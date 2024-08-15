@@ -250,7 +250,7 @@ namespace xtd {
     
     /// @cond
     time_zone_info() = default;
-    time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time);
+    time_zone_info(const string& id, const ticks& base_utc_offset, const string& daylight_name, const string& display_name, const string& standard_name, bool supports_daylight_saving_time);
     time_zone_info(const time_zone_info&) = default;
     time_zone_info(time_zone_info&&) = default;
     time_zone_info& operator =(const time_zone_info&) = default;
@@ -272,10 +272,10 @@ namespace xtd {
     /// @brief Gets the display name for the current time zone's daylight saving time.
     /// @return string The display name for the time zone's daylight saving time.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
-    /// @remarks A DaylightName property whose value is not ustring.Empty or null does not necessarily indicate that the time zone supports daylight saving time. To determine whether the time zone supports daylight saving time, check the value of its SupportsDaylightSavingTime property.
-    /// @remarks In most cases, the DaylightName property of time zones defined in the registry is not ustring.Empty or null. However, the DaylightName property of custom time zones can be set to ustring.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(ustring, TimeSpan, ustring, ustring) or the time_zone_info.CreateCustomTimeZone(ustring, TimeSpan, ustring, ustring, ustring, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is true. Therefore, your code should never assume that the value of the DaylightName property is not null or empty.
+    /// @remarks A DaylightName property whose value is not string.Empty or null does not necessarily indicate that the time zone supports daylight saving time. To determine whether the time zone supports daylight saving time, check the value of its SupportsDaylightSavingTime property.
+    /// @remarks In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is true. Therefore, your code should never assume that the value of the DaylightName property is not null or empty.
     /// @remarks The DaylightName property is equivalent to the DaylightName property of the TimeZone class.
-    const ustring& daylight_name() const noexcept;
+    const string& daylight_name() const noexcept;
     
     /// @brief Gets the general display name that represents the time zone.
     /// @return string The time zone's general display name.
@@ -287,19 +287,19 @@ namespace xtd {
     /// (GMT-02:00) Mid-Atlantic
     /// (GMT-07:00) Mountain Time (US & Canada)
     /// ```
-    const ustring& display_name() const noexcept;
+    const string& display_name() const noexcept;
     
     /// @brief Gets the time zone identifier.
     /// @return string The time zone identifier.
     /// @remarks The time zone identifier is a key string that uniquely identifies a particular time zone. It can be passed as a parameter to the FindSystemTimeZoneById method to retrieve a particular time zone from the registry.
-    const ustring& id() const noexcept;
+    const string& id() const noexcept;
     
     /// @brief Gets the display name for the time zone's standard time.
     /// @return The display name of the time zone's standard time.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
     /// @remarks The StandardName property is identical to the StandardName property of the TimeZone class.
     /// @remarks The value of the StandardName property is usually, but not always, identical to that of the Id property.
-    const ustring& standard_name() const noexcept;
+    const string& standard_name() const noexcept;
     
     /// @brief Gets a value indicating whether the time zone has any daylight saving time rules.*
     /// @return bool true if the time zone supports daylight saving time; otherwise, false.
@@ -336,7 +336,7 @@ namespace xtd {
     /// @return true if the date_time parameter is a daylight saving time; otherwise, false.
     bool is_daylight_saving_time(const xtd::date_time& date_time) const noexcept;
     
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
 
     /// @name Public Static Methods
@@ -371,13 +371,13 @@ namespace xtd {
     /// @param date_time The date and time to convert.
     /// @param destination_time_zone_id The identifier of the destination time zone.
     /// @return The date and time in the destination time zone.
-    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& destination_time_zone_id);
+    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& destination_time_zone_id);
     /// @brief Converts a time from one time zone to another based on time zone identifiers.
     /// @param date_time The date and time to convert.
     /// @param source_time_zone_id The identifier of the source time zone.
     /// @param destintion_time_zone_id The identifier of the destination time zone.
     /// @return The date and time in the destination time zone that corresponds to the dateTime parameter in the source time zone.
-    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& source_time_zone_id, const xtd::ustring& destination_time_zone_id);
+    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& source_time_zone_id, const xtd::string& destination_time_zone_id);
     
     /// @brief Converts a Coordinated Universal Time (UTC) to the time in a specified time zone.
     /// @param date_time The Coordinated Universal Time (UTC).
@@ -400,15 +400,15 @@ namespace xtd {
     /// @return An object whose identifier is the value of the id parameter.
     /// @exception ArgumentNullException The id parameter is null.
     /// @exception TimeZoneNotFoundException The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
-    static time_zone_info time_find_system_time_zone_by_id(const ustring& id);
+    static time_zone_info time_find_system_time_zone_by_id(const string& id);
     /// @}
     
   private:
-    ustring id_;
+    string id_;
     ticks base_utc_offset_;
-    ustring daylight_name_;
-    ustring display_name_;
-    ustring standard_name_;
+    string daylight_name_;
+    string display_name_;
+    string standard_name_;
     bool supports_daylight_saving_time_ = false;
     std::vector<adjustement_rule> adjustement_rules_;
   };

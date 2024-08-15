@@ -36,12 +36,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the source_switch class, specifying the name of the source.
       /// @param name The name of the source.
       /// @remarks The name parameter is used to set the value of the display_name property.
-      explicit source_switch(const xtd::ustring& name);
+      explicit source_switch(const xtd::string& name);
       /// @brief Initializes a new instance of the source_switch class, specifying the display name and the default value for the source switch.
       /// @param display_name The name of the source.
       /// @param default_switch_value The default value for the switch.
       /// @remarks The display_name parameter is used to set the value of the display_name property; the default_switch_value parameter is saved as a field and used to initialize the value property on first reference.
-      source_switch(const xtd::ustring& display_name, const xtd::ustring& default_switch_value);
+      source_switch(const xtd::string& display_name, const xtd::string& default_switch_value);
       /// @}
       
       /// @name Public Properties

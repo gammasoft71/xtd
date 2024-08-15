@@ -13,7 +13,7 @@ extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
 
 trace_listener_collection& trace::listeners_ = __listeners__;
-ustring trace::source_name_ = assembly::get_executing_assembly().location();
+string trace::source_name_ = assembly::get_executing_assembly().location();
 
 bool trace::auto_flush() noexcept {
   return auto_flush_;
@@ -66,27 +66,27 @@ void trace::use_global_lock(bool use_global_lock) noexcept {
 }
 
 void trace::cassert(bool condition) {
-  if (__should_aborted__(condition, ustring::empty_string, csf_)) __xtd_debugbreak();
+  if (__should_aborted__(condition, string::empty_string, csf_)) __xtd_debugbreak();
 }
 
-void trace::cassert(bool condition, const ustring& message) {
+void trace::cassert(bool condition, const string& message) {
   if (__should_aborted__(condition, message, csf_)) __xtd_debugbreak();
 }
 
-void trace::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void trace::cassert(bool condition, const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) __xtd_debugbreak();
 }
 
-void trace::cassert(bool condition, const ustring& message, const ustring& detail_message) {
+void trace::cassert(bool condition, const string& message, const string& detail_message) {
   if (__should_aborted__(condition, message, detail_message, csf_)) __xtd_debugbreak();
 }
 
-void trace::cassert(bool condition, const ustring& message, const ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
+void trace::cassert(bool condition, const string& message, const string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, detail_message, stack_frame)) __xtd_debugbreak();
 }
 
 void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, ustring::empty_string, stack_frame)) __xtd_debugbreak();
+  if (__should_aborted__(condition, string::empty_string, stack_frame)) __xtd_debugbreak();
 }
 
 void trace::indent() noexcept {
@@ -97,7 +97,7 @@ void trace::unindent() noexcept {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
-void trace::fail__(const ustring& message) {
+void trace::fail__(const string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -110,7 +110,7 @@ void trace::fail__(const ustring& message) {
   if (auto_flush_) flush();
 }
 
-void trace::fail__(const ustring& message, const ustring& detail_message) {
+void trace::fail__(const string& message, const string& detail_message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -128,7 +128,7 @@ void trace::flush_() {
     listener->flush();
 }
 
-void trace::trace_event_(trace_event_type trace_event_type, const ustring& message) {
+void trace::trace_event_(trace_event_type trace_event_type, const string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -141,7 +141,7 @@ void trace::trace_event_(trace_event_type trace_event_type, const ustring& messa
   if (auto_flush_) flush();
 }
 
-void trace::write_(const ustring& message) {
+void trace::write_(const string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -154,7 +154,7 @@ void trace::write_(const ustring& message) {
   if (auto_flush_) flush();
 }
 
-void trace::write_(const ustring& message, const ustring& category) {
+void trace::write_(const string& message, const string& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -167,7 +167,7 @@ void trace::write_(const ustring& message, const ustring& category) {
   if (auto_flush_) flush();
 }
 
-void trace::write_line_(const ustring& message) {
+void trace::write_line_(const string& message) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
@@ -180,7 +180,7 @@ void trace::write_line_(const ustring& message) {
   if (auto_flush_) flush();
 }
 
-void trace::write_line_(const ustring& message, const ustring& category) {
+void trace::write_line_(const string& message, const string& category) {
   for (auto listener : listeners_) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);

@@ -16,9 +16,9 @@ using namespace xtd::collections::generic;
 namespace set_path {
   class program final static_ {
   public:
-    static auto main(const list<ustring>& args) {
-      ustring key;
-      ustring value;
+    static auto main(const list<string>& args) {
+      string key;
+      string value;
       bool show_version = false;
       bool show_help = false;
       bool add = false;
@@ -29,7 +29,7 @@ namespace set_path {
         return -1;
       }
 
-      if (ustring::is_empty(key)) show_help = true;
+      if (string::is_empty(key)) show_help = true;
 
       if (environment_variable_system && environment::os_version().is_windows() && !environment::user_administrator()) {
         console::write_line("ERROR : Launch set_environment_variable in administrator mode.");
@@ -40,7 +40,7 @@ namespace set_path {
       else if (show_help) console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
       else {
         /*
-        ustring current_value;
+        string current_value;
         if (environment::os_version().is_windows()) current_value = win32_read_environment_variable_system(key, environment_variable_system);
         else if (environment::os_version().is_macos()) current_value = macos_read_environment_variable_system(key, environment_variable_system);
         else if (environment::os_version().is_linux()) current_value = linux_read_environment_variable_system(key, environment_variable_system);
@@ -50,7 +50,7 @@ namespace set_path {
           return 0;
         }
         
-        if (remove && ustring::is_empty(current_value)) {
+        if (remove && string::is_empty(current_value)) {
           console::write_line("The key \"{}\" does not exist. Do nothing.", key);
           return 0;
         }*/
@@ -67,12 +67,12 @@ namespace set_path {
     }
     
   private:
-    static ustring get_error() {
+    static string get_error() {
       return "set_environment_variable : invalid params\n"
         "Try 'set_environment_variable --help' for more information.";
     }
     
-    static ustring get_usage() {
+    static string get_usage() {
       return "Usage\n"
         "  set_environment_variable [options] key [value]\n"
         "\n"
@@ -86,18 +86,18 @@ namespace set_path {
         "(**) System option is valid only on Windows. You must in administrator mode.";
     }
     
-    static ustring get_version() {
-      return ustring::format("set_environment_variable version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+    static string get_version() {
+      return string::format("set_environment_variable version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const list<ustring>& args, ustring& key, ustring& value, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
+    static bool process_arguments(const list<string>& args, string& key, string& value, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-a" || args[index] == "--add") add = true;
         else if (args[index] == "-r" || args[index] == "--remove") remove = true;
         else if (args[index] == "-s" || args[index] == "--system") system_path = true;
         else if (args[index] == "-v" || args[index] == "--version") show_version = true;
         else if (args[index] == "-h" || args[index] == "--help") show_help = true;
-        //else if (!ustring::is_empty(key)) return false;
+        //else if (!string::is_empty(key)) return false;
         else {
         key = args[index];
         if (index + 1 < args.size()) value = args[++index];
@@ -105,34 +105,34 @@ namespace set_path {
       }
       
       if (!add && !remove) add = true;
-      if (remove) value = ustring::empty_string;
-      if (add && ustring::is_empty(value)) {
+      if (remove) value = string::empty_string;
+      if (add && string::is_empty(value)) {
         remove = true;
         add = false;
       }
 
-      return !ustring::is_empty(key) || show_help || show_version;
+      return !string::is_empty(key) || show_help || show_version;
     }
     
-    static ustring linux_read_environment_variable_system(const ustring& key, bool environment_variable_system) {
+    static string linux_read_environment_variable_system(const string& key, bool environment_variable_system) {
       return environment::get_environment_variable(key, environment_variable_system ? environment_variable_target::machine : environment_variable_target::user);
     }
     
-    static int linux_write_environment_variable_system(bool environment_variable_system, const ustring& key, const ustring& value) {
+    static int linux_write_environment_variable_system(bool environment_variable_system, const string& key, const string& value) {
       console::write_line("Not yet implemented...");
       return 1;
     }
     
-    static ustring macos_read_environment_variable_system(const ustring& key, bool environment_variable_system) {
+    static string macos_read_environment_variable_system(const string& key, bool environment_variable_system) {
       return environment::get_environment_variable(key, environment_variable_system ? environment_variable_target::machine : environment_variable_target::user);
     }
     
-    static int macos_write_environment_variable_system(bool environment_variable_system, const ustring& key, const ustring& value) {
+    static int macos_write_environment_variable_system(bool environment_variable_system, const string& key, const string& value) {
       console::write_line("Not yet implemented...");
       return 1;
     }
     
-    static ustring win32_read_environment_variable_system(const ustring& key, bool environment_variable_system) {
+    static string win32_read_environment_variable_system(const string& key, bool environment_variable_system) {
       /// @todo Replace by xtd::microsoft::registry when xtd::microsoft::registry class is ready...
       wchar value[4097] = L"";
       #if defined(_WIN32)
@@ -140,14 +140,14 @@ namespace set_path {
       auto status = RegGetValue(environment_variable_system ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, environment_variable_system ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", convert_string::to_wstring(key).c_str(), RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(value), &size);
       if (status != ERROR_SUCCESS && status != ERROR_FILE_NOT_FOUND) {
         console::write_line("An error 0x{:X8} occurred when reading path in registry", status);
-        return ustring::empty_string;
+        return string::empty_string;
       }
       if (status == ERROR_SUCCESS) value[size] = 0;
       #endif
       return convert_string::to_ustring(value);
     }
     
-    static int win32_write_environment_variable_system(bool environment_variable_system, const ustring& key, const ustring& value) {
+    static int win32_write_environment_variable_system(bool environment_variable_system, const string& key, const string& value) {
       /// @todo Replace by xtd::microsoft::registry when xtd::microsoft::registry class is ready...
       #if defined(_WIN32)
       HKEY environment_key;
@@ -157,7 +157,7 @@ namespace set_path {
         return 1;
       }
       
-      if (ustring::is_empty(value)) {
+      if (string::is_empty(value)) {
         status = RegDeleteKey(environment_key, convert_string::to_wstring(key).c_str());
         if (status != ERROR_SUCCESS) {
           console::write_line("An error 0x{:X8} occurred when erase key \"{}\" from registry", status, key);

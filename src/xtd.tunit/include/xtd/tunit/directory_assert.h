@@ -381,13 +381,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void does_not_exist(const std::basic_string<char_t>& directory) {does_not_exist(directory, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void does_not_exist(const std::basic_string<char_t>& directory) {does_not_exist(directory, xtd::string::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -395,13 +395,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void does_not_exist(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, xtd::ustring::empty_string, stack_frame);}
+      static void does_not_exist(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -409,7 +409,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
@@ -424,7 +424,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
@@ -434,9 +434,9 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static void does_not_exist(const char_t* directory) {does_not_exist(directory, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void does_not_exist(const char_t* directory) {does_not_exist(directory, xtd::string::empty_string, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>
-      static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, xtd::ustring::empty_string, stack_frame);}
+      static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       template<typename char_t>
       static void does_not_exist(const char_t* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>
@@ -504,7 +504,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -517,7 +517,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -530,7 +530,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -544,7 +544,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -557,13 +557,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void exists(const std::basic_string<char_t>& directory) {exists(directory, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void exists(const std::basic_string<char_t>& directory) {exists(directory, xtd::string::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -571,13 +571,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void exists(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, xtd::ustring::empty_string, stack_frame);}
+      static void exists(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -585,7 +585,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -600,7 +600,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtd::string d1 = environment::get_folder_path(environment::special_folder::common_application_data);
       /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
@@ -610,9 +610,9 @@ namespace xtd {
       
       /// @cond
       template<typename char_t>
-      static void exists(const char_t* directory) {exists(directory, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void exists(const char_t* directory) {exists(directory, xtd::string::empty_string, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>
-      static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, xtd::ustring::empty_string, stack_frame);}
+      static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, xtd::string::empty_string, stack_frame);}
       template<typename char_t>
       static void exists(const char_t* directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>

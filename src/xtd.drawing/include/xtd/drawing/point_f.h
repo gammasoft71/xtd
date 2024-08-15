@@ -102,8 +102,8 @@ namespace xtd {
       void offset(const point_f& pt) noexcept;
       
       /// @brief Converts this point to a human-readable string.
-      /// @return An xtd::ustring that represents this xtd::drawing::point.
-      xtd::ustring to_string() const noexcept override;
+      /// @return An xtd::string that represents this xtd::drawing::point.
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Methods

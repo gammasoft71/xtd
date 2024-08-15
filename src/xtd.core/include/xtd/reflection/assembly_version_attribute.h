@@ -34,25 +34,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_version_attribute class.
       /// @param version The version information.
-      explicit assembly_version_attribute(const ustring& version);
+      explicit assembly_version_attribute(const string& version);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_version_attribute(const ustring& version, const object& executing_assembly);
+      assembly_version_attribute(const string& version, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets version information.
       /// @return A string containing the version information.
-      const ustring& version() const noexcept;
+      const string& version() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring version_;
+      string version_;
     };
   }
 }
@@ -77,4 +77,4 @@ xtd::sptr<xtd::reflection::assembly_version_attribute>& __assembly_version_attri
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_version_(version) \
-  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::ustring(version) == "" || xtd::ustring(version) == "*" ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}
+  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::string(version) == "" || xtd::string(version) == "*" ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}

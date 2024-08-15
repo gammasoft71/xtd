@@ -158,7 +158,7 @@ namespace xtd {
       
       /// @brief Converts an Internet address to its standard notation.
       /// @return A string that contains the IP address in either IPv4 dotted-quad or in IPv6 colon-hexadecimal notation.
-      ustring to_string() const noexcept override;
+      string to_string() const noexcept override;
       /// @}
 
       /// @name Public Static Methods
@@ -287,13 +287,13 @@ namespace xtd {
       /// @exception xtd::format_exception str is not a valid IP address.
       /// @remarks The static xtd::net::ip_address::parse method creates an xtd::net::ip_address instance from an IP address expressed in dotted-quad notation for IPv4 and in colon-hexadecimal notation for IPv6.
       /// @remarks The number of parts (each part is separated by a period) in str determines how the IP address is constructed. A one part address is stored directly in the network address. A two part address, convenient for specifying a class A address, puts the leading part in the first byte and the trailing part in the right-most three bytes of the network address. A three part address, convenient for specifying a class B address, puts the first part in the first byte, the second part in the second byte, and the final part in the right-most two bytes of the network address.
-      static ip_address parse(const ustring& str);
+      static ip_address parse(const string& str);
       
       /// @brief Determines whether a string is a valid IP address.
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool true if str is a valid IP address; otherwise, false.
-      static bool try_parse(const ustring& str, ip_address& address) noexcept;
+      static bool try_parse(const string& str, ip_address& address) noexcept;
       /// @}
 
     private:

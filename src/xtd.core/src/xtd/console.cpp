@@ -195,12 +195,12 @@ void console::output_code_page(int32 code_page) {
   if (native::console::output_code_page(code_page)) throw io::io_exception {csf_};
 }
 
-ustring console::title() {
+string console::title() {
   register_cancel_key_press(); // Must be first...
   return native::console::title();
 }
 
-void console::title(const ustring& title) {
+void console::title(const string& title) {
   register_cancel_key_press(); // Must be first...
   native::console::title(title);
 }
@@ -298,12 +298,12 @@ int32 console::read() {
   return in.get();
 }
 
-ustring console::read_line() {
+string console::read_line() {
   register_cancel_key_press(); // Must be first...
   return read_line(false);
 }
 
-ustring console::read_line(bool intercept) {
+string console::read_line(bool intercept) {
   register_cancel_key_press(); // Must be first...
   struct echo_on {
     echo_on(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
@@ -397,13 +397,13 @@ void console::register_cancel_key_press() {
   };
 }
 
-void console::write_(const ustring& value) {
+void console::write_(const string& value) {
   auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value;
   if (auto_flush_out()) out.flush();
 }
 
-void console::write_line_(const ustring& value) {
+void console::write_line_(const string& value) {
   auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value << std::endl;
   if (auto_flush_out()) out.flush();

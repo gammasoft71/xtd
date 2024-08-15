@@ -22,8 +22,8 @@ namespace {
   }
   
   static intptr create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {
-    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_DEFAULT));
-    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix()))));
+    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::string::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_DEFAULT));
+    wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::string::format("{}{}.png", name, get_os_postfix()))));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
     wxCursor* cursor = new wxCursor(image);

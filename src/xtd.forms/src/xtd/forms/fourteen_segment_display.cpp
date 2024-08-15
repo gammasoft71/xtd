@@ -40,7 +40,7 @@ fourteen_segment_display fourteen_segment_display::create(const drawing::point& 
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.location(location);
   item.size(size);
@@ -69,7 +69,7 @@ fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments s
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.value(segments);
   item.location(location);
@@ -102,7 +102,7 @@ fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments s
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.value(segments);
   item.show_back_segment(show_back_segment);
@@ -132,7 +132,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.parent(parent);
   item.location(location);
@@ -164,7 +164,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -200,7 +200,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
   return item;
 }
 
-fourteen_segment_display fourteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fourteen_segment_display fourteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = fourteen_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -213,7 +213,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
 
 xtd::uptr<xtd::object> fourteen_segment_display::clone() const {
   auto result = xtd::new_uptr<fourteen_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

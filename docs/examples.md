@@ -121,7 +121,6 @@ xtdc run
 
 ```cpp
 #include <xtd/xtd>
-#include <string>
 
 using namespace xtd;
 using namespace xtd::tunit;

@@ -103,7 +103,7 @@ namespace xtd {
       static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names() noexcept;
+      static const std::vector<xtd::string>& get_color_names() noexcept;
       /// @}
     };
   }

@@ -56,7 +56,7 @@ namespace xtd {
       
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     protected:

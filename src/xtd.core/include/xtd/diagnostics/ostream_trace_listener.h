@@ -60,14 +60,14 @@ namespace xtd {
       }
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const xtd::ustring& message) override {
+      void write(const xtd::string& message) override {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_(message);
         #endif
       }
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const xtd::ustring& message) override {
+      void write_line(const xtd::string& message) override {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);
         #endif
@@ -76,8 +76,8 @@ namespace xtd {
       
     private:
       void flush_();
-      void write_(const xtd::ustring& message);
-      void write_line_(const xtd::ustring& message);
+      void write_(const xtd::string& message);
+      void write_line_(const xtd::string& message);
       std::ostream ostream_ {nullptr};
     };
   }

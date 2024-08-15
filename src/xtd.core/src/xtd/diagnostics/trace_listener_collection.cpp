@@ -20,13 +20,13 @@ bool trace_listener_collection::equals(const trace_listener_collection& value) c
   return static_cast<const base&>(*this) == static_cast<const base&>(value);
 }
 
-trace_listener_collection::const_reference trace_listener_collection::operator [](const ustring& name) const {
+trace_listener_collection::const_reference trace_listener_collection::operator [](const string& name) const {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;
 }
 
-trace_listener_collection::reference trace_listener_collection::operator [](const ustring& name) {
+trace_listener_collection::reference trace_listener_collection::operator [](const string& name) {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;

@@ -60,27 +60,27 @@ key_control::key_control() {
   line_.visible(false);
 }
 
-key_control& key_control::key_event(const ustring& value) {
+key_control& key_control::key_event(const string& value) {
   key_event_.text(value);
   return *this;
 }
 
-key_control& key_control::key_code(const xtd::ustring& value) {
+key_control& key_control::key_code(const xtd::string& value) {
   key_code_.text(value);
   return *this;
 }
 
-key_control& key_control::key_data(const xtd::ustring& value) {
+key_control& key_control::key_data(const xtd::string& value) {
   key_data_.text(value);
   return *this;
 }
 
-key_control& key_control::key_value(const xtd::ustring& value) {
+key_control& key_control::key_value(const xtd::string& value) {
   key_value_.text(value);
   return *this;
 }
 
-key_control& key_control::key_modfiers(const xtd::ustring& value) {
+key_control& key_control::key_modfiers(const xtd::string& value) {
   key_modfiers_.text(value);
   return *this;
 }

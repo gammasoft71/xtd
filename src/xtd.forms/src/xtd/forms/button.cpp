@@ -100,7 +100,7 @@ button button::create(const drawing::point& location, const drawing::size& size)
   return result;
 }
 
-button button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button button::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = button {};
   result.location(location);
   result.size(size);
@@ -108,20 +108,20 @@ button button::create(const drawing::point& location, const drawing::size& size,
   return result;
 }
 
-button button::create(const xtd::ustring& text) {
+button button::create(const xtd::string& text) {
   auto result = button {};
   result.text(text);
   return result;
 }
 
-button button::create(const xtd::ustring& text, const drawing::point& location) {
+button button::create(const xtd::string& text, const drawing::point& location) {
   auto result = button {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+button button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = button {};
   result.text(text);
   result.location(location);
@@ -129,7 +129,7 @@ button button::create(const xtd::ustring& text, const drawing::point& location, 
   return result;
 }
 
-button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = button {};
   result.text(text);
   result.location(location);
@@ -159,7 +159,7 @@ button button::create(const control& parent, const drawing::point& location, con
   return result;
 }
 
-button button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = button {};
   result.parent(parent);
   result.location(location);
@@ -168,14 +168,14 @@ button button::create(const control& parent, const drawing::point& location, con
   return result;
 }
 
-button button::create(const control& parent, const xtd::ustring& text) {
+button button::create(const control& parent, const xtd::string& text) {
   auto result = button {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+button button::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = button {};
   result.parent(parent);
   result.text(text);
@@ -183,7 +183,7 @@ button button::create(const control& parent, const xtd::ustring& text, const dra
   return result;
 }
 
-button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+button button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = button {};
   result.parent(parent);
   result.text(text);
@@ -192,7 +192,7 @@ button button::create(const control& parent, const xtd::ustring& text, const dra
   return result;
 }
 
-button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = button {};
   result.parent(parent);
   result.text(text);
@@ -229,7 +229,7 @@ xtd::forms::visual_styles::push_button_state button::state() const noexcept {
 
 xtd::uptr<xtd::object> button::clone() const {
   auto result = xtd::new_uptr<button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

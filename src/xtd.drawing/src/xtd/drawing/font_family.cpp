@@ -9,10 +9,10 @@ using namespace xtd::drawing;
 
 struct font_family::data {
   intptr handle_ = 0;
-  xtd::ustring name_;
+  xtd::string name_;
 };
 
-font_family::font_family(const ustring& name) : data_(xtd::new_sptr<data>()) {
+font_family::font_family(const string& name) : data_(xtd::new_sptr<data>()) {
   data_->name_ = name;
   if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string"_t, csf_);
   data_->handle_ = native::font_family::create(name);
@@ -28,7 +28,7 @@ font_family::font_family(text::generic_font_families generic_font_families) : da
   }
 }
 
-font_family::font_family(const ustring& name, const text::font_collection& font_collection) : data_(xtd::new_sptr<data>()) {
+font_family::font_family(const string& name, const text::font_collection& font_collection) : data_(xtd::new_sptr<data>()) {
   auto font_families = font_collection.families();
   auto iterator = find_if(font_families.begin(), font_families.end(), [&](const font_family & font_family) {return name == font_family.name();});
   if (iterator == font_families.end()) throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t, csf_);
@@ -70,7 +70,7 @@ font_family font_family::generic_serif() noexcept {
   return font_family(text::generic_font_families::serif);
 }
 
-const xtd::ustring& font_family::name() const noexcept {
+const xtd::string& font_family::name() const noexcept {
   return data_->name_;
 }
 
@@ -94,7 +94,7 @@ int32 font_family::get_line_spacing(font_style style) const {
   return native::font_family::get_line_spacing(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-ustring font_family::get_name(int32 language) const {
+string font_family::get_name(int32 language) const {
   return native::font_family::get_name(data_->handle_, language);
 }
 
@@ -102,6 +102,6 @@ bool font_family::is_style_available(font_style style) const {
   return native::font_family::is_style_available(data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-xtd::ustring font_family::to_string() const noexcept {
-  return ustring::format("[{}: name={}]", get_type().name(), data_->name_);
+xtd::string font_family::to_string() const noexcept {
+  return string::format("[{}: name={}]", get_type().name(), data_->name_);
 }

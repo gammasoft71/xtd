@@ -17,7 +17,7 @@ using namespace xtd::forms;
 namespace {
   class input_dialog_standard : public form {
   public:
-    input_dialog_standard(const xtd::ustring& text, const xtd::ustring& message, const xtd::ustring& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
+    input_dialog_standard(const xtd::string& text, const xtd::string& message, const xtd::string& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
       auto offset_multiline = multiline ? 100 : 0;
       
       icon(xtd::drawing::icon::empty);
@@ -64,7 +64,7 @@ namespace {
       input_text_box_.focus();
     }
     
-    ustring value() const {return input_text_box_.text();}
+    string value() const {return input_text_box_.text();}
     
     forms::dialog_result show_dialog() override {
       start_position(form_start_position::center_screen);
@@ -105,10 +105,10 @@ struct input_dialog::data {
   xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
   bool multiline = false;
-  xtd::ustring message;
-  xtd::ustring text;
+  xtd::string message;
+  xtd::string text;
   bool use_system_password_char = false;
-  xtd::ustring value;
+  xtd::string value;
   bool word_wrap = true;
 };
 
@@ -150,20 +150,20 @@ input_dialog& input_dialog::multiline(bool multiline) {
   return *this;
 }
 
-xtd::ustring input_dialog::message() const noexcept {
+xtd::string input_dialog::message() const noexcept {
   return data_->message;
 }
 
-input_dialog& input_dialog::message(const ustring& message) {
+input_dialog& input_dialog::message(const string& message) {
   data_->message = message;
   return *this;
 }
 
-xtd::ustring input_dialog::text() const noexcept {
+xtd::string input_dialog::text() const noexcept {
   return data_->text;
 }
 
-input_dialog& input_dialog::text(const ustring& text) {
+input_dialog& input_dialog::text(const string& text) {
   data_->text = text;
   return *this;
 }
@@ -177,11 +177,11 @@ input_dialog& input_dialog::use_system_password_char(bool use_system_password_ch
   return *this;
 }
 
-xtd::ustring input_dialog::value() const noexcept {
+xtd::string input_dialog::value() const noexcept {
   return data_->value;
 }
 
-input_dialog& input_dialog::value(const xtd::ustring& value) {
+input_dialog& input_dialog::value(const xtd::string& value) {
   if (value == data_->value) return *this;
   switch (data_->character_casing) {
     case xtd::forms::character_casing::normal: data_->value = value; break;

@@ -77,12 +77,12 @@ namespace xtd {
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static type_t parse(const xtd::ustring& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
+    static type_t parse(const xtd::string& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
     using box<type_t>::try_parse;
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static bool parse(const xtd::ustring& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
+    static bool parse(const xtd::string& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
     /// @}
   };
 }

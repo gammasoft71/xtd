@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @brief Initializes a new instance of the data_received_event_args class.
       /// @param data The line that was written by an associated Process to its redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream.
-      explicit data_received_event_args(const xtd::ustring& data) : data_(data) {}
+      explicit data_received_event_args(const xtd::string& data) : data_(data) {}
       
       /// @cond
       data_received_event_args(const data_received_event_args&) = default;
@@ -49,12 +49,12 @@ namespace xtd {
       
       /// @brief Gets the line of characters that was written to a redirected Process output stream.
       /// @return true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
-      const xtd::ustring& data() const noexcept {return data_;}
+      const xtd::string& data() const noexcept {return data_;}
       
       /// @}
       
     private:
-      xtd::ustring data_;
+      xtd::string data_;
     };
   }
 }

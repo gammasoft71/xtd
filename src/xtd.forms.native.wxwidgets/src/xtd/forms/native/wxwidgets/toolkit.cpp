@@ -8,12 +8,12 @@
 
 using namespace xtd;
 
-ustring xtd::forms::native::toolkit::name() {
+string xtd::forms::native::toolkit::name() {
   return xtd::drawing::native::toolkit::name();
 }
 
-ustring xtd::forms::native::toolkit::description() {
-  return ustring::format("The underlying graphical toolkit is {} {}. See https://www.wxwidgets.org for more information.", xtd::drawing::native::toolkit::name(), xtd::drawing::native::toolkit::version());
+string xtd::forms::native::toolkit::description() {
+  return string::format("The underlying graphical toolkit is {} {}. See https://www.wxwidgets.org for more information.", xtd::drawing::native::toolkit::name(), xtd::drawing::native::toolkit::version());
 }
 
 xtd::version xtd::forms::native::toolkit::version() {

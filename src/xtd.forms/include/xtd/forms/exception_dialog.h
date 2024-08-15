@@ -72,11 +72,11 @@ namespace xtd {
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::ustring text() const noexcept;
+      xtd::string text() const noexcept;
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      exception_dialog& text(const xtd::ustring& text);
+      exception_dialog& text(const xtd::string& text);
       /// @}
       
       /// @name Public Methods

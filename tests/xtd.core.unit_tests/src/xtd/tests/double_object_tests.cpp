@@ -108,18 +108,18 @@ namespace xtd::tests {
     }
     
     void test_method_(format) {
-      assert::are_equal("0", ustring::format("{}", 0.0), csf_);
-      assert::are_equal("1", ustring::format("{}", 1.0), csf_);
-      assert::are_equal("255", ustring::format("{}", 255.0), csf_);
-      assert::are_equal("4294967295", ustring::format("{}", 4294967295.0), csf_);
-      assert::are_equal("0.00390625", ustring::format("{}", 0.00390625), csf_);
-      assert::are_equal("2.3283064365387E-10", ustring::format("{}", 0.00000000023283064365386962890625), csf_);
-      assert::are_equal("1.23456789012345E-300", ustring::format("{}", 1.23456789012345E-300), csf_);
-      assert::are_equal("1.23456789012346", ustring::format("{}", 1.2345678901234565), csf_);
-      assert::are_equal("4.94065645841247E-324", ustring::format("{}", double_object::epsilon), csf_);
-      assert::are_equal("nan", ustring::format("{}", double_object::NaN), csf_);
-      assert::are_equal("-inf", ustring::format("{}", double_object::negative_infinity), csf_);
-      assert::are_equal("inf", ustring::format("{}", double_object::positive_infinity), csf_);
+      assert::are_equal("0", string::format("{}", 0.0), csf_);
+      assert::are_equal("1", string::format("{}", 1.0), csf_);
+      assert::are_equal("255", string::format("{}", 255.0), csf_);
+      assert::are_equal("4294967295", string::format("{}", 4294967295.0), csf_);
+      assert::are_equal("0.00390625", string::format("{}", 0.00390625), csf_);
+      assert::are_equal("2.3283064365387E-10", string::format("{}", 0.00000000023283064365386962890625), csf_);
+      assert::are_equal("1.23456789012345E-300", string::format("{}", 1.23456789012345E-300), csf_);
+      assert::are_equal("1.23456789012346", string::format("{}", 1.2345678901234565), csf_);
+      assert::are_equal("4.94065645841247E-324", string::format("{}", double_object::epsilon), csf_);
+      assert::are_equal("nan", string::format("{}", double_object::NaN), csf_);
+      assert::are_equal("-inf", string::format("{}", double_object::negative_infinity), csf_);
+      assert::are_equal("inf", string::format("{}", double_object::positive_infinity), csf_);
     }
     
     void test_method_(to_string) {

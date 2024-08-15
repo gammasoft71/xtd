@@ -48,7 +48,7 @@ const std::vector<color>& gray_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& gray_colors::get_color_names() noexcept {
+const std::vector<string>& gray_colors::get_color_names() noexcept {
   static auto color_names = std::vector {gray_colors::black().name(), gray_colors::dark_slate_gray().name(), gray_colors::dim_gray().name(), gray_colors::slate_gray().name(), gray_colors::gray().name(), gray_colors::light_slate_gray().name(), gray_colors::dark_gray().name(), gray_colors::silver().name(), gray_colors::light_gray().name(), gray_colors::gainsboro().name()};
   return color_names;
 }

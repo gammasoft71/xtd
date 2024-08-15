@@ -109,7 +109,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -132,7 +132,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -169,7 +169,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -192,7 +192,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -215,7 +215,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -238,7 +238,7 @@ namespace xtd {
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
       ///   if (point1 == point2) {
-      ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
+      ///     form_graphics.draw_string(string::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
       /// ```
@@ -272,8 +272,8 @@ namespace xtd {
       void offset(const point& p) noexcept;
       
       /// @brief Converts this point to a human-readable string.
-      /// @return An xtd::ustring that represents this xtd::drawing::point.
-      xtd::ustring to_string() const noexcept override;
+      /// @return An xtd::string that represents this xtd::drawing::point.
+      xtd::string to_string() const noexcept override;
       
       /// @brief Converts the specified xtd::drawing::point_f to a point by truncating the values of the xtd::drawing::point_f.
       /// @param value The xtd::drawing::point_f to convert.
@@ -376,7 +376,7 @@ namespace xtd {
   
   template<>
   inline drawing::point parse<drawing::point>(const std::string& str) {
-    auto values = xtd::ustring(str).replace("}", xtd::ustring::empty_string).replace(" y=", xtd::ustring::empty_string).replace("{x=", xtd::ustring::empty_string).split({','});
+    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" y=", xtd::string::empty_string).replace("{x=", xtd::string::empty_string).split({','});
     return {xtd::parse<int32>(values[0]), xtd::parse<int32>(values[1])};
   }
 }

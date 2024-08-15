@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const xtd::ustring& value) {
+  inline decimal as<decimal>(const xtd::string& value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(xtd::ustring& value) {
+  inline decimal as<decimal>(xtd::string& value) {
     return xtd::convert::to_decimal(value);
   }
   

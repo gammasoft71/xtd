@@ -210,7 +210,7 @@ namespace xtd {
       
       /// @brief Converts the attributes of this xtd::drawing::rectangle_f to a human-readable string.
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Methods

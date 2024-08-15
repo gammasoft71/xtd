@@ -46,7 +46,7 @@ tab_page& tab_page::image_index(size_t value) {
 }
 
 control& tab_page::parent(const control& parent) {
-  if (!is<tab_control>(parent)) throw argument_exception(ustring::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), parent.get_type().full_name());
+  if (!is<tab_control>(parent)) throw argument_exception(string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), parent.get_type().full_name());
   as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
   return *this;
 }
@@ -58,7 +58,7 @@ control& tab_page::parent(std::nullptr_t) {
   return *this;
 }
 
-control& tab_page::text(const ustring& text) {
+control& tab_page::text(const string& text) {
   if (control::text() == text) return *this;
   if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
   set_text(text);
@@ -82,7 +82,7 @@ tab_page tab_page::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-tab_page tab_page::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_page tab_page::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_page {};
   result.location(location);
   result.size(size);
@@ -90,20 +90,20 @@ tab_page tab_page::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-tab_page tab_page::create(const xtd::ustring& text) {
+tab_page tab_page::create(const xtd::string& text) {
   auto result = tab_page {};
   result.text(text);
   return result;
 }
 
-tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location) {
+tab_page tab_page::create(const xtd::string& text, const drawing::point& location) {
   auto result = tab_page {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+tab_page tab_page::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = tab_page {};
   result.text(text);
   result.location(location);
@@ -111,7 +111,7 @@ tab_page tab_page::create(const xtd::ustring& text, const drawing::point& locati
   return result;
 }
 
-tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_page tab_page::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_page {};
   result.text(text);
   result.location(location);
@@ -141,7 +141,7 @@ tab_page tab_page::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-tab_page tab_page::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_page tab_page::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_page {};
   result.parent(parent);
   result.location(location);
@@ -150,14 +150,14 @@ tab_page tab_page::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-tab_page tab_page::create(const control& parent, const xtd::ustring& text) {
+tab_page tab_page::create(const control& parent, const xtd::string& text) {
   auto result = tab_page {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+tab_page tab_page::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = tab_page {};
   result.parent(parent);
   result.text(text);
@@ -165,7 +165,7 @@ tab_page tab_page::create(const control& parent, const xtd::ustring& text, const
   return result;
 }
 
-tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+tab_page tab_page::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = tab_page {};
   result.parent(parent);
   result.text(text);
@@ -174,7 +174,7 @@ tab_page tab_page::create(const control& parent, const xtd::ustring& text, const
   return result;
 }
 
-tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_page tab_page::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_page {};
   result.parent(parent);
   result.text(text);
@@ -191,7 +191,7 @@ void tab_page::destroy_handle() {
 
 xtd::uptr<xtd::object> tab_page::clone() const {
   auto result = xtd::new_uptr<tab_page>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

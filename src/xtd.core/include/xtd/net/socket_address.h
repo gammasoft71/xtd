@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Returns information about the socket address.
       /// @return A string that contains information about the xtd::net::socket_address.
       /// @remarks The xtd::net::socket_address::to_string method returns a string that contains the xtd::net::sockets::address_family enumerated value, the size of the underlying buffer of the socket_address structure, and the remaining contents of the buffer.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

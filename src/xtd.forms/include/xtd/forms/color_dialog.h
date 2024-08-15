@@ -136,12 +136,12 @@ namespace xtd {
       /// @brief Gets the color dialog box title.
       /// @return The color dialog box title. The default value is an empty string ("").
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
-      virtual const xtd::ustring& title() const noexcept;
+      virtual const xtd::string& title() const noexcept;
       /// @brief Sets the color dialog box title.
       /// @param value The file dialog box title. The default value is an empty string ("").
       /// @return Current file_dialog.
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
-      virtual color_dialog& title(const xtd::ustring& value);
+      virtual color_dialog& title(const xtd::string& value);
       /// @}
       
       /// @name Public Methods

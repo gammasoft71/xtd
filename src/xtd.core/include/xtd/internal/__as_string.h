@@ -33,7 +33,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(std::any value) {
+  inline string as<string>(std::any value) {
     return xtd::convert::to_string(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(bool value) {
+  inline string as<string>(bool value) {
     return xtd::convert::to_string(value);
   }
   
@@ -77,14 +77,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(xtd::byte value) {
+  inline string as<string>(xtd::byte value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -98,10 +98,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// xtd::byte value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(xtd::byte value, xtd::byte from_base) {
+  inline string as<string>(xtd::byte value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -124,7 +124,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(char value) {
+  inline string as<string>(char value) {
     return xtd::convert::to_string(value);
   }
   
@@ -148,7 +148,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(char8 value) {
+  inline string as<string>(char8 value) {
     return xtd::convert::to_string(value);
   }
 #endif
@@ -172,7 +172,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(char16 value) {
+  inline string as<string>(char16 value) {
     return xtd::convert::to_string(value);
   }
   
@@ -195,7 +195,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(char32 value) {
+  inline string as<string>(char32 value) {
     return xtd::convert::to_string(value);
   }
   
@@ -218,7 +218,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(wchar value) {
+  inline string as<string>(wchar value) {
     return xtd::convert::to_string(value);
   }
   
@@ -240,7 +240,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(decimal value) {
+  inline string as<string>(decimal value) {
     return xtd::convert::to_string(value);
   }
   
@@ -262,7 +262,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(double value) {
+  inline string as<string>(double value) {
     return xtd::convert::to_string(value);
   }
   
@@ -284,7 +284,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(float value) {
+  inline string as<string>(float value) {
     return xtd::convert::to_string(value);
   }
   
@@ -306,14 +306,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(int16 value) {
+  inline string as<string>(int16 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -327,10 +327,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// int16 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(int16 value, xtd::byte from_base) {
+  inline string as<string>(int16 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -352,14 +352,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(int32 value) {
+  inline string as<string>(int32 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -373,10 +373,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// int32 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(int32 value, xtd::byte from_base) {
+  inline string as<string>(int32 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -398,14 +398,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(int64 value) {
+  inline string as<string>(int64 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -419,10 +419,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// int64 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(int64 value, xtd::byte from_base) {
+  inline string as<string>(int64 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -444,14 +444,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(slong value) {
+  inline string as<string>(slong value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -465,10 +465,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// slong value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(slong value, xtd::byte from_base) {
+  inline string as<string>(slong value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -490,14 +490,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(sbyte value) {
+  inline string as<string>(sbyte value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -511,10 +511,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// sbyte value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(sbyte value, xtd::byte from_base) {
+  inline string as<string>(sbyte value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -536,14 +536,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(uint16 value) {
+  inline string as<string>(uint16 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -557,10 +557,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// uint16 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(uint16 value, xtd::byte from_base) {
+  inline string as<string>(uint16 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -582,14 +582,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(uint32 value) {
+  inline string as<string>(uint32 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -603,10 +603,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// uint32 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(uint32 value, xtd::byte from_base) {
+  inline string as<string>(uint32 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -628,14 +628,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(uint64 value) {
+  inline string as<string>(uint64 value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -649,10 +649,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// uint64 value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(uint64 value, xtd::byte from_base) {
+  inline string as<string>(uint64 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -674,14 +674,14 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline ustring as<ustring>(xtd::ulong value) {
+  inline string as<string>(xtd::ulong value) {
     return xtd::convert::to_string(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ustring object converted from value.
+  /// @return A new string object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
   /// ```cpp
@@ -695,10 +695,10 @@ namespace xtd {
   /// @par Examples
   /// ```cpp
   /// xtd::ulong value = 42;
-  /// ustring result = as<ustring>(value, 16);
+  /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline ustring as<ustring>(xtd::ulong value, xtd::byte from_base) {
+  inline string as<string>(xtd::ulong value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
 }

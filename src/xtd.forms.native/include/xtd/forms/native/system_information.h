@@ -86,7 +86,7 @@ namespace xtd {
         /// @brief Gets the NetBIOS computer name of the local computer.
         /// @return The name of this computer.
         /// @warning Internal use only
-        static xtd::ustring computer_name();
+        static xtd::string computer_name();
         /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
         /// @return A size that indicates the maximum dimensions of a cursor in pixels.
         /// @warning Internal use only

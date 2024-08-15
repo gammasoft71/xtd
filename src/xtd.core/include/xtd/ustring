@@ -1,6 +1,6 @@
 #pragma once
-#  pragma message("Deprecated : Replaced by #include <xtd/ustring> - Will be removed in version 0.4.0")
+#  pragma message("Deprecated : Replaced by #include <xtd/string> - Will be removed in version 0.4.0")
 #else
-#  warning "Deprecated : Replaced by #include <xtd/ustring> - Will be removed in version 0.4.0"
+#  warning "Deprecated : Replaced by #include <xtd/string> - Will be removed in version 0.4.0"
 #endif
 #include "string.h"

@@ -69,11 +69,11 @@ namespace xtd {
       
       /// @brief Gets the product description.
       /// @return The product description.
-      const xtd::ustring& description() const noexcept;
+      const xtd::string& description() const noexcept;
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current busy_dialog instance.
-      busy_dialog& description(const xtd::ustring& description);
+      busy_dialog& description(const xtd::string& description);
       
       /// @brief Gets the foreground color for the dialog.
       /// @return A xtd::drawing::color that represents the foreground color of the dialog.
@@ -111,11 +111,11 @@ namespace xtd {
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const xtd::ustring& text() const noexcept;
+      const xtd::string& text() const noexcept;
       /// @brief Sets the dialog title.
       /// @param text The dialog title.
       /// @return Current busy_dialog instance.
-      busy_dialog& text(const xtd::ustring& text);
+      busy_dialog& text(const xtd::string& text);
       /// @}
       
       /// @name Public Methods

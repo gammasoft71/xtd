@@ -48,7 +48,7 @@ namespace xtd {
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened
-      explicit binary_writer(const xtd::ustring& path);
+      explicit binary_writer(const xtd::string& path);
       /// @brief Initializes a new instance of the binary_writer class for the specified stream.
       /// @param stream The stream to be read.
       explicit binary_writer(std::ostream& stream);
@@ -194,7 +194,7 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const ustring& value);
+      virtual void write(const string& value);
       /// @cond
       virtual void write(const std::string& value);
 #if defined(__xtd__cpp_lib_char8_t)
@@ -247,7 +247,7 @@ namespace xtd {
       binary_writer& operator <<(int64 value) {write(value); return *this;}
       binary_writer& operator <<(sbyte value) {write(value); return *this;}
       binary_writer& operator <<(float value) {write(value); return *this;}
-      binary_writer& operator <<(const ustring& value) {write(value); return *this;}
+      binary_writer& operator <<(const string& value) {write(value); return *this;}
       binary_writer& operator <<(const std::string& value) {write(value); return *this;}
 #if defined(__xtd__cpp_lib_char8_t)
       binary_writer& operator <<(const std::u8string& value) {write(value); return *this;}

@@ -32,7 +32,7 @@ const std::vector<color>& pink_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& pink_colors::get_color_names() noexcept {
+const std::vector<string>& pink_colors::get_color_names() noexcept {
   static auto color_names = std::vector {pink_colors::medium_violet_red().name(), pink_colors::deep_pink().name(), pink_colors::pale_violet_red().name(), pink_colors::hot_pink().name(), pink_colors::light_pink().name(), pink_colors::pink().name()};
   return color_names;
 }

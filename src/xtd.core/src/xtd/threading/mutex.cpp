@@ -12,22 +12,22 @@ using namespace xtd::threading;
 mutex::mutex() : mutex(false) {
 }
 
-mutex::mutex(bool initially_owned) : mutex(initially_owned, ustring::empty_string) {
+mutex::mutex(bool initially_owned) : mutex(initially_owned, string::empty_string) {
 }
 
-mutex::mutex(const ustring& name) : mutex(false, name) {
+mutex::mutex(const string& name) : mutex(false, name) {
 }
 
-mutex::mutex(const ustring& name, bool& created_new) : mutex(false, name, created_new) {
+mutex::mutex(const string& name, bool& created_new) : mutex(false, name, created_new) {
 }
 
-mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
+mutex::mutex(bool initially_owned, const string& name) : name_(name) {
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
   auto created_new = false;
   create(initially_owned, created_new);
 }
 
-mutex::mutex(bool initially_owned, const ustring& name, bool& created_new) : name_(name) {
+mutex::mutex(bool initially_owned, const string& name, bool& created_new) : name_(name) {
   create(initially_owned, created_new);
 }
 
@@ -66,7 +66,7 @@ void mutex::lock() {
   wait_one();
 }
 
-mutex mutex::open_existing(const ustring& name) {
+mutex mutex::open_existing(const string& name) {
   if (name.empty()) throw argument_exception {csf_};
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
   auto result = mutex{};
@@ -102,9 +102,9 @@ bool mutex::try_lock_until(const date_time& timeout_time) noexcept {
   }
 }
 
-bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
+bool mutex::try_open_existing(const string& name, mutex& result) noexcept {
   result.close();
-  if (ustring::is_empty(name)) return false;
+  if (string::is_empty(name)) return false;
   if (name.size() > native::named_mutex::max_name_size()) return false;
   auto new_mutex = mutex {};
   new_mutex.name_ = name;

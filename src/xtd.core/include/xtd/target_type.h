@@ -55,7 +55,7 @@ namespace xtd {
     
     /// @brief Gets target id name.
     /// @return The target id name.
-    ustring name() const noexcept;
+    string name() const noexcept;
     
     /// @brief Gets target id value.
     /// @return One of xtd::target_id values.
@@ -65,7 +65,7 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    ustring to_string() const noexcept override;
+    string to_string() const noexcept override;
     /// @}
     
   private:

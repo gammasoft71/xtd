@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline bool as<bool>(const xtd::ustring& value) {
+  inline bool as<bool>(const xtd::string& value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline bool as<bool>(xtd::ustring& value) {
+  inline bool as<bool>(xtd::string& value) {
     return xtd::convert::to_boolean(value);
   }
   

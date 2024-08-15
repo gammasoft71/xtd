@@ -61,7 +61,7 @@ font_picker font_picker::create(const drawing::point& location, const drawing::s
   return result;
 }
 
-font_picker font_picker::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.location(location);
   result.size(size);
@@ -90,7 +90,7 @@ font_picker font_picker::create(const drawing::font& font, const drawing::point&
   return result;
 }
 
-font_picker font_picker::create(const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.font(font);
   result.location(location);
@@ -123,7 +123,7 @@ font_picker font_picker::create(const drawing::font& font, const xtd::drawing::c
   return result;
 }
 
-font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.font(font);
   result.color(color);
@@ -154,7 +154,7 @@ font_picker font_picker::create(const control& parent, const drawing::point& loc
   return result;
 }
 
-font_picker font_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.parent(parent);
   result.location(location);
@@ -187,7 +187,7 @@ font_picker font_picker::create(const control& parent, const drawing::font& font
   return result;
 }
 
-font_picker font_picker::create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.parent(parent);
   result.font(font);
@@ -224,7 +224,7 @@ font_picker font_picker::create(const control& parent, const drawing::font& font
   return result;
 }
 
-font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = font_picker {};
   result.parent(parent);
   result.font(font);
@@ -243,7 +243,7 @@ forms::create_params font_picker::create_params() const noexcept {
 
 xtd::uptr<xtd::object> font_picker::clone() const {
   auto result = xtd::new_uptr<font_picker>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

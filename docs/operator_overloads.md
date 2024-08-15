@@ -14,7 +14,7 @@ The following guidelines should help you decide when and how to use operator ove
 
 **✔️ CONSIDER** defining operator overloads in a type that should feel like a primitive type.
 
-For example, xtd:ustring has operator == and operator != defined.
+For example, xtd:string has operator == and operator != defined.
 
 **✔️ DO** define operator overloads in structs that represent numbers.
 
@@ -55,7 +55,7 @@ private:
 
 //...
 
-static ustring form1::check_points(const point& p1, const point& p2) {
+static string form1::check_points(const point& p1, const point& p2) {
   if (p1 == p2) eturn "Equals";
   return "Not equals";
 }

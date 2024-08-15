@@ -9,16 +9,16 @@ struct list_control::data {
 
 const list_control::item list_control::item::empty;
 
-list_control::item::item(const xtd::ustring& value) : value_(value) {
+list_control::item::item(const xtd::string& value) : value_(value) {
 }
 
-list_control::item::item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {
+list_control::item::item(const xtd::string& value, const std::any& tag) : value_(value), tag_(tag) {
 }
 
 list_control::item::item(const char* value) : value_(value) {
 }
 
-const xtd::ustring& list_control::item::value() const noexcept {
+const xtd::string& list_control::item::value() const noexcept {
   return value_;
 }
 
@@ -34,7 +34,7 @@ int32 list_control::item::compare_to(const item& value) const noexcept {
   return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
 }
 
-xtd::ustring list_control::item::to_string() const noexcept {
+xtd::string list_control::item::to_string() const noexcept {
   return value_;
 }
 

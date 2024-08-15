@@ -29,25 +29,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_file_version_attribute class.
       /// @param version The file version information.
-      explicit core_export_ assembly_file_version_attribute(const ustring& version);
+      explicit core_export_ assembly_file_version_attribute(const string& version);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_file_version_attribute(const ustring& version, const object& executing_assembly);
+      assembly_file_version_attribute(const string& version, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets version information.
       /// @return A string containing the version information.
-      const ustring& version() const noexcept;
+      const string& version() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring version_;
+      string version_;
     };
   }
 }

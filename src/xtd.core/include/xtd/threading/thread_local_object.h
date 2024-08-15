@@ -131,8 +131,8 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      ustring to_string() const noexcept override {
-        return ustring::format("{}", value());
+      string to_string() const noexcept override {
+        return string::format("{}", value());
       }
       /// @}
 

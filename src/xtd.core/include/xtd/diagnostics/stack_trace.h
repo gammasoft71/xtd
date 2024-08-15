@@ -130,7 +130,7 @@ namespace xtd {
       /// ```cpp
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
-      /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
+      /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
       /// ```
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
       explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
@@ -322,15 +322,15 @@ namespace xtd {
       /// ```cpp
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
-      /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
+      /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
       /// ```
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:
       friend class xtd::system_exception;
-      stack_trace(const xtd::ustring& str, size_t skip_frames, bool need_file_info);
-      xtd::ustring to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const noexcept;
+      stack_trace(const xtd::string& str, size_t skip_frames, bool need_file_info);
+      xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const noexcept;
       
       stack_frame_collection frames_;
     };

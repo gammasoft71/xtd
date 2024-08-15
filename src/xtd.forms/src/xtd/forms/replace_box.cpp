@@ -5,7 +5,7 @@ using namespace xtd::forms;
 
 xtd::uptr<xtd::forms::replace_dialog> replace_box::dialog_;
 
-void replace_box::show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::ustring& find_string, const xtd::ustring& replace_string, const xtd::ustring& title, bool match_case, bool whole_word) {
+void replace_box::show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, bool match_case, bool whole_word) {
   if (dialog_) return;
   dialog_ = xtd::new_uptr<xtd::forms::replace_dialog>();
   dialog_->title(title).find_string(find_string).replace_string(replace_string).match_case(match_case).whole_word(whole_word);

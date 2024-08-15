@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline xtd::byte as<xtd::byte>(const xtd::ustring& value) {
+  inline xtd::byte as<xtd::byte>(const xtd::string& value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline xtd::byte as<xtd::byte>(xtd::ustring& value) {
+  inline xtd::byte as<xtd::byte>(xtd::string& value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// xtd::byte result = as<xtd::byte>(value, 16);
   /// ```
   template<>
-  inline xtd::byte as<xtd::byte>(const xtd::ustring& value, xtd::byte from_base) {
+  inline xtd::byte as<xtd::byte>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_byte(value, from_base);
   }
   

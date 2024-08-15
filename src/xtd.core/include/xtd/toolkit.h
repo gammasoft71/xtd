@@ -30,7 +30,7 @@ namespace xtd {
     /// @param name The toolkit name.
     /// @param version The toolkit version.
     /// @param description The toolkit description.
-    toolkit(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& description);
+    toolkit(const xtd::string& name, const xtd::version& version, const xtd::string& description);
     /// @}
     
     /// @cond
@@ -44,11 +44,11 @@ namespace xtd {
     /// @{
     /// @brief Gets the toolkit description.
     /// @return The toolkit description.
-    const xtd::ustring& description() const noexcept;
+    const xtd::string& description() const noexcept;
     
     /// @brief Gets the toolkit name.
     /// @return The toolkit name.
-    const xtd::ustring& name() const noexcept;
+    const xtd::string& name() const noexcept;
     
     /// @brief Gets the toolkit version.
     /// @return The toolkit version.
@@ -60,12 +60,12 @@ namespace xtd {
     /// @{
     using object::equals;
     bool equals(const toolkit& other) const noexcept override;
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:
-    xtd::ustring description_ = "No toolkit defined.";
-    xtd::ustring name_ = "Unknown";
+    xtd::string description_ = "No toolkit defined.";
+    xtd::string name_ = "Unknown";
     xtd::version version_;
   };
 }

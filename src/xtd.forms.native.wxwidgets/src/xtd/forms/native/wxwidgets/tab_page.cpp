@@ -20,7 +20,7 @@ void tab_page::image_index(intptr control, size_t image_index) {
   if (note_book && note_book->GetImageList() && image_index < static_cast<size_t>(note_book->GetImageList()->GetImageCount())) note_book->SetPageImage(note_book->FindPage(page), static_cast<int32>(image_index));
 }
 
-void tab_page::text(intptr control, const ustring& text) {
+void tab_page::text(intptr control, const string& text) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

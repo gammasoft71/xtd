@@ -31,12 +31,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_description_attribute class.
       /// @param description The description information.
-      explicit assembly_description_attribute(const ustring& description);
+      explicit assembly_description_attribute(const string& description);
       /// @}
 
       /// @cond
       /// Internal used only
-      assembly_description_attribute(const ustring& description, const object& executing_assembly);
+      assembly_description_attribute(const string& description, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -44,14 +44,14 @@ namespace xtd {
       /// @{
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
-      const ustring& description() const noexcept;
+      const string& description() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring description_;
+      string description_;
     };
   }
 }

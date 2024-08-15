@@ -65,7 +65,7 @@ namespace xtd {
         /// @param end_of_packet Specifies that this element should not be combined with the next element in a single send request from the sockets layer to the transport. This flag is used for granular control of the content of each message on a datagram or message-oriented socket.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
-        send_packets_element(const xtd::ustring& file_path, size_t offset, size_t count, bool end_of_packet);
+        send_packets_element(const xtd::string& file_path, size_t offset, size_t count, bool end_of_packet);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the buffer with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
@@ -81,7 +81,7 @@ namespace xtd {
         /// @param count The number of bytes to send starting from the offset parameter. If count is zero, the entire file is sent.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
-        send_packets_element(const xtd::ustring& file_path, size_t offset, size_t count);
+        send_packets_element(const xtd::string& file_path, size_t offset, size_t count);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the buffer with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_stream The file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -102,7 +102,7 @@ namespace xtd {
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
-        explicit send_packets_element(const xtd::ustring& file_path);
+        explicit send_packets_element(const xtd::string& file_path);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified FileStream object.
         /// @param file_stream The file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -138,7 +138,7 @@ namespace xtd {
         /// @return The filename of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a file_path parameter.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the xtd::net::sockets::send_packets_element::file_path property. If the file is in the current working directory, no path information needs to be specified.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::file_path property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a file_path parameter.
-        const xtd::ustring& file_path() const noexcept;
+        const xtd::string& file_path() const noexcept;
         
         /// @brief Gets the object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
         /// @remarks An object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
@@ -155,7 +155,7 @@ namespace xtd {
         std::vector<xtd::byte> buffer_;
         size_t count_ = 0;
         bool end_of_packet_ = false;
-        xtd::ustring file_path_;
+        xtd::string file_path_;
         std::ifstream* file_stream_ = nullptr;
         size_t offset_ = 0;
         bool delete_file_stream_when_destroy_ = false;

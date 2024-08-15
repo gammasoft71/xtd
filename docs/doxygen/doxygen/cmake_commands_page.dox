@@ -755,7 +755,7 @@
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
 ///  add_sources(file.h file.cpp)
-///  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+///  setting(name xtd::string APPLICATION "\"Settings example\"")
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
 ///  target_type(CONSOLE_APPLICATION)
@@ -776,8 +776,8 @@
 ///  add_sources(file.h file.cpp)
 ///
 ///  setting_include("xtd/drawing/color")
-///  setting_include("xtd/ustring")
-///  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+///  setting_include("xtd/string")
+///  setting(name xtd::string APPLICATION "\"Settings example\"")
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
 ///  target_type(CONSOLE_APPLICATION)

@@ -93,12 +93,12 @@ namespace xtd {
       type_t get_lparam() const noexcept { return reinterpret_cast<type_t>(lparam_); }
       
       /// @brief Returns a string that represents the msg property.
-      /// @return A xtd::ustring that represents the msg property.
-      xtd::ustring to_msg_string() const noexcept;
+      /// @return A xtd::string that represents the msg property.
+      xtd::string to_msg_string() const noexcept;
       
       /// @brief Returns a string that represents the current message.
-      /// @return A xtd::ustring that represents the current message.
-      xtd::ustring to_string() const noexcept override;
+      /// @return A xtd::string that represents the current message.
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods

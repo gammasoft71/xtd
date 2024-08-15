@@ -14,7 +14,7 @@ using namespace io;
 
 const file_info file_info::empty;
 
-file_info::file_info(const xtd::ustring& file_name) {
+file_info::file_info(const xtd::string& file_name) {
   original_path_ = file_name;
   refresh();
 }
@@ -23,7 +23,7 @@ directory_info file_info::directory() const {
   return directory_info {directory_name()};
 }
 
-ustring file_info::directory_name() const {
+string file_info::directory_name() const {
   return path::combine(path::get_path_root(full_path_), path::get_directory_name(full_path_));
 }
 
@@ -52,7 +52,7 @@ size_t file_info::length() const {
   return native::file::get_size(full_path_);
 }
 
-ustring file_info::name() const {
+string file_info::name() const {
   auto items = full_path_.split({path::directory_separator_char()});
   if (items.size() == 0) return full_path_;
   return items[items.size() - 1];
@@ -62,14 +62,14 @@ stream_writer file_info::append_text() const {
   return stream_writer {full_path_, true};
 }
 
-file_info file_info::copy_to(const xtd::ustring& dest_file_name) const {
+file_info file_info::copy_to(const xtd::string& dest_file_name) const {
   if (!exists()) throw file_not_found_exception {csf_};
   if (file::exists(dest_file_name)) throw io_exception {csf_};
   if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception {csf_};
   return file_info {dest_file_name};
 }
 
-file_info file_info::copy_to(const xtd::ustring& dest_file_name, bool overwrite) const {
+file_info file_info::copy_to(const xtd::string& dest_file_name, bool overwrite) const {
   if (overwrite && file::exists(dest_file_name)) file::remove(dest_file_name);
   return copy_to(dest_file_name);
 }
@@ -82,7 +82,7 @@ stream_writer file_info::create_text() const {
   return stream_writer {full_path_};
 }
 
-void file_info::move_to(const xtd::ustring& dest_file_name) {
+void file_info::move_to(const xtd::string& dest_file_name) {
   if (!exists()) throw file_not_found_exception {csf_};
   if ((attributes() & file_attributes::directory) == file_attributes::directory) throw argument_exception {csf_};
   if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception {csf_};
@@ -91,7 +91,7 @@ void file_info::move_to(const xtd::ustring& dest_file_name) {
   refresh();
 }
 
-void file_info::move_to(const xtd::ustring& dest_file_name, bool overwrite) {
+void file_info::move_to(const xtd::string& dest_file_name, bool overwrite) {
   if (overwrite && file::exists(dest_file_name)) file::remove(dest_file_name);
   move_to(dest_file_name);
 }
@@ -117,7 +117,7 @@ void file_info::remove() const {
   file::remove(full_path_);
 }
 
-file_info file_info::replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) {
+file_info file_info::replace(const xtd::string& destination_file_name, const xtd::string& destination_backup_file_name) {
   file::replace(full_path_, destination_file_name, destination_backup_file_name);
   original_path_ = destination_backup_file_name;
   refresh();

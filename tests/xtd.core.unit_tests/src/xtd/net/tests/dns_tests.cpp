@@ -12,7 +12,7 @@ using namespace xtd::tunit;
 namespace xtd::net::tests {
   class test_class_(dns_tests) {
     void test_method_(get_host_name) {
-      ustring host_name;
+      string host_name;
       assert::does_not_throw([&] {host_name = dns::get_host_name();}, csf_);
     }
 

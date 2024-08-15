@@ -10,13 +10,13 @@ namespace xtd::tests {
   class test_class_(lietarls_tests) {
     void test_method_(operator_s_on_char_ptr) {
       auto s = "string"_s;
-      assert::is_instance_of<ustring>(s);
+      assert::is_instance_of<string>(s);
       assert::are_equal("string", s, csf_);
     }
     
     void test_method_(operator_s_on_char8_t_ptr) {
       auto s = u8"string"_s;
-      assert::is_instance_of<ustring>(s);
+      assert::is_instance_of<string>(s);
       assert::are_equal("string", s, csf_);
     }
     

@@ -17,7 +17,7 @@ socket_address end_point::serialize() const {
   throw not_implemented_exception {csf_};
 }
 
-ustring end_point::to_string() const noexcept {
-  return ustring::format("{}", address_family_);
+string end_point::to_string() const noexcept {
+  return string::format("{}", address_family_);
 }
 

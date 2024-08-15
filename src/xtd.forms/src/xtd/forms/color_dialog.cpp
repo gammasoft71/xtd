@@ -11,7 +11,7 @@ struct color_dialog::data {
   drawing::color color = drawing::color::black;
   colors custom_colors {16, xtd::drawing::color::white};
   size_t options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
-  xtd::ustring title;
+  xtd::string title;
 };
 
 color_dialog::color_dialog() : data_(xtd::new_sptr<data>()) {
@@ -96,11 +96,11 @@ color_dialog& color_dialog::solid_color_only(bool solid_color_only) {
   return *this;
 }
 
-const xtd::ustring& color_dialog::title() const noexcept {
+const xtd::string& color_dialog::title() const noexcept {
   return data_->title;
 }
 
-color_dialog& color_dialog::title(const xtd::ustring& value) {
+color_dialog& color_dialog::title(const xtd::string& value) {
   data_->title = value;
   return *this;
 }

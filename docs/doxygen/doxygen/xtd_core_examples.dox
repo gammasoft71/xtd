@@ -437,7 +437,7 @@
 /// The classic first application "Hello, World!" with xtd::io::file and  xtd::io::path classes.
 ///
 /// @example hello_world_ustring.cpp
-/// The classic first application "Hello, World!" with xtd::ustring class.
+/// The classic first application "Hello, World!" with xtd::string class.
 ///
 /// @example iasync_result.cpp
 /// Shows how to use xtd:: iasync_result interface.
@@ -671,7 +671,7 @@
 /// Shows how to use xtd::beep class.
 ///
 /// @example fibonacci_series.cpp
-/// Shows how to use xtd::console, xtd::ustring classes.
+/// Shows how to use xtd::console, xtd::string classes.
 ///
 /// @example hello_world_console2.cpp
 /// The classic first application "Hello, World!" with xtd::console class.
@@ -725,46 +725,46 @@
 /// Shows how to use xtd::random::next method.
 ///
 /// @example sprintf.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_boolean.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_character.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class_with_specified_formating.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class_with_specified_formating_with_to_string.cpp
 /// Show how to use format xtd::format class.
 ///
 /// @example sprintf_date_time.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_duration.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_enum.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_enum_class.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_floating_point.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_numeric.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_string.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_with_alignment.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// Shows how to use xtd::string::sprintf method.
 ///
 /// @example startup.cpp
 /// Shows how to use xtd::startup class.
@@ -782,34 +782,34 @@
 /// Shows how to use xtd::startup class.
 ///
 /// @example compare.cpp
-/// Shows how to use xtd::ustring::compare method.
+/// Shows how to use xtd::string::compare method.
 ///
 /// @example compare_ignore_case.cpp
-/// Shows how to use xtd::ustring::compare method.
+/// Shows how to use xtd::string::compare method.
 ///
 /// @example concat.cpp
-/// Shows how to use xtd::ustring::concat method.
+/// Shows how to use xtd::string::concat method.
 ///
 /// @example concat_collection.cpp
-/// Shows how to use xtd::ustring::concat method.
+/// Shows how to use xtd::string::concat method.
 ///
 /// @example contains.cpp
-/// Shows how to use xtd::ustring::contains method.
+/// Shows how to use xtd::string::contains method.
 ///
 /// @example join.cpp
-/// Shows how to use xtd::ustring::join method.
+/// Shows how to use xtd::string::join method.
 ///
 /// @example split.cpp
-/// Shows how to use xtd::ustring::split method.
+/// Shows how to use xtd::string::split method.
 ///
 /// @example string_format.cpp
-/// Shows how to use xtd::ustring::format method.
+/// Shows how to use xtd::string::format method.
 ///
 /// @example string_format_with_order.cpp
-/// Shows how to use xtd::ustring::format method.
+/// Shows how to use xtd::string::format method.
 ///
 /// @example string_unicode.cpp
-/// Shows how to use xtd::ustring method.
+/// Shows how to use xtd::string method.
 ///
 /// @example test_console.cpp
 /// Shows how to set target startup with cmake xtd::console.

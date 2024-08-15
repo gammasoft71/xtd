@@ -189,29 +189,29 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static label create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::label with specified text.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text);
+      static label create(const xtd::string& text);
       /// @brief A factory to create an xtd::forms::label with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text, const drawing::point& location);
+      static label create(const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::label with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static label create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::label with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static label create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::label with specified parent,.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @return New xtd::forms::label created.
@@ -233,25 +233,25 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::label with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text);
+      static label create(const control& parent, const xtd::string& text);
       /// @brief A factory to create an xtd::forms::label with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      static label create(const control& parent, const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::label with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::label with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
@@ -259,7 +259,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

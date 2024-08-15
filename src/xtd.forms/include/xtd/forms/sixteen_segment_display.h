@@ -67,7 +67,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified segments.
       /// @param segments A dots_collection that represent all dots status.
       /// @return New xtd::forms::sixteen_segment_display created.
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified segments, and back_segment visibility.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment true if background segments are shown; otherwise false
@@ -115,7 +115,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
@@ -137,7 +137,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified parent, segments.
       /// @param parent The parent that contains the new created xtd::forms::sixteen_segment_display.
       /// @param segments A xtd::forms::segments combination that represent sixteen_segment_display.
@@ -163,7 +163,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified parent, segments, and back_segment visibility.
       /// @param parent The parent that contains the new created xtd::forms::sixteen_segment_display.
       /// @param segments A xtd::forms::segments combination that represent sixteen_segment_display.
@@ -193,7 +193,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
       /// @param name The name of the xtd::forms::sixteen_segment_display.
       /// @return New xtd::forms::sixteen_segment_display created.
-      static sixteen_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static sixteen_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

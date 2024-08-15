@@ -14,7 +14,7 @@ namespace sleepfor {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
     
   public:
-    static auto main(const list<ustring>& args) {
+    static auto main(const list<string>& args) {
       int duration = 0;
       period_type type = period_type::milliseconds;
       bool indefinitely = false;
@@ -36,12 +36,12 @@ namespace sleepfor {
     }
     
   private:
-    static ustring get_error() {
+    static string get_error() {
       return "sleepfor : invalid params\n"
         "Try 'sleepfor --help' for more information.";
     }
     
-    static ustring get_usage() {
+    static string get_usage() {
       return "Usage\n"
         "  sleepfor [duration] [--nanoseconds| -milliseconds| -seconds| -minutes|]\n"
         "\n"
@@ -54,11 +54,11 @@ namespace sleepfor {
         "-h, --help          : Shows this help page.";
     }
     
-    static ustring get_version() {
-      return ustring::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+    static string get_version() {
+      return string::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const list<ustring>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
+    static bool process_arguments(const list<string>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;
         else if (args[index] == "-ms" || args[index] == "--milliseconds") type = period_type::milliseconds;

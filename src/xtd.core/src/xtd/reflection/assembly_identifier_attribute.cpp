@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_identifier_attribute::assembly_identifier_attribute(const ustring& identifier) : identifier_(identifier) {
+assembly_identifier_attribute::assembly_identifier_attribute(const string& identifier) : identifier_(identifier) {
 }
 
-assembly_identifier_attribute::assembly_identifier_attribute(const ustring& identifier, const object& executing_assembly) : identifier_(identifier) {
+assembly_identifier_attribute::assembly_identifier_attribute(const string& identifier, const object& executing_assembly) : identifier_(identifier) {
   __assembly_identifier_attribute__() = xtd::new_sptr<xtd::reflection::assembly_identifier_attribute>(identifier);
 }
 
-const ustring& assembly_identifier_attribute::identifier() const noexcept {
+const string& assembly_identifier_attribute::identifier() const noexcept {
   return identifier_;
 }
 

@@ -60,37 +60,37 @@ namespace xtd {
 
       /// @brief Gets the main text associated with this control.
       /// @return The main text associated with this control.
-      virtual xtd::ustring& main_text() const noexcept;
+      virtual xtd::string& main_text() const noexcept;
       /// @brief Sets the main text associated with this control.
       /// @param text The main text associated with this control.
       /// @return Current control.
-      virtual command_link_button& main_text(const xtd::ustring& value);
+      virtual command_link_button& main_text(const xtd::string& value);
 
       /// @brief Gets the supplementary text associated with this control.
       /// @return The supplementary text associated with this control.
-      virtual xtd::ustring& supplementary_text() const noexcept;
+      virtual xtd::string& supplementary_text() const noexcept;
       /// @brief Sets the supplementary text associated with this control.
       /// @param text The supplementary text associated with this control.
       /// @return Current control.
-      virtual command_link_button& supplementary_text(const xtd::ustring& value);
+      virtual command_link_button& supplementary_text(const xtd::string& value);
 
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
-      xtd::ustring& text() const noexcept override;
+      xtd::string& text() const noexcept override;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
       /// @remarks Is equivalent to calling the texts property with what's before first "\n" as text and after first "\n" as supplementary_text.
-      xtd::forms::control& text(const xtd::ustring& value) override;
+      xtd::forms::control& text(const xtd::string& value) override;
 
       /// @brief Gets text and supplementary text.
       /// @return A tuple of two strings that represent main text and supplementary text.
-      virtual std::tuple<xtd::ustring, xtd::ustring> texts() const noexcept;
+      virtual std::tuple<xtd::string, xtd::string> texts() const noexcept;
       /// @brief Sets text and supplementary text.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @return Current control.
       /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      virtual command_link_button& texts(const std::tuple<xtd::ustring, xtd::ustring>& texts);
+      virtual command_link_button& texts(const std::tuple<xtd::string, xtd::string>& texts);
       /// @}
       
       /// @name Public Methods
@@ -101,7 +101,7 @@ namespace xtd {
       /// @param supplementary_text A string that represent supplementary text.
       /// @return Current control.
       /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      void set_texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+      void set_texts(const xtd::string& text, const xtd::string& supplementary_text);
       
       /// @brief Sets text and supplementary text.
       /// @param text A string that represent control text
@@ -110,7 +110,7 @@ namespace xtd {
       /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
       /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0
       [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0")]]
-      control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+      control& texts(const xtd::string& text, const xtd::string& supplementary_text);
       /// @}
 
       /// @name Public Static Methods
@@ -122,47 +122,47 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::command_link_button with specified text.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const xtd::ustring& text);
+      static command_link_button create(const xtd::string& text);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const xtd::ustring& text, const drawing::point& location);
+      static command_link_button create(const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static command_link_button create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static command_link_button create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, and supplementary_text.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const std::tuple<xtd::ustring, xtd::ustring>& texts);
+      static command_link_button create(const std::tuple<xtd::string, xtd::string>& texts);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, supplementary_text, and location.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location);
+      static command_link_button create(const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, supplementary_text, location, and size.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size);
+      static command_link_button create(const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::command_link_button with specified text, supplementary_text, location, size, and name.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static command_link_button create(const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
@@ -171,20 +171,20 @@ namespace xtd {
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const xtd::ustring& text);
+      static command_link_button create(const control& parent, const xtd::string& text);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      static command_link_button create(const control& parent, const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static command_link_button create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
@@ -192,25 +192,25 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static command_link_button create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, and supplementary_text.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts);
+      static command_link_button create(const control& parent, const std::tuple<xtd::string, xtd::string>& texts);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, supplementary_text, and location.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location);
+      static command_link_button create(const control& parent, const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, supplementary_text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size);
+      static command_link_button create(const control& parent, const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, supplementary_text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param texts A tuple of two strings that represent main text and supplementary text.
@@ -218,7 +218,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::command_link_button.
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
-      static command_link_button create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static command_link_button create(const control& parent, const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

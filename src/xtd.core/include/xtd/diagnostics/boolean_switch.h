@@ -64,7 +64,7 @@ namespace xtd {
       ///   inline static xtd::diagnostics::boolean_switch data_switch("data", "data_access module");
       ///
       /// public:
-      ///   static void my_method(const xtd::ustring& location) {
+      ///   static void my_method(const xtd::string& location) {
       ///     // Insert code here to handle processing.
       ///     if (data_switch.enabled())
       ///       console::write_line("Error happened at {}", location);
@@ -77,13 +77,13 @@ namespace xtd {
       /// ```
       /// @remarks When you create a xtd::diagnostics::boolean_switch, the display_name parameter is used to find initial switch settings. If the constructor cannot find initial settings, the xtd::diagnostics::boolean_switch::enabled property is set to false (disabled).
       /// @remarks The switches you created should be static.
-      boolean_switch(const xtd::ustring& display_name, const xtd::ustring& description);
+      boolean_switch(const xtd::string& display_name, const xtd::string& description);
       /// @brief Initializes a new instance of the xtd::diagnostics::boolean_switch class with the specified display name, description, and default switch value.
       /// @param display_name The name to display on a user interface.
       /// @param description The description of the switch.
       /// @param default_switch_value The default value of the switch.
-      /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::boolean_switch::display_name property, and the description parameter is use to set the value of the xtd::diagnostics::boolean_switch::description property. The default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::boolean_switch::value property on first reference. For more information about constructor use, see the xtd::diagnostics::boolean_switch::booleanswitch(std::string, xtd::ustring) constructor.
-      boolean_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
+      /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::boolean_switch::display_name property, and the description parameter is use to set the value of the xtd::diagnostics::boolean_switch::description property. The default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::boolean_switch::value property on first reference. For more information about constructor use, see the xtd::diagnostics::boolean_switch::booleanswitch(std::string, xtd::string) constructor.
+      boolean_switch(const xtd::string& display_name, const xtd::string& description, const xtd::string& default_switch_value);
       
       /// @}
       

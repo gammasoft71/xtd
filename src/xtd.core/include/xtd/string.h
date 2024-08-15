@@ -29,7 +29,6 @@
 /// @cond
 namespace xtd {
   class string;
-  using ustring = xtd::string;
 }
 template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::string& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);

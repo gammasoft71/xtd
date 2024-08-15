@@ -15,7 +15,7 @@ namespace xtd::tunit::tests {
   
   void test_(file_assert_does_not_exist_failed_tests, test_output) {
     auto [output, result] = run_test_("xtd::tunit::tests::file_assert_does_not_exist_failed_tests.*");
-    assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
+    assert_value_(xtd::string::format("Start 1 test from 1 test case\n"
                                        "  FAILED  xtd::tunit::tests::file_assert_does_not_exist_failed_tests.test_case_failed\n"
                                        "    Expected: not file exists\n"
                                        "    But was:  {}\n"

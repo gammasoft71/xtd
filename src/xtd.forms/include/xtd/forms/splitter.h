@@ -86,7 +86,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::splitter.
       /// @param name The name of the xtd::forms::splitter.
       /// @return New xtd::forms::splitter created.
-      static splitter create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static splitter create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::splitter with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::splitter.
       /// @return New xtd::forms::splitter created.
@@ -108,7 +108,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::splitter.
       /// @param name The name of the xtd::forms::splitter.
       /// @return New xtd::forms::splitter created.
-      static splitter create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static splitter create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

@@ -85,6 +85,6 @@ bool horizontal_control_layout_style::equals(const horizontal_control_layout_sty
   return width_ == value.width_ && as<control_layout_style>(*this).equals(as<control_layout_style>(value));
 }
 
-ustring horizontal_control_layout_style::to_string() const noexcept {
-  return ustring::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));
+string horizontal_control_layout_style::to_string() const noexcept {
+  return string::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));
 }

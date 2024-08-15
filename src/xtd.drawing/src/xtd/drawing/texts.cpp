@@ -3,355 +3,355 @@
 
 using namespace xtd::drawing;
 
-xtd::ustring texts::abort() {
+xtd::string texts::abort() {
   return "&Abort"_t;
 }
 
-xtd::ustring texts::about() {
+xtd::string texts::about() {
   return "&About..."_t;
 }
 
-xtd::ustring texts::actual_size() {
+xtd::string texts::actual_size() {
   return "&Actual Size"_t;
 }
 
-xtd::ustring texts::add() {
+xtd::string texts::add() {
   return "Add"_t;
 }
 
-xtd::ustring texts::alignment() {
+xtd::string texts::alignment() {
   return "Alignment"_t;
 }
 
-xtd::ustring texts::align_left() {
+xtd::string texts::align_left() {
   return "Align Left"_t;
 }
 
-xtd::ustring texts::align_right() {
+xtd::string texts::align_right() {
   return "Align Right"_t;
 }
 
-xtd::ustring texts::apply() {
+xtd::string texts::apply() {
   return "&Apply"_t;
 }
 
-xtd::ustring texts::ascending() {
+xtd::string texts::ascending() {
   return "&Ascending"_t;
 }
 
-xtd::ustring texts::back() {
+xtd::string texts::back() {
   return "&Back"_t;
 }
 
-xtd::ustring texts::bold() {
+xtd::string texts::bold() {
   return "&Bold"_t;
 }
 
-xtd::ustring texts::bottom() {
+xtd::string texts::bottom() {
   return "&Bottom"_t;
 }
 
-xtd::ustring texts::cancel() {
+xtd::string texts::cancel() {
   return "&Cancel"_t;
 }
 
-xtd::ustring texts::cdrom() {
+xtd::string texts::cdrom() {
   return "&CD-Rom"_t;
 }
 
-xtd::ustring texts::centered() {
+xtd::string texts::centered() {
   return "Centered"_t;
 }
 
-xtd::ustring texts::clear() {
+xtd::string texts::clear() {
   return "&Clear"_t;
 }
 
-xtd::ustring texts::close() {
+xtd::string texts::close() {
   return "&Close"_t;
 }
 
-xtd::ustring texts::color() {
+xtd::string texts::color() {
   return "&Color"_t;
 }
 
-xtd::ustring texts::contents() {
+xtd::string texts::contents() {
   return "&Contents"_t;
 }
 
-xtd::ustring texts::convert() {
+xtd::string texts::convert() {
   return "&Convert"_t;
 }
 
-xtd::ustring texts::copy() {
+xtd::string texts::copy() {
   return "&Copy"_t;
 }
 
-xtd::ustring texts::customize() {
+xtd::string texts::customize() {
   return "&Customize"_t;
 }
 
-xtd::ustring texts::cut() {
+xtd::string texts::cut() {
   return "Cu&t"_t;
 }
 
-xtd::ustring texts::del() {
+xtd::string texts::del() {
   return "&Delete"_t;
 }
 
-xtd::ustring texts::descending() {
+xtd::string texts::descending() {
   return "&Descending"_t;
 }
 
-xtd::ustring texts::down() {
+xtd::string texts::down() {
   return "&Down"_t;
 }
 
-xtd::ustring texts::edit() {
+xtd::string texts::edit() {
   return "&Edit"_t;
 }
 
-xtd::ustring texts::execute() {
+xtd::string texts::execute() {
   return "&Execute"_t;
 }
 
-xtd::ustring texts::exit() {
+xtd::string texts::exit() {
   return "E&xit"_t;
 }
 
-xtd::ustring texts::file() {
+xtd::string texts::file() {
   return "&File"_t;
 }
 
-xtd::ustring texts::find() {
+xtd::string texts::find() {
   return "&Find..."_t;
 }
 
-xtd::ustring texts::first() {
+xtd::string texts::first() {
   return "&First"_t;
 }
 
-xtd::ustring texts::floppy() {
+xtd::string texts::floppy() {
   return "&Floppy"_t;
 }
 
-xtd::ustring texts::font() {
+xtd::string texts::font() {
   return "&Font"_t;
 }
 
-xtd::ustring texts::forward() {
+xtd::string texts::forward() {
   return "&Forward"_t;
 }
 
-xtd::ustring texts::harddisk() {
+xtd::string texts::harddisk() {
   return "&Harddisk"_t;
 }
 
-xtd::ustring texts::help() {
+xtd::string texts::help() {
   return "&Help"_t;
 }
 
-xtd::ustring texts::home() {
+xtd::string texts::home() {
   return "&Home"_t;
 }
 
-xtd::ustring texts::ignore() {
+xtd::string texts::ignore() {
   return "&Ignore"_t;
 }
 
-xtd::ustring texts::indent() {
+xtd::string texts::indent() {
   return "Indent"_t;
 }
 
-xtd::ustring texts::index() {
+xtd::string texts::index() {
   return "&Index"_t;
 }
 
-xtd::ustring texts::info() {
+xtd::string texts::info() {
   return "&Info"_t;
 }
 
-xtd::ustring texts::italic() {
+xtd::string texts::italic() {
   return "&Italic"_t;
 }
 
-xtd::ustring texts::justified() {
+xtd::string texts::justified() {
   return "Justified"_t;
 }
 
-xtd::ustring texts::jump_to() {
+xtd::string texts::jump_to() {
   return "&Jump to"_t;
 }
 
-xtd::ustring texts::last() {
+xtd::string texts::last() {
   return "&Last"_t;
 }
 
-xtd::ustring texts::network() {
+xtd::string texts::network() {
   return "&Network"_t;
 }
 
-xtd::ustring texts::new_() {
+xtd::string texts::new_() {
   return "&New"_t;
 }
 
-xtd::ustring texts::next() {
+xtd::string texts::next() {
   return "&Next"_t;
 }
 
-xtd::ustring texts::no() {
+xtd::string texts::no() {
   return "&No"_t;
 }
 
-xtd::ustring texts::ok() {
+xtd::string texts::ok() {
   return "&OK"_t;
 }
 
-xtd::ustring texts::open() {
+xtd::string texts::open() {
   return "&Open..."_t;
 }
 
-xtd::ustring texts::options() {
+xtd::string texts::options() {
   return "&Options"_t;
 }
 
-xtd::ustring texts::paste() {
+xtd::string texts::paste() {
   return "&Paste"_t;
 }
 
-xtd::ustring texts::preferences() {
+xtd::string texts::preferences() {
   return "&Preferences"_t;
 }
 
-xtd::ustring texts::previous() {
+xtd::string texts::previous() {
   return "&Previous"_t;
 }
 
-xtd::ustring texts::print() {
+xtd::string texts::print() {
   return "&Print..."_t;
 }
 
-xtd::ustring texts::print_preview() {
+xtd::string texts::print_preview() {
   return "Print pre&view"_t;
 }
 
-xtd::ustring texts::properties() {
+xtd::string texts::properties() {
   return "&Properties"_t;
 }
 
-xtd::ustring texts::quit() {
+xtd::string texts::quit() {
   return "&Quit"_t;
 }
 
-xtd::ustring texts::redo() {
+xtd::string texts::redo() {
   return "&Redo"_t;
 }
 
-xtd::ustring texts::refresh() {
+xtd::string texts::refresh() {
   return "Refresh"_t;
 }
 
-xtd::ustring texts::remove() {
+xtd::string texts::remove() {
   return "Remove"_t;
 }
 
-xtd::ustring texts::replace() {
+xtd::string texts::replace() {
   return "Rep&lace..."_t;
 }
 
-xtd::ustring texts::retry() {
+xtd::string texts::retry() {
   return "&Retry"_t;
 }
 
-xtd::ustring texts::revert_to_saved() {
+xtd::string texts::revert_to_saved() {
   return "Revert to Saved"_t;
 }
 
-xtd::ustring texts::save() {
+xtd::string texts::save() {
   return "&Save"_t;
 }
 
-xtd::ustring texts::save_as() {
+xtd::string texts::save_as() {
   return "Save &As..."_t;
 }
 
-xtd::ustring texts::search() {
+xtd::string texts::search() {
   return "&Search"_t;
 }
 
-xtd::ustring texts::select_all() {
+xtd::string texts::select_all() {
   return "Select &All"_t;
 }
 
-xtd::ustring texts::settings() {
+xtd::string texts::settings() {
   return "&Settings..."_t;
 }
 
-xtd::ustring texts::spell_check() {
+xtd::string texts::spell_check() {
   return "&Spell Check"_t;
 }
 
-xtd::ustring texts::stop() {
+xtd::string texts::stop() {
   return "&Stop"_t;
 }
 
-xtd::ustring texts::strikeout() {
+xtd::string texts::strikeout() {
   return "&Strikeout"_t;
 }
 
-xtd::ustring texts::tools() {
+xtd::string texts::tools() {
   return "&Tools"_t;
 }
 
-xtd::ustring texts::top() {
+xtd::string texts::top() {
   return "&Top"_t;
 }
 
-xtd::ustring texts::undelete() {
+xtd::string texts::undelete() {
   return "Undelete"_t;
 }
 
-xtd::ustring texts::underline() {
+xtd::string texts::underline() {
   return "&Underline"_t;
 }
 
-xtd::ustring texts::undo() {
+xtd::string texts::undo() {
   return "&Undo"_t;
 }
 
-xtd::ustring texts::unindent() {
+xtd::string texts::unindent() {
   return "Unindent"_t;
 }
 
-xtd::ustring texts::up() {
+xtd::string texts::up() {
   return "&Up"_t;
 }
 
-xtd::ustring texts::view() {
+xtd::string texts::view() {
   return "&View"_t;
 }
 
-xtd::ustring texts::window() {
+xtd::string texts::window() {
   return "&Window"_t;
 }
 
-xtd::ustring texts::yes() {
+xtd::string texts::yes() {
   return "&Yes"_t;
 }
 
-xtd::ustring texts::zoom_in() {
+xtd::string texts::zoom_in() {
   return "Zoom &In"_t;
 }
 
-xtd::ustring texts::zoom_out() {
+xtd::string texts::zoom_out() {
   return "Zoom &Out"_t;
 }
 
-xtd::ustring texts::zoom_to_fit() {
+xtd::string texts::zoom_to_fit() {
   return "Zoom to &Fit"_t;
 }
 
-const std::vector<xtd::ustring>& texts::get_texts() noexcept {
-  static auto texts = std::vector<xtd::ustring> {abort(), about(), actual_size(), add(), alignment(), align_left(), align_right(), apply(), ascending(), back(), bold(), bottom(), cancel(), cdrom(), centered(), clear(), close(), color(), contents(), convert(), copy(), customize(), cut(), del(), descending(), down(), edit(), execute(), exit(), file(), find(), first(), floppy(), font(), forward(), harddisk(), help(), home(), ignore(), indent(), index(), info(), italic(), justified(), jump_to(), last(), network(), new_(), next(), no(), ok(), open(), options(), paste(), preferences(), previous(), print(), print_preview(), properties(), quit(), redo(), refresh(), remove(), replace(), retry(), revert_to_saved(), save(), save_as(), search(), select_all(), settings(), spell_check(), stop(), strikeout(), tools(), top(), undelete(), underline(), undo(), unindent(), up(), view(), window(), yes(), zoom_in(), zoom_out(), zoom_to_fit()};
+const std::vector<xtd::string>& texts::get_texts() noexcept {
+  static auto texts = std::vector<xtd::string> {abort(), about(), actual_size(), add(), alignment(), align_left(), align_right(), apply(), ascending(), back(), bold(), bottom(), cancel(), cdrom(), centered(), clear(), close(), color(), contents(), convert(), copy(), customize(), cut(), del(), descending(), down(), edit(), execute(), exit(), file(), find(), first(), floppy(), font(), forward(), harddisk(), help(), home(), ignore(), indent(), index(), info(), italic(), justified(), jump_to(), last(), network(), new_(), next(), no(), ok(), open(), options(), paste(), preferences(), previous(), print(), print_preview(), properties(), quit(), redo(), refresh(), remove(), replace(), retry(), revert_to_saved(), save(), save_as(), search(), select_all(), settings(), spell_check(), stop(), strikeout(), tools(), top(), undelete(), underline(), undo(), unindent(), up(), view(), window(), yes(), zoom_in(), zoom_out(), zoom_to_fit()};
   return texts;
 }

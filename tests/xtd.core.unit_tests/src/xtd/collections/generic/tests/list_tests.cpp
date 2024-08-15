@@ -72,7 +72,7 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(default_constructor) {
-      auto items = list<ustring> {};
+      auto items = list<string> {};
       assert::is_zero(items.capacity(), csf_);
       assert::is_zero(items.count(), csf_);
       collection_assert::is_empty(items, csf_);

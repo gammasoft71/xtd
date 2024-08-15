@@ -14,7 +14,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be strings.
       /// ```cpp
-      /// using string_dictionary = xtd::collections::generic::dictionary<xtd::ustring, xtd::ustring>
+      /// using string_dictionary = xtd::collections::generic::dictionary<xtd::string, xtd::string>
       /// ```
       /// @par Header
       /// ```cpp
@@ -25,7 +25,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      using string_dictionary = xtd::collections::generic::dictionary<xtd::ustring, xtd::ustring>;
+      using string_dictionary = xtd::collections::generic::dictionary<xtd::string, xtd::string>;
     }
   }
 }

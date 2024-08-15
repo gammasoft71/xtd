@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct find_event_args::data {
-  ustring find_string;
+  string find_string;
   bool match_case = false;
   forms::search_direction search_direction = forms::search_direction::down;
   bool whole_word = false;
@@ -13,7 +13,7 @@ struct find_event_args::data {
 find_event_args::find_event_args() : data_(xtd::new_sptr<data>()) {
 }
 
-find_event_args::find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) : data_(xtd::new_sptr<data>()) {
+find_event_args::find_event_args(const xtd::string& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) : data_(xtd::new_sptr<data>()) {
   data_->find_string = find_string;
   data_->match_case = match_case;
   data_->search_direction = search_direction;
@@ -29,7 +29,7 @@ find_event_args& find_event_args::operator =(const find_event_args& other) {
   return *this;
 }
 
-const xtd::ustring& find_event_args::find_string() const noexcept {
+const xtd::string& find_event_args::find_string() const noexcept {
   return data_->find_string;
 }
 

@@ -89,6 +89,6 @@ padding padding::subtract(const padding& p1, const padding& p2) {
   return {p1.left_ - p2.left_, p1.top_ - p2.top_, p1.right_ - p2.right_, p1.bottom_ - p2.bottom_};
 }
 
-xtd::ustring padding::to_string() const noexcept {
-  return xtd::ustring::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);
+xtd::string padding::to_string() const noexcept {
+  return xtd::string::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);
 }

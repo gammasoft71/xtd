@@ -871,7 +871,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(begin(), end());}
         
-        ustring to_string() const noexcept override {return xtd::ustring::format("[{}]", xtd::ustring::join(", ", *this));}
+        string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
                 
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::list <type_t>, if that number is less than a threshold value.
         /// @par Examples

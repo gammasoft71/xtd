@@ -124,7 +124,7 @@ progress_bar progress_bar::create(const drawing::point& location, const drawing:
   return result;
 }
 
-progress_bar progress_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.location(location);
   result.size(size);
@@ -153,7 +153,7 @@ progress_bar progress_bar::create(int32 value, const drawing::point& location, c
   return result;
 }
 
-progress_bar progress_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.value(value);
   result.location(location);
@@ -186,7 +186,7 @@ progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::poi
   return result;
 }
 
-progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.maximum(maximum);
   result.value(value);
@@ -223,7 +223,7 @@ progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, con
   return result;
 }
 
-progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.minimum(minimum);
   result.maximum(maximum);
@@ -255,7 +255,7 @@ progress_bar progress_bar::create(const control& parent, const drawing::point& l
   return result;
 }
 
-progress_bar progress_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.parent(parent);
   result.location(location);
@@ -288,7 +288,7 @@ progress_bar progress_bar::create(const control& parent, int32 value, const draw
   return result;
 }
 
-progress_bar progress_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.parent(parent);
   result.value(value);
@@ -325,7 +325,7 @@ progress_bar progress_bar::create(const control& parent, int32 value, int32 maxi
   return result;
 }
 
-progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.parent(parent);
   result.maximum(maximum);
@@ -366,7 +366,7 @@ progress_bar progress_bar::create(const control& parent, int32 value, int32 mini
   return result;
 }
 
-progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = progress_bar {};
   result.parent(parent);
   result.minimum(minimum);
@@ -391,8 +391,8 @@ void progress_bar::set_range(int32 min_value, int32 max_value) {
   maximum(min_value > max_value ? min_value : max_value);
 }
 
-xtd::ustring progress_bar::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
+xtd::string progress_bar::to_string() const noexcept {
+  return string::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 forms::create_params progress_bar::create_params() const noexcept {
@@ -410,7 +410,7 @@ drawing::size progress_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> progress_bar::clone() const {
   auto result = xtd::new_uptr<progress_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

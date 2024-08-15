@@ -275,10 +275,10 @@ namespace xtd {
     
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
-    static xtd::ustring title();
+    static xtd::string title();
     /// @brief Sets the title to display in the console title bar.
     /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
-    static void title(const xtd::ustring& title);
+    static void title(const xtd::string& title);
     
     /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
     /// @return true if Ctrl+C is treated as ordinary input; otherwise, false.
@@ -405,11 +405,11 @@ namespace xtd {
     
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::ustring read_line();
+    static xtd::string read_line();
     /// @brief Reads the next line of characters from the standard input stream.
     /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::ustring read_line(bool intercept);
+    static xtd::string read_line(bool intercept);
 
     /// @brief Sets the foreground and background console colors to their defaults.
     /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
@@ -459,18 +459,18 @@ namespace xtd {
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write(arg_t&& value) {write_(xtd::ustring::format("{}",  value));}
+    static void write(arg_t&& value) {write_(xtd::string::format("{}",  value));}
     
     /// @cond
     template<typename type_t>
-    static void write(std::initializer_list<type_t>&& il) {write_(xtd::ustring::format("{}", il));}
+    static void write(std::initializer_list<type_t>&& il) {write_(xtd::string::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>
-    static void write(const xtd::ustring& fmt, args_t&& ... values) {write_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
+    static void write(const xtd::string& fmt, args_t&& ... values) {write_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     
     /// @brief Writes the current line terminator to the standard output stream using the specified format information.
     static void write_line();
@@ -479,18 +479,18 @@ namespace xtd {
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write_line(arg_t&& value) {write_line_(xtd::ustring::format("{}", value));}
+    static void write_line(arg_t&& value) {write_line_(xtd::string::format("{}", value));}
     
     /// @cond
     template<typename type_t>
-    static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::ustring::format("{}", il));}
+    static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::string::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param values Values to write,
     template<typename ... args_t>
-    static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
+    static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     /// @}
     
   private:
@@ -498,7 +498,7 @@ namespace xtd {
     static bool on_cancel_key_press(int32 special_key);
     static void register_cancel_key_press();
     
-    static void write_(const ustring& value);
-    static void write_line_(const ustring& value);
+    static void write_(const string& value);
+    static void write_line_(const string& value);
   };
 }

@@ -27,25 +27,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_trademark_attribute class.
       /// @param trademark The trademark information.
-      explicit assembly_trademark_attribute(const ustring& trademark);
+      explicit assembly_trademark_attribute(const string& trademark);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_trademark_attribute(const ustring& trademark, const object& executing_assembly);
+      assembly_trademark_attribute(const string& trademark, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
-      const ustring& trademark() const noexcept;
+      const string& trademark() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring trademark_;
+      string trademark_;
     };
   }
 }

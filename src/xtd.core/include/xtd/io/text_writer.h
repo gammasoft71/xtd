@@ -48,9 +48,9 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the line terminator string used by the current text_writer.
-      const xtd::ustring& new_line() const noexcept;
+      const xtd::string& new_line() const noexcept;
       /// @brief Sets the line terminator string used by the current text_writer.
-      void new_line(const xtd::ustring& new_line) noexcept;
+      void new_line(const xtd::string& new_line) noexcept;
       /// @}
       
       /// @name Public Methods
@@ -66,7 +66,7 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      virtual void write(const xtd::ustring& value);
+      virtual void write(const xtd::string& value);
       
       /// @brief Writes the specified bool value to the text stream.
       /// @param value The value to write.
@@ -128,14 +128,14 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
-      void write(value_t value) {write(xtd::ustring::format("{}", value));}
+      void write(value_t value) {write(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format
       /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
-      void write(const xtd::ustring& fmt, args_t&& ... args) noexcept {write(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
+      void write(const xtd::string& fmt, args_t&& ... args) noexcept {write(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       
       /// @brief Writes new line to the text stream.
       /// @exception io::io_exception An I/O error occurs.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @brief Writes the specified string value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(const xtd::ustring& value);
+      void write_line(const xtd::string& value);
       
       /// @brief Writes the specified bool value and new line to the text stream.
       /// @param value The value to write.
@@ -206,14 +206,14 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
-      void write_line(value_t value) {write_line(xtd::ustring::format("{}", value));}
+      void write_line(value_t value) {write_line(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format.
       /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
-      void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
+      void write_line(const xtd::string& fmt, args_t&& ... args) noexcept {write_line(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       /// @}
 
       /// @name Public Static Methods
@@ -234,7 +234,7 @@ namespace xtd {
       /// @}
       
     private:
-      xtd::ustring new_line_ = "\n";
+      xtd::string new_line_ = "\n";
     };
     
     /// @brief Represents a null text writer.
@@ -250,7 +250,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ null_text_writer : public xtd::io::text_writer {
     public:
-      void write(const xtd::ustring&) override;
+      void write(const xtd::string&) override;
     };
     
     /// @brief Represents a synchronized text writer.
@@ -266,7 +266,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ synchronized_text_writer : public xtd::io::text_writer {
     public:
-      void write(const xtd::ustring& value) override ;
+      void write(const xtd::string& value) override ;
       
     private:
       friend class text_writer;

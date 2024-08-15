@@ -115,7 +115,7 @@ numeric_up_down numeric_up_down::create(const drawing::point& location, const dr
   return result;
 }
 
-numeric_up_down numeric_up_down::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.location(location);
   result.size(size);
@@ -144,7 +144,7 @@ numeric_up_down numeric_up_down::create(double value, const drawing::point& loca
   return result;
 }
 
-numeric_up_down numeric_up_down::create(double value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(double value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.value(value);
   result.location(location);
@@ -177,7 +177,7 @@ numeric_up_down numeric_up_down::create(double value, double maximum, const draw
   return result;
 }
 
-numeric_up_down numeric_up_down::create(double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.maximum(maximum);
   result.value(value);
@@ -214,7 +214,7 @@ numeric_up_down numeric_up_down::create(double value, double minimum, double max
   return result;
 }
 
-numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.minimum(minimum);
   result.maximum(maximum);
@@ -246,7 +246,7 @@ numeric_up_down numeric_up_down::create(const control& parent, const drawing::po
   return result;
 }
 
-numeric_up_down numeric_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
   result.location(location);
@@ -279,7 +279,7 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, con
   return result;
 }
 
-numeric_up_down numeric_up_down::create(const control& parent, double value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(const control& parent, double value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
   result.value(value);
@@ -316,7 +316,7 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
   return result;
 }
 
-numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
   result.maximum(maximum);
@@ -357,7 +357,7 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
   return result;
 }
 
-numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
   result.minimum(minimum);
@@ -374,8 +374,8 @@ void numeric_up_down::set_range(double min_value, double max_value) {
   maximum(min_value > max_value ? min_value : max_value);
 }
 
-xtd::ustring numeric_up_down::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
+xtd::string numeric_up_down::to_string() const noexcept {
+  return string::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 drawing::color numeric_up_down::default_back_color() const noexcept {
@@ -395,7 +395,7 @@ forms::create_params numeric_up_down::create_params() const noexcept {
 
 xtd::uptr<xtd::object> numeric_up_down::clone() const {
   auto result = xtd::new_uptr<numeric_up_down>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

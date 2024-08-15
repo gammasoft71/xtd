@@ -48,7 +48,7 @@ namespace xtd {
     /// @{
     /// @brief Gets additional information.
     /// @return Additional information.
-    xtd::ustring additional_information() const noexcept;
+    xtd::string additional_information() const noexcept;
     
     /// @brief Gets the build type.
     /// @return One of xtd::build_type values.
@@ -68,11 +68,11 @@ namespace xtd {
     
     /// @brief Gets compiler name.
     /// @return The compiler name.
-    xtd::ustring name() const noexcept;
+    xtd::string name() const noexcept;
     
     /// @brief Gets compiler version string.
     /// @return The compiler version string.
-    xtd::ustring version_string() const noexcept;
+    xtd::string version_string() const noexcept;
     
     /// @brief Gets compiler version.
     /// @return The compiler version.
@@ -84,13 +84,13 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:
-    xtd::ustring get_apple_clang_additional_information() const noexcept;
-    xtd::ustring get_compiler_version_string(const xtd::ustring& compiler_name) const noexcept;
-    xtd::ustring get_msvc_additional_information() const noexcept;
+    xtd::string get_apple_clang_additional_information() const noexcept;
+    xtd::string get_compiler_version_string(const xtd::string& compiler_name) const noexcept;
+    xtd::string get_msvc_additional_information() const noexcept;
     
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
     xtd::version version_;

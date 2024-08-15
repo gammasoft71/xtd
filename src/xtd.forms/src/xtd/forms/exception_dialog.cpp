@@ -21,7 +21,7 @@ namespace {
   using link_label = label;
   class exception_dialog_standard : public form {
   public:
-    exception_dialog_standard(const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
+    exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
       panel_top_.location({0, 0});
       panel_top_.size({480, 150});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
@@ -38,7 +38,7 @@ namespace {
       label_exception_.location({85, 10});
       label_exception_.size({385, 95});
       label_exception_.text_align(content_alignment::top_left);
-      label_exception_.text(ustring::format("Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"_t, environment::new_line(), exception_ ? exception_->what() : "(Unknown exception)"_t));
+      label_exception_.text(string::format("Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"_t, environment::new_line(), exception_ ? exception_->what() : "(Unknown exception)"_t));
       
       button_details_.location({10, 115});
       button_details_.width(100);
@@ -84,31 +84,31 @@ namespace {
     }
     
     using form::show_dialog;
-    static forms::dialog_result show_dialog(const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog();
     }
     
-    static forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog(owner);
     }
     
     using form::show_sheet;
-    static void show_sheet(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static void show_sheet(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       dialog.form::show_sheet_dialog(owner);
     }
     
     using form::show_sheet_dialog;
-    static forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_sheet_dialog(owner);
     }
     
   private:
-    ustring generate_report() const {
-      auto report = ustring::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
+    string generate_report() const {
+      auto report = string::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
       report += generate_exception_report();
       report += generate_libraries_report();
       report += generate_operating_system_report();
@@ -117,63 +117,63 @@ namespace {
       return report;
     }
     
-    ustring generate_exception_report() const {
-      auto report = ustring::format("{0} Exception text {0}{1}"_t, ustring(14, '*'), environment::new_line());
+    string generate_exception_report() const {
+      auto report = string::format("{0} Exception text {0}{1}"_t, string(14, '*'), environment::new_line());
       if (exception_ && dynamic_cast<const system_exception*>(exception_))
-        report += ustring::format("{}{}", static_cast<const system_exception*>(exception_)->to_string(), environment::new_line());
+        report += string::format("{}{}", static_cast<const system_exception*>(exception_)->to_string(), environment::new_line());
       else if (exception_ && dynamic_cast<const std::exception*>(exception_))
-        report += ustring::format("{0}: {1}{2}", typeof_(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
+        report += string::format("{0}: {1}{2}", typeof_(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
       else
-        report += ustring::format("(Unknown exception){0}"_t, environment::new_line());
+        report += string::format("(Unknown exception){0}"_t, environment::new_line());
       report += environment::new_line();
       return report;
     }
     
-    ustring generate_libraries_report() const {
+    string generate_libraries_report() const {
       auto first = true;
-      auto report = ustring::format("{0} Libraries {0}{1}"_t, ustring(14, '*'), environment::new_line());
+      auto report = string::format("{0} Libraries {0}{1}"_t, string(14, '*'), environment::new_line());
       for (auto library : {"xtd.core", "xtd.drawing", "xtd.forms"}) {
-        if (!first) report += ustring::format("{}{}", ustring(40, '-'), environment::new_line());
-        report += ustring::format("{}{}", library, environment::new_line());
-        report += ustring::format("    Name: {}.{}{}"_t, library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
-        report += ustring::format("    Version: {}{}"_t, environment::version(), environment::new_line());
-        report += ustring::format("    include path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), environment::new_line());
-        report += ustring::format("    library path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::new_line());
-        report += ustring::format("    resources path: {}{}"_t, environment::get_folder_path(environment::special_folder::xtd_resources), environment::new_line());
+        if (!first) report += string::format("{}{}", string(40, '-'), environment::new_line());
+        report += string::format("{}{}", library, environment::new_line());
+        report += string::format("    Name: {}.{}{}"_t, library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
+        report += string::format("    Version: {}{}"_t, environment::version(), environment::new_line());
+        report += string::format("    include path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), environment::new_line());
+        report += string::format("    library path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::new_line());
+        report += string::format("    resources path: {}{}"_t, environment::get_folder_path(environment::special_folder::xtd_resources), environment::new_line());
         first = false;
       }
       report += environment::new_line();
       return report;
     }
     
-    ustring generate_operating_system_report() const {
-      auto report = ustring::format("{0} Operating System {0}{1}"_t, ustring(14, '*'), environment::new_line());
-      report += ustring::format("{}{}", environment::os_version().name(), environment::new_line());
-      report += ustring::format("    Version : {}{}"_t, environment::os_version().version(), environment::new_line());
-      report += ustring::format("    Desktop environment : {}{}"_t, environment::os_version().desktop_environment(), environment::new_line());
-      report += ustring::format("    OS Version : {}{}"_t, environment::os_version(), environment::new_line());
-      report += ustring::format("    64 bits : {}{}"_t, environment::is_64_bit_operating_system(), environment::new_line());
+    string generate_operating_system_report() const {
+      auto report = string::format("{0} Operating System {0}{1}"_t, string(14, '*'), environment::new_line());
+      report += string::format("{}{}", environment::os_version().name(), environment::new_line());
+      report += string::format("    Version : {}{}"_t, environment::os_version().version(), environment::new_line());
+      report += string::format("    Desktop environment : {}{}"_t, environment::os_version().desktop_environment(), environment::new_line());
+      report += string::format("    OS Version : {}{}"_t, environment::os_version(), environment::new_line());
+      report += string::format("    64 bits : {}{}"_t, environment::is_64_bit_operating_system(), environment::new_line());
       report += environment::new_line();
       return report;
     }
     
-    ustring generate_language_report() const {
-      auto report = ustring::format("{0} Language {0}{1}"_t, ustring(14, '*'), environment::new_line());
-      report += ustring::format("{}{}", environment::cpp_version().name(), environment::new_line());
-      report += ustring::format("    Version : {}{}"_t, environment::cpp_version().version(), environment::new_line());
-      report += ustring::format("    Experimental : {}{}"_t, environment::cpp_version().is_experimental_language(), environment::new_line());
-      report += ustring::format("    Supported : {}{}"_t, environment::cpp_version().is_supported(), environment::new_line());
+    string generate_language_report() const {
+      auto report = string::format("{0} Language {0}{1}"_t, string(14, '*'), environment::new_line());
+      report += string::format("{}{}", environment::cpp_version().name(), environment::new_line());
+      report += string::format("    Version : {}{}"_t, environment::cpp_version().version(), environment::new_line());
+      report += string::format("    Experimental : {}{}"_t, environment::cpp_version().is_experimental_language(), environment::new_line());
+      report += string::format("    Supported : {}{}"_t, environment::cpp_version().is_supported(), environment::new_line());
       report += environment::new_line();
       return report;
     }
     
-    ustring generate_compiler_report() const {
-      auto report = ustring::format("{0} Compiler {0}{1}"_t, ustring(14, '*'), environment::new_line());
-      report += ustring::format("{0}{1}", environment::compiler_version().name(), environment::new_line());
-      report += ustring::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
-      report += ustring::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
-      report += ustring::format("    Mode : {0}{1}", environment::compiler_version().is_build_type_debug() ? "Debug"_t : "Release"_t, environment::new_line());
-      report += ustring::format("    64 bits : {0}{1}", environment::compiler_version().is_64_bit(), environment::new_line());
+    string generate_compiler_report() const {
+      auto report = string::format("{0} Compiler {0}{1}"_t, string(14, '*'), environment::new_line());
+      report += string::format("{0}{1}", environment::compiler_version().name(), environment::new_line());
+      report += string::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
+      report += string::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
+      report += string::format("    Mode : {0}{1}", environment::compiler_version().is_build_type_debug() ? "Debug"_t : "Release"_t, environment::new_line());
+      report += string::format("    64 bits : {0}{1}", environment::compiler_version().is_64_bit(), environment::new_line());
       report += environment::new_line();
       return report;
     }
@@ -194,7 +194,7 @@ struct exception_dialog::data {
   forms::dialog_result dialog_result = forms::dialog_result::none;
   forms::dialog_appearance dialog_appearance = forms::dialog_appearance::standard;
   const std::exception* exception = nullptr;
-  ustring text;
+  string text;
 };
 
 exception_dialog::exception_dialog() : data_(xtd::new_sptr<data>()) {
@@ -223,11 +223,11 @@ exception_dialog& exception_dialog::exception(const std::exception& exception) {
   return *this;
 }
 
-ustring exception_dialog::text() const noexcept {
+string exception_dialog::text() const noexcept {
   return data_->text;
 }
 
-exception_dialog& exception_dialog::text(const ustring& text) {
+exception_dialog& exception_dialog::text(const string& text) {
   data_->text = text;
   return *this;
 }

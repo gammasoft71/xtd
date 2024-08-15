@@ -66,13 +66,13 @@ namespace xtd {
 
   /// @cond
   inline const object& boxing(const object& value) noexcept {return value;}
-  inline ustring boxing(const char* value) noexcept {return ustring(value);}
+  inline string boxing(const char* value) noexcept {return string(value);}
 #if defined(__xtd__cpp_lib_char8_t)
-  inline ustring boxing(const char8* value) noexcept {return ustring(value);}
+  inline string boxing(const char8* value) noexcept {return string(value);}
 #endif
-  inline ustring boxing(const char16* value) noexcept {return ustring(value);}
-  inline ustring boxing(const char32* value) noexcept {return ustring(value);}
-  inline ustring boxing(const wchar* value) noexcept {return ustring(value);}
+  inline string boxing(const char16* value) noexcept {return string(value);}
+  inline string boxing(const char32* value) noexcept {return string(value);}
+  inline string boxing(const wchar* value) noexcept {return string(value);}
   inline char_object boxing(const char& value) noexcept {return char_object(value);}
 #if defined(__xtd__cpp_lib_char8_t)
   inline char8_object boxing(const char8& value) noexcept {return char8_object(value);}

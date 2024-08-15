@@ -88,7 +88,7 @@ animation animation::create(const point& location, const drawing::size& size) {
   return result;
 }
 
-animation animation::create(const point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const point& location, const drawing::size& size, const xtd::string& name) {
   auto result = animation {};
   result.location(location);
   result.size(size);
@@ -117,7 +117,7 @@ animation animation::create(uint32 frames_per_second, const point& location, con
   return result;
 }
 
-animation animation::create(uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::string& name) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
   result.location(location);
@@ -147,7 +147,7 @@ animation animation::create(const control& parent, const point& location, const 
   return result;
 }
 
-animation animation::create(const control& parent, const point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const control& parent, const point& location, const drawing::size& size, const xtd::string& name) {
   auto result = animation {};
   result.parent(parent);
   result.location(location);
@@ -180,7 +180,7 @@ animation animation::create(const control& parent, uint32 frames_per_second, con
   return result;
 }
 
-animation animation::create(const control& parent, uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const control& parent, uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::string& name) {
   auto result = animation {};
   result.parent(parent);
   result.frames_per_second(frames_per_second);
@@ -200,7 +200,7 @@ void animation::stop() {
 
 xtd::uptr<xtd::object> animation::clone() const {
   auto result = xtd::new_uptr<animation>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

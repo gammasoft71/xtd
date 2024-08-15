@@ -60,11 +60,11 @@ namespace xtd {
       
       /// @brief Gets the dialog message text.
       /// @return The current dialog message text.
-      xtd::ustring message() const noexcept;
+      xtd::string message() const noexcept;
       /// @brief Sets the dialog message text.
       /// @param value The new dialog message text.
       /// @return Current input_dialog instance.
-      assert_dialog& message(const xtd::ustring& value);
+      assert_dialog& message(const xtd::string& value);
 
       /// @brief Gets stack frame.
       /// @return The stzack frame.

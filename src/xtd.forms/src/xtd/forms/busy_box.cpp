@@ -11,27 +11,27 @@ void busy_box::show(const iwin32_window& owner) {
   show_busy_dialog(&owner);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text) {
   show_busy_dialog(&owner, text);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption) {
   show_busy_dialog(&owner, text, caption);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) {
   show_busy_dialog(&owner, text, caption, icon);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) {
   show_busy_dialog(&owner, text, caption, icon, back_color);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) {
   show_busy_dialog(&owner, text, caption, icon, back_color, fore_color);
 }
 
-void busy_box::show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
+void busy_box::show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
   show_busy_dialog(&owner, text, caption, icon, back_color, fore_color, opacity);
 }
 
@@ -39,31 +39,31 @@ void busy_box::show() {
   show_busy_dialog(nullptr);
 }
 
-void busy_box::show(const xtd::ustring& text) {
+void busy_box::show(const xtd::string& text) {
   show_busy_dialog(nullptr, text);
 }
 
-void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption) {
+void busy_box::show(const xtd::string& text, const xtd::string& caption) {
   show_busy_dialog(nullptr, text, caption);
 }
 
-void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon) {
+void busy_box::show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) {
   show_busy_dialog(nullptr, text, caption, icon);
 }
 
-void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) {
+void busy_box::show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) {
   show_busy_dialog(nullptr, text, caption, icon, back_color);
 }
 
-void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) {
+void busy_box::show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) {
   show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color);
 }
 
-void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
+void busy_box::show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
   show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color, opacity);
 }
 
-void busy_box::show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
+void busy_box::show_busy_dialog(const iwin32_window* owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
   if (dialog_) return;
   dialog_ = xtd::new_uptr<busy_dialog>();
   dialog_->description(text);

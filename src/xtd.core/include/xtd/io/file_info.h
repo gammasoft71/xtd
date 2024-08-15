@@ -62,7 +62,7 @@ namespace xtd {
       /// When the properties are first retrieved, xtd::io::file_info calls the xtd::io::file_info::refresh method and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       /// @include file_info.cpp
       /// @remarks You can specify either the fully qualified or the relative file name, but the security check gets the fully qualified name.
-      explicit file_info(const xtd::ustring& file_name);
+      explicit file_info(const xtd::string& file_name);
       /// @}
       
       /// @name Public Properties
@@ -81,7 +81,7 @@ namespace xtd {
       /// @par Exemple
       /// The following example retrieves the full path of the specified file.
       /// ```cpp
-      /// ustring file_name = R"(C:\TMP\log.txt)";
+      /// string file_name = R"(C:\TMP\log.txt)";
       /// file_info file_info(file_name);
       /// if (!file_info.exists())
       ///   return;
@@ -95,14 +95,14 @@ namespace xtd {
       /// ```
       /// @remarks To get the parent directory as a xtd::io::directory_info object, use the xtd::io::file_info::directory property.
       /// @remarks When first called, xtd::io::file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
-      xtd::ustring directory_name() const;
+      xtd::string directory_name() const;
       
       /// @brief Gets a value indicating whether a file exists.
       /// @return true if the file exists; false if the file does not exist or if the file is a directory.
       /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
       /// ```cpp
-      /// std::vector<char> open_data_file(const ustring& file_name) {
+      /// std::vector<char> open_data_file(const string& file_name) {
       ///   // Check the FileName argument.
       ///   if (file_name.size() == 0)
       ///     throw argument_exception("file_name", csf_);
@@ -149,7 +149,7 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring file_name = R"(c:\test.xml)";
+      ///     string file_name = R"(c:\test.xml)";
       ///
       ///     // Get the read-only value for a file.
       ///     bool is_read_only = is_file_read_only(file_name);
@@ -170,7 +170,7 @@ namespace xtd {
       ///   }
       ///
       ///   // Sets the read-only value of a file.
-      ///   static void set_file_read_access(const ustring& file_name, bool set_read_only) {
+      ///   static void set_file_read_access(const string& file_name, bool set_read_only) {
       ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
@@ -179,7 +179,7 @@ namespace xtd {
       ///   }
       ///
       ///   // Returns wether a file is read-only.
-      ///   static bool is_file_read_only(const ustring& file_name) {
+      ///   static bool is_file_read_only(const string& file_name) {
       ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
@@ -218,7 +218,7 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring file_name = R"(c:\test.xml)";
+      ///     string file_name = R"(c:\test.xml)";
       ///
       ///     // Get the read-only value for a file.
       ///     bool is_read_only = is_file_read_only(file_name);
@@ -239,7 +239,7 @@ namespace xtd {
       ///   }
       ///
       ///   // Sets the read-only value of a file.
-      ///   static void set_file_read_access(const ustring& file_name, bool set_read_only) {
+      ///   static void set_file_read_access(const string& file_name, bool set_read_only) {
       ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
@@ -248,7 +248,7 @@ namespace xtd {
       ///   }
       ///
       ///   // Returns wether a file is read-only.
-      ///   static bool is_file_read_only(const ustring& file_name) {
+      ///   static bool is_file_read_only(const string& file_name) {
       ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
@@ -359,7 +359,7 @@ namespace xtd {
       /// ```
       /// @remarks When first called, xtd::io::file_info calls Refresh and caches information about the file. On subsequent calls, you must call Refresh to get the latest copy of the information.
       /// @remarks The name of the file includes the file extension.
-      xtd::ustring name() const override;
+      xtd::string name() const override;
       /// @}
       
       /// @name Public Methods
@@ -427,8 +427,8 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring path = R"(c:\SoureFile.txt)";
-      ///     ustring path2 = R"(c:\NewFile.txt)";
+      ///     string path = R"(c:\SoureFile.txt)";
+      ///     string path2 = R"(c:\NewFile.txt)";
       ///     file_info fi1(path);
       ///     file_info fi2(path2);
       ///
@@ -512,9 +512,9 @@ namespace xtd {
       /// // Add as many lines as you like...
       /// // Add another line to the output...
       /// ```
-      /// @remarks Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file.
+      /// @remarks Use the xtd::io::file_info::copy_to(string, bool) method to allow overwriting of an existing file.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
-      xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
+      xtd::io::file_info copy_to(const xtd::string& dest_file_name) const;
       /// @brief Copies an existing file to a new file, allowing the overwriting of an existing file.
       /// @param dest_file_name The name of the new file to copy to.
       /// @param overwrite true to allow an existing file to be overwritten; otherwise, false.
@@ -537,8 +537,8 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring path = R"(c:\SoureFile.txt)";
-      ///     ustring path2 = R"(c:\NewFile.txt)";
+      ///     string path = R"(c:\SoureFile.txt)";
+      ///     string path2 = R"(c:\NewFile.txt)";
       ///     file_info fi1(path);
       ///     file_info fi2(path2);
       ///
@@ -622,9 +622,9 @@ namespace xtd {
       /// // Add as many lines as you like...
       /// // Add another line to the output...
       /// ```
-      /// @remarks Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(ustring) method to prevent overwriting of an existing file by default.
+      /// @remarks Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(string) method to prevent overwriting of an existing file by default.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
-      xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;
+      xtd::io::file_info copy_to(const xtd::string& dest_file_name, bool overwrite) const;
       
       /// @brief Creates a file.
       /// @return A new file.
@@ -684,8 +684,8 @@ namespace xtd {
       /// The following example demonstrates moving a file to a different location and renaming the file.
       /// @include file_info_move_to.cpp
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
-      /// @remarks This method does not overwrite the destination file if it already exists. For that purpose, call xtd::ioo::file_info::move_to(ustring, bool) instead.
-      void move_to(const xtd::ustring& dest_file_name);
+      /// @remarks This method does not overwrite the destination file if it already exists. For that purpose, call xtd::ioo::file_info::move_to(string, bool) instead.
+      void move_to(const xtd::string& dest_file_name);
       
       /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
       /// @param dest_file_name The path to move the file to, which can specify a different file name.
@@ -702,7 +702,7 @@ namespace xtd {
       /// The following example demonstrates moving a file to a different location and renaming the file.
       /// @include file_info_move_to.cpp
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
-      void move_to(const xtd::ustring& dest_file_name, bool overwrite);
+      void move_to(const xtd::string& dest_file_name, bool overwrite);
       
       /// @brief Opens a file in the specified mode.
       /// @param mode A std::ios::openmode constant specifying the mode (for example, std::ios::openmode::in or std::ios::openmode::app) in which to open the file.
@@ -763,12 +763,12 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring path = R"(c:\MyTest.txt)";
+      ///     string path = R"(c:\MyTest.txt)";
       ///     file_info fi1(path);
       ///
       ///     try {
       ///       block_scope_(ofstream ofs = fi1.create_text()) {}
-      ///       ustring path2 = path + "temp";
+      ///       string path2 = path + "temp";
       ///       file_info fi2(path2);
       ///
       ///       //Ensure that the target does not exist.
@@ -833,7 +833,7 @@ namespace xtd {
       /// @include file_info_replace.cpp
       /// @remarks The Replace method replaces the contents of a specified file with the contents of the file described by the current xtd::io::file_info object. It also creates a backup of the file that was replaced. Finally, it returns a new xtd::io::file_info object that describes the overwritten file.
       /// @remarks Pass an empty string ("") to the dest_backup_file_name parameter if you do not want to create a backup of the file being replaced.
-      file_info replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
+      file_info replace(const xtd::string& destination_file_name, const xtd::string& destination_backup_file_name);
       /// @}
       
     private:

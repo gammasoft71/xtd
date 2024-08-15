@@ -89,7 +89,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @param name The name of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static user_control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::user_control with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
@@ -111,7 +111,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @param name The name of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
 
     protected:

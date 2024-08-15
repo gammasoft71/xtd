@@ -135,7 +135,7 @@ namespace xtd {
     /// @remarks The format of the version number is as follows. Optional components are shown in square brackets ('[' and ']'):
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// @remarks All defined components must be integers greater than or equal to 0. For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then version should be "6.2.1.3".
-    explicit version(const xtd::ustring& version);
+    explicit version(const xtd::string& version);
     /// @brief Initializes a new instance of the xtd::version class using the specified major and minor values.
     /// @param major The major version number.
     /// @param minor The minor version number.
@@ -242,14 +242,14 @@ namespace xtd {
     using object::equals;
     bool equals(const version& v) const noexcept override;
     
-    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation.
-    /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
+    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::string representation.
+    /// @return The xtd::string representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// For example, if you create a xtd::version object using the constructor xtd::version(1, 1), the returned string is "1.1". If you create a xtd::version object using the constructor xtd::version(1, 3, 4, 2), the returned string is "1.3.4.2".
-    xtd::ustring to_string() const noexcept override;
-    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation. A specified count indicates the number of components to return.
+    xtd::string to_string() const noexcept override;
+    /// @brief Converts the value of the current xtd::version object to its equivalent xtd::string representation. A specified count indicates the number of components to return.
     /// @param field_count The number of components to return. The field_count ranges from 0 to 4.
-    /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, each separated by a period character ('.'). The field_count parameter determines how many components are returned.
+    /// @return The xtd::string representation of the values of the major, minor, build, and revision components of the current xtd::version object, each separated by a period character ('.'). The field_count parameter determines how many components are returned.
     /// | field_count | Return Value               |
     /// | ----------- | -------------------------- |
     /// | 0           | An empty string ("").      |
@@ -259,7 +259,7 @@ namespace xtd {
     /// | 4           | major.minor.build.revision |
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
     /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
-    xtd::ustring to_string(size_t field_count) const;
+    xtd::string to_string(size_t field_count) const;
     /// @}
     
     /// @name Public Static Methods
@@ -275,8 +275,8 @@ namespace xtd {
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
     /// @warning Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the xtd::version::parse method to parse user input. Alternatively, you can call the xtd::version::try_parse method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded.
-    /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const ustring&) constructor.
-    static version parse(const xtd::ustring& input);
+    /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const string&) constructor.
+    static version parse(const xtd::string& input);
 
     /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.
     /// @param input A string that contains a version number to convert.
@@ -286,7 +286,7 @@ namespace xtd {
     /// For the parse operation to succeed, the input parameter must be in the following format:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
-    static bool try_parse(const xtd::ustring& input, version& result) noexcept;
+    static bool try_parse(const xtd::string& input, version& result) noexcept;
     /// @}
     
   private:

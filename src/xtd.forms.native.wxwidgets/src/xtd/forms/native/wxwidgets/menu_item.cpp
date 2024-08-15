@@ -16,57 +16,57 @@ using namespace xtd::forms::native;
 
 namespace {
   #if defined(__WXOSX__)
-  static bool is_about_item(const xtd::ustring& text) {
+  static bool is_about_item(const xtd::string& text) {
     wxString itemText = text;
-    itemText.Replace("&", ustring::empty_string);
-    itemText.Replace(".", ustring::empty_string);
+    itemText.Replace("&", string::empty_string);
+    itemText.Replace(".", string::empty_string);
     itemText.LowerCase();
     wxString aboutText = "&About..."_t;
-    aboutText.Replace("&", ustring::empty_string);
-    aboutText.Replace(".", ustring::empty_string);
+    aboutText.Replace("&", string::empty_string);
+    aboutText.Replace(".", string::empty_string);
     aboutText.LowerCase();
     return itemText == aboutText || itemText == "about";
   }
 #endif
 
-  static bool is_quit_item(const xtd::ustring& text, size_t shortcut) {
+  static bool is_quit_item(const xtd::string& text, size_t shortcut) {
     wxString itemText = text;
-    itemText.Replace("&", ustring::empty_string);
-    itemText.Replace(".", ustring::empty_string);
+    itemText.Replace("&", string::empty_string);
+    itemText.Replace(".", string::empty_string);
     itemText.LowerCase();
     wxString exitText = "E&xit"_t;
-    exitText.Replace("&", ustring::empty_string);
-    exitText.Replace(".", ustring::empty_string);
+    exitText.Replace("&", string::empty_string);
+    exitText.Replace(".", string::empty_string);
     exitText.LowerCase();
     return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_CONTROL_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
   }
 
 #if defined(__WXOSX__)
-  static bool is_preferences_item(const xtd::ustring& text) {
+  static bool is_preferences_item(const xtd::string& text) {
     wxString itemText = text;
-    itemText.Replace("&", ustring::empty_string);
-    itemText.Replace(".", ustring::empty_string);
+    itemText.Replace("&", string::empty_string);
+    itemText.Replace(".", string::empty_string);
     itemText.LowerCase();
 #  ifdef __MAC_13_0
     wxString preferenceText = "&Settings..."_t;
 #  else
     wxString preferenceText = "&Preferences"_t;
 #  endif
-    preferenceText.Replace("&", ustring::empty_string);
-    preferenceText.Replace(".", ustring::empty_string);
+    preferenceText.Replace("&", string::empty_string);
+    preferenceText.Replace(".", string::empty_string);
     preferenceText.LowerCase();
     return itemText == preferenceText || itemText == "preferences" || itemText == "options" || itemText == "settings";
   }
   #endif
   
-  static xtd::ustring make_item_text(const xtd::ustring& text, size_t shortcut) {
+  static xtd::string make_item_text(const xtd::string& text, size_t shortcut) {
 #if defined(__WXOSX__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text, shortcut)) return "";
 #  ifdef __MAC_13_0
-    if (is_preferences_item(text)) return xtd::ustring {"&Settings..."_t} + "\tCtrl+,";
+    if (is_preferences_item(text)) return xtd::string {"&Settings..."_t} + "\tCtrl+,";
 #  else
-    if (is_preferences_item(text)) return xtd::ustring {"&Preference"_t} + "\tCtrl+,";
+    if (is_preferences_item(text)) return xtd::string {"&Preference"_t} + "\tCtrl+,";
 #  endif
 #elif defined(__WXMSW__)
       if (is_quit_item(text, shortcut)) return text + "\tAlt+F4";
@@ -134,7 +134,7 @@ namespace {
     return text + "\t" + key;
   }
   
-  static wxWindowID make_window_id(const xtd::ustring& text, size_t shortcut) {
+  static wxWindowID make_window_id(const xtd::string& text, size_t shortcut) {
     #if defined(__WXOSX__)
     if (is_about_item(text)) return wxID_ABOUT;
     if (is_quit_item(text, shortcut)) return wxID_EXIT;
@@ -148,7 +148,7 @@ void menu_item::checked(intptr menu_item, bool checked) {
   reinterpret_cast<wxMenuItem*>(menu_item)->Check(checked);
 }
 
-intptr menu_item::create(intptr menu, const ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
+intptr menu_item::create(intptr menu, const string& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
   static auto kinds = std::map<int32, wxItemKind> {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
   auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text, shortcut), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
   if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
@@ -170,7 +170,7 @@ intptr menu_item::menu_id(intptr menu_item) {
   return static_cast<intptr>(reinterpret_cast<wxMenuItem*>(menu_item)->GetId());
 }
 
-void menu_item::text(intptr menu_item, const xtd::ustring& text, size_t shortcut) {
+void menu_item::text(intptr menu_item, const xtd::string& text, size_t shortcut) {
   if (menu_item == 0) throw argument_exception {csf_};
   reinterpret_cast<wxMenuItem*>(menu_item)->SetItemLabel(convert_string::to_wstring(make_item_text(text, shortcut)));
 }

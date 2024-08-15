@@ -10,8 +10,8 @@
 using namespace xtd;
 using namespace xtd::io;
 
-binary_writer::binary_writer(const ustring& path) : stream_(new std::ofstream(path, std::ios::out | std::ios::binary | std::ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
+binary_writer::binary_writer(const string& path) : stream_(new std::ofstream(path, std::ios::out | std::ios::binary | std::ios_base::trunc)), delete_when_destroy_(true) {
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
@@ -113,54 +113,54 @@ void binary_writer::write(float value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(const ustring& value) {
+void binary_writer::write(const string& value) {
   write(static_cast<int32>(value.size()));
   for (auto c : value)
     write(c);
 }
 
 void binary_writer::write(const std::string& value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const std::u8string& value) {
-  write(ustring(value));
+  write(string(value));
 }
 #endif
 
 void binary_writer::write(const std::u16string& value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(const std::u32string& value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(const std::wstring& value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(const char* value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const char8* value) {
-  write(ustring(value));
+  write(string(value));
 }
 #endif
 
 void binary_writer::write(const char16* value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(const char32* value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(const wchar* value) {
-  write(ustring(value));
+  write(string(value));
 }
 
 void binary_writer::write(uint16 value) {

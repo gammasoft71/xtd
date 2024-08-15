@@ -32,6 +32,6 @@ bool link_area::equals(const link_area& other) const noexcept {
   return start_ == other.start_ && length_ == other.length_;
 }
 
-xtd::ustring link_area::to_string() const noexcept {
-  return ustring::format("{{start={}, length={}}}", start_, length_);
+xtd::string link_area::to_string() const noexcept {
+  return string::format("{{start={}, length={}}}", start_, length_);
 }

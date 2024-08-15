@@ -34,7 +34,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::source_filter class, specifying the name of the trace source.
       /// @param source The name of the trace source.
-      explicit source_filter(const xtd::ustring& source);
+      explicit source_filter(const xtd::string& source);
       /// @}
       
       /// @name Public Properties
@@ -42,10 +42,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const xtd::ustring& source() const noexcept;
+      const xtd::string& source() const noexcept;
       /// @brief Gets the name of the trace source.
       /// @param source The name of the trace source.
-      void source(const xtd::ustring& source) noexcept;
+      void source(const xtd::string& source) noexcept;
       /// @}
       
       /// @name Public Methods
@@ -59,11 +59,11 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::ustring& message, std::any data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept override;
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, std::any data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept override;
       /// @}
       
     private:
-      xtd::ustring source_;
+      xtd::string source_;
     };
   }
 }

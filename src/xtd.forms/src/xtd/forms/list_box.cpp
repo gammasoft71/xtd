@@ -158,7 +158,7 @@ list_box& list_box::sorted(bool sorted) {
   return *this;
 }
 
-control& list_box::text(const xtd::ustring& text) {
+control& list_box::text(const xtd::string& text) {
   return *this;
 }
 
@@ -183,7 +183,7 @@ list_box list_box::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-list_box list_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.location(location);
   result.size(size);
@@ -212,7 +212,7 @@ list_box list_box::create(const object_collection& items, const drawing::point& 
   return result;
 }
 
-list_box list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.items(items);
   result.location(location);
@@ -245,7 +245,7 @@ list_box list_box::create(const object_collection& items, size_t selected_index,
   return result;
 }
 
-list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.items(items);
   result.selected_index(selected_index);
@@ -276,7 +276,7 @@ list_box list_box::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-list_box list_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
   result.location(location);
@@ -309,7 +309,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
   result.items(items);
@@ -346,7 +346,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
   result.items(items);
@@ -400,7 +400,7 @@ forms::create_params list_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> list_box::clone() const {
   auto result = xtd::new_uptr<list_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

@@ -18,9 +18,9 @@ namespace {
     return result;
   }
   
-  ustring decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
+  string decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
     // https://www.programmingalgorithms.com/algorithm/xor-encryption/
-    return ustring {reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length};
+    return string {reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length};
   }
 }
 

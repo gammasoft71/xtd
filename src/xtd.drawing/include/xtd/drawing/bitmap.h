@@ -54,12 +54,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param filename The bitmap file name and path.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the xtd::drawing::bitmap is disposed.
-      explicit bitmap(const xtd::ustring& filename);
+      explicit bitmap(const xtd::string& filename);
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param filename The bitmap file name and path.
       /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, false.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the xtd::drawing::bitmap is disposed.
-      explicit bitmap(const xtd::ustring& filename, bool use_icm);
+      explicit bitmap(const xtd::string& filename, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
       /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.

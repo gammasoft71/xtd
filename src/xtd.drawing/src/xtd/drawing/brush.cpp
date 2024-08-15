@@ -38,7 +38,7 @@ bool brush::equals(const brush& value) const noexcept {
   return data_->handle_ == value.data_->handle_;
 }
 
-xtd::ustring brush::to_string() const noexcept {
+xtd::string brush::to_string() const noexcept {
   return get_type().full_name();
 }
 

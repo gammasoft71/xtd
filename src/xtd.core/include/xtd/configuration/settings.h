@@ -40,7 +40,7 @@ namespace xtd {
     /// setting(back_color xtd::drawing::color USER "xtd::drawing::system_colors::control()")
     /// setting(location xtd::drawing::point USER "{100, 50}")
     /// setting(size xtd::drawing::size USER "{335, 45}")
-    /// setting(text xtd::ustring APPLICATION "\"Settings example\"")
+    /// setting(text xtd::string APPLICATION "\"Settings example\"")
     /// ```
     /// • The generated properties/settings.h :
     /// ```cpp
@@ -114,8 +114,8 @@ namespace xtd {
     ///     }
     ///
     ///     // @brief Gets the text system setting property.
-    ///     // @return A xtd::ustring value.
-    ///     xtd::ustring text() const noexcept {return "Settings example";}
+    ///     // @return A xtd::string value.
+    ///     xtd::string text() const noexcept {return "Settings example";}
     ///
     ///     // @}
     ///
@@ -194,7 +194,7 @@ namespace xtd {
       /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
       /// @remarks The `company_name` is equal to the xtd::reflection::assembly::company() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to `product_name`.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
-      const xtd::ustring& file_path() const noexcept;
+      const xtd::string& file_path() const noexcept;
       /// @}
       
       /// @name Public Methods
@@ -204,15 +204,15 @@ namespace xtd {
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
-      xtd::ustring read(const xtd::ustring& key, const xtd::ustring& default_value);
+      xtd::string read(const xtd::string& key, const xtd::string& default_value);
       /// @brief Reads a value for specified key. If not found default value is used.
       /// @tparam type_t The type of value to read.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A type_t that represent the value associate to the key.
       template<typename type_t>
-      type_t read(const xtd::ustring& key, const type_t& default_value) {
-        return xtd::parse<type_t>(read_string(key, xtd::ustring::format("{}", default_value)));
+      type_t read(const xtd::string& key, const type_t& default_value) {
+        return xtd::parse<type_t>(read_string(key, xtd::string::format("{}", default_value)));
       }
       
       /// @brief Reset application settings.
@@ -228,21 +228,21 @@ namespace xtd {
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
-      void write(const xtd::ustring& key, const xtd::ustring& value);
+      void write(const xtd::string& key, const xtd::string& value);
       /// @brief Writes a specified value for specified key.
       /// @tparam type_t The type of value to write.
       /// @param key The key used to write a value.
       /// @param value A type_t to write.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
       template<typename type_t>
-      void write(const xtd::ustring& key, type_t&& value) {
-        write_string(key, xtd::ustring::format("{}", value));
+      void write(const xtd::string& key, type_t&& value) {
+        write_string(key, xtd::string::format("{}", value));
       }
       /// @}
       
     private:
-      xtd::ustring read_string(const xtd::ustring& key, const xtd::ustring& default_value);
-      void write_string(const xtd::ustring& key, const xtd::ustring& value);
+      xtd::string read_string(const xtd::string& key, const xtd::string& default_value);
+      void write_string(const xtd::string& key, const xtd::string& value);
       
       xtd::sptr<data> data_;
     };

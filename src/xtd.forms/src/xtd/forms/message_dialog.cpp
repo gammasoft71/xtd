@@ -18,8 +18,8 @@ struct message_dialog::data {
   bool display_help_button = false;
   xtd::forms::message_dialog_icon icon = xtd::forms::message_dialog_icon::none;
   xtd::forms::message_dialog_options options = static_cast<xtd::forms::message_dialog_options>(0);
-  xtd::ustring message;
-  xtd::ustring text;
+  xtd::string message;
+  xtd::string text;
 };
 
 message_dialog::message_dialog() : data_(xtd::new_sptr<data>()) {
@@ -84,20 +84,20 @@ message_dialog& message_dialog::options(xtd::forms::message_dialog_options optio
   return *this;
 }
 
-xtd::ustring message_dialog::message() const noexcept {
+xtd::string message_dialog::message() const noexcept {
   return data_->message;
 }
 
-message_dialog& message_dialog::message(const xtd::ustring& message) {
+message_dialog& message_dialog::message(const xtd::string& message) {
   data_->message = message;
   return *this;
 }
 
-xtd::ustring message_dialog::text() const noexcept {
+xtd::string message_dialog::text() const noexcept {
   return data_->text;
 }
 
-message_dialog& message_dialog::text(const xtd::ustring& text) {
+message_dialog& message_dialog::text(const xtd::string& text) {
   data_->text = text;
   return *this;
 }

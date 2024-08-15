@@ -26,21 +26,21 @@ using namespace xtd::io;
 using namespace xtdc_gui;
 
 namespace {
-  static void copy_directory(const ustring& source_dir, const ustring& destination_dir, bool recursive) {
+  static void copy_directory(const string& source_dir, const string& destination_dir, bool recursive) {
     auto dir = directory_info(source_dir);
-    if (!dir.exists()) throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()), csf_);
+    if (!dir.exists()) throw directory_not_found_exception(string::format("Source directory not found: {}", dir.full_name()), csf_);
     
     directory::create_directory(destination_dir);
     
     for (const file_info& file : dir.get_files()) {
-      ustring target_file_path = path::combine(destination_dir, file.name());
+      string target_file_path = path::combine(destination_dir, file.name());
       file.copy_to(target_file_path);
     }
     
     if (recursive) {
       std::vector<directory_info> dirs = dir.get_directories();
       for (const directory_info& sub_dir : dirs) {
-        ustring new_destination_dir = path::combine(destination_dir, sub_dir.name());
+        string new_destination_dir = path::combine(destination_dir, sub_dir.name());
         copy_directory(sub_dir.full_name(), new_destination_dir, true);
       }
     }
@@ -89,7 +89,7 @@ main_form::main_form() {
   
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
-      if (!directory::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      if (!directory::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, string::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
       else open_project(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
@@ -211,7 +211,7 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
   open_xtd_examples_information_link_label_.padding(xtd::forms::padding(5));
   open_xtd_examples_information_link_label_.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
-    process::start(as<ustring>(e.link().link_data()));
+    process::start(as<string>(e.link().link_data()));
   };
   
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
@@ -590,17 +590,17 @@ main_form::main_form() {
   next_button_.click += [&] {
     if (create_panel_.visible()) {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
-      auto project_name = std::map<project_type, ustring> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
+      auto project_name = std::map<project_type, string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
-      while (directory::exists(path::combine(configure_project_location_text_box_.text(), ustring::format("{}{}", project_name, index)))) index++;
-      configure_project_name_text_box_.text(ustring::format("{}{}", project_name, index));
+      while (directory::exists(path::combine(configure_project_location_text_box_.text(), string::format("{}{}", project_name, index)))) index++;
+      configure_project_name_text_box_.text(string::format("{}{}", project_name, index));
       previous_button_.text("&Back");
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
       auto project_path = path::combine(configure_project_location_text_box_.text(), configure_project_name_text_box_.text());
-      if (directory::exists(project_path)) message_box::show(*this, ustring::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
+      if (directory::exists(project_path)) message_box::show(*this, string::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
       else {
         new_project(project_path, current_project_type_index_);
         startup_panel_.visible(true);
@@ -611,7 +611,7 @@ main_form::main_form() {
       }
     } else if (open_xtd_examples_panel_.visible()) {
       auto xtd_example = xtd_example_item();
-      ustring exemple_subproject_path;
+      string exemple_subproject_path;
       if (open_xtd_example_tab_control_.selected_index() == 0) {
         xtd_example = any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.core.examples";
@@ -633,17 +633,17 @@ main_form::main_form() {
       if (directory::exists(target_path)) directory::remove(target_path, true);
       directory::create_directory(target_path);
       copy_directory(xtd_example.path(), target_path, true);
-      //message_box::show(*this, ustring::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
+      //message_box::show(*this, string::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       background_worker_ = xtd::new_uptr<background_worker>();
       background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
         begin_invoke([&] {
           progress_dialog_ = xtd::new_uptr<progress_dialog>();
-          progress_dialog_->text(ustring::format("Opening {} example", path::get_file_name(any_cast<ustring>(e.argument()))));
+          progress_dialog_->text(string::format("Opening {} example", path::get_file_name(any_cast<string>(e.argument()))));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
           progress_dialog_->show_sheet_dialog(*this);
         });
-        process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+        process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -665,14 +665,14 @@ main_form::main_form() {
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = properties::settings::default_settings().create_recent_propjects().split({';'});
   create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
-  properties::settings::default_settings().create_recent_propjects(ustring::join(";", create_recent_projects)).save();
+  properties::settings::default_settings().create_recent_propjects(string::join(";", create_recent_projects)).save();
   init_create_create_recent_projects_list_box();
 }
 
-void main_form::delete_from_open_recent_projects(const ustring& project_path) {
+void main_form::delete_from_open_recent_projects(const string& project_path) {
   auto open_recent_projects = properties::settings::default_settings().open_recent_propjects().split({';'});
   open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
-  properties::settings::default_settings().open_recent_propjects(ustring::join(";", open_recent_projects)).save();
+  properties::settings::default_settings().open_recent_propjects(string::join(";", open_recent_projects)).save();
   init_startup_open_recent_projects_list_box();
 }
 
@@ -693,30 +693,30 @@ void main_form::init_create_create_recent_projects_list_box() {
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().open_recent_propjects().split({';'}))
-    startup_open_recent_projects_list_box_.items().push_back(ustring::format("{} ({})", path::get_file_name(item), item));
+    startup_open_recent_projects_list_box_.items().push_back(string::format("{} ({})", path::get_file_name(item), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects().split({';'});
-  std::list<ustring> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
+  std::list<string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
   if (find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
     create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(ustring::join(";", std::vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()})).save();
+  properties::settings::default_settings().create_recent_propjects(string::join(";", std::vector<string> {create_recent_projects.begin(), create_recent_projects.end()})).save();
   
   init_create_create_recent_projects_list_box();
 }
 
-void main_form::add_to_open_recent_projects(const ustring& project_path) {
+void main_form::add_to_open_recent_projects(const string& project_path) {
   auto open_recent_projects_from_settings = properties::settings::default_settings().open_recent_propjects().split({';'});
-  std::list<ustring> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
+  std::list<string> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
   if (find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
     open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(ustring::join(";", std::vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
+  properties::settings::default_settings().open_recent_propjects(string::join(";", std::vector<string> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
   
   init_startup_open_recent_projects_list_box();
 }
@@ -734,26 +734,26 @@ void main_form::new_project() {
   next_button_.visible(true);
 }
 
-void main_form::new_project(const ustring& project_path, size_t project_type_items_index) {
+void main_form::new_project(const string& project_path, size_t project_type_items_index) {
   auto current_project_type = create_project_type_items_control_.project_type_items()[current_project_type_index_];
   add_to_create_recent_projects(project_type_items_index);
   new_project(project_path, current_project_type.project_type(), current_project_type.project_language(), current_project_type.project_sdk());
 }
 
-void main_form::new_project(const ustring& project_path, project_type type, project_language language, project_sdk sdk) {
+void main_form::new_project(const string& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
   background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
-    std::tuple<ustring, ustring, ustring> new_project = any_cast<std::tuple<ustring, ustring, ustring>>(e.argument());
+    std::tuple<string, string, string> new_project = any_cast<std::tuple<string, string, string>>(e.argument());
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(ustring::format("Creating {} project", path::get_file_name(std::get<2>(new_project))));
+      progress_dialog_->text(string::format("Creating {} project", path::get_file_name(std::get<2>(new_project))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -763,7 +763,7 @@ void main_form::new_project(const ustring& project_path, project_type type, proj
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, ustring> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? std::map<project_language, ustring> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : std::map<project_sdk, ustring> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), project_path));
+  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? std::map<project_language, string> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : std::map<project_sdk, string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), project_path));
 }
 
 void main_form::open_project() {
@@ -772,18 +772,18 @@ void main_form::open_project() {
   if (dialog.show_sheet_dialog(*this) == dialog_result::ok) open_project(dialog.selected_path());
 }
 
-void main_form::open_project(const ustring& project_path) {
+void main_form::open_project(const string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(ustring::format("Opening {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
+      progress_dialog_->text(string::format("Opening {} project", path::get_file_name(any_cast<string>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -816,18 +816,18 @@ void main_form::run_project() {
   if (dialog.show_sheet_dialog(*this) == dialog_result::ok) run_project(dialog.selected_path());
 }
 
-void main_form::run_project(const ustring& project_path) {
+void main_form::run_project(const string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(ustring::format("Running {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
+      progress_dialog_->text(string::format("Running {} project", path::get_file_name(any_cast<string>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("run {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("run {}", any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -869,7 +869,7 @@ void main_form::show_about_dialog() {
   dialog.show();
 }
 
-void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd::ustring& context) {
+void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd::string& context) {
   // Description
   update_open_xtd_examples_description(item.description().empty() ? "Coming soon..."_s : item.description());
   // Picture or Output
@@ -881,22 +881,22 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd
     update_open_xtd_examples_picture(images::from_name(context, drawing::size{ 1024, 1024 }));
 }
 
-void main_form::update_open_xtd_examples_description(const xtd::ustring& description) {
+void main_form::update_open_xtd_examples_description(const xtd::string& description) {
   open_xtd_examples_information_link_label_.text("");
   open_xtd_examples_information_link_label_.links().clear();
   if (description.empty()) return;
   static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
-  xtd::ustring text = description;
+  xtd::string text = description;
   std::sregex_iterator iterator(description.begin(), description.end(), rgx_md_link), end{};
   for (auto it = iterator; it != end; ++it) {
     if (it->size() == 3) { // 3 matches: whole []() + sub [] + sub ()
-      const xtd::ustring whole = it->str(0); // []()
-      const xtd::ustring title = it->str(1); // [] contents
-      xtd::ustring link = it->str(2);        // () contents
+      const xtd::string whole = it->str(0); // []()
+      const xtd::string title = it->str(1); // [] contents
+      xtd::string link = it->str(2);        // () contents
       // Todo: if it's not a link, maybe a file e.g ../../CMakeLists.txt
       // open a google search in xtd documentation for now...
       if (!link.starts_with("http"))
-        link = xtd::ustring::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
+        link = xtd::string::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
       // Replace all markdown links [title](url) with title
       text = text.replace(whole, title);
       open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
@@ -913,7 +913,7 @@ void main_form::update_open_xtd_examples_picture(const xtd::drawing::image& pict
   open_xtd_examples_information_picture_box_.image(picture);
 }
 
-void main_form::update_open_xtd_examples_output(const xtd::ustring& output) {
+void main_form::update_open_xtd_examples_output(const xtd::string& output) {
   open_xtd_examples_information_output_text_box_.visible(true);
   open_xtd_examples_information_picture_box_.visible(false);
   open_xtd_examples_information_output_text_box_.text(output);

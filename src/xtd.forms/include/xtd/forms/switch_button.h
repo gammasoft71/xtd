@@ -118,7 +118,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
-      static switch_button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static switch_button create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::switch_button with specified text, and checked.
       /// @param text A string that represent text of the xtd::forms::switch_button.
       /// @param checked true if the check box is checked; otherwise, false.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
-      static switch_button create(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static switch_button create(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a xtd::forms::switch_button with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
@@ -166,7 +166,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
-      static switch_button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static switch_button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, and checked.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @param text A string that represent text of the xtd::forms::switch_button.
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
-      static switch_button create(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static switch_button create(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

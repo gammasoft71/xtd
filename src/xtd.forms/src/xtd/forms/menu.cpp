@@ -98,11 +98,11 @@ menu& menu::menu_items(const std::vector<std::reference_wrapper<menu_item>>& val
   return *this;
 }
 
-const xtd::ustring& menu::name() const noexcept {
+const xtd::string& menu::name() const noexcept {
   return data_->name;
 }
 
-menu& menu::name(const xtd::ustring& value) {
+menu& menu::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
@@ -140,8 +140,8 @@ std::optional<std::reference_wrapper<main_menu>> menu::get_main_menu() const noe
   return std::nullopt;
 }
 
-ustring menu::to_string() const noexcept {
-  return ustring::format("{}, items.size: {}", get_type().full_name(), data_->menu_items.size());
+string menu::to_string() const noexcept {
+  return string::format("{}, items.size: {}", get_type().full_name(), data_->menu_items.size());
 }
 
 void menu::clone_menu(const menu& menu_src) {

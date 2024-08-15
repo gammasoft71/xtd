@@ -13,7 +13,7 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 namespace {
-  xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations) {
+  xtd::string get_hotkey_prefix_locations(const xtd::string& str, std::vector<size_t>& locations) {
     auto offset = 0_z;
     for (auto index = 0_z; index < str.size(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
@@ -29,7 +29,7 @@ namespace {
     return new_str;
   }
   
-  void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
+  void draw_string(graphics g, const string& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     auto hotkey_prefix_locations = std::vector<size_t> {};
     auto text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
     if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
@@ -37,7 +37,7 @@ namespace {
   }
 }
 
-void check_box_renderer::draw_check_box(const ustring& theme, graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box(const string& theme, graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (theme == "gnome") draw_check_box_gnome(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else if (theme.to_lower() == "gnome (dark)") draw_check_box_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else if (theme.to_lower() == "gnome (light)") draw_check_box_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
@@ -59,12 +59,12 @@ void check_box_renderer::draw_check_box(const ustring& theme, graphics g, const 
   else draw_check_box_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_gnome(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_gnome(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().control_dark();
@@ -95,7 +95,7 @@ void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& 
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().control_dark();
@@ -126,25 +126,25 @@ void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle&
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_kde(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_kde(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_kde_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_kde_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   draw_check_box_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_kde_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_kde_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   draw_check_box_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_macos(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_macos(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control(), 0.05);
   auto button_color = application::style_sheet().system_colors().button_face();
@@ -176,7 +176,7 @@ void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& 
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = color::from_argb(200, 200, 200);
   auto button_color = back_color.has_value() ? color::from_argb(128, application::style_sheet().system_colors().control()) : application::style_sheet().system_colors().button_face();
@@ -208,12 +208,12 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   
 }
 
-void check_box_renderer::draw_check_box_symbolic(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().active_border();
@@ -250,7 +250,7 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().active_border();
@@ -287,12 +287,12 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_windows(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_windows(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().active_border();
@@ -323,7 +323,7 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = application::style_sheet().system_colors().control_text();
@@ -354,37 +354,37 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
   draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
-void check_box_renderer::draw_check_box_xtd(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_xtd(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_check_box_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_check_box_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_xtd_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_xtd_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   draw_check_box_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_check_box_xtd_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_check_box_xtd_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   draw_check_box_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_flat_check_box(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_flat_check_box(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_flat_check_box_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_flat_check_box_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_flat_check_box_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_flat_check_box_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
 }
 
-void check_box_renderer::draw_flat_check_box_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_flat_check_box_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
 }
 
-void check_box_renderer::draw_popup_check_box(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_popup_check_box(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_popup_check_box_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else  draw_popup_check_box_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void check_box_renderer::draw_popup_check_box_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_popup_check_box_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
 }
 
-void check_box_renderer::draw_popup_check_box_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
+void check_box_renderer::draw_popup_check_box_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
 }

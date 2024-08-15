@@ -57,7 +57,7 @@ If you don't have to unsubscribe from an event later, you can use the addition a
 
 ```cpp
 publisher.raise_custom_event += [](object& sender, custom_event_args& e) {  
-  xtd::ustring s = sender.to_string() + " " + e.to_string();  
+  xtd::string s = sender.to_string() + " " + e.to_string();  
   console::write_line(s);  
 };
 ```
@@ -110,13 +110,13 @@ The name event_handler can lead to a bit of confusion as it doesn't actually han
 class custom_event_args : xtd::event_args {
 public:
   custom_event_args() = default;
-  custom_event_args(const xtd::ustring& message) : message_(message) {}
+  custom_event_args(const xtd::string& message) : message_(message) {}
   
-  xtd::ustring message() const noexcept {return message_;}
-  void message(const xtd::ustring& value) noexcept {message_ = value;}
+  xtd::string message() const noexcept {return message_;}
+  void message(const xtd::string& value) noexcept {message_ = value;}
 
 private:
-  xtd::ustring message_;
+  xtd::string message_;
 };
 ```
 
@@ -165,13 +165,13 @@ using namespace xtd;
 class custom_event_args : xtd::event_args {
 public:
   custom_event_args() = default;
-  custom_event_args(const xtd::ustring& message) : message_(message) {}
+  custom_event_args(const xtd::string& message) : message_(message) {}
   
-  xtd::ustring message() const noexcept {return message_;}
-  void message(const xtd::ustring& value) noexcept {message_ = value;}
+  xtd::string message() const noexcept {return message_;}
+  void message(const xtd::string& value) noexcept {message_ = value;}
 
 private:
-  xtd::ustring message_;
+  xtd::string message_;
 };
 
 // Class that publishes an event
@@ -200,7 +200,7 @@ protected:
     // Event will be null if there are no subscribers
     if (!raise_event.is_empty()) {
       // Format the string to send inside the CustomEventArgs parameter
-      e.message(ustring::format("{} at {}", e.message(), date_time::now()));
+      e.message(string::format("{} at {}", e.message(), date_time::now()));
       
       // Call to raise the event.
       raise_event(*this, e);
@@ -211,18 +211,18 @@ protected:
 //Class that subscribes to an event
 class subscriber : public object {
 public:
-  subscriber(ustring id, publisher& pub) : id_(id) {
+  subscriber(string id, publisher& pub) : id_(id) {
     // Subscribe to the event
     pub.raise_custom_event += {*this, &subscriber::handle_custom_event};
   }
   
   // Define what actions to take when the event is raised.
   void handle_custom_event(object& sender, custom_event_args& e) {
-    console::write_line(ustring::format("{} received this message: {}", id_, e.message()));
+    console::write_line(string::format("{} received this message: {}", id_, e.message()));
   }
 
 private:
-  ustring id_;
+  string id_;
 };
 
 class program {

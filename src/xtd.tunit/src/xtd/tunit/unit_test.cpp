@@ -67,8 +67,8 @@ size_t unit_test::aborted_test_count() const noexcept {
   return count;
 }
 
-std::vector<ustring> unit_test::aborted_test_names() const noexcept {
-  auto names = std::vector<ustring> {};
+std::vector<string> unit_test::aborted_test_names() const noexcept {
+  auto names = std::vector<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -88,8 +88,8 @@ size_t unit_test::ignored_test_count() const noexcept {
   return count;
 }
 
-std::vector<ustring> unit_test::ignored_test_names() const noexcept {
-  auto names = std::vector<ustring> {};
+std::vector<string> unit_test::ignored_test_names() const noexcept {
+  auto names = std::vector<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -104,8 +104,8 @@ size_t unit_test::failed_test_count() const noexcept {
   return count;
 }
 
-std::vector<ustring> unit_test::failed_test_names() const noexcept {
-  auto names = std::vector<ustring> {};
+std::vector<string> unit_test::failed_test_names() const noexcept {
+  auto names = std::vector<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -120,8 +120,8 @@ size_t unit_test::succeed_test_count() const noexcept {
   return count;
 }
 
-std::vector<ustring> unit_test::succeed_test_names() const noexcept {
-  auto names = std::vector<ustring> {};
+std::vector<string> unit_test::succeed_test_names() const noexcept {
+  auto names = std::vector<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -143,7 +143,7 @@ int32 unit_test::run() noexcept {
     }
     
     if (settings::default_settings().list_tests()) {
-      auto tests = std::vector<ustring> {};
+      auto tests = std::vector<string> {};
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
           tests.push_back(test_class.test()->name() + '.' + test.name());
@@ -202,11 +202,11 @@ int32 unit_test::count_tests(int32 count) {
   return settings::default_settings().exit_status();
 }
 
-int32 unit_test::list_tests(const std::vector<ustring>& tests) {
+int32 unit_test::list_tests(const std::vector<string>& tests) {
   return settings::default_settings().exit_status();
 }
 
-bool unit_test::parse_arguments(const std::vector<ustring>& args) {
+bool unit_test::parse_arguments(const std::vector<string>& args) {
   auto gtest_compatibility = settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
@@ -272,19 +272,19 @@ std::vector<registered_test_class>& unit_test::test_classes() {
   return test_classes;
 }
 
-ustring unit_test::get_filename(const ustring& path) {
+string unit_test::get_filename(const string& path) {
   auto filename = path;
   const auto last_slash_idx = filename.find_last_of("\\/");
-  if (ustring::npos != last_slash_idx)
+  if (string::npos != last_slash_idx)
     filename = filename.remove(0, last_slash_idx + 1);
   
   const auto period_idx = filename.rfind('.');
-  if (ustring::npos != period_idx)
+  if (string::npos != period_idx)
     filename = filename.remove(period_idx);
   return filename;
 }
 
-ustring unit_test::cdata_message_to_xml_string(const test& test) {
+string unit_test::cdata_message_to_xml_string(const test& test) {
   auto ss = std::stringstream {};
   if (settings::default_settings().gtest_compatibility()) {
     if (test.stack_frame() != stack_frame::empty())
@@ -301,19 +301,19 @@ ustring unit_test::cdata_message_to_xml_string(const test& test) {
   return ss.str();
 }
 
-ustring unit_test::escape_path_to_json_string(const ustring& path) {
-  return ustring::join(ustring::format("\\{}", io::path::directory_separator_char()), ustring(path).split({io::path::directory_separator_char()}));
+string unit_test::escape_path_to_json_string(const string& path) {
+  return string::join(string::format("\\{}", io::path::directory_separator_char()), string(path).split({io::path::directory_separator_char()}));
 }
 
-ustring unit_test::escape_to_json_string(const ustring& str) {
-  return ustring(str).replace("\"", "\\\"");
+string unit_test::escape_to_json_string(const string& str) {
+  return string(str).replace("\"", "\\\"");
 }
 
-ustring unit_test::escape_to_xml_string(const ustring& str) {
-  return ustring(str).replace("\"", "&quot;").replace("&", "&amp;").replace("'", "&apos;").replace("<", "&lt;").replace(">", "&gt;");
+string unit_test::escape_to_xml_string(const string& str) {
+  return string(str).replace("\"", "&quot;").replace("&", "&amp;").replace("'", "&apos;").replace("<", "&lt;").replace(">", "&gt;");
 }
 
-ustring unit_test::message_to_json_string(const test& test) {
+string unit_test::message_to_json_string(const test& test) {
   auto ss = std::stringstream {};
   if (settings::default_settings().gtest_compatibility())
     ss << "Value of: " << escape_to_json_string(test.actual()) << "\\n" << "  Actual: " << escape_to_json_string(test.actual()) << "\\n" << "Expected: " << escape_to_json_string(test.expect());
@@ -322,7 +322,7 @@ ustring unit_test::message_to_json_string(const test& test) {
   return ss.str();
 }
 
-ustring unit_test::message_to_xml_string(const test& test) {
+string unit_test::message_to_xml_string(const test& test) {
   auto ss = std::stringstream {};
   if (settings::default_settings().gtest_compatibility()) {
     if (test.stack_frame() != stack_frame::empty())
@@ -339,18 +339,18 @@ ustring unit_test::message_to_xml_string(const test& test) {
   return ss.str();
 }
 
-ustring unit_test::name_to_string(const ustring& name) {
+string unit_test::name_to_string(const string& name) {
   return (settings::default_settings().gtest_compatibility() ? "AllTests" : name_);
 }
 
-ustring unit_test::status_to_string(const test& test) {
+string unit_test::status_to_string(const test& test) {
   auto ss = std::stringstream {};
   if (test.not_started() || test.ignored()) ss << "notrun";
   else ss << "run";
   return ss.str();
 }
 
-ustring unit_test::to_string(const time_span& ts) {
+string unit_test::to_string(const time_span& ts) {
   auto ss = std::stringstream {};
   auto ms = static_cast<int32>(ts.total_nanoseconds());
   if (ms == 0) ss << 0;
@@ -411,7 +411,7 @@ void unit_test::write_tests_json() {
   file << "  \"failures\": " << failed_test_count() << "," << std::endl;
   file << "  \"disabled\": " << ignored_test_count() << "," << std::endl;
   file << "  \"errors\": " << 0  << "," << std::endl;
-  file << "  \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", settings::default_settings().start_time()) << "\"," << std::endl;
+  file << "  \"timestamp\": \"" << string::format("{0:L}-{0:k}-{0:i}T{0:t}Z", settings::default_settings().start_time()) << "\"," << std::endl;
   file << "  \"time\": \"" << to_string(elapsed_time()) << "s\"," << std::endl;
   file << "  \"name\": \"" << name_to_string(name_) << "\"," << std::endl;
   file << "  \"testsuites\": [" << std::endl;
@@ -422,7 +422,7 @@ void unit_test::write_tests_json() {
     file << "      \"failures\": " << test_class.test()->failed_test_count() << "," << std::endl;
     file << "      \"disabled\": " << test_class.test()->ignored_test_count() << "," << std::endl;
     file << "      \"errors\": " << 0 << "," << std::endl;
-    file << "      \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test_class.test()->start_time()) << "\"," << std::endl;
+    file << "      \"timestamp\": \"" << string::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test_class.test()->start_time()) << "\"," << std::endl;
     file << "      \"time\": \"" << to_string(test_class.test()->elapsed_time()) << "s\"," << std::endl;
     file << "      \"testsuite\": [" << std::endl;
     for (auto& test : test_class.test()->tests()) {
@@ -430,9 +430,9 @@ void unit_test::write_tests_json() {
       file << "          \"name\": \"" << test.name() << "\"," << std::endl;
       file << "          \"file\": \"" << escape_path_to_json_string(test.stack_frame().get_file_name()) << "\"," << std::endl;
       file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
-      file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
+      file << "          \"status\": \"" << string(status_to_string(test)).to_upper() << "\"," << std::endl;
       file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
-      file << "          \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test.start_time()) << "\"," << std::endl;
+      file << "          \"timestamp\": \"" << string::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test.start_time()) << "\"," << std::endl;
       file << "          \"time\": \"" << to_string(test.elapsed_time()) << "s\"," << std::endl;
       file << "          \"classname\": \"" << escape_to_xml_string(test_class.test()->name()) << "\"," << std::endl;
       if (test.failed()) {

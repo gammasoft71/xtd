@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_configuration_attribute::assembly_configuration_attribute(const ustring& configuration) : configuration_(configuration) {
+assembly_configuration_attribute::assembly_configuration_attribute(const string& configuration) : configuration_(configuration) {
 }
 
-assembly_configuration_attribute::assembly_configuration_attribute(const ustring& configuration, const object& executing_assembly) : configuration_(configuration) {
+assembly_configuration_attribute::assembly_configuration_attribute(const string& configuration, const object& executing_assembly) : configuration_(configuration) {
   __assembly_configuration_attribute__() = xtd::new_sptr<xtd::reflection::assembly_configuration_attribute>(configuration);
 }
 
-const ustring& assembly_configuration_attribute::configuration() const noexcept {
+const string& assembly_configuration_attribute::configuration() const noexcept {
   return configuration_;
 }
 

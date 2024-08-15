@@ -43,7 +43,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent abort check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent abort check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -91,7 +91,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent abort check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent abort check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -139,7 +139,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent abort check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -169,7 +169,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent about check_box.
       /// @return The created check_box.
@@ -188,7 +188,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent about check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -210,7 +210,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent about check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -236,7 +236,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent about check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -258,7 +258,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent about check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -284,7 +284,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent about check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -314,7 +314,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent actual_size check_box.
       /// @return The created check_box.
@@ -333,7 +333,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent actual_size check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -355,7 +355,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent actual_size check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -381,7 +381,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent actual_size check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -403,7 +403,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent actual_size check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -429,7 +429,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent actual_size check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -459,7 +459,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent add check_box.
       /// @return The created check_box.
@@ -478,7 +478,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent add check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -500,7 +500,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent add check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -526,7 +526,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent add check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -548,7 +548,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent add check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -574,7 +574,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent add check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -604,7 +604,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent alignment check_box.
       /// @return The created check_box.
@@ -623,7 +623,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent alignment check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -645,7 +645,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent alignment check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -671,7 +671,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent alignment check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -693,7 +693,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent alignment check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -719,7 +719,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent alignment check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -749,7 +749,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent align_left check_box.
       /// @return The created check_box.
@@ -768,7 +768,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_left check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -790,7 +790,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_left check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -816,7 +816,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_left check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -838,7 +838,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_left check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -864,7 +864,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_left check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -894,7 +894,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent align_right check_box.
       /// @return The created check_box.
@@ -913,7 +913,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_right check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -935,7 +935,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_right check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -961,7 +961,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_right check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -983,7 +983,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_right check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1009,7 +1009,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent align_right check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1039,7 +1039,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent apply check_box.
       /// @return The created check_box.
@@ -1058,7 +1058,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent apply check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1080,7 +1080,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent apply check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1106,7 +1106,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent apply check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1128,7 +1128,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent apply check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1154,7 +1154,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent apply check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1184,7 +1184,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent ascending check_box.
       /// @return The created check_box.
@@ -1203,7 +1203,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ascending check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1225,7 +1225,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ascending check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1251,7 +1251,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ascending check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1273,7 +1273,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ascending check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1299,7 +1299,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ascending check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1329,7 +1329,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent back check_box.
       /// @return The created check_box.
@@ -1348,7 +1348,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent back check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1370,7 +1370,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent back check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1396,7 +1396,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent back check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1418,7 +1418,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent back check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1444,7 +1444,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent back check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1474,7 +1474,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent bold check_box.
       /// @return The created check_box.
@@ -1493,7 +1493,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bold check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1515,7 +1515,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bold check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1541,7 +1541,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bold check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1563,7 +1563,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bold check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1589,7 +1589,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bold check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1619,7 +1619,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent bottom check_box.
       /// @return The created check_box.
@@ -1638,7 +1638,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bottom check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1660,7 +1660,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bottom check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1686,7 +1686,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bottom check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1708,7 +1708,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bottom check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1734,7 +1734,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent bottom check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1764,7 +1764,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent cancel check_box.
       /// @return The created check_box.
@@ -1783,7 +1783,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cancel check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1805,7 +1805,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cancel check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1831,7 +1831,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cancel check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1853,7 +1853,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cancel check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1879,7 +1879,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cancel check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -1909,7 +1909,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent cdrom check_box.
       /// @return The created check_box.
@@ -1928,7 +1928,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cdrom check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -1950,7 +1950,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cdrom check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1976,7 +1976,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cdrom check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -1998,7 +1998,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cdrom check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2024,7 +2024,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cdrom check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2054,7 +2054,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent centered check_box.
       /// @return The created check_box.
@@ -2073,7 +2073,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent centered check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2095,7 +2095,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent centered check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2121,7 +2121,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent centered check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2143,7 +2143,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent centered check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2169,7 +2169,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent centered check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2199,7 +2199,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent clear check_box.
       /// @return The created check_box.
@@ -2218,7 +2218,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent clear check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2240,7 +2240,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent clear check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2266,7 +2266,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent clear check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2288,7 +2288,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent clear check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2314,7 +2314,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent clear check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2344,7 +2344,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent close check_box.
       /// @return The created check_box.
@@ -2363,7 +2363,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent close check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2385,7 +2385,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent close check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2411,7 +2411,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent close check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2433,7 +2433,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent close check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2459,7 +2459,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent close check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2489,7 +2489,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent color check_box.
       /// @return The created check_box.
@@ -2508,7 +2508,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent color check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2530,7 +2530,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent color check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2556,7 +2556,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent color check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2578,7 +2578,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent color check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2604,7 +2604,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent color check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2634,7 +2634,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent contents check_box.
       /// @return The created check_box.
@@ -2653,7 +2653,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent contents check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2675,7 +2675,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent contents check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2701,7 +2701,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent contents check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2723,7 +2723,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent contents check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2749,7 +2749,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent contents check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2779,7 +2779,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent convert check_box.
       /// @return The created check_box.
@@ -2798,7 +2798,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent convert check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2820,7 +2820,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent convert check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2846,7 +2846,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent convert check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -2868,7 +2868,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent convert check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2894,7 +2894,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent convert check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -2924,7 +2924,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent copy check_box.
       /// @return The created check_box.
@@ -2943,7 +2943,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent copy check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -2965,7 +2965,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent copy check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2991,7 +2991,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent copy check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3013,7 +3013,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent copy check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3039,7 +3039,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent copy check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3069,7 +3069,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent customize check_box.
       /// @return The created check_box.
@@ -3088,7 +3088,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent customize check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3110,7 +3110,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent customize check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3136,7 +3136,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent customize check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3158,7 +3158,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent customize check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3184,7 +3184,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent customize check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3214,7 +3214,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent cut check_box.
       /// @return The created check_box.
@@ -3233,7 +3233,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cut check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3255,7 +3255,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cut check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3281,7 +3281,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cut check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3303,7 +3303,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cut check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3329,7 +3329,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent cut check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3359,7 +3359,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent del check_box.
       /// @return The created check_box.
@@ -3378,7 +3378,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent del check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3400,7 +3400,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent del check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3426,7 +3426,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent del check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3448,7 +3448,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent del check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3474,7 +3474,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent del check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3504,7 +3504,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent descending check_box.
       /// @return The created check_box.
@@ -3523,7 +3523,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent descending check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3545,7 +3545,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent descending check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3571,7 +3571,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent descending check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3593,7 +3593,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent descending check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3619,7 +3619,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent descending check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3649,7 +3649,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent down check_box.
       /// @return The created check_box.
@@ -3668,7 +3668,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent down check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3690,7 +3690,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent down check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3716,7 +3716,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent down check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3738,7 +3738,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent down check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3764,7 +3764,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent down check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3794,7 +3794,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent edit check_box.
       /// @return The created check_box.
@@ -3813,7 +3813,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent edit check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3835,7 +3835,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent edit check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3861,7 +3861,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent edit check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -3883,7 +3883,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent edit check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3909,7 +3909,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent edit check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -3939,7 +3939,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent execute check_box.
       /// @return The created check_box.
@@ -3958,7 +3958,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent execute check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -3980,7 +3980,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent execute check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4006,7 +4006,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent execute check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4028,7 +4028,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent execute check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4054,7 +4054,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent execute check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4084,7 +4084,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent exit check_box.
       /// @return The created check_box.
@@ -4103,7 +4103,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent exit check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4125,7 +4125,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent exit check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4151,7 +4151,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent exit check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4173,7 +4173,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent exit check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4199,7 +4199,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent exit check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4229,7 +4229,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent file check_box.
       /// @return The created check_box.
@@ -4248,7 +4248,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent file check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4270,7 +4270,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent file check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4296,7 +4296,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent file check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4318,7 +4318,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent file check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4344,7 +4344,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent file check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4374,7 +4374,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent find check_box.
       /// @return The created check_box.
@@ -4393,7 +4393,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent find check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4415,7 +4415,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent find check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4441,7 +4441,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent find check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4463,7 +4463,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent find check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4489,7 +4489,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent find check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4519,7 +4519,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent first check_box.
       /// @return The created check_box.
@@ -4538,7 +4538,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent first check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4560,7 +4560,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent first check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4586,7 +4586,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent first check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4608,7 +4608,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent first check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4634,7 +4634,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent first check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4664,7 +4664,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent floppy check_box.
       /// @return The created check_box.
@@ -4683,7 +4683,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent floppy check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4705,7 +4705,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent floppy check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4731,7 +4731,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent floppy check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4753,7 +4753,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent floppy check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4779,7 +4779,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent floppy check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4809,7 +4809,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent font check_box.
       /// @return The created check_box.
@@ -4828,7 +4828,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent font check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4850,7 +4850,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent font check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4876,7 +4876,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent font check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -4898,7 +4898,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent font check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4924,7 +4924,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent font check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -4954,7 +4954,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent forward check_box.
       /// @return The created check_box.
@@ -4973,7 +4973,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent forward check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -4995,7 +4995,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent forward check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5021,7 +5021,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent forward check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5043,7 +5043,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent forward check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5069,7 +5069,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent forward check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5099,7 +5099,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent harddisk check_box.
       /// @return The created check_box.
@@ -5118,7 +5118,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent harddisk check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5140,7 +5140,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent harddisk check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5166,7 +5166,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent harddisk check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5188,7 +5188,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent harddisk check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5214,7 +5214,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent harddisk check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5244,7 +5244,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent help check_box.
       /// @return The created check_box.
@@ -5263,7 +5263,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent help check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5285,7 +5285,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent help check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5311,7 +5311,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent help check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5333,7 +5333,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent help check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5359,7 +5359,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent help check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5389,7 +5389,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent home check_box.
       /// @return The created check_box.
@@ -5408,7 +5408,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent home check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5430,7 +5430,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent home check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5456,7 +5456,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent home check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5478,7 +5478,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent home check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5504,7 +5504,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent home check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5534,7 +5534,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent ignore check_box.
       /// @return The created check_box.
@@ -5553,7 +5553,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ignore check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5575,7 +5575,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ignore check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5601,7 +5601,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ignore check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5623,7 +5623,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ignore check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5649,7 +5649,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ignore check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5679,7 +5679,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent indent check_box.
       /// @return The created check_box.
@@ -5698,7 +5698,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent indent check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5720,7 +5720,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent indent check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5746,7 +5746,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent indent check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5768,7 +5768,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent indent check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5794,7 +5794,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent indent check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5824,7 +5824,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent index check_box.
       /// @return The created check_box.
@@ -5843,7 +5843,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent index check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -5865,7 +5865,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent index check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5891,7 +5891,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent index check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -5913,7 +5913,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent index check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5939,7 +5939,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent index check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -5969,7 +5969,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent info check_box.
       /// @return The created check_box.
@@ -5988,7 +5988,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent info check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6010,7 +6010,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent info check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6036,7 +6036,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent info check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6058,7 +6058,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent info check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6084,7 +6084,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent info check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6114,7 +6114,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent italic check_box.
       /// @return The created check_box.
@@ -6133,7 +6133,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent italic check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6155,7 +6155,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent italic check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6181,7 +6181,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent italic check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6203,7 +6203,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent italic check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6229,7 +6229,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent italic check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6259,7 +6259,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent justified check_box.
       /// @return The created check_box.
@@ -6278,7 +6278,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent justified check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6300,7 +6300,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent justified check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6326,7 +6326,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent justified check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6348,7 +6348,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent justified check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6374,7 +6374,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent justified check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6404,7 +6404,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent jump_to check_box.
       /// @return The created check_box.
@@ -6423,7 +6423,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent jump_to check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6445,7 +6445,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent jump_to check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6471,7 +6471,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent jump_to check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6493,7 +6493,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent jump_to check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6519,7 +6519,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent jump_to check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6549,7 +6549,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent last check_box.
       /// @return The created check_box.
@@ -6568,7 +6568,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent last check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6590,7 +6590,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent last check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6616,7 +6616,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent last check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6638,7 +6638,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent last check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6664,7 +6664,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent last check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6694,7 +6694,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent network check_box.
       /// @return The created check_box.
@@ -6713,7 +6713,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent network check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6735,7 +6735,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent network check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6761,7 +6761,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent network check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6783,7 +6783,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent network check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6809,7 +6809,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent network check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6839,7 +6839,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent new_ check_box.
       /// @return The created check_box.
@@ -6858,7 +6858,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent new_ check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -6880,7 +6880,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent new_ check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6906,7 +6906,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent new_ check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -6928,7 +6928,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent new_ check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6954,7 +6954,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent new_ check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -6984,7 +6984,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent next check_box.
       /// @return The created check_box.
@@ -7003,7 +7003,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent next check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7025,7 +7025,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent next check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7051,7 +7051,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent next check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7073,7 +7073,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent next check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7099,7 +7099,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent next check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7129,7 +7129,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent no check_box.
       /// @return The created check_box.
@@ -7148,7 +7148,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent no check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7170,7 +7170,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent no check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7196,7 +7196,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent no check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7218,7 +7218,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent no check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7244,7 +7244,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent no check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7274,7 +7274,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent ok check_box.
       /// @return The created check_box.
@@ -7293,7 +7293,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ok check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7315,7 +7315,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ok check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7341,7 +7341,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ok check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7363,7 +7363,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ok check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7389,7 +7389,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent ok check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7419,7 +7419,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent open check_box.
       /// @return The created check_box.
@@ -7438,7 +7438,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent open check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7460,7 +7460,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent open check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7486,7 +7486,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent open check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7508,7 +7508,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent open check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7534,7 +7534,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent open check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7564,7 +7564,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent options check_box.
       /// @return The created check_box.
@@ -7583,7 +7583,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent options check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7605,7 +7605,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent options check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7631,7 +7631,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent options check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7653,7 +7653,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent options check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7679,7 +7679,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent options check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7709,7 +7709,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent paste check_box.
       /// @return The created check_box.
@@ -7728,7 +7728,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent paste check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7750,7 +7750,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent paste check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7776,7 +7776,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent paste check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7798,7 +7798,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent paste check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7824,7 +7824,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent paste check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7854,7 +7854,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent preferences check_box.
       /// @return The created check_box.
@@ -7873,7 +7873,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent preferences check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -7895,7 +7895,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent preferences check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7921,7 +7921,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent preferences check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -7943,7 +7943,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent preferences check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7969,7 +7969,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent preferences check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -7999,7 +7999,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent previous check_box.
       /// @return The created check_box.
@@ -8018,7 +8018,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent previous check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8040,7 +8040,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent previous check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8066,7 +8066,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent previous check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8088,7 +8088,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent previous check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8114,7 +8114,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent previous check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8144,7 +8144,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent print check_box.
       /// @return The created check_box.
@@ -8163,7 +8163,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8185,7 +8185,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8211,7 +8211,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8233,7 +8233,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8259,7 +8259,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8289,7 +8289,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent print_preview check_box.
       /// @return The created check_box.
@@ -8308,7 +8308,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print_preview check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8330,7 +8330,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print_preview check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8356,7 +8356,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print_preview check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8378,7 +8378,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print_preview check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8404,7 +8404,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent print_preview check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8434,7 +8434,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent properties check_box.
       /// @return The created check_box.
@@ -8453,7 +8453,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent properties check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8475,7 +8475,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent properties check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8501,7 +8501,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent properties check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8523,7 +8523,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent properties check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8549,7 +8549,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent properties check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8579,7 +8579,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent quit check_box.
       /// @return The created check_box.
@@ -8598,7 +8598,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent quit check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8620,7 +8620,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent quit check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8646,7 +8646,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent quit check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8668,7 +8668,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent quit check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8694,7 +8694,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent quit check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8724,7 +8724,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent redo check_box.
       /// @return The created check_box.
@@ -8743,7 +8743,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent redo check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8765,7 +8765,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent redo check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8791,7 +8791,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent redo check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8813,7 +8813,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent redo check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8839,7 +8839,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent redo check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -8869,7 +8869,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent refresh check_box.
       /// @return The created check_box.
@@ -8888,7 +8888,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent refresh check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -8910,7 +8910,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent refresh check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8936,7 +8936,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent refresh check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -8958,7 +8958,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent refresh check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8984,7 +8984,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent refresh check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9014,7 +9014,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent remove check_box.
       /// @return The created check_box.
@@ -9033,7 +9033,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent remove check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9055,7 +9055,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent remove check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9081,7 +9081,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent remove check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9103,7 +9103,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent remove check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9129,7 +9129,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent remove check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9159,7 +9159,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent replace check_box.
       /// @return The created check_box.
@@ -9178,7 +9178,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent replace check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9200,7 +9200,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent replace check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9226,7 +9226,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent replace check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9248,7 +9248,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent replace check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9274,7 +9274,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent replace check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9304,7 +9304,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent retry check_box.
       /// @return The created check_box.
@@ -9323,7 +9323,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent retry check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9345,7 +9345,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent retry check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9371,7 +9371,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent retry check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9393,7 +9393,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent retry check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9419,7 +9419,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent retry check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9449,7 +9449,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box.
       /// @return The created check_box.
@@ -9468,7 +9468,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9490,7 +9490,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9516,7 +9516,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9538,7 +9538,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9564,7 +9564,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent revert_to_saved check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9594,7 +9594,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent save check_box.
       /// @return The created check_box.
@@ -9613,7 +9613,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9635,7 +9635,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9661,7 +9661,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9683,7 +9683,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9709,7 +9709,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9739,7 +9739,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent save_as check_box.
       /// @return The created check_box.
@@ -9758,7 +9758,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save_as check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9780,7 +9780,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save_as check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9806,7 +9806,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save_as check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9828,7 +9828,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save_as check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9854,7 +9854,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent save_as check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -9884,7 +9884,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent search check_box.
       /// @return The created check_box.
@@ -9903,7 +9903,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent search check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -9925,7 +9925,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent search check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9951,7 +9951,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent search check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -9973,7 +9973,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent search check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9999,7 +9999,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent search check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10029,7 +10029,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent select_all check_box.
       /// @return The created check_box.
@@ -10048,7 +10048,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent select_all check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10070,7 +10070,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent select_all check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10096,7 +10096,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent select_all check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10118,7 +10118,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent select_all check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10144,7 +10144,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent select_all check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10174,7 +10174,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent settings check_box.
       /// @return The created check_box.
@@ -10193,7 +10193,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent settings check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10215,7 +10215,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent settings check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10241,7 +10241,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent settings check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10263,7 +10263,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent settings check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10289,7 +10289,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent settings check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10319,7 +10319,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent spell_check check_box.
       /// @return The created check_box.
@@ -10338,7 +10338,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent spell_check check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10360,7 +10360,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent spell_check check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10386,7 +10386,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent spell_check check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10408,7 +10408,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent spell_check check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10434,7 +10434,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent spell_check check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10464,7 +10464,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent stop check_box.
       /// @return The created check_box.
@@ -10483,7 +10483,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent stop check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10505,7 +10505,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent stop check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10531,7 +10531,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent stop check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10553,7 +10553,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent stop check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10579,7 +10579,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent stop check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10609,7 +10609,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent strikeout check_box.
       /// @return The created check_box.
@@ -10628,7 +10628,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent strikeout check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10650,7 +10650,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent strikeout check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10676,7 +10676,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent strikeout check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10698,7 +10698,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent strikeout check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10724,7 +10724,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent strikeout check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10754,7 +10754,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent tools check_box.
       /// @return The created check_box.
@@ -10773,7 +10773,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent tools check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10795,7 +10795,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent tools check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10821,7 +10821,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent tools check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10843,7 +10843,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent tools check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10869,7 +10869,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent tools check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -10899,7 +10899,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent top check_box.
       /// @return The created check_box.
@@ -10918,7 +10918,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent top check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -10940,7 +10940,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent top check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10966,7 +10966,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent top check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -10988,7 +10988,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent top check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11014,7 +11014,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent top check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11044,7 +11044,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent undelete check_box.
       /// @return The created check_box.
@@ -11063,7 +11063,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undelete check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11085,7 +11085,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undelete check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11111,7 +11111,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undelete check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11133,7 +11133,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undelete check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11159,7 +11159,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undelete check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11189,7 +11189,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent underline check_box.
       /// @return The created check_box.
@@ -11208,7 +11208,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent underline check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11230,7 +11230,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent underline check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11256,7 +11256,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent underline check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11278,7 +11278,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent underline check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11304,7 +11304,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent underline check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11334,7 +11334,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent undo check_box.
       /// @return The created check_box.
@@ -11353,7 +11353,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undo check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11375,7 +11375,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undo check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11401,7 +11401,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undo check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11423,7 +11423,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undo check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11449,7 +11449,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent undo check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11479,7 +11479,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent unindent check_box.
       /// @return The created check_box.
@@ -11498,7 +11498,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent unindent check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11520,7 +11520,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent unindent check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11546,7 +11546,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent unindent check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11568,7 +11568,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent unindent check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11594,7 +11594,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent unindent check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11624,7 +11624,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent up check_box.
       /// @return The created check_box.
@@ -11643,7 +11643,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent up check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11665,7 +11665,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent up check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11691,7 +11691,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent up check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11713,7 +11713,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent up check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11739,7 +11739,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent up check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11769,7 +11769,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent view check_box.
       /// @return The created check_box.
@@ -11788,7 +11788,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent view check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11810,7 +11810,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent view check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11836,7 +11836,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent view check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -11858,7 +11858,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent view check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11884,7 +11884,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent view check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -11914,7 +11914,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent window check_box.
       /// @return The created check_box.
@@ -11933,7 +11933,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent window check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -11955,7 +11955,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent window check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11981,7 +11981,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent window check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -12003,7 +12003,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent window check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12029,7 +12029,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent window check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -12059,7 +12059,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent yes check_box.
       /// @return The created check_box.
@@ -12078,7 +12078,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent yes check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -12100,7 +12100,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent yes check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12126,7 +12126,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent yes check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -12148,7 +12148,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent yes check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12174,7 +12174,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent yes check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -12204,7 +12204,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent zoom_in check_box.
       /// @return The created check_box.
@@ -12223,7 +12223,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_in check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -12245,7 +12245,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_in check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12271,7 +12271,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_in check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -12293,7 +12293,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_in check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12319,7 +12319,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_in check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -12349,7 +12349,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent zoom_out check_box.
       /// @return The created check_box.
@@ -12368,7 +12368,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_out check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -12390,7 +12390,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_out check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12416,7 +12416,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_out check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -12438,7 +12438,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_out check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12464,7 +12464,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_out check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -12494,7 +12494,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box.
       /// @return The created check_box.
@@ -12513,7 +12513,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created check_box.
@@ -12535,7 +12535,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box with specified three_state, and check_state.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12561,7 +12561,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box with specified parent.
       /// @param parent The control that contains the check_box.
       /// @return The created check_box.
@@ -12583,7 +12583,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box with specified parent, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12609,7 +12609,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined check_box that represent zoom_to_fit check_box with specified parent, three_state, and check_state.
       /// @param parent The control that contains the check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -12639,7 +12639,7 @@ namespace xtd {
       /// @param size The check_box size in pixels.
       /// @param name The name of the check_box.
       /// @return The created check_box.
-      static check_box zoom_to_fit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static check_box zoom_to_fit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
     };
   }

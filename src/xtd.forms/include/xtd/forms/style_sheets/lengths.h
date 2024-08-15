@@ -118,7 +118,7 @@ namespace xtd {
         /// @{
         using object::equals;
         bool equals(const lengths& other) const noexcept override;
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
         
       private:

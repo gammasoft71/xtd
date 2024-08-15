@@ -107,19 +107,19 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring message() const noexcept;
+      xtd::string message() const noexcept;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current message_dialog instance.
-      message_dialog& message(const xtd::ustring& message);
+      message_dialog& message(const xtd::string& message);
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::ustring text() const noexcept;
+      xtd::string text() const noexcept;
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current message_dialog instance.
-      message_dialog& text(const xtd::ustring& text);
+      message_dialog& text(const xtd::string& text);
       /// @}
       
       /// @name Public Methods

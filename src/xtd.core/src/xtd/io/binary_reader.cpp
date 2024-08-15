@@ -9,8 +9,8 @@
 using namespace xtd;
 using namespace xtd::io;
 
-binary_reader::binary_reader(const ustring& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
-  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
+binary_reader::binary_reader(const string& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
 }
 
@@ -132,9 +132,9 @@ float binary_reader::read_single() {
   return bit_converter::to_single(read_bytes(sizeof(float)), 0);
 }
 
-ustring binary_reader::read_string() {
+string binary_reader::read_string() {
   auto length = read_int32();
-  return ustring(read_chars(length).data(), static_cast<size_t>(length));
+  return string(read_chars(length).data(), static_cast<size_t>(length));
 }
 
 uint16 binary_reader::read_uint16() {

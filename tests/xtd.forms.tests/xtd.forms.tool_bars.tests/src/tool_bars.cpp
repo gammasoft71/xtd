@@ -41,7 +41,7 @@ public:
     style_sheet_choice.items({"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"});
     style_sheet_choice.selected_index_changed += [&] {
       application::style_sheet(application::get_style_sheet_from_name(style_sheet_choice.selected_item().value()));
-      text(ustring::format("Tool_bars tests - {}", style_sheet_choice.selected_item().value()));
+      text(string::format("Tool_bars tests - {}", style_sheet_choice.selected_item().value()));
     };
     style_sheet_choice.selected_item(style_sheets::style_sheet::system_style_sheet().theme().name());
   }

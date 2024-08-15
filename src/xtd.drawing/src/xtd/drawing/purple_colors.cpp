@@ -84,7 +84,7 @@ const std::vector<color>& purple_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& purple_colors::get_color_names() noexcept {
+const std::vector<string>& purple_colors::get_color_names() noexcept {
   static auto color_names = std::vector {purple_colors::indigo().name(), purple_colors::rebecca_purple().name(), purple_colors::purple().name(), purple_colors::dark_magenta().name(), purple_colors::dark_violet().name(), purple_colors::dark_slate_blue().name(), purple_colors::blue_violet().name(), purple_colors::dark_orchid().name(), purple_colors::fuchsia().name(), purple_colors::magenta().name(), purple_colors::slate_blue().name(), purple_colors::medium_slate_blue().name(), purple_colors::medium_orchid().name(), purple_colors::medium_purple().name(), purple_colors::orchid().name(), purple_colors::violet().name(), purple_colors::plum().name(), purple_colors::thistle().name(), purple_colors::lavender().name()};
   return color_names;
 }

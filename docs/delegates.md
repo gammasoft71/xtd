@@ -45,17 +45,17 @@ Delegates have the following properties:
 
 ## Using Delegates
 
-A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::ustring](../src/xtd.core/include/xtd/string.h) as an argument and returns void:
+A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::string](../src/xtd.core/include/xtd/string.h) as an argument and returns void:
 
 ```cpp
-using del = xtd::delegate<void(const xtd::ustring& message)>;
+using del = xtd::delegate<void(const xtd::string& message)>;
 ```
 
 A delegate object is normally constructed by providing the name of the method the delegate will wrap, or with a lambda expression. Once a delegate is instantiated, a method call made to the delegate will be passed by the delegate to that method. The parameters passed to the delegate by the caller are passed to the method, and the return value, if any, from the method is returned to the caller by the delegate. This is known as invoking the delegate. An instantiated delegate can be invoked as if it were the wrapped method itself. For example:
 
 ```cpp
 // Create a method for a delegate.
-void delegate_method(const xtd::ustring& message) {
+void delegate_method(const xtd::string& message) {
   console::write_line(message);
 }
 ```
@@ -106,8 +106,8 @@ When a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is constructed to
 ```cpp
 class method_class {
 public:
-    void method1(const xtd::ustring& message) { }
-    void method2(const xtd::ustring& message) { }
+    void method1(const xtd::string& message) { }
+    void method2(const xtd::string& message) { }
 }
 ```
 

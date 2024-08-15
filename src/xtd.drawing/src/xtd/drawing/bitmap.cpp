@@ -22,10 +22,10 @@ bitmap::bitmap(const image& original, int32 width, int32 height) : xtd::drawing:
 bitmap::bitmap(const image& original, const rectangle& new_rect) : xtd::drawing::image(original, new_rect) {
 }
 
-bitmap::bitmap(const xtd::ustring& filename) : xtd::drawing::image(filename) {
+bitmap::bitmap(const xtd::string& filename) : xtd::drawing::image(filename) {
 }
 
-bitmap::bitmap(const xtd::ustring& filename, bool use_icm) : xtd::drawing::image(filename, use_icm) {
+bitmap::bitmap(const xtd::string& filename, bool use_icm) : xtd::drawing::image(filename, use_icm) {
 }
 
 bitmap::bitmap(std::istream& stream) : xtd::drawing::image(stream) {

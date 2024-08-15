@@ -3,10 +3,10 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-source_switch::source_switch(const ustring& name) : switch_base(name, ustring::empty_string) {
+source_switch::source_switch(const string& name) : switch_base(name, string::empty_string) {
 }
 
-source_switch::source_switch(const ustring& display_name, const ustring& default_switch_value) : switch_base(display_name, ustring::empty_string, default_switch_value) {
+source_switch::source_switch(const string& display_name, const string& default_switch_value) : switch_base(display_name, string::empty_string, default_switch_value) {
 }
 
 

@@ -93,8 +93,8 @@ namespace xtd {
       bool equals(const xtd::drawing::size_f& value) const noexcept override;
       
       /// @brief Creates a human-readable string that represents this xtd::drawing::size_f class.
-      /// @return A xtd::ustring that represents this size.
-      xtd::ustring to_string() const noexcept override;
+      /// @return A xtd::string that represents this size.
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods
@@ -162,7 +162,7 @@ namespace xtd {
   /// @cond
   template<>
   inline drawing::size_f parse<drawing::size_f>(const std::string& str) {
-    auto values = xtd::ustring(str).replace("}", xtd::ustring::empty_string).replace(" height=", xtd::ustring::empty_string).replace("{width=", xtd::ustring::empty_string).split({','});
+    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" height=", xtd::string::empty_string).replace("{width=", xtd::string::empty_string).split({','});
     return {xtd::parse<float>(values[0]), xtd::parse<float>(values[1])};
   }
   /// @endcond

@@ -10,7 +10,7 @@ using namespace io;
 
 const drive_info drive_info::empty;
 
-drive_info::drive_info(const ustring& drive_name) : drive_name_(drive_name) {
+drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
   if (drive_name.empty()) throw argument_exception {csf_};
   auto drives = native::drive::get_drives();
   if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {csf_};
@@ -22,8 +22,8 @@ size_t drive_info::available_free_space() const {
   return free_bytes;
 }
 
-ustring drive_info::drive_format() const {
-  auto volume_name = ustring {}, file_system_name = ustring {};
+string drive_info::drive_format() const {
+  auto volume_name = string {}, file_system_name = string {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
   return file_system_name;
 }
@@ -34,11 +34,11 @@ drive_type drive_info::drive_type() const {
 }
 
 bool drive_info::is_ready() const noexcept {
-  auto volume_name = ustring {}, file_system_name = ustring {};
+  auto volume_name = string {}, file_system_name = string {};
   return native::drive::get_volume_information(drive_name_, volume_name, file_system_name);
 }
 
-ustring drive_info::name() const noexcept {
+string drive_info::name() const noexcept {
   return drive_name_;
 }
 
@@ -58,8 +58,8 @@ size_t drive_info::total_size() const {
   return total_number_of_bytes;
 }
 
-ustring drive_info::volume_label() const {
-  auto volume_name = ustring {}, file_system_name = ustring {};
+string drive_info::volume_label() const {
+  auto volume_name = string {}, file_system_name = string {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
   return volume_name;
 }
@@ -71,6 +71,6 @@ std::vector<drive_info> drive_info::get_drives() noexcept {
   return drives;
 }
 
-xtd::ustring drive_info::to_string() const noexcept {
+xtd::string drive_info::to_string() const noexcept {
   return drive_name_;
 }

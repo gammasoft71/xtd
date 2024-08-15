@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_product_attribute::assembly_product_attribute(const ustring& product) : product_(product) {
+assembly_product_attribute::assembly_product_attribute(const string& product) : product_(product) {
 }
 
-assembly_product_attribute::assembly_product_attribute(const ustring& product, const object& executing_assembly) : product_(product) {
+assembly_product_attribute::assembly_product_attribute(const string& product, const object& executing_assembly) : product_(product) {
   __assembly_product_attribute__() = xtd::new_sptr<xtd::reflection::assembly_product_attribute>(product);
 }
 
-const ustring& assembly_product_attribute::product() const noexcept {
+const string& assembly_product_attribute::product() const noexcept {
   return product_;
 }
 

@@ -188,7 +188,7 @@ bool pen::equals(const xtd::drawing::pen& value) const noexcept {
   return data_ == value.data_;
 }
 
-xtd::ustring pen::to_string() const noexcept {
+xtd::string pen::to_string() const noexcept {
   return get_type().full_name();
 }
 

@@ -69,7 +69,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void insert_item(intptr control, size_t index, const xtd::ustring& value, int32 check_state);
+        static void insert_item(intptr control, size_t index, const xtd::string& value, int32 check_state);
         /// @brief Gets selected item index.
         /// @param control Checked list box window handle.
         /// @return The selected item index.
@@ -91,7 +91,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void update_item(intptr control, size_t index, const xtd::ustring& value, int32 check_state);
+        static void update_item(intptr control, size_t index, const xtd::string& value, int32 check_state);
         /// @}
       };
     }

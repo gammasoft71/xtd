@@ -18,7 +18,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct text_box::data {
-  xtd::ustring placeholder_text = xtd::ustring::empty_string;
+  xtd::string placeholder_text = xtd::string::empty_string;
   bool accepts_return = false;
   xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
   char32 password_char = 0;
@@ -64,11 +64,11 @@ text_box& text_box::password_char(char32 value) {
   return *this;
 }
 
-const xtd::ustring& text_box::placeholder_text() const noexcept {
+const xtd::string& text_box::placeholder_text() const noexcept {
   return data_->placeholder_text;
 }
 
-text_box& text_box::placeholder_text(const xtd::ustring& value) {
+text_box& text_box::placeholder_text(const xtd::string& value) {
   if (data_->placeholder_text == value) return *this;
   data_->placeholder_text = value;
   if (is_handle_created())
@@ -86,18 +86,18 @@ size_t text_box::selection_start() const noexcept {
   return text_box_base::selection_start();
 }
 
-const ustring& text_box::text() const noexcept {
+const string& text_box::text() const noexcept {
   if (!data_->use_system_password_char && data_->password_char) return control::text();
   return text_box_base::text();
 }
 
-control& text_box::text(const ustring& text) {
+control& text_box::text(const string& text) {
   if (control::text() == text) return *this;
   set_text(text);
   if (!data_->use_system_password_char && data_->password_char) {
-    if (is_handle_created()) native::text_box::text(handle(), ustring::empty_string);
+    if (is_handle_created()) native::text_box::text(handle(), string::empty_string);
     for (size_t count = 0; count < text.size(); count++)
-      if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
+      if (is_handle_created()) native::text_box::append(handle(), xtd::string::format("{}", data_->password_char));
   } else {
     switch (data_->character_casing) {
       case xtd::forms::character_casing::normal: set_text(text); break;
@@ -122,7 +122,7 @@ text_box& text_box::use_system_password_char(bool value) {
   return *this;
 }
 
-void text_box::append_text(const xtd::ustring& value) {
+void text_box::append_text(const xtd::string& value) {
   if (is_handle_created()) native::text_box::append(handle(), value);
 }
 
@@ -143,7 +143,7 @@ text_box text_box::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-text_box text_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+text_box text_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = text_box {};
   result.location(location);
   result.size(size);
@@ -151,20 +151,20 @@ text_box text_box::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-text_box text_box::create(const xtd::ustring& text) {
+text_box text_box::create(const xtd::string& text) {
   auto result = text_box {};
   result.text(text);
   return result;
 }
 
-text_box text_box::create(const xtd::ustring& text, const drawing::point& location) {
+text_box text_box::create(const xtd::string& text, const drawing::point& location) {
   auto result = text_box {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-text_box text_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+text_box text_box::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = text_box {};
   result.text(text);
   result.location(location);
@@ -172,7 +172,7 @@ text_box text_box::create(const xtd::ustring& text, const drawing::point& locati
   return result;
 }
 
-text_box text_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+text_box text_box::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = text_box {};
   result.text(text);
   result.location(location);
@@ -202,7 +202,7 @@ text_box text_box::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-text_box text_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+text_box text_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = text_box {};
   result.parent(parent);
   result.location(location);
@@ -211,14 +211,14 @@ text_box text_box::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-text_box text_box::create(const control& parent, const xtd::ustring& text) {
+text_box text_box::create(const control& parent, const xtd::string& text) {
   auto result = text_box {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+text_box text_box::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = text_box {};
   result.parent(parent);
   result.text(text);
@@ -226,7 +226,7 @@ text_box text_box::create(const control& parent, const xtd::ustring& text, const
   return result;
 }
 
-text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+text_box text_box::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = text_box {};
   result.parent(parent);
   result.text(text);
@@ -235,7 +235,7 @@ text_box text_box::create(const control& parent, const xtd::ustring& text, const
   return result;
 }
 
-text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+text_box text_box::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = text_box {};
   result.parent(parent);
   result.text(text);
@@ -273,7 +273,7 @@ forms::create_params text_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> text_box::clone() const {
   auto result = xtd::new_uptr<text_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -297,9 +297,9 @@ void text_box::on_handle_created(const event_args& e) {
   
   if (!data_->use_system_password_char && data_->password_char) {
     auto txt = text();
-    native::text_box::text(handle(), ustring::empty_string);
+    native::text_box::text(handle(), string::empty_string);
     for (auto count = 0_z; count < txt.size(); ++count)
-      native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
+      native::text_box::append(handle(), xtd::string::format("{}", data_->password_char));
   } else {
     switch (data_->character_casing) {
       case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
@@ -338,8 +338,8 @@ void text_box::wm_key_char(message& message) {
       message.result(key_event_args.suppress_key_press());
     } else if (message.msg() == WM_CHAR && char32_object::is_control(static_cast<char32>(message.wparam())) == 0) {
       auto key_event_args = key_press_event_args {static_cast<char32>(message.wparam())};
-      set_text(control::text() + xtd::ustring::format("{}", key_event_args.key_char()));
-      native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
+      set_text(control::text() + xtd::string::format("{}", key_event_args.key_char()));
+      native::text_box::append(handle(), xtd::string::format("{}", data_->password_char));
       message.result(true);
     } else if (message.msg() == WM_KEYUP) {
       auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};

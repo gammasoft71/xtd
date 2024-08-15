@@ -25,6 +25,6 @@ selection_range& selection_range::start(date_time value) {
   return *this;
 }
 
-ustring selection_range::to_string() const noexcept {
-  return ustring::format("selection_range: start: {0:d} {0:t}, end: {1:d} {1:t}", start_, end_);
+string selection_range::to_string() const noexcept {
+  return string::format("selection_range: start: {0:d} {0:t}, end: {1:d} {1:t}", start_, end_);
 }

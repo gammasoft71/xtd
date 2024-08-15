@@ -10,7 +10,7 @@ using namespace xtd::forms;
 struct assert_dialog::data {
   message_dialog dialog;
   forms::dialog_result dialog_result = forms::dialog_result::none;
-  ustring message;
+  string message;
   diagnostics::stack_frame stack_frame = diagnostics::stack_frame::empty();
 };
 
@@ -32,11 +32,11 @@ assert_dialog& assert_dialog::dialog_appearance(forms::dialog_appearance dialog_
   return *this;
 }
 
-ustring assert_dialog::message() const noexcept {
+string assert_dialog::message() const noexcept {
   return data_->message;
 }
 
-assert_dialog& assert_dialog::message(const ustring& message) {
+assert_dialog& assert_dialog::message(const string& message) {
   if (data_->message == message) return *this;
   data_->message = message;
   set_message();
@@ -90,5 +90,5 @@ void assert_dialog::set_message() noexcept {
   if (data_->stack_frame == diagnostics::stack_frame::empty() && data_->message == "") data_->dialog.message("");
   else if (data_->stack_frame == diagnostics::stack_frame::empty() && data_->message != "") data_->dialog.message(data_->message);
   else if (data_->stack_frame != diagnostics::stack_frame::empty() && data_->message == "") data_->dialog.message(diagnostics::stack_trace(data_->stack_frame).to_string());
-  else data_->dialog.message(ustring::format("{}\n\n{}", data_->message, diagnostics::stack_trace(data_->stack_frame)));
+  else data_->dialog.message(string::format("{}\n\n{}", data_->message, diagnostics::stack_trace(data_->stack_frame)));
 }

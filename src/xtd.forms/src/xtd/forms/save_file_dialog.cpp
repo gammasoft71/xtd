@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 std::fstream save_file_dialog::open_file() const noexcept {
-  return io::file::open(xtd::ustring(data_->file_name), std::ios::binary | std::ios::in | std::ios::out);
+  return io::file::open(xtd::string(data_->file_name), std::ios::binary | std::ios::in | std::ios::out);
 }
 
 bool save_file_dialog::run_file_dialog(intptr owner) {

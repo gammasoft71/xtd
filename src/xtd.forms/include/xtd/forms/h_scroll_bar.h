@@ -55,7 +55,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified value.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @return New xtd::forms::h_scroll_bar created.
@@ -77,7 +77,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified value, and maximum.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @param maximum The upper limit of values of the scrollable range.
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified value, minimum, and maximum.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @param minimum The lower limit of values of the scrollable range.
@@ -133,7 +133,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent, and value.
       /// @param parent The parent that contains the new created xtd::forms::h_scroll_bar.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
@@ -181,7 +181,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent, value, and maximum.
       /// @param parent The parent that contains the new created xtd::forms::h_scroll_bar.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
@@ -211,7 +211,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent, value, minimum, and maximum.
       /// @param parent The parent that contains the new created xtd::forms::h_scroll_bar.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
@@ -245,7 +245,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::h_scroll_bar.
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
-      static h_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static h_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

@@ -42,7 +42,7 @@ namespace xtd {
     ///   xtd::byte r = slate_blue.r();
     ///   xtd::byte g = slate_blue.g();
     ///   xtd::byte b = slate_blue.b();
-    ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}", a, r, g, b);
+    ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// ```
@@ -514,7 +514,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// ```
@@ -533,7 +533,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// ```
@@ -552,7 +552,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// ```
@@ -589,7 +589,7 @@ namespace xtd {
       
       /// @brief Gets the name of this xtd::drawing::color.
       /// @return string The name of this xtd::drawing::color.
-      xtd::ustring name() const noexcept;
+      xtd::string name() const noexcept;
       
       /// @brief Gets the red component value of this xtd::drawing::color class.
       /// @return byte The red component value of this xtd::drawing::color.
@@ -604,7 +604,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// ```
@@ -897,7 +897,7 @@ namespace xtd {
       ///   }
       /// }
       /// ```
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods
@@ -1236,11 +1236,11 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// ```
-      static xtd::drawing::color from_name(const xtd::ustring& name) noexcept;
+      static xtd::drawing::color from_name(const xtd::string& name) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the three YUV components (luma and choma) values.
       /// @param y The Y'UV `Y` value of this xtd::drawing::color. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
@@ -1267,7 +1267,7 @@ namespace xtd {
       /// @brief Creates a xtd::drawing::color class from the specified name.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      static xtd::drawing::color parse(const xtd::ustring& color) noexcept;
+      static xtd::drawing::color parse(const xtd::string& color) noexcept;
       /// @}
       
     private:
@@ -1280,7 +1280,7 @@ namespace xtd {
       bool empty_ = true;
       intptr handle_ = 0;
       xtd::drawing::known_color known_color_ = static_cast<xtd::drawing::known_color>(0);
-      xtd::ustring name_;
+      xtd::string name_;
     };
   }
   

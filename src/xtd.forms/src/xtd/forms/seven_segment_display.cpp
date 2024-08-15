@@ -102,7 +102,7 @@ seven_segment_display seven_segment_display::create(const drawing::point& locati
   return item;
 }
 
-seven_segment_display seven_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.location(location);
   item.size(size);
@@ -131,7 +131,7 @@ seven_segment_display seven_segment_display::create(xtd::forms::segments segment
   return item;
 }
 
-seven_segment_display seven_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.value(segments);
   item.location(location);
@@ -164,7 +164,7 @@ seven_segment_display seven_segment_display::create(xtd::forms::segments segment
   return item;
 }
 
-seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.value(segments);
   item.show_back_segment(show_back_segment);
@@ -194,7 +194,7 @@ seven_segment_display seven_segment_display::create(const control& parent, const
   return item;
 }
 
-seven_segment_display seven_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.parent(parent);
   item.location(location);
@@ -226,7 +226,7 @@ seven_segment_display seven_segment_display::create(const control& parent, xtd::
   return item;
 }
 
-seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -262,7 +262,7 @@ seven_segment_display seven_segment_display::create(const control& parent, xtd::
   return item;
 }
 
-seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = seven_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -287,7 +287,7 @@ drawing::size seven_segment_display::default_size() const noexcept {
 
 xtd::uptr<xtd::object> seven_segment_display::clone() const {
   auto result = xtd::new_uptr<seven_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

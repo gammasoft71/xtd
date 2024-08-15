@@ -15,7 +15,7 @@ public:
   ~__using_dns__() {native::dns::cleanup();}
 };
 
-std::vector<ip_address> dns::get_host_addresses(const ustring& host_name_or_address) {
+std::vector<ip_address> dns::get_host_addresses(const string& host_name_or_address) {
   ip_host_entry host_entry = get_host_entry(host_name_or_address);
   return host_entry.address_list();
 }
@@ -24,7 +24,7 @@ ip_host_entry dns::get_host_entry(const ip_address& address) {
   return get_host_entry(address.to_string());
 }
 
-ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
+ip_host_entry dns::get_host_entry(const string& host_name_or_address) {
   __using_dns__ hostent;
   ip_address host_address;
   intptr host;
@@ -48,7 +48,7 @@ ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
   return host_entry;
 }
 
-ustring dns::get_host_name() {
+string dns::get_host_name() {
   __using_dns__ hotent;
   std::string host_name;
   if (native::dns::get_host_name(host_name) != 0) throw invalid_operation_exception {csf_};

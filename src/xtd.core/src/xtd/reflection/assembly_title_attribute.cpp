@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_title_attribute::assembly_title_attribute(const ustring& title) : title_(title) {
+assembly_title_attribute::assembly_title_attribute(const string& title) : title_(title) {
 }
 
-assembly_title_attribute::assembly_title_attribute(const ustring& title, const object& executing_assembly) : title_(title) {
+assembly_title_attribute::assembly_title_attribute(const string& title, const object& executing_assembly) : title_(title) {
   __assembly_title_attribute__() = xtd::new_sptr<xtd::reflection::assembly_title_attribute>(title);
 }
 
-const ustring& assembly_title_attribute::title() const noexcept {
+const string& assembly_title_attribute::title() const noexcept {
   return title_;
 }
 

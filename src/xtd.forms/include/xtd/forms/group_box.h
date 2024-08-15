@@ -87,29 +87,29 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @param name The name of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static group_box create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::group_box with specified text.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const xtd::ustring& text);
+      static group_box create(const xtd::string& text);
       /// @brief A factory to create an xtd::forms::group_box with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const xtd::ustring& text, const drawing::point& location);
+      static group_box create(const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::group_box with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static group_box create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::group_box with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @param name The name of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static group_box create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::group_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
@@ -132,26 +132,26 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @param name The name of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static group_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::group_box with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::group_box.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const control& parent, const xtd::ustring& text);
+      static group_box create(const control& parent, const xtd::string& text);
       /// @brief A factory to create an xtd::forms::group_box with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::group_box.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      static group_box create(const control& parent, const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::group_box with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::group_box.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static group_box create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::group_box with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::group_box.
       /// @param text A string that represent text of the xtd::forms::group_box.
@@ -159,7 +159,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::group_box.
       /// @param name The name of the xtd::forms::group_box.
       /// @return New xtd::forms::group_box created.
-      static group_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static group_box create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

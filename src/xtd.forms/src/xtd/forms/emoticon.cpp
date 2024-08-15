@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct emoticon::data {
-  xtd::ustring name;
+  xtd::string name;
   std::vector<char32> codepoints;
 };
 
@@ -15,17 +15,17 @@ const emoticon emoticon::empty() {
 emoticon::emoticon() : data_(xtd::new_sptr<data>()) {
 }
 
-emoticon::emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const xtd::string& name, std::initializer_list<char32> codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const xtd::string& name, const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, char32 codepoint) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const xtd::string& name, char32 codepoint) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = {codepoint};
 }
@@ -51,7 +51,7 @@ emoticon& emoticon::operator =(const emoticon& other) {
   return *this;
 }
 
-const xtd::ustring& emoticon::name() const noexcept {
+const xtd::string& emoticon::name() const noexcept {
   return data_->name;
 }
 
@@ -63,7 +63,7 @@ bool emoticon::equals(const emoticon& value) const noexcept {
   return data_->name == value.data_->name && data_->codepoints == value.data_->codepoints;
 }
 
-xtd::ustring emoticon::to_string() const noexcept {
+xtd::string emoticon::to_string() const noexcept {
   /// @todo Replace string with string_builder when implemented.
   auto result = std::string {};
   for (auto codepoint : data_->codepoints) {
@@ -90,7 +90,7 @@ void emoticon::create_data() {
   data_ = xtd::new_sptr<data>();
 }
 
-void emoticon::name_(const ustring& name) {
+void emoticon::name_(const string& name) {
   data_->name = name;
 }
 

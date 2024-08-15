@@ -37,7 +37,7 @@ namespace xtd::tests {
     void test_method_(const_object_to_invalid_other_ptr) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<ustring>(*g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<string>(*g);}, csf_);
       delete g;
     }
     
@@ -52,7 +52,7 @@ namespace xtd::tests {
     void test_method_(object_to_invalid_other_ptr) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<ustring>(*g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<string>(*g);}, csf_);
       delete g;
     }
     
@@ -104,7 +104,7 @@ namespace xtd::tests {
     void test_method_(const_ptr_to_invalid_other_ptr) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<string>(g);}, csf_);
       delete g;
     }
     
@@ -126,7 +126,7 @@ namespace xtd::tests {
     void test_method_(ptr_to_invalid_other_ptr) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ptr<string>(g);}, csf_);
       delete g;
     }
     
@@ -157,7 +157,7 @@ namespace xtd::tests {
     void test_method_(const_object_to_invalid_other_ref) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<ustring>(*g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<string>(*g);}, csf_);
       delete g;
     }
     
@@ -172,7 +172,7 @@ namespace xtd::tests {
     void test_method_(object_to_invalid_other_ref) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<ustring>(*g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<string>(*g);}, csf_);
       delete g;
     }
     
@@ -214,7 +214,7 @@ namespace xtd::tests {
     
     void test_method_(const_pointer_to_invalid_other_ref) {
       const guid* g = new guid();
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<string>(g);}, csf_);
       delete g;
     }
     
@@ -232,7 +232,7 @@ namespace xtd::tests {
     
     void test_method_(pointer_to_invalid_other_ref) {
       guid* g = new guid();
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_ref<string>(g);}, csf_);
       delete g;
     }
     
@@ -246,7 +246,7 @@ namespace xtd::tests {
     
     void test_method_(to_unique_ptr_invalid) {
       xtd::uptr<guid> g = xtd::new_uptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_unique_ptr<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_unique_ptr<string>(g);}, csf_);
     }
     
     void test_method_(move_to_unique_ptr) {
@@ -255,7 +255,7 @@ namespace xtd::tests {
     }
     
     void test_method_(move_to_unique_ptr_invalid) {
-      assert::throws<invalid_cast_exception>([] {convert_pointer::to_unique_ptr<ustring>(xtd::new_uptr<guid>());}, csf_);
+      assert::throws<invalid_cast_exception>([] {convert_pointer::to_unique_ptr<string>(xtd::new_uptr<guid>());}, csf_);
     }
     
     void test_method_(to_shared_ptr) {
@@ -266,7 +266,7 @@ namespace xtd::tests {
     
     void test_method_(to_shared_ptr_invalid) {
       xtd::sptr<guid> g = xtd::new_sptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_shared_ptr<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_shared_ptr<string>(g);}, csf_);
     }
     
     void test_method_(const_to_shared_ptr) {
@@ -277,7 +277,7 @@ namespace xtd::tests {
     
     void test_method_(const_to_shared_ptr_invalid) {
       const xtd::sptr<guid> g = xtd::new_sptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_shared_ptr<ustring>(g);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {convert_pointer::to_shared_ptr<string>(g);}, csf_);
     }
     
     void test_method_(move_to_shared_ptr) {
@@ -286,7 +286,7 @@ namespace xtd::tests {
     }
     
     void test_method_(move_to_shared_ptr_invalid) {
-      assert::throws<invalid_cast_exception>([] {convert_pointer::to_shared_ptr<ustring>(xtd::new_sptr<guid>());}, csf_);
+      assert::throws<invalid_cast_exception>([] {convert_pointer::to_shared_ptr<string>(xtd::new_sptr<guid>());}, csf_);
     }
   };
 }

@@ -11,11 +11,11 @@ xtd::drawing::image form_button_images::close(bool maximized_form) {
   return close(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::close(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::close(const xtd::string& theme) {
   return close(theme, size());
 }
 
-xtd::drawing::image form_button_images::close(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::close(const xtd::string& theme, bool maximized_form) {
   return close(theme, size(maximized_form));
 }
 
@@ -23,7 +23,7 @@ xtd::drawing::image form_button_images::close(const xtd::drawing::size& size) {
   return close(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::close(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::close(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-close", size);
 }
 
@@ -35,11 +35,11 @@ xtd::drawing::image form_button_images::close_hovered(bool maximized_form) {
   return close_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::close_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::close_hovered(const xtd::string& theme) {
   return close_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::close_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::close_hovered(const xtd::string& theme, bool maximized_form) {
   return close_hovered(theme, size(maximized_form));
 }
 
@@ -47,7 +47,7 @@ xtd::drawing::image form_button_images::close_hovered(const xtd::drawing::size& 
   return close_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::close_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::close_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-close-hovered", size);
 }
 
@@ -59,11 +59,11 @@ xtd::drawing::image form_button_images::fullscreen(bool maximized_form) {
   return fullscreen(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::fullscreen(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::fullscreen(const xtd::string& theme) {
   return fullscreen(theme, size());
 }
 
-xtd::drawing::image form_button_images::fullscreen(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::fullscreen(const xtd::string& theme, bool maximized_form) {
   return fullscreen(theme, size(maximized_form));
 }
 
@@ -71,7 +71,7 @@ xtd::drawing::image form_button_images::fullscreen(const xtd::drawing::size& siz
   return fullscreen(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::fullscreen(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::fullscreen(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-fullscreen", size);
 }
 
@@ -83,11 +83,11 @@ xtd::drawing::image form_button_images::fullscreen_hovered(bool maximized_form) 
   return fullscreen_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::string& theme) {
   return fullscreen_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::string& theme, bool maximized_form) {
   return fullscreen_hovered(theme, size(maximized_form));
 }
 
@@ -95,7 +95,7 @@ xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::drawing::s
   return fullscreen_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::fullscreen_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-fullscreen-hovered", size);
 }
 
@@ -107,11 +107,11 @@ xtd::drawing::image form_button_images::maximize(bool maximized_form) {
   return maximize(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::maximize(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::maximize(const xtd::string& theme) {
   return maximize(theme, size());
 }
 
-xtd::drawing::image form_button_images::maximize(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::maximize(const xtd::string& theme, bool maximized_form) {
   return maximize(theme, size(maximized_form));
 }
 
@@ -119,7 +119,7 @@ xtd::drawing::image form_button_images::maximize(const xtd::drawing::size& size)
   return maximize(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::maximize(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::maximize(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-maximize", size);
 }
 
@@ -131,11 +131,11 @@ xtd::drawing::image form_button_images::maximize_hovered(bool maximized_form) {
   return maximize_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::maximize_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::maximize_hovered(const xtd::string& theme) {
   return maximize_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::maximize_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::maximize_hovered(const xtd::string& theme, bool maximized_form) {
   return maximize_hovered(theme, size(maximized_form));
 }
 
@@ -143,7 +143,7 @@ xtd::drawing::image form_button_images::maximize_hovered(const xtd::drawing::siz
   return maximize_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::maximize_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::maximize_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-maximize-hovered", size);
 }
 
@@ -155,11 +155,11 @@ xtd::drawing::image form_button_images::minimize(bool maximized_form) {
   return minimize(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::minimize(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::minimize(const xtd::string& theme) {
   return minimize(theme, size());
 }
 
-xtd::drawing::image form_button_images::minimize(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::minimize(const xtd::string& theme, bool maximized_form) {
   return minimize(theme, size(maximized_form));
 }
 
@@ -167,7 +167,7 @@ xtd::drawing::image form_button_images::minimize(const xtd::drawing::size& size)
   return minimize(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::minimize(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::minimize(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-minimize", size);
 }
 
@@ -179,11 +179,11 @@ xtd::drawing::image form_button_images::minimize_hovered(bool maximized_form) {
   return minimize_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::minimize_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::minimize_hovered(const xtd::string& theme) {
   return minimize_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::minimize_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::minimize_hovered(const xtd::string& theme, bool maximized_form) {
   return minimize_hovered(theme, size(maximized_form));
 }
 
@@ -191,7 +191,7 @@ xtd::drawing::image form_button_images::minimize_hovered(const xtd::drawing::siz
   return minimize_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::minimize_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::minimize_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-minimize-hovered", size);
 }
 
@@ -203,11 +203,11 @@ xtd::drawing::image form_button_images::restore(bool maximized_form) {
   return restore(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::restore(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::restore(const xtd::string& theme) {
   return restore(theme, size());
 }
 
-xtd::drawing::image form_button_images::restore(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::restore(const xtd::string& theme, bool maximized_form) {
   return restore(theme, size(maximized_form));
 }
 
@@ -215,7 +215,7 @@ xtd::drawing::image form_button_images::restore(const xtd::drawing::size& size) 
   return restore(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::restore(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::restore(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-restore", size);
 }
 
@@ -227,11 +227,11 @@ xtd::drawing::image form_button_images::restore_hovered(bool maximized_form) {
   return restore_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::restore_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::restore_hovered(const xtd::string& theme) {
   return restore_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::restore_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::restore_hovered(const xtd::string& theme, bool maximized_form) {
   return restore_hovered(theme, size(maximized_form));
 }
 
@@ -239,7 +239,7 @@ xtd::drawing::image form_button_images::restore_hovered(const xtd::drawing::size
   return restore_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::restore_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::restore_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-restore-hovered", size);
 }
 
@@ -251,11 +251,11 @@ xtd::drawing::image form_button_images::system_menu(bool maximized_form) {
   return system_menu(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::system_menu(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::system_menu(const xtd::string& theme) {
   return system_menu(theme, size());
 }
 
-xtd::drawing::image form_button_images::system_menu(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::system_menu(const xtd::string& theme, bool maximized_form) {
   return system_menu(theme, size(maximized_form));
 }
 
@@ -263,7 +263,7 @@ xtd::drawing::image form_button_images::system_menu(const xtd::drawing::size& si
   return system_menu(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::system_menu(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::system_menu(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-system-menu", size);
 }
 
@@ -275,11 +275,11 @@ xtd::drawing::image form_button_images::system_menu_hovered(bool maximized_form)
   return system_menu_hovered(xtd::forms::application::style_sheet().theme().name(), size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::system_menu_hovered(const xtd::ustring& theme) {
+xtd::drawing::image form_button_images::system_menu_hovered(const xtd::string& theme) {
   return system_menu_hovered(theme, size());
 }
 
-xtd::drawing::image form_button_images::system_menu_hovered(const xtd::ustring& theme, bool maximized_form) {
+xtd::drawing::image form_button_images::system_menu_hovered(const xtd::string& theme, bool maximized_form) {
   return system_menu_hovered(theme, size(maximized_form));
 }
 
@@ -287,7 +287,7 @@ xtd::drawing::image form_button_images::system_menu_hovered(const xtd::drawing::
   return system_menu_hovered(xtd::forms::application::style_sheet().theme().name(), size);
 }
 
-xtd::drawing::image form_button_images::system_menu_hovered(const xtd::ustring& theme, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::system_menu_hovered(const xtd::string& theme, const xtd::drawing::size& size) {
   return from_name(theme, "window-system-menu-hovered", size);
 }
 
@@ -305,26 +305,26 @@ xtd::drawing::size form_button_images::size(bool maximized_form) {
   return {32, 32};
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& name) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& name) {
   return from_name(name, size());
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& theme, const xtd::ustring& name) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& theme, const xtd::string& name) {
   return from_name(theme, name, size());
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& name, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& name, const xtd::drawing::size& size) {
   return from_name(xtd::forms::application::style_sheet().theme().name(), name, size);
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size) {
   return images::from_name(theme, name, size);
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& name, bool maximized_form) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& name, bool maximized_form) {
   return from_name(name, size(maximized_form));
 }
 
-xtd::drawing::image form_button_images::from_name(const xtd::ustring& theme, const xtd::ustring& name, bool maximized_form) {
+xtd::drawing::image form_button_images::from_name(const xtd::string& theme, const xtd::string& name, bool maximized_form) {
   return from_name(theme, name, size(maximized_form));
 }

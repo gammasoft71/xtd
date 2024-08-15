@@ -95,7 +95,7 @@ namespace xtd {
       /// @return The name of this computer.
       /// @remarks The ComputerName property retrieves the NetBIOS name of the local computer. This is accomplished with a call into the native System Information function GetComputerName. This name is established at system startup_, when the system reads it from the registry. If the local computer is a node in a cluster, ComputerName returns the name of the cluster virtual server.
       /// @remarks You can use the computer_name method to determine the name of the computer that is displayed to other users on a network.
-      static xtd::ustring computer_name();
+      static xtd::string computer_name();
       
       /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
       /// @return A size that indicates the maximum dimensions of a cursor in pixels.
@@ -535,7 +535,7 @@ namespace xtd {
       /// @brief Gets the name of the domain the user belongs to.
       /// @return The name of the user domain. If a local user account exists with the same name as the user name, this property gets the computer name.
       /// @remarks If a local user account exists with the same name as the user name, this property gets the computer name.
-      static xtd::ustring user_domain_name();
+      static xtd::string user_domain_name();
       
       /// @brief Gets a value indicating whether the current process is running in user-interactive mode.
       /// @return true if the current process is running in user-interactive mode; otherwise, false.
@@ -545,7 +545,7 @@ namespace xtd {
       
       /// @brief Gets the user name associated with the current thread.
       /// @return The user name of the user associated with the current thread.
-      static xtd::ustring user_name();
+      static xtd::string user_name();
       
       /// @brief Gets the thickness, in pixels, of the top and bottom edges of the system focus rectangle.
       /// @return The thickness, in pixels, of the top and bottom edges of the system focus rectangle.

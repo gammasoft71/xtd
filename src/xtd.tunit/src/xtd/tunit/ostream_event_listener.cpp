@@ -184,7 +184,7 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
       os_ << "[  FAILED  ] ";
       console::reset_color();
       os_ << e.unit_test().failed_test_count() << " test, listed below:" << std::endl;
-      for (ustring name : e.unit_test().failed_test_names()) {
+      for (string name : e.unit_test().failed_test_names()) {
         console::foreground_color(console_color::dark_red);
         os_ << "[  FAILED  ] ";
         console::reset_color();

@@ -130,29 +130,29 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static button create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::button with specified text.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const xtd::ustring& text);
+      static button create(const xtd::string& text);
       /// @brief A factory to create an xtd::forms::button with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const xtd::ustring& text, const drawing::point& location);
+      static button create(const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::button with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static button create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::button with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static button create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::button with specified parent,.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @return New xtd::forms::button created.
@@ -174,25 +174,25 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::button with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const xtd::ustring& text);
+      static button create(const control& parent, const xtd::string& text);
       /// @brief A factory to create an xtd::forms::button with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      static button create(const control& parent, const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::button with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static button create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::button with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.
@@ -200,7 +200,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static button create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
 
     protected:

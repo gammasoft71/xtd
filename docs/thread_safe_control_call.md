@@ -92,14 +92,14 @@ void background_worker1_do_work(object& sender, do_work_event_args& e) {
   int max = 10;
   
   while (counter <= max) {
-    background_worker1.report_progress(0, ustring::format("{}", counter));
+    background_worker1.report_progress(0, string::format("{}", counter));
     this_thread::sleep_for(chrono::milliseconds(1000));
     counter++;
   }
 }
 
 void background_worker1_progress_changed(object& sender, const progress_changed_event_args& e) {
-  text_box1.text(as<ustring>(e.user_state()));
+  text_box1.text(as<string>(e.user_state()));
 }
 ```
 

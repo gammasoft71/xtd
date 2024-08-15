@@ -33,7 +33,7 @@ size_t text_box::selection_start(intptr control) {
   return static_cast<size_t>(from);
 }
 
-void text_box::append(intptr control, const ustring& text) {
+void text_box::append(intptr control, const string& text) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -50,7 +50,7 @@ void text_box::select(intptr control, size_t start, size_t length) {
   }
   return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(start, start + length);
 }
-ustring text_box::text(intptr control) {
+string text_box::text(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -59,7 +59,7 @@ ustring text_box::text(intptr control) {
   return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().c_str().AsWChar();
 }
 
-void text_box::text(intptr control, const ustring& text) {
+void text_box::text(intptr control, const string& text) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -72,7 +72,7 @@ void text_box::text(intptr control, const ustring& text) {
   }
 }
 
-void text_box::placeholder_text(intptr control, const ustring& text) {
+void text_box::placeholder_text(intptr control, const string& text) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

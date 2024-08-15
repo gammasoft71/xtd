@@ -55,7 +55,7 @@ namespace xtd {
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
-        static void insert_item(intptr control, size_t index, const xtd::ustring& value);
+        static void insert_item(intptr control, size_t index, const xtd::string& value);
         /// @brief Gets selected item index.
         /// @param control Domain up down window handle.
         /// @return The selected item index.
@@ -71,7 +71,7 @@ namespace xtd {
         /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
-        static void update_item(intptr control, size_t index, const xtd::ustring& value);
+        static void update_item(intptr control, size_t index, const xtd::string& value);
         /// @}
       };
     }

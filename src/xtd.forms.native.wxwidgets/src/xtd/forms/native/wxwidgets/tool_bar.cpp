@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr tool_bar::add_tool_bar_button(intptr tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible) {
+intptr tool_bar::add_tool_bar_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible) {
   if (!tool_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -23,7 +23,7 @@ intptr tool_bar::add_tool_bar_button(intptr tool_bar, const xtd::ustring& text, 
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
-intptr tool_bar::add_tool_bar_drop_down_button(intptr tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, intptr drop_down_menu) {
+intptr tool_bar::add_tool_bar_drop_down_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, intptr drop_down_menu) {
   if (!tool_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -37,7 +37,7 @@ intptr tool_bar::add_tool_bar_drop_down_button(intptr tool_bar, const xtd::ustri
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
-intptr tool_bar::add_tool_bar_toggle_button(intptr tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+intptr tool_bar::add_tool_bar_toggle_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!tool_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -73,7 +73,7 @@ intptr tool_bar::add_tool_bar_stretchable_separator(intptr tool_bar) {
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
-intptr tool_bar::add_tool_bar_control(intptr tool_bar, intptr control, const xtd::ustring& text, const xtd::ustring& tool_tip_text) {
+intptr tool_bar::add_tool_bar_control(intptr tool_bar, intptr control, const xtd::string& text, const xtd::string& tool_tip_text) {
   if (!tool_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -110,7 +110,7 @@ bool tool_bar::set_system_tool_bar(intptr control, intptr tool_bar) {
   return true;
 }
 
-void tool_bar::update_tool_bar_item(intptr tool_bar, intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+void tool_bar::update_tool_bar_item(intptr tool_bar, intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!tool_bar || !handle || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

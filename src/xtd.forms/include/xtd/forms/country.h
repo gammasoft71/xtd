@@ -54,15 +54,15 @@ namespace xtd {
       /// @{
       /// @brief Gets the country alpha 2 code.
       /// @return A string that represent the alpha 2 code.
-      virtual const xtd::ustring alpha_2_code() const noexcept;
+      virtual const xtd::string alpha_2_code() const noexcept;
       
       /// @brief Gets the country alpha 3 code.
       /// @return A string that represent the alpha 3 code.
-      virtual const xtd::ustring alpha_3_code() const noexcept;
+      virtual const xtd::string alpha_3_code() const noexcept;
       
       /// @brief Gets the country emoticon.
       /// @return A string that represent the emoticon.
-      virtual const xtd::ustring emoticon() const noexcept;
+      virtual const xtd::string emoticon() const noexcept;
       
       /// @brief Gets the country flag.
       /// @return A xtd::drawing::image that represent the flag of 1024 x 768 pixels.
@@ -74,7 +74,7 @@ namespace xtd {
       
       /// @brief Gets the country name.
       /// @return A string that represent the country.
-      virtual const xtd::ustring name() const noexcept;
+      virtual const xtd::string name() const noexcept;
       
       /// @brief Gets the country numeric code.
       /// @return A signed-integer that represent the numeric code.
@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
-      virtual xtd::ustring to_string() const noexcept override;
+      virtual xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods
@@ -97,15 +97,15 @@ namespace xtd {
       /// @{
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
-      static country from_alpha_2_code(const xtd::ustring& alpha_2_code);
+      static country from_alpha_2_code(const xtd::string& alpha_2_code);
       
       /// @brief Gets a country from alpha 3 code.
       /// @return If exist a xtd::forms::country that represent alpha 3 coded; otherwise xtd::forms::country::empty.
-      static country from_alpha_3_code(const xtd::ustring& alpha_3_code);
+      static country from_alpha_3_code(const xtd::string& alpha_3_code);
       
       /// @brief Gets a country from name.
       /// @return If exist a xtd::forms::country that represent name; otherwise xtd::forms::country::empty.
-      static country from_name(const xtd::ustring& name);
+      static country from_name(const xtd::string& name);
       
       /// @brief Gets a country from numeric code.
       /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
@@ -114,8 +114,8 @@ namespace xtd {
       
     private:
       friend class countries;
-      static const std::vector<xtd::ustring> enclosed_letters;
-      country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code);
+      static const std::vector<xtd::string> enclosed_letters;
+      country(const xtd::string& name, const xtd::string& alpha_2_code, const xtd::string& alpha_3_code, int32 numeric_code);
       
       xtd::sptr<data> data_;
     };

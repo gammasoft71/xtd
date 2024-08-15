@@ -17,7 +17,7 @@ button buttons::abort(const drawing::point& location, const drawing::size& size)
   return button::create(texts::abort(), location, size);
 }
 
-button buttons::abort(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::abort(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::abort(), location, size, name);
 }
 
@@ -33,7 +33,7 @@ button buttons::abort(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::abort(), location, size);
 }
 
-button buttons::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::abort(), location, size, name);
 }
 
@@ -49,7 +49,7 @@ button buttons::about(const drawing::point& location, const drawing::size& size)
   return button::create(texts::about(), location, size);
 }
 
-button buttons::about(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::about(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::about(), location, size, name);
 }
 
@@ -65,7 +65,7 @@ button buttons::about(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::about(), location, size);
 }
 
-button buttons::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::about(), location, size, name);
 }
 
@@ -81,7 +81,7 @@ button buttons::actual_size(const drawing::point& location, const drawing::size&
   return button::create(texts::actual_size(), location, size);
 }
 
-button buttons::actual_size(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::actual_size(), location, size, name);
 }
 
@@ -97,7 +97,7 @@ button buttons::actual_size(const control& parent, const drawing::point& locatio
   return button::create(parent, texts::actual_size(), location, size);
 }
 
-button buttons::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::actual_size(), location, size, name);
 }
 
@@ -113,7 +113,7 @@ button buttons::add(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::add(), location, size);
 }
 
-button buttons::add(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::add(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::add(), location, size, name);
 }
 
@@ -129,7 +129,7 @@ button buttons::add(const control& parent, const drawing::point& location, const
   return button::create(parent, texts::add(), location, size);
 }
 
-button buttons::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::add(), location, size, name);
 }
 
@@ -145,7 +145,7 @@ button buttons::alignment(const drawing::point& location, const drawing::size& s
   return button::create(texts::alignment(), location, size);
 }
 
-button buttons::alignment(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::alignment(), location, size, name);
 }
 
@@ -161,7 +161,7 @@ button buttons::alignment(const control& parent, const drawing::point& location,
   return button::create(parent, texts::alignment(), location, size);
 }
 
-button buttons::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::alignment(), location, size, name);
 }
 
@@ -177,7 +177,7 @@ button buttons::align_left(const drawing::point& location, const drawing::size& 
   return button::create(texts::align_left(), location, size);
 }
 
-button buttons::align_left(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::align_left(), location, size, name);
 }
 
@@ -193,7 +193,7 @@ button buttons::align_left(const control& parent, const drawing::point& location
   return button::create(parent, texts::align_left(), location, size);
 }
 
-button buttons::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::align_left(), location, size, name);
 }
 
@@ -209,7 +209,7 @@ button buttons::align_right(const drawing::point& location, const drawing::size&
   return button::create(texts::align_right(), location, size);
 }
 
-button buttons::align_right(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::align_right(), location, size, name);
 }
 
@@ -225,7 +225,7 @@ button buttons::align_right(const control& parent, const drawing::point& locatio
   return button::create(parent, texts::align_right(), location, size);
 }
 
-button buttons::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::align_right(), location, size, name);
 }
 
@@ -241,7 +241,7 @@ button buttons::apply(const drawing::point& location, const drawing::size& size)
   return button::create(texts::apply(), location, size);
 }
 
-button buttons::apply(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::apply(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::apply(), location, size, name);
 }
 
@@ -257,7 +257,7 @@ button buttons::apply(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::apply(), location, size);
 }
 
-button buttons::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::apply(), location, size, name);
 }
 
@@ -273,7 +273,7 @@ button buttons::ascending(const drawing::point& location, const drawing::size& s
   return button::create(texts::ascending(), location, size);
 }
 
-button buttons::ascending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::ascending(), location, size, name);
 }
 
@@ -289,7 +289,7 @@ button buttons::ascending(const control& parent, const drawing::point& location,
   return button::create(parent, texts::ascending(), location, size);
 }
 
-button buttons::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::ascending(), location, size, name);
 }
 
@@ -305,7 +305,7 @@ button buttons::back(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::back(), location, size);
 }
 
-button buttons::back(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::back(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::back(), location, size, name);
 }
 
@@ -321,7 +321,7 @@ button buttons::back(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::back(), location, size);
 }
 
-button buttons::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::back(), location, size, name);
 }
 
@@ -337,7 +337,7 @@ button buttons::bold(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::bold(), location, size);
 }
 
-button buttons::bold(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::bold(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::bold(), location, size, name);
 }
 
@@ -353,7 +353,7 @@ button buttons::bold(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::bold(), location, size);
 }
 
-button buttons::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::bold(), location, size, name);
 }
 
@@ -369,7 +369,7 @@ button buttons::bottom(const drawing::point& location, const drawing::size& size
   return button::create(texts::bottom(), location, size);
 }
 
-button buttons::bottom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::bottom(), location, size, name);
 }
 
@@ -385,7 +385,7 @@ button buttons::bottom(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::bottom(), location, size);
 }
 
-button buttons::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::bottom(), location, size, name);
 }
 
@@ -401,7 +401,7 @@ button buttons::cancel(const drawing::point& location, const drawing::size& size
   return button::create(texts::cancel(), location, size);
 }
 
-button buttons::cancel(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::cancel(), location, size, name);
 }
 
@@ -417,7 +417,7 @@ button buttons::cancel(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::cancel(), location, size);
 }
 
-button buttons::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::cancel(), location, size, name);
 }
 
@@ -433,7 +433,7 @@ button buttons::cdrom(const drawing::point& location, const drawing::size& size)
   return button::create(texts::cdrom(), location, size);
 }
 
-button buttons::cdrom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::cdrom(), location, size, name);
 }
 
@@ -449,7 +449,7 @@ button buttons::cdrom(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::cdrom(), location, size);
 }
 
-button buttons::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::cdrom(), location, size, name);
 }
 
@@ -465,7 +465,7 @@ button buttons::centered(const drawing::point& location, const drawing::size& si
   return button::create(texts::centered(), location, size);
 }
 
-button buttons::centered(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::centered(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::centered(), location, size, name);
 }
 
@@ -481,7 +481,7 @@ button buttons::centered(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::centered(), location, size);
 }
 
-button buttons::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::centered(), location, size, name);
 }
 
@@ -497,7 +497,7 @@ button buttons::clear(const drawing::point& location, const drawing::size& size)
   return button::create(texts::clear(), location, size);
 }
 
-button buttons::clear(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::clear(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::clear(), location, size, name);
 }
 
@@ -513,7 +513,7 @@ button buttons::clear(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::clear(), location, size);
 }
 
-button buttons::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::clear(), location, size, name);
 }
 
@@ -529,7 +529,7 @@ button buttons::close(const drawing::point& location, const drawing::size& size)
   return button::create(texts::close(), location, size);
 }
 
-button buttons::close(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::close(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::close(), location, size, name);
 }
 
@@ -545,7 +545,7 @@ button buttons::close(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::close(), location, size);
 }
 
-button buttons::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::close(), location, size, name);
 }
 
@@ -561,7 +561,7 @@ button buttons::color(const drawing::point& location, const drawing::size& size)
   return button::create(texts::color(), location, size);
 }
 
-button buttons::color(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::color(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::color(), location, size, name);
 }
 
@@ -577,7 +577,7 @@ button buttons::color(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::color(), location, size);
 }
 
-button buttons::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::color(), location, size, name);
 }
 
@@ -593,7 +593,7 @@ button buttons::contents(const drawing::point& location, const drawing::size& si
   return button::create(texts::contents(), location, size);
 }
 
-button buttons::contents(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::contents(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::contents(), location, size, name);
 }
 
@@ -609,7 +609,7 @@ button buttons::contents(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::contents(), location, size);
 }
 
-button buttons::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::contents(), location, size, name);
 }
 
@@ -625,7 +625,7 @@ button buttons::convert(const drawing::point& location, const drawing::size& siz
   return button::create(texts::convert(), location, size);
 }
 
-button buttons::convert(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::convert(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::convert(), location, size, name);
 }
 
@@ -641,7 +641,7 @@ button buttons::convert(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::convert(), location, size);
 }
 
-button buttons::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::convert(), location, size, name);
 }
 
@@ -657,7 +657,7 @@ button buttons::copy(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::copy(), location, size);
 }
 
-button buttons::copy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::copy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::copy(), location, size, name);
 }
 
@@ -673,7 +673,7 @@ button buttons::copy(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::copy(), location, size);
 }
 
-button buttons::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::copy(), location, size, name);
 }
 
@@ -689,7 +689,7 @@ button buttons::customize(const drawing::point& location, const drawing::size& s
   return button::create(texts::customize(), location, size);
 }
 
-button buttons::customize(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::customize(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::customize(), location, size, name);
 }
 
@@ -705,7 +705,7 @@ button buttons::customize(const control& parent, const drawing::point& location,
   return button::create(parent, texts::customize(), location, size);
 }
 
-button buttons::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::customize(), location, size, name);
 }
 
@@ -721,7 +721,7 @@ button buttons::cut(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::cut(), location, size);
 }
 
-button buttons::cut(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cut(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::cut(), location, size, name);
 }
 
@@ -737,7 +737,7 @@ button buttons::cut(const control& parent, const drawing::point& location, const
   return button::create(parent, texts::cut(), location, size);
 }
 
-button buttons::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::cut(), location, size, name);
 }
 
@@ -753,7 +753,7 @@ button buttons::del(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::del(), location, size);
 }
 
-button buttons::del(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::del(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::del(), location, size, name);
 }
 
@@ -769,7 +769,7 @@ button buttons::del(const control& parent, const drawing::point& location, const
   return button::create(parent, texts::del(), location, size);
 }
 
-button buttons::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::del(), location, size, name);
 }
 
@@ -785,7 +785,7 @@ button buttons::descending(const drawing::point& location, const drawing::size& 
   return button::create(texts::descending(), location, size);
 }
 
-button buttons::descending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::descending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::descending(), location, size, name);
 }
 
@@ -801,7 +801,7 @@ button buttons::descending(const control& parent, const drawing::point& location
   return button::create(parent, texts::descending(), location, size);
 }
 
-button buttons::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::descending(), location, size, name);
 }
 
@@ -817,7 +817,7 @@ button buttons::down(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::down(), location, size);
 }
 
-button buttons::down(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::down(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::down(), location, size, name);
 }
 
@@ -833,7 +833,7 @@ button buttons::down(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::down(), location, size);
 }
 
-button buttons::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::down(), location, size, name);
 }
 
@@ -849,7 +849,7 @@ button buttons::edit(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::edit(), location, size);
 }
 
-button buttons::edit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::edit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::edit(), location, size, name);
 }
 
@@ -865,7 +865,7 @@ button buttons::edit(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::edit(), location, size);
 }
 
-button buttons::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::edit(), location, size, name);
 }
 
@@ -881,7 +881,7 @@ button buttons::execute(const drawing::point& location, const drawing::size& siz
   return button::create(texts::execute(), location, size);
 }
 
-button buttons::execute(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::execute(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::execute(), location, size, name);
 }
 
@@ -897,7 +897,7 @@ button buttons::execute(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::execute(), location, size);
 }
 
-button buttons::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::execute(), location, size, name);
 }
 
@@ -913,7 +913,7 @@ button buttons::exit(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::exit(), location, size);
 }
 
-button buttons::exit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::exit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::exit(), location, size, name);
 }
 
@@ -929,7 +929,7 @@ button buttons::exit(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::exit(), location, size);
 }
 
-button buttons::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::exit(), location, size, name);
 }
 
@@ -945,7 +945,7 @@ button buttons::file(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::file(), location, size);
 }
 
-button buttons::file(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::file(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::file(), location, size, name);
 }
 
@@ -961,7 +961,7 @@ button buttons::file(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::file(), location, size);
 }
 
-button buttons::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::file(), location, size, name);
 }
 
@@ -977,7 +977,7 @@ button buttons::find(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::find(), location, size);
 }
 
-button buttons::find(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::find(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::find(), location, size, name);
 }
 
@@ -993,7 +993,7 @@ button buttons::find(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::find(), location, size);
 }
 
-button buttons::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::find(), location, size, name);
 }
 
@@ -1009,7 +1009,7 @@ button buttons::first(const drawing::point& location, const drawing::size& size)
   return button::create(texts::first(), location, size);
 }
 
-button buttons::first(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::first(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::first(), location, size, name);
 }
 
@@ -1025,7 +1025,7 @@ button buttons::first(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::first(), location, size);
 }
 
-button buttons::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::first(), location, size, name);
 }
 
@@ -1041,7 +1041,7 @@ button buttons::floppy(const drawing::point& location, const drawing::size& size
   return button::create(texts::floppy(), location, size);
 }
 
-button buttons::floppy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::floppy(), location, size, name);
 }
 
@@ -1057,7 +1057,7 @@ button buttons::floppy(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::floppy(), location, size);
 }
 
-button buttons::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::floppy(), location, size, name);
 }
 
@@ -1073,7 +1073,7 @@ button buttons::font(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::font(), location, size);
 }
 
-button buttons::font(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::font(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::font(), location, size, name);
 }
 
@@ -1089,7 +1089,7 @@ button buttons::font(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::font(), location, size);
 }
 
-button buttons::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::font(), location, size, name);
 }
 
@@ -1105,7 +1105,7 @@ button buttons::forward(const drawing::point& location, const drawing::size& siz
   return button::create(texts::forward(), location, size);
 }
 
-button buttons::forward(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::forward(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::forward(), location, size, name);
 }
 
@@ -1121,7 +1121,7 @@ button buttons::forward(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::forward(), location, size);
 }
 
-button buttons::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::forward(), location, size, name);
 }
 
@@ -1137,7 +1137,7 @@ button buttons::harddisk(const drawing::point& location, const drawing::size& si
   return button::create(texts::harddisk(), location, size);
 }
 
-button buttons::harddisk(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::harddisk(), location, size, name);
 }
 
@@ -1153,7 +1153,7 @@ button buttons::harddisk(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::harddisk(), location, size);
 }
 
-button buttons::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::harddisk(), location, size, name);
 }
 
@@ -1169,7 +1169,7 @@ button buttons::help(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::help(), location, size);
 }
 
-button buttons::help(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::help(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::help(), location, size, name);
 }
 
@@ -1185,7 +1185,7 @@ button buttons::help(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::help(), location, size);
 }
 
-button buttons::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::help(), location, size, name);
 }
 
@@ -1201,7 +1201,7 @@ button buttons::home(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::home(), location, size);
 }
 
-button buttons::home(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::home(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::home(), location, size, name);
 }
 
@@ -1217,7 +1217,7 @@ button buttons::home(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::home(), location, size);
 }
 
-button buttons::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::home(), location, size, name);
 }
 
@@ -1233,7 +1233,7 @@ button buttons::ignore(const drawing::point& location, const drawing::size& size
   return button::create(texts::ignore(), location, size);
 }
 
-button buttons::ignore(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::ignore(), location, size, name);
 }
 
@@ -1249,7 +1249,7 @@ button buttons::ignore(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::ignore(), location, size);
 }
 
-button buttons::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::ignore(), location, size, name);
 }
 
@@ -1265,7 +1265,7 @@ button buttons::indent(const drawing::point& location, const drawing::size& size
   return button::create(texts::indent(), location, size);
 }
 
-button buttons::indent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::indent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::indent(), location, size, name);
 }
 
@@ -1281,7 +1281,7 @@ button buttons::indent(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::indent(), location, size);
 }
 
-button buttons::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::indent(), location, size, name);
 }
 
@@ -1297,7 +1297,7 @@ button buttons::index(const drawing::point& location, const drawing::size& size)
   return button::create(texts::index(), location, size);
 }
 
-button buttons::index(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::index(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::index(), location, size, name);
 }
 
@@ -1313,7 +1313,7 @@ button buttons::index(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::index(), location, size);
 }
 
-button buttons::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::index(), location, size, name);
 }
 
@@ -1329,7 +1329,7 @@ button buttons::info(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::info(), location, size);
 }
 
-button buttons::info(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::info(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::info(), location, size, name);
 }
 
@@ -1345,7 +1345,7 @@ button buttons::info(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::info(), location, size);
 }
 
-button buttons::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::info(), location, size, name);
 }
 
@@ -1361,7 +1361,7 @@ button buttons::italic(const drawing::point& location, const drawing::size& size
   return button::create(texts::italic(), location, size);
 }
 
-button buttons::italic(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::italic(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::italic(), location, size, name);
 }
 
@@ -1377,7 +1377,7 @@ button buttons::italic(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::italic(), location, size);
 }
 
-button buttons::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::italic(), location, size, name);
 }
 
@@ -1393,7 +1393,7 @@ button buttons::justified(const drawing::point& location, const drawing::size& s
   return button::create(texts::justified(), location, size);
 }
 
-button buttons::justified(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::justified(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::justified(), location, size, name);
 }
 
@@ -1409,7 +1409,7 @@ button buttons::justified(const control& parent, const drawing::point& location,
   return button::create(parent, texts::justified(), location, size);
 }
 
-button buttons::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::justified(), location, size, name);
 }
 
@@ -1425,7 +1425,7 @@ button buttons::jump_to(const drawing::point& location, const drawing::size& siz
   return button::create(texts::jump_to(), location, size);
 }
 
-button buttons::jump_to(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::jump_to(), location, size, name);
 }
 
@@ -1441,7 +1441,7 @@ button buttons::jump_to(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::jump_to(), location, size);
 }
 
-button buttons::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::jump_to(), location, size, name);
 }
 
@@ -1457,7 +1457,7 @@ button buttons::last(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::last(), location, size);
 }
 
-button buttons::last(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::last(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::last(), location, size, name);
 }
 
@@ -1473,7 +1473,7 @@ button buttons::last(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::last(), location, size);
 }
 
-button buttons::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::last(), location, size, name);
 }
 
@@ -1489,7 +1489,7 @@ button buttons::network(const drawing::point& location, const drawing::size& siz
   return button::create(texts::network(), location, size);
 }
 
-button buttons::network(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::network(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::network(), location, size, name);
 }
 
@@ -1505,7 +1505,7 @@ button buttons::network(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::network(), location, size);
 }
 
-button buttons::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::network(), location, size, name);
 }
 
@@ -1521,7 +1521,7 @@ button buttons::new_(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::new_(), location, size);
 }
 
-button buttons::new_(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::new_(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::new_(), location, size, name);
 }
 
@@ -1537,7 +1537,7 @@ button buttons::new_(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::new_(), location, size);
 }
 
-button buttons::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::new_(), location, size, name);
 }
 
@@ -1553,7 +1553,7 @@ button buttons::next(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::next(), location, size);
 }
 
-button buttons::next(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::next(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::next(), location, size, name);
 }
 
@@ -1569,7 +1569,7 @@ button buttons::next(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::next(), location, size);
 }
 
-button buttons::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::next(), location, size, name);
 }
 
@@ -1585,7 +1585,7 @@ button buttons::no(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::no(), location, size);
 }
 
-button buttons::no(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::no(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::no(), location, size, name);
 }
 
@@ -1601,7 +1601,7 @@ button buttons::no(const control& parent, const drawing::point& location, const 
   return button::create(parent, texts::no(), location, size);
 }
 
-button buttons::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::no(), location, size, name);
 }
 
@@ -1617,7 +1617,7 @@ button buttons::ok(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::ok(), location, size);
 }
 
-button buttons::ok(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ok(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::ok(), location, size, name);
 }
 
@@ -1633,7 +1633,7 @@ button buttons::ok(const control& parent, const drawing::point& location, const 
   return button::create(parent, texts::ok(), location, size);
 }
 
-button buttons::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::ok(), location, size, name);
 }
 
@@ -1649,7 +1649,7 @@ button buttons::open(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::open(), location, size);
 }
 
-button buttons::open(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::open(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::open(), location, size, name);
 }
 
@@ -1665,7 +1665,7 @@ button buttons::open(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::open(), location, size);
 }
 
-button buttons::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::open(), location, size, name);
 }
 
@@ -1681,7 +1681,7 @@ button buttons::options(const drawing::point& location, const drawing::size& siz
   return button::create(texts::options(), location, size);
 }
 
-button buttons::options(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::options(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::options(), location, size, name);
 }
 
@@ -1697,7 +1697,7 @@ button buttons::options(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::options(), location, size);
 }
 
-button buttons::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::options(), location, size, name);
 }
 
@@ -1713,7 +1713,7 @@ button buttons::paste(const drawing::point& location, const drawing::size& size)
   return button::create(texts::paste(), location, size);
 }
 
-button buttons::paste(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::paste(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::paste(), location, size, name);
 }
 
@@ -1729,7 +1729,7 @@ button buttons::paste(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::paste(), location, size);
 }
 
-button buttons::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::paste(), location, size, name);
 }
 
@@ -1745,7 +1745,7 @@ button buttons::preferences(const drawing::point& location, const drawing::size&
   return button::create(texts::preferences(), location, size);
 }
 
-button buttons::preferences(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::preferences(), location, size, name);
 }
 
@@ -1761,7 +1761,7 @@ button buttons::preferences(const control& parent, const drawing::point& locatio
   return button::create(parent, texts::preferences(), location, size);
 }
 
-button buttons::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::preferences(), location, size, name);
 }
 
@@ -1777,7 +1777,7 @@ button buttons::previous(const drawing::point& location, const drawing::size& si
   return button::create(texts::previous(), location, size);
 }
 
-button buttons::previous(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::previous(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::previous(), location, size, name);
 }
 
@@ -1793,7 +1793,7 @@ button buttons::previous(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::previous(), location, size);
 }
 
-button buttons::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::previous(), location, size, name);
 }
 
@@ -1809,7 +1809,7 @@ button buttons::print(const drawing::point& location, const drawing::size& size)
   return button::create(texts::print(), location, size);
 }
 
-button buttons::print(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::print(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::print(), location, size, name);
 }
 
@@ -1825,7 +1825,7 @@ button buttons::print(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::print(), location, size);
 }
 
-button buttons::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::print(), location, size, name);
 }
 
@@ -1841,7 +1841,7 @@ button buttons::print_preview(const drawing::point& location, const drawing::siz
   return button::create(texts::print_preview(), location, size);
 }
 
-button buttons::print_preview(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::print_preview(), location, size, name);
 }
 
@@ -1857,7 +1857,7 @@ button buttons::print_preview(const control& parent, const drawing::point& locat
   return button::create(parent, texts::print_preview(), location, size);
 }
 
-button buttons::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::print_preview(), location, size, name);
 }
 
@@ -1873,7 +1873,7 @@ button buttons::properties(const drawing::point& location, const drawing::size& 
   return button::create(texts::properties(), location, size);
 }
 
-button buttons::properties(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::properties(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::properties(), location, size, name);
 }
 
@@ -1889,7 +1889,7 @@ button buttons::properties(const control& parent, const drawing::point& location
   return button::create(parent, texts::properties(), location, size);
 }
 
-button buttons::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::properties(), location, size, name);
 }
 
@@ -1905,7 +1905,7 @@ button buttons::quit(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::quit(), location, size);
 }
 
-button buttons::quit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::quit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::quit(), location, size, name);
 }
 
@@ -1921,7 +1921,7 @@ button buttons::quit(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::quit(), location, size);
 }
 
-button buttons::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::quit(), location, size, name);
 }
 
@@ -1937,7 +1937,7 @@ button buttons::redo(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::redo(), location, size);
 }
 
-button buttons::redo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::redo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::redo(), location, size, name);
 }
 
@@ -1953,7 +1953,7 @@ button buttons::redo(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::redo(), location, size);
 }
 
-button buttons::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::redo(), location, size, name);
 }
 
@@ -1969,7 +1969,7 @@ button buttons::refresh(const drawing::point& location, const drawing::size& siz
   return button::create(texts::refresh(), location, size);
 }
 
-button buttons::refresh(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::refresh(), location, size, name);
 }
 
@@ -1985,7 +1985,7 @@ button buttons::refresh(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::refresh(), location, size);
 }
 
-button buttons::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::refresh(), location, size, name);
 }
 
@@ -2001,7 +2001,7 @@ button buttons::remove(const drawing::point& location, const drawing::size& size
   return button::create(texts::remove(), location, size);
 }
 
-button buttons::remove(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::remove(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::remove(), location, size, name);
 }
 
@@ -2017,7 +2017,7 @@ button buttons::remove(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::remove(), location, size);
 }
 
-button buttons::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::remove(), location, size, name);
 }
 
@@ -2033,7 +2033,7 @@ button buttons::replace(const drawing::point& location, const drawing::size& siz
   return button::create(texts::replace(), location, size);
 }
 
-button buttons::replace(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::replace(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::replace(), location, size, name);
 }
 
@@ -2049,7 +2049,7 @@ button buttons::replace(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::replace(), location, size);
 }
 
-button buttons::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::replace(), location, size, name);
 }
 
@@ -2065,7 +2065,7 @@ button buttons::retry(const drawing::point& location, const drawing::size& size)
   return button::create(texts::retry(), location, size);
 }
 
-button buttons::retry(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::retry(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::retry(), location, size, name);
 }
 
@@ -2081,7 +2081,7 @@ button buttons::retry(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::retry(), location, size);
 }
 
-button buttons::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::retry(), location, size, name);
 }
 
@@ -2097,7 +2097,7 @@ button buttons::revert_to_saved(const drawing::point& location, const drawing::s
   return button::create(texts::revert_to_saved(), location, size);
 }
 
-button buttons::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::revert_to_saved(), location, size, name);
 }
 
@@ -2113,7 +2113,7 @@ button buttons::revert_to_saved(const control& parent, const drawing::point& loc
   return button::create(parent, texts::revert_to_saved(), location, size);
 }
 
-button buttons::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::revert_to_saved(), location, size, name);
 }
 
@@ -2129,7 +2129,7 @@ button buttons::save(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::save(), location, size);
 }
 
-button buttons::save(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::save(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::save(), location, size, name);
 }
 
@@ -2145,7 +2145,7 @@ button buttons::save(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::save(), location, size);
 }
 
-button buttons::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::save(), location, size, name);
 }
 
@@ -2161,7 +2161,7 @@ button buttons::save_as(const drawing::point& location, const drawing::size& siz
   return button::create(texts::save_as(), location, size);
 }
 
-button buttons::save_as(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::save_as(), location, size, name);
 }
 
@@ -2177,7 +2177,7 @@ button buttons::save_as(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::save_as(), location, size);
 }
 
-button buttons::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::save_as(), location, size, name);
 }
 
@@ -2193,7 +2193,7 @@ button buttons::search(const drawing::point& location, const drawing::size& size
   return button::create(texts::search(), location, size);
 }
 
-button buttons::search(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::search(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::search(), location, size, name);
 }
 
@@ -2209,7 +2209,7 @@ button buttons::search(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::search(), location, size);
 }
 
-button buttons::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::search(), location, size, name);
 }
 
@@ -2225,7 +2225,7 @@ button buttons::select_all(const drawing::point& location, const drawing::size& 
   return button::create(texts::select_all(), location, size);
 }
 
-button buttons::select_all(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::select_all(), location, size, name);
 }
 
@@ -2241,7 +2241,7 @@ button buttons::select_all(const control& parent, const drawing::point& location
   return button::create(parent, texts::select_all(), location, size);
 }
 
-button buttons::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::select_all(), location, size, name);
 }
 
@@ -2257,7 +2257,7 @@ button buttons::settings(const drawing::point& location, const drawing::size& si
   return button::create(texts::settings(), location, size);
 }
 
-button buttons::settings(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::settings(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::settings(), location, size, name);
 }
 
@@ -2273,7 +2273,7 @@ button buttons::settings(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::settings(), location, size);
 }
 
-button buttons::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::settings(), location, size, name);
 }
 
@@ -2289,7 +2289,7 @@ button buttons::spell_check(const drawing::point& location, const drawing::size&
   return button::create(texts::spell_check(), location, size);
 }
 
-button buttons::spell_check(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::spell_check(), location, size, name);
 }
 
@@ -2305,7 +2305,7 @@ button buttons::spell_check(const control& parent, const drawing::point& locatio
   return button::create(parent, texts::spell_check(), location, size);
 }
 
-button buttons::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::spell_check(), location, size, name);
 }
 
@@ -2321,7 +2321,7 @@ button buttons::stop(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::stop(), location, size);
 }
 
-button buttons::stop(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::stop(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::stop(), location, size, name);
 }
 
@@ -2337,7 +2337,7 @@ button buttons::stop(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::stop(), location, size);
 }
 
-button buttons::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::stop(), location, size, name);
 }
 
@@ -2353,7 +2353,7 @@ button buttons::strikeout(const drawing::point& location, const drawing::size& s
   return button::create(texts::strikeout(), location, size);
 }
 
-button buttons::strikeout(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::strikeout(), location, size, name);
 }
 
@@ -2369,7 +2369,7 @@ button buttons::strikeout(const control& parent, const drawing::point& location,
   return button::create(parent, texts::strikeout(), location, size);
 }
 
-button buttons::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::strikeout(), location, size, name);
 }
 
@@ -2385,7 +2385,7 @@ button buttons::tools(const drawing::point& location, const drawing::size& size)
   return button::create(texts::tools(), location, size);
 }
 
-button buttons::tools(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::tools(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::tools(), location, size, name);
 }
 
@@ -2401,7 +2401,7 @@ button buttons::tools(const control& parent, const drawing::point& location, con
   return button::create(parent, texts::tools(), location, size);
 }
 
-button buttons::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::tools(), location, size, name);
 }
 
@@ -2417,7 +2417,7 @@ button buttons::top(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::top(), location, size);
 }
 
-button buttons::top(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::top(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::top(), location, size, name);
 }
 
@@ -2433,7 +2433,7 @@ button buttons::top(const control& parent, const drawing::point& location, const
   return button::create(parent, texts::top(), location, size);
 }
 
-button buttons::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::top(), location, size, name);
 }
 
@@ -2449,7 +2449,7 @@ button buttons::undelete(const drawing::point& location, const drawing::size& si
   return button::create(texts::undelete(), location, size);
 }
 
-button buttons::undelete(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::undelete(), location, size, name);
 }
 
@@ -2465,7 +2465,7 @@ button buttons::undelete(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::undelete(), location, size);
 }
 
-button buttons::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::undelete(), location, size, name);
 }
 
@@ -2481,7 +2481,7 @@ button buttons::underline(const drawing::point& location, const drawing::size& s
   return button::create(texts::underline(), location, size);
 }
 
-button buttons::underline(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::underline(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::underline(), location, size, name);
 }
 
@@ -2497,7 +2497,7 @@ button buttons::underline(const control& parent, const drawing::point& location,
   return button::create(parent, texts::underline(), location, size);
 }
 
-button buttons::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::underline(), location, size, name);
 }
 
@@ -2513,7 +2513,7 @@ button buttons::undo(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::undo(), location, size);
 }
 
-button buttons::undo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::undo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::undo(), location, size, name);
 }
 
@@ -2529,7 +2529,7 @@ button buttons::undo(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::undo(), location, size);
 }
 
-button buttons::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::undo(), location, size, name);
 }
 
@@ -2545,7 +2545,7 @@ button buttons::unindent(const drawing::point& location, const drawing::size& si
   return button::create(texts::unindent(), location, size);
 }
 
-button buttons::unindent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::unindent(), location, size, name);
 }
 
@@ -2561,7 +2561,7 @@ button buttons::unindent(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::unindent(), location, size);
 }
 
-button buttons::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::unindent(), location, size, name);
 }
 
@@ -2577,7 +2577,7 @@ button buttons::up(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::up(), location, size);
 }
 
-button buttons::up(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::up(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::up(), location, size, name);
 }
 
@@ -2593,7 +2593,7 @@ button buttons::up(const control& parent, const drawing::point& location, const 
   return button::create(parent, texts::up(), location, size);
 }
 
-button buttons::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::up(), location, size, name);
 }
 
@@ -2609,7 +2609,7 @@ button buttons::view(const drawing::point& location, const drawing::size& size) 
   return button::create(texts::view(), location, size);
 }
 
-button buttons::view(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::view(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::view(), location, size, name);
 }
 
@@ -2625,7 +2625,7 @@ button buttons::view(const control& parent, const drawing::point& location, cons
   return button::create(parent, texts::view(), location, size);
 }
 
-button buttons::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::view(), location, size, name);
 }
 
@@ -2641,7 +2641,7 @@ button buttons::window(const drawing::point& location, const drawing::size& size
   return button::create(texts::window(), location, size);
 }
 
-button buttons::window(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::window(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::window(), location, size, name);
 }
 
@@ -2657,7 +2657,7 @@ button buttons::window(const control& parent, const drawing::point& location, co
   return button::create(parent, texts::window(), location, size);
 }
 
-button buttons::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::window(), location, size, name);
 }
 
@@ -2673,7 +2673,7 @@ button buttons::yes(const drawing::point& location, const drawing::size& size) {
   return button::create(texts::yes(), location, size);
 }
 
-button buttons::yes(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::yes(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::yes(), location, size, name);
 }
 
@@ -2689,7 +2689,7 @@ button buttons::yes(const control& parent, const drawing::point& location, const
   return button::create(parent, texts::yes(), location, size);
 }
 
-button buttons::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::yes(), location, size, name);
 }
 
@@ -2705,7 +2705,7 @@ button buttons::zoom_in(const drawing::point& location, const drawing::size& siz
   return button::create(texts::zoom_in(), location, size);
 }
 
-button buttons::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::zoom_in(), location, size, name);
 }
 
@@ -2721,7 +2721,7 @@ button buttons::zoom_in(const control& parent, const drawing::point& location, c
   return button::create(parent, texts::zoom_in(), location, size);
 }
 
-button buttons::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::zoom_in(), location, size, name);
 }
 
@@ -2737,7 +2737,7 @@ button buttons::zoom_out(const drawing::point& location, const drawing::size& si
   return button::create(texts::zoom_out(), location, size);
 }
 
-button buttons::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::zoom_out(), location, size, name);
 }
 
@@ -2753,7 +2753,7 @@ button buttons::zoom_out(const control& parent, const drawing::point& location, 
   return button::create(parent, texts::zoom_out(), location, size);
 }
 
-button buttons::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::zoom_out(), location, size, name);
 }
 
@@ -2769,7 +2769,7 @@ button buttons::zoom_to_fit(const drawing::point& location, const drawing::size&
   return button::create(texts::zoom_to_fit(), location, size);
 }
 
-button buttons::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(texts::zoom_to_fit(), location, size, name);
 }
 
@@ -2785,6 +2785,6 @@ button buttons::zoom_to_fit(const control& parent, const drawing::point& locatio
   return button::create(parent, texts::zoom_to_fit(), location, size);
 }
 
-button buttons::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+button buttons::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return button::create(parent, texts::zoom_to_fit(), location, size, name);
 }

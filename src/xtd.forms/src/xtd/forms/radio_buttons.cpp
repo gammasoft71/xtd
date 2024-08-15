@@ -17,7 +17,7 @@ radio_button radio_buttons::abort(const drawing::point& location, const drawing:
   return radio_button::create(texts::abort(), location, size);
 }
 
-radio_button radio_buttons::abort(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::abort(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::abort(), location, size, name);
 }
 
@@ -33,7 +33,7 @@ radio_button radio_buttons::abort(bool checked, const drawing::point& location, 
   return radio_button::create(texts::abort(), checked, location, size);
 }
 
-radio_button radio_buttons::abort(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::abort(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::abort(), checked, location, size, name);
 }
 
@@ -49,7 +49,7 @@ radio_button radio_buttons::abort(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::abort(), location, size);
 }
 
-radio_button radio_buttons::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::abort(), location, size, name);
 }
 
@@ -65,7 +65,7 @@ radio_button radio_buttons::abort(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::abort(), checked, location, size);
 }
 
-radio_button radio_buttons::abort(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::abort(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::abort(), checked, location, size, name);
 }
 
@@ -81,7 +81,7 @@ radio_button radio_buttons::about(const drawing::point& location, const drawing:
   return radio_button::create(texts::about(), location, size);
 }
 
-radio_button radio_buttons::about(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::about(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::about(), location, size, name);
 }
 
@@ -97,7 +97,7 @@ radio_button radio_buttons::about(bool checked, const drawing::point& location, 
   return radio_button::create(texts::about(), checked, location, size);
 }
 
-radio_button radio_buttons::about(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::about(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::about(), checked, location, size, name);
 }
 
@@ -113,7 +113,7 @@ radio_button radio_buttons::about(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::about(), location, size);
 }
 
-radio_button radio_buttons::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::about(), location, size, name);
 }
 
@@ -129,7 +129,7 @@ radio_button radio_buttons::about(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::about(), checked, location, size);
 }
 
-radio_button radio_buttons::about(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::about(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::about(), checked, location, size, name);
 }
 
@@ -145,7 +145,7 @@ radio_button radio_buttons::actual_size(const drawing::point& location, const dr
   return radio_button::create(texts::actual_size(), location, size);
 }
 
-radio_button radio_buttons::actual_size(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::actual_size(), location, size, name);
 }
 
@@ -161,7 +161,7 @@ radio_button radio_buttons::actual_size(bool checked, const drawing::point& loca
   return radio_button::create(texts::actual_size(), checked, location, size);
 }
 
-radio_button radio_buttons::actual_size(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::actual_size(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::actual_size(), checked, location, size, name);
 }
 
@@ -177,7 +177,7 @@ radio_button radio_buttons::actual_size(const control& parent, const drawing::po
   return radio_button::create(parent, texts::actual_size(), location, size);
 }
 
-radio_button radio_buttons::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::actual_size(), location, size, name);
 }
 
@@ -193,7 +193,7 @@ radio_button radio_buttons::actual_size(const control& parent, bool checked, con
   return radio_button::create(parent, texts::actual_size(), checked, location, size);
 }
 
-radio_button radio_buttons::actual_size(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::actual_size(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::actual_size(), checked, location, size, name);
 }
 
@@ -209,7 +209,7 @@ radio_button radio_buttons::add(const drawing::point& location, const drawing::s
   return radio_button::create(texts::add(), location, size);
 }
 
-radio_button radio_buttons::add(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::add(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::add(), location, size, name);
 }
 
@@ -225,7 +225,7 @@ radio_button radio_buttons::add(bool checked, const drawing::point& location, co
   return radio_button::create(texts::add(), checked, location, size);
 }
 
-radio_button radio_buttons::add(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::add(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::add(), checked, location, size, name);
 }
 
@@ -241,7 +241,7 @@ radio_button radio_buttons::add(const control& parent, const drawing::point& loc
   return radio_button::create(parent, texts::add(), location, size);
 }
 
-radio_button radio_buttons::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::add(), location, size, name);
 }
 
@@ -257,7 +257,7 @@ radio_button radio_buttons::add(const control& parent, bool checked, const drawi
   return radio_button::create(parent, texts::add(), checked, location, size);
 }
 
-radio_button radio_buttons::add(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::add(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::add(), checked, location, size, name);
 }
 
@@ -273,7 +273,7 @@ radio_button radio_buttons::alignment(const drawing::point& location, const draw
   return radio_button::create(texts::alignment(), location, size);
 }
 
-radio_button radio_buttons::alignment(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::alignment(), location, size, name);
 }
 
@@ -289,7 +289,7 @@ radio_button radio_buttons::alignment(bool checked, const drawing::point& locati
   return radio_button::create(texts::alignment(), checked, location, size);
 }
 
-radio_button radio_buttons::alignment(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::alignment(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::alignment(), checked, location, size, name);
 }
 
@@ -305,7 +305,7 @@ radio_button radio_buttons::alignment(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::alignment(), location, size);
 }
 
-radio_button radio_buttons::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::alignment(), location, size, name);
 }
 
@@ -321,7 +321,7 @@ radio_button radio_buttons::alignment(const control& parent, bool checked, const
   return radio_button::create(parent, texts::alignment(), checked, location, size);
 }
 
-radio_button radio_buttons::alignment(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::alignment(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::alignment(), checked, location, size, name);
 }
 
@@ -337,7 +337,7 @@ radio_button radio_buttons::align_left(const drawing::point& location, const dra
   return radio_button::create(texts::align_left(), location, size);
 }
 
-radio_button radio_buttons::align_left(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::align_left(), location, size, name);
 }
 
@@ -353,7 +353,7 @@ radio_button radio_buttons::align_left(bool checked, const drawing::point& locat
   return radio_button::create(texts::align_left(), checked, location, size);
 }
 
-radio_button radio_buttons::align_left(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_left(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::align_left(), checked, location, size, name);
 }
 
@@ -369,7 +369,7 @@ radio_button radio_buttons::align_left(const control& parent, const drawing::poi
   return radio_button::create(parent, texts::align_left(), location, size);
 }
 
-radio_button radio_buttons::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::align_left(), location, size, name);
 }
 
@@ -385,7 +385,7 @@ radio_button radio_buttons::align_left(const control& parent, bool checked, cons
   return radio_button::create(parent, texts::align_left(), checked, location, size);
 }
 
-radio_button radio_buttons::align_left(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_left(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::align_left(), checked, location, size, name);
 }
 
@@ -401,7 +401,7 @@ radio_button radio_buttons::align_right(const drawing::point& location, const dr
   return radio_button::create(texts::align_right(), location, size);
 }
 
-radio_button radio_buttons::align_right(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::align_right(), location, size, name);
 }
 
@@ -417,7 +417,7 @@ radio_button radio_buttons::align_right(bool checked, const drawing::point& loca
   return radio_button::create(texts::align_right(), checked, location, size);
 }
 
-radio_button radio_buttons::align_right(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_right(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::align_right(), checked, location, size, name);
 }
 
@@ -433,7 +433,7 @@ radio_button radio_buttons::align_right(const control& parent, const drawing::po
   return radio_button::create(parent, texts::align_right(), location, size);
 }
 
-radio_button radio_buttons::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::align_right(), location, size, name);
 }
 
@@ -449,7 +449,7 @@ radio_button radio_buttons::align_right(const control& parent, bool checked, con
   return radio_button::create(parent, texts::align_right(), checked, location, size);
 }
 
-radio_button radio_buttons::align_right(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::align_right(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::align_right(), checked, location, size, name);
 }
 
@@ -465,7 +465,7 @@ radio_button radio_buttons::apply(const drawing::point& location, const drawing:
   return radio_button::create(texts::apply(), location, size);
 }
 
-radio_button radio_buttons::apply(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::apply(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::apply(), location, size, name);
 }
 
@@ -481,7 +481,7 @@ radio_button radio_buttons::apply(bool checked, const drawing::point& location, 
   return radio_button::create(texts::apply(), checked, location, size);
 }
 
-radio_button radio_buttons::apply(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::apply(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::apply(), checked, location, size, name);
 }
 
@@ -497,7 +497,7 @@ radio_button radio_buttons::apply(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::apply(), location, size);
 }
 
-radio_button radio_buttons::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::apply(), location, size, name);
 }
 
@@ -513,7 +513,7 @@ radio_button radio_buttons::apply(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::apply(), checked, location, size);
 }
 
-radio_button radio_buttons::apply(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::apply(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::apply(), checked, location, size, name);
 }
 
@@ -529,7 +529,7 @@ radio_button radio_buttons::ascending(const drawing::point& location, const draw
   return radio_button::create(texts::ascending(), location, size);
 }
 
-radio_button radio_buttons::ascending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ascending(), location, size, name);
 }
 
@@ -545,7 +545,7 @@ radio_button radio_buttons::ascending(bool checked, const drawing::point& locati
   return radio_button::create(texts::ascending(), checked, location, size);
 }
 
-radio_button radio_buttons::ascending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ascending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ascending(), checked, location, size, name);
 }
 
@@ -561,7 +561,7 @@ radio_button radio_buttons::ascending(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::ascending(), location, size);
 }
 
-radio_button radio_buttons::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ascending(), location, size, name);
 }
 
@@ -577,7 +577,7 @@ radio_button radio_buttons::ascending(const control& parent, bool checked, const
   return radio_button::create(parent, texts::ascending(), checked, location, size);
 }
 
-radio_button radio_buttons::ascending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ascending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ascending(), checked, location, size, name);
 }
 
@@ -593,7 +593,7 @@ radio_button radio_buttons::back(const drawing::point& location, const drawing::
   return radio_button::create(texts::back(), location, size);
 }
 
-radio_button radio_buttons::back(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::back(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::back(), location, size, name);
 }
 
@@ -609,7 +609,7 @@ radio_button radio_buttons::back(bool checked, const drawing::point& location, c
   return radio_button::create(texts::back(), checked, location, size);
 }
 
-radio_button radio_buttons::back(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::back(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::back(), checked, location, size, name);
 }
 
@@ -625,7 +625,7 @@ radio_button radio_buttons::back(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::back(), location, size);
 }
 
-radio_button radio_buttons::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::back(), location, size, name);
 }
 
@@ -641,7 +641,7 @@ radio_button radio_buttons::back(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::back(), checked, location, size);
 }
 
-radio_button radio_buttons::back(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::back(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::back(), checked, location, size, name);
 }
 
@@ -657,7 +657,7 @@ radio_button radio_buttons::bold(const drawing::point& location, const drawing::
   return radio_button::create(texts::bold(), location, size);
 }
 
-radio_button radio_buttons::bold(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bold(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::bold(), location, size, name);
 }
 
@@ -673,7 +673,7 @@ radio_button radio_buttons::bold(bool checked, const drawing::point& location, c
   return radio_button::create(texts::bold(), checked, location, size);
 }
 
-radio_button radio_buttons::bold(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bold(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::bold(), checked, location, size, name);
 }
 
@@ -689,7 +689,7 @@ radio_button radio_buttons::bold(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::bold(), location, size);
 }
 
-radio_button radio_buttons::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::bold(), location, size, name);
 }
 
@@ -705,7 +705,7 @@ radio_button radio_buttons::bold(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::bold(), checked, location, size);
 }
 
-radio_button radio_buttons::bold(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bold(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::bold(), checked, location, size, name);
 }
 
@@ -721,7 +721,7 @@ radio_button radio_buttons::bottom(const drawing::point& location, const drawing
   return radio_button::create(texts::bottom(), location, size);
 }
 
-radio_button radio_buttons::bottom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::bottom(), location, size, name);
 }
 
@@ -737,7 +737,7 @@ radio_button radio_buttons::bottom(bool checked, const drawing::point& location,
   return radio_button::create(texts::bottom(), checked, location, size);
 }
 
-radio_button radio_buttons::bottom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bottom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::bottom(), checked, location, size, name);
 }
 
@@ -753,7 +753,7 @@ radio_button radio_buttons::bottom(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::bottom(), location, size);
 }
 
-radio_button radio_buttons::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::bottom(), location, size, name);
 }
 
@@ -769,7 +769,7 @@ radio_button radio_buttons::bottom(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::bottom(), checked, location, size);
 }
 
-radio_button radio_buttons::bottom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::bottom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::bottom(), checked, location, size, name);
 }
 
@@ -785,7 +785,7 @@ radio_button radio_buttons::cancel(const drawing::point& location, const drawing
   return radio_button::create(texts::cancel(), location, size);
 }
 
-radio_button radio_buttons::cancel(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cancel(), location, size, name);
 }
 
@@ -801,7 +801,7 @@ radio_button radio_buttons::cancel(bool checked, const drawing::point& location,
   return radio_button::create(texts::cancel(), checked, location, size);
 }
 
-radio_button radio_buttons::cancel(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cancel(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cancel(), checked, location, size, name);
 }
 
@@ -817,7 +817,7 @@ radio_button radio_buttons::cancel(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::cancel(), location, size);
 }
 
-radio_button radio_buttons::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cancel(), location, size, name);
 }
 
@@ -833,7 +833,7 @@ radio_button radio_buttons::cancel(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::cancel(), checked, location, size);
 }
 
-radio_button radio_buttons::cancel(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cancel(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cancel(), checked, location, size, name);
 }
 
@@ -849,7 +849,7 @@ radio_button radio_buttons::cdrom(const drawing::point& location, const drawing:
   return radio_button::create(texts::cdrom(), location, size);
 }
 
-radio_button radio_buttons::cdrom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cdrom(), location, size, name);
 }
 
@@ -865,7 +865,7 @@ radio_button radio_buttons::cdrom(bool checked, const drawing::point& location, 
   return radio_button::create(texts::cdrom(), checked, location, size);
 }
 
-radio_button radio_buttons::cdrom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cdrom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cdrom(), checked, location, size, name);
 }
 
@@ -881,7 +881,7 @@ radio_button radio_buttons::cdrom(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::cdrom(), location, size);
 }
 
-radio_button radio_buttons::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cdrom(), location, size, name);
 }
 
@@ -897,7 +897,7 @@ radio_button radio_buttons::cdrom(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::cdrom(), checked, location, size);
 }
 
-radio_button radio_buttons::cdrom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cdrom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cdrom(), checked, location, size, name);
 }
 
@@ -913,7 +913,7 @@ radio_button radio_buttons::centered(const drawing::point& location, const drawi
   return radio_button::create(texts::centered(), location, size);
 }
 
-radio_button radio_buttons::centered(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::centered(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::centered(), location, size, name);
 }
 
@@ -929,7 +929,7 @@ radio_button radio_buttons::centered(bool checked, const drawing::point& locatio
   return radio_button::create(texts::centered(), checked, location, size);
 }
 
-radio_button radio_buttons::centered(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::centered(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::centered(), checked, location, size, name);
 }
 
@@ -945,7 +945,7 @@ radio_button radio_buttons::centered(const control& parent, const drawing::point
   return radio_button::create(parent, texts::centered(), location, size);
 }
 
-radio_button radio_buttons::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::centered(), location, size, name);
 }
 
@@ -961,7 +961,7 @@ radio_button radio_buttons::centered(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::centered(), checked, location, size);
 }
 
-radio_button radio_buttons::centered(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::centered(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::centered(), checked, location, size, name);
 }
 
@@ -977,7 +977,7 @@ radio_button radio_buttons::clear(const drawing::point& location, const drawing:
   return radio_button::create(texts::clear(), location, size);
 }
 
-radio_button radio_buttons::clear(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::clear(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::clear(), location, size, name);
 }
 
@@ -993,7 +993,7 @@ radio_button radio_buttons::clear(bool checked, const drawing::point& location, 
   return radio_button::create(texts::clear(), checked, location, size);
 }
 
-radio_button radio_buttons::clear(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::clear(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::clear(), checked, location, size, name);
 }
 
@@ -1009,7 +1009,7 @@ radio_button radio_buttons::clear(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::clear(), location, size);
 }
 
-radio_button radio_buttons::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::clear(), location, size, name);
 }
 
@@ -1025,7 +1025,7 @@ radio_button radio_buttons::clear(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::clear(), checked, location, size);
 }
 
-radio_button radio_buttons::clear(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::clear(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::clear(), checked, location, size, name);
 }
 
@@ -1041,7 +1041,7 @@ radio_button radio_buttons::close(const drawing::point& location, const drawing:
   return radio_button::create(texts::close(), location, size);
 }
 
-radio_button radio_buttons::close(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::close(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::close(), location, size, name);
 }
 
@@ -1057,7 +1057,7 @@ radio_button radio_buttons::close(bool checked, const drawing::point& location, 
   return radio_button::create(texts::close(), checked, location, size);
 }
 
-radio_button radio_buttons::close(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::close(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::close(), checked, location, size, name);
 }
 
@@ -1073,7 +1073,7 @@ radio_button radio_buttons::close(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::close(), location, size);
 }
 
-radio_button radio_buttons::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::close(), location, size, name);
 }
 
@@ -1089,7 +1089,7 @@ radio_button radio_buttons::close(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::close(), checked, location, size);
 }
 
-radio_button radio_buttons::close(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::close(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::close(), checked, location, size, name);
 }
 
@@ -1105,7 +1105,7 @@ radio_button radio_buttons::color(const drawing::point& location, const drawing:
   return radio_button::create(texts::color(), location, size);
 }
 
-radio_button radio_buttons::color(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::color(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::color(), location, size, name);
 }
 
@@ -1121,7 +1121,7 @@ radio_button radio_buttons::color(bool checked, const drawing::point& location, 
   return radio_button::create(texts::color(), checked, location, size);
 }
 
-radio_button radio_buttons::color(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::color(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::color(), checked, location, size, name);
 }
 
@@ -1137,7 +1137,7 @@ radio_button radio_buttons::color(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::color(), location, size);
 }
 
-radio_button radio_buttons::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::color(), location, size, name);
 }
 
@@ -1153,7 +1153,7 @@ radio_button radio_buttons::color(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::color(), checked, location, size);
 }
 
-radio_button radio_buttons::color(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::color(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::color(), checked, location, size, name);
 }
 
@@ -1169,7 +1169,7 @@ radio_button radio_buttons::contents(const drawing::point& location, const drawi
   return radio_button::create(texts::contents(), location, size);
 }
 
-radio_button radio_buttons::contents(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::contents(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::contents(), location, size, name);
 }
 
@@ -1185,7 +1185,7 @@ radio_button radio_buttons::contents(bool checked, const drawing::point& locatio
   return radio_button::create(texts::contents(), checked, location, size);
 }
 
-radio_button radio_buttons::contents(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::contents(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::contents(), checked, location, size, name);
 }
 
@@ -1201,7 +1201,7 @@ radio_button radio_buttons::contents(const control& parent, const drawing::point
   return radio_button::create(parent, texts::contents(), location, size);
 }
 
-radio_button radio_buttons::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::contents(), location, size, name);
 }
 
@@ -1217,7 +1217,7 @@ radio_button radio_buttons::contents(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::contents(), checked, location, size);
 }
 
-radio_button radio_buttons::contents(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::contents(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::contents(), checked, location, size, name);
 }
 
@@ -1233,7 +1233,7 @@ radio_button radio_buttons::convert(const drawing::point& location, const drawin
   return radio_button::create(texts::convert(), location, size);
 }
 
-radio_button radio_buttons::convert(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::convert(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::convert(), location, size, name);
 }
 
@@ -1249,7 +1249,7 @@ radio_button radio_buttons::convert(bool checked, const drawing::point& location
   return radio_button::create(texts::convert(), checked, location, size);
 }
 
-radio_button radio_buttons::convert(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::convert(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::convert(), checked, location, size, name);
 }
 
@@ -1265,7 +1265,7 @@ radio_button radio_buttons::convert(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::convert(), location, size);
 }
 
-radio_button radio_buttons::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::convert(), location, size, name);
 }
 
@@ -1281,7 +1281,7 @@ radio_button radio_buttons::convert(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::convert(), checked, location, size);
 }
 
-radio_button radio_buttons::convert(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::convert(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::convert(), checked, location, size, name);
 }
 
@@ -1297,7 +1297,7 @@ radio_button radio_buttons::copy(const drawing::point& location, const drawing::
   return radio_button::create(texts::copy(), location, size);
 }
 
-radio_button radio_buttons::copy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::copy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::copy(), location, size, name);
 }
 
@@ -1313,7 +1313,7 @@ radio_button radio_buttons::copy(bool checked, const drawing::point& location, c
   return radio_button::create(texts::copy(), checked, location, size);
 }
 
-radio_button radio_buttons::copy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::copy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::copy(), checked, location, size, name);
 }
 
@@ -1329,7 +1329,7 @@ radio_button radio_buttons::copy(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::copy(), location, size);
 }
 
-radio_button radio_buttons::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::copy(), location, size, name);
 }
 
@@ -1345,7 +1345,7 @@ radio_button radio_buttons::copy(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::copy(), checked, location, size);
 }
 
-radio_button radio_buttons::copy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::copy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::copy(), checked, location, size, name);
 }
 
@@ -1361,7 +1361,7 @@ radio_button radio_buttons::customize(const drawing::point& location, const draw
   return radio_button::create(texts::customize(), location, size);
 }
 
-radio_button radio_buttons::customize(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::customize(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::customize(), location, size, name);
 }
 
@@ -1377,7 +1377,7 @@ radio_button radio_buttons::customize(bool checked, const drawing::point& locati
   return radio_button::create(texts::customize(), checked, location, size);
 }
 
-radio_button radio_buttons::customize(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::customize(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::customize(), checked, location, size, name);
 }
 
@@ -1393,7 +1393,7 @@ radio_button radio_buttons::customize(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::customize(), location, size);
 }
 
-radio_button radio_buttons::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::customize(), location, size, name);
 }
 
@@ -1409,7 +1409,7 @@ radio_button radio_buttons::customize(const control& parent, bool checked, const
   return radio_button::create(parent, texts::customize(), checked, location, size);
 }
 
-radio_button radio_buttons::customize(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::customize(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::customize(), checked, location, size, name);
 }
 
@@ -1425,7 +1425,7 @@ radio_button radio_buttons::cut(const drawing::point& location, const drawing::s
   return radio_button::create(texts::cut(), location, size);
 }
 
-radio_button radio_buttons::cut(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cut(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cut(), location, size, name);
 }
 
@@ -1441,7 +1441,7 @@ radio_button radio_buttons::cut(bool checked, const drawing::point& location, co
   return radio_button::create(texts::cut(), checked, location, size);
 }
 
-radio_button radio_buttons::cut(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cut(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::cut(), checked, location, size, name);
 }
 
@@ -1457,7 +1457,7 @@ radio_button radio_buttons::cut(const control& parent, const drawing::point& loc
   return radio_button::create(parent, texts::cut(), location, size);
 }
 
-radio_button radio_buttons::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cut(), location, size, name);
 }
 
@@ -1473,7 +1473,7 @@ radio_button radio_buttons::cut(const control& parent, bool checked, const drawi
   return radio_button::create(parent, texts::cut(), checked, location, size);
 }
 
-radio_button radio_buttons::cut(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::cut(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::cut(), checked, location, size, name);
 }
 
@@ -1489,7 +1489,7 @@ radio_button radio_buttons::del(const drawing::point& location, const drawing::s
   return radio_button::create(texts::del(), location, size);
 }
 
-radio_button radio_buttons::del(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::del(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::del(), location, size, name);
 }
 
@@ -1505,7 +1505,7 @@ radio_button radio_buttons::del(bool checked, const drawing::point& location, co
   return radio_button::create(texts::del(), checked, location, size);
 }
 
-radio_button radio_buttons::del(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::del(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::del(), checked, location, size, name);
 }
 
@@ -1521,7 +1521,7 @@ radio_button radio_buttons::del(const control& parent, const drawing::point& loc
   return radio_button::create(parent, texts::del(), location, size);
 }
 
-radio_button radio_buttons::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::del(), location, size, name);
 }
 
@@ -1537,7 +1537,7 @@ radio_button radio_buttons::del(const control& parent, bool checked, const drawi
   return radio_button::create(parent, texts::del(), checked, location, size);
 }
 
-radio_button radio_buttons::del(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::del(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::del(), checked, location, size, name);
 }
 
@@ -1553,7 +1553,7 @@ radio_button radio_buttons::descending(const drawing::point& location, const dra
   return radio_button::create(texts::descending(), location, size);
 }
 
-radio_button radio_buttons::descending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::descending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::descending(), location, size, name);
 }
 
@@ -1569,7 +1569,7 @@ radio_button radio_buttons::descending(bool checked, const drawing::point& locat
   return radio_button::create(texts::descending(), checked, location, size);
 }
 
-radio_button radio_buttons::descending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::descending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::descending(), checked, location, size, name);
 }
 
@@ -1585,7 +1585,7 @@ radio_button radio_buttons::descending(const control& parent, const drawing::poi
   return radio_button::create(parent, texts::descending(), location, size);
 }
 
-radio_button radio_buttons::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::descending(), location, size, name);
 }
 
@@ -1601,7 +1601,7 @@ radio_button radio_buttons::descending(const control& parent, bool checked, cons
   return radio_button::create(parent, texts::descending(), checked, location, size);
 }
 
-radio_button radio_buttons::descending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::descending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::descending(), checked, location, size, name);
 }
 
@@ -1617,7 +1617,7 @@ radio_button radio_buttons::down(const drawing::point& location, const drawing::
   return radio_button::create(texts::down(), location, size);
 }
 
-radio_button radio_buttons::down(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::down(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::down(), location, size, name);
 }
 
@@ -1633,7 +1633,7 @@ radio_button radio_buttons::down(bool checked, const drawing::point& location, c
   return radio_button::create(texts::down(), checked, location, size);
 }
 
-radio_button radio_buttons::down(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::down(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::down(), checked, location, size, name);
 }
 
@@ -1649,7 +1649,7 @@ radio_button radio_buttons::down(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::down(), location, size);
 }
 
-radio_button radio_buttons::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::down(), location, size, name);
 }
 
@@ -1665,7 +1665,7 @@ radio_button radio_buttons::down(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::down(), checked, location, size);
 }
 
-radio_button radio_buttons::down(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::down(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::down(), checked, location, size, name);
 }
 
@@ -1681,7 +1681,7 @@ radio_button radio_buttons::edit(const drawing::point& location, const drawing::
   return radio_button::create(texts::edit(), location, size);
 }
 
-radio_button radio_buttons::edit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::edit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::edit(), location, size, name);
 }
 
@@ -1697,7 +1697,7 @@ radio_button radio_buttons::edit(bool checked, const drawing::point& location, c
   return radio_button::create(texts::edit(), checked, location, size);
 }
 
-radio_button radio_buttons::edit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::edit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::edit(), checked, location, size, name);
 }
 
@@ -1713,7 +1713,7 @@ radio_button radio_buttons::edit(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::edit(), location, size);
 }
 
-radio_button radio_buttons::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::edit(), location, size, name);
 }
 
@@ -1729,7 +1729,7 @@ radio_button radio_buttons::edit(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::edit(), checked, location, size);
 }
 
-radio_button radio_buttons::edit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::edit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::edit(), checked, location, size, name);
 }
 
@@ -1745,7 +1745,7 @@ radio_button radio_buttons::execute(const drawing::point& location, const drawin
   return radio_button::create(texts::execute(), location, size);
 }
 
-radio_button radio_buttons::execute(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::execute(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::execute(), location, size, name);
 }
 
@@ -1761,7 +1761,7 @@ radio_button radio_buttons::execute(bool checked, const drawing::point& location
   return radio_button::create(texts::execute(), checked, location, size);
 }
 
-radio_button radio_buttons::execute(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::execute(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::execute(), checked, location, size, name);
 }
 
@@ -1777,7 +1777,7 @@ radio_button radio_buttons::execute(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::execute(), location, size);
 }
 
-radio_button radio_buttons::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::execute(), location, size, name);
 }
 
@@ -1793,7 +1793,7 @@ radio_button radio_buttons::execute(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::execute(), checked, location, size);
 }
 
-radio_button radio_buttons::execute(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::execute(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::execute(), checked, location, size, name);
 }
 
@@ -1809,7 +1809,7 @@ radio_button radio_buttons::exit(const drawing::point& location, const drawing::
   return radio_button::create(texts::exit(), location, size);
 }
 
-radio_button radio_buttons::exit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::exit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::exit(), location, size, name);
 }
 
@@ -1825,7 +1825,7 @@ radio_button radio_buttons::exit(bool checked, const drawing::point& location, c
   return radio_button::create(texts::exit(), checked, location, size);
 }
 
-radio_button radio_buttons::exit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::exit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::exit(), checked, location, size, name);
 }
 
@@ -1841,7 +1841,7 @@ radio_button radio_buttons::exit(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::exit(), location, size);
 }
 
-radio_button radio_buttons::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::exit(), location, size, name);
 }
 
@@ -1857,7 +1857,7 @@ radio_button radio_buttons::exit(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::exit(), checked, location, size);
 }
 
-radio_button radio_buttons::exit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::exit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::exit(), checked, location, size, name);
 }
 
@@ -1873,7 +1873,7 @@ radio_button radio_buttons::file(const drawing::point& location, const drawing::
   return radio_button::create(texts::file(), location, size);
 }
 
-radio_button radio_buttons::file(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::file(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::file(), location, size, name);
 }
 
@@ -1889,7 +1889,7 @@ radio_button radio_buttons::file(bool checked, const drawing::point& location, c
   return radio_button::create(texts::file(), checked, location, size);
 }
 
-radio_button radio_buttons::file(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::file(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::file(), checked, location, size, name);
 }
 
@@ -1905,7 +1905,7 @@ radio_button radio_buttons::file(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::file(), location, size);
 }
 
-radio_button radio_buttons::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::file(), location, size, name);
 }
 
@@ -1921,7 +1921,7 @@ radio_button radio_buttons::file(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::file(), checked, location, size);
 }
 
-radio_button radio_buttons::file(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::file(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::file(), checked, location, size, name);
 }
 
@@ -1937,7 +1937,7 @@ radio_button radio_buttons::find(const drawing::point& location, const drawing::
   return radio_button::create(texts::find(), location, size);
 }
 
-radio_button radio_buttons::find(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::find(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::find(), location, size, name);
 }
 
@@ -1953,7 +1953,7 @@ radio_button radio_buttons::find(bool checked, const drawing::point& location, c
   return radio_button::create(texts::find(), checked, location, size);
 }
 
-radio_button radio_buttons::find(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::find(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::find(), checked, location, size, name);
 }
 
@@ -1969,7 +1969,7 @@ radio_button radio_buttons::find(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::find(), location, size);
 }
 
-radio_button radio_buttons::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::find(), location, size, name);
 }
 
@@ -1985,7 +1985,7 @@ radio_button radio_buttons::find(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::find(), checked, location, size);
 }
 
-radio_button radio_buttons::find(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::find(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::find(), checked, location, size, name);
 }
 
@@ -2001,7 +2001,7 @@ radio_button radio_buttons::first(const drawing::point& location, const drawing:
   return radio_button::create(texts::first(), location, size);
 }
 
-radio_button radio_buttons::first(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::first(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::first(), location, size, name);
 }
 
@@ -2017,7 +2017,7 @@ radio_button radio_buttons::first(bool checked, const drawing::point& location, 
   return radio_button::create(texts::first(), checked, location, size);
 }
 
-radio_button radio_buttons::first(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::first(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::first(), checked, location, size, name);
 }
 
@@ -2033,7 +2033,7 @@ radio_button radio_buttons::first(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::first(), location, size);
 }
 
-radio_button radio_buttons::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::first(), location, size, name);
 }
 
@@ -2049,7 +2049,7 @@ radio_button radio_buttons::first(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::first(), checked, location, size);
 }
 
-radio_button radio_buttons::first(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::first(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::first(), checked, location, size, name);
 }
 
@@ -2065,7 +2065,7 @@ radio_button radio_buttons::floppy(const drawing::point& location, const drawing
   return radio_button::create(texts::floppy(), location, size);
 }
 
-radio_button radio_buttons::floppy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::floppy(), location, size, name);
 }
 
@@ -2081,7 +2081,7 @@ radio_button radio_buttons::floppy(bool checked, const drawing::point& location,
   return radio_button::create(texts::floppy(), checked, location, size);
 }
 
-radio_button radio_buttons::floppy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::floppy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::floppy(), checked, location, size, name);
 }
 
@@ -2097,7 +2097,7 @@ radio_button radio_buttons::floppy(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::floppy(), location, size);
 }
 
-radio_button radio_buttons::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::floppy(), location, size, name);
 }
 
@@ -2113,7 +2113,7 @@ radio_button radio_buttons::floppy(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::floppy(), checked, location, size);
 }
 
-radio_button radio_buttons::floppy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::floppy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::floppy(), checked, location, size, name);
 }
 
@@ -2129,7 +2129,7 @@ radio_button radio_buttons::font(const drawing::point& location, const drawing::
   return radio_button::create(texts::font(), location, size);
 }
 
-radio_button radio_buttons::font(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::font(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::font(), location, size, name);
 }
 
@@ -2145,7 +2145,7 @@ radio_button radio_buttons::font(bool checked, const drawing::point& location, c
   return radio_button::create(texts::font(), checked, location, size);
 }
 
-radio_button radio_buttons::font(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::font(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::font(), checked, location, size, name);
 }
 
@@ -2161,7 +2161,7 @@ radio_button radio_buttons::font(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::font(), location, size);
 }
 
-radio_button radio_buttons::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::font(), location, size, name);
 }
 
@@ -2177,7 +2177,7 @@ radio_button radio_buttons::font(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::font(), checked, location, size);
 }
 
-radio_button radio_buttons::font(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::font(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::font(), checked, location, size, name);
 }
 
@@ -2193,7 +2193,7 @@ radio_button radio_buttons::forward(const drawing::point& location, const drawin
   return radio_button::create(texts::forward(), location, size);
 }
 
-radio_button radio_buttons::forward(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::forward(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::forward(), location, size, name);
 }
 
@@ -2209,7 +2209,7 @@ radio_button radio_buttons::forward(bool checked, const drawing::point& location
   return radio_button::create(texts::forward(), checked, location, size);
 }
 
-radio_button radio_buttons::forward(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::forward(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::forward(), checked, location, size, name);
 }
 
@@ -2225,7 +2225,7 @@ radio_button radio_buttons::forward(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::forward(), location, size);
 }
 
-radio_button radio_buttons::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::forward(), location, size, name);
 }
 
@@ -2241,7 +2241,7 @@ radio_button radio_buttons::forward(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::forward(), checked, location, size);
 }
 
-radio_button radio_buttons::forward(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::forward(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::forward(), checked, location, size, name);
 }
 
@@ -2257,7 +2257,7 @@ radio_button radio_buttons::harddisk(const drawing::point& location, const drawi
   return radio_button::create(texts::harddisk(), location, size);
 }
 
-radio_button radio_buttons::harddisk(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::harddisk(), location, size, name);
 }
 
@@ -2273,7 +2273,7 @@ radio_button radio_buttons::harddisk(bool checked, const drawing::point& locatio
   return radio_button::create(texts::harddisk(), checked, location, size);
 }
 
-radio_button radio_buttons::harddisk(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::harddisk(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::harddisk(), checked, location, size, name);
 }
 
@@ -2289,7 +2289,7 @@ radio_button radio_buttons::harddisk(const control& parent, const drawing::point
   return radio_button::create(parent, texts::harddisk(), location, size);
 }
 
-radio_button radio_buttons::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::harddisk(), location, size, name);
 }
 
@@ -2305,7 +2305,7 @@ radio_button radio_buttons::harddisk(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::harddisk(), checked, location, size);
 }
 
-radio_button radio_buttons::harddisk(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::harddisk(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::harddisk(), checked, location, size, name);
 }
 
@@ -2321,7 +2321,7 @@ radio_button radio_buttons::help(const drawing::point& location, const drawing::
   return radio_button::create(texts::help(), location, size);
 }
 
-radio_button radio_buttons::help(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::help(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::help(), location, size, name);
 }
 
@@ -2337,7 +2337,7 @@ radio_button radio_buttons::help(bool checked, const drawing::point& location, c
   return radio_button::create(texts::help(), checked, location, size);
 }
 
-radio_button radio_buttons::help(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::help(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::help(), checked, location, size, name);
 }
 
@@ -2353,7 +2353,7 @@ radio_button radio_buttons::help(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::help(), location, size);
 }
 
-radio_button radio_buttons::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::help(), location, size, name);
 }
 
@@ -2369,7 +2369,7 @@ radio_button radio_buttons::help(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::help(), checked, location, size);
 }
 
-radio_button radio_buttons::help(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::help(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::help(), checked, location, size, name);
 }
 
@@ -2385,7 +2385,7 @@ radio_button radio_buttons::home(const drawing::point& location, const drawing::
   return radio_button::create(texts::home(), location, size);
 }
 
-radio_button radio_buttons::home(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::home(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::home(), location, size, name);
 }
 
@@ -2401,7 +2401,7 @@ radio_button radio_buttons::home(bool checked, const drawing::point& location, c
   return radio_button::create(texts::home(), checked, location, size);
 }
 
-radio_button radio_buttons::home(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::home(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::home(), checked, location, size, name);
 }
 
@@ -2417,7 +2417,7 @@ radio_button radio_buttons::home(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::home(), location, size);
 }
 
-radio_button radio_buttons::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::home(), location, size, name);
 }
 
@@ -2433,7 +2433,7 @@ radio_button radio_buttons::home(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::home(), checked, location, size);
 }
 
-radio_button radio_buttons::home(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::home(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::home(), checked, location, size, name);
 }
 
@@ -2449,7 +2449,7 @@ radio_button radio_buttons::ignore(const drawing::point& location, const drawing
   return radio_button::create(texts::ignore(), location, size);
 }
 
-radio_button radio_buttons::ignore(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ignore(), location, size, name);
 }
 
@@ -2465,7 +2465,7 @@ radio_button radio_buttons::ignore(bool checked, const drawing::point& location,
   return radio_button::create(texts::ignore(), checked, location, size);
 }
 
-radio_button radio_buttons::ignore(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ignore(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ignore(), checked, location, size, name);
 }
 
@@ -2481,7 +2481,7 @@ radio_button radio_buttons::ignore(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::ignore(), location, size);
 }
 
-radio_button radio_buttons::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ignore(), location, size, name);
 }
 
@@ -2497,7 +2497,7 @@ radio_button radio_buttons::ignore(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::ignore(), checked, location, size);
 }
 
-radio_button radio_buttons::ignore(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ignore(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ignore(), checked, location, size, name);
 }
 
@@ -2513,7 +2513,7 @@ radio_button radio_buttons::indent(const drawing::point& location, const drawing
   return radio_button::create(texts::indent(), location, size);
 }
 
-radio_button radio_buttons::indent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::indent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::indent(), location, size, name);
 }
 
@@ -2529,7 +2529,7 @@ radio_button radio_buttons::indent(bool checked, const drawing::point& location,
   return radio_button::create(texts::indent(), checked, location, size);
 }
 
-radio_button radio_buttons::indent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::indent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::indent(), checked, location, size, name);
 }
 
@@ -2545,7 +2545,7 @@ radio_button radio_buttons::indent(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::indent(), location, size);
 }
 
-radio_button radio_buttons::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::indent(), location, size, name);
 }
 
@@ -2561,7 +2561,7 @@ radio_button radio_buttons::indent(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::indent(), checked, location, size);
 }
 
-radio_button radio_buttons::indent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::indent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::indent(), checked, location, size, name);
 }
 
@@ -2577,7 +2577,7 @@ radio_button radio_buttons::index(const drawing::point& location, const drawing:
   return radio_button::create(texts::index(), location, size);
 }
 
-radio_button radio_buttons::index(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::index(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::index(), location, size, name);
 }
 
@@ -2593,7 +2593,7 @@ radio_button radio_buttons::index(bool checked, const drawing::point& location, 
   return radio_button::create(texts::index(), checked, location, size);
 }
 
-radio_button radio_buttons::index(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::index(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::index(), checked, location, size, name);
 }
 
@@ -2609,7 +2609,7 @@ radio_button radio_buttons::index(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::index(), location, size);
 }
 
-radio_button radio_buttons::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::index(), location, size, name);
 }
 
@@ -2625,7 +2625,7 @@ radio_button radio_buttons::index(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::index(), checked, location, size);
 }
 
-radio_button radio_buttons::index(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::index(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::index(), checked, location, size, name);
 }
 
@@ -2641,7 +2641,7 @@ radio_button radio_buttons::info(const drawing::point& location, const drawing::
   return radio_button::create(texts::info(), location, size);
 }
 
-radio_button radio_buttons::info(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::info(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::info(), location, size, name);
 }
 
@@ -2657,7 +2657,7 @@ radio_button radio_buttons::info(bool checked, const drawing::point& location, c
   return radio_button::create(texts::info(), checked, location, size);
 }
 
-radio_button radio_buttons::info(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::info(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::info(), checked, location, size, name);
 }
 
@@ -2673,7 +2673,7 @@ radio_button radio_buttons::info(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::info(), location, size);
 }
 
-radio_button radio_buttons::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::info(), location, size, name);
 }
 
@@ -2689,7 +2689,7 @@ radio_button radio_buttons::info(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::info(), checked, location, size);
 }
 
-radio_button radio_buttons::info(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::info(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::info(), checked, location, size, name);
 }
 
@@ -2705,7 +2705,7 @@ radio_button radio_buttons::italic(const drawing::point& location, const drawing
   return radio_button::create(texts::italic(), location, size);
 }
 
-radio_button radio_buttons::italic(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::italic(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::italic(), location, size, name);
 }
 
@@ -2721,7 +2721,7 @@ radio_button radio_buttons::italic(bool checked, const drawing::point& location,
   return radio_button::create(texts::italic(), checked, location, size);
 }
 
-radio_button radio_buttons::italic(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::italic(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::italic(), checked, location, size, name);
 }
 
@@ -2737,7 +2737,7 @@ radio_button radio_buttons::italic(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::italic(), location, size);
 }
 
-radio_button radio_buttons::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::italic(), location, size, name);
 }
 
@@ -2753,7 +2753,7 @@ radio_button radio_buttons::italic(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::italic(), checked, location, size);
 }
 
-radio_button radio_buttons::italic(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::italic(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::italic(), checked, location, size, name);
 }
 
@@ -2769,7 +2769,7 @@ radio_button radio_buttons::justified(const drawing::point& location, const draw
   return radio_button::create(texts::justified(), location, size);
 }
 
-radio_button radio_buttons::justified(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::justified(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::justified(), location, size, name);
 }
 
@@ -2785,7 +2785,7 @@ radio_button radio_buttons::justified(bool checked, const drawing::point& locati
   return radio_button::create(texts::justified(), checked, location, size);
 }
 
-radio_button radio_buttons::justified(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::justified(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::justified(), checked, location, size, name);
 }
 
@@ -2801,7 +2801,7 @@ radio_button radio_buttons::justified(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::justified(), location, size);
 }
 
-radio_button radio_buttons::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::justified(), location, size, name);
 }
 
@@ -2817,7 +2817,7 @@ radio_button radio_buttons::justified(const control& parent, bool checked, const
   return radio_button::create(parent, texts::justified(), checked, location, size);
 }
 
-radio_button radio_buttons::justified(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::justified(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::justified(), checked, location, size, name);
 }
 
@@ -2833,7 +2833,7 @@ radio_button radio_buttons::jump_to(const drawing::point& location, const drawin
   return radio_button::create(texts::jump_to(), location, size);
 }
 
-radio_button radio_buttons::jump_to(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::jump_to(), location, size, name);
 }
 
@@ -2849,7 +2849,7 @@ radio_button radio_buttons::jump_to(bool checked, const drawing::point& location
   return radio_button::create(texts::jump_to(), checked, location, size);
 }
 
-radio_button radio_buttons::jump_to(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::jump_to(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::jump_to(), checked, location, size, name);
 }
 
@@ -2865,7 +2865,7 @@ radio_button radio_buttons::jump_to(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::jump_to(), location, size);
 }
 
-radio_button radio_buttons::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::jump_to(), location, size, name);
 }
 
@@ -2881,7 +2881,7 @@ radio_button radio_buttons::jump_to(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::jump_to(), checked, location, size);
 }
 
-radio_button radio_buttons::jump_to(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::jump_to(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::jump_to(), checked, location, size, name);
 }
 
@@ -2897,7 +2897,7 @@ radio_button radio_buttons::last(const drawing::point& location, const drawing::
   return radio_button::create(texts::last(), location, size);
 }
 
-radio_button radio_buttons::last(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::last(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::last(), location, size, name);
 }
 
@@ -2913,7 +2913,7 @@ radio_button radio_buttons::last(bool checked, const drawing::point& location, c
   return radio_button::create(texts::last(), checked, location, size);
 }
 
-radio_button radio_buttons::last(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::last(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::last(), checked, location, size, name);
 }
 
@@ -2929,7 +2929,7 @@ radio_button radio_buttons::last(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::last(), location, size);
 }
 
-radio_button radio_buttons::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::last(), location, size, name);
 }
 
@@ -2945,7 +2945,7 @@ radio_button radio_buttons::last(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::last(), checked, location, size);
 }
 
-radio_button radio_buttons::last(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::last(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::last(), checked, location, size, name);
 }
 
@@ -2961,7 +2961,7 @@ radio_button radio_buttons::network(const drawing::point& location, const drawin
   return radio_button::create(texts::network(), location, size);
 }
 
-radio_button radio_buttons::network(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::network(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::network(), location, size, name);
 }
 
@@ -2977,7 +2977,7 @@ radio_button radio_buttons::network(bool checked, const drawing::point& location
   return radio_button::create(texts::network(), checked, location, size);
 }
 
-radio_button radio_buttons::network(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::network(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::network(), checked, location, size, name);
 }
 
@@ -2993,7 +2993,7 @@ radio_button radio_buttons::network(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::network(), location, size);
 }
 
-radio_button radio_buttons::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::network(), location, size, name);
 }
 
@@ -3009,7 +3009,7 @@ radio_button radio_buttons::network(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::network(), checked, location, size);
 }
 
-radio_button radio_buttons::network(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::network(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::network(), checked, location, size, name);
 }
 
@@ -3025,7 +3025,7 @@ radio_button radio_buttons::new_(const drawing::point& location, const drawing::
   return radio_button::create(texts::new_(), location, size);
 }
 
-radio_button radio_buttons::new_(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::new_(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::new_(), location, size, name);
 }
 
@@ -3041,7 +3041,7 @@ radio_button radio_buttons::new_(bool checked, const drawing::point& location, c
   return radio_button::create(texts::new_(), checked, location, size);
 }
 
-radio_button radio_buttons::new_(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::new_(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::new_(), checked, location, size, name);
 }
 
@@ -3057,7 +3057,7 @@ radio_button radio_buttons::new_(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::new_(), location, size);
 }
 
-radio_button radio_buttons::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::new_(), location, size, name);
 }
 
@@ -3073,7 +3073,7 @@ radio_button radio_buttons::new_(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::new_(), checked, location, size);
 }
 
-radio_button radio_buttons::new_(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::new_(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::new_(), checked, location, size, name);
 }
 
@@ -3089,7 +3089,7 @@ radio_button radio_buttons::next(const drawing::point& location, const drawing::
   return radio_button::create(texts::next(), location, size);
 }
 
-radio_button radio_buttons::next(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::next(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::next(), location, size, name);
 }
 
@@ -3105,7 +3105,7 @@ radio_button radio_buttons::next(bool checked, const drawing::point& location, c
   return radio_button::create(texts::next(), checked, location, size);
 }
 
-radio_button radio_buttons::next(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::next(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::next(), checked, location, size, name);
 }
 
@@ -3121,7 +3121,7 @@ radio_button radio_buttons::next(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::next(), location, size);
 }
 
-radio_button radio_buttons::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::next(), location, size, name);
 }
 
@@ -3137,7 +3137,7 @@ radio_button radio_buttons::next(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::next(), checked, location, size);
 }
 
-radio_button radio_buttons::next(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::next(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::next(), checked, location, size, name);
 }
 
@@ -3153,7 +3153,7 @@ radio_button radio_buttons::no(const drawing::point& location, const drawing::si
   return radio_button::create(texts::no(), location, size);
 }
 
-radio_button radio_buttons::no(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::no(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::no(), location, size, name);
 }
 
@@ -3169,7 +3169,7 @@ radio_button radio_buttons::no(bool checked, const drawing::point& location, con
   return radio_button::create(texts::no(), checked, location, size);
 }
 
-radio_button radio_buttons::no(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::no(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::no(), checked, location, size, name);
 }
 
@@ -3185,7 +3185,7 @@ radio_button radio_buttons::no(const control& parent, const drawing::point& loca
   return radio_button::create(parent, texts::no(), location, size);
 }
 
-radio_button radio_buttons::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::no(), location, size, name);
 }
 
@@ -3201,7 +3201,7 @@ radio_button radio_buttons::no(const control& parent, bool checked, const drawin
   return radio_button::create(parent, texts::no(), checked, location, size);
 }
 
-radio_button radio_buttons::no(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::no(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::no(), checked, location, size, name);
 }
 
@@ -3217,7 +3217,7 @@ radio_button radio_buttons::ok(const drawing::point& location, const drawing::si
   return radio_button::create(texts::ok(), location, size);
 }
 
-radio_button radio_buttons::ok(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ok(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ok(), location, size, name);
 }
 
@@ -3233,7 +3233,7 @@ radio_button radio_buttons::ok(bool checked, const drawing::point& location, con
   return radio_button::create(texts::ok(), checked, location, size);
 }
 
-radio_button radio_buttons::ok(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ok(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::ok(), checked, location, size, name);
 }
 
@@ -3249,7 +3249,7 @@ radio_button radio_buttons::ok(const control& parent, const drawing::point& loca
   return radio_button::create(parent, texts::ok(), location, size);
 }
 
-radio_button radio_buttons::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ok(), location, size, name);
 }
 
@@ -3265,7 +3265,7 @@ radio_button radio_buttons::ok(const control& parent, bool checked, const drawin
   return radio_button::create(parent, texts::ok(), checked, location, size);
 }
 
-radio_button radio_buttons::ok(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::ok(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::ok(), checked, location, size, name);
 }
 
@@ -3281,7 +3281,7 @@ radio_button radio_buttons::open(const drawing::point& location, const drawing::
   return radio_button::create(texts::open(), location, size);
 }
 
-radio_button radio_buttons::open(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::open(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::open(), location, size, name);
 }
 
@@ -3297,7 +3297,7 @@ radio_button radio_buttons::open(bool checked, const drawing::point& location, c
   return radio_button::create(texts::open(), checked, location, size);
 }
 
-radio_button radio_buttons::open(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::open(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::open(), checked, location, size, name);
 }
 
@@ -3313,7 +3313,7 @@ radio_button radio_buttons::open(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::open(), location, size);
 }
 
-radio_button radio_buttons::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::open(), location, size, name);
 }
 
@@ -3329,7 +3329,7 @@ radio_button radio_buttons::open(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::open(), checked, location, size);
 }
 
-radio_button radio_buttons::open(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::open(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::open(), checked, location, size, name);
 }
 
@@ -3345,7 +3345,7 @@ radio_button radio_buttons::options(const drawing::point& location, const drawin
   return radio_button::create(texts::options(), location, size);
 }
 
-radio_button radio_buttons::options(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::options(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::options(), location, size, name);
 }
 
@@ -3361,7 +3361,7 @@ radio_button radio_buttons::options(bool checked, const drawing::point& location
   return radio_button::create(texts::options(), checked, location, size);
 }
 
-radio_button radio_buttons::options(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::options(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::options(), checked, location, size, name);
 }
 
@@ -3377,7 +3377,7 @@ radio_button radio_buttons::options(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::options(), location, size);
 }
 
-radio_button radio_buttons::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::options(), location, size, name);
 }
 
@@ -3393,7 +3393,7 @@ radio_button radio_buttons::options(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::options(), checked, location, size);
 }
 
-radio_button radio_buttons::options(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::options(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::options(), checked, location, size, name);
 }
 
@@ -3409,7 +3409,7 @@ radio_button radio_buttons::paste(const drawing::point& location, const drawing:
   return radio_button::create(texts::paste(), location, size);
 }
 
-radio_button radio_buttons::paste(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::paste(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::paste(), location, size, name);
 }
 
@@ -3425,7 +3425,7 @@ radio_button radio_buttons::paste(bool checked, const drawing::point& location, 
   return radio_button::create(texts::paste(), checked, location, size);
 }
 
-radio_button radio_buttons::paste(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::paste(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::paste(), checked, location, size, name);
 }
 
@@ -3441,7 +3441,7 @@ radio_button radio_buttons::paste(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::paste(), location, size);
 }
 
-radio_button radio_buttons::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::paste(), location, size, name);
 }
 
@@ -3457,7 +3457,7 @@ radio_button radio_buttons::paste(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::paste(), checked, location, size);
 }
 
-radio_button radio_buttons::paste(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::paste(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::paste(), checked, location, size, name);
 }
 
@@ -3473,7 +3473,7 @@ radio_button radio_buttons::preferences(const drawing::point& location, const dr
   return radio_button::create(texts::preferences(), location, size);
 }
 
-radio_button radio_buttons::preferences(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::preferences(), location, size, name);
 }
 
@@ -3489,7 +3489,7 @@ radio_button radio_buttons::preferences(bool checked, const drawing::point& loca
   return radio_button::create(texts::preferences(), checked, location, size);
 }
 
-radio_button radio_buttons::preferences(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::preferences(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::preferences(), checked, location, size, name);
 }
 
@@ -3505,7 +3505,7 @@ radio_button radio_buttons::preferences(const control& parent, const drawing::po
   return radio_button::create(parent, texts::preferences(), location, size);
 }
 
-radio_button radio_buttons::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::preferences(), location, size, name);
 }
 
@@ -3521,7 +3521,7 @@ radio_button radio_buttons::preferences(const control& parent, bool checked, con
   return radio_button::create(parent, texts::preferences(), checked, location, size);
 }
 
-radio_button radio_buttons::preferences(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::preferences(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::preferences(), checked, location, size, name);
 }
 
@@ -3537,7 +3537,7 @@ radio_button radio_buttons::previous(const drawing::point& location, const drawi
   return radio_button::create(texts::previous(), location, size);
 }
 
-radio_button radio_buttons::previous(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::previous(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::previous(), location, size, name);
 }
 
@@ -3553,7 +3553,7 @@ radio_button radio_buttons::previous(bool checked, const drawing::point& locatio
   return radio_button::create(texts::previous(), checked, location, size);
 }
 
-radio_button radio_buttons::previous(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::previous(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::previous(), checked, location, size, name);
 }
 
@@ -3569,7 +3569,7 @@ radio_button radio_buttons::previous(const control& parent, const drawing::point
   return radio_button::create(parent, texts::previous(), location, size);
 }
 
-radio_button radio_buttons::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::previous(), location, size, name);
 }
 
@@ -3585,7 +3585,7 @@ radio_button radio_buttons::previous(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::previous(), checked, location, size);
 }
 
-radio_button radio_buttons::previous(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::previous(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::previous(), checked, location, size, name);
 }
 
@@ -3601,7 +3601,7 @@ radio_button radio_buttons::print(const drawing::point& location, const drawing:
   return radio_button::create(texts::print(), location, size);
 }
 
-radio_button radio_buttons::print(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::print(), location, size, name);
 }
 
@@ -3617,7 +3617,7 @@ radio_button radio_buttons::print(bool checked, const drawing::point& location, 
   return radio_button::create(texts::print(), checked, location, size);
 }
 
-radio_button radio_buttons::print(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::print(), checked, location, size, name);
 }
 
@@ -3633,7 +3633,7 @@ radio_button radio_buttons::print(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::print(), location, size);
 }
 
-radio_button radio_buttons::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::print(), location, size, name);
 }
 
@@ -3649,7 +3649,7 @@ radio_button radio_buttons::print(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::print(), checked, location, size);
 }
 
-radio_button radio_buttons::print(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::print(), checked, location, size, name);
 }
 
@@ -3665,7 +3665,7 @@ radio_button radio_buttons::print_preview(const drawing::point& location, const 
   return radio_button::create(texts::print_preview(), location, size);
 }
 
-radio_button radio_buttons::print_preview(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::print_preview(), location, size, name);
 }
 
@@ -3681,7 +3681,7 @@ radio_button radio_buttons::print_preview(bool checked, const drawing::point& lo
   return radio_button::create(texts::print_preview(), checked, location, size);
 }
 
-radio_button radio_buttons::print_preview(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print_preview(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::print_preview(), checked, location, size, name);
 }
 
@@ -3697,7 +3697,7 @@ radio_button radio_buttons::print_preview(const control& parent, const drawing::
   return radio_button::create(parent, texts::print_preview(), location, size);
 }
 
-radio_button radio_buttons::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::print_preview(), location, size, name);
 }
 
@@ -3713,7 +3713,7 @@ radio_button radio_buttons::print_preview(const control& parent, bool checked, c
   return radio_button::create(parent, texts::print_preview(), checked, location, size);
 }
 
-radio_button radio_buttons::print_preview(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::print_preview(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::print_preview(), checked, location, size, name);
 }
 
@@ -3729,7 +3729,7 @@ radio_button radio_buttons::properties(const drawing::point& location, const dra
   return radio_button::create(texts::properties(), location, size);
 }
 
-radio_button radio_buttons::properties(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::properties(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::properties(), location, size, name);
 }
 
@@ -3745,7 +3745,7 @@ radio_button radio_buttons::properties(bool checked, const drawing::point& locat
   return radio_button::create(texts::properties(), checked, location, size);
 }
 
-radio_button radio_buttons::properties(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::properties(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::properties(), checked, location, size, name);
 }
 
@@ -3761,7 +3761,7 @@ radio_button radio_buttons::properties(const control& parent, const drawing::poi
   return radio_button::create(parent, texts::properties(), location, size);
 }
 
-radio_button radio_buttons::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::properties(), location, size, name);
 }
 
@@ -3777,7 +3777,7 @@ radio_button radio_buttons::properties(const control& parent, bool checked, cons
   return radio_button::create(parent, texts::properties(), checked, location, size);
 }
 
-radio_button radio_buttons::properties(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::properties(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::properties(), checked, location, size, name);
 }
 
@@ -3793,7 +3793,7 @@ radio_button radio_buttons::quit(const drawing::point& location, const drawing::
   return radio_button::create(texts::quit(), location, size);
 }
 
-radio_button radio_buttons::quit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::quit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::quit(), location, size, name);
 }
 
@@ -3809,7 +3809,7 @@ radio_button radio_buttons::quit(bool checked, const drawing::point& location, c
   return radio_button::create(texts::quit(), checked, location, size);
 }
 
-radio_button radio_buttons::quit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::quit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::quit(), checked, location, size, name);
 }
 
@@ -3825,7 +3825,7 @@ radio_button radio_buttons::quit(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::quit(), location, size);
 }
 
-radio_button radio_buttons::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::quit(), location, size, name);
 }
 
@@ -3841,7 +3841,7 @@ radio_button radio_buttons::quit(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::quit(), checked, location, size);
 }
 
-radio_button radio_buttons::quit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::quit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::quit(), checked, location, size, name);
 }
 
@@ -3857,7 +3857,7 @@ radio_button radio_buttons::redo(const drawing::point& location, const drawing::
   return radio_button::create(texts::redo(), location, size);
 }
 
-radio_button radio_buttons::redo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::redo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::redo(), location, size, name);
 }
 
@@ -3873,7 +3873,7 @@ radio_button radio_buttons::redo(bool checked, const drawing::point& location, c
   return radio_button::create(texts::redo(), checked, location, size);
 }
 
-radio_button radio_buttons::redo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::redo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::redo(), checked, location, size, name);
 }
 
@@ -3889,7 +3889,7 @@ radio_button radio_buttons::redo(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::redo(), location, size);
 }
 
-radio_button radio_buttons::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::redo(), location, size, name);
 }
 
@@ -3905,7 +3905,7 @@ radio_button radio_buttons::redo(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::redo(), checked, location, size);
 }
 
-radio_button radio_buttons::redo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::redo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::redo(), checked, location, size, name);
 }
 
@@ -3921,7 +3921,7 @@ radio_button radio_buttons::refresh(const drawing::point& location, const drawin
   return radio_button::create(texts::refresh(), location, size);
 }
 
-radio_button radio_buttons::refresh(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::refresh(), location, size, name);
 }
 
@@ -3937,7 +3937,7 @@ radio_button radio_buttons::refresh(bool checked, const drawing::point& location
   return radio_button::create(texts::refresh(), checked, location, size);
 }
 
-radio_button radio_buttons::refresh(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::refresh(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::refresh(), checked, location, size, name);
 }
 
@@ -3953,7 +3953,7 @@ radio_button radio_buttons::refresh(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::refresh(), location, size);
 }
 
-radio_button radio_buttons::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::refresh(), location, size, name);
 }
 
@@ -3969,7 +3969,7 @@ radio_button radio_buttons::refresh(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::refresh(), checked, location, size);
 }
 
-radio_button radio_buttons::refresh(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::refresh(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::refresh(), checked, location, size, name);
 }
 
@@ -3985,7 +3985,7 @@ radio_button radio_buttons::remove(const drawing::point& location, const drawing
   return radio_button::create(texts::remove(), location, size);
 }
 
-radio_button radio_buttons::remove(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::remove(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::remove(), location, size, name);
 }
 
@@ -4001,7 +4001,7 @@ radio_button radio_buttons::remove(bool checked, const drawing::point& location,
   return radio_button::create(texts::remove(), checked, location, size);
 }
 
-radio_button radio_buttons::remove(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::remove(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::remove(), checked, location, size, name);
 }
 
@@ -4017,7 +4017,7 @@ radio_button radio_buttons::remove(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::remove(), location, size);
 }
 
-radio_button radio_buttons::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::remove(), location, size, name);
 }
 
@@ -4033,7 +4033,7 @@ radio_button radio_buttons::remove(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::remove(), checked, location, size);
 }
 
-radio_button radio_buttons::remove(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::remove(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::remove(), checked, location, size, name);
 }
 
@@ -4049,7 +4049,7 @@ radio_button radio_buttons::replace(const drawing::point& location, const drawin
   return radio_button::create(texts::replace(), location, size);
 }
 
-radio_button radio_buttons::replace(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::replace(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::replace(), location, size, name);
 }
 
@@ -4065,7 +4065,7 @@ radio_button radio_buttons::replace(bool checked, const drawing::point& location
   return radio_button::create(texts::replace(), checked, location, size);
 }
 
-radio_button radio_buttons::replace(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::replace(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::replace(), checked, location, size, name);
 }
 
@@ -4081,7 +4081,7 @@ radio_button radio_buttons::replace(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::replace(), location, size);
 }
 
-radio_button radio_buttons::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::replace(), location, size, name);
 }
 
@@ -4097,7 +4097,7 @@ radio_button radio_buttons::replace(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::replace(), checked, location, size);
 }
 
-radio_button radio_buttons::replace(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::replace(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::replace(), checked, location, size, name);
 }
 
@@ -4113,7 +4113,7 @@ radio_button radio_buttons::retry(const drawing::point& location, const drawing:
   return radio_button::create(texts::retry(), location, size);
 }
 
-radio_button radio_buttons::retry(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::retry(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::retry(), location, size, name);
 }
 
@@ -4129,7 +4129,7 @@ radio_button radio_buttons::retry(bool checked, const drawing::point& location, 
   return radio_button::create(texts::retry(), checked, location, size);
 }
 
-radio_button radio_buttons::retry(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::retry(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::retry(), checked, location, size, name);
 }
 
@@ -4145,7 +4145,7 @@ radio_button radio_buttons::retry(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::retry(), location, size);
 }
 
-radio_button radio_buttons::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::retry(), location, size, name);
 }
 
@@ -4161,7 +4161,7 @@ radio_button radio_buttons::retry(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::retry(), checked, location, size);
 }
 
-radio_button radio_buttons::retry(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::retry(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::retry(), checked, location, size, name);
 }
 
@@ -4177,7 +4177,7 @@ radio_button radio_buttons::revert_to_saved(const drawing::point& location, cons
   return radio_button::create(texts::revert_to_saved(), location, size);
 }
 
-radio_button radio_buttons::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::revert_to_saved(), location, size, name);
 }
 
@@ -4193,7 +4193,7 @@ radio_button radio_buttons::revert_to_saved(bool checked, const drawing::point& 
   return radio_button::create(texts::revert_to_saved(), checked, location, size);
 }
 
-radio_button radio_buttons::revert_to_saved(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::revert_to_saved(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::revert_to_saved(), checked, location, size, name);
 }
 
@@ -4209,7 +4209,7 @@ radio_button radio_buttons::revert_to_saved(const control& parent, const drawing
   return radio_button::create(parent, texts::revert_to_saved(), location, size);
 }
 
-radio_button radio_buttons::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::revert_to_saved(), location, size, name);
 }
 
@@ -4225,7 +4225,7 @@ radio_button radio_buttons::revert_to_saved(const control& parent, bool checked,
   return radio_button::create(parent, texts::revert_to_saved(), checked, location, size);
 }
 
-radio_button radio_buttons::revert_to_saved(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::revert_to_saved(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::revert_to_saved(), checked, location, size, name);
 }
 
@@ -4241,7 +4241,7 @@ radio_button radio_buttons::save(const drawing::point& location, const drawing::
   return radio_button::create(texts::save(), location, size);
 }
 
-radio_button radio_buttons::save(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::save(), location, size, name);
 }
 
@@ -4257,7 +4257,7 @@ radio_button radio_buttons::save(bool checked, const drawing::point& location, c
   return radio_button::create(texts::save(), checked, location, size);
 }
 
-radio_button radio_buttons::save(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::save(), checked, location, size, name);
 }
 
@@ -4273,7 +4273,7 @@ radio_button radio_buttons::save(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::save(), location, size);
 }
 
-radio_button radio_buttons::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::save(), location, size, name);
 }
 
@@ -4289,7 +4289,7 @@ radio_button radio_buttons::save(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::save(), checked, location, size);
 }
 
-radio_button radio_buttons::save(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::save(), checked, location, size, name);
 }
 
@@ -4305,7 +4305,7 @@ radio_button radio_buttons::save_as(const drawing::point& location, const drawin
   return radio_button::create(texts::save_as(), location, size);
 }
 
-radio_button radio_buttons::save_as(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::save_as(), location, size, name);
 }
 
@@ -4321,7 +4321,7 @@ radio_button radio_buttons::save_as(bool checked, const drawing::point& location
   return radio_button::create(texts::save_as(), checked, location, size);
 }
 
-radio_button radio_buttons::save_as(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save_as(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::save_as(), checked, location, size, name);
 }
 
@@ -4337,7 +4337,7 @@ radio_button radio_buttons::save_as(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::save_as(), location, size);
 }
 
-radio_button radio_buttons::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::save_as(), location, size, name);
 }
 
@@ -4353,7 +4353,7 @@ radio_button radio_buttons::save_as(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::save_as(), checked, location, size);
 }
 
-radio_button radio_buttons::save_as(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::save_as(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::save_as(), checked, location, size, name);
 }
 
@@ -4369,7 +4369,7 @@ radio_button radio_buttons::search(const drawing::point& location, const drawing
   return radio_button::create(texts::search(), location, size);
 }
 
-radio_button radio_buttons::search(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::search(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::search(), location, size, name);
 }
 
@@ -4385,7 +4385,7 @@ radio_button radio_buttons::search(bool checked, const drawing::point& location,
   return radio_button::create(texts::search(), checked, location, size);
 }
 
-radio_button radio_buttons::search(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::search(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::search(), checked, location, size, name);
 }
 
@@ -4401,7 +4401,7 @@ radio_button radio_buttons::search(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::search(), location, size);
 }
 
-radio_button radio_buttons::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::search(), location, size, name);
 }
 
@@ -4417,7 +4417,7 @@ radio_button radio_buttons::search(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::search(), checked, location, size);
 }
 
-radio_button radio_buttons::search(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::search(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::search(), checked, location, size, name);
 }
 
@@ -4433,7 +4433,7 @@ radio_button radio_buttons::select_all(const drawing::point& location, const dra
   return radio_button::create(texts::select_all(), location, size);
 }
 
-radio_button radio_buttons::select_all(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::select_all(), location, size, name);
 }
 
@@ -4449,7 +4449,7 @@ radio_button radio_buttons::select_all(bool checked, const drawing::point& locat
   return radio_button::create(texts::select_all(), checked, location, size);
 }
 
-radio_button radio_buttons::select_all(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::select_all(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::select_all(), checked, location, size, name);
 }
 
@@ -4465,7 +4465,7 @@ radio_button radio_buttons::select_all(const control& parent, const drawing::poi
   return radio_button::create(parent, texts::select_all(), location, size);
 }
 
-radio_button radio_buttons::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::select_all(), location, size, name);
 }
 
@@ -4481,7 +4481,7 @@ radio_button radio_buttons::select_all(const control& parent, bool checked, cons
   return radio_button::create(parent, texts::select_all(), checked, location, size);
 }
 
-radio_button radio_buttons::select_all(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::select_all(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::select_all(), checked, location, size, name);
 }
 
@@ -4497,7 +4497,7 @@ radio_button radio_buttons::settings(const drawing::point& location, const drawi
   return radio_button::create(texts::settings(), location, size);
 }
 
-radio_button radio_buttons::settings(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::settings(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::settings(), location, size, name);
 }
 
@@ -4513,7 +4513,7 @@ radio_button radio_buttons::settings(bool checked, const drawing::point& locatio
   return radio_button::create(texts::settings(), checked, location, size);
 }
 
-radio_button radio_buttons::settings(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::settings(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::settings(), checked, location, size, name);
 }
 
@@ -4529,7 +4529,7 @@ radio_button radio_buttons::settings(const control& parent, const drawing::point
   return radio_button::create(parent, texts::settings(), location, size);
 }
 
-radio_button radio_buttons::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::settings(), location, size, name);
 }
 
@@ -4545,7 +4545,7 @@ radio_button radio_buttons::settings(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::settings(), checked, location, size);
 }
 
-radio_button radio_buttons::settings(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::settings(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::settings(), checked, location, size, name);
 }
 
@@ -4561,7 +4561,7 @@ radio_button radio_buttons::spell_check(const drawing::point& location, const dr
   return radio_button::create(texts::spell_check(), location, size);
 }
 
-radio_button radio_buttons::spell_check(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::spell_check(), location, size, name);
 }
 
@@ -4577,7 +4577,7 @@ radio_button radio_buttons::spell_check(bool checked, const drawing::point& loca
   return radio_button::create(texts::spell_check(), checked, location, size);
 }
 
-radio_button radio_buttons::spell_check(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::spell_check(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::spell_check(), checked, location, size, name);
 }
 
@@ -4593,7 +4593,7 @@ radio_button radio_buttons::spell_check(const control& parent, const drawing::po
   return radio_button::create(parent, texts::spell_check(), location, size);
 }
 
-radio_button radio_buttons::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::spell_check(), location, size, name);
 }
 
@@ -4609,7 +4609,7 @@ radio_button radio_buttons::spell_check(const control& parent, bool checked, con
   return radio_button::create(parent, texts::spell_check(), checked, location, size);
 }
 
-radio_button radio_buttons::spell_check(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::spell_check(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::spell_check(), checked, location, size, name);
 }
 
@@ -4625,7 +4625,7 @@ radio_button radio_buttons::stop(const drawing::point& location, const drawing::
   return radio_button::create(texts::stop(), location, size);
 }
 
-radio_button radio_buttons::stop(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::stop(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::stop(), location, size, name);
 }
 
@@ -4641,7 +4641,7 @@ radio_button radio_buttons::stop(bool checked, const drawing::point& location, c
   return radio_button::create(texts::stop(), checked, location, size);
 }
 
-radio_button radio_buttons::stop(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::stop(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::stop(), checked, location, size, name);
 }
 
@@ -4657,7 +4657,7 @@ radio_button radio_buttons::stop(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::stop(), location, size);
 }
 
-radio_button radio_buttons::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::stop(), location, size, name);
 }
 
@@ -4673,7 +4673,7 @@ radio_button radio_buttons::stop(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::stop(), checked, location, size);
 }
 
-radio_button radio_buttons::stop(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::stop(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::stop(), checked, location, size, name);
 }
 
@@ -4689,7 +4689,7 @@ radio_button radio_buttons::strikeout(const drawing::point& location, const draw
   return radio_button::create(texts::strikeout(), location, size);
 }
 
-radio_button radio_buttons::strikeout(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::strikeout(), location, size, name);
 }
 
@@ -4705,7 +4705,7 @@ radio_button radio_buttons::strikeout(bool checked, const drawing::point& locati
   return radio_button::create(texts::strikeout(), checked, location, size);
 }
 
-radio_button radio_buttons::strikeout(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::strikeout(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::strikeout(), checked, location, size, name);
 }
 
@@ -4721,7 +4721,7 @@ radio_button radio_buttons::strikeout(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::strikeout(), location, size);
 }
 
-radio_button radio_buttons::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::strikeout(), location, size, name);
 }
 
@@ -4737,7 +4737,7 @@ radio_button radio_buttons::strikeout(const control& parent, bool checked, const
   return radio_button::create(parent, texts::strikeout(), checked, location, size);
 }
 
-radio_button radio_buttons::strikeout(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::strikeout(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::strikeout(), checked, location, size, name);
 }
 
@@ -4753,7 +4753,7 @@ radio_button radio_buttons::tools(const drawing::point& location, const drawing:
   return radio_button::create(texts::tools(), location, size);
 }
 
-radio_button radio_buttons::tools(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::tools(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::tools(), location, size, name);
 }
 
@@ -4769,7 +4769,7 @@ radio_button radio_buttons::tools(bool checked, const drawing::point& location, 
   return radio_button::create(texts::tools(), checked, location, size);
 }
 
-radio_button radio_buttons::tools(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::tools(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::tools(), checked, location, size, name);
 }
 
@@ -4785,7 +4785,7 @@ radio_button radio_buttons::tools(const control& parent, const drawing::point& l
   return radio_button::create(parent, texts::tools(), location, size);
 }
 
-radio_button radio_buttons::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::tools(), location, size, name);
 }
 
@@ -4801,7 +4801,7 @@ radio_button radio_buttons::tools(const control& parent, bool checked, const dra
   return radio_button::create(parent, texts::tools(), checked, location, size);
 }
 
-radio_button radio_buttons::tools(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::tools(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::tools(), checked, location, size, name);
 }
 
@@ -4817,7 +4817,7 @@ radio_button radio_buttons::top(const drawing::point& location, const drawing::s
   return radio_button::create(texts::top(), location, size);
 }
 
-radio_button radio_buttons::top(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::top(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::top(), location, size, name);
 }
 
@@ -4833,7 +4833,7 @@ radio_button radio_buttons::top(bool checked, const drawing::point& location, co
   return radio_button::create(texts::top(), checked, location, size);
 }
 
-radio_button radio_buttons::top(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::top(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::top(), checked, location, size, name);
 }
 
@@ -4849,7 +4849,7 @@ radio_button radio_buttons::top(const control& parent, const drawing::point& loc
   return radio_button::create(parent, texts::top(), location, size);
 }
 
-radio_button radio_buttons::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::top(), location, size, name);
 }
 
@@ -4865,7 +4865,7 @@ radio_button radio_buttons::top(const control& parent, bool checked, const drawi
   return radio_button::create(parent, texts::top(), checked, location, size);
 }
 
-radio_button radio_buttons::top(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::top(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::top(), checked, location, size, name);
 }
 
@@ -4881,7 +4881,7 @@ radio_button radio_buttons::undelete(const drawing::point& location, const drawi
   return radio_button::create(texts::undelete(), location, size);
 }
 
-radio_button radio_buttons::undelete(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::undelete(), location, size, name);
 }
 
@@ -4897,7 +4897,7 @@ radio_button radio_buttons::undelete(bool checked, const drawing::point& locatio
   return radio_button::create(texts::undelete(), checked, location, size);
 }
 
-radio_button radio_buttons::undelete(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undelete(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::undelete(), checked, location, size, name);
 }
 
@@ -4913,7 +4913,7 @@ radio_button radio_buttons::undelete(const control& parent, const drawing::point
   return radio_button::create(parent, texts::undelete(), location, size);
 }
 
-radio_button radio_buttons::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::undelete(), location, size, name);
 }
 
@@ -4929,7 +4929,7 @@ radio_button radio_buttons::undelete(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::undelete(), checked, location, size);
 }
 
-radio_button radio_buttons::undelete(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undelete(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::undelete(), checked, location, size, name);
 }
 
@@ -4945,7 +4945,7 @@ radio_button radio_buttons::underline(const drawing::point& location, const draw
   return radio_button::create(texts::underline(), location, size);
 }
 
-radio_button radio_buttons::underline(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::underline(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::underline(), location, size, name);
 }
 
@@ -4961,7 +4961,7 @@ radio_button radio_buttons::underline(bool checked, const drawing::point& locati
   return radio_button::create(texts::underline(), checked, location, size);
 }
 
-radio_button radio_buttons::underline(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::underline(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::underline(), checked, location, size, name);
 }
 
@@ -4977,7 +4977,7 @@ radio_button radio_buttons::underline(const control& parent, const drawing::poin
   return radio_button::create(parent, texts::underline(), location, size);
 }
 
-radio_button radio_buttons::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::underline(), location, size, name);
 }
 
@@ -4993,7 +4993,7 @@ radio_button radio_buttons::underline(const control& parent, bool checked, const
   return radio_button::create(parent, texts::underline(), checked, location, size);
 }
 
-radio_button radio_buttons::underline(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::underline(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::underline(), checked, location, size, name);
 }
 
@@ -5009,7 +5009,7 @@ radio_button radio_buttons::undo(const drawing::point& location, const drawing::
   return radio_button::create(texts::undo(), location, size);
 }
 
-radio_button radio_buttons::undo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::undo(), location, size, name);
 }
 
@@ -5025,7 +5025,7 @@ radio_button radio_buttons::undo(bool checked, const drawing::point& location, c
   return radio_button::create(texts::undo(), checked, location, size);
 }
 
-radio_button radio_buttons::undo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::undo(), checked, location, size, name);
 }
 
@@ -5041,7 +5041,7 @@ radio_button radio_buttons::undo(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::undo(), location, size);
 }
 
-radio_button radio_buttons::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::undo(), location, size, name);
 }
 
@@ -5057,7 +5057,7 @@ radio_button radio_buttons::undo(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::undo(), checked, location, size);
 }
 
-radio_button radio_buttons::undo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::undo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::undo(), checked, location, size, name);
 }
 
@@ -5073,7 +5073,7 @@ radio_button radio_buttons::unindent(const drawing::point& location, const drawi
   return radio_button::create(texts::unindent(), location, size);
 }
 
-radio_button radio_buttons::unindent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::unindent(), location, size, name);
 }
 
@@ -5089,7 +5089,7 @@ radio_button radio_buttons::unindent(bool checked, const drawing::point& locatio
   return radio_button::create(texts::unindent(), checked, location, size);
 }
 
-radio_button radio_buttons::unindent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::unindent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::unindent(), checked, location, size, name);
 }
 
@@ -5105,7 +5105,7 @@ radio_button radio_buttons::unindent(const control& parent, const drawing::point
   return radio_button::create(parent, texts::unindent(), location, size);
 }
 
-radio_button radio_buttons::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::unindent(), location, size, name);
 }
 
@@ -5121,7 +5121,7 @@ radio_button radio_buttons::unindent(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::unindent(), checked, location, size);
 }
 
-radio_button radio_buttons::unindent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::unindent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::unindent(), checked, location, size, name);
 }
 
@@ -5137,7 +5137,7 @@ radio_button radio_buttons::up(const drawing::point& location, const drawing::si
   return radio_button::create(texts::up(), location, size);
 }
 
-radio_button radio_buttons::up(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::up(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::up(), location, size, name);
 }
 
@@ -5153,7 +5153,7 @@ radio_button radio_buttons::up(bool checked, const drawing::point& location, con
   return radio_button::create(texts::up(), checked, location, size);
 }
 
-radio_button radio_buttons::up(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::up(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::up(), checked, location, size, name);
 }
 
@@ -5169,7 +5169,7 @@ radio_button radio_buttons::up(const control& parent, const drawing::point& loca
   return radio_button::create(parent, texts::up(), location, size);
 }
 
-radio_button radio_buttons::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::up(), location, size, name);
 }
 
@@ -5185,7 +5185,7 @@ radio_button radio_buttons::up(const control& parent, bool checked, const drawin
   return radio_button::create(parent, texts::up(), checked, location, size);
 }
 
-radio_button radio_buttons::up(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::up(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::up(), checked, location, size, name);
 }
 
@@ -5201,7 +5201,7 @@ radio_button radio_buttons::view(const drawing::point& location, const drawing::
   return radio_button::create(texts::view(), location, size);
 }
 
-radio_button radio_buttons::view(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::view(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::view(), location, size, name);
 }
 
@@ -5217,7 +5217,7 @@ radio_button radio_buttons::view(bool checked, const drawing::point& location, c
   return radio_button::create(texts::view(), checked, location, size);
 }
 
-radio_button radio_buttons::view(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::view(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::view(), checked, location, size, name);
 }
 
@@ -5233,7 +5233,7 @@ radio_button radio_buttons::view(const control& parent, const drawing::point& lo
   return radio_button::create(parent, texts::view(), location, size);
 }
 
-radio_button radio_buttons::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::view(), location, size, name);
 }
 
@@ -5249,7 +5249,7 @@ radio_button radio_buttons::view(const control& parent, bool checked, const draw
   return radio_button::create(parent, texts::view(), checked, location, size);
 }
 
-radio_button radio_buttons::view(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::view(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::view(), checked, location, size, name);
 }
 
@@ -5265,7 +5265,7 @@ radio_button radio_buttons::window(const drawing::point& location, const drawing
   return radio_button::create(texts::window(), location, size);
 }
 
-radio_button radio_buttons::window(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::window(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::window(), location, size, name);
 }
 
@@ -5281,7 +5281,7 @@ radio_button radio_buttons::window(bool checked, const drawing::point& location,
   return radio_button::create(texts::window(), checked, location, size);
 }
 
-radio_button radio_buttons::window(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::window(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::window(), checked, location, size, name);
 }
 
@@ -5297,7 +5297,7 @@ radio_button radio_buttons::window(const control& parent, const drawing::point& 
   return radio_button::create(parent, texts::window(), location, size);
 }
 
-radio_button radio_buttons::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::window(), location, size, name);
 }
 
@@ -5313,7 +5313,7 @@ radio_button radio_buttons::window(const control& parent, bool checked, const dr
   return radio_button::create(parent, texts::window(), checked, location, size);
 }
 
-radio_button radio_buttons::window(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::window(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::window(), checked, location, size, name);
 }
 
@@ -5329,7 +5329,7 @@ radio_button radio_buttons::yes(const drawing::point& location, const drawing::s
   return radio_button::create(texts::yes(), location, size);
 }
 
-radio_button radio_buttons::yes(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::yes(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::yes(), location, size, name);
 }
 
@@ -5345,7 +5345,7 @@ radio_button radio_buttons::yes(bool checked, const drawing::point& location, co
   return radio_button::create(texts::yes(), checked, location, size);
 }
 
-radio_button radio_buttons::yes(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::yes(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::yes(), checked, location, size, name);
 }
 
@@ -5361,7 +5361,7 @@ radio_button radio_buttons::yes(const control& parent, const drawing::point& loc
   return radio_button::create(parent, texts::yes(), location, size);
 }
 
-radio_button radio_buttons::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::yes(), location, size, name);
 }
 
@@ -5377,7 +5377,7 @@ radio_button radio_buttons::yes(const control& parent, bool checked, const drawi
   return radio_button::create(parent, texts::yes(), checked, location, size);
 }
 
-radio_button radio_buttons::yes(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::yes(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::yes(), checked, location, size, name);
 }
 
@@ -5393,7 +5393,7 @@ radio_button radio_buttons::zoom_in(const drawing::point& location, const drawin
   return radio_button::create(texts::zoom_in(), location, size);
 }
 
-radio_button radio_buttons::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_in(), location, size, name);
 }
 
@@ -5409,7 +5409,7 @@ radio_button radio_buttons::zoom_in(bool checked, const drawing::point& location
   return radio_button::create(texts::zoom_in(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_in(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_in(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_in(), checked, location, size, name);
 }
 
@@ -5425,7 +5425,7 @@ radio_button radio_buttons::zoom_in(const control& parent, const drawing::point&
   return radio_button::create(parent, texts::zoom_in(), location, size);
 }
 
-radio_button radio_buttons::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_in(), location, size, name);
 }
 
@@ -5441,7 +5441,7 @@ radio_button radio_buttons::zoom_in(const control& parent, bool checked, const d
   return radio_button::create(parent, texts::zoom_in(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_in(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_in(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_in(), checked, location, size, name);
 }
 
@@ -5457,7 +5457,7 @@ radio_button radio_buttons::zoom_out(const drawing::point& location, const drawi
   return radio_button::create(texts::zoom_out(), location, size);
 }
 
-radio_button radio_buttons::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_out(), location, size, name);
 }
 
@@ -5473,7 +5473,7 @@ radio_button radio_buttons::zoom_out(bool checked, const drawing::point& locatio
   return radio_button::create(texts::zoom_out(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_out(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_out(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_out(), checked, location, size, name);
 }
 
@@ -5489,7 +5489,7 @@ radio_button radio_buttons::zoom_out(const control& parent, const drawing::point
   return radio_button::create(parent, texts::zoom_out(), location, size);
 }
 
-radio_button radio_buttons::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_out(), location, size, name);
 }
 
@@ -5505,7 +5505,7 @@ radio_button radio_buttons::zoom_out(const control& parent, bool checked, const 
   return radio_button::create(parent, texts::zoom_out(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_out(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_out(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_out(), checked, location, size, name);
 }
 
@@ -5521,7 +5521,7 @@ radio_button radio_buttons::zoom_to_fit(const drawing::point& location, const dr
   return radio_button::create(texts::zoom_to_fit(), location, size);
 }
 
-radio_button radio_buttons::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_to_fit(), location, size, name);
 }
 
@@ -5537,7 +5537,7 @@ radio_button radio_buttons::zoom_to_fit(bool checked, const drawing::point& loca
   return radio_button::create(texts::zoom_to_fit(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_to_fit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_to_fit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(texts::zoom_to_fit(), checked, location, size, name);
 }
 
@@ -5553,7 +5553,7 @@ radio_button radio_buttons::zoom_to_fit(const control& parent, const drawing::po
   return radio_button::create(parent, texts::zoom_to_fit(), location, size);
 }
 
-radio_button radio_buttons::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_to_fit(), location, size, name);
 }
 
@@ -5569,6 +5569,6 @@ radio_button radio_buttons::zoom_to_fit(const control& parent, bool checked, con
   return radio_button::create(parent, texts::zoom_to_fit(), checked, location, size);
 }
 
-radio_button radio_buttons::zoom_to_fit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_buttons::zoom_to_fit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return radio_button::create(parent, texts::zoom_to_fit(), checked, location, size, name);
 }

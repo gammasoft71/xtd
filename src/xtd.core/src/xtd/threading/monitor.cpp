@@ -22,7 +22,7 @@ using namespace xtd::threading;
 struct monitor::item {
   monitor::critical_section critical_section;
   xtd::sptr<std::atomic<int32>> used_count = xtd::new_sptr<std::atomic<int32>>(0);
-  std::optional<ustring> name;
+  std::optional<string> name;
   thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;
 };
@@ -53,7 +53,7 @@ void monitor::exit_ptr(object_ptr obj) {
   item* monitor_data = &get_static_data().monitor_items[obj.first];
   if (--(*monitor_data->used_count) == 0) {
     saved = get_static_data().monitor_items[obj.first];
-    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
+    if (obj.second) delete reinterpret_cast<const string*>(obj.first);
     get_static_data().monitor_items.erase(obj.first);
     monitor_data = &saved;
   }
@@ -62,7 +62,7 @@ void monitor::exit_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.leave();
 }
 
-intptr monitor::get_ustring_ptr(const ustring& str) {
+intptr monitor::get_ustring_ptr(const string& str) {
   if (str.empty()) throw argument_exception {csf_};
   get_static_data().monitor_items_critical_section.enter();
   auto ptr = reinterpret_cast<intptr>(&str);
@@ -111,7 +111,7 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
   if (!is_entered_ptr(obj)) {
     auto i = item {};
     if (obj.second) {
-      auto str = reinterpret_cast<const ustring*>(obj.first);
+      auto str = reinterpret_cast<const string*>(obj.first);
       i.name = *str;
     }
     get_static_data().monitor_items.insert({obj.first, i});

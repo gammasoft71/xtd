@@ -52,7 +52,7 @@ namespace xtd {
         /// @param control Command link button window handle.
         /// @param texts A tuple of two strings that represent control text and supplementary text.
         /// @warning Internal use only
-        static void texts(intptr control, const std::tuple<ustring, ustring>& texts);
+        static void texts(intptr control, const std::tuple<string, string>& texts);
         /// @}
       };
     }

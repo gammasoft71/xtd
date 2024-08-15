@@ -190,7 +190,7 @@ namespace xtd {
           else {
             auto caption = create_params.caption;
             #if defined(__WXOSX__)
-            if (ustring::is_empty(caption)) caption = " ";
+            if (string::is_empty(caption)) caption = " ";
             #endif
             control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
             dynamic_cast<wxGroupBox*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));

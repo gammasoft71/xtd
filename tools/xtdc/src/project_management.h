@@ -53,17 +53,17 @@ namespace xtdc_command {
   class project_management {
     class change_current_directory {
     public:
-      change_current_directory(const xtd::ustring& current_directory) {
+      change_current_directory(const xtd::string& current_directory) {
         if (!xtd::io::directory::exists(current_directory)) xtd::io::directory::create_directory(current_directory);
         xtd::environment::current_directory(current_directory);
       }
       ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
     private:
-      xtd::ustring previous_current_directoy_ = xtd::environment::current_directory();
+      xtd::string previous_current_directoy_ = xtd::environment::current_directory();
     };
     
   public:
-    explicit project_management(const xtd::ustring& output) : path_(output.c_str()) {}
+    explicit project_management(const xtd::string& output) : path_(output.c_str()) {}
     
     static std::vector<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
@@ -101,20 +101,20 @@ namespace xtdc_command {
       throw xtd::argument_exception("sdk is not project_sdk valid value", current_stack_frame_);
     }
     
-    xtd::ustring add(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
+    xtd::string add(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Add project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} already exists and not empty! Add project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
-      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return xtd::ustring::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path_).full_name());
+      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path_).full_name());
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
       
-      lines.push_back(xtd::ustring::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
+      lines.push_back(xtd::string::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
+      std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language, bool>> {
         {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
         {project_type::console, {*this, &project_management::create_console}},
         {project_type::gui, {*this, &project_management::create_gui}},
@@ -126,45 +126,45 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
-      return xtd::ustring::format("{0}Project {1} added{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} added{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring build(const xtd::ustring& target, bool clean_first, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Build project aborted.", path_);
+    xtd::string build(const xtd::string& target, bool clean_first, bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Build project aborted.", path_);
       if (clean_first) clean(release);
       else generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       if (xtd::environment::os_version().is_windows_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, false);
       else if (xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), true, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), true, false);
       else
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return xtd::ustring::format("{0}Project {1} builded{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} builded{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring clean(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", path_);
+    xtd::string clean(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Clean project aborted.", path_);
       auto build_path = xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(this->build_path(), release ? "Release" : "Debug") : this->build_path();
       if (xtd::io::directory::exists(build_path)) xtd::io::directory::remove(build_path, true);
       generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
-      return xtd::ustring::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring create(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
+    xtd::string create(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} already exists and not empty! Create project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
+      std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language, bool>> {
         {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
         {project_type::console, {*this, &project_management::create_console}},
         {project_type::gui, {*this, &project_management::create_gui}},
@@ -174,20 +174,20 @@ namespace xtdc_command {
       } [type](name, sdk, language, true);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring generate(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
+    xtd::string generate(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! GenertaeGenertae project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Genertae project aborted.";
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Genertae project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Genertae project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Genertae project aborted.";
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language>> {
+      std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language>> {
         {project_type::blank_solution, {*this, &project_management::generate_blank_solution}},
         {project_type::console, {*this, &project_management::generate_console}},
         {project_type::gui, {*this, &project_management::generate_gui}},
@@ -197,57 +197,57 @@ namespace xtdc_command {
       } [type](name, sdk, language);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring install(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Install project aborted.", path_);
+    xtd::string install(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Install project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       build("install", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Install project aborted.";
-      return xtd::ustring::format("{0}Project {1} installed{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} installed{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring open(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Open project aborted.", path_);
+    xtd::string open(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Open project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
       auto xtdc_default_ide = xtd::environment::get_environment_variable("XTDC_DEFAULT_IDE");
-      if (!xtd::ustring::is_empty(xtdc_default_ide)) {
-        if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
-        if (xtdc_default_ide == "codeblocks") launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+      if (!xtd::string::is_empty(xtdc_default_ide)) {
+        if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+        if (xtdc_default_ide == "codeblocks") launch_and_wait_process(xtd::string::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
         else launch_and_wait_process(xtdc_default_ide, path_, false, false);
-      } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
-      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
+      } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::string::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
       else {
         if (xtd::io::file::exists("/usr/bin/code")) launch_and_wait_process("code", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/gvim")) launch_and_wait_process("gvim", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/vim")) launch_and_wait_process("vim", path_, false, false);
-        else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+        else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::string::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
         else if (xtd::io::file::exists("/usr/bin/kdevelop")) launch_and_wait_process("kdevelop", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", path_, false, false);
-        else return xtd::ustring::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
+        else return xtd::string::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
       }
-      return xtd::ustring::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
+      return xtd::string::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
     }
     
-    xtd::ustring update(const xtd::ustring& target) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Update project aborted.", path_);
+    xtd::string update(const xtd::string& target) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Update project aborted.", path_);
       change_current_directory current_directory {build_path()};
       generate_project(target);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Update project aborted.";
-      return xtd::ustring::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
+      return xtd::string::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
     }
     
-    xtd::ustring run(const xtd::ustring& target, bool release, bool wait_process) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Run project aborted.", path_);
+    xtd::string run(const xtd::string& target, bool release, bool wait_process) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Run project aborted.", path_);
       build(target, false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       //if (target_path.empty()) return "The target does not exist! Run project aborted.";
-      if (!xtd::io::file::exists(target_path)) return xtd::ustring::format("The target \"{}\" does not exist! Run project aborted.", target_path);
+      if (!xtd::io::file::exists(target_path)) return xtd::string::format("The target \"{}\" does not exist! Run project aborted.", target_path);
       
       xtd::console::clear();
       xtd::diagnostics::process process;
@@ -259,27 +259,27 @@ namespace xtdc_command {
       return "";
     }
     
-    std::vector<xtd::ustring>& targets() const {
-      static std::vector<xtd::ustring> targets;
+    std::vector<xtd::string>& targets() const {
+      static std::vector<xtd::string> targets;
       if (targets.size() == 0)
         for (const auto& line : get_system_information())
-          if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos)
+          if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos)
             targets.push_back(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
       return targets;
     }
     
-    xtd::ustring test(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Test project aborted.", path_);
+    xtd::string test(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Test project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
-      launch_and_wait_process("ctest", xtd::ustring::format("--output-on-failure --build-config {}", release ? "release" : "debug"), false, false);
-      return xtd::ustring::format("{0}Project {1} tested{0}", xtd::environment::new_line(), path_);
+      launch_and_wait_process("ctest", xtd::string::format("--output-on-failure --build-config {}", release ? "release" : "debug"), false, false);
+      return xtd::string::format("{0}Project {1} tested{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::ustring uninstall(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
-      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), "install_manifest.txt"))) return xtd::ustring::format("File {} does not exists! Uninstall project aborted.", xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : xtd::io::path::combine(build_path(), "install_manifest.txt"));
+    xtd::string uninstall(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
+      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), "install_manifest.txt"))) return xtd::string::format("File {} does not exists! Uninstall project aborted.", xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : xtd::io::path::combine(build_path(), "install_manifest.txt"));
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       
       for (auto system_file : xtd::io::file::read_all_lines(xtd::io::path::combine((xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()), "install_manifest.txt"))) {
@@ -291,16 +291,16 @@ namespace xtdc_command {
       }
       
       xtd::io::file::remove(xtd::io::path::combine(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), "install_manifest.txt"));
-      return xtd::ustring::format("{0}Project {1} uninstalled{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} uninstalled{0}", xtd::environment::new_line(), path_);
     }
     
   private:
-    xtd::ustring& get_name() const {
-      static xtd::ustring name;
+    xtd::string& get_name() const {
+      static xtd::string name;
       if (name.empty()) {
         for (const auto& line : get_system_information()) {
           if (line.starts_with("CMAKE_PROJECT_NAME:STATIC=")) {
-            name = line.replace("CMAKE_PROJECT_NAME:STATIC=", xtd::ustring::empty_string);
+            name = line.replace("CMAKE_PROJECT_NAME:STATIC=", xtd::string::empty_string);
             break;
           }
         }
@@ -309,14 +309,14 @@ namespace xtdc_command {
       return name;
     }
     
-    xtd::ustring get_target_path(const xtd::ustring& target, bool release) const {
+    xtd::string get_target_path(const xtd::string& target, bool release) const {
       for (const auto& line : get_system_information())
-        if (line.starts_with(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target)))
-          return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), xtd::ustring::empty_string), target, release);
+        if (line.starts_with(xtd::string::format("{}_BINARY_DIR:STATIC=", target)))
+          return make_platform_target_path(line.replace(xtd::string::format("{}_BINARY_DIR:STATIC=", target), xtd::string::empty_string), target, release);
       //if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
       //return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
 
-      xtd::delegate<xtd::ustring(const xtd::ustring& path, const xtd::ustring& target)> find_target {[&](const xtd::ustring& path, const xtd::ustring& target)->xtd::ustring {
+      xtd::delegate<xtd::string(const xtd::string& path, const xtd::string& target)> find_target {[&](const xtd::string& path, const xtd::string& target)->xtd::string {
         if (xtd::io::file::exists(xtd::io::path::combine(path, target))) return xtd::io::path::combine(path, target);
         for (auto& directory : xtd::io::directory::get_directories(path))
           return find_target(directory, target);
@@ -327,23 +327,23 @@ namespace xtdc_command {
       return find_target(build_path(), target);
     }
     
-    xtd::ustring get_first_target_path(bool release) const {
+    xtd::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
-        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos) return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), xtd::ustring::empty_string), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
+        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos) return make_platform_target_path(line.replace(xtd::string::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), xtd::string::empty_string), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return xtd::io::path::combine(build_path(), xtd::io::path::get_file_name(path_), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
       if (xtd::environment::os_version().is_macos_platform()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_), xtd::io::path::get_file_name(path_));
       return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
     }
     
-    xtd::ustring make_platform_target_path(const xtd::ustring& path, const xtd::ustring& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target));
-      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target));
+    xtd::string make_platform_target_path(const xtd::string& path, const xtd::string& target, bool release) const {
+      if (xtd::environment::os_version().is_windows_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::string::format("{}.exe", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::string::format("{}.exe", target));
+      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::string::format("{}.app", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::string::format("{}.app", target));
       if (xtd::environment::os_version().is_macos_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", target))) return xtd::io::path::combine(path, release ? "Release" : "Debug", target);
       if (xtd::environment::os_version().is_unix_platform() && xtd::io::file::exists(xtd::io::path::combine(path, target))) return xtd::io::path::combine(path, target);
       return "";
     }
     
-    bool is_windows_gui_app(const xtd::ustring& path) const {
+    bool is_windows_gui_app(const xtd::string& path) const {
       if (!xtd::io::file::exists(path)) return false;
       auto bytes = xtd::io::file::read_all_bytes(path);
       // read PE Format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
@@ -351,9 +351,9 @@ namespace xtdc_command {
       return xtd::bit_converter::to_uint16(bytes, xtd::bit_converter::to_uint16(bytes, 0x3C) + 92) == 2;
     }
     
-    bool is_linux_gui_app(const xtd::ustring& path) const {
+    bool is_linux_gui_app(const xtd::string& path) const {
       if (!xtd::io::file::exists(path)) return false;
-      auto config_file = xtd::io::path::combine({xtd::environment::get_folder_path(xtd::environment::special_folder::home), ".local", "share", "applications", xtd::ustring::format("{}.desktop", xtd::io::path::get_file_name(path))});
+      auto config_file = xtd::io::path::combine({xtd::environment::get_folder_path(xtd::environment::special_folder::home), ".local", "share", "applications", xtd::string::format("{}.desktop", xtd::io::path::get_file_name(path))});
       if (!xtd::io::file::exists(config_file)) return false;
       auto lines = xtd::io::file::read_all_lines(config_file);
       for (auto line : lines)
@@ -361,18 +361,18 @@ namespace xtdc_command {
       return false;
     }
     
-    bool is_macos_gui_app(const xtd::ustring& path) const {
+    bool is_macos_gui_app(const xtd::string& path) const {
       return xtd::io::path::has_extension(path) && xtd::io::path::get_extension(path) == ".app";
     }
     
-    bool is_gui(const xtd::ustring& path) const {
+    bool is_gui(const xtd::string& path) const {
       if (xtd::environment::os_version().is_windows_platform()) return is_windows_gui_app(path);
       if (xtd::environment::os_version().is_macos_platform()) return is_macos_gui_app(path);
       return is_linux_gui_app(path);
     }
     
-    std::vector<xtd::ustring>& get_system_information() const {
-      static std::vector<xtd::ustring> system_information;
+    std::vector<xtd::string>& get_system_information() const {
+      static std::vector<xtd::string> system_information;
       static bool exception_throwed = false;
       if (!exception_throwed && system_information.size() == 0) {
         if (!xtd::io::file::exists(xtd::io::path::combine(build_path(), "xtd_si.txt"))) {
@@ -389,22 +389,22 @@ namespace xtdc_command {
       return system_information;
     }
     
-    xtd::ustring build_path() const {return xtd::io::path::combine(path_, "build");}
+    xtd::string build_path() const {return xtd::io::path::combine(path_, "build");}
     xtd::int32 last_exit_code() const {return last_exit_code_;}
     
-    void create_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+    void create_blank_solution(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) {
+      std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}},
         {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}},
         {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
       } [sdk](name, create_solution);
     }
     
-    void create_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
+    void create_console(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+        default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_console_project {path_}, &c_console_project::create}},
             {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
             {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
@@ -413,8 +413,8 @@ namespace xtdc_command {
       }
     }
     
-    void create_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+    void create_gui(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
         {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}},
@@ -432,11 +432,11 @@ namespace xtdc_command {
       } [sdk](name, create_solution);
     }
     
-    void create_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
+    void create_shared_library(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_shared_library_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+        default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
             {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
             {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
@@ -445,11 +445,11 @@ namespace xtdc_command {
       }
     }
     
-    void create_static_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
+    void create_static_library(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_static_library_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, create_solution); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+        default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
             {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::create}},
@@ -458,8 +458,8 @@ namespace xtdc_command {
       }
     }
     
-    void create_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+    void create_unit_test_application(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::catch2, {catch2_unit_test_application_project {path_}, &catch2_unit_test_application_project::create}},
         {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::create}},
         {project_sdk::xtd, {xtd_unit_test_application_project {path_}, &xtd_unit_test_application_project::create}},
@@ -467,30 +467,30 @@ namespace xtdc_command {
       } [sdk](name, create_solution);
     }
     
-    void create_doxygen_txt(const xtd::ustring& name) const {
+    void create_doxygen_txt(const xtd::string& name) const {
       xtd::io::file::write_all_text(xtd::io::path::combine(path_, ".doxygen.txt"), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources), "texts", "doxygen.txt"));
     }
     
-    void create_readme_md(const xtd::ustring& name) const {
-      std::vector<xtd::ustring> lines {
-        xtd::ustring::format("# {}", name),
+    void create_readme_md(const xtd::string& name) const {
+      std::vector<xtd::string> lines {
+        xtd::string::format("# {}", name),
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
     }
     
-    void generate_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language) {
-      std::map<project_sdk, xtd::action<const xtd::ustring&>> {
+    void generate_blank_solution(const xtd::string& name, project_sdk sdk, project_language language) {
+      std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::generate}},
         {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::generate}},
         {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
       } [sdk](name);
     }
     
-    void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language) const {
+    void generate_console(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&>> {
+        default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
             {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
             {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
@@ -499,8 +499,8 @@ namespace xtdc_command {
       }
     }
     
-    void generate_gui(const xtd::ustring& name, project_sdk sdk, project_language language) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&>> {
+    void generate_gui(const xtd::string& name, project_sdk sdk, project_language language) const {
+      std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::generate}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::generate}},
         {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::generate}},
@@ -518,11 +518,11 @@ namespace xtdc_command {
       } [sdk](name);
     }
     
-    void generate_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language) const {
+    void generate_shared_library(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&>> {
+        default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
             {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
             {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
@@ -531,11 +531,11 @@ namespace xtdc_command {
       }
     }
     
-    void generate_static_library(const xtd::ustring& name, project_sdk sdk, project_language language) const {
+    void generate_static_library(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_static_library_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&>> {
+        default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
             {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::generate}},
@@ -544,8 +544,8 @@ namespace xtdc_command {
       }
     }
     
-    void generate_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&>> {
+    void generate_unit_test_application(const xtd::string& name, project_sdk sdk, project_language language) const {
+      std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::catch2, {catch2_unit_test_application_project {path_}, &catch2_unit_test_application_project::generate}},
         {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::generate}},
         {project_sdk::xtd, {xtd_unit_test_application_project {path_}, &xtd_unit_test_application_project::generate}},
@@ -555,44 +555,44 @@ namespace xtdc_command {
     
     void generate_project() const {generate_project(xtd::io::path::get_file_name(path_));}
     
-    void generate_project(xtd::ustring name) const {
+    void generate_project(xtd::string name) const {
       bool first_generation = !xtd::io::directory::exists(build_path());
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.sln", name)))))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()), false, false);
-      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.xcodeproj", name)))))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true, false);
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name)))))
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, false);
+      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true, false);
       else if (xtd::environment::os_version().is_unix_platform()) {
-        if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::ustring::format("{}.cbp", name)))) {
+        if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, false);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, false);
           patch_cbp_file(name, "Debug");
         }
-        if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", xtd::ustring::format("{}.cbp", name)))) {
+        if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, false);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, false);
           patch_cbp_file(name, "Release");
         }
       }
     }
     
-    bool is_path_already_exist_and_not_empty(const xtd::ustring& path) const {
+    bool is_path_already_exist_and_not_empty(const xtd::string& path) const {
       if (!xtd::io::directory::exists(path_)) return false;
       if (xtd::io::directory::get_file_system_entries(path_).size() == 0) return false;
       if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::get_file_system_entries(path_).size() == 1 && xtd::io::directory::get_file_system_entries(path_, ".DS_Store").size() == 1) return false;
       return true;
     }
     
-    void launch_and_wait_process(const xtd::ustring& file_name) const {launch_and_wait_process(file_name, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute) const {launch_and_wait_process(file_name, shell_execute, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute, bool verbose) const {launch_and_wait_process(file_name, xtd::ustring::empty_string, shell_execute, verbose);}
-    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments) const {launch_and_wait_process(file_name, arguments, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute) const {launch_and_wait_process(file_name, arguments, shell_execute, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute, bool verbose) const {
+    void launch_and_wait_process(const xtd::string& file_name) const {launch_and_wait_process(file_name, false);}
+    void launch_and_wait_process(const xtd::string& file_name, bool shell_execute) const {launch_and_wait_process(file_name, shell_execute, false);}
+    void launch_and_wait_process(const xtd::string& file_name, bool shell_execute, bool verbose) const {launch_and_wait_process(file_name, xtd::string::empty_string, shell_execute, verbose);}
+    void launch_and_wait_process(const xtd::string& file_name, const xtd::string& arguments) const {launch_and_wait_process(file_name, arguments, false);}
+    void launch_and_wait_process(const xtd::string& file_name, const xtd::string& arguments, bool shell_execute) const {launch_and_wait_process(file_name, arguments, shell_execute, false);}
+    void launch_and_wait_process(const xtd::string& file_name, const xtd::string& arguments, bool shell_execute, bool verbose) const {
       xtd::diagnostics::process process;
       process.start_info({file_name, arguments});
       process.start_info().use_shell_execute(shell_execute);
@@ -605,20 +605,20 @@ namespace xtdc_command {
       last_exit_code_ = process.exit_code();
     }
     
-    void patch_cbp_file(const xtd::ustring& name, const xtd::ustring& build_config) const {
+    void patch_cbp_file(const xtd::string& name, const xtd::string& build_config) const {
       if (xtd::io::file::read_all_text(xtd::io::file::exists(xtd::io::path::combine(path_, name, "CMakeLists.txt")) ? xtd::io::path::combine(path_, name, "CMakeLists.txt") : xtd::io::path::combine(path_, "CMakeLists.txt")).contains("GUI_APPLICATION")) {
-        auto cbp_file_lines = xtd::io::file::read_all_lines(xtd::io::path::combine(build_path(), build_config, xtd::ustring::format("{}.cbp", name)));
-        for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::ustring::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
+        auto cbp_file_lines = xtd::io::file::read_all_lines(xtd::io::path::combine(build_path(), build_config, xtd::string::format("{}.cbp", name)));
+        for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::string::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
           if (*iterator == "\t\t\t\t<Option type=\"1\"/>") {
             *iterator = "\t\t\t\t<Option type=\"0\"/>";
             break;
           }
         }
-        xtd::io::file::write_all_lines(xtd::io::path::combine(build_path(), build_config, xtd::ustring::format("{}.cbp", name)), cbp_file_lines);
+        xtd::io::file::write_all_lines(xtd::io::path::combine(build_path(), build_config, xtd::string::format("{}.cbp", name)), cbp_file_lines);
       }
     }
     
-    mutable xtd::ustring path_ = xtd::environment::current_directory();
+    mutable xtd::string path_ = xtd::environment::current_directory();
     mutable xtd::int32 last_exit_code_ = EXIT_SUCCESS;
   };
 }

@@ -47,21 +47,21 @@ namespace xtd {
       /// @{
       /// @brief Gets the control's initial text.
       /// @return The control's initial text.
-      const xtd::ustring& caption() const noexcept;
+      const xtd::string& caption() const noexcept;
       /// @brief Gets the control's initial text.
       /// @param caption The control's initial text.
       /// @return Current create_params instance.
-      create_params& caption(const xtd::ustring& caption);
+      create_params& caption(const xtd::string& caption);
       
       /// @brief Gets the name of the Windows class to derive the control from.
       /// @return The name of the Windows class to derive the control from.
       /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
-      const xtd::ustring& class_name() const noexcept;
+      const xtd::string& class_name() const noexcept;
       /// @brief Sets the name of the Windows class to derive the control from.
       /// @param class_name The name of the Windows class to derive the control from.
       /// @return Current create_param instance.
       /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
-      create_params& class_name(const xtd::ustring& class_name);
+      create_params& class_name(const xtd::string& class_name);
       
       /// @brief Gets a bitwise combination of class style values.
       /// @return A bitwise combination of the class style values.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @{
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

@@ -56,12 +56,12 @@ void settings::exit_status(int32 exit_status) noexcept {
   exit_status_ = exit_status;
 }
 
-const std::vector<ustring>& settings::filter_tests() const noexcept {
+const std::vector<string>& settings::filter_tests() const noexcept {
   return filter_tests_;
 }
 
-void settings::filter_tests(const std::vector<ustring>& filter_tests) noexcept {
-  filter_tests_ = !filter_tests.empty() ? filter_tests : std::vector<ustring> {"*.*"};
+void settings::filter_tests(const std::vector<string>& filter_tests) noexcept {
+  filter_tests_ = !filter_tests.empty() ? filter_tests : std::vector<string> {"*.*"};
 }
 
 bool settings::gtest_compatibility() const noexcept {
@@ -72,7 +72,7 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
   gtest_compatibility_ = gtest_compatibility;
 }
 
-bool settings::is_match_test_name(const ustring& test_class_name, const ustring& test_name) const noexcept {
+bool settings::is_match_test_name(const string& test_class_name, const string& test_name) const noexcept {
   auto result = false;
   auto found_filter_test_count = false;
   for (auto filter_test : filter_tests())
@@ -121,19 +121,19 @@ void settings::output_xml(bool output_xml) noexcept {
   output_xml_ = output_xml;
 }
 
-ustring settings::output_json_path() const noexcept {
+string settings::output_json_path() const noexcept {
   return output_json_path_.value_or(gtest_compatibility() ? "test_detail.json" : "tests.json");
 }
 
-void settings::output_json_path(const ustring& output_json_path) noexcept {
+void settings::output_json_path(const string& output_json_path) noexcept {
   output_json_path_ = output_json_path;
 }
 
-ustring settings::output_xml_path() const noexcept {
+string settings::output_xml_path() const noexcept {
   return output_xml_path_.value_or(gtest_compatibility() ? "test_detail.xml" : "tests.xml");
 }
 
-void settings::output_xml_path(const ustring& output_xml_path) noexcept {
+void settings::output_xml_path(const string& output_xml_path) noexcept {
   output_xml_path_ = output_xml_path;
 }
 
@@ -185,7 +185,7 @@ void settings::enable_stack_trace(bool enable_stack_trace) noexcept {
   enable_stack_trace_ = enable_stack_trace;
 }
 
-bool settings::pattern_compare(const ustring& name, const ustring& pattern) const noexcept {
+bool settings::pattern_compare(const string& name, const string& pattern) const noexcept {
   if (pattern == "") return name == "";
   if (name == "") return false;
   if (pattern == "*" || pattern == "*.*") return true;

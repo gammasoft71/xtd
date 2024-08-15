@@ -100,7 +100,7 @@ toggle_button toggle_button::create(const drawing::point& location, const drawin
   return result;
 }
 
-toggle_button toggle_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.location(location);
   result.size(size);
@@ -108,71 +108,71 @@ toggle_button toggle_button::create(const drawing::point& location, const drawin
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text) {
+toggle_button toggle_button::create(const xtd::string& text) {
   auto result = toggle_button {};
   result.text(text);
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, const drawing::point& location) {
+toggle_button toggle_button::create(const xtd::string& text, const drawing::point& location) {
   auto result = toggle_button {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+toggle_button toggle_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = toggle_button {};
   result.text(text);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-toggle_button toggle_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = toggle_button {};
-  result.text(text);
-  result.location(location);
-  result.size(size);
-  result.name(name);
-  return result;
-}
-
-toggle_button toggle_button::create(const xtd::ustring& text, xtd::forms::check_state check_state) {
-  auto result = toggle_button {};
-  result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-toggle_button toggle_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = toggle_button {};
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-toggle_button toggle_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = toggle_button {};
-  result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   result.name(name);
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state) {
+toggle_button toggle_button::create(const xtd::string& text, xtd::forms::check_state check_state) {
+  auto result = toggle_button {};
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+toggle_button toggle_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = toggle_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+toggle_button toggle_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = toggle_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+toggle_button toggle_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+  auto result = toggle_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+toggle_button toggle_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state) {
   auto result = toggle_button {};
   result.text(text);
   result.three_state(three_state);
@@ -180,7 +180,7 @@ toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, 
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
+toggle_button toggle_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
   auto result = toggle_button {};
   result.text(text);
   result.three_state(three_state);
@@ -189,7 +189,7 @@ toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, 
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+toggle_button toggle_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
   auto result = toggle_button {};
   result.text(text);
   result.three_state(three_state);
@@ -199,7 +199,7 @@ toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, 
   return result;
 }
 
-toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.text(text);
   result.three_state(three_state);
@@ -230,7 +230,7 @@ toggle_button toggle_button::create(const control& parent, const drawing::point&
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.parent(parent);
   result.location(location);
@@ -239,79 +239,79 @@ toggle_button toggle_button::create(const control& parent, const drawing::point&
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
-  auto result = toggle_button {};
-  result.parent(parent);
-  result.text(text);
-  result.location(location);
-  return result;
-}
-
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
   result.location(location);
-  result.size(size);
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
   result.location(location);
   result.size(size);
-  result.name(name);
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = toggle_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = toggle_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = toggle_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   result.name(name);
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state) {
+  auto result = toggle_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = toggle_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = toggle_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+  auto result = toggle_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
@@ -320,7 +320,7 @@ toggle_button toggle_button::create(const control& parent, const xtd::ustring& t
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
@@ -330,7 +330,7 @@ toggle_button toggle_button::create(const control& parent, const xtd::ustring& t
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
@@ -341,7 +341,7 @@ toggle_button toggle_button::create(const control& parent, const xtd::ustring& t
   return result;
 }
 
-toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+toggle_button toggle_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = toggle_button {};
   result.parent(parent);
   result.text(text);
@@ -374,7 +374,7 @@ forms::create_params toggle_button::create_params() const noexcept {
 
 xtd::uptr<xtd::object> toggle_button::clone() const {
   auto result = xtd::new_uptr<toggle_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

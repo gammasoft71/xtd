@@ -21,7 +21,7 @@ public:
     throw invalid_operation_exception {csf_};
   }
   
-  bool create(int32 initial_count, int32 maximum_count, const ustring& name) override {
+  bool create(int32 initial_count, int32 maximum_count, const string& name) override {
     name_ = name;
     handle_ = native::named_semaphore::create(initial_count, maximum_count, name);
     return handle_ != invalid_handle;
@@ -33,7 +33,7 @@ public:
     handle_ = invalid_handle;
   }
   
-  bool open(const ustring& name) override {
+  bool open(const string& name) override {
     name_ = name;
     handle_ = native::named_semaphore::open(name);
     return handle_ != invalid_handle;
@@ -50,5 +50,5 @@ public:
   
 private:
   intptr handle_ = invalid_handle;
-  ustring name_;
+  string name_;
 };

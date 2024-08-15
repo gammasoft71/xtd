@@ -33,7 +33,7 @@ namespace xtd {
       string_writer() = default;
       /// @brief Initializes a new instance of the stream_writer class for the specified string.
       /// @param str base string.
-      explicit string_writer(const xtd::ustring& str);
+      explicit string_writer(const xtd::string& str);
       /// @}
       
       /// @name Public Properties
@@ -54,12 +54,12 @@ namespace xtd {
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
       void flush() override;
       
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::io_exception An I/O error occurs.
-      void write(const xtd::ustring& value) override;
+      void write(const xtd::string& value) override;
       /// @}
       
     private:

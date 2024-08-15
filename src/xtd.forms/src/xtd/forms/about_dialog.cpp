@@ -37,21 +37,21 @@ namespace {
       auto_size(true);
     }
     
-    const ustring title() const {return title_;}
-    credits_item_panel& title(const ustring& title) {
+    const string title() const {return title_;}
+    credits_item_panel& title(const string& title) {
       if (title_ == title) return *this;
       title_ = title;
       title_label_.text(title);
       return *this;
     }
     
-    const list<ustring>& names() const {return names_;}
-    credits_item_panel& names(const list<ustring>& names) {
+    const list<string>& names() const {return names_;}
+    credits_item_panel& names(const list<string>& names) {
       if (names_ == names) return *this;
       names_ = names;
       names_label_.text(names_.size() ? names_[0] : "");
       for (auto index = 1_z; index < names_.size(); ++index)
-        names_label_.text(ustring::format("{}{}{}", names_label_.text(), environment::new_line(), names_[index]));
+        names_label_.text(string::format("{}{}{}", names_label_.text(), environment::new_line(), names_[index]));
       height(names_label_.height());
       return *this;
     }
@@ -59,7 +59,7 @@ namespace {
   protected:
     xtd::uptr<xtd::object> clone() const override {
       auto result = xtd::new_uptr<credits_item_panel>(*this);
-      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
       return result;
     }
     
@@ -72,8 +72,8 @@ namespace {
   private:
     label title_label_;
     label names_label_;
-    list<ustring> names_;
-    ustring title_;
+    list<string> names_;
+    string title_;
   };
   
   class about_dialog_standard : public form {
@@ -136,7 +136,7 @@ namespace {
     }
     
     using form::show;
-    void show(const iwin32_window* owner, const image& icon, const ustring& name, const ustring& description, const ustring& version, const ustring& long_version, const ustring& copyright, const ustring& website, const ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const ustring& license, const about_dialog::user_tab_page_collection& user_pages) {
+    void show(const iwin32_window* owner, const image& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const std::vector<string>& authors, const std::vector<string>& artists, const std::vector<string>& documenters, const std::vector<string>& translators, const string& license, const about_dialog::user_tab_page_collection& user_pages) {
       if (visible()) {
         activate();
         return;
@@ -165,14 +165,14 @@ namespace {
       }
       
       if (!version.empty() && !long_version.empty())
-        label_version_.text(ustring::format("{} ({})", long_version, version));
+        label_version_.text(string::format("{} ({})", long_version, version));
       else if (!long_version.empty())
-        label_version_.text(ustring::format("{}", long_version));
+        label_version_.text(string::format("{}", long_version));
       else if (!version.empty())
-        label_version_.text(ustring::format("({})", version));
+        label_version_.text(string::format("({})", version));
         
       label_description_.height(static_cast<int32>(23 * description.split({'\n'}).size()));
-      label_description_.text(ustring::format("{}", description));
+      label_description_.text(string::format("{}", description));
       
       link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
       link_label_website_.text(!website_label.empty() ? website_label : website);
@@ -182,7 +182,7 @@ namespace {
       };
       
       label_copyright_.height(static_cast<int32>(23 * copyright.split({'\n'}).size()));
-      label_copyright_.text(ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
+      label_copyright_.text(string::format("{}", string(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
         tab_control_about_.tab_pages().push_back(tab_page_credits_);
@@ -261,19 +261,19 @@ struct about_dialog::data {
   forms::dialog_appearance dialog_appearance = forms::dialog_appearance::standard;
   intptr handle = 0;
   image icon;
-  ustring name;
-  ustring version;
-  ustring long_version;
-  ustring description;
-  ustring copyright;
-  ustring website;
-  ustring website_label;
+  string name;
+  string version;
+  string long_version;
+  string description;
+  string copyright;
+  string website;
+  string website_label;
   author_collection authors;
   documenter_collection documenters;
   user_tab_page_collection user_tab_pages;
   translator_collection translators;
   artist_collection artists;
-  ustring license;
+  string license;
 };
 
 about_dialog::about_dialog() : data_(xtd::new_sptr<data>()) {
@@ -310,20 +310,20 @@ about_dialog& about_dialog::authors(const author_collection& authors) {
   return *this;
 }
 
-ustring about_dialog::copyright() const noexcept {
+string about_dialog::copyright() const noexcept {
   return data_->copyright;
 }
 
-about_dialog& about_dialog::copyright(const ustring& copyright) {
+about_dialog& about_dialog::copyright(const string& copyright) {
   data_->copyright = copyright;
   return *this;
 }
 
-ustring about_dialog::description() const noexcept {
+string about_dialog::description() const noexcept {
   return data_->description;
 }
 
-about_dialog& about_dialog::description(const ustring& description) {
+about_dialog& about_dialog::description(const string& description) {
   data_->description = description;
   return *this;
 }
@@ -369,29 +369,29 @@ about_dialog& about_dialog::icon(const bitmap& bitmap) {
   return *this;
 }
 
-ustring about_dialog::license() const noexcept {
+string about_dialog::license() const noexcept {
   return data_->license;
 }
 
-about_dialog& about_dialog::license(const ustring& license) {
+about_dialog& about_dialog::license(const string& license) {
   data_->license = license;
   return *this;
 }
 
-ustring about_dialog::long_version() const noexcept {
+string about_dialog::long_version() const noexcept {
   return data_->long_version;
 }
 
-about_dialog& about_dialog::long_version(const ustring& long_version) {
+about_dialog& about_dialog::long_version(const string& long_version) {
   data_->long_version = long_version;
   return *this;
 }
 
-ustring about_dialog::name() const noexcept {
+string about_dialog::name() const noexcept {
   return data_->name;
 }
 
-about_dialog& about_dialog::name(const ustring& name) {
+about_dialog& about_dialog::name(const string& name) {
   data_->name = name;
   return *this;
 }
@@ -417,29 +417,29 @@ about_dialog& about_dialog::translators(const translator_collection& translators
   return *this;
 }
 
-ustring about_dialog::version() const noexcept {
+string about_dialog::version() const noexcept {
   return data_->version;
 }
 
-about_dialog& about_dialog::version(const ustring& version) {
+about_dialog& about_dialog::version(const string& version) {
   data_->version = version;
   return *this;
 }
 
-ustring about_dialog::website() const noexcept {
+string about_dialog::website() const noexcept {
   return data_->website;
 }
 
-about_dialog& about_dialog::website(const ustring& website) {
+about_dialog& about_dialog::website(const string& website) {
   data_->website = website;
   return *this;
 }
 
-ustring about_dialog::website_label() const noexcept {
+string about_dialog::website_label() const noexcept {
   return data_->website_label;
 }
 
-about_dialog& about_dialog::website_label(const ustring& website_label) {
+about_dialog& about_dialog::website_label(const string& website_label) {
   data_->website_label = website_label;
   return *this;
 }

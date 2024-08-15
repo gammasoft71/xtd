@@ -94,7 +94,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::panel.
       /// @param name The name of the xtd::forms::panel.
       /// @return New xtd::forms::panel created.
-      static panel create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::panel.
       /// @return New xtd::forms::panel created.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::panel.
       /// @param name The name of the xtd::forms::panel.
       /// @return New xtd::forms::panel created.
-      static panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

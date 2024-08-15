@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Displays a exception box in front of the specified window. The exception box displays a specified caption and unknown exception.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param caption A string that specifies the title bar caption to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& caption);
+      static dialog_result show(const iwin32_window& owner, const xtd::string& caption);
       /// @brief Displays a exception box in front of the specified window. The exception box displays a specified exception.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param exception An exception to display.
@@ -54,24 +54,24 @@ namespace xtd {
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param exception An exception to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static dialog_result show(const iwin32_window& owner, const std::exception& exception, const xtd::ustring& caption);
+      static dialog_result show(const iwin32_window& owner, const std::exception& exception, const xtd::string& caption);
       
       /// @brief Displays a exception box. The exception box displays an unknown exception.
       static dialog_result show();
       /// @brief Displays a exception box. The exception box displays a specified caption and unknown exception.
       /// @param caption A string that specifies the title bar caption to display.
-      static dialog_result show(const xtd::ustring& caption);
+      static dialog_result show(const xtd::string& caption);
       /// @brief Displays a exception box. The exception box displays a specified exception.
       /// @param exception An exception to display.
       static dialog_result show(const std::exception& exception);
       /// @brief Displays a exception box. The exception box displays a specified exception and caption.
       /// @param exception An exception to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static dialog_result show(const std::exception& exception, const xtd::ustring& caption);
+      static dialog_result show(const std::exception& exception, const xtd::string& caption);
       /// @}
       
     private:
-      static dialog_result show_exception_box(const iwin32_window* owner, const std::exception* exception = nullptr, const xtd::ustring& caption = "");
+      static dialog_result show_exception_box(const iwin32_window* owner, const std::exception* exception = nullptr, const xtd::string& caption = "");
     };
   }
 }

@@ -14,7 +14,7 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        explicit selector(const xtd::ustring& name) : name_(name) {}
+        explicit selector(const xtd::string& name) : name_(name) {}
         /// @}
         
         /// @cond
@@ -26,8 +26,8 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        const xtd::ustring& name() const noexcept {return name_;}
-        void name(const xtd::ustring& name) noexcept {name_ = name;}
+        const xtd::string& name() const noexcept {return name_;}
+        void name(const xtd::string& name) noexcept {name_ = name;}
         
         const xtd::web::css::property_map& properties() const noexcept {return properties_;}
         void properties(const xtd::web::css::property_map& properties) noexcept {properties_ = properties;}
@@ -35,7 +35,7 @@ namespace xtd {
         /// @}
         
       private:
-        xtd::ustring name_;
+        xtd::string name_;
         xtd::web::css::property_map properties_;
       };
     }

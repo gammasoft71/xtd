@@ -99,13 +99,13 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(compare_exchange_ustring_if_comparand_equal) {
-      ustring location = "str1";
+      string location = "str1";
       assert::are_equal("str1", interlocked::compare_exchange(location, "str2"_s, "str1"_s), csf_);
       assert::are_equal("str2", location, csf_);
     }
     
     void test_method_(compare_exchange_ustring_if_comparand_different) {
-      ustring location = "str1";
+      string location = "str1";
       assert::are_equal("str1", interlocked::compare_exchange(location, "str2"_s, "str"_s), csf_);
       assert::are_equal("str1", location, csf_);
     }
@@ -161,7 +161,7 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(exchange_ustring) {
-      ustring location = "str1";
+      string location = "str1";
       assert::are_equal("str1", interlocked::exchange(location, "str2"_s), csf_);
       assert::are_equal("str2", location, csf_);
     }

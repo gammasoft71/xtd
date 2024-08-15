@@ -16,15 +16,15 @@ using namespace xtd::forms;
 
 struct replace_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
-  xtd::ustring find_string;
-  xtd::ustring replace_string;
+  xtd::string find_string;
+  xtd::string replace_string;
   intptr handle = 0;
   std::optional<xtd::drawing::point> location;
   bool match_case = false;
   const iwin32_window* owner;
   bool show_match_case = true;
   bool show_whole_word = true;
-  xtd::ustring title;
+  xtd::string title;
   bool visible = false;
   bool whole_word = false;
 };
@@ -37,22 +37,22 @@ replace_dialog::~replace_dialog() {
   destroy_handle();
 }
 
-const xtd::ustring& replace_dialog::find_string() const noexcept {
+const xtd::string& replace_dialog::find_string() const noexcept {
   return data_->find_string;
 }
 
-replace_dialog& replace_dialog::find_string(const xtd::ustring& value) {
+replace_dialog& replace_dialog::find_string(const xtd::string& value) {
   if (value == data_->find_string) return *this;
   data_->find_string = value;
   recreate_handle();
   return *this;
 }
 
-const xtd::ustring& replace_dialog::replace_string() const noexcept {
+const xtd::string& replace_dialog::replace_string() const noexcept {
   return data_->replace_string;
 }
 
-replace_dialog& replace_dialog::replace_string(const xtd::ustring& value) {
+replace_dialog& replace_dialog::replace_string(const xtd::string& value) {
   if (value == data_->replace_string) return *this;
   data_->replace_string = value;
   recreate_handle();
@@ -103,11 +103,11 @@ replace_dialog& replace_dialog::show_whole_word(bool value) {
   return *this;
 }
 
-const xtd::ustring& replace_dialog::title() const noexcept {
+const xtd::string& replace_dialog::title() const noexcept {
   return data_->title;
 }
 
-replace_dialog& replace_dialog::title(const xtd::ustring& value) {
+replace_dialog& replace_dialog::title(const xtd::string& value) {
   if (value == data_->title) return *this;
   data_->title = value;
   recreate_handle();
@@ -160,7 +160,7 @@ void replace_dialog::on_dialog_closed() {
   dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
-void replace_dialog::on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool whole_word, bool match_case) {
+void replace_dialog::on_dialog_find(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool whole_word, bool match_case) {
   data_->location = location;
   data_->find_string = find_string;
   data_->replace_string = replace_string;
@@ -169,7 +169,7 @@ void replace_dialog::on_dialog_find(const xtd::drawing::point& location, const u
   find_next(*this, find_event_args(data_->find_string, data_->match_case, search_direction::down, data_->whole_word));
 }
 
-void replace_dialog::on_dialog_replace(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool replace_all, bool whole_word, bool match_case) {
+void replace_dialog::on_dialog_replace(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool replace_all, bool whole_word, bool match_case) {
   data_->location = location;
   data_->find_string = find_string;
   data_->replace_string = replace_string;

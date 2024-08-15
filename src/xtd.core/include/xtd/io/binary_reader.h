@@ -46,7 +46,7 @@ namespace xtd {
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      explicit binary_reader(const xtd::ustring& path);
+      explicit binary_reader(const xtd::string& path);
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified stream.
       /// @param stream The stream to be read.
       /// @par Examples
@@ -218,7 +218,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual ustring read_string();
+      virtual string read_string();
       
       /// @brief Reads a 2-byte unsigned integer from the current stream and advances the current position of the stream by two bytes.
       /// @return A 2-byte unsigned integer read from the current stream.
@@ -267,7 +267,7 @@ namespace xtd {
       binary_reader& operator >>(int64& value) {value = read_int64(); return *this;}
       binary_reader& operator >>(sbyte& value) {value = read_sbyte(); return *this;}
       binary_reader& operator >>(float& value) {value = read_single(); return *this;}
-      binary_reader& operator >>(ustring& value) {value = read_string(); return *this;}
+      binary_reader& operator >>(string& value) {value = read_string(); return *this;}
       binary_reader& operator >>(uint16& value) {value = read_uint16(); return *this;}
       binary_reader& operator >>(uint32& value) {value = read_uint32(); return *this;}
       binary_reader& operator >>(uint64& value) {value = read_uint64(); return *this;}

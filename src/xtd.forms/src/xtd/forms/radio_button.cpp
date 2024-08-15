@@ -110,7 +110,7 @@ radio_button radio_button::create(const drawing::point& location, const drawing:
   return result;
 }
 
-radio_button radio_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.location(location);
   result.size(size);
@@ -118,20 +118,20 @@ radio_button radio_button::create(const drawing::point& location, const drawing:
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text) {
+radio_button radio_button::create(const xtd::string& text) {
   auto result = radio_button {};
   result.text(text);
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location) {
+radio_button radio_button::create(const xtd::string& text, const drawing::point& location) {
   auto result = radio_button {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+radio_button radio_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = radio_button {};
   result.text(text);
   result.location(location);
@@ -139,7 +139,7 @@ radio_button radio_button::create(const xtd::ustring& text, const drawing::point
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.text(text);
   result.location(location);
@@ -148,14 +148,14 @@ radio_button radio_button::create(const xtd::ustring& text, const drawing::point
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, bool checked) {
+radio_button radio_button::create(const xtd::string& text, bool checked) {
   auto result = radio_button {};
   result.text(text);
   result.checked(checked);
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location) {
+radio_button radio_button::create(const xtd::string& text, bool checked, const drawing::point& location) {
   auto result = radio_button {};
   result.text(text);
   result.checked(checked);
@@ -163,7 +163,7 @@ radio_button radio_button::create(const xtd::ustring& text, bool checked, const 
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size) {
+radio_button radio_button::create(const xtd::string& text, bool checked, const drawing::point& location, const drawing::size& size) {
   auto result = radio_button {};
   result.text(text);
   result.checked(checked);
@@ -172,7 +172,7 @@ radio_button radio_button::create(const xtd::ustring& text, bool checked, const 
   return result;
 }
 
-radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const xtd::string& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.text(text);
   result.checked(checked);
@@ -203,7 +203,7 @@ radio_button radio_button::create(const control& parent, const drawing::point& l
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.parent(parent);
   result.location(location);
@@ -212,14 +212,14 @@ radio_button radio_button::create(const control& parent, const drawing::point& l
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text) {
+radio_button radio_button::create(const control& parent, const xtd::string& text) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -227,7 +227,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -236,7 +236,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -246,7 +246,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, bool checked) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -254,7 +254,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, bool checked, const drawing::point& location) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -263,7 +263,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, bool checked, const drawing::point& location, const drawing::size& size) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -273,7 +273,7 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+radio_button radio_button::create(const control& parent, const xtd::string& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = radio_button {};
   result.parent(parent);
   result.text(text);
@@ -288,8 +288,8 @@ void radio_button::perform_click() {
   on_click(event_args::empty);
 }
 
-xtd::ustring radio_button::to_string() const noexcept {
-  return ustring::format("{}, checked: {}", get_type().full_name(), data_->checked);
+xtd::string radio_button::to_string() const noexcept {
+  return string::format("{}, checked: {}", get_type().full_name(), data_->checked);
 }
 
 forms::create_params radio_button::create_params() const noexcept {
@@ -316,7 +316,7 @@ xtd::forms::visual_styles::radio_button_state radio_button::state() const noexce
 
 xtd::uptr<xtd::object> radio_button::clone() const {
   auto result = xtd::new_uptr<radio_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

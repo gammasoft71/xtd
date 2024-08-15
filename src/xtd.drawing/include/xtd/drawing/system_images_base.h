@@ -39,7 +39,7 @@ namespace xtd {
       static xtd::drawing::size default_size() noexcept;
 
       /// @brief Gets the image contexts.
-      /// @return An wtd::ustring array that contains the image contexts.
+      /// @return An wtd::string array that contains the image contexts.
       /// @remarks The system images are grouped by contaxt.
       /// @remarks The following table list the contexts :
       /// | Context       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -57,9 +57,9 @@ namespace xtd {
       /// | Status        | Icons for presenting status to the user. This context contains icons for warning and error dialogs, as well as for the current weather, appointment alarms, and battery status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
       /// | xtd           | Icons for representinf xtd libraries and products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
       /// @remarks See (Icon Naming Specification)[https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::ustring> contexts() noexcept;
+      static std::vector<xtd::string> contexts() noexcept;
       /// @brief Gets the image context names.
-      /// @return An xtd::ustring, xtd::ustring hash table that contains the image context names.
+      /// @return An xtd::string, xtd::string hash table that contains the image context names.
       /// @remarks The system images are grouped by contaxt.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
@@ -451,9 +451,9 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names() noexcept;
+      static std::map<xtd::string, std::vector<xtd::string>> context_names() noexcept;
       /// @brief Gets the image names.
-      /// @return An xtd::ustring array that contains the image names.
+      /// @return An xtd::string array that contains the image names.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
       /// | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -844,10 +844,10 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::ustring> names() noexcept;
+      static std::vector<xtd::string> names() noexcept;
       /// @brief Gets the image names for the specified context.
       /// @param context The context to retrieve the image names.
-      /// @return An xtd::ustring, xtd::ustring hash table that contains the image names for the specified context.
+      /// @return An xtd::string, xtd::string hash table that contains the image names for the specified context.
       /// @remarks The system images are grouped by contaxt.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
@@ -1239,7 +1239,7 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::ustring> names(const xtd::ustring& context) noexcept;
+      static std::vector<xtd::string> names(const xtd::string& context) noexcept;
       /// @brief Gets standard sizes for image.
       /// @return An xtd::drawing::size array that contains the default sizes for image.
       /// @remarks This method allows you to obtain the standard sizes for an image. If you choose another size, the image will be scaled.
@@ -1254,34 +1254,34 @@ namespace xtd {
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The theme is the default system theme.
       /// @remarks The size is the default size (32 x 32).
-      static xtd::drawing::image from_name(const xtd::ustring& name);
+      static xtd::drawing::image from_name(const xtd::string& name);
       /// @brief Gets system image from specified name and size.
       /// @param name The system image name.
       /// @param size The system image size in pixels.
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The theme is the default system theme.
-      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::image from_name(const xtd::string& name, const xtd::drawing::size& size);
       /// @brief Gets system image from specified them and name.
       /// @param theme The system image theme.
       /// @param name The system image name.
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The size is the default size in pixels (32 x 32).
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name);
+      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name);
       /// @brief Gets system image from specified theme, name and size.
       /// @param theme The system image theme.
       /// @param name The system image name.
       /// @param size The system image size in pixels.
       /// @return An xtd::drawing::image object that contains the system image from specified name.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size);
       /// @}
       
     private:
       // This method is only needed to disable the native::system::image::form_name function during unit testing.
       static bool native_system_images_from_name_enabled() noexcept {return __XTD_CURRENT_TARGET_ID__ != __XTD_TARGET_ID_TEST_APPLICATION__;}
       friend class system_icons;
-      static xtd::ustring default_theme() noexcept;
-      static xtd::ustring fallback_theme() noexcept;
-      static std::vector<xtd::ustring> themes() noexcept;
+      static xtd::string default_theme() noexcept;
+      static xtd::string fallback_theme() noexcept;
+      static std::vector<xtd::string> themes() noexcept;
     };
   }
 }

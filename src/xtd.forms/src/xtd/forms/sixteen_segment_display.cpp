@@ -39,7 +39,7 @@ sixteen_segment_display sixteen_segment_display::create(const drawing::point& lo
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.location(location);
   item.size(size);
@@ -68,7 +68,7 @@ sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments seg
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.value(segments);
   item.location(location);
@@ -101,7 +101,7 @@ sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments seg
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.value(segments);
   item.show_back_segment(show_back_segment);
@@ -131,7 +131,7 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, c
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.parent(parent);
   item.location(location);
@@ -163,7 +163,7 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, x
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -199,7 +199,7 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, x
   return item;
 }
 
-sixteen_segment_display sixteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+sixteen_segment_display sixteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto item = sixteen_segment_display {};
   item.parent(parent);
   item.value(segments);
@@ -212,7 +212,7 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, x
 
 xtd::uptr<xtd::object> sixteen_segment_display::clone() const {
   auto result = xtd::new_uptr<sixteen_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

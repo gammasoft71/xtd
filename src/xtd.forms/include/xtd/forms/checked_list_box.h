@@ -47,29 +47,29 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value); // Can't be explicit by design.
+        item(const xtd::string& value); // Can't be explicit by design.
         /// @brief Initializes a new instance of the item class with specified value and check state.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
-        item(const xtd::ustring& value, bool checked);
+        item(const xtd::string& value, bool checked);
         /// @brief Initializes a new instance of the item class with specified value and checked state.
         /// @param value a string that represent the item.
         /// @param check_state a bool that represent check state.
-        item(const xtd::ustring& value, forms::check_state check_state);
+        item(const xtd::string& value, forms::check_state check_state);
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, const std::any& tag);
+        item(const xtd::string& value, const std::any& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, bool checked, const std::any& tag);
+        item(const xtd::string& value, bool checked, const std::any& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag);
+        item(const xtd::string& value, forms::check_state check_state, const std::any& tag);
         /// @}
         
         /// @cond
@@ -187,7 +187,7 @@ namespace xtd {
       using list_box::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const xtd::ustring& text) override;
+      control& text(const xtd::string& text) override;
       /// @}
       
       /// @name Public Methods
@@ -216,7 +216,7 @@ namespace xtd {
       /// @brief Returns the text value of the current item.
       /// @param index The index of the item.
       /// @return A string that represent the text value of the current item.
-      const xtd::ustring& get_item_text(size_t index) const;
+      const xtd::string& get_item_text(size_t index) const;
       
       /// @brief Sets check_state for the item at the specified index to checked.
       /// @param index The index of the item to set the check state for.
@@ -234,7 +234,7 @@ namespace xtd {
       /// @brief Sets the text value of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param text A string that represent the text value.
-      void set_item_text(size_t index, const xtd::ustring& text);
+      void set_item_text(size_t index, const xtd::string& text);
       /// @}
       
       /// @name Public Static Methods
@@ -257,7 +257,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
@@ -279,7 +279,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items, and selected_index.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
@@ -305,7 +305,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
@@ -327,7 +327,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, and items.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
@@ -353,7 +353,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, and selected_index.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
@@ -383,7 +383,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

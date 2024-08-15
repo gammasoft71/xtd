@@ -80,7 +80,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::font_picker with specified font.
       /// @param font The selected font.
       /// @return New xtd::forms::font_picker created.
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::font_picker with specified font, and color.
       /// @param font The selected font.
       /// @param color The color selected by the user. If a color is not selected.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::font_picker with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::font_picker with specified parent, and font.
       /// @param parent The parent that contains the new created xtd::forms::font_picker.
       /// @param font The selected font.
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::font_picker with specified parent, font, and color.
       /// @param parent The parent that contains the new created xtd::forms::font_picker.
       /// @param font The selected font.
@@ -206,7 +206,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::font_picker.
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
-      static font_picker create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static font_picker create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

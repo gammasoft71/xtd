@@ -26,39 +26,39 @@ template<> struct xtd::enum_register<xtd::tests::wday> {
 namespace xtd::tests {
   class test_class_(wstring_enum_class_format_tests) {
     void test_method_(format_sunday_with_default_argument) {
-      assert::are_equal(L"sunday", xtd::ustring::format(L"{0}", wday::sunday), csf_);
+      assert::are_equal(L"sunday", xtd::string::format(L"{0}", wday::sunday), csf_);
     }
     
     void test_method_(format_monday_with_left_alignment) {
-      assert::are_equal(L"    monday", ustring::format(L"{0,10}", wday::monday), csf_);
+      assert::are_equal(L"    monday", string::format(L"{0,10}", wday::monday), csf_);
     }
     
     void test_method_(format_tuesday_with_right_alignment) {
-      assert::are_equal(L"tuesday   ", ustring::format(L"{0, -10}", wday::tuesday), csf_);
+      assert::are_equal(L"tuesday   ", string::format(L"{0, -10}", wday::tuesday), csf_);
     }
     
     void test_method_(format_wednesday_with_binary_argument) {
-      assert::are_equal(L"11", xtd::ustring::format(L"{0:b}", wday::wednesday), csf_);
+      assert::are_equal(L"11", xtd::string::format(L"{0:b}", wday::wednesday), csf_);
     }
     
     void test_method_(format_thursday_with_decimal_argument) {
-      assert::are_equal(L"4", xtd::ustring::format(L"{0:d}", wday::thursday), csf_);
+      assert::are_equal(L"4", xtd::string::format(L"{0:d}", wday::thursday), csf_);
     }
     
     void test_method_(format_friday_with_general_argument) {
-      assert::are_equal(L"friday", xtd::ustring::format(L"{0:g}", wday::friday), csf_);
+      assert::are_equal(L"friday", xtd::string::format(L"{0:g}", wday::friday), csf_);
     }
     
     void test_method_(format_saturday_with_octal_argument) {
-      assert::are_equal(L"6", xtd::ustring::format(L"{0:o}", wday::saturday), csf_);
+      assert::are_equal(L"6", xtd::string::format(L"{0:o}", wday::saturday), csf_);
     }
     
     void test_method_(format_sunday_with_hexadecimal_argument) {
-      assert::are_equal(L"0", xtd::ustring::format(L"{0:x}", wday::sunday), csf_);
+      assert::are_equal(L"0", xtd::string::format(L"{0:x}", wday::sunday), csf_);
     }
     
     void test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::ustring::format(L"{0:e}", wday::tuesday);}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::string::format(L"{0:e}", wday::tuesday);}, csf_);
     }
   };
 }

@@ -168,7 +168,7 @@ void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
   for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
-xtd::ustring matrix::to_string() const noexcept {
+xtd::string matrix::to_string() const noexcept {
   return get_type().full_name();
 }
 

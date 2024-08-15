@@ -309,7 +309,7 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const xtd::string& filename, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
@@ -319,7 +319,7 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(const xtd::ustring& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const xtd::string& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
@@ -510,13 +510,13 @@ namespace xtd {
         /// @param image The image handle.
         /// @param filename The file to save to.
         /// @warning Internal use only
-        static void save(intptr image, const xtd::ustring& filename);
+        static void save(intptr image, const xtd::string& filename);
         /// @brief Saves image to the specified output filename and raw format.
         /// @param image The image handle.
         /// @param filename The file to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr image, const xtd::ustring& filename, size_t raw_format);
+        static void save(intptr image, const xtd::string& filename, size_t raw_format);
         /// @brief Saves image to the specified stream and raw format.
         /// @param image The image handle.
         /// @param stream The stream to save to.

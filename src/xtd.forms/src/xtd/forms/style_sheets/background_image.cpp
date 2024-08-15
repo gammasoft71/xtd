@@ -15,7 +15,7 @@ using namespace xtd::forms::style_sheets;
 
 const background_image background_image::empty;
 
-background_image::background_image(const ustring& url) : image_type_(style_sheets::image_type::url), url_(url) {
+background_image::background_image(const string& url) : image_type_(style_sheets::image_type::url), url_(url) {
 }
 
 background_image::background_image(const std::vector<color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
@@ -81,6 +81,6 @@ xtd::uptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::st
   return nullptr;
 }
 
-xtd::ustring background_image::to_string() const noexcept {
-  return ustring::format("[image_type={}, url={}, colors=[{}], angle={}]", image_type(), url(), colors(), angle());
+xtd::string background_image::to_string() const noexcept {
+  return string::format("[image_type={}, url={}, colors=[{}], angle={}]", image_type(), url(), colors(), angle());
 }

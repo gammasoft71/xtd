@@ -52,7 +52,7 @@ socket::socket() {
 }
 socket::socket(intptr handle)  {
   data_ = xtd::new_sptr<socket::data>();
-  debug::write_if(show_debug_socket.enabled(), ustring::format("socket::socket(handle) : socket=[{}]", handle));
+  debug::write_if(show_debug_socket.enabled(), string::format("socket::socket(handle) : socket=[{}]", handle));
   if (handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[handle_invalid]");
     throw argument_exception {csf_};
@@ -76,9 +76,9 @@ socket::socket(xtd::net::sockets::address_family address_family, xtd::net::socke
   data_->socket_type = socket_type;
   data_->protocol_type = protocol_type;
   data_->handle = native::socket::create(static_cast<int32>(address_family), static_cast<int32>(socket_type), static_cast<int32>(protocol_type));
-  debug::write_if(show_debug_socket.enabled(), ustring::format("socket::socket(handle) : socket=[{}] address_family=[{}] socket_type=[{}] protocol_type=[{}]", data_->handle, data_->address_family, data_->socket_type, data_->protocol_type));
+  debug::write_if(show_debug_socket.enabled(), string::format("socket::socket(handle) : socket=[{}] address_family=[{}] socket_type=[{}] protocol_type=[{}]", data_->handle, data_->address_family, data_->socket_type, data_->protocol_type));
   if (data_->handle == static_cast<intptr>(-1)) {
-    debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));
+    debug::write_line_if(show_debug_socket.enabled(), string::format(" error=[{}]", get_last_error_()));
     throw socket_exception(get_last_error_(), csf_);
   }
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
@@ -351,7 +351,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd::net::
   throw argument_exception {csf_};
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
   return begin_connect(dns::get_host_addresses(host), port, callback, state);
 }
 
@@ -523,9 +523,9 @@ xtd::sptr<xtd::iasync_result> socket::begin_send_to(const std::vector<xtd::byte>
 }
 
 void socket::close() {
-  debug::write_if(show_debug_socket.enabled(), ustring::format("socket::close() : socket=[{}]", data_->handle));
+  debug::write_if(show_debug_socket.enabled(), string::format("socket::close() : socket=[{}]", data_->handle));
   if (data_->handle != 0 && native::socket::destroy(data_->handle) != 0) {
-    debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));
+    debug::write_line_if(show_debug_socket.enabled(), string::format(" error=[{}]", get_last_error_()));
     throw socket_exception(get_last_error_(), csf_);
   }
   data_->address_family = xtd::net::sockets::address_family::unspecified;
@@ -553,7 +553,7 @@ void socket::connect(const std::vector<ip_address>& addresses, uint16 port) {
   throw argument_exception {csf_};
 }
 
-void socket::connect(const xtd::ustring& host, uint16 port) {
+void socket::connect(const xtd::string& host, uint16 port) {
   connect(dns::get_host_addresses(host), port);
 }
 
@@ -949,7 +949,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_connect_(xtd::sptr<xtd::net::end_poi
 }
 
 void socket::bind_(xtd::sptr<xtd::net::end_point> local_end_point) {
-  debug::write_if(show_debug_socket.enabled(), ustring::format("socket::bind() : socket=[{}] local_end_point=[{}]", data_->handle, *local_end_point));
+  debug::write_if(show_debug_socket.enabled(), string::format("socket::bind() : socket=[{}] local_end_point=[{}]", data_->handle, *local_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
     throw object_closed_exception {csf_};
@@ -957,7 +957,7 @@ void socket::bind_(xtd::sptr<xtd::net::end_point> local_end_point) {
   data_->local_end_point = local_end_point;
   auto socket_address = data_->local_end_point->serialize();
   if (native::socket::bind(data_->handle, socket_address.bytes_) != 0) {
-    debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));
+    debug::write_line_if(show_debug_socket.enabled(), string::format(" error=[{}]", get_last_error_()));
     throw socket_exception(get_last_error_(), csf_);
   }
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
@@ -965,7 +965,7 @@ void socket::bind_(xtd::sptr<xtd::net::end_point> local_end_point) {
 }
 
 void socket::connect_(xtd::sptr<xtd::net::end_point> remote_end_point) {
-  debug::write_if(show_debug_socket.enabled(), ustring::format("socket::connect() : socket=[{}] remote_end_point=[{}]", data_->handle, *remote_end_point));
+  debug::write_if(show_debug_socket.enabled(), string::format("socket::connect() : socket=[{}] remote_end_point=[{}]", data_->handle, *remote_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
     throw object_closed_exception {csf_};
@@ -974,7 +974,7 @@ void socket::connect_(xtd::sptr<xtd::net::end_point> remote_end_point) {
   data_->remote_end_point = remote_end_point;
   auto socket_address = data_->remote_end_point->serialize();
   if (native::socket::connect(data_->handle, socket_address.bytes_) != 0) {
-    debug::write_line_if(show_debug_socket.enabled(), ustring::format(" error=[{}]", get_last_error_()));
+    debug::write_line_if(show_debug_socket.enabled(), string::format(" error=[{}]", get_last_error_()));
     throw socket_exception(get_last_error_(), csf_);
   }
   debug::write_line_if(show_debug_socket.enabled(), " succeed");

@@ -99,7 +99,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static loading_indicator create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::loading_indicator with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static loading_indicator create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

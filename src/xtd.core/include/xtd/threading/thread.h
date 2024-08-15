@@ -166,11 +166,11 @@ namespace xtd {
       
       /// @brief Gets the name of the thread.
       /// @return A string containing the name of the thread, or empty ("") if no name was set.
-      ustring name() const noexcept;
+      string name() const noexcept;
       /// @brief Sets the name of the thread.
       /// @param value A string containing the name of the thread, or empty ("") if no name was set.
       /// @return The xtd::threading::thread current instance.
-      thread& name(const ustring& value);
+      thread& name(const string& value);
 
       /// @brief Gets a value indicating the scheduling priority of a thread.
       /// @return One of the xtd::threading::thread_priority values. The default value is xtd::threading::thread_priority::normal.

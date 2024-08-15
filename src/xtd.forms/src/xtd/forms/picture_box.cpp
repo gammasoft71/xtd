@@ -119,7 +119,7 @@ picture_box picture_box::create(const drawing::point& location, const drawing::s
   return result;
 }
 
-picture_box picture_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+picture_box picture_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = picture_box {};
   result.location(location);
   result.size(size);
@@ -148,7 +148,7 @@ picture_box picture_box::create(const xtd::drawing::image& image, const drawing:
   return result;
 }
 
-picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = picture_box {};
   result.image(image);
   result.location(location);
@@ -178,7 +178,7 @@ picture_box picture_box::create(const control& parent, const drawing::point& loc
   return result;
 }
 
-picture_box picture_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+picture_box picture_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = picture_box {};
   result.parent(parent);
   result.location(location);
@@ -211,7 +211,7 @@ picture_box picture_box::create(const control& parent, const xtd::drawing::image
   return result;
 }
 
-picture_box picture_box::create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+picture_box picture_box::create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = picture_box {};
   result.parent(parent);
   result.image(image);
@@ -247,7 +247,7 @@ forms::create_params picture_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> picture_box::clone() const {
   auto result = xtd::new_uptr<picture_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

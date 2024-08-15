@@ -47,18 +47,18 @@ namespace xtd {
     /// @{
     /// @brief Gets the fully qualified name of the type_object, including the namespace of the type_object.
     /// @return The fully qualified name of the type_object, including the namespace of the type_object.
-    /// @remarks For example, the fully qualified name of the xtd::ustring type is xtd::ustring.
-    xtd::ustring full_name() const noexcept;
+    /// @remarks For example, the fully qualified name of the xtd::string type is xtd::string.
+    xtd::string full_name() const noexcept;
 
     /// @brief Gets the name of the type_object.
     /// @return The name of the type_object.
-    /// @remarks For example, the name of the xtd::ustring type is ustring.
-    xtd::ustring name() const noexcept;
+    /// @remarks For example, the name of the xtd::string type is string.
+    xtd::string name() const noexcept;
 
     /// @brief Gets the namespace of the type_object.
     /// @return The namespace of the type_object.
-    /// @remarks For example, the namespace of the xtd::ustring type is xtd::
-    xtd::ustring namespace_() const noexcept;
+    /// @remarks For example, the namespace of the xtd::string type is xtd::
+    xtd::string namespace_() const noexcept;
     /// @}
     
     using object::equals;
@@ -66,7 +66,7 @@ namespace xtd {
     /// @{
     bool equals(const type_object& type) const noexcept override;
 
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:

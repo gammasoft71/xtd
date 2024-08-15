@@ -112,7 +112,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static picture_box create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::picture_box with specified image.
       /// @param image The image that is displayed by picture_box.
       /// @return New xtd::forms::picture_box created.
@@ -134,7 +134,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::picture_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
@@ -156,7 +156,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, and image.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
@@ -182,7 +182,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

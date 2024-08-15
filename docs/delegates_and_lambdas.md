@@ -14,8 +14,8 @@ using namespace xtd;
 
 class stringer {
 public:
-  ustring reverse_string(const ustring& s) {
-    ustring result = s;
+  string reverse_string(const string& s) {
+    string result = s;
     std::reverse(result.begin(), result.end());
     return result;
   }
@@ -23,9 +23,9 @@ public:
 
 class program {
 public:
-  using reverse = delegate<ustring(const ustring& s)>;
+  using reverse = delegate<string(const string& s)>;
   
-  static auto main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<string>& args) {
     stringer s;
     reverse rev(s, &stringer::reverse_string);
     
@@ -45,8 +45,8 @@ The following example demonstrates the use of delegates with functor.
 using namespace xtd;
 
 struct string_reverser {
-  ustring operator ()(const ustring& s) {
-    ustring result = s;
+  string operator ()(const string& s) {
+    string result = s;
     std::reverse(result.begin(), result.end());
     return result;
   }
@@ -54,9 +54,9 @@ struct string_reverser {
 
 class program {
 public:
-  using reverse = delegate<ustring(const ustring& s)>;
+  using reverse = delegate<string(const string& s)>;
   
-  static auto main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<string>& args) {
     string_reverser sr;
     reverse rev(sr);
     
@@ -77,15 +77,15 @@ using namespace xtd;
 
 class program {
 public:
-  using reverse = delegate<ustring(const ustring& s)>;
+  using reverse = delegate<string(const string& s)>;
   
-  static ustring reverse_string(const ustring& s) {
-    ustring result = s;
+  static string reverse_string(const string& s) {
+    string result = s;
     std::reverse(result.begin(), result.end());
     return result;
   }
   
-  static auto main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<string>& args) {
     reverse rev(reverse_string);
     
     console::write_line(rev("a string"));
@@ -95,8 +95,8 @@ public:
 startup_(program::main);
 ```
 
-* The `using reverse = delegate<ustring(const ustring& s)>;` line creates a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.
-* The `static ustring reverse_string(const ustring& s)` method, which has the exact same signature as the defined delegate type, implements the delegate.
+* The `using reverse = delegate<string(const string& s)>;` line creates a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.
+* The `static string reverse_string(const string& s)` method, which has the exact same signature as the defined delegate type, implements the delegate.
 * The `reverse rev(reverse_string);` line shows that you can assign a method to a variable of the corresponding delegate type.
 * The `console::write_line(rev("a string"));` line demonstrates how to use a variable of a delegate type to invoke the delegate.
 
@@ -118,14 +118,14 @@ using namespace xtd;
 
 class program {
 public:
-  static ustring reverse_string(const ustring& s) {
-    ustring result = s;
+  static string reverse_string(const string& s) {
+    string result = s;
     std::reverse(result.begin(), result.end());
     return result;
   }
   
-  static auto main(const std::vector<ustring>& args) {
-    func<ustring, const ustring&> rev(reverse_string);
+  static auto main(const std::vector<string>& args) {
+    func<string, const string&> rev(reverse_string);
     
     console::write_line(rev("a string"));
   }
@@ -146,9 +146,9 @@ using namespace xtd;
 
 class program {
 public:
-  static auto main(const std::vector<ustring>& args) {
-    func<ustring, const ustring&> rev([](auto s) {
-      ustring result = s;
+  static auto main(const std::vector<string>& args) {
+    func<string, const string&> rev([](auto s) {
+      string result = s;
       std::reverse(result.begin(), result.end());
       return result;
     });
@@ -161,7 +161,7 @@ startup_(program::main);
 ```
 
 As you can see, the delegate body is just a set of expressions, like any other delegate. 
-But instead of making it a separate definition, we introduced it ad hoc in the creation of `func<ustring, const ustring&> rev`.
+But instead of making it a separate definition, we introduced it ad hoc in the creation of `func<string, const string&> rev`.
 
 # See also
 ​

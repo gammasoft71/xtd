@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Gets the name of the test class.
       /// @return The nzme of the test class.
-      xtd::ustring name() const noexcept;
+      xtd::string name() const noexcept;
       
       /// @brief Gets the test count.
       /// @return The test count.
@@ -141,7 +141,7 @@ namespace xtd {
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
       xtd::date_time end_time_point;
-      xtd::ustring name_;
+      xtd::string name_;
       xtd::date_time start_time_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;

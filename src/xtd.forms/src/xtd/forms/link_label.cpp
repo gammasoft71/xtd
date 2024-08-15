@@ -37,14 +37,14 @@ link_label::link_collection& link_label::link_collection::operator =(const link_
   return *this;
 }
 
-link_label::link_collection::const_reference link_label::link_collection::operator [](const ustring& name) const noexcept {
+link_label::link_collection::const_reference link_label::link_collection::operator [](const string& name) const noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   static auto link_empty = value_type {};
   return link_empty;
 }
 
-link_label::link_collection::reference link_label::link_collection::operator [](const ustring& name) noexcept {
+link_label::link_collection::reference link_label::link_collection::operator [](const string& name) noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   static auto link_empty = value_type {};
@@ -173,7 +173,7 @@ link_label link_label::create(const drawing::point& location, const drawing::siz
   return result;
 }
 
-link_label link_label::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.location(location);
   result.size(size);
@@ -181,20 +181,20 @@ link_label link_label::create(const drawing::point& location, const drawing::siz
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text) {
+link_label link_label::create(const xtd::string& text) {
   auto result = link_label {};
   result.text(text);
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const drawing::point& location) {
+link_label link_label::create(const xtd::string& text, const drawing::point& location) {
   auto result = link_label {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+link_label link_label::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = link_label {};
   result.text(text);
   result.location(location);
@@ -202,7 +202,7 @@ link_label link_label::create(const xtd::ustring& text, const drawing::point& lo
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.text(text);
   result.location(location);
@@ -211,14 +211,14 @@ link_label link_label::create(const xtd::ustring& text, const drawing::point& lo
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const link_collection& links) {
+link_label link_label::create(const xtd::string& text, const link_collection& links) {
   auto result = link_label {};
   result.text(text);
   result.links(links);
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location) {
+link_label link_label::create(const xtd::string& text, const link_collection& links, const drawing::point& location) {
   auto result = link_label {};
   result.text(text);
   result.links(links);
@@ -226,7 +226,7 @@ link_label link_label::create(const xtd::ustring& text, const link_collection& l
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
+link_label link_label::create(const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
   auto result = link_label {};
   result.text(text);
   result.links(links);
@@ -235,7 +235,7 @@ link_label link_label::create(const xtd::ustring& text, const link_collection& l
   return result;
 }
 
-link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.text(text);
   result.links(links);
@@ -266,7 +266,7 @@ link_label link_label::create(const control& parent, const drawing::point& locat
   return result;
 }
 
-link_label link_label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.parent(parent);
   result.location(location);
@@ -275,14 +275,14 @@ link_label link_label::create(const control& parent, const drawing::point& locat
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text) {
+link_label link_label::create(const control& parent, const xtd::string& text) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+link_label link_label::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -290,7 +290,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+link_label link_label::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -299,7 +299,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -309,7 +309,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links) {
+link_label link_label::create(const control& parent, const xtd::string& text, const link_collection& links) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -317,7 +317,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location) {
+link_label link_label::create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -326,7 +326,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
+link_label link_label::create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -336,7 +336,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+link_label link_label::create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
@@ -349,7 +349,7 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
 
 xtd::uptr<xtd::object> link_label::clone() const {
   auto result = xtd::new_uptr<link_label>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -421,7 +421,7 @@ void link_label::on_paint(paint_event_args& e) {
     auto text_location = get_text_location(line_number);
     auto line_index = 0_z;
     auto size_text = drawing::size {};
-    auto text = ustring::empty_string;
+    auto text = string::empty_string;
     for (auto link : data_->links) {
       auto color = link_color();
       if (!link.enabled()) color = disabled_link_color();
@@ -519,7 +519,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     auto line_index = 0_z;
     auto text_location = get_text_location(line_number);
     auto size_text = drawing::size {};
-    auto text = ustring::empty_string;
+    auto text = string::empty_string;
     for (auto link : data_->links) {
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);

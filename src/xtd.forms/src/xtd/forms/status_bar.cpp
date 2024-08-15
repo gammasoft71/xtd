@@ -150,7 +150,7 @@ status_bar status_bar::create(const status_bar_panel_collection& panels) {
   return result;
 }
 
-status_bar status_bar::create(const status_bar_panel_collection& panels, const xtd::ustring& name) {
+status_bar status_bar::create(const status_bar_panel_collection& panels, const xtd::string& name) {
   auto result = status_bar {};
   result.panels() = panels;
   result.name(name);
@@ -170,7 +170,7 @@ status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_pan
   return result;
 }
 
-status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::string& name) {
   auto result = status_bar {};
   result.dock(style);
   result.panels() = panels;
@@ -178,27 +178,27 @@ status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_pan
   return result;
 }
 
-status_bar status_bar::create(const xtd::ustring& text) {
+status_bar status_bar::create(const xtd::string& text) {
   auto result = status_bar {};
   result.text(text);
   return result;
 }
 
-status_bar status_bar::create(const xtd::ustring& text, const xtd::ustring& name) {
+status_bar status_bar::create(const xtd::string& text, const xtd::string& name) {
   auto result = status_bar {};
   result.text(text);
   result.name(name);
   return result;
 }
 
-status_bar status_bar::create(xtd::forms::dock_style style, const xtd::ustring& text) {
+status_bar status_bar::create(xtd::forms::dock_style style, const xtd::string& text) {
   auto result = status_bar {};
   result.dock(style);
   result.text(text);
   return result;
 }
 
-status_bar status_bar::create(xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name) {
+status_bar status_bar::create(xtd::forms::dock_style style, const xtd::string& text, const xtd::string& name) {
   auto result = status_bar {};
   result.dock(style);
   result.text(text);
@@ -219,7 +219,7 @@ status_bar status_bar::create(const control& parent, const status_bar_panel_coll
   return result;
 }
 
-status_bar status_bar::create(const control& parent, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+status_bar status_bar::create(const control& parent, const status_bar_panel_collection& panels, const xtd::string& name) {
   auto result = status_bar {};
   result.parent(parent);
   result.panels() = panels;
@@ -242,7 +242,7 @@ status_bar status_bar::create(const control& parent, xtd::forms::dock_style styl
   return result;
 }
 
-status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::string& name) {
   auto result = status_bar {};
   result.parent(parent);
   result.dock(style);
@@ -251,14 +251,14 @@ status_bar status_bar::create(const control& parent, xtd::forms::dock_style styl
   return result;
 }
 
-status_bar status_bar::create(const control& parent, const xtd::ustring& text) {
+status_bar status_bar::create(const control& parent, const xtd::string& text) {
   auto result = status_bar {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-status_bar status_bar::create(const control& parent, const xtd::ustring& text, const xtd::ustring& name) {
+status_bar status_bar::create(const control& parent, const xtd::string& text, const xtd::string& name) {
   auto result = status_bar {};
   result.parent(parent);
   result.text(text);
@@ -266,7 +266,7 @@ status_bar status_bar::create(const control& parent, const xtd::ustring& text, c
   return result;
 }
 
-status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text) {
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::string& text) {
   auto result = status_bar {};
   result.parent(parent);
   result.dock(style);
@@ -274,7 +274,7 @@ status_bar status_bar::create(const control& parent, xtd::forms::dock_style styl
   return result;
 }
 
-status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name) {
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::string& text, const xtd::string& name) {
   auto result = status_bar {};
   result.parent(parent);
   result.dock(style);
@@ -308,7 +308,7 @@ drawing::size status_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> status_bar::clone() const {
   auto result = xtd::new_uptr<status_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -520,7 +520,7 @@ void status_bar::resize_spring_panels() {
    */
 }
 
-void status_bar::update_status_bar_panel_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
+void status_bar::update_status_bar_panel_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
   if (!handle) return;
   if (is_system_status_bar()) {
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);

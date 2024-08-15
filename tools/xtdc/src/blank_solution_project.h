@@ -4,23 +4,23 @@
 namespace xtdc_command {
   class blank_solution_project : public base_project {
   public:
-    explicit blank_solution_project(const xtd::ustring& path) : base_project(path) {}
+    explicit blank_solution_project(const xtd::string& path) : base_project(path) {}
     
-    void create(const xtd::ustring& name, bool create_solution) const {
+    void create(const xtd::string& name, bool create_solution) const {
       create_solution_cmakelists_txt(name);
     }
     
-    void generate(const xtd::ustring& name) const {
+    void generate(const xtd::string& name) const {
       create_solution_cmakelists_txt(name);
     }
     
   private:
-    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
-      std::vector<xtd::ustring> lines {
+    void create_solution_cmakelists_txt(const xtd::string& name) const {
+      std::vector<xtd::string> lines {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
-        xtd::ustring::format("project({})", name),
+        xtd::string::format("project({})", name),
         "",
         "# Install",
         "install_package()",

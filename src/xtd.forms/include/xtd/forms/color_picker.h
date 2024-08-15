@@ -81,7 +81,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
       /// @param name The name of the xtd::forms::color_picker.
       /// @return New xtd::forms::color_picker created.
-      static color_picker create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static color_picker create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::color_picker with specified color.
       /// @param color The color selected by the user. If a color is not selected.
       /// @return New xtd::forms::color_picker created.
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
       /// @param name The name of the xtd::forms::color_picker.
       /// @return New xtd::forms::color_picker created.
-      static color_picker create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static color_picker create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::color_picker with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::color_picker.
       /// @return New xtd::forms::color_picker created.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
       /// @param name The name of the xtd::forms::color_picker.
       /// @return New xtd::forms::color_picker created.
-      static color_picker create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static color_picker create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::color_picker with specified parent, and color.
       /// @param parent The parent that contains the new created xtd::forms::color_picker.
       /// @param color The color selected by the user. If a color is not selected.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
       /// @param name The name of the xtd::forms::color_picker.
       /// @return New xtd::forms::color_picker created.
-      static color_picker create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static color_picker create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

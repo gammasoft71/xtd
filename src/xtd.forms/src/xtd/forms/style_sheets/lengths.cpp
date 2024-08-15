@@ -71,7 +71,7 @@ bool lengths::equals(const lengths& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
 }
 
-xtd::ustring lengths::to_string() const noexcept {
-  if (all_) return ustring::format("[all = {}]", top());
-  return ustring::format("[top = {}, left = {}, bottom = {}, right = {}]", top(), left(), bottom(), right());
+xtd::string lengths::to_string() const noexcept {
+  if (all_) return string::format("[all = {}]", top());
+  return string::format("[top = {}, left = {}, bottom = {}, right = {}]", top(), left(), bottom(), right());
 }

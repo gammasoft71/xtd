@@ -28,7 +28,7 @@ synthesizer_state speech_synthesizer::state() const noexcept {
   return data_->state;
 }
 
-void speech_synthesizer::speak(const ustring& text_to_speak) {
+void speech_synthesizer::speak(const string& text_to_speak) {
   data_->used_prompt = &data_->prompt;
   data_->used_prompt->text_to_speak() = text_to_speak;
   speak(*data_->used_prompt);
@@ -42,7 +42,7 @@ void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
   on_speak_completed();
 }
 
-xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const ustring& text_to_speak) {
+xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const string& text_to_speak) {
   data_->used_prompt = &data_->prompt;
   data_->used_prompt->text_to_speak() = text_to_speak;
   speak_async(*data_->used_prompt);

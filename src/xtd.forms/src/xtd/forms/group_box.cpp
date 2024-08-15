@@ -74,7 +74,7 @@ group_box group_box::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-group_box group_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+group_box group_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = group_box {};
   result.location(location);
   result.size(size);
@@ -82,20 +82,20 @@ group_box group_box::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-group_box group_box::create(const xtd::ustring& text) {
+group_box group_box::create(const xtd::string& text) {
   auto result = group_box {};
   result.text(text);
   return result;
 }
 
-group_box group_box::create(const xtd::ustring& text, const drawing::point& location) {
+group_box group_box::create(const xtd::string& text, const drawing::point& location) {
   auto result = group_box {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+group_box group_box::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = group_box {};
   result.text(text);
   result.location(location);
@@ -103,7 +103,7 @@ group_box group_box::create(const xtd::ustring& text, const drawing::point& loca
   return result;
 }
 
-group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+group_box group_box::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = group_box {};
   result.text(text);
   result.location(location);
@@ -133,7 +133,7 @@ group_box group_box::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-group_box group_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+group_box group_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = group_box {};
   result.parent(parent);
   result.location(location);
@@ -142,14 +142,14 @@ group_box group_box::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-group_box group_box::create(const control& parent, const xtd::ustring& text) {
+group_box group_box::create(const control& parent, const xtd::string& text) {
   auto result = group_box {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+group_box group_box::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = group_box {};
   result.parent(parent);
   result.text(text);
@@ -157,7 +157,7 @@ group_box group_box::create(const control& parent, const xtd::ustring& text, con
   return result;
 }
 
-group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+group_box group_box::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = group_box {};
   result.parent(parent);
   result.text(text);
@@ -166,7 +166,7 @@ group_box group_box::create(const control& parent, const xtd::ustring& text, con
   return result;
 }
 
-group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+group_box group_box::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = group_box {};
   result.parent(parent);
   result.text(text);
@@ -187,7 +187,7 @@ forms::create_params group_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> group_box::clone() const {
   auto result = xtd::new_uptr<group_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

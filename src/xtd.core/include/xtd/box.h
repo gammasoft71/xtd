@@ -106,16 +106,16 @@ namespace xtd {
     int32 compare_to(const box& value) const noexcept override {return equals(value) ? 0 : xtd::collections::generic::helpers::comparer<type_t> {}(value_, value.value_) ? -1 : 1;}
     bool equals(const object& obj) const noexcept override {return is<box<type_t>>(obj) && equals(static_cast<const box<type_t>&>(obj));}
     bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<type_t> {}(value_, value.value_);}
-    xtd::ustring to_string() const noexcept override {return std::is_integral<type_t>::value || std::is_floating_point<type_t>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, type_t>::value ? xtd::ustring::format("{}", value_) : typeof_<type_t>().full_name();}
+    xtd::string to_string() const noexcept override {return std::is_integral<type_t>::value || std::is_floating_point<type_t>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, type_t>::value ? xtd::string::format("{}", value_) : typeof_<type_t>().full_name();}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::ustring to_string(const xtd::ustring& format) const {return to_string(format, std::locale {});}
+    xtd::string to_string(const xtd::string& format) const {return to_string(format, std::locale {});}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format, and locale.
     /// @param format A value type format string.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const override {return xtd::ustring::format(xtd::ustring::format("{{:{}}}", format), value_);}
+    xtd::string to_string(const xtd::string& format, const std::locale& loc) const override {return xtd::string::format(xtd::string::format("{{:{}}}", format), value_);}
     /// @}
 
     /// @name Public Static Methods
@@ -124,13 +124,13 @@ namespace xtd {
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static type_t parse(const xtd::ustring& value) {return xtd::parse<type_t>(value);}
+    static type_t parse(const xtd::string& value) {return xtd::parse<type_t>(value);}
 
     /// @brief Converts the string to its type_t equivalent. A return value indicates whether the conversion succeeded or failed.
     /// @param value A string containing a type_t to convert.
     /// @param result A type_t equivalent to the number contained in value.
     /// @return true if s was converted successfully; otherwise, false.
-    static bool try_parse(const xtd::ustring& value, type_t& result) noexcept {return xtd::try_parse<type_t>(value, result);}
+    static bool try_parse(const xtd::string& value, type_t& result) noexcept {return xtd::try_parse<type_t>(value, result);}
     /// @}
     
   private:

@@ -17,7 +17,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Implements a std::pair with the key and the value strongly typed to be strings.
       /// ```cpp
-      /// using string_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>
+      /// using string_pair = xtd::collections::generic::key_value_pair<xtd::string, xtd::string>
       /// ```
       /// @par Header
       /// ```cpp

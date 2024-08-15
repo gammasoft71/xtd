@@ -5,13 +5,13 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-ustring& __xtd_forms_trace_form_base_default_form_name__() noexcept {
-  static auto value = ustring {"9f5767d6-7a21-4ebe-adfe-2427b2024a55"};
+string& __xtd_forms_trace_form_base_default_form_name__() noexcept {
+  static auto value = string {"9f5767d6-7a21-4ebe-adfe-2427b2024a55"};
   return value;
 }
 
-ustring& __xtd_forms_trace_form_base_default_text_box_name__() noexcept {
-  static auto value = ustring {"d014d407-851c-49c1-a343-3380496a639a"};
+string& __xtd_forms_trace_form_base_default_text_box_name__() noexcept {
+  static auto value = string {"d014d407-851c-49c1-a343-3380496a639a"};
   return value;
 }
 
@@ -19,8 +19,8 @@ struct trace_form_base::data {
   bool need_header = true;
   bool show_date = true;
   bool show_time = true;
-  ustring format = "{0}";
-  ustring header_separator = "|";
+  string format = "{0}";
+  string header_separator = "|";
   forms::text_box text;
 };
 
@@ -33,18 +33,18 @@ control& trace_form_base::dock(dock_style dock) {
   return control::dock(dock);
 }
 
-const ustring& trace_form_base::header_separator() const noexcept {
+const string& trace_form_base::header_separator() const noexcept {
   return data_->header_separator;
 }
 
-trace_form_base& trace_form_base::header_separator(const ustring& header_separator) {
+trace_form_base& trace_form_base::header_separator(const string& header_separator) {
   if (header_separator == data_->header_separator) return *this;
   data_->header_separator = header_separator;
   update_format();
   return *this;
 }
 
-const ustring& trace_form_base::name() const noexcept {
+const string& trace_form_base::name() const noexcept {
   return form::name();
 }
 
@@ -70,7 +70,7 @@ trace_form_base& trace_form_base::show_time(bool value) {
   return *this;
 }
 
-trace_form_base::trace_form_base(const ustring& text) : data_(xtd::new_sptr<data>()) {
+trace_form_base::trace_form_base(const string& text) : data_(xtd::new_sptr<data>()) {
   close_box(false);
   minimize_box(false);
   name(__xtd_forms_trace_form_base_default_form_name__());
@@ -98,7 +98,7 @@ void trace_form_base::on_fore_color_changed(const event_args& e) {
   data_->text.fore_color(fore_color());
 }
 
-void trace_form_base::write(const ustring& trace) {
+void trace_form_base::write(const string& trace) {
   auto writer = [self = this, trace=trace] {
     auto lck = lock {*self};
     if (self->need_header()) self->write_header();
@@ -108,7 +108,7 @@ void trace_form_base::write(const ustring& trace) {
   else writer();
 }
 
-void trace_form_base::write_line(const ustring& trace) {
+void trace_form_base::write_line(const string& trace) {
   auto lck = lock {*this};
   write(trace);
   write(environment::new_line());
@@ -117,7 +117,7 @@ void trace_form_base::write_line(const ustring& trace) {
 
 void trace_form_base::write_header() {
   auto now = date_time::now();
-  data_->text.append_text(ustring::format(data_->format, now, (now.ticks() / 10 % 1000000), data_->header_separator));
+  data_->text.append_text(string::format(data_->format, now, (now.ticks() / 10 % 1000000), data_->header_separator));
   data_->need_header = false;
 }
 

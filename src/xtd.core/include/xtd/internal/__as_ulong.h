@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const xtd::ustring& value) {
+  inline xtd::ulong as<xtd::ulong>(const xtd::string& value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(xtd::ustring& value) {
+  inline xtd::ulong as<xtd::ulong>(xtd::string& value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// xtd::ulong result = as<xtd::ulong>(value, 16);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const xtd::ustring& value, xtd::byte from_base) {
+  inline xtd::ulong as<xtd::ulong>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_ullong(value, from_base);
   }
   

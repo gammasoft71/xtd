@@ -20,7 +20,7 @@ fixed_layout_panel fixed_layout_panel::create(const drawing::point& location, co
   return result;
 }
 
-fixed_layout_panel fixed_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fixed_layout_panel fixed_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = fixed_layout_panel {};
   result.location(location);
   result.size(size);
@@ -49,7 +49,7 @@ fixed_layout_panel fixed_layout_panel::create(const control& parent, const drawi
   return result;
 }
 
-fixed_layout_panel fixed_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+fixed_layout_panel fixed_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = fixed_layout_panel {};
   result.parent(parent);
   result.location(location);
@@ -60,7 +60,7 @@ fixed_layout_panel fixed_layout_panel::create(const control& parent, const drawi
 
 xtd::uptr<xtd::object> fixed_layout_panel::clone() const {
   auto result = xtd::new_uptr<fixed_layout_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

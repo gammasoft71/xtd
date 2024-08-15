@@ -20,7 +20,7 @@ namespace xtd::tests {
     }
     
     void test_method_(is_string_with_const_string) {
-      assert::is_true(is<ustring>(""_s), csf_);
+      assert::is_true(is<string>(""_s), csf_);
     }
     
     void test_method_(is_string_without_const_string) {

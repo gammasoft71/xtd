@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief Returns the Internet Protocol (IP) addresses for the specified host.
       /// @param host_name_or_address The host name or IP address to resolve.
       /// @return An array of type xtd::net::ip_address that holds the IP addresses for the host that is specified by the host_name_or_address parameter..
-      static std::vector<xtd::net::ip_address> get_host_addresses(const xtd::ustring& host_name_or_address);
+      static std::vector<xtd::net::ip_address> get_host_addresses(const xtd::string& host_name_or_address);
       
       /// @brief Resolves an IP address to an xtd::net::ip_host_entry instance.
       /// @param address An IP address.
@@ -39,11 +39,11 @@ namespace xtd {
       /// @brief Resolves a host name or IP address to an xtd::net::ip_host_entry instance.
       /// @param host_name_or_address The host name or IP address to resolve.
       /// @return An xtd::net::ip_host_entry instance that contains address information about the host specified in host_name_or_address.
-      static xtd::net::ip_host_entry get_host_entry(const xtd::ustring& host_name_or_address);
+      static xtd::net::ip_host_entry get_host_entry(const xtd::string& host_name_or_address);
       
       /// @brief Gets the host name of the local computer.
       /// @return string A string that contains the DNS host name of the local computer.
-      static xtd::ustring get_host_name();
+      static xtd::string get_host_name();
       /// @}
     };
   }

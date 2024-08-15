@@ -225,6 +225,6 @@ rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
   return rectangle(as<int32>(math::truncate(rect.x())), as<int32>(math::truncate(rect.y())), as<int32>(math::truncate(rect.width())), as<int32>(math::truncate(rect.height())));
 }
 
-xtd::ustring rectangle::to_string() const noexcept {
-  return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
+xtd::string rectangle::to_string() const noexcept {
+  return string::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
 }

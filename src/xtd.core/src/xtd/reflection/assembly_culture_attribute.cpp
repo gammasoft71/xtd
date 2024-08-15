@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_culture_attribute::assembly_culture_attribute(const ustring& culture) : culture_(culture) {
+assembly_culture_attribute::assembly_culture_attribute(const string& culture) : culture_(culture) {
 }
 
-assembly_culture_attribute::assembly_culture_attribute(const ustring& culture, const object& executing_assembly) : culture_(culture) {
+assembly_culture_attribute::assembly_culture_attribute(const string& culture, const object& executing_assembly) : culture_(culture) {
   __assembly_culture_attribute__() = xtd::new_sptr<xtd::reflection::assembly_culture_attribute>(culture);
 }
 
-const ustring& assembly_culture_attribute::culture() const noexcept {
+const string& assembly_culture_attribute::culture() const noexcept {
   return culture_;
 }
 

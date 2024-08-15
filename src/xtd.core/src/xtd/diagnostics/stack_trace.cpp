@@ -6,27 +6,27 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 stack_trace::stack_trace() {
-  frames_ = stack_frame::get_stack_frames(ustring::empty_string, METHODS_TO_SKIP + 1, false);
+  frames_ = stack_frame::get_stack_frames(string::empty_string, METHODS_TO_SKIP + 1, false);
 }
 
 stack_trace::stack_trace(bool need_file_info) {
-  frames_ = stack_frame::get_stack_frames(ustring::empty_string, METHODS_TO_SKIP + 1, need_file_info);
+  frames_ = stack_frame::get_stack_frames(string::empty_string, METHODS_TO_SKIP + 1, need_file_info);
 }
 
 stack_trace::stack_trace(const stack_frame& frame) {
   frames_.push_back(frame);
 }
 
-stack_trace::stack_trace(const ustring& str, size_t skip_frames, bool need_file_info) {
+stack_trace::stack_trace(const string& str, size_t skip_frames, bool need_file_info) {
   frames_ = stack_frame::get_stack_frames(str, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
 }
 
 stack_trace::stack_trace(size_t skip_frames) {
-  frames_ = stack_frame::get_stack_frames(ustring::empty_string, skip_frames + METHODS_TO_SKIP + 1, false);
+  frames_ = stack_frame::get_stack_frames(string::empty_string, skip_frames + METHODS_TO_SKIP + 1, false);
 }
 
 stack_trace::stack_trace(size_t skip_frames, bool need_file_info) {
-  frames_ = stack_frame::get_stack_frames(ustring::empty_string, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
+  frames_ = stack_frame::get_stack_frames(string::empty_string, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
 }
 
 stack_trace::stack_trace(const std::exception& exception) {
@@ -60,17 +60,17 @@ const stack_trace::stack_frame_collection& stack_trace::get_frames() const noexc
   return frames_;
 }
 
-ustring stack_trace::to_string() const noexcept {
+string stack_trace::to_string() const noexcept {
   return to_string(0);
 }
 
-ustring stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const noexcept {
-  auto str = ustring::empty_string;
+string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const noexcept {
+  auto str = string::empty_string;
   for (auto index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + frames_[index].get_method();
-    if (index == skip_frames && stack_frame != stack_frame::empty()) str += ustring::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? ustring::format("[0x{:X8}] ", frames_[index].get_offset()) : ustring::empty_string, stack_frame.get_file_name(), stack_frame.get_file_line_number());
-    else if (!frames_[index].get_file_name().empty()) str += ustring::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? ustring::format("[0x{:X8}] ", frames_[index].get_offset()) : ustring::empty_string, frames_[index].get_file_name(), frames_[index].get_file_line_number());
+    if (index == skip_frames && stack_frame != stack_frame::empty()) str += string::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? string::format("[0x{:X8}] ", frames_[index].get_offset()) : string::empty_string, stack_frame.get_file_name(), stack_frame.get_file_line_number());
+    else if (!frames_[index].get_file_name().empty()) str += string::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? string::format("[0x{:X8}] ", frames_[index].get_offset()) : string::empty_string, frames_[index].get_file_name(), frames_[index].get_file_line_number());
   }
   return str;
 }

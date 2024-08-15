@@ -31,7 +31,7 @@ v_scroll_bar v_scroll_bar::create(const drawing::point& location, const drawing:
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.location(location);
   result.size(size);
@@ -60,7 +60,7 @@ v_scroll_bar v_scroll_bar::create(int32 value, const drawing::point& location, c
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.value(value);
   result.location(location);
@@ -93,7 +93,7 @@ v_scroll_bar v_scroll_bar::create(int32 value, int32 maximum, const drawing::poi
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.maximum(maximum);
   result.value(value);
@@ -130,7 +130,7 @@ v_scroll_bar v_scroll_bar::create(int32 value, int32 minimum, int32 maximum, con
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.minimum(minimum);
   result.maximum(maximum);
@@ -162,7 +162,7 @@ v_scroll_bar v_scroll_bar::create(const control& parent, const drawing::point& l
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.parent(parent);
   result.location(location);
@@ -195,7 +195,7 @@ v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, const draw
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.parent(parent);
   result.value(value);
@@ -232,7 +232,7 @@ v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 maxi
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.parent(parent);
   result.maximum(maximum);
@@ -273,7 +273,7 @@ v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 mini
   return result;
 }
 
-v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = v_scroll_bar {};
   result.parent(parent);
   result.minimum(minimum);
@@ -297,6 +297,6 @@ xtd::drawing::size v_scroll_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> v_scroll_bar::clone() const {
   auto result = xtd::new_uptr<v_scroll_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

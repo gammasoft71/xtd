@@ -3,11 +3,11 @@
 using namespace xtd;
 
 struct xtd::forms::link::data {
-  xtd::ustring description;
+  xtd::string description;
   bool enabled = true;
   size_t length = 0;
   std::any link_data;
-  xtd::ustring name;
+  xtd::string name;
   size_t start = 0;
   std::any tag;
   bool visited = false;
@@ -37,11 +37,11 @@ xtd::forms::link& xtd::forms::link::operator =(const link& value) {
   return *this;
 }
 
-const xtd::ustring& xtd::forms::link::description() const noexcept {
+const xtd::string& xtd::forms::link::description() const noexcept {
   return data_->description;
 }
 
-xtd::forms::link& xtd::forms::link::description(const xtd::ustring& value) {
+xtd::forms::link& xtd::forms::link::description(const xtd::string& value) {
   data_->description = value;
   return *this;
 }
@@ -73,11 +73,11 @@ xtd::forms::link& xtd::forms::link::link_data(std::any value) {
   return *this;
 }
 
-const xtd::ustring& xtd::forms::link::name() const noexcept {
+const xtd::string& xtd::forms::link::name() const noexcept {
   return data_->name;
 }
 
-xtd::forms::link& xtd::forms::link::name(const xtd::ustring& value) {
+xtd::forms::link& xtd::forms::link::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }

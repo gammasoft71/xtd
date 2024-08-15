@@ -15,11 +15,11 @@ using namespace xtd;
 using namespace xtd::collections::specialized;
 using namespace xtd::io;
 
-std::map<ustring, string_dictionary> translator::language_values_;
-ustring translator::language_;
-std::set<ustring> translator::translated_languages_;
+std::map<string, string_dictionary> translator::language_values_;
+string translator::language_;
+std::set<string> translator::translated_languages_;
 
-xtd::ustring translator::language() {
+xtd::string translator::language() {
   try {
     initialize(); // Must be first
   } catch (...) {
@@ -27,7 +27,7 @@ xtd::ustring translator::language() {
   return language_;
 }
 
-void translator::language(const xtd::ustring& language) {
+void translator::language(const xtd::string& language) {
   try {
     initialize(); // Must be first
   } catch (...) {
@@ -35,12 +35,12 @@ void translator::language(const xtd::ustring& language) {
   language_ = language;
 }
 
-std::vector<xtd::ustring> translator::languages() {
+std::vector<xtd::string> translator::languages() {
   try {
     initialize(); // Must be first
   } catch (...) {
   }
-  static auto languages = std::vector<xtd::ustring> {};
+  static auto languages = std::vector<xtd::string> {};
   if (!languages.empty()) return languages;
   for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
   return languages;
@@ -50,7 +50,7 @@ std::locale translator::locale() {
   return std::locale {};
 }
 
-void translator::locale(const xtd::ustring& value) {
+void translator::locale(const xtd::string& value) {
   auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split({'_'});
   auto extension = value.find_last_of(".") == value.npos ? ".utf-8" : value.substring(value.find_last_of("."));
   if (parts.size() != 0 && parts.size() != 2) throw argument_exception(csf_);
@@ -63,15 +63,15 @@ void translator::locale(const std::locale& locale) {
   std::locale::global(locale);
 }
 
-xtd::ustring translator::system_language() {
+xtd::string translator::system_language() {
   return locale_to_language(xtd::native::translator::get_system_locale());
 }
 
-void translator::add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value) {
+void translator::add_value(const xtd::string& language, const xtd::string& key, const xtd::string& value) {
   language_values_[language][key] = value;
 }
 
-void translator::parse_locale(const xtd::ustring& locale_path) {
+void translator::parse_locale(const xtd::string& locale_path) {
   if (!directory::exists(locale_path)) return;
   for (auto locale_item : directory::get_directories(locale_path)) {
     // Uncomment the following line if initialization is too slow to read only the current language, and not all languages...
@@ -81,19 +81,19 @@ void translator::parse_locale(const xtd::ustring& locale_path) {
   }
 }
 
-void translator::parse_file(const xtd::ustring& file, const xtd::ustring& language) {
+void translator::parse_file(const xtd::string& file, const xtd::string& language) {
   auto lines = xtd::io::file::read_all_lines(file);
-  auto key = ustring::empty_string;
-  auto value = ustring::empty_string;
+  auto key = string::empty_string;
+  auto value = string::empty_string;
   auto line_count = 0;
   for (auto line : lines) {
     line_count++;
     line = line.trim();
-    if (ustring::is_empty(line)) continue;
+    if (string::is_empty(line)) continue;
     if (line.starts_with("#")) continue;
     if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
-    else throw xtd::format_exception(xtd::ustring::format("file {} has an invalid format at line {}", file, line_count), csf_);
+    else throw xtd::format_exception(xtd::string::format("file {} has an invalid format at line {}", file, line_count), csf_);
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";
@@ -101,11 +101,11 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
   }
 }
 
-xtd::ustring translator::translate(const xtd::ustring& value) noexcept {
+xtd::string translator::translate(const xtd::string& value) noexcept {
   return translate(language(), value);
 }
 
-xtd::ustring translator::translate(const xtd::ustring& language, const xtd::ustring& value) noexcept {
+xtd::string translator::translate(const xtd::string& language, const xtd::string& value) noexcept {
   return translate(language, value.c_str());
 }
 
@@ -113,7 +113,7 @@ const char* translator::translate(const char* value) noexcept {
   return translate(language(), value);
 }
 
-const char* translator::translate(const xtd::ustring& language, const char* value) noexcept {
+const char* translator::translate(const xtd::string& language, const char* value) noexcept {
   try {
     initialize(); // Must be first
     return language_values_.at(language).at(value).c_str();
@@ -131,7 +131,7 @@ void translator::initialize() {
     else language_ = system_language();
   }
   
-  static auto language_initialized = ustring::empty_string;
+  static auto language_initialized = string::empty_string;
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
   
   auto xtd_locale_path = environment::get_folder_path(environment::special_folder::xtd_locale);
@@ -151,7 +151,7 @@ void translator::initialize() {
   language_initialized = language_;
 }
 
-ustring translator::locale_to_language(ustring locale) {
+string translator::locale_to_language(string locale) {
   if (locale.size() < 2) return locale;
   if (locale.find(".") != locale.npos) locale = locale.remove(locale.find("."));
   if (translated_languages_.find(locale) != translated_languages_.end()) return locale;

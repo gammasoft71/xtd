@@ -17,24 +17,24 @@ ip_host_entry& ip_host_entry::address_list(const std::vector<xtd::net::ip_addres
   return *this;
 }
 
-const std::vector<xtd::ustring>& ip_host_entry::aliases() const noexcept {
+const std::vector<xtd::string>& ip_host_entry::aliases() const noexcept {
   return aliases_;
 }
 
-std::vector<xtd::ustring>& ip_host_entry::aliases() noexcept {
+std::vector<xtd::string>& ip_host_entry::aliases() noexcept {
   return aliases_;
 }
 
-ip_host_entry& ip_host_entry::aliases(const std::vector<xtd::ustring>& aliases) noexcept {
+ip_host_entry& ip_host_entry::aliases(const std::vector<xtd::string>& aliases) noexcept {
   aliases_ = aliases;
   return *this;
 }
 
-const xtd::ustring& ip_host_entry::host_name() const noexcept {
+const xtd::string& ip_host_entry::host_name() const noexcept {
   return host_name_;
 }
 
-ip_host_entry& ip_host_entry::host_name(const xtd::ustring& host_name) noexcept {
+ip_host_entry& ip_host_entry::host_name(const xtd::string& host_name) noexcept {
   host_name_ = host_name;
   return *this;
 }

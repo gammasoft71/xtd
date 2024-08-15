@@ -252,11 +252,11 @@ namespace xtd {
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
       /// @remarks If no encoder exists for the file format of the image, the Portable Network Graphics (PNG) encoder is used. When you use the xtd::drawing::image::save method to save a graphic image as a Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file, the resulting file is saved as a Portable Network Graphics (PNG) file. This behavior occurs because the GDI+ component of the .NET Framework does not have an encoder that you can use to save files as .wmf or .emf files.
       /// @remarks Saving the image to the same file it was constructed from is not allowed and throws an exception.
-      void save(const xtd::ustring& filename) const;
+      void save(const xtd::string& filename) const;
       /// @brief Saves this xtd::drawing::image to the specified file in the specified format.
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
       /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
-      void save(const xtd::ustring& filename, const xtd::drawing::imaging::image_format& format) const;
+      void save(const xtd::string& filename, const xtd::drawing::imaging::image_format& format) const;
       /// @brief Saves this image to the specified stream in the specified format.
       /// @param stream The std::otream where the image will be saved.
       /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
@@ -271,7 +271,7 @@ namespace xtd {
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The xtd::drawing::image this method creates.
-      static image from_file(const xtd::ustring& filename) {return image(filename);}
+      static image from_file(const xtd::string& filename) {return image(filename);}
       
       /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
       /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
@@ -316,8 +316,8 @@ namespace xtd {
     protected:
       /// @cond
       explicit image(intptr hbitmap);
-      explicit image(const xtd::ustring& filename);
-      explicit image(const xtd::ustring& filename, bool use_icm);
+      explicit image(const xtd::string& filename);
+      explicit image(const xtd::string& filename, bool use_icm);
       explicit image(std::istream& stream);
       explicit image(std::istream& stream, bool use_icm);
       explicit image(const char* const* bits);

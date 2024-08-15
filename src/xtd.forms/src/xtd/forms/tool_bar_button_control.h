@@ -113,7 +113,7 @@ public:
   }
   
   using xtd::forms::control::text;
-  xtd::forms::control& text(const xtd::ustring& value) override {
+  xtd::forms::control& text(const xtd::string& value) override {
     if (text() == value) return *this;
     button_base::text(value);
     update_size();

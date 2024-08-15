@@ -52,7 +52,7 @@ const std::vector<color>& apple_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& apple_colors::get_color_names() noexcept {
+const std::vector<string>& apple_colors::get_color_names() noexcept {
   static auto color_names = std::vector {apple_colors::black().name(), apple_colors::blue().name(), apple_colors::brown().name(), apple_colors::cyan().name(), apple_colors::green().name(), apple_colors::magenta().name(), apple_colors::orange().name(), apple_colors::purple().name(), apple_colors::red().name(), apple_colors::yellow().name(), apple_colors::white().name()};
   return color_names;
 }

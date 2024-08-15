@@ -8,9 +8,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct folder_browser_dialog::data {
-  xtd::ustring description;
+  xtd::string description;
   environment::special_folder root_folder = environment::special_folder::desktop;
-  xtd::ustring selected_path;
+  xtd::string selected_path;
   size_t options = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
 };
 
@@ -26,11 +26,11 @@ folder_browser_dialog& folder_browser_dialog::auto_upgrade_enable(bool value) {
   return *this;
 }
 
-const xtd::ustring& folder_browser_dialog::description() const noexcept {
+const xtd::string& folder_browser_dialog::description() const noexcept {
   return data_->description;
 }
 
-folder_browser_dialog& folder_browser_dialog::description(const xtd::ustring& value) {
+folder_browser_dialog& folder_browser_dialog::description(const xtd::string& value) {
   data_->description = value;
   return *this;
 }
@@ -44,11 +44,11 @@ folder_browser_dialog& folder_browser_dialog::root_folder(environment::special_f
   return *this;
 }
 
-const xtd::ustring& folder_browser_dialog::selected_path() const noexcept {
+const xtd::string& folder_browser_dialog::selected_path() const noexcept {
   return data_->selected_path;
 }
 
-folder_browser_dialog& folder_browser_dialog::selected_path(const xtd::ustring& value) {
+folder_browser_dialog& folder_browser_dialog::selected_path(const xtd::string& value) {
   data_->selected_path = value;
   return *this;
 }

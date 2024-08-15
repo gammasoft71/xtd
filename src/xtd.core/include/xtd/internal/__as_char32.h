@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline char32 as<char32>(const xtd::ustring& value) {
+  inline char32 as<char32>(const xtd::string& value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline char32 as<char32>(xtd::ustring& value) {
+  inline char32 as<char32>(xtd::string& value) {
     return xtd::convert::to_char32(value);
   }
   

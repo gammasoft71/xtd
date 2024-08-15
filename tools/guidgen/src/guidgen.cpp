@@ -8,8 +8,8 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static auto main(const std::vector<ustring>& args) {
-      auto format = ustring::empty_string;
+    static auto main(const std::vector<string>& args) {
+      auto format = string::empty_string;
       auto count = 1;
       auto show_help = false;
       auto show_version = false;
@@ -34,12 +34,12 @@ namespace guidgen {
     }
     
   private:
-    static auto get_error() noexcept -> ustring {
+    static auto get_error() noexcept -> string {
       return "guidgen : invalid params\n"
         "Try 'guidgen --help' for more information.";
     }
     
-    static auto get_usage() noexcept -> ustring {
+    static auto get_usage() noexcept -> string {
       return "Usage\n"
         "  guidgen [--format Format] [--count Count]\n"
         "\n"
@@ -54,16 +54,16 @@ namespace guidgen {
         "-h, --help    : Shows this help page.";
     }
     
-    static auto get_version() noexcept -> ustring {
-      return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+    static auto get_version() noexcept -> string {
+      return string::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static auto process_arguments(const std::vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
+    static auto process_arguments(const std::vector<string>& args, string& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
       try {
         for (auto index = 0_z; index < args.size(); index += 1) {
           static constexpr auto format_types = {"N", "D", "B", "P", "X"};
           if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1])) format = args[index++ + 1];
-          else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && ustring::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done
+          else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && string::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done
           else if (args[index] == "-v" || args[index] == "--version") show_version = true;
           else if (args[index] == "-h" || args[index] == "--help") show_help = true;
           else return false;

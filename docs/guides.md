@@ -35,7 +35,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Preprocessor symbols](preprocessor_symbols.md)
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
-    * [ustring](ustring.md)
+    * [string](ustring.md)
     * [Dates, times, and time zones](date_time.md)
     * [Delegates](delegates.md)
     * [Events](events.md)

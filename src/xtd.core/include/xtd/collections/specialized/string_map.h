@@ -17,7 +17,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a std::map with the key and the value strongly typed to be strings.
       /// ```cpp
-      /// using string_map = std::map<xtd::ustring, xtd::ustring>
+      /// using string_map = std::map<xtd::string, xtd::string>
       /// ```
       /// @par Header
       /// ```cpp

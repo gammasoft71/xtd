@@ -72,7 +72,7 @@ const std::vector<color>& basic_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& basic_colors::get_color_names() noexcept {
+const std::vector<string>& basic_colors::get_color_names() noexcept {
   static auto color_names = std::vector {basic_colors::white().name(), basic_colors::silver().name(), basic_colors::gray().name(), basic_colors::black().name(), basic_colors::red().name(), basic_colors::maroon().name(), basic_colors::yellow().name(), basic_colors::olive().name(), basic_colors::lime().name(), basic_colors::green().name(), basic_colors::aqua().name(), basic_colors::teal().name(), basic_colors::blue().name(), basic_colors::navy().name(), basic_colors::fuchsia().name(), basic_colors::purple().name()};
   return color_names;
 }

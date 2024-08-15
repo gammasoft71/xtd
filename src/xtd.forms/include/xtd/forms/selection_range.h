@@ -79,7 +79,7 @@ namespace xtd {
       
       /// @name Public Methods
       /// @{
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

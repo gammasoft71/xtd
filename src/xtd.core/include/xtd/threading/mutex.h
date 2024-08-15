@@ -72,29 +72,29 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
       /// @remarks The initially owned is set to flase.
-      explicit mutex(const ustring& name);
+      explicit mutex(const string& name);
       /// @brief Initializes a new instance of the xtd::threading::mutex class with a string that is the name of the mutex, and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @param created_new When this method returns, contains a bool that is true if a local mutex was created (that is, if name is empty string) or if the specified named system mutex was created; false if the specified named system mutex already existed.
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
       /// @remarks The initially owned is set to flase.
-      mutex(const ustring& name, bool& created_new);
+      mutex(const string& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::mutex class with a bool value that indicates whether the calling thread should have initial ownership of the mutex, and a string that is the name of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
-      mutex(bool initially_owned, const ustring& name);
+      mutex(bool initially_owned, const string& name);
       /// @brief Initializes a new instance of the xtd::threading::mutex class with a bool value that indicates whether the calling thread should have initial ownership of the mutex, a string that is the name of the mutex, and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @param created_new When this method returns, contains a bool that is true if a local mutex was created (that is, if name is empty string) or if the specified named system mutex was created; false if the specified named system mutex already existed.
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
-      mutex(bool initially_owned, const ustring& name, bool& created_new);
+      mutex(bool initially_owned, const string& name, bool& created_new);
       /// @}
 
       /// @cond
       template <typename char_t>
-      explicit mutex(const char_t* name) : mutex(ustring(name)) {}
+      explicit mutex(const char_t* name) : mutex(string(name)) {}
       ~mutex();
       /// @endcond
 
@@ -174,13 +174,13 @@ namespace xtd {
       /// @return A xtd::threading::mutex object that represents a named system mutex.
       /// @exception xtd::argument_exception is a zero-length string <br>-or-<br> name is longer than 128 characters
       /// @exception xtd::io::io_exception An Io error occurred.
-      static mutex open_existing(const ustring& name);
+      static mutex open_existing(const string& name);
       
       /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
       /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
       /// @return true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
-      static bool try_open_existing(const ustring& name, mutex& result) noexcept;
+      static bool try_open_existing(const string& name, mutex& result) noexcept;
       /// @}
 
     protected:
@@ -196,7 +196,7 @@ namespace xtd {
       friend class thread;
       void create(bool initially_owned, bool& created_new);
       xtd::sptr<mutex_base> mutex_;
-      ustring name_;
+      string name_;
     };
   }
 }

@@ -9,12 +9,12 @@ struct xtd::forms::status_bar_panel::data {
   intptr handle = 0;
   xtd::drawing::image image;
   int32 min_width = 10;
-  xtd::ustring name;
+  xtd::string name;
   xtd::forms::status_bar* parent = nullptr;
   xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
   std::any tag;
-  xtd::ustring text;
-  xtd::ustring tool_tip_text;
+  xtd::string text;
+  xtd::string tool_tip_text;
   int32 width = 100;
 };
 

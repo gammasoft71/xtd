@@ -11,18 +11,18 @@ using namespace xtd;
 const guid guid::empty;
 
 guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw argument_exception(ustring::format("Vector size must be {}", data_.size()), csf_);
+  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()), csf_);
 }
 
 guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw argument_exception(ustring::format("Vector size must be {}", data_.size()), csf_);
+  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()), csf_);
 }
 
 guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d) {
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
-  if (d.size() != data_.size() - 8) throw argument_exception(ustring::format("Vector size must be {}", data_.size() - 8), csf_);
+  if (d.size() != data_.size() - 8) throw argument_exception(string::format("Vector size must be {}", data_.size() - 8), csf_);
   
   auto index = 0_z;
   data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
@@ -61,8 +61,8 @@ guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, 
   data_[index++] = k;
 }
 
-guid::guid(const ustring& guid) {
-  auto simple = guid.replace("0x", ustring::empty_string).replace(",", ustring::empty_string).replace("-", ustring::empty_string).replace("(", ustring::empty_string).replace(")", ustring::empty_string).replace("{", ustring::empty_string).replace("}", ustring::empty_string);
+guid::guid(const string& guid) {
+  auto simple = guid.replace("0x", string::empty_string).replace(",", string::empty_string).replace("-", string::empty_string).replace("(", string::empty_string).replace(")", string::empty_string).replace("{", string::empty_string).replace("}", string::empty_string);
   for (auto index = 0_z; index < data_.size(); ++index) {
     data_[index] = parse<xtd::byte>(simple.substring(0, 2), number_styles::hex_number);
     simple = simple.remove(0, 2);
@@ -90,25 +90,25 @@ const std::vector<xtd::byte>& guid::to_byte_array() const noexcept {
   return data_;
 }
 
-ustring guid::to_string() const noexcept {
+string guid::to_string() const noexcept {
   return to_string("D");
 }
 
-ustring guid::to_string(const ustring& format) const {
+string guid::to_string(const string& format) const {
   return to_string(format, std::locale {});
 }
 
-ustring guid::to_string(const ustring& format, const std::locale& loc) const {
+string guid::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format.empty() ? "d" : format.to_lower();
   
-  if (fmt.size() != 1 || ustring("ndbpx").index_of(fmt) == ustring::npos) throw format_exception {csf_};
+  if (fmt.size() != 1 || string("ndbpx").index_of(fmt) == string::npos) throw format_exception {csf_};
     
   auto hyphens = fmt != "n" && fmt != "x";
   auto braces = fmt == "b";
   auto parentheses = fmt == "p";
   auto hexadecimal = fmt == "x";
   
-  auto result = ustring::empty_string;
+  auto result = string::empty_string;
   for (auto index = 0_z; index < data_.size(); ++index) {
     if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15))) result += ",";
     if (hexadecimal && (index == 0 || index == 8)) result += "{";

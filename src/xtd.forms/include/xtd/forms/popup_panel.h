@@ -69,7 +69,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @param name The name of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static popup_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::popup_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
@@ -91,7 +91,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @param name The name of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static popup_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

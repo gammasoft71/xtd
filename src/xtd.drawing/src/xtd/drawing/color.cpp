@@ -192,18 +192,18 @@ bool color::is_light() const noexcept {
 }
 
 bool color::is_named_color() const noexcept {
-  return name() != ustring::format("{:x8}", argb_) && name() != "0";
+  return name() != string::format("{:x8}", argb_) && name() != "0";
 }
 
 bool color::is_system_color() const noexcept {
   return known_color_ >= start_know_system_colors_range;
 }
 
-xtd::ustring color::name() const noexcept {
-  if (name_ != ustring::empty_string) return name_;
-  if (known_color_ != static_cast<xtd::drawing::known_color>(0)) return ustring::format("{}", known_color_);
-  if (handle_ != 0) return ustring::format("{:x}h", handle_);
-  if (argb_ != 0) return ustring::format("{:x8}", argb_);
+xtd::string color::name() const noexcept {
+  if (name_ != string::empty_string) return name_;
+  if (known_color_ != static_cast<xtd::drawing::known_color>(0)) return string::format("{}", known_color_);
+  if (handle_ != 0) return string::format("{:x}h", handle_);
+  if (argb_ != 0) return string::format("{:x8}", argb_);
   return "0";
 }
 
@@ -547,14 +547,14 @@ color color::from_known_color(known_color color) {
   }
 }
 
-color color::from_name(const ustring& name) noexcept {
-  static auto names = std::map<ustring, known_color> {};
+color color::from_name(const string& name) noexcept {
+  static auto names = std::map<string, known_color> {};
   if (names.empty()) {
     for (auto entry : enum_object<>::get_entries<known_color>())
-      names.insert({entry.second.replace("_", ustring::empty_string), entry.first});
+      names.insert({entry.second.replace("_", string::empty_string), entry.first});
   }
   
-  auto key = name.to_lower().replace(" ", ustring::empty_string).replace("_", ustring::empty_string);
+  auto key = name.to_lower().replace(" ", string::empty_string).replace("_", string::empty_string);
   auto it = names.find(key);
   if (it == names.end()) {
     auto result = color {};
@@ -645,13 +645,13 @@ color color::light(const color& color, double percent) noexcept {
   return color_converter::light(color, percent);
 }
 
-color color::parse(const ustring& color) noexcept {
+color color::parse(const string& color) noexcept {
   try {
-    auto argb = color.replace("color [a=", ustring::empty_string).replace(" r=", ustring::empty_string).replace(" g=", ustring::empty_string).replace("b=", ustring::empty_string).replace("]", ustring::empty_string).split({','});
+    auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split({','});
     if (argb.size() == 1) return color::from_argb(xtd::parse<uint32>(argb.at(0), xtd::number_styles::hex_number));
-    return color::from_argb(ustring::parse<xtd::byte>(argb.at(0)), ustring::parse<xtd::byte>(argb.at(1)), ustring::parse<xtd::byte>(argb.at(2)), ustring::parse<xtd::byte>(argb.at(3)));
+    return color::from_argb(string::parse<xtd::byte>(argb.at(0)), string::parse<xtd::byte>(argb.at(1)), string::parse<xtd::byte>(argb.at(2)), string::parse<xtd::byte>(argb.at(3)));
   } catch (...) {
-    return color::from_name(color.replace("]", ustring::empty_string).replace("color [", ustring::empty_string));
+    return color::from_name(color.replace("]", string::empty_string).replace("color [", string::empty_string));
   }
 }
 
@@ -664,10 +664,10 @@ known_color color::to_known_color() const noexcept {
   return known_color_;
 }
 
-ustring color::to_string() const noexcept {
+string color::to_string() const noexcept {
   if (empty_) return "color [empty]";
-  if (name() != ustring::format("{:x8}", argb_) && name() != "0") return ustring::format("color [{0}]", name());
-  return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+  if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
+  return string::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 
 color::color(uint32 argb) : argb_(argb), empty_(false) {

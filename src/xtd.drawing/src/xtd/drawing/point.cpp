@@ -78,8 +78,8 @@ point point::subtract(const point& pt1, const point& pt2) noexcept {
   return pt1 - size {pt2};
 }
 
-xtd::ustring point::to_string() const noexcept {
-  return  ustring::format("{{x={}, y={}}}", x_, y_);
+xtd::string point::to_string() const noexcept {
+  return  string::format("{{x={}, y={}}}", x_, y_);
 }
 
 point point::truncate(const point_f& value) noexcept {

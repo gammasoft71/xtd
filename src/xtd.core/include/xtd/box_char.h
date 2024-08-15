@@ -58,7 +58,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is n ASCII character; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_ascii(const ustring& s, size_t index) {return is_ascii(s[index]);}
+    static bool is_ascii(const string& s, size_t index) {return is_ascii(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a control character.
     /// @param c The Unicode character to evaluate.
@@ -70,7 +70,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a control character; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_control(const ustring& s, size_t index) {return is_control(s[index]);}
+    static bool is_control(const string& s, size_t index) {return is_control(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a decimal digit.
     /// @param c The Unicode character to evaluate.
@@ -83,7 +83,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is decimal digit; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_digit(const ustring& s, size_t index) {return is_digit(s[index]);}
+    static bool is_digit(const string& s, size_t index) {return is_digit(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a Unicode letter.
     /// @param c The Unicode character to evaluate.
@@ -95,7 +95,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a letter; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_letter(const ustring& s, size_t index) {return is_letter(s[index]);}
+    static bool is_letter(const string& s, size_t index) {return is_letter(s[index]);}
     
     /// @brief Indicates whether a Unicode character is categorized as a letter or a decimal digit.
     /// @param c The Unicode character to evaluate.
@@ -107,7 +107,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a letter or a decimal digit; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_letter_or_digit(const ustring& s, size_t index) {return is_letter_or_digit(s[index]);}
+    static bool is_letter_or_digit(const string& s, size_t index) {return is_letter_or_digit(s[index]);}
     
     /// @brief ndicates whether the specified Unicode character is categorized as a lowercase letter.
     /// @param c The Unicode character to evaluate.
@@ -119,7 +119,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a lowercase letter; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_lower(const ustring& s, size_t index) {return is_lower(s[index]);}
+    static bool is_lower(const string& s, size_t index) {return is_lower(s[index]);}
     
     /// @brief Indicates whether a Unicode character is categorized as a number.
     /// @param c The Unicode character to evaluate.
@@ -131,7 +131,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a number; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_number(const ustring& s, size_t index) {return is_number(s[index]);}
+    static bool is_number(const string& s, size_t index) {return is_number(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a punctuation mark.
     /// @param c The Unicode character to evaluate.
@@ -143,7 +143,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is categorized as a punctuation mark.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_punctuation(const ustring& s, size_t index) {return is_punctuation(s[index]);}
+    static bool is_punctuation(const string& s, size_t index) {return is_punctuation(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a separator character.
     /// @param c The Unicode character to evaluate.
@@ -155,7 +155,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is categorized as a separator character.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_separator(const ustring& s, size_t index) {return is_separator(s[index]);}
+    static bool is_separator(const string& s, size_t index) {return is_separator(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as a symbol character.
     /// @param c The Unicode character to evaluate.
@@ -167,7 +167,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is a symbol character; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_symbol(const ustring& s, size_t index) {return is_symbol(s[index]);}
+    static bool is_symbol(const string& s, size_t index) {return is_symbol(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as an uppercase letter.
     /// @param c The Unicode character to evaluate.
@@ -179,7 +179,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is an uppercase letter; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_upper(const ustring& s, size_t index) {return is_upper(s[index]);}
+    static bool is_upper(const string& s, size_t index) {return is_upper(s[index]);}
     
     /// @brief Indicates whether the specified Unicode character is categorized as white space.
     /// @param c The Unicode character to evaluate.
@@ -191,7 +191,7 @@ namespace xtd {
     /// @param index The position of the character to evaluate in s.
     /// @return true if the character at position index in s is white space; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
-    static bool is_white_space(const ustring& s, size_t index) {return is_white_space(s[index]);}
+    static bool is_white_space(const string& s, size_t index) {return is_white_space(s[index]);}
     
     /// @brief Converts the value of a Unicode character to its lowercase equivalent.
     /// @param c The Unicode character to convert.

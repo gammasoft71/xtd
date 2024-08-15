@@ -815,7 +815,7 @@ namespace xtd {
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
       /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
-      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle);
+      void draw_rotated_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -823,7 +823,7 @@ namespace xtd {
       /// @param x The x-coordinate of the upper-left corner of the drawn text.
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
       /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
-      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle);
+      void draw_rotated_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle);
       
       /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle structure, and radius.
       /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
@@ -858,7 +858,7 @@ namespace xtd {
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
       /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word. To further manipulate how the string is drawn inside the rectangle use the xtd::drawing::graphics::draw_string overload that takes a xtd::drawing::string_format.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
       /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -866,27 +866,27 @@ namespace xtd {
       /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word, unless otherwise specified with the format parameter.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const xtd::drawing::string_format& format);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const xtd::drawing::string_format& format);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const xtd::drawing::string_format& format);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const xtd::drawing::string_format& format);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param x The x-coordinate of the upper-left corner of the drawn text.
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -894,7 +894,7 @@ namespace xtd {
       /// @param x The x-coordinate of the upper-left corner of the drawn text.
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const xtd::drawing::string_format& format);
+      void draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const xtd::drawing::string_format& format);
       
       /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::region.
       /// @param region xtd::drawing::region that specifies the region to exclude from the clip region.
@@ -1200,52 +1200,52 @@ namespace xtd {
       bool is_visible(float x, float y);
       
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font within the specified layout area.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param layout_area xtd::drawing::size_f structure that specifies the maximum layout area for the text.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param width Maximum width of the string in pixels.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32 width);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, int32 width);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font and formatted with the specified xtd::drawing::string_format.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param origin xtd::drawing::point_f structure that represents the upper-left corner of the string.
       /// @param format xtd::drawing::string_format that represents formatting information, such as line spacing, for the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font and formatted with the specified xtd::drawing::string_format.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param layout_area xtd::drawing::size_f structure that specifies the maximum layout area for the text.
       /// @param format xtd::drawing::string_format that represents formatting information, such as line spacing, for the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font and formatted with the specified xtd::drawing::string_format.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param width Maximum width of the string in pixels.
       /// @param format xtd::drawing::string_format that represents formatting information, such as line spacing, for the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32 width, const xtd::drawing::string_format& format);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, int32 width, const xtd::drawing::string_format& format);
       /// @brief Measures the specified string when drawn with the specified xtd::drawing::font and formatted with the specified xtd::drawing::string_format.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param layout_area xtd::drawing::size_f structure that specifies the maximum layout area for the text.
       /// @param format xtd::drawing::string_format that represents formatting information, such as line spacing, for the string.
       /// @param characters_fitted Number of characters in the string.
       /// @param lines_filled Number of text lines in the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled);
       
       /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing_2d::matrix.
       /// @param matrix 4x4 xtd::drawing::drawing_2d::matrix that multiplies the world transformation.
@@ -1327,13 +1327,13 @@ namespace xtd {
       void translate_transform(float dx, float dy, xtd::drawing::drawing_2d::matrix_order order);
       
       /// @brief Trims the specified string for a specified width with the specified xtd::drawing::font and with the specified xtd::drawing::string_trimming.
-      /// @param text xtd::ustring to measure.
+      /// @param text xtd::string to measure.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param width Specifies the maximum width for the text.
       /// @param trimming One of xtd::drawing::string_trimming values.
-      xtd::ustring trim_string(const xtd::ustring& text, const xtd::drawing::font& font, float width, xtd::drawing::string_trimming trimming);
+      xtd::string trim_string(const xtd::string& text, const xtd::drawing::font& font, float width, xtd::drawing::string_trimming trimming);
       
-      xtd::ustring to_string() const noexcept override {return get_type().full_name();}
+      xtd::string to_string() const noexcept override {return get_type().full_name();}
       /// @}
 
       /// @name Public Static Methods
@@ -1365,7 +1365,7 @@ namespace xtd {
       /// * xtd::drawing::imaging::pixel_format::format_1bpp_indexed
       /// * xtd::drawing::imaging::pixel_format::format_4bpp_indexed
       /// * xtd::drawing::imaging::pixel_format::format_8bpp_indexed
-      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
+      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::string, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
       /// @remarks This method also throws an exception if the image has any of the following pixel formats.
       /// * xtd::drawing::imaging::pixel_format::undefined
       /// * xtd::drawing::imaging::pixel_format::dont_care

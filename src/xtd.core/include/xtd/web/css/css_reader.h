@@ -20,7 +20,7 @@ namespace xtd {
         /// @{
         css_reader(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
         css_reader(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
-        css_reader(const xtd::ustring& text) {parse_text(text);}
+        css_reader(const xtd::string& text) {parse_text(text);}
         /// @}
         
         /// @name Public Properties
@@ -30,7 +30,7 @@ namespace xtd {
         /// @}
         
       private:
-        void parse_text(const xtd::ustring& text) {
+        void parse_text(const xtd::string& text) {
           enum class parse_status {
             selector,
             key,
@@ -39,8 +39,8 @@ namespace xtd {
           parse_status status = parse_status::selector;
           size_t start_index = 0;
           xtd::web::css::selector current_selector;
-          xtd::ustring current_selector_name;
-          xtd::ustring current_key;
+          xtd::string current_selector_name;
+          xtd::string current_key;
           for (size_t index = 0; index < text.size(); index++) {
             if (text[index] == '/' && text[index + 1] == '*') {
               // Skip comments...

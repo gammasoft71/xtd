@@ -58,30 +58,30 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, and line number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
-      stack_frame(const xtd::ustring& file_name, uint32 line_number);
+      stack_frame(const xtd::string& file_name, uint32 line_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and method name.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
-      stack_frame(const xtd::ustring& file_name, uint32 line_number, const xtd::ustring& method_name);
+      stack_frame(const xtd::string& file_name, uint32 line_number, const xtd::string& method_name);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::ustring& file_name, uint32 line_number, const xtd::ustring& method_name, uint32 column_number);
+      stack_frame(const xtd::string& file_name, uint32 line_number, const xtd::string& method_name, uint32 column_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param column_number The column number in the specified file.
-      stack_frame(const xtd::ustring& file_name, uint32 line_number, uint32 column_number);
+      stack_frame(const xtd::string& file_name, uint32 line_number, uint32 column_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, column number, method name, and offset.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::ustring& file_name, uint32 line_number, const xtd::ustring& method_name, uint32 column_number, uint32 offset);
+      stack_frame(const xtd::string& file_name, uint32 line_number, const xtd::string& method_name, uint32 column_number, uint32 offset);
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
@@ -156,7 +156,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual const xtd::ustring& get_file_name() const noexcept;
+      virtual const xtd::string& get_file_name() const noexcept;
       
       /// @brief Gets the method in which the frame is executing.
       /// @return The method in which the frame is executing.
@@ -173,7 +173,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual const xtd::ustring& get_method() const noexcept;
+      virtual const xtd::string& get_method() const noexcept;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
@@ -194,18 +194,18 @@ namespace xtd {
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:
       friend class stack_trace;
       // Do not use xtd::collections::generic::list because xtd::diagnostics::stack_frame is use by xtd::system_exception and
       // xtd::collections::generic::list use xtd::argument_exception.
-      static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info) noexcept;
+      static std::vector<stack_frame> get_stack_frames(const xtd::string& str, size_t skip_frames, bool need_file_info) noexcept;
       
-      xtd::ustring file_name_;
+      xtd::string file_name_;
       uint32 file_line_number_ = 0;
-      xtd::ustring method_name_;
+      xtd::string method_name_;
       uint32 file_column_number_ = 0;
       uint32 offset_ = OFFSET_UNKNOWN;
     };

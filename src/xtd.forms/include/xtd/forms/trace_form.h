@@ -66,11 +66,11 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      void write(const xtd::ustring& trace) override {
+      void write(const xtd::string& trace) override {
         if (!defined) return;
         trace_form_base::write(trace);
       }
-      void write_line(const xtd::ustring& trace) override {
+      void write_line(const xtd::string& trace) override {
         if (!defined) return;
         trace_form_base::write_line(trace);
       }

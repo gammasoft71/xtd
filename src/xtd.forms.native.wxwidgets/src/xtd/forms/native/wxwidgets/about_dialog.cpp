@@ -26,12 +26,12 @@ namespace {
 }
 #endif
 
-void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustring& name, const ustring& description, const ustring& version, const ustring& long_version, const ustring& copyright, const ustring& website, const ustring& website_label, const std::vector<ustring>& creators, const std::vector<ustring>& designers, const std::vector<ustring>& doc_writers, const std::vector<ustring>& translators, const ustring& license) {
+void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const std::vector<string>& creators, const std::vector<string>& designers, const std::vector<string>& doc_writers, const std::vector<string>& translators, const string& license) {
   wxAboutDialogInfo about_info;
   about_info.SetName(convert_string::to_wstring(name));
   about_info.SetDescription(convert_string::to_wstring(description));
   if (!long_version.empty() || !version.empty()) about_info.SetVersion(version.empty() ? convert_string::to_wstring(long_version) : convert_string::to_wstring(version), convert_string::to_wstring(long_version));
-  about_info.SetCopyright(convert_string::to_wstring(ustring(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
+  about_info.SetCopyright(convert_string::to_wstring(string(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
   #if defined(__WXGTK__)
   about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
   about_info.SetWebSite(convert_string::to_wstring(website), convert_string::to_wstring(website_label));

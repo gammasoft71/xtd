@@ -29,12 +29,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
       /// @param copyright The copyright information.
-      explicit assembly_copyright_attribute(const ustring& copyright);
+      explicit assembly_copyright_attribute(const string& copyright);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_copyright_attribute(const ustring& copyright, const object& executing_assembly);
+      assembly_copyright_attribute(const string& copyright, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -42,14 +42,14 @@ namespace xtd {
       /// @{
       /// @brief Gets copyright information.
       /// @return A string containing the copyright information.
-      const ustring& copyright() const noexcept;
+      const string& copyright() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring copyright_;
+      string copyright_;
     };
   }
 }

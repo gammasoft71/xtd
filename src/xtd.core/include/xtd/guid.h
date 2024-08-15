@@ -120,7 +120,7 @@ namespace xtd {
     /// @remarks "{CA761232-ED42-11CE-BACD-00AA0057B223}"
     /// @remarks "(CA761232-ED42-11CE-BACD-00AA0057B223)"
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
-    explicit guid(const ustring& guid);
+    explicit guid(const string& guid);
     /// @}
     
     /// @cond
@@ -152,9 +152,9 @@ namespace xtd {
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:
     /// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    /// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the ustring::to_string method on the returned string.
+    /// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the string::to_string method on the returned string.
     /// @remarks This method provides a default GUID format that is sufficient for typical use; however, other versions of this method that take a format parameter provide a few common format variations.
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier.
     /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
     /// @return The value of this xtd::guid, represented as a series of lowercase hexadecimal digits in the specified format.
@@ -172,7 +172,7 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    ustring to_string(const ustring& format) const;
+    string to_string(const string& format) const;
     /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier, and locale.
     /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
@@ -191,7 +191,7 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    ustring to_string(const ustring& format, const std::locale& loc) const override;
+    string to_string(const string& format, const std::locale& loc) const override;
     /// @}
 
     /// @name Public Static Methods

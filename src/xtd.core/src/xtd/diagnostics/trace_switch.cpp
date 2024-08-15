@@ -3,10 +3,10 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-trace_switch::trace_switch(const ustring& display_name, const ustring& description) : switch_base(display_name, description) {
+trace_switch::trace_switch(const string& display_name, const string& description) : switch_base(display_name, description) {
 }
 
-trace_switch::trace_switch(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : switch_base(display_name, description, default_switch_value) {
+trace_switch::trace_switch(const string& display_name, const string& description, const string& default_switch_value) : switch_base(display_name, description, default_switch_value) {
 }
 
 xtd::diagnostics::trace_level trace_switch::level() const noexcept {
@@ -37,10 +37,10 @@ void trace_switch::on_switch_setting_changed() {
   switch_base::on_switch_setting_changed();
   auto level = switch_setting();
   if (level < static_cast<int32>(xtd::diagnostics::trace_level::off)) {
-    //xtd::diagnostics::debug::write_line<ustring>(xtd::ustring("trace_switch level too low"), display_name());
+    //xtd::diagnostics::debug::write_line<string>(xtd::string("trace_switch level too low"), display_name());
     switch_setting(static_cast<int32>(xtd::diagnostics::trace_level::off));
   } else if (level > static_cast<int32>(xtd::diagnostics::trace_level::verbose)) {
-    //xtd::diagnostics::debug::write_line<ustring>(xtd::ustring("trace_switch level too high"), display_name());
+    //xtd::diagnostics::debug::write_line<string>(xtd::string("trace_switch level too high"), display_name());
     switch_setting(static_cast<int32>(xtd::diagnostics::trace_level::verbose));
   }
 }

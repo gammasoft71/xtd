@@ -255,7 +255,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name);
+      static tool_bar create(const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified style.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @param style One of the xtd::forms::dock_style values.
@@ -273,7 +273,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name);
+      static tool_bar create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
@@ -288,7 +288,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name);
+      static tool_bar create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified style.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @param style One of the xtd::forms::dock_style values.
@@ -306,7 +306,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name);
+      static tool_bar create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
@@ -323,7 +323,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name);
+      static tool_bar create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified parent, and style.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @param style One of the xtd::forms::dock_style values.
@@ -341,7 +341,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name);
+      static tool_bar create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
@@ -358,7 +358,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name);
+      static tool_bar create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tool_bar with specified parent, and style.
       /// @param parent The parent that contains the new created xtd::forms::tool_bar.
       /// @param style One of the xtd::forms::dock_style values.
@@ -376,7 +376,7 @@ namespace xtd {
       /// @param image_collection An xtd::forms::image_list::image_collection that contains images available to the xtd::forms::tool_bar_button controls.
       /// @param name The name of the xtd::forms::tool_bar.
       /// @return New xtd::forms::tool_bar created.
-      static tool_bar create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name);
+      static tool_bar create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name);
       /// @}
       
     protected:
@@ -435,7 +435,7 @@ namespace xtd {
       void on_item_removed(size_t pos, tool_bar_button_ref item);
       
       void resize_stretchable_separtors();
-      void update_toolbar_button_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+      void update_toolbar_button_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
       
       void wm_click(const message& message);
       

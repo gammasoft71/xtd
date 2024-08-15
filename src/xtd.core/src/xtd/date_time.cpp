@@ -344,16 +344,16 @@ date_time date_time::from_tm(const tm& value, date_time_kind kind) {
   return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, value.tm_sec, kind);
 }
 
-std::vector<ustring> date_time::get_date_time_formats() const noexcept {
-  auto date_time_formats = std::vector<ustring> {};
+std::vector<string> date_time::get_date_time_formats() const noexcept {
+  auto date_time_formats = std::vector<string> {};
   //for (auto format : formats)
   for (auto format = 'a'; format <= 'z'; ++format) {
     try {
-      date_time_formats.emplace_back(self_.to_string(ustring::format("{}", format)));
+      date_time_formats.emplace_back(self_.to_string(string::format("{}", format)));
     } catch(...) {
     }
     try {
-      date_time_formats.emplace_back(self_.to_string(ustring::format("{}", char_object::to_upper(format))));
+      date_time_formats.emplace_back(self_.to_string(string::format("{}", char_object::to_upper(format))));
     } catch(...) {
     }
   }
@@ -370,7 +370,7 @@ bool date_time::is_leap_year(uint32 year) {
   return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
-date_time date_time::parse(const xtd::ustring& s) {
+date_time date_time::parse(const xtd::string& s) {
   throw not_implemented_exception {csf_};
 }
 
@@ -381,7 +381,7 @@ date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
   return value;
 }
 
-ustring date_time::sprintf(const ustring& format, const date_time& value) {
+string date_time::sprintf(const string& format, const date_time& value) {
   auto result = std::stringstream {};
   result.imbue(std::locale());
   auto tm_value = value.to_tm();
@@ -422,82 +422,82 @@ date_time date_time::to_local_time() const {
   return date_time {ticks_duration() + utc_offset, date_time_kind::local};
 }
 
-const xtd::ustring date_time::to_long_date_string() const {
+const xtd::string date_time::to_long_date_string() const {
   return to_string("n");
 }
 
-const xtd::ustring date_time::to_long_time_string() const {
+const xtd::string date_time::to_long_time_string() const {
   return to_string("T");
 }
 
-const xtd::ustring date_time::to_short_date_string() const {
+const xtd::string date_time::to_short_date_string() const {
   return to_string("D");
 }
 
-const xtd::ustring date_time::to_short_time_string() const {
+const xtd::string date_time::to_short_time_string() const {
   return to_string("V");
 }
 
-xtd::ustring date_time::to_string() const noexcept {
+xtd::string date_time::to_string() const noexcept {
   return to_string("G");
 }
 
-ustring date_time::to_string(const ustring& format) const {
+string date_time::to_string(const string& format) const {
   return to_string(format, std::locale {});
 }
 
-ustring date_time::to_string(const ustring& format, const std::locale& loc) const {
+string date_time::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (fmt.empty()) fmt = "G";
   if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   switch (fmt[0]) {
-    case 'a': return ustring::format("{}", hour / 12 ? "PM" : "AM");
-    case 'b': return ustring::format("{:D3}", millisecond());
-    case 'B': return ustring::format("{}", millisecond());
-    case 'c': return ustring::format("{:D7}", ticks() % ticks_per_millisecond);
-    case 'C': return ustring::format("{}", ticks() % ticks_per_millisecond);
-    case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
-    case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
-    case 'e': return ustring::format("{:D2}", second);
-    case 'E': return ustring::format("{}", second);
+    case 'a': return string::format("{}", hour / 12 ? "PM" : "AM");
+    case 'b': return string::format("{:D3}", millisecond());
+    case 'B': return string::format("{}", millisecond());
+    case 'c': return string::format("{:D7}", ticks() % ticks_per_millisecond);
+    case 'C': return string::format("{}", ticks() % ticks_per_millisecond);
+    case 'd': return string::format("{:D2}/{:D2}/{:D}", month, day, year);
+    case 'D': return string::format("{:D}/{:D2}/{:D}", month, day, year);
+    case 'e': return string::format("{:D2}", second);
+    case 'E': return string::format("{}", second);
     case 'f': return sprintf("%Ec", *this);
     case 'F': return sprintf("%c", *this);
     case 'g': return sprintf("%Ec", *this);
     case 'G': return sprintf("%c", *this);
     case 'h': return sprintf("%a", *this);
     case 'H': return sprintf("%A", *this);
-    case 'i': return ustring::format("{:D2}", day);
-    case 'I': return ustring::format("{:D}", day);
+    case 'i': return string::format("{:D2}", day);
+    case 'I': return string::format("{:D}", day);
     case 'j': return sprintf("%b", *this);
     case 'J': return sprintf("%B", *this);
-    case 'k': return ustring::format("{:D2}", month);
-    case 'K': return ustring::format("{:D}", month);
-    case 'l': return ustring::format("{:D2}", year % 100);
-    case 'L': return ustring::format("{:D4}", year);
-    case 'm': return ustring::format("{:D}", year);
-    case 'M': return ustring::format("{} {:D}", sprintf("%B", *this), day);
-    case 'n': return ustring::format("{}, {:D} {} {:D}", sprintf("%A", *this), day, sprintf("%B", *this), year);
-    case 'N': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
+    case 'k': return string::format("{:D2}", month);
+    case 'K': return string::format("{:D}", month);
+    case 'l': return string::format("{:D2}", year % 100);
+    case 'L': return string::format("{:D4}", year);
+    case 'm': return string::format("{:D}", year);
+    case 'M': return string::format("{} {:D}", sprintf("%B", *this), day);
+    case 'n': return string::format("{}, {:D} {} {:D}", sprintf("%A", *this), day, sprintf("%B", *this), year);
+    case 'N': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
     case 'o':
-    case 'O': return ustring::format("{:D} {} {:D}", day, sprintf("%B", *this), year);
-    case 'p': return ustring::format("{:D2}", minute);
-    case 'P': return ustring::format("{}", minute);
-    case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
-    case 'S': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D3}", year, month, day, hour, minute, second, value_.count() % ticks_per_second / 10000);
-    case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
-    case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
-    case 'u': return ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'U': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
-    case 'v': return ustring::format("{:D2}:{:D2}", hour, minute);
-    case 'V': return ustring::format("{:D}:{:D2}", hour, minute);
-    case 'w': return ustring::format("{:D2}", hour);
-    case 'W': return ustring::format("{:D}", hour);
-    case 'x': return ustring::format("{:D2}", hour % 12);
-    case 'X': return ustring::format("{:D}", hour % 12);
-    case 'y': return ustring::format("{} {:D}", sprintf("%B", *this), year % 100);
-    case 'Y': return ustring::format("{} {:D}", sprintf("%B", *this), year);
+    case 'O': return string::format("{:D} {} {:D}", day, sprintf("%B", *this), year);
+    case 'p': return string::format("{:D2}", minute);
+    case 'P': return string::format("{}", minute);
+    case 's': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
+    case 'S': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D3}", year, month, day, hour, minute, second, value_.count() % ticks_per_second / 10000);
+    case 't': return string::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
+    case 'T': return string::format("{:D}:{:D2}:{:D2}", hour, minute, second);
+    case 'u': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
+    case 'U': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
+    case 'v': return string::format("{:D2}:{:D2}", hour, minute);
+    case 'V': return string::format("{:D}:{:D2}", hour, minute);
+    case 'w': return string::format("{:D2}", hour);
+    case 'W': return string::format("{:D}", hour);
+    case 'x': return string::format("{:D2}", hour % 12);
+    case 'X': return string::format("{:D}", hour % 12);
+    case 'y': return string::format("{} {:D}", sprintf("%B", *this), year % 100);
+    case 'Y': return string::format("{} {:D}", sprintf("%B", *this), year);
     case 'z':
     case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
   }
@@ -536,7 +536,7 @@ date_time date_time::to_universal_time() const {
   return date_time {ticks_duration() - utc_offset, date_time_kind::utc};
 }
 
-bool date_time::try_parse(const ustring& s, date_time& result) noexcept {
+bool date_time::try_parse(const string& s, date_time& result) noexcept {
   return false;
 }
 

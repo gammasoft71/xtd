@@ -46,11 +46,11 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring message() const noexcept;
+      xtd::string message() const noexcept;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current trace_message_dialog instance.
-      trace_message_dialog& message(const xtd::ustring& message) {
+      trace_message_dialog& message(const xtd::string& message) {
         #if defined(TRACE)
         dialog_.message(message);
         #endif

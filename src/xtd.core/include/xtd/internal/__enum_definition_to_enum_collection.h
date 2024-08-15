@@ -14,7 +14,7 @@
 
 /// @cond
 template<typename enum_t>
-xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::ustring& enum_definition) {
+xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::string& enum_definition) {
   xtd::enum_collection<enum_t> entries;
   #if !defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
   for (size_t num_state = 0; num_state < __enumeration_introspection::num_states<enum_t>; ++num_state)
@@ -25,7 +25,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
   xtd::int64 current_value = 0;
   for (auto entry : enum_definition.split({','})) {
     auto key_value = entry.trim().split({'='});
-    if (key_value.size() < 1 || key_value.size() > 2 || (key_value.size() == 2 && xtd::ustring::is_empty(key_value[1])))
+    if (key_value.size() < 1 || key_value.size() > 2 || (key_value.size() == 2 && xtd::string::is_empty(key_value[1])))
       throw xtd::format_exception("Not a valid enum declaration"_t, csf_);
     xtd::int64 value = current_value;
     if (key_value.size() == 2) {

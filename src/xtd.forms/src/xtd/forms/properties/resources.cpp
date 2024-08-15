@@ -10,20 +10,20 @@ using namespace forms;
 using namespace forms::properties;
 
 namespace {
-  ustring get_os_postfix() noexcept {
+  string get_os_postfix() noexcept {
     return environment::os_version().is_windows_platform() ? "_w" : environment::os_version().is_unix_platform() ? "_g" : environment::os_version().is_macos_platform() ? "_m" : "";
   }
 }
 
 const bitmap& resources::cursor_arrow() {
-  if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("arrow{}.png", get_os_postfix())))) return bitmap::empty;
-  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("arrow{}.png", get_os_postfix()))};
+  if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", string::format("arrow{}.png", get_os_postfix())))) return bitmap::empty;
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", string::format("arrow{}.png", get_os_postfix()))};
   return bitmap;
 }
 
 const bitmap& resources::cursor_no_move_2d() {
-  if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("cursor_no_move_2d{}.png", get_os_postfix())))) return bitmap::empty;
-  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("cursor_no_move_2d{}.png", get_os_postfix()))};
+  if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", string::format("cursor_no_move_2d{}.png", get_os_postfix())))) return bitmap::empty;
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", string::format("cursor_no_move_2d{}.png", get_os_postfix()))};
   return bitmap;
 }
 

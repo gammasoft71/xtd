@@ -12,16 +12,16 @@ using namespace xtd::forms;
 struct progress_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   intptr handle = 0;
-  std::vector<xtd::ustring> informations;
+  std::vector<xtd::string> informations;
   size_t marquee_animation_speed = 100;
   int32 maximum = 100;
-  xtd::ustring message;
+  xtd::string message;
   int32 minimum = 0;
   bool native = false;
   size_t options = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
   const iwin32_window* owner = nullptr;
   int32 step = 10;
-  xtd::ustring text;
+  xtd::string text;
   int32 value = 0;
 };
 
@@ -49,11 +49,11 @@ progress_dialog& progress_dialog::dialog_appearance(xtd::forms::dialog_appearanc
   return *this;
 }
 
-const std::vector<xtd::ustring>& progress_dialog::informations() const noexcept {
+const std::vector<xtd::string>& progress_dialog::informations() const noexcept {
   return data_->informations;
 }
 
-progress_dialog& progress_dialog::informations(const std::vector<xtd::ustring>& informations) {
+progress_dialog& progress_dialog::informations(const std::vector<xtd::string>& informations) {
   if (data_->informations == informations) return *this;
   data_->informations = informations;
   if (data_->handle) native::progress_dialog::informations(data_->handle, data_->informations);
@@ -95,11 +95,11 @@ progress_dialog& progress_dialog::maximum(int32 maximum) {
   return *this;
 }
 
-const xtd::ustring& progress_dialog::message() const noexcept {
+const xtd::string& progress_dialog::message() const noexcept {
   return data_->message;
 }
 
-progress_dialog& progress_dialog::message(const xtd::ustring& message) {
+progress_dialog& progress_dialog::message(const xtd::string& message) {
   if (data_->message == message) return *this;
   data_->message = message;
   if (data_->handle) native::progress_dialog::message(data_->handle, data_->message);
@@ -193,11 +193,11 @@ progress_dialog& progress_dialog::step(int32 step) {
   return *this;
 }
 
-const xtd::ustring& progress_dialog::text() const noexcept {
+const xtd::string& progress_dialog::text() const noexcept {
   return data_->text;
 }
 
-progress_dialog& progress_dialog::text(const xtd::ustring& text) {
+progress_dialog& progress_dialog::text(const xtd::string& text) {
   if (data_->text == text) return *this;
   data_->text = text;
   recreate_dialog();

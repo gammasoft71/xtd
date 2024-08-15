@@ -27,7 +27,7 @@ namespace xtd {
     return __string_formatter(fmt, value, loc);
   }
   
-  std::string to_string(const xtd::ustring& value, const std::string& fmt, const std::locale& loc) {
+  std::string to_string(const xtd::string& value, const std::string& fmt, const std::locale& loc) {
     return __string_formatter(fmt, value, loc);
   }
   

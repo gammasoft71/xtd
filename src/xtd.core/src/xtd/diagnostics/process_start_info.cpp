@@ -5,17 +5,17 @@ using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::security;
 
-process_start_info::process_start_info(const ustring& file_name) : file_name_(file_name) {
+process_start_info::process_start_info(const string& file_name) : file_name_(file_name) {
 }
 
-process_start_info::process_start_info(const ustring& file_name, const ustring& arguments) : file_name_(file_name), arguments_(arguments) {
+process_start_info::process_start_info(const string& file_name, const string& arguments) : file_name_(file_name), arguments_(arguments) {
 }
 
-const ustring& process_start_info::arguments() const noexcept {
+const string& process_start_info::arguments() const noexcept {
   return arguments_;
 }
 
-process_start_info& process_start_info::arguments(const ustring& value) noexcept {
+process_start_info& process_start_info::arguments(const string& value) noexcept {
   arguments_ = value;
   return *this;
 }
@@ -29,28 +29,28 @@ process_start_info& process_start_info::create_no_window(bool value) noexcept {
   return *this;
 }
 
-const ustring& process_start_info::domain() const noexcept {
+const string& process_start_info::domain() const noexcept {
   return domain_;
 }
 
-process_start_info& process_start_info::domain(const ustring& value) noexcept {
+process_start_info& process_start_info::domain(const string& value) noexcept {
   domain_ = value;
   return *this;
 }
 
-const std::map<ustring, ustring>& process_start_info::environment() const noexcept {
+const std::map<string, string>& process_start_info::environment() const noexcept {
   return environment_variables_;
 }
 
-std::map<ustring, ustring>& process_start_info::environment() noexcept {
+std::map<string, string>& process_start_info::environment() noexcept {
   return environment_variables_;
 }
 
-const std::map<ustring, ustring>& process_start_info::environment_variables() const noexcept {
+const std::map<string, string>& process_start_info::environment_variables() const noexcept {
   return environment_variables_;
 }
 
-std::map<ustring, ustring>& process_start_info::environment_variables() noexcept {
+std::map<string, string>& process_start_info::environment_variables() noexcept {
   return environment_variables_;
 }
 
@@ -72,11 +72,11 @@ process_start_info& process_start_info::error_dialog_parent_handle(intptr value)
   return *this;
 }
 
-const ustring& process_start_info::file_name() const noexcept {
+const string& process_start_info::file_name() const noexcept {
   return file_name_;
 }
 
-process_start_info& process_start_info::file_name(const ustring& value) noexcept {
+process_start_info& process_start_info::file_name(const string& value) noexcept {
   file_name_ = value;
   return *this;
 }
@@ -104,11 +104,11 @@ process_start_info& process_start_info::password(const xtd::security::secure_str
   return *this;
 }
 
-ustring process_start_info::password_in_clear_text() const noexcept {
+string process_start_info::password_in_clear_text() const noexcept {
   return password_.to_unsecure_string();
 }
 
-process_start_info& process_start_info::password_in_clear_text(const ustring& value) noexcept {
+process_start_info& process_start_info::password_in_clear_text(const string& value) noexcept {
   password_ = secure_string(value.c_str(), value.size());
   return *this;
 }
@@ -140,11 +140,11 @@ process_start_info& process_start_info::redirect_standard_output(bool value) noe
   return *this;
 }
 
-const ustring& process_start_info::user_name() const noexcept {
+const string& process_start_info::user_name() const noexcept {
   return user_name_;
 }
 
-process_start_info& process_start_info::user_name(const ustring& value) noexcept {
+process_start_info& process_start_info::user_name(const string& value) noexcept {
   user_name_ = value;
   return *this;
 }
@@ -158,16 +158,16 @@ process_start_info& process_start_info::use_shell_execute(bool value) noexcept {
   return *this;
 }
 
-ustring process_start_info::verb() const noexcept {
+string process_start_info::verb() const noexcept {
   return verb_;
 }
 
-process_start_info& process_start_info::verb(const ustring& value) noexcept {
+process_start_info& process_start_info::verb(const string& value) noexcept {
   verb_ = value;
   return *this;
 }
 
-list<ustring> process_start_info::verbs() const {
+list<string> process_start_info::verbs() const {
   if (file_name_ == "") return {};
   // return native::process:verbs(file_name_);
   return {};
@@ -182,11 +182,11 @@ process_start_info& process_start_info::window_style(process_window_style value)
   return *this;
 }
 
-const ustring& process_start_info::working_directory() const noexcept {
+const string& process_start_info::working_directory() const noexcept {
   return working_directory_;
 }
 
-process_start_info& process_start_info::working_directory(const ustring& value) noexcept {
+process_start_info& process_start_info::working_directory(const string& value) noexcept {
   working_directory_ = value;
   return *this;
 }

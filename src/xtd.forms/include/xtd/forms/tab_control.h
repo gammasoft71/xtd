@@ -73,32 +73,32 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param text The text of element to insert.
-        iterator insert(const_iterator pos, const xtd::ustring& text);
+        iterator insert(const_iterator pos, const xtd::string& text);
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param text The text of element to insert.
         /// @param name The name of element to insert.
-        iterator insert(const_iterator pos, const xtd::ustring& text, const xtd::ustring& name);
+        iterator insert(const_iterator pos, const xtd::string& text, const xtd::string& name);
         
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert_at;
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param text The text of element to insert.
-        void insert_at(size_t index, const xtd::ustring& text);
+        void insert_at(size_t index, const xtd::string& text);
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param text The text of element to insert.
         /// @param name The name of element to insert.
-        void insert_at(size_t index, const xtd::ustring& text, const xtd::ustring& name);
+        void insert_at(size_t index, const xtd::string& text, const xtd::string& name);
         
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
         /// @brief Adds an element to the end.
         /// @param text The text of element to add.
-        void push_back(const xtd::ustring& text);
+        void push_back(const xtd::string& text);
         /// @brief Adds an element to the end.
         /// @param text The text of element to add.
         /// @param name The name of element to add.
-        void push_back(const xtd::ustring& text, const ustring& name);
+        void push_back(const xtd::string& text, const string& name);
         
         /// @}
         
@@ -120,17 +120,17 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator [](const xtd::ustring& name) const;
+        std::optional<value_type> operator [](const xtd::string& name) const;
         /// @brief Gets the first xtd::forms::control::tab_page_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator [](const xtd::ustring& name);
+        std::optional<value_type> operator [](const xtd::string& name);
         /// @}
       private:
         friend tab_control;
-        event<tab_page_collection, delegate<void(size_t index, const ustring& text, const ustring& name)>> text_added;
-        event<tab_page_collection, delegate<iterator(const_iterator pos, const ustring& text, const ustring& name)>> text_inserted;
+        event<tab_page_collection, delegate<void(size_t index, const string& text, const string& name)>> text_added;
+        event<tab_page_collection, delegate<iterator(const_iterator pos, const string& text, const string& name)>> text_inserted;
       };
       
       /// @name Public Fields
@@ -218,7 +218,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_control.
       /// @param name The name of the xtd::forms::tab_control.
       /// @return New xtd::forms::tab_control created.
-      static tab_control create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static tab_control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::tab_control with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::tab_control.
       /// @return New xtd::forms::tab_control created.
@@ -240,7 +240,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_control.
       /// @param name The name of the xtd::forms::tab_control.
       /// @return New xtd::forms::tab_control created.
-      static tab_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static tab_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events
@@ -292,8 +292,8 @@ namespace xtd {
       
       void on_tab_pages_item_added(size_t, tab_page_ref& item);
       void on_tab_pages_item_removed(size_t, tab_page_ref& item);
-      void on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name);
-      tab_page_collection::iterator on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name);
+      void on_tab_pages_text_added(size_t index, const string& text, const string& name);
+      tab_page_collection::iterator on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const string& text, const string& name);
       
       void wm_command_control(message& message);
       

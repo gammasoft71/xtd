@@ -29,25 +29,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_guid_attribute class.
       /// @param guid The guid information.
-      explicit assembly_guid_attribute(const ustring& guid);
+      explicit assembly_guid_attribute(const string& guid);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_guid_attribute(const ustring& guid, const object& executing_assembly);
+      assembly_guid_attribute(const string& guid, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets guid information.
       /// @return A string containing the guid information.
-      const ustring& guid() const noexcept;
+      const string& guid() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring guid_;
+      string guid_;
     };
   }
 }

@@ -112,7 +112,7 @@ std::vector<image> xtd_system_images::get_images(const xtd::drawing::size& size)
   return std::vector {gammasoft(size), xtd(size), xtd_console(size), xtd_forms(size), xtd_tunit(size), xtd_core(size), xtd_delegates(size), xtd_diagnostics(size), xtd_drawing(size), xtd_io(size), xtd_strings(size), xtd_cmake(size), };
 }
 
-const std::vector<ustring>& xtd_system_images::get_image_names() noexcept {
+const std::vector<string>& xtd_system_images::get_image_names() noexcept {
   static auto names = std::vector {"gammasoft"_s, "xtd"_s, "xtd-console"_s, "xtd-forms"_s, "xtd-tunit"_s, "xtd-core"_s, "xtd-delegates"_s, "xtd-diagnostics"_s, "xtd-drawing"_s, "xtd-io"_s, "xtd-strings"_s, "xtd-cmake"_s, };
   return names;
 }

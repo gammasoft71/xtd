@@ -13,7 +13,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a collection of strings.
       /// ```cpp
-      /// using string_collection = xtd::collections::generic::list<xtd::ustring>
+      /// using string_collection = xtd::collections::generic::list<xtd::string>
       /// ```
       /// @par Header
       /// ```cpp
@@ -24,7 +24,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      using string_collection = xtd::collections::generic::list<xtd::ustring>;
+      using string_collection = xtd::collections::generic::list<xtd::string>;
     }
   }
 }

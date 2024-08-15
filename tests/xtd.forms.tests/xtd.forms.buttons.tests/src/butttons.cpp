@@ -55,7 +55,7 @@ public:
     style_sheet_choice.items({"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"});
     style_sheet_choice.selected_index_changed += [&] {
       application::style_sheet(application::get_style_sheet_from_name(style_sheet_choice.selected_item().value()));
-      text(ustring::format("Buttons tests - {}", style_sheet_choice.selected_item().value()));
+      text(string::format("Buttons tests - {}", style_sheet_choice.selected_item().value()));
     };
     style_sheet_choice.selected_item(style_sheets::style_sheet::system_style_sheet().theme().name());
   }
@@ -69,17 +69,17 @@ private:
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 10});
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 10});
     button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     default_buttons.push_back(button_ptr);
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({90, 10});
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({90, 10});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({170, 10}).enabled(false);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({170, 10}).enabled(false);
     
     // Image only buttons
     
@@ -103,85 +103,85 @@ private:
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({490, 10});
+    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({490, 10});
     button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({570, 10});
+    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({570, 10});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({650, 10}).enabled(false);
+    button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({650, 10}).enabled(false);
     
     // Fore Color
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 50}).fore_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 50}).fore_color(color::dodger_blue);
     button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({90, 50}).fore_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({90, 50}).fore_color(color::dodger_blue);
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({170, 50}).enabled(false).fore_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({170, 50}).enabled(false).fore_color(color::dodger_blue);
     
     // Back Color
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({250, 50}).back_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({250, 50}).back_color(color::dodger_blue);
     button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({330, 50}).back_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({330, 50}).back_color(color::dodger_blue);
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({410, 50}).enabled(false).back_color(color::dodger_blue);
+    button_ptr->flat_style(style).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({410, 50}).enabled(false).back_color(color::dodger_blue);
     
     // Text align buttons
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::top_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::top_left).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 90}).size({100, 50});
     button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::top_center).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({120, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::top_center).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({120, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::top_right).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({230, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::top_right).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({230, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::middle_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({340, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::middle_left).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({340, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::middle_center).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({450, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::middle_center).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({450, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::middle_right).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({560, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::middle_right).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({560, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::bottom_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({670, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::bottom_left).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({670, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::bottom_center).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({780, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::bottom_center).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({780, 90}).size({100, 50});
     
     button_ptr = xtd::new_sptr<button>();
     buttons.push_back(button_ptr);
-    button_ptr->flat_style(style).text_align(content_alignment::bottom_right).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({890, 90}).size({100, 50});
+    button_ptr->flat_style(style).text_align(content_alignment::bottom_right).text(string::format("Buttton {}", ++button_number)).parent(parent_control).location({890, 90}).size({100, 50});
     
     // Image align buttons
     

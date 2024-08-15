@@ -65,7 +65,7 @@ namespace xtd {
       /// @param message The message to show.
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @note The category parameter is limited to 256 characters. std::string longer than 256 characters are truncated.
-      static void log(int32 level, const xtd::ustring& category, const xtd::ustring& message);
+      static void log(int32 level, const xtd::string& category, const xtd::string& message);
       /// @}
     };
   }
