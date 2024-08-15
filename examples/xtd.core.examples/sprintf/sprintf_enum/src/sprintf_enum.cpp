@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 enum week_day {
@@ -18,17 +17,17 @@ template<> struct xtd::enum_register<week_day> {
 };
 
 int main() {
-  cout << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("")) << endl;
-  cout << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("b")) << endl;
-  cout << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("B")) << endl;
-  cout << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("d")) << endl;
-  cout << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("D")) << endl;
-  cout << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("g")) << endl;
-  cout << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("G")) << endl;
-  cout << ustring::sprintf("0%s", enum_object {week_day::saturday}.to_string("o")) << endl;
-  cout << ustring::sprintf("0%s", enum_object {week_day::saturday}.to_string("O")) << endl;
-  cout << ustring::sprintf("0x%s", enum_object {week_day::saturday}.to_string("x")) << endl;
-  cout << ustring::sprintf("0x%s", enum_object {week_day::saturday}.to_string("X")) << endl;
+  console::out << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("")) << environment::new_line;
+  console::out << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("b")) << environment::new_line;
+  console::out << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("B")) << environment::new_line;
+  console::out << ustring::sprintf("0b%s", enum_object {week_day::saturday}.to_string("d")) << environment::new_line;
+  console::out << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("D")) << environment::new_line;
+  console::out << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("g")) << environment::new_line;
+  console::out << ustring::sprintf("%s", enum_object {week_day::saturday}.to_string("G")) << environment::new_line;
+  console::out << ustring::sprintf("0%s", enum_object {week_day::saturday}.to_string("o")) << environment::new_line;
+  console::out << ustring::sprintf("0%s", enum_object {week_day::saturday}.to_string("O")) << environment::new_line;
+  console::out << ustring::sprintf("0x%s", enum_object {week_day::saturday}.to_string("x")) << environment::new_line;
+  console::out << ustring::sprintf("0x%s", enum_object {week_day::saturday}.to_string("X")) << environment::new_line;
 }
 
 // This code produces the following output :

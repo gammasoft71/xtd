@@ -1,4 +1,5 @@
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/using>
 
 using namespace xtd;
@@ -8,7 +9,7 @@ auto main() -> int {
     console::write_line(ustring::join(", ", values));
   
   // uncomment next line cause build error with undeclared identifier 'values'.
-  // cout << ustring::join(", ", values) << endl;
+  // console::out << ustring::join(", ", values) << environment::new_line;
 }
 
 // This code produces the following output :

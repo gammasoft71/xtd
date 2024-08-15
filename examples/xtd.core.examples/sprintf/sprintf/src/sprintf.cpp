@@ -1,11 +1,11 @@
-#include <xtd/literals>
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::sprintf("%s %s %d %c", "string", "literal"_s, 42, 'a') << endl;
+  console::out << ustring::sprintf("%s %s %d %c", "string", "literal"_s, 42, 'a') << environment::new_line;
 }
 
 // This code produces the following output :

@@ -1,22 +1,23 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/double_object>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::sprintf("%f", 12.345) << endl;
-  cout << ustring::sprintf("%F", 12.345) << endl;
-  cout << ustring::sprintf("%e", 12.345) << endl;
-  cout << ustring::sprintf("%E", 12.345) << endl;
-  cout << ustring::sprintf("%g", 12.345) << endl;
-  cout << ustring::sprintf("%G", 12.345) << endl;
-  cout << ustring::sprintf("0x%a", 12.345) << endl;
-  cout << ustring::sprintf("0x%A", 12.345) << endl;
-  cout << ustring::sprintf("%G", double_object::epsilon) << endl;
-  cout << ustring::sprintf("%f", double_object::NaN) << endl;
-  cout << ustring::sprintf("%f", double_object::positive_infinity) << endl;
-  cout << ustring::sprintf("%f", double_object::negative_infinity) << endl;
+  console::out << ustring::sprintf("%f", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%F", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%e", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%E", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%g", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%G", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("0x%a", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("0x%A", 12.345) << environment::new_line;
+  console::out << ustring::sprintf("%G", double_object::epsilon) << environment::new_line;
+  console::out << ustring::sprintf("%f", double_object::NaN) << environment::new_line;
+  console::out << ustring::sprintf("%f", double_object::positive_infinity) << environment::new_line;
+  console::out << ustring::sprintf("%f", double_object::negative_infinity) << environment::new_line;
 }
 
 // This code produces the following output :

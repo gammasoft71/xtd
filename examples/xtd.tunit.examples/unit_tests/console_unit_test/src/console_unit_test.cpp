@@ -1,7 +1,7 @@
 #include <xtd/xtd.tunit>
 #include <sstream>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -14,7 +14,7 @@ namespace unit_tests {
 auto main() -> int {
   return console_unit_test().run();
   // is same :
-  // return unit_test(std::new_uptr<ostream_event_listener>(cout)).run();
+  //return unit_test(new_uptr<ostream_event_listener>(console::out)).run();
 }
 
 // This code can produce the following output :

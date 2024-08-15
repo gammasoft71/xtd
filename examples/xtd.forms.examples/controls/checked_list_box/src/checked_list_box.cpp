@@ -3,7 +3,6 @@
 #include <xtd/forms/form>
 #include <xtd/cdebug>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -24,7 +23,7 @@ namespace checked_list_box_example {
       checked_list_box1.selected_index(0);
       
       checked_list_box1.item_check += [](object & sender, item_check_event_args & e) {
-        cdebug << ustring::format("item_check, index={}, new_value={}, current_value={}", e.index(), e.new_value(), e.current_value()) << endl;
+        cdebug << ustring::format("item_check, index={}, new_value={}, current_value={}", e.index(), e.new_value(), e.current_value()) << environment::new_line;
       };
     }
     

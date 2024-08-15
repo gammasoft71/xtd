@@ -1,17 +1,15 @@
 #include <xtd/xtd>
 
-using namespace std;
-using namespace std::literals;
 using namespace xtd;
 
 int main() {
-  cout << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("")) << endl;
-  cout << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("G")) << endl;
+  console::out << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("")) << environment::new_line;
+  console::out << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("G")) << environment::new_line;
   auto duration = 2_h + 3_min + 32_s + 24_ms + 500_ns;
-  cout << ustring::sprintf("%s", duration.to_string("F")) << endl;
-  cout << ustring::sprintf("%s:%s", duration.to_string("H"), duration.to_string("M")) << endl;
-  cout << ustring::sprintf("%s:%s:%s:%s", duration.to_string("H"), duration.to_string("M"), duration.to_string("S"), duration.to_string("T")) << endl;
-  cout << ustring::sprintf("%s:%s:%s:%s", duration.to_string("h"), duration.to_string("m"), duration.to_string("s"), duration.to_string("t")) << endl;
+  console::out << ustring::sprintf("%s", duration.to_string("F")) << environment::new_line;
+  console::out << ustring::sprintf("%s:%s", duration.to_string("H"), duration.to_string("M")) << environment::new_line;
+  console::out << ustring::sprintf("%s:%s:%s:%s", duration.to_string("H"), duration.to_string("M"), duration.to_string("S"), duration.to_string("T")) << environment::new_line;
+  console::out << ustring::sprintf("%s:%s:%s:%s", duration.to_string("h"), duration.to_string("m"), duration.to_string("s"), duration.to_string("t")) << environment::new_line;
 }
 
 // This code produces the following output :

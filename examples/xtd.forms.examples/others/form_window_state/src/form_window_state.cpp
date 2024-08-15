@@ -18,7 +18,7 @@ public:
       button_normal.enabled(window_state() != form_window_state::normal);
       button_minimize.enabled(window_state() != form_window_state::minimized&& window_state() != form_window_state::full_screen);
       
-      ctrace << ustring::format("resize: {}, {}", size(), window_state()) << std::endl;
+      ctrace << ustring::format("resize: {}, {}", size(), window_state()) << environment::new_line;
     };
     client_size({410, 200});
     window_state(form_window_state::maximized);

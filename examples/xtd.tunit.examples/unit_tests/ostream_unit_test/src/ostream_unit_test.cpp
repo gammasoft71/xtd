@@ -1,7 +1,7 @@
 #include <xtd/xtd.tunit>
 #include <sstream>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -13,15 +13,15 @@ namespace unit_tests {
 
 auto main() -> int {
   // create your own ostream in this case a string stream for example
-  auto ss = stringstream {};
+  auto ss = std::stringstream {};
   
   // create and run an ostream_unit_test
   auto result = ostream_unit_test(ss).run();
   
-  // display string stream on cout line by line
+  // display string stream on console::out line by line
   auto line = string {};
   while (std::getline(ss, line))
-    cout << line << endl;
+    console::out << line << environment::new_line;
     
   return result;
 }
