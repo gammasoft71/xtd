@@ -474,14 +474,39 @@ namespace xtd {
     /// @return true if the value parameter occurs within this string; otherwise, false.
     bool contains(char8 value) const noexcept;
 #endif
+    /// @brief Returns a value indicating whether a specified char occurs within this string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this string; otherwise, false.
+    bool contains(char16 value) const noexcept;
+    /// @brief Returns a value indicating whether a specified char occurs within this string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this string; otherwise, false.
+    bool contains(char32 value) const noexcept;
+    /// @brief Returns a value indicating whether a specified char occurs within this string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this string; otherwise, false.
+    bool contains(wchar value) const noexcept;
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
     /// @param value The string to seek.
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
 
+    /// @brief Determines whether this instance and a specified object, which must also be a xtd::ustring object, have the same value.
+    /// @param obj The string to compare to this instance.
+    /// @return `true` if `obj` is a xtd::ustring and its value is the same as this instance; otherwise, `false`.
     bool equals(const object& obj) const noexcept override;
-    bool equals(const ustring& tzi) const noexcept;
-    
+    /// @brief Determines whether this instance and another specified String object have the same value.
+    /// @param value The string to compare to this instance.
+    /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
+    /// @remarks This method performs an ordinal (case-sensitive) comparison.
+    bool equals(const ustring& value) const noexcept;
+    /// @brief Determines whether this instance and another specified String object have the same value, ignoring or honoring their case.
+    /// @param value The string to compare to this instance.
+    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
+    /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
+    /// @remarks This method performs an ordinal comparison.
+    bool equals(const ustring& value, bool ignore_case) const noexcept;
+
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
@@ -492,6 +517,18 @@ namespace xtd {
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(char8 value) const noexcept;
 #endif
+    /// @brief Determines whether the end of this string matches the specified character.
+    /// @param value The char_t to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(char16 value) const noexcept;
+    /// @brief Determines whether the end of this string matches the specified character.
+    /// @param value The char_t to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(char32 value) const noexcept;
+    /// @brief Determines whether the end of this string matches the specified character.
+    /// @param value The char_t to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(wchar value) const noexcept;
     /// @brief Determines whether the end of this string matches the specified string.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
@@ -661,13 +698,13 @@ namespace xtd {
     template<>
     ustring pad_left<char>(size_t total_width, char padding_char) const {return pad_left_char(total_width, padding_char);}
     template<>
-    ustring pad_left<xtd::char8>(size_t total_width, xtd::char8 padding_char) const {return pad_left_char8(total_width, padding_char);}
+    ustring pad_left<char8>(size_t total_width, char8 padding_char) const {return pad_left_char8(total_width, padding_char);}
     template<>
-    ustring pad_left<xtd::char16>(size_t total_width, xtd::char16 padding_char) const {return pad_left_char16(total_width, padding_char);}
+    ustring pad_left<char16>(size_t total_width, char16 padding_char) const {return pad_left_char16(total_width, padding_char);}
     template<>
-    ustring pad_left<xtd::char32>(size_t total_width, xtd::char32 padding_char) const {return pad_left_char32(total_width, padding_char);}
+    ustring pad_left<char32>(size_t total_width, char32 padding_char) const {return pad_left_char32(total_width, padding_char);}
     template<>
-    ustring pad_left<xtd::wchar>(size_t total_width, xtd::wchar padding_char) const {return pad_left_wchar(total_width, padding_char);}
+    ustring pad_left<wchar>(size_t total_width, wchar padding_char) const {return pad_left_wchar(total_width, padding_char);}
     /// @endcond
 
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
@@ -703,13 +740,13 @@ namespace xtd {
     template<>
     ustring pad_right<char>(size_t total_width, char padding_char) const {return pad_right_char(total_width, padding_char);}
     template<>
-    ustring pad_right<xtd::char8>(size_t total_width, xtd::char8 padding_char) const {return pad_right_char8(total_width, padding_char);}
+    ustring pad_right<char8>(size_t total_width, char8 padding_char) const {return pad_right_char8(total_width, padding_char);}
     template<>
-    ustring pad_right<xtd::char16>(size_t total_width, xtd::char16 padding_char) const {return pad_right_char16(total_width, padding_char);}
+    ustring pad_right<char16>(size_t total_width, char16 padding_char) const {return pad_right_char16(total_width, padding_char);}
     template<>
-    ustring pad_right<xtd::char32>(size_t total_width, xtd::char32 padding_char) const {return pad_right_char32(total_width, padding_char);}
+    ustring pad_right<char32>(size_t total_width, char32 padding_char) const {return pad_right_char32(total_width, padding_char);}
     template<>
-    ustring pad_right<xtd::wchar>(size_t total_width, xtd::wchar padding_char) const {return pad_right_wchar(total_width, padding_char);}
+    ustring pad_right<wchar>(size_t total_width, wchar padding_char) const {return pad_right_wchar(total_width, padding_char);}
     /// @endcond
 
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
@@ -1114,7 +1151,21 @@ namespace xtd {
     /// // demangled name = xtd::date_time
     /// ```
     static ustring demangle(const ustring& name);
-    
+
+    /// @brief Determines whether two specified xtd::ustring objects have the same value.
+    /// @param a The first string to compare.
+    /// @param b The second string to compare.
+    /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
+    /// @remarks This method performs an ordinal (case-sensitive) comparison.
+    static bool equals(const ustring& a, const ustring& b) noexcept;
+    /// @brief Determines whether two specified xtd::ustring objects have the same value, ignoring or honoring their case.
+    /// @param a The first string to compare.
+    /// @param b The second string to compare.
+    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
+    /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
+    /// @remarks This method performs an ordinal comparison.
+    static bool equals(const ustring& a, const ustring& b, bool ignore_case) noexcept;
+
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
     /// @param args arguments list to write using format.
@@ -1642,18 +1693,18 @@ namespace xtd {
     template<typename char_t>
     ustring pad_left_any_char(size_t total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
     ustring pad_left_char(size_t total_width, char padding_char) const noexcept;
-    ustring pad_left_char8(size_t total_width, xtd::char8 padding_char) const noexcept;
-    ustring pad_left_char16(size_t total_width, xtd::char16 padding_char) const noexcept;
-    ustring pad_left_char32(size_t total_width, xtd::char32 padding_char) const noexcept;
-    ustring pad_left_wchar(size_t total_width, xtd::wchar padding_char) const noexcept;
+    ustring pad_left_char8(size_t total_width, char8 padding_char) const noexcept;
+    ustring pad_left_char16(size_t total_width, char16 padding_char) const noexcept;
+    ustring pad_left_char32(size_t total_width, char32 padding_char) const noexcept;
+    ustring pad_left_wchar(size_t total_width, wchar padding_char) const noexcept;
     
     template<typename char_t>
     ustring pad_right_any_char(size_t total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
     ustring pad_right_char(size_t total_width, char padding_char) const noexcept;
-    ustring pad_right_char8(size_t total_width, xtd::char8 padding_char) const noexcept;
-    ustring pad_right_char16(size_t total_width, xtd::char16 padding_char) const noexcept;
-    ustring pad_right_char32(size_t total_width, xtd::char32 padding_char) const noexcept;
-    ustring pad_right_wchar(size_t total_width, xtd::wchar padding_char) const noexcept;
+    ustring pad_right_char8(size_t total_width, char8 padding_char) const noexcept;
+    ustring pad_right_char16(size_t total_width, char16 padding_char) const noexcept;
+    ustring pad_right_char32(size_t total_width, char32 padding_char) const noexcept;
+    ustring pad_right_wchar(size_t total_width, wchar padding_char) const noexcept;
 
     static const std::vector<value_type> default_split_separators;
     static const std::vector<value_type> default_trim_chars;
