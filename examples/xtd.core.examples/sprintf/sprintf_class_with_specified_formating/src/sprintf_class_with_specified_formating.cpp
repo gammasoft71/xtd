@@ -1,6 +1,6 @@
 #include <xtd/collections/generic/list>
 #include <xtd/format_exception>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace std;
 using namespace xtd;

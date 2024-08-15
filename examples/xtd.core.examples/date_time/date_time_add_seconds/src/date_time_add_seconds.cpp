@@ -1,7 +1,7 @@
 #include <xtd/console>
 #include <xtd/date_time>
 #include <xtd/startup>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace xtd;
 

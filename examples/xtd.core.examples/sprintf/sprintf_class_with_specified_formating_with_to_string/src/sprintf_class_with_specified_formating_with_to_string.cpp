@@ -1,6 +1,8 @@
 #include <xtd/collections/generic/list>
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/format_exception>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace xtd;
 using namespace xtd::collections;
@@ -33,10 +35,10 @@ using characters = generic::list<character>;
 
 auto main() -> int {
   character c("Jean-Luc Picard", "Captain");
-  std::cout << ustring::sprintf("%s", c.to_string()) << std::endl;
-  std::cout << ustring::sprintf("%s", c.to_string("F")) << std::endl;
-  std::cout << ustring::sprintf("%s", c.to_string("N")) << std::endl;
-  std::cout << ustring::sprintf("%s", c.to_string("R")) << std::endl;
+  console::out << ustring::sprintf("%s", c.to_string()) << environment::new_line;
+  console::out << ustring::sprintf("%s", c.to_string("F")) << environment::new_line;
+  console::out << ustring::sprintf("%s", c.to_string("N")) << environment::new_line;
+  console::out << ustring::sprintf("%s", c.to_string("R")) << environment::new_line;
 }
 
 // This code produces the following output :

@@ -1,7 +1,8 @@
 #include <xtd/format_exception>
-#include <xtd/ustring>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 class character : public iformatable {
@@ -11,8 +12,8 @@ public:
   const ustring& name() const noexcept {return name_;}
   const ustring& rank() const noexcept {return rank_;}
   
-  ustring to_string() const noexcept {return to_string("", locale {});}
-  ustring to_string(const ustring& format, const locale& loc) const override {
+  ustring to_string() const noexcept {return to_string("", std::locale {});}
+  ustring to_string(const ustring& format, const std::locale& loc) const override {
     auto fmt = ustring::is_empty(format) ? "F" : format;
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
@@ -28,10 +29,10 @@ private:
 auto main() -> int {
   auto c = character {"Jean-Luc Picard", "Captain"};
  
-  cout << ustring::format("{}", c) << endl;
-  cout << ustring::format("{:F}", c) << endl;
-  cout << ustring::format("{:N}", c) << endl;
-  cout << ustring::format("{:R}", c) << endl;
+  console::out << ustring::format("{}", c) << environment::new_line;
+  console::out << ustring::format("{:F}", c) << environment::new_line;
+  console::out << ustring::format("{:N}", c) << environment::new_line;
+  console::out << ustring::format("{:R}", c) << environment::new_line;
 }
 
 // This code produces the following output :

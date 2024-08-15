@@ -1,7 +1,8 @@
+#include <xtd/console>
 #include <xtd/date_time>
-#include <xtd/ustring>
+#include <xtd/environment>
+#include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
@@ -10,45 +11,45 @@ auto main() -> int {
   // auto t = std::time(nullptr);
   // auto date_time = *std::localtime(&t);
   
-  cout << ustring::format("{}", date_time) << endl;
-  cout << ustring::format("{:d}", date_time) << endl;
-  cout << ustring::format("{:D}", date_time) << endl;
-  cout << ustring::format("{:t}", date_time) << endl;
-  cout << ustring::format("{:T}", date_time) << endl;
-  cout << ustring::format("{:f}", date_time) << endl;
-  cout << ustring::format("{:F}", date_time) << endl;
-  cout << ustring::format("{:g}", date_time) << endl;
-  cout << ustring::format("{:G}", date_time) << endl;
-  //cout << ustring::format("{0:h} {0:i} {0:j} {0:l}", date_time) << endl;
-  //cout << ustring::format("{0:H} {0:I} {0:J} {0:L}", date_time) << endl;
-  //cout << ustring::format("{:i}/{0:k}/{0:l}", date_time) << endl;
-  //cout << ustring::format("{:I}/{0:K}/{0:L}", date_time) << endl;
-  cout << ustring::format("{:h}", date_time) << endl;
-  cout << ustring::format("{:H}", date_time) << endl;
-  cout << ustring::format("{:i}", date_time) << endl;
-  cout << ustring::format("{:I}", date_time) << endl;
-  cout << ustring::format("{:j}", date_time) << endl;
-  cout << ustring::format("{:J}", date_time) << endl;
-  cout << ustring::format("{:k}", date_time) << endl;
-  cout << ustring::format("{:K}", date_time) << endl;
-  cout << ustring::format("{:l}", date_time) << endl;
-  cout << ustring::format("{:L}", date_time) << endl;
-  cout << ustring::format("{:m}", date_time) << endl;
-  cout << ustring::format("{:M}", date_time) << endl;
-  cout << ustring::format("{:n}", date_time) << endl;
-  cout << ustring::format("{:n}", date_time) << endl;
-  cout << ustring::format("{:O}", date_time) << endl;
-  cout << ustring::format("{:s}", date_time) << endl;
-  cout << ustring::format("{:t}", date_time) << endl;
-  cout << ustring::format("{:T}", date_time) << endl;
-  cout << ustring::format("{:u}", date_time) << endl;
-  cout << ustring::format("{:U}", date_time) << endl;
-  cout << ustring::format("{:v}", date_time) << endl;
-  cout << ustring::format("{:V}", date_time) << endl;
-  cout << ustring::format("{:y}", date_time) << endl;
-  cout << ustring::format("{:Y}", date_time) << endl;
-  cout << ustring::format("{:z}", date_time) << endl;
-  cout << ustring::format("{:Z}", date_time) << endl;
+  console::out << ustring::format("{}", date_time) << environment::new_line;
+  console::out << ustring::format("{:d}", date_time) << environment::new_line;
+  console::out << ustring::format("{:D}", date_time) << environment::new_line;
+  console::out << ustring::format("{:t}", date_time) << environment::new_line;
+  console::out << ustring::format("{:T}", date_time) << environment::new_line;
+  console::out << ustring::format("{:f}", date_time) << environment::new_line;
+  console::out << ustring::format("{:F}", date_time) << environment::new_line;
+  console::out << ustring::format("{:g}", date_time) << environment::new_line;
+  console::out << ustring::format("{:G}", date_time) << environment::new_line;
+  //console::out << ustring::format("{0:h} {0:i} {0:j} {0:l}", date_time) << environment::new_line;
+  //console::out << ustring::format("{0:H} {0:I} {0:J} {0:L}", date_time) << environment::new_line;
+  //console::out << ustring::format("{:i}/{0:k}/{0:l}", date_time) << environment::new_line;
+  //console::out << ustring::format("{:I}/{0:K}/{0:L}", date_time) << environment::new_line;
+  console::out << ustring::format("{:h}", date_time) << environment::new_line;
+  console::out << ustring::format("{:H}", date_time) << environment::new_line;
+  console::out << ustring::format("{:i}", date_time) << environment::new_line;
+  console::out << ustring::format("{:I}", date_time) << environment::new_line;
+  console::out << ustring::format("{:j}", date_time) << environment::new_line;
+  console::out << ustring::format("{:J}", date_time) << environment::new_line;
+  console::out << ustring::format("{:k}", date_time) << environment::new_line;
+  console::out << ustring::format("{:K}", date_time) << environment::new_line;
+  console::out << ustring::format("{:l}", date_time) << environment::new_line;
+  console::out << ustring::format("{:L}", date_time) << environment::new_line;
+  console::out << ustring::format("{:m}", date_time) << environment::new_line;
+  console::out << ustring::format("{:M}", date_time) << environment::new_line;
+  console::out << ustring::format("{:n}", date_time) << environment::new_line;
+  console::out << ustring::format("{:n}", date_time) << environment::new_line;
+  console::out << ustring::format("{:O}", date_time) << environment::new_line;
+  console::out << ustring::format("{:s}", date_time) << environment::new_line;
+  console::out << ustring::format("{:t}", date_time) << environment::new_line;
+  console::out << ustring::format("{:T}", date_time) << environment::new_line;
+  console::out << ustring::format("{:u}", date_time) << environment::new_line;
+  console::out << ustring::format("{:U}", date_time) << environment::new_line;
+  console::out << ustring::format("{:v}", date_time) << environment::new_line;
+  console::out << ustring::format("{:V}", date_time) << environment::new_line;
+  console::out << ustring::format("{:y}", date_time) << environment::new_line;
+  console::out << ustring::format("{:Y}", date_time) << environment::new_line;
+  console::out << ustring::format("{:z}", date_time) << environment::new_line;
+  console::out << ustring::format("{:Z}", date_time) << environment::new_line;
 }
 
 // This code can be produce the following output :

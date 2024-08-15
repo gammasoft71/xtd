@@ -1,7 +1,7 @@
 #include <xtd/console>
 #include <xtd/time_span>
 #include <xtd/int64_object>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace xtd;
 

@@ -1,11 +1,13 @@
-#include <xtd/ustring>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/string>
 #include <optional>
 
 using namespace xtd;
 
 auto main() -> int {
-  std::cout << ustring::format("{}", std::optional<ustring>()) << std::endl;
-  std::cout << ustring::format("{}", std::optional<ustring>("Optional string")) << std::endl;
+  console::out << ustring::format("{}", std::optional<ustring>()) << environment::new_line;
+  console::out << ustring::format("{}", std::optional<ustring>("Optional string")) << environment::new_line;
 }
 
 // This code produces the following output :
