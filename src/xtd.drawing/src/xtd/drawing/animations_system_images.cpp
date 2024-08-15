@@ -24,7 +24,7 @@ std::vector<image> animations_system_images::get_images(const xtd::drawing::size
   return std::vector {process_working(size), };
 }
 
-const std::vector<ustring>& animations_system_images::get_image_names() noexcept {
+const std::vector<string>& animations_system_images::get_image_names() noexcept {
   static auto names = std::vector {"process-working"_s, };
   return names;
 }

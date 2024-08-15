@@ -213,8 +213,8 @@ constexpr size_t WS_SIZEBOX = WS_THICKFRAME;
 constexpr size_t WS_TILEDWINDOW = WS_OVERLAPPEDWINDOW;
 #endif
 
-inline static xtd::ustring __windows_style_to_string__(size_t style) {
-  xtd::ustring result = "WS_OVERLAPPED";
+inline static xtd::string __windows_style_to_string__(size_t style) {
+  xtd::string result = "WS_OVERLAPPED";
   
   if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) result += " | WS_MAXIMIZEBOX";
   if ((style & WS_MINIMIZEBOX) == WS_MINIMIZEBOX) result += " | WS_MINIMIZEBOX";

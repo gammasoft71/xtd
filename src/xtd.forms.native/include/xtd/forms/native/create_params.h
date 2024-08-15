@@ -36,13 +36,13 @@ namespace xtd {
         /// @brief Gets or sets the control's initial text.
         /// @return The control's initial text.
         /// @warning Internal use only
-        xtd::ustring caption;
+        xtd::string caption;
         
         /// @brief Gets or sets the name of the Windows class to derive the control from.
         /// @return The name of the Windows class to derive the control from.
         /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
         /// @warning Internal use only
-        xtd::ustring class_name;
+        xtd::string class_name;
         
         /// @brief Gets or sets a bitwise combination of class style values.
         /// @return A bitwise combination of the class style values.

@@ -37,8 +37,8 @@ size_t text_reader::read_block(std::vector<char>& buffer, size_t index, size_t c
   return read(buffer, index, count);
 }
 
-ustring text_reader::read_line() {
-  auto line = ustring::empty_string;
+string text_reader::read_line() {
+  auto line = string::empty_string;
   for (auto current = read(); current != EOF && current != '\n'; current = read()) {
     if (current == '\r') continue;
     line += static_cast<char>(current);
@@ -46,8 +46,8 @@ ustring text_reader::read_line() {
   return line;
 }
 
-ustring text_reader::read_to_end() {
-  auto text = ustring::empty_string;
+string text_reader::read_to_end() {
+  auto text = string::empty_string;
   for (int32 current = read(); current != EOF; current = read()) {
     if (current == '\r') continue;
     text += static_cast<char>(current);

@@ -44,11 +44,11 @@ file_dialog& file_dialog::check_path_exists(bool value) {
   return *this;
 }
 
-const xtd::ustring& file_dialog::default_ext() const noexcept {
+const xtd::string& file_dialog::default_ext() const noexcept {
   return data_->default_ext;
 }
 
-file_dialog& file_dialog::default_ext(const xtd::ustring& value) {
+file_dialog& file_dialog::default_ext(const xtd::string& value) {
   data_->default_ext = value;
   return *this;
 }
@@ -62,24 +62,24 @@ file_dialog& file_dialog::dereference_link(bool value) {
   return *this;
 }
 
-const xtd::ustring& file_dialog::file_name() const noexcept {
+const xtd::string& file_dialog::file_name() const noexcept {
   return data_->file_name;
 }
 
-file_dialog& file_dialog::file_name(const xtd::ustring& value) {
+file_dialog& file_dialog::file_name(const xtd::string& value) {
   data_->file_name = value;
   return *this;
 }
 
-const std::vector<xtd::ustring> file_dialog::file_names() const noexcept {
+const std::vector<xtd::string> file_dialog::file_names() const noexcept {
   return data_->file_names;
 }
 
-const xtd::ustring& file_dialog::filter() const noexcept {
+const xtd::string& file_dialog::filter() const noexcept {
   return data_->filter;
 }
 
-file_dialog& file_dialog::filter(const xtd::ustring& value) {
+file_dialog& file_dialog::filter(const xtd::string& value) {
   data_->filter = value;
   return *this;
 }
@@ -93,11 +93,11 @@ file_dialog& file_dialog::filter_index(size_t value) {
   return *this;
 }
 
-const xtd::ustring& file_dialog::initial_directory() const noexcept {
+const xtd::string& file_dialog::initial_directory() const noexcept {
   return data_->initial_directory;
 }
 
-file_dialog& file_dialog::initial_directory(const xtd::ustring& value) {
+file_dialog& file_dialog::initial_directory(const xtd::string& value) {
   data_->initial_directory = value;
   return *this;
 }
@@ -151,11 +151,11 @@ file_dialog& file_dialog::support_multi_dotted_extensions(bool value) {
   return *this;
 }
 
-const xtd::ustring& file_dialog::title() const noexcept {
+const xtd::string& file_dialog::title() const noexcept {
   return data_->title;
 }
 
-file_dialog& file_dialog::title(const xtd::ustring& value) {
+file_dialog& file_dialog::title(const xtd::string& value) {
   data_->title = value;
   return *this;
 }
@@ -183,8 +183,8 @@ void file_dialog::reset() noexcept {
   data_->title = "";
 }
 
-xtd::ustring file_dialog::to_string() const noexcept {
-  return ustring::format("{}: title: {}, filename: {}", get_type().full_name(), data_->title, data_->file_name);
+xtd::string file_dialog::to_string() const noexcept {
+  return string::format("{}: title: {}, filename: {}", get_type().full_name(), data_->title, data_->file_name);
 }
 
 bool file_dialog::run_dialog(intptr hwnd_owner) {

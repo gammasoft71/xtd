@@ -128,7 +128,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Static methodds
@@ -157,7 +157,7 @@ namespace xtd {
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
-      cursor(intptr handle, bool destroyable, const xtd::ustring& name);
+      cursor(intptr handle, bool destroyable, const xtd::string& name);
       
       xtd::sptr<data> data_;
     };

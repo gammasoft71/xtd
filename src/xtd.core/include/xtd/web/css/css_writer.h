@@ -19,7 +19,7 @@ namespace xtd {
         /// @{
         css_writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
         css_writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
-        css_writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
+        css_writer(const xtd::string& path) : text_writer_(new xtd::io::stream_writer(path)) {}
         /// @}
         /// @cond
         ~css_writer() {if (delete_when_destroy_) delete text_writer_;}

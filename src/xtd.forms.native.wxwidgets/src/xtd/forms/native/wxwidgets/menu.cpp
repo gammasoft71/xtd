@@ -26,7 +26,7 @@ void menu::insert_item(intptr menu, size_t pos, intptr menu_item) {
   reinterpret_cast<wxMenu*>(menu)->Insert(pos, reinterpret_cast<wxMenuItem*>(menu_item));
 }
 
-void menu::insert_menu(intptr menu, size_t pos, intptr menu_item, const ustring& text) {
+void menu::insert_menu(intptr menu, size_t pos, intptr menu_item, const string& text) {
   if (menu == 0) throw argument_exception {csf_};
   if (menu_item == 0) throw argument_exception {csf_};
   reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text), reinterpret_cast<wxMenu*>(menu_item));
@@ -42,7 +42,7 @@ void menu::remove_item(intptr menu, size_t pos) {
   reinterpret_cast<wxMenu*>(menu)->Remove(reinterpret_cast<wxMenu*>(menu)->FindItemByPosition(pos));
 }
 
-void menu::text(intptr menu, const xtd::ustring& text) {
+void menu::text(intptr menu, const xtd::string& text) {
   if (menu == 0) throw argument_exception {csf_};
   auto wx_menu = reinterpret_cast<wxMenu*>(menu);
   if (wx_menu->GetMenuBar()) wx_menu->GetMenuBar()->SetMenuLabel(wx_menu->GetMenuBar()->FindMenu(wx_menu->GetTitle()), text);

@@ -24,6 +24,6 @@ bool debugger::launch() {
   return native::debugger::launch();
 }
 
-void debugger::log(int32 level, const ustring& category, const ustring& message) {
+void debugger::log(int32 level, const string& category, const string& message) {
   return native::debugger::log(level, category, message);
 }

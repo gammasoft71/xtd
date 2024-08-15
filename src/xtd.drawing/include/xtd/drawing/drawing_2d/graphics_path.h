@@ -361,33 +361,33 @@ namespace xtd {
         void add_rounded_rectangle(float x, float y, float width, float height, float radius);
         
         /// @brief Adds a text string to this path.
-        /// @param s The xtd::ustring to add.
+        /// @param s The xtd::string to add.
         /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
         /// @param em_size The height of the em square box that bounds the character.
         /// @param origin A xtd::drawing::point that represents the point where the text starts.
         /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& origin, const xtd::drawing::string_format& format);
+        void add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& origin, const xtd::drawing::string_format& format);
         /// @brief Adds a text string to this path.
-        /// @param s The xtd::ustring to add.
+        /// @param s The xtd::string to add.
         /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
         /// @param em_size The height of the em square box that bounds the character.
         /// @param origin A xtd::drawing::point_f that represents the point where the text starts.
         /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format);
+        void add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format);
         /// @brief Adds a text string to this path.
-        /// @param s The xtd::ustring to add.
+        /// @param s The xtd::string to add.
         /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
         /// @param em_size The height of the em square box that bounds the character.
         /// @param layout_rect A xtd::drawing::rectangle that represents the rectangle that bounds the text.
         /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format);
+        void add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format);
         /// @brief Adds a text string to this path.
-        /// @param s The xtd::ustring to add.
+        /// @param s The xtd::string to add.
         /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
         /// @param em_size The height of the em square box that bounds the character.
         /// @param layout_rect A xtd::drawing::rectangle_f that represents the rectangle that bounds the text.
         /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format);
+        void add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format);
         
         /// @brief Closes all open figures in this path and starts a new figure. It closes each open figure by connecting a line from its endpoint to its starting point.
         void close_all_figures();
@@ -440,7 +440,7 @@ namespace xtd {
         /// @remarks This method starts a new subpath in the path. Subpaths allow you to separate a path into sections and use the xtd::drawing::drawing_2d::graphics_path_iterator class to iterate through the subpaths.
         void start_figure();
         
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
         
       private:

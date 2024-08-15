@@ -17,14 +17,14 @@ struct cursor::data {
   intptr handle_ = 0;
   bool destroyable_ = true;
   xtd::drawing::point hot_spot_;
-  xtd::ustring name_;
+  xtd::string name_;
   xtd::drawing::size size_;
   std::any tag_;
 };
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(xtd::new_sptr<data>()) {
+cursor::cursor(intptr handle, bool destroyable, const xtd::string& name) : data_(xtd::new_sptr<data>()) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -38,7 +38,7 @@ cursor::cursor() : data_(xtd::new_sptr<data>()) {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor(intptr handle) : cursor(handle, false, ustring::empty_string) {
+cursor::cursor(intptr handle) : cursor(handle, false, string::empty_string) {
 }
 
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(xtd::new_sptr<data>()) {
@@ -113,6 +113,6 @@ void cursor::show() {
   native::cursor::show();
 }
 
-ustring cursor::to_string() const noexcept {
-  return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : get_type().full_name());
+string cursor::to_string() const noexcept {
+  return string::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : get_type().full_name());
 }

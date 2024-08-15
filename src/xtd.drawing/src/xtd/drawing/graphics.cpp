@@ -572,11 +572,11 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
 
-void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
+void graphics::draw_rotated_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
   draw_rotated_string(s, font, brush, point.x(), point.y(), angle);
 }
 
-void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
+void graphics::draw_rotated_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
   native::graphics::draw_rotated_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle);
 }
 
@@ -597,27 +597,27 @@ void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, flo
   native::graphics::draw_rounded_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {
+void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {
   draw_string(s, font, brush, layout_rectangle, string_format());
 }
 
-void graphics::draw_string(const ustring& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+void graphics::draw_string(const string& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
   native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(layout_rectangle.x()), to_pixels(layout_rectangle.y()), to_pixels(layout_rectangle.width()), to_pixels(layout_rectangle.height()), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), static_cast<int32>(format.format_flags()));
 }
 
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
+void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
   draw_string(s, font, brush, point.x(), point.y(), string_format());
 }
 
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
+void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
   draw_string(s, font, brush, point.x(), point.y(), format);
 }
 
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
+void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
   draw_string(s, font, brush, x, y, string_format());
 }
 
-void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
+void graphics::draw_string(const string& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
   native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
 }
 
@@ -851,31 +851,31 @@ bool graphics::is_visible(float x, float y) {
   return clip().is_visible(x, y, *this);
 }
 
-size_f graphics::measure_string(const ustring& text, const font& font) {
+size_f graphics::measure_string(const string& text, const font& font) {
   return measure_string(text, font, size_f(single_object::max_value, single_object::max_value), string_format());
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area) {
   return measure_string(text, font, layout_area, string_format());
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32 width) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, int32 width) {
   return measure_string(text, font, size_f(as<float>(width), single_object::max_value), string_format());
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
   return measure_string(text, font, size_f(single_object::max_value, single_object::max_value), format);
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format) {
   return measure_string(text, font, layout_area, format, int32_object::max_value, int32_object::max_value);
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32 width, const xtd::drawing::string_format& format) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, int32 width, const xtd::drawing::string_format& format) {
   return measure_string(text, font, size_f(as<float>(width), single_object::max_value), format);
 }
 
-size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
   auto string_width = 0.0f;
   auto string_height = 0.0f;
   native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, to_pixels(layout_area.width()), to_pixels(layout_area.height()), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);
@@ -949,7 +949,7 @@ void graphics::translate_transform(float dx, float dy, matrix_order order) {
   native::graphics::translate_transform(handle(), to_pixels(dx), to_pixels(dy), static_cast<int32>(order));
 }
 
-ustring graphics::trim_string(const ustring& text, const font& font, float width, string_trimming trimming) {
+string graphics::trim_string(const string& text, const font& font, float width, string_trimming trimming) {
   auto result = text;
   return native::graphics::trim_string(handle(), text, font.handle(), width, static_cast<int32>(trimming));
 }

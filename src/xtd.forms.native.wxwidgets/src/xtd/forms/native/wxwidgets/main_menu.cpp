@@ -12,7 +12,7 @@ using namespace xtd::forms::native;
 
 #if defined(__WXOSX__)
 namespace {
-  static bool is_help_item(const xtd::ustring& text) {
+  static bool is_help_item(const xtd::string& text) {
     wxString itemText = text;
     itemText.Replace(L"&", L"");
     itemText.Replace(L".", L"");
@@ -20,7 +20,7 @@ namespace {
     return itemText == L"help";
   }
   
-  static bool is_window_item(const xtd::ustring& text) {
+  static bool is_window_item(const xtd::string& text) {
     wxString itemText = text;
     itemText.Replace(L"&", L"");
     itemText.Replace(L".", L"");
@@ -40,7 +40,7 @@ void main_menu::destroy(intptr main_menu) {
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
-void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const ustring& text) {
+void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const string& text) {
   if (main_menu == 0) throw argument_exception {csf_};
   if (menu_item == 0) throw argument_exception {csf_};
   

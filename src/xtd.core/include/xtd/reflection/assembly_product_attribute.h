@@ -29,25 +29,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_product_attribute class.
       /// @param product The product information.
-      explicit assembly_product_attribute(const ustring& product);
+      explicit assembly_product_attribute(const string& product);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_product_attribute(const ustring& product, const object& executing_assembly);
+      assembly_product_attribute(const string& product, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets product information.
       /// @return A string containing the product information.
-      const ustring& product() const noexcept;
+      const string& product() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring product_;
+      string product_;
     };
   }
 }

@@ -39,14 +39,14 @@ namespace xtd {
     /// class program {
     /// public:
     ///   static auto main() {
-    ///     ustring source_directory = R"(C:\current)";
-    ///     ustring archive_directory = R"(C:\archive)";
+    ///     string source_directory = R"(C:\current)";
+    ///     string archive_directory = R"(C:\archive)";
     ///
     ///     try {
     ///       auto txt_files = directory::enumerate_files(source_directory, "*.txt");
     ///
-    ///       for (ustring current_file : txt_files) {
-    ///         ustring file_name = current_file.substring(source_directory.size() + 1);
+    ///       for (string current_file : txt_files) {
+    ///         string file_name = current_file.substring(source_directory.size() + 1);
     ///         directory::move(current_file, path::combine(archive_directory, file_name));
     ///       }
     ///     } catch (system_exception& e) {
@@ -68,8 +68,8 @@ namespace xtd {
     /// class program {
     /// public:
     ///   static auto main() {
-    ///     ustring source_directory = R"(C:\source)";
-    ///     ustring destination_directory = R"(C:\destination)";
+    ///     string source_directory = R"(C:\source)";
+    ///     string destination_directory = R"(C:\destination)";
     ///
     ///     try {
     ///       directory::move(source_directory, destination_directory);
@@ -95,7 +95,7 @@ namespace xtd {
     /// * "\\\\MyServer\\MyShare".
     /// @remarks By default, full read/write access to new directories is granted to all users. However, the app must have the correct security to access existing directories.
     /// @remarks To demand permissions for a directory and all its subdirectories, end the path string with the directory separator character. (For example, "C:\Temp\" grants access to C:\Temp\ and all its subdirectories.) To demand permissions only for a specific directory, end the path string with a period. (For example, "C:\Temp\." grants access only to C:\Temp\, not to its subdirectories.)
-    /// @remarks In members that accept a search_pattern parameter, the search string can be any combination of literal characters and two wildcard characters; * and ?. This parameter does not recognize regular expressions. For more information, see the xtd::io::directory::enumerate_directories(ustring, ustring) method or any other method that uses the search_pattern parameter.
+    /// @remarks In members that accept a search_pattern parameter, the search string can be any combination of literal characters and two wildcard characters; * and ?. This parameter does not recognize regular expressions. For more information, see the xtd::io::directory::enumerate_directories(string, string) method or any other method that uses the search_pattern parameter.
     /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
     /// @remarks xtd::io::directory and xtd::io::directory_info are not supported for use in Windows Store apps. For information about how to access files and folders in Windows Store apps, see [Accessing data and files (Windows Store apps)](https://msdn.microsoft.com/library/windows/apps/hh758319.aspx).
     class core_export_ directory static_ {
@@ -104,14 +104,14 @@ namespace xtd {
       class directory_iterator : public xtd::iequatable<directory_iterator> {
         struct data;
         
-        explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
+        explicit directory_iterator(const xtd::string& path, const xtd::string& pattern);
       public:
         /// @cond
         using iterator_category = std::input_iterator_tag;
-        using value_type = xtd::ustring;
-        using difference_type = xtd::ustring;
-        using pointer = xtd::ustring*;
-        using reference = xtd::ustring&;
+        using value_type = xtd::string;
+        using difference_type = xtd::string;
+        using pointer = xtd::string*;
+        using reference = xtd::string&;
         
         directory_iterator();
         directory_iterator(const directory_iterator&) = default;
@@ -139,10 +139,10 @@ namespace xtd {
       public:
         /// @cond
         using iterator_category = std::input_iterator_tag;
-        using value_type = xtd::ustring;
-        using difference_type = xtd::ustring;
-        using pointer = xtd::ustring*;
-        using reference = xtd::ustring&;
+        using value_type = xtd::string;
+        using difference_type = xtd::string;
+        using pointer = xtd::string*;
+        using reference = xtd::string&;
         
         file_iterator();
         file_iterator(const file_iterator&) = default;
@@ -170,10 +170,10 @@ namespace xtd {
       public:
         /// @cond
         using iterator_category = std::input_iterator_tag;
-        using value_type = xtd::ustring;
-        using difference_type = xtd::ustring;
-        using pointer = xtd::ustring*;
-        using reference = xtd::ustring&;
+        using value_type = xtd::string;
+        using difference_type = xtd::string;
+        using pointer = xtd::string*;
+        using reference = xtd::string&;
         
         file_system_entry_iterator();
         file_system_entry_iterator(const file_system_entry_iterator&) = default;
@@ -253,7 +253,7 @@ namespace xtd {
       /// @remarks Trailing spaces are removed from the end of the path parameter before creating the directory.
       /// @remarks Creating a directory with only the colon character (:) is not supported, and will cause a not_supported_exception to be thrown.
       /// @remarks On Unix systems, use a forward slash (/) as path separator.
-      static xtd::io::directory_info create_directory(const xtd::ustring& path);
+      static xtd::io::directory_info create_directory(const xtd::string& path);
       
       /// @brief Returns an enumerable collection of directory full names in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -277,9 +277,9 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Set a variable to the My Documents path.
-      ///       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+      ///       string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       ///
-      ///       list<ustring> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
+      ///       list<string> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
       ///
       ///       for (auto dir : dirs) {
       ///         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
@@ -297,7 +297,7 @@ namespace xtd {
       /// ```
       /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
-      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path);
+      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::string& path);
       /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -320,10 +320,10 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     try {
-      ///       ustring dir_path = R"(\\archives\2009\reports)";
+      ///       string dir_path = R"(\\archives\2009\reports)";
       ///
       ///       // Create a List collection.
-      ///       auto dirs = list<ustring>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
+      ///       auto dirs = list<string>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
       ///
       ///       // Show results.
       ///       for (auto dir : dirs) {
@@ -350,7 +350,7 @@ namespace xtd {
       /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
-      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns an enumerable collection of full file names in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -371,14 +371,14 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring source_directory = R"(C:\current)";
-      ///     ustring archive_directory = R"(C:\archive)";
+      ///     string source_directory = R"(C:\current)";
+      ///     string archive_directory = R"(C:\archive)";
       ///
       ///     try {
       ///       auto txt_files = directory::enumerate_files(source_directory);
       ///
-      ///       for (ustring current_file : txt_files) {
-      ///         ustring file_name = current_file.substring(source_directory.size() + 1);
+      ///       for (string current_file : txt_files) {
+      ///         string file_name = current_file.substring(source_directory.size() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
       ///     } catch (system_exception& e) {
@@ -391,7 +391,7 @@ namespace xtd {
       /// ```
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned. When you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
-      static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path);
+      static xtd::io::directory::file_iterator enumerate_files(const xtd::string& path);
       /// @brief Returns an enumerable collection of full file names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -412,14 +412,14 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring source_directory = R"(C:\current)";
-      ///     ustring archive_directory = R"(C:\archive)";
+      ///     string source_directory = R"(C:\current)";
+      ///     string archive_directory = R"(C:\archive)";
       ///
       ///     try {
       ///       auto txt_files = directory::enumerate_files(source_directory, "*.txt");
       ///
-      ///       for (ustring current_file : txt_files) {
-      ///         ustring file_name = current_file.substring(source_directory.size() + 1);
+      ///       for (string current_file : txt_files) {
+      ///         string file_name = current_file.substring(source_directory.size() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
       ///     } catch (system_exception& e) {
@@ -439,7 +439,7 @@ namespace xtd {
       /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::ioo::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
-      static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static xtd::io::directory::file_iterator enumerate_files(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns an enumerable collection of file names and directory names in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -451,7 +451,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_file_system_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files_system_entires can be more efficient.
-      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::ustring& path);
+      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::string& path);
       /// @brief Returns an enumerable collection of file names and directory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param serach_pattern The search string to match against the names of file-system entries in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -470,7 +470,7 @@ namespace xtd {
       /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::ioo::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_file_system_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_entries can be more efficient.
-      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Determines whether the given path refers to an existing directory on disk.
       /// @param path The path to test.
@@ -486,8 +486,8 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const list<ustring>& args) {
-      ///     for (ustring path : args) {
+      ///   static auto main(const list<string>& args) {
+      ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
       ///         process_file(path);
@@ -502,20 +502,20 @@ namespace xtd {
       ///
       ///   // Process all files in the directory passed in, recurse on any directories
       ///   // that are found, and process the files they contain.
-      ///   static void process_directory(const ustring& target_directory) {
+      ///   static void process_directory(const string& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     list<ustring> file_entries = directory::get_files(target_directory);
-      ///     for (ustring file_name : file_entries)
+      ///     list<string> file_entries = directory::get_files(target_directory);
+      ///     for (string file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     list<ustring> subdirectory_entries = directory::get_directories(target_directory);
-      ///     for (ustring subdirectory : subdirectory_entries)
+      ///     list<string> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (string subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
       ///
       ///   // Insert logic for processing found files here.
-      ///   static void process_file(const ustring& path) {
+      ///   static void process_file(const string& path) {
       ///     console::write_line("Processed file '{0}'.", path);
       ///   }
       /// };
@@ -527,7 +527,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks If you do not have at a minimum read-only permission to the directory, the Exists method will return false.
       /// @remarks The xtd::io::directory::exists method returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
-      static bool exists(const xtd::ustring& path);
+      static bool exists(const xtd::string& path);
       
       /// @brief Gets the creation date and time of a directory.
       /// @param path The path of the directory.
@@ -570,7 +570,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      static xtd::date_time get_creation_time(const xtd::ustring& path);
+      static xtd::date_time get_creation_time(const xtd::string& path);
       
       /// @brief Gets the current working directory of the application.
       /// @return A string that contains the absolute path of the current working directory, and does not end with a backslash (\).
@@ -589,8 +589,8 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Get the current directory.
-      ///       ustring path = directory::get_current_directory();
-      ///       ustring target = R"(c:\temp)";
+      ///       string path = directory::get_current_directory();
+      ///       string target = R"(c:\temp)";
       ///       console::write_line("The current directory is {0}", path);
       ///       if (!directory::exists(target)) {
       ///         directory::create_directory(target);
@@ -613,7 +613,7 @@ namespace xtd {
       /// ```
       /// @remarks The current directory is distinct from the original directory, which is the one from which the process was started.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static xtd::ustring get_current_directory();
+      static xtd::string get_current_directory();
       
       /// @brief Returns the names of subdirectories (including their paths) in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -634,8 +634,8 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const list<ustring>& args) {
-      ///     for (ustring path : args) {
+      ///   static auto main(const list<string>& args) {
+      ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
       ///         process_file(path);
@@ -650,33 +650,33 @@ namespace xtd {
       ///
       ///   // Process all files in the directory passed in, recurse on any directories
       ///   // that are found, and process the files they contain.
-      ///   static void process_directory(const ustring& target_directory) {
+      ///   static void process_directory(const string& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     std::vector<ustring> file_entries = directory::get_files(target_directory);
-      ///     for (ustring file_name : file_entries)
+      ///     std::vector<string> file_entries = directory::get_files(target_directory);
+      ///     for (string file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     std::vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
-      ///     for (ustring subdirectory : subdirectory_entries)
+      ///     std::vector<string> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (string subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
       ///
       ///   // Insert logic for processing found files here.
-      ///   static void process_file(const ustring& path) {
+      ///   static void process_file(const string& path) {
       ///     console::write_line("Processed file '{0}'.", path);
       ///   }
       /// };
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks This method is identical to xtd::io::directory::get_directories(ustring, ustring) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
+      /// @remarks This method is identical to xtd::io::directory::get_directories(string, string) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The names returned by this method are prefixed with the directory information provided in path.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_directories(const xtd::ustring& path);
+      static std::vector<xtd::string> get_directories(const xtd::string& path);
       /// @brief Returns the names of subdirectories (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of subdirectories in path. This parameter can contain a combination of valid literal and wildcard characters, but it doesn't support regular expressions.
@@ -700,9 +700,9 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get subdirectories that begin with the letter "p."
-      ///       list<ustring> dirs = directory::get_directories(R"(c:\)", "p*");
+      ///       list<string> dirs = directory::get_directories(R"(c:\)", "p*");
       ///       console::write_line("The number of directories starting with p is {0}.", dirs.size());
-      ///       for (ustring dir : dirs) {
+      ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
       ///     } catch (const system_exception& e) {
@@ -724,7 +724,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information, and is not case-sensitive. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static std::vector<xtd::string> get_directories(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the volume information, root information, or both for the specified path.
       /// @param path The path of a file or directory.
@@ -747,7 +747,7 @@ namespace xtd {
       ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
       ///     // or the sample will throw a DirectoryNotFoundException.
-      ///     ustring dir = R"(C:\test)";
+      ///     string dir = R"(C:\test)";
       ///     try {
       ///       //Set the current directory.
       ///       directory::set_current_directory(dir);
@@ -766,7 +766,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static xtd::ustring get_directory_root(const xtd::ustring& path);
+      static xtd::string get_directory_root(const xtd::string& path);
       
       /// @brief Returns the names of files (including their paths) in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -788,7 +788,7 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main(const std::vector<list>& args) {
-      ///     for (ustring path : args) {
+      ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
       ///         process_file(path);
@@ -803,20 +803,20 @@ namespace xtd {
       ///
       ///   // Process all files in the directory passed in, recurse on any directories
       ///   // that are found, and process the files they contain.
-      ///   static void process_directory(const ustring& target_directory) {
+      ///   static void process_directory(const string& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     std::vector<ustring> file_entries = directory::get_files(target_directory);
-      ///     for (ustring file_name : file_entries)
+      ///     std::vector<string> file_entries = directory::get_files(target_directory);
+      ///     for (string file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     std::vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
-      ///     for (ustring subdirectory : subdirectory_entries)
+      ///     std::vector<string> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (string subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
       ///
       ///   // Insert logic for processing found files here.
-      ///   static void process_file(const ustring& path) {
+      ///   static void process_file(const string& path) {
       ///     console::write_line("Processed file '{0}'.", path);
       ///   }
       /// };
@@ -825,12 +825,12 @@ namespace xtd {
       /// ```
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       /// @remarks The returned file names are appended to the supplied path parameter.
-      /// @remarks This method is identical to xtd::io::directory::get_files(ustring, ustring) with the asterisk (*) specified as the search pattern.
+      /// @remarks This method is identical to xtd::io::directory::get_files(string, string) with the asterisk (*) specified as the search pattern.
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The order of the returned file names is not guaranteed; use the std:::sort method if a specific sort order is required.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_files(const xtd::ustring& path);
+      static std::vector<xtd::string> get_files(const xtd::string& path);
       /// @brief Returns the names of files (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -854,9 +854,9 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get files that begin with the letter "c".
-      ///       list<ustring> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       list<string> dirs = directory::get_files(R"(c:\", "c*)");
       ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
-      ///       for (ustring dir : dirs) {
+      ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
       ///     } catch (const system_exception& e) {
@@ -884,7 +884,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static std::vector<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the names of all files and subdirectories in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -907,8 +907,8 @@ namespace xtd {
       ///   static auto main() {
       ///     program snippets;
       ///
-      ///     ustring path = io::directory::get_current_directory();
-      ///     ustring filter = "*.exe";
+      ///     string path = io::directory::get_current_directory();
+      ///     string filter = "*.exe";
       ///
       ///     snippets.print_file_system_entries(path);
       ///     snippets.print_file_system_entries(path, filter);
@@ -917,12 +917,12 @@ namespace xtd {
       ///     snippets.move("C:\\proof", "C:\\Temp");
       ///   }
       ///
-      ///   void print_file_system_entries(const ustring& path) {
+      ///   void print_file_system_entries(const string& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path);
       ///
-      ///    for (xtd::ustring str : directory_entries) {
+      ///    for (xtd::string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -937,9 +937,9 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
-      ///       for (ustring str : directory_entries) {
+      ///       for (string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -954,9 +954,9 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       list<ustring> drives = io::directory::get_logical_drives();
+      ///       list<string> drives = io::directory::get_logical_drives();
       ///
-      ///       for (ustring str : drives) {
+      ///       for (string str : drives) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const io::io_exception&) {
@@ -966,7 +966,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void get_parent(const ustring& path) {
+      ///   void get_parent(const string& path) {
       ///     try {
       ///       io::directory_info directory_info = io::directory::get_parent(path);
       ///
@@ -976,7 +976,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///   void move(const string& source_path, const string& destination_path) {
       ///     try {
       ///       io::directory::move(source_path, destination_path);
       ///       console::write_line("The directory move is complete.");
@@ -998,7 +998,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path);
+      static std::vector<xtd::string> get_file_system_entries(const xtd::string& path);
       /// @brief Returns an array of file names and directory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param serach_pattern The search string to match against the names of file and directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -1021,8 +1021,8 @@ namespace xtd {
       ///   static auto main() {
       ///     program snippets;
       ///
-      ///     ustring path = io::directory::get_current_directory();
-      ///     ustring filter = "*.exe";
+      ///     string path = io::directory::get_current_directory();
+      ///     string filter = "*.exe";
       ///
       ///     snippets.print_file_system_entries(path);
       ///     snippets.print_file_system_entries(path, filter);
@@ -1031,12 +1031,12 @@ namespace xtd {
       ///     snippets.move("C:\\proof", "C:\\Temp");
       ///   }
       ///
-      ///   void print_file_system_entries(const ustring& path) {
+      ///   void print_file_system_entries(const string& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path);
       ///
-      ///    for (xtd::ustring str : directory_entries) {
+      ///    for (xtd::string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1051,9 +1051,9 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
-      ///       for (ustring str : directory_entries) {
+      ///       for (string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1068,9 +1068,9 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       list<ustring> drives = io::directory::get_logical_drives();
+      ///       list<string> drives = io::directory::get_logical_drives();
       ///
-      ///       for (ustring str : drives) {
+      ///       for (string str : drives) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const io::io_exception&) {
@@ -1080,7 +1080,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void get_parent(const ustring& path) {
+      ///   void get_parent(const string& path) {
       ///     try {
       ///       io::directory_info directory_info = io::directory::get_parent(path);
       ///
@@ -1090,7 +1090,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///   void move(const string& source_path, const string& destination_path) {
       ///     try {
       ///       io::directory::move(source_path, destination_path);
       ///       console::write_line("The directory move is complete.");
@@ -1123,7 +1123,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      static std::vector<xtd::string> get_file_system_entries(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the date and time the specified file or directory was last accessed.
       /// @param path The file or directory for which to obtain access date and time information.
@@ -1145,7 +1145,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     try {
-      ///       ustring path = R"(c:\MyDir)";
+      ///       string path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
       ///         directory::create_directory(path);
       ///       }
@@ -1175,7 +1175,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static xtd::date_time get_last_access_time(const xtd::ustring& path);
+      static xtd::date_time get_last_access_time(const xtd::string& path);
       
       /// @brief Returns the date and time the specified file or directory was last written to.
       /// @param path The file or directory for which to obtain modification date and time information.
@@ -1197,7 +1197,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     try {
-      ///       ustring path = R"(c:\MyDir)";
+      ///       string path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
       ///         directory::create_directory(path);
       ///       }
@@ -1226,7 +1226,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static xtd::date_time get_last_write_time(const xtd::ustring& path);
+      static xtd::date_time get_last_write_time(const xtd::string& path);
       
       /// @brief Retrieves the names of the logical drives on this computer in the form "<drive letter>:\".
       /// @return The logical drives on this computer.
@@ -1245,8 +1245,8 @@ namespace xtd {
       ///   static auto main() {
       ///     program snippets;
       ///
-      ///     ustring path = io::directory::get_current_directory();
-      ///     ustring filter = "*.exe";
+      ///     string path = io::directory::get_current_directory();
+      ///     string filter = "*.exe";
       ///
       ///     snippets.print_file_system_entries(path);
       ///     snippets.print_file_system_entries(path, filter);
@@ -1255,12 +1255,12 @@ namespace xtd {
       ///     snippets.move("C:\\proof", "C:\\Temp");
       ///   }
       ///
-      ///   void print_file_system_entries(const ustring& path) {
+      ///   void print_file_system_entries(const string& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path);
       ///
-      ///    for (xtd::ustring str : directory_entries) {
+      ///    for (xtd::string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1275,9 +1275,9 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
-      ///       for (ustring str : directory_entries) {
+      ///       for (string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1292,9 +1292,9 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       list<ustring> drives = io::directory::get_logical_drives();
+      ///       list<string> drives = io::directory::get_logical_drives();
       ///
-      ///       for (ustring str : drives) {
+      ///       for (string str : drives) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const io::io_exception&) {
@@ -1304,7 +1304,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void get_parent(const ustring& path) {
+      ///   void get_parent(const string& path) {
       ///     try {
       ///       io::directory_info directory_info = io::directory::get_parent(path);
       ///
@@ -1314,7 +1314,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///   void move(const string& source_path, const string& destination_path) {
       ///     try {
       ///       io::directory::move(source_path, destination_path);
       ///       console::write_line("The directory move is complete.");
@@ -1332,7 +1332,7 @@ namespace xtd {
       /// ```
       /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::ustring> get_logical_drives();
+      static std::vector<xtd::string> get_logical_drives();
       
       /// @brief Retrieves the parent directory of the specified path, including both absolute and relative paths.
       /// @param path The path for which to retrieve the parent directory.
@@ -1355,8 +1355,8 @@ namespace xtd {
       ///   static auto main() {
       ///     program snippets;
       ///
-      ///     ustring path = io::directory::get_current_directory();
-      ///     ustring filter = "*.exe";
+      ///     string path = io::directory::get_current_directory();
+      ///     string filter = "*.exe";
       ///
       ///     snippets.print_file_system_entries(path);
       ///     snippets.print_file_system_entries(path, filter);
@@ -1365,12 +1365,12 @@ namespace xtd {
       ///     snippets.move("C:\\proof", "C:\\Temp");
       ///   }
       ///
-      ///   void print_file_system_entries(const ustring& path) {
+      ///   void print_file_system_entries(const string& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path);
       ///
-      ///    for (xtd::ustring str : directory_entries) {
+      ///    for (xtd::string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1385,9 +1385,9 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<string> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
-      ///       for (ustring str : directory_entries) {
+      ///       for (string str : directory_entries) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const security::security_exception&) {
@@ -1402,9 +1402,9 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       list<ustring> drives = io::directory::get_logical_drives();
+      ///       list<string> drives = io::directory::get_logical_drives();
       ///
-      ///       for (ustring str : drives) {
+      ///       for (string str : drives) {
       ///         console::write_line(str);
       ///       }
       ///     } catch (const io::io_exception&) {
@@ -1414,7 +1414,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void get_parent(const ustring& path) {
+      ///   void get_parent(const string& path) {
       ///     try {
       ///       io::directory_info directory_info = io::directory::get_parent(path);
       ///
@@ -1424,7 +1424,7 @@ namespace xtd {
       ///     }
       ///   }
       ///
-      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///   void move(const string& source_path, const string& destination_path) {
       ///     try {
       ///       io::directory::move(source_path, destination_path);
       ///       console::write_line("The directory move is complete.");
@@ -1445,13 +1445,13 @@ namespace xtd {
       /// @remarks The string returned by this method consists of all characters in the path up to, but not including, the last xtd::io::path::directory_separator_char or alt_directory_separator_char. For example, passing the path "C:\Directory\SubDirectory\test.txt" to xtd::io::directory::get_parent returns "C:\Directory\SubDirectory". Passing "C:\Directory\SubDirectory" returns "C:\Directory". However, passing "C:\Directory\SubDirectory\" returns "C:\Directory\SubDirectory", because the ending directory separator is after "SubDirectory".
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static xtd::io::directory_info get_parent(const xtd::ustring& path);
+      static xtd::io::directory_info get_parent(const xtd::string& path);
       
       /// @brief Gets the xtd::io::file_permissions of the directory on the path.
       /// @param path The path to the directory.
       /// @return The xtd::io::file_permissions of the directory on the path.
       /// @exception xtd::io::directory_not_found_exception if directory src does not exists.
-      static xtd::io::file_permissions get_permissions(const xtd::ustring& path);
+      static xtd::io::file_permissions get_permissions(const xtd::string& path);
       
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param source_dir_name The path of the file or directory to move.
@@ -1471,8 +1471,8 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring source_directory = R"(C:\source)";
-      ///     ustring destination_directory = R"(C:\destination)";
+      ///     string source_directory = R"(C:\source)";
+      ///     string destination_directory = R"(C:\destination)";
       ///
       ///     try {
       ///       directory::move(source_directory, destination_directory);
@@ -1488,7 +1488,7 @@ namespace xtd {
       /// @remarks The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameters before moving the directory.
       /// @note xtd::io::directory::move method throws an xtd::io::io_exception in all platforms when the dest_dir_name already exists.
-      static void move(const xtd::ustring& source_dir_name, const xtd::ustring& dest_dir_name);
+      static void move(const xtd::string& source_dir_name, const xtd::string& dest_dir_name);
       
       /// @brief Deletes an empty directory from a specified path.
       /// @param path The name of the empty directory to remove. This directory must be writable and empty.
@@ -1508,7 +1508,7 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
+      ///     string sub_path = R"(C:\NewDirectory\NewSubDirectory)";
       ///
       ///     try {
       ///       directory::create_directory(sub_path);
@@ -1527,13 +1527,13 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::ustring&, bool) with false specified for the second parameter.
+      /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::string&, bool) with false specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
       /// @remarks This method throws an IOException if the directory specified in the path parameter contains files or subdirectories.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks In some cases, if you have the specified directory open in File Explorer, the Delete method may not be able to delete it.
-      static void remove(const xtd::ustring& path);
+      static void remove(const xtd::string& path);
       
       /// @brief Deletes the specified directory and, if indicated, any subdirectories and files in the directory.
       /// @param path The name of the directory to remove.
@@ -1554,8 +1554,8 @@ namespace xtd {
       /// class program {
       /// public:
       ///   static auto main() {
-      ///     ustring top_path = R"(C:\NewDirectory)";
-      ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
+      ///     string top_path = R"(C:\NewDirectory)";
+      ///     string sub_path = R"(C:\NewDirectory\NewSubDirectory)";
       ///
       ///     try {
       ///       directory::create_directory(sub_path);
@@ -1583,7 +1583,7 @@ namespace xtd {
       /// @remarks If the recursive parameter is true, the user must have write permission for the current directory as well as for all subdirectories.
       /// @remarks The behavior of this method differs slightly when deleting a directory that contains a reparse point, such as a symbolic link or a mount point. If the reparse point is a directory, such as a mount point, it is unmounted and the mount point is deleted. This method does not recurse through the reparse point. If the reparse point is a symbolic link to a file, the reparse point is deleted and not the target of the symbolic link.
       /// @remarks In some cases, if you have the specified directory open in File Explorer, the xtd::io::directory::remove method may not be able to delete it.
-      static void remove(const xtd::ustring& path, bool recursive);
+      static void remove(const xtd::string& path, bool recursive);
       
       /// @brief Sets the creation date and time for the specified file or directory.
       /// @param path The file or directory for which to set the creation date and time information.
@@ -1605,7 +1605,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     // Set the directory.
-      ///     ustring n = R"(C:\test\newdir)";
+      ///     string n = R"(C:\test\newdir)";
       ///
       ///     //Create the directory.
       ///     try {
@@ -1640,7 +1640,7 @@ namespace xtd {
       /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      static void set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time);
+      static void set_creation_time(const xtd::string& path, const xtd::date_time& creation_time);
       /// @brief Sets the creation date and time for the specified file or directory.
       /// @param path The file or directory for which to set the creation date and time information.
       /// @param creation_time The date and time the file or directory was last written to. This value is expressed in local time.
@@ -1661,7 +1661,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     // Set the directory.
-      ///     ustring n = R"(C:\test\newdir)";
+      ///     string n = R"(C:\test\newdir)";
       ///
       ///     //Create the directory.
       ///     try {
@@ -1696,7 +1696,7 @@ namespace xtd {
       /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      static void set_creation_time(const xtd::ustring& path, time_t creation_time);
+      static void set_creation_time(const xtd::string& path, time_t creation_time);
       
       /// @brief Sets the application's current working directory to the specified directory.
       /// @param path The path to which the current working directory is set.
@@ -1717,7 +1717,7 @@ namespace xtd {
       ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
       ///     // or the sample will throw a DirectoryNotFoundException.
-      ///     ustring dir = R"(C:\test)";
+      ///     string dir = R"(C:\test)";
       ///     try {
       ///       //Set the current directory.
       ///       directory::set_current_directory(dir);
@@ -1741,7 +1741,7 @@ namespace xtd {
       /// @remarks Trailing spaces are removed from the end of the path parameter before setting the directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks If you are setting the directory to a drive with removable media (for example, "E:" for a USB flash drive), you can determine whether the drive is ready by using the xtd::io::drive::is_ready property.
-      static void set_current_directory(const xtd::ustring& path);
+      static void set_current_directory(const xtd::string& path);
       
       /// @brief Sets the date and time the specified file or directory was last accessed.
       /// @param path The file or directory for which to set the access date and time information.
@@ -1762,7 +1762,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     try {
-      ///       ustring path = R"(c:\MyDir)";
+      ///       string path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
       ///         directory::create_directory(path);
       ///       }
@@ -1789,7 +1789,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static void set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time);
+      static void set_last_access_time(const xtd::string& path, const xtd::date_time& last_access_time);
       
       /// @brief Sets the date and time a directory was last written to.
       /// @param path The path of the directory.
@@ -1810,7 +1810,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     try {
-      ///       ustring path = R"(c:\MyDir)";
+      ///       string path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
       ///         directory::create_directory(path);
       ///       }
@@ -1837,7 +1837,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
+      static void set_last_write_time(const xtd::string& path, const xtd::date_time& last_write_time);
       
       /// @brief Sets the specified xtd::io::file_permissions of the directory on the specified path.
       /// @param path The path to the directory.
@@ -1849,11 +1849,11 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
+      static void set_permissions(const xtd::string& path, xtd::io::file_permissions permissions);
       /// @}
 
     private:
-      static std::tuple<time_t, time_t, time_t> get_file_times(const ustring& path);
+      static std::tuple<time_t, time_t, time_t> get_file_times(const string& path);
     };
   }
 }

@@ -24,7 +24,7 @@ loading_indicator loading_indicators::bar(const xtd::drawing::point& location, c
   return result;
 }
 
-loading_indicator loading_indicators::bar(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::bar(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::bar);
   result.location(location);
@@ -57,7 +57,7 @@ loading_indicator loading_indicators::bar(bool running, const xtd::drawing::poin
   return result;
 }
 
-loading_indicator loading_indicators::bar(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::bar(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::bar);
   result.running(running);
@@ -91,7 +91,7 @@ loading_indicator loading_indicators::bar(const control& parent, const xtd::draw
   return result;
 }
 
-loading_indicator loading_indicators::bar(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::bar(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::bar);
   result.parent(parent);
@@ -128,7 +128,7 @@ loading_indicator loading_indicators::bar(const control& parent, bool running, c
   return result;
 }
 
-loading_indicator loading_indicators::bar(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::bar(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::bar);
   result.parent(parent);
@@ -160,7 +160,7 @@ loading_indicator loading_indicators::circle_bars(const xtd::drawing::point& loc
   return result;
 }
 
-loading_indicator loading_indicators::circle_bars(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_bars(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_bars);
   result.location(location);
@@ -193,7 +193,7 @@ loading_indicator loading_indicators::circle_bars(bool running, const xtd::drawi
   return result;
 }
 
-loading_indicator loading_indicators::circle_bars(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_bars(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_bars);
   result.running(running);
@@ -227,7 +227,7 @@ loading_indicator loading_indicators::circle_bars(const control& parent, const x
   return result;
 }
 
-loading_indicator loading_indicators::circle_bars(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_bars(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_bars);
   result.parent(parent);
@@ -264,7 +264,7 @@ loading_indicator loading_indicators::circle_bars(const control& parent, bool ru
   return result;
 }
 
-loading_indicator loading_indicators::circle_bars(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_bars(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_bars);
   result.parent(parent);
@@ -296,7 +296,7 @@ loading_indicator loading_indicators::circle_blinks(const xtd::drawing::point& l
   return result;
 }
 
-loading_indicator loading_indicators::circle_blinks(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_blinks(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_blinks);
   result.location(location);
@@ -329,7 +329,7 @@ loading_indicator loading_indicators::circle_blinks(bool running, const xtd::dra
   return result;
 }
 
-loading_indicator loading_indicators::circle_blinks(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_blinks(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_blinks);
   result.running(running);
@@ -363,7 +363,7 @@ loading_indicator loading_indicators::circle_blinks(const control& parent, const
   return result;
 }
 
-loading_indicator loading_indicators::circle_blinks(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_blinks(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_blinks);
   result.parent(parent);
@@ -400,7 +400,7 @@ loading_indicator loading_indicators::circle_blinks(const control& parent, bool 
   return result;
 }
 
-loading_indicator loading_indicators::circle_blinks(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::circle_blinks(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::circle_blinks);
   result.parent(parent);
@@ -432,7 +432,7 @@ loading_indicator loading_indicators::five_lines_center(const xtd::drawing::poin
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_center(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_center(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
   result.location(location);
@@ -465,7 +465,7 @@ loading_indicator loading_indicators::five_lines_center(bool running, const xtd:
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_center(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_center(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
   result.running(running);
@@ -499,7 +499,7 @@ loading_indicator loading_indicators::five_lines_center(const control& parent, c
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_center(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_center(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
   result.parent(parent);
@@ -536,7 +536,7 @@ loading_indicator loading_indicators::five_lines_center(const control& parent, b
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_center(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_center(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
   result.parent(parent);
@@ -568,7 +568,7 @@ loading_indicator loading_indicators::five_lines_chronological(const xtd::drawin
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_chronological(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_chronological(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_chronological);
   result.location(location);
@@ -601,7 +601,7 @@ loading_indicator loading_indicators::five_lines_chronological(bool running, con
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_chronological(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_chronological(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_chronological);
   result.running(running);
@@ -635,7 +635,7 @@ loading_indicator loading_indicators::five_lines_chronological(const control& pa
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_chronological(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_chronological(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_chronological);
   result.parent(parent);
@@ -672,7 +672,7 @@ loading_indicator loading_indicators::five_lines_chronological(const control& pa
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_chronological(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_chronological(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_chronological);
   result.parent(parent);
@@ -704,7 +704,7 @@ loading_indicator loading_indicators::five_lines_pulse(const xtd::drawing::point
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
   result.location(location);
@@ -737,7 +737,7 @@ loading_indicator loading_indicators::five_lines_pulse(bool running, const xtd::
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
   result.running(running);
@@ -771,7 +771,7 @@ loading_indicator loading_indicators::five_lines_pulse(const control& parent, co
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
   result.parent(parent);
@@ -808,7 +808,7 @@ loading_indicator loading_indicators::five_lines_pulse(const control& parent, bo
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
   result.parent(parent);
@@ -840,7 +840,7 @@ loading_indicator loading_indicators::five_lines_wave(const xtd::drawing::point&
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_wave(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_wave(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_wave);
   result.location(location);
@@ -873,7 +873,7 @@ loading_indicator loading_indicators::five_lines_wave(bool running, const xtd::d
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_wave(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_wave(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_wave);
   result.running(running);
@@ -907,7 +907,7 @@ loading_indicator loading_indicators::five_lines_wave(const control& parent, con
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_wave(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_wave(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_wave);
   result.parent(parent);
@@ -944,7 +944,7 @@ loading_indicator loading_indicators::five_lines_wave(const control& parent, boo
   return result;
 }
 
-loading_indicator loading_indicators::five_lines_wave(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines_wave(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_wave);
   result.parent(parent);
@@ -976,7 +976,7 @@ loading_indicator loading_indicators::five_lines(const xtd::drawing::point& loca
   return result;
 }
 
-loading_indicator loading_indicators::five_lines(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
   result.location(location);
@@ -1009,7 +1009,7 @@ loading_indicator loading_indicators::five_lines(bool running, const xtd::drawin
   return result;
 }
 
-loading_indicator loading_indicators::five_lines(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
   result.running(running);
@@ -1043,7 +1043,7 @@ loading_indicator loading_indicators::five_lines(const control& parent, const xt
   return result;
 }
 
-loading_indicator loading_indicators::five_lines(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
   result.parent(parent);
@@ -1080,7 +1080,7 @@ loading_indicator loading_indicators::five_lines(const control& parent, bool run
   return result;
 }
 
-loading_indicator loading_indicators::five_lines(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::five_lines(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
   result.parent(parent);
@@ -1112,7 +1112,7 @@ loading_indicator loading_indicators::pulse(const xtd::drawing::point& location,
   return result;
 }
 
-loading_indicator loading_indicators::pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse);
   result.location(location);
@@ -1145,7 +1145,7 @@ loading_indicator loading_indicators::pulse(bool running, const xtd::drawing::po
   return result;
 }
 
-loading_indicator loading_indicators::pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse);
   result.running(running);
@@ -1179,7 +1179,7 @@ loading_indicator loading_indicators::pulse(const control& parent, const xtd::dr
   return result;
 }
 
-loading_indicator loading_indicators::pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse);
   result.parent(parent);
@@ -1216,7 +1216,7 @@ loading_indicator loading_indicators::pulse(const control& parent, bool running,
   return result;
 }
 
-loading_indicator loading_indicators::pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse);
   result.parent(parent);
@@ -1248,7 +1248,7 @@ loading_indicator loading_indicators::pulse_outline(const xtd::drawing::point& l
   return result;
 }
 
-loading_indicator loading_indicators::pulse_outline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse_outline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
   result.location(location);
@@ -1281,7 +1281,7 @@ loading_indicator loading_indicators::pulse_outline(bool running, const xtd::dra
   return result;
 }
 
-loading_indicator loading_indicators::pulse_outline(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse_outline(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
   result.running(running);
@@ -1315,7 +1315,7 @@ loading_indicator loading_indicators::pulse_outline(const control& parent, const
   return result;
 }
 
-loading_indicator loading_indicators::pulse_outline(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse_outline(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
   result.parent(parent);
@@ -1352,7 +1352,7 @@ loading_indicator loading_indicators::pulse_outline(const control& parent, bool 
   return result;
 }
 
-loading_indicator loading_indicators::pulse_outline(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::pulse_outline(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
   result.parent(parent);
@@ -1384,7 +1384,7 @@ loading_indicator loading_indicators::standard(const xtd::drawing::point& locati
   return result;
 }
 
-loading_indicator loading_indicators::standard(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::standard(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
   result.location(location);
@@ -1417,7 +1417,7 @@ loading_indicator loading_indicators::standard(bool running, const xtd::drawing:
   return result;
 }
 
-loading_indicator loading_indicators::standard(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::standard(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
   result.running(running);
@@ -1451,7 +1451,7 @@ loading_indicator loading_indicators::standard(const control& parent, const xtd:
   return result;
 }
 
-loading_indicator loading_indicators::standard(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::standard(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
   result.parent(parent);
@@ -1488,7 +1488,7 @@ loading_indicator loading_indicators::standard(const control& parent, bool runni
   return result;
 }
 
-loading_indicator loading_indicators::standard(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::standard(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
   result.parent(parent);
@@ -1520,7 +1520,7 @@ loading_indicator loading_indicators::system(const xtd::drawing::point& location
   return result;
 }
 
-loading_indicator loading_indicators::system(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::system(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::system);
   result.location(location);
@@ -1553,7 +1553,7 @@ loading_indicator loading_indicators::system(bool running, const xtd::drawing::p
   return result;
 }
 
-loading_indicator loading_indicators::system(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::system(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::system);
   result.running(running);
@@ -1587,7 +1587,7 @@ loading_indicator loading_indicators::system(const control& parent, const xtd::d
   return result;
 }
 
-loading_indicator loading_indicators::system(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::system(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::system);
   result.parent(parent);
@@ -1624,7 +1624,7 @@ loading_indicator loading_indicators::system(const control& parent, bool running
   return result;
 }
 
-loading_indicator loading_indicators::system(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::system(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::system);
   result.parent(parent);
@@ -1656,7 +1656,7 @@ loading_indicator loading_indicators::three_balls(const xtd::drawing::point& loc
   return result;
 }
 
-loading_indicator loading_indicators::three_balls(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls);
   result.location(location);
@@ -1689,7 +1689,7 @@ loading_indicator loading_indicators::three_balls(bool running, const xtd::drawi
   return result;
 }
 
-loading_indicator loading_indicators::three_balls(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls);
   result.running(running);
@@ -1723,7 +1723,7 @@ loading_indicator loading_indicators::three_balls(const control& parent, const x
   return result;
 }
 
-loading_indicator loading_indicators::three_balls(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls);
   result.parent(parent);
@@ -1760,7 +1760,7 @@ loading_indicator loading_indicators::three_balls(const control& parent, bool ru
   return result;
 }
 
-loading_indicator loading_indicators::three_balls(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls);
   result.parent(parent);
@@ -1792,7 +1792,7 @@ loading_indicator loading_indicators::three_balls_bouncing(const xtd::drawing::p
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_bouncing(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_bouncing(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_bouncing);
   result.location(location);
@@ -1825,7 +1825,7 @@ loading_indicator loading_indicators::three_balls_bouncing(bool running, const x
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_bouncing(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_bouncing(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_bouncing);
   result.running(running);
@@ -1859,7 +1859,7 @@ loading_indicator loading_indicators::three_balls_bouncing(const control& parent
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_bouncing(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_bouncing(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_bouncing);
   result.parent(parent);
@@ -1896,7 +1896,7 @@ loading_indicator loading_indicators::three_balls_bouncing(const control& parent
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_bouncing(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_bouncing(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_bouncing);
   result.parent(parent);
@@ -1928,7 +1928,7 @@ loading_indicator loading_indicators::three_balls_rotation(const xtd::drawing::p
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_rotation(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_rotation(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
   result.location(location);
@@ -1961,7 +1961,7 @@ loading_indicator loading_indicators::three_balls_rotation(bool running, const x
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_rotation(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_rotation(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
   result.running(running);
@@ -1995,7 +1995,7 @@ loading_indicator loading_indicators::three_balls_rotation(const control& parent
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_rotation(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_rotation(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
   result.parent(parent);
@@ -2032,7 +2032,7 @@ loading_indicator loading_indicators::three_balls_rotation(const control& parent
   return result;
 }
 
-loading_indicator loading_indicators::three_balls_rotation(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::ustring& name) noexcept {
+loading_indicator loading_indicators::three_balls_rotation(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
   result.parent(parent);

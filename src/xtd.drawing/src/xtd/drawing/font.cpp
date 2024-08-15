@@ -17,9 +17,9 @@ struct font::data {
   xtd::byte gdi_char_set_ = 1;
   bool gdi_vertical_font_ = false;
   bool is_system_font_ = false;
-  xtd::ustring original_font_name_;
+  xtd::string original_font_name_;
   float size_ = 8.25f;
-  xtd::ustring system_font_name_;
+  xtd::string system_font_name_;
   font_style style_ = font_style::regular;
   graphics_unit unit_ = graphics_unit::point;
 };
@@ -43,7 +43,7 @@ font::font(const font& prototype, font_style style) : data_(xtd::new_sptr<data>(
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(xtd::new_sptr<data>()) {
+font::font(string family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(xtd::new_sptr<data>()) {
   if (em_size <= 0 || em_size == single_object::positive_infinity || single_object::is_NaN(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, csf_);
   if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, csf_);
   try {
@@ -65,7 +65,7 @@ font::font() : data_(xtd::new_sptr<data>()) {
 
 font::font(intptr handle) : data_(xtd::new_sptr<data>()) {
   data_->handle_ = handle;
-  auto family_name = ustring::empty_string;
+  auto family_name = string::empty_string;
   auto fbold = false, fitalic = false, funderline = false, fstrikeout = false;
   native::font::get_information(data_->handle_, family_name, data_->size_, fbold, fitalic, funderline, fstrikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
@@ -91,31 +91,31 @@ font::font(const font& value) : data_(xtd::new_sptr<data>()) {
 font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : font(font_family.name(), em_size, style, unit, gdi_char_set, gdi_vertical_font) {
 }
 
-font::font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set) : font(family_name, em_size, style, unit, gdi_char_set, false) {
+font::font(xtd::string family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set) : font(family_name, em_size, style, unit, gdi_char_set, false) {
 }
 
 font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set) : font(font_family, em_size, style, unit, gdi_char_set, false) {
 }
 
-font::font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit) : font(family_name, em_size, style, unit, 0, false) {
+font::font(xtd::string family_name, float em_size, font_style style, graphics_unit unit) : font(family_name, em_size, style, unit, 0, false) {
 }
 
 font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit) : font(font_family, em_size, style, unit, 0, false) {
 }
 
-font::font(xtd::ustring family_name, float em_size, font_style style) : font(family_name, em_size, style, graphics_unit::point, 0, false) {
+font::font(xtd::string family_name, float em_size, font_style style) : font(family_name, em_size, style, graphics_unit::point, 0, false) {
 }
 
 font::font(const drawing::font_family& font_family, float em_size, font_style style) : font(font_family, em_size, style, graphics_unit::point, 0, false) {
 }
 
-font::font(xtd::ustring family_name, float em_size, graphics_unit unit) : font(family_name, em_size, font_style::regular, unit, 0, false) {
+font::font(xtd::string family_name, float em_size, graphics_unit unit) : font(family_name, em_size, font_style::regular, unit, 0, false) {
 }
 
 font::font(const drawing::font_family& font_family, float em_size, graphics_unit unit) : font(font_family, em_size, font_style::regular, unit, 0, false) {
 }
 
-font::font(xtd::ustring family_name, float em_size) : font(family_name, em_size, font_style::regular, graphics_unit::point, 0, false) {
+font::font(xtd::string family_name, float em_size) : font(family_name, em_size, font_style::regular, graphics_unit::point, 0, false) {
 }
 
 font::font(const drawing::font_family& font_family, float em_size) : font(font_family, em_size, font_style::regular, graphics_unit::point, 0, false) {
@@ -163,11 +163,11 @@ bool font::italic() const noexcept {
   return (data_->style_ & font_style::italic) == font_style::italic;
 }
 
-const xtd::ustring& font::name() const noexcept {
+const xtd::string& font::name() const noexcept {
   return data_->font_family_.name();
 }
 
-const xtd::ustring& font::original_font_name() const noexcept {
+const xtd::string& font::original_font_name() const noexcept {
   return data_->original_font_name_;
 }
 
@@ -211,7 +211,7 @@ bool font::equals(const font& value) const noexcept {
 font font::from_hdc(const intptr hdc) {
   auto font = drawing::font {};
   font.data_->handle_ = native::font::create_from_hdc(hdc);
-  auto family_name = ustring::empty_string;
+  auto family_name = string::empty_string;
   auto fbold = false, fitalic = false, funderline = false, fstrikeout = false;
   native::font::get_information(font.data_->handle_, family_name, font.data_->size_, fbold, fitalic, funderline, fstrikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
   try {
@@ -251,6 +251,6 @@ intptr font::to_hfont() const {
   return native::font::create_from_hfont(data_->handle_);
 }
 
-xtd::ustring font::to_string() const noexcept {
-  return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", get_type().name(), data_->font_family_.name(), data_->size_, (int32)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
+xtd::string font::to_string() const noexcept {
+  return string::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", get_type().name(), data_->font_family_.name(), data_->size_, (int32)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }

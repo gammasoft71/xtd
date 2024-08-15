@@ -29,25 +29,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_identifier_attribute class.
       /// @param identifier The identifier information.
-      explicit assembly_identifier_attribute(const ustring& identifier);
+      explicit assembly_identifier_attribute(const string& identifier);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_identifier_attribute(const ustring& identifier, const object& executing_assembly);
+      assembly_identifier_attribute(const string& identifier, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets identifier information.
       /// @return A string containing the identifier information.
-      const ustring& identifier() const noexcept;
+      const string& identifier() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring identifier_;
+      string identifier_;
     };
   }
 }

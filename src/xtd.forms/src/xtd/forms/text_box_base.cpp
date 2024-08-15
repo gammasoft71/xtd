@@ -64,12 +64,12 @@ text_box_base& text_box_base::border_style(std::nullptr_t) {
   return *this;
 }
 
-std::vector<xtd::ustring> text_box_base::lines() const noexcept {
+std::vector<xtd::string> text_box_base::lines() const noexcept {
   return text().split({'\n'});
 }
 
-text_box_base& text_box_base::lines(const std::vector<xtd::ustring>& lines) {
-  text(xtd::ustring::join("\n", lines));
+text_box_base& text_box_base::lines(const std::vector<xtd::string>& lines) {
+  text(xtd::string::join("\n", lines));
   return *this;
 }
 
@@ -126,7 +126,7 @@ text_box_base& text_box_base::word_wrap(bool value) {
   return *this;
 }
 
-void text_box_base::append_text(const xtd::ustring& value) {
+void text_box_base::append_text(const xtd::string& value) {
   suspend_layout();
   text(text() + value);
   select(text().size(), 0);

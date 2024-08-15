@@ -43,11 +43,11 @@ xtd::io::file_system_info& file_system_info::creation_time_utc(const xtd::date_t
   return creation_time(value.to_local_time());
 }
 
-ustring file_system_info::extension() const {
+string file_system_info::extension() const {
   return path::get_extension(full_path_);
 }
 
-ustring file_system_info::full_name() const {
+string file_system_info::full_name() const {
   return full_path_;
 }
 
@@ -119,6 +119,6 @@ void file_system_info::refresh() {
   }
 }
 
-ustring file_system_info::to_string() const noexcept {
+string file_system_info::to_string() const noexcept {
   return original_path_;
 }

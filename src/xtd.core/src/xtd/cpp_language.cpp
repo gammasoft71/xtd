@@ -44,9 +44,9 @@ int32 cpp_language::month() const noexcept {
   return cpp_ % 100;
 }
 
-xtd::ustring cpp_language::name() const noexcept {
-  static auto names = std::map<language_id, xtd::ustring> {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::cpp23, "C++ 23"}, {language_id::unknown, "<unknown>"}};
-  if (is_experimental_language()) return ustring::format("Experimental {}", names[experimental_language()]);
+xtd::string cpp_language::name() const noexcept {
+  static auto names = std::map<language_id, xtd::string> {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::cpp23, "C++ 23"}, {language_id::unknown, "<unknown>"}};
+  if (is_experimental_language()) return string::format("Experimental {}", names[experimental_language()]);
   return names[language()];
 }
 
@@ -54,8 +54,8 @@ uint32 cpp_language::value() const noexcept {
   return cpp_;
 }
 
-xtd::ustring cpp_language::version_string() const noexcept {
-  return ustring::format("{} {}", name(), version());
+xtd::string cpp_language::version_string() const noexcept {
+  return string::format("{} {}", name(), version());
 }
 
 xtd::version cpp_language::version() const noexcept {
@@ -64,6 +64,6 @@ xtd::version cpp_language::version() const noexcept {
 
 int32 cpp_language::year() const noexcept {return cpp_ / 100;}
 
-xtd::ustring cpp_language::to_string() const noexcept {
+xtd::string cpp_language::to_string() const noexcept {
   return version_string();
 }

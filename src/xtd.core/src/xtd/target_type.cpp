@@ -27,11 +27,11 @@ target_id target_type::target_id() const noexcept {
   return target_id_;
 }
 
-ustring target_type::name() const noexcept {
+string target_type::name() const noexcept {
   return enum_object<xtd::target_id>(target_id_).to_string().replace("_", " ");
 }
 
-ustring target_type::to_string() const noexcept {
+string target_type::to_string() const noexcept {
   return name();
 }
 

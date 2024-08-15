@@ -43,14 +43,14 @@ namespace xtd {
       /// @param find_string The string to find.
       /// @param find_next The callback called when the user click the find button.
       template<typename find_next_callback_t>
-      static void show(const iwin32_window& owner, const xtd::ustring& find_string, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string);}
+      static void show(const iwin32_window& owner, const xtd::string& find_string, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string);}
       /// @brief Displays a find dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the find dialog box.
       /// @param find_string The string to find.
       /// @param title The find dialog title.
       /// @param find_next The callback called when the user click the find button.
       template<typename find_next_callback_t>
-      static void show(const iwin32_window& owner, const xtd::ustring& find_string, const xtd::ustring& title, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title);}
+      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& title, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title);}
       /// @brief Displays a find dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the find dialog box.
       /// @param find_string The string to find.
@@ -58,7 +58,7 @@ namespace xtd {
       /// @param match_case true if match case option selected; otherwise false.
       /// @param find_next The callback called when the user click the find button.
       template<typename find_next_callback_t>
-      static void show(const iwin32_window& owner, const xtd::ustring& find_string, const xtd::ustring& title, bool match_case, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case);}
+      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& title, bool match_case, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case);}
       /// @brief Displays a find dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the find dialog box.
       /// @param find_string The string to find.
@@ -67,7 +67,7 @@ namespace xtd {
       /// @param search_direction One of xtd::forms::search_direction values.
       /// @param find_next The callback called when the user click the find button.
       template<typename find_next_callback_t>
-      static void show(const iwin32_window& owner, const xtd::ustring& find_string, const xtd::ustring& title, bool match_case, xtd::forms::search_direction search_direction, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case, search_direction);}
+      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& title, bool match_case, xtd::forms::search_direction search_direction, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case, search_direction);}
       /// @brief Displays a find dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the find dialog box.
       /// @param find_string The string to find.
@@ -77,11 +77,11 @@ namespace xtd {
       /// @param whole_word true if whole word option selected; otherwise false.
       /// @param find_next The callback called when the user click the find button.
       template<typename find_next_callback_t>
-      static void show(const iwin32_window& owner, const xtd::ustring& find_string, const xtd::ustring& title, bool match_case, xtd::forms::search_direction search_direction, bool whole_word, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case, search_direction, whole_word);}
+      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& title, bool match_case, xtd::forms::search_direction search_direction, bool whole_word, find_next_callback_t find_next) {show_find_box(owner, xtd::forms::find_event_handler(find_next), find_string, title, match_case, search_direction, whole_word);}
       /// @}
       
     private:
-      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::ustring& find_string = xtd::ustring::empty_string, const xtd::ustring& title = xtd::ustring::empty_string, bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false);
+      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::string& find_string = xtd::string::empty_string, const xtd::string& title = xtd::string::empty_string, bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false);
       
       static xtd::uptr<xtd::forms::find_dialog> dialog_;
     };

@@ -76,7 +76,7 @@ socket_address ip_end_point::serialize() const {
   return result;
 }
 
-ustring ip_end_point::to_string() const noexcept {
-  if (address_family_ == address_family::inter_network_v6) return ustring::format("[{}]:{:D}", address_, port_);
-  return ustring::format("{}:{:D}", address_, port_);
+string ip_end_point::to_string() const noexcept {
+  if (address_family_ == address_family::inter_network_v6) return string::format("[{}]:{:D}", address_, port_);
+  return string::format("{}:{:D}", address_, port_);
 }

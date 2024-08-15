@@ -170,7 +170,7 @@ light_button light_button::create(const drawing::point& location, const drawing:
   return result;
 }
 
-light_button light_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.location(location);
   result.size(size);
@@ -178,71 +178,71 @@ light_button light_button::create(const drawing::point& location, const drawing:
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text) {
+light_button light_button::create(const xtd::string& text) {
   auto result = light_button {};
   result.text(text);
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, const drawing::point& location) {
+light_button light_button::create(const xtd::string& text, const drawing::point& location) {
   auto result = light_button {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+light_button light_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = light_button {};
   result.text(text);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-light_button light_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = light_button {};
-  result.text(text);
-  result.location(location);
-  result.size(size);
-  result.name(name);
-  return result;
-}
-
-light_button light_button::create(const xtd::ustring& text, xtd::forms::check_state check_state) {
-  auto result = light_button {};
-  result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-light_button light_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = light_button {};
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-light_button light_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = light_button {};
-  result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   result.name(name);
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state) {
+light_button light_button::create(const xtd::string& text, xtd::forms::check_state check_state) {
+  auto result = light_button {};
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+light_button light_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = light_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+light_button light_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = light_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+light_button light_button::create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+  auto result = light_button {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+light_button light_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state) {
   auto result = light_button {};
   result.text(text);
   result.three_state(three_state);
@@ -250,7 +250,7 @@ light_button light_button::create(const xtd::ustring& text, bool three_state, xt
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
+light_button light_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
   auto result = light_button {};
   result.text(text);
   result.three_state(three_state);
@@ -259,7 +259,7 @@ light_button light_button::create(const xtd::ustring& text, bool three_state, xt
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+light_button light_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
   auto result = light_button {};
   result.text(text);
   result.three_state(three_state);
@@ -269,7 +269,7 @@ light_button light_button::create(const xtd::ustring& text, bool three_state, xt
   return result;
 }
 
-light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.text(text);
   result.three_state(three_state);
@@ -301,7 +301,7 @@ light_button light_button::create(const control& parent, const drawing::point& l
   return result;
 }
 
-light_button light_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.parent(parent);
   result.location(location);
@@ -310,79 +310,79 @@ light_button light_button::create(const control& parent, const drawing::point& l
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text) {
+light_button light_button::create(const control& parent, const xtd::string& text) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
-  auto result = light_button {};
-  result.parent(parent);
-  result.text(text);
-  result.location(location);
-  return result;
-}
-
-light_button light_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+light_button light_button::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
   result.location(location);
-  result.size(size);
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
   result.location(location);
   result.size(size);
-  result.name(name);
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state) {
+light_button light_button::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-light_button light_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = light_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-light_button light_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = light_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-light_button light_button::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = light_button {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
   result.location(location);
   result.size(size);
   result.name(name);
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state) {
+light_button light_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state) {
+  auto result = light_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+light_button light_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = light_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+light_button light_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = light_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+light_button light_button::create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+  auto result = light_button {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+light_button light_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
@@ -391,7 +391,7 @@ light_button light_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
+light_button light_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
@@ -401,7 +401,7 @@ light_button light_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+light_button light_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
@@ -412,7 +412,7 @@ light_button light_button::create(const control& parent, const xtd::ustring& tex
   return result;
 }
 
-light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+light_button light_button::create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = light_button {};
   result.parent(parent);
   result.text(text);
@@ -437,7 +437,7 @@ xtd::forms::visual_styles::check_box_state light_button::state() const noexcept 
 
 xtd::uptr<xtd::object> light_button::clone() const {
   auto result = xtd::new_uptr<light_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

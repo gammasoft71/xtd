@@ -76,12 +76,12 @@ namespace xtd {
       
       /// @brief Reads a line of characters from the current stream and returns the data as a string.
       /// @return The next line from the input stream, or the empty string if all characters have been read.
-      virtual xtd::ustring read_line();
+      virtual xtd::string read_line();
       
       /// @brief Reads all characters from the current position to the end of the text_reader and returns them as one string.
       /// @return A string containing all characters from the current position to the end of the text_reader.
       /// @exception io::io_exception An I/O error occurs.
-      virtual xtd::ustring read_to_end();
+      virtual xtd::string read_to_end();
       /// @}
       
       /// @name Public Static Methods

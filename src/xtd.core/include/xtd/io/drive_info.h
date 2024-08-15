@@ -46,7 +46,7 @@ namespace xtd {
       /// @param drive_name A valid drive path or drive letter. This can be either uppercase or lowercase, 'a' to 'z'. A null value is not valid.
       /// @exception xtd::argument_exception drive_name does not refer to a valid drive.
       /// @remarks Use this class to obtain information on drives. The drive name must be either an uppercase or lowercase letter from 'a' to 'z'. You cannot use this method to obtain information on drive names that are null or use UNC (\\server\share) paths.
-      explicit drive_info(const xtd::ustring& drive_name);
+      explicit drive_info(const xtd::string& drive_name);
       /// @}
       
       /// @name Public Properties
@@ -72,7 +72,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks Use xtd::io::drive_info::drive_format to determine what formatting a drive uses.
-      xtd::ustring drive_format() const;
+      xtd::string drive_format() const;
       
       /// @brief Gets the drive type, such as CD-ROM, removable, network, or fixed.
       /// @return One of the enumeration values that specifies a drive type.
@@ -97,7 +97,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property is the name assigned to the drive, such as C:\ or E:\.
-      xtd::ustring name() const noexcept;
+      xtd::string name() const noexcept;
       
       /// @brief Gets the root directory of a drive.
       /// @return An object that contains the root directory of the drive.
@@ -134,7 +134,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks The label length is determined by the operating system. For example, NTFS allows a volume label to be up to 32 characters long.
-      xtd::ustring volume_label() const;
+      xtd::string volume_label() const;
       /// @}
       
       /// @name Public Methods
@@ -143,7 +143,7 @@ namespace xtd {
       /// @brief Returns a drive name as a string.
       /// @return The name of the drive.
       /// @remarks This method returns the xtd::io::drive_info::name property.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
 
       /// @name Public Static Methods
@@ -163,7 +163,7 @@ namespace xtd {
     private:
       drive_info() = default;
       
-      xtd::ustring drive_name_;
+      xtd::string drive_name_;
     };
   }
 }

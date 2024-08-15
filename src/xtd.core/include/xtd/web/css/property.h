@@ -16,19 +16,19 @@ namespace xtd {
         
         /// @{
         property() = default;
-        explicit property(const xtd::ustring& value) : value_(value) {}
+        explicit property(const xtd::string& value) : value_(value) {}
         /// @}
         
         /// @name Operators
         
         /// @{
-        operator xtd::ustring() noexcept {return value_;}
+        operator xtd::string() noexcept {return value_;}
         /// @}
         
         /// @name Public Properties
         
         /// @{
-        const xtd::ustring& value() const noexcept {return value_;}
+        const xtd::string& value() const noexcept {return value_;}
         template<typename value_t>
         uintptr value() const noexcept {return xtd::parse<value_t>(value_);}
         /// @}
@@ -44,7 +44,7 @@ namespace xtd {
         int64 to_int64() const {return xtd::parse<int64>(value_);}
         intptr to_intptr() const {return xtd::parse<intptr>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
-        xtd::ustring to_string() const noexcept override {return value_;}
+        xtd::string to_string() const noexcept override {return value_;}
         xtd::byte to_uint8() const {return xtd::parse<xtd::byte>(value_);}
         uint16 to_uint16() const {return xtd::parse<uint16>(value_);}
         uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
@@ -57,24 +57,24 @@ namespace xtd {
         /// @name Public Static Methods
         
         /// @{
-        static property from(bool value) {return property(ustring::format("{}", value));}
-        static property from(double value) {return property(ustring::format("{}", value));}
-        static property from(float value) {return property(ustring::format("{}", value));}
-        static property from(sbyte value) {return property(ustring::format("{}", value));}
-        static property from(int16 value) {return property(ustring::format("{}", value));}
-        static property from(int32 value) {return property(ustring::format("{}", value));}
-        static property from(int64 value) {return property(ustring::format("{}", value));}
-        static property from(const xtd::ustring& value) {return property(ustring::format("{}", value));}
-        static property from(xtd::byte value) {return property(ustring::format("{}", value));}
-        static property from(uint16 value) {return property(ustring::format("{}", value));}
-        static property from(uint32 value) {return property(ustring::format("{}", value));}
-        static property from(uint64 value) {return property(ustring::format("{}", value));}
+        static property from(bool value) {return property(string::format("{}", value));}
+        static property from(double value) {return property(string::format("{}", value));}
+        static property from(float value) {return property(string::format("{}", value));}
+        static property from(sbyte value) {return property(string::format("{}", value));}
+        static property from(int16 value) {return property(string::format("{}", value));}
+        static property from(int32 value) {return property(string::format("{}", value));}
+        static property from(int64 value) {return property(string::format("{}", value));}
+        static property from(const xtd::string& value) {return property(string::format("{}", value));}
+        static property from(xtd::byte value) {return property(string::format("{}", value));}
+        static property from(uint16 value) {return property(string::format("{}", value));}
+        static property from(uint32 value) {return property(string::format("{}", value));}
+        static property from(uint64 value) {return property(string::format("{}", value));}
         template<typename value_t>
-        static property from(value_t value) {return property(ustring::format("{}", value));}
+        static property from(value_t value) {return property(string::format("{}", value));}
         /// @}
 
       private:
-        xtd::ustring value_;
+        xtd::string value_;
       };
     }
   }

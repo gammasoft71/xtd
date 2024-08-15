@@ -168,7 +168,7 @@ std::vector<image> categories_system_images::get_images(const xtd::drawing::size
   return std::vector {applications_accessories(size), applications_development(size), applications_engineering(size), applications_games(size), applications_graphics(size), applications_internet(size), applications_multimedia(size), applications_office(size), applications_other(size), applications_science(size), applications_system(size), applications_utilities(size), preferences_desktop(size), preferences_desktop_peripherals(size), preferences_desktop_personal(size), preferences_other(size), preferences_system(size), preferences_system_network(size), system_help(size), };
 }
 
-const std::vector<ustring>& categories_system_images::get_image_names() noexcept {
+const std::vector<string>& categories_system_images::get_image_names() noexcept {
   static auto names = std::vector {"applications-accessories"_s, "applications-development"_s, "applications-engineering"_s, "applications-games"_s, "applications-graphics"_s, "applications-internet"_s, "applications-multimedia"_s, "applications-office"_s, "applications-other"_s, "applications-science"_s, "applications-system"_s, "applications-utilities"_s, "preferences-desktop"_s, "preferences-desktop-peripherals"_s, "preferences-desktop-personal"_s, "preferences-other"_s, "preferences-system"_s, "preferences-system-network"_s, "system-help"_s, };
   return names;
 }

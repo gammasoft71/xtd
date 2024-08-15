@@ -81,7 +81,7 @@ namespace xtd {
       static const std::vector<xtd::drawing::font>& get_fonts();
       
       /// @brief Gets an array of system font names.
-      static const std::vector<xtd::ustring>& get_font_names();
+      static const std::vector<xtd::string>& get_font_names();
       /// @}
     };
   }

@@ -60,11 +60,11 @@ namespace xtd {
       
       /// @brief Gets the information texts.
       /// @return The information texts.
-      const std::vector<xtd::ustring>& informations() const noexcept;
+      const std::vector<xtd::string>& informations() const noexcept;
       /// @brief Sets the information texts.
       /// @param informations The information texts.
       /// @return Current progress_dialog instance.
-      progress_dialog& informations(const std::vector<xtd::ustring>& informations);
+      progress_dialog& informations(const std::vector<xtd::string>& informations);
       
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       /// @return tree is marquee; otherwise false. The default is false.
@@ -98,11 +98,11 @@ namespace xtd {
       
       /// @brief Gets the message text.
       /// @return The message text.
-      const xtd::ustring& message() const noexcept;
+      const xtd::string& message() const noexcept;
       /// @brief Sets the message text.
       /// @param description The message text.
       /// @return Current progress_dialog instance.
-      progress_dialog& message(const xtd::ustring& message);
+      progress_dialog& message(const xtd::string& message);
       
       /// @brief Gets the minimum value of the range of the control.
       /// @return The minimum value of the range. The default is 0.
@@ -169,11 +169,11 @@ namespace xtd {
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const xtd::ustring& text() const noexcept;
+      const xtd::string& text() const noexcept;
       /// @brief Sets the dialog title.
       /// @param copyright The dialog title.
       /// @return Current progress_dialog instance.
-      progress_dialog& text(const xtd::ustring& text);
+      progress_dialog& text(const xtd::string& text);
       
       /// @brief Gets the current position of the progress bar.
       /// @return The position within the range of the progress bar. The default is 0.

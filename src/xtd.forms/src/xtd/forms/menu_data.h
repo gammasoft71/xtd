@@ -6,7 +6,7 @@ struct xtd::forms::menu::data {
   menu_item_collection menu_items;
   xtd::sptr<menu_item> mdi_list_item;
   std::optional<std::reference_wrapper<menu>> main_menu;
-  xtd::ustring name;
+  xtd::string name;
   std::optional<std::reference_wrapper<menu>> parent;
   std::any tag;
 };

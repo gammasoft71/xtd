@@ -12,16 +12,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-domain_up_down::item::item(const xtd::ustring& value) : value_(value) {
+domain_up_down::item::item(const xtd::string& value) : value_(value) {
 }
 
-domain_up_down::item::item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {
+domain_up_down::item::item(const xtd::string& value, const std::any& tag) : value_(value), tag_(tag) {
 }
 
 domain_up_down::item::item(const char* value) : value_(value) {
 }
 
-const xtd::ustring& domain_up_down::item::value() const noexcept {
+const xtd::string& domain_up_down::item::value() const noexcept {
   return value_;
 }
 
@@ -37,7 +37,7 @@ int32 domain_up_down::item::compare_to(const item& value) const noexcept {
   return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
 }
 
-xtd::ustring domain_up_down::item::to_string() const noexcept {
+xtd::string domain_up_down::item::to_string() const noexcept {
   return value_;
 }
 
@@ -143,7 +143,7 @@ domain_up_down domain_up_down::create(const drawing::point& location, const draw
   return result;
 }
 
-domain_up_down domain_up_down::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.location(location);
   result.size(size);
@@ -172,7 +172,7 @@ domain_up_down domain_up_down::create(const object_collection& items, const draw
   return result;
 }
 
-domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.items(items);
   result.location(location);
@@ -205,7 +205,7 @@ domain_up_down domain_up_down::create(const object_collection& items, size_t sel
    return result;
 }
 
-domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.items(items);
   result.selected_index(selected_index);
@@ -236,7 +236,7 @@ domain_up_down domain_up_down::create(const control& parent, const drawing::poin
   return result;
 }
 
-domain_up_down domain_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.parent(parent);
   result.location(location);
@@ -269,7 +269,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
   return result;
 }
 
-domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.parent(parent);
   result.items(items);
@@ -306,7 +306,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
   return result;
 }
 
-domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.parent(parent);
   result.items(items);
@@ -338,7 +338,7 @@ drawing::color domain_up_down::default_fore_color() const noexcept {
 
 xtd::uptr<xtd::object> domain_up_down::clone() const {
   auto result = xtd::new_uptr<domain_up_down>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

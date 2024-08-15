@@ -76,7 +76,7 @@ const std::vector<color>& brown_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& brown_colors::get_color_names() noexcept {
+const std::vector<string>& brown_colors::get_color_names() noexcept {
   static auto color_names = std::vector {brown_colors::maroon().name(), brown_colors::brown().name(), brown_colors::saddle_brown().name(), brown_colors::sienna().name(), brown_colors::chocolate().name(), brown_colors::dark_goldenrod().name(), brown_colors::peru().name(), brown_colors::rosy_brown().name(), brown_colors::goldenrod().name(), brown_colors::sandy_brown().name(), brown_colors::tan().name(), brown_colors::burly_wood().name(), brown_colors::wheat().name(), brown_colors::navajo_white().name(), brown_colors::bisque().name(), brown_colors::blanched_almond().name(), brown_colors::cornsilk().name()};
   return color_names;
 }

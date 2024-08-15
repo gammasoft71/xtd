@@ -72,7 +72,7 @@ namespace xtd {
         /// @remarks This constructor creates a new xtd::net::sockets::tcp_client and makes a synchronous connection attempt to the provided host name and port number. The underlying service provider will assign the most appropriate local IP address and port number. xtd::net::sockets::tcp_client will block until it either connects or fails. This constructor allows you to initialize, resolve the DNS host name, and connect in one convenient step.
         /// @remarks If IPv6 is enabled and the xtd::net::sockets::tcp_client method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        tcp_client(const xtd::ustring& hostname, uint16 port);
+        tcp_client(const xtd::string& hostname, uint16 port);
         /// @}
         
         /// @cond
@@ -127,7 +127,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks By default, multiple clients can use a specific port; however, only one of the clients can perform operations on the network traffic sent to the port.
         /// @remarks You can use the xtd::net::sockets::tcp_client::client::exclusive_address_use property to prevent multiple clients from using a specific port.
-        /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::ustring, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
+        /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::string, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
         bool exclusive_address_use() const;
         /// @brief Sets a bool value that specifies whether the xtd::net::sockets::tcp_client allows only one client to use a port.
         /// @param value bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, false.
@@ -136,7 +136,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks By default, multiple clients can use a specific port; however, only one of the clients can perform operations on the network traffic sent to the port.
         /// @remarks You can use the xtd::net::sockets::tcp_client::client::exclusive_address_use property to prevent multiple clients from using a specific port.
-        /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::ustring, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
+        /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::string, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
         tcp_client& exclusive_address_use(bool value);
         
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket will delay closing a socket in an attempt to send all pending data.
@@ -271,7 +271,7 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::sptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
-        /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by a host name (xtd::ustring) and a port number (uint16).
+        /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by a host name (xtd::string) and a port number (uint16).
         /// @param host The name of the remote host.
         /// @param port The port number of the remote host.
         /// @param callback An xtd::async_callback delegate that references the method to invoke when the operation is complete.
@@ -282,7 +282,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_client::client::begin_connect operation must be completed by calling the xtd::net::sockets::tcp_client::end_connect method. Typically, the method is invoked by the asyncCallback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief Disposes this xtd::net::sockets::tcp_client instance and requests that the underlying TCP connection be closed.
         /// @remarks The xtd::net::sockets::tcp_client::close method marks the instance as disposed and requests that the associated xtd::net::sockets::socket close the TCP connection. Based on the xtd::net::sockets::tcp_client::linger_state property,
@@ -315,9 +315,9 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This constructor creates a new xtd::net::sockets::tcp_client and makes a synchronous connection attempt to the provided host name and port number. The underlying service provider will assign the most appropriate local IP address and port number. xtd::net::sockets::tcp_client will block until it either connects or fails. This constructor allows you to initialize, resolve the DNS host name, and connect in one convenient step.
-        /// @remarks If IPv6 is enabled and the xtd::net::sockets::tcp_client(xtd::ustring, uint16) method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.
+        /// @remarks If IPv6 is enabled and the xtd::net::sockets::tcp_client(xtd::string, uint16) method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void connect(const xtd::ustring& hostname, uint16 port);
+        void connect(const xtd::string& hostname, uint16 port);
         
         /// @brief Ends a pending asynchronous connection attempt.
         /// @param result An xtd::iasync_result object returned by a call to xtd::net::sockets::tcp_client::client::begin_connect.

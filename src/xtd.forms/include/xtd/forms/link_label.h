@@ -88,12 +88,12 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        const_reference operator [](const xtd::ustring& name) const noexcept;
+        const_reference operator [](const xtd::string& name) const noexcept;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        reference operator [](const xtd::ustring& name) noexcept;
+        reference operator [](const xtd::string& name) noexcept;
         /// @}
       };
       
@@ -250,47 +250,47 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::link_label with specified text.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text);
+      static link_label create(const xtd::string& text);
       /// @brief A factory to create an xtd::forms::link_label with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const drawing::point& location);
+      static link_label create(const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::link_label with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static link_label create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::link_label with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::link_label with specified text.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const link_collection& links);
+      static link_label create(const xtd::string& text, const link_collection& links);
       /// @brief A factory to create an xtd::forms::link_label with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
      /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const link_collection& links, const drawing::point& location);
+      static link_label create(const xtd::string& text, const link_collection& links, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::link_label with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
      /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size);
+      static link_label create(const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::link_label with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
@@ -298,7 +298,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::link_label with specified parent,.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
@@ -320,25 +320,25 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text);
+      static link_label create(const control& parent, const xtd::string& text);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      static link_label create(const control& parent, const xtd::string& text, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      static link_label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
@@ -346,19 +346,19 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const link_collection& links);
+      static link_label create(const control& parent, const xtd::string& text, const link_collection& links);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location);
+      static link_label create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
@@ -366,7 +366,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size);
+      static link_label create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::link_label with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::link_label.
       /// @param text A string that represent text of the xtd::forms::link_label.
@@ -375,7 +375,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @param name The name of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
-      static link_label create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static link_label create(const control& parent, const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

@@ -34,213 +34,213 @@ namespace xtd {
       
       /// @{
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title, const open_file_box_options options);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory, const open_file_box_options options);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter);
       /// @brief Displays a select file dialog box in front of a specified window.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter, const open_file_box_options options);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
+      /// @param file_name An output xtd::string that will store the selected file name.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name);
+      static xtd::forms::dialog_result show(xtd::string& file_name);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title);
       
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title, const open_file_box_options options);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title, const xtd::string& initial_directory);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title, const xtd::string& initial_directory, const open_file_box_options options);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter);
       /// @brief Displays a select file dialog box.
-      /// @param file_name An output xtd::ustring that will store the selected file name.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param file_name An output xtd::string that will store the selected file name.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const open_file_box_options options);
+      static xtd::forms::dialog_result show(xtd::string& file_name, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter);
       /// @brief Displays a multiple file select dialog box in front of a specified window.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::forms::iwin32_window& owner, const xtd::string& title, const xtd::string& initial_directory,  const xtd::string& filter, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const xtd::ustring& initial_directory);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title, const xtd::string& initial_directory);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const xtd::ustring& initial_directory, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title, const xtd::string& initial_directory, const open_file_box_options options);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const xtd::ustring& initial_directory, const xtd::ustring& filter);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title, const xtd::string& initial_directory, const xtd::string& filter);
       /// @brief Displays a multiple file select dialog box.
-      /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
+      /// @param file_names An output std::vector <xtd::string> that will store the selected file names.
+      /// @param title An xtd::string that specifies the caption title of the file dialog box.
+      /// @param initial_directory An xtd::string that specifies the initial directory displayed by the file dialog box
+      /// @param filter An xtd::string that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::open_file_box_options to specify additional options to the file dialog box
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
-      static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const xtd::ustring& initial_directory, const xtd::ustring& filter, const open_file_box_options options);
+      static xtd::forms::dialog_result show(std::vector<xtd::string>& file_names, const xtd::string& title, const xtd::string& initial_directory, const xtd::string& filter, const open_file_box_options options);
       /// @}
       
     private:
       template<const bool multiselect, typename output_t>
-      static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::ustring& title, const xtd::ustring& initial_directory = xtd::ustring::empty_string, const xtd::ustring& filter = xtd::ustring::empty_string, const open_file_box_options options = open_file_box_options::none, const xtd::forms::iwin32_window* owner = nullptr) {
+      static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::string& title, const xtd::string& initial_directory = xtd::string::empty_string, const xtd::string& filter = xtd::string::empty_string, const open_file_box_options options = open_file_box_options::none, const xtd::forms::iwin32_window* owner = nullptr) {
         auto dialog = xtd::forms::open_file_dialog {};
         dialog.multiselect(multiselect)
         .title(title)

@@ -57,28 +57,28 @@ namespace xtd {
   inline const object& unboxing(const object& value) noexcept {return value;}
   inline object& unboxing(object& value) noexcept {return value;}
   
-  inline const char* unboxing(const ustring& value) noexcept {return value.c_str();}
-  inline const char* unboxing(ustring& value) noexcept {return value.c_str();}
+  inline const char* unboxing(const string& value) noexcept {return value.c_str();}
+  inline const char* unboxing(string& value) noexcept {return value.c_str();}
   
   template<typename char_t>
-  inline const char_t* unboxing(const ustring& value) {throw invalid_cast_exception("Invalid character type");}
+  inline const char_t* unboxing(const string& value) {throw invalid_cast_exception("Invalid character type");}
   template<typename char_t>
-  inline const char_t* unboxing(ustring& value) {throw invalid_cast_exception("Invalid character type");}
+  inline const char_t* unboxing(string& value) {throw invalid_cast_exception("Invalid character type");}
   
   template<>
-  inline const char* unboxing<char>(const ustring& value) {return value.c_str();}
+  inline const char* unboxing<char>(const string& value) {return value.c_str();}
   template<>
-  inline const char* unboxing<char>(ustring& value) {return value.c_str();}
+  inline const char* unboxing<char>(string& value) {return value.c_str();}
   
 #if defined(__xtd__cpp_lib_char8_t)
   template<>
-  inline const char8* unboxing<char8>(const ustring& value) {
+  inline const char8* unboxing<char8>(const string& value) {
     thread_local static std::u8string result;
     result = convert_string::to_u8string(value);
     return result.c_str();
   }
   template<>
-  inline const char8* unboxing<char8>(ustring& value) {
+  inline const char8* unboxing<char8>(string& value) {
     thread_local static std::u8string result;
     result = convert_string::to_u8string(value);
     return result.c_str();
@@ -86,39 +86,39 @@ namespace xtd {
 #endif
   
   template<>
-  inline const char16* unboxing<char16>(const ustring& value) {
+  inline const char16* unboxing<char16>(const string& value) {
     thread_local static std::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
   template<>
-  inline const char16* unboxing<char16>(ustring& value) {
+  inline const char16* unboxing<char16>(string& value) {
     thread_local static std::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
   
   template<>
-  inline const char32* unboxing<char32>(const ustring& value) {
+  inline const char32* unboxing<char32>(const string& value) {
     thread_local static std::u32string result;
     result = convert_string::to_u32string(value);
     return result.c_str();
   }
   template<>
-  inline const char32* unboxing<char32>(ustring& value) {
+  inline const char32* unboxing<char32>(string& value) {
     thread_local static std::u32string result;
     result = convert_string::to_u32string(value);
     return result.c_str();
   }
   
   template<>
-  inline const wchar* unboxing<wchar>(const ustring& value) {
+  inline const wchar* unboxing<wchar>(const string& value) {
     thread_local static std::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();
   }
   template<>
-  inline const wchar* unboxing<wchar>(ustring& value) {
+  inline const wchar* unboxing<wchar>(string& value) {
     thread_local static std::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();

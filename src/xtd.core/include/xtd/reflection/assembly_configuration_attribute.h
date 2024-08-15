@@ -29,12 +29,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xttd::reflection::assembly_configuration_attribute class.
       /// @param configuration The assembly configuration.
-      explicit assembly_configuration_attribute(const ustring& configuration);
+      explicit assembly_configuration_attribute(const string& configuration);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_configuration_attribute(const ustring& value, const object& executing_assembly);
+      assembly_configuration_attribute(const string& value, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -42,14 +42,14 @@ namespace xtd {
       /// @{
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
-      const ustring& configuration() const noexcept;
+      const string& configuration() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring configuration_;
+      string configuration_;
     };
   }
 }

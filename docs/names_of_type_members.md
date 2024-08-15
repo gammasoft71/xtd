@@ -11,11 +11,11 @@ Because methods are the means of taking action, the design guidelines require th
 **✔️ DO** give methods names that are verbs or verb phrases.
 
 ```cpp
-​class ustring : public object {
+​class string : public object {
 public:
   int compare_to(...);
-  std::vectory<ustring> split(...);
-  ustring trim();
+  std::vectory<string> split(...);
+  string trim();
 };
 ```
 
@@ -28,9 +28,9 @@ Unlike other members, properties should be given noun phrase or adjective names.
 **❌ DO NOT** have properties that match the name of "get_" or "set_" methods as in the following example:
 
 ```cpp
-ustring text_writer() const { ... }
-void textt_writer(const ustring& value) { ... }
-ustring get_text_writer(int value) { ... }
+string text_writer() const { ... }
+void textt_writer(const string& value) { ... }
+string get_text_writer(int value) { ... }
 ```
 
 This pattern typically indicates that the property should really be a method.

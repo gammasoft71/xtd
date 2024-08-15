@@ -76,7 +76,7 @@ const std::vector<color>& white_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& white_colors::get_color_names() noexcept {
+const std::vector<string>& white_colors::get_color_names() noexcept {
   static auto color_names = std::vector {white_colors::misty_rose().name(), white_colors::antique_white().name(), white_colors::linen().name(), white_colors::beige().name(), white_colors::white_smoke().name(), white_colors::lavender_blush().name(), white_colors::old_lace().name(), white_colors::alice_blue().name(), white_colors::sea_shell().name(), white_colors::ghost_white().name(), white_colors::honeydew().name(), white_colors::floral_white().name(), white_colors::azure().name(), white_colors::mint_cream().name(), white_colors::snow().name(), white_colors::ivory().name(), white_colors::white().name()};
   return color_names;
 }

@@ -188,12 +188,12 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator [](const xtd::ustring& name) const;
+        std::optional<value_type> operator [](const xtd::string& name) const;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        std::optional<value_type> operator [](const xtd::ustring& name);
+        std::optional<value_type> operator [](const xtd::string& name);
         /// @}
         
         /// @name Public Methods
@@ -326,13 +326,13 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value.
-      explicit control(const xtd::ustring& text);
+      explicit control(const xtd::string& text);
       /// @brief Initializes a new instance of the xtd::forms::control class as a child control, with specific text.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
-      control(const control& parent, const xtd::ustring& text);
+      control(const control& parent, const xtd::string& text);
       /// @brief Initializes a new instance of the control class with specific text, size, and location.
       /// @param text The text displayed by the control.
       /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the left property.
@@ -341,7 +341,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      control(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height);
+      control(const xtd::string& text, int32 left, int32 top, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::forms::control class as a child control, with specific text, size, and location.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
@@ -351,7 +351,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the xtd::forms::control::height property.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the xtd::forms::control::parent control's control::control_collection. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      control(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height);
+      control(const control& parent, const xtd::string& text, int32 left, int32 top, int32 width, int32 height);
       /// @}
       
       /// @cond
@@ -493,7 +493,7 @@ namespace xtd {
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual xtd::ustring company_name() const noexcept;
+      virtual xtd::string company_name() const noexcept;
       
       /// @brief Gets the xtd::forms::context_menu that is displayed in the control.
       /// @return A xtd::forms::context_menu that represents the context menu to display in the control.
@@ -728,11 +728,11 @@ namespace xtd {
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
-      virtual const xtd::ustring& name() const noexcept;
+      virtual const xtd::string& name() const noexcept;
       /// @brief Sets the name of the control.
       /// @param name The name of the control. The default is an empty string ("").
       /// @return Current control.
-      virtual control& name(const xtd::ustring& name);
+      virtual control& name(const xtd::string& name);
       
       /// @brief Gets padding within the control.
       /// @return A padding representing the control's internal spacing characteristics.
@@ -756,7 +756,7 @@ namespace xtd {
       
       /// @brief Gets the product name of the assembly containing the control.
       /// @return The product name of the assembly containing the control.
-      virtual xtd::ustring product_name() const noexcept;
+      virtual xtd::string product_name() const noexcept;
       
       /// @brief Gets a value indicating whether the control is currently re-creating its handle.
       /// @return true if the control is currently re-creating its handle; otherwise, false.
@@ -835,7 +835,7 @@ namespace xtd {
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      virtual control& style_sheet(const xtd::ustring& value);
+      virtual control& style_sheet(const xtd::string& value);
       /// @brief Resets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
@@ -868,11 +868,11 @@ namespace xtd {
       
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
-      virtual const xtd::ustring& text() const noexcept;
+      virtual const xtd::string& text() const noexcept;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual control& text(const xtd::ustring& text);
+      virtual control& text(const xtd::string& text);
       
       /// @brief Gets the toolkit handle that the control is bound to.
       /// @return An intptr that contains the toolkit handle (HWND) of the control.
@@ -1151,7 +1151,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the control, if any.
       /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       
       /// @brief Causes the control to redraw the invalidated regions within its client area.
       /// @remarks Executes any pending requests for painting.
@@ -1198,7 +1198,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a specified control with specified parent.
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
@@ -1222,7 +1222,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a specified control.
       /// @return New control created.
       template<typename control_t>
@@ -1256,7 +1256,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+      static control_t create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.location(location);
         result.size(size);
@@ -1303,7 +1303,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1315,7 +1315,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::ustring& text) {
+      static control_t create(const xtd::string& text) {
         auto result = control_t {};
         result.text(text);
         return result;
@@ -1325,7 +1325,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::ustring& text, const drawing::point& location) {
+      static control_t create(const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1337,7 +1337,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+      static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1351,7 +1351,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+      static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1364,7 +1364,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::ustring& text) {
+      static control_t create(const control& parent, const xtd::string& text) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1376,7 +1376,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1390,7 +1390,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1406,7 +1406,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -2179,7 +2179,7 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual void set_text(const xtd::ustring& text);
+      virtual void set_text(const xtd::string& text);
       
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
@@ -2227,7 +2227,7 @@ namespace xtd {
       void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
-      static bool is_trace_form_or_control(const ustring& name);
+      static bool is_trace_form_or_control(const string& name);
       void on_controls_item_added(size_t, control_ref item);
       void on_controls_item_removed(size_t, control_ref item);
       void on_parent_size_changed(object& sender, const event_args& e);

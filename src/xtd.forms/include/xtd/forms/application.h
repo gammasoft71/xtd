@@ -81,7 +81,7 @@ namespace xtd {
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks product_version first looks to see if the assembly containing the main executable has the AssemblyInformationalVersion attribute on it. If this attribute exists, it is used for both product_version and common_app_data_path. If this attribute does not exist, both properties use the version of the executable file instead.
       /// @remarks The path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
-      static xtd::ustring common_app_data_path() noexcept;
+      static xtd::string common_app_data_path() noexcept;
       
       /*
        /// @brief Gets the registry key for the application data that is shared among all users.
@@ -96,10 +96,10 @@ namespace xtd {
       /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
       /// ```cpp
       /// void PrintCompanyName() {
-      ///   textBox1.Text(xtd::ustring::format("The company name is: {0}", application::company_name);
+      ///   textBox1.Text(xtd::string::format("The company name is: {0}", application::company_name);
       /// }
       /// ```
-      static xtd::ustring company_name() noexcept;
+      static xtd::string company_name() noexcept;
 
       /// @brief Gets a value indicating whether dark mode is enabled for the application.
       /// @return True is dark mode enabled; otherwise false.
@@ -118,11 +118,11 @@ namespace xtd {
       
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
-      static xtd::ustring executable_name() noexcept;
+      static xtd::string executable_name() noexcept;
       
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      static xtd::ustring executable_path() noexcept;
+      static xtd::string executable_path() noexcept;
 
       /// @brief Gets a value indicating whether font size correction is enabled.
       /// @return true if font size correction is enabled; otherwise false.
@@ -195,15 +195,15 @@ namespace xtd {
       
       /// @brief Gets the product name associated with this application.
       /// @return The product name.
-      static xtd::ustring product_name() noexcept;
+      static xtd::string product_name() noexcept;
       
       /// @brief Gets the product version associated with this application.
       /// @return The product version.
-      static xtd::ustring product_version() noexcept;
+      static xtd::string product_version() noexcept;
       
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
-      static xtd::ustring startup_path() noexcept;
+      static xtd::string startup_path() noexcept;
       
       /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
@@ -263,7 +263,7 @@ namespace xtd {
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks Data stored in this path is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
       /// @remarks A typical base path is "C:\Documents and Settings\username\Application Data".
-      static xtd::ustring user_app_data_path() noexcept;
+      static xtd::string user_app_data_path() noexcept;
       
       /*
        /// @brief Gets the registry key for the application data of a user.
@@ -423,7 +423,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The style sheet name not tvalid.
       /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static xtd::forms::style_sheets::style_sheet get_style_sheet_from_name(const xtd::ustring& name);
+      static xtd::forms::style_sheets::style_sheet get_style_sheet_from_name(const xtd::string& name);
       
       /// @brief Raises the Idle event
       /// @param e The event_args objects to pass to the idle event.

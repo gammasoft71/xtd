@@ -14,19 +14,19 @@ namespace xtd {
   /// ```cpp
   /// // values is released automatically after the end closure }.
   /// using_(auto values = {1, 2, 3, 4, 5}) {
-  ///   cout << ustring::join(", ", values) << endl;
+  ///   cout << string::join(", ", values) << endl;
   /// }
   /// ```
   /// same as :
   /// ```cpp
   /// using_(auto values = {1, 2, 3, 4, 5})
-  ///   cout << ustring::join(", ", values) << endl;
+  ///   cout << string::join(", ", values) << endl;
   /// ```
   /// same as :
   /// ```cpp
   /// {
   ///   auto values = {1, 2, 3, 4, 5};
-  ///   cout << ustring::join(", ", values) << endl;
+  ///   cout << string::join(", ", values) << endl;
   /// }
   /// ```
   /// @remarks same as #block_scope_

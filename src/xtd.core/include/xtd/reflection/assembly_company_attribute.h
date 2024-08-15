@@ -29,12 +29,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_company_attribute class.
       /// @param company The company name information.
-      explicit assembly_company_attribute(const ustring& company);
+      explicit assembly_company_attribute(const string& company);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_company_attribute(const ustring& value, const object& executing_assembly);
+      assembly_company_attribute(const string& value, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -42,14 +42,14 @@ namespace xtd {
       /// @{
       /// @brief Gets company name information.
       /// @return A string containing the company name.
-      const ustring& company() const noexcept;
+      const string& company() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring company_;
+      string company_;
     };
   }
 }

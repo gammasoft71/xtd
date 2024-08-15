@@ -63,7 +63,7 @@ namespace xtd {
         /// @brief Synchronously speaks the contents of a string.
         /// @param text_to_speak The text to speak.
         /// @remarks To asynchronously speak the contents of a xtd::speech::synthesis::prompt_builder object, use xtd::speech::synthesis::speech_synthesizer::speak_async.
-        void speak(const xtd::ustring& text_to_speak);
+        void speak(const xtd::string& text_to_speak);
         /// @brief Synchronously speaks the contents of a xtd::speech::synthesis::prompt object.
         /// @param prompt The content to speak.
         /// @remarks To asynchronously speak the contents of a xtd::speech::synthesis::prompt_builder object, use xtd::speech::synthesis::speech_synthesizer::speak_async.
@@ -72,7 +72,7 @@ namespace xtd {
         /// @brief Asynchronously speaks the contents of a string.
         /// @param text_to_speak The text to speak.
         /// @return Returns the object that contains the content to speak.
-        xtd::speech::synthesis::prompt& speak_async(const xtd::ustring& text_to_speak);
+        xtd::speech::synthesis::prompt& speak_async(const xtd::string& text_to_speak);
         /// @brief Asynchronously speaks the contents of a xtd::speech::synthesis::prompt object.
         /// @param prompt The content to speak.
         void speak_async(xtd::speech::synthesis::prompt& prompt);

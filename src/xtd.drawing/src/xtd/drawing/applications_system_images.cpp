@@ -168,7 +168,7 @@ std::vector<image> applications_system_images::get_images(const xtd::drawing::si
   return std::vector {accessories_calculator(size), accessories_character_map(size), accessories_dictionary(size), accessories_text_editor(size), help_browser(size), help(size), multimedia_volume_control(size), preferences_desktop_accessibility(size), preferences_desktop_font(size), preferences_desktop_keyboard(size), preferences_desktop_locale(size), preferences_desktop_screensaver(size), preferences_desktop_theme(size), preferences_desktop_wallpaper(size), system_file_manager(size), system_software_install(size), system_software_update(size), utilities_system_monitor(size), utilities_terminal(size), };
 }
 
-const std::vector<ustring>& applications_system_images::get_image_names() noexcept {
+const std::vector<string>& applications_system_images::get_image_names() noexcept {
   static auto names = std::vector {"accessories-calculator"_s, "accessories-character-map"_s, "accessories-dictionary"_s, "accessories-text-editor"_s, "help-browser"_s, "help"_s, "multimedia-volume-control"_s, "preferences-desktop-accessibility"_s, "preferences-desktop-font"_s, "preferences-desktop-keyboard"_s, "preferences-desktop-locale"_s, "preferences-desktop-screensaver"_s, "preferences-desktop-theme"_s, "preferences-desktop-wallpaper"_s, "system-file-manager"_s, "system-software-install"_s, "system-software-update"_s, "utilities-system-monitor"_s, "utilities-terminal"_s, };
   return names;
 }

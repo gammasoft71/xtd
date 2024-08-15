@@ -21,7 +21,7 @@ public:
     throw invalid_operation_exception {csf_};
   }
   
-  bool create(bool initially_owned, const ustring& name) override {
+  bool create(bool initially_owned, const string& name) override {
     name_ = name;
     handle_ = native::named_mutex::create(initially_owned, name);
     return handle_ != invalid_handle;
@@ -33,7 +33,7 @@ public:
     handle_ = invalid_handle;
   }
   
-  bool open(const ustring& name) override {
+  bool open(const string& name) override {
     name_ = name;
     handle_ = native::named_mutex::open(name);
     return handle_ != invalid_handle;
@@ -50,5 +50,5 @@ public:
   
 private:
   intptr handle_ = invalid_handle;
-  ustring name_;
+  string name_;
 };

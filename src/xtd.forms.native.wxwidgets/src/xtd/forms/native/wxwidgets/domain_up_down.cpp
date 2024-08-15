@@ -38,7 +38,7 @@ void domain_up_down::end_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void domain_up_down::insert_item(intptr control, size_t index, const ustring& value) {
+void domain_up_down::insert_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -66,7 +66,7 @@ void domain_up_down::selected_index(intptr control, size_t index) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
 
-void domain_up_down::update_item(intptr control, size_t index, const ustring& value) {
+void domain_up_down::update_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

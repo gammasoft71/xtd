@@ -110,7 +110,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static animation create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per seconds.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
@@ -132,7 +132,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static animation create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::animation with specified parent.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
@@ -154,7 +154,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static animation create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::animation with specified parent, and the number of frame per second.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
@@ -180,7 +180,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events

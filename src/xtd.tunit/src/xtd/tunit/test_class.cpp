@@ -11,7 +11,7 @@ time_span test_class::elapsed_time() const noexcept {
   return end_time_point - start_time_;
 }
 
-ustring test_class::name() const noexcept {
+string test_class::name() const noexcept {
   return name_;
 }
 

@@ -51,7 +51,7 @@ namespace xtd {
         /// @name Public Fields
         
         /// @{
-        /// @brief Represents an empty item that value is equal to xtd::ustring::empty_string and tag has no vlaue.
+        /// @brief Represents an empty item that value is equal to xtd::string::empty_string and tag has no vlaue.
         static const item empty;
         /// @}
 
@@ -62,11 +62,11 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value); // Can't be explicit by design.
+        item(const xtd::string& value); // Can't be explicit by design.
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, const std::any& tag);
+        item(const xtd::string& value, const std::any& tag);
         /// @}
         
         /// @cond
@@ -82,8 +82,8 @@ namespace xtd {
         
         /// @{
         /// @brief Gets the value of the item.
-        /// @return A xtd::ustring that represent the value of item.
-        virtual const xtd::ustring& value() const noexcept;
+        /// @return A xtd::string that represent the value of item.
+        virtual const xtd::string& value() const noexcept;
         
         /// @brief Gets the tag of the item.
         /// @return A std::any that represent the tag of item.
@@ -100,11 +100,11 @@ namespace xtd {
         
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
         
       private:
-        xtd::ustring value_;
+        xtd::string value_;
         std::any tag_;
       };
       

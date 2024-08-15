@@ -117,14 +117,14 @@ namespace xtd {
       /// @remarks If extension does not contain a leading period, the period is added.
       /// @remarks If path contains a multiple extension separated by multiple periods, the returned string contains the contents of path with the last period and all characters following it replaced by extension. For example, if path is "\Dir1\examples\pathtests.csx.txt" and extension is "cs", the modified path is "\Dir1\examples\pathtests.csx.cs".
       /// @remarks It is not possible to verify that the returned results are valid in all scenarios. For example, if path is empty, extension is appended.
-      static xtd::ustring change_extension(const xtd::ustring& path, const xtd::ustring& extension);
+      static xtd::string change_extension(const xtd::string& path, const xtd::string& extension);
       
       /// @brief Combines two path strings.
       /// @param path1 The first path.
       /// @param path2 The second path.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::ustring combine(const xtd::ustring& path1, const xtd::ustring& path2);
+      static xtd::string combine(const xtd::string& path1, const xtd::string& path2);
       
       /// @brief Combines three path strings.
       /// @param path1 The first path.
@@ -154,8 +154,8 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<typename path_t>
-      static xtd::ustring combine(path_t paths) noexcept {
-        xtd::ustring result;
+      static xtd::string combine(path_t paths) noexcept {
+        xtd::string result;
         std::for_each(paths.begin(), paths.end(), [&](auto path) {result = combine(result, path);});
         return result;
       }
@@ -164,36 +164,36 @@ namespace xtd {
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept;
+      static xtd::string combine(const std::initializer_list<xtd::string>& paths) noexcept;
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
       /// @return A string containing directory information for path, or null if path denotes a root directory, is the empty string ("").
       /// @remarks Returns string empty if path does not contain directory information.
-      static xtd::ustring get_directory_name(const xtd::ustring& path);
+      static xtd::string get_directory_name(const xtd::string& path);
       
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
-      /// @return An xtd::ustring containing the extension of the specified path (including the ".") or xtd::ustring::empty.
+      /// @return An xtd::string containing the extension of the specified path (including the ".") or xtd::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
-      static xtd::ustring get_extension(const xtd::ustring& path);
+      static xtd::string get_extension(const xtd::string& path);
       
       /// @brief Returns the file name and extension of the specified path string.
       /// @param path The path string from which to obtain the file name and extension.
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
-      static xtd::ustring get_file_name(const xtd::ustring& path);
+      static xtd::string get_file_name(const xtd::string& path);
 
       /// @brief Returns the file name of the specified path string without the extension.
       /// @param path The path of the file.
       /// @return The string returned by xtd::io::path::get_file_name, minus the last period (.) and all characters following it.
       /// @remarks This method does not verify that the path or file name exists.
-      static xtd::ustring get_file_name_without_extension(const xtd::ustring& path);
+      static xtd::string get_file_name_without_extension(const xtd::string& path);
       
       /// @brief Returns the absolute path for the specified path string.
       /// @param path The file or directory for which to obtain absolute path information.
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
-      static xtd::ustring get_full_path(const xtd::ustring& path);
+      static xtd::string get_full_path(const xtd::string& path);
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
@@ -211,32 +211,32 @@ namespace xtd {
       /// @return A string containing the root directory of path, such as "C:\", or null if
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
-      static xtd::ustring get_path_root(const xtd::ustring& path);
+      static xtd::string get_path_root(const xtd::string& path);
       
       /// @brief Returns a random folder name or file name.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       /// @remarks The default name length is 8 and the default extension length is 3.
-      static xtd::ustring get_random_file_name();
+      static xtd::string get_random_file_name();
       /// @brief Returns a random folder name or file name with specified name length.
       /// @brief name_length The lname legnth.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       /// @remarks The default extension length is 0.
-      static xtd::ustring get_random_file_name(size_t name_length);
+      static xtd::string get_random_file_name(size_t name_length);
       /// @brief Returns a random folder name or file name with specified name length, and extension length.
       /// @brief name_length The name legnth.
       /// @brief extension_size The extension legnth.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      static xtd::ustring get_random_file_name(size_t name_size, size_t extension_size);
+      static xtd::string get_random_file_name(size_t name_size, size_t extension_size);
 
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
       /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
-      static xtd::ustring get_temp_file_name();
+      static xtd::string get_temp_file_name();
 
       /// @brief Returns the path of the current user's temporary folder.
       /// @return string The path to the temporary folder, ending with a backslash.
@@ -245,26 +245,26 @@ namespace xtd {
       /// * The path specified by the TEMP environment variable.
       /// * The path specified by the USERPROFILE environment variable.
       /// * The Windows directory.
-      static xtd::ustring get_temp_path() noexcept;
+      static xtd::string get_temp_path() noexcept;
       
       /// @brief Determines whether a path includes a file name extension.
       /// @param path The path to search for an extension.
       /// @return true if the characters that follow the last directory separator (\\ or /)
       /// @return or volume separator (:) in the path include a period (.) followed by one
       /// @return or more characters; otherwise, false.
-      static bool has_extension(const xtd::ustring& path);
+      static bool has_extension(const xtd::string& path);
       
       /// @brief Gets a value indicating whether the specified path string contains absolute or relative path information.
       /// @param path The path to test.
       /// @return true if path contains an absolute path; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
-      static bool is_path_rooted(const xtd::ustring& path);
+      static bool is_path_rooted(const xtd::string& path);
       /// @}
       
     private:
-      static int32 __get_index_path_rooted(const xtd::ustring& path);
-      static bool __is_drive(const xtd::ustring& path) noexcept;
+      static int32 __get_index_path_rooted(const xtd::string& path);
+      static bool __is_drive(const xtd::string& path) noexcept;
     };
   }
 }

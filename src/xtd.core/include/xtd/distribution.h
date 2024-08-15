@@ -28,7 +28,7 @@ namespace xtd {
   /// @remarks By design, the distribution class is not a general purpose means of describing an operating system distribution, and you cannot derive a more inclusive type from the distribution class. If you need a type to contain other information about an operating system distribution, create your own type, then include a field of type distribution and any additional fields or methods that you require.
   class distribution final : public object {
   public:
-    using id_collection = std::vector<xtd::ustring>;
+    using id_collection = std::vector<xtd::string>;
     /// @name Public Constructors
     
     /// @{
@@ -42,7 +42,7 @@ namespace xtd {
     /// @param version_string The operating system distribution version string.
     /// @param home The operating system distribution home url.
     /// @param bug_repport The operating system distribution bug report url.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string, const xtd::uri& home, const xtd::uri& bug_repport);
+    distribution(const xtd::string& name, const xtd::version& version, const xtd::string& code_name, const xtd::string& description, const xtd::string& id, const id_collection& like_ids, const xtd::string& version_string, const xtd::uri& home, const xtd::uri& bug_repport);
     /// @}
     
     /// @cond
@@ -60,11 +60,11 @@ namespace xtd {
     
     /// @brief Gets operating system distribution code name. For example "jammy" is the code name of Ubuntu 22.04.
     /// @return The operating system distribution code name.
-    const xtd::ustring& code_name() const noexcept;
+    const xtd::string& code_name() const noexcept;
     
     /// @brief Gets operating system distribution description. For example "Ubuntu 22.04.2 LTS".
     /// @return The operating system distribution description.
-    const xtd::ustring& description() const noexcept;
+    const xtd::string& description() const noexcept;
     
     /// @brief Gets operating system distribution home url.
     /// @return The operating system distribution home url.
@@ -72,7 +72,7 @@ namespace xtd {
     
     /// @brief Gets operating system distribution identifier.
     /// @return The operating system distribution identifier.
-    const xtd::ustring& id() const noexcept;
+    const xtd::string& id() const noexcept;
     
     /// @brief Gets operating system distribution like identifiers array.
     /// @return The operating system distribution like identifiers array.
@@ -80,7 +80,7 @@ namespace xtd {
     
     /// @brief Gets operating system distribution name. For example "Ubuntu".
     /// @return The operating system distribution name.
-    const xtd::ustring& name() const noexcept;
+    const xtd::string& name() const noexcept;
     
     /// @brief Gets a xtd::version object that identifies the operating system distribution. For example xtd::version(22, 4).
     /// @return Version A Version object that describes the major version, minor version, build, and revision numbers for the operating system distribution.
@@ -88,7 +88,7 @@ namespace xtd {
     
     /// @brief Gets operating system distribution version string.
     /// @return The operating system distribution version string.
-    const xtd::ustring& version_string() const noexcept;
+    const xtd::string& version_string() const noexcept;
     /// @}
     
     /// @name Public Methods
@@ -96,17 +96,17 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this distribution object to its equivalent string representation.
     /// @return The string representation of the value returned by the description property.
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:
-    xtd::ustring name_;
+    xtd::string name_;
     xtd::version version_;
-    xtd::ustring code_name_;
-    xtd::ustring description_;
-    xtd::ustring id_;
+    xtd::string code_name_;
+    xtd::string description_;
+    xtd::string id_;
     id_collection like_ids_;
-    xtd::ustring version_string_;
+    xtd::string version_string_;
     xtd::uri home_;
     xtd::uri bug_repport_;
   };

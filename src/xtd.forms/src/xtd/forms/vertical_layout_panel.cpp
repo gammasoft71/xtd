@@ -41,7 +41,7 @@ vertical_layout_panel vertical_layout_panel::create(const drawing::point& locati
   return result;
 }
 
-vertical_layout_panel vertical_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+vertical_layout_panel vertical_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = vertical_layout_panel {};
   result.location(location);
   result.size(size);
@@ -70,7 +70,7 @@ vertical_layout_panel vertical_layout_panel::create(const control& parent, const
   return result;
 }
 
-vertical_layout_panel vertical_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+vertical_layout_panel vertical_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = vertical_layout_panel {};
   result.parent(parent);
   result.location(location);
@@ -81,7 +81,7 @@ vertical_layout_panel vertical_layout_panel::create(const control& parent, const
 
 xtd::uptr<xtd::object> vertical_layout_panel::clone() const {
   auto result = xtd::new_uptr<vertical_layout_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

@@ -248,7 +248,7 @@ void lcd_label::dot_matrix_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
+    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     set_dots(it->second);
   }
@@ -375,7 +375,7 @@ void lcd_label::fourteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
+    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     fourteen_segment_display_digit::value(it->second);
   }
@@ -482,7 +482,7 @@ void lcd_label::nine_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
+    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     nine_segment_display_digit::value(it->second);
   }
@@ -589,7 +589,7 @@ void lcd_label::seven_segment_display_digit::set_character(char32 value) {
     {U':', forms::segments::pc}};
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
+    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     seven_segment_display::value(it->second);
   }
@@ -710,7 +710,7 @@ void lcd_label::sixteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
+    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     sixteen_segment_display::value(it->second);
   }
@@ -792,7 +792,7 @@ forms::lcd_style lcd_label::lcd_style() const noexcept {
 lcd_label& lcd_label::lcd_style(forms::lcd_style value) {
   if (data_->lcd_style == value) return *this;
   data_->lcd_style = value;
-  xtd::ustring current_text = text();
+  xtd::string current_text = text();
   text("");
   text(current_text);
   return *this;
@@ -833,7 +833,7 @@ lcd_label& lcd_label::thickness(int32 value) {
   return *this;
 }
 
-control& lcd_label::text(const xtd::ustring& value) {
+control& lcd_label::text(const xtd::string& value) {
   if (text() == value) return *this;
   if (is_handle_created()) suspend_layout();
   auto str = convert_string::to_wstring(value);
@@ -901,7 +901,7 @@ lcd_label lcd_label::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-lcd_label lcd_label::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+lcd_label lcd_label::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = lcd_label {};
   result.location(location);
   result.size(size);
@@ -909,20 +909,20 @@ lcd_label lcd_label::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-lcd_label lcd_label::create(const xtd::ustring& text) {
+lcd_label lcd_label::create(const xtd::string& text) {
   auto result = lcd_label {};
   result.text(text);
   return result;
 }
 
-lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& location) {
+lcd_label lcd_label::create(const xtd::string& text, const drawing::point& location) {
   auto result = lcd_label {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+lcd_label lcd_label::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = lcd_label {};
   result.text(text);
   result.location(location);
@@ -930,7 +930,7 @@ lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& loca
   return result;
 }
 
-lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+lcd_label lcd_label::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = lcd_label {};
   result.text(text);
   result.location(location);
@@ -960,7 +960,7 @@ lcd_label lcd_label::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-lcd_label lcd_label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+lcd_label lcd_label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = lcd_label {};
   result.parent(parent);
   result.location(location);
@@ -969,14 +969,14 @@ lcd_label lcd_label::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-lcd_label lcd_label::create(const control& parent, const xtd::ustring& text) {
+lcd_label lcd_label::create(const control& parent, const xtd::string& text) {
   auto result = lcd_label {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+lcd_label lcd_label::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = lcd_label {};
   result.parent(parent);
   result.text(text);
@@ -984,7 +984,7 @@ lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, con
   return result;
 }
 
-lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+lcd_label lcd_label::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = lcd_label {};
   result.parent(parent);
   result.text(text);
@@ -993,7 +993,7 @@ lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, con
   return result;
 }
 
-lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+lcd_label lcd_label::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = lcd_label {};
   result.parent(parent);
   result.text(text);
@@ -1009,7 +1009,7 @@ drawing::size lcd_label::default_size() const noexcept {
 
 xtd::uptr<xtd::object> lcd_label::clone() const {
   auto result = xtd::new_uptr<lcd_label>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

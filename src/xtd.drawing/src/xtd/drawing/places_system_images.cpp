@@ -296,7 +296,7 @@ std::vector<image> places_system_images::get_images(const xtd::drawing::size& si
   return std::vector {folder(size), folder_activities(size), folder_applications(size), folder_bookmark(size), folder_cloud(size), folder_desktop(size), folder_development(size), folder_documents(size), folder_download(size), folder_favorites(size), folder_games(size), folder_github(size), folder_home(size), folder_html(size), folder_images(size), folder_important(size), folder_locked(size), folder_music(size), folder_network(size), folder_print(size), folder_public(size), folder_remote(size), folder_system(size), folder_tar(size), folder_temp(size), folder_templates(size), folder_text(size), folder_videos(size), network_server(size), network_workgroup(size), start_here(size), user_bookmarks(size), user_desktop(size), user_home(size), user_trash(size), };
 }
 
-const std::vector<ustring>& places_system_images::get_image_names() noexcept {
+const std::vector<string>& places_system_images::get_image_names() noexcept {
   static auto names = std::vector {"folder"_s, "folder-activities"_s, "folder-applications"_s, "folder-bookmark"_s, "folder-cloud"_s, "folder-desktop"_s, "folder-development"_s, "folder-documents"_s, "folder-download"_s, "folder-favorites"_s, "folder-games"_s, "folder-github"_s, "folder-home"_s, "folder-html"_s, "folder-images"_s, "folder-important"_s, "folder-locked"_s, "folder-music"_s, "folder-network"_s, "folder-print"_s, "folder-public"_s, "folder-remote"_s, "folder-system"_s, "folder-tar"_s, "folder-temp"_s, "folder-templates"_s, "folder-text"_s, "folder-videos"_s, "network-server"_s, "network-workgroup"_s, "start-here"_s, "user-bookmarks"_s, "user-desktop"_s, "user-home"_s, "user-trash"_s, };
   return names;
 }

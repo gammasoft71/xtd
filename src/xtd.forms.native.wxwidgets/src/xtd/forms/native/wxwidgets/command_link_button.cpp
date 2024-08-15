@@ -37,7 +37,7 @@ void command_link_button::image_align(intptr control, uint32 align) {
   }
 }
 
-void command_link_button::texts(intptr control, const std::tuple<ustring, ustring>& texts) {
+void command_link_button::texts(intptr control, const std::tuple<string, string>& texts) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

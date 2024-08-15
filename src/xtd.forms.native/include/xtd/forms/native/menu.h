@@ -59,7 +59,7 @@ namespace xtd {
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_menu(intptr menu, size_t pos,  intptr menu_item, const xtd::ustring& text);
+        static void insert_menu(intptr menu, size_t pos,  intptr menu_item, const xtd::string& text);
         /// @brief Gets native menu handle.
         /// @param menu Menu handle.
         /// @return The native menu handle.
@@ -74,7 +74,7 @@ namespace xtd {
         /// @param menu Menu handle.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void text(intptr menu, const xtd::ustring& text);
+        static void text(intptr menu, const xtd::string& text);
         /// @}
       };
     }

@@ -29,12 +29,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_culture_attribute class.
       /// @param culture The culture information.
-      explicit assembly_culture_attribute(const ustring& culture);
+      explicit assembly_culture_attribute(const string& culture);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_culture_attribute(const ustring& culture, const object& executing_assembly);
+      assembly_culture_attribute(const string& culture, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -42,14 +42,14 @@ namespace xtd {
       /// @{
       /// @brief Gets culture information.
       /// @return A string containing the culture information.
-      const ustring& culture() const noexcept;
+      const string& culture() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring culture_;
+      string culture_;
     };
   }
 }

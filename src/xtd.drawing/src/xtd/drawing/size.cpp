@@ -62,8 +62,8 @@ drawing::size drawing::size::subtract(const drawing::size& size1, const drawing:
   return size1 - size2;
 }
 
-xtd::ustring drawing::size::to_string() const noexcept {
-  return ustring::format("{{width={}, height={}}}", width(), height());
+xtd::string drawing::size::to_string() const noexcept {
+  return string::format("{{width={}, height={}}}", width(), height());
 }
 
 drawing::size drawing::size::operator +(const drawing::size& size) const noexcept {

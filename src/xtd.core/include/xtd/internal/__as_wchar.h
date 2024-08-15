@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline wchar as<wchar>(const xtd::ustring& value) {
+  inline wchar as<wchar>(const xtd::string& value) {
     return xtd::convert::to_wchar(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline wchar as<wchar>(xtd::ustring& value) {
+  inline wchar as<wchar>(xtd::string& value) {
     return xtd::convert::to_wchar(value);
   }
   

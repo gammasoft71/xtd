@@ -150,7 +150,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static void enter(const type_t* str) {enter(ustring(str));}
+      static void enter(const type_t* str) {enter(string(str));}
       /// @endcond
 
       /// @brief Acquires an exclusive lock on the specified obj.
@@ -165,7 +165,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static void enter(const type_t* str, bool& lock_taken) {enter(ustring(str), lock_taken);}
+      static void enter(const type_t* str, bool& lock_taken) {enter(string(str), lock_taken);}
       /// @endcond
 
       /// @brief Releases an exclusive lock on the specified obj.
@@ -179,7 +179,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static void exit(const type_t* str) {exit(ustring(str));}
+      static void exit(const type_t* str) {exit(string(str));}
       /// @endcond
 
       /// @brief Determines whether the current thread holds the lock on the specified object.
@@ -194,7 +194,7 @@ namespace xtd {
 
       /// @cond
       template<typename type_t>
-      static bool is_entered(const type_t* str) {return is_entered(ustring(str));}
+      static bool is_entered(const type_t* str) {return is_entered(string(str));}
       /// @endcond
 
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
@@ -213,7 +213,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static void pulse(const type_t* str) {pulse(ustring(str));}
+      static void pulse(const type_t* str) {pulse(string(str));}
       /// @endcond
 
       /// @brief Notifies all waiting threads of a change in the object's state.
@@ -231,7 +231,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static void pulse_all(const type_t* str) {pulse_all(ustring(str));}
+      static void pulse_all(const type_t* str) {pulse_all(string(str));}
       /// @endcond
 
       /// @brief Attempts to acquire an exclusive lock on the specified object.
@@ -247,7 +247,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str) {return try_enter(ustring(str));}
+      static bool try_enter(const type_t* str) {return try_enter(string(str));}
       /// @endcond
 
       /// @brief Attempts to acquire an exclusive lock on the specified object.
@@ -264,7 +264,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(ustring(str), lock_taken);}
+      static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(string(str), lock_taken);}
       /// @endcond
 
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -280,7 +280,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(ustring(str), milliseconds_timeout);}
+      static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
 
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -297,7 +297,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(ustring(str), milliseconds_timeout, lock_taken);}
+      static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
 
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -313,7 +313,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(ustring(str), milliseconds_timeout);}
+      static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
 
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -330,7 +330,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(ustring(str), milliseconds_timeout, lock_taken);}
+      static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
 
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
@@ -346,7 +346,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(ustring(str), timeout);}
+      static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(string(str), timeout);}
       /// @endcond
 
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
@@ -420,7 +420,7 @@ namespace xtd {
 
       /// @cond
       template<typename type_t>
-      static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(ustring(str), timeout, lock_taken);}
+      static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(string(str), timeout, lock_taken);}
       /// @endcond
       
     private:
@@ -430,18 +430,18 @@ namespace xtd {
 
       template<typename object_t>
       static object_ptr get_ptr(const object_t& obj) noexcept {
-        bool is_string = is<ustring>(obj);
+        bool is_string = is<string>(obj);
         // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
-        return std::make_pair(is_string ? get_ustring_ptr(*(new ustring(as<ustring>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
+        return std::make_pair(is_string ? get_ustring_ptr(*(new string(as<string>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
       template<typename type_t>
-      static object_ptr get_ptr(const type_t* str) {return get_ptr(ustring(str));}
+      static object_ptr get_ptr(const type_t* str) {return get_ptr(string(str));}
 
       static void enter_ptr(object_ptr obj);
       static void enter_ptr(object_ptr obj, bool& lock_taken);
       static void exit_ptr(object_ptr obj);
-      static intptr get_ustring_ptr(const ustring& str);
+      static intptr get_ustring_ptr(const string& str);
       static bool is_entered_ptr(object_ptr obj) noexcept;
       static void pulse_ptr(object_ptr obj);
       static void pulse_all_ptr(object_ptr obj);

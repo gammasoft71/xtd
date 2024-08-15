@@ -94,7 +94,7 @@ choice& choice::sorted(bool sorted) {
   return *this;
 }
 
-control& choice::text(const xtd::ustring& text) {
+control& choice::text(const xtd::string& text) {
   return *this;
 }
 
@@ -119,7 +119,7 @@ choice choice::create(const drawing::point& location, const drawing::size& size)
   return result;
 }
 
-choice choice::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.location(location);
   result.size(size);
@@ -148,7 +148,7 @@ choice choice::create(const object_collection& items, const drawing::point& loca
   return result;
 }
 
-choice choice::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.items(items);
   result.location(location);
@@ -181,7 +181,7 @@ choice choice::create(const object_collection& items, size_t selected_index, con
   return result;
 }
 
-choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.items(items);
   result.selected_index(selected_index);
@@ -212,7 +212,7 @@ choice choice::create(const control& parent, const drawing::point& location, con
   return result;
 }
 
-choice choice::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.parent(parent);
   result.location(location);
@@ -245,7 +245,7 @@ choice choice::create(const control& parent, const object_collection& items, con
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.parent(parent);
   result.items(items);
@@ -282,7 +282,7 @@ choice choice::create(const control& parent, const object_collection& items, siz
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.parent(parent);
   result.items(items);
@@ -310,7 +310,7 @@ forms::create_params choice::create_params() const noexcept {
 
 xtd::uptr<xtd::object> choice::clone() const {
   auto result = xtd::new_uptr<choice>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

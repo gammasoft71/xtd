@@ -346,7 +346,7 @@ void graphics::draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_rotated_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, float angle) {
+void graphics::draw_rotated_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float angle) {
   wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
@@ -360,12 +360,12 @@ void graphics::draw_rounded_rectangle(intptr handle, intptr pen, float x, float 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
+void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats) {
+void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats) {
   wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
@@ -650,7 +650,7 @@ void graphics::interpolation_mode(intptr handle, int32 interpolation_mode) {
 }
 
 /*
-void graphics::measure_string(intptr handle, const ustring& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0;
   height = 0;
@@ -675,7 +675,7 @@ void graphics::measure_string(intptr handle, const ustring& text, intptr font, f
 }
 */
 
-void graphics::measure_string(intptr handle, const ustring& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0.0f;
   height = 0.0f;
@@ -782,7 +782,7 @@ void graphics::translate_transform(intptr handle, float dx, float dy, int32 orde
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-xtd::ustring graphics::trim_string(intptr handle, const xtd::ustring& text, intptr font, float width, int32 trimming) {
+xtd::string graphics::trim_string(intptr handle, const xtd::string& text, intptr font, float width, int32 trimming) {
   return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
 }
 

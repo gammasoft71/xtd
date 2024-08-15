@@ -31,7 +31,7 @@ main_menu::main_menu(const std::vector<menu_item_ref>& menu_items) {
 
 xtd::uptr<xtd::object> main_menu::clone() const {
   auto result = xtd::new_uptr<main_menu>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -73,11 +73,11 @@ xtd::forms::main_menu main_menu::create_standard_items(const drawing::size& size
   return create_standard_items(application::style_sheet().theme().name(), size, on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::string& theme, const xtd::event_handler& on_click) {
   return create_standard_items(application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
-xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme, const drawing::size& size, const xtd::event_handler& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::string& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   auto file_new_menu_item = xtd::new_sptr<menu_item>(texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::ctrl_n);
   auto file_open_menu_item = xtd::new_sptr<menu_item>(texts::open(), on_click, menu_images::file_open(theme, size), shortcut::ctrl_o);
   auto file_separator1_menu_item = xtd::new_sptr<menu_item>("-");

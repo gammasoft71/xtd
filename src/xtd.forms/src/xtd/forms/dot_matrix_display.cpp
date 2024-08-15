@@ -137,7 +137,7 @@ dot_matrix_display dot_matrix_display::create(const drawing::point& location, co
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.location(location);
   result.size(size);
@@ -166,7 +166,7 @@ dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.dots(dots);
   result.location(location);
@@ -199,7 +199,7 @@ dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool 
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.dots(dots);
   result.show_back_dot(show_back_dot);
@@ -230,7 +230,7 @@ dot_matrix_display dot_matrix_display::create(const control& parent, const drawi
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.parent(parent);
   result.location(location);
@@ -263,7 +263,7 @@ dot_matrix_display dot_matrix_display::create(const control& parent, const dots_
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.parent(parent);
   result.dots(dots);
@@ -300,7 +300,7 @@ dot_matrix_display dot_matrix_display::create(const control& parent, const dots_
   return result;
 }
 
-dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = dot_matrix_display {};
   result.parent(parent);
   result.dots(dots);
@@ -344,7 +344,7 @@ xtd::drawing::size dot_matrix_display::default_size() const noexcept {
 
 xtd::uptr<xtd::object> dot_matrix_display::clone() const {
   auto result = xtd::new_uptr<dot_matrix_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

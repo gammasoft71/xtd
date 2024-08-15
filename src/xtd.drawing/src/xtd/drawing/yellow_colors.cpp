@@ -52,7 +52,7 @@ const std::vector<color>& yellow_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& yellow_colors::get_color_names() noexcept {
+const std::vector<string>& yellow_colors::get_color_names() noexcept {
   static auto color_names = std::vector {yellow_colors::dark_khaki().name(), yellow_colors::gold().name(), yellow_colors::khaki().name(), yellow_colors::peach_puff().name(), yellow_colors::yellow().name(), yellow_colors::pale_goldenrod().name(), yellow_colors::moccasin().name(), yellow_colors::papaya_whip().name(), yellow_colors::light_goldenrod_yellow().name(), yellow_colors::lemon_chiffon().name(), yellow_colors::light_yellow().name()};
   return color_names;
 }

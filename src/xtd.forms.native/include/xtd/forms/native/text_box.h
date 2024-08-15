@@ -52,7 +52,7 @@ namespace xtd {
         /// @param control Text box window handle.
         /// @param value The text to append to the current contents of the text box.
         /// @warning Internal use only
-        static void append(intptr control, const xtd::ustring& text);
+        static void append(intptr control, const xtd::string& text);
         /// @brief Selects a range of text in the text box.
         /// @param control Text box window handle.
         /// @param start The position of the first character in the current text selection within the text box.
@@ -63,16 +63,16 @@ namespace xtd {
         /// @param control Text box window handle.
         /// @return The text string.
         /// @warning Internal use only
-        static xtd::ustring text(intptr control);
+        static xtd::string text(intptr control);
         /// @brief Sets text associate to the text box.
         /// @param control Text box window handle.
         /// @param text The text string.
         /// @warning Internal use only
-        static void text(intptr control, const xtd::ustring& text);
+        static void text(intptr control, const xtd::string& text);
         /// @brief Sets the placeholder text (aka hint) associate to the text box.
         /// @return The text string.
         /// @warning Internal use only
-        static void placeholder_text(intptr control, const xtd::ustring& text);
+        static void placeholder_text(intptr control, const xtd::string& text);
         /// @}
       };
     }

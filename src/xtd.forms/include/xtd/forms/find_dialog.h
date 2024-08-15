@@ -55,11 +55,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const noexcept;
+      const xtd::string& find_string() const noexcept;
       /// @brief Sets the string to find.
       /// @param value The string to find.
       /// @return Current find_dialog instance.
-      find_dialog& find_string(const xtd::ustring& value);
+      find_dialog& find_string(const xtd::string& value);
       
       /// @brief Gets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @return The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
@@ -111,11 +111,11 @@ namespace xtd {
       
       /// @brief Gets the find dialog title.
       /// @return The find dialog title.
-      const xtd::ustring& title() const noexcept;
+      const xtd::string& title() const noexcept;
       /// @brief Sets the find dialog title.
       /// @param value The find dialog title.
       /// @return Current find_dialog instance.
-      find_dialog& title(const xtd::ustring& value);
+      find_dialog& title(const xtd::string& value);
       
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
@@ -169,7 +169,7 @@ namespace xtd {
       void create_handle();
       void destroy_handle();
       void on_dialog_closed();
-      void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case);
+      void on_dialog_find(const xtd::drawing::point& location, const string& find_string, bool downwards, bool whole_word, bool match_case);
       void recreate_handle();
       
       xtd::sptr<data> data_;

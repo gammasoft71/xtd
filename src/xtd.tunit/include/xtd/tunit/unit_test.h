@@ -77,7 +77,7 @@ namespace xtd {
       
       /// @brief Gets the array of aborted test names.
       /// @return The array of aborted test names.
-      std::vector<xtd::ustring> aborted_test_names() const noexcept;
+      std::vector<xtd::string> aborted_test_names() const noexcept;
       
       /// @brief Gets the elapsed time for the execution of all tests in the unit test.
       /// @return The elapsed time for the execution of all tests in the unit test.
@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Gets the array of ignored test names.
       /// @return The array of ignored test names.
-      std::vector<xtd::ustring> ignored_test_names() const noexcept;
+      std::vector<xtd::string> ignored_test_names() const noexcept;
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Gets the array of failed test names.
       /// @return The array of failed test names.
-      std::vector<xtd::ustring> failed_test_names() const noexcept;
+      std::vector<xtd::string> failed_test_names() const noexcept;
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
@@ -105,7 +105,7 @@ namespace xtd {
       
       /// @brief Gets the array of succeed test names.
       /// @return The array of succeed test names.
-      std::vector<xtd::ustring> succeed_test_names() const noexcept;
+      std::vector<xtd::string> succeed_test_names() const noexcept;
       /// @}
       
       
@@ -134,13 +134,13 @@ namespace xtd {
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 list_tests(const std::vector<xtd::ustring>& tests);
+      virtual int32 list_tests(const std::vector<xtd::string>& tests);
       
       /// @brief Parses the specified arguments.
       /// @param The arguments to parse.
       /// @return true the execution process stops immediately after the analysis of the arguments; otherwise false the execution process continues its execution.
       /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
-      virtual bool parse_arguments(const std::vector<ustring>& args);
+      virtual bool parse_arguments(const std::vector<string>& args);
       /// @}
       
     private:
@@ -152,16 +152,16 @@ namespace xtd {
       
       static void add(const xtd::tunit::registered_test_class& test_class);
       static std::vector<xtd::tunit::registered_test_class>& test_classes();
-      xtd::ustring get_filename(const xtd::ustring& path);
-      xtd::ustring cdata_message_to_xml_string(const xtd::tunit::test& test);
-      xtd::ustring escape_path_to_json_string(const xtd::ustring& path);
-      xtd::ustring escape_to_json_string(const xtd::ustring& str);
-      xtd::ustring escape_to_xml_string(const xtd::ustring& str);
-      xtd::ustring message_to_json_string(const xtd::tunit::test& test);
-      xtd::ustring message_to_xml_string(const xtd::tunit::test& test);
-      xtd::ustring name_to_string(const xtd::ustring& name);
-      xtd::ustring status_to_string(const xtd::tunit::test& test);
-      xtd::ustring to_string(const time_span& ms);
+      xtd::string get_filename(const xtd::string& path);
+      xtd::string cdata_message_to_xml_string(const xtd::tunit::test& test);
+      xtd::string escape_path_to_json_string(const xtd::string& path);
+      xtd::string escape_to_json_string(const xtd::string& str);
+      xtd::string escape_to_xml_string(const xtd::string& str);
+      xtd::string message_to_json_string(const xtd::tunit::test& test);
+      xtd::string message_to_xml_string(const xtd::tunit::test& test);
+      xtd::string name_to_string(const xtd::string& name);
+      xtd::string status_to_string(const xtd::tunit::test& test);
+      xtd::string to_string(const time_span& ms);
       void unit_test_cleanup();
       void unit_test_initialize();
       void write_list_tests_json();
@@ -169,8 +169,8 @@ namespace xtd {
       void write_tests_json();
       void write_tests_xml();
       
-      std::vector<ustring> arguments;
-      xtd::ustring name_ = "AllTests";
+      std::vector<string> arguments;
+      xtd::string name_ = "AllTests";
       xtd::uptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;
       int32 repeat_iteration_ = 0;

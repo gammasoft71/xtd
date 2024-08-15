@@ -1,2 +1,2 @@
-key "Input xtd::ustring was not in a correct format."
-value "لم تكن بتنسيق صحيح xtd::ustring قيمة الإدخال"
+key "Input xtd::string was not in a correct format."
+value "لم تكن بتنسيق صحيح xtd::string قيمة الإدخال"

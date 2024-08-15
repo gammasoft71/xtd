@@ -45,8 +45,8 @@ size_f size_f::subtract(const size_f& size1, const size_f& size2) noexcept {
   return size1 - size2;
 }
 
-xtd::ustring size_f::to_string() const noexcept {
-  return ustring::format("{{width={}, height={}}}", width(), height());
+xtd::string size_f::to_string() const noexcept {
+  return string::format("{{width={}, height={}}}", width(), height());
 }
 
 size_f size_f::operator +(const size_f& size) const noexcept {

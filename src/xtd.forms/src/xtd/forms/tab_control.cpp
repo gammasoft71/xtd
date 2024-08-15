@@ -26,59 +26,59 @@ tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(c
   return *this;
 }
 
-tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text) {
-  return insert(pos, text, ustring::empty_string);
+tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text) {
+  return insert(pos, text, string::empty_string);
 }
 
-tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text, const xtd::ustring& name) {
+tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text, const xtd::string& name) {
   return text_inserted(pos, text, name);
 }
 
-void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text) {
-  return insert_at(index, text, ustring::empty_string);
+void tab_control::tab_page_collection::insert_at(size_t index, const xtd::string& text) {
+  return insert_at(index, text, string::empty_string);
 }
 
-void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text, const xtd::ustring& name) {
+void tab_control::tab_page_collection::insert_at(size_t index, const xtd::string& text, const xtd::string& name) {
   text_added(index, text, name);
 }
 
-void tab_control::tab_page_collection::push_back(const xtd::ustring& text) {
-  push_back(text, ustring::empty_string);
+void tab_control::tab_page_collection::push_back(const xtd::string& text) {
+  push_back(text, string::empty_string);
 }
 
-void tab_control::tab_page_collection::push_back(const xtd::ustring& text, const ustring& name) {
+void tab_control::tab_page_collection::push_back(const xtd::string& text, const string& name) {
   text_added(npos, text, name);
 }
 
 void tab_control::tab_page_collection::push_back(const char* text) {
-  push_back(text, ustring::empty_string);
+  push_back(text, string::empty_string);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void tab_control::tab_page_collection::push_back(const char8* text) {
-  push_back(text, ustring::empty_string);
+  push_back(text, string::empty_string);
 }
 #endif
 
 void tab_control::tab_page_collection::push_back(const char16* text) {
-  push_back(text, ustring::empty_string);
+  push_back(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const char32* text) {
-  push_back(text, ustring::empty_string);
+  push_back(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const wchar* text) {
-  push_back(text, ustring::empty_string);
+  push_back(text, string::empty_string);
 }
 
-std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) const {
+std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const string& name) const {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};
 }
 
-std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) {
+std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const string& name) {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};
@@ -163,7 +163,7 @@ tab_control tab_control::create(const drawing::point& location, const drawing::s
   return result;
 }
 
-tab_control tab_control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_control tab_control::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_control {};
   result.location(location);
   result.size(size);
@@ -192,7 +192,7 @@ tab_control tab_control::create(const control& parent, const drawing::point& loc
   return result;
 }
 
-tab_control tab_control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+tab_control tab_control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = tab_control {};
   result.parent(parent);
   result.location(location);
@@ -218,7 +218,7 @@ forms::create_params tab_control::create_params() const noexcept {
 
 xtd::uptr<xtd::object> tab_control::clone() const {
   auto result = xtd::new_uptr<tab_control>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -230,7 +230,7 @@ drawing::size tab_control::measure_control() const noexcept {
 }
 
 void tab_control::on_control_added(const control_event_args& e) {
-  if (!is<xtd::forms::tab_page>(e.control())) throw xtd::argument_exception(ustring::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()));
+  if (!is<xtd::forms::tab_page>(e.control())) throw xtd::argument_exception(string::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()));
   control::on_control_added(e);
   if (data_->selected_index == npos) data_->selected_index = 0;
 }
@@ -273,7 +273,7 @@ void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
   controls().erase_at(index);
 }
 
-void tab_control::on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name) {
+void tab_control::on_tab_pages_text_added(size_t index, const string& text, const string& name) {
   auto item = xtd::new_uptr<tab_page>();
   item->text(text);
   item->name(name);
@@ -286,7 +286,7 @@ void tab_control::on_tab_pages_text_added(size_t index, const ustring& text, con
   }
 }
 
-tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name) {
+tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const string& text, const string& name) {
   auto item = xtd::new_uptr<tab_page>();
   item->text(text);
   item->name(name);

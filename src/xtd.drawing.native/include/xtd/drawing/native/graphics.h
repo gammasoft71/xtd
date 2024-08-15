@@ -253,7 +253,7 @@ namespace xtd {
         /// @param y The y-coordinate of the upper-left corner of the drawn text.
         /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
         /// @warning Internal use only
-        static void draw_rotated_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, float angle);
+        static void draw_rotated_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float angle);
         
         /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, a height, and radius.
         /// @param handle The graphics handle.
@@ -278,7 +278,7 @@ namespace xtd {
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static void draw_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
+        static void draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
         /// @brief Draws the specified text string at the specified rectangle with the specified brush and font handle using the formatting attributes of the format.
         /// @param handle The graphics handle.
         /// @param text String to draw.
@@ -294,7 +294,7 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise false.
         /// @warning Internal use only
-        static void draw_string(intptr handle, const xtd::ustring& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats);
+        static void draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats);
         
         /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::collections::generic::key_value_pair<float, float> structures.
         /// @param handle The graphics handle.
@@ -453,7 +453,7 @@ namespace xtd {
         
         /// @brief Measures the specified string when drawn with the specified font and formatted with the specified format.
         /// @param handle The graphics handle.
-        /// @param text xtd::ustring to measure.
+        /// @param text xtd::string to measure.
         /// @param font A font handle that defines the text format of the string.
         /// @param width The width of the text.
         /// @param height The height of the text.
@@ -466,7 +466,7 @@ namespace xtd {
         /// @param characters_fitted Number of characters in the string.
         /// @param lines_filled Number of text lines in the string.
         /// @warning Internal use only
-        static void measure_string(intptr handle, const xtd::ustring& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces);
+        static void measure_string(intptr handle, const xtd::string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces);
         
         /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::native::graphics::get_hdc() method of the graphics.
         /// @param handle The graphics handle.
@@ -546,12 +546,12 @@ namespace xtd {
         
         /// @brief Trims the specified string for a specified width with the specified font and trimming.
         /// @param handle The graphics handle.
-        /// @param text xtd::ustring to measure.
+        /// @param text xtd::string to measure.
         /// @param font A font handle that defines the text format of the string.
         /// @param width The width of the text.
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static xtd::ustring trim_string(intptr handle, const xtd::ustring& text, intptr font, float width, int32 trimming);
+        static xtd::string trim_string(intptr handle, const xtd::string& text, intptr font, float width, int32 trimming);
         
         /// @brief Gets the bounding rectangle of the visible clipping region of the graphics.
         /// @param handle The graphics handle.

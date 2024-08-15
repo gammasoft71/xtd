@@ -119,8 +119,8 @@ namespace xtd::tests {
     }
     
     void test_method_(to_any_from_ustring) {
-      ustring value = "42";
-      assert::are_equal("42", any_cast<ustring>(convert::to_any(value)), csf_);
+      string value = "42";
+      assert::are_equal("42", any_cast<string>(convert::to_any(value)), csf_);
     }
     
     void test_method_(to_any_from_string) {
@@ -320,7 +320,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_boolean_from_ustring) {
-      ustring value = "true";
+      string value = "true";
       assert::is_true(convert::to_boolean(value), csf_);
       value = "false";
       assert::is_false(convert::to_boolean(value), csf_);
@@ -633,7 +633,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_byte_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42u, convert::to_byte(value), csf_);
       value = "0";
       assert::is_zero(convert::to_byte(value), csf_);
@@ -952,7 +952,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char_from_ustring) {
-      ustring value = "a";
+      string value = "a";
       assert::are_equal('a', convert::to_char(value), csf_);
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char(value);}, csf_);
@@ -1239,7 +1239,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char8_from_ustring) {
-      ustring value = "a";
+      string value = "a";
       assert::are_equal(u8'a', convert::to_char8(value), csf_);
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);}, csf_);
@@ -1517,7 +1517,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char16_from_ustring) {
-      ustring value = "a";
+      string value = "a";
       assert::are_equal(u'a', convert::to_char16(value), csf_);
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char16(value);}, csf_);
@@ -1786,7 +1786,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char32_from_ustring) {
-      ustring value = "a";
+      string value = "a";
       assert::are_equal(U'a', convert::to_char32(value), csf_);
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);}, csf_);
@@ -2067,7 +2067,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_wchar_from_ustring) {
-      ustring value = "a";
+      string value = "a";
       assert::are_equal(L'a', convert::to_wchar(value), csf_);
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_wchar(value);}, csf_);
@@ -2303,7 +2303,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_decimal_from_ustring) {
-      ustring value = "42.0";
+      string value = "42.0";
       assert::are_equal(42.0l, convert::to_decimal(value), csf_);
       value = "0";
       assert::is_zero(convert::to_decimal(value), csf_);
@@ -2561,7 +2561,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_double_from_ustring) {
-      ustring value = "42.0";
+      string value = "42.0";
       assert::are_equal(42.0, convert::to_double(value), csf_);
       value = "0";
       assert::is_zero(convert::to_double(value), csf_);
@@ -2819,7 +2819,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_single_from_ustring) {
-      ustring value = "42.0";
+      string value = "42.0";
       assert::are_equal(42.0f, convert::to_single(value), csf_);
       value = "0";
       assert::is_zero(convert::to_single(value), csf_);
@@ -3110,7 +3110,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int16_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42, convert::to_int16(value), csf_);
       value = "0";
       assert::is_zero(convert::to_int16(value), csf_);
@@ -3399,7 +3399,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int32_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42, convert::to_int32(value), csf_);
       value = "0";
       assert::is_zero(convert::to_int32(value), csf_);
@@ -3678,7 +3678,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int64_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42l, convert::to_int64(value), csf_);
       value = "0";
       assert::is_zero(convert::to_int64(value), csf_);
@@ -3957,7 +3957,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_llong_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42ll, convert::to_llong(value), csf_);
       value = "0";
       assert::is_zero(convert::to_llong(value), csf_);
@@ -4262,7 +4262,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_sbyte_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42, convert::to_sbyte(value), csf_);
       value = "0";
       assert::is_zero(convert::to_sbyte(value), csf_);
@@ -4559,7 +4559,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint16_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42u, convert::to_uint16(value), csf_);
       value = "0";
       assert::is_zero(convert::to_uint16(value), csf_);
@@ -4844,7 +4844,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint32_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42u, convert::to_uint32(value), csf_);
       value = "0";
       assert::is_zero(convert::to_uint32(value), csf_);
@@ -5121,7 +5121,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint64_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42u, convert::to_uint64(value), csf_);
       value = "0";
       assert::is_zero(convert::to_uint64(value), csf_);
@@ -5398,7 +5398,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_ullong_from_ustring) {
-      ustring value = "42";
+      string value = "42";
       assert::are_equal(42llu, convert::to_ullong(value), csf_);
       value = "0";
       assert::is_zero(convert::to_ullong(value), csf_);

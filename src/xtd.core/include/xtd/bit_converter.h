@@ -339,42 +339,42 @@ namespace xtd {
     /// @remarks The to_uint64 method converts the bytes from index start_index to start_index + 7 to an Uint64 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint64 to_uint64(const std::vector<xtd::byte>& value, size_t start_index);
     
-    /// @brief Converts the numeric value of each element of a specified std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
+    /// @brief Converts the numeric value of each element of a specified std::vector of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An std::vector of bytes.
-    /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
+    /// @return xtd::string A xtd::string of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
     /// @exception argument_null_exception value is null.
     /// @remarks All the elements of value are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
-    /// The following code example converts xtd::byte std::vectors to xtd::ustring objects with the to_string method.
+    /// The following code example converts xtd::byte std::vectors to xtd::string objects with the to_string method.
     /// @include bit_converterto_string.cpp
-    static xtd::ustring to_string(const std::vector<xtd::byte>& value);
+    static xtd::string to_string(const std::vector<xtd::byte>& value);
     
-    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
+    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
-    /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
+    /// @return xtd::string A xtd::string of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
     /// @exception argument_null_exception value is null.
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The elements from std::vector position start_index to the end of the std::vector are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
-    /// The following code example converts xtd::byte std::vectors to xtd::ustring objects with the to_string method.
+    /// The following code example converts xtd::byte std::vectors to xtd::string objects with the to_string method.
     /// @include bit_converterto_string2.cpp
-    static xtd::ustring to_string(const std::vector<xtd::byte>& value, size_t start_index);
+    static xtd::string to_string(const std::vector<xtd::byte>& value, size_t start_index);
     
-    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
+    /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
     /// @param length The number of std::vector elements in value to convert.
-    /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
+    /// @return xtd::string A xtd::string of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
     /// @exception argument_null_exception value is null.
     /// @exception argument_out_of_range_exception start_index or length is less than zero.<br>-or-<br>start_index is greater than zero and is greater than or equal to the length of value.
     /// @exception argument_exception The combination of start_index and length does not specify a position within value; that is, the start_index parameter is greater than the length of value minus the length parameter.
-    /// @remarks AThe length elements from std::vector position start_index are converted. If length equals zero, the method returns xtd::ustring.Empty.
+    /// @remarks AThe length elements from std::vector position start_index are converted. If length equals zero, the method returns xtd::string.Empty.
     /// @remarks The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
-    /// The following code example converts xtd::byte std::vectors to xtd::ustring objects with the to_string method.
+    /// The following code example converts xtd::byte std::vectors to xtd::string objects with the to_string method.
     /// @include bit_converterto_string3.cpp
-    static xtd::ustring to_string(const std::vector<xtd::byte>& value, size_t start_index, size_t length);
+    static xtd::string to_string(const std::vector<xtd::byte>& value, size_t start_index, size_t length);
     /// @}
   };
 }

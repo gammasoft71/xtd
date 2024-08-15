@@ -9,23 +9,23 @@
 namespace xtdc_command {
   class new_project final :public project_base {
   public:
-    static int execute(const std::vector<xtd::ustring>& args) {
+    static int execute(const std::vector<xtd::string>& args) {
       auto show_help = false;
-      xtd::ustring invalid_option;
-      xtd::ustring type;
-      xtd::ustring sdk;
-      xtd::ustring name;
-      xtd::ustring path;
+      xtd::string invalid_option;
+      xtd::string type;
+      xtd::string sdk;
+      xtd::string name;
+      xtd::string path;
       if (!process_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           xtd::console::write_line("Unknown option: {0}", invalid_option);
         else
           xtd::console::write_line("Invalid parameters");
-        xtd::console::write_line(xtd::ustring::join("\n", get_help()));
+        xtd::console::write_line(xtd::string::join("\n", get_help()));
         return -1;
       }
       if (show_help)
-        xtd::console::write_line(xtd::ustring::join("\n", get_help()));
+        xtd::console::write_line(xtd::string::join("\n", get_help()));
       else {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
@@ -44,16 +44,16 @@ namespace xtdc_command {
           return -1;
         }
         
-        xtdc_command::project_type project_type = std::map<xtd::ustring, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = std::map<xtd::ustring, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = std::map<xtd::ustring, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+        xtdc_command::project_type project_type = std::map<xtd::string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+        xtdc_command::project_sdk project_sdk = std::map<xtd::string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+        xtdc_command::project_language project_language = std::map<xtd::string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         xtd::console::write_line(project_management(get_project_full_path_from_path(path)).create(name, project_type, project_sdk, project_language));
       }
       return 0;
     }
     
   private:
-    static std::vector<xtd::ustring> get_help() noexcept {
+    static std::vector<xtd::string> get_help() noexcept {
       return {
         "Initialize project.",
         "Usage: new [template-short-name] [path] [<options>]",
@@ -88,7 +88,7 @@ namespace xtdc_command {
       };
     }
     
-    static bool process_arguments(const std::vector<xtd::ustring>& args, bool& show_help, xtd::ustring& type, xtd::ustring& name, xtd::ustring& path, xtd::ustring& sdk, xtd::ustring& invalid_option) {
+    static bool process_arguments(const std::vector<xtd::string>& args, bool& show_help, xtd::string& type, xtd::string& name, xtd::string& path, xtd::string& sdk, xtd::string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;

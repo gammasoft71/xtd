@@ -476,11 +476,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "Gammasoft";
+  /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
   template<typename new_type_t>
-  new_type_t as(const xtd::ustring& value) {
+  new_type_t as(const xtd::string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
@@ -504,11 +504,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "Gammasoft";
+  /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
   template<typename new_type_t>
-  new_type_t as(xtd::ustring& value) {
+  new_type_t as(xtd::string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
@@ -519,7 +519,7 @@ namespace xtd {
   
   /// @cond
   template<typename new_type_t>
-  new_type_t as(const xtd::ustring& value, xtd::byte from_base) {
+  new_type_t as(const xtd::string& value, xtd::byte from_base) {
     throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>

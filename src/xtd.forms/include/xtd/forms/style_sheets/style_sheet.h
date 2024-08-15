@@ -81,9 +81,9 @@ namespace xtd {
         /// @brief Represents a style sheet panels collection.
         using panels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::panel>;
         /// @brief Represents a style_sheets collection.
-        using style_sheets_t = std::map<xtd::ustring, style_sheet>;
+        using style_sheets_t = std::map<xtd::string, style_sheet>;
         /// @brief Represents a style_sheet names collection.
-        using style_sheet_names_t = std::vector<xtd::ustring>;
+        using style_sheet_names_t = std::vector<xtd::string>;
         /// @brief Represents a style sheet tool_bars collection.
         using status_bars_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::status_bar>;
         /// @brief Represents a style sheet buttons collection.
@@ -112,7 +112,7 @@ namespace xtd {
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
         /// @param css_text The css forrmated text that contains the style sheet definition.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        explicit style_sheet(const xtd::ustring& css_text);
+        explicit style_sheet(const xtd::string& css_text);
         
         /// @cond
         style_sheet(const style_sheet&);
@@ -356,52 +356,52 @@ namespace xtd {
         /// @param css_text The css string that contains button definition.
         /// @return The style sheet buttons collection.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static buttons_t button_from_css(const  xtd::ustring& css_text);
+        static buttons_t button_from_css(const  xtd::string& css_text);
         
         /// @brief Gets the style sheet controls collection from specified css string.
         /// @param css_text The css string that contains control definition.
         /// @return The style sheet controls collection.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static controls_t control_from_css(const  xtd::ustring& css_text);
+        static controls_t control_from_css(const  xtd::string& css_text);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static style_sheet get_style_sheet_from_name(const xtd::ustring& name);
+        static style_sheet get_style_sheet_from_name(const xtd::string& name);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static style_sheet get_style_sheet_from_file(const xtd::ustring& file_name);
+        static style_sheet get_style_sheet_from_file(const xtd::string& file_name);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static style_sheet get_style_sheet_from_path(const xtd::ustring& path_name);
+        static style_sheet get_style_sheet_from_path(const xtd::string& path_name);
         
         /// @brief Gets the style sheet forms collection from specified css string.
         /// @param css_text The css string that contains forms definition.
         /// @return The style sheet forms collection.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static forms_t form_from_css(const  xtd::ustring& css_text);
+        static forms_t form_from_css(const  xtd::string& css_text);
         
         /// @brief Gets the style sheet system colors from specified css string.
         /// @param css_text The css string that contains system colors definition.
         /// @return The style sheet system colors.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static xtd::forms::style_sheets::system_colors system_colors_from_css(const xtd::ustring& css_text);
+        static xtd::forms::style_sheets::system_colors system_colors_from_css(const xtd::string& css_text);
         
         /// @brief Gets the style sheet theme from specified css string.
         /// @param css_text The css string that contains theme definition.
         /// @return The style sheet theme.
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-        static xtd::forms::style_sheets::theme theme_from_css(const xtd::ustring& css_text);
+        static xtd::forms::style_sheets::theme theme_from_css(const xtd::string& css_text);
         
         /// @brief Converts xtd::forms::border_style in std::tuple<xtd::forms::style_sheets::border_type, int32, int32>.
         /// @param border The ::forms::border_style to convert.
@@ -422,32 +422,32 @@ namespace xtd {
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
         friend class xtd::forms::control;
         friend class xtd::forms::form;
-        style_sheet(const xtd::ustring& css_text, bool init_system);
+        style_sheet(const xtd::string& css_text, bool init_system);
         
-        xtd::drawing::color background_color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
-        background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
-        border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
-        border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
-        border_radius border_radius_from_css(const xtd::ustring& css_text, const border_radius& default_value) const noexcept;
-        border_width border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept;
-        xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
-        length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
-        margin margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        margin margin_bottom_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        margin margin_left_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        margin margin_right_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        margin margin_top_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        padding padding_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
-        padding padding_bottom_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
-        padding padding_left_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
-        padding padding_right_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
-        padding padding_top_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
-        ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
-        xtd::forms::content_alignment text_align_from_css(const xtd::ustring& css_text, const xtd::forms::content_alignment& default_value) const noexcept;
-        xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
-        xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
-        xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
-        xtd::forms::style_sheets::white_space white_space_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept;
+        xtd::drawing::color background_color_from_css(const xtd::string& css_text, const xtd::drawing::color& default_value) const noexcept;
+        background_image background_image_from_css(const xtd::string& css_text, const background_image& default_value) const noexcept;
+        border_color border_color_from_css(const xtd::string& css_text, const border_color& default_value) const noexcept;
+        border_style border_style_from_css(const string& text, const border_style& default_value) const noexcept;
+        border_radius border_radius_from_css(const xtd::string& css_text, const border_radius& default_value) const noexcept;
+        border_width border_width_from_css(const xtd::string& css_text, const border_width& default_value) const noexcept;
+        xtd::drawing::color color_from_css(const xtd::string& css_text, const xtd::drawing::color& default_value) const noexcept;
+        length length_from_css(const xtd::string& css_text, const length& default_value) const noexcept;
+        margin margin_from_css(const xtd::string& css_text, const margin& default_value) const noexcept;
+        margin margin_bottom_from_css(const xtd::string& css_text, const margin& default_value) const noexcept;
+        margin margin_left_from_css(const xtd::string& css_text, const margin& default_value) const noexcept;
+        margin margin_right_from_css(const xtd::string& css_text, const margin& default_value) const noexcept;
+        margin margin_top_from_css(const xtd::string& css_text, const margin& default_value) const noexcept;
+        padding padding_from_css(const xtd::string& css_text, const padding& default_value) const noexcept;
+        padding padding_bottom_from_css(const xtd::string& css_text, const padding& default_value) const noexcept;
+        padding padding_left_from_css(const xtd::string& css_text, const padding& default_value) const noexcept;
+        padding padding_right_from_css(const xtd::string& css_text, const padding& default_value) const noexcept;
+        padding padding_top_from_css(const xtd::string& css_text, const padding& default_value) const noexcept;
+        string string_from_css(const xtd::string& css_text, const xtd::string& default_value) const noexcept;
+        xtd::forms::content_alignment text_align_from_css(const xtd::string& css_text, const xtd::forms::content_alignment& default_value) const noexcept;
+        xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::string& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
+        xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::string& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
+        xtd::uri uri_from_css(const xtd::string& css_text, const xtd::uri& default_value) const noexcept;
+        xtd::forms::style_sheets::white_space white_space_from_css(const xtd::string& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept;
         
         template<typename type_t, typename collection_t>
         type_t get_state_control(const collection_t& collection, pseudo_state state) const noexcept {
@@ -461,7 +461,7 @@ namespace xtd {
         
         static void on_style_sheet_changed(const xtd::event_args& e);
         static void on_system_colors_changed(const event_args& e);
-        std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
+        std::vector<xtd::string> split_values_from_text(const xtd::string& text) const noexcept;
         
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
         void control_reader(xtd::web::css::css_reader& reader) noexcept;
@@ -494,22 +494,22 @@ namespace xtd {
         //static style_sheet system_style_sheet_windows_dark() noexcept; // Declared in system_style_sheet_windows_dark.cpp
         //static style_sheet system_style_sheet_windows_light() noexcept; // Declared in system_style_sheet_windows_light.cpp
         
-        bool try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept;
-        bool try_parse_named_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_rgb_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_rgba_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_hsv_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_hsva_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_hsl_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
+        bool try_parse_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_hex_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_linear_gradient(const xtd::string& text, background_image& result) const noexcept;
+        bool try_parse_named_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_rgb_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_rgba_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_hsv_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_hsva_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_hsl_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_hsla_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_system_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_uri(const xtd::string& text, xtd::uri& result) const noexcept;
         
         void system_colors_(const xtd::forms::style_sheets::system_colors& system_colors);
         void theme_(const xtd::forms::style_sheets::theme& theme);
-        void theme_name_(const xtd::ustring& name);
+        void theme_name_(const xtd::string& name);
         
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;

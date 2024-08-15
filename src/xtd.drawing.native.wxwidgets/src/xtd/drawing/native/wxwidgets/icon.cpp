@@ -67,12 +67,12 @@ namespace {
   }
 }
 
-intptr icon::create(const ustring& filename) {
+intptr icon::create(const string& filename) {
   toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
-intptr icon::create(const xtd::ustring& filename, int32 width, int32 height) {
+intptr icon::create(const xtd::string& filename, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   //return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
   return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(wxString(convert_string::to_wstring(filename))).GetIcon({width, height})));
@@ -133,7 +133,7 @@ int32 icon::get_width(intptr icon) {
   return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetWidth();
 }
 
-void icon::save(intptr icon, const ustring& filename) {
+void icon::save(intptr icon, const string& filename) {
   //reinterpret_cast<wxIconBundle*>(icon)->GetIcon().SaveFile(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE);
   reinterpret_cast<wxImage*>(to_image(icon))->SaveFile(filename);
 }

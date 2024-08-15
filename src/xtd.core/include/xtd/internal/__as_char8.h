@@ -476,11 +476,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const xtd::ustring& value) {
+  inline char8 as<char8>(const xtd::string& value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -499,11 +499,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(xtd::ustring& value) {
+  inline char8 as<char8>(xtd::string& value) {
     return xtd::convert::to_char8(value);
   }
   

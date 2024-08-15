@@ -64,7 +64,7 @@ namespace xtd {
     
     /// @brief Gets the offical name of the cpp language.
     /// @return The offical name of the cpp version.
-    xtd::ustring name() const noexcept;
+    xtd::string name() const noexcept;
     
     /// @brief Gets the value of cpp language.
     /// @return The value of cpp version.
@@ -72,7 +72,7 @@ namespace xtd {
     
     /// @brief Gets the version string of cpp language.
     /// @return The version string.
-    xtd::ustring version_string() const noexcept;
+    xtd::string version_string() const noexcept;
     
     /// @brief Gets The version of cpp language.
     /// @return The version.
@@ -88,7 +88,7 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:

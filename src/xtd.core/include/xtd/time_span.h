@@ -329,7 +329,7 @@ namespace xtd {
     /// @return A time interval that corresponds to value.
     /// @exception xtd::format_exception value has an invalid format.
     /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
-    static time_span parse(const ustring& value);
+    static time_span parse(const string& value);
     
     /// @brief Returns a new xtd::time_span object whose value is the difference between the specified xtd::time_span object and this instance.
     /// @param ts The time interval to be subtracted.
@@ -337,13 +337,13 @@ namespace xtd {
     /// @remarks The return value is a new xtd::time_span; the original xtd::time_span is not modified.
     time_span subtract(const time_span& ts) const noexcept;
 
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
     /// @param format A single format specifier that indicates how to format the value of this xtd::time_span.
     /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
     /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
-    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
-    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
+    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::string::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
+    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::string&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
@@ -365,15 +365,15 @@ namespace xtd {
     /// | 'S'    | write absolute value of seconds ss                                                                                          |
     /// | 't'    | write absolute value of ticks                                                                                               |
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
-    ustring to_string(const ustring& format) const;
+    string to_string(const string& format) const;
 
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format, and locale.
     /// @param format A single format specifier that indicates how to format the value of this xtd::time_span.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
     /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
-    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
-    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
+    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::string::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
+    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::string&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
@@ -395,7 +395,7 @@ namespace xtd {
     /// | 'S'    | write absolute value of seconds ss                                                                                          |
     /// | 't'    | write absolute value of ticks                                                                                               |
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
-    ustring to_string(const ustring& format, const std::locale& loc) const override;
+    string to_string(const string& format, const std::locale& loc) const override;
     /// @}
     
     /// @name Public Static Methods
@@ -527,7 +527,7 @@ namespace xtd {
     /// @param value A string that specifies the time interval to convert.
     /// @param result When this method returns, contains an object that represents the time interval specified by value, or xtd::time_span::zero if the conversion failed.
     /// @return true if s was converted successfully; otherwise, false. This operation returns false if the value parameter is empty (""), has an invalid format, represents a time interval that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value, or has at least one days, hours, minutes, or seconds component outside its valid range.
-    static bool try_parse(const ustring& value, time_span& result);
+    static bool try_parse(const string& value, time_span& result);
     /// @}
 
   private:
@@ -541,8 +541,8 @@ namespace xtd {
     static constexpr int32 parse_format = 2;
 
     static time_span interval(double value, int scale);
-    ustring make_string_from_duration(bool constant) const;
-    static int32 try_parse_internal(const ustring& value, time_span& result);
+    string make_string_from_duration(bool constant) const;
+    static int32 try_parse_internal(const string& value, time_span& result);
 
     int64 ticks_ = 0;
   };

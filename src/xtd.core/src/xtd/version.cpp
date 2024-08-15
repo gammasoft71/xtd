@@ -8,7 +8,7 @@
 
 using namespace xtd;
 
-version::version(const ustring& version) {
+version::version(const string& version) {
   *this = parse(version);
 }
 
@@ -64,22 +64,22 @@ bool version::equals(const version& v) const noexcept {
   return major_ == v.major_ && minor_ == v.minor_ && build_ == v.build_ && revision_ == v.revision_;
 }
 
-version version::parse(const xtd::ustring& input) {
+version version::parse(const xtd::string& input) {
   auto rgx = std::regex {"\\."};
   auto versions = xtd::collections::specialized::string_collection {};
   for (auto it = std::sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     
   switch (versions.size()) {
-    case 2: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1])};
-    case 3: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2])};
-    case 4: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]), ustring::parse<int32>(versions[3])};
+    case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};
+    case 3: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2])};
+    case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
   }
   
   throw xtd::argument_exception {csf_};
 }
 
-bool version::try_parse(const xtd::ustring& input, version& result) noexcept {
+bool version::try_parse(const xtd::string& input, version& result) noexcept {
   try {
     result = parse(input);
     return true;
@@ -88,7 +88,7 @@ bool version::try_parse(const xtd::ustring& input, version& result) noexcept {
   }
 }
 
-xtd::ustring version::to_string() const noexcept {
+xtd::string version::to_string() const noexcept {
   try {
     return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));
   } catch (...) {
@@ -96,12 +96,12 @@ xtd::ustring version::to_string() const noexcept {
   }
 }
 
-xtd::ustring version::to_string(size_t field_count) const {
+xtd::string version::to_string(size_t field_count) const {
   if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw xtd::argument_exception {"Field count invalid"_t, csf_};
-  auto result = ustring::empty_string;
-  if (field_count >= 1) result += ustring::format("{}", major_);
-  if (field_count >= 2) result += ustring::format(".{}", minor_);
-  if (field_count >= 3) result += ustring::format(".{}", build_);
-  if (field_count == 4) result += ustring::format(".{}", revision_);
+  auto result = string::empty_string;
+  if (field_count >= 1) result += string::format("{}", major_);
+  if (field_count >= 2) result += string::format(".{}", minor_);
+  if (field_count >= 3) result += string::format(".{}", build_);
+  if (field_count == 4) result += string::format(".{}", revision_);
   return result;
 }

@@ -25,12 +25,12 @@ void ostream_trace_listener::flush_() {
   if (ostream_.good()) ostream_ << std::flush;
 }
 
-void ostream_trace_listener::write_(const ustring& message) {
+void ostream_trace_listener::write_(const string& message) {
   if (need_indent()) write_indent();
   if (ostream_.good()) ostream_ << message;
 }
 
-void ostream_trace_listener::write_line_(const ustring& message) {
+void ostream_trace_listener::write_line_(const string& message) {
   write(message + "\n");
   need_indent(true);
 }

@@ -82,7 +82,7 @@ namespace xtd {
       return value_->equals(*other.value_);
     }
     xtd::size get_hash_code() const noexcept override {return has_value() ? value_->get_hash_code() : 0;}
-    ustring to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
+    string to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
     
     /// @brief Reset the current object. Set the current object to null.
     /// @remarks If xtd::any_object::has_values is true, destroys the contained object; otherwise does nothing.
@@ -111,13 +111,13 @@ namespace xtd {
     template<typename type_t, typename ...args_t>
     inline ptr<object> boxing_ptr(args_t&& ...args) noexcept {return new box<type_t>(args...);}
     //inline ptr<object> boxing_ptr(const object& value) noexcept {return new value;}
-    inline ptr<object> boxing_ptr(const char* value) noexcept {return new_ptr<ustring>(value);}
+    inline ptr<object> boxing_ptr(const char* value) noexcept {return new_ptr<string>(value);}
 #if defined(__xtd__cpp_lib_char8_t)
-    inline ptr<object> boxing_ptr(const char8* value) noexcept {return  new_ptr<ustring>(value);}
+    inline ptr<object> boxing_ptr(const char8* value) noexcept {return  new_ptr<string>(value);}
 #endif
-    inline ptr<object> boxing_ptr(const char16* value) noexcept {return new_ptr<ustring>(value);}
-    inline ptr<object> boxing_ptr(const char32* value) noexcept {return new_ptr<ustring>(value);}
-    inline ptr<object> boxing_ptr(const wchar* value) noexcept {return new_ptr<ustring>(value);}
+    inline ptr<object> boxing_ptr(const char16* value) noexcept {return new_ptr<string>(value);}
+    inline ptr<object> boxing_ptr(const char32* value) noexcept {return new_ptr<string>(value);}
+    inline ptr<object> boxing_ptr(const wchar* value) noexcept {return new_ptr<string>(value);}
     inline ptr<object> boxing_ptr(const char& value) noexcept {return new_ptr<char_object>(value);}
 #if defined(__xtd__cpp_lib_char8_t)
     inline ptr<object> boxing_ptr(const char8& value) noexcept {return new_ptr<char8_object>(value);}

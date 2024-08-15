@@ -101,7 +101,7 @@ namespace xtd {
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

@@ -95,13 +95,13 @@ namespace xtd {
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      const xtd::ustring& name() const noexcept;
+      const xtd::string& name() const noexcept;
       
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @return Current menu class.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      menu& name(const xtd::ustring& value);
+      menu& name(const xtd::string& value);
       
       /// @brief Gets user-defined data associated with the control.
       /// @return An object representing the data.
@@ -136,7 +136,7 @@ namespace xtd {
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     protected:

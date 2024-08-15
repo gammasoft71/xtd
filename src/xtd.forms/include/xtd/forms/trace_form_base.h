@@ -8,8 +8,8 @@
 #include <xtd/date_time>
 
 /// @cond
-xtd::ustring& __xtd_forms_trace_form_base_default_form_name__() noexcept;
-xtd::ustring& __xtd_forms_trace_form_base_default_text_box_name__() noexcept;
+xtd::string& __xtd_forms_trace_form_base_default_form_name__() noexcept;
+xtd::string& __xtd_forms_trace_form_base_default_text_box_name__() noexcept;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -38,13 +38,13 @@ namespace xtd {
       
       /// @brief Gets the string used to separate date and/or time from trace text.
       /// @return A string that represent separator. By default is "|".
-      virtual const xtd::ustring& header_separator() const noexcept;
+      virtual const xtd::string& header_separator() const noexcept;
       /// @brief Sets the string used to separate date and/or time from trace text.
       /// @param header_separator A string that represent separator. By default is "|".
       /// @return Current trace_form_base.
-      virtual trace_form_base& header_separator(const xtd::ustring& header_separator);
+      virtual trace_form_base& header_separator(const xtd::string& header_separator);
       
-      const xtd::ustring& name() const noexcept override;
+      const xtd::string& name() const noexcept override;
       
       /// @brief Gets a value indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.
@@ -69,7 +69,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the trace_form_base class with specified caption text.
       /// @param text A string that represent the caption text oof the debug form.
-      explicit trace_form_base(const xtd::ustring& text);
+      explicit trace_form_base(const xtd::string& text);
       /// @}
       
       /// @name Protected Methods
@@ -80,11 +80,11 @@ namespace xtd {
       
       /// @brief Writes trace string to the multiline text.
       /// @param trace A string to write.
-      virtual void write(const xtd::ustring& trace);
+      virtual void write(const xtd::string& trace);
       
       /// @brief Writes trace string to the multiline text followed by a line terminator.
       /// @param trace A string to write.
-      virtual void write_line(const xtd::ustring& trace);
+      virtual void write_line(const xtd::string& trace);
       
       /// @brief Writes header, if needed. Writes date and/or time and header_separator.
       /// @param trace A string to write.

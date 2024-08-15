@@ -75,10 +75,10 @@ namespace xtd::tests {
     void test_method_(execute_test_async_runner) {
       test_async_runner runner;
       auto& result = runner.start();
-      assert::are_equal("Started", as<ustring>(result.async_state()), csf_);
+      assert::are_equal("Started", as<string>(result.async_state()), csf_);
       assert::is_false(result.is_completed(), csf_);
       runner.wait(result);
-      assert::are_equal("Ended", as<ustring>(result.async_state()), csf_);
+      assert::are_equal("Ended", as<string>(result.async_state()), csf_);
       assert::is_true(result.is_completed(), csf_);
     }
   };

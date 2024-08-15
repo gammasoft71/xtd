@@ -106,7 +106,7 @@ int32 system_information::caret_width() {
   #endif
 }
 
-ustring system_information::computer_name() {
+string system_information::computer_name() {
   return xtd::environment::machine_name();
 }
 

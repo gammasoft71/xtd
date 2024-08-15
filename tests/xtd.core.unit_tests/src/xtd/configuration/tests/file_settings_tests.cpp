@@ -29,7 +29,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_empty_string) {
-      auto fs = file_settings {ustring::empty_string};
+      auto fs = file_settings {string::empty_string};
       assert::is_false(fs.auto_save(), csf_);
       assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::is_empty(fs.file_path(), csf_);
@@ -536,13 +536,13 @@ namespace xtd::configuration::tests {
 
       fs[""]["key1"] = "value1";
       fs[""]["key2"] = "value2";
-      fs[""]["key3"] = as<ustring>(42);
+      fs[""]["key3"] = as<string>(42);
       fs["section1"]["key1"] = "value3";
       fs["section1"]["key2"] = "value4";
-      fs["section1"]["key3"] = as<ustring>(21);
+      fs["section1"]["key3"] = as<string>(21);
       fs["section2"]["key1"] = "value5";
       fs["section2"]["key2"] = "value6";
-      fs["section2"]["key3"] = as<ustring>(84);
+      fs["section2"]["key3"] = as<string>(84);
 
       assert::are_equal("value1", fs[""]["key1"], csf_);
       assert::are_equal("value2", fs[""]["key2"], csf_);

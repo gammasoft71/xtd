@@ -34,7 +34,7 @@ namespace xtd {
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened
-      explicit stream_writer(const xtd::ustring& path);
+      explicit stream_writer(const xtd::string& path);
       /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
       explicit stream_writer(std::ostream& stream);
@@ -43,7 +43,7 @@ namespace xtd {
       /// @param append Determines whether data is to be appended to the file. If the file exists and append is false, the file is overwritten. If the file exists and append is true, the data is appended to the file. Otherwise, a new file is created.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened
-      stream_writer(const xtd::ustring& path, bool append);
+      stream_writer(const xtd::string& path, bool append);
       /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
       stream_writer(std::ostream& stream, bool append);
@@ -91,7 +91,7 @@ namespace xtd {
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::io_exception An I/O error occurs.
-      void write(const xtd::ustring& value) override;
+      void write(const xtd::string& value) override;
       /// @}
       
     private:

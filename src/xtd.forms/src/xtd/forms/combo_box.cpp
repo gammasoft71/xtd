@@ -124,7 +124,7 @@ combo_box& combo_box::sorted(bool sorted) {
   return *this;
 }
 
-control& combo_box::text(const xtd::ustring& text) {
+control& combo_box::text(const xtd::string& text) {
   return *this;
 }
 
@@ -149,7 +149,7 @@ combo_box combo_box::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-combo_box combo_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.location(location);
   result.size(size);
@@ -178,7 +178,7 @@ combo_box combo_box::create(const object_collection& items, const drawing::point
   return result;
 }
 
-combo_box combo_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.items(items);
   result.location(location);
@@ -211,7 +211,7 @@ combo_box combo_box::create(const object_collection& items, size_t selected_inde
   return result;
 }
 
-combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.items(items);
   result.selected_index(selected_index);
@@ -242,7 +242,7 @@ combo_box combo_box::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-combo_box combo_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.parent(parent);
   result.location(location);
@@ -275,7 +275,7 @@ combo_box combo_box::create(const control& parent, const object_collection& item
   return result;
 }
 
-combo_box combo_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.parent(parent);
   result.items(items);
@@ -312,7 +312,7 @@ combo_box combo_box::create(const control& parent, const object_collection& item
   return result;
 }
 
-combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = combo_box {};
   result.parent(parent);
   result.items(items);
@@ -348,7 +348,7 @@ forms::create_params combo_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> combo_box::clone() const {
   auto result = xtd::new_uptr<combo_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

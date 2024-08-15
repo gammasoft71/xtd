@@ -102,8 +102,8 @@ namespace xtd {
     ///   }
     ///
     ///   static auto main() {
-    ///     ustring source_directory = "c:\\source_directory";
-    ///     ustring target_directory = "c:\\target_directory";
+    ///     string source_directory = "c:\\source_directory";
+    ///     string target_directory = "c:\\target_directory";
     ///
     ///     directory_info di_source(source_directory);
     ///     directory_info di_target(target_directory);
@@ -132,7 +132,7 @@ namespace xtd {
       class directory_iterator : public xtd::iequatable<directory_iterator> {
         struct data;
         
-        explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
+        explicit directory_iterator(const xtd::string& path, const xtd::string& pattern);
       public:
         /// @cond
         using iterator_category = std::input_iterator_tag;
@@ -152,8 +152,8 @@ namespace xtd {
         xtd::io::directory_info::directory_iterator end() const;
         bool equals(const directory_iterator& other) const noexcept override;
         
-        xtd::ustring path() const;
-        xtd::ustring pattern() const;
+        xtd::string path() const;
+        xtd::string pattern() const;
         /// @endcond
         
       private:
@@ -187,8 +187,8 @@ namespace xtd {
         xtd::io::directory_info::file_iterator end() const;
         bool equals(const file_iterator& other) const noexcept override;
         
-        xtd::ustring path() const;
-        xtd::ustring pattern() const;
+        xtd::string path() const;
+        xtd::string pattern() const;
         /// @endcond
         
       private:
@@ -222,8 +222,8 @@ namespace xtd {
         xtd::io::directory_info::file_system_info_iterator end() const;
         bool equals(const file_system_info_iterator& other) const noexcept override;
         
-        xtd::ustring path() const;
-        xtd::ustring pattern() const;
+        xtd::string path() const;
+        xtd::string pattern() const;
         /// @endcond
         
       private:
@@ -282,7 +282,7 @@ namespace xtd {
       /// ```
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      explicit directory_info(const xtd::ustring& path);
+      explicit directory_info(const xtd::string& path);
       /// @}
       
       /// @name Properrties
@@ -302,7 +302,7 @@ namespace xtd {
       /// class program {
       /// public:
       ///   // Copy a source directory to a target directory.
-      ///   static void copy_directory(const ustring& source_directory, const ustring& target_directory) {
+      ///   static void copy_directory(const string& source_directory, const string& target_directory) {
       ///     directory_info  source(source_directory);
       ///     directory_info  target(target_directory);
       ///
@@ -348,7 +348,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     directory_info dir(".");
-      ///     ustring dir_name = dir.name();
+      ///     string dir_name = dir.name();
       ///     console::write_line("directory_info name is {0}.", dir_name);
       ///   }
       /// };
@@ -358,7 +358,7 @@ namespace xtd {
       /// @remarks This xtd::io::directory_info::name property returns only the name of the directory, such as "Bin". To get the full path, such as "c:\public\Bin", use the xtd::io::directory_info::full_name property.
       /// @remarks The xtd::io::directory_info::name property of a xtd::io::directory_info requires no permission (beyond the read permission to the directory necessary to construct the Exists) but can give out the directory name. If it is necessary to hand out a xtd::io::directory_info to a protected directory with a cryptographically secure name, create a dummy directory for the untrusted code's use.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      xtd::ustring name() const override;
+      xtd::string name() const override;
       
       /// @brief Gets the parent directory of a specified subdirectory.
       /// @return The parent directory, or null if the path is null or if the file path denotes a root (such as \, C:\, or \\server\share).
@@ -533,7 +533,7 @@ namespace xtd {
       /// ```
       /// @remarks Any and all directories specified in path are created, unless some part of path is invalid. The path parameter specifies a directory path, not a file path. If the subdirectory already exists, this method does nothing.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      xtd::io::directory_info create_subdirectory(const xtd::ustring& path) const;
+      xtd::io::directory_info create_subdirectory(const xtd::string& path) const;
       
       /// @brief Returns an enumerable collection of directory information in the current directory.
       /// @return An xtd::io::directory_info::directory_iterator of directories in the current directory.
@@ -551,7 +551,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     // Set a variable to the Documents path.
-      ///     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+      ///     string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       ///
       ///     directory_info dirs(doc_path);
       ///
@@ -593,7 +593,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::creation_time
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
-      xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::ustring& search_pattern) const;
+      xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::string& search_pattern) const;
       
       /// @brief Returns an enumerable collection of file information in the current directory.
       /// @return An xtd::io::directory_info::file_iterator of the files in the current directory.
@@ -769,7 +769,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& search_pattern) const;
+      xtd::io::directory_info::file_iterator enumerate_files(const xtd::string& search_pattern) const;
       
       /// @brief Returns an enumerable collection of file system information in the current directory.
       /// @return An xtd::io::directory_info::file_system_info_iterator of file system information in the current directory.
@@ -807,7 +807,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::ustring& search_pattern) const;
+      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::string& search_pattern) const;
       
       /// @brief Returns the subdirectories of the current directory.
       /// @return An array of xtd::io::directory_info objects.
@@ -894,7 +894,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::directory_info> get_directories(const xtd::ustring& search_pattern) const;
+      std::vector<xtd::io::directory_info> get_directories(const xtd::string& search_pattern) const;
       
       /// @brief Returns a file list from the current directory.
       /// @return An array of type xtd::io::file_info.
@@ -1042,7 +1042,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::file_info> get_files(const xtd::ustring& search_pattern) const;
+      std::vector<xtd::io::file_info> get_files(const xtd::string& search_pattern) const;
       
       /// @brief Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and subdirectories in a directory.
       /// @return An array of strongly typed xtd::io::file_system_info entries.
@@ -1062,7 +1062,7 @@ namespace xtd {
       ///     try {
       ///       console::write_line("Enter the path to a directory:");
       ///
-      ///       ustring directory = console::read_line();
+      ///       string directory = console::read_line();
       ///
       ///       // Create a new directory_info object.
       ///       directory_info dir(directory);
@@ -1147,11 +1147,11 @@ namespace xtd {
       ///     try {
       ///       console::write_line("Enter the path to a directory:");
       ///
-      ///       ustring directory = console::read_line();
+      ///       string directory = console::read_line();
       ///
       ///       console::write_line("Enter a search string (for example *p*):");
       ///
-      ///       ustring search_string = console::read_line();
+      ///       string search_string = console::read_line();
       ///
       ///       // Create a new directory_info object.
       ///       directory_info dir(directory);
@@ -1178,7 +1178,7 @@ namespace xtd {
       ///   }
       ///
       /// private:
-      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info, const ustring& search_string) {
+      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info, const string& search_string) {
       ///     // Iterate through each item.
       ///     for (xtd::sptr<file_system_info> i : fs_info) {
       ///       // Check to see if this is a directory_info object.
@@ -1222,7 +1222,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& search_pattern) const;
+      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::string& search_pattern) const;
       
       /// @brief Moves a DirectoryInfo instance and its contents to a new path.
       /// @param dest_dir_name The name and path to which to move this directory. The destination cannot be another disk volume or a directory with the identical name. It can be an existing directory to which you want to add this directory as a subdirectory.
@@ -1276,7 +1276,7 @@ namespace xtd {
       /// @remarks This method throws an IOException if, for example, you try to move c:\mydir to c:\public, and c:\public already exists. You must specify "c:\\public\\mydir" as the destDirName parameter, or specify a new directory name such as "c:\\newdir".
       /// @remarks This method permits moving a directory to a read-only directory. The read/write attribute of neither directory is affected.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      void move_to(const xtd::ustring& dest_dir_name);
+      void move_to(const xtd::string& dest_dir_name);
       
       /// @brief Deletes this xtd::io::directory_info if it is empty.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.

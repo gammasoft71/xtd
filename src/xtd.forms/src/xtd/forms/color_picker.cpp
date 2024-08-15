@@ -62,7 +62,7 @@ color_picker color_picker::create(const drawing::point& location, const drawing:
   return result;
 }
 
-color_picker color_picker::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+color_picker color_picker::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = color_picker {};
   result.location(location);
   result.size(size);
@@ -91,7 +91,7 @@ color_picker color_picker::create(const xtd::drawing::color& color, const drawin
   return result;
 }
 
-color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = color_picker {};
   result.color(color);
   result.location(location);
@@ -121,7 +121,7 @@ color_picker color_picker::create(const control& parent, const drawing::point& l
   return result;
 }
 
-color_picker color_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+color_picker color_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = color_picker {};
   result.parent(parent);
   result.location(location);
@@ -154,7 +154,7 @@ color_picker color_picker::create(const control& parent, const xtd::drawing::col
   return result;
 }
 
-color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = color_picker {};
   result.parent(parent);
   result.color(color);
@@ -173,7 +173,7 @@ forms::create_params color_picker::create_params() const noexcept {
 
 xtd::uptr<xtd::object> color_picker::clone() const {
   auto result = xtd::new_uptr<color_picker>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

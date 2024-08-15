@@ -224,7 +224,7 @@ namespace xtd {
       static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       
-      static const std::vector<xtd::ustring>& get_color_names() noexcept;
+      static const std::vector<xtd::string>& get_color_names() noexcept;
       /// @}
     };
   }

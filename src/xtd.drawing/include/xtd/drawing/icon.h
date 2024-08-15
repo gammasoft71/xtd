@@ -45,20 +45,20 @@ namespace xtd {
       /// * 32 pixels x 32 pixels
       /// * 48 pixels x 48 pixels
       /// @remarks This constructor returns the smallest image that is contained in the specified file.
-      explicit icon(const xtd::ustring& filename);
+      explicit icon(const xtd::string& filename);
       /// @brief Initializes a new instance of the xtd::drawing::icon class of the specified size from the specified file.
       /// @param filename The file to load the xtd::drawing::icon from.
       /// @param size The desired size of the icon.
       /// @remarks If the specified file does not contain an image that matches the desired size, the icon that has the closest size is returned.
       /// @remarks The filename should include the complete path if it is not in the current application directory.
-      icon(const xtd::ustring& filename, const xtd::drawing::size& size);
+      icon(const xtd::string& filename, const xtd::drawing::size& size);
       /// @brief Initializes a new instance of the xtd::drawing::icon class with the specified width and height from the specified file.
       /// @param filename The file to load the xtd::drawing::icon from.
       /// @param width The desired width of the xtd::drawing::icon.
       /// @param height The desired height of the xtd::drawing::icon.
       /// @remarks If the specified file does not contain an image that matches the desired height and width, the icon that has the closest size is returned.
       /// @remarks The filename should include the complete path if it is not in the current application directory.
-      icon(const xtd::ustring& filename, int32 width, int32 height);
+      icon(const xtd::string& filename, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::drawing::icon class from the specified data stream.
       /// @param stream The data stream from which to load the xtd::drawing::icon.
       /// @remarks An icon resource can contain multiple icon images. One icon file may contain images in several sizes and color depths. The image that is used in an application depends on the operating system and settings. The following list details the typical sizes for an icon:
@@ -144,7 +144,7 @@ namespace xtd {
       
       /// @brief Saves this xtd::drawing::icon to the specified output filename.
       /// @param filename The file to save to.
-      void save(const xtd::ustring& filename) const;
+      void save(const xtd::string& filename) const;
       /// @brief Saves this xtd::drawing::icon to the specified output std::ostream.
       /// @param stream The std::ostream to save to.
       void save(std::ostream& stream) const;
@@ -156,7 +156,7 @@ namespace xtd {
       
       /// @brief Gets a human-readable string that describes the xtd::drawing::icon.
       /// @return A string that describes the xtd::drawing::icon.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified Windows handle to an icon (HICON).

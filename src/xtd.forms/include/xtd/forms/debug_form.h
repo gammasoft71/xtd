@@ -68,11 +68,11 @@ namespace xtd {
       /// @{
       void flush() override;
       
-      void write(const xtd::ustring& debug) override {
+      void write(const xtd::string& debug) override {
         if (!defined) return;
         trace_form_base::write(debug);
       }
-      void write_line(const xtd::ustring& debug) override {
+      void write_line(const xtd::string& debug) override {
         if (!defined) return;
         trace_form_base::write_line(debug);
       }

@@ -39,7 +39,7 @@ void list_box::end_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void list_box::insert_item(intptr control, size_t index, const ustring& value) {
+void list_box::insert_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -84,7 +84,7 @@ std::vector<size_t> list_box::selected_indices(intptr control) {
   return indices;
 }
 
-void list_box::update_item(intptr control, size_t index, const ustring& value) {
+void list_box::update_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

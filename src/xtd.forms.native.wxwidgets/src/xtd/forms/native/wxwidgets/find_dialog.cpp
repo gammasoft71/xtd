@@ -28,19 +28,19 @@ namespace {
 
 class wxFindDialog : public wxFindReplaceDialog {
 public:
-  wxFindDialog(intptr hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
+  wxFindDialog(intptr hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::string&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
   
   int32 style = 0;
   bool downwards = true;
   bool whole_word = false;
   bool match_case = false;
   wxString find_string;
-  xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next;
+  xtd::delegate<void(const xtd::drawing::point&, const xtd::string&, bool, bool, bool)> find_next;
   xtd::delegate<void()> dialog_closed;
   intptr hwnd = 0;
 };
 
-intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) {
+intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::string& title, const xtd::string& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::string&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) {
   if (!wxTheApp) return 0;
   
   int32 find_replace_flags = 0;

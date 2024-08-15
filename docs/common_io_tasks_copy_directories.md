@@ -17,13 +17,13 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void copy_directory(const ustring& source_dir, const ustring& destination_dir, bool recursive) {
+  static void copy_directory(const string& source_dir, const string& destination_dir, bool recursive) {
     // Get information about the source directory
     auto dir = directory_info(source_dir);
     
     // Check if the source directory exists
     if (!dir.exists())
-      throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()), csf_);
+      throw directory_not_found_exception(string::format("Source directory not found: {}", dir.full_name()), csf_);
     
     // Cache directories before we start copying
     list<directory_info> dirs = dir.get_directories();

@@ -50,7 +50,7 @@ int32 system_information::caret_width() {
   return native::system_information::caret_width();
 }
 
-xtd::ustring system_information::computer_name() {
+xtd::string system_information::computer_name() {
   return native::system_information::computer_name();
 }
 

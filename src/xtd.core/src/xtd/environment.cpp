@@ -139,19 +139,19 @@ event<environment, program_exit_event_handler> environment::program_exit;
 
 environment::signal_catcher environment::signal_catcher_;
 
-const ustring& environment::xtd_library::include_path() const noexcept {
+const string& environment::xtd_library::include_path() const noexcept {
   return include_path_;
 }
 
-const ustring& environment::xtd_library::library_path() const noexcept {
+const string& environment::xtd_library::library_path() const noexcept {
   return library_path_;
 }
 
-const ustring& environment::xtd_library::name() const noexcept {
+const string& environment::xtd_library::name() const noexcept {
   return name_;
 }
 
-const ustring& environment::xtd_library::resources_path() const noexcept {
+const string& environment::xtd_library::resources_path() const noexcept {
   return resources_path_;
 }
 
@@ -159,22 +159,22 @@ const xtd::version& environment::xtd_library::version() const noexcept {
   return version_;
 }
 
-ustring environment::xtd_library::to_string() const noexcept {
-  return xtd::ustring::format("{} (version {})", name_, version_);
+string environment::xtd_library::to_string() const noexcept {
+  return xtd::string::format("{} (version {})", name_, version_);
 }
 
-environment::xtd_library::xtd_library(const ustring& name, const xtd::version& version, const ustring& include_path, const ustring& library_path, const ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {
+environment::xtd_library::xtd_library(const string& name, const xtd::version& version, const string& include_path, const string& library_path, const string& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {
 }
 
-xtd::ustring environment::command_line() noexcept {
-  return xtd::ustring::join(" ", get_command_line_args());
+xtd::string environment::command_line() noexcept {
+  return xtd::string::join(" ", get_command_line_args());
 }
 
-ustring environment::current_directory() {
+string environment::current_directory() {
   return io::directory::get_current_directory();
 }
 
-void environment::current_directory(const ustring& directory_name) {
+void environment::current_directory(const string& directory_name) {
   io::directory::set_current_directory(directory_name);
 }
 
@@ -210,11 +210,11 @@ std::locale environment::locale() noexcept {
   return std::locale();
 }
 
-ustring environment::machine_name() {
+string environment::machine_name() {
   return native::environment::get_machine_name();
 }
 
-ustring environment::new_line() noexcept {
+string environment::new_line() noexcept {
   return native::environment::new_line();
 }
 
@@ -244,11 +244,11 @@ xtd::processor environment::processor_information() {
   return processor;
 }
 
-xtd::ustring environment::stack_trace() {
+xtd::string environment::stack_trace() {
   return xtd::diagnostics::stack_trace(true).to_string();
 }
 
-xtd::ustring environment::system_directory() {
+xtd::string environment::system_directory() {
   return get_folder_path(environment::special_folder::system);
 }
 
@@ -269,7 +269,7 @@ bool environment::user_administrator() {
   return native::environment::get_user_administrator();
 }
 
-ustring environment::user_domain_name() {
+string environment::user_domain_name() {
   return native::environment::get_user_domain_name();
 }
 
@@ -277,7 +277,7 @@ bool environment::user_interactive() {
   return true;
 }
 
-ustring environment::user_name() {
+string environment::user_name() {
   return native::environment::get_user_name();
 }
 
@@ -306,17 +306,17 @@ void environment::exit(xtd::exit_status exit_status) {
   exit(enum_object<>::to_int32(exit_status));
 }
 
-xtd::ustring environment::expand_environment_variables(const xtd::ustring& name) {
+xtd::string environment::expand_environment_variables(const xtd::string& name) {
   auto buffer = name;
-  auto result = xtd::ustring::empty_string;
+  auto result = xtd::string::empty_string;
   
   auto index = buffer.index_of('%');
-  while (index != xtd::ustring::npos && buffer.index_of('%', index + 1) != xtd::ustring::npos) {
+  while (index != xtd::string::npos && buffer.index_of('%', index + 1) != xtd::string::npos) {
     result += buffer.substring(0, index);
     buffer = buffer.remove(0, index + 1);
     index = buffer.index_of('%');
     if (get_environment_variable(buffer.substring(0, index)) != "") result += get_environment_variable(buffer.substring(0, index));
-    else result += xtd::ustring::format("%{0}%", buffer.substring(0, index));
+    else result += xtd::string::format("%{0}%", buffer.substring(0, index));
     buffer = buffer.remove(0, index + 1);
     index = buffer.index_of('%');
   }
@@ -329,11 +329,11 @@ xtd::collections::specialized::string_collection environment::get_command_line_a
   return {args.begin(), args.end()};
 }
 
-xtd::ustring environment::get_environment_variable(const xtd::ustring& variable) {
+xtd::string environment::get_environment_variable(const xtd::string& variable) {
   return get_environment_variable(variable, environment_variable_target::process);
 }
 
-ustring environment::get_environment_variable(const ustring& variable, environment_variable_target target) {
+string environment::get_environment_variable(const string& variable, environment_variable_target target) {
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
   return native::environment::get_environment_variable(variable, as<int32>(target));
 }
@@ -347,11 +347,11 @@ std::map<std::string, std::string>& environment::get_environment_variables(envir
   return native::environment::get_environment_variables(as<int32>(target));
 }
 
-xtd::ustring environment::get_folder_path(environment::special_folder folder) {
+xtd::string environment::get_folder_path(environment::special_folder folder) {
   return get_folder_path(folder, environment::special_folder_option::none);
 }
 
-ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
+string environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
   switch (folder) {
     case environment::special_folder::application_resources: return path::get_full_path(native::environment::get_resources_path(is_gui_application()));
     case environment::special_folder::xtd_install: return xtd_root_path();
@@ -403,16 +403,16 @@ void environment::raise(xtd::signal signal) {
   std::raise(enum_object<>::to_int32(signal));
 }
 
-void environment::set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value) {
+void environment::set_environment_variable(const xtd::string& variable, const xtd::string& value) {
   set_environment_variable(variable, value, environment_variable_target::process);
 }
 
-void environment::set_environment_variable(const ustring& variable, const ustring& value, environment_variable_target target) {
-  if (ustring::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, csf_);
+void environment::set_environment_variable(const string& variable, const string& value, environment_variable_target target) {
+  if (string::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, csf_);
   
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
   
-  if (ustring::is_empty(value)) {
+  if (string::is_empty(value)) {
     native::environment::get_environment_variables(as<int32>(target)).erase(variable);
     native::environment::unset_environment_variable(variable, as<int32>(target));
   } else {

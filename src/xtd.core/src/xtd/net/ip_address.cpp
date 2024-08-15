@@ -204,8 +204,8 @@ uint64 ip_address::network_to_host_order(uint64 network) {
   return host_to_network_order(network);
 }
 
-ip_address ip_address::parse(const ustring& str) {
-  block_scope_(std::vector<ustring> address_parts = str.split({'.'})) {
+ip_address ip_address::parse(const string& str) {
+  block_scope_(std::vector<string> address_parts = str.split({'.'})) {
     if (address_parts.size() == 4) {
       std::vector<xtd::byte> addresses(4);
       for (auto index = 0_z; index < address_parts.size(); index++)
@@ -214,7 +214,7 @@ ip_address ip_address::parse(const ustring& str) {
     }
   }
   
-  ustring work_ip_string = ((str[0] == '[' && str[str.size() - 1] == ']') ? str.substring(1, str.size() - 2) : str);
+  string work_ip_string = ((str[0] == '[' && str[str.size() - 1] == ']') ? str.substring(1, str.size() - 2) : str);
   ip_address value;
   value.address_family_ = sockets::address_family::inter_network_v6;
   if (work_ip_string.index_of('%') != work_ip_string.npos) {
@@ -222,7 +222,7 @@ ip_address ip_address::parse(const ustring& str) {
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   
-  block_scope_(std::vector<ustring> address_parts = work_ip_string.split({':'})) {
+  block_scope_(std::vector<string> address_parts = work_ip_string.split({':'})) {
     for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
       if (it->empty()) {
         *it = "0";
@@ -234,7 +234,7 @@ ip_address ip_address::parse(const ustring& str) {
     
     if (address_parts.size() == 8) {
       for (auto index = 0_z; index < address_parts.size(); index++)
-        value.numbers_[index] = xtd::parse<uint16>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
+        value.numbers_[index] = xtd::parse<uint16>(string::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
       return value;
     }
   }
@@ -242,26 +242,26 @@ ip_address ip_address::parse(const ustring& str) {
   throw xtd::format_exception {csf_};
 }
 
-ustring ip_address::to_string() const noexcept {
+string ip_address::to_string() const noexcept {
   if (address_family_ == sockets::address_family::inter_network)
-    return ustring::join(".", get_address_bytes());
+    return string::join(".", get_address_bytes());
     
-  ustring str;
+  string str;
   for (size_t index = 0; index < 8; ++index) {
     if (index < 7 && numbers_[index] == 0 && numbers_[index + 1] == 0) {
       if (index == 0) str = ":";
       while (index < 7 && numbers_[index + 1] == 0) ++index;
       if (index < 8) str += ":";
     } else {
-      str += ustring::format("{:x}", numbers_[index]);
+      str += string::format("{:x}", numbers_[index]);
       if (index < 7) str += ":";
     }
   }
-  if (scope_id_ != 0) str += ustring::format("%{}", scope_id_);
+  if (scope_id_ != 0) str += string::format("%{}", scope_id_);
   return str;
 }
 
-bool ip_address::try_parse(const ustring& str, ip_address& address) noexcept {
+bool ip_address::try_parse(const string& str, ip_address& address) noexcept {
   try {
     address = parse(str);
   } catch (...) {

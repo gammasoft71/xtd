@@ -208,6 +208,6 @@ rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexc
   return result;
 }
 
-xtd::ustring rectangle_f::to_string() const noexcept {
-  return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
+xtd::string rectangle_f::to_string() const noexcept {
+  return string::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
 }

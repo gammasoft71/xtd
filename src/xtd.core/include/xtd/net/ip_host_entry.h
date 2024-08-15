@@ -54,28 +54,28 @@ namespace xtd {
       
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      const std::vector<xtd::ustring>& aliases() const noexcept;
+      const std::vector<xtd::string>& aliases() const noexcept;
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      std::vector<xtd::ustring>& aliases() noexcept;
+      std::vector<xtd::string>& aliases() noexcept;
       /// @brief Sets List of aliases that are associated with a host.
       /// @param aliases A string array of aliases that are associated with a host.
       /// @return The current instance.
-      ip_host_entry& aliases(const std::vector<xtd::ustring>& aliases) noexcept;
+      ip_host_entry& aliases(const std::vector<xtd::string>& aliases) noexcept;
       
       /// @brief Gets the DNS name of the host.
       /// @return A string represent the DNS name of the host.
-      const xtd::ustring& host_name() const noexcept;
+      const xtd::string& host_name() const noexcept;
       /// @brief Sets the DNS name of the host.
       /// @param hist_name A string represent the DNS name of the host.
       /// @return The current instance.
-      ip_host_entry& host_name(const xtd::ustring& host_name) noexcept;
+      ip_host_entry& host_name(const xtd::string& host_name) noexcept;
       /// @}
       
     private:
       std::vector<xtd::net::ip_address> address_list_;
-      std::vector<xtd::ustring> aliases_;
-      xtd::ustring host_name_;
+      std::vector<xtd::string> aliases_;
+      xtd::string host_name_;
     };
   }
 }

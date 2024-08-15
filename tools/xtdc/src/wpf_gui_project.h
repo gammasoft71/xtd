@@ -4,9 +4,9 @@
 namespace xtdc_command {
   class wpf_gui_project : public base_project {
   public:
-    explicit wpf_gui_project(const xtd::ustring& path) : base_project(path) {}
+    explicit wpf_gui_project(const xtd::string& path) : base_project(path) {}
     
-    void create(const xtd::ustring& name, bool create_solution) const {
+    void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
@@ -17,28 +17,28 @@ namespace xtdc_command {
       create_application_xaml(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
-    void generate(const xtd::ustring& name) const {
+    void generate(const xtd::string& name) const {
       generate_cmakelists_txt(name, current_path());
     }
     
   private:
-    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
-      std::vector<xtd::ustring> lines {
+    void create_solution_cmakelists_txt(const xtd::string& name) const {
+      std::vector<xtd::string> lines {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
-        xtd::ustring::format("project({})", name),
-        xtd::ustring::format("add_subdirectory({})", name)
+        xtd::string::format("project({})", name),
+        xtd::string::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
     
-    void create_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
-        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::string::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/App.config",
@@ -76,11 +76,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "using System.Windows;",
         "",
-        xtd::ustring::format("namespace {} {{", name),
+        xtd::string::format("namespace {} {{", name),
         "  public partial class Window1 : Window {",
         "    public Window1() {",
         "      InitializeComponent();",
@@ -91,14 +91,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.xaml.cs"), lines);
     }
     
-    void create_window1_xaml(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
-        xtd::ustring::format("<Window x:Class=\"{}.Window1\"", name),
+    void create_window1_xaml(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
+        xtd::string::format("<Window x:Class=\"{}.Window1\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
         "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
         "        xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"",
         "        xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"",
-        xtd::ustring::format("        xmlns:local=\"clr-namespace:{}\"", name),
+        xtd::string::format("        xmlns:local=\"clr-namespace:{}\"", name),
         "        mc:Ignorable=\"d\"",
         "        Title=\"Window1\" Height=\"450\" Width=\"800\">",
         "    <Grid>",
@@ -110,8 +110,8 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.xaml"), lines);
     }
     
-    void create_application_config(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_application_config(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
         "<configuration>",
         "    <startup> ",
@@ -122,11 +122,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "App.config"), lines);
     }
     
-    void create_application_source(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_application_source(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "using System.Windows;",
         "",
-        xtd::ustring::format("namespace {} {{", name),
+        xtd::string::format("namespace {} {{", name),
         "  public partial class App : Application {",
         "  }",
         "}",
@@ -134,12 +134,12 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "App.xaml.cs"), lines);
     }
     
-    void create_application_xaml(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
-        xtd::ustring::format("<Application x:Class=\"{}.App\"", name),
+    void create_application_xaml(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
+        xtd::string::format("<Application x:Class=\"{}.App\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
         "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
-        xtd::ustring::format("    xmlns:local=\"clr-namespace:{}\"", name),
+        xtd::string::format("    xmlns:local=\"clr-namespace:{}\"", name),
         "        StartupUri=\"src\\Window1.xaml\">",
         "    <Application.Resources>",
         "",
@@ -150,12 +150,12 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "App.xaml"), lines);
     }
     
-    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines;
+    void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines;
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
-      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
+      lines.push_back(xtd::string::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
       lines.push_back("include(CSharpUtilities)");
       lines.push_back("set(SOURCES");
       lines.push_back("  src/App.config");

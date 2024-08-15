@@ -34,10 +34,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::ustring("VALUE")); // test ok.
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::ustring("VALUE")); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::string("VALUE")); // test ok.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::string("VALUE")); // test throws an abort_error exception.
       /// ```
-      static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual);
+      static void are_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual);
       /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -45,10 +45,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::ustring("VALUE"), csf_); // test ok.
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::ustring("VALUE"), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::string("VALUE"), csf_); // test ok.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::string("VALUE"), csf_); // test throws an abort_error exception.
       /// ```
-      static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -56,10 +56,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::ustring("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::ustring("VALUE"), "User message..."); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::string("VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::string("VALUE"), "User message..."); // test throws an abort_error exception.
       /// ```
-      static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message);
+      static void are_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message);
       /// @brief Validates that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -68,10 +68,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::ustring("VALUE"), "User message...", csf_); // test ok.
-      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::ustring("VALUE"), "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("value", xtd::string("VALUE"), "User message...", csf_); // test ok.
+      /// xtd::tunit::string_assume::are_equal_ignoring_case("key", xtd::string("VALUE"), "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void are_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
@@ -79,10 +79,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::ustring("VALUE")); // test ok.
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::ustring("VALUE")); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::string("VALUE")); // test ok.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::string("VALUE")); // test throws an abort_error exception.
       /// ```
-      static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual);
+      static void are_not_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual);
       /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -90,10 +90,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::ustring("VALUE"), csf_); // test ok.
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::ustring("VALUE"), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::string("VALUE"), csf_); // test ok.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::string("VALUE"), csf_); // test throws an abort_error exception.
       /// ```
-      static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -101,10 +101,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::ustring("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::ustring("VALUE"), "User message..."); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::string("VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::string("VALUE"), "User message..."); // test throws an abort_error exception.
       /// ```
-      static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message);
+      static void are_not_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message);
       /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -113,10 +113,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::ustring("VALUE"), "User message...", csf_); // test ok.
-      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::ustring("VALUE"), "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("key", xtd::string("VALUE"), "User message...", csf_); // test ok.
+      /// xtd::tunit::string_assume::are_not_equal_ignoring_case("value", xtd::string("VALUE"), "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void are_not_equal_ignoring_case(const xtd::ustring& expected, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
@@ -124,11 +124,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s); // test ok.
       /// xtd::tunit::string_assume::contains("z", s); // test throws an abort_error exception.
       /// ```
-      static void contains(const xtd::ustring& item, const xtd::ustring& string);
+      static void contains(const xtd::string& item, const xtd::string& string);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -136,11 +136,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, csf_); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void contains(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -148,11 +148,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void contains(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void contains(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -161,11 +161,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void contains(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
@@ -173,11 +173,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s); // test ok.
       /// xtd::tunit::string_assume::contains("z", s); // test throws an abort_error exception.
       /// ```
-      static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string);
+      static void does_not_contain(const xtd::string& item, const xtd::string& string);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -185,11 +185,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, csf_); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_contain(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -197,11 +197,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void does_not_contain(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       /// @brief Validates that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -210,11 +210,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::contains("a", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::contains("z", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_contain(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_contain(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string does not end with a specific item.
       /// @param item object to verify.
@@ -222,11 +222,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_end_with("law", s); // test ok.
       /// xtd::tunit::string_assume::does_not_end_with("lue", s); // test throws an abort_error exception.
       /// ```
-      static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string);
+      static void does_not_end_with(const xtd::string& item, const xtd::string& string);
       
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
@@ -235,11 +235,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_end_with("law", s, csf_); // test ok.
       /// xtd::tunit::string_assume::does_not_end_with("lue", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
@@ -248,11 +248,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_end_with("law", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::does_not_end_with("lue", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
@@ -262,11 +262,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_end_with("law", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::does_not_end_with("lue", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that does not match regex pattern.
       /// @param regex_pattern the regex pattern.
@@ -274,10 +274,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::ustring("Hello, World!")); // test ok.
-      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::ustring("Hello, World!")); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::string("Hello, World!")); // test ok.
+      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::string("Hello, World!")); // test throws an abort_error exception.
       /// ```
-      static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual);
+      static void does_not_match(const xtd::string& regex_pattern, const xtd::string& actual);
       /// @brief Validates that does not match regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -285,10 +285,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::ustring("Hello, World!"), csf_); // test ok.
-      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::ustring("Hello, World!"), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::string("Hello, World!"), csf_); // test ok.
+      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::string("Hello, World!"), csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_match(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that does not match regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -296,10 +296,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::ustring("Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::ustring("Hello, World!"), "User message..."); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::does_not_match("^Salut", xtd::string("Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assume::does_not_match("^Hello", xtd::string("Hello, World!"), "User message..."); // test throws an abort_error exception.
       /// ```
-      static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message);
+      static void does_not_match(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message);
       /// @brief Validates that does not match regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -308,10 +308,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::does_not_match("^Salut", "Hello, World!", xtd::ustring("User message..."), csf_); // test ok.
-      /// xtd::tunit::string_assume::does_not_match("^Hello", "Hello, World!", xtd::ustring("User message..."), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::does_not_match("^Salut", "Hello, World!", xtd::string("User message..."), csf_); // test ok.
+      /// xtd::tunit::string_assume::does_not_match("^Hello", "Hello, World!", xtd::string("User message..."), csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_match(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string does not start with a specific item.
       /// @param item object to verify.
@@ -319,11 +319,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_start_with("zoe", s); // test ok.
       /// xtd::tunit::string_assume::does_not_start_with("val", s); // test throws an abort_error exception.
       /// ```
-      static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string);
+      static void does_not_start_with(const xtd::string& item, const xtd::string& string);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -331,11 +331,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_start_with("zoe", s, csf_); // test ok.
       /// xtd::tunit::string_assume::does_not_start_with("val", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -343,11 +343,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_start_with("zoe", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::does_not_start_with("val", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -356,11 +356,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::does_not_start_with("zoe", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::does_not_start_with("val", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void does_not_start_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string ends with a specific item.
       /// @param item object to verify.
@@ -368,11 +368,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::ends_with("val", s); // test ok.
       /// xtd::tunit::string_assume::ends_with("law", s); // test throws an abort_error exception.
       /// ```
-      static void ends_with(const xtd::ustring& item, const xtd::ustring& string);
+      static void ends_with(const xtd::string& item, const xtd::string& string);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -380,11 +380,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::ends_with("val", s, csf_); // test ok.
       /// xtd::tunit::string_assume::ends_with("law", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void ends_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void ends_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -392,11 +392,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::ends_with("val", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::ends_with("law", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void ends_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void ends_with(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -405,11 +405,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::ends_with("lue", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::ends_with("law", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void ends_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void ends_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that matches regex pattern.
       /// @param regex_pattern the regex pattern.
@@ -417,10 +417,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::matches("^Hello", xtd::ustring("Hello, World!")); // test ok.
-      /// xtd::tunit::string_assume::matches("^Salut", xtd::ustring("Hello, World!")); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::matches("^Hello", xtd::string("Hello, World!")); // test ok.
+      /// xtd::tunit::string_assume::matches("^Salut", xtd::string("Hello, World!")); // test throws an abort_error exception.
       /// ```
-      static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual);
+      static void matches(const xtd::string& regex_pattern, const xtd::string& actual);
       /// @brief Validates that matches regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -428,10 +428,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::matches("^Hello", xtd::ustring("Hello, World!"), csf_); // test ok.
-      /// xtd::tunit::string_assume::matches("^Salut", xtd::ustring("Hello, World!"), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::matches("^Hello", xtd::string("Hello, World!"), csf_); // test ok.
+      /// xtd::tunit::string_assume::matches("^Salut", xtd::string("Hello, World!"), csf_); // test throws an abort_error exception.
       /// ```
-      static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      static void matches(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that matches regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -439,10 +439,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::matches("^Hello", xtd::ustring("Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_assume::matches("^Salut", xtd::ustring("Hello, World!"), "User message..."); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::matches("^Hello", xtd::string("Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assume::matches("^Salut", xtd::string("Hello, World!"), "User message..."); // test throws an abort_error exception.
       /// ```
-      static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message);
+      static void matches(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message);
       /// @brief Validates that matches regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.
@@ -451,10 +451,10 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::string_assume::matches("^Hello", "Hello, World!", xtd::ustring("User message..."), csf_); // test ok.
-      /// xtd::tunit::string_assume::matches("^Salut", "Hello, World!", xtd::ustring("User message..."), csf_); // test throws an abort_error exception.
+      /// xtd::tunit::string_assume::matches("^Hello", "Hello, World!", xtd::string("User message..."), csf_); // test ok.
+      /// xtd::tunit::string_assume::matches("^Salut", "Hello, World!", xtd::string("User message..."), csf_); // test throws an abort_error exception.
       /// ```
-      static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void matches(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that string starts with a specific item.
       /// @param item object to verify.
@@ -462,11 +462,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::starts_with("val", s); // test ok.
       /// xtd::tunit::string_assume::starts_with("zoe", s); // test throws an abort_error exception.
       /// ```
-      static void starts_with(const xtd::ustring& item, const xtd::ustring& string);
+      static void starts_with(const xtd::string& item, const xtd::string& string);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -474,11 +474,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::starts_with("val", s, csf_); // test ok.
       /// xtd::tunit::string_assume::starts_with("zoe", s, csf_); // test throws an abort_error exception.
       /// ```
-      static void starts_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::diagnostics::stack_frame& stack_frame);
+      static void starts_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -486,11 +486,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::starts_with("val", s, "User message..."); // test ok.
       /// xtd::tunit::string_assume::starts_with("zoe", s, "User message..."); // test throws an abort_error exception.
       /// ```
-      static void starts_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message);
+      static void starts_with(const xtd::string& item, const xtd::string& string, const xtd::string& message);
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -499,11 +499,11 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::ustring s = "value";
+      /// xtd::string s = "value";
       /// xtd::tunit::string_assume::starts_with("val", s, "User message...", csf_); // test ok.
       /// xtd::tunit::string_assume::starts_with("zoe", s, "User message...", csf_); // test throws an abort_error exception.
       /// ```
-      static void starts_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void starts_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @}
     };
   }

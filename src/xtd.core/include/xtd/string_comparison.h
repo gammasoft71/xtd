@@ -4,13 +4,13 @@
 #pragma once
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::ustring::compare method
+  /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::string::compare method
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see xtd::ustring
+  /// @see xtd::string
   enum class string_comparison {
     /// @brief Compare strings using ordinal (binary) sort rules.
     ordinal,

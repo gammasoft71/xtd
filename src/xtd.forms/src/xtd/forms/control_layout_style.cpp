@@ -81,8 +81,8 @@ control_layout_style& control_layout_style::align(xtd::forms::content_alignment 
   return *this;
 }
 
-xtd::ustring control_layout_style::to_string() const noexcept {
-  return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", data_->expanded, data_->align, data_->size_type);
+xtd::string control_layout_style::to_string() const noexcept {
+  return string::format("control_layout_style=[expanded={}, align={}, size_type={}]", data_->expanded, data_->align, data_->size_type);
 }
 
 bool control_layout_style::equals(const control_layout_style& value) const noexcept {

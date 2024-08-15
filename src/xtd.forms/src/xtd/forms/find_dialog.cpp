@@ -16,7 +16,7 @@ using namespace xtd::forms;
 
 struct find_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
-  xtd::ustring find_string;
+  xtd::string find_string;
   intptr handle = 0;
   std::optional<xtd::drawing::point> location;
   bool match_case = false;
@@ -25,7 +25,7 @@ struct find_dialog::data {
   bool show_up_down = true;
   bool show_whole_word = true;
   xtd::forms::search_direction search_direction = xtd::forms::search_direction::down;
-  xtd::ustring title;
+  xtd::string title;
   bool visible = false;
   bool whole_word = false;
 };
@@ -38,11 +38,11 @@ find_dialog::~find_dialog() {
   destroy_handle();
 }
 
-const xtd::ustring& find_dialog::find_string() const noexcept {
+const xtd::string& find_dialog::find_string() const noexcept {
   return data_->find_string;
 }
 
-find_dialog& find_dialog::find_string(const xtd::ustring& value) {
+find_dialog& find_dialog::find_string(const xtd::string& value) {
   if (value == data_->find_string) return *this;
   data_->find_string = value;
   recreate_handle();
@@ -115,11 +115,11 @@ find_dialog& find_dialog::show_whole_word(bool value) {
   return *this;
 }
 
-const xtd::ustring& find_dialog::title() const noexcept {
+const xtd::string& find_dialog::title() const noexcept {
   return data_->title;
 }
 
-find_dialog& find_dialog::title(const xtd::ustring& value) {
+find_dialog& find_dialog::title(const xtd::string& value) {
   if (value == data_->title) return *this;
   data_->title = value;
   recreate_handle();
@@ -184,7 +184,7 @@ void find_dialog::on_dialog_closed() {
   dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
-void find_dialog::on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
+void find_dialog::on_dialog_find(const xtd::drawing::point& location, const string& find_string, bool downwards, bool whole_word, bool match_case) {
   data_->location = location;
   data_->find_string = find_string;
   data_->search_direction = downwards ? xtd::forms::search_direction::down : xtd::forms::search_direction::up;

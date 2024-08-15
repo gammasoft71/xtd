@@ -13,37 +13,37 @@ using namespace xtd::threading;
 struct semaphore::data {
   std::atomic<int32> count = 0;
   std::atomic<int32> maximum_count = int32_object::max_value;
-  ustring name;
+  string name;
 };
 
 semaphore::semaphore() : semaphore(0, int32_object::max_value) {
 }
 
-semaphore::semaphore(const ustring& name) : semaphore(0, int32_object::max_value, name) {
+semaphore::semaphore(const string& name) : semaphore(0, int32_object::max_value, name) {
 }
 
-semaphore::semaphore(const ustring& name, bool& created_new) : semaphore(0, int32_object::max_value, name, created_new) {
+semaphore::semaphore(const string& name, bool& created_new) : semaphore(0, int32_object::max_value, name, created_new) {
 }
 
-semaphore::semaphore(int32 initial_count) : semaphore(initial_count, int32_object::max_value, ustring::empty_string) {
+semaphore::semaphore(int32 initial_count) : semaphore(initial_count, int32_object::max_value, string::empty_string) {
 }
 
-semaphore::semaphore(int32 initial_count, const ustring& name) : semaphore(initial_count, int32_object::max_value, name) {
+semaphore::semaphore(int32 initial_count, const string& name) : semaphore(initial_count, int32_object::max_value, name) {
 }
 
-semaphore::semaphore(int32 initial_count, const ustring& name, bool& created_new) : semaphore(initial_count, int32_object::max_value, name, created_new) {
+semaphore::semaphore(int32 initial_count, const string& name, bool& created_new) : semaphore(initial_count, int32_object::max_value, name, created_new) {
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initial_count, maximum_count, ustring::empty_string) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initial_count, maximum_count, string::empty_string) {
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : data_(xtd::new_sptr<data>()) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   auto created_new = false;
   create(initial_count, maximum_count, created_new);
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
   if (initial_count > maximum_count) throw argument_exception {csf_};
   if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
@@ -78,7 +78,7 @@ bool semaphore::equals(const semaphore& value) const noexcept {
   return handle() == value.handle();
 }
 
-semaphore semaphore::open_existing(const ustring& name) {
+semaphore semaphore::open_existing(const string& name) {
   if (name.empty()) throw argument_exception {csf_};
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
   auto result = semaphore{};
@@ -104,9 +104,9 @@ int32 semaphore::release(int32 release_count) {
   return previous_count;
 }
 
-bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexcept {
+bool semaphore::try_open_existing(const string& name, semaphore& result) noexcept {
   result.close();
-  if (ustring::is_empty(name)) return false;
+  if (string::is_empty(name)) return false;
   if (name.size() > native::named_semaphore::max_name_size()) return false;
   auto new_semaphore = semaphore {};
   new_semaphore.data_->name = name;

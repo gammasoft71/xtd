@@ -150,18 +150,18 @@ icon system_icons::xtd_forms_logo(const size& size) noexcept {
   return from_name("xtd-forms", size);
 }
 
-icon system_icons::from_name(const xtd::ustring& name) {
+icon system_icons::from_name(const xtd::string& name) {
   return from_name(system_images_base::default_theme(), name, default_size());
 }
 
-icon system_icons::from_name(const xtd::ustring& name, const size& size) {
+icon system_icons::from_name(const xtd::string& name, const size& size) {
   return from_name(system_images_base::default_theme(), name, size);
 }
 
-icon system_icons::from_name(const xtd::ustring& theme, const xtd::ustring& name) {
+icon system_icons::from_name(const xtd::string& theme, const xtd::string& name) {
   return from_name(theme, name, default_size());
 }
 
-icon system_icons::from_name(const xtd::ustring& theme, const xtd::ustring& name, const size& size) {
+icon system_icons::from_name(const xtd::string& theme, const xtd::string& name, const size& size) {
   return icon::from_bitmap(bitmap(system_images::from_name(theme, name, size)));
 }

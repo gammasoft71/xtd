@@ -85,28 +85,28 @@ bool time_zone_info::adjustement_rule::equals(const adjustement_rule& ar) const 
   return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;
 }
 
-time_zone_info::time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time) : id_(id), base_utc_offset_(base_utc_offset), daylight_name_(daylight_name), display_name_(display_name), standard_name_(standard_name), supports_daylight_saving_time_(supports_daylight_saving_time) {
+time_zone_info::time_zone_info(const string& id, const ticks& base_utc_offset, const string& daylight_name, const string& display_name, const string& standard_name, bool supports_daylight_saving_time) : id_(id), base_utc_offset_(base_utc_offset), daylight_name_(daylight_name), display_name_(display_name), standard_name_(standard_name), supports_daylight_saving_time_(supports_daylight_saving_time) {
 }
 
 ticks time_zone_info::base_utc_offset() const noexcept {
   return base_utc_offset_;
 }
 
-const ustring& time_zone_info::daylight_name() const noexcept {
+const string& time_zone_info::daylight_name() const noexcept {
   return daylight_name_;
 }
 
-const ustring& time_zone_info::display_name() const noexcept {
+const string& time_zone_info::display_name() const noexcept {
   return display_name_;
 }
 
-const ustring& time_zone_info::id() const noexcept {
+const string& time_zone_info::id() const noexcept {
   return id_;
 }
 
 const time_zone_info& time_zone_info::local() noexcept {
   static auto local_time_zone = time_zone_info {};
-  if (ustring::is_empty(local_time_zone.id_)) {
+  if (string::is_empty(local_time_zone.id_)) {
     auto tzi = native::date_time::get_local_time_zone();
     local_time_zone.id_ = tzi.id;
     local_time_zone.base_utc_offset_ = ticks(tzi.base_utc_offset);
@@ -118,7 +118,7 @@ const time_zone_info& time_zone_info::local() noexcept {
   return local_time_zone;
 }
 
-const ustring& time_zone_info::standard_name() const noexcept {
+const string& time_zone_info::standard_name() const noexcept {
   return standard_name_;
 }
 
@@ -159,11 +159,11 @@ xtd::date_time time_zone_info::convert_time(const xtd::date_time& date_time, con
   return {};
 }
 
-xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& destination_time_zone_id) {
+xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& destination_time_zone_id) {
   return {};
 }
 
-xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& source_time_zone_id, const xtd::ustring& destination_time_zone_id) {
+xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& source_time_zone_id, const xtd::string& destination_time_zone_id) {
   return {};
 }
 
@@ -203,7 +203,7 @@ bool time_zone_info::is_daylight_saving_time(const xtd::date_time& date_time) co
   return false;
 }
 
-time_zone_info time_zone_info::time_find_system_time_zone_by_id(const ustring& id) {
+time_zone_info time_zone_info::time_find_system_time_zone_by_id(const string& id) {
   if (local().id_ == id) return local();
   if (utc().id_ == id) return utc();
   
@@ -214,6 +214,6 @@ time_zone_info time_zone_info::time_find_system_time_zone_by_id(const ustring& i
   throw time_zone_not_found_exception {csf_};
 }
 
-ustring time_zone_info::to_string() const noexcept {
-  return ustring::format("time_zone_info [id=\"{}\", base_utc_offset={}, daylight_name=\"{}\", display_name\"{}\", standard_name=\"{}\", supports_daylight_saving_time={}]", id(), base_utc_offset(), daylight_name(), display_name(), standard_name(), supports_daylight_saving_time());
+string time_zone_info::to_string() const noexcept {
+  return string::format("time_zone_info [id=\"{}\", base_utc_offset={}, daylight_name=\"{}\", display_name\"{}\", standard_name=\"{}\", supports_daylight_saving_time={}]", id(), base_utc_offset(), daylight_name(), display_name(), standard_name(), supports_daylight_saving_time());
 }

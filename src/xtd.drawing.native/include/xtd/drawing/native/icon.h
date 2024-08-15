@@ -42,14 +42,14 @@ namespace xtd {
         /// @param filename The filename of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(const xtd::ustring& filename);
+        static intptr create(const xtd::string& filename);
         /// @brief Creates an icon from specified filename, and size.
         /// @param filename The filename of the icon.
         /// @param width The desired width of the icon.
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(const xtd::ustring& filename, int32 width, int32 height);
+        static intptr create(const xtd::string& filename, int32 width, int32 height);
         /// @brief Creates an icon from specified std::stream.
         /// @param stream The stream containing the icon.
         /// @return A new icon handle.
@@ -116,7 +116,7 @@ namespace xtd {
         /// @param icon The icon handle .
         /// @param filename The file to save to.
         /// @warning Internal use only
-        static void save(intptr icon, const xtd::ustring& filename);
+        static void save(intptr icon, const xtd::string& filename);
         /// @brief Saves icon to the specified output std::ostream.
         /// @param icon The icon handle .
         /// @param stream The std::ostream to save to.

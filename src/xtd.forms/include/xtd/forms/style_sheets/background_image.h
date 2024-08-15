@@ -69,7 +69,7 @@ namespace xtd {
         /// | xtd::forms::style_sheets::background_image::colors     | An array with one color : xtd::drawing::color::black) |
         /// | xtd::forms::style_sheets::background_image::image_type | xtd::forms::style_sheets::image_type::url             |
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        explicit background_image(const xtd::ustring& url);
+        explicit background_image(const xtd::string& url);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified colors array.
         /// @param color The colors that specifies the color for gradient image to display.
         /// | Property                                          | Default value                                         |
@@ -152,7 +152,7 @@ namespace xtd {
         using object::equals;
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
                 
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
 
         /// @name Public Static Methods

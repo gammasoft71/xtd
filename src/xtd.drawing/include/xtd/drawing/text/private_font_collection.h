@@ -36,7 +36,7 @@ namespace xtd {
         /// @brief Adds a font from the specified file to this xtd::drawing::text::private_font_collection.
         /// @param filename A string that contains the file name of the font to add.
         /// @exception std::invalid_argument The specified font is not supported or the font file cannot be found.
-        void add_font_file(const xtd::ustring& filename);
+        void add_font_file(const xtd::string& filename);
         
         /// @brief Adds a font contained in system memory to this xtd::drawing::text::private_font_collection.
         /// @param memory The memory address of the font to add.

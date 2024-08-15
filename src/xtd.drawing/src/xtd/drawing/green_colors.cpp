@@ -88,7 +88,7 @@ const std::vector<color>& green_colors::get_colors() noexcept {
   return colors;
 }
 
-const std::vector<ustring>& green_colors::get_color_names() noexcept {
+const std::vector<string>& green_colors::get_color_names() noexcept {
   static auto color_names = std::vector {green_colors::dark_green().name(), green_colors::green().name(), green_colors::dark_olive_green().name(), green_colors::forest_green().name(), green_colors::sea_green().name(), green_colors::olive().name(), green_colors::olive_drab().name(), green_colors::medium_sea_green().name(), green_colors::lime_green().name(), green_colors::lime().name(), green_colors::spring_green().name(), green_colors::medium_spring_green().name(), green_colors::dark_sea_green().name(), green_colors::medium_aquamarine().name(), green_colors::yellow_green().name(), green_colors::lawn_green().name(), green_colors::chartreuse().name(), green_colors::light_green().name(), green_colors::green_yellow().name(), green_colors::pale_green().name()};
   return color_names;
 }

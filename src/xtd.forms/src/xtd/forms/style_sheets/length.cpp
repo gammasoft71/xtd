@@ -55,6 +55,6 @@ int32 length::get_pixels(const xtd::drawing::rectangle& rect) const noexcept {
   return 0;
 }
 
-xtd::ustring length::to_string() const noexcept {
-  return ustring::format("{} {}", value(), unit());
+xtd::string length::to_string() const noexcept {
+  return string::format("{} {}", value(), unit());
 }

@@ -108,20 +108,20 @@ namespace xtd::tests {
     }
     
     void test_method_(format) {
-      assert::are_equal("0", ustring::format("{}", 0.0f), csf_);
-      assert::are_equal("1", ustring::format("{}", 1.0f), csf_);
-      assert::are_equal("65535", ustring::format("{}", 65535.0f), csf_);
-      assert::are_equal("0.00390625", ustring::format("{}", 0.00390625f), csf_);
-      assert::are_equal("2.328306E-10", ustring::format("{}", 0.00000000023283064365386962890625f), csf_);
-      assert::are_equal("1.2345E-35", ustring::format("{}", 1.2345E-35f), csf_);
-      assert::are_equal("1.234567", ustring::format("{}", 1.2345671f), csf_);
-      assert::are_equal("1.234568E+35", ustring::format("{}", 1.23456789E+35f), csf_);
-      assert::are_equal("1.401298E-45", ustring::format("{}", single_object::epsilon), csf_);
-      assert::are_equal("-3.402823E+38", ustring::format("{}", single_object::min_value), csf_);
-      assert::are_equal("3.402823E+38", ustring::format("{}", single_object::max_value), csf_);
-      assert::are_equal("nan", ustring::format("{}", single_object::NaN), csf_);
-      assert::are_equal("-inf", ustring::format("{}", single_object::negative_infinity), csf_);
-      assert::are_equal("inf", ustring::format("{}", single_object::positive_infinity), csf_);
+      assert::are_equal("0", string::format("{}", 0.0f), csf_);
+      assert::are_equal("1", string::format("{}", 1.0f), csf_);
+      assert::are_equal("65535", string::format("{}", 65535.0f), csf_);
+      assert::are_equal("0.00390625", string::format("{}", 0.00390625f), csf_);
+      assert::are_equal("2.328306E-10", string::format("{}", 0.00000000023283064365386962890625f), csf_);
+      assert::are_equal("1.2345E-35", string::format("{}", 1.2345E-35f), csf_);
+      assert::are_equal("1.234567", string::format("{}", 1.2345671f), csf_);
+      assert::are_equal("1.234568E+35", string::format("{}", 1.23456789E+35f), csf_);
+      assert::are_equal("1.401298E-45", string::format("{}", single_object::epsilon), csf_);
+      assert::are_equal("-3.402823E+38", string::format("{}", single_object::min_value), csf_);
+      assert::are_equal("3.402823E+38", string::format("{}", single_object::max_value), csf_);
+      assert::are_equal("nan", string::format("{}", single_object::NaN), csf_);
+      assert::are_equal("-inf", string::format("{}", single_object::negative_infinity), csf_);
+      assert::are_equal("inf", string::format("{}", single_object::positive_infinity), csf_);
     }
     
     void test_method_(to_string) {

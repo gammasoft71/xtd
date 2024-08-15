@@ -7,8 +7,8 @@
 using namespace xtd;
 using namespace xtd::io;
 
-stream_reader::stream_reader(const ustring& path) : stream_(new std::ifstream(path)), delete_when_destroy_(true) {
-  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
+stream_reader::stream_reader(const string& path) : stream_(new std::ifstream(path)), delete_when_destroy_(true) {
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
 }
 

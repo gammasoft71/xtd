@@ -48,18 +48,18 @@ namespace xtd {
     /// public:
     ///   static auto main() {
     ///     //  Loop through all the immediate subdirectories of C.
-    ///     for (ustring entry : directory::get_directories("C:\\")) {
+    ///     for (string entry : directory::get_directories("C:\\")) {
     ///       display_file_system_info_attributes(directory_info(entry));
     ///     }
     ///     //  Loop through all the files in C.
-    ///     for (ustring entry : directory::get_files("C:\\")) {
+    ///     for (string entry : directory::get_files("C:\\")) {
     ///       display_file_system_info_attributes(file_info(entry));
     ///     }
     ///   }
     ///
     ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
     ///     //  Assume that this entry is a file.
-    ///     ustring entry_type = "File";
+    ///     string entry_type = "File";
     ///
     ///     // Determine if entry is really a directory
     ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -118,7 +118,7 @@ namespace xtd {
       /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
-      ///     ustring entry_type = "File";
+      ///     string entry_type = "File";
       ///
       ///     // Determine if entry is really a directory
       ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -154,7 +154,7 @@ namespace xtd {
       /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
-      ///     ustring entry_type = "File";
+      ///     string entry_type = "File";
       ///
       ///     // Determine if entry is really a directory
       ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -176,7 +176,7 @@ namespace xtd {
       /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
-      ///     ustring entry_type = "File";
+      ///     string entry_type = "File";
       ///
       ///     // Determine if entry is really a directory
       ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -197,7 +197,7 @@ namespace xtd {
       /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
-      ///     ustring entry_type = "File";
+      ///     string entry_type = "File";
       ///
       ///     // Determine if entry is really a directory
       ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -264,7 +264,7 @@ namespace xtd {
       /// | Retrieve only the file name a path.           | xtd::io::path::get_file_name_without_extension                                                                                                 |
       /// | Retrieve only the directory name from a path. | xtd::io::path::get_directory_name                                                                                                              |
       /// | Change the extension of a file.               | xtd::io::path::change_extrnsion                                                                                                                |
-      virtual xtd::ustring extension() const;
+      virtual xtd::string extension() const;
       
       /// @brief Gets the full path of the directory or file.
       /// @return A string containing the full path.
@@ -273,7 +273,7 @@ namespace xtd {
       /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
-      ///     ustring entry_type = "File";
+      ///     string entry_type = "File";
       ///
       ///     // Determine if entry is really a directory
       ///     if ((fsi.attributes() & file_attributes::directory) == file_attributes::directory) {
@@ -285,7 +285,7 @@ namespace xtd {
       /// ```
       /// @remarks For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt".
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      xtd::ustring full_name() const;
+      xtd::string full_name() const;
       
       /// @brief Gets the time the current file or directory was last accessed.
       /// @return The time that the current file or directory was last accessed.
@@ -302,7 +302,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<string>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -357,7 +357,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<string>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -444,7 +444,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<string>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -499,7 +499,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<string>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -568,10 +568,10 @@ namespace xtd {
       xtd::io::file_system_info& last_write_time_utc(const xtd::date_time& value);
       
       /// @brief For files, gets the name of the file. For directories, gets the name of the last directory in the hierarchy if a hierarchy exists. Otherwise, the Name property gets the name of the directory.
-      /// @return A xtd::ustring that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
+      /// @return A xtd::string that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
       /// @remarks For a directory, xtd::io::file_system_info::name returns only the name of the parent directory, such as dir, not c:\dir. For a subdirectory, xtd::io::file_system_info::name returns only the name of the subdirectory, such as sub1, not c:\dir\sub1.
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
-      virtual xtd::ustring name() const = 0;
+      virtual xtd::string name() const = 0;
       
       /// @brief Gets the permissions for the current file or directory.
       /// @return xtd::io::file_permissions of the current xtd::io::file_system_info.
@@ -611,7 +611,7 @@ namespace xtd {
       /// @note The string returned by the xtd::io::file_system_info::tto_string method represents the path that was passed to the constructor of the class implementing xtd::io::file_system_info. Instead of calling the xtd::io::file_system_info::to_string method, you should retrieve the value of either of the following properties, depending on your intent:
       /// * xtd::io::file_system_info::name, to get the name of the file or directory, without any parent path information.
       /// * xtd::io::file_system_info::full_name, to get the fully qualified path of the file or directory.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     protected:
@@ -626,9 +626,9 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the fully qualified path of the directory or file.
-      xtd::ustring full_path_;
+      xtd::string full_path_;
       /// @brief The path originally specified by the user, whether relative or absolute.
-      xtd::ustring original_path_;
+      xtd::string original_path_;
       /// @}
       
     private:

@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application.
-      explicit font_family(const xtd::ustring& name);
+      explicit font_family(const xtd::string& name);
       
       /// @brief Initializes a new xtd::drawing::font_family from the specified generic font family.
       /// @param generic_font_families The xtd::drawing::text::generic_font_families from which to create the new font_family.
@@ -55,7 +55,7 @@ namespace xtd {
       /// @param name The name of the new xtd::drawing::font_family.
       /// @param font_collection The FontCollection that contains this FontFamily.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application - or - name specifies a font that is not a part of specified font_collection..
-      font_family(const xtd::ustring& name, const text::font_collection& font_collection);
+      font_family(const xtd::string& name, const text::font_collection& font_collection);
       /// @}
       
       /// @cond
@@ -70,7 +70,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      const xtd::ustring& name() const noexcept;
+      const xtd::string& name() const noexcept;
       /// @}
 
       /// @name Public Static Properties
@@ -123,7 +123,7 @@ namespace xtd {
       /// @param language The language in which the name is returned.
       /// @return A String that represents the name, in the specified language, of this font_family.
       /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
-      xtd::ustring get_name(int32 language) const;
+      xtd::string get_name(int32 language) const;
       
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.
@@ -132,7 +132,7 @@ namespace xtd {
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

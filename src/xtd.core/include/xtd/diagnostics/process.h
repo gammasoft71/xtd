@@ -349,7 +349,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks You can view statistical data and process information for processes running on remote computers but you cannot call xtd::diagnostics::process::start, xtd::diagnostics::process::close_main_window, or xtd::diagnostics::process::kill on remote computers.
       /// @note When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the xtd::environment::machine_name property to get the correct machine name.
-      ustring machine_name() const;
+      string machine_name() const;
       
       /// @brief Gets the overall priority category for the associated process.
       /// @return The priority category for the associated process, from which the xtd::diagnostics::process::base_priority of the process is calculated.
@@ -389,7 +389,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The xtd::diagnostics::process::process_name property holds an executable file name, such as Outlook, that does not include the .exe extension or the path. It is helpful for getting and manipulating all the processes that are associated with the same executable file.
       /// @remarks You can call xtd::diagnostics::process::get_processes_by_name, passing it an executable file name, to retrieve an array that contains every running instance on the specified computer. You can use this array, for example, to shut down all the running instances of the executable file.
-      ustring process_name() const;
+      string process_name() const;
       
       /// @brief Gets a stream used to read the error output of the application.
       /// @return A std::istream that can be used to read the standard error stream of the application.
@@ -452,7 +452,7 @@ namespace xtd {
       ///   p.start();
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
-      ///   ustring output = stream_reader(p.standard_error()).read_to_end();
+      ///   string output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
       ///   console::write_line("\nError stream: {}", output);
@@ -482,7 +482,7 @@ namespace xtd {
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
       ///   p.begin_error_read_line();
-      ///   ustring output = stream_reader(p.standard_error()).read_to_end();
+      ///   string output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
       ///   console::write_line("\nError stream: {}", output);
@@ -792,11 +792,11 @@ namespace xtd {
       /// @remarks Use this overload to start a process resource by specifying its file name. The overload associates the resource with a new xtd::diagnostics::process object.
       /// @remarks This overload lets you start a process without first creating a new xtd::diagnostics::process instance. The overload is an alternative to the explicit steps of creating a new xtd::diagnostics::process instance, setting the xtd::diagnostics::process_start_info::file_name member of the xtd::diagnostics::process::start_info property, and calling xtd::diagnostics::process::start for the xtd::diagnostics::process instance.
       /// @remarks Starting a process by specifying its file name is similar to typing the information in the Run dialog box of the Windows Start menu. Therefore, the file name does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application installed on the system. For example the file name can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc if you have associated .doc files with a word processing tool, such as Microsoft Word. Similarly, in the same way that the Run dialog box can accept an executable file name with or without the .exe extension, the .exe extension is optional in the fileName parameter. For example, you can set the fileName parameter to either "Notepad.exe" or "Notepad".
-      /// @remarks This overload does not allow command-line arguments for the process. If you need to specify one or more command-line arguments for the process, use the xtd::diagnostics::process::start(xtd::diagnostics::process_start_info) or xtd::diagnostics::process::start(ustring, ustring) overloads.
+      /// @remarks This overload does not allow command-line arguments for the process. If you need to specify one or more command-line arguments for the process, use the xtd::diagnostics::process::start(xtd::diagnostics::process_start_info) or xtd::diagnostics::process::start(string, string) overloads.
       /// @remarks Unlike the other overloads, the overload of xtd::diagnostics::process::start that has no parameters is not a static member. Use that overload when you have already created a Process instance and specified start information (including the file name), and you want to start a process resource and associate it with the existing Process instance. Use one of the static overloads when you want to create a new xtd::diagnostics::process component rather than start a process for an existing component. Both this overload and the overload that has no parameters allow you to specify the file name of the process resource to start.
       /// @remarks If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = %path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it.
       /// @remarks Whenever you use xtd::diagnostics::process::start to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or xtd::diagnostics::process::kill. You can check whether a process has already been closed by using its xtd::diagnostics::process::has_exited property.
-      static process start(const ustring& file_name);
+      static process start(const string& file_name);
       /// @brief Starts a process resource by specifying the name of an application and a set of command-line arguments, and associates the resource with a new xtd::diagnostics::process component.
       /// @param file_name The name of a document or application file to run in the process.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -808,7 +808,7 @@ namespace xtd {
       /// @remarks Unlike the other overloads, the overload of xtd::diagnostics::process::start that has no parameters is not a static member. Use that overload when you have already created a xtd::diagnostics::process instance and specified start information (including the file name), and you want to start a process resource and associate it with the existing Process instance. Use one of the static overloads when you want to create a new Process component rather than start a process for an existing component. Both this overload and the overload that has no parameters allow you to specify the file name of the process resource to start and command-line arguments to pass.
       /// @remarks If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = %path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it.
       /// @remarks Whenever you use xtd::diagnostics::process::start to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or Kill. You can check whether a process has already been closed by using its xtd::diagnostics::process::has_exited property.
-      static process start(const ustring& file_name, const ustring& arguments);
+      static process start(const string& file_name, const string& arguments);
       /// @}
       
       /// @name Public Events
@@ -847,7 +847,7 @@ namespace xtd {
     private:
       xtd::sptr<data> data_;
       friend __init_process_message_box_message__;
-      inline static xtd::delegate<void(const ustring&)> message_box_message_;
+      inline static xtd::delegate<void(const string&)> message_box_message_;
     };
   }
 }

@@ -23,7 +23,7 @@ struct process::data {
   xtd::diagnostics::process_start_info start_info_;
   std::optional<intptr> handle_ = 0;
   int32 id_ = 0;
-  ustring machine_name_;
+  string machine_name_;
   xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
   xtd::uptr<std::ostream> standard_input_;
   xtd::uptr<std::istream> standard_output_;
@@ -41,7 +41,7 @@ struct process::data {
 
 // This delegate will be initialized by __init_process_message_box_message__ in xtd.forms/src/xtd/forms/application.cpp file.
 // This operation can be done only if xtd.forms lib is present.
-//xtd::delegate<void(const xtd::ustring&)> process::message_box_message_;
+//xtd::delegate<void(const xtd::string&)> process::message_box_message_;
 
 bool process::error_data_received_event::is_empty() const noexcept {
   return data_received_event_handler::is_empty();
@@ -185,7 +185,7 @@ int32 process::id() const {
   return data_->id_;
 }
 
-ustring process::machine_name() const {
+string process::machine_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->machine_name_;
 }
@@ -205,7 +205,7 @@ process& process::priority_class(process_priority_class value) {
   return *this;
 }
 
-ustring process::process_name() const {
+string process::process_name() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return path::get_file_name_without_extension(data_->start_info_.file_name());
 }
@@ -257,7 +257,7 @@ void process::close() {
 void process::kill() {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   native::process::kill(data_->handle_.value());
-  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::kill [handle={}, killed]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), string::format("process::kill [handle={}, killed]", data_->handle_));
 }
 
 bool process::start() {
@@ -286,11 +286,11 @@ bool process::start() {
       }
       if (process.data_->handle_ == 0) throw invalid_operation_exception {"The system cannot find the file specified"_t, csf_};
       allow_to_continue = true;
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks_duration())).count() % 1000000));
+      debug::write_line_if(show_debug_process.enabled(), string::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, string::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : string::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks_duration())).count() % 1000000));
       auto exit_code = 0;
       process.data_->exit_code_ = native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = date_time::now();
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks_duration()).count() % 1000000, process.data_->exit_code_));
+      debug::write_line_if(show_debug_process.enabled(), string::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks_duration()).count() % 1000000, process.data_->exit_code_));
       if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", csf_);
       process.on_exited();
     } catch (...) {
@@ -313,20 +313,20 @@ process process::start(const process_start_info& start_info) {
   return process;
 }
 
-process process::start(const ustring& file_name) {
+process process::start(const string& file_name) {
   return start(process_start_info {file_name});
 }
 
-process process::start(const ustring& file_name, const ustring& arguments) {
+process process::start(const string& file_name, const string& arguments) {
   return start(process_start_info {file_name, arguments});
 }
 
 process& process::wait_for_exit() {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
-  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), string::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();
-  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  debug::write_line_if(show_debug_process.enabled(), string::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
     auto exception_pointer = data_->exception_pointer_;
@@ -341,10 +341,10 @@ process& process::wait_for_exit(int32 milliseconds) {
   /// @todo create a timeout...
   /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
-  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
+  debug::write_line_if(show_debug_process.enabled(), string::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();
-  debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
+  debug::write_line_if(show_debug_process.enabled(), string::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
     auto exception_pointer = data_->exception_pointer_;

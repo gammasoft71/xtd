@@ -405,13 +405,13 @@ form form::create() {
   return form {};
 }
 
-form form::create(const xtd::ustring& text) {
+form form::create(const xtd::string& text) {
   auto result = form {};
   result.text(text);
   return result;
 }
 
-form form::create(const xtd::ustring& text, const drawing::point& location) {
+form form::create(const xtd::string& text, const drawing::point& location) {
   auto result = form {};
   result.text(text);
   result.start_position(form_start_position::manual);
@@ -419,7 +419,7 @@ form form::create(const xtd::ustring& text, const drawing::point& location) {
   return result;
 }
 
-form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+form form::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = form {};
   result.text(text);
   result.start_position(form_start_position::manual);
@@ -428,7 +428,7 @@ form form::create(const xtd::ustring& text, const drawing::point& location, cons
   return result;
 }
 
-form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+form form::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = form {};
   result.text(text);
   result.start_position(form_start_position::manual);
@@ -438,56 +438,56 @@ form form::create(const xtd::ustring& text, const drawing::point& location, cons
   return result;
 }
 
-form form::create(const xtd::ustring& text, const drawing::size& size) {
+form form::create(const xtd::string& text, const drawing::size& size) {
   auto result = form {};
   result.text(text);
   result.size(size);
   return result;
 }
 
-form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
+form form::create(const xtd::string& text, const drawing::size& size, const xtd::string& name) {
   auto result = form {};
   result.text(text);
-  result.size(size);
-  result.name(name);
-  return result;
-}
-
-form form::create(const xtd::ustring& text, form_start_position start_position) {
-  auto result = form {};
-  result.text(text);
-  result.start_position(start_position);
-  return result;
-}
-
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location) {
-  auto result = form {};
-  result.text(text);
-  result.start_position(start_position);
-  result.location(location);
-  return result;
-}
-
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size) {
-  auto result = form {};
-  result.text(text);
-  result.start_position(start_position);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = form {};
-  result.text(text);
-  result.start_position(start_position);
-  result.location(location);
   result.size(size);
   result.name(name);
   return result;
 }
 
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size) {
+form form::create(const xtd::string& text, form_start_position start_position) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  return result;
+}
+
+form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.location(location);
+  return result;
+}
+
+form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location, const drawing::size& size) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+form form::create(const xtd::string& text, form_start_position start_position, const drawing::size& size) {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -495,7 +495,7 @@ form form::create(const xtd::ustring& text, form_start_position start_position, 
   return result;
 }
 
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name) {
+form form::create(const xtd::string& text, form_start_position start_position, const drawing::size& size, const xtd::string& name) {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -560,7 +560,7 @@ namespace {
     }
   private:
     form* form_ = nullptr;
-    ustring text_;
+    string text_;
     bool control_box_ = false;
     form_start_position start_position_ = form_start_position::manual;
     point location_;
@@ -643,7 +643,7 @@ drawing::size form::default_size() const noexcept {
 
 xtd::uptr<xtd::object> form::clone() const {
   auto result = xtd::new_uptr<form>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

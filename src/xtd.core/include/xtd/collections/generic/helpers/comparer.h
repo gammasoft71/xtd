@@ -29,7 +29,7 @@ namespace xtd {
         /// @par Examples
         /// The following example show how to use xtd::collections::generic::helpers::comparer with `std::unordered_map`.
         /// ```cpp
-        /// auto key_values = std::map<xtd::date_time, xtd::ustring, xtd::collections::generic::helpers::comparer<xtd::date_time>, xtd::collections::generic::helpers::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
+        /// auto key_values = std::map<xtd::date_time, xtd::string, xtd::collections::generic::helpers::comparer<xtd::date_time>, xtd::collections::generic::helpers::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::string>>> {};
         /// key_values.insert({{1971, 1, 5}, "Birth date"});
         /// ```
         template<typename type_t = void>

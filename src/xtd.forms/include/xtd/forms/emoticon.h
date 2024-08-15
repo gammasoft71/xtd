@@ -43,17 +43,17 @@ namespace xtd {
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An initializer list of char32 that represent the emoticon.
-      emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints);
+      emoticon(const xtd::string& name, std::initializer_list<char32> codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An array of char32 that represent the emoticon.
-      emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints);
+      emoticon(const xtd::string& name, const std::vector<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
       /// @param name A string that represent the name of emoticon
       /// @param codepoint A char32 that represent the emoticon.
-      emoticon(const xtd::ustring& name, char32 codepoint);
+      emoticon(const xtd::string& name, char32 codepoint);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An initializer list of char32 that represent the emoticon.
@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @cond
       template<typename type_t>
-      emoticon(const xtd::ustring& name, std::initializer_list<type_t> codepoints) {
+      emoticon(const xtd::string& name, std::initializer_list<type_t> codepoints) {
         create_data();
         name_(name);
         for (auto codepoint : codepoints)
@@ -78,7 +78,7 @@ namespace xtd {
       }
       
       template<typename type_t>
-      emoticon(const xtd::ustring& name, const std::vector<type_t>& codepoints) {
+      emoticon(const xtd::string& name, const std::vector<type_t>& codepoints) {
         create_data();
         name_(name);
         for (auto codepoint : codepoints)
@@ -86,7 +86,7 @@ namespace xtd {
       }
       
       template<typename type_t>
-      emoticon(const xtd::ustring& name, type_t codepoint) {
+      emoticon(const xtd::string& name, type_t codepoint) {
         create_data();
         name_(name);
         codepoints_({static_cast<char32>(codepoint)});
@@ -122,7 +122,7 @@ namespace xtd {
       /// @{
       /// @brief Gets name of emoticon.
       /// @return A string that represent the name of emoticon.
-      const xtd::ustring& name() const noexcept;
+      const xtd::string& name() const noexcept;
       
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32 that represent the emoticon.
@@ -137,12 +137,12 @@ namespace xtd {
       
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:
       void create_data();
-      void name_(const ustring& name);
+      void name_(const string& name);
       std::vector<char32>& codepoints_();
       void codepoints_(std::vector<char32>&& codepoints);
       
@@ -152,23 +152,23 @@ namespace xtd {
 }
 
 /// @cond
-inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
+inline xtd::string operator +(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
   return value_a.to_string() + value_b.to_string();
 }
 
-inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const char* value_b) {
+inline xtd::string operator +(const xtd::forms::emoticon& value_a, const char* value_b) {
   return value_a.to_string() + value_b;
 }
 
-inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const xtd::ustring& value_b) {
+inline xtd::string operator +(const xtd::forms::emoticon& value_a, const xtd::string& value_b) {
   return value_a.to_string() + value_b;
 }
 
-inline xtd::ustring operator +(const xtd::ustring& value_a, const xtd::forms::emoticon& value_b) {
+inline xtd::string operator +(const xtd::string& value_a, const xtd::forms::emoticon& value_b) {
   return value_a + value_b.to_string();
 }
 
-inline xtd::ustring operator +(const char* value_a, const xtd::forms::emoticon& value_b) {
-  return xtd::ustring(value_a) + value_b.to_string();
+inline xtd::string operator +(const char* value_a, const xtd::forms::emoticon& value_b) {
+  return xtd::string(value_a) + value_b.to_string();
 }
 /// @endcond

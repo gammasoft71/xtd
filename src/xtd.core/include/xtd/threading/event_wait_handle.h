@@ -52,20 +52,20 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying the name.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @remarks The initial state is false and the mode is set to xtd::threading::event_reset_mode::auto_reset.
-      explicit event_wait_handle(const ustring& name);
+      explicit event_wait_handle(const string& name);
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled if created as a result of this call, whether it resets automatically or manually, the name of a system synchronization event, and a bool variable whose value after the call indicates whether the named system event was created.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param created_new When this method returns, contains true if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; false if the specified named system event already existed. This parameter is passed uninitialized.
-      event_wait_handle(const ustring& name, bool& created_new);
+      event_wait_handle(const string& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled if created as a result of this call, and the name of a system synchronization event.
       /// @param initial_state true to set the initial state to signaled; false to set it to nonsignaled.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
-      event_wait_handle(bool initial_state, const ustring& name);
+      event_wait_handle(bool initial_state, const string& name);
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled if created as a result of this call, the name of a system synchronization event, and a bool variable whose value after the call indicates whether the named system event was created.
       /// @param initial_state true to set the initial state to signaled; false to set it to nonsignaled.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param created_new When this method returns, contains true if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; false if the specified named system event already existed. This parameter is passed uninitialized.
-      event_wait_handle(bool initial_state, const ustring& name, bool& created_new);
+      event_wait_handle(bool initial_state, const string& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled, and whether it resets automatically or manually.
       /// @param initial_state true to set the initial state to signaled; false to set it to nonsignaled.
       /// @param mode One of the xtd::threading::event_reset_mode values that determines whether the event resets automatically or manually.
@@ -84,7 +84,7 @@ namespace xtd {
       /// @remarks If a system event with the name specified for the name parameter already exists, the initialState parameter is ignored.
       /// @warning When using this constructor for named system events, specify false for initial_state. This constructor provides no way to determine whether a named system event was created, so you cannot make any assumptions about the state of the named event. To determine whether a named event was created, use the xtd::threading::event_wait_handle(bool, xtd::threading::event_reset_mode, xtd::utring, bool) constructor or the xtd::threading::event_wait_handle(bool, xtd::threading::event__reset_mode, xtd:string, bool) constructor.
       /// @remarks If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the xtd::threading::event_reset_mode::manual_reset flag is specified for mode, threads that wait on the event will not block. If the initial state is signaled, and mode is xtd::threading::event_reset_mode::auto_reset, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
-      event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name);
+      event_wait_handle(bool initial_state, event_reset_mode mode, const string& name);
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled if created as a result of this call, whether it resets automatically or manually, the name of a system synchronization event, and a bool variable whose value after the call indicates whether the named system event was created.
       /// @param initial_state true to set the initial state to signaled; false to set it to nonsignaled.
       /// @param mode One of the xtd::threading::event_reset_mode values that determines whether the event resets automatically or manually.
@@ -98,12 +98,12 @@ namespace xtd {
       /// @remarks If a name is provided and a synchronization object of the requested type already exists in the namespace, the existing synchronization object is opened. If a synchronization object of a different type already exists in the namespace, a WaitHandleCannotBeOpenedException is thrown. Otherwise, a new synchronization object is created.
       /// @remarks If a system event with the name specified for the name parameter already exists, the initialState parameter is ignored. After calling this constructor, use the value in the variable specified for the ref parameter (ByRef parameter in Visual Basic)createdNew to determine whether the named system event already existed or was created.
       /// @remarks If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the xtd::threading::event_reset_mode::manual_reset flag is specified for mode, threads that wait on the event will not block. If the initial state is signaled, and mode is xtd::threading::event_reset_mode::auto_reset, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
-      event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new);
+      event_wait_handle(bool initial_state, event_reset_mode mode, const string& name, bool& created_new);
       /// @}
 
       /// @cond
       template <typename char_t>
-      explicit event_wait_handle(const char_t* name) : event_wait_handle(ustring(name)) {}
+      explicit event_wait_handle(const char_t* name) : event_wait_handle(string(name)) {}
       ~event_wait_handle();
       /// @endcond
 
@@ -152,7 +152,7 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a xtd::threading::wait_handle_cannot_be_opened_exception is thrown
       /// @remarks The xtd::threading::event_wait_handle::open_existing method tries to open the specified named system event. To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
-      static event_wait_handle open_existing(const ustring& name);
+      static event_wait_handle open_existing(const string& name);
 
       /// @brief Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
@@ -166,7 +166,7 @@ namespace xtd {
       /// @remarks To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
       /// @remarks If you are uncertain whether a named synchronization event exists, use this method overload instead of the xtd::threading::event_xait_handle::open_existing(xtd::uttring) method overload, which throws an exception if the synchronization event does not exist.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
-      static bool try_open_existing(const ustring& name, event_wait_handle& result) noexcept;
+      static bool try_open_existing(const string& name, event_wait_handle& result) noexcept;
       /// @}
 
     protected:

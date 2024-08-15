@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const xtd::ustring& value) {
+  inline slong as<slong>(const xtd::string& value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(xtd::ustring& value) {
+  inline slong as<slong>(xtd::string& value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// slong result = as<slong>(value, 16);
   /// ```
   template<>
-  inline slong as<slong>(const xtd::ustring& value, xtd::byte from_base) {
+  inline slong as<slong>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_llong(value, from_base);
   }
   

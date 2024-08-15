@@ -3,13 +3,13 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_company_attribute::assembly_company_attribute(const ustring& company) : company_(company) {}
+assembly_company_attribute::assembly_company_attribute(const string& company) : company_(company) {}
 
-assembly_company_attribute::assembly_company_attribute(const ustring& company, const object& executing_assembly) : company_(company) {
+assembly_company_attribute::assembly_company_attribute(const string& company, const object& executing_assembly) : company_(company) {
   __assembly_company_attribute__() = xtd::new_sptr<xtd::reflection::assembly_company_attribute>(company);
 }
 
-const ustring& assembly_company_attribute::company() const noexcept {
+const string& assembly_company_attribute::company() const noexcept {
   return company_;
 }
 

@@ -124,7 +124,7 @@ namespace xtd {
       /// @brief Returns a string that represents the current padding.
       /// @return A string that represents the current padding.
       /// @remarks This method returns a string containing the labeled values of the padding for all four edges.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods

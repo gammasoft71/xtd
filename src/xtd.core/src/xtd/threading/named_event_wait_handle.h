@@ -22,7 +22,7 @@ public:
     throw invalid_operation_exception {csf_};
   }
   
-  bool create(bool initial_state, bool manual_reset, const ustring& name) override {
+  bool create(bool initial_state, bool manual_reset, const string& name) override {
     name_ = name;
     is_set_ = initial_state;
     handle_ = native::named_event_wait_handle::create(initial_state, manual_reset, name);
@@ -37,7 +37,7 @@ public:
     handle_ = invalid_handle;
   }
   
-  bool open(const ustring& name) override {
+  bool open(const string& name) override {
     name_ = name;
     handle_ = native::named_event_wait_handle::open(name);
     return handle_ != invalid_handle;
@@ -67,5 +67,5 @@ private:
   intptr handle_ = invalid_handle;
   bool manual_reset_ = false;
   std::atomic<bool> is_set_ = false;
-  ustring name_;
+  string name_;
 };

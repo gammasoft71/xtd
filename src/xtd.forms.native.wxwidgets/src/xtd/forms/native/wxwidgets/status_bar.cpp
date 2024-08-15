@@ -21,7 +21,7 @@ namespace {
   }
 }
 
-intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width) {
+intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width) {
   if (!status_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -40,7 +40,7 @@ intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::ustring& t
   return static_cast<intptr>(count - 1);
 }
 
-intptr status_bar::add_status_bar_control(intptr status_bar, intptr control, const xtd::ustring& text) {
+intptr status_bar::add_status_bar_control(intptr status_bar, intptr control, const xtd::string& text) {
   if (!status_bar || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -86,12 +86,12 @@ bool status_bar::sizing_grip() {
   return !environment::os_version().is_macos();
 }
 
-xtd::ustring status_bar::sizing_grip_cursor_name() {
+xtd::string status_bar::sizing_grip_cursor_name() {
   if (environment::os_version().is_linux()) return "pan_se";
   return "size_nwse";
 }
 
-void status_bar::update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable) {
+void status_bar::update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

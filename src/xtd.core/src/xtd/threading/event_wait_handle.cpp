@@ -15,31 +15,31 @@ struct event_wait_handle::data {
   xtd::uptr<event_wait_handle_base> event_wait_handle;
   event_reset_mode mode = event_reset_mode::auto_reset;
   std::atomic<bool> is_set = false;
-  ustring name;
+  string name;
 };
 
 event_wait_handle::event_wait_handle() : event_wait_handle(false) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state) : event_wait_handle(initial_state, event_reset_mode::auto_reset, ustring::empty_string) {
+event_wait_handle::event_wait_handle(bool initial_state) : event_wait_handle(initial_state, event_reset_mode::auto_reset, string::empty_string) {
 }
 
-event_wait_handle::event_wait_handle(const ustring& name) : event_wait_handle(false, event_reset_mode::auto_reset, name) {
+event_wait_handle::event_wait_handle(const string& name) : event_wait_handle(false, event_reset_mode::auto_reset, name) {
 }
 
-event_wait_handle::event_wait_handle(const ustring& name, bool& created_new) : event_wait_handle(false, event_reset_mode::auto_reset, name, created_new) {
+event_wait_handle::event_wait_handle(const string& name, bool& created_new) : event_wait_handle(false, event_reset_mode::auto_reset, name, created_new) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, const ustring& name) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name) {
+event_wait_handle::event_wait_handle(bool initial_state, const string& name) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bool& created_new) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name, created_new) {
+event_wait_handle::event_wait_handle(bool initial_state, const string& name, bool& created_new) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name, created_new) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, ustring::empty_string) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, string::empty_string) {
   
 }
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(xtd::new_sptr<event_wait_handle::data>()) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const string& name) : data_(xtd::new_sptr<event_wait_handle::data>()) {
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
@@ -49,7 +49,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   create(initial_state, created_new);
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new) : data_(xtd::new_sptr<event_wait_handle::data>()) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const string& name, bool& created_new) : data_(xtd::new_sptr<event_wait_handle::data>()) {
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
@@ -83,7 +83,7 @@ bool event_wait_handle::equals(const event_wait_handle& value) const noexcept {
   return handle() == value.handle();
 }
 
-event_wait_handle event_wait_handle::open_existing(const ustring& name) {
+event_wait_handle event_wait_handle::open_existing(const string& name) {
   if (name.empty()) throw argument_exception {csf_};
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {csf_};
   auto result = event_wait_handle{};
@@ -109,9 +109,9 @@ bool event_wait_handle::set() {
   return result;
 }
 
-bool event_wait_handle::try_open_existing(const ustring& name, event_wait_handle& result) noexcept {
+bool event_wait_handle::try_open_existing(const string& name, event_wait_handle& result) noexcept {
   result.close();
-  if (ustring::is_empty(name)) return false;
+  if (string::is_empty(name)) return false;
   if (name.size() > native::named_event_wait_handle::max_name_size()) return false;
   auto new_event_wait_handle = event_wait_handle {};
   new_event_wait_handle.data_->name = name;

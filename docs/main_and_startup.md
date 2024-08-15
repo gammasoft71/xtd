@@ -152,7 +152,7 @@ using namespace xtd::collections::generic;
 namespace examples {
   class program {
   public:
-    static void main(const list<ustring>& args) {
+    static void main(const list<string>& args) {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);
@@ -177,7 +177,7 @@ using namespace xtd::collections::generic;
 namespace examples {
   class program {
   public:
-    static auto main(const list<ustring>& args) -> int {
+    static auto main(const list<string>& args) -> int {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);

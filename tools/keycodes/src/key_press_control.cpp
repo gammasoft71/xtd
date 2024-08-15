@@ -25,7 +25,7 @@ key_press_control::key_press_control() {
   key_char_.parent(*this);
 }
 
-key_press_control& key_press_control::key_char(const xtd::ustring& value) {
+key_press_control& key_press_control::key_char(const xtd::string& value) {
   key_char_.text(value);
   return *this;
 }

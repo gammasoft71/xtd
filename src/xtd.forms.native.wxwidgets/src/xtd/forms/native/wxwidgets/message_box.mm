@@ -31,7 +31,7 @@ namespace {
     return NSAlertStyleWarning;
   }
   
-  static NSAlert* create_alert(const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
+  static NSAlert* create_alert(const string& text, const string& caption, uint32 style, bool display_help_button) {
     NSAlert* alert = [[NSAlert alloc] init];
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) {
       [alert addButtonWithTitle:[NSString stringWithUTF8String:"Retry"_t]];
@@ -66,14 +66,14 @@ namespace {
   }
 }
 
-int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
+int32 message_box::show(intptr control, const string& text, const string& caption, uint32 style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     return convert_to_dialog_rsult(style, [alert runModal]);
   }
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const string& text, const string& caption, uint32 style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler: ^ (NSModalResponse return_code) {

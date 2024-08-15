@@ -60,8 +60,8 @@ namespace xtd {
       /// | xtd::forms::status_bar_panel::image         | xtd::drawing::image::empty                        |
       /// | xtd::forms::status_bar_panel::min_width     | 10                                                |
       /// | xtd::forms::status_bar_panel::style         | xtd::forms::status_bar_panel_style::text          |
-      /// | xtd::forms::status_bar_panel::text          | xtd::ustring::empty_string                        |
-      /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::ustring::empty_string                        |
+      /// | xtd::forms::status_bar_panel::text          | xtd::string::empty_string                        |
+      /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::string::empty_string                        |
       /// | xtd::forms::status_bar_panel::width         | 100                                               |
       status_bar_panel();
       /// @}
@@ -147,12 +147,12 @@ namespace xtd {
       /// @brief Gets the name of the xtd::forms::status_bar_panel.
       /// @return The name of the xtd::forms::status_bar_panel.
       /// @remarks The xtd::forms::status_bar_panel::name property corresponds to the key for a xtd::forms::status_bar_panel in the xtd::forms::status_bar::status_bar_panel_collection.
-      const xtd::ustring& name() const noexcept;
+      const xtd::string& name() const noexcept;
       /// @brief Sets the name of the xtd::forms::status_bar_panel.
       /// @param value The name of the xtd::forms::status_bar_panel.
       /// @return This current instance.
       /// @remarks The xtd::forms::status_bar_panel::name property corresponds to the key for a xtd::forms::status_bar_panel in the xtd::forms::status_bar::status_bar_panel_collection.
-      status_bar_panel& name(const xtd::ustring& value);
+      status_bar_panel& name(const xtd::string& value);
       
       /// @brief Gets the xtd::forms::status_bar control that the status bar panel is assigned to.
       /// @return The xtd::forms::status_bar control that the xtd::forms::status_bar_panel is assigned to.
@@ -181,24 +181,24 @@ namespace xtd {
       /// @brief Gets the text of the status bar panel.
       /// @return The text displayed in the panel. The default is an empty string ("").
       /// @remarks This property represents the text that is displayed when the xtd::forms::status_bar_panel::style property is set to xtd::forms::status_bar_panel::text. You can use this property to display information about your application in a xtd::forms::status_bar control. For example, you can use the xtd::forms::status_bar_panel::text property to display Help information when the user moves the mouse over a menu or to display the name and location of a file that is opened in an application. To align the text within a xtd::forms::status_bar_panel, use the xtd::forms::status_bar_panel::alignment property.
-      const xtd::ustring& text() const noexcept;
+      const xtd::string& text() const noexcept;
       /// @brief Sets the text of the status bar panel.
       /// @param value The text displayed in the panel. The default is an empty string ("").
       /// @return This current instance.
       /// @remarks This property represents the text that is displayed when the xtd::forms::status_bar_panel::style property is set to xtd::forms::status_bar_panel::text. You can use this property to display information about your application in a xtd::forms::status_bar control. For example, you can use the xtd::forms::status_bar_panel::text property to display Help information when the user moves the mouse over a menu or to display the name and location of a file that is opened in an application. To align the text within a xtd::forms::status_bar_panel, use the xtd::forms::status_bar_panel::alignment property.
-      status_bar_panel& text(const xtd::ustring& value);
+      status_bar_panel& text(const xtd::string& value);
       
       /// @brief Gets ToolTip text associated with the status bar panel.
       /// @return The ToolTip text for the panel.
       /// @remarks You can use this property to display additional information in a ToolTip when the mouse pointer rests on a xtd::forms::status_bar_panel. For example, you can display a ToolTip that provides data transfer speed for a xtd::forms::status_bar_panel that displays the status of a file transfer.
       /// @remarks To display ToolTips for other controls in your application, use the xtd::forms::tool_tip control.
-      const xtd::ustring& tool_tip_text() const noexcept;
+      const xtd::string& tool_tip_text() const noexcept;
       /// @brief Sets ToolTip text associated with the status bar panel.
       /// @param value The ToolTip text for the panel.
       /// @return This current instance.
       /// @remarks You can use this property to display additional information in a ToolTip when the mouse pointer rests on a xtd::forms::status_bar_panel. For example, you can display a ToolTip that provides data transfer speed for a xtd::forms::status_bar_panel that displays the status of a file transfer.
       /// @remarks To display ToolTips for other controls in your application, use the xtd::forms::tool_tip control.
-      status_bar_panel& tool_tip_text(const xtd::ustring& value);
+      status_bar_panel& tool_tip_text(const xtd::string& value);
       
       /// @brief Gets the width of the status bar panel within the xtd::forms::status_bar control.
       /// @return The width, in pixels, of the xtd::forms::status_bar_panel.
@@ -226,9 +226,9 @@ namespace xtd {
       void end_init();
       
       /// @brief Returns a string that represents the xtd::forms::status_bar_panel control.
-      /// @return A xtd::ustring that represents the current xtd::forms::status_bar_panel.
+      /// @return A xtd::string that represents the current xtd::forms::status_bar_panel.
       /// @remarks The xtd::forms::status_bar_panel::to_string method returns a string that includes the type and the value of the xtd::forms::status_bar_panel::style and xtd::forms::status_bar_panel::text properties.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
       /// @name Public Static Methods
@@ -238,7 +238,7 @@ namespace xtd {
       /// @param text The text displayed on the status bar panel.
       /// @param control A xtd::forms::control to be displayed in the control status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
-      static status_bar_panel create_control(const xtd::ustring& text, const xtd::forms::control& control);
+      static status_bar_panel create_control(const xtd::string& text, const xtd::forms::control& control);
       /// @brief A factory to create a control status bar panel with specified control.
       /// @param control A xtd::forms::control to be displayed in the control status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
@@ -247,7 +247,7 @@ namespace xtd {
       /// @brief A factory to create a status bar panel with specified text.
       /// @param text The text displayed on the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
-      static status_bar_panel create_panel(const xtd::ustring& text);
+      static status_bar_panel create_panel(const xtd::string& text);
       /// @brief A factory to create a status bar panel with specified image index.
       /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
@@ -256,7 +256,7 @@ namespace xtd {
       /// @param text The text displayed on the status bar panel.
       /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
-      static status_bar_panel create_panel(const xtd::ustring& text, const xtd::drawing::image& image);
+      static status_bar_panel create_panel(const xtd::string& text, const xtd::drawing::image& image);
       /// @}
       
     protected:

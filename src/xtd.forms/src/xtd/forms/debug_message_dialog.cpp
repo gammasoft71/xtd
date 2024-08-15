@@ -13,7 +13,7 @@ dialog_result debug_message_dialog::dialog_result() const noexcept {
   return dialog_.dialog_result();
 }
 
-ustring debug_message_dialog::message() const noexcept {
+string debug_message_dialog::message() const noexcept {
   return dialog_.message();
 }
 

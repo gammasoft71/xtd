@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_copyright_attribute::assembly_copyright_attribute(const ustring& copyright) : copyright_(copyright) {
+assembly_copyright_attribute::assembly_copyright_attribute(const string& copyright) : copyright_(copyright) {
 }
 
-assembly_copyright_attribute::assembly_copyright_attribute(const ustring& copyright, const object& executing_assembly) : copyright_(copyright) {
+assembly_copyright_attribute::assembly_copyright_attribute(const string& copyright, const object& executing_assembly) : copyright_(copyright) {
   __assembly_copyright_attribute__() = xtd::new_sptr<xtd::reflection::assembly_copyright_attribute>(copyright);
 }
 
-const ustring& assembly_copyright_attribute::copyright() const noexcept {
+const string& assembly_copyright_attribute::copyright() const noexcept {
   return copyright_;
 }
 

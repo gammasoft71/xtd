@@ -2,7 +2,7 @@
 
 using namespace xtd::io;
 
-string_reader::string_reader(const ustring& input) : stream_(input) {
+string_reader::string_reader(const string& input) : stream_(input) {
 }
 
 xtd::int32 string_reader::peek() const {

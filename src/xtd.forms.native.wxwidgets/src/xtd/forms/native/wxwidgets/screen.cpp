@@ -41,7 +41,7 @@ rectangle screen::bounds(size_t index) {
 std::string screen::device_name(size_t index) {
   application::initialize();
   std::string device_name = xtd::convert_string::to_string(wxDisplay(static_cast<int32>(index)).GetName().c_str().AsWChar());
-  return device_name.empty() ? ustring::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
+  return device_name.empty() ? string::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
 int32 screen::pixels_per_inch(size_t index) {

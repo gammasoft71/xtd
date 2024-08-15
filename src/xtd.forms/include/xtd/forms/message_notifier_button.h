@@ -9,13 +9,13 @@ namespace xtd {
     class message_notifier_button : public xtd::forms::component, public xtd::iequatable<message_notifier_button> {
     public:
       message_notifier_button() = default;
-      explicit message_notifier_button(const xtd::ustring& text) : text_(text) {}
+      explicit message_notifier_button(const xtd::string& text) : text_(text) {}
       
-      const xtd::ustring& text() const noexcept {
+      const xtd::string& text() const noexcept {
         return text_;
       }
       
-      message_notifier_button& text(const xtd::ustring& value) {
+      message_notifier_button& text(const xtd::string& value) {
         text_ = value;
         return *this;
       }
@@ -27,7 +27,7 @@ namespace xtd {
       }
       
     private:
-      xtd::ustring text_;
+      xtd::string text_;
     };
     
     using message_notifier_button_ref = std::reference_wrapper<message_notifier_button>;

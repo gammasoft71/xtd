@@ -36,7 +36,7 @@ namespace xtd {
       /// @param match_case true if match case option selected; otherwise false.
       /// @param search_direction true if match case option selected; otherwise false.
       /// @param whole_word One of xtd::forms::search_direction values.
-      find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word);
+      find_event_args(const xtd::string& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word);
       /// @}
       
       /// @cond
@@ -49,7 +49,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const noexcept;
+      const xtd::string& find_string() const noexcept;
       
       /// @brief Gets the match case value.
       /// @return true if match case option selected; otherwise false. The default is false.

@@ -24,7 +24,7 @@ public:
     return true;
   }
   
-  bool create(bool initial_state, bool manual_reset, const ustring& name) override {
+  bool create(bool initial_state, bool manual_reset, const string& name) override {
     throw invalid_operation_exception {csf_};
   }
 
@@ -33,7 +33,7 @@ public:
     handle_.reset();
   }
   
-  bool open(const ustring& name) override {
+  bool open(const string& name) override {
     throw invalid_operation_exception {csf_};
   }
 

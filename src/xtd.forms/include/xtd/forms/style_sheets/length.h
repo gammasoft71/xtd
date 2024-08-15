@@ -133,7 +133,7 @@ namespace xtd {
         /// @return The legnth in pixels.
         int32 get_pixels(const xtd::drawing::rectangle& rect) const noexcept;
         
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
         
       private:

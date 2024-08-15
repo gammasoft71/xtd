@@ -14,8 +14,8 @@ struct busy_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   xtd::drawing::color fore_color = application::style_sheet().system_colors().control_text();
   xtd::drawing::image icon;
-  xtd::ustring text;
-  xtd::ustring description;
+  xtd::string text;
+  xtd::string description;
   double opacity = 1.0;
   bool native = false;
   intptr handle = 0;
@@ -45,11 +45,11 @@ busy_dialog& busy_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog
   return *this;
 }
 
-const xtd::ustring& busy_dialog::description() const noexcept {
+const xtd::string& busy_dialog::description() const noexcept {
   return data_->description;
 }
 
-busy_dialog& busy_dialog::description(const xtd::ustring& description) {
+busy_dialog& busy_dialog::description(const xtd::string& description) {
   data_->description = description;
   return *this;
 }
@@ -95,11 +95,11 @@ busy_dialog& busy_dialog::opacity(double opacity) {
 
 /// @brief Gets the dialog title.
 /// @return The dialog title.
-const xtd::ustring& busy_dialog::text() const noexcept {
+const xtd::string& busy_dialog::text() const noexcept {
   return data_->text;
 }
 
-busy_dialog& busy_dialog::text(const xtd::ustring& text) {
+busy_dialog& busy_dialog::text(const xtd::string& text) {
   data_->text = text;
   return *this;
 }

@@ -57,14 +57,14 @@ public:
   }
   
   using xtd::forms::control::text;
-  xtd::forms::control& text(const xtd::ustring& value) override {
+  xtd::forms::control& text(const xtd::string& value) override {
     if (text() == value) return *this;
     label::text(value);
     update_size();
     return *this;
   }
   
-  void tool_tip_text(const xtd::ustring& value) {
+  void tool_tip_text(const xtd::string& value) {
     data_->tool_tip_text = value;
   }
   
@@ -147,7 +147,7 @@ private:
     xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
     xtd::forms::status_bar_panel_border_style status_bar_panel_border_style = xtd::forms::status_bar_panel_border_style::none;
     xtd::forms::status_bar_panel_auto_size status_bar_panel_auto_size = xtd::forms::status_bar_panel_auto_size::none;
-    xtd::ustring tool_tip_text;
+    xtd::string tool_tip_text;
   };
   
   xtd::sptr<data> data_ = xtd::new_sptr<data>();

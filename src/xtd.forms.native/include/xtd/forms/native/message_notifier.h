@@ -35,7 +35,7 @@ namespace xtd {
         /// @param close_timeout_interval Interval for close time out in milliseconds.
         /// @param on_notifier_closed The delagate called when message notifier is closed.
         /// @warning Internal use only
-        static void show(intptr hwnd, const xtd::ustring& title, const xtd::ustring& message, const xtd::drawing::icon& icon, uint32 style, bool close_timeout_enabled, std::chrono::system_clock::duration close_timeout_interval, xtd::delegate<void()> on_notifier_closed);
+        static void show(intptr hwnd, const xtd::string& title, const xtd::string& message, const xtd::drawing::icon& icon, uint32 style, bool close_timeout_enabled, std::chrono::system_clock::duration close_timeout_interval, xtd::delegate<void()> on_notifier_closed);
         /// @}
       };
     }

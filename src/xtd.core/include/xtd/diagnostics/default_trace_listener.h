@@ -68,7 +68,7 @@ namespace xtd {
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
       /// } catch (const system_exception& ex) {
-      ///   ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+      ///   string fail_message = string::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())
       ///     console::write_line(fail_message + "\n" + ex.message());
@@ -85,7 +85,7 @@ namespace xtd {
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
       /// } catch (const system_exception& ex) {
-      ///   ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+      ///   string fail_message = string::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())
       ///     console::write_line(fail_message + "\n" + ex.message());
@@ -107,7 +107,7 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
-      xtd::ustring log_file_name() const noexcept;
+      xtd::string log_file_name() const noexcept;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples
@@ -121,7 +121,7 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
-      void log_file_name(const xtd::ustring log_file_name) noexcept;
+      void log_file_name(const xtd::string log_file_name) noexcept;
       /// @}
       
       /// @name Public Methods
@@ -131,16 +131,16 @@ namespace xtd {
       void flush() override;
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const xtd::ustring& message) override;
+      void write(const xtd::string& message) override;
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const xtd::ustring& message) override;
+      void write_line(const xtd::string& message) override;
       /// @}
       
     private:
       bool assert_ui_enabled_ = true;
-      xtd::ustring log_file_name_;
-      xtd::ustring message_line_;
+      xtd::string log_file_name_;
+      xtd::string message_line_;
     };
   }
 }

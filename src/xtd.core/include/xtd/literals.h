@@ -396,7 +396,7 @@ namespace xtd {
     /// ```
     xtd::time_span operator""_ns(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -404,13 +404,13 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = "This is a "_s + "simple test"_s;
+    /// xtd::string s = "This is a "_s + "simple test"_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_s(const char* s, size_t n);
+    xtd::string operator""_s(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -418,13 +418,13 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = u8"This is a "_s + u8"simple test"_s;
+    /// xtd::string s = u8"This is a "_s + u8"simple test"_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_s(const char8* s, size_t n);
+    xtd::string operator""_s(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -432,12 +432,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = U"This is a "_s + U"simple test"_s;
+    /// xtd::string s = U"This is a "_s + U"simple test"_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_s(const char16* s, size_t n);
+    xtd::string operator""_s(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -445,12 +445,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = u"This is a "_s + u"simple test"_s;
+    /// xtd::string s = u"This is a "_s + u"simple test"_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_s(const char32* s, size_t n);
+    xtd::string operator""_s(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -458,10 +458,10 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = L"This is a "_s + L"simple test"_s;
+    /// xtd::string s = L"This is a "_s + L"simple test"_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_s(const wchar* s, size_t n);
+    xtd::string operator""_s(const wchar* s, size_t n);
     
     /// @brief Used to convert the specified value as seconds to xtd::time_span.
     /// @par Namespace
@@ -476,7 +476,7 @@ namespace xtd {
     /// ```
     xtd::time_span operator""_s(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format.
+    /// @brief Used to convert the specified value to xtd::string with a binary format.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -484,12 +484,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb;
+    /// xtd::string s = 49_sb;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb(unsigned long long s);
+    xtd::string operator""_sb(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with two digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with two digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -497,12 +497,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb2;
+    /// xtd::string s = 49_sb2;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb2(unsigned long long s);
+    xtd::string operator""_sb2(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with four digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with four digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -510,12 +510,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb4;
+    /// xtd::string s = 49_sb4;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb4(unsigned long long s);
+    xtd::string operator""_sb4(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with eight digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with eight digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -523,12 +523,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb8;
+    /// xtd::string s = 49_sb8;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb8(unsigned long long s);
+    xtd::string operator""_sb8(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with sixteen digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with sixteen digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -536,12 +536,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb16;
+    /// xtd::string s = 49_sb16;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb16(unsigned long long s);
+    xtd::string operator""_sb16(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with thirty two digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with thirty two digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -549,12 +549,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb32;
+    /// xtd::string s = 49_sb32;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb32(unsigned long long s);
+    xtd::string operator""_sb32(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a binary format with sixty four digits.
+    /// @brief Used to convert the specified value to xtd::string with a binary format with sixty four digits.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -562,12 +562,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sb64;
+    /// xtd::string s = 49_sb64;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sb64(unsigned long long s);
+    xtd::string operator""_sb64(unsigned long long s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a decimal format.
+    /// @brief Used to convert the specified value to xtd::string with a decimal format.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -575,12 +575,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 4.9_sd;
+    /// xtd::string s = 4.9_sd;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sd(long double s);
+    xtd::string operator""_sd(long double s);
     
-    /// @brief Used to convert the specified value to xtd::ustring with a decimal format.
+    /// @brief Used to convert the specified value to xtd::string with a decimal format.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -588,12 +588,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sd;
+    /// xtd::string s = 49_sd;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sd(unsigned long long s);
+    xtd::string operator""_sd(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -601,12 +601,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx;
+    /// xtd::string s = 49_sx;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sx(unsigned long long s);
+    xtd::string operator""_sx(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -614,12 +614,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx2;
+    /// xtd::string s = 49_sx2;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sx2(unsigned long long s);
+    xtd::string operator""_sx2(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -627,12 +627,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx4;
+    /// xtd::string s = 49_sx4;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sx4(unsigned long long s);
+    xtd::string operator""_sx4(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -640,12 +640,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_s;
+    /// xtd::string s = 49_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sx8(unsigned long long s);
+    xtd::string operator""_sx8(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -653,12 +653,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx;
+    /// xtd::string s = 49_sx;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sX(unsigned long long s);
+    xtd::string operator""_sX(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -666,12 +666,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx2;
+    /// xtd::string s = 49_sx2;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sX2(unsigned long long s);
+    xtd::string operator""_sX2(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -679,12 +679,12 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_sx4;
+    /// xtd::string s = 49_sx4;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sX4(unsigned long long s);
+    xtd::string operator""_sX4(unsigned long long s);
     
-    /// @brief Used to convert specified value into xtd::ustring.
+    /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -692,10 +692,10 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::ustring s = 49_s;
+    /// xtd::string s = 49_s;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::ustring operator""_sX8(unsigned long long s);
+    xtd::string operator""_sX8(unsigned long long s);
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -1056,7 +1056,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core literals translate
-    xtd::ustring operator""_t(const char8* s, size_t n) noexcept;
+    xtd::string operator""_t(const char8* s, size_t n) noexcept;
 #endif
     
     /// @brief Used to translate specified string into locale.
@@ -1065,7 +1065,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core literals translate
-    xtd::ustring operator""_t(const char16* s, size_t n) noexcept;
+    xtd::string operator""_t(const char16* s, size_t n) noexcept;
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -1073,7 +1073,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core literals translate
-    xtd::ustring operator""_t(const char32* s, size_t n) noexcept;
+    xtd::string operator""_t(const char32* s, size_t n) noexcept;
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -1081,7 +1081,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core literals translate
-    xtd::ustring operator""_t(const wchar* s, size_t n) noexcept;
+    xtd::string operator""_t(const wchar* s, size_t n) noexcept;
     
     /// @brief Used to convert the specified value as tiks to xtd::time_span.
     /// @par Namespace

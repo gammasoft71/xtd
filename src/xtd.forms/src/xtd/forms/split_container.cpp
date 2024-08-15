@@ -98,7 +98,7 @@ split_container split_container::create(const drawing::point& location, const dr
   return result;
 }
 
-split_container split_container::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+split_container split_container::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = split_container {};
   result.location(location);
   result.size(size);
@@ -127,7 +127,7 @@ split_container split_container::create(const control& parent, const drawing::po
   return result;
 }
 
-split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = split_container {};
   result.parent(parent);
   result.location(location);
@@ -142,7 +142,7 @@ drawing::size split_container::default_size() const noexcept {
 
 xtd::uptr<xtd::object> split_container::clone() const {
   auto result = xtd::new_uptr<split_container>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

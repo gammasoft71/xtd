@@ -29,186 +29,186 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
-      static xtd::ustring abort();
+      static xtd::string abort();
       /// @brief Gets a system-defined text that has a string value of "&About". This field is constant.
-      static xtd::ustring about();
+      static xtd::string about();
       /// @brief Gets a system-defined text that has a string value of "&Actual Size". This field is constant.
-      static xtd::ustring actual_size();
+      static xtd::string actual_size();
       /// @brief Gets a system-defined text that has a string value of "Add". This field is constant.
-      static xtd::ustring add();
+      static xtd::string add();
       /// @brief Gets a system-defined text that has a string value of "Alignment". This field is constant.
-      static xtd::ustring alignment();
+      static xtd::string alignment();
       /// @brief Gets a system-defined text that has a string value of "Align Left". This field is constant.
-      static xtd::ustring align_left();
+      static xtd::string align_left();
       /// @brief Gets a system-defined text that has a string value of "Align Right". This field is constant.
-      static xtd::ustring align_right();
+      static xtd::string align_right();
       /// @brief Gets a system-defined text that has a string value of "&Apply". This field is constant.
-      static xtd::ustring apply();
+      static xtd::string apply();
       /// @brief Gets a system-defined text that has a string value of "&Ascending". This field is constant.
-      static xtd::ustring ascending();
+      static xtd::string ascending();
       /// @brief Gets a system-defined text that has a string value of "&Back". This field is constant.
-      static xtd::ustring back();
+      static xtd::string back();
       /// @brief Gets a system-defined text that has a string value of "&Bold". This field is constant.
-      static xtd::ustring bold();
+      static xtd::string bold();
       /// @brief Gets a system-defined text that has a string value of "&Bottom". This field is constant.
-      static xtd::ustring bottom();
+      static xtd::string bottom();
       /// @brief Gets a system-defined text that has a string value of "&Cancel". This field is constant.
-      static xtd::ustring cancel();
+      static xtd::string cancel();
       /// @brief Gets a system-defined text that has a string value of "&CD-Rom". This field is constant.
-      static xtd::ustring cdrom();
+      static xtd::string cdrom();
       /// @brief Gets a system-defined text that has a string value of "Centered". This field is constant.
-      static xtd::ustring centered();
+      static xtd::string centered();
       /// @brief Gets a system-defined text that has a string value of "&Clear". This field is constant.
-      static xtd::ustring clear();
+      static xtd::string clear();
       /// @brief Gets a system-defined text that has a string value of "&Close". This field is constant.
-      static xtd::ustring close();
+      static xtd::string close();
       /// @brief Gets a system-defined text that has a string value of "&Color". This field is constant.
-      static xtd::ustring color();
+      static xtd::string color();
       /// @brief Gets a system-defined text that has a string value of "&Contents". This field is constant.
-      static xtd::ustring contents();
+      static xtd::string contents();
       /// @brief Gets a system-defined text that has a string value of "&Convert". This field is constant.
-      static xtd::ustring convert();
+      static xtd::string convert();
       /// @brief Gets a system-defined text that has a string value of "&Copy". This field is constant.
-      static xtd::ustring copy();
+      static xtd::string copy();
       /// @brief Gets a system-defined text that has a string value of "&Customize". This field is constant.
-      static xtd::ustring customize();
+      static xtd::string customize();
       /// @brief Gets a system-defined text that has a string value of "Cu&t". This field is constant.
-      static xtd::ustring cut();
+      static xtd::string cut();
       /// @brief Gets a system-defined text that has a string value of "&Delete". This field is constant.
-      static xtd::ustring del();
+      static xtd::string del();
       /// @brief Gets a system-defined text that has a string value of "&Descending". This field is constant.
-      static xtd::ustring descending();
+      static xtd::string descending();
       /// @brief Gets a system-defined text that has a string value of "&Down". This field is constant.
-      static xtd::ustring down();
+      static xtd::string down();
       /// @brief Gets a system-defined text that has a string value of "&Edit". This field is constant.
-      static xtd::ustring edit();
+      static xtd::string edit();
       /// @brief Gets a system-defined text that has a string value of "&Execute". This field is constant.
-      static xtd::ustring execute();
+      static xtd::string execute();
       /// @brief Gets a system-defined text that has a string value of "E&xit". This field is constant.
-      static xtd::ustring exit();
+      static xtd::string exit();
       /// @brief Gets a system-defined text that has a string value of "&File". This field is constant.
-      static xtd::ustring file();
+      static xtd::string file();
       /// @brief Gets a system-defined text that has a string value of "&Find...". This field is constant.
-      static xtd::ustring find();
+      static xtd::string find();
       /// @brief Gets a system-defined text that has a string value of "&First". This field is constant.
-      static xtd::ustring first();
+      static xtd::string first();
       /// @brief Gets a system-defined text that has a string value of "&Floppy". This field is constant.
-      static xtd::ustring floppy();
+      static xtd::string floppy();
       /// @brief Gets a system-defined text that has a string value of "&Font". This field is constant.
-      static xtd::ustring font();
+      static xtd::string font();
       /// @brief Gets a system-defined text that has a string value of "&Forward". This field is constant.
-      static xtd::ustring forward();
+      static xtd::string forward();
       /// @brief Gets a system-defined text that has a string value of "&Harddisk". This field is constant.
-      static xtd::ustring harddisk();
+      static xtd::string harddisk();
       /// @brief Gets a system-defined text that has a string value of "&Help". This field is constant.
-      static xtd::ustring help();
+      static xtd::string help();
       /// @brief Gets a system-defined text that has a string value of "&Home". This field is constant.
-      static xtd::ustring home();
+      static xtd::string home();
       /// @brief Gets a system-defined text that has a string value of "&Ignore". This field is constant.
-      static xtd::ustring ignore();
+      static xtd::string ignore();
       /// @brief Gets a system-defined text that has a string value of "Indent". This field is constant.
-      static xtd::ustring indent();
+      static xtd::string indent();
       /// @brief Gets a system-defined text that has a string value of "&Index". This field is constant.
-      static xtd::ustring index();
+      static xtd::string index();
       /// @brief Gets a system-defined text that has a string value of "&Info". This field is constant.
-      static xtd::ustring info();
+      static xtd::string info();
       /// @brief Gets a system-defined text that has a string value of "&Italic". This field is constant.
-      static xtd::ustring italic();
+      static xtd::string italic();
       /// @brief Gets a system-defined text that has a string value of "Justified". This field is constant.
-      static xtd::ustring justified();
+      static xtd::string justified();
       /// @brief Gets a system-defined text that has a string value of "&Jump to". This field is constant.
-      static xtd::ustring jump_to();
+      static xtd::string jump_to();
       /// @brief Gets a system-defined text that has a string value of "&Last". This field is constant.
-      static xtd::ustring last();
+      static xtd::string last();
       /// @brief Gets a system-defined text that has a string value of "&Network". This field is constant.
-      static xtd::ustring network();
+      static xtd::string network();
       /// @brief Gets a system-defined text that has a string value of "&New". This field is constant.
-      static xtd::ustring new_();
+      static xtd::string new_();
       /// @brief Gets a system-defined text that has a string value of "&Next". This field is constant.
-      static xtd::ustring next();
+      static xtd::string next();
       /// @brief Gets a system-defined text that has a string value of "&No". This field is constant.
-      static xtd::ustring no();
+      static xtd::string no();
       /// @brief Gets a system-defined text that has a string value of "&OK". This field is constant.
-      static xtd::ustring ok();
+      static xtd::string ok();
       /// @brief Gets a system-defined text that has a string value of "&Open...". This field is constant.
-      static xtd::ustring open();
+      static xtd::string open();
       /// @brief Gets a system-defined text that has a string value of "&Options". This field is constant.
-      static xtd::ustring options();
+      static xtd::string options();
       /// @brief Gets a system-defined text that has a string value of "&Paste". This field is constant.
-      static xtd::ustring paste();
+      static xtd::string paste();
       /// @brief Gets a system-defined text that has a string value of "&Preference". This field is constant.
-      static xtd::ustring preferences();
+      static xtd::string preferences();
       /// @brief Gets a system-defined text that has a string value of "&Previous". This field is constant.
-      static xtd::ustring previous();
+      static xtd::string previous();
       /// @brief Gets a system-defined text that has a string value of "&Print...". This field is constant.
-      static xtd::ustring print();
+      static xtd::string print();
       /// @brief Gets a system-defined text that has a string value of "Print Re&view". This field is constant.
-      static xtd::ustring print_preview();
+      static xtd::string print_preview();
       /// @brief Gets a system-defined text that has a string value of "&Properties". This field is constant.
-      static xtd::ustring properties();
+      static xtd::string properties();
       /// @brief Gets a system-defined text that has a string value of "&Quit". This field is constant.
-      static xtd::ustring quit();
+      static xtd::string quit();
       /// @brief Gets a system-defined text that has a string value of "&Redo". This field is constant.
-      static xtd::ustring redo();
+      static xtd::string redo();
       /// @brief Gets a system-defined text that has a string value of "Refresh". This field is constant.
-      static xtd::ustring refresh();
+      static xtd::string refresh();
       /// @brief Gets a system-defined text that has a string value of "Remove". This field is constant.
-      static xtd::ustring remove();
+      static xtd::string remove();
       /// @brief Gets a system-defined text that has a string value of "Rep&lace". This field is constant.
-      static xtd::ustring replace();
+      static xtd::string replace();
       /// @brief Gets a system-defined text that has a string value of "&Retry". This field is constant.
-      static xtd::ustring retry();
+      static xtd::string retry();
       /// @brief Gets a system-defined text that has a string value of "Revert to Saved". This field is constant.
-      static xtd::ustring revert_to_saved();
+      static xtd::string revert_to_saved();
       /// @brief Gets a system-defined text that has a string value of "&Save". This field is constant.
-      static xtd::ustring save();
+      static xtd::string save();
       /// @brief Gets a system-defined text that has a string value of "Save &As...". This field is constant.
-      static xtd::ustring save_as();
+      static xtd::string save_as();
       /// @brief Gets a system-defined text that has a string value of "&Search". This field is constant.
-      static xtd::ustring search();
+      static xtd::string search();
       /// @brief Gets a system-defined text that has a string value of "Select &All". This field is constant.
-      static xtd::ustring select_all();
+      static xtd::string select_all();
       /// @brief Gets a system-defined text that has a string value of "&Settings...". This field is constant.
-      static xtd::ustring settings();
+      static xtd::string settings();
       /// @brief Gets a system-defined text that has a string value of "&Spell Check". This field is constant.
-      static xtd::ustring spell_check();
+      static xtd::string spell_check();
       /// @brief Gets a system-defined text that has a string value of "&Stop". This field is constant.
-      static xtd::ustring stop();
+      static xtd::string stop();
       /// @brief Gets a system-defined text that has a string value of "&Strikeout". This field is constant.
-      static xtd::ustring strikeout();
+      static xtd::string strikeout();
       /// @brief Gets a system-defined text that has a string value of "&Tools". This field is constant.
-      static xtd::ustring tools();
+      static xtd::string tools();
       /// @brief Gets a system-defined text that has a string value of "&Top". This field is constant.
-      static xtd::ustring top();
+      static xtd::string top();
       /// @brief Gets a system-defined text that has a string value of "Undelete". This field is constant.
-      static xtd::ustring undelete();
+      static xtd::string undelete();
       /// @brief Gets a system-defined text that has a string value of "&Underline". This field is constant.
-      static xtd::ustring underline();
+      static xtd::string underline();
       /// @brief Gets a system-defined text that has a string value of "&Undo". This field is constant.
-      static xtd::ustring undo();
+      static xtd::string undo();
       /// @brief Gets a system-defined text that has a string value of "Unindent". This field is constant.
-      static xtd::ustring unindent();
+      static xtd::string unindent();
       /// @brief Gets a system-defined text that has a string value of "&Up". This field is constant.
-      static xtd::ustring up();
+      static xtd::string up();
       /// @brief Gets a system-defined text that has a string value of "&View". This field is constant.
-      static xtd::ustring view();
+      static xtd::string view();
       /// @brief Gets a system-defined text that has a string value of "&Window". This field is constant.
-      static xtd::ustring window();
+      static xtd::string window();
       /// @brief Gets a system-defined text that has a string value of "&Yes". This field is constant.
-      static xtd::ustring yes();
+      static xtd::string yes();
       /// @brief Gets a system-defined text that has a string value of "Zoom &In". This field is constant.
-      static xtd::ustring zoom_in();
+      static xtd::string zoom_in();
       /// @brief Gets a system-defined text that has a string value of "Zoom &Out". This field is constant.
-      static xtd::ustring zoom_out();
+      static xtd::string zoom_out();
       /// @brief Gets a system-defined text that has a string value of "Zoom to &Fit". This field is constant.
-      static xtd::ustring zoom_to_fit();
+      static xtd::string zoom_to_fit();
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of texts.
-      static const std::vector<xtd::ustring>& get_texts() noexcept;
+      static const std::vector<xtd::string>& get_texts() noexcept;
       /// @}
     };
   }

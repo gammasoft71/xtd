@@ -9,5 +9,5 @@ using namespace xtd::drawing::text;
 
 installed_font_collection::installed_font_collection() {
   auto iffs = native::font_family::installed_font_families();
-  std::for_each(iffs.begin(), iffs.end(), [&](const xtd::ustring & family) {families_.emplace_back(family);});
+  std::for_each(iffs.begin(), iffs.end(), [&](const xtd::string & family) {families_.emplace_back(family);});
 }

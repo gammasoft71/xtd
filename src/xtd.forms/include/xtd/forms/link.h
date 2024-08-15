@@ -60,12 +60,12 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a text description of the link.
-      /// @return A xtd::ustring representing a text description of the link.
-      const xtd::ustring& description() const noexcept;
+      /// @return A xtd::string representing a text description of the link.
+      const xtd::string& description() const noexcept;
       /// @brief Sets a text description of the link.
-      /// @param value A xtd::ustring representing a text description of the link.
+      /// @param value A xtd::string representing a text description of the link.
       /// @return The current instance of xtd::forms::link_label::link.
-      link& description(const xtd::ustring& value);
+      link& description(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the link is enabled.
       /// @return true if the link is enabled; otherwise, false.
@@ -98,12 +98,12 @@ namespace xtd {
       link& link_data(std::any value);
       
       /// @brief Gets the name of the xtd::forms::link_label::link.
-      /// @return A xtd::ustring representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
-      const xtd::ustring& name() const noexcept;
+      /// @return A xtd::string representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
+      const xtd::string& name() const noexcept;
       /// @brief Sets the name of the xtd::forms::link_label::link.
-      /// @param value A xtd::ustring representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
+      /// @param value A xtd::string representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
       /// @return The current instance of xtd::forms::link_label::link.
-      link& name(const xtd::ustring& value);
+      link& name(const xtd::string& value);
       
       /// @brief Gets the starting location of the link within the text of the xtd::forms::link_label::link.
       /// @return The location within the text of the the xtd::forms::link_label control where the link starts.

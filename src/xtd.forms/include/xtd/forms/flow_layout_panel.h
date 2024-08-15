@@ -51,7 +51,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @param name The name of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static flow_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @param name The name of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static flow_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

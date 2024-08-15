@@ -36,12 +36,12 @@ namespace xtd {
       /// @brief Close image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image close(const xtd::ustring& theme);
+      static xtd::drawing::image close(const xtd::string& theme);
       /// @brief Close image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image close(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image close(const xtd::string& theme, bool maximized_form);
       /// @brief Close image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close".
@@ -50,7 +50,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image close(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image close(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Close hovered image object.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
@@ -62,12 +62,12 @@ namespace xtd {
       /// @brief Close hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
-      static xtd::drawing::image close_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image close_hovered(const xtd::string& theme);
       /// @brief Close hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
-      static xtd::drawing::image close_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image close_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief Close hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
@@ -76,7 +76,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
-      static xtd::drawing::image close_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image close_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Fullscreen image object.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
@@ -88,12 +88,12 @@ namespace xtd {
       /// @brief Fullscreen image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
-      static xtd::drawing::image fullscreen(const xtd::ustring& theme);
+      static xtd::drawing::image fullscreen(const xtd::string& theme);
       /// @brief Fullscreen image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
-      static xtd::drawing::image fullscreen(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image fullscreen(const xtd::string& theme, bool maximized_form);
       /// @brief Fullscreen image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close".
-      static xtd::drawing::image fullscreen(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image fullscreen(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Close image object.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
@@ -114,12 +114,12 @@ namespace xtd {
       /// @brief Fullscreen hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
-      static xtd::drawing::image fullscreen_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image fullscreen_hovered(const xtd::string& theme);
       /// @brief Fullscreen hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
-      static xtd::drawing::image fullscreen_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image fullscreen_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief Fullscreen hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
-      static xtd::drawing::image fullscreen_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image fullscreen_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Maximize image object.
       /// @return A xtd::drawing::image that represent "window-maximize".
@@ -140,12 +140,12 @@ namespace xtd {
       /// @brief Maximize image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-maximize".
-      static xtd::drawing::image maximize(const xtd::ustring& theme);
+      static xtd::drawing::image maximize(const xtd::string& theme);
       /// @brief Maximize image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-maximize".
-      static xtd::drawing::image maximize(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image maximize(const xtd::string& theme, bool maximized_form);
       /// @brief Maximize image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize".
@@ -154,7 +154,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize".
-      static xtd::drawing::image maximize(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image maximize(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Maximize hovered image object.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
@@ -166,12 +166,12 @@ namespace xtd {
       /// @brief Maximize hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
-      static xtd::drawing::image maximize_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image maximize_hovered(const xtd::string& theme);
       /// @brief Maximize hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
-      static xtd::drawing::image maximize_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image maximize_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief Maximize hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
@@ -180,7 +180,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
-      static xtd::drawing::image maximize_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image maximize_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Minimize image object.
       /// @return A xtd::drawing::image that represent "window-minimize".
@@ -192,12 +192,12 @@ namespace xtd {
       /// @brief Minimize image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-minimize".
-      static xtd::drawing::image minimize(const xtd::ustring& theme);
+      static xtd::drawing::image minimize(const xtd::string& theme);
       /// @brief Minimize image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-minimize".
-      static xtd::drawing::image minimize(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image minimize(const xtd::string& theme, bool maximized_form);
       /// @brief Minimize image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize".
@@ -206,7 +206,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize".
-      static xtd::drawing::image minimize(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image minimize(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Minimize hovered image object.
       /// @return A xtd::drawing::image that represent "window-close".
@@ -218,12 +218,12 @@ namespace xtd {
       /// @brief Minimize hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-minimize-hovered".
-      static xtd::drawing::image minimize_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image minimize_hovered(const xtd::string& theme);
       /// @brief Minimize hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-minimize-hovered".
-      static xtd::drawing::image minimize_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image minimize_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief Minimize hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize-hovered".
@@ -232,7 +232,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize-hovered".
-      static xtd::drawing::image minimize_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image minimize_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Restore image object.
       /// @return A xtd::drawing::image that represent "window-restore".
@@ -244,12 +244,12 @@ namespace xtd {
       /// @brief Restore image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-restore".
-      static xtd::drawing::image restore(const xtd::ustring& theme);
+      static xtd::drawing::image restore(const xtd::string& theme);
       /// @brief Restore image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-restore".
-      static xtd::drawing::image restore(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image restore(const xtd::string& theme, bool maximized_form);
       /// @brief Restore image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore".
@@ -258,7 +258,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore".
-      static xtd::drawing::image restore(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image restore(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Restore hovered image object.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
@@ -270,12 +270,12 @@ namespace xtd {
       /// @brief Restore hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
-      static xtd::drawing::image restore_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image restore_hovered(const xtd::string& theme);
       /// @brief Restore hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
-      static xtd::drawing::image restore_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image restore_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief Restore hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
@@ -284,7 +284,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore-hovered""window-restore-hovered".
-      static xtd::drawing::image restore_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image restore_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief System menu image object.
       /// @return A xtd::drawing::image that represent "window-system-menu".
@@ -296,12 +296,12 @@ namespace xtd {
       /// @brief System menu image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const xtd::ustring& theme);
+      static xtd::drawing::image system_menu(const xtd::string& theme);
       /// @brief System menu image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image system_menu(const xtd::string& theme, bool maximized_form);
       /// @brief System menu image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
@@ -310,7 +310,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
-      static xtd::drawing::image system_menu(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image system_menu(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief System menu hovered image object.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
@@ -322,12 +322,12 @@ namespace xtd {
       /// @brief System menu hovered image object with specified theme.
       /// @param theme a string that represent theme of image.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
-      static xtd::drawing::image system_menu_hovered(const xtd::ustring& theme);
+      static xtd::drawing::image system_menu_hovered(const xtd::string& theme);
       /// @brief System menu hovered image object with specified theme and maximized form.
       /// @param theme a string that represent theme of image.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
-      static xtd::drawing::image system_menu_hovered(const xtd::ustring& theme, bool maximized_form);
+      static xtd::drawing::image system_menu_hovered(const xtd::string& theme, bool maximized_form);
       /// @brief System menu hovered image object with specified size.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
@@ -336,7 +336,7 @@ namespace xtd {
       /// @param theme a string that represent theme of image.
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
-      static xtd::drawing::image system_menu_hovered(const xtd::ustring& theme, const xtd::drawing::size& size);
+      static xtd::drawing::image system_menu_hovered(const xtd::string& theme, const xtd::drawing::size& size);
       
       /// @brief Gets the height and width of the button images.
       /// @return The size that represents the height and width of the button images in pixels.
@@ -359,21 +359,21 @@ namespace xtd {
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::context_names to get names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& name);
+      static xtd::drawing::image from_name(const xtd::string& name);
       /// @brief Gets image object with specified theme and name.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name);
+      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name);
       /// @brief Gets image object with specified name and size.
       /// @param name the image name to get.
       /// @param size The size that represents the height and width of the button images in pixels.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::image from_name(const xtd::string& name, const xtd::drawing::size& size);
       /// @brief Gets image object with specified theme, name and size.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
@@ -381,14 +381,14 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size);
       /// @brief Gets image object with specified name and maximized form.
       /// @param name the image name to get.
       /// @param maximized_form true if form is maximized; otherwise false.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& name, bool maximized_form);
+      static xtd::drawing::image from_name(const xtd::string& name, bool maximized_form);
       /// @brief Gets image object with specified theme,  name and maximized form.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
@@ -396,7 +396,7 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, bool maximized_form);
+      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name, bool maximized_form);
       /// @}
     };
   }

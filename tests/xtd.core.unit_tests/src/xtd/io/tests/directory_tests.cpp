@@ -12,7 +12,7 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(directory_tests) {
-    inline static const ustring test_path = path::combine(path::get_temp_path(), "test_directory");
+    inline static const string test_path = path::combine(path::get_temp_path(), "test_directory");
     static void test_initialize_(test_initialize) {
       if (directory::exists(test_path)) directory::remove(test_path, true);
       directory::create_directory(test_path);
@@ -66,7 +66,7 @@ namespace xtd::io::tests {
       // Linux :
       //   #define PATH_MAX 4096 /* # chars in a path name including nul */
       //   #define NAME_MAX  255 /* max bytes in a file name */
-      assert::throws<path_too_long_exception>([] {directory::create_directory("directory"_s + ustring(260, '1'));}, csf_);
+      assert::throws<path_too_long_exception>([] {directory::create_directory("directory"_s + string(260, '1'));}, csf_);
     }
   };
 }

@@ -8,7 +8,7 @@ using namespace xtd::forms;
 tool_bar_button::tool_bar_button() : data_(xtd::new_sptr<data>()) {
 }
 
-tool_bar_button::tool_bar_button(const ustring& text) : data_(xtd::new_sptr<data>()) {
+tool_bar_button::tool_bar_button(const string& text) : data_(xtd::new_sptr<data>()) {
   data_->text = text;
 }
 
@@ -70,11 +70,11 @@ tool_bar_button& tool_bar_button::image_index(size_t value) {
   return *this;
 }
 
-const ustring& tool_bar_button::name() const noexcept {
+const string& tool_bar_button::name() const noexcept {
   return data_->name;
 }
 
-tool_bar_button& tool_bar_button::name(const xtd::ustring& value) {
+tool_bar_button& tool_bar_button::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
@@ -118,22 +118,22 @@ tool_bar_button& tool_bar_button::tag(std::any value) {
   return *this;
 }
 
-const ustring& tool_bar_button::text() const noexcept {
+const string& tool_bar_button::text() const noexcept {
   return data_->text;
 }
 
-tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
+tool_bar_button& tool_bar_button::text(const xtd::string& value) {
   if (data_->text == value) return *this;
   data_->text = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
-const ustring& tool_bar_button::tool_tip_text() const noexcept {
+const string& tool_bar_button::tool_tip_text() const noexcept {
   return data_->tool_tip_text;
 }
 
-tool_bar_button& tool_bar_button::tool_tip_text(const xtd::ustring& value) {
+tool_bar_button& tool_bar_button::tool_tip_text(const xtd::string& value) {
   if (data_->tool_tip_text == value) return *this;
   data_->tool_tip_text = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
@@ -151,7 +151,7 @@ tool_bar_button& tool_bar_button::visible(bool value) {
   return *this;
 }
 
-tool_bar_button tool_bar_button::create_control(const xtd::ustring& text, const xtd::forms::control& control) {
+tool_bar_button tool_bar_button::create_control(const xtd::string& text, const xtd::forms::control& control) {
   auto result = tool_bar_button {};
   result.control(control);
   result.style(xtd::forms::tool_bar_button_style::control);
@@ -166,7 +166,7 @@ tool_bar_button tool_bar_button::create_control(const xtd::forms::control& contr
   return result;
 }
 
-tool_bar_button tool_bar_button::create_drop_down_button(const xtd::ustring& text, const xtd::forms::context_menu& drop_down_menu) {
+tool_bar_button tool_bar_button::create_drop_down_button(const xtd::string& text, const xtd::forms::context_menu& drop_down_menu) {
   auto result = tool_bar_button {};
   result.drop_down_menu(drop_down_menu);
   result.style(xtd::forms::tool_bar_button_style::drop_down_button);
@@ -182,7 +182,7 @@ tool_bar_button tool_bar_button::create_drop_down_button(size_t image_index, con
   return result;
 }
 
-tool_bar_button tool_bar_button::create_drop_down_button(const xtd::ustring& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
+tool_bar_button tool_bar_button::create_drop_down_button(const xtd::string& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
   auto result = tool_bar_button {};
   result.drop_down_menu(drop_down_menu);
   result.image_index(image_index);
@@ -191,7 +191,7 @@ tool_bar_button tool_bar_button::create_drop_down_button(const xtd::ustring& tex
   return result;
 }
 
-tool_bar_button tool_bar_button::create_push_button(const xtd::ustring& text) {
+tool_bar_button tool_bar_button::create_push_button(const xtd::string& text) {
   auto result = tool_bar_button {};
   result.style(xtd::forms::tool_bar_button_style::push_button);
   result.text(text);
@@ -205,7 +205,7 @@ tool_bar_button tool_bar_button::create_push_button(size_t image_index) {
   return result;
 }
 
-tool_bar_button tool_bar_button::create_push_button(const xtd::ustring& text, size_t image_index) {
+tool_bar_button tool_bar_button::create_push_button(const xtd::string& text, size_t image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::push_button);
@@ -225,7 +225,7 @@ tool_bar_button tool_bar_button::create_stretchable_separator() {
   return result;
 }
 
-tool_bar_button tool_bar_button::create_toggle_button(const xtd::ustring& text) {
+tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text) {
   auto result = tool_bar_button {};
   result.style(xtd::forms::tool_bar_button_style::toggle_button);
   result.text(text);
@@ -239,7 +239,7 @@ tool_bar_button tool_bar_button::create_toggle_button(size_t image_index) {
   return result;
 }
 
-tool_bar_button tool_bar_button::create_toggle_button(const xtd::ustring& text, size_t image_index) {
+tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text, size_t image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::toggle_button);
@@ -251,14 +251,14 @@ bool tool_bar_button::equals(const tool_bar_button& other) const noexcept {
   return data_ == other.data_;
 }
 
-xtd::ustring tool_bar_button::to_string() const noexcept {
-  if (!data_->text.empty()) return ustring::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
-  if (!data_->name.empty()) return ustring::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
-  return ustring::format("{}, style: {}", get_type().full_name(), data_->style);
+xtd::string tool_bar_button::to_string() const noexcept {
+  if (!data_->text.empty()) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
+  if (!data_->name.empty()) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
+  return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 
 xtd::uptr<xtd::object> tool_bar_button::clone() const {
   auto result = xtd::new_uptr<tool_bar_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

@@ -10,14 +10,14 @@
 using namespace xtd;
 using namespace xtd::io;
 
-stream_writer::stream_writer(const ustring& path) : stream_writer(path, false) {
+stream_writer::stream_writer(const string& path) : stream_writer(path, false) {
 }
 
 stream_writer::stream_writer(std::ostream& stream) : stream_writer(stream, false) {
 }
 
-stream_writer::stream_writer(const ustring& path, bool append) : stream_(new std::ofstream(path, append ? std::ios::out | std::ios_base::app : std::ios::out | std::ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
+stream_writer::stream_writer(const string& path, bool append) : stream_(new std::ofstream(path, append ? std::ios::out | std::ios_base::app : std::ios::out | std::ios_base::trunc)), delete_when_destroy_(true) {
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
@@ -62,7 +62,7 @@ void stream_writer::flush() {
   if (stream_) stream_->flush();
 }
 
-void stream_writer::write(const ustring& value) {
+void stream_writer::write(const string& value) {
   if (stream_) stream_->write(value.c_str(), value.length());
   if (auto_flush_) flush();
 }

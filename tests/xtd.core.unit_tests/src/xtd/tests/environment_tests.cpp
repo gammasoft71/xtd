@@ -107,7 +107,7 @@ namespace xtd::tests {
       // There is no unit test possible.
       /*
        assert::are_equal(__architecture_name__, p.architecture_string(), csf_);
-       assert::are_equal(ustring(__architecture_name__).ends_with("64"), p.is_64_bit(), csf_);
+       assert::are_equal(string(__architecture_name__).ends_with("64"), p.is_64_bit(), csf_);
        */
     }
     

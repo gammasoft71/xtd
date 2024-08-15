@@ -33,7 +33,7 @@ using namespace xtd::drawing;
 using namespace xtd::io;
 
 namespace {
-  static ustring system_images_base_resource_path() {
+  static string system_images_base_resource_path() {
     return path::combine({environment::get_folder_path(environment::special_folder::xtd_resources), "system_images"});
   }
   
@@ -49,15 +49,15 @@ xtd::drawing::size system_images_base::default_size() noexcept {
   return {32, 32};
 }
 
-std::vector<ustring> system_images_base::contexts() noexcept {
-  auto result = std::vector<ustring> {};
+std::vector<string> system_images_base::contexts() noexcept {
+  auto result = std::vector<string> {};
   for (const auto& context_name : context_names())
     result.push_back(context_name.first);
   return result;
 }
 
-std::map<ustring, std::vector<ustring>> system_images_base::context_names() noexcept {
-  static std::map<ustring, std::vector<ustring>> context_names {
+std::map<string, std::vector<string>> system_images_base::context_names() noexcept {
+  static std::map<string, std::vector<string>> context_names {
     {"Actions", {"address-book-new", "application-exit", "appointment-new", "call-start", "call-stop", "contact-new", "dialog-cancel", "dialog-ok", "dialog-ok-apply", "document-edit", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-rename", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-table", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-optical-burn", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-media-equalizer", "view-media-lyrics", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-close-hovered", "window-fullscreen", "window-fullscreen-hovered", "window-maximize", "window-maximize-hovered", "window-minimize", "window-minimize-hovered", "window-new", "window-restore", "window-restore-hovered", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
     {"Animations", {"process-working"}},
     {"Applications", {"accessories-calculator", "accessories-character-map", "accessories-dictionary", "accessories-text-editor", "help-browser", "help", "multimedia-volume-control", "preferences-desktop-accessibility", "preferences-desktop-font", "preferences-desktop-keyboard", "preferences-desktop-locale", "preferences-desktop-screensaver", "preferences-desktop-theme", "preferences-desktop-wallpaper", "system-file-manager", "system-software-install", "system-software-update", "utilities-system-monitor", "utilities-terminal"}},
@@ -74,15 +74,15 @@ std::map<ustring, std::vector<ustring>> system_images_base::context_names() noex
   return context_names;
 }
 
-std::vector<ustring> system_images_base::names() noexcept {
-  auto result = std::vector<ustring> {};
+std::vector<string> system_images_base::names() noexcept {
+  auto result = std::vector<string> {};
   for (const auto& context_name : context_names())
     for (const auto& name : context_name.second)
       result.push_back(name);
   return result;
 }
 
-std::vector<xtd::ustring> system_images_base::names(const xtd::ustring& context) noexcept {
+std::vector<xtd::string> system_images_base::names(const xtd::string& context) noexcept {
   return context_names()[context];
 }
 
@@ -90,23 +90,23 @@ std::vector<xtd::drawing::size> system_images_base::sizes() noexcept {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
 
-image system_images_base::from_name(const xtd::ustring& name) {
+image system_images_base::from_name(const xtd::string& name) {
   return from_name(default_theme(), name, default_size());
 }
 
-image system_images_base::from_name(const xtd::ustring& name, const xtd::drawing::size& size) {
+image system_images_base::from_name(const xtd::string& name, const xtd::drawing::size& size) {
   return from_name(default_theme(), name, size);
 }
 
-image system_images_base::from_name(const xtd::ustring& theme, const xtd::ustring& name) {
+image system_images_base::from_name(const xtd::string& theme, const xtd::string& name) {
   return from_name(theme, name, default_size());
 }
 
-image system_images_base::from_name(const ustring& theme, const ustring& name, const size& size) {
+image system_images_base::from_name(const string& theme, const string& name, const size& size) {
   static auto default_sizes = std::vector<drawing::size> {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
-  static auto default_size_names = std::vector<ustring> {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
+  static auto default_size_names = std::vector<string> {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
-  auto theme_name = theme.replace(" (dark)", ustring::empty_string).replace(" (light)", ustring::empty_string);
+  auto theme_name = theme.replace(" (dark)", string::empty_string).replace(" (light)", string::empty_string);
   
   auto theme_path = directory::exists(path::combine(system_images_base_resource_path(), theme_name)) ? path::combine(system_images_base_resource_path(), theme_name) : path::combine(system_images_base_resource_path(), default_theme());
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
@@ -139,15 +139,15 @@ image system_images_base::from_name(const ustring& theme, const ustring& name, c
   return image::empty;
 }
 
-ustring system_images_base::default_theme() noexcept {
+string system_images_base::default_theme() noexcept {
   static auto default_theme = xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();
   return default_theme;
 }
 
-ustring system_images_base::fallback_theme() noexcept {
+string system_images_base::fallback_theme() noexcept {
   return "symbolic";
 }
 
-std::vector<ustring> system_images_base::themes() noexcept {
+std::vector<string> system_images_base::themes() noexcept {
   return {"gnome", "gnome (dark)", "gnome (light)", "kde", "kde (dark)", "kde (light)", "macos", "macos (dark)", "macos (light)", "symbolic", "symbolic (dark)", "symbolic (light)", "windows", "windows (dark)", "windows (light)", "xtd", "xtd (dark)", "xtd (light)"};
 }

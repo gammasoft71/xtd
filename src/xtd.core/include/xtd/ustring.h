@@ -3,9 +3,9 @@
 #pragma once
 /// @cond
 #if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/ustring.h> - Will be removed in version 0.4.0")
+#  pragma message("Deprecated : Replaced by #include <xtd/string.h> - Will be removed in version 0.4.0")
 #else
-#  warning "Deprecated : Replaced by #include <xtd/ustring.h> - Will be removed in version 0.4.0"
+#  warning "Deprecated : Replaced by #include <xtd/string.h> - Will be removed in version 0.4.0"
 #endif
 #include "string.h"
 
@@ -23,5 +23,5 @@ namespace xtd {
   /// @remarks xtd::ustring cannot inherit from xtd::iequatable <xtd::ustring> because [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) defines the [== and != operators](https://en.cppreference.com/w/cpp/string/basic_string/operator_cmp).
   /// @todo replace all `class::ustring;` definitions by `class xtd::string;` when switching class `xtd::ustring` an alias `xtd::string` to class `xtd::string` and alias `xtd::ustring`
   /// @deprecated Replaced by xtd::string - Will be removed in version 0.4.0
-  //using ustring [[deprecated("Replaced by xtd::string - Will be removed in version 0.4.0")]] = xtd::string;
+  using ustring [[deprecated("Replaced by xtd::string - Will be removed in version 0.4.0")]] = xtd::string;
 }

@@ -15,15 +15,15 @@ struct icon::data {
   xtd::drawing::size size;
 };
 
-icon::icon(const ustring& filename) : data_(xtd::new_sptr<data>()) {
+icon::icon(const string& filename) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(filename);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon(const xtd::ustring& filename, const xtd::drawing::size& size) : icon(filename, size.width(), size.height()) {
+icon::icon(const xtd::string& filename, const xtd::drawing::size& size) : icon(filename, size.width(), size.height()) {
 }
 
-icon::icon(const xtd::ustring& filename, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
+icon::icon(const xtd::string& filename, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(filename, width, height);
   data_->size = {width, height};
 }
@@ -107,7 +107,7 @@ icon icon::from_bitmap(const bitmap& bitmap) {
   return icon(bitmap);
 }
 
-void icon::save(const ustring& filename) const {
+void icon::save(const string& filename) const {
   native::icon::save(data_->handle, filename);
 }
 
@@ -119,6 +119,6 @@ bitmap icon::to_bitmap() const {
   return image::from_hbitmap(native::icon::to_image(data_->handle));
 }
 
-xtd::ustring icon::to_string() const noexcept {
+xtd::string icon::to_string() const noexcept {
   return get_type().full_name();
 }

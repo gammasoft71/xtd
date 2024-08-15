@@ -4,8 +4,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct create_params::data {
-  xtd::ustring caption;
-  xtd::ustring class_name;
+  xtd::string caption;
+  xtd::string class_name;
   size_t class_style = 0;
   size_t ex_style = 0;
   drawing::point location;
@@ -27,20 +27,20 @@ create_params& create_params::operator =(const create_params& other) {
   return *this;
 }
 
-const xtd::ustring& create_params::caption() const noexcept {
+const xtd::string& create_params::caption() const noexcept {
   return data_->caption;
 }
 
-create_params& create_params::caption(const xtd::ustring& caption) {
+create_params& create_params::caption(const xtd::string& caption) {
   data_->caption = caption;
   return *this;
 }
 
-const xtd::ustring& create_params::class_name() const noexcept {
+const xtd::string& create_params::class_name() const noexcept {
   return data_->class_name;
 }
 
-create_params& create_params::class_name(const xtd::ustring& class_name) {
+create_params& create_params::class_name(const xtd::string& class_name) {
   data_->class_name = class_name;
   return *this;
 }
@@ -145,6 +145,6 @@ create_params& create_params::y(int32 y) {
   return *this;
 }
 
-xtd::ustring create_params::to_string() const noexcept {
-  return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x(), data_->location.y(), data_->size.width(), data_->size.height());
+xtd::string create_params::to_string() const noexcept {
+  return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x(), data_->location.y(), data_->size.width(), data_->size.height());
 }

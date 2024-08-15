@@ -103,7 +103,7 @@ collapsible_panel collapsible_panel::create(const drawing::point& location, cons
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.location(location);
   result.size(size);
@@ -111,20 +111,20 @@ collapsible_panel collapsible_panel::create(const drawing::point& location, cons
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text) {
+collapsible_panel collapsible_panel::create(const xtd::string& text) {
   auto result = collapsible_panel {};
   result.text(text);
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, const drawing::point& location) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, const drawing::point& location) {
   auto result = collapsible_panel {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = collapsible_panel {};
   result.text(text);
   result.location(location);
@@ -132,7 +132,7 @@ collapsible_panel collapsible_panel::create(const xtd::ustring& text, const draw
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.text(text);
   result.location(location);
@@ -141,14 +141,14 @@ collapsible_panel collapsible_panel::create(const xtd::ustring& text, const draw
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, bool expanded) {
   auto result = collapsible_panel {};
   result.text(text);
   result.expanded(expanded);
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded, const drawing::point& location) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, bool expanded, const drawing::point& location) {
   auto result = collapsible_panel {};
   result.text(text);
   result.expanded(expanded);
@@ -156,7 +156,7 @@ collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expan
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size) {
   auto result = collapsible_panel {};
   result.text(text);
   result.expanded(expanded);
@@ -165,7 +165,7 @@ collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expan
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.text(text);
   result.expanded(expanded);
@@ -196,7 +196,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const drawing
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.location(location);
@@ -205,14 +205,14 @@ collapsible_panel collapsible_panel::create(const control& parent, const drawing
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, const drawing::point& location) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -220,7 +220,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -229,7 +229,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -239,7 +239,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, bool expanded) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -247,7 +247,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -256,7 +256,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -266,7 +266,7 @@ collapsible_panel collapsible_panel::create(const control& parent, const xtd::us
   return result;
 }
 
-collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = collapsible_panel {};
   result.parent(parent);
   result.text(text);
@@ -296,7 +296,7 @@ forms::create_params collapsible_panel::create_params() const noexcept {
 
 xtd::uptr<xtd::object> collapsible_panel::clone() const {
   auto result = xtd::new_uptr<collapsible_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

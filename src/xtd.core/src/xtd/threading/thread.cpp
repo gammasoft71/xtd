@@ -36,7 +36,7 @@ struct thread::data {
   bool joinable {false};
   int32 managed_thread_id {unmanaged_thread_id};
   int32 max_stack_size {0};
-  xtd::ustring name;
+  xtd::string name;
   std::any parameter;
   xtd::threading::parameterized_thread_start parameterized_thread_start;
   xtd::threading::thread_priority priority {xtd::threading::thread_priority::normal};
@@ -161,11 +161,11 @@ int32 thread::managed_thread_id() const noexcept {
   return data_->managed_thread_id;
 }
 
-ustring thread::name() const noexcept {
+string thread::name() const noexcept {
   return data_->name;
 }
 
-thread& thread::name(const ustring& value) {
+thread& thread::name(const string& value) {
   if (value == data_->name) return *this;
   data_->name = value;
   if (get_current_thread_id() == data_->thread_id) native::thread::set_current_thread_name(value);

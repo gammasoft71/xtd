@@ -44,7 +44,7 @@ namespace xtd::forms::native {
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
 
-    //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", typeof_<control_t>().full_name(), to_string(event)));
+    //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, string::format("control_wrapper<{}>::ProcessEvent {}", typeof_<control_t>().full_name(), to_string(event)));
     
     // keyboard events
     if (event.GetEventType() == wxEVT_CHAR) wx_evt_char(event);
@@ -372,12 +372,12 @@ namespace xtd::forms::native {
       {wxEVT_COMMAND_LEFT_CLICK, "wxEVT_COMMAND_LEFT_CLICK"}, {wxEVT_COMMAND_LEFT_DCLICK, "wxEVT_COMMAND_LEFT_DCLICK"}, {wxEVT_COMMAND_RIGHT_CLICK, "wxEVT_COMMAND_RIGHT_CLICK"}, {wxEVT_COMMAND_RIGHT_DCLICK, "wxEVT_COMMAND_RIGHT_DCLICK"}, {wxEVT_COMMAND_SET_FOCUS, "wxEVT_COMMAND_SET_FOCUS"}, {wxEVT_COMMAND_KILL_FOCUS, "wxEVT_COMMAND_KILL_FOCUS"}, {wxEVT_COMMAND_ENTER, "wxEVT_COMMAND_ENTER"},
       {wxEVT_HELP, "wxEVT_HELP"}, {wxEVT_DETAILED_HELP, "wxEVT_DETAILED_HELP"},};
     auto it = eventTypes.find(eventType);
-    return ustring::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
+    return string::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
   }
   
   template<typename control_t>
   inline std::string control_wrapper<control_t>::to_string(const wxEvent& event) {
-    return ustring::format("{} {{type={}, id={}}}", typeof_<control_t>().full_name(), to_string(event.GetEventType()), event.GetId());
+    return string::format("{} {{type={}, id={}}}", typeof_<control_t>().full_name(), to_string(event.GetEventType()), event.GetId());
   }
   
   template<typename control_t>

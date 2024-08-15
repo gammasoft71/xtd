@@ -282,7 +282,7 @@ tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_
   return result;
 }
 
-tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name) {
   auto result = tool_bar {};
   result.image_list().images().push_back_range(image_collection);
   result.name(name);
@@ -302,7 +302,7 @@ tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_
   return result;
 }
 
-tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name) {
   auto result = tool_bar {};
   result.dock(style);
   result.image_list().images().push_back_range(image_collection);
@@ -323,7 +323,7 @@ tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_
   return result;
 }
 
-tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name) {
   auto result = tool_bar {};
   result.image_list().images().push_back_range(image_collection);
   result.buttons().push_back_range(buttons);
@@ -346,7 +346,7 @@ tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_
   return result;
 }
 
-tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name) {
   auto result = tool_bar {};
   result.dock(style);
   result.image_list().images().push_back_range(image_collection);
@@ -368,7 +368,7 @@ tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::i
   return result;
 }
 
-tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name) {
   auto result = tool_bar {};
   result.parent(parent);
   result.image_list().images().push_back_range(image_collection);
@@ -391,7 +391,7 @@ tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, c
   return result;
 }
 
-tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::string& name) {
   auto result = tool_bar {};
   result.parent(parent);
   result.dock(style);
@@ -415,7 +415,7 @@ tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::i
   return result;
 }
 
-tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name) {
   auto result = tool_bar {};
   result.parent(parent);
   result.image_list().images().push_back_range(image_collection);
@@ -441,7 +441,7 @@ tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, c
   return result;
 }
 
-tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::string& name) {
   auto result = tool_bar {};
   result.parent(parent);
   result.dock(style);
@@ -481,7 +481,7 @@ drawing::size tool_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> tool_bar::clone() const {
   auto result = xtd::new_uptr<tool_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
@@ -677,7 +677,7 @@ void tool_bar::resize_stretchable_separtors() {
   }
 }
 
-void tool_bar::update_toolbar_button_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+void tool_bar::update_toolbar_button_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!handle) return;
   if (is_system_tool_bar())
     native::tool_bar::update_tool_bar_item(this->handle(), handle, text, tool_tip_text, image, pushed, enabled, visible);

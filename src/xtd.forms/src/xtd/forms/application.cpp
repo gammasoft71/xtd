@@ -35,8 +35,8 @@ struct __init_process_message_box_message__ {
     xtd::diagnostics::process::message_box_message_ = {*this, &__init_process_message_box_message__::__show_message_box__};
   }
 
-  void __show_message_box__(const ustring& file_name) {
-    xtd::forms::message_box::show(ustring::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
+  void __show_message_box__(const string& file_name) {
+    xtd::forms::message_box::show(string::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
   }
 
   void __force_compiler_optimizer_to_create_object__() {
@@ -125,13 +125,13 @@ void application::button_images(bool value) {
   native::application::enable_button_images(value);
 }
 
-xtd::ustring application::common_app_data_path() noexcept {
+xtd::string application::common_app_data_path() noexcept {
   auto common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
   try {
     if (!io::directory::exists(common_app_data_path))
       io::directory::create_directory(common_app_data_path);
   } catch (...) {
-    assert_(io::directory::exists(common_app_data_path), ustring::format("The {} path does not exist.", common_app_data_path));
+    assert_(io::directory::exists(common_app_data_path), string::format("The {} path does not exist.", common_app_data_path));
   }
   return common_app_data_path;
 }
@@ -142,7 +142,7 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 }
  */
 
-xtd::ustring application::company_name() noexcept {
+xtd::string application::company_name() noexcept {
   try {
     if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
     return assembly::get_executing_assembly().company();
@@ -165,11 +165,11 @@ void application::dark_mode(bool value) {
   native::application::enable_dark_mode(value);
 }
 
-xtd::ustring application::executable_name() noexcept {
+xtd::string application::executable_name() noexcept {
   return io::path::get_file_name(application::executable_path());
 }
 
-xtd::ustring application::executable_path() noexcept {
+xtd::string application::executable_path() noexcept {
   return assembly::get_executing_assembly().location();
 }
 
@@ -247,17 +247,17 @@ const form_collection application::open_forms() noexcept {
    */
 }
 
-xtd::ustring application::product_name() noexcept {
+xtd::string application::product_name() noexcept {
   if (assembly::get_executing_assembly().product() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
   return assembly::get_executing_assembly().product();
 }
 
-xtd::ustring application::product_version() noexcept {
-  if (assembly::get_executing_assembly().version() == "") return ustring("0.0.0");
+xtd::string application::product_version() noexcept {
+  if (assembly::get_executing_assembly().version() == "") return string("0.0.0");
   return assembly::get_executing_assembly().version();
 }
 
-xtd::ustring application::startup_path() noexcept {
+xtd::string application::startup_path() noexcept {
   return assembly::get_executing_assembly().location_path();
 }
 
@@ -301,13 +301,13 @@ const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() n
   return xtd::forms::style_sheets::style_sheet::system_style_sheet();
 }
 
-xtd::ustring application::user_app_data_path() noexcept {
+xtd::string application::user_app_data_path() noexcept {
   auto user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
   try {
     if (!io::directory::exists(user_app_data_path))
       io::directory::create_directory(user_app_data_path);
   } catch (...) {
-    assert_(io::directory::exists(user_app_data_path), ustring::format("The {} path does not exist.", user_app_data_path));
+    assert_(io::directory::exists(user_app_data_path), string::format("The {} path does not exist.", user_app_data_path));
   }
   return user_app_data_path;
 }
@@ -385,7 +385,7 @@ void application::exit_thread() {
   native::application::exit();
 }
 
-xtd::forms::style_sheets::style_sheet application::get_style_sheet_from_name(const xtd::ustring& name) {
+xtd::forms::style_sheets::style_sheet application::get_style_sheet_from_name(const xtd::string& name) {
   return xtd::forms::style_sheets::style_sheet::get_style_sheet_from_name(name);
 }
 
@@ -418,7 +418,7 @@ void application::run() {
 
 void application::run(xtd::forms::application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, csf_);
-  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw invalid_operation_exception {xtd::ustring::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()), csf_};
+  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw invalid_operation_exception {xtd::string::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()), csf_};
 
   context_ = &context;
   context.thread_exit += application::on_app_thread_exit;

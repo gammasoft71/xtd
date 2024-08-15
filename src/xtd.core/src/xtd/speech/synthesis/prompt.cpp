@@ -5,14 +5,14 @@ using namespace xtd;
 using namespace xtd::speech::synthesis;
 
 struct prompt::data {
-  ustring text_to_speak;
+  string text_to_speak;
   const speech_synthesizer* synthesizer = nullptr;
 };
 
-prompt::prompt() : prompt(ustring::empty_string) {
+prompt::prompt() : prompt(string::empty_string) {
 }
 
-prompt::prompt(const ustring& text_to_speak) : data_(xtd::new_sptr<data>()) {
+prompt::prompt(const string& text_to_speak) : data_(xtd::new_sptr<data>()) {
   data_->text_to_speak = text_to_speak;
 }
 
@@ -20,7 +20,7 @@ bool prompt::is_completed() const noexcept {
   return !data_->synthesizer ? true : data_->synthesizer->state() == synthesizer_state::ready;
 }
 
-xtd::ustring& prompt::text_to_speak() noexcept {
+xtd::string& prompt::text_to_speak() noexcept {
   return data_->text_to_speak;
 }
 

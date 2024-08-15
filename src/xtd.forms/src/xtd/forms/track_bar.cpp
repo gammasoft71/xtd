@@ -137,7 +137,7 @@ track_bar track_bar::create(const drawing::point& location, const drawing::size&
   return result;
 }
 
-track_bar track_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.location(location);
   result.size(size);
@@ -166,7 +166,7 @@ track_bar track_bar::create(int32 value, const drawing::point& location, const d
   return result;
 }
 
-track_bar track_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.value(value);
   result.location(location);
@@ -199,7 +199,7 @@ track_bar track_bar::create(int32 value, int32 maximum, const drawing::point& lo
   return result;
 }
 
-track_bar track_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.maximum(maximum);
   result.value(value);
@@ -236,7 +236,7 @@ track_bar track_bar::create(int32 value, int32 minimum, int32 maximum, const dra
   return result;
 }
 
-track_bar track_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.minimum(minimum);
   result.maximum(maximum);
@@ -268,7 +268,7 @@ track_bar track_bar::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-track_bar track_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.parent(parent);
   result.location(location);
@@ -301,7 +301,7 @@ track_bar track_bar::create(const control& parent, int32 value, const drawing::p
   return result;
 }
 
-track_bar track_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.parent(parent);
   result.value(value);
@@ -338,7 +338,7 @@ track_bar track_bar::create(const control& parent, int32 value, int32 maximum, c
   return result;
 }
 
-track_bar track_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.parent(parent);
   result.maximum(maximum);
@@ -379,7 +379,7 @@ track_bar track_bar::create(const control& parent, int32 value, int32 minimum, i
   return result;
 }
 
-track_bar track_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+track_bar track_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = track_bar {};
   result.parent(parent);
   result.minimum(minimum);
@@ -396,8 +396,8 @@ void track_bar::set_range(int32 min_value, int32 max_value) {
   maximum(min_value > max_value ? min_value : max_value);
 }
 
-xtd::ustring track_bar::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
+xtd::string track_bar::to_string() const noexcept {
+  return string::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 forms::create_params track_bar::create_params() const noexcept {
@@ -422,7 +422,7 @@ drawing::size track_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> track_bar::clone() const {
   auto result = xtd::new_uptr<track_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

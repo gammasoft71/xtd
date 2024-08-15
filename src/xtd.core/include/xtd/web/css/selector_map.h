@@ -10,7 +10,7 @@ namespace xtd {
   namespace web {
     namespace css {
       /// @brief Represents the map of a selector name - selector pair.
-      using selector_map = std::map<xtd::ustring, xtd::web::css::selector>;
+      using selector_map = std::map<xtd::string, xtd::web::css::selector>;
     }
   }
 }

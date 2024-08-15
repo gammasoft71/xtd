@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_trademark_attribute::assembly_trademark_attribute(const ustring& trademark) : trademark_(trademark) {
+assembly_trademark_attribute::assembly_trademark_attribute(const string& trademark) : trademark_(trademark) {
 }
 
-assembly_trademark_attribute::assembly_trademark_attribute(const ustring& trademark, const object& executing_assembly) : trademark_(trademark) {
+assembly_trademark_attribute::assembly_trademark_attribute(const string& trademark, const object& executing_assembly) : trademark_(trademark) {
   __assembly_trademark_attribute__() = xtd::new_sptr<xtd::reflection::assembly_trademark_attribute>(trademark);
 }
 
-const ustring& assembly_trademark_attribute::trademark() const noexcept {
+const string& assembly_trademark_attribute::trademark() const noexcept {
   return trademark_;
 }
 

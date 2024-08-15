@@ -223,7 +223,7 @@ namespace xtd {
         /// @param points An array of xtd::drawing::point structures that represents the points to transform.
         void vector_transform_points(std::vector<xtd::drawing::point>& points);
         
-        xtd::ustring to_string() const noexcept override;
+        xtd::string to_string() const noexcept override;
         /// @}
         
       private:

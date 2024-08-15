@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// uint64 result = as<uint64>(value);
   /// ```
   template<>
-  inline uint64 as<uint64>(const xtd::ustring& value) {
+  inline uint64 as<uint64>(const xtd::string& value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// uint64 result = as<uint64>(value);
   /// ```
   template<>
-  inline uint64 as<uint64>(xtd::ustring& value) {
+  inline uint64 as<uint64>(xtd::string& value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// uint64 result = as<uint64>(value, 16);
   /// ```
   template<>
-  inline uint64 as<uint64>(const xtd::ustring& value, xtd::byte from_base) {
+  inline uint64 as<uint64>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_uint64(value, from_base);
   }
   

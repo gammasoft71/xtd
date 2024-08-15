@@ -12,13 +12,13 @@ namespace keycodes {
     /// @brief Initializes a new instance of the form1 class.
     key_press_control();
     
-    key_press_control& key_char(const xtd::ustring& value);
-    key_press_control& key_data(const xtd::ustring& value);
+    key_press_control& key_char(const xtd::string& value);
+    key_press_control& key_data(const xtd::string& value);
     
   protected:
     xtd::uptr<xtd::object> clone() const override {
       auto result = xtd::new_uptr<key_press_control>(*this);
-      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
       return result;
     }
 

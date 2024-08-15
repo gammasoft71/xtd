@@ -3,14 +3,14 @@
 using namespace xtd;
 using namespace xtd::reflection;
 
-assembly_guid_attribute::assembly_guid_attribute(const ustring& guid) : guid_(guid) {
+assembly_guid_attribute::assembly_guid_attribute(const string& guid) : guid_(guid) {
 }
 
-assembly_guid_attribute::assembly_guid_attribute(const ustring& guid, const object& executing_assembly) : guid_(guid) {
+assembly_guid_attribute::assembly_guid_attribute(const string& guid, const object& executing_assembly) : guid_(guid) {
   __assembly_guid_attribute__() = xtd::new_sptr<xtd::reflection::assembly_guid_attribute>(guid);
 }
 
-const ustring& assembly_guid_attribute::guid() const noexcept {
+const string& assembly_guid_attribute::guid() const noexcept {
   return guid_;
 }
 

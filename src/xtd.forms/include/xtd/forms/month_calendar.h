@@ -409,7 +409,7 @@ namespace xtd {
       /// @remarks If you set the date1 parameter greater than the date2 parameter, both dates are set to the date1 value.
       void set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2);
       
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       
       /// @brief Repaints the bold dates to reflect the dates set in the lists of bold dates.
       /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
@@ -436,7 +436,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified value.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @return New xtd::forms::month_calendar created.
@@ -458,7 +458,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, and minimum date.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param max_date The maximum date and time that can be selected in the control.
@@ -484,7 +484,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, and maximum date.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
@@ -514,7 +514,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -545,7 +545,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, and value.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -574,7 +574,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, and maximum date.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -607,7 +607,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, and maximum date.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -644,7 +644,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

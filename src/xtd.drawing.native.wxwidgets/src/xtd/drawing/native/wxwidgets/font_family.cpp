@@ -31,17 +31,17 @@ namespace {
   #endif
 }
 
-intptr font_family::create(const ustring& name) {
+intptr font_family::create(const string& name) {
   toolkit::initialize(); // Must be first
-  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr>(new ustring(name));
-  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr>(new ustring(name)) : 0;
+  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr>(new string(name));
+  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr>(new string(name)) : 0;
 }
 
 void font_family::destroy(intptr font_family) {
-  delete reinterpret_cast<ustring*>(font_family);
+  delete reinterpret_cast<string*>(font_family);
 }
 
-ustring font_family::generic_serif_name() {
+string font_family::generic_serif_name() {
   toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
@@ -60,7 +60,7 @@ ustring font_family::generic_serif_name() {
   #endif
 }
 
-ustring font_family::generic_sans_serif_name() {
+string font_family::generic_sans_serif_name() {
   toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
@@ -79,7 +79,7 @@ ustring font_family::generic_sans_serif_name() {
   #endif
 }
 
-ustring font_family::generic_monospace_name() {
+string font_family::generic_monospace_name() {
   toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
@@ -98,9 +98,9 @@ ustring font_family::generic_monospace_name() {
   #endif
 }
 
-std::vector<ustring> font_family::installed_font_families() {
+std::vector<string> font_family::installed_font_families() {
   toolkit::initialize(); // Must be first
-  std::vector<ustring> families;
+  std::vector<string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
     if (name[0] != '@') families.push_back(name.c_str().AsWChar());
   std::sort(families.begin(), families.end());
@@ -111,7 +111,7 @@ int32 font_family::get_cell_ascent(intptr font_family, int32 em_height, bool bol
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -124,7 +124,7 @@ int32 font_family::get_cell_descent(intptr font_family, int32 em_height, bool bo
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -137,7 +137,7 @@ int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bo
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -146,9 +146,9 @@ int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bo
   return std::round(static_cast<double>(metrics.height + metrics.externalLeading) / metrics.height * em_height);
 }
 
-ustring font_family::get_name(intptr font_family, int32 language) {
+string font_family::get_name(intptr font_family, int32 language) {
   toolkit::initialize(); // Must be first
-  return *reinterpret_cast<ustring*>(font_family);
+  return *reinterpret_cast<string*>(font_family);
 }
 
 bool font_family::is_style_available(intptr font_family, bool bold, bool italic, bool underline, bool strikeout) {

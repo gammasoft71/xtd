@@ -4,13 +4,13 @@
 #pragma once
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Specifies whether applicable xtd::ustring::split method overloads include or omit empty substrings from the return value.
+  /// @brief Specifies whether applicable xtd::string::split method overloads include or omit empty substrings from the return value.
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see xtd::ustring
+  /// @see xtd::string
   enum class string_split_options {
     /// @brief The return value includes array elements that contain an empty string.
     none,

@@ -63,12 +63,12 @@ namespace xtd {
   /// date_time date3 = date_time::today();
   /// ```
   ///
-  ///    * By parsing the xtd::ustring representation of a date and time value. The xtd::date_time::parse, xtd::date_time::parse_exact, xtd::date_time::try_parse, and xtd::date_time::try_parse_exact methods all convert a xtd::ustring to its equivalent date and time value. The following example uses the xtd::date_time::parse method to parse a xtd::ustring and convert it to a xtd::date_time value.
+  ///    * By parsing the xtd::string representation of a date and time value. The xtd::date_time::parse, xtd::date_time::parse_exact, xtd::date_time::try_parse, and xtd::date_time::try_parse_exact methods all convert a xtd::string to its equivalent date and time value. The following example uses the xtd::date_time::parse method to parse a xtd::string and convert it to a xtd::date_time value.
   /// ```cpp
-  /// ustring date_string = "5/1/2008 8:30:52";
+  /// string date_string = "5/1/2008 8:30:52";
   /// date_time date1 = date_time::parse(date_string);
   /// ```
-  /// Note that the xtd::date_time::try_parse and xtd::date_time::try_parse_exact methods indicate whether a particular xtd::ustring contains a valid representation of a xtd::date_time value in addition to performing the conversion.
+  /// Note that the xtd::date_time::try_parse and xtd::date_time::try_parse_exact methods indicate whether a particular xtd::string contains a valid representation of a xtd::date_time value in addition to performing the conversion.
   ///
   ///    * By calling the xtd::date_time structure's implicit default constructor. The following example illustrates a call to the xtd::date_time implicit default constructor.
   /// ```cpp
@@ -303,7 +303,7 @@ namespace xtd {
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
     /// ```
-    /// @remarks The value of the xtd::date_time::hour property is always expressed using a 24-hour clock. To retrieve a string that represents the hour of a date and time using a 12-hour clock, call the xtd::date_time::to_string(ustring) method with the "x" format specifier. For example:
+    /// @remarks The value of the xtd::date_time::hour property is always expressed using a 24-hour clock. To retrieve a string that represents the hour of a date and time using a 12-hour clock, call the xtd::date_time::to_string(string) method with the "x" format specifier. For example:
     /// ```cpp
     /// date_time date1(2008, 4, 1, 18, 53, 0);
     /// console::write_line(date1.to_string("X"));                                   // Displays 6
@@ -613,7 +613,7 @@ namespace xtd {
     
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
-    std::vector<ustring> get_date_time_formats() const noexcept;
+    std::vector<string> get_date_time_formats() const noexcept;
     
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
     /// @return true if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
@@ -691,36 +691,36 @@ namespace xtd {
     
     /// @brief Converts the value of the current xtd::date_time object to its equivalent long date string representation.
     /// @return A string that contains the long date string representation of the current xtd::date_time object.
-    /// @remarks The return value is identical to the value returned by specifying the "n" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
-    const xtd::ustring to_long_date_string() const;
+    /// @remarks The return value is identical to the value returned by specifying the "n" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::string&) method.
+    const xtd::string to_long_date_string() const;
     
     /// @brief Converts the value of the current xtd::date_time object to its equivalent long time string representation.
     /// @return A string that contains the long time string representation of the current xtd::date_time object.
-    /// @remarks The return value is identical to the value returned by specifying the "T" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
-    const xtd::ustring to_long_time_string() const;
+    /// @remarks The return value is identical to the value returned by specifying the "T" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::string&) method.
+    const xtd::string to_long_time_string() const;
     
     /// @brief Converts the value of the current xtd::date_time object to its equivalent short date string representation.
     /// @return A string that contains the short date string representation of the current xtd::date_time object.
-    /// @remarks The return value is identical to the value returned by specifying the "D" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
-    const xtd::ustring to_short_date_string() const;
+    /// @remarks The return value is identical to the value returned by specifying the "D" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::string&) method.
+    const xtd::string to_short_date_string() const;
     
     /// @brief Converts the value of the current xtd::date_time object to its equivalent short time string representation.
     /// @return A string that contains the short time string representation of the current xtd::date_time object.
-    /// @remarks The return value is identical to the value returned by specifying the "V" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
-    const xtd::ustring to_short_time_string() const;
+    /// @remarks The return value is identical to the value returned by specifying the "V" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::string&) method.
+    const xtd::string to_short_time_string() const;
     
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the formatting conventions of the current culture.
     /// @return A string representation of the value of the current xtd::date_time object.
-    /// @remarks The return value is identical to the value returned by specifying the "G" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
-    xtd::ustring to_string() const noexcept override;
+    /// @remarks The return value is identical to the value returned by specifying the "G" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::string&) method.
+    xtd::string to_string() const noexcept override;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
     /// @param format A standard or custom date and time format string.
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
+    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
     /// @include date_time_to_string_format.cpp
-    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::ustring&) are listed below:
+    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::string&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'a'    | writes "PM" or "AM"                                                                                                         |
@@ -769,16 +769,16 @@ namespace xtd {
     /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
     /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
     /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
-    xtd::ustring to_string(const ustring& format) const;
+    xtd::string to_string(const string& format) const;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
     /// @param format A standard or custom date and time format string.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
+    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
     /// @include date_time_to_string_format.cpp
-    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::ustring&) are listed below:
+    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::string&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'a'    | writes "PM" or "AM"                                                                                                         |
@@ -827,7 +827,7 @@ namespace xtd {
     /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
     /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
     /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
-    xtd::ustring to_string(const ustring& format, const std::locale& loc) const override;
+    xtd::string to_string(const string& format, const std::locale& loc) const override;
 
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @return The value of the current xtd::date_time object expressed as [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
@@ -871,7 +871,7 @@ namespace xtd {
     /// @brief Gets the current date.
     /// @return An object that is set to today's date, with the time component set to 00:00:00.
     /// @par Examples
-    /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::ustring&) method uses the g format specifier to include the time component, which is zero.
+    /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::string&) method uses the g format specifier to include the time component, which is zero.
     /// @include date_time_today.cpp
     /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::local.
     /// @remarks Because it returns the current date without the current time, the xtd::date_time::today property is suitable for use in applications that work with dates only. In contrast, the xtd::date_time::time_of_day property returns the current time without the current date, and the xtd::date_timextd::date_timextd::date_time::now property returns both the current date and the current time.
@@ -1014,7 +1014,7 @@ namespace xtd {
     /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a xtd::date_time value whose Kind property is DateTimeKind.Unspecified.
     /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
     /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
-    static date_time parse(const xtd::ustring& s);
+    static date_time parse(const xtd::string& s);
     
     /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
     /// @param value A date and time.
@@ -1025,10 +1025,10 @@ namespace xtd {
     /// @include date_time_specify_kind.cpp
     static date_time specify_kind(const date_time& value, date_time_kind kind);
     
-    /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
+    /// @brief Returns a xtd::string that represents the current xtd::date_time.
     /// @param format Format-control String.
     /// @param value The xtd::date_time object to format.
-    /// @return A xtd::ustring that represents the current xtd::date_time.
+    /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
     /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
     /// @include date_time_sprintf.cpp
@@ -1092,14 +1092,14 @@ namespace xtd {
     /// | \%n    | writes newline character.                                                                                                   |
     /// | \%t    | writes horizontal tab character.                                                                                            |
     /// @remarks See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.
-    static xtd::ustring sprintf(const ustring& format, const date_time& value);
+    static xtd::string sprintf(const string& format, const date_time& value);
 
     /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param s A string containing a date and time to convert.
     /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
     /// @return true if the s parameter was converted successfully; otherwise, false.
     /// @remarks The xtd::date_time::try_parse method is similar to the xtd::date_time::parse method, except that the xtd::date_time::try_parse method does not throw an exception if the conversion fails.
-    static bool try_parse(const ustring& s, date_time& result) noexcept;
+    static bool try_parse(const string& s, date_time& result) noexcept;
     /// @}
     
     /// @cond

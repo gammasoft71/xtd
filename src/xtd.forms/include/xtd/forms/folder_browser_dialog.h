@@ -57,12 +57,12 @@ namespace xtd {
       /// @brief Gets the descriptive text displayed above the tree view control in the dialog box.
       /// @return The description to display. The default is an empty string ("").
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      const xtd::ustring& description() const noexcept;
+      const xtd::string& description() const noexcept;
       /// @brief Sets the descriptive text displayed above the tree view control in the dialog box.
       /// @param value The description to display. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      folder_browser_dialog& description(const xtd::ustring& value);
+      folder_browser_dialog& description(const xtd::string& value);
       
       /// @brief Gets the root folder where the browsing starts from.
       /// @return One of the environment::special_folder values. The default is environment::special_folder::desktop.
@@ -77,13 +77,13 @@ namespace xtd {
       /// @return The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      const xtd::ustring& selected_path() const noexcept;
+      const xtd::string& selected_path() const noexcept;
       /// @brief Sets the path selected by the user.
       /// @param value The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      folder_browser_dialog& selected_path(const xtd::ustring& value);
+      folder_browser_dialog& selected_path(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the New Folder button appears in the folder browser dialog box.
       /// @return true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.

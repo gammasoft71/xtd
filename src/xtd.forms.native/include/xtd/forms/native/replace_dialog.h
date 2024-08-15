@@ -55,7 +55,7 @@ namespace xtd {
         /// @param dialog_closed A delegate that will be invoked when the dialog is closed.
         /// @param return The replace dialog handle.
         /// @warning Internal use only
-        static intptr create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, const xtd::ustring& replace_string, bool show_whole_word, bool show_match_case, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed);
+        static intptr create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::string& title, const xtd::string& find_string, const xtd::string& replace_string, bool show_whole_word, bool show_match_case, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::string&, const xtd::string&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::string&, const xtd::string&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed);
         /// @brief Hides replace dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only

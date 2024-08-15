@@ -76,11 +76,11 @@ namespace xtd {
       
       std::optional<xtd::forms::message_notifier_button> notifier_button_clicked() const noexcept { return notifier_button_clicked_; }
       
-      xtd::ustring title() const noexcept { return title_; }
-      message_notifier& title(const xtd::ustring& title) noexcept { title_ = title; return *this; }
+      xtd::string title() const noexcept { return title_; }
+      message_notifier& title(const xtd::string& title) noexcept { title_ = title; return *this; }
       
-      xtd::ustring message() const noexcept { return message_; }
-      message_notifier& message(const xtd::ustring& message) noexcept { message_ = message; return *this; }
+      xtd::string message() const noexcept { return message_; }
+      message_notifier& message(const xtd::string& message) noexcept { message_ = message; return *this; }
       
       const xtd::drawing::image& icon() const noexcept { return icon_; }
       message_notifier& icon(const xtd::drawing::image& icon) noexcept { icon_ = icon; return *this; }
@@ -113,8 +113,8 @@ namespace xtd {
       }
       
     private:
-      xtd::ustring title_;
-      xtd::ustring message_;
+      xtd::string title_;
+      xtd::string message_;
       xtd::drawing::image icon_ = xtd::drawing::image::empty;
       bool close_timeout_enabled_ = false;
       std::chrono::milliseconds close_timeout_interval_ = std::chrono::milliseconds(10'000);

@@ -36,63 +36,63 @@ namespace xtd {
       /// @{
       /// @brief Gets company name information.
       /// @return A string containing the company name.
-      const ustring& company() const noexcept;
+      const string& company() const noexcept;
       
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
-      const ustring& configuration() const noexcept;
+      const string& configuration() const noexcept;
       
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
       /// @param copyright The copyright information.
-      const ustring& copyright() const noexcept;
+      const string& copyright() const noexcept;
       
       /// @brief Gets culture information.
       /// @return A string containing the culture information.
-      const ustring& culture() const noexcept;
+      const string& culture() const noexcept;
       
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
-      const ustring& description() const noexcept;
+      const string& description() const noexcept;
       
       /// @brief Gets file version information.
       /// @return A string containing the file version information.
-      const ustring& file_version() const noexcept;
+      const string& file_version() const noexcept;
       
       /// @brief Gets guid information.
       /// @return A string containing the guid information.
-      const ustring& guid() const noexcept;
+      const string& guid() const noexcept;
       
       /// @brief Gets identifier information.
       /// @return A string containing the identifier information.
-      const ustring& identifier() const noexcept;
+      const string& identifier() const noexcept;
       
       /// @brief Gets the location of the executable file.
       /// @return A string containing the location_of the executable file.
-      ustring location() const noexcept;
+      string location() const noexcept;
       
       /// @brief Gets name information.
       /// @return A string containing the name information.
-      const ustring& name() const noexcept;
+      const string& name() const noexcept;
       
       /// @brief Gets product information.
       /// @return A string containing the product information.
-      const ustring& product() const noexcept;
+      const string& product() const noexcept;
 
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
-      ustring location_path() const noexcept;
+      string location_path() const noexcept;
 
       /// @brief Gets title information.
       /// @return A string containing the title information.
-      const ustring& title() const noexcept;
+      const string& title() const noexcept;
       
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
-      const ustring& trademarks() const noexcept;
+      const string& trademarks() const noexcept;
       
       /// @brief Gets version information.
       /// @return A string containing the version information.
-      const ustring& version() const noexcept;
+      const string& version() const noexcept;
       /// @}
       
       /// @name Static ethods
@@ -113,19 +113,19 @@ namespace xtd {
       /// @}
       
     private:
-      ustring company_;
-      ustring configuration_;
-      ustring copyright_;
-      ustring culture_;
-      ustring description_;
-      ustring file_version_;
-      ustring guid_;
-      ustring identifier_;
-      ustring name_;
-      ustring product_;
-      ustring title_;
-      ustring trademarks_;
-      ustring version_;
+      string company_;
+      string configuration_;
+      string copyright_;
+      string culture_;
+      string description_;
+      string file_version_;
+      string guid_;
+      string identifier_;
+      string name_;
+      string product_;
+      string title_;
+      string trademarks_;
+      string version_;
     };
   }
 }

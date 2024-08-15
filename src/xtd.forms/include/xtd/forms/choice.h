@@ -89,7 +89,7 @@ namespace xtd {
       using list_control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const xtd::ustring& text) override;
+      control& text(const xtd::string& text) override;
       /// @}
       
       /// @name Public Methods
@@ -124,7 +124,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::choice with specified items.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @return New xtd::forms::choice created.
@@ -146,7 +146,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::choice with specified items, and selected_index.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
@@ -172,7 +172,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::choice with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @return New xtd::forms::choice created.
@@ -194,7 +194,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::choice with specified parent, and items.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
@@ -220,7 +220,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, and selected_index.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
@@ -250,7 +250,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static choice create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:

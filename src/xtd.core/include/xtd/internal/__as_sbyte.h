@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// sbyte result = as<sbyte>(value);
   /// ```
   template<>
-  inline sbyte as<sbyte>(const xtd::ustring& value) {
+  inline sbyte as<sbyte>(const xtd::string& value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// sbyte result = as<sbyte>(value);
   /// ```
   template<>
-  inline sbyte as<sbyte>(xtd::ustring& value) {
+  inline sbyte as<sbyte>(xtd::string& value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// sbyte result = as<sbyte>(value, 16);
   /// ```
   template<>
-  inline sbyte as<sbyte>(const xtd::ustring& value, xtd::byte from_base) {
+  inline sbyte as<sbyte>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_sbyte(value, from_base);
   }
   

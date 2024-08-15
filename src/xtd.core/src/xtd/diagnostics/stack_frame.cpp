@@ -52,23 +52,23 @@ stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32 line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const string& file_name, uint32 line_number) : file_name_(file_name), file_line_number_(line_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32 line_number, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, uint32 line_number, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name, uint32 column_number, uint32 offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
+stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name, uint32 column_number, uint32 offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
 }
 
 stack_frame stack_frame::empty() noexcept {
-  return {ustring::empty_string, 0, ustring::empty_string, 0, OFFSET_UNKNOWN};
+  return {string::empty_string, 0, string::empty_string, 0, OFFSET_UNKNOWN};
 }
 
 bool stack_frame::equals(const stack_frame& sf) const noexcept {
@@ -83,11 +83,11 @@ uint32 stack_frame::get_file_line_number() const noexcept {
   return file_line_number_;
 }
 
-const ustring& stack_frame::get_file_name() const noexcept {
+const string& stack_frame::get_file_name() const noexcept {
   return file_name_;
 }
 
-const ustring& stack_frame::get_method() const noexcept {
+const string& stack_frame::get_method() const noexcept {
   return method_name_;
 }
 
@@ -95,19 +95,19 @@ uint32 stack_frame::get_offset() const noexcept {
   return offset_;
 }
 
-ustring stack_frame::to_string() const noexcept {
+string stack_frame::to_string() const noexcept {
   if (*this == empty()) return "";
-  return ustring::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
+  return string::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
-std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
+std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, size_t skip_frames, bool need_file_info) noexcept {
   auto call_stack = native::stack_trace::get_frames(2);
   auto skip_frames_before_str = 0_z;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.size();
     for (auto index = 0_z; index < call_stack.size(); ++index) {
       auto [file, line, column, function, offset] = call_stack[index];
-      if (ustring {function}.starts_with(str)) {
+      if (string {function}.starts_with(str)) {
         skip_frames_before_str = index;
         break;
       }
@@ -120,7 +120,7 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
     auto [file, line, column, function, offset] = call_stack[index];
     auto skip = false;
     for (auto starting_str : {"__startup__::run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
-      if (ustring(function).starts_with(starting_str)) skip = true;
+      if (string(function).starts_with(starting_str)) skip = true;
     if (skip) continue;
     stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? static_cast<uint32>(line) : 0, function, need_file_info ? static_cast<uint32>(column) : 0, static_cast<uint32>(offset)));
   }

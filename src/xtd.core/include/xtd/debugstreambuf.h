@@ -28,7 +28,7 @@ namespace xtd {
       #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
       if (!str().empty()) {
         if (str() == "\n") xtd::diagnostics::debug::write_line();
-        else if (xtd::ustring(str()).ends_with('\n')) xtd::diagnostics::debug::write_line(xtd::ustring(str()).trim_end('\n'));
+        else if (xtd::string(str()).ends_with('\n')) xtd::diagnostics::debug::write_line(xtd::string(str()).trim_end('\n'));
         else xtd::diagnostics::debug::write(str());
         str("");
       }

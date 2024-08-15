@@ -53,7 +53,7 @@ namespace xtd {
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr create(intptr menu, const xtd::ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut);
+        static intptr create(intptr menu, const xtd::string& text, const xtd::drawing::image& image, int32 kind, size_t shortcut);
         /// @brief Destroys menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
@@ -73,7 +73,7 @@ namespace xtd {
         /// @param text The text associated with this menu_item.
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @warning Internal use only
-        static void text(intptr menu_item, const xtd::ustring& text, size_t shortcut);
+        static void text(intptr menu_item, const xtd::string& text, size_t shortcut);
         /// @}
       };
     }

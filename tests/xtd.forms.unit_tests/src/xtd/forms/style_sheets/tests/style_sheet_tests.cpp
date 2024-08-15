@@ -11,25 +11,25 @@ using namespace xtd::tunit;
 
 class __test_style_sheet__ static_ {
 public:
-  static border_color border_color_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const border_color& result) noexcept {
+  static border_color border_color_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const border_color& result) noexcept {
     return style_sheet.border_color_from_css(css_text, result);
   }
-  static style_sheets::border_style border_style_from_css(style_sheets::style_sheet& style_sheet, const ustring& css_text, const style_sheets::border_style& default_value) noexcept {
+  static style_sheets::border_style border_style_from_css(style_sheets::style_sheet& style_sheet, const string& css_text, const style_sheets::border_style& default_value) noexcept {
     return style_sheet.border_style_from_css(css_text, default_value);
   }
-  static xtd::drawing::color color_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const xtd::drawing::color& default_value) noexcept {
+  static xtd::drawing::color color_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const xtd::drawing::color& default_value) noexcept {
     return style_sheet.color_from_css(css_text, default_value);
   }
-  static background_image background_image_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const background_image& default_value) noexcept {
+  static background_image background_image_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const background_image& default_value) noexcept {
     return style_sheet.background_image_from_css(css_text, default_value);
   }
-  static length length_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const length& default_value) noexcept {
+  static length length_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const length& default_value) noexcept {
     return style_sheet.length_from_css(css_text, default_value);
   }
-  static xtd::ustring string_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const xtd::ustring& default_value) noexcept {
+  static xtd::string string_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const xtd::string& default_value) noexcept {
     return style_sheet.string_from_css(css_text, default_value);
   }
-  static xtd::uri uri_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const xtd::uri& default_value) noexcept {
+  static xtd::uri uri_from_css(style_sheets::style_sheet& style_sheet, const xtd::string& css_text, const xtd::uri& default_value) noexcept {
     return style_sheet.uri_from_css(css_text, default_value);
   }
 };

@@ -477,11 +477,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// uint32 result = as<uint32>(value);
   /// ```
   template<>
-  inline uint32 as<uint32>(const xtd::ustring& value) {
+  inline uint32 as<uint32>(const xtd::string& value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -500,11 +500,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "42";
+  /// string value = "42";
   /// uint32 result = as<uint32>(value);
   /// ```
   template<>
-  inline uint32 as<uint32>(xtd::ustring& value) {
+  inline uint32 as<uint32>(xtd::string& value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -524,11 +524,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// ustring value = "0x2A";
+  /// string value = "0x2A";
   /// uint32 result = as<uint32>(value, 16);
   /// ```
   template<>
-  inline uint32 as<uint32>(const xtd::ustring& value, xtd::byte from_base) {
+  inline uint32 as<uint32>(const xtd::string& value, xtd::byte from_base) {
     return xtd::convert::to_uint32(value, from_base);
   }
   

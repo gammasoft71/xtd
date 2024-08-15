@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
-      explicit stream_reader(const xtd::ustring& path);
+      explicit stream_reader(const xtd::string& path);
       /// @brief Initializes a new instance of the stream_reader class for the specified stream.
       /// @param stream The stream to be read.
       explicit stream_reader(std::istream& stream);

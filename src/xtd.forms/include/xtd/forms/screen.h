@@ -51,7 +51,7 @@ namespace xtd {
       /// @brief Gets the device name associated with a display.
       /// @return The device name associated with a display.
       /// @remarks This string may contain non-printable characters.
-      const xtd::ustring& device_name() const;
+      const xtd::string& device_name() const;
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return true if this display is high resolution; otherwise, false.
@@ -174,11 +174,11 @@ namespace xtd {
       
     private:
       screen() = default;
-      screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area);
+      screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::string& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area);
       
       int32 bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
-      xtd::ustring device_name_;
+      xtd::string device_name_;
       int32 pixels_per_inch_ = 96;
       bool primary_ = false;
       double scale_factor_ = 1.;

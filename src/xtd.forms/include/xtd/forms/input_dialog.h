@@ -76,19 +76,19 @@ namespace xtd {
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring message() const noexcept;
+      xtd::string message() const noexcept;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current input_dialog instance.
-      input_dialog& message(const xtd::ustring& message);
+      input_dialog& message(const xtd::string& message);
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::ustring text() const noexcept;
+      xtd::string text() const noexcept;
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      input_dialog& text(const xtd::ustring& text);
+      input_dialog& text(const xtd::string& text);
       
       /// @brief Gets use system password char status.
       /// @return true if dialog text box use system password char status; otherwise false.
@@ -102,11 +102,11 @@ namespace xtd {
       
       /// @brief Gets the value.
       /// @return The value.
-      xtd::ustring value() const noexcept;
+      xtd::string value() const noexcept;
       /// @brief Sets the value.
       /// @param value The value.
       /// @return Current input_dialog instance.
-      input_dialog& value(const xtd::ustring& value);
+      input_dialog& value(const xtd::string& value);
       
       /// @brief Gets word wrap status.
       /// @return true if dialog text box is word wrap; otherwise false.

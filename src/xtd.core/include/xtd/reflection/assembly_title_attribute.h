@@ -29,25 +29,25 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_title_attribute class.
       /// @param title The title information.
-      explicit assembly_title_attribute(const ustring& title);
+      explicit assembly_title_attribute(const string& title);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_title_attribute(const ustring& title, const object& executing_assembly);
+      assembly_title_attribute(const string& title, const object& executing_assembly);
       /// @endcond
       
       /// @{
       /// @brief Gets title information.
       /// @return A string containing the title information.
-      const ustring& title() const noexcept;
+      const string& title() const noexcept;
       /// @}
       
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
-      ustring title_;
+      string title_;
     };
   }
 }

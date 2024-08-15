@@ -81,11 +81,11 @@ status_bar_panel& status_bar_panel::min_width(int32 value) {
   return *this;
 }
 
-const ustring& status_bar_panel::name() const noexcept {
+const string& status_bar_panel::name() const noexcept {
   return data_->name;
 }
 
-status_bar_panel& status_bar_panel::name(const xtd::ustring& value) {
+status_bar_panel& status_bar_panel::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
@@ -114,22 +114,22 @@ status_bar_panel& status_bar_panel::tag(std::any value) {
   return *this;
 }
 
-const ustring& status_bar_panel::text() const noexcept {
+const string& status_bar_panel::text() const noexcept {
   return data_->text;
 }
 
-status_bar_panel& status_bar_panel::text(const xtd::ustring& value) {
+status_bar_panel& status_bar_panel::text(const xtd::string& value) {
   if (data_->text == value) return *this;
   data_->text = value;
   if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
   return *this;
 }
 
-const ustring& status_bar_panel::tool_tip_text() const noexcept {
+const string& status_bar_panel::tool_tip_text() const noexcept {
   return data_->tool_tip_text;
 }
 
-status_bar_panel& status_bar_panel::tool_tip_text(const xtd::ustring& value) {
+status_bar_panel& status_bar_panel::tool_tip_text(const xtd::string& value) {
   if (data_->tool_tip_text == value) return *this;
   data_->tool_tip_text = value;
   if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
@@ -151,7 +151,7 @@ void status_bar_panel::begin_init() {
   data_->init_mode = true;
 }
 
-status_bar_panel status_bar_panel::create_control(const xtd::ustring& text, const xtd::forms::control& control) {
+status_bar_panel status_bar_panel::create_control(const xtd::string& text, const xtd::forms::control& control) {
   auto result = status_bar_panel {};
   result.control(control);
   result.style(xtd::forms::status_bar_panel_style::control);
@@ -166,7 +166,7 @@ status_bar_panel status_bar_panel::create_control(const xtd::forms::control& con
   return result;
 }
 
-status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text) {
+status_bar_panel status_bar_panel::create_panel(const xtd::string& text) {
   auto result = status_bar_panel {};
   result.style(xtd::forms::status_bar_panel_style::text);
   result.text(text);
@@ -180,7 +180,7 @@ status_bar_panel status_bar_panel::create_panel(const xtd::drawing::image& image
   return result;
 }
 
-status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text, const xtd::drawing::image& image) {
+status_bar_panel status_bar_panel::create_panel(const xtd::string& text, const xtd::drawing::image& image) {
   auto result = status_bar_panel {};
   result.image(image);
   result.style(xtd::forms::status_bar_panel_style::text);
@@ -197,14 +197,14 @@ void status_bar_panel::end_init() {
   if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
 }
 
-xtd::ustring status_bar_panel::to_string() const noexcept {
-  if (!data_->text.empty()) return ustring::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
-  if (!data_->name.empty()) return ustring::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
-  return ustring::format("{}, style: {}", get_type().full_name(), data_->style);
+xtd::string status_bar_panel::to_string() const noexcept {
+  if (!data_->text.empty()) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
+  if (!data_->name.empty()) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
+  return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 
 xtd::uptr<xtd::object> status_bar_panel::clone() const {
   auto result = xtd::new_uptr<status_bar_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

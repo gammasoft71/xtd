@@ -42,7 +42,7 @@ const xtd::byte& socket_address::operator [](size_t index) const {
   return bytes_[index];
 }
 
-ustring socket_address::to_string() const noexcept {
-  return ustring::format("{}:{}:{{{}}}", address_family(), size(), size() <= 2 ? "" : ustring::join(",", bytes_, 2, size() - 2));
+string socket_address::to_string() const noexcept {
+  return string::format("{}:{}:{{{}}}", address_family(), size(), size() <= 2 ? "" : string::join(",", bytes_, 2, size() - 2));
 }
 

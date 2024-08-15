@@ -7,63 +7,63 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::reflection;
 
-const ustring& assembly::company() const noexcept {
+const string& assembly::company() const noexcept {
   return company_;
 }
 
-const ustring& assembly::configuration() const noexcept {
+const string& assembly::configuration() const noexcept {
   return configuration_;
 }
 
-const ustring& assembly::copyright() const noexcept {
+const string& assembly::copyright() const noexcept {
   return copyright_;
 }
 
-const ustring& assembly::culture() const noexcept {
+const string& assembly::culture() const noexcept {
   return culture_;
 }
 
-const ustring& assembly::description() const noexcept {
+const string& assembly::description() const noexcept {
   return description_;
 }
 
-const ustring& assembly::file_version() const noexcept {
+const string& assembly::file_version() const noexcept {
   return file_version_;
 }
 
-const ustring& assembly::guid() const noexcept {
+const string& assembly::guid() const noexcept {
   return guid_;
 }
 
-const ustring& assembly::identifier() const noexcept {
+const string& assembly::identifier() const noexcept {
   return identifier_;
 }
 
-ustring assembly::location() const noexcept {
+string assembly::location() const noexcept {
   return environment::get_command_line_args()[0];
 }
 
-const ustring& assembly::name() const noexcept {
+const string& assembly::name() const noexcept {
   return name_;
 }
 
-const ustring& assembly::product() const noexcept {
+const string& assembly::product() const noexcept {
   return product_;
 }
 
-ustring assembly::location_path() const noexcept {
+string assembly::location_path() const noexcept {
   return path::get_directory_name(location());
 }
 
-const ustring& assembly::title() const noexcept {
+const string& assembly::title() const noexcept {
   return title_;
 }
 
-const ustring& assembly::trademarks() const noexcept {
+const string& assembly::trademarks() const noexcept {
   return trademarks_;
 }
 
-const ustring& assembly::version() const noexcept {
+const string& assembly::version() const noexcept {
   return version_;
 }
 

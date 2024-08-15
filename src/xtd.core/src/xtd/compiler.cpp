@@ -11,10 +11,10 @@ compiler::compiler(xtd::compiler_id compiler_id, const xtd::version& version, xt
   if (!enum_object<>::is_defined(compiler_id)) throw argument_exception {csf_};
 }
 
-xtd::ustring compiler::additional_information() const noexcept {
+xtd::string compiler::additional_information() const noexcept {
   if (compiler_id() == xtd::compiler_id::msvc) return get_msvc_additional_information();
   if (compiler_id() == xtd::compiler_id::apple_clang) return get_apple_clang_additional_information();
-  return ustring::empty_string;
+  return string::empty_string;
 }
 
 xtd::build_type compiler::build_type() const noexcept {
@@ -33,26 +33,26 @@ bool compiler::is_64_bit() noexcept {
   return is_64_bit_;
 }
 
-xtd::ustring compiler::name() const noexcept {
-  static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::msvc, "MSVC"}, {compiler_id::clang, "Clang"}, {compiler_id::gcc, "GCC"}, {compiler_id::apple_clang, "Apple Clang"}};
+xtd::string compiler::name() const noexcept {
+  static std::map<xtd::compiler_id, xtd::string> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::msvc, "MSVC"}, {compiler_id::clang, "Clang"}, {compiler_id::gcc, "GCC"}, {compiler_id::apple_clang, "Apple Clang"}};
   return names[compiler_id()];
 }
 
-xtd::ustring compiler::version_string() const noexcept {
+xtd::string compiler::version_string() const noexcept {
   if (compiler_id() == xtd::compiler_id::apple_clang || compiler_id() == xtd::compiler_id::clang) return get_compiler_version_string("clang");
   if (compiler_id() == xtd::compiler_id::gcc) return get_compiler_version_string("gcc");
-  return ustring::format("{} {}", name(), version());
+  return string::format("{} {}", name(), version());
 }
 
 const xtd::version& compiler::version() const noexcept {
   return version_;
 }
 
-xtd::ustring compiler::to_string() const noexcept {
+xtd::string compiler::to_string() const noexcept {
   return version_string();
 }
 
-xtd::ustring compiler::get_apple_clang_additional_information() const noexcept {
+xtd::string compiler::get_apple_clang_additional_information() const noexcept {
   // https://en.wikipedia.org/wiki/Xcode
   auto version_string = get_compiler_version_string("clang");
   if (version_string.contains("15.0.0 (clang-1500.3.9.4)")) return "Xcode 15.3";
@@ -162,20 +162,20 @@ xtd::ustring compiler::get_apple_clang_additional_information() const noexcept {
   return "Xcode";
 }
 
-xtd::ustring compiler::get_compiler_version_string(const xtd::ustring& compiler_name) const noexcept {
-  static auto version_string = ustring::empty_string;
-  if (!ustring::is_empty(version_string)) return version_string;
+xtd::string compiler::get_compiler_version_string(const xtd::string& compiler_name) const noexcept {
+  static auto version_string = string::empty_string;
+  if (!string::is_empty(version_string)) return version_string;
   try {
     auto psi = process_start_info {compiler_name, "--version"};
     auto p = process::start(psi.use_shell_execute(false).redirect_standard_output(true)).wait_for_exit();
     version_string = stream_reader(p.standard_output()).read_line();
   } catch(...) {
-    version_string = ustring::format("{} {}", name(), version());
+    version_string = string::format("{} {}", name(), version());
   }
   return version_string;
 }
 
-xtd::ustring compiler::get_msvc_additional_information() const noexcept {
+xtd::string compiler::get_msvc_additional_information() const noexcept {
   // https://learn.microsoft.com/fr-fr/cpp/overview/compiler-versions?view=msvc-170
   if (version().major() == 19 && version().minor() == 40) return "Visual Studio 20222 version 17.10";
   if (version().major() == 19 && version().minor() == 39) return "Visual Studio 2022 version 17.9";

@@ -17,7 +17,7 @@ label labels::abort(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::abort(), location, size);
 }
 
-label labels::abort(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::abort(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::abort(), location, size, name);
 }
 
@@ -33,7 +33,7 @@ label labels::abort(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::abort(), location, size);
 }
 
-label labels::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::abort(), location, size, name);
 }
 
@@ -49,7 +49,7 @@ label labels::about(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::about(), location, size);
 }
 
-label labels::about(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::about(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::about(), location, size, name);
 }
 
@@ -65,7 +65,7 @@ label labels::about(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::about(), location, size);
 }
 
-label labels::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::about(), location, size, name);
 }
 
@@ -81,7 +81,7 @@ label labels::actual_size(const drawing::point& location, const drawing::size& s
   return label::create(texts::actual_size(), location, size);
 }
 
-label labels::actual_size(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::actual_size(), location, size, name);
 }
 
@@ -97,7 +97,7 @@ label labels::actual_size(const control& parent, const drawing::point& location,
   return label::create(parent, texts::actual_size(), location, size);
 }
 
-label labels::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::actual_size(), location, size, name);
 }
 
@@ -113,7 +113,7 @@ label labels::add(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::add(), location, size);
 }
 
-label labels::add(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::add(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::add(), location, size, name);
 }
 
@@ -129,7 +129,7 @@ label labels::add(const control& parent, const drawing::point& location, const d
   return label::create(parent, texts::add(), location, size);
 }
 
-label labels::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::add(), location, size, name);
 }
 
@@ -145,7 +145,7 @@ label labels::alignment(const drawing::point& location, const drawing::size& siz
   return label::create(texts::alignment(), location, size);
 }
 
-label labels::alignment(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::alignment(), location, size, name);
 }
 
@@ -161,7 +161,7 @@ label labels::alignment(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::alignment(), location, size);
 }
 
-label labels::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::alignment(), location, size, name);
 }
 
@@ -177,7 +177,7 @@ label labels::align_left(const drawing::point& location, const drawing::size& si
   return label::create(texts::align_left(), location, size);
 }
 
-label labels::align_left(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::align_left(), location, size, name);
 }
 
@@ -193,7 +193,7 @@ label labels::align_left(const control& parent, const drawing::point& location, 
   return label::create(parent, texts::align_left(), location, size);
 }
 
-label labels::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::align_left(), location, size, name);
 }
 
@@ -209,7 +209,7 @@ label labels::align_right(const drawing::point& location, const drawing::size& s
   return label::create(texts::align_right(), location, size);
 }
 
-label labels::align_right(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::align_right(), location, size, name);
 }
 
@@ -225,7 +225,7 @@ label labels::align_right(const control& parent, const drawing::point& location,
   return label::create(parent, texts::align_right(), location, size);
 }
 
-label labels::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::align_right(), location, size, name);
 }
 
@@ -241,7 +241,7 @@ label labels::apply(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::apply(), location, size);
 }
 
-label labels::apply(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::apply(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::apply(), location, size, name);
 }
 
@@ -257,7 +257,7 @@ label labels::apply(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::apply(), location, size);
 }
 
-label labels::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::apply(), location, size, name);
 }
 
@@ -273,7 +273,7 @@ label labels::ascending(const drawing::point& location, const drawing::size& siz
   return label::create(texts::ascending(), location, size);
 }
 
-label labels::ascending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::ascending(), location, size, name);
 }
 
@@ -289,7 +289,7 @@ label labels::ascending(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::ascending(), location, size);
 }
 
-label labels::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::ascending(), location, size, name);
 }
 
@@ -305,7 +305,7 @@ label labels::back(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::back(), location, size);
 }
 
-label labels::back(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::back(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::back(), location, size, name);
 }
 
@@ -321,7 +321,7 @@ label labels::back(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::back(), location, size);
 }
 
-label labels::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::back(), location, size, name);
 }
 
@@ -337,7 +337,7 @@ label labels::bold(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::bold(), location, size);
 }
 
-label labels::bold(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::bold(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::bold(), location, size, name);
 }
 
@@ -353,7 +353,7 @@ label labels::bold(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::bold(), location, size);
 }
 
-label labels::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::bold(), location, size, name);
 }
 
@@ -369,7 +369,7 @@ label labels::bottom(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::bottom(), location, size);
 }
 
-label labels::bottom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::bottom(), location, size, name);
 }
 
@@ -385,7 +385,7 @@ label labels::bottom(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::bottom(), location, size);
 }
 
-label labels::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::bottom(), location, size, name);
 }
 
@@ -401,7 +401,7 @@ label labels::cancel(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::cancel(), location, size);
 }
 
-label labels::cancel(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::cancel(), location, size, name);
 }
 
@@ -417,7 +417,7 @@ label labels::cancel(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::cancel(), location, size);
 }
 
-label labels::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::cancel(), location, size, name);
 }
 
@@ -433,7 +433,7 @@ label labels::cdrom(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::cdrom(), location, size);
 }
 
-label labels::cdrom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::cdrom(), location, size, name);
 }
 
@@ -449,7 +449,7 @@ label labels::cdrom(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::cdrom(), location, size);
 }
 
-label labels::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::cdrom(), location, size, name);
 }
 
@@ -465,7 +465,7 @@ label labels::centered(const drawing::point& location, const drawing::size& size
   return label::create(texts::centered(), location, size);
 }
 
-label labels::centered(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::centered(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::centered(), location, size, name);
 }
 
@@ -481,7 +481,7 @@ label labels::centered(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::centered(), location, size);
 }
 
-label labels::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::centered(), location, size, name);
 }
 
@@ -497,7 +497,7 @@ label labels::clear(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::clear(), location, size);
 }
 
-label labels::clear(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::clear(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::clear(), location, size, name);
 }
 
@@ -513,7 +513,7 @@ label labels::clear(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::clear(), location, size);
 }
 
-label labels::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::clear(), location, size, name);
 }
 
@@ -529,7 +529,7 @@ label labels::close(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::close(), location, size);
 }
 
-label labels::close(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::close(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::close(), location, size, name);
 }
 
@@ -545,7 +545,7 @@ label labels::close(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::close(), location, size);
 }
 
-label labels::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::close(), location, size, name);
 }
 
@@ -561,7 +561,7 @@ label labels::color(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::color(), location, size);
 }
 
-label labels::color(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::color(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::color(), location, size, name);
 }
 
@@ -577,7 +577,7 @@ label labels::color(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::color(), location, size);
 }
 
-label labels::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::color(), location, size, name);
 }
 
@@ -593,7 +593,7 @@ label labels::contents(const drawing::point& location, const drawing::size& size
   return label::create(texts::contents(), location, size);
 }
 
-label labels::contents(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::contents(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::contents(), location, size, name);
 }
 
@@ -609,7 +609,7 @@ label labels::contents(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::contents(), location, size);
 }
 
-label labels::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::contents(), location, size, name);
 }
 
@@ -625,7 +625,7 @@ label labels::convert(const drawing::point& location, const drawing::size& size)
   return label::create(texts::convert(), location, size);
 }
 
-label labels::convert(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::convert(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::convert(), location, size, name);
 }
 
@@ -641,7 +641,7 @@ label labels::convert(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::convert(), location, size);
 }
 
-label labels::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::convert(), location, size, name);
 }
 
@@ -657,7 +657,7 @@ label labels::copy(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::copy(), location, size);
 }
 
-label labels::copy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::copy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::copy(), location, size, name);
 }
 
@@ -673,7 +673,7 @@ label labels::copy(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::copy(), location, size);
 }
 
-label labels::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::copy(), location, size, name);
 }
 
@@ -689,7 +689,7 @@ label labels::customize(const drawing::point& location, const drawing::size& siz
   return label::create(texts::customize(), location, size);
 }
 
-label labels::customize(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::customize(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::customize(), location, size, name);
 }
 
@@ -705,7 +705,7 @@ label labels::customize(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::customize(), location, size);
 }
 
-label labels::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::customize(), location, size, name);
 }
 
@@ -721,7 +721,7 @@ label labels::cut(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::cut(), location, size);
 }
 
-label labels::cut(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cut(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::cut(), location, size, name);
 }
 
@@ -737,7 +737,7 @@ label labels::cut(const control& parent, const drawing::point& location, const d
   return label::create(parent, texts::cut(), location, size);
 }
 
-label labels::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::cut(), location, size, name);
 }
 
@@ -753,7 +753,7 @@ label labels::del(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::del(), location, size);
 }
 
-label labels::del(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::del(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::del(), location, size, name);
 }
 
@@ -769,7 +769,7 @@ label labels::del(const control& parent, const drawing::point& location, const d
   return label::create(parent, texts::del(), location, size);
 }
 
-label labels::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::del(), location, size, name);
 }
 
@@ -785,7 +785,7 @@ label labels::descending(const drawing::point& location, const drawing::size& si
   return label::create(texts::descending(), location, size);
 }
 
-label labels::descending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::descending(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::descending(), location, size, name);
 }
 
@@ -801,7 +801,7 @@ label labels::descending(const control& parent, const drawing::point& location, 
   return label::create(parent, texts::descending(), location, size);
 }
 
-label labels::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::descending(), location, size, name);
 }
 
@@ -817,7 +817,7 @@ label labels::down(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::down(), location, size);
 }
 
-label labels::down(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::down(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::down(), location, size, name);
 }
 
@@ -833,7 +833,7 @@ label labels::down(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::down(), location, size);
 }
 
-label labels::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::down(), location, size, name);
 }
 
@@ -849,7 +849,7 @@ label labels::edit(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::edit(), location, size);
 }
 
-label labels::edit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::edit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::edit(), location, size, name);
 }
 
@@ -865,7 +865,7 @@ label labels::edit(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::edit(), location, size);
 }
 
-label labels::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::edit(), location, size, name);
 }
 
@@ -881,7 +881,7 @@ label labels::execute(const drawing::point& location, const drawing::size& size)
   return label::create(texts::execute(), location, size);
 }
 
-label labels::execute(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::execute(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::execute(), location, size, name);
 }
 
@@ -897,7 +897,7 @@ label labels::execute(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::execute(), location, size);
 }
 
-label labels::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::execute(), location, size, name);
 }
 
@@ -913,7 +913,7 @@ label labels::exit(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::exit(), location, size);
 }
 
-label labels::exit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::exit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::exit(), location, size, name);
 }
 
@@ -929,7 +929,7 @@ label labels::exit(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::exit(), location, size);
 }
 
-label labels::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::exit(), location, size, name);
 }
 
@@ -945,7 +945,7 @@ label labels::file(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::file(), location, size);
 }
 
-label labels::file(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::file(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::file(), location, size, name);
 }
 
@@ -961,7 +961,7 @@ label labels::file(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::file(), location, size);
 }
 
-label labels::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::file(), location, size, name);
 }
 
@@ -977,7 +977,7 @@ label labels::find(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::find(), location, size);
 }
 
-label labels::find(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::find(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::find(), location, size, name);
 }
 
@@ -993,7 +993,7 @@ label labels::find(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::find(), location, size);
 }
 
-label labels::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::find(), location, size, name);
 }
 
@@ -1009,7 +1009,7 @@ label labels::first(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::first(), location, size);
 }
 
-label labels::first(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::first(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::first(), location, size, name);
 }
 
@@ -1025,7 +1025,7 @@ label labels::first(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::first(), location, size);
 }
 
-label labels::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::first(), location, size, name);
 }
 
@@ -1041,7 +1041,7 @@ label labels::floppy(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::floppy(), location, size);
 }
 
-label labels::floppy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::floppy(), location, size, name);
 }
 
@@ -1057,7 +1057,7 @@ label labels::floppy(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::floppy(), location, size);
 }
 
-label labels::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::floppy(), location, size, name);
 }
 
@@ -1073,7 +1073,7 @@ label labels::font(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::font(), location, size);
 }
 
-label labels::font(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::font(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::font(), location, size, name);
 }
 
@@ -1089,7 +1089,7 @@ label labels::font(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::font(), location, size);
 }
 
-label labels::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::font(), location, size, name);
 }
 
@@ -1105,7 +1105,7 @@ label labels::forward(const drawing::point& location, const drawing::size& size)
   return label::create(texts::forward(), location, size);
 }
 
-label labels::forward(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::forward(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::forward(), location, size, name);
 }
 
@@ -1121,7 +1121,7 @@ label labels::forward(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::forward(), location, size);
 }
 
-label labels::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::forward(), location, size, name);
 }
 
@@ -1137,7 +1137,7 @@ label labels::harddisk(const drawing::point& location, const drawing::size& size
   return label::create(texts::harddisk(), location, size);
 }
 
-label labels::harddisk(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::harddisk(), location, size, name);
 }
 
@@ -1153,7 +1153,7 @@ label labels::harddisk(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::harddisk(), location, size);
 }
 
-label labels::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::harddisk(), location, size, name);
 }
 
@@ -1169,7 +1169,7 @@ label labels::help(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::help(), location, size);
 }
 
-label labels::help(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::help(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::help(), location, size, name);
 }
 
@@ -1185,7 +1185,7 @@ label labels::help(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::help(), location, size);
 }
 
-label labels::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::help(), location, size, name);
 }
 
@@ -1201,7 +1201,7 @@ label labels::home(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::home(), location, size);
 }
 
-label labels::home(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::home(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::home(), location, size, name);
 }
 
@@ -1217,7 +1217,7 @@ label labels::home(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::home(), location, size);
 }
 
-label labels::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::home(), location, size, name);
 }
 
@@ -1233,7 +1233,7 @@ label labels::ignore(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::ignore(), location, size);
 }
 
-label labels::ignore(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::ignore(), location, size, name);
 }
 
@@ -1249,7 +1249,7 @@ label labels::ignore(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::ignore(), location, size);
 }
 
-label labels::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::ignore(), location, size, name);
 }
 
@@ -1265,7 +1265,7 @@ label labels::indent(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::indent(), location, size);
 }
 
-label labels::indent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::indent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::indent(), location, size, name);
 }
 
@@ -1281,7 +1281,7 @@ label labels::indent(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::indent(), location, size);
 }
 
-label labels::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::indent(), location, size, name);
 }
 
@@ -1297,7 +1297,7 @@ label labels::index(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::index(), location, size);
 }
 
-label labels::index(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::index(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::index(), location, size, name);
 }
 
@@ -1313,7 +1313,7 @@ label labels::index(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::index(), location, size);
 }
 
-label labels::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::index(), location, size, name);
 }
 
@@ -1329,7 +1329,7 @@ label labels::info(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::info(), location, size);
 }
 
-label labels::info(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::info(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::info(), location, size, name);
 }
 
@@ -1345,7 +1345,7 @@ label labels::info(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::info(), location, size);
 }
 
-label labels::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::info(), location, size, name);
 }
 
@@ -1361,7 +1361,7 @@ label labels::italic(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::italic(), location, size);
 }
 
-label labels::italic(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::italic(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::italic(), location, size, name);
 }
 
@@ -1377,7 +1377,7 @@ label labels::italic(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::italic(), location, size);
 }
 
-label labels::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::italic(), location, size, name);
 }
 
@@ -1393,7 +1393,7 @@ label labels::justified(const drawing::point& location, const drawing::size& siz
   return label::create(texts::justified(), location, size);
 }
 
-label labels::justified(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::justified(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::justified(), location, size, name);
 }
 
@@ -1409,7 +1409,7 @@ label labels::justified(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::justified(), location, size);
 }
 
-label labels::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::justified(), location, size, name);
 }
 
@@ -1425,7 +1425,7 @@ label labels::jump_to(const drawing::point& location, const drawing::size& size)
   return label::create(texts::jump_to(), location, size);
 }
 
-label labels::jump_to(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::jump_to(), location, size, name);
 }
 
@@ -1441,7 +1441,7 @@ label labels::jump_to(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::jump_to(), location, size);
 }
 
-label labels::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::jump_to(), location, size, name);
 }
 
@@ -1457,7 +1457,7 @@ label labels::last(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::last(), location, size);
 }
 
-label labels::last(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::last(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::last(), location, size, name);
 }
 
@@ -1473,7 +1473,7 @@ label labels::last(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::last(), location, size);
 }
 
-label labels::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::last(), location, size, name);
 }
 
@@ -1489,7 +1489,7 @@ label labels::network(const drawing::point& location, const drawing::size& size)
   return label::create(texts::network(), location, size);
 }
 
-label labels::network(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::network(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::network(), location, size, name);
 }
 
@@ -1505,7 +1505,7 @@ label labels::network(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::network(), location, size);
 }
 
-label labels::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::network(), location, size, name);
 }
 
@@ -1521,7 +1521,7 @@ label labels::new_(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::new_(), location, size);
 }
 
-label labels::new_(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::new_(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::new_(), location, size, name);
 }
 
@@ -1537,7 +1537,7 @@ label labels::new_(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::new_(), location, size);
 }
 
-label labels::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::new_(), location, size, name);
 }
 
@@ -1553,7 +1553,7 @@ label labels::next(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::next(), location, size);
 }
 
-label labels::next(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::next(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::next(), location, size, name);
 }
 
@@ -1569,7 +1569,7 @@ label labels::next(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::next(), location, size);
 }
 
-label labels::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::next(), location, size, name);
 }
 
@@ -1585,7 +1585,7 @@ label labels::no(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::no(), location, size);
 }
 
-label labels::no(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::no(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::no(), location, size, name);
 }
 
@@ -1601,7 +1601,7 @@ label labels::no(const control& parent, const drawing::point& location, const dr
   return label::create(parent, texts::no(), location, size);
 }
 
-label labels::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::no(), location, size, name);
 }
 
@@ -1617,7 +1617,7 @@ label labels::ok(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::ok(), location, size);
 }
 
-label labels::ok(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ok(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::ok(), location, size, name);
 }
 
@@ -1633,7 +1633,7 @@ label labels::ok(const control& parent, const drawing::point& location, const dr
   return label::create(parent, texts::ok(), location, size);
 }
 
-label labels::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::ok(), location, size, name);
 }
 
@@ -1649,7 +1649,7 @@ label labels::open(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::open(), location, size);
 }
 
-label labels::open(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::open(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::open(), location, size, name);
 }
 
@@ -1665,7 +1665,7 @@ label labels::open(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::open(), location, size);
 }
 
-label labels::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::open(), location, size, name);
 }
 
@@ -1681,7 +1681,7 @@ label labels::options(const drawing::point& location, const drawing::size& size)
   return label::create(texts::options(), location, size);
 }
 
-label labels::options(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::options(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::options(), location, size, name);
 }
 
@@ -1697,7 +1697,7 @@ label labels::options(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::options(), location, size);
 }
 
-label labels::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::options(), location, size, name);
 }
 
@@ -1713,7 +1713,7 @@ label labels::paste(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::paste(), location, size);
 }
 
-label labels::paste(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::paste(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::paste(), location, size, name);
 }
 
@@ -1729,7 +1729,7 @@ label labels::paste(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::paste(), location, size);
 }
 
-label labels::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::paste(), location, size, name);
 }
 
@@ -1745,7 +1745,7 @@ label labels::preferences(const drawing::point& location, const drawing::size& s
   return label::create(texts::preferences(), location, size);
 }
 
-label labels::preferences(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::preferences(), location, size, name);
 }
 
@@ -1761,7 +1761,7 @@ label labels::preferences(const control& parent, const drawing::point& location,
   return label::create(parent, texts::preferences(), location, size);
 }
 
-label labels::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::preferences(), location, size, name);
 }
 
@@ -1777,7 +1777,7 @@ label labels::previous(const drawing::point& location, const drawing::size& size
   return label::create(texts::previous(), location, size);
 }
 
-label labels::previous(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::previous(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::previous(), location, size, name);
 }
 
@@ -1793,7 +1793,7 @@ label labels::previous(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::previous(), location, size);
 }
 
-label labels::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::previous(), location, size, name);
 }
 
@@ -1809,7 +1809,7 @@ label labels::print(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::print(), location, size);
 }
 
-label labels::print(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::print(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::print(), location, size, name);
 }
 
@@ -1825,7 +1825,7 @@ label labels::print(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::print(), location, size);
 }
 
-label labels::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::print(), location, size, name);
 }
 
@@ -1841,7 +1841,7 @@ label labels::print_preview(const drawing::point& location, const drawing::size&
   return label::create(texts::print_preview(), location, size);
 }
 
-label labels::print_preview(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::print_preview(), location, size, name);
 }
 
@@ -1857,7 +1857,7 @@ label labels::print_preview(const control& parent, const drawing::point& locatio
   return label::create(parent, texts::print_preview(), location, size);
 }
 
-label labels::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::print_preview(), location, size, name);
 }
 
@@ -1873,7 +1873,7 @@ label labels::properties(const drawing::point& location, const drawing::size& si
   return label::create(texts::properties(), location, size);
 }
 
-label labels::properties(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::properties(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::properties(), location, size, name);
 }
 
@@ -1889,7 +1889,7 @@ label labels::properties(const control& parent, const drawing::point& location, 
   return label::create(parent, texts::properties(), location, size);
 }
 
-label labels::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::properties(), location, size, name);
 }
 
@@ -1905,7 +1905,7 @@ label labels::quit(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::quit(), location, size);
 }
 
-label labels::quit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::quit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::quit(), location, size, name);
 }
 
@@ -1921,7 +1921,7 @@ label labels::quit(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::quit(), location, size);
 }
 
-label labels::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::quit(), location, size, name);
 }
 
@@ -1937,7 +1937,7 @@ label labels::redo(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::redo(), location, size);
 }
 
-label labels::redo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::redo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::redo(), location, size, name);
 }
 
@@ -1953,7 +1953,7 @@ label labels::redo(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::redo(), location, size);
 }
 
-label labels::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::redo(), location, size, name);
 }
 
@@ -1969,7 +1969,7 @@ label labels::refresh(const drawing::point& location, const drawing::size& size)
   return label::create(texts::refresh(), location, size);
 }
 
-label labels::refresh(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::refresh(), location, size, name);
 }
 
@@ -1985,7 +1985,7 @@ label labels::refresh(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::refresh(), location, size);
 }
 
-label labels::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::refresh(), location, size, name);
 }
 
@@ -2001,7 +2001,7 @@ label labels::remove(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::remove(), location, size);
 }
 
-label labels::remove(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::remove(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::remove(), location, size, name);
 }
 
@@ -2017,7 +2017,7 @@ label labels::remove(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::remove(), location, size);
 }
 
-label labels::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::remove(), location, size, name);
 }
 
@@ -2033,7 +2033,7 @@ label labels::replace(const drawing::point& location, const drawing::size& size)
   return label::create(texts::replace(), location, size);
 }
 
-label labels::replace(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::replace(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::replace(), location, size, name);
 }
 
@@ -2049,7 +2049,7 @@ label labels::replace(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::replace(), location, size);
 }
 
-label labels::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::replace(), location, size, name);
 }
 
@@ -2065,7 +2065,7 @@ label labels::retry(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::retry(), location, size);
 }
 
-label labels::retry(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::retry(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::retry(), location, size, name);
 }
 
@@ -2081,7 +2081,7 @@ label labels::retry(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::retry(), location, size);
 }
 
-label labels::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::retry(), location, size, name);
 }
 
@@ -2097,7 +2097,7 @@ label labels::revert_to_saved(const drawing::point& location, const drawing::siz
   return label::create(texts::revert_to_saved(), location, size);
 }
 
-label labels::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::revert_to_saved(), location, size, name);
 }
 
@@ -2113,7 +2113,7 @@ label labels::revert_to_saved(const control& parent, const drawing::point& locat
   return label::create(parent, texts::revert_to_saved(), location, size);
 }
 
-label labels::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::revert_to_saved(), location, size, name);
 }
 
@@ -2129,7 +2129,7 @@ label labels::save(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::save(), location, size);
 }
 
-label labels::save(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::save(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::save(), location, size, name);
 }
 
@@ -2145,7 +2145,7 @@ label labels::save(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::save(), location, size);
 }
 
-label labels::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::save(), location, size, name);
 }
 
@@ -2161,7 +2161,7 @@ label labels::save_as(const drawing::point& location, const drawing::size& size)
   return label::create(texts::save_as(), location, size);
 }
 
-label labels::save_as(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::save_as(), location, size, name);
 }
 
@@ -2177,7 +2177,7 @@ label labels::save_as(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::save_as(), location, size);
 }
 
-label labels::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::save_as(), location, size, name);
 }
 
@@ -2193,7 +2193,7 @@ label labels::search(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::search(), location, size);
 }
 
-label labels::search(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::search(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::search(), location, size, name);
 }
 
@@ -2209,7 +2209,7 @@ label labels::search(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::search(), location, size);
 }
 
-label labels::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::search(), location, size, name);
 }
 
@@ -2225,7 +2225,7 @@ label labels::select_all(const drawing::point& location, const drawing::size& si
   return label::create(texts::select_all(), location, size);
 }
 
-label labels::select_all(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::select_all(), location, size, name);
 }
 
@@ -2241,7 +2241,7 @@ label labels::select_all(const control& parent, const drawing::point& location, 
   return label::create(parent, texts::select_all(), location, size);
 }
 
-label labels::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::select_all(), location, size, name);
 }
 
@@ -2257,7 +2257,7 @@ label labels::settings(const drawing::point& location, const drawing::size& size
   return label::create(texts::settings(), location, size);
 }
 
-label labels::settings(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::settings(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::settings(), location, size, name);
 }
 
@@ -2273,7 +2273,7 @@ label labels::settings(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::settings(), location, size);
 }
 
-label labels::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::settings(), location, size, name);
 }
 
@@ -2289,7 +2289,7 @@ label labels::spell_check(const drawing::point& location, const drawing::size& s
   return label::create(texts::spell_check(), location, size);
 }
 
-label labels::spell_check(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::spell_check(), location, size, name);
 }
 
@@ -2305,7 +2305,7 @@ label labels::spell_check(const control& parent, const drawing::point& location,
   return label::create(parent, texts::spell_check(), location, size);
 }
 
-label labels::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::spell_check(), location, size, name);
 }
 
@@ -2321,7 +2321,7 @@ label labels::stop(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::stop(), location, size);
 }
 
-label labels::stop(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::stop(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::stop(), location, size, name);
 }
 
@@ -2337,7 +2337,7 @@ label labels::stop(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::stop(), location, size);
 }
 
-label labels::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::stop(), location, size, name);
 }
 
@@ -2353,7 +2353,7 @@ label labels::strikeout(const drawing::point& location, const drawing::size& siz
   return label::create(texts::strikeout(), location, size);
 }
 
-label labels::strikeout(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::strikeout(), location, size, name);
 }
 
@@ -2369,7 +2369,7 @@ label labels::strikeout(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::strikeout(), location, size);
 }
 
-label labels::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::strikeout(), location, size, name);
 }
 
@@ -2385,7 +2385,7 @@ label labels::tools(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::tools(), location, size);
 }
 
-label labels::tools(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::tools(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::tools(), location, size, name);
 }
 
@@ -2401,7 +2401,7 @@ label labels::tools(const control& parent, const drawing::point& location, const
   return label::create(parent, texts::tools(), location, size);
 }
 
-label labels::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::tools(), location, size, name);
 }
 
@@ -2417,7 +2417,7 @@ label labels::top(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::top(), location, size);
 }
 
-label labels::top(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::top(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::top(), location, size, name);
 }
 
@@ -2433,7 +2433,7 @@ label labels::top(const control& parent, const drawing::point& location, const d
   return label::create(parent, texts::top(), location, size);
 }
 
-label labels::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::top(), location, size, name);
 }
 
@@ -2449,7 +2449,7 @@ label labels::undelete(const drawing::point& location, const drawing::size& size
   return label::create(texts::undelete(), location, size);
 }
 
-label labels::undelete(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::undelete(), location, size, name);
 }
 
@@ -2465,7 +2465,7 @@ label labels::undelete(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::undelete(), location, size);
 }
 
-label labels::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::undelete(), location, size, name);
 }
 
@@ -2481,7 +2481,7 @@ label labels::underline(const drawing::point& location, const drawing::size& siz
   return label::create(texts::underline(), location, size);
 }
 
-label labels::underline(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::underline(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::underline(), location, size, name);
 }
 
@@ -2497,7 +2497,7 @@ label labels::underline(const control& parent, const drawing::point& location, c
   return label::create(parent, texts::underline(), location, size);
 }
 
-label labels::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::underline(), location, size, name);
 }
 
@@ -2513,7 +2513,7 @@ label labels::undo(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::undo(), location, size);
 }
 
-label labels::undo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::undo(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::undo(), location, size, name);
 }
 
@@ -2529,7 +2529,7 @@ label labels::undo(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::undo(), location, size);
 }
 
-label labels::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::undo(), location, size, name);
 }
 
@@ -2545,7 +2545,7 @@ label labels::unindent(const drawing::point& location, const drawing::size& size
   return label::create(texts::unindent(), location, size);
 }
 
-label labels::unindent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::unindent(), location, size, name);
 }
 
@@ -2561,7 +2561,7 @@ label labels::unindent(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::unindent(), location, size);
 }
 
-label labels::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::unindent(), location, size, name);
 }
 
@@ -2577,7 +2577,7 @@ label labels::up(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::up(), location, size);
 }
 
-label labels::up(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::up(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::up(), location, size, name);
 }
 
@@ -2593,7 +2593,7 @@ label labels::up(const control& parent, const drawing::point& location, const dr
   return label::create(parent, texts::up(), location, size);
 }
 
-label labels::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::up(), location, size, name);
 }
 
@@ -2609,7 +2609,7 @@ label labels::view(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::view(), location, size);
 }
 
-label labels::view(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::view(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::view(), location, size, name);
 }
 
@@ -2625,7 +2625,7 @@ label labels::view(const control& parent, const drawing::point& location, const 
   return label::create(parent, texts::view(), location, size);
 }
 
-label labels::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::view(), location, size, name);
 }
 
@@ -2641,7 +2641,7 @@ label labels::window(const drawing::point& location, const drawing::size& size) 
   return label::create(texts::window(), location, size);
 }
 
-label labels::window(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::window(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::window(), location, size, name);
 }
 
@@ -2657,7 +2657,7 @@ label labels::window(const control& parent, const drawing::point& location, cons
   return label::create(parent, texts::window(), location, size);
 }
 
-label labels::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::window(), location, size, name);
 }
 
@@ -2673,7 +2673,7 @@ label labels::yes(const drawing::point& location, const drawing::size& size) {
   return label::create(texts::yes(), location, size);
 }
 
-label labels::yes(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::yes(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::yes(), location, size, name);
 }
 
@@ -2689,7 +2689,7 @@ label labels::yes(const control& parent, const drawing::point& location, const d
   return label::create(parent, texts::yes(), location, size);
 }
 
-label labels::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::yes(), location, size, name);
 }
 
@@ -2705,7 +2705,7 @@ label labels::zoom_in(const drawing::point& location, const drawing::size& size)
   return label::create(texts::zoom_in(), location, size);
 }
 
-label labels::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::zoom_in(), location, size, name);
 }
 
@@ -2721,7 +2721,7 @@ label labels::zoom_in(const control& parent, const drawing::point& location, con
   return label::create(parent, texts::zoom_in(), location, size);
 }
 
-label labels::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::zoom_in(), location, size, name);
 }
 
@@ -2737,7 +2737,7 @@ label labels::zoom_out(const drawing::point& location, const drawing::size& size
   return label::create(texts::zoom_out(), location, size);
 }
 
-label labels::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::zoom_out(), location, size, name);
 }
 
@@ -2753,7 +2753,7 @@ label labels::zoom_out(const control& parent, const drawing::point& location, co
   return label::create(parent, texts::zoom_out(), location, size);
 }
 
-label labels::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::zoom_out(), location, size, name);
 }
 
@@ -2769,7 +2769,7 @@ label labels::zoom_to_fit(const drawing::point& location, const drawing::size& s
   return label::create(texts::zoom_to_fit(), location, size);
 }
 
-label labels::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(texts::zoom_to_fit(), location, size, name);
 }
 
@@ -2785,6 +2785,6 @@ label labels::zoom_to_fit(const control& parent, const drawing::point& location,
   return label::create(parent, texts::zoom_to_fit(), location, size);
 }
 
-label labels::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+label labels::zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   return label::create(parent, texts::zoom_to_fit(), location, size, name);
 }

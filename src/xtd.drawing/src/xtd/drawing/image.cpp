@@ -65,7 +65,7 @@ image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
   update_properties();
 }
 
-image::image(const ustring& filename) : data_(xtd::new_sptr<data>()) {
+image::image(const string& filename) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = std::map<size_t, size_t> {};
   data_->handle_ = native::image::create(filename, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -78,7 +78,7 @@ image::image(const ustring& filename) : data_(xtd::new_sptr<data>()) {
   update_properties();
 }
 
-image::image(const ustring& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
+image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = std::map<size_t, size_t> {};
   data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -349,11 +349,11 @@ void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
   native::image::rotate_flip(handle(), static_cast<int32>(rotate_flip_type));
 }
 
-void image::save(const ustring& filename) const {
+void image::save(const string& filename) const {
   native::image::save(data_->handle_, filename);
 }
 
-void image::save(const ustring& filename, const imaging::image_format& format) const {
+void image::save(const string& filename, const imaging::image_format& format) const {
   native::image::save(data_->handle_, filename, to_raw_format(format));
 }
 

@@ -20,7 +20,7 @@ splitter_panel splitter_panel::create(const drawing::point& location, const draw
   return result;
 }
 
-splitter_panel splitter_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter_panel splitter_panel::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = splitter_panel {};
   result.location(location);
   result.size(size);
@@ -49,7 +49,7 @@ splitter_panel splitter_panel::create(const control& parent, const drawing::poin
   return result;
 }
 
-splitter_panel splitter_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter_panel splitter_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = splitter_panel {};
   result.parent(parent);
   result.location(location);
@@ -60,6 +60,6 @@ splitter_panel splitter_panel::create(const control& parent, const drawing::poin
 
 xtd::uptr<xtd::object> splitter_panel::clone() const {
   auto result = xtd::new_uptr<splitter_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

@@ -435,16 +435,16 @@ public:
     text("Handle creation and destruction example");
 
     handle_created += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handdle_created {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handdle_created {}", static_cast<control&>(sender).name()));
     };
     handle_destroyed += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handle_destroyed {}", static_cast<control&>(sender).name()));
     };
     control_added += [](object& sender, const control_event_args& e) {
-      debug::write_line(ustring::format("control_added {}", e.control().name()));
+      debug::write_line(string::format("control_added {}", e.control().name()));
     };
     control_removed += [](object& sender, const control_event_args& e) {
-      debug::write_line(ustring::format("control_removed {}", e.control().name()));
+      debug::write_line(string::format("control_removed {}", e.control().name()));
     };
 
     button1.name("button1");
@@ -452,10 +452,10 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.handle_created += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handle_created {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handle_created {}", static_cast<control&>(sender).name()));
     };
     button1.handle_destroyed += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handle_destroyed {}", static_cast<control&>(sender).name()));
     };
     button1.click += [&] {
       debug::write_line("------------------------------------");
@@ -466,7 +466,7 @@ public:
       debug::write_line("------------------------------------");
     };
     button1.parent_changed += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("parent_changed {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("parent_changed {}", static_cast<control&>(sender).name()));
     };
     
     label1.auto_size(true);
@@ -475,13 +475,13 @@ public:
     label1.location({10, 50});
     label1.parent(*this);
     label1.handle_created += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handle_created {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handle_created {}", static_cast<control&>(sender).name()));
     };
     label1.handle_destroyed += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("handle_destroyed {}", static_cast<control&>(sender).name()));
     };
     label1.parent_changed += [] (object& sender, const event_args& e) {
-      debug::write_line(ustring::format("parent_changed {}", static_cast<control&>(sender).name()));
+      debug::write_line(string::format("parent_changed {}", static_cast<control&>(sender).name()));
     };
   }
 
@@ -689,7 +689,7 @@ xtd::forms::text_box text1;
 text1.name("text1");
 
 text1.read_only_changed += [&] (xtd::object& sender, const xtd::event_args& e) { 
-  xtd::diagnostics::debug::write_line(ustring::format("The read_only property of {} is changed to {}", sender, static_cast<xtd::forms::text_box&>(sender).read_only()));
+  xtd::diagnostics::debug::write_line(string::format("The read_only property of {} is changed to {}", sender, static_cast<xtd::forms::text_box&>(sender).read_only()));
 };
 
 text1.read_only(true);
@@ -925,19 +925,19 @@ public:
     change_color_button.click += [&] {
       back_color(color::from_argb(rand.next<uint8>(), rand.next<uint8>(), rand.next<uint8>()));
       fore_color(color::from_argb(rand.next<uint8>(), rand.next<uint8>(), rand.next<uint8>()));
-      label1.text(ustring::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
-      label2.text(ustring::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
+      label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
+      label2.text(string::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
     };
     
     label1.auto_size(true);
     label1.location({10, 50});
-    label1.text(ustring::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
+    label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
     
     label2.auto_size(true);
     label2.back_color(color::dark_cyan);
     label2.fore_color(color::black);
     label2.location({10, 110});
-    label2.text(ustring::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
+    label2.text(string::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
   }
   
 private:
@@ -1321,15 +1321,15 @@ namespace resources_example::properties {
       return bitmap;
     }
 
-    /// @brief Looks up a localized resource of type xtd::ustring.
-    static const xtd::ustring& information() {
-      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "information.txt"));
+    /// @brief Looks up a localized resource of type xtd::string.
+    static const xtd::string& information() {
+      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "information.txt"));
       return text;
     }
 
-    /// @brief Looks up a localized resource of type xtd::ustring.
-    static const xtd::ustring& readme() {
-      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "readme.md"));
+    /// @brief Looks up a localized resource of type xtd::string.
+    static const xtd::string& readme() {
+      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "readme.md"));
       return text;
     }
 

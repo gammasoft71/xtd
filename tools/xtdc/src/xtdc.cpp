@@ -11,17 +11,17 @@ using namespace xtd::diagnostics;
 namespace xtdc_command {
   class xtdc final :public project_base {
   public:
-    static auto main(const list<ustring>& args) {
+    static auto main(const list<string>& args) {
       if (args.size() == 0) {
-        console::write_line(ustring::join("\n", get_help()));
+        console::write_line(string::join("\n", get_help()));
         return -1;
       }
       
       auto show_help = false;
       auto show_info = false;
       auto show_version = false;
-      ustring invalid_option;
-      list<ustring> command_args;
+      string invalid_option;
+      list<string> command_args;
       if (process_xtdc_arguments(args, show_help, show_info, show_version, command_args, invalid_option) == false) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
@@ -35,7 +35,7 @@ namespace xtdc_command {
     }
     
   private:
-    static std::list<ustring> get_help() noexcept {
+    static std::list<string> get_help() noexcept {
       return {
         "",
         "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]",
@@ -70,7 +70,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_add_help() noexcept {
+    static list<string> get_add_help() noexcept {
       return {
         "Add new project to project.",
         "Usage: add [template-short-name] [path] [<options>]",
@@ -105,7 +105,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_build_help() noexcept {
+    static list<string> get_build_help() noexcept {
       return {
         "Builds a project.",
         "Usage: build [path] [<options>]",
@@ -128,7 +128,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_clean_help() noexcept {
+    static list<string> get_clean_help() noexcept {
       return {
         "Clean build output(s).",
         "Usage: clean [path] [<options>]",
@@ -149,7 +149,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_generate_help() noexcept {
+    static list<string> get_generate_help() noexcept {
       return {
         "Generate project.",
         "Usage: generate [template-short-name] [path] [<options>]",
@@ -184,7 +184,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_install_help() noexcept {
+    static list<string> get_install_help() noexcept {
       return {
         "Install a project.",
         "Usage: install [path] [<options>]",
@@ -205,7 +205,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_open_help() noexcept {
+    static list<string> get_open_help() noexcept {
       return {
         "Open a project in default ide.",
         "Usage: open [path] [<options>]",
@@ -227,7 +227,7 @@ namespace xtdc_command {
     }
     
 
-    static list<ustring> get_update_help() noexcept {
+    static list<string> get_update_help() noexcept {
       return {
         "Regenrates a project.",
         "Usage: update [path] [<options>]",
@@ -248,7 +248,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_run_help() noexcept {
+    static list<string> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
         "Usage: run [path] [<options>]",
@@ -272,7 +272,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_targets_help() noexcept {
+    static list<string> get_targets_help() noexcept {
       return {
         "List project targets.",
         "Usage: targets [path] [<options>]",
@@ -291,7 +291,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_test_help() noexcept {
+    static list<string> get_test_help() noexcept {
       return {
         "Runs unit tests using the test runner specified in the project.",
         "Usage: test [path] [<options>]",
@@ -312,7 +312,7 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_uninstall_help() noexcept {
+    static list<string> get_uninstall_help() noexcept {
       return {
         "Uninstall a project.",
         "Usage: uninstall [path] [<options>]",
@@ -333,71 +333,71 @@ namespace xtdc_command {
       };
     }
     
-    static list<ustring> get_info() noexcept {
+    static list<string> get_info() noexcept {
       return {
         "",
         get_xtd_version(),
         //"",
         "Operating System:",
-        ustring::format("  Name: {}", environment::os_version().name()),
-        ustring::format("  Version: {}", environment::os_version().version()),
-        ustring::format("  Service pack: {}", environment::os_version().service_pack()),
-        ustring::format("  Desktop environment: {}", environment::os_version().desktop_environment()),
-        ustring::format("  64 bit: {}", environment::os_version().is_64_bit()),
+        string::format("  Name: {}", environment::os_version().name()),
+        string::format("  Version: {}", environment::os_version().version()),
+        string::format("  Service pack: {}", environment::os_version().service_pack()),
+        string::format("  Desktop environment: {}", environment::os_version().desktop_environment()),
+        string::format("  64 bit: {}", environment::os_version().is_64_bit()),
         "",
         "Compiler:",
-        ustring::format("  Name: {}", environment::compiler_version().name()),
-        ustring::format("  Version: {}", environment::compiler_version().version()),
-        ustring::format("  Mode: {}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release"),
-        ustring::format("  64 bit: {}", environment::compiler_version().is_64_bit()),
+        string::format("  Name: {}", environment::compiler_version().name()),
+        string::format("  Version: {}", environment::compiler_version().version()),
+        string::format("  Mode: {}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release"),
+        string::format("  64 bit: {}", environment::compiler_version().is_64_bit()),
         "",
         "Language:",
-        ustring::format("  Name: {}", environment::cpp_version().name()),
-        ustring::format("  Version: {}", environment::cpp_version().version()),
-        ustring::format("  Experimental: {}", environment::cpp_version().is_experimental_language()),
-        ustring::format("  Supported: {}", environment::cpp_version().is_supported()),
+        string::format("  Name: {}", environment::cpp_version().name()),
+        string::format("  Version: {}", environment::cpp_version().version()),
+        string::format("  Experimental: {}", environment::cpp_version().is_experimental_language()),
+        string::format("  Supported: {}", environment::cpp_version().is_supported()),
         "",
       };
     }
     
-    static ustring get_xtd_version() noexcept {
-      auto result = ustring::format("xtd Framework:{}", environment::new_line());
+    static string get_xtd_version() noexcept {
+      auto result = string::format("xtd Framework:{}", environment::new_line());
       for (auto library : environment::xtd_libraries()) {
-        result += ustring::format("  {}", library.name(), environment::new_line());
-        result += ustring::format("    Version: {}{}", library.version(), environment::new_line());
-        result += ustring::format("    include path: {}{}", library.include_path(), environment::new_line());
-        result += ustring::format("    library path: {}{}", library.library_path(), environment::new_line());
-        result += ustring::format("    resources path: {}{}", library.resources_path(), environment::new_line());
+        result += string::format("  {}", library.name(), environment::new_line());
+        result += string::format("    Version: {}{}", library.version(), environment::new_line());
+        result += string::format("    include path: {}{}", library.include_path(), environment::new_line());
+        result += string::format("    library path: {}{}", library.library_path(), environment::new_line());
+        result += string::format("    resources path: {}{}", library.resources_path(), environment::new_line());
       }
       return result;
     }
     
-    static ustring get_version() noexcept {
-      return ustring::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), xtd::date_time::now());
+    static string get_version() noexcept {
+      return string::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), xtd::date_time::now());
     }
     
-    static ustring get_version_number() noexcept {
+    static string get_version_number() noexcept {
       return environment::version().to_string();
     }
     
-    static int add(const list<ustring>& args) {
+    static int add(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
-      ustring type;
-      ustring sdk;
-      ustring name;
-      ustring path;
+      string invalid_option;
+      string type;
+      string sdk;
+      string name;
+      string path;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_add_help()));
+        console::write_line(string::join("\n", get_add_help()));
         return -1;
       }
       
       if (show_help)
-        console::write_line(ustring::join("\n", get_add_help()));
+        console::write_line(string::join("\n", get_add_help()));
       else {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
@@ -416,73 +416,73 @@ namespace xtdc_command {
           return -1;
         }
         
-        xtdc_command::project_type project_type = std::map<ustring, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = std::map<ustring, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = std::map<ustring, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+        xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+        xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+        xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         console::write_line(project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language));
       }
       return 0;
     }
     
-    static int build(const list<ustring>& args) {
+    static int build(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto clean_first = false;
       auto release = false;
-      ustring target;
-      ustring path;
+      string target;
+      string path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_build_help()));
+        console::write_line(string::join("\n", get_build_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_build_help()));
+        console::write_line(string::join("\n", get_build_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).build(target, clean_first, release));
       return 0;
     }
     
-    static int clean(const list<ustring>& args) {
+    static int clean(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
-      ustring path;
+      string path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_clean_help()));
+        console::write_line(string::join("\n", get_clean_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_clean_help()));
+        console::write_line(string::join("\n", get_clean_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).clean(release));
       return 0;
     }
     
-    static int generate(const list<ustring>& args) {
+    static int generate(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
-      ustring type;
-      ustring sdk;
-      ustring name;
-      ustring path;
+      string invalid_option;
+      string type;
+      string sdk;
+      string name;
+      string path;
       if (!process_generate_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_generate_help()));
+        console::write_line(string::join("\n", get_generate_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_generate_help()));
+        console::write_line(string::join("\n", get_generate_help()));
       else {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
@@ -501,184 +501,184 @@ namespace xtdc_command {
           return -1;
         }
         
-        xtdc_command::project_type project_type = std::map<ustring, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = std::map<ustring, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = std::map<ustring, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+        xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+        xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+        xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         console::write_line(project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language));
       }
       return 0;
     }
     
-    static int help(const list<ustring>& args) {
-      console::write_line(ustring::join("\n", get_help()));
+    static int help(const list<string>& args) {
+      console::write_line(string::join("\n", get_help()));
       return 0;
     }
     
-    static int install(const list<ustring>& args) {
+    static int install(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
-      ustring path;
+      string path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_install_help()));
+        console::write_line(string::join("\n", get_install_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_install_help()));
+        console::write_line(string::join("\n", get_install_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).install(release));
       return 0;
     }
     
-    static int open(const list<ustring>& args) {
+    static int open(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
-      ustring path;
+      string path;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_open_help()));
+        console::write_line(string::join("\n", get_open_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_open_help()));
+        console::write_line(string::join("\n", get_open_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).open(release));
       return 0;
     }
     
-    static int update(const list<ustring>& args) {
+    static int update(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
-      ustring target;
-      ustring path;
+      string invalid_option;
+      string target;
+      string path;
       if (!process_update_arguments(args, show_help, target, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_update_help()));
+        console::write_line(string::join("\n", get_update_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_update_help()));
+        console::write_line(string::join("\n", get_update_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).update(target));
       return 0;
     }
     
-    static int run(const list<ustring>& args) {
+    static int run(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
       auto wait = false;
-      ustring target;
-      ustring path;
+      string target;
+      string path;
       if (!process_run_arguments(args, show_help, release, wait, target, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_run_help()));
+        console::write_line(string::join("\n", get_run_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_run_help()));
+        console::write_line(string::join("\n", get_run_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).run(target, release, wait));
       return 0;
     }
     
-    static int targets(const list<ustring>& args) {
+    static int targets(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
-      ustring path;
+      string invalid_option;
+      string path;
       if (!process_targets_arguments(args, show_help, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_targets_help()));
+        console::write_line(string::join("\n", get_targets_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_targets_help()));
+        console::write_line(string::join("\n", get_targets_help()));
       else {
-        auto targets = xtd::ustring::join(", ", project_management(get_project_full_path_from_path(path)).targets());
+        auto targets = xtd::string::join(", ", project_management(get_project_full_path_from_path(path)).targets());
         if (targets.empty()) targets = get_project_name_from_path(path);
         console::write_line(targets);
       }
       return 0;
     }
     
-    static int test(const list<ustring>& args) {
+    static int test(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
-      ustring path;
+      string path;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_test_help()));
+        console::write_line(string::join("\n", get_test_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_test_help()));
+        console::write_line(string::join("\n", get_test_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).test(release));
       return 0;
     }
     
-    static int uninstall(const list<ustring>& args) {
+    static int uninstall(const list<string>& args) {
       auto show_help = false;
-      ustring invalid_option;
+      string invalid_option;
       auto release = false;
-      ustring path;
+      string path;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
           console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_uninstall_help()));
+        console::write_line(string::join("\n", get_uninstall_help()));
         return -1;
       }
       if (show_help)
-        console::write_line(ustring::join("\n", get_uninstall_help()));
+        console::write_line(string::join("\n", get_uninstall_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).uninstall(release));
       return 0;
     }
     
-    static int documentation(const list<ustring>& args) {
+    static int documentation(const list<string>& args) {
       process::start("https://gammasoft71.github.io/xtd/docs/documentation").wait_for_exit();
       return 0;
     }
     
-    static int examples(const list<ustring>& args) {
+    static int examples(const list<string>& args) {
       process::start("https://github.com/gammasoft71/xtd/blob/master/examples/README.md").wait_for_exit();
       return 0;
     }
     
-    static int guide(const list<ustring>& args) {
+    static int guide(const list<string>& args) {
       process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/index.html").wait_for_exit();
       return 0;
     }
     
-    static int web(const list<ustring>& args) {
+    static int web(const list<string>& args) {
       process::start("https://gammasoft71.github.io/xtd").wait_for_exit();
       return 0;
     }
     
-    static bool process_xtdc_arguments(const list<ustring>& args, bool& show_help, bool& show_info, bool& show_version, list<ustring>& command_args, ustring& invalid_option) {
+    static bool process_xtdc_arguments(const list<string>& args, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -697,7 +697,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_add_arguments(const list<ustring>& args, bool& show_help, ustring& type, ustring& name, ustring& path, ustring& sdk, ustring& invalid_option) {
+    static bool process_add_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -720,7 +720,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_build_arguments(const list<ustring>& args, bool& show_help, bool& clean_first, bool& release, ustring& target, ustring& path, ustring& invalid_option) {
+    static bool process_build_arguments(const list<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -742,7 +742,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_clean_arguments(const list<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
+    static bool process_clean_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -760,7 +760,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_generate_arguments(const list<ustring>& args, bool& show_help, ustring& type, ustring& name, ustring& path, ustring& sdk, ustring& invalid_option) {
+    static bool process_generate_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -783,7 +783,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_install_arguments(const list<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
+    static bool process_install_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -801,7 +801,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_open_arguments(const list<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
+    static bool process_open_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -819,7 +819,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_update_arguments(const list<ustring>& args, bool& show_help, ustring& target, ustring& path, ustring& invalid_option) {
+    static bool process_update_arguments(const list<string>& args, bool& show_help, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -835,7 +835,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_run_arguments(const list<ustring>& args, bool& show_help, bool& release, bool& wait, ustring& target, ustring& path, ustring& invalid_option) {
+    static bool process_run_arguments(const list<string>& args, bool& show_help, bool& release, bool& wait, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -857,7 +857,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_targets_arguments(const list<ustring>& args, bool& show_help, ustring& path, ustring& invalid_option) {
+    static bool process_targets_arguments(const list<string>& args, bool& show_help, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -871,25 +871,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_test_arguments(const list<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
-      for (size_t i = 1; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help")
-          show_help = true;
-        else if (args[i] == "-d" || args[i] == "--debug")
-          release = false;
-        else if (args[i] == "-r" || args[i] == "--release")
-          release = true;
-        else if (path.empty())
-          path = args[i];
-        else if (args[i].starts_with('-')) {
-          invalid_option = args[i];
-          return false;
-        }
-      }
-      return true;
-    }
-    
-    static bool process_uninstall_arguments(const list<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
+    static bool process_test_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -907,20 +889,38 @@ namespace xtdc_command {
       return true;
     }
     
-    static int invalid_command(const list<ustring>& command_args) {
+    static bool process_uninstall_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
+      for (size_t i = 1; i < args.size(); i += 1) {
+        if (args[i] == "-h" || args[i] == "--help")
+          show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
+        else if (path.empty())
+          path = args[i];
+        else if (args[i].starts_with('-')) {
+          invalid_option = args[i];
+          return false;
+        }
+      }
+      return true;
+    }
+    
+    static int invalid_command(const list<string>& command_args) {
       console::write_line("Invalid command");
-      console::write_line(ustring::join("\n", get_help()));
+      console::write_line(string::join("\n", get_help()));
       return -1;
     }
     
-    static int run_commands(bool show_help, bool show_info, bool show_version, ustring invalid_option, const list<ustring>& command_args) {
+    static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const list<string>& command_args) {
       if (show_version || show_info || show_help) {
         console::write_line(get_version());
-        if (show_info) console::write_line(ustring::join("\n", get_info()));
-        if (show_help) console::write_line(ustring::join("\n", get_help()));
+        if (show_info) console::write_line(string::join("\n", get_info()));
+        if (show_help) console::write_line(string::join("\n", get_help()));
         return 0;
       }
-      static std::map<ustring, std::function<int(const list<ustring>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      static std::map<string, std::function<int(const list<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       auto it = commands.find(command_args[0]);
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);

@@ -217,7 +217,7 @@ namespace xtd {
 
       /// @brief Gets an array of image names.
       /// @return The array of image names.
-      static const std::vector<xtd::ustring>& get_image_names() noexcept;
+      static const std::vector<xtd::string>& get_image_names() noexcept;
       /// @}
     };
   }

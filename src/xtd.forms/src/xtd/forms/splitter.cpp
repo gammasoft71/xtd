@@ -69,7 +69,7 @@ splitter splitter::create(const drawing::point& location, const drawing::size& s
   return result;
 }
 
-splitter splitter::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter splitter::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = splitter {};
   result.location(location);
   result.size(size);
@@ -98,7 +98,7 @@ splitter splitter::create(const control& parent, const drawing::point& location,
   return result;
 }
 
-splitter splitter::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter splitter::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = splitter {};
   result.parent(parent);
   result.location(location);
@@ -113,7 +113,7 @@ drawing::size splitter::default_size() const noexcept {
 
 xtd::uptr<xtd::object> splitter::clone() const {
   auto result = xtd::new_uptr<splitter>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

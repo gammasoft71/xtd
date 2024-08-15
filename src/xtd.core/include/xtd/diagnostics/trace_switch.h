@@ -37,13 +37,13 @@ namespace xtd {
       /// @param description The description of the switch.
       /// @remarks he xtd::diagnostics::trace_switch class provides the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to test the Level of the switch. The xtd::diagnostics::trace_switch::level property gets or sets the switch's xtd::diagnostics::trace_level.
       /// @note To improve performance, you can make xtd::diagnostics::trace_switch members static in your class.
-      trace_switch(const xtd::ustring& display_name, const xtd::ustring& description);
+      trace_switch(const xtd::string& display_name, const xtd::string& description);
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name, description, and default value for the switch.
       /// @param display_name The name to display on a user interface.
       /// @param description The description of the switch.
       /// @param default_switch_value The default value of the switch.
       /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::trace_switch::display_name property, the description parameter is use to set the value of the xtd::diagnostics::trace_switch::description property, and the default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::trace_switch::value property on first reference.
-      trace_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
+      trace_switch(const xtd::string& display_name, const xtd::string& description, const xtd::string& default_switch_value);
       /// @}
       
       /// @name Public Properties

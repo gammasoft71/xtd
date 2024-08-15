@@ -217,7 +217,7 @@ intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wpa
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
-xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
+xtd::drawing::size control::default_size(const xtd::string& class_name) {
   static auto is_gnome = environment::os_version().desktop_environment() == "gnome";
   static auto is_macos = environment::os_version().desktop_environment() == "macos";
   
@@ -477,7 +477,7 @@ void control::size(intptr control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
-ustring control::text(intptr control) {
+string control::text(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -486,7 +486,7 @@ ustring control::text(intptr control) {
   return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().c_str().AsWChar());
 }
 
-void control::text(intptr control, const ustring& text) {
+void control::text(intptr control, const string& text) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

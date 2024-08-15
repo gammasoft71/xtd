@@ -86,7 +86,7 @@ namespace xtd {
       
       /// @brief Returns a string that represents the current object.
       /// @return string A string that represents the current object.
-      xtd::ustring to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
       
     private:

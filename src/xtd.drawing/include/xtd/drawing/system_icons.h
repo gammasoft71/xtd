@@ -188,25 +188,25 @@ namespace xtd {
       /// @return An xtd::drawing::icon object that contains the system icon from specified name.
       /// @remarks The theme is the default system theme.
       /// @remarks The size is the default size (32 x 32).
-      static xtd::drawing::icon from_name(const xtd::ustring& name);
+      static xtd::drawing::icon from_name(const xtd::string& name);
       /// @brief Gets system icon from specified name and size.
       /// @param name The system icon name.
       /// @param size The system icon size in pixels.
       /// @return An xtd::drawing::icon object that contains the system icon from specified name.
       /// @remarks The theme is the default system theme.
-      static xtd::drawing::icon from_name(const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::icon from_name(const xtd::string& name, const xtd::drawing::size& size);
       /// @brief Gets system icon from specified them and name.
       /// @param theme The system icon theme.
       /// @param name The system icon name.
       /// @return An xtd::drawing::icon object that contains the system icon from specified name.
       /// @remarks The size is the default size in pixels (32 x 32).
-      static xtd::drawing::icon from_name(const xtd::ustring& theme, const xtd::ustring& name);
+      static xtd::drawing::icon from_name(const xtd::string& theme, const xtd::string& name);
       /// @brief Gets system icon from specified theme, name and size.
       /// @param theme The system icon theme.
       /// @param name The system icon name.
       /// @param size The system icon size in pixels.
       /// @return An xtd::drawing::icon object that contains the system icon from specified name.
-      static xtd::drawing::icon from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
+      static xtd::drawing::icon from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size);
       /// @}
     };
   }

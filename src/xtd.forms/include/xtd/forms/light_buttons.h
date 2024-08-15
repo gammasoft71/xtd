@@ -43,7 +43,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent abort light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent abort light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -91,7 +91,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent abort light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent abort light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -139,7 +139,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent abort light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -169,7 +169,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent about light_button.
       /// @return The created light_button.
@@ -188,7 +188,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent about light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -210,7 +210,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent about light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -236,7 +236,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent about light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -258,7 +258,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent about light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -284,7 +284,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent about light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -314,7 +314,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent actual_size light_button.
       /// @return The created light_button.
@@ -333,7 +333,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent actual_size light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -355,7 +355,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent actual_size light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -381,7 +381,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent actual_size light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -403,7 +403,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent actual_size light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -429,7 +429,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent actual_size light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -459,7 +459,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent add light_button.
       /// @return The created light_button.
@@ -478,7 +478,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent add light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -500,7 +500,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent add light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -526,7 +526,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent add light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -548,7 +548,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent add light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -574,7 +574,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent add light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -604,7 +604,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent alignment light_button.
       /// @return The created light_button.
@@ -623,7 +623,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent alignment light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -645,7 +645,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent alignment light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -671,7 +671,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent alignment light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -693,7 +693,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent alignment light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -719,7 +719,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent alignment light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -749,7 +749,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent align_left light_button.
       /// @return The created light_button.
@@ -768,7 +768,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_left light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -790,7 +790,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_left light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -816,7 +816,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_left light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -838,7 +838,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_left light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -864,7 +864,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_left light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -894,7 +894,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent align_right light_button.
       /// @return The created light_button.
@@ -913,7 +913,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_right light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -935,7 +935,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_right light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -961,7 +961,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_right light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -983,7 +983,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_right light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1009,7 +1009,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent align_right light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1039,7 +1039,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent apply light_button.
       /// @return The created light_button.
@@ -1058,7 +1058,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent apply light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1080,7 +1080,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent apply light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1106,7 +1106,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent apply light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1128,7 +1128,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent apply light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1154,7 +1154,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent apply light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1184,7 +1184,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent ascending light_button.
       /// @return The created light_button.
@@ -1203,7 +1203,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ascending light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1225,7 +1225,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ascending light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1251,7 +1251,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ascending light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1273,7 +1273,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ascending light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1299,7 +1299,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ascending light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1329,7 +1329,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent back light_button.
       /// @return The created light_button.
@@ -1348,7 +1348,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent back light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1370,7 +1370,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent back light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1396,7 +1396,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent back light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1418,7 +1418,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent back light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1444,7 +1444,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent back light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1474,7 +1474,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent bold light_button.
       /// @return The created light_button.
@@ -1493,7 +1493,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bold light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1515,7 +1515,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bold light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1541,7 +1541,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bold light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1563,7 +1563,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bold light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1589,7 +1589,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bold light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1619,7 +1619,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent bottom light_button.
       /// @return The created light_button.
@@ -1638,7 +1638,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bottom light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1660,7 +1660,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bottom light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1686,7 +1686,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bottom light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1708,7 +1708,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bottom light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1734,7 +1734,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent bottom light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1764,7 +1764,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent cancel light_button.
       /// @return The created light_button.
@@ -1783,7 +1783,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cancel light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1805,7 +1805,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cancel light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1831,7 +1831,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cancel light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1853,7 +1853,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cancel light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1879,7 +1879,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cancel light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -1909,7 +1909,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent cdrom light_button.
       /// @return The created light_button.
@@ -1928,7 +1928,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cdrom light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -1950,7 +1950,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cdrom light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1976,7 +1976,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cdrom light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -1998,7 +1998,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cdrom light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2024,7 +2024,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cdrom light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2054,7 +2054,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent centered light_button.
       /// @return The created light_button.
@@ -2073,7 +2073,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent centered light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2095,7 +2095,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent centered light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2121,7 +2121,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent centered light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2143,7 +2143,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent centered light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2169,7 +2169,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent centered light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2199,7 +2199,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent clear light_button.
       /// @return The created light_button.
@@ -2218,7 +2218,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent clear light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2240,7 +2240,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent clear light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2266,7 +2266,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent clear light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2288,7 +2288,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent clear light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2314,7 +2314,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent clear light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2344,7 +2344,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent close light_button.
       /// @return The created light_button.
@@ -2363,7 +2363,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent close light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2385,7 +2385,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent close light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2411,7 +2411,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent close light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2433,7 +2433,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent close light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2459,7 +2459,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent close light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2489,7 +2489,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent color light_button.
       /// @return The created light_button.
@@ -2508,7 +2508,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent color light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2530,7 +2530,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent color light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2556,7 +2556,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent color light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2578,7 +2578,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent color light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2604,7 +2604,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent color light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2634,7 +2634,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent contents light_button.
       /// @return The created light_button.
@@ -2653,7 +2653,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent contents light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2675,7 +2675,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent contents light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2701,7 +2701,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent contents light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2723,7 +2723,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent contents light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2749,7 +2749,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent contents light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2779,7 +2779,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent convert light_button.
       /// @return The created light_button.
@@ -2798,7 +2798,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent convert light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2820,7 +2820,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent convert light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2846,7 +2846,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent convert light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -2868,7 +2868,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent convert light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2894,7 +2894,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent convert light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -2924,7 +2924,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent copy light_button.
       /// @return The created light_button.
@@ -2943,7 +2943,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent copy light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -2965,7 +2965,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent copy light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2991,7 +2991,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent copy light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3013,7 +3013,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent copy light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3039,7 +3039,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent copy light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3069,7 +3069,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent customize light_button.
       /// @return The created light_button.
@@ -3088,7 +3088,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent customize light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3110,7 +3110,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent customize light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3136,7 +3136,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent customize light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3158,7 +3158,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent customize light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3184,7 +3184,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent customize light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3214,7 +3214,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent cut light_button.
       /// @return The created light_button.
@@ -3233,7 +3233,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cut light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3255,7 +3255,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cut light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3281,7 +3281,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cut light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3303,7 +3303,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cut light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3329,7 +3329,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent cut light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3359,7 +3359,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent del light_button.
       /// @return The created light_button.
@@ -3378,7 +3378,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent del light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3400,7 +3400,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent del light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3426,7 +3426,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent del light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3448,7 +3448,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent del light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3474,7 +3474,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent del light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3504,7 +3504,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent descending light_button.
       /// @return The created light_button.
@@ -3523,7 +3523,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent descending light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3545,7 +3545,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent descending light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3571,7 +3571,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent descending light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3593,7 +3593,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent descending light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3619,7 +3619,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent descending light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3649,7 +3649,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent down light_button.
       /// @return The created light_button.
@@ -3668,7 +3668,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent down light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3690,7 +3690,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent down light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3716,7 +3716,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent down light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3738,7 +3738,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent down light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3764,7 +3764,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent down light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3794,7 +3794,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent edit light_button.
       /// @return The created light_button.
@@ -3813,7 +3813,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent edit light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3835,7 +3835,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent edit light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3861,7 +3861,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent edit light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -3883,7 +3883,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent edit light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3909,7 +3909,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent edit light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -3939,7 +3939,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent execute light_button.
       /// @return The created light_button.
@@ -3958,7 +3958,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent execute light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -3980,7 +3980,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent execute light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4006,7 +4006,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent execute light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4028,7 +4028,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent execute light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4054,7 +4054,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent execute light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4084,7 +4084,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent exit light_button.
       /// @return The created light_button.
@@ -4103,7 +4103,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent exit light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4125,7 +4125,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent exit light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4151,7 +4151,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent exit light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4173,7 +4173,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent exit light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4199,7 +4199,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent exit light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4229,7 +4229,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent file light_button.
       /// @return The created light_button.
@@ -4248,7 +4248,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent file light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4270,7 +4270,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent file light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4296,7 +4296,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent file light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4318,7 +4318,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent file light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4344,7 +4344,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent file light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4374,7 +4374,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent find light_button.
       /// @return The created light_button.
@@ -4393,7 +4393,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent find light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4415,7 +4415,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent find light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4441,7 +4441,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent find light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4463,7 +4463,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent find light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4489,7 +4489,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent find light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4519,7 +4519,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent first light_button.
       /// @return The created light_button.
@@ -4538,7 +4538,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent first light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4560,7 +4560,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent first light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4586,7 +4586,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent first light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4608,7 +4608,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent first light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4634,7 +4634,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent first light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4664,7 +4664,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent floppy light_button.
       /// @return The created light_button.
@@ -4683,7 +4683,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent floppy light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4705,7 +4705,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent floppy light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4731,7 +4731,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent floppy light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4753,7 +4753,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent floppy light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4779,7 +4779,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent floppy light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4809,7 +4809,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent font light_button.
       /// @return The created light_button.
@@ -4828,7 +4828,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent font light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4850,7 +4850,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent font light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4876,7 +4876,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent font light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -4898,7 +4898,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent font light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4924,7 +4924,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent font light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -4954,7 +4954,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent forward light_button.
       /// @return The created light_button.
@@ -4973,7 +4973,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent forward light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -4995,7 +4995,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent forward light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5021,7 +5021,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent forward light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5043,7 +5043,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent forward light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5069,7 +5069,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent forward light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5099,7 +5099,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent harddisk light_button.
       /// @return The created light_button.
@@ -5118,7 +5118,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent harddisk light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5140,7 +5140,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent harddisk light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5166,7 +5166,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent harddisk light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5188,7 +5188,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent harddisk light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5214,7 +5214,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent harddisk light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5244,7 +5244,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent help light_button.
       /// @return The created light_button.
@@ -5263,7 +5263,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent help light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5285,7 +5285,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent help light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5311,7 +5311,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent help light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5333,7 +5333,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent help light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5359,7 +5359,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent help light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5389,7 +5389,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent home light_button.
       /// @return The created light_button.
@@ -5408,7 +5408,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent home light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5430,7 +5430,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent home light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5456,7 +5456,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent home light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5478,7 +5478,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent home light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5504,7 +5504,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent home light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5534,7 +5534,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent ignore light_button.
       /// @return The created light_button.
@@ -5553,7 +5553,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ignore light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5575,7 +5575,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ignore light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5601,7 +5601,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ignore light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5623,7 +5623,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ignore light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5649,7 +5649,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ignore light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5679,7 +5679,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent indent light_button.
       /// @return The created light_button.
@@ -5698,7 +5698,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent indent light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5720,7 +5720,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent indent light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5746,7 +5746,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent indent light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5768,7 +5768,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent indent light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5794,7 +5794,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent indent light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5824,7 +5824,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent index light_button.
       /// @return The created light_button.
@@ -5843,7 +5843,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent index light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -5865,7 +5865,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent index light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5891,7 +5891,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent index light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -5913,7 +5913,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent index light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5939,7 +5939,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent index light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -5969,7 +5969,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent info light_button.
       /// @return The created light_button.
@@ -5988,7 +5988,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent info light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6010,7 +6010,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent info light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6036,7 +6036,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent info light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6058,7 +6058,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent info light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6084,7 +6084,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent info light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6114,7 +6114,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent italic light_button.
       /// @return The created light_button.
@@ -6133,7 +6133,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent italic light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6155,7 +6155,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent italic light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6181,7 +6181,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent italic light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6203,7 +6203,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent italic light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6229,7 +6229,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent italic light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6259,7 +6259,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent justified light_button.
       /// @return The created light_button.
@@ -6278,7 +6278,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent justified light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6300,7 +6300,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent justified light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6326,7 +6326,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent justified light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6348,7 +6348,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent justified light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6374,7 +6374,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent justified light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6404,7 +6404,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent jump_to light_button.
       /// @return The created light_button.
@@ -6423,7 +6423,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent jump_to light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6445,7 +6445,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent jump_to light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6471,7 +6471,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent jump_to light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6493,7 +6493,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent jump_to light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6519,7 +6519,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent jump_to light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6549,7 +6549,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent last light_button.
       /// @return The created light_button.
@@ -6568,7 +6568,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent last light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6590,7 +6590,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent last light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6616,7 +6616,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent last light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6638,7 +6638,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent last light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6664,7 +6664,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent last light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6694,7 +6694,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent network light_button.
       /// @return The created light_button.
@@ -6713,7 +6713,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent network light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6735,7 +6735,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent network light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6761,7 +6761,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent network light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6783,7 +6783,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent network light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6809,7 +6809,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent network light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6839,7 +6839,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent new_ light_button.
       /// @return The created light_button.
@@ -6858,7 +6858,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent new_ light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -6880,7 +6880,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent new_ light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6906,7 +6906,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent new_ light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -6928,7 +6928,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent new_ light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6954,7 +6954,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent new_ light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -6984,7 +6984,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent next light_button.
       /// @return The created light_button.
@@ -7003,7 +7003,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent next light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7025,7 +7025,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent next light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7051,7 +7051,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent next light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7073,7 +7073,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent next light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7099,7 +7099,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent next light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7129,7 +7129,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent no light_button.
       /// @return The created light_button.
@@ -7148,7 +7148,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent no light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7170,7 +7170,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent no light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7196,7 +7196,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent no light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7218,7 +7218,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent no light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7244,7 +7244,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent no light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7274,7 +7274,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent ok light_button.
       /// @return The created light_button.
@@ -7293,7 +7293,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ok light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7315,7 +7315,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ok light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7341,7 +7341,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ok light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7363,7 +7363,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ok light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7389,7 +7389,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent ok light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7419,7 +7419,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent open light_button.
       /// @return The created light_button.
@@ -7438,7 +7438,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent open light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7460,7 +7460,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent open light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7486,7 +7486,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent open light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7508,7 +7508,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent open light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7534,7 +7534,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent open light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7564,7 +7564,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent options light_button.
       /// @return The created light_button.
@@ -7583,7 +7583,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent options light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7605,7 +7605,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent options light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7631,7 +7631,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent options light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7653,7 +7653,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent options light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7679,7 +7679,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent options light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7709,7 +7709,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent paste light_button.
       /// @return The created light_button.
@@ -7728,7 +7728,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent paste light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7750,7 +7750,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent paste light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7776,7 +7776,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent paste light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7798,7 +7798,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent paste light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7824,7 +7824,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent paste light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7854,7 +7854,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent preferences light_button.
       /// @return The created light_button.
@@ -7873,7 +7873,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent preferences light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -7895,7 +7895,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent preferences light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7921,7 +7921,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent preferences light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -7943,7 +7943,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent preferences light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7969,7 +7969,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent preferences light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -7999,7 +7999,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent previous light_button.
       /// @return The created light_button.
@@ -8018,7 +8018,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent previous light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8040,7 +8040,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent previous light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8066,7 +8066,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent previous light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8088,7 +8088,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent previous light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8114,7 +8114,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent previous light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8144,7 +8144,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent print light_button.
       /// @return The created light_button.
@@ -8163,7 +8163,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8185,7 +8185,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8211,7 +8211,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8233,7 +8233,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8259,7 +8259,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8289,7 +8289,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent print_preview light_button.
       /// @return The created light_button.
@@ -8308,7 +8308,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print_preview light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8330,7 +8330,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print_preview light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8356,7 +8356,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print_preview light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8378,7 +8378,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print_preview light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8404,7 +8404,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent print_preview light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8434,7 +8434,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent properties light_button.
       /// @return The created light_button.
@@ -8453,7 +8453,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent properties light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8475,7 +8475,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent properties light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8501,7 +8501,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent properties light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8523,7 +8523,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent properties light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8549,7 +8549,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent properties light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8579,7 +8579,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent quit light_button.
       /// @return The created light_button.
@@ -8598,7 +8598,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent quit light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8620,7 +8620,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent quit light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8646,7 +8646,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent quit light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8668,7 +8668,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent quit light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8694,7 +8694,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent quit light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8724,7 +8724,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent redo light_button.
       /// @return The created light_button.
@@ -8743,7 +8743,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent redo light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8765,7 +8765,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent redo light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8791,7 +8791,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent redo light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8813,7 +8813,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent redo light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8839,7 +8839,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent redo light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -8869,7 +8869,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent refresh light_button.
       /// @return The created light_button.
@@ -8888,7 +8888,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent refresh light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -8910,7 +8910,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent refresh light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8936,7 +8936,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent refresh light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -8958,7 +8958,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent refresh light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -8984,7 +8984,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent refresh light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9014,7 +9014,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent remove light_button.
       /// @return The created light_button.
@@ -9033,7 +9033,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent remove light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9055,7 +9055,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent remove light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9081,7 +9081,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent remove light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9103,7 +9103,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent remove light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9129,7 +9129,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent remove light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9159,7 +9159,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent replace light_button.
       /// @return The created light_button.
@@ -9178,7 +9178,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent replace light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9200,7 +9200,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent replace light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9226,7 +9226,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent replace light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9248,7 +9248,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent replace light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9274,7 +9274,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent replace light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9304,7 +9304,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent retry light_button.
       /// @return The created light_button.
@@ -9323,7 +9323,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent retry light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9345,7 +9345,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent retry light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9371,7 +9371,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent retry light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9393,7 +9393,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent retry light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9419,7 +9419,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent retry light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9449,7 +9449,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button.
       /// @return The created light_button.
@@ -9468,7 +9468,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9490,7 +9490,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9516,7 +9516,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9538,7 +9538,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9564,7 +9564,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9594,7 +9594,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent save light_button.
       /// @return The created light_button.
@@ -9613,7 +9613,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9635,7 +9635,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9661,7 +9661,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9683,7 +9683,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9709,7 +9709,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9739,7 +9739,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent save_as light_button.
       /// @return The created light_button.
@@ -9758,7 +9758,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save_as light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9780,7 +9780,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save_as light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9806,7 +9806,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save_as light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9828,7 +9828,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save_as light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9854,7 +9854,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent save_as light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -9884,7 +9884,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent search light_button.
       /// @return The created light_button.
@@ -9903,7 +9903,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent search light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -9925,7 +9925,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent search light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9951,7 +9951,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent search light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -9973,7 +9973,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent search light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -9999,7 +9999,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent search light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10029,7 +10029,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent select_all light_button.
       /// @return The created light_button.
@@ -10048,7 +10048,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent select_all light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10070,7 +10070,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent select_all light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10096,7 +10096,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent select_all light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10118,7 +10118,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent select_all light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10144,7 +10144,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent select_all light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10174,7 +10174,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent settings light_button.
       /// @return The created light_button.
@@ -10193,7 +10193,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent settings light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10215,7 +10215,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent settings light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10241,7 +10241,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent settings light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10263,7 +10263,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent settings light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10289,7 +10289,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent settings light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10319,7 +10319,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent spell_check light_button.
       /// @return The created light_button.
@@ -10338,7 +10338,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent spell_check light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10360,7 +10360,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent spell_check light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10386,7 +10386,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent spell_check light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10408,7 +10408,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent spell_check light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10434,7 +10434,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent spell_check light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10464,7 +10464,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent stop light_button.
       /// @return The created light_button.
@@ -10483,7 +10483,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent stop light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10505,7 +10505,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent stop light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10531,7 +10531,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent stop light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10553,7 +10553,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent stop light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10579,7 +10579,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent stop light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10609,7 +10609,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent strikeout light_button.
       /// @return The created light_button.
@@ -10628,7 +10628,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent strikeout light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10650,7 +10650,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent strikeout light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10676,7 +10676,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent strikeout light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10698,7 +10698,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent strikeout light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10724,7 +10724,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent strikeout light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10754,7 +10754,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent tools light_button.
       /// @return The created light_button.
@@ -10773,7 +10773,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent tools light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10795,7 +10795,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent tools light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10821,7 +10821,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent tools light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10843,7 +10843,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent tools light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10869,7 +10869,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent tools light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -10899,7 +10899,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent top light_button.
       /// @return The created light_button.
@@ -10918,7 +10918,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent top light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -10940,7 +10940,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent top light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -10966,7 +10966,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent top light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -10988,7 +10988,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent top light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11014,7 +11014,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent top light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11044,7 +11044,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent undelete light_button.
       /// @return The created light_button.
@@ -11063,7 +11063,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undelete light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11085,7 +11085,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undelete light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11111,7 +11111,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undelete light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11133,7 +11133,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undelete light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11159,7 +11159,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undelete light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11189,7 +11189,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent underline light_button.
       /// @return The created light_button.
@@ -11208,7 +11208,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent underline light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11230,7 +11230,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent underline light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11256,7 +11256,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent underline light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11278,7 +11278,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent underline light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11304,7 +11304,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent underline light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11334,7 +11334,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent undo light_button.
       /// @return The created light_button.
@@ -11353,7 +11353,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undo light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11375,7 +11375,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undo light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11401,7 +11401,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undo light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11423,7 +11423,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undo light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11449,7 +11449,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent undo light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11479,7 +11479,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent unindent light_button.
       /// @return The created light_button.
@@ -11498,7 +11498,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent unindent light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11520,7 +11520,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent unindent light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11546,7 +11546,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent unindent light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11568,7 +11568,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent unindent light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11594,7 +11594,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent unindent light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11624,7 +11624,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent up light_button.
       /// @return The created light_button.
@@ -11643,7 +11643,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent up light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11665,7 +11665,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent up light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11691,7 +11691,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent up light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11713,7 +11713,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent up light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11739,7 +11739,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent up light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11769,7 +11769,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent view light_button.
       /// @return The created light_button.
@@ -11788,7 +11788,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent view light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11810,7 +11810,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent view light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11836,7 +11836,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent view light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -11858,7 +11858,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent view light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11884,7 +11884,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent view light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -11914,7 +11914,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent window light_button.
       /// @return The created light_button.
@@ -11933,7 +11933,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent window light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -11955,7 +11955,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent window light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -11981,7 +11981,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent window light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -12003,7 +12003,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent window light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12029,7 +12029,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent window light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -12059,7 +12059,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent yes light_button.
       /// @return The created light_button.
@@ -12078,7 +12078,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent yes light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -12100,7 +12100,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent yes light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12126,7 +12126,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent yes light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -12148,7 +12148,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent yes light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12174,7 +12174,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent yes light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -12204,7 +12204,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent zoom_in light_button.
       /// @return The created light_button.
@@ -12223,7 +12223,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_in light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -12245,7 +12245,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_in light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12271,7 +12271,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_in light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -12293,7 +12293,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_in light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12319,7 +12319,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_in light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -12349,7 +12349,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent zoom_out light_button.
       /// @return The created light_button.
@@ -12368,7 +12368,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_out light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -12390,7 +12390,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_out light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12416,7 +12416,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_out light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -12438,7 +12438,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_out light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12464,7 +12464,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_out light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -12494,7 +12494,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
 
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button.
       /// @return The created light_button.
@@ -12513,7 +12513,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created light_button.
@@ -12535,7 +12535,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button with specified three_state, and check_state.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12561,7 +12561,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button with specified parent.
       /// @param parent The control that contains the light_button.
       /// @return The created light_button.
@@ -12583,7 +12583,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button with specified parent, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -12609,7 +12609,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(const control& parent, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button with specified parent, three_state, and check_state.
       /// @param parent The control that contains the light_button.
       /// @param three_state true if the light_button is able to display three check states; otherwise, false.
@@ -12639,7 +12639,7 @@ namespace xtd {
       /// @param size The light_button size in pixels.
       /// @param name The name of the light_button.
       /// @return The created light_button.
-      static light_button zoom_to_fit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      static light_button zoom_to_fit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
     };
   }

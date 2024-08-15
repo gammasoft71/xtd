@@ -313,7 +313,7 @@ time_span time_span::negate() const {
   return time_span {-ticks_};
 }
 
-time_span time_span::parse(const ustring& value) {
+time_span time_span::parse(const string& value) {
   auto result = time_span {};
   switch (try_parse_internal(value, result)) {
     case parse_format: throw format_exception {csf_};
@@ -326,44 +326,44 @@ time_span time_span::subtract(const time_span& ts) const noexcept {
   return time_span {ticks_ - ts.ticks_};
 }
 
-xtd::ustring time_span::to_string() const noexcept {
+xtd::string time_span::to_string() const noexcept {
   return to_string("G");
 }
 
-ustring time_span::to_string(const ustring& format) const {
+string time_span::to_string(const string& format) const {
   return to_string(format, std::locale {});
 }
 
-ustring time_span::to_string(const ustring& format, const std::locale& loc) const {
+string time_span::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (fmt.empty()) fmt = "G";
   if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
   
   switch (fmt[0]) {
     case 'c': return make_string_from_duration(true);
-    case 'd': return ustring::format("{}", math::abs(days()));
-    case 'D': return ustring::format("{:d2}", math::abs(days()));
-    case 'f': return ustring::format("{}{}.{}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : ustring::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
-    case 'F': return ustring::format("{}{}.{:d2}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : ustring::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
+    case 'd': return string::format("{}", math::abs(days()));
+    case 'D': return string::format("{:d2}", math::abs(days()));
+    case 'f': return string::format("{}{}.{}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : string::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
+    case 'F': return string::format("{}{}.{:d2}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : string::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
     case 'g': return make_string_from_duration(false);
     case 'G': return make_string_from_duration(true);
-    case 'h': return ustring::format("{}", math::abs(hours()));
-    case 'H': return ustring::format("{:d2}", math::abs(hours()));
-    case 'l': return ustring::format("{}", math::abs(milliseconds()));
-    case 'L': return ustring::format("{:d3}", math::abs(milliseconds()));
-    case 'm': return ustring::format("{}", math::abs(minutes()));
-    case 'M': return ustring::format("{:d2}", math::abs(minutes()));
-    case 'o': return ustring::format("{}", ticks() < 0 ? "-" : "");
-    case 'O': return ustring::format("{}", ticks() < 0 ? "-" : "+");
-    case 's': return ustring::format("{}", math::abs(seconds()));
-    case 'S': return ustring::format("{:d2}", math::abs(seconds()));
-    case 't': return ustring::format("{0:d}", math::abs(ticks() % ticks_per_second));
-    case 'T': return ustring::format("{:d7}", math::abs(ticks() % ticks_per_second));
+    case 'h': return string::format("{}", math::abs(hours()));
+    case 'H': return string::format("{:d2}", math::abs(hours()));
+    case 'l': return string::format("{}", math::abs(milliseconds()));
+    case 'L': return string::format("{:d3}", math::abs(milliseconds()));
+    case 'm': return string::format("{}", math::abs(minutes()));
+    case 'M': return string::format("{:d2}", math::abs(minutes()));
+    case 'o': return string::format("{}", ticks() < 0 ? "-" : "");
+    case 'O': return string::format("{}", ticks() < 0 ? "-" : "+");
+    case 's': return string::format("{}", math::abs(seconds()));
+    case 'S': return string::format("{:d2}", math::abs(seconds()));
+    case 't': return string::format("{0:d}", math::abs(ticks() % ticks_per_second));
+    case 'T': return string::format("{:d7}", math::abs(ticks() % ticks_per_second));
     default: throw xtd::format_exception("Invalid format");
   }
 }
 
-bool time_span::try_parse(const ustring& value, time_span& result) {
+bool time_span::try_parse(const string& value, time_span& result) {
   return try_parse_internal(value, result) == 0;
 }
 
@@ -375,16 +375,16 @@ time_span time_span::interval(double value, int scale) {
   return time_span(static_cast<int64>(millis) * ticks_per_millisecond); // Do not use as<int64>(...) because it rounds the value
 }
 
-ustring time_span::make_string_from_duration(bool constant) const {
-  auto result = ustring::empty_string;
+string time_span::make_string_from_duration(bool constant) const {
+  auto result = string::empty_string;
   if (ticks() < 0) result += '-';
-  if (days()) result += ustring::format("{}.", math::abs(days()));
-  result += ustring::format(constant ? "{:d2}:{:d2}:{:d2}" : "{:d}:{:d2}:{:d2}", math::abs(hours()), math::abs(minutes()), math::abs(seconds()));
-  if (ticks() % ticks_per_second) result += ustring::format(".{:d7}", math::abs(ticks() % ticks_per_second));
+  if (days()) result += string::format("{}.", math::abs(days()));
+  result += string::format(constant ? "{:d2}:{:d2}:{:d2}" : "{:d}:{:d2}:{:d2}", math::abs(hours()), math::abs(minutes()), math::abs(seconds()));
+  if (ticks() % ticks_per_second) result += string::format(".{:d7}", math::abs(ticks() % ticks_per_second));
   return result;
 }
 
-int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
+int32 time_span::try_parse_internal(const string& value, time_span& result) {
   result = time_span::zero;
 
   if (value.empty()) return parse_format;
@@ -430,7 +430,7 @@ int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
   }
   
   if (items.size() > 5_z) return parse_format;
-  if (value.last_index_of('-') != ustring::npos && value.last_index_of('-') != 0_z) return parse_format;
+  if (value.last_index_of('-') != string::npos && value.last_index_of('-') != 0_z) return parse_format;
   if (items.size() == 5_z && value.last_index_of(':') > value.last_index_of('.')) return parse_format;
   
   if (0 > hours || hours > 24) return parse_overflow;

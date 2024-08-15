@@ -43,7 +43,7 @@ namespace xtd {
     
     /// @brief Gets architecture string.
     /// @return The architecture string.
-    xtd::ustring architecture_string() const noexcept;
+    xtd::string architecture_string() const noexcept;
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
@@ -55,7 +55,7 @@ namespace xtd {
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
-    xtd::ustring name() const noexcept;
+    xtd::string name() const noexcept;
     /// @}
     
     /// @name Public Methods
@@ -63,13 +63,13 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this processor object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::ustring to_string() const noexcept override;
+    xtd::string to_string() const noexcept override;
     /// @}
     
   private:
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;
     bool is_64_bit_ = false;
     uint32 core_count_ = 1;
-    mutable xtd::ustring architecture_string_;
+    mutable xtd::string architecture_string_;
   };
 }

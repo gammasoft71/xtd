@@ -6,7 +6,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-ustring trace_event_cache::call_stack() const noexcept {
+string trace_event_cache::call_stack() const noexcept {
   return stack_trace(true).to_string();
 }
 
@@ -16,16 +16,16 @@ const date_time& trace_event_cache::date_time() const noexcept {
   return date_time_;
 }
 
-std::vector<ustring> trace_event_cache::logical_operation_stack() const noexcept {
-  return std::vector<ustring>();
+std::vector<string> trace_event_cache::logical_operation_stack() const noexcept {
+  return std::vector<string>();
 }
 
 int32 trace_event_cache::process_id() const noexcept {
   return -1;
 }
 
-ustring trace_event_cache::thread_id() const noexcept {
-  return ustring::format("{}", threading::thread::current_thread().managed_thread_id());
+string trace_event_cache::thread_id() const noexcept {
+  return string::format("{}", threading::thread::current_thread().managed_thread_id());
 }
 
 std::chrono::nanoseconds trace_event_cache::timestamp() const noexcept {

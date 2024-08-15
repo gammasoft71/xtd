@@ -28,7 +28,7 @@ namespace xtd::io::tests {
       assert::does_not_throw([] {file::append_all_lines(test_file_name, {"Line 2", "Line 3"});}, csf_);
       
       std::ifstream file(test_file_name);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Line 1\nLine 2\nLine 3\n", contents, csf_);
     }
     
@@ -37,7 +37,7 @@ namespace xtd::io::tests {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "to append");}, csf_);
       
       std::ifstream file(test_file_name);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("This is a text to append", contents, csf_);
     }
     
@@ -48,7 +48,7 @@ namespace xtd::io::tests {
       
       assert::is_true(std::ifstream(test_file_name).good(), csf_);
       std::ifstream file("file2.txt");
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
       ::remove("file2.txt");
     }
@@ -62,7 +62,7 @@ namespace xtd::io::tests {
       
       assert::is_true(std::ifstream(test_file_name).good(), csf_);
       std::ifstream file("file2.txt");
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
       ::remove("file2.txt");
     }
@@ -76,7 +76,7 @@ namespace xtd::io::tests {
       
       assert::is_true(std::ifstream(test_file_name).good(), csf_);
       std::ifstream file("file2.txt");
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Existing", contents, csf_);
       file.close();
       ::remove("file2.txt");
@@ -139,7 +139,7 @@ namespace xtd::io::tests {
       
       assert::is_false(std::ifstream(test_file_name).good(), csf_);
       std::ifstream file("file2.txt");
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
       ::remove("file2.txt");
     }
@@ -168,7 +168,7 @@ namespace xtd::io::tests {
       std::fstream file = file::open(test_file_name, std::ios::in);
       
       assert::is_true(file.good(), csf_);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
     }
     
@@ -189,7 +189,7 @@ namespace xtd::io::tests {
       std::fstream file = file::open(test_file_name, std::ios::out);
       
       assert::is_true(file.good(), csf_);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::is_empty(contents, csf_);
     }
     
@@ -200,7 +200,7 @@ namespace xtd::io::tests {
       std::ifstream file = file::open_read(test_file_name);
       
       assert::is_true(file.good(), csf_);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
     }
     
@@ -215,7 +215,7 @@ namespace xtd::io::tests {
       std::ifstream file = file::open_text(test_file_name);
       
       assert::is_true(file.good(), csf_);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents, csf_);
     }
     
@@ -251,7 +251,7 @@ namespace xtd::io::tests {
       std::ofstream existing_file(test_file_name);
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
-      std::vector<ustring> lines = file::read_all_lines(test_file_name);
+      std::vector<string> lines = file::read_all_lines(test_file_name);
       assert::are_equal(3_z, lines.size(), csf_);
       assert::are_equal("Line 1", lines[0], csf_);
       assert::are_equal("Line 2", lines[1], csf_);
@@ -299,10 +299,10 @@ namespace xtd::io::tests {
       assert::is_true(std::ifstream(file_name2).good(), csf_);
       assert::is_true(std::ifstream(file_name3).good(), csf_);
       std::ifstream file2(file_name2);
-      ustring contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text1", contents, csf_);
       std::ifstream file3(file_name3);
-      contents = ustring {std::istreambuf_iterator<char> {file3}, std::istreambuf_iterator<char> {}};
+      contents = string {std::istreambuf_iterator<char> {file3}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text2", contents, csf_);
       
       file2.close();
@@ -325,7 +325,7 @@ namespace xtd::io::tests {
       assert::is_true(std::ifstream(file_name2).good(), csf_);
       assert::is_false(std::ifstream(file_name3).good(), csf_);
       std::ifstream file2(file_name2);
-      ustring contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text2", contents, csf_);
       
       file2.close();
@@ -347,7 +347,7 @@ namespace xtd::io::tests {
       assert::is_false(std::ifstream(file_name2).good(), csf_);
       assert::is_false(std::ifstream(file_name3).good(), csf_);
       std::ifstream file1(file_name1);
-      ustring contents {std::istreambuf_iterator<char> {file1}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file1}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text1", contents, csf_);
       
       ::remove(file_name1);
@@ -374,10 +374,10 @@ namespace xtd::io::tests {
       assert::is_true(std::ifstream(file_name2).good(), csf_);
       assert::is_true(std::ifstream(file_name3).good(), csf_);
       std::ifstream file2(file_name2);
-      ustring contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file2}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text1", contents, csf_);
       std::ifstream file3(file_name3);
-      contents = ustring {std::istreambuf_iterator<char> {file3}, std::istreambuf_iterator<char> {}};
+      contents = string {std::istreambuf_iterator<char> {file3}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Text2", contents, csf_);
       
       ::remove(file_name1);
@@ -390,7 +390,7 @@ namespace xtd::io::tests {
       assert::does_not_throw([] {file::write_all_lines(test_file_name, {"Line 2", "Line 3"});}, csf_);
       
       std::ifstream file(test_file_name);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("Line 2\nLine 3\n", contents, csf_);
     }
     
@@ -399,7 +399,7 @@ namespace xtd::io::tests {
       assert::does_not_throw([] {file::write_all_text(test_file_name, "to write");}, csf_);
       
       std::ifstream file(test_file_name);
-      ustring contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
+      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
       assert::are_equal("to write", contents, csf_);
     }
   };

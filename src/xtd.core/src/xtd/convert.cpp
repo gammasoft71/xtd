@@ -86,7 +86,7 @@ std::any convert::to_any(xtd::ulong value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const ustring& value) noexcept {
+std::any convert::to_any(const string& value) noexcept {
   return value;
 }
 
@@ -242,72 +242,72 @@ bool convert::to_boolean(xtd::ulong value) noexcept {
   return value != 0;
 }
 
-bool convert::to_boolean(const ustring& value) {
-  return ustring::parse<bool>(value);
+bool convert::to_boolean(const string& value) {
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const std::string& value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const std::u8string& value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 #endif
 
 bool convert::to_boolean(const std::u16string& value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const std::u32string& value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const std::wstring& value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const char* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(char* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const char8* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(char8* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 #endif
 
 bool convert::to_boolean(const char16* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(char16* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const char32* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(char32* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(const wchar* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 bool convert::to_boolean(wchar* value) {
-  return ustring::parse<bool>(value);
+  return string::parse<bool>(value);
 }
 
 xtd::byte convert::to_byte(std::any value) {
@@ -411,11 +411,11 @@ xtd::byte convert::to_byte(xtd::ulong value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const ustring& value) {
-  return ustring::parse<xtd::byte>(value);
+xtd::byte convert::to_byte(const string& value) {
+  return string::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const ustring& value, xtd::byte from_base) {
+xtd::byte convert::to_byte(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<xtd::byte>(value, number_styles::binary_number); break;
     case 8: return parse<xtd::byte>(value, number_styles::octal_number); break;
@@ -426,67 +426,67 @@ xtd::byte convert::to_byte(const ustring& value, xtd::byte from_base) {
 }
 
 xtd::byte convert::to_byte(const std::string& value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const std::u8string& value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 #endif
 
 xtd::byte convert::to_byte(const std::u16string& value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(const std::u32string& value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(const std::wstring& value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(const char* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(char* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const char8* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(char8* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 #endif
 
 xtd::byte convert::to_byte(const char16* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(char16* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(const char32* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(char32* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(const wchar* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(wchar* value) {
-  return ustring::parse<xtd::byte>(value);
+  return string::parse<xtd::byte>(value);
 }
 
 char convert::to_char(std::any value) {
@@ -590,7 +590,7 @@ char convert::to_char(xtd::ulong value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(const ustring& value) {
+char convert::to_char(const string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -770,7 +770,7 @@ char8 convert::to_char8(xtd::ulong value) {
   return static_cast<char8>(value);
 }
 
-char8 convert::to_char8(const ustring& value) {
+char8 convert::to_char8(const string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -953,7 +953,7 @@ char16 convert::to_char16(xtd::ulong value) {
   return static_cast<char16>(value);
 }
 
-char16 convert::to_char16(const ustring& value) {
+char16 convert::to_char16(const string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1137,7 +1137,7 @@ char32 convert::to_char32(xtd::ulong value) {
   return static_cast<char32>(value);
 }
 
-char32 convert::to_char32(const ustring& value) {
+char32 convert::to_char32(const string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1323,7 +1323,7 @@ wchar convert::to_wchar(xtd::ulong value) {
   return static_cast<wchar>(value);
 }
 
-wchar convert::to_wchar(const ustring& value) {
+wchar convert::to_wchar(const string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1493,72 +1493,72 @@ decimal convert::to_decimal(xtd::ulong value) noexcept {
   return static_cast<decimal>(value);
 }
 
-decimal convert::to_decimal(const ustring& value) {
-  return ustring::parse<decimal>(value);
+decimal convert::to_decimal(const string& value) {
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const std::string& value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const std::u8string& value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 #endif
 
 decimal convert::to_decimal(const std::u16string& value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const std::u32string& value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const std::wstring& value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const char* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(char* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const char8* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(char8* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 #endif
 
 decimal convert::to_decimal(const char16* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(char16* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const char32* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(char32* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(const wchar* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 decimal convert::to_decimal(wchar* value) {
-  return ustring::parse<decimal>(value);
+  return string::parse<decimal>(value);
 }
 
 double convert::to_double(std::any value) {
@@ -1647,72 +1647,72 @@ double convert::to_double(xtd::ulong value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(const ustring& value) {
-  return ustring::parse<double>(value);
+double convert::to_double(const string& value) {
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const std::string& value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const std::u8string& value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 #endif
 
 double convert::to_double(const std::u16string& value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const std::u32string& value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const std::wstring& value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const char* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(char* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const char8* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(char8* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 #endif
 
 double convert::to_double(const char16* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(char16* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const char32* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(char32* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(const wchar* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 double convert::to_double(wchar* value) {
-  return ustring::parse<double>(value);
+  return string::parse<double>(value);
 }
 
 float convert::to_single(std::any value) {
@@ -1801,72 +1801,72 @@ float convert::to_single(xtd::ulong value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(const ustring& value) {
-  return ustring::parse<float>(value);
+float convert::to_single(const string& value) {
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const std::string& value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const std::u8string& value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 #endif
 
 float convert::to_single(const std::u16string& value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const std::u32string& value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const std::wstring& value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const char* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(char* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const char8* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(char8* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 #endif
 
 float convert::to_single(const char16* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(char16* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const char32* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(char32* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(const wchar* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 float convert::to_single(wchar* value) {
-  return ustring::parse<float>(value);
+  return string::parse<float>(value);
 }
 
 int16 convert::to_int16(std::any value) {
@@ -1966,11 +1966,11 @@ int16 convert::to_int16(xtd::ulong value) {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(const ustring& value) {
-  return ustring::parse<int16>(value);
+int16 convert::to_int16(const string& value) {
+  return string::parse<int16>(value);
 }
 
-int16 convert::to_int16(const ustring& value, xtd::byte from_base) {
+int16 convert::to_int16(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int16>(value, number_styles::binary_number); break;
     case 8: return parse<int16>(value, number_styles::octal_number); break;
@@ -1981,67 +1981,67 @@ int16 convert::to_int16(const ustring& value, xtd::byte from_base) {
 }
 
 int16 convert::to_int16(const std::string& value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const std::u8string& value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 #endif
 
 int16 convert::to_int16(const std::u16string& value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(const std::u32string& value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(const std::wstring& value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(const char* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(char* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const char8* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(char8* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 #endif
 
 int16 convert::to_int16(const char16* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(char16* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(const char32* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(char32* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(const wchar* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int16 convert::to_int16(wchar* value) {
-  return ustring::parse<int16>(value);
+  return string::parse<int16>(value);
 }
 
 int32 convert::to_int32(std::any value) {
@@ -2137,11 +2137,11 @@ int32 convert::to_int32(xtd::ulong value) {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(const ustring& value) {
-  return ustring::parse<int32>(value);
+int32 convert::to_int32(const string& value) {
+  return string::parse<int32>(value);
 }
 
-int32 convert::to_int32(const ustring& value, xtd::byte from_base) {
+int32 convert::to_int32(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int32>(value, number_styles::binary_number); break;
     case 8: return parse<int32>(value, number_styles::octal_number); break;
@@ -2152,67 +2152,67 @@ int32 convert::to_int32(const ustring& value, xtd::byte from_base) {
 }
 
 int32 convert::to_int32(const std::string& value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const std::u8string& value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 #endif
 
 int32 convert::to_int32(const std::u16string& value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(const std::u32string& value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(const std::wstring& value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(const char* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(char* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const char8* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(char8* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 #endif
 
 int32 convert::to_int32(const char16* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(char16* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(const char32* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(char32* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(const wchar* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int32 convert::to_int32(wchar* value) {
-  return ustring::parse<int32>(value);
+  return string::parse<int32>(value);
 }
 
 int64 convert::to_int64(std::any value) {
@@ -2303,11 +2303,11 @@ int64 convert::to_int64(xtd::ulong value) {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(const ustring& value) {
-  return ustring::parse<int64>(value);
+int64 convert::to_int64(const string& value) {
+  return string::parse<int64>(value);
 }
 
-int64 convert::to_int64(const ustring& value, xtd::byte from_base) {
+int64 convert::to_int64(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int64>(value, number_styles::binary_number); break;
     case 8: return parse<int64>(value, number_styles::octal_number); break;
@@ -2318,67 +2318,67 @@ int64 convert::to_int64(const ustring& value, xtd::byte from_base) {
 }
 
 int64 convert::to_int64(const std::string& value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const std::u8string& value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 #endif
 
 int64 convert::to_int64(const std::u16string& value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(const std::u32string& value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(const std::wstring& value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(const char* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(char* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const char8* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(char8* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 #endif
 
 int64 convert::to_int64(const char16* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(char16* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(const char32* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(char32* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(const wchar* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 int64 convert::to_int64(wchar* value) {
-  return ustring::parse<int64>(value);
+  return string::parse<int64>(value);
 }
 
 slong convert::to_llong(std::any value) {
@@ -2469,11 +2469,11 @@ slong convert::to_llong(xtd::ulong value) {
   return static_cast<slong>(value);
 }
 
-slong convert::to_llong(const ustring& value) {
-  return ustring::parse<slong>(value);
+slong convert::to_llong(const string& value) {
+  return string::parse<slong>(value);
 }
 
-slong convert::to_llong(const ustring& value, xtd::byte from_base) {
+slong convert::to_llong(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<slong>(value, number_styles::binary_number); break;
     case 8: return parse<slong>(value, number_styles::octal_number); break;
@@ -2484,67 +2484,67 @@ slong convert::to_llong(const ustring& value, xtd::byte from_base) {
 }
 
 slong convert::to_llong(const std::string& value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const std::u8string& value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 #endif
 
 slong convert::to_llong(const std::u16string& value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(const std::u32string& value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(const std::wstring& value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(const char* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(char* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const char8* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(char8* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 #endif
 
 slong convert::to_llong(const char16* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(char16* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(const char32* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(char32* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(const wchar* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 slong convert::to_llong(wchar* value) {
-  return ustring::parse<slong>(value);
+  return string::parse<slong>(value);
 }
 
 sbyte convert::to_sbyte(std::any value) {
@@ -2647,11 +2647,11 @@ sbyte convert::to_sbyte(xtd::ulong value) {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const ustring& value) {
-  return ustring::parse<sbyte>(value);
+sbyte convert::to_sbyte(const string& value) {
+  return string::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const ustring& value, xtd::byte from_base) {
+sbyte convert::to_sbyte(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<sbyte>(value, number_styles::binary_number); break;
     case 8: return parse<sbyte>(value, number_styles::octal_number); break;
@@ -2662,67 +2662,67 @@ sbyte convert::to_sbyte(const ustring& value, xtd::byte from_base) {
 }
 
 sbyte convert::to_sbyte(const std::string& value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const std::u8string& value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 #endif
 
 sbyte convert::to_sbyte(const std::u16string& value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(const std::u32string& value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(const std::wstring& value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(const char* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(char* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const char8* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(char8* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 #endif
 
 sbyte convert::to_sbyte(const char16* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(char16* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(const char32* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(char32* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(const wchar* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(wchar* value) {
-  return ustring::parse<sbyte>(value);
+  return string::parse<sbyte>(value);
 }
 
 uint16 convert::to_uint16(std::any value) {
@@ -2823,11 +2823,11 @@ uint16 convert::to_uint16(xtd::ulong value) {
   return static_cast<uint16>(value);
 }
 
-uint16 convert::to_uint16(const ustring& value) {
-  return ustring::parse<uint16>(value);
+uint16 convert::to_uint16(const string& value) {
+  return string::parse<uint16>(value);
 }
 
-uint16 convert::to_uint16(const ustring& value, xtd::byte from_base) {
+uint16 convert::to_uint16(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint16>(value, number_styles::binary_number); break;
     case 8: return parse<uint16>(value, number_styles::octal_number); break;
@@ -2838,67 +2838,67 @@ uint16 convert::to_uint16(const ustring& value, xtd::byte from_base) {
 }
 
 uint16 convert::to_uint16(const std::string& value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const std::u8string& value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 #endif
 
 uint16 convert::to_uint16(const std::u16string& value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(const std::u32string& value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(const std::wstring& value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(const char* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(char* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const char8* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(char8* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 #endif
 
 uint16 convert::to_uint16(const char16* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(char16* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(const char32* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(char32* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(const wchar* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint16 convert::to_uint16(wchar* value) {
-  return ustring::parse<uint16>(value);
+  return string::parse<uint16>(value);
 }
 
 uint32 convert::to_uint32(std::any value) {
@@ -2997,11 +2997,11 @@ uint32 convert::to_uint32(xtd::ulong value) {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(const ustring& value) {
-  return ustring::parse<uint32>(value);
+uint32 convert::to_uint32(const string& value) {
+  return string::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const ustring& value, xtd::byte from_base) {
+uint32 convert::to_uint32(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint32>(value, number_styles::binary_number); break;
     case 8: return parse<uint32>(value, number_styles::octal_number); break;
@@ -3012,67 +3012,67 @@ uint32 convert::to_uint32(const ustring& value, xtd::byte from_base) {
 }
 
 uint32 convert::to_uint32(const std::string& value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const std::u8string& value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 #endif
 
 uint32 convert::to_uint32(const std::u16string& value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(const std::u32string& value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(const std::wstring& value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(const char* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(char* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const char8* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(char8* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 #endif
 
 uint32 convert::to_uint32(const char16* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(char16* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(const char32* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(char32* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(const wchar* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint32 convert::to_uint32(wchar* value) {
-  return ustring::parse<uint32>(value);
+  return string::parse<uint32>(value);
 }
 
 uint64 convert::to_uint64(std::any value) {
@@ -3169,15 +3169,15 @@ uint64 convert::to_uint64(xtd::ulong value) noexcept {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(const ustring& value) {
-  return ustring::parse<uint64>(value);
+uint64 convert::to_uint64(const string& value) {
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const std::string& value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const ustring& value, xtd::byte from_base) {
+uint64 convert::to_uint64(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint64>(value, number_styles::binary_number); break;
     case 8: return parse<uint64>(value, number_styles::octal_number); break;
@@ -3189,62 +3189,62 @@ uint64 convert::to_uint64(const ustring& value, xtd::byte from_base) {
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const std::u8string& value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 #endif
 
 uint64 convert::to_uint64(const std::u16string& value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const std::u32string& value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const std::wstring& value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const char* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(char* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const char8* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(char8* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 #endif
 
 uint64 convert::to_uint64(const char16* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(char16* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const char32* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(char32* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(const wchar* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 uint64 convert::to_uint64(wchar* value) {
-  return ustring::parse<uint64>(value);
+  return string::parse<uint64>(value);
 }
 
 xtd::ulong convert::to_ullong(std::any value) {
@@ -3341,11 +3341,11 @@ xtd::ulong convert::to_ullong(xtd::ulong value) noexcept {
   return value;
 }
 
-xtd::ulong convert::to_ullong(const ustring& value) {
-  return ustring::parse<xtd::ulong>(value);
+xtd::ulong convert::to_ullong(const string& value) {
+  return string::parse<xtd::ulong>(value);
 }
 
-xtd::ulong convert::to_ullong(const ustring& value, xtd::byte from_base) {
+xtd::ulong convert::to_ullong(const string& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<xtd::ulong>(value, number_styles::binary_number); break;
     case 8: return parse<xtd::ulong>(value, number_styles::octal_number); break;
@@ -3356,505 +3356,505 @@ xtd::ulong convert::to_ullong(const ustring& value, xtd::byte from_base) {
 }
 
 xtd::ulong convert::to_ullong(const std::string& value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const std::u8string& value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 #endif
 
 xtd::ulong convert::to_ullong(const std::u16string& value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(const std::u32string& value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(const std::wstring& value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(const char* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(char* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const char8* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(char8* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 #endif
 
 xtd::ulong convert::to_ullong(const char16* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(char16* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(const char32* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(char32* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(const wchar* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(wchar* value) {
-  return ustring::parse<xtd::ulong>(value);
+  return string::parse<xtd::ulong>(value);
 }
 
-ustring convert::to_string(std::any value) {
-  return ustring::format("{}", value);
+string convert::to_string(std::any value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(bool value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(bool value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(xtd::byte value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(xtd::byte value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(xtd::byte value, xtd::byte from_base) {
+string convert::to_string(xtd::byte value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(char value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(char value) noexcept {
+  return string::format("{}", value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_string(char8 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(char8 value) noexcept {
+  return string::format("{}", value);
 }
 #endif
 
-ustring convert::to_string(char16 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(char16 value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(char32 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(char32 value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(wchar value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(wchar value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(decimal value) {
-  return ustring::format("{}", value);
+string convert::to_string(decimal value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(double value) {
-  return ustring::format("{}", value);
+string convert::to_string(double value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(float value) {
-  return ustring::format("{}", value);
+string convert::to_string(float value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(int16 value) {
-  return ustring::format("{}", value);
+string convert::to_string(int16 value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(int16 value, xtd::byte from_base) {
+string convert::to_string(int16 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(int32 value) {
-  return ustring::format("{}", value);
+string convert::to_string(int32 value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(int32 value, xtd::byte from_base) {
+string convert::to_string(int32 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(int64 value) {
-  return ustring::format("{}", value);
+string convert::to_string(int64 value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(int64 value, xtd::byte from_base) {
+string convert::to_string(int64 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(slong value) {
-  return ustring::format("{}", value);
+string convert::to_string(slong value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(slong value, xtd::byte from_base) {
+string convert::to_string(slong value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(sbyte value) {
-  return ustring::format("{}", value);
+string convert::to_string(sbyte value) {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(sbyte value, xtd::byte from_base) {
+string convert::to_string(sbyte value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(uint16 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(uint16 value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(uint16 value, xtd::byte from_base) {
+string convert::to_string(uint16 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(uint32 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(uint32 value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(uint32 value, xtd::byte from_base) {
+string convert::to_string(uint32 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(uint64 value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(uint64 value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(uint64 value, xtd::byte from_base) {
+string convert::to_string(uint64 value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(xtd::ulong value) noexcept {
-  return ustring::format("{}", value);
+string convert::to_string(xtd::ulong value) noexcept {
+  return string::format("{}", value);
 }
 
-ustring convert::to_string(xtd::ulong value, xtd::byte from_base) {
+string convert::to_string(xtd::ulong value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
+    case 2: return string::format("{:B}", value); break;
+    case 8: return string::format("{:O}", value); break;
+    case 10: return string::format("{:D}", value); break;
+    case 16: return string::format("{:X}", value); break;
     default: throw argument_exception {csf_};
   }
 }
 
-ustring convert::to_string(const ustring& value) {
+string convert::to_string(const string& value) {
   return value;
 }
 
-ustring convert::to_string(const std::string& value) {
-  return value;
-}
-
-#if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_string(const std::u8string& value) {
-  return value;
-}
-#endif
-
-ustring convert::to_string(const std::u16string& value) {
-  return value;
-}
-
-ustring convert::to_string(const std::u32string& value) {
-  return value;
-}
-
-ustring convert::to_string(const std::wstring& value) {
-  return value;
-}
-
-ustring convert::to_string(const char* value) {
-  return value;
-}
-
-ustring convert::to_string(char* value) {
+string convert::to_string(const std::string& value) {
   return value;
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_string(const char8* value) {
-  return value;
-}
-
-ustring convert::to_string(char8* value) {
+string convert::to_string(const std::u8string& value) {
   return value;
 }
 #endif
 
-ustring convert::to_string(const char16* value) {
+string convert::to_string(const std::u16string& value) {
   return value;
 }
 
-ustring convert::to_string(char16* value) {
+string convert::to_string(const std::u32string& value) {
   return value;
 }
 
-ustring convert::to_string(const char32* value) {
+string convert::to_string(const std::wstring& value) {
   return value;
 }
 
-ustring convert::to_string(char32* value) {
+string convert::to_string(const char* value) {
   return value;
 }
 
-ustring convert::to_string(const wchar* value) {
+string convert::to_string(char* value) {
   return value;
 }
 
-ustring convert::to_string(wchar* value) {
+#if defined(__xtd__cpp_lib_char8_t)
+string convert::to_string(const char8* value) {
   return value;
 }
 
-ustring convert::to_ustring(std::any value) {
+string convert::to_string(char8* value) {
+  return value;
+}
+#endif
+
+string convert::to_string(const char16* value) {
+  return value;
+}
+
+string convert::to_string(char16* value) {
+  return value;
+}
+
+string convert::to_string(const char32* value) {
+  return value;
+}
+
+string convert::to_string(char32* value) {
+  return value;
+}
+
+string convert::to_string(const wchar* value) {
+  return value;
+}
+
+string convert::to_string(wchar* value) {
+  return value;
+}
+
+string convert::to_ustring(std::any value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(bool value) noexcept {
+string convert::to_ustring(bool value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(xtd::byte value) noexcept {
+string convert::to_ustring(xtd::byte value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(xtd::byte value, xtd::byte from_base) {
+string convert::to_ustring(xtd::byte value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(char value) noexcept {
+string convert::to_ustring(char value) noexcept {
   return to_string(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_ustring(char8 value) noexcept {
+string convert::to_ustring(char8 value) noexcept {
   return to_string(value);
 }
 #endif
 
-ustring convert::to_ustring(char16 value) noexcept {
+string convert::to_ustring(char16 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char32 value) noexcept {
+string convert::to_ustring(char32 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(wchar value) noexcept {
+string convert::to_ustring(wchar value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(decimal value) {
+string convert::to_ustring(decimal value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(double value) {
+string convert::to_ustring(double value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(float value) {
+string convert::to_ustring(float value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int16 value) {
+string convert::to_ustring(int16 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int16 value, xtd::byte from_base) {
+string convert::to_ustring(int16 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(int32 value) {
+string convert::to_ustring(int32 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int32 value, xtd::byte from_base) {
+string convert::to_ustring(int32 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(int64 value) {
+string convert::to_ustring(int64 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int64 value, xtd::byte from_base) {
+string convert::to_ustring(int64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(slong value) {
+string convert::to_ustring(slong value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(slong value, xtd::byte from_base) {
+string convert::to_ustring(slong value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(sbyte value) {
+string convert::to_ustring(sbyte value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(sbyte value, xtd::byte from_base) {
+string convert::to_ustring(sbyte value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(uint16 value) noexcept {
+string convert::to_ustring(uint16 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint16 value, xtd::byte from_base) {
+string convert::to_ustring(uint16 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(uint32 value) noexcept {
+string convert::to_ustring(uint32 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint32 value, xtd::byte from_base) {
+string convert::to_ustring(uint32 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(uint64 value) noexcept {
+string convert::to_ustring(uint64 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint64 value, xtd::byte from_base) {
+string convert::to_ustring(uint64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(xtd::ulong value) noexcept {
+string convert::to_ustring(xtd::ulong value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(xtd::ulong value, xtd::byte from_base) {
+string convert::to_ustring(xtd::ulong value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(const ustring& value) {
+string convert::to_ustring(const string& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const std::string& value) {
+string convert::to_ustring(const std::string& value) {
   return to_string(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_ustring(const std::u8string& value) {
+string convert::to_ustring(const std::u8string& value) {
   return to_string(value);
 }
 #endif
 
-ustring convert::to_ustring(const std::u16string& value) {
+string convert::to_ustring(const std::u16string& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const std::u32string& value) {
+string convert::to_ustring(const std::u32string& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const std::wstring& value) {
+string convert::to_ustring(const std::wstring& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const char* value) {
+string convert::to_ustring(const char* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char* value) {
+string convert::to_ustring(char* value) {
   return to_string(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_ustring(const char8* value) {
+string convert::to_ustring(const char8* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char8* value) {
+string convert::to_ustring(char8* value) {
   return to_string(value);
 }
 #endif
 
-ustring convert::to_ustring(const char16* value) {
+string convert::to_ustring(const char16* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char16* value) {
+string convert::to_ustring(char16* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const char32* value) {
+string convert::to_ustring(const char32* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char32* value) {
+string convert::to_ustring(char32* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const wchar* value) {
+string convert::to_ustring(const wchar* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(wchar* value) {
+string convert::to_ustring(wchar* value) {
   return to_string(value);
 }

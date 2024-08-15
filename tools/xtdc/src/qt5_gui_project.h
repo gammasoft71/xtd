@@ -4,9 +4,9 @@
 namespace xtdc_command {
   class qt5_gui_project : public base_project {
   public:
-    explicit qt5_gui_project(const xtd::ustring& path) : base_project(path) {}
+    explicit qt5_gui_project(const xtd::string& path) : base_project(path) {}
     
-    void create(const xtd::ustring& name, bool create_solution) const {
+    void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) {
         create_solution_cmakelists_txt(name);
@@ -19,37 +19,37 @@ namespace xtdc_command {
       create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
-    void generate(const xtd::ustring& name) const {
+    void generate(const xtd::string& name) const {
       generate_cmakelists_txt(name, current_path());
       generate_qmake_pro(name, current_path());
     }
     
   private:
-    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
-      std::vector<xtd::ustring> lines {
+    void create_solution_cmakelists_txt(const xtd::string& name) const {
+      std::vector<xtd::string> lines {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
-        xtd::ustring::format("project({})", name),
-        xtd::ustring::format("add_subdirectory({})", name)
+        xtd::string::format("project({})", name),
+        xtd::string::format("add_subdirectory({})", name)
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
     
-    void create_solution_qmake_pro(const xtd::ustring& name) const {
-      std::vector<xtd::ustring> lines {
+    void create_solution_qmake_pro(const xtd::string& name) const {
+      std::vector<xtd::string> lines {
         "TEMPLATE = subdirs",
-        xtd::ustring::format("SUBDIRS = {}", name),
+        xtd::string::format("SUBDIRS = {}", name),
       };
-      xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), xtd::ustring::format("{}.pro", name)), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), xtd::string::format("{}.pro", name)), lines);
     }
     
-    void create_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
-        xtd::ustring::format("project({} VERSION 1.0.0)", name),
+        xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -74,25 +74,25 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_qmake_pro(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_qmake_pro(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "CONFIG += c++17",
         "QT = widgets",
         "HEADERS = src/Window1.h",
         "SOURCES = src/Window1.cpp src/Program.cpp",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.pro", name)), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::string::format("{}.pro", name)), lines);
     }
     
-    void create_include(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_include(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
         "#pragma once",
         "#include <QMainWindow>",
         "",
-        xtd::ustring::format("namespace {} {{", name),
+        xtd::string::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public QMainWindow {",
         "    Q_OBJECT",
@@ -106,11 +106,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.h"), lines);
     }
     
-    void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "#include \"Window1.h\"",
         "",
-        xtd::ustring::format("using namespace {};", name),
+        xtd::string::format("using namespace {};", name),
         "",
         "Window1::Window1() {",
         "  setWindowTitle(\"Window1\");",
@@ -122,12 +122,12 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
     }
     
-    void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
+    void create_main(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines {
         "#include \"Window1.h\"",
         "#include <QApplication>",
         "",
-        xtd::ustring::format("using namespace {};", name),
+        xtd::string::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
         "auto main(int argc, char* argv[]) -> int {",
@@ -141,18 +141,18 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
     }
     
-    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines;
+    void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines;
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
-      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0)", name));
+      lines.push_back(xtd::string::format("project({} VERSION 1.0.0)", name));
       lines.push_back("set(SOURCES");
       auto [headers, sources] = get_cpp_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::ustring::format("  {}", file));
+        lines.push_back(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::ustring::format("  {}", file));
+        lines.push_back(xtd::string::format("  {}", file));
       lines.push_back(")");
       lines.push_back("source_group(src FILES ${SOURCES})");
       lines.push_back("find_package(Qt5 COMPONENTS Widgets REQUIRED)");
@@ -172,15 +172,15 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void generate_qmake_pro(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines;
+    void generate_qmake_pro(const xtd::string& name, const xtd::string& path) const {
+      std::vector<xtd::string> lines;
       lines.push_back("CONFIG += c++17");
       lines.push_back("QT = widgets");
       auto [headers, sources] = get_cpp_sources(path, path);
-      lines.push_back(xtd::ustring::format("HEADERS = {}", xtd::ustring::join(" ", headers)));
-      lines.push_back(xtd::ustring::format("SOURCES = {}", xtd::ustring::join(" ", sources)));
+      lines.push_back(xtd::string::format("HEADERS = {}", xtd::string::join(" ", headers)));
+      lines.push_back(xtd::string::format("SOURCES = {}", xtd::string::join(" ", sources)));
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.pro", name)), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::string::format("{}.pro", name)), lines);
     }
   };
 }

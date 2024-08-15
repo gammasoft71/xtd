@@ -42,7 +42,7 @@ namespace {
     // Workaround : Call wxClientDCImpl without a window.
     if (func.Contains("DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
     
-    if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", ustring::format("cond={}, msg={}", cond, msg), stack_frame {ustring {file.c_str()}, as<uint32>(line), ustring {func.c_str()}})) debug_break_();
+    if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", string::format("cond={}, msg={}", cond, msg), stack_frame {string {file.c_str()}, as<uint32>(line), string {func.c_str()}})) debug_break_();
   }
 }
 
@@ -79,7 +79,7 @@ void xtd::drawing::native::toolkit::shutdown(intptr handle) {
   wxEntryCleanup();
 }
 
-ustring xtd::drawing::native::toolkit::name() {
+string xtd::drawing::native::toolkit::name() {
   return "wxWidgets";
 }
 

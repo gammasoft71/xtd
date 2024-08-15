@@ -144,7 +144,7 @@ std::vector<image> mimetypes_system_images::get_images(const xtd::drawing::size&
   return std::vector {application_x_executable(size), audio_x_generic(size), font_x_generic(size), image_x_generic(size), package_x_generic(size), text_html(size), text_x_generic(size), text_x_generic_template(size), text_x_script(size), video_x_generic(size), x_office_address_book(size), x_office_calendar(size), x_office_contact(size), x_office_document(size), x_office_presentation(size), x_office_spreadsheet(size), };
 }
 
-const std::vector<ustring>& mimetypes_system_images::get_image_names() noexcept {
+const std::vector<string>& mimetypes_system_images::get_image_names() noexcept {
   static auto names = std::vector {"application-x-executable"_s, "audio-x-generic"_s, "font-x-generic"_s, "image-x-generic"_s, "package-x-generic"_s, "text-html"_s, "text-x-generic"_s, "text-x-generic-template"_s, "text-x-script"_s, "video-x-generic"_s, "x-office-address-book"_s, "x-office-calendar"_s, "x-office-contact"_s, "x-office-document"_s, "x-office-presentation"_s, "x-office-spreadsheet"_s, };
   return names;
 }

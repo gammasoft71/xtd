@@ -17,22 +17,22 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-checked_list_box::item::item(const xtd::ustring& value) : list_box::item(value) {
+checked_list_box::item::item(const xtd::string& value) : list_box::item(value) {
 }
 
-checked_list_box::item::item(const xtd::ustring& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
+checked_list_box::item::item(const xtd::string& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
 }
 
-checked_list_box::item::item(const xtd::ustring& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {
+checked_list_box::item::item(const xtd::string& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {
 }
 
-checked_list_box::item::item(const xtd::ustring& value, const std::any& tag) : list_box::item(value, tag) {
+checked_list_box::item::item(const xtd::string& value, const std::any& tag) : list_box::item(value, tag) {
 }
 
-checked_list_box::item::item(const xtd::ustring& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
+checked_list_box::item::item(const xtd::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
 }
 
-checked_list_box::item::item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {
+checked_list_box::item::item(const xtd::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {
 }
 
 checked_list_box::item::item(const char* value) : list_box::item(value) {
@@ -148,7 +148,7 @@ std::vector<checked_list_box::item> checked_list_box::selected_items() const noe
   return itms;
 }
 
-control& checked_list_box::text(const xtd::ustring& text) {
+control& checked_list_box::text(const xtd::string& text) {
   data_->selected_item = {text};
   return *this;
 }
@@ -174,7 +174,7 @@ checked_list_box checked_list_box::create(const drawing::point& location, const 
   return result;
 }
 
-checked_list_box checked_list_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.location(location);
   result.size(size);
@@ -203,7 +203,7 @@ checked_list_box checked_list_box::create(const object_collection& items, const 
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.items(items);
   result.location(location);
@@ -236,7 +236,7 @@ checked_list_box checked_list_box::create(const object_collection& items, size_t
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.items(items);
   result.selected_index(selected_index);
@@ -267,7 +267,7 @@ checked_list_box checked_list_box::create(const control& parent, const drawing::
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.location(location);
@@ -300,7 +300,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items(items);
@@ -337,7 +337,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items(items);
@@ -360,7 +360,7 @@ forms::check_state checked_list_box::get_item_check_state(size_t index) const {
   return items()[index].check_state();
 }
 
-const xtd::ustring& checked_list_box::get_item_text(size_t index) const {
+const xtd::string& checked_list_box::get_item_text(size_t index) const {
   return items()[index].value();
 }
 
@@ -376,7 +376,7 @@ void checked_list_box::set_item_check_state(size_t index, forms::check_state che
   }
 }
 
-void checked_list_box::set_item_text(size_t index, const xtd::ustring& text) {
+void checked_list_box::set_item_text(size_t index, const xtd::string& text) {
   items()[index] = {text, items()[index].checked(), items()[index].tag()};
 }
 
@@ -406,7 +406,7 @@ forms::create_params checked_list_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> checked_list_box::clone() const {
   auto result = xtd::new_uptr<checked_list_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 

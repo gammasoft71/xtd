@@ -25,7 +25,7 @@ tcp_client::tcp_client(address_family address_family) : data_(xtd::new_sptr<tcp_
   data_->client_socket = socket(address_family, socket_type::stream, protocol_type::tcp);
 }
 
-tcp_client::tcp_client(const xtd::ustring& hostname, uint16 port) : data_(xtd::new_sptr<tcp_client::data>()) {
+tcp_client::tcp_client(const xtd::string& hostname, uint16 port) : data_(xtd::new_sptr<tcp_client::data>()) {
   connect(hostname, port);
 }
 
@@ -124,7 +124,7 @@ xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const std::vector<xtd::n
   return data_->client_socket.begin_connect(addresses, port, callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
   if (active()) throw socket_exception(socket_error::is_connected, csf_);
   return data_->client_socket.begin_connect(host, port, callback, state);
 }
@@ -147,7 +147,7 @@ void tcp_client::connect(const xtd::net::ip_address& ip_address, uint16 port) {
   active(true);
 }
 
-void tcp_client::connect(const xtd::ustring& host_name, uint16 port) {
+void tcp_client::connect(const xtd::string& host_name, uint16 port) {
   if (active()) throw socket_exception(socket_error::is_connected, csf_);
   data_->client_socket.connect(dns::get_host_addresses(host_name), port);
   active(true);

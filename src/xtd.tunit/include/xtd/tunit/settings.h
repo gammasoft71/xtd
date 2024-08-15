@@ -93,12 +93,12 @@ namespace xtd {
       /// @brief Gets filter tests.
       /// @return filter tests.
       /// @remarks The value by default is "*.*".
-      const std::vector<ustring>& filter_tests() const noexcept;
+      const std::vector<string>& filter_tests() const noexcept;
       
       /// @brief Sets filter tests.
       /// @param filter_tests filter tests.
       /// @remarks The value by default is "*.*".
-      void filter_tests(const std::vector<ustring>& filter_tests) noexcept;
+      void filter_tests(const std::vector<string>& filter_tests) noexcept;
       
       /// @brief Gets google test comaptibility.
       /// @return true if google test comaptibility; otherwise false.
@@ -110,7 +110,7 @@ namespace xtd {
       
       /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
       /// @return Return true if class name and test name match with the current filter tests; otherwise false.
-      bool is_match_test_name(const xtd::ustring& test_class_name, const xtd::ustring& test_name) const noexcept;
+      bool is_match_test_name(const xtd::string& test_class_name, const xtd::string& test_name) const noexcept;
       
       /// @brief Gets list tests.
       /// @return true if list tests; otherwise false.
@@ -146,19 +146,19 @@ namespace xtd {
       
       /// @brief Gets output json path.
       /// @return Output json path.
-      xtd::ustring output_json_path() const noexcept;
+      xtd::string output_json_path() const noexcept;
       
       /// @brief Sets output sjon path.
       /// @param output_jsonl_path Output json path.
-      void output_json_path(const xtd::ustring& output_json_path) noexcept;
+      void output_json_path(const xtd::string& output_json_path) noexcept;
       
       /// @brief Gets output xml path.
       /// @return Output xml path.
-      xtd::ustring output_xml_path() const noexcept;
+      xtd::string output_xml_path() const noexcept;
       
       /// @brief Sets output xml path.
       /// @param output_xml_path Output xml path.
-      void output_xml_path(const xtd::ustring& output_xml_path) noexcept;
+      void output_xml_path(const xtd::string& output_xml_path) noexcept;
       
       /// @brief Gets shuffle tests.
       /// @return Shuffle test.
@@ -230,7 +230,7 @@ namespace xtd {
       friend class ostream_event_listener;
       friend class ostream_unit_test;
       
-      bool pattern_compare(const xtd::ustring& name, const xtd::ustring& pattern) const noexcept;
+      bool pattern_compare(const xtd::string& name, const xtd::string& pattern) const noexcept;
       
       void end_time(const xtd::date_time& end_time) noexcept;
       void start_time(const xtd::date_time& start_time) noexcept;
@@ -239,7 +239,7 @@ namespace xtd {
       bool break_on_failure_ = false;
       bool brief_ = false;
       bool throw_on_failure_ = false;
-      std::vector<ustring> filter_tests_;
+      std::vector<string> filter_tests_;
       int32 exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;
       bool count_tests_ = false;
@@ -247,9 +247,9 @@ namespace xtd {
       bool output_color_ = true;
       bool output_json_ = false;
       bool output_xml_ = false;
-      std::optional<xtd::ustring> output_json_path_;
-      std::optional<xtd::ustring> output_xml_path_;
-      xtd::ustring file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
+      std::optional<xtd::string> output_json_path_;
+      std::optional<xtd::string> output_xml_path_;
+      xtd::string file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       uint32 random_seed_ = 0;

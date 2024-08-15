@@ -23,10 +23,10 @@ namespace xtd::forms::tests {
     class control_for_test : public control {
     public:
       control_for_test() = default;
-      explicit control_for_test(const xtd::ustring& text) : control(text) {}
-      control_for_test(const control& parent, const xtd::ustring& text) : control(parent, text) {}
-      control_for_test(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(text, left, top, width, height) {}
-      control_for_test(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(parent, text, left, top, width, height) {}
+      explicit control_for_test(const xtd::string& text) : control(text) {}
+      control_for_test(const control& parent, const xtd::string& text) : control(parent, text) {}
+      control_for_test(const xtd::string& text, int32 left, int32 top, int32 width, int32 height) : control(text, left, top, width, height) {}
+      control_for_test(const control& parent, const xtd::string& text, int32 left, int32 top, int32 width, int32 height) : control(parent, text, left, top, width, height) {}
       
       using control::default_back_color;
       using control::default_cursor;
@@ -1258,7 +1258,7 @@ namespace xtd::forms::tests {
     void test_method_(tag_without_parent) {
       control_for_test control;
       control.tag("my tag");
-      assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
+      assert::are_equal("my tag", as<string>(control.tag()), csf_);
     }
     
     void test_method_(tag_with_parent) {
@@ -1266,7 +1266,7 @@ namespace xtd::forms::tests {
       control_for_test control;
       control.parent(form);
       control.tag("my tag");
-      assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
+      assert::are_equal("my tag", as<string>(control.tag()), csf_);
     }
     
     void test_method_(text_without_parent) {

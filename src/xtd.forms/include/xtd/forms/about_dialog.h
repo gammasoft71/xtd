@@ -45,13 +45,13 @@ namespace xtd {
       
       /// @{
       /// @brief Represents an author collection.
-      using author_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      using author_collection = xtd::forms::layout::arranged_element_collection<xtd::string>;
       /// @brief Represents an artist collection.
-      using artist_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      using artist_collection = xtd::forms::layout::arranged_element_collection<xtd::string>;
       /// @brief Represents a documenter collection.
-      using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::string>;
       /// @brief Represents a translator collection.
-      using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::string>;
       /// @brief Represents user tab page collection.
       using user_tab_page_collection = tab_control::tab_page_collection;
       /// @}
@@ -94,19 +94,19 @@ namespace xtd {
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
-      xtd::ustring copyright() const noexcept;
+      xtd::string copyright() const noexcept;
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
       /// @return Current about_dialog instance.
-      about_dialog& copyright(const xtd::ustring& copyright);
+      about_dialog& copyright(const xtd::string& copyright);
       
       /// @brief Gets the product description.
       /// @return The product description.
-      xtd::ustring description() const noexcept;
+      xtd::string description() const noexcept;
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current about_dialog instance.
-      about_dialog& description(const xtd::ustring& description);
+      about_dialog& description(const xtd::string& description);
       
       /// @brief Gets the documentation writers array.
       /// @return The documentation writers array.
@@ -145,27 +145,27 @@ namespace xtd {
       
       /// @brief Gets the product license.
       /// @return The product license.
-      xtd::ustring license() const noexcept;
+      xtd::string license() const noexcept;
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current about_dialog instance.
-      about_dialog& license(const xtd::ustring& license);
+      about_dialog& license(const xtd::string& license);
       
       /// @brief Gets the product long version.
       /// @return The product long version.
-      xtd::ustring long_version() const noexcept;
+      xtd::string long_version() const noexcept;
       /// @brief Sets the product long version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& long_version(const xtd::ustring& long_version);
+      about_dialog& long_version(const xtd::string& long_version);
       
       /// @brief Gets the product name.
       /// @return The product name.
-      xtd::ustring name() const noexcept;
+      xtd::string name() const noexcept;
       /// @brief Sets the product name.
       /// @param name The product name.
       /// @return Current about_dialog instance.
-      about_dialog& name(const xtd::ustring& name);
+      about_dialog& name(const xtd::string& name);
       
       /// @brief Gets the translators array.
       /// @return The translators array.
@@ -189,27 +189,27 @@ namespace xtd {
 
       /// @brief Gets the product version.
       /// @return The product version.
-      xtd::ustring version() const noexcept;
+      xtd::string version() const noexcept;
       /// @brief Sets the product version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      about_dialog& version(const xtd::ustring& version);
+      about_dialog& version(const xtd::string& version);
       
       /// @brief Gets the product website.
       /// @return The website.
-      xtd::ustring website() const noexcept;
+      xtd::string website() const noexcept;
       /// @brief Sets the product website.
       /// @param website The  product website.
       /// @return Current about_dialog instance.
-      about_dialog& website(const xtd::ustring& website);
+      about_dialog& website(const xtd::string& website);
       
       /// @brief Gets the product website label.
       /// @return The product website label.
-      xtd::ustring website_label() const noexcept;
+      xtd::string website_label() const noexcept;
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
       /// @return Current about_dialog instance.
-      about_dialog& website_label(const xtd::ustring& website_label);
+      about_dialog& website_label(const xtd::string& website_label);
       /// @}
       
       /// @name Public Methods

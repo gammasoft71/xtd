@@ -12,17 +12,17 @@ const test_class* test::current_test_class_ = nullptr;
 const unit_test* test::current_unit_test_ = nullptr;
 intptr test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<intptr>("");
 
-test::test(const ustring& name, const std::function<void()>& method, const diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {
+test::test(const string& name, const std::function<void()>& method, const diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {
 }
 
-test::test(const ustring& name, const std::function<void()>& method, bool ignore, const diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
+test::test(const string& name, const std::function<void()>& method, bool ignore, const diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
 }
 
 bool test::aborted() const noexcept {
   return status_ == test_status::aborted;
 }
 
-const ustring& test::actual() const noexcept {
+const string& test::actual() const noexcept {
   return actual_;
 }
 
@@ -32,7 +32,7 @@ time_span test::elapsed_time() const noexcept {
   return end_time_point - start_time_;
 }
 
-const ustring& test::expect() const noexcept {
+const string& test::expect() const noexcept {
   return expect_;
 }
 
@@ -64,15 +64,15 @@ std::function<void()> test::method() const noexcept {
   return method_;
 }
 
-const ustring& test::message() const noexcept {
+const string& test::message() const noexcept {
   return message_;
 }
 
-const ustring& test::name() const noexcept {
+const string& test::name() const noexcept {
   return name_;
 }
 
-const ustring& test::user_message() const noexcept {
+const string& test::user_message() const noexcept {
   return user_message_;
 }
 
@@ -107,7 +107,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
   
   if (ignored() && settings::default_settings().also_run_ignored_tests()) status_ = test_status::not_started;
   
-  if ((ustring(reinterpret_cast<const char*>(__internal_tunit_unit_tests_mode__)) == "internal_tests" || settings::default_settings().repeat_test() != 1) && (aborted() || failed() || succeed())) status_ = test_status::not_started;
+  if ((string(reinterpret_cast<const char*>(__internal_tunit_unit_tests_mode__)) == "internal_tests" || settings::default_settings().repeat_test() != 1) && (aborted() || failed() || succeed())) status_ = test_status::not_started;
   
   if (settings::default_settings().is_match_test_name(test_class.name(), name())) {
     if (ignored()) {

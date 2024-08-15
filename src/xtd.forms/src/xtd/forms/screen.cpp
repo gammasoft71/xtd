@@ -24,7 +24,7 @@ const drawing::rectangle& screen::bounds() const noexcept {
   return bounds_;
 }
 
-const xtd::ustring& screen::device_name() const {
+const xtd::string& screen::device_name() const {
   return device_name_;
 }
 
@@ -118,5 +118,5 @@ rectangle screen::get_working_area(const rectangle& rect) {
   return from_rectangle(rect).working_area();
 }
 
-screen::screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {
+screen::screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::string& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {
 }

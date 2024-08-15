@@ -56,7 +56,7 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      explicit semaphore(const ustring& name);
+      explicit semaphore(const string& name);
       /// @brief nitializes a new instance of the xtd::threading::semaphore class, specifying optionally specifying the name of a system semaphore object, and specifying a variable that receives a value indicating whether a new system semaphore was created.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param created_new When this method returns, contains true if a local semaphore was created (that is, if name is null or an empty string) or if the specified named system semaphore was created; false if the specified named system semaphore already existed. This parameter is passed uninitialized.
@@ -67,7 +67,7 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      explicit semaphore(const ustring& name, bool& created_new);
+      explicit semaphore(const string& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::semaphore class, specifying the initial number of entries.
       /// @param initial_count The initial number of requests for the semaphore that can be granted concurrently.
       /// @exception xtd::argument_out_of_range_exception initial_count is less than 0.
@@ -85,7 +85,7 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      semaphore(int32 initial_count, const ustring& name);
+      semaphore(int32 initial_count, const string& name);
       /// @brief nitializes a new instance of the xtd::threading::semaphore class, specifying the initial number of entries and the maximum number of concurrent entries, optionally specifying the name of a system semaphore object, and specifying a variable that receives a value indicating whether a new system semaphore was created.
       /// @param initial_count The initial number of requests for the semaphore that can be granted concurrently.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
@@ -98,7 +98,7 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      semaphore(int32 initial_count, const ustring& name, bool& created_new);
+      semaphore(int32 initial_count, const string& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::semaphore class, specifying the initial number of entries and the maximum number of concurrent entries.
       /// @param initial_count The initial number of requests for the semaphore that can be granted concurrently.
       /// @param maximum_count The maximum number of requests for the semaphore that can be granted concurrently.
@@ -121,7 +121,7 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      semaphore(int32 initial_count, int32 maximum_count, const ustring& name);
+      semaphore(int32 initial_count, int32 maximum_count, const string& name);
       /// @brief nitializes a new instance of the xtd::threading::semaphore class, specifying the initial number of entries and the maximum number of concurrent entries, optionally specifying the name of a system semaphore object, and specifying a variable that receives a value indicating whether a new system semaphore was created.
       /// @param initial_count The initial number of requests for the semaphore that can be granted concurrently.
       /// @param maximum_count The maximum number of requests for the semaphore that can be granted concurrently.
@@ -136,12 +136,12 @@ namespace xtd {
       /// @remarks If you specify an empty string ("") for name, a local semaphore is created, as if you had called the xtd::threading::semaphore(int32, int32) constructor overload.
       /// @remarks Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries.
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
-      semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool& created_new);
+      semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new);
       /// @}
 
       /// @cond
       template <typename char_t>
-      explicit semaphore(const char_t* name) : semaphore(ustring(name)) {}
+      explicit semaphore(const char_t* name) : semaphore(string(name)) {}
       ~semaphore();
       /// @endcond
 
@@ -190,7 +190,7 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
-      static semaphore open_existing(const ustring& name);
+      static semaphore open_existing(const string& name);
 
       /// @brief Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
@@ -199,7 +199,7 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
-      static bool try_open_existing(const ustring& name, semaphore& result) noexcept;
+      static bool try_open_existing(const string& name, semaphore& result) noexcept;
       /// @}
 
     protected:

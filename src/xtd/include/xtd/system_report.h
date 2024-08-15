@@ -62,17 +62,17 @@ namespace xtd {
     
     /// @{
     /// @brief Represents an environment variables collection.
-    using environment_variable_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
+    using environment_variable_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @brief Represents a folders collection.
-    using special_folder_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
+    using special_folder_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @brief Represents a colors collection.
-    using system_color_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::color>>;
+    using system_color_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::color>>;
     /// @brief Represents a fonts collection.
-    using system_font_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::font>>;
+    using system_font_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font>>;
     /// @brief Represents a font families collection.
-    using system_font_family_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::font_family>>;
+    using system_font_family_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font_family>>;
     /// @brief Represents a system informations collection.
-    using system_information_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
+    using system_information_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @}
     
     /// @name Public Static Properties
@@ -151,28 +151,28 @@ namespace xtd {
     /// @brief Generates json format string report.
     /// @return An json format string report.
     /// @todo Implement json report
-    static xtd::ustring to_json() noexcept;
+    static xtd::string to_json() noexcept;
     /// @brief Generates json format string report.
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return An json format string report.
     /// @todo Implement json report
-    static xtd::ustring to_json(reports reports) noexcept;
+    static xtd::string to_json(reports reports) noexcept;
     /// @brief Generates string report.
     /// @return A string report.
-    static xtd::ustring to_string() noexcept;
+    static xtd::string to_string() noexcept;
     /// @brief Generates string report.
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return A string report.
-    static xtd::ustring to_string(reports reports) noexcept;
+    static xtd::string to_string(reports reports) noexcept;
     /// @brief Generates xml format string report.
     /// @return An xml format string report.
     /// @todo Implement xml report
-    static xtd::ustring to_xml() noexcept;
+    static xtd::string to_xml() noexcept;
     /// @brief Generates xml format string report.
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return An xml format string report.
     /// @todo Implement xml report
-    static xtd::ustring to_xml(reports reports) noexcept;
+    static xtd::string to_xml(reports reports) noexcept;
     /// @}
   };
 }

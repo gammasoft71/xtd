@@ -14,7 +14,7 @@
 
 constexpr xtd::int32 __CSIDL_HOME__ = 0x0040;
 
-inline xtd::ustring __get_environment_variable__(const xtd::ustring& variable) {
+inline xtd::string __get_environment_variable__(const xtd::string& variable) {
   DWORD environent_variable_size = 65535;
   std::wstring environment_variable(environent_variable_size, 0);
   environent_variable_size = GetEnvironmentVariable(xtd::convert_string::to_wstring(variable).data(), environment_variable.data(), environent_variable_size);
@@ -22,7 +22,7 @@ inline xtd::ustring __get_environment_variable__(const xtd::ustring& variable) {
   return environment_variable.data();
 }
 
-inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
+inline xtd::string __get_know_folder_path__(xtd::int32 id) {
   if (id == __CSIDL_HOME__)
     return __get_environment_variable__("HOMEPATH");
   DWORD path_size = 65535;
@@ -32,7 +32,7 @@ inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
 #else
 #include <xtd/string>
 
-inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
+inline xtd::string __get_know_folder_path__(xtd::int32 id) {
   return "";
 }
 #endif
