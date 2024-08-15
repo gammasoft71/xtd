@@ -1192,7 +1192,7 @@ endmacro()
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
 ##  add_sources(file.h file.cpp)
-##  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+##  setting(name xtd::string APPLICATION "\"Settings example\"")
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
 ##  target_type(CONSOLE_APPLICATION)
@@ -1230,8 +1230,8 @@ endmacro()
 ##  add_sources(file.h file.cpp)
 ##
 ##  setting_include("xtd/drawing/color") 
-##  setting_include("xtd/ustring") 
-##  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+##  setting_include("xtd/string") 
+##  setting(name xtd::string APPLICATION "\"Settings example\"")
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
 ##  target_type(CONSOLE_APPLICATION)
@@ -1853,8 +1853,8 @@ macro(write_resources_file_header)
       )
     elseif ("${EXTENSION}" STREQUAL ".txt")
       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
-        "    static const xtd::ustring& ${NAME}() {\n"
+        "    /// @brief Looks up a localized resource of type xtd::string.\n"
+        "    static const xtd::string& ${NAME}() {\n"
         "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
@@ -1870,8 +1870,8 @@ macro(write_resources_file_header)
       )
     else ()
       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
-        "    static const xtd::ustring& ${NAME}() {\n"
+        "    /// @brief Looks up a localized resource of type xtd::string.\n"
+        "    static const xtd::string& ${NAME}() {\n"
         "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
@@ -1885,9 +1885,9 @@ macro(write_resources_file_header)
     split_resource_string(${RESOURCE_STRING} NAME VALUE COMMENT)
 
     file(APPEND ${RESOURCES_FILE_HEADER}
-      "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
-      "    static const xtd::ustring& ${NAME}() {\n"
-      "      static auto str = xtd::ustring {${VALUE}};\n"
+      "    /// @brief Looks up a localized resource of type xtd::string.\n"
+      "    static const xtd::string& ${NAME}() {\n"
+      "      static auto str = xtd::string {${VALUE}};\n"
       "      return str;\n"
       "    }\n"
       "\n"
