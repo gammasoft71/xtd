@@ -1,27 +1,27 @@
-#include <xtd/literals>
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
   auto duration = 26_h + 3_min + 32_s + 24_ms + 500_ns;
-  cout << ustring::format("{}", duration) << endl;
-  cout << ustring::format("{:c}", duration) << endl;
-  cout << ustring::format("{:d}", duration) << endl;
-  cout << ustring::format("{:D}", duration) << endl;
-  cout << ustring::format("{:f}", duration) << endl;
-  cout << ustring::format("{:F}", duration) << endl;
-  cout << ustring::format("{:g}", duration) << endl;
-  cout << ustring::format("{:G}", duration) << endl;
-  cout << ustring::format("{:h}", duration) << endl;
-  cout << ustring::format("{:H}", duration) << endl;
-  cout << ustring::format("{:m}", duration) << endl;
-  cout << ustring::format("{:M}", duration) << endl;
-  cout << ustring::format("{:n}", duration) << endl;
-  cout << ustring::format("{:N}", duration) << endl;
-  cout << ustring::format("{:s}", duration) << endl;
-  cout << ustring::format("{:S}", duration) << endl;
+  console::out << ustring::format("{}", duration) << environment::new_line;
+  console::out << ustring::format("{:c}", duration) << environment::new_line;
+  console::out << ustring::format("{:d}", duration) << environment::new_line;
+  console::out << ustring::format("{:D}", duration) << environment::new_line;
+  console::out << ustring::format("{:f}", duration) << environment::new_line;
+  console::out << ustring::format("{:F}", duration) << environment::new_line;
+  console::out << ustring::format("{:g}", duration) << environment::new_line;
+  console::out << ustring::format("{:G}", duration) << environment::new_line;
+  console::out << ustring::format("{:h}", duration) << environment::new_line;
+  console::out << ustring::format("{:H}", duration) << environment::new_line;
+  console::out << ustring::format("{:m}", duration) << environment::new_line;
+  console::out << ustring::format("{:M}", duration) << environment::new_line;
+  console::out << ustring::format("{:n}", duration) << environment::new_line;
+  console::out << ustring::format("{:N}", duration) << environment::new_line;
+  console::out << ustring::format("{:s}", duration) << environment::new_line;
+  console::out << ustring::format("{:S}", duration) << environment::new_line;
 }
 
 // This code produces the following output :

@@ -2,7 +2,6 @@
 #include <xtd/interface>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 
 namespace interface2_example {

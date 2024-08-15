@@ -2,7 +2,6 @@
 #include <xtd/console>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 

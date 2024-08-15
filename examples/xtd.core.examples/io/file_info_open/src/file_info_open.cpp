@@ -5,7 +5,6 @@
 #include <xtd/console>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
@@ -26,7 +25,7 @@ public:
     }
     
     //Open the stream and read it back.
-    block_scope_(auto fs = fi.open(ios::in)) {
+    block_scope_(auto fs = fi.open(std::ios::in)) {
       auto sr = stream_reader {fs};
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
