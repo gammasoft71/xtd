@@ -456,8 +456,13 @@ namespace xtd {
     bool operator !=(const wchar* other) const;
     const value_type& operator [](size_t index);
     const value_type& operator [](size_t index) const;
-    ustring substr(size_type index = 0, size_type count = npos) const;
     /// @endcond
+    
+    /// @name Public Properties
+    
+    /// @{
+    xtd::size length() const noexcept;
+    /// @}
     
     /// @name Public Methods
     
@@ -856,6 +861,12 @@ namespace xtd {
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(const ustring& value, bool ignore_case) const noexcept;
     
+    /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than `size()` - `pos` (e.g. if `count` == `npos`), the returned substring is [`pos`, xtd::ustring::size()).
+    /// @param pos The position of the first character to include.
+    /// @param count The length of the substring.
+    /// @return xtd::ustring containing the substring [`pos`, `pos` + `count`) or [`pos`, xtd::ustring::size()).
+    ustring substr(size_type pos = 0, size_type count = npos) const;
+
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
     /// @param str string to substring.
     /// @param start_index The zero-based starting character position of a substring in this instance.
