@@ -4,6 +4,7 @@
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/int16_object.h"
 #include "../../include/xtd/lock.h"
+#include "../../include/xtd/io/io_exception.h"
 #include "../../include/xtd/io/stream_reader.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console>
@@ -144,9 +145,9 @@ int32 console::input_code_page() {
   return native::console::input_code_page();
 }
 
-bool console::input_code_page(int32 code_page) {
+void console::input_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  return native::console::input_code_page(code_page);
+  if (!native::console::input_code_page(code_page)) throw io::io_exception {csf_};
 }
 
 bool console::is_error_redirected() {
@@ -189,9 +190,9 @@ int32 console::output_code_page() {
   return native::console::output_code_page();
 }
 
-bool console::output_code_page(int32 code_page) {
+void console::output_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  return native::console::output_code_page(code_page);
+  if (native::console::output_code_page(code_page)) throw io::io_exception {csf_};
 }
 
 ustring console::title() {

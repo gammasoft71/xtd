@@ -182,6 +182,7 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
+    /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
     /// @remarks The following table lists the encodings supported by xtd.
     /// @remarks
     /// | Code page | Name       | Display name                |
@@ -197,7 +198,7 @@ namespace xtd {
     static int32 input_code_page();
     /// @brief Sets the code page the console uses to read input.
     /// @param code_page The code page used to read console input.
-    /// @return true if the code page changed; otherwise false.
+    /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
     /// @remarks The following table lists the encodings supported by xtd.
     /// @remarks
     /// | Code page | Name       | Display name                |
@@ -210,7 +211,7 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static bool input_code_page(int32 code_page);
+    static void input_code_page(int32 code_page);
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @param true if error output is redirected; otherwise, false.
@@ -241,6 +242,7 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
+    /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
     /// @remarks The following table lists the encodings supported by xtd.
     /// @remarks
     /// | Code page | Name       | Display name                |
@@ -256,7 +258,7 @@ namespace xtd {
     static int32 output_code_page();
     /// @brief Sets the code page the console uses to write output.
     /// @param code_page The code page used to write console output.
-    /// @return true if the code page changed; otherwise false.
+    /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
     /// @remarks The following table lists the encodings supported by xtd.
     /// @remarks
     /// | Code page | Name       | Display name                |
@@ -269,7 +271,7 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static bool output_code_page(int32 code_page);
+    static void output_code_page(int32 code_page);
     
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
