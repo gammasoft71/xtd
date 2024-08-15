@@ -20,7 +20,7 @@
 namespace xtd {
   /// @cond
   class type_object;
-  class ustring;
+  class string;
   /// @endcond
   
   /// @brief Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
@@ -100,12 +100,12 @@ namespace xtd {
       return xtd::new_uptr<object_t>(*object_ptr);
     }
     
-    /// @brief Returns a xtd::ustring that represents the current object.
+    /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
-    virtual xtd::ustring to_string() const noexcept;
+    virtual xtd::string to_string() const noexcept;
     /// @}
     
     /// @name Public Static Methods
@@ -141,7 +141,7 @@ namespace xtd {
     /// @}
     
   private:
-    void __throw_invalid_cast_exception(const ustring& file, uint32 line, const ustring& method) const;
+    void __throw_invalid_cast_exception(const string& file, uint32 line, const string& method) const;
   };
   
   /// @cond

@@ -15,7 +15,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class ustring;
+  class string;
   namespace threading {
     class thread;
     class wait_handle;
@@ -34,7 +34,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ types final {
       types() = delete;
-      friend xtd::ustring;
+      friend xtd::string;
       friend xtd::threading::thread;
       friend xtd::threading::wait_handle;
     protected:

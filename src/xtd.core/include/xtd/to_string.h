@@ -337,7 +337,7 @@ namespace xtd {
   std::string to_string(const char32* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const wchar* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc);
-  std::string to_string(const xtd::ustring& value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const xtd::string& value, const std::string& fmt, const std::locale& loc);
 #if defined(__xtd__cpp_lib_char8_t)
   std::string to_string(const std::u8string& value, const std::string& fmt, const std::locale& loc);
 #endif

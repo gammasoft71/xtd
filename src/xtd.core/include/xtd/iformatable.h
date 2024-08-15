@@ -10,7 +10,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class ustring;
+  class string;
   /// @endcond
   
   /// @brief Provides functionality to format the value of an object into a string representation.
@@ -26,7 +26,7 @@ namespace xtd {
   /// @remarks * Standard and custom format strings for formatting date and time values (see [Standard Date and Time Format Strings]() and [Custom Date and Time Format Strings]()).
   /// @remarks * Standard and custom format strings for formatting time intervals (see [Standard time_span Format Strings]() and [Custom TimeSpan Format Strings]()).
   /// @remarks You can also define your own format strings to support formatting of your application-defined types.
-  /// @remarks The xtd::iformattable interface defines a single method, xtd::iformatable::to_string, that supplies formatting services for the implementing type. The xtd::iformatable::to_string method can be called directly. In addition, it is called automatically by the xtd::convert.to_string methods, and by methods that use the composite formatting feature in the xtd framework. Such methods include xtd::console::write_line, xtd::ustring::format, and xtd::text::string_builder::apend_format, among others. The ToString method is called for each format item in the method's format string.
+  /// @remarks The xtd::iformattable interface defines a single method, xtd::iformatable::to_string, that supplies formatting services for the implementing type. The xtd::iformatable::to_string method can be called directly. In addition, it is called automatically by the xtd::convert.to_string methods, and by methods that use the composite formatting feature in the xtd framework. Such methods include xtd::console::write_line, xtd::string::format, and xtd::text::string_builder::apend_format, among others. The ToString method is called for each format item in the method's format string.
   /// @remarks The xtd::iformattable interface is implemented by the base data types.
   /// @par Notes to Implementers
   /// Classes that require more control over the formatting of strings than xtd::iformattable::to_string() provides should implement xtd::iformattable.
@@ -40,10 +40,10 @@ namespace xtd {
     
     /// @{
     /// @brief Formats the value of the current instance using the specified format.
-    /// @param format The format to use <br>-or-<br> A xtd::ustring::empty_string ("") to use the default format defined for the type of the xtd::iformattable implementation.
+    /// @param format The format to use <br>-or-<br> A xtd::string::empty_string ("") to use the default format defined for the type of the xtd::iformattable implementation.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return The value of the current instance in the specified format.
-    virtual xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const = 0;
+    virtual xtd::string to_string(const xtd::string& format, const std::locale& loc) const = 0;
     /// @}
   
     
