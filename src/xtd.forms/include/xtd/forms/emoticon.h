@@ -6,7 +6,7 @@
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <ostream>
 #include <vector>
 

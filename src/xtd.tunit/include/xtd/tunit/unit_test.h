@@ -7,7 +7,7 @@
 #include "registered_test_class.h"
 #include "settings.h"
 #include <xtd/date_time>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

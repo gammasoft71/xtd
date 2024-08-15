@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/interface>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

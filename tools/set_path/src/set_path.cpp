@@ -2,7 +2,7 @@
 #include <xtd/console>
 #include <xtd/environment>
 #include <xtd/startup>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/chrono>
 #if defined(_WIN32)
 #define UNICODE

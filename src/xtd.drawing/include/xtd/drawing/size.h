@@ -6,7 +6,7 @@
 #include "size_f.h"
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

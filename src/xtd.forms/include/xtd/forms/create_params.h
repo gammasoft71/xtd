@@ -5,7 +5,7 @@
 #include <xtd/drawing/point>
 #include <xtd/drawing/size>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <iostream>
 #include <string>

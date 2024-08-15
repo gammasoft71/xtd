@@ -1,7 +1,7 @@
 #pragma once
 #include "component.h"
 #include <xtd/iequatable>
-#include <xtd/ustring>
+#include <xtd/string>
 
 // TODO: documentation
 namespace xtd {

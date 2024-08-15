@@ -12,7 +12,7 @@
 #include <xtd/drawing/system_fonts>
 #include <xtd/forms/content_alignment>
 #include <xtd/interface>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -1,6 +1,6 @@
 #include <xtd/as>
 #include <xtd/interface>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

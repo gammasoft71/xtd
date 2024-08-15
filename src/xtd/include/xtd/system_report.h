@@ -5,7 +5,7 @@
 #include <vector>
 #include <xtd/environment>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/version>
 #include <xtd/collections/generic/key_value_pair>
 #include <xtd/drawing/color>

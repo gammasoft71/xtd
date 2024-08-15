@@ -9,7 +9,7 @@
 #include <xtd/drawing/image>
 #include <xtd/drawing/rectangle>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <memory>
 #include <vector>
 

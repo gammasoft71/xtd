@@ -4,7 +4,7 @@
 #pragma once
 #include "test_class.h"
 #include "../tunit_export.h"
-#include <xtd/ustring>
+#include <xtd/string>
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

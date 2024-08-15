@@ -88,7 +88,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains program class.",
         "#pragma once",
-        "#include <xtd/ustring>",
+        "#include <xtd/string>",
         "#include <vector>",
         "",
         "/// @brief Represents the namespace that contains application objects.",

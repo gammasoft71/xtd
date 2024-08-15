@@ -13,7 +13,7 @@
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/typeof>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/diagnostics/stack_frame>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

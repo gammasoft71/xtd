@@ -7,7 +7,7 @@
 #include <xtd/drawing/icon>
 #include <xtd/chrono>
 #include <xtd/delegate>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/event>
 #include <xtd/event_args>
 #include <xtd/not_implemented_exception>

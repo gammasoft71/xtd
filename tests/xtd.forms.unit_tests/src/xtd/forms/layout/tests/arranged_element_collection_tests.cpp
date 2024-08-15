@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/forms/layout/arranged_element_collection>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

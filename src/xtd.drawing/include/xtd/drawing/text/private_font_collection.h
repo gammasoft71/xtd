@@ -4,7 +4,7 @@
 #pragma once
 #include "../../drawing_export.h"
 #include "font_collection.h"
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <vector>
 

@@ -1,7 +1,7 @@
 #include "../../../include/xtd/tunit/ostream_event_listener.h"
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/console>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

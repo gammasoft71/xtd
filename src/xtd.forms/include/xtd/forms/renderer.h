@@ -16,7 +16,7 @@
 #include <xtd/delegate>
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

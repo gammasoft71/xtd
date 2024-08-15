@@ -1,4 +1,4 @@
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/null_pointer_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>

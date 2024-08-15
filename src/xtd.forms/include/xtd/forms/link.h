@@ -6,7 +6,7 @@
 #include <xtd/any>
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

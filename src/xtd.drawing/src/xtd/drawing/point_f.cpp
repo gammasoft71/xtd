@@ -3,7 +3,7 @@
 #include "../../../include/xtd/drawing/size.h"
 #include "../../../include/xtd/drawing/size_f.h"
 #include <xtd/as>
-#include <xtd/ustring>
+#include <xtd/string>
 
 using namespace xtd::drawing;
 
