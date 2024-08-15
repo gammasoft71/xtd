@@ -1,7 +1,6 @@
 #include <xtd/xtd.tunit>
 #include <stdexcept>
 
-using namespace std;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -21,8 +20,8 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      auto is = istringstream {"xtd::tunit::file_assert::are_equal example."};
-      file_assert::are_equal(istringstream {"xtd::tunit::file_assert::are_equel example."}, is);
+      auto is = std::istringstream {"xtd::tunit::file_assert::are_equal example."};
+      file_assert::are_equal(std::istringstream {"xtd::tunit::file_assert::are_equel example."}, is);
     }
   };
 }

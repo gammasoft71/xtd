@@ -1,12 +1,11 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_collection_succeed) {
-      valid::is_empty(initializer_list<int> {});
+      valid::is_empty(std::initializer_list<int> {});
     }
     
     void test_method_(test_case_collection_failed) {
