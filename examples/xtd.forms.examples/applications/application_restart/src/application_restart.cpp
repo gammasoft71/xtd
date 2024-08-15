@@ -3,7 +3,6 @@
 #include <xtd/forms/form>
 #include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -13,7 +12,7 @@ auto main() -> int {
   auto restart_button = button::create(main_form, "Restart", {10, 10});
   restart_button.click += application::restart;
   
-  environment::set_environment_variable("application_restart_count", to_string(restart_count + 1));
+  environment::set_environment_variable("application_restart_count", int32_object {restart_count + 1}.to_string());
   
   application::run(main_form);
 }

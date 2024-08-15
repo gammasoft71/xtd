@@ -1,7 +1,6 @@
 #include <limits>
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

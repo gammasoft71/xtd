@@ -4,7 +4,6 @@
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {

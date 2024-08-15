@@ -7,7 +7,6 @@
 #include <xtd/forms/toggle_button>
 #include <list>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -67,7 +66,7 @@ private:
   button button_add;
   button button_remove;
   toggle_button button_expand;
-  list<ptr<control>> control_items;
+  std::list<ptr<control>> control_items;
 };
 
 auto main() -> int {
