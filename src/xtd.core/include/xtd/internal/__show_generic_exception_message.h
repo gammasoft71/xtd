@@ -10,7 +10,7 @@
 
 #include "../system_exception.h"
 #include "../target_id.h"
-#include "../ustring.h"
+#include "../string.h"
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
 #include "xtd/forms/application.h"
 #include "xtd/forms/exception_box.h"

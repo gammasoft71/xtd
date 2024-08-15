@@ -5,7 +5,7 @@
 #include "build_type.h"
 #include "compiler_id.h"
 #include "object.h"
-#include "ustring.h"
+#include "string.h"
 #include "version.h"
 #include <vector>
 

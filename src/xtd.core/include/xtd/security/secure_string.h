@@ -2,7 +2,7 @@
 /// @brief Contains xtd::security::secure_string class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../string.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

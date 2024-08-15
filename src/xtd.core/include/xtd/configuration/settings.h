@@ -4,7 +4,7 @@
 #pragma once
 #include "../core_export.h"
 #include "../object.h"
-#include "../ustring.h"
+#include "../string.h"
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

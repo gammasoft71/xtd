@@ -7,7 +7,7 @@
 #include "../event.h"
 #include "../event_handler.h"
 #include "../object.h"
-#include "../ustring.h"
+#include "../string.h"
 #include "../optional.h"
 #include "data_received_event_handler.h"
 #include "process_priority_class.h"

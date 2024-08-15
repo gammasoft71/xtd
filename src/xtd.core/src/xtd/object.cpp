@@ -4,7 +4,7 @@
 #include "../../include/xtd/invalid_cast_exception.h"
 #include "../../include/xtd/object.h"
 #include "../../include/xtd/type_object.h"
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/string.h"
 
 using namespace xtd;
 using namespace xtd::collections::generic;

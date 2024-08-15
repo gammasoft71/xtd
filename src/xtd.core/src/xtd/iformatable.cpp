@@ -1,5 +1,5 @@
 #include "../../include/xtd/iformatable.h"
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/string.h"
 
 using namespace xtd;
 

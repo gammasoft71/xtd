@@ -5,7 +5,7 @@
 #include "../collections/generic/list.h"
 #include "../any_object.h"
 #include "../abstract.h"
-#include "../ustring.h"
+#include "../string.h"
 #include "default_trace_listener.h"
 #include "source_levels.h"
 #include "source_switch.h"

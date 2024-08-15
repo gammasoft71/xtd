@@ -5,7 +5,7 @@
 #include "iequatable.h"
 #include "object.h"
 #include "type.h"
-#include "ustring.h"
+#include "string.h"
 
 /// @cond
 namespace xtd {

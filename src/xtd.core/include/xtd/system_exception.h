@@ -8,7 +8,7 @@
 #include "core_export.h"
 #include "literals.h"
 #include "object.h"
-#include "ustring.h"
+#include "string.h"
 #include <cstdint>
 #include <stdexcept>
 #include <system_error>

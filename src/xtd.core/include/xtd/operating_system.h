@@ -6,7 +6,7 @@
 #include "distribution.h"
 #include "object.h"
 #include "platform_id.h"
-#include "ustring.h"
+#include "string.h"
 #include "version.h"
 #include <map>
 #include <vector>

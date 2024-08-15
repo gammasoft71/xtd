@@ -4,7 +4,7 @@
 #pragma once
 #include "../core_export.h"
 #include "../object.h"
-#include "../ustring.h"
+#include "../string.h"
 #include <cstdio>
 #include <istream>
 #include <string>
