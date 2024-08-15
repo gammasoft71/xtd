@@ -203,6 +203,8 @@ add_sources(
   include/xtd/forms/draw_item_event_args
   include/xtd/forms/draw_item_event_handler.h
   include/xtd/forms/draw_item_event_handler
+  include/xtd/forms/draw_item_state.h
+  include/xtd/forms/draw_item_state
   include/xtd/forms/emoticon.h
   include/xtd/forms/emoticon
   include/xtd/forms/emoticons.h
