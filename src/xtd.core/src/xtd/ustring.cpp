@@ -711,9 +711,25 @@ bool ustring::contains(value_type value) const noexcept {
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool ustring::contains(char8 value) const noexcept {
-  return find(value) != npos;
+  auto str = convert_string::to_u8string(*this);
+  return str.find(value) != str.npos;
 }
 #endif
+
+bool ustring::contains(char16 value) const noexcept {
+  auto str = convert_string::to_u16string(*this);
+  return str.find(value) != str.npos;
+}
+
+bool ustring::contains(char32 value) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return str.find(value) != str.npos;
+}
+
+bool ustring::contains(wchar value) const noexcept {
+  auto str = convert_string::to_wstring(*this);
+  return str.find(value) != str.npos;
+}
 
 bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
@@ -723,8 +739,13 @@ bool ustring::equals(const object& obj) const noexcept {
   return is<ustring>(obj) && equals(static_cast<const ustring&>(obj));
 }
 
-bool ustring::equals(const ustring& other) const noexcept {
-  return compare_to(other) == 0;
+bool ustring::equals(const ustring& value) const noexcept {
+  return equals(value, false);
+}
+
+bool ustring::equals(const ustring& value, bool ignore_case) const noexcept {
+  if (ignore_case) return to_lower().compare_to(value.to_lower()) == 0;
+  return compare_to(value) == 0;
 }
 
 bool ustring::ends_with(value_type value) const noexcept {
@@ -733,9 +754,25 @@ bool ustring::ends_with(value_type value) const noexcept {
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool ustring::ends_with(char8 value) const noexcept {
-  return rfind(value) == size() - 1;
+  auto str = convert_string::to_u8string(*this);
+  return str.rfind(value) == str.size() - 1;
 }
 #endif
+
+bool ustring::ends_with(char16 value) const noexcept {
+  auto str = convert_string::to_u16string(*this);
+  return str.rfind(value) == str.size() - 1;
+}
+
+bool ustring::ends_with(char32 value) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return str.rfind(value) == str.size() - 1;
+}
+
+bool ustring::ends_with(wchar value) const noexcept {
+  auto str = convert_string::to_wstring(*this);
+  return str.rfind(value) == str.size() - 1;
+}
 
 bool ustring::ends_with(const ustring& value) const noexcept {
   return ends_with(value, false);
@@ -1086,6 +1123,14 @@ ustring ustring::trim_start(const std::vector<value_type>& trim_chars) const noe
   return result;
 }
 
+bool ustring::equals(const ustring& a, const ustring& b) noexcept {
+  return a.equals(b);
+}
+
+bool ustring::equals(const ustring& a, const ustring& b, bool ignore_case) noexcept {
+  return a.equals(b, ignore_case);
+}
+
 ustring ustring::get_class_name(const ustring& full_name) {
   auto length = full_name.last_index_of("<");
   if (length == npos) length = full_name.length();
@@ -1097,22 +1142,22 @@ ustring ustring::pad_left_char(size_t total_width, char padding_char) const noex
   return total_width < size() ? *this : ustring(total_width - size(), padding_char) + *this;
 }
 
-ustring ustring::pad_left_char8(size_t total_width, xtd::char8 padding_char) const noexcept {
+ustring ustring::pad_left_char8(size_t total_width, char8 padding_char) const noexcept {
   auto str = convert_string::to_u8string(*this);
   return total_width < str.size() ? str : std::u8string(total_width - str.size(), padding_char) + str;
 }
 
-ustring ustring::pad_left_char16(size_t total_width, xtd::char16 padding_char) const noexcept {
+ustring ustring::pad_left_char16(size_t total_width, char16 padding_char) const noexcept {
   auto str = convert_string::to_u16string(*this);
   return total_width < str.size() ? str : std::u16string(total_width - str.size(), padding_char) + str;
 }
 
-ustring ustring::pad_left_char32(size_t total_width, xtd::char32 padding_char) const noexcept {
+ustring ustring::pad_left_char32(size_t total_width, char32 padding_char) const noexcept {
   auto str = convert_string::to_u32string(*this);
   return total_width < str.size() ? str : std::u32string(total_width - str.size(), padding_char) + str;
 }
 
-ustring ustring::pad_left_wchar(size_t total_width, xtd::wchar padding_char) const noexcept {
+ustring ustring::pad_left_wchar(size_t total_width, wchar padding_char) const noexcept {
   auto str = convert_string::to_wstring(*this);
   return total_width < str.size() ? str : std::wstring(total_width - str.size(), padding_char) + str;
 }
@@ -1121,22 +1166,22 @@ ustring ustring::pad_right_char(size_t total_width, char padding_char) const noe
   return total_width < size() ? *this : *this + ustring(total_width - size(), padding_char);
 }
 
-ustring ustring::pad_right_char8(size_t total_width, xtd::char8 padding_char) const noexcept {
+ustring ustring::pad_right_char8(size_t total_width, char8 padding_char) const noexcept {
   auto str = convert_string::to_u8string(*this);
   return total_width < str.size() ? str : str + std::u8string(total_width - str.size(), padding_char);
 }
 
-ustring ustring::pad_right_char16(size_t total_width, xtd::char16 padding_char) const noexcept {
+ustring ustring::pad_right_char16(size_t total_width, char16 padding_char) const noexcept {
   auto str = convert_string::to_u16string(*this);
   return total_width < str.size() ? str : str + std::u16string(total_width - str.size(), padding_char);
 }
 
-ustring ustring::pad_right_char32(size_t total_width, xtd::char32 padding_char) const noexcept {
+ustring ustring::pad_right_char32(size_t total_width, char32 padding_char) const noexcept {
   auto str = convert_string::to_u32string(*this);
   return total_width < str.size() ? str : str + std::u32string(total_width - str.size(), padding_char);
 }
 
-ustring ustring::pad_right_wchar(size_t total_width, xtd::wchar padding_char) const noexcept {
+ustring ustring::pad_right_wchar(size_t total_width, wchar padding_char) const noexcept {
   auto str = convert_string::to_wstring(*this);
   return total_width < str.size() ? str : str + std::wstring(total_width - str.size(), padding_char);
 }
