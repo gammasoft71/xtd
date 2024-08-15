@@ -607,8 +607,8 @@ const ustring::value_type& ustring::operator [](size_t index) const {
   return basic_string<value_type>::operator [](index);
 }
 
-ustring ustring::substr(size_type index, size_type count) const {
-  return basic_string<value_type>::substr(index, count);
+xtd::size ustring::length() const noexcept {
+  return size();
 }
 
 ustring ustring::class_name(const std::type_info& info) {
@@ -1030,6 +1030,10 @@ bool ustring::starts_with(const ustring& value) const noexcept {
 bool ustring::starts_with(const ustring& value, bool ignore_case) const noexcept {
   if (ignore_case) return to_lower().find(value.to_lower()) == 0;
   return find(value) == 0;
+}
+
+ustring ustring::substr(size_type index, size_type count) const {
+  return basic_string<value_type>::substr(index, count);
 }
 
 ustring ustring::substring(size_t start_index) const noexcept {
