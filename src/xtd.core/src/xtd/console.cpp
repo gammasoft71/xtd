@@ -192,7 +192,7 @@ int32 console::output_code_page() {
 
 void console::output_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  if (native::console::output_code_page(code_page)) throw io::io_exception {csf_};
+  if (!native::console::output_code_page(code_page)) throw io::io_exception {csf_};
 }
 
 string console::title() {
