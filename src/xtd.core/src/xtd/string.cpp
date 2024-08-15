@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/string.h"
 #include "../../include/xtd/typeof.h"
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/convert_string.h"
