@@ -88,13 +88,13 @@ namespace check_box_renderer_example {
     
   private:
     void set_color(const color& color) {
-      cdebug << ustring::format("color = {}", color.to_string()) << endl;
+      cdebug << ustring::format("color = {}", color.to_string()) << environment::new_line;
     }
     void set_color(nullptr_t) {
-      cdebug << "color = (nullptr)" << endl;
+      cdebug << "color = (nullptr)" << environment::new_line;
     }
-    optional<color> bcolor;
-    optional<color> fcolor;
+    std::optional<color> bcolor;
+    std::optional<color> fcolor;
     choice choice_theme;
     color_picker color_picker_background;
     color_picker color_picker_foreground;

@@ -2,12 +2,11 @@
 #include <xtd/console>
 #include <strstream>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::web::css;
 
 auto main() -> int {
-  auto stream = stringstream {};
+  auto stream = std::stringstream {};
   auto  writer = css_writer {stream};
   
   writer.selectors()[".user_box"].properties()["display"] = property::from("none");

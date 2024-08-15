@@ -1,15 +1,14 @@
 #include <xtd/xtd.tunit>
-#include <iostream>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
 void trace_message(const string& message, const stack_frame& sf) {
-  cout << "message: " << message << endl;
-  cout << "member name: " << sf.get_method() << endl;
-  cout << "source file path: " << sf.get_file_name() << endl;
-  cout << "source line number: " << sf.get_file_line_number() << endl;
+  console::out << "message: " << message << environment::new_line;
+  console::out << "member name: " << sf.get_method() << environment::new_line;
+  console::out << "source file path: " << sf.get_file_name() << environment::new_line;
+  console::out << "source line number: " << sf.get_file_line_number() << environment::new_line;
 }
 
 auto main() -> int {
