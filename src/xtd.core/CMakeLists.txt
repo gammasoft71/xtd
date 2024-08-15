@@ -376,6 +376,8 @@ add_sources(
   include/xtd/static
   include/xtd/std.h
   include/xtd/std
+  include/xtd/string.h
+  include/xtd/string
   include/xtd/string_comparison.h
   include/xtd/string_comparison
   include/xtd/string_split_options.h
@@ -464,7 +466,7 @@ add_sources(
   include/xtd/uri_template_match_exception
   include/xtd/using.h
   include/xtd/using
-  include/xtd/ustring.h
+  include/xtd/string.h
   include/xtd/ustring
   include/xtd/va_args_comma.h
   include/xtd/va_args_comma
@@ -641,7 +643,7 @@ add_sources(
   include/xtd/internal/__as_int32.h
   include/xtd/internal/__as_uint32.h
   include/xtd/internal/__as_sbyte.h
-  include/xtd/internal/__as_ustring.h
+  include/xtd/internal/__as_string.h
   include/xtd/internal/__as_string.h
   include/xtd/internal/__as_pointer.h
   include/xtd/internal/__as_ulong.h
@@ -1036,7 +1038,7 @@ add_sources(
   src/xtd/type_object.cpp
   src/xtd/types.cpp
   src/xtd/uri.cpp
-  src/xtd/ustring.cpp
+  src/xtd/string.cpp
   src/xtd/version.cpp
   src/xtd/configuration/file_settings.cpp
   src/xtd/configuration/settings.cpp
