@@ -1,6 +1,5 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -10,7 +9,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case_collection_failed) {
-      valid::is_not_empty(initializer_list<int> {});
+      valid::is_not_empty(std::initializer_list<int> {});
     }
     
     void test_method_(test_case_string_succeed) {

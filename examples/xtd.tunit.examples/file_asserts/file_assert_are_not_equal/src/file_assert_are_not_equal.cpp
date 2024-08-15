@@ -1,18 +1,17 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto is = istringstream {"xtd::tunit::file_assert::are_not_equal example."};
-      file_assert::are_not_equal(istringstream {"xtd::tunit::file_assert::are_not_equel example."}, is);
+      auto is = std::istringstream {"xtd::tunit::file_assert::are_not_equal example."};
+      file_assert::are_not_equal(std::istringstream {"xtd::tunit::file_assert::are_not_equel example."}, is);
     }
     
     void test_method_(test_case_failed) {
-      auto is = istringstream {"xtd::tunit::file_assert::are_not_equal example."};
-      file_assert::are_not_equal(istringstream {"xtd::tunit::file_assert::are_not_equal example."}, is);
+      auto is = std::istringstream {"xtd::tunit::file_assert::are_not_equal example."};
+      file_assert::are_not_equal(std::istringstream {"xtd::tunit::file_assert::are_not_equal example."}, is);
     }
   };
 }

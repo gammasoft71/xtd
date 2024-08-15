@@ -1,8 +1,7 @@
 #define TUNIT_CONFIG_MAIN
 #include <xtd/xtd.tunit>
-#include <string>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {

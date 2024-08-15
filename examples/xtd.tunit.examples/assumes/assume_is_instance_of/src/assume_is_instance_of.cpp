@@ -1,20 +1,18 @@
 #include <xtd/xtd.tunit>
 #include <stdexcept>
-#include <string>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      invalid_argument except("invalid argument");
-      assume::is_instance_of<logic_error>(except);
+      std::invalid_argument except("invalid argument");
+      assume::is_instance_of<std::logic_error>(except);
     }
     
     void test_method_(test_case_aborted) {
-      invalid_argument except("invalid argument");
-      assume::is_instance_of<bad_cast>(except);
+      std::invalid_argument except("invalid argument");
+      assume::is_instance_of<std::bad_cast>(except);
     }
   };
 }
