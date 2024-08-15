@@ -29,12 +29,12 @@ type_object object::get_type() const noexcept {
   return type_object(typeid(*this));
 }
 
-ustring object::to_string() const noexcept {
+string object::to_string() const noexcept {
   if (dynamic_cast<const iformatable*>(this)) return dynamic_cast<const iformatable*>(this)->to_string("", std::locale {});
   return get_type().full_name();
 }
 
-void object::__throw_invalid_cast_exception(const ustring& file, uint32 line, const ustring& method) const {
+void object::__throw_invalid_cast_exception(const string& file, uint32 line, const string& method) const {
   throw invalid_cast_exception {{file, line, method}};
 }
 

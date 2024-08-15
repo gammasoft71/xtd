@@ -46,7 +46,7 @@
 namespace xtd {
   class iformatable;
   class object;
-  class ustring;
+  class string;
   
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
@@ -391,7 +391,7 @@ std::string __format_stringer_to_std_string(const xtd::char16* str);
 std::string __format_stringer_to_std_string(const xtd::char32* str);
 std::string __format_stringer_to_std_string(const xtd::wchar* str);
 std::string __format_stringer_to_std_string(const std::string& str);
-std::string __format_stringer_to_std_string(const xtd::ustring& str);
+std::string __format_stringer_to_std_string(const xtd::string& str);
 #if defined(__xtd__cpp_lib_char8_t)
 std::string __format_stringer_to_std_string(const std::u8string& str);
 #endif

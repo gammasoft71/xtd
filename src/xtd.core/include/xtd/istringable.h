@@ -8,7 +8,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class ustring;
+  class string;
   /// @endcond
   
   /// @brief Provides a way to represent the current object as a string.
@@ -28,7 +28,7 @@ namespace xtd {
     /// @{
     /// @brief Gets a string that represents the current object.
     /// @return A string that represents the current object.
-    virtual xtd::ustring to_string() const = 0;
+    virtual xtd::string to_string() const = 0;
     /// @}
     
     /// @cond
