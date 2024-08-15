@@ -3,6 +3,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../include/xtd/ustring.h"
 #include "../../include/xtd/typeof.h"
+#include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/hash_code.h"
@@ -29,6 +30,10 @@ void __throw_ustring_format_exception_open_bracket(const char* file, uint32 line
 
 void __throw_ustring_format_exception_start_colon(const char* file, uint32 line, const char* func) {
   throw format_exception("Invalid format expression : format argument must be start by ':'"_t, {file, line, func});
+}
+
+void __throw_ustring_invalid_char_type(const char* file, uint32 line, const char* func, const xtd::type& type) {
+  throw argument_exception(ustring::format("Invalid argument type : {}", typeof_(type).full_name()), {file, line, func});
 }
 
 const ustring ustring::empty_string;
@@ -881,7 +886,7 @@ ustring ustring::pad_left(size_t total_width) const noexcept {
 }
 
 ustring ustring::pad_left(size_t total_width, value_type padding_char) const noexcept {
-  return total_width < size() ? *this : ustring(total_width - size(), padding_char) + *this;
+  return pad_left_char(total_width, padding_char);
 }
 
 ustring ustring::pad_right(size_t total_width) const noexcept {
@@ -889,7 +894,7 @@ ustring ustring::pad_right(size_t total_width) const noexcept {
 }
 
 ustring ustring::pad_right(size_t total_width, value_type padding_char) const noexcept {
-  return total_width < size() ? *this : *this + ustring(total_width - size(), padding_char);
+  return pad_right_char(total_width, padding_char);
 }
 
 ustring ustring::quoted() const {
@@ -1086,6 +1091,54 @@ ustring ustring::get_class_name(const ustring& full_name) {
   if (length == npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
+}
+
+ustring ustring::pad_left_char(size_t total_width, char padding_char) const noexcept {
+  return total_width < size() ? *this : ustring(total_width - size(), padding_char) + *this;
+}
+
+ustring ustring::pad_left_char8(size_t total_width, xtd::char8 padding_char) const noexcept {
+  auto str = convert_string::to_u8string(*this);
+  return total_width < str.size() ? str : std::u8string(total_width - str.size(), padding_char) + str;
+}
+
+ustring ustring::pad_left_char16(size_t total_width, xtd::char16 padding_char) const noexcept {
+  auto str = convert_string::to_u16string(*this);
+  return total_width < str.size() ? str : std::u16string(total_width - str.size(), padding_char) + str;
+}
+
+ustring ustring::pad_left_char32(size_t total_width, xtd::char32 padding_char) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return total_width < str.size() ? str : std::u32string(total_width - str.size(), padding_char) + str;
+}
+
+ustring ustring::pad_left_wchar(size_t total_width, xtd::wchar padding_char) const noexcept {
+  auto str = convert_string::to_wstring(*this);
+  return total_width < str.size() ? str : std::wstring(total_width - str.size(), padding_char) + str;
+}
+
+ustring ustring::pad_right_char(size_t total_width, char padding_char) const noexcept {
+  return total_width < size() ? *this : *this + ustring(total_width - size(), padding_char);
+}
+
+ustring ustring::pad_right_char8(size_t total_width, xtd::char8 padding_char) const noexcept {
+  auto str = convert_string::to_u8string(*this);
+  return total_width < str.size() ? str : str + std::u8string(total_width - str.size(), padding_char);
+}
+
+ustring ustring::pad_right_char16(size_t total_width, xtd::char16 padding_char) const noexcept {
+  auto str = convert_string::to_u16string(*this);
+  return total_width < str.size() ? str : str + std::u16string(total_width - str.size(), padding_char);
+}
+
+ustring ustring::pad_right_char32(size_t total_width, xtd::char32 padding_char) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return total_width < str.size() ? str : str + std::u32string(total_width - str.size(), padding_char);
+}
+
+ustring ustring::pad_right_wchar(size_t total_width, xtd::wchar padding_char) const noexcept {
+  auto str = convert_string::to_wstring(*this);
+  return total_width < str.size() ? str : str + std::wstring(total_width - str.size(), padding_char);
 }
 
 ustring xtd::to_ustring(int val) {
