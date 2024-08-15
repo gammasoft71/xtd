@@ -72,88 +72,88 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, value_type character);
+    ustring(xtd::size count, value_type character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, value_type character, const allocator_type& allocator);
+    ustring(xtd::size count, value_type character, const allocator_type& allocator);
 #if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, char8 character);
+    ustring(xtd::size count, char8 character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, char8 character, const allocator_type& allocator);
+    ustring(xtd::size count, char8 character, const allocator_type& allocator);
 #endif
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, char16 character);
+    ustring(xtd::size count, char16 character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, char16 character, const allocator_type& allocator);
+    ustring(xtd::size count, char16 character, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, char32 character);
+    ustring(xtd::size count, char32 character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, char32 character, const allocator_type& allocator);
+    ustring(xtd::size count, char32 character, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, wchar character);
+    ustring(xtd::size count, wchar character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, wchar character, const allocator_type& allocator);
+    ustring(xtd::size count, wchar character, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
-    ustring(const ustring& str, size_t index, size_t count);
+    ustring(const ustring& str, xtd::size index, xtd::size count);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index, count characters and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(const ustring& str, size_t index, size_t count, const allocator_type& allocator);
+    ustring(const ustring& str, xtd::size index, xtd::size count, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
-    ustring(const ustring& str, size_t index);
+    ustring(const ustring& str, xtd::size index);
     /// @brief Initializes a new instance of xtd::ustring with specified substring at index and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(const ustring& str, size_t index, const allocator_type& allocator);
+    ustring(const ustring& str, xtd::size index, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    ustring(const value_type* str, size_t count);
+    ustring(const value_type* str, xtd::size count);
     /// @brief Initializes a new instance of xtd::ustring with specified substring, count characters and allocator.
     /// @param str The string to copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(const value_type* str, size_t count, const allocator_type& allocator);
+    ustring(const value_type* str, xtd::size count, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const value_type* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
@@ -335,13 +335,13 @@ namespace xtd {
     template<typename type_t>
     ustring(const type_t& object, const allocator_type& allocator) : std::basic_string<value_type>(object, allocator) {}
     template<typename type_t>
-    ustring(const type_t& object, size_t index, size_t count) : std::basic_string<value_type>(object, index, count) {}
+    ustring(const type_t& object, xtd::size index, xtd::size count) : std::basic_string<value_type>(object, index, count) {}
     template<typename type_t>
-    ustring(const type_t& object, size_t index, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, index, count, allocator) {}
+    ustring(const type_t& object, xtd::size index, xtd::size count, const allocator_type& allocator) : std::basic_string<value_type>(object, index, count, allocator) {}
     template<typename type_t>
-    ustring(const type_t& object, size_t count) : std::basic_string<value_type>(object, 0, count) {}
+    ustring(const type_t& object, xtd::size count) : std::basic_string<value_type>(object, 0, count) {}
     template<typename type_t>
-    ustring(const type_t& object, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
+    ustring(const type_t& object, xtd::size count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
      */
     
     ustring& operator =(const ustring& str) noexcept;
@@ -454,8 +454,8 @@ namespace xtd {
     bool operator !=(const std::wstring& other) const;
     bool operator ==(const wchar* other) const;
     bool operator !=(const wchar* other) const;
-    const value_type& operator [](size_t index);
-    const value_type& operator [](size_t index) const;
+    const value_type& operator [](xtd::size index);
+    const value_type& operator [](xtd::size index) const;
     /// @endcond
     
     /// @name Public Properties
@@ -549,58 +549,58 @@ namespace xtd {
     
     /// @brief Returns the hash code for this string.
     /// @return A hash code.
-    size_t get_hash_code() const noexcept override;
+    xtd::size get_hash_code() const noexcept override;
     
     /// @brief Reports the index of the first occurrence of the specified character in this string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(value_type value) const noexcept;
+    xtd::size index_of(value_type value) const noexcept;
     /// @brief Reports the index of the first occurrence of the specified string in this string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(const ustring& value) const noexcept;
+    xtd::size index_of(const ustring& value) const noexcept;
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(value_type value, size_t start_index) const noexcept;
+    xtd::size index_of(value_type value, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(const ustring& value, size_t start_index) const noexcept;
+    xtd::size index_of(const ustring& value, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(value_type value, size_t start_index, size_t count) const noexcept;
+    xtd::size index_of(value_type value, xtd::size start_index, xtd::size count) const noexcept;
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t index_of(const ustring& value, size_t start_index, size_t count) const noexcept;
+    xtd::size index_of(const ustring& value, xtd::size start_index, xtd::size count) const noexcept;
     
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values) const noexcept;
+    xtd::size index_of_any(const std::vector<value_type>& values) const noexcept;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
+    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
+    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const noexcept;
     /// @cond
-    size_t index_of_any(const std::initializer_list<value_type>& values) const noexcept;
-    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
-    size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept;
+    xtd::size index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const noexcept;
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const noexcept;
     /// @endcond
     
     /// @brief Inserts a specified instance of string at a specified index position in this instance.
@@ -609,7 +609,7 @@ namespace xtd {
     /// @return A new string equivalent to this instance but with value inserted at position start_index.
     /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
     /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
-    ustring insert(size_t start_index, const ustring& value) const noexcept;
+    ustring insert(xtd::size start_index, const ustring& value) const noexcept;
     
     /// @brief Indicates whether this string is an empty string ("").
     /// @return true if the value parameter is null or an empty string (""); otherwise, false.
@@ -620,54 +620,54 @@ namespace xtd {
     /// @brief Reports the index of the last occurrence of the specified character in this tring.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(value_type value) const noexcept;
+    xtd::size last_index_of(value_type value) const noexcept;
     /// @brief Reports the index of the last occurrence of the specified string in this string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(const ustring& value) const noexcept;
+    xtd::size last_index_of(const ustring& value) const noexcept;
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(value_type value, size_t start_index) const noexcept;
+    xtd::size last_index_of(value_type value, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(const ustring& value, size_t start_index) const noexcept;
+    xtd::size last_index_of(const ustring& value, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param str A string to find last index of.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(value_type value, size_t start_index, size_t count) const noexcept;
+    xtd::size last_index_of(value_type value, xtd::size start_index, xtd::size count) const noexcept;
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    size_t last_index_of(const ustring& value, size_t start_index, size_t count) const noexcept;
+    xtd::size last_index_of(const ustring& value, xtd::size start_index, xtd::size count) const noexcept;
 
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t last_index_of_any(const std::vector<value_type>& values) const noexcept;
+    xtd::size last_index_of_any(const std::vector<value_type>& values) const noexcept;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
+    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index) const noexcept;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
+    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const noexcept;
     /// @cond
-    size_t last_index_of_any(const std::initializer_list<value_type>& values) const noexcept;
-    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
-    size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index, size_t count) const noexcept;
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const noexcept;
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const noexcept;
     /// @endcond
     
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
@@ -675,21 +675,21 @@ namespace xtd {
     /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
-    ustring pad_left(size_t total_width) const noexcept;
+    ustring pad_left(xtd::size total_width) const noexcept;
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
     template<typename char_t>
-    ustring pad_left(size_t total_width) const noexcept {return pad_left<char_t>(total_width, char_t {' '});}
+    ustring pad_left(xtd::size total_width) const noexcept {return pad_left<char_t>(total_width, char_t {' '});}
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
-    ustring pad_left(size_t total_width, value_type padding_char) const noexcept;
+    ustring pad_left(xtd::size total_width, value_type padding_char) const noexcept;
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
@@ -697,19 +697,19 @@ namespace xtd {
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
     template<typename char_t>
-    ustring pad_left(size_t total_width, char_t padding_char) const {return pad_left_any_char(total_width, padding_char);}
+    ustring pad_left(xtd::size total_width, char_t padding_char) const {return pad_left_any_char(total_width, padding_char);}
 
     /// @cond
     template<>
-    ustring pad_left<char>(size_t total_width, char padding_char) const {return pad_left_char(total_width, padding_char);}
+    ustring pad_left<char>(xtd::size total_width, char padding_char) const {return pad_left_char(total_width, padding_char);}
     template<>
-    ustring pad_left<char8>(size_t total_width, char8 padding_char) const {return pad_left_char8(total_width, padding_char);}
+    ustring pad_left<char8>(xtd::size total_width, char8 padding_char) const {return pad_left_char8(total_width, padding_char);}
     template<>
-    ustring pad_left<char16>(size_t total_width, char16 padding_char) const {return pad_left_char16(total_width, padding_char);}
+    ustring pad_left<char16>(xtd::size total_width, char16 padding_char) const {return pad_left_char16(total_width, padding_char);}
     template<>
-    ustring pad_left<char32>(size_t total_width, char32 padding_char) const {return pad_left_char32(total_width, padding_char);}
+    ustring pad_left<char32>(xtd::size total_width, char32 padding_char) const {return pad_left_char32(total_width, padding_char);}
     template<>
-    ustring pad_left<wchar>(size_t total_width, wchar padding_char) const {return pad_left_wchar(total_width, padding_char);}
+    ustring pad_left<wchar>(xtd::size total_width, wchar padding_char) const {return pad_left_wchar(total_width, padding_char);}
     /// @endcond
 
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
@@ -717,21 +717,21 @@ namespace xtd {
     /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
-    ustring pad_right(size_t total_width) const noexcept;
+    ustring pad_right(xtd::size total_width) const noexcept;
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
     template<typename char_t>
-    ustring pad_right(size_t total_width) const noexcept {return pad_right<char_t>(total_width, char_t {' '});}
+    ustring pad_right(xtd::size total_width) const noexcept {return pad_right<char_t>(total_width, char_t {' '});}
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::ustring::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
-    ustring pad_right(size_t total_width, value_type padding_char) const noexcept;
+    ustring pad_right(xtd::size total_width, value_type padding_char) const noexcept;
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
@@ -739,19 +739,19 @@ namespace xtd {
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::ustring::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
     template<typename char_t>
-    ustring pad_right(size_t total_width, char_t padding_char) const {return pad_right_any_char(total_width, padding_char);}
+    ustring pad_right(xtd::size total_width, char_t padding_char) const {return pad_right_any_char(total_width, padding_char);}
     
     /// @cond
     template<>
-    ustring pad_right<char>(size_t total_width, char padding_char) const {return pad_right_char(total_width, padding_char);}
+    ustring pad_right<char>(xtd::size total_width, char padding_char) const {return pad_right_char(total_width, padding_char);}
     template<>
-    ustring pad_right<char8>(size_t total_width, char8 padding_char) const {return pad_right_char8(total_width, padding_char);}
+    ustring pad_right<char8>(xtd::size total_width, char8 padding_char) const {return pad_right_char8(total_width, padding_char);}
     template<>
-    ustring pad_right<char16>(size_t total_width, char16 padding_char) const {return pad_right_char16(total_width, padding_char);}
+    ustring pad_right<char16>(xtd::size total_width, char16 padding_char) const {return pad_right_char16(total_width, padding_char);}
     template<>
-    ustring pad_right<char32>(size_t total_width, char32 padding_char) const {return pad_right_char32(total_width, padding_char);}
+    ustring pad_right<char32>(xtd::size total_width, char32 padding_char) const {return pad_right_char32(total_width, padding_char);}
     template<>
-    ustring pad_right<wchar>(size_t total_width, wchar padding_char) const {return pad_right_wchar(total_width, padding_char);}
+    ustring pad_right<wchar>(xtd::size total_width, wchar padding_char) const {return pad_right_wchar(total_width, padding_char);}
     /// @endcond
 
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
@@ -769,12 +769,12 @@ namespace xtd {
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return A new string object that is equivalent to this string less the removed characters.
-    ustring remove(size_t start_index) const noexcept;
+    ustring remove(xtd::size start_index) const noexcept;
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @param count The number of characters to delete.
     /// @return A new string object that is equivalent to this string less the removed characters.
-    ustring remove(size_t start_index, size_t count) const noexcept;
+    ustring remove(xtd::size start_index, xtd::size count) const noexcept;
     
     /// @brief Replaces all occurrences of a specified char_t in this string with another specified char_t.
     /// @param old_char A char_t to be replaced.
@@ -799,7 +799,7 @@ namespace xtd {
     /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains an empty string.
     /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
-    std::vector<ustring> split(const std::vector<value_type>& separators, size_t count, string_split_options options) const noexcept;
+    std::vector<ustring> split(const std::vector<value_type>& separators, xtd::size count, string_split_options options) const noexcept;
     /// @brief Splits this string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
@@ -836,7 +836,7 @@ namespace xtd {
     /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string.
     /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
-    std::vector<ustring> split(const std::vector<value_type>& separators, size_t count) const noexcept;
+    std::vector<ustring> split(const std::vector<value_type>& separators, xtd::size count) const noexcept;
     
     /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring.
     /// @param value A xtd::ustring to compare to.
@@ -871,12 +871,12 @@ namespace xtd {
     /// @param str string to substring.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
-    ustring substring(size_t start_index) const noexcept;
+    ustring substring(xtd::size start_index) const noexcept;
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @param length The number of characters in the substring.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
-    ustring substring(size_t start_index, size_t length) const noexcept;
+    ustring substring(xtd::size start_index, xtd::size length) const noexcept;
     
     /// @brief Copies the characters in this instance to a Unicode character array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
@@ -884,12 +884,12 @@ namespace xtd {
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index.
     /// @param start_index The starting position of string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
-    std::vector<value_type> to_array(size_t start_index) const noexcept;
+    std::vector<value_type> to_array(xtd::size start_index) const noexcept;
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index with specified length.
     /// @param start_index The starting position of string to convert.
     /// @param length The length of the string to convert
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
-    std::vector<value_type> to_array(size_t start_index, size_t length) const noexcept;
+    std::vector<value_type> to_array(xtd::size start_index, xtd::size length) const noexcept;
     
     /// @brief Returns a copy of the current string converted to lowercase.
     /// @return A new string in lowercase.
@@ -1024,7 +1024,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
+    static int32 compare(const ustring& str_a, xtd::size index_a, const ustring& str_b, xtd::size index_b, xtd::size length) noexcept;
     /// @brief Compares substrings of two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -1038,7 +1038,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
+    static int32 compare(const ustring& str_a, xtd::size index_a, const ustring& str_b, xtd::size index_b, xtd::size length, bool ignore_case) noexcept;
     /// @brief Compares substrings of two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -1052,7 +1052,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
+    static int32 compare(const ustring& str_a, xtd::size index_a, const ustring& str_b, xtd::size index_b, xtd::size length, xtd::string_comparison comparison_type) noexcept;
     
     /// @brief Concatenates four specified instances of string.
     /// @param str_a The first string to concatenate.
@@ -1186,7 +1186,7 @@ namespace xtd {
     template<typename ...args_t>
     static ustring format(const ustring& fmt, args_t&& ... args) {
       ustring result;
-      size_t index = 0;
+      xtd::size index = 0;
       std::vector<__format_information<char>> formats;
       auto begin_format_iterator = fmt.end();
       auto end_format_iterator = fmt.end();
@@ -1208,8 +1208,8 @@ namespace xtd {
             if (format_str.size() == 0)
               fi.index = index++;
             else {
-              size_t index_alignment_separator = ustring(format_str).index_of(',');
-              size_t index_format_separator = ustring(format_str).index_of(u':');
+              xtd::size index_alignment_separator = ustring(format_str).index_of(',');
+              xtd::size index_format_separator = ustring(format_str).index_of(u':');
               
               if (index_alignment_separator != std::string::npos && index_format_separator != std::string::npos && index_alignment_separator > index_format_separator)
                 index_alignment_separator = std::string::npos;
@@ -1301,7 +1301,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
-    static ustring join(const ustring& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size() - index);}
+    static ustring join(const ustring& separator, const collection_t& values, xtd::size index) noexcept {return join(separator, values, index, values.size() - index);}
     /// @brief Concatenates a specified separator string between each element of a specified Object array, yielding a single concatenated string.
     /// @param separator A string separator.
     /// @param values An array of Object.
@@ -1311,8 +1311,8 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
-    static ustring join(const ustring& separator, const collection_t& values, size_t index, size_t count) noexcept {
-      size_t i = 0;
+    static ustring join(const ustring& separator, const collection_t& values, xtd::size index, xtd::size count) noexcept {
+      xtd::size i = 0;
       ustring result;
       for (const auto& item : values) {
         if (i >= index) {
@@ -1327,9 +1327,9 @@ namespace xtd {
     template<typename value_t>
     static ustring join(const ustring& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
     template<typename value_t>
-    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index) noexcept {return join(separator, std::vector<value_t>(values), index);}
+    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, xtd::size index) noexcept {return join(separator, std::vector<value_t>(values), index);}
     template<typename value_t>
-    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index, size_t count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
+    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
     /// @endcond
     
     /// @brief Converts a string into a value_t type.
@@ -1394,7 +1394,7 @@ namespace xtd {
     /// | l      | long int      | unsigned long int      |                 | win_t | wchar*   |       | long int*       |
     /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int*  |
     /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*       |
-    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*         |
+    /// | z      | xtd::size        | xtd::size                 |                 |       |          |       | xtd::size*         |
     /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*      |
     /// | L      |               |                        | long double     |       |          |       |                 |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
@@ -1702,20 +1702,20 @@ namespace xtd {
     static ustring get_class_name(const ustring& full_name);
     
     template<typename char_t>
-    ustring pad_left_any_char(size_t total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
-    ustring pad_left_char(size_t total_width, char padding_char) const noexcept;
-    ustring pad_left_char8(size_t total_width, char8 padding_char) const noexcept;
-    ustring pad_left_char16(size_t total_width, char16 padding_char) const noexcept;
-    ustring pad_left_char32(size_t total_width, char32 padding_char) const noexcept;
-    ustring pad_left_wchar(size_t total_width, wchar padding_char) const noexcept;
+    ustring pad_left_any_char(xtd::size total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
+    ustring pad_left_char(xtd::size total_width, char padding_char) const noexcept;
+    ustring pad_left_char8(xtd::size total_width, char8 padding_char) const noexcept;
+    ustring pad_left_char16(xtd::size total_width, char16 padding_char) const noexcept;
+    ustring pad_left_char32(xtd::size total_width, char32 padding_char) const noexcept;
+    ustring pad_left_wchar(xtd::size total_width, wchar padding_char) const noexcept;
     
     template<typename char_t>
-    ustring pad_right_any_char(size_t total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
-    ustring pad_right_char(size_t total_width, char padding_char) const noexcept;
-    ustring pad_right_char8(size_t total_width, char8 padding_char) const noexcept;
-    ustring pad_right_char16(size_t total_width, char16 padding_char) const noexcept;
-    ustring pad_right_char32(size_t total_width, char32 padding_char) const noexcept;
-    ustring pad_right_wchar(size_t total_width, wchar padding_char) const noexcept;
+    ustring pad_right_any_char(xtd::size total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
+    ustring pad_right_char(xtd::size total_width, char padding_char) const noexcept;
+    ustring pad_right_char8(xtd::size total_width, char8 padding_char) const noexcept;
+    ustring pad_right_char16(xtd::size total_width, char16 padding_char) const noexcept;
+    ustring pad_right_char32(xtd::size total_width, char32 padding_char) const noexcept;
+    ustring pad_right_wchar(xtd::size total_width, wchar padding_char) const noexcept;
 
     static const std::vector<value_type> default_split_separators;
     static const std::vector<value_type> default_trim_chars;
@@ -1793,8 +1793,8 @@ namespace xtd {
 
 /// @cond
 template<typename arg_t>
-void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
-  size_t offset = 0;
+void __ustring_extract_format_arg(std::string& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
+  xtd::size offset = 0;
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
@@ -1819,7 +1819,7 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
 
 template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& formats, args_t&& ... args) {
-  size_t index = 0;
+  xtd::size index = 0;
   (__ustring_extract_format_arg(fmt, index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
