@@ -21,7 +21,7 @@ public:
       progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
       for (auto index = progress_box::minimum(); index <= progress_box::maximum(); ++index) {
         threading::thread::sleep(100_ms); // Do some work...
-        progress_box::update(index, "Downloading", xtd::ustring::format("{}/{}", index, progress_box::maximum()));
+        progress_box::update(index, "Downloading", xtd::string::format("{}/{}", index, progress_box::maximum()));
         if (progress_box::skipped()) index++;
         if (progress_box::cancelled()) break;
       }

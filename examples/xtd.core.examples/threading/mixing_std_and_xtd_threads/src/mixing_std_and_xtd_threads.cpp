@@ -9,8 +9,8 @@ using namespace xtd::threading;
 namespace mixing_std_and_xtd_threads_example {
   class mixing_std_and_xtd_threads_class {
   private:
-    static ustring to_string(const thread& thread) {
-      return ustring::format("  thread={{name={}, managed_thread_id={}, priority={}, thread_id=0x{:x}, state={}}}", thread.name(), thread.managed_thread_id(), thread.priority(), thread.thread_id(), thread.thread_state());
+    static string to_string(const thread& thread) {
+      return string::format("  thread={{name={}, managed_thread_id={}, priority={}, thread_id=0x{:x}, state={}}}", thread.name(), thread.managed_thread_id(), thread.priority(), thread.thread_id(), thread.thread_state());
     }
     
   public:

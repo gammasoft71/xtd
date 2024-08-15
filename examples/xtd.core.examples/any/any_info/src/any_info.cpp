@@ -8,7 +8,7 @@ struct foo1 : public object {
   explicit foo1(int v) : value(v) {}
   int value = 0;
   
-  ustring to_string() const noexcept override {return ustring::format("{}", value);}
+  string to_string() const noexcept override {return string::format("{}", value);}
   bool operator <(const foo1& f) const noexcept {return value < f.value;}
 };
 
@@ -23,9 +23,9 @@ template<>
 std::string xtd::to_string(const foo2& value, const std::string& fmt, const std::locale& loc) {return xtd::int32_object {value.value}.to_string(fmt, loc);}
 
 template<typename type_t>
-ustring get_any_info(const type_t& value) {
+string get_any_info(const type_t& value) {
   auto any_value = any_object (value);
-  return ustring::format("[value = {} ({}), any = {} ({})]", value, typeof_(value), any_value.value(), typeof_(any_value.value()));
+  return string::format("[value = {} ({}), any = {} ({})]", value, typeof_(value), any_value.value(), typeof_(any_value.value()));
 }
 
 auto main() -> int {
@@ -40,7 +40,7 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// [value = one (char [4]), any = one (xtd::ustring)]
+// [value = one (char [4]), any = one (xtd::string)]
 // [value = Tue Jan  5 00:00:00 1971 (xtd::date_time), any = Tue Jan  5 00:00:00 1971 (xtd::date_time)]
 // [value = 42 (int), any = 42 (xtd::box_integer<int>)]
 // [value = 0.42 (double), any = 0.42 (xtd::box_floating_point<double>)]

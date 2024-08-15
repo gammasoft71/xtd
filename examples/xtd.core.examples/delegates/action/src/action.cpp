@@ -9,7 +9,7 @@ using namespace xtd::collections::generic;
 auto main() -> int {
   auto names = list {"Bruce", "Alfred", "Tim", "Richard"};
   
-  auto print = action<const ustring&> {[](const ustring & value) {
+  auto print = action<const string&> {[](const string & value) {
     console::write_line(value);
   }};
   
@@ -17,7 +17,7 @@ auto main() -> int {
   std::for_each(names.begin(), names.end(), print);
   
   // The following demonstrates the lambda of c++ to display the contents of the list to the console.
-  std::for_each(names.begin(), names.end(), [](const ustring & value) {
+  std::for_each(names.begin(), names.end(), [](const string & value) {
     console::write_line(value);
   });
 }

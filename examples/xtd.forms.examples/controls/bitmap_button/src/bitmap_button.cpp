@@ -19,7 +19,7 @@ public:
     button1.image(image::from_data(gammasoft_16x16_xpm));
     button1.image_align(content_alignment::middle_center);
     button1.click += [&] {
-      label1.text(ustring::format("Button 1 clicked {} times", ++button1_clicked));
+      label1.text(string::format("Button 1 clicked {} times", ++button1_clicked));
     };
 
     button2.auto_repeat(true);
@@ -28,7 +28,7 @@ public:
     button2.image(image::from_data(gammasoft_64x64_xpm));
     button2.image_align(content_alignment::middle_center);
     button2.click += [&] {
-      label2.text(ustring::format("Button 2 clicked {} times", ++button2_clicked));
+      label2.text(string::format("Button 2 clicked {} times", ++button2_clicked));
     };
 
     label1.parent(*this);

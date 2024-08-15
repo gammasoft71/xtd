@@ -16,7 +16,7 @@ namespace button_example {
       button1.text("Button 1");
       button1.location({50, 50});
       button1.click += [&] {
-        label1.text(ustring::format("Button 1 clicked {} times", ++button1_clicked));
+        label1.text(string::format("Button 1 clicked {} times", ++button1_clicked));
       };
       
       button2.parent(*this);
@@ -25,7 +25,7 @@ namespace button_example {
       button2.auto_repeat(true);
       button2.size({200, 75});
       button2.click += [&] {
-        label2.text(ustring::format("Button 2 clicked {} times", ++button2_clicked));
+        label2.text(string::format("Button 2 clicked {} times", ++button2_clicked));
       };
       
       label1.parent(*this);

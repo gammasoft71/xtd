@@ -16,16 +16,16 @@ namespace application_add_message_filter_example {
       text("Application add message filter example");
       panel_.border_style(forms::border_style::groove);
       skip_button_click_check_box_.auto_size(true);
-      click += [&] {debug::write_line(ustring::format("(form.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      button_.click += [&] {debug::write_line(ustring::format("(button.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      skip_button_click_check_box_.click += [&] {debug::write_line(ustring::format("(check_box.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      panel_.click += [&] {debug::write_line(ustring::format("(panel.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
+      click += [&] {debug::write_line(string::format("(form.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
+      button_.click += [&] {debug::write_line(string::format("(button.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
+      skip_button_click_check_box_.click += [&] {debug::write_line(string::format("(check_box.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
+      panel_.click += [&] {debug::write_line(string::format("(panel.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
     }
     
   private:
     bool pre_filter_message(const message& message) {
       // Uncomment following line to see all messages.
-      //debug::write_line(ustring::format("message=[{}], control=[{}]", message.to_string(), from_handle(message.hwnd()).has_value() ? from_handle(message.hwnd()).value().get().to_string() : "(null)"));
+      //debug::write_line(string::format("message=[{}], control=[{}]", message.to_string(), from_handle(message.hwnd()).has_value() ? from_handle(message.hwnd()).value().get().to_string() : "(null)"));
       return skip_button_click_check_box_.checked() && message.msg() == WM_LBUTTONDOWN && message.hwnd() == button_.handle();
     }
     

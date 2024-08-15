@@ -21,20 +21,20 @@ public:
     screen_informations_text_box.parent(*this);
     screen_informations_text_box.read_only(true);
     screen_informations_text_box.word_wrap(false);
-    screen_informations_text_box.append_text(ustring::format("Number of screens: {}{}", screen::all_screens().size(), environment::new_line()));
-    screen_informations_text_box.append_text(ustring::format("Standard pixels per inch: {}{}", screen::get_standard_pixels_per_inch(), environment::new_line()));
+    screen_informations_text_box.append_text(string::format("Number of screens: {}{}", screen::all_screens().size(), environment::new_line()));
+    screen_informations_text_box.append_text(string::format("Standard pixels per inch: {}{}", screen::get_standard_pixels_per_inch(), environment::new_line()));
     auto index = 0;
     for (auto screen : screen::all_screens()) {
       screen_informations_text_box.append_text(environment::new_line());
-      screen_informations_text_box.append_text(ustring::format("Screen: {}\n", ++index, environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Device name: {}{}", screen.device_name(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Bounds: {}{}", screen.bounds(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   High resolution: {}{}", screen.high_resolution(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   working area: {}{}", screen.working_area(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Primary: {}{}", screen.primary(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Bits per pixels (Depth): {}{}", screen.bits_per_pixel(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Pixels per Inch (PPI): {}{}", screen.pixels_per_inch(), environment::new_line()));
-      screen_informations_text_box.append_text(ustring::format("   Scale factor: {}{}", screen.scale_factor()));
+      screen_informations_text_box.append_text(string::format("Screen: {}\n", ++index, environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Device name: {}{}", screen.device_name(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Bounds: {}{}", screen.bounds(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   High resolution: {}{}", screen.high_resolution(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   working area: {}{}", screen.working_area(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Primary: {}{}", screen.primary(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Bits per pixels (Depth): {}{}", screen.bits_per_pixel(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Pixels per Inch (PPI): {}{}", screen.pixels_per_inch(), environment::new_line()));
+      screen_informations_text_box.append_text(string::format("   Scale factor: {}{}", screen.scale_factor()));
     }
   }
   

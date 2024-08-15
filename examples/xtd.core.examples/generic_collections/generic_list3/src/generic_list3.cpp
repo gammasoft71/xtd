@@ -6,9 +6,9 @@ using namespace xtd::collections::generic;
 class example {
 public:
   static auto main() -> void {
-    auto input = array<ustring> {"Brachiosaurus", "Amargasaurus", "Mamenchisaurus"};
+    auto input = array<string> {"Brachiosaurus", "Amargasaurus", "Mamenchisaurus"};
     
-    auto dinosaurs = list<ustring>(input);
+    auto dinosaurs = list<string>(input);
     
     console::write_line("\ncapacity: {0}", dinosaurs.capacity());
     

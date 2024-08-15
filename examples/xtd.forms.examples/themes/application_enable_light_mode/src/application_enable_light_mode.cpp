@@ -258,7 +258,7 @@ protected:
   
 private:
   void on_menu_click(object& sender, const event_args& e) {
-    ustring file_name;
+    string file_name;
     if (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) open_file_box::show(file_name, *this);
     if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) save_file_box::show(file_name, *this);
     if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) save_file_box::show(file_name, *this, "Save as...");
@@ -267,7 +267,7 @@ private:
   }
   
   void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
-    ustring file_name;
+    string file_name;
     if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
     if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
     if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls in light mode", "Light mode example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");

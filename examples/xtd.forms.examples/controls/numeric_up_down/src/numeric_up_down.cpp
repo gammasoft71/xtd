@@ -18,10 +18,10 @@ namespace numeric_up_down_example {
       numeric_up_down1.location({80, 50});
       numeric_up_down1.wrapped(true);
       numeric_up_down1.value_changed += [&] {
-        label1.text(ustring::format("value = {}", numeric_up_down1.value()));
+        label1.text(string::format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.text_changed += [&] {
-        cdebug << ustring::format("text = {}", numeric_up_down1.text()) << environment::new_line;
+        cdebug << string::format("text = {}", numeric_up_down1.text()) << environment::new_line;
       };
       numeric_up_down1.value(50);
       

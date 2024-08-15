@@ -21,7 +21,7 @@ namespace auto_reset_event_example {
       
       for (auto index = 1; index < 4; ++index) {
         threads.emplace_back(thread_proc);
-        threads.back().name(ustring::format("Thread_{}", index));
+        threads.back().name(string::format("Thread_{}", index));
         threads.back().start();
       }
       thread::sleep(250_ms);
@@ -43,7 +43,7 @@ namespace auto_reset_event_example {
     }
     
     static void thread_proc() {
-      ustring name = thread::current_thread().name();
+      string name = thread::current_thread().name();
       
       console::write_line("{0} waits on auto_reset_event #1.", name);
       event_1.wait_one();

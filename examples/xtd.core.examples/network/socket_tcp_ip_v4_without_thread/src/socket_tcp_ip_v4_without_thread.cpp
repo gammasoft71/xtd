@@ -20,7 +20,7 @@ auto main() -> int {
     while (!terminate_app) {
       auto buffer = list<unsigned char>(256);
       auto number_of_byte_received = socket.receive(buffer);
-      if (number_of_byte_received) console::write_line(ustring {buffer.begin(), buffer.begin() + number_of_byte_received});
+      if (number_of_byte_received) console::write_line(string {buffer.begin(), buffer.begin() + number_of_byte_received});
     }
   };
   
@@ -30,7 +30,7 @@ auto main() -> int {
     
     auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("socket={}, counter={}", socket.handle(), ++counter);
+      auto str = string::format("socket={}, counter={}", socket.handle(), ++counter);
       socket.send(list<unsigned char> {str.begin(), str.end()});
       thread::sleep(50_ms);
     }

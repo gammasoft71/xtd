@@ -4,10 +4,10 @@ using namespace xtd;
 
 class user : public object, public iequatable<user> {
 public:
-  explicit user(int id, const ustring& name) : id_ {id}, name_ {name} {}
+  explicit user(int id, const string& name) : id_ {id}, name_ {name} {}
 
   int id() const noexcept {return id_;}
-  const ustring& name() const noexcept {return name_;}
+  const string& name() const noexcept {return name_;}
   
   // Overriding the equals method from object
   bool equals(const object& other) const noexcept override {return is<user>(other) && equals(as<user>(other));}
@@ -19,11 +19,11 @@ public:
   size_t get_hash_code() const noexcept override {return hash_code::combine(id_, name_);}
     
   // Overriding the ToString method for better readability
-  ustring to_string() const noexcept override {return ustring::format("user: id = {}, name = {}", id_, name_);}
+  string to_string() const noexcept override {return string::format("user: id = {}, name = {}", id_, name_);}
   
 private:
   int id_ = 0;
-  ustring name_;
+  string name_;
 };
 
 auto main() -> int {

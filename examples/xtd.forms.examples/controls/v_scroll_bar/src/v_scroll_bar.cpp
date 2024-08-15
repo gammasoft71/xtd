@@ -23,7 +23,7 @@ namespace v_scroll_bar_example {
       v_scroll_bar2.maximum(20);
       v_scroll_bar2.value(10);
       v_scroll_bar2.scroll += [&] {
-        xtd::diagnostics::debug::write_line(xtd::ustring::format("v_scrolbar2 value = {}", v_scroll_bar2.value()));
+        xtd::diagnostics::debug::write_line(xtd::string::format("v_scrolbar2 value = {}", v_scroll_bar2.value()));
       };
     }
     

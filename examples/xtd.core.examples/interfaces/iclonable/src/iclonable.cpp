@@ -9,7 +9,7 @@ public:
 
   uptr<object> clone() const override {return new_uptr<foo>(value_);}
 
-  ustring to_string() const noexcept override {return ustring::format("{}", value_);}
+  string to_string() const noexcept override {return string::format("{}", value_);}
 
 private:
   int value_ = 0;

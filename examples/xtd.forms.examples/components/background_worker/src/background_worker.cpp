@@ -76,13 +76,13 @@ namespace background_worker_example {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
           thread::sleep(100_ms); // simulate work...
-          worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
+          worker.report_progress(step, string::format("step {} / {}", step, progress.maximum()));
         }
       };
       
       worker.progress_changed += [&](object & sender, const progress_changed_event_args & e) {
         progress.value(e.progress_percentage());
-        progress_text.append_text(ustring::format("{}{}", std::any_cast<ustring>(e.user_state()), environment::new_line()));
+        progress_text.append_text(string::format("{}{}", std::any_cast<string>(e.user_state()), environment::new_line()));
       };
       
       worker.run_worker_completed += [&](object & sender, const run_worker_completed_event_args & e) {
@@ -91,7 +91,7 @@ namespace background_worker_example {
         cancel_button.enabled(false);
         progress.value(0);
         progress_text.text("");
-        status.text(ustring::format("Status : {}", e.cancel() ? "canceled" : "completed"));
+        status.text(string::format("Status : {}", e.cancel() ? "canceled" : "completed"));
       };
     }
     

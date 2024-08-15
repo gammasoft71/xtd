@@ -19,7 +19,7 @@ xtdc run
 ## Output
 
 ```
-a = one => one (xtd::ustring)
+a = one => one (xtd::string)
 a = Tue Jan  5 00:00:00 1971 => Tue Jan  5 00:00:00 1971 (xtd::date_time)
 a = 42 => 42 (int)
 a = 0.42 => 0.42 (double)

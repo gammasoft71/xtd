@@ -7,10 +7,10 @@
 using namespace xtd;
 
 auto main() -> int {
-  console::out << ustring::format("{}", std::exception()) << environment::new_line;
-  console::out << ustring::format("{}", std::invalid_argument("Invalid argument")) << environment::new_line;
-  console::out << ustring::format("{}", system_exception("System exception")) << environment::new_line;
-  console::out << ustring::format("{}", argument_out_of_range_exception("Argument out of range exception")) << environment::new_line;
+  console::out << string::format("{}", std::exception()) << environment::new_line;
+  console::out << string::format("{}", std::invalid_argument("Invalid argument")) << environment::new_line;
+  console::out << string::format("{}", system_exception("System exception")) << environment::new_line;
+  console::out << string::format("{}", argument_out_of_range_exception("Argument out of range exception")) << environment::new_line;
 }
 
 // This code produces the following output :

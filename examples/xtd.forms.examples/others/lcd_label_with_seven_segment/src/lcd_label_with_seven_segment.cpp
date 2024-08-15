@@ -20,14 +20,14 @@ auto main() -> int {
   label.dock(dock_style::fill);
   label.fore_color(color::yellow);
   label.back_color(color_converter::average(color::black, label.fore_color(), 0.05));
-  label.text(ustring::format("{}", label.valid_characters()[index]));
+  label.text(string::format("{}", label.valid_characters()[index]));
   
   timer timer;
   timer.interval(300_ms);
   timer.enabled(!timer.enabled());
   timer.tick += [&] {
     if (++index >= label.valid_characters().size()) index = 0;
-    label.text(ustring::format("{}", label.valid_characters()[index]));
+    label.text(string::format("{}", label.valid_characters()[index]));
   };
   
   application::run(form_main);

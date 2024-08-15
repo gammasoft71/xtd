@@ -3,13 +3,13 @@
 using namespace xtd;
 
 int main() {
-  console::out << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("")) << environment::new_line;
-  console::out << ustring::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("G")) << environment::new_line;
+  console::out << string::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("")) << environment::new_line;
+  console::out << string::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("G")) << environment::new_line;
   auto duration = 2_h + 3_min + 32_s + 24_ms + 500_ns;
-  console::out << ustring::sprintf("%s", duration.to_string("F")) << environment::new_line;
-  console::out << ustring::sprintf("%s:%s", duration.to_string("H"), duration.to_string("M")) << environment::new_line;
-  console::out << ustring::sprintf("%s:%s:%s:%s", duration.to_string("H"), duration.to_string("M"), duration.to_string("S"), duration.to_string("T")) << environment::new_line;
-  console::out << ustring::sprintf("%s:%s:%s:%s", duration.to_string("h"), duration.to_string("m"), duration.to_string("s"), duration.to_string("t")) << environment::new_line;
+  console::out << string::sprintf("%s", duration.to_string("F")) << environment::new_line;
+  console::out << string::sprintf("%s:%s", duration.to_string("H"), duration.to_string("M")) << environment::new_line;
+  console::out << string::sprintf("%s:%s:%s:%s", duration.to_string("H"), duration.to_string("M"), duration.to_string("S"), duration.to_string("T")) << environment::new_line;
+  console::out << string::sprintf("%s:%s:%s:%s", duration.to_string("h"), duration.to_string("m"), duration.to_string("s"), duration.to_string("t")) << environment::new_line;
 }
 
 // This code produces the following output :

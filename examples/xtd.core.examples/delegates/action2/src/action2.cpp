@@ -6,13 +6,13 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-using display_message = action<const ustring&>;
+using display_message = action<const string&>;
 
-void show_windows_message(const ustring& message) {
+void show_windows_message(const string& message) {
   message_box::show(message);
 }
 
-void write_line(const ustring& message) {
+void write_line(const string& message) {
   console::write_line(message);
 }
 

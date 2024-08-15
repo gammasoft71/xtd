@@ -24,7 +24,7 @@ public:
       auto file_name = "MyFile.txt"_s;
       auto res = save_file_box::show(file_name, *this, "Save file as...", environment::get_folder_path(environment::special_folder::my_documents), "*.txt");
       if (res == dialog_result::ok)
-        message_box::show(ustring::format("File will be saved as:\n{}", file_name));
+        message_box::show(string::format("File will be saved as:\n{}", file_name));
     };
   }
   

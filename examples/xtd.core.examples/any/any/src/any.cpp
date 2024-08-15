@@ -8,7 +8,7 @@ struct foo1 : public object {
   explicit foo1(int v) : value(v) {}
   int value = 0;
   
-  ustring to_string() const noexcept override {return ustring::format("{}", value);}
+  string to_string() const noexcept override {return string::format("{}", value);}
   bool operator <(const foo1& f) const noexcept {return value < f.value;}
 };
 
@@ -22,7 +22,7 @@ struct foo2 {
 auto main() -> int {
   auto a = any_object {};
   a = "one";
-  console::write_line("a = {} => {} ({})", a, as<ustring>(a), typeof_(as<ustring>(a)));
+  console::write_line("a = {} => {} ({})", a, as<string>(a), typeof_(as<string>(a)));
   a = date_time {1971, 1, 5};
   console::write_line("a = {} => {} ({})", a, as<date_time>(a), typeof_(as<date_time>(a)));
   a = 42;
@@ -39,7 +39,7 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// a = one => one (xtd::ustring)
+// a = one => one (xtd::string)
 // a = Tue Jan  5 00:00:00 1971 => Tue Jan  5 00:00:00 1971 (xtd::date_time)
 // a = 42 => 42 (int)
 // a = 0.42 => 0.42 (double)

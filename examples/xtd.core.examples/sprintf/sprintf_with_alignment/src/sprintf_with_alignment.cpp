@@ -3,9 +3,9 @@
 using namespace xtd;
 
 int main() {
-  console::out << ustring::sprintf("[%10d]", 42) << environment::new_line;
-  console::out << ustring::sprintf("[%-10d]", 42) << environment::new_line;
-  console::out << ustring::sprintf("[%010d]", 42) << environment::new_line;
+  console::out << string::sprintf("[%10d]", 42) << environment::new_line;
+  console::out << string::sprintf("[%-10d]", 42) << environment::new_line;
+  console::out << string::sprintf("[%010d]", 42) << environment::new_line;
 }
 
 // This code produces the following output :

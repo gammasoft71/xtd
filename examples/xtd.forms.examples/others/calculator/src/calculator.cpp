@@ -104,7 +104,7 @@ namespace calculator {
           .border_radius(0)
           .border_size(0));
         button_numbers[i].flat_style(xtd::forms::flat_style::flat);
-        button_numbers[i].text(ustring::format("{}", i));
+        button_numbers[i].text(string::format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
         button_numbers[i].size({60, 50});
         button_numbers[i].click += event_handler(*this, &form_main::button_number_click);
@@ -152,7 +152,7 @@ namespace calculator {
     }
     
     void back_space_key_press(object& sender, const event_args& e) {
-      if (result.text().length() > 0) result.text(as<ustring>(result.text()).remove(result.text().length() - 1));
+      if (result.text().length() > 0) result.text(as<string>(result.text()).remove(result.text().length() - 1));
       if (result.text().length() == 0 || result.text() == "-") button_clear_click(sender, e);
     }
     
@@ -164,15 +164,15 @@ namespace calculator {
     }
     
     void button_percent_click(object& sender, const event_args& e) {
-      result.text(ustring::format("{}", parse<double>(result.text()) / 100));
+      result.text(string::format("{}", parse<double>(result.text()) / 100));
     }
     
     void button_plus_minus_click(object& sender, const event_args& e) {
-      if (result.text() != "0" && result.text() != "0.") result.text(ustring::format("{}", -parse<double>(result.text())));
+      if (result.text() != "0" && result.text() != "0.") result.text(string::format("{}", -parse<double>(result.text())));
     }
     
     void button_number_click(object& sender, const event_args& e) {
-      if ((as<control>(sender).handle() == button_decimal.handle() && as<ustring>(result.text()).contains(".")) || (result.text() == "0" && as<control>(sender).handle() == button_numbers[0].handle())) return;
+      if ((as<control>(sender).handle() == button_decimal.handle() && as<string>(result.text()).contains(".")) || (result.text() == "0" && as<control>(sender).handle() == button_numbers[0].handle())) return;
       if ((first_operand.has_value() && first_operand == parse<double>(result.text())) || (result.text() == "0" && as<control>(sender).handle() != button_decimal.handle())) result.text("");
       if (second_operand.has_value()) second_operand.reset();
       result.text(result.text() + as<control>(sender).text());
@@ -184,15 +184,15 @@ namespace calculator {
         if (!second_operand.has_value()) second_operand = parse<double>(result.text());
         switch (operation) {
           case operators::none: break;
-          case operators::divide: result.text(ustring::format("{}", first_operand.value() / second_operand.value())); break;
-          case operators::multiply: result.text(ustring::format("{}", first_operand.value() * second_operand.value())); break;
-          case operators::subtract: result.text(ustring::format("{}", first_operand.value() - second_operand.value())); break;
-          case operators::add: result.text(ustring::format("{}", first_operand.value() + second_operand.value())); break;
+          case operators::divide: result.text(string::format("{}", first_operand.value() / second_operand.value())); break;
+          case operators::multiply: result.text(string::format("{}", first_operand.value() * second_operand.value())); break;
+          case operators::subtract: result.text(string::format("{}", first_operand.value() - second_operand.value())); break;
+          case operators::add: result.text(string::format("{}", first_operand.value() + second_operand.value())); break;
           default: break;
         }
         first_operand = parse<double>(result.text());
       }
-      operation = std::map<ustring, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
+      operation = std::map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
       if (as<control>(sender).text() != "=") {
         if (second_operand.has_value()) first_operand.reset();
         second_operand.reset();

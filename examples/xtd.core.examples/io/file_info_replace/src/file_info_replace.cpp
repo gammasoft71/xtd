@@ -34,7 +34,7 @@ public:
   }
   
   // Move a file into another file, delete the original, and create a backup of the replaced file.
-  static void replace_file(const ustring& file_to_move_and_delete, const ustring& file_to_replace, const ustring& backup_of_file_to_replace) {
+  static void replace_file(const string& file_to_move_and_delete, const string& file_to_replace, const string& backup_of_file_to_replace) {
     // Create a new file_info object.
     auto f_info = file_info {file_to_move_and_delete};
     

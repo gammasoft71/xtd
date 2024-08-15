@@ -34,7 +34,7 @@ auto main() -> int {
   
   application::idle += [] {
     static auto cpt = 0;
-    trace::write_line(ustring::format("Idle [{}]...", ++cpt));
+    trace::write_line(string::format("Idle [{}]...", ++cpt));
   };
   
   application::leave_thread_modal += [] {

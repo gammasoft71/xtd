@@ -27,7 +27,7 @@ namespace uri_example {
       xtd::console::write_line("port: {}", uri.port());
       xtd::console::write_line("query: {}", uri.query());
       xtd::console::write_line("scheme: {}", uri.scheme());
-      xtd::console::write_line("segments: {}", xtd::ustring::join(", ", uri.segments()));
+      xtd::console::write_line("segments: {}", xtd::string::join(", ", uri.segments()));
       xtd::console::write_line("user_info: {}", uri.user_info());
     }
   };

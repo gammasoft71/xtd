@@ -59,7 +59,7 @@ namespace timer_example {
         elapsed_minutes++;
         dialog_is_open = true;
         
-        if (message_box::show(ustring::format("{0} minutes have elapsed since the text was saved. Save it now? ",
+        if (message_box::show(string::format("{0} minutes have elapsed since the text was saved. Save it now? ",
                                               elapsed_minutes), "Save Text",
                               message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes)
           button1_click(*this, event_args::empty);
@@ -68,7 +68,7 @@ namespace timer_example {
     }
     
     void button1_click(object& sender, const event_args& e) {
-      if (ustring::is_empty(save_file_dialog1.file_name())) {
+      if (string::is_empty(save_file_dialog1.file_name())) {
         if (save_file_dialog1.show_dialog() == dialog_result::ok)
           sw = new_ptr<stream_writer>(save_file_dialog1.file_name(), false);
       }
@@ -98,7 +98,7 @@ namespace timer_example {
     int elapsed_minutes = 0;
     bool has_changed = false;
     ptr<stream_writer> sw;
-    ustring txt;
+    string txt;
 
     // Create a timer with a 1-minute interval
     timers::timer timer {60'000};

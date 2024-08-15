@@ -7,7 +7,7 @@ auto main() -> int {
   "Type '+' in the first column to show \n"
   "the cursor, '-' to hide the cursor, "
   "or lowercase 'x' to quit:"_s;
-  auto s = ustring::empty_string;
+  auto s = string::empty_string;
 
   auto save_cursor_visibile = console::cursor_visible();
   auto save_cursor_size = console::cursor_size();
@@ -17,7 +17,7 @@ auto main() -> int {
   while (true) {
     console::write_line(m1, ((console::cursor_visible() == true) ? "VISIBLE" : "HIDDEN"));
     s = console::read_line();
-    if (ustring::is_empty(s) == false) {
+    if (string::is_empty(s) == false) {
       if (s[0] == '+')
         console::cursor_visible(true);
       else if (s[0] == '-')

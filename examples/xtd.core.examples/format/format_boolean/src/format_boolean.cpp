@@ -6,33 +6,33 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-void print_boolean(ustring text, bool value, cap c) {
+void print_boolean(string text, bool value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  boolean  │   format   │      representation              │" << environment::new_line
                  << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
 
-  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << ustring::format("{}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:b}       │ " << ustring::format("{:b}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:b4}      │ " << ustring::format("{:b4}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:b8}      │ " << ustring::format("{:b8}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:B}       │ " << ustring::format("{:B}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:B4}      │ " << ustring::format("{:B4}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:B8}      │ " << ustring::format("{:B8}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << ustring::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:d2}      │ " << ustring::format("{:d2}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << ustring::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:D2}      │ " << ustring::format("{:D2}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << ustring::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << ustring::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:o}       │ " << ustring::format("{:o}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:o3}      │ " << ustring::format("{:o3}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:O}       │ " << ustring::format("{:O}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:O3}      │ " << ustring::format("{:O3}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << ustring::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:x5}      │ " << ustring::format("{:x5}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << ustring::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:X5}      │ " << ustring::format("{:X5}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << string::format("{}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:b}       │ " << string::format("{:b}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:b4}      │ " << string::format("{:b4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:b8}      │ " << string::format("{:b8}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:B}       │ " << string::format("{:B}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:B4}      │ " << string::format("{:B4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:B8}      │ " << string::format("{:B8}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:d2}      │ " << string::format("{:d2}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:D2}      │ " << string::format("{:D2}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:o}       │ " << string::format("{:o}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:o3}      │ " << string::format("{:o3}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:O}       │ " << string::format("{:O}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:O3}      │ " << string::format("{:O3}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:x5}      │ " << string::format("{:x5}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:X5}      │ " << string::format("{:X5}", value).pad_right(32) << " |" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;

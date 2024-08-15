@@ -19,7 +19,7 @@ auto main() -> int {
   output_stream.close();
   console::set_out(console::open_standard_output());
   
-  console::write_line(ustring::join(environment::new_line(), file::read_all_lines(output_file_path)));
+  console::write_line(string::join(environment::new_line(), file::read_all_lines(output_file_path)));
   
   file::remove(output_file_path);
 }

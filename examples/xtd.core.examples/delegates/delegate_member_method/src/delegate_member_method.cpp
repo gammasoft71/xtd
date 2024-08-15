@@ -7,7 +7,7 @@ class test_delegate {
 public:
   test_delegate() = default;
   
-  void write(const ustring& str) {
+  void write(const string& str) {
     console::write_line(str);
   }
 };
@@ -15,7 +15,7 @@ public:
 auto main() -> int {
   // use delegate as std::function with std::bind
   auto td = test_delegate {};
-  auto writer = delegate<void(const ustring& str)> {td, &test_delegate::write};
+  auto writer = delegate<void(const string& str)> {td, &test_delegate::write};
   
   writer("String to write");
 }

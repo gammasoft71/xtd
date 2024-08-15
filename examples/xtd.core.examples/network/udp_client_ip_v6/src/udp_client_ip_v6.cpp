@@ -20,7 +20,7 @@ auto main() -> int {
       auto incoming_end_point = ip_end_point {};
       auto buffer = udp.receive(incoming_end_point);
       if (buffer.size() && buffer[0] != 0xFF)
-        console::write_line(ustring(buffer.begin(), buffer.end()));
+        console::write_line(string(buffer.begin(), buffer.end()));
     }
   }};
   
@@ -28,7 +28,7 @@ auto main() -> int {
     auto udp = udp_client {address_family::inter_network_v6};
     auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("counter={}", ++counter);
+      auto str = string::format("counter={}", ++counter);
       udp.send(list<unsigned char>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::ip_v6_loopback, 9400));
       thread::sleep(50_ms);
     }

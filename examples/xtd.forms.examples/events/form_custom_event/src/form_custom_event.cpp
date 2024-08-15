@@ -30,7 +30,7 @@ namespace custom_event_example {
       };
       
       custom_event += [&](object& sender, const custom_event_args& e) {
-        message_box::show(*this, ustring::format("Receive custom_event event ({})", any_cast<int>(e.tag())), "Custom event");
+        message_box::show(*this, string::format("Receive custom_event event ({})", any_cast<int>(e.tag())), "Custom event");
       };
     }
     

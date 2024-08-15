@@ -31,7 +31,7 @@ public:
     
     int32 compare_to(const program::box& o) const noexcept override {return 0;}
     bool equals(const program::box& o) const noexcept override {return length == o.length && width == o.width && height == o.height;}
-    ustring to_string() const noexcept {return ustring::format("box [length={}, width={}, height={}]", length, width, height);}
+    string to_string() const noexcept {return string::format("box [length={}, width={}, height={}]", length, width, height);}
   };
   
   class box_collection : public ienumerable<program::box> {

@@ -10,7 +10,7 @@ using namespace xtd::threading;
 namespace interlocked_example {
   struct my_thread {
     threading::thread thread;
-    ustring name;
+    string name;
   };
   
   class my_interlocked_exchange_class {
@@ -27,7 +27,7 @@ namespace interlocked_example {
       auto rnd = xtd::random {};
       
       for (auto index = 0ul; index < my_threads.size(); ++index) {
-        my_threads[index].name = ustring::format("Thread{}", index + 1);
+        my_threads[index].name = string::format("Thread{}", index + 1);
         
         //Wait a random amount of time before starting next thread.
         thread::sleep(rnd.next(0, 1000));
@@ -41,7 +41,7 @@ namespace interlocked_example {
     
     static void my_thread_proc(std::any name) {
       for (auto index = 0; index < num_thread_iterations; ++index) {
-        use_resource(as<ustring>(name));
+        use_resource(as<string>(name));
         
         //Wait 1 second before next attempt.
         thread::sleep(1000);
@@ -49,7 +49,7 @@ namespace interlocked_example {
     }
     
     //A simple method that denies reentrancy.
-    static auto use_resource(const ustring& name)->bool {
+    static auto use_resource(const string& name)->bool {
       //0 indicates that the method is not in use.
       if (0 == interlocked::exchange(using_resource, 1)) {
         console::write_line("{} acquired the lock", name);

@@ -5,7 +5,7 @@ using namespace xtd;
 
 auto main() -> int {
   auto items = {"One ", "Two ", "Three ", "Four "};
-  console::write_line(ustring::concat(items));
+  console::write_line(string::concat(items));
 }
 
 // This code produces the following output :

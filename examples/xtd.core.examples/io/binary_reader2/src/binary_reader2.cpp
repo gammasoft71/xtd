@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::io;
 
 class program {
-  inline static const ustring file_name = "app_settings.dat";
+  inline static const string file_name = "app_settings.dat";
 public:
   static auto main() {
     write_default_values();
@@ -28,7 +28,7 @@ public:
   
   static void display_values() {
     auto aspect_ratio = .0f;
-    auto temp_directory = ustring::empty_string;
+    auto temp_directory = string::empty_string;
     auto auto_save_time = 0;
     auto show_status_bar = false;
 

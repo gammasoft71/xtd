@@ -20,10 +20,10 @@ public:
     .size({150, 35})
     .text("Select single file")
     .click += [this] {
-      ustring file_name;
+      string file_name;
       auto res = open_file_box::show(file_name, *this, "Please select a file...", ".", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
       if (res == dialog_result::ok)
-        message_box::show(ustring::format("Selected file is:\n{}", file_name));
+        message_box::show(string::format("Selected file is:\n{}", file_name));
     };
     
     button_open_multiple_files.parent(*this)
@@ -31,10 +31,10 @@ public:
     .size({150, 35})
     .text("Select multiple files")
     .click += [] {
-      auto file_names = list<ustring> {};
+      auto file_names = list<string> {};
       auto res = open_file_box::show(file_names, "Please select multiple files...", open_file_box_options::check_file_exists | open_file_box_options::show_hidden_files);
       if (res == dialog_result::ok)
-        message_box::show(ustring::format("Selected files are:\n{}", ustring::join("\n", file_names)));
+        message_box::show(string::format("Selected files are:\n{}", string::join("\n", file_names)));
     };
   }
   

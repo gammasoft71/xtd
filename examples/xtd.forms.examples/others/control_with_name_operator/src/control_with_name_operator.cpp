@@ -19,7 +19,7 @@ namespace control_with_name_operator_example {
       as<button>(controls()["button1"].value().get()).auto_repeat(true);
       controls()["button1"].value().get().click += [&] {
         static int count = 0;
-        controls()["label1"].value().get().text(ustring::format("button clicked {} times", ++count));
+        controls()["label1"].value().get().text(string::format("button clicked {} times", ++count));
       };
 
       controls()["label1"].value().get().auto_size(true);

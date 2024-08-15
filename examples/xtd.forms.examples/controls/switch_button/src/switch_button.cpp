@@ -21,7 +21,7 @@ public:
     switch_button2.parent(*this);
     switch_button2.location({50, 70});
     switch_button2.checked_changed += [&] {
-      label1.text(ustring::format("rounded switch: {}", switch_button2.checked() ? "On" : "Off"));
+      label1.text(string::format("rounded switch: {}", switch_button2.checked() ? "On" : "Off"));
     };
     switch_button2.checked(true);
     
@@ -33,7 +33,7 @@ public:
     switch_button3.location({50, 110});
     switch_button3.rounded(false);
     switch_button3.checked_changed += [&] {
-      label2.text(ustring::format("square switch: {}", switch_button3.checked() ? "On" : "Off"));
+      label2.text(string::format("square switch: {}", switch_button3.checked() ? "On" : "Off"));
     };
     switch_button3.checked(true);
     

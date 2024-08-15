@@ -9,8 +9,8 @@ class control : public xtd::object {
 public:
   control() = default;
   
-  const xtd::ustring& text() const {return text_;}
-  void text(const xtd::ustring& text) {
+  const xtd::string& text() const {return text_;}
+  void text(const xtd::string& text) {
     if (text_ != text) {
       text_ = text;
       on_text_changed(xtd::event_args::empty);
@@ -23,7 +23,7 @@ protected:
   void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
   
 private:
-  xtd::ustring text_;
+  xtd::string text_;
 };
 
 class button : public control {

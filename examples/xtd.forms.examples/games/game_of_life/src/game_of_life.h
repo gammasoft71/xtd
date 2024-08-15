@@ -63,14 +63,14 @@ namespace game_of_life {
       label_iterations_.parent(*this);
       label_iterations_.font(xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), label_iterations_.font().size()));
       label_iterations_.text_align(xtd::forms::content_alignment::middle_right);
-      label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
+      label_iterations_.text(xtd::string::format("Iterations : {}", iterations_));
       label_iterations_.width(150);
       label_iterations_.location({555, 12});
       label_iterations_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       
       label_zoom_.parent(*this);
       label_zoom_.location({10, 45});
-      label_zoom_.text(xtd::ustring::format("Zoom : {}", zoom_));
+      label_zoom_.text(xtd::string::format("Zoom : {}", zoom_));
       
       track_bar_zoom_.parent(*this);
       track_bar_zoom_.auto_size(false);
@@ -86,14 +86,14 @@ namespace game_of_life {
           track_bar_zoom_.value(panel_grid_.client_size().height() / grid::rows + 1);
         zoom_ = track_bar_zoom_.value();
         panel_grid_.invalidate();
-        label_zoom_.text(xtd::ustring::format("Zoom : {}", zoom_));
+        label_zoom_.text(xtd::string::format("Zoom : {}", zoom_));
       };
       track_bar_zoom_.size({200, 25});
       
       label_speed_.parent(*this);
       label_speed_.location({425, 45});
       label_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      label_speed_.text(xtd::ustring::format("Speed : {}", speed_));
+      label_speed_.text(xtd::string::format("Speed : {}", speed_));
       
       track_bar_speed_.parent(*this);
       track_bar_speed_.auto_size(false);
@@ -105,7 +105,7 @@ namespace game_of_life {
       track_bar_speed_.value_changed += [&] {
         speed_ = track_bar_speed_.value();
         interval_milliseconds_ = 1000 / speed_;
-        label_speed_.text(xtd::ustring::format("Speed : {}", speed_));
+        label_speed_.text(xtd::string::format("Speed : {}", speed_));
       };
       track_bar_speed_.size({200, 25});
       track_bar_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
@@ -160,7 +160,7 @@ namespace game_of_life {
       grid_.cells_updated += [&] {
         panel_grid_.begin_invoke([&] {
           panel_grid_.invalidate();
-          label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
+          label_iterations_.text(xtd::string::format("Iterations : {}", iterations_));
           xtd::forms::application::do_events();
         });
       };
@@ -186,7 +186,7 @@ namespace game_of_life {
     void clear() {
       grid_.clear();
       iterations_ = 0;
-      label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
+      label_iterations_.text(xtd::string::format("Iterations : {}", iterations_));
       panel_grid_.invalidate();
     }
     
@@ -210,7 +210,7 @@ namespace game_of_life {
       }
     }
     
-    void fill_figure(const xtd::collections::generic::list<xtd::ustring>& figure) {
+    void fill_figure(const xtd::collections::generic::list<xtd::string>& figure) {
       auto height = xtd::as<int>(figure.size());
       auto width = 0u;
       for (auto line : figure)

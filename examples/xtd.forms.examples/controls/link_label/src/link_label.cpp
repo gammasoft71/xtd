@@ -33,7 +33,7 @@ namespace link_label_example {
       link_label2.links().push_back({19, 3, "https://gammasoft71.github.io/xtd"});
       link_label2.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start(as<ustring>(e.link().link_data()));
+        process::start(as<string>(e.link().link_data()));
       };
       
       link_label3.location({10, 70});

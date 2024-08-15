@@ -6,7 +6,7 @@ using namespace xtd;
 namespace static_object2_example {
   class program final : public static_object {
   public:
-    static ustring to_string() {return "program";}
+    static string to_string() {return "program";}
   };
 }
 

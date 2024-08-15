@@ -19,7 +19,7 @@ xtdc run
 ## Output
 
 ```
-[value = one (char [4]), any = one (xtd::ustring)]
+[value = one (char [4]), any = one (xtd::string)]
 [value = Tue Jan  5 00:00:00 1971 (xtd::date_time), any = Tue Jan  5 00:00:00 1971 (xtd::date_time)]
 [value = 42 (int), any = 42 (xtd::box_integer<int>)]
 [value = 0.42 (double), any = 0.42 (xtd::box_floating_point<double>)]

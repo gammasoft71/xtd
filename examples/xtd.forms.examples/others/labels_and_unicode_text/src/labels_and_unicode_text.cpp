@@ -25,7 +25,7 @@ public:
   }
   
 private:
-  list<key_value_pair<ustring, ustring>> languages {
+  list<key_value_pair<string, string>> languages {
     {"Arabic", u8"\u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629"},
     {"Trad. Chinese", u8"\u4E2D\u570B\u7684\u6F22\u5B57"},
     {"Simpl. Chinese:", u8"\u6C49\u8BED"},

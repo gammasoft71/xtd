@@ -6,7 +6,7 @@ auto main() -> int {
   console::write(L"Hello ");
   console::write_line(L"World!");
   console::write(L"Enter your name: ");
-  ustring name = console::read_line();
+  string name = console::read_line();
   console::write(L"Good day, ");
   console::write(name);
   console::write_line(L"!");

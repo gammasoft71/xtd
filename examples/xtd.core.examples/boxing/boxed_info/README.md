@@ -23,8 +23,8 @@ xtdc run
 [type = double, boxed type = xtd::box_floating_point<double>, value = 42.84]
 [type = bool, boxed type = xtd::box<bool>, value = true]
 [type = xtd::day_of_week, boxed type = xtd::enum_object<xtd::day_of_week>, value = saturday]
-[type = char [9], boxed type = xtd::ustring, value = A string]
-[type = char32_t [13], boxed type = xtd::ustring, value = A u32 string]
+[type = char [9], boxed type = xtd::string, value = A string]
+[type = char32_t [13], boxed type = xtd::string, value = A u32 string]
 [type = xtd::date_time, boxed type = xtd::date_time, value = Thu Dec  1 20:03:07 2022]
 [type = foo, boxed type = xtd::box<foo>, value = (unregistered)]
 ```

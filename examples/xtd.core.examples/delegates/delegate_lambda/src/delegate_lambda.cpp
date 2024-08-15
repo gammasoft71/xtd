@@ -6,7 +6,7 @@ using namespace xtd;
 
 auto main() -> int {
   // use delegate as std::function
-  auto writer = delegate<void(const ustring& str)> {[](const ustring & str)  {
+  auto writer = delegate<void(const string& str)> {[](const string & str)  {
     console::out << str << environment::new_line;
   }};
   

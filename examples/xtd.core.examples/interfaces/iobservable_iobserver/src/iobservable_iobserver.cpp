@@ -61,10 +61,10 @@ private:
 
 class location_reporter : iobserver<location> {
 public:
-  location_reporter(ustring name) : name_(name) {}
+  location_reporter(string name) : name_(name) {}
   virtual ~location_reporter() {unsubscribe();}
   
-  ustring name() const noexcept {return name_;}
+  string name() const noexcept {return name_;}
   
   virtual void subscribe(iobservable<location>& provider) {
     provider_ = &provider;
@@ -90,7 +90,7 @@ public:
   }
   
 private:
-  ustring name_;
+  string name_;
   iobservable<location>* provider_ = nullptr;
 };
 

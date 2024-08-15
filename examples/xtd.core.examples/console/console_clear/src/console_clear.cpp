@@ -43,7 +43,7 @@ namespace console_clear_example {
         
         console::write_line();
         console::write("Enter a message to display: ");
-        ustring text_to_display = console::read_line();
+        string text_to_display = console::read_line();
         console::write_line();
         console::foreground_color(new_fore_color);
         console::background_color(new_back_color);
@@ -60,7 +60,7 @@ namespace console_clear_example {
     }
     
   private:
-    static char32_t get_key_press(const ustring& msg, const list<char32_t>& valid_chars) {
+    static char32_t get_key_press(const string& msg, const list<char32_t>& valid_chars) {
       auto key_pressed = console_key_info {};
       auto valid = false;
       

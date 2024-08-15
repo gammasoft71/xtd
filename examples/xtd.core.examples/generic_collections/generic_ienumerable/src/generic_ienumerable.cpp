@@ -15,7 +15,7 @@ public:
   static void test_stream_reader_enumerable() {
     // Check the memory before the iterator is used.
     auto memory_before = memory_information::get_used_process_memory();
-    auto strings_found = array<ustring> {};
+    auto strings_found = array<string> {};
     // Open a file with the stream_reader_enumerable and check for a string.
     try {
       for (auto line : stream_reader_enumerable {path::combine(path::get_temp_path(), "temp_file.txt")})
@@ -34,7 +34,7 @@ public:
   static void test_reading_file() {
     size memory_before = memory_information::get_used_process_memory();
 
-    auto file_contents = list<ustring> {};
+    auto file_contents = list<string> {};
     try {
       auto sr = stream_reader {path::combine(path::get_temp_path(), "temp_file.txt")};
       // Add the file contents to a generic list of strings.
@@ -47,7 +47,7 @@ public:
     }
     
     // Check for the string.
-    auto strings_found = array<ustring> {};
+    auto strings_found = array<string> {};
     for (auto line : file_contents)
       if (line.contains("string to search for")) strings_found.push_back(line);
     console::write_line("Found: {}", strings_found.size());
@@ -58,29 +58,29 @@ public:
   }
 
   // you must also implement xtd::collections::generic::ienumerable <type_t> and xtd::collections::generic::ienumerator <type_t>
-  class stream_reader_enumerable : public ienumerable<ustring> {
+  class stream_reader_enumerable : public ienumerable<string> {
   private:
-    ustring file_path_;
+    string file_path_;
     
   public:
-    stream_reader_enumerable(const ustring& file_path) : file_path_ {file_path} {}
+    stream_reader_enumerable(const string& file_path) : file_path_ {file_path} {}
     
     // Must implement get_enumerator, which returns a new stream_reader_enumerator.
-    enumerator<ustring> get_enumerator() const override {return {new_ptr<stream_reader_enumerator>(file_path_)};}
+    enumerator<string> get_enumerator() const override {return {new_ptr<stream_reader_enumerator>(file_path_)};}
   };
   
   // When you implement xtd::collections::generic::ienumerable <type_t>, you must also implement xtd::collections::generic::ienumerator <type_t>, which will walk through the contents of the file one line at a time.
-  class stream_reader_enumerator : public object, public ienumerator<ustring> {
+  class stream_reader_enumerator : public object, public ienumerator<string> {
   private:
     stream_reader sr_;
-    std::optional<ustring> current_;
+    std::optional<string> current_;
 
   public:
-    stream_reader_enumerator(const ustring& file_path) : sr_ {file_path} {}
+    stream_reader_enumerator(const string& file_path) : sr_ {file_path} {}
     ~stream_reader_enumerator() {sr_.close();}
 
     // Implement current, move_next and reset, which are required by ienumerator.
-    const ustring& current() const override {
+    const string& current() const override {
       if (!current_.has_value()) throw invalid_operation_exception {csf_};
       return current_.value();
     }

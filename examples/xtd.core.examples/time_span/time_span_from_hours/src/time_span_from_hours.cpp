@@ -6,12 +6,12 @@
 using namespace xtd;
 
 void gen_time_span_from_hours(double hours) {
-  // Crée un objet time_span et une chaîne ustring à partir
+  // Crée un objet time_span et une chaîne string à partir
   // d'un nombre d'heures.
   time_span interval = time_span::from_hours(hours);
-  ustring timeInterval = interval.to_string();
+  string timeInterval = interval.to_string();
   
-  // Remplit la fin de la chaîne ustring avec des espaces si elle
+  // Remplit la fin de la chaîne string avec des espaces si elle
   // ne contient pas de millisecondes.
   size_t pIndex = timeInterval.index_of(':');
   pIndex = timeInterval.index_of( '.', pIndex );

@@ -9,12 +9,12 @@ using namespace xtd::collections::generic;
 class character : public iequatable<character>, public icomparable<character> {
 public:
   character() = default;
-  character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
+  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
-  const ustring& name() const noexcept {return name_;}
-  const ustring& rank() const noexcept {return rank_;}
+  const string& name() const noexcept {return name_;}
+  const string& rank() const noexcept {return rank_;}
   
-  ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
+  string to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
   int compare_to(const character& rhs) const noexcept override {
     if (name_ == rhs.name_ && rank_ == rhs.rank_) return 0;
@@ -26,15 +26,15 @@ public:
   bool equals(const character& rhs) const noexcept override {return compare_to(rhs) == 0;}
 
 private:
-  ustring name_;
-  ustring rank_;
+  string name_;
+  string rank_;
 };
 
 using characters = list<character>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-  console::out << ustring::sprintf("%s", c.to_string()) << environment::new_line;
+  console::out << string::sprintf("%s", c.to_string()) << environment::new_line;
 }
 
 // This code produces the following output :

@@ -17,7 +17,7 @@ public:
     button1.text("Folder...");
     button1.click += [&] {
       if (folder_browser_box::show(selected_path, *this) == forms::dialog_result::ok)
-        label1.text(ustring::format("Path = {}", selected_path));
+        label1.text(string::format("Path = {}", selected_path));
     };
     
     label1.parent(*this);
@@ -29,7 +29,7 @@ public:
 private:
   button button1;
   label label1;
-  ustring selected_path;
+  string selected_path;
 };
 
 auto main() -> int {

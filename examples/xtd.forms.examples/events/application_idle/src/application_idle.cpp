@@ -13,7 +13,7 @@ namespace application_idle_example {
     
   private:
     void on_application_idle(const event_args& e) {
-      text(ustring::format("{}", ++counter));
+      text(string::format("{}", ++counter));
     }
     
     int counter = 0;

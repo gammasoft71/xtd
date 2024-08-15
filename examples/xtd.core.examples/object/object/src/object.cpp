@@ -24,8 +24,8 @@ public:
   }
   
   // Return the point's value as a string.
-  ustring to_string() const noexcept override {
-    return ustring::format("({}, {})", x, y);
+  string to_string() const noexcept override {
+    return string::format("({}, {})", x, y);
   }
   
   // Return a copy of this point object by making a simple field copy.

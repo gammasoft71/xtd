@@ -48,7 +48,7 @@ namespace example {
       choice_size.bounds({75, 85, 280, 25});
       choice_size.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       for (auto size : images::sizes())
-        choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
+        choice_size.items().push_back({string::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
       choice_size.selected_index_changed += event_handler(*this, &form1::update_form);
       

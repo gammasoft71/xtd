@@ -6,7 +6,7 @@ using namespace xtd::collections::generic;
 class example {
 public:
   static auto main() -> void {
-    auto dinosaurs = list<ustring> {};
+    auto dinosaurs = list<string> {};
     
     dinosaurs.add("Tyrannosaurus");
     dinosaurs.add("Amargasaurus");
@@ -34,7 +34,7 @@ public:
     for (auto dinosaur : read_only_dinosaurs)
       console::write_line(dinosaur);
 
-    auto dino_array = array<ustring>(read_only_dinosaurs.count() + 2);
+    auto dino_array = array<string>(read_only_dinosaurs.count() + 2);
     read_only_dinosaurs.copy_to(dino_array, 1);
     
     console::write_line("\nCopied array has {0} elements:", dino_array.size());

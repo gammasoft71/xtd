@@ -11,8 +11,8 @@ using namespace xtd::io;
 
 class program {
 private:
-  inline static ustring source_path = path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_info_test_directory", "move_from", "from_file.xml");
-  inline static ustring dest_path = path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_info_test_directory", "dest_filexml");
+  inline static string source_path = path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_info_test_directory", "move_from", "from_file.xml");
+  inline static string dest_path = path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_info_test_directory", "dest_filexml");
   
 public:
   //
@@ -90,10 +90,10 @@ private:
   // Creates and saves an Xml file to source_path.
   //
   static void write_file_content(int total_element) {
-    auto lines = list<ustring> {};
+    auto lines = list<string> {};
     lines.push_back("<?xml version=\"1.0\" standalone=\"yes\"?>");
     for (auto index  = 0; index < total_element; ++index)
-      lines.push_back(ustring::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
+      lines.push_back(string::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
     file::write_all_lines(source_path, lines);
   }
   
@@ -142,7 +142,7 @@ private:
   // code is not suitable for production applications.
   //
   static void display_exception(const system_exception& ex) {
-    auto s = ustring::empty_string;
+    auto s = string::empty_string;
     s += "An exception of type \"";
     s += typeof_(ex).full_name();
     s += "\" has occurred.\r\n";

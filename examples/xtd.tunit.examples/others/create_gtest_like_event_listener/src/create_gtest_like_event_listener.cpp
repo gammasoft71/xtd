@@ -108,7 +108,7 @@ private:
     console::out << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << environment::new_line;
     if (e.unit_test().failed_test_count()) {
       console::out << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << environment::new_line;
-      for (ustring name : e.unit_test().failed_test_names())
+      for (string name : e.unit_test().failed_test_names())
         console::out << "[  FAILED  ] " << name << environment::new_line;
       console::out << environment::new_line;
       console::out << " " << e.unit_test().failed_test_count() << " FAILED TEST" << environment::new_line;

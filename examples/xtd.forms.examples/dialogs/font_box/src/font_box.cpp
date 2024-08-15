@@ -24,7 +24,7 @@ public:
       auto font = system_fonts::default_font();
       auto res = font_box::show(font, *this);
       if (res == dialog_result::ok)
-        message_box::show(ustring::format("Selected font is: {}", font));
+        message_box::show(string::format("Selected font is: {}", font));
     };
     
     button_font_and_color.parent(*this)
@@ -36,7 +36,7 @@ public:
       drawing::color color = drawing::color::blue;
       auto res = font_box::show(font, color, font_box_options::show_color);
       if (res == dialog_result::ok)
-        message_box::show(ustring::format("Selected font is: {}\ncolor: {}", font, color));
+        message_box::show(string::format("Selected font is: {}\ncolor: {}", font, color));
     };
   }
   

@@ -279,7 +279,7 @@ protected:
   
   void on_style_sheet_changed(const event_args& e) override {
     form::on_style_sheet_changed(e);
-    diagnostics::debug::write_line(ustring::format("The style sheet has been changed to : {}", application::style_sheet().theme().name()));
+    diagnostics::debug::write_line(string::format("The style sheet has been changed to : {}", application::style_sheet().theme().name()));
     // Refreshes the menu to use the images of the current style sheet
     menu(nullptr);
     menu(main_menu1);
@@ -292,7 +292,7 @@ protected:
   
 private:
   void on_menu_click(object& sender, const event_args& e) {
-    ustring file_name;
+    string file_name;
     if (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) open_file_box::show(file_name, *this);
     if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) save_file_box::show(file_name, *this);
     if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) save_file_box::show(file_name, *this, "Save as...");
@@ -301,7 +301,7 @@ private:
   }
   
   void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
-    ustring file_name;
+    string file_name;
     if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
     if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
     if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");

@@ -9,7 +9,7 @@ class virtual_console : public xtd::forms::text_box {
 public:
   virtual_console()  {
     xtd::environment::current_directory(xtd::environment::get_folder_path(xtd::environment::special_folder::home));
-    prompt = xtd::ustring::format("[{}] $ ", xtd::environment::current_directory());
+    prompt = xtd::string::format("[{}] $ ", xtd::environment::current_directory());
     
     multiline(true);
     back_color(default_back_color());
@@ -36,9 +36,9 @@ protected:
   }
   
 private:
-  xtd::ustring get_command() const {
+  xtd::string get_command() const {
     auto pos = text().last_index_of(prompt);
-    if (pos != xtd::ustring::npos) {
+    if (pos != xtd::string::npos) {
       pos += prompt.size();
       return text().substring(pos);
     }
@@ -59,7 +59,7 @@ private:
         auto args = command_line.split({' '});
         start_info.file_name(args[0]);
         if (args.size() > 1)
-          start_info.arguments(xtd::ustring::join(" ", xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));
+          start_info.arguments(xtd::string::join(" ", xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));
           
         append_text(xtd::environment::new_line());
         start_info.use_shell_execute(false);
@@ -69,9 +69,9 @@ private:
         if (start_info.file_name() == "cd" && !start_info.arguments().empty()) {
           if (xtd::io::directory::exists(start_info.arguments())) {
             xtd::environment::current_directory(start_info.arguments());
-            prompt = xtd::ustring::format("[{}] $ ",  xtd::environment::current_directory());
+            prompt = xtd::string::format("[{}] $ ",  xtd::environment::current_directory());
           } else {
-            append_text(xtd::ustring::format("cd: no such file or directory: {}", start_info.arguments()));
+            append_text(xtd::string::format("cd: no such file or directory: {}", start_info.arguments()));
             append_text(xtd::environment::new_line());
           }
         } else {
@@ -94,7 +94,7 @@ private:
           }
         }
       } catch (...) {
-        append_text(xtd::ustring::format("command not found: {}", start_info.file_name()));
+        append_text(xtd::string::format("command not found: {}", start_info.file_name()));
         append_text(xtd::environment::new_line());
       }
     }
@@ -102,7 +102,7 @@ private:
     append_text(prompt);
     e.handled(true);
   }
-  xtd::ustring prompt = xtd::ustring::format("[{}] $ ",  xtd::environment::current_directory());
+  xtd::string prompt = xtd::string::format("[{}] $ ",  xtd::environment::current_directory());
   xtd::collections::specialized::string_collection commands;
 };
 

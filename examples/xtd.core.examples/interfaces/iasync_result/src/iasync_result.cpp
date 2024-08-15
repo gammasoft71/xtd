@@ -8,17 +8,17 @@ using namespace xtd::threading;
 class async_demo {
 public:
   // The method to be executed asynchronously.
-  ustring test_method(int call_duration, int* thread_id) {
+  string test_method(int call_duration, int* thread_id) {
     console::write_line("Test method begins.");
     thread::sleep(call_duration);
     *thread_id = thread::current_thread().managed_thread_id();
-    return ustring::format("My call time was {}.", call_duration);
+    return string::format("My call time was {}.", call_duration);
   }
 };
 
 // The delegate must have the same signature as the method
 // it will call asynchronously.
-using async_method_caller = delegate<ustring(int call_duration, int* thread_id)>;
+using async_method_caller = delegate<string(int call_duration, int* thread_id)>;
 
 auto main() -> int {
   // The asynchronous method puts the thread id here.

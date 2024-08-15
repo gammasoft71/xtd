@@ -8,12 +8,12 @@ namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
       auto s = "string";
-      assert::is_false(ustring::is_empty(s));
+      assert::is_false(string::is_empty(s));
     }
     
     void test_method_(test_case_failed) {
-      auto s = ustring::empty_string;
-      assert::is_false(ustring::is_empty(s));
+      auto s = string::empty_string;
+      assert::is_false(string::is_empty(s));
     }
   };
 }

@@ -3,21 +3,21 @@
 
 using namespace xtd;
 
-void goodbye(const ustring& s) {
+void goodbye(const string& s) {
   console::write_line("Goodbye {}", s);
 }
 
 class object {
 public:
-  void hello(const ustring& s) {
+  void hello(const string& s) {
     console::write_line("Hello {}", s);
   }
 };
 
 auto main() -> int {
-  using example_function = delegate<void(const ustring&)>;
+  using example_function = delegate<void(const string&)>;
   auto instance = ::object {};
-  auto str = ustring {"World"};
+  auto str = string {"World"};
   
   //equivanet to : example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
   auto f = example_function {instance, &::object::hello};

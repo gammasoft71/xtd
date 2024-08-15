@@ -20,19 +20,19 @@ public:
     change_color_button.click += [&] {
       back_color(color::from_argb(rand.next<unsigned char>(), rand.next<unsigned char>(), rand.next<unsigned char>()));
       fore_color(color::from_argb(rand.next<unsigned char>(), rand.next<unsigned char>(), rand.next<unsigned char>()));
-      label1.text(ustring::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
-      label2.text(ustring::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
+      label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
+      label2.text(string::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
     };
     
     label1.auto_size(true);
     label1.location({10, 50});
-    label1.text(ustring::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
+    label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
     
     label2.auto_size(true);
     label2.back_color(color::dark_cyan);
     label2.fore_color(color::black);
     label2.location({10, 110});
-    label2.text(ustring::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
+    label2.text(string::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
   }
   
 private:

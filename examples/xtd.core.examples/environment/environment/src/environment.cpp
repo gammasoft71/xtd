@@ -9,7 +9,7 @@ namespace environment_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      auto str = ustring::empty_string;
+      auto str = string::empty_string;
       auto nl = environment::new_line();
       //
       console::write_line();
@@ -19,7 +19,7 @@ namespace environment_example {
       console::write_line("command_line: {}", environment::command_line());
       
       auto arguments = environment::get_command_line_args();
-      console::write_line("get_command_line_args: {}", ustring::join(", ", arguments));
+      console::write_line("get_command_line_args: {}", string::join(", ", arguments));
       
       //  <-- Keep this information secure! -->
       console::write_line("current_directory: {}", environment::current_directory());
@@ -57,7 +57,7 @@ namespace environment_example {
       //  No example for Exit(exitCode) because doing so would terminate this example.
       
       //  <-- Keep this information secure! -->
-      auto query = ustring::format("My home folder is %{}% and user is %{}%", environment::os_version().is_windows_platform() ? "HOMEPATH" : "HOME", environment::os_version().is_windows_platform() ? "USERNAME" : "USER");
+      auto query = string::format("My home folder is %{}% and user is %{}%", environment::os_version().is_windows_platform() ? "HOMEPATH" : "HOME", environment::os_version().is_windows_platform() ? "USERNAME" : "USER");
       str = environment::expand_environment_variables(query);
       console::write_line("expand_environment_variables: {}  {}",  nl, str);
       
@@ -71,7 +71,7 @@ namespace environment_example {
       console::write_line("get_folder_path: {}", environment::get_folder_path(environment::special_folder::system));
       
       auto drives = environment::get_logical_drives();
-      console::write_line("GetLogicalDrives: {}", ustring::join(", ", drives));
+      console::write_line("GetLogicalDrives: {}", string::join(", ", drives));
     }
   };
 }
