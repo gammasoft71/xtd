@@ -4,7 +4,6 @@
 #include <xtd/forms/label>
 #include <xtd/forms/list_box>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

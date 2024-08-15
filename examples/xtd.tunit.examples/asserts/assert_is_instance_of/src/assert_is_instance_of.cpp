@@ -2,19 +2,18 @@
 #include <stdexcept>
 #include <string>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto except = invalid_argument {"invalid argument"};
-      assert::is_instance_of<logic_error>(except);
+      auto except = std::invalid_argument {"invalid argument"};
+      assert::is_instance_of<std::logic_error>(except);
     }
     
     void test_method_(test_case_failed) {
-      auto except = invalid_argument {"invalid argument"};
-      assert::is_instance_of<bad_cast>(except);
+      auto except = std::invalid_argument {"invalid argument"};
+      assert::is_instance_of<std::bad_cast>(except);
     }
   };
 }

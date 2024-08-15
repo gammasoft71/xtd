@@ -3,7 +3,6 @@
 #include <xtd/forms/list_box>
 #include <xtd/forms/main_menu>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

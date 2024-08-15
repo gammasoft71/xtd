@@ -4,7 +4,6 @@
 #include "../properties/settings.h"
 
 using namespace minesweeper;
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

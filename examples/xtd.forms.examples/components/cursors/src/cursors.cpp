@@ -5,7 +5,6 @@
 #include <xtd/forms/panel>
 #include <xtd/drawing/system_colors>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

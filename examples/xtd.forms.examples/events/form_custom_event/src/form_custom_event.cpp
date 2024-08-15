@@ -3,7 +3,6 @@
 #include <xtd/forms/form>
 #include <xtd/forms/message_box>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
