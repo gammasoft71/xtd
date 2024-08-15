@@ -8,7 +8,7 @@
 #include "../core_export.h"
 #include "../environment.h"
 #include "../static.h"
-#include "../ustring.h"
+#include "../string.h"
 #include "assert_dialog_result.h"
 #include "debugger.h"
 #include "stack_trace.h"

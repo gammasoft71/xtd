@@ -10,7 +10,7 @@
 #include "../core_export.h"
 #include "../date_time.h"
 #include "../static.h"
-#include "../ustring.h"
+#include "../string.h"
 #include <cstdint>
 #include <cstdio>
 #include <fstream>

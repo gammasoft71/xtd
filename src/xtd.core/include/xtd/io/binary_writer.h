@@ -7,7 +7,7 @@
 #undef __XTD_STD_INTERNAL__
 #include "../optional.h"
 #include "../object.h"
-#include "../ustring.h"
+#include "../string.h"
 #include <fstream>
 #include <array>
 #include <vector>

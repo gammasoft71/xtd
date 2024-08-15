@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::source_switch class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../string.h"
 #include "source_levels.h"
 #include "trace_event_type.h"
 #include "switch_base.h"

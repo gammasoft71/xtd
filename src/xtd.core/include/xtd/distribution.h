@@ -6,7 +6,7 @@
 #include "object.h"
 #include "platform_id.h"
 #include "uri.h"
-#include "ustring.h"
+#include "string.h"
 #include "version.h"
 #include <map>
 #include <vector>

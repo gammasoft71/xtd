@@ -4,7 +4,7 @@
 #pragma once
 #include "collections/specialized/string_dictionary.h"
 #include "static.h"
-#include "ustring.h"
+#include "string.h"
 #include <string>
 #include <map>
 #include <set>

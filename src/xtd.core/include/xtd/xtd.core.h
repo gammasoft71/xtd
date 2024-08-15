@@ -436,7 +436,7 @@
 #include "uri_partial.h"
 #include "uri_template_match_exception.h"
 #include "using.h"
-#include "ustring.h"
+#include "string.h"
 #include "va_args_comma.h"
 #include "version.h"
 #include "wchar.h"

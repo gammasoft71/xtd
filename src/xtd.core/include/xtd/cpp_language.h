@@ -4,7 +4,7 @@
 #pragma once
 #include "language_id.h"
 #include "object.h"
-#include "ustring.h"
+#include "string.h"
 #include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

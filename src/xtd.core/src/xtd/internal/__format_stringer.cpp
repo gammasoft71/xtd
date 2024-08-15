@@ -2,7 +2,7 @@
 #include "../../../include/xtd/internal/__format_stringer.h"
 #undef __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/iformatable.h"
-#include "../../../include/xtd/ustring.h"
+#include "../../../include/xtd/string.h"
 
 using namespace xtd;
 

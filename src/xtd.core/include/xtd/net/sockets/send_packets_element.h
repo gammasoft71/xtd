@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../ip_address.h"
-#include "../../ustring.h"
+#include "../../string.h"
 #include <fstream>
 #include <functional>
 #include <vector>

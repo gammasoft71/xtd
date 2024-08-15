@@ -1,7 +1,7 @@
 #include "../../include/xtd/translator.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/string.h"
 #include "../../include/xtd/collections/specialized/string_dictionary.h"
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/file.h"

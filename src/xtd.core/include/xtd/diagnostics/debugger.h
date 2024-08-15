@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include "../core_export.h"
 #include "../static.h"
-#include "../ustring.h"
+#include "../string.h"
 
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__xtd_debugbreak.h"

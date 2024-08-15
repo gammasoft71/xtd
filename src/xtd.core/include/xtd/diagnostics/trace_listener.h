@@ -5,7 +5,7 @@
 #include <memory>
 #include <stdexcept>
 #include "../abstract.h"
-#include "../ustring.h"
+#include "../string.h"
 #include "trace_event_cache.h"
 #include "trace_event_type.h"
 #include "trace_options.h"

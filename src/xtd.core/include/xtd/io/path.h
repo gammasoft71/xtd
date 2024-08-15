@@ -5,7 +5,7 @@
 #include "file.h"
 #include "../core_export.h"
 #include "../static.h"
-#include "../ustring.h"
+#include "../string.h"
 #include <algorithm>
 #include <cstdlib>
 #include <random>

@@ -7,7 +7,7 @@
 
 #include "../typeof.h"
 #include "../types.h"
-#include "../ustring.h"
+#include "../string.h"
 
 /// @cond
 #if defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)

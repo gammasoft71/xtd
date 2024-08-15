@@ -26,7 +26,7 @@
 #include "target_id.h"
 #include "target_type.h"
 #include "toolkit.h"
-#include "ustring.h"
+#include "string.h"
 #include "version.h"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__build_type.h"

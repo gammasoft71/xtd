@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "icomparable.h"
-#include "ustring.h"
+#include "string.h"
 
 /// @cond
 #if defined(major)

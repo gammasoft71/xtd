@@ -1,4 +1,4 @@
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/string.h"
 #include "../../include/xtd/register_any_stringer.h"
 #include "../../include/xtd/types.h"
 #include "../../include/xtd/date_time.h"

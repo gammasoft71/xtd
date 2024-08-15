@@ -4,7 +4,7 @@
 #pragma once
 #include "time_span.h"
 #include "types.h"
-#include "ustring.h"
+#include "string.h"
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
