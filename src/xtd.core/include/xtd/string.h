@@ -29,6 +29,7 @@
 /// @cond
 namespace xtd {
   class ustring;
+  using string = xtd::ustring;
 }
 template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
@@ -39,6 +40,7 @@ void __throw_ustring_format_exception_start_colon(const char* file, xtd::uint32 
 void __throw_ustring_invalid_char_type(const char* file, xtd::uint32 line, const char* func, const xtd::type& type);
 /// @endcond
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
   /// @par Namespace
@@ -1731,21 +1733,7 @@ namespace xtd {
     using std::basic_string<value_type>::replace;
     using std::basic_string<value_type>::resize;
   };
-  
-  /// @brief Represents text as a sequence of UTF-8 code units.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
-  /// @remarks If you want the same mutable string class, you can use xtd::text::ustring_builder class.
-  /// @remarks xtd::ustring is inherited from [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
-  /// @remarks xtd::ustring cannot inherit from xtd::iequatable <xtd::ustring> because [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) defines the [== and != operators](https://en.cppreference.com/w/cpp/string/basic_string/operator_cmp).
-  /// @todo replace all `class::ustring;` definitions by `class xtd::string;` when switching class `xtd::ustring` an alias `xtd::string` to class `xtd::string` and alias `xtd::ustring`
-  /// @deprecated Replaced by xtd::string - Will be removed in version 0.4.0
-  using string /*[[deprecated("Replaced by xtd::string - Will be removed in version 0.4.0")]]*/ = xtd::ustring;
-  
+    
   /// @brief Converts a signed integer to xtd::ustring.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.

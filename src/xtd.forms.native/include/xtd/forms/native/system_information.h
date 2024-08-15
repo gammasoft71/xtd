@@ -10,7 +10,7 @@
 
 #include <cstdint>
 #include <xtd/static.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/size.h>
 #include <xtd/forms_native_export.h>

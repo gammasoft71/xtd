@@ -144,7 +144,7 @@
 | [uri_partial](../src/xtd.core/include/xtd/uri_partial.h)                                               | enumeration   | ![progress](pictures/progress100.png) |
 | [uri_template_match_exception](../src/xtd.core/include/xtd/uri_template_match_exception.h)             | exception     | ![progress](pictures/progress100.png) |
 | [using_](../src/xtd.core/include/xtd/using.h)                                                          | keyword       | ![progress](pictures/progress100.png) |
-| [ustring](../src/xtd.core/include/xtd/ustring.h)                                                       | class         | ![progress](pictures/progress100.png) |
+| [ustring](../src/xtd.core/include/xtd/string.h)                                                       | class         | ![progress](pictures/progress100.png) |
 | [version](../src/xtd.core/include/xtd/version.h)                                                       | class         | ![progress](pictures/progress100.png) |
 | [xml_syntax_exception](../src/xtd.core/include/xtd/xml_syntax_exception.h)                             | exception     | ![progress](pictures/progress100.png) |
 

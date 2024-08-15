@@ -9,7 +9,7 @@
 /// @endcond
 
 #include <cstddef>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 

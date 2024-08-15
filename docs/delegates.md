@@ -45,7 +45,7 @@ Delegates have the following properties:
 
 ## Using Delegates
 
-A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::ustring](../src/xtd.core/include/xtd/ustring.h) as an argument and returns void:
+A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::ustring](../src/xtd.core/include/xtd/string.h) as an argument and returns void:
 
 ```cpp
 using del = xtd::delegate<void(const xtd::ustring& message)>;

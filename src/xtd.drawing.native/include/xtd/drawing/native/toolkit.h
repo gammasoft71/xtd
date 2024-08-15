@@ -7,7 +7,7 @@
 
 #include <cstdint>
 #include <xtd/static.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/version.h>
 #include <xtd/drawing_native_export.h>
 

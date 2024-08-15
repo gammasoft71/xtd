@@ -10,7 +10,7 @@
 
 #include "create_params.h"
 #include <xtd/static.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/drawing/image.h>
 #include <xtd/forms_native_export.h>
 

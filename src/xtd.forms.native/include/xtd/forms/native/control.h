@@ -20,7 +20,7 @@
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/region.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/forms_native_export.h>
 #include "window_definitions.h"
 #include "create_params.h"

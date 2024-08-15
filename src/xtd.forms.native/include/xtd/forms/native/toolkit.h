@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/static.h>
 #include <xtd/version.h>
 #include <xtd/forms_native_export.h>
