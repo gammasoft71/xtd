@@ -1,28 +1,29 @@
+#include <xtd/console>
 #include <xtd/double_object>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  locale::global(locale {"en_US.UTF-8"}); // change to us for currency
-  cout << ustring::format("{}", 12.345) << endl;
-  cout << ustring::format("{:c}", 12.345) << endl;
-  cout << ustring::format("{:C}", 12.345) << endl;
-  cout << ustring::format("{:e}", 12.345) << endl;
-  cout << ustring::format("{:E}", 12.345) << endl;
-  cout << ustring::format("{:f}", 12.345) << endl;
-  cout << ustring::format("{:F}", 12.345) << endl;
-  cout << ustring::format("{:g}", 12.345) << endl;
-  cout << ustring::format("{:G}", 12.345) << endl;
-  cout << ustring::format("{:n}", 12.345) << endl;
-  cout << ustring::format("{:N}", 12.345) << endl;
-  cout << ustring::format("{:p}", .0012345) << endl;
-  cout << ustring::format("{:P}", .0012345) << endl;
-  cout << ustring::format("{}", double_object::positive_infinity) << endl;
-  cout << ustring::format("{}", double_object::negative_infinity) << endl;
-  cout << ustring::format("{}", double_object::NaN) << endl;
-  cout << ustring::format("{}", std::numeric_limits<double>::signaling_NaN()) << endl;
+  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
+  console::out << ustring::format("{}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:c}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:C}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:e}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:E}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:f}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:F}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:g}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:G}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:n}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:N}", 12.345) << environment::new_line;
+  console::out << ustring::format("{:p}", .0012345) << environment::new_line;
+  console::out << ustring::format("{:P}", .0012345) << environment::new_line;
+  console::out << ustring::format("{}", double_object::positive_infinity) << environment::new_line;
+  console::out << ustring::format("{}", double_object::negative_infinity) << environment::new_line;
+  console::out << ustring::format("{}", double_object::NaN) << environment::new_line;
+  console::out << ustring::format("{}", std::numeric_limits<double>::signaling_NaN()) << environment::new_line;
 }
 
 // This code produces the following output :

@@ -1,7 +1,8 @@
+#include <xtd/console>
 #include <xtd/enum>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 enum week_day {
@@ -20,17 +21,17 @@ template<> struct xtd::enum_register<week_day> {
 };
 
 auto main() -> int {
-  cout << ustring::format("{}", week_day::saturday) << endl;
-  cout << ustring::format("0b{:b}", week_day::saturday) << endl;
-  cout << ustring::format("0b{:B}", week_day::saturday) << endl;
-  cout << ustring::format("{:d}", week_day::saturday) << endl;
-  cout << ustring::format("{:D}", week_day::saturday) << endl;
-  cout << ustring::format("{:g}", week_day::saturday) << endl;
-  cout << ustring::format("{:G}", week_day::saturday) << endl;
-  cout << ustring::format("0{:o}", week_day::saturday) << endl;
-  cout << ustring::format("0{:O}", week_day::saturday) << endl;
-  cout << ustring::format("0x{:x}", week_day::saturday) << endl;
-  cout << ustring::format("0x{:X}", week_day::saturday) << endl;
+  console::out << ustring::format("{}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0b{:b}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0b{:B}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("{:d}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("{:D}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("{:g}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("{:G}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0{:o}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0{:O}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0x{:x}", week_day::saturday) << environment::new_line;
+  console::out << ustring::format("0x{:X}", week_day::saturday) << environment::new_line;
 }
 
 // This code produces the following output :

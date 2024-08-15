@@ -1,13 +1,15 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 
 using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("{}", nullptr) << endl;
-  cout << ustring::format("{}", null) << endl;
-  cout << ustring::format("{}", NULL) << endl;
-  cout << ustring::format("{}", 0) << endl;
+  console::out << ustring::format("{}", nullptr) << environment::new_line;
+  console::out << ustring::format("{}", null) << environment::new_line;
+  console::out << ustring::format("{}", NULL) << environment::new_line;
+  console::out << ustring::format("{}", 0) << environment::new_line;
 }
 
 // This code produces the following output :
