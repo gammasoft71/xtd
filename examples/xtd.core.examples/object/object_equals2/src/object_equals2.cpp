@@ -3,8 +3,8 @@
 using namespace xtd;
 
 auto main() -> int {
-  ustring s1 = "Tom";
-  ustring s2 = "Carol";
+  string s1 = "Tom";
+  string s2 = "Carol";
   console::write_line("object::equals(\"{0}\", \"{1}\") => {2}", s1, s2, object::equals(s1, s2));
   
   s1 = "Tom";

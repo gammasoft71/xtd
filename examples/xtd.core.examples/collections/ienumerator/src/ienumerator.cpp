@@ -10,10 +10,10 @@ public:
   // Simple business object.
   struct person : public object, public iequatable<person>, public icomparable<person> {
   public:
-    person(const ustring& first_name, const ustring last_name) : first_name {first_name}, last_name {last_name} {}
+    person(const string& first_name, const string last_name) : first_name {first_name}, last_name {last_name} {}
     
-    ustring first_name;
-    ustring last_name;
+    string first_name;
+    string last_name;
     
     int32 compare_to(const person& o) const noexcept override {
       if (first_name == o.first_name && last_name == o.last_name) return 0;
@@ -22,7 +22,7 @@ public:
     }
     bool equals(const object& o) const noexcept override {return is<person>(o) && equals(as<person>(o));}
     bool equals(const person& o) const noexcept override {return compare_to(o) == 0;}
-    ustring to_string() const noexcept override {return ustring::format("{} {}", first_name, last_name);}
+    string to_string() const noexcept override {return string::format("{} {}", first_name, last_name);}
   };
   
   class people_enumerator : public ienumerator {

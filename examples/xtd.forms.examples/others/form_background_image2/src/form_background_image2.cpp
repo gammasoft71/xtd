@@ -27,7 +27,7 @@ namespace form_background_image2 {
       bliss_url.links().push_back({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
       bliss_url.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start(as<ustring>(e.link().link_data()));
+        process::start(as<string>(e.link().link_data()));
       };
 
       for (auto [value, name] : enum_object<>::get_entries<xtd::forms::image_layout>())

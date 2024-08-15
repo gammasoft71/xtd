@@ -9,27 +9,27 @@ using namespace xtd::collections::generic;
 class character {
 public:
   character() = default;
-  character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
+  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
-  const ustring& name() const noexcept {return name_;}
-  const ustring& rank() const noexcept {return rank_;}
+  const string& name() const noexcept {return name_;}
+  const string& rank() const noexcept {return rank_;}
   
-  ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
+  string to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
-  // Only this operator is needed for character class to be recognized by ustring::format() without specified formating.
+  // Only this operator is needed for character class to be recognized by string::format() without specified formating.
   friend std::ostream& operator <<(std::ostream& os, const character& value) noexcept {return os << value.to_string();}
   friend bool operator ==(const character& lhs, const character& rhs) noexcept {return lhs.name() == rhs.name() && lhs.rank() == rhs.rank();}
 
 private:
-  ustring name_;
-  ustring rank_;
+  string name_;
+  string rank_;
 };
 
 using characters = list<character>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    console::out << ustring::format("{}", c) << environment::new_line;
+    console::out << string::format("{}", c) << environment::new_line;
 }
 
 // This code produces the following output :

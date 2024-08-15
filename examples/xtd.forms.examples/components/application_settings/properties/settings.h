@@ -68,8 +68,8 @@ namespace application_settings::properties {
     }
 
     /// @brief Gets the text system setting property.
-    /// @return A xtd::ustring value.
-    xtd::ustring text() const noexcept {return "Settings example";}
+    /// @return A xtd::string value.
+    xtd::string text() const noexcept {return "Settings example";}
 
     /// @}
 

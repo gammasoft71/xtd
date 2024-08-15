@@ -10,7 +10,7 @@ auto main() -> int {
   auto button2 = xtd::forms::button::create(form1, "Button 2", {50, 100}, {200, 75});
   auto label1 = xtd::forms::label::create(form1, "Button 1 clicked 0 times", {50, 200}, {200, 23});
   auto label2 = xtd::forms::label::create(form1, "Button 2 clicked 0 times", {50, 230}, {200, 23});
-  button1.click += [&] {label1.text(xtd::ustring::format("Button 1 clicked {} times", ++button1_clicked));};
-  button2.auto_repeat(true).click += [&] {label2.text(xtd::ustring::format("Button 2 clicked {} times", ++button2_clicked));};
+  button1.click += [&] {label1.text(xtd::string::format("Button 1 clicked {} times", ++button1_clicked));};
+  button2.auto_repeat(true).click += [&] {label2.text(xtd::string::format("Button 2 clicked {} times", ++button2_clicked));};
   xtd::forms::application::run(form1);
 }

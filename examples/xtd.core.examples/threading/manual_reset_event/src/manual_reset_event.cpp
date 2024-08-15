@@ -16,7 +16,7 @@ namespace manual_reset_event_example {
       
       for(auto i = 0; i <= 2; ++i) {
         threads.emplace_back(thread_proc);
-        threads.back().name(ustring::format("Thread_{}", i));
+        threads.back().name(string::format("Thread_{}", i));
         threads.back().start();
       }
       
@@ -34,7 +34,7 @@ namespace manual_reset_event_example {
       
       for(auto i = 3; i <= 4; ++i) {
         threads.emplace_back(thread_proc);
-        threads.back().name(ustring::format("Thread_{}", i));
+        threads.back().name(string::format("Thread_{}", i));
         threads.back().start();
       }
       
@@ -65,7 +65,7 @@ namespace manual_reset_event_example {
     inline static manual_reset_event mre {false};
     
     static void thread_proc() {
-      ustring name = thread::current_thread().name();
+      string name = thread::current_thread().name();
       
       console::write_line(name + " starts and calls mre.WaitOne()");
       

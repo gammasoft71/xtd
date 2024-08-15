@@ -14,7 +14,7 @@ namespace status_bar_without_panels_example {
       text("Status bar without panels example");
       
       mouse_click += [&](object& sender, const mouse_event_args& e) {
-        status_bar1.text(ustring::format("Mouse click at location : {}", e.location()));
+        status_bar1.text(string::format("Mouse click at location : {}", e.location()));
       };
       
       status_bar1.parent(*this);

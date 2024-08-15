@@ -82,7 +82,7 @@ private:
   };
   
   void on_timer_tick(object& sender, const event_args& e) {
-    watch.text(ustring::format("{0:H}:{0:M}:{0:S}.{0:L}", stopwatch.elapsed()));
+    watch.text(string::format("{0:H}:{0:M}:{0:S}.{0:L}", stopwatch.elapsed()));
   };
   
   xtd::diagnostics::stopwatch stopwatch;

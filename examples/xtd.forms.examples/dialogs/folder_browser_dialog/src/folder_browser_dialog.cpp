@@ -21,7 +21,7 @@ public:
       dialog.selected_path(selected_path);
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
         selected_path = dialog.selected_path();
-        label1.text(ustring::format("Path = {}", selected_path));
+        label1.text(string::format("Path = {}", selected_path));
       }
     };
     
@@ -34,7 +34,7 @@ public:
 private:
   button button1;
   label label1;
-  ustring selected_path;
+  string selected_path;
 };
 
 auto main() -> int {

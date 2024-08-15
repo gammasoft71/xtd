@@ -51,7 +51,7 @@ private:
     try {
       throw operation_canceled_exception(current_stack_frame_);
     } catch (const system_exception& e) {
-      message_box::show(*this, e.message(), ustring::format("Exception {} handled", e.name()));
+      message_box::show(*this, e.message(), string::format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw std::invalid_argument("Invalid argument");}

@@ -27,7 +27,7 @@ namespace tool_bar_example {
       choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice1.selected_index(0);
       choice1.selected_value_changed += [&] {
-        list_box1.items().push_back(ustring::format("{} selected", choice1.selected_item()));
+        list_box1.items().push_back(string::format("{} selected", choice1.selected_item()));
         list_box1.selected_index(list_box1.items().size() - 1);
       };
       
@@ -57,14 +57,14 @@ namespace tool_bar_example {
   private:
     void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
       if (e.button().style() == tool_bar_button_style::toggle_button)
-        list_box1.items().push_back(ustring::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
+        list_box1.items().push_back(string::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
       else
-        list_box1.items().push_back(ustring::format("Button {} clicked", e.button().text()));
+        list_box1.items().push_back(string::format("Button {} clicked", e.button().text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     
     void on_menu_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(ustring::format("Menu item {} clicked", as<menu_item>(sender).text()));
+      list_box1.items().push_back(string::format("Menu item {} clicked", as<menu_item>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     

@@ -15,7 +15,7 @@ void gen_time_span_from_days (double days) {
   // ne contient pas de millisecondes.
   size_t index = time_interval.index_of( ':' );
   index = time_interval.index_of( '.', index );
-  if (index == ustring::npos) time_interval += "        ";
+  if (index == string::npos) time_interval += "        ";
   
   console::write_line("{0,21}{1,26}", days, time_interval);
 }

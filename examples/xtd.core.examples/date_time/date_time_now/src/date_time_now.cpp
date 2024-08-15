@@ -19,7 +19,7 @@ public:
         console::write_line("   Local date and time: {}, {}", local_date.to_string(), local_date.kind());
         console::write_line("   UTC date and time: {}, {}\n", utc_date.to_string(), utc_date.kind());
       } catch (const std::exception& e) {
-        console::write_line(ustring::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");
+        console::write_line(string::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");
       }
     }
   }

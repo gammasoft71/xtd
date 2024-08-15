@@ -21,7 +21,7 @@ public:
     for (auto index = 0_z; index < environment::processor_count() - 1; ++index) {
       thread::start_new([&] {
         auto counter = 0u;
-        auto thread_name = ustring::format("thread {}", thread::current_thread().managed_thread_id());
+        auto thread_name = string::format("thread {}", thread::current_thread().managed_thread_id());
         thread::current_thread().name(thread_name);
         while (!closed) {
           /// simulate work...
@@ -29,7 +29,7 @@ public:
           ++counter;
           /// call invoke method to update UI in the main thread.
           messages.begin_invoke([&, counter, thread_name] {
-            messages.items().push_back(ustring::format("{}: counter: {}", thread_name, counter));
+            messages.items().push_back(string::format("{}: counter: {}", thread_name, counter));
             messages.selected_index(messages.items().size() - 1);
           });
         }

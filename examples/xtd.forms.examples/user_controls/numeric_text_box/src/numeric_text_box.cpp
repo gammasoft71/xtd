@@ -26,7 +26,7 @@ namespace numeric_tex_box_example {
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<ustring>(text()).index_of('.') != ustring::npos));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<string>(text()).index_of('.') != string::npos));
     }
     
     void on_text_changed(const event_args& e) override {
@@ -51,7 +51,7 @@ namespace numeric_tex_box_example {
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
       numeric_text_box1.value_changed += [&] {
-        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << environment::new_line;
+        ctrace << string::format("value_changed [value={}]", numeric_text_box1.value()) << environment::new_line;
       };
     }
     

@@ -1,6 +1,6 @@
 # compare
 
-Shows how to use [xtd::ustring::compare](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a435ca143c948bc8c0c009dabe7de1b6b) method.
+Shows how to use [xtd::string::compare](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a435ca143c948bc8c0c009dabe7de1b6b) method.
 
 ## Sources
 

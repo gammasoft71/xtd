@@ -6,7 +6,7 @@ using namespace xtd::collections::generic;
 class example {
 public:
   static auto main() -> void {
-    auto dinosaurs = list<ustring> {};
+    auto dinosaurs = list<string> {};
     
     console::write_line("\ncapacity: {0}", dinosaurs.capacity());
     

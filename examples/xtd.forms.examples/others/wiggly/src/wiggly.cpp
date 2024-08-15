@@ -28,8 +28,8 @@ namespace wiggly_example {
       auto wiggly_text = as<std::u32string>(text());
       for (auto i = 0_z; i < wiggly_text.length(); i++) {
         auto index = (step + i) % sins.size();
-        e.graphics().draw_string(ustring::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
-        pos.x(pos.x() + as<int>(e.graphics().measure_string(ustring::format("{}", wiggly_text[i]), font()).width()));
+        e.graphics().draw_string(string::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
+        pos.x(pos.x() + as<int>(e.graphics().measure_string(string::format("{}", wiggly_text[i]), font()).width()));
       }
     }
     

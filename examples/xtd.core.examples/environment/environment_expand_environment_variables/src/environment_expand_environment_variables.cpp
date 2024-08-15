@@ -4,7 +4,7 @@
 using namespace xtd;
 
 auto main() -> int {
-  auto str = ustring::empty_string;
+  auto str = string::empty_string;
   auto nl = environment::new_line();
   
   console::write_line();

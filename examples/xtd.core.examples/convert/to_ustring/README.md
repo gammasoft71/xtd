@@ -19,41 +19,41 @@ xtdc run
 ## Output
 
 ```
-Convert int to ustring :
+Convert int to string :
 ------------------------
 to_ustring(value)            = 42
-as<ustring>(value)           = 42
+as<string>(value)           = 42
 convert::to_ustring(value)   = 42
-ustring::format("{}", value) = 42
+string::format("{}", value) = 42
 
-Convert float to ustring :
+Convert float to string :
 --------------------------
 to_ustring(float_value)            = 42.5
-as<ustring>(float_value)           = 42.5
+as<string>(float_value)           = 42.5
 convert::to_ustring(float_value)   = 42.5
-ustring::format("{}", float_value) = 42.5
+string::format("{}", float_value) = 42.5
 
-Convert any to ustring :
+Convert any to string :
 ------------------------
 to_ustring(any_value)            = 42
-as<ustring>(any_value)           = 42
+as<string>(any_value)           = 42
 convert::to_ustring(any_value)   = 42
-ustring::format("{}", any_value) = 42
+string::format("{}", any_value) = 42
 
-Convert const char16 to ustring :
+Convert const char16 to string :
 -----------------------------------
 to_ustring(wstring_value)                      = A string value
-as<ustring>(const_char16_value)                = A string value
+as<string>(const_char16_value)                = A string value
 convert::to_ustring(const_char16_value)        = A string value
 convert_string::to_ustring(const_char16_value) = A string value
-ustring::format("{}", const_char16_value)      = A string value
+string::format("{}", const_char16_value)      = A string value
 
-Convert wstring to ustring :
+Convert wstring to string :
 ----------------------------
 to_ustring(wstring_value)                 = A string value
-as<ustring>(wstring_value)                = A string value
+as<string>(wstring_value)                = A string value
 convert::to_ustring(wstring_value)        = A string value
 convert_string::to_ustring(wstring_value) = A string value
-ustring::format("{}", wstring_value)      = A string value
+string::format("{}", wstring_value)      = A string value
 Program ended with exit code: 0
 ```

@@ -17,7 +17,7 @@ public:
     
     form2.client_size({300, 100});
     form2.form_closing += [&](auto sender, auto& e) {e.cancel(cancel_close_check_box.checked());};
-    form2.form_closed += [&] {form2.text(ustring::format("Close count = {}", ++close_count));};
+    form2.form_closed += [&] {form2.text(string::format("Close count = {}", ++close_count));};
   }
   
 private:

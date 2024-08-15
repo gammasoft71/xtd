@@ -12,8 +12,8 @@ using namespace xtd::net::sockets;
 
 class test_ip_address {
 public:
-  static auto main(const list<ustring>& args) {
-    auto server = ustring::empty_string;
+  static auto main(const list<string>& args) {
+    auto server = string::empty_string;
     
     // Define a regular expression to parse user's input.
     // This is a security check. It allows only
@@ -46,7 +46,7 @@ private:
    * It then displays the type of address family supported by the server and its
    * IP address in standard and byte format.
    **/
-  static void ip_addresses(const ustring& server) {
+  static void ip_addresses(const string& server) {
     try {
       // Get server related information.
       auto heserver = dns::get_host_entry(server);

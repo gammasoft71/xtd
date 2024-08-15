@@ -35,8 +35,8 @@ public:
     active_control(input);
   }
   
-  virtual ustring input_text() const {return input.text();}
-  virtual user_input_dialog& input_text(const ustring& input_text) {
+  virtual string input_text() const {return input.text();}
+  virtual user_input_dialog& input_text(const string& input_text) {
     input.text(input_text);
     return *this;
   }

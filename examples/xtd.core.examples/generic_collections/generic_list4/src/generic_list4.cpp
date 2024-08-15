@@ -7,13 +7,13 @@ using namespace xtd::collections::generic;
 // but the part name can change.
 class part : public object, public iequatable<part> {
 public:
-  ustring part_name;
+  string part_name;
   int part_id = 0;
 
   part() = default;
-  part(const ustring& name, int id) : part_name {name}, part_id {id} {}
+  part(const string& name, int id) : part_name {name}, part_id {id} {}
 
-  ustring to_string() const noexcept override {return ustring::format("ID: {}   Name: {}", part_id, part_name);}
+  string to_string() const noexcept override {return string::format("ID: {}   Name: {}", part_id, part_name);}
   
   bool equals(const object& obj) const noexcept override {return is<part>(obj) && equals(as<part>(obj));}
   bool equals(const part& other) const noexcept override {return part_id == other.part_id;}

@@ -11,8 +11,8 @@ using namespace xtd;
 class foo1 {
 public:
   explicit foo1(int value) : value_ {value} {}
-  ustring to_string() const noexcept {return ustring::format("{}", value_);}
-  ustring to_string(const ustring& format, const std::locale& loc) const {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept {return string::format("{}", value_);}
+  string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
 
 private:
   int value_ = 0;
@@ -25,8 +25,8 @@ class foo2 {
 public:
   explicit foo2(int value) : value_ {value} {}
   
-  ustring to_string() const noexcept {return ustring::format("{}", value_);}
-  ustring to_string(const ustring& format, const std::locale& loc) const {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept {return string::format("{}", value_);}
+  string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
 
 private:
   int value_ = 0;
@@ -43,8 +43,8 @@ class foo3 : public iformatable {
 public:
   explicit foo3(int value) : value_ {value} {}
   
-  ustring to_string() const noexcept {return ustring::format("{}", value_);}
-  ustring to_string(const ustring& format, const std::locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept {return string::format("{}", value_);}
+  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
   
 private:
   int value_ = 0;
@@ -56,8 +56,8 @@ private:
 class foo4 : public object {
 public:
   explicit foo4(int value) : value_ {value} {}
-  ustring to_string() const noexcept override {return ustring::format("{}", value_);}
-  ustring to_string(const ustring& format, const std::locale& loc) const {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept override {return string::format("{}", value_);}
+  string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
 
 private:
   int value_ = 0;
@@ -70,8 +70,8 @@ class foo5 : public iformatable {
 public:
   explicit foo5(int value) : value_ {value} {}
 
-  ustring to_string() const noexcept {return ustring::format("{}", value_);}
-  ustring to_string(const ustring& format, const std::locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept {return string::format("{}", value_);}
+  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
 
   friend std::ostream& operator <<(std::ostream& stream, const foo5& value) {return stream << value.to_string("", std::locale {});}
   
@@ -86,8 +86,8 @@ class foo6 {
 public:
   explicit foo6(int value) : value_ {value} {}
   
-  ustring to_string() const noexcept {return to_string("", std::locale {});}
-  ustring to_string(const ustring& format, const std::locale& loc) const {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string() const noexcept {return to_string("", std::locale {});}
+  string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
   
   friend std::ostream& operator <<(std::ostream& stream, const foo6& value) {return stream << value.to_string();}
   
@@ -107,7 +107,7 @@ public:
   explicit foo7(int value) : value_ {value} {}
   
   using object::to_string;
-  ustring to_string(const ustring& format, const std::locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
   
 private:
   int value_ = 0;
@@ -119,12 +119,12 @@ auto main() -> int {
   console::out << "  " << f1 << environment::new_line;
   console::out << "  " << f1.to_string() << environment::new_line;
   try {
-    console::out << ustring::format("  {}", f1) << environment::new_line;
+    console::out << string::format("  {}", f1) << environment::new_line;
   } catch(const format_exception& e) {
     console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
   }
   try {
-    console::out << ustring::format("  0b{:b8}", f1) << environment::new_line;
+    console::out << string::format("  0b{:b8}", f1) << environment::new_line;
   } catch(const format_exception& e) {
     console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
   }
@@ -157,8 +157,8 @@ auto main() -> int {
   console::out << "foo2 standard output :" << environment::new_line;
   console::out << "  " << f2 << environment::new_line;
   console::out << "  " << f2.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f2) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f2) << environment::new_line;
+  console::out << string::format("  {}", f2) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f2) << environment::new_line;
   console::out << "  0b" << f2.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo2 write_line :");
@@ -176,8 +176,8 @@ auto main() -> int {
   console::out << "foo3 standard output :" << environment::new_line;
   console::out << "  " << f3 << environment::new_line;
   console::out << "  " << f3.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f3) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f3) << environment::new_line;
+  console::out << string::format("  {}", f3) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f3) << environment::new_line;
   console::out << "  0b" << f3.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo3 write_line :");
@@ -195,8 +195,8 @@ auto main() -> int {
   console::out << "foo4 standard output :" << environment::new_line;
   console::out << "  " << f4 << environment::new_line;
   console::out << "  " << f4.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f4) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f4) << environment::new_line;
+  console::out << string::format("  {}", f4) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f4) << environment::new_line;
   console::out << "  0b" << f4.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo4 write_line :");
@@ -214,8 +214,8 @@ auto main() -> int {
   console::out << "foo5 standard output :" << environment::new_line;
   console::out << "  " << f5 << environment::new_line;
   console::out << "  " << f5.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f5) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f5) << environment::new_line;
+  console::out << string::format("  {}", f5) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f5) << environment::new_line;
   console::out << "  0b" << f5.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo5 write_line :");
@@ -233,8 +233,8 @@ auto main() -> int {
   console::out << "foo6 standard output :" << environment::new_line;
   console::out << "  " << f6 << environment::new_line;
   console::out << "  " << f6.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f6) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f6) << environment::new_line;
+  console::out << string::format("  {}", f6) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f6) << environment::new_line;
   console::out << "  0b" << f6.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo6 write_line :");
@@ -252,8 +252,8 @@ auto main() -> int {
   console::out << "foo7 standard output :" << environment::new_line;
   console::out << "  " << f7 << environment::new_line;
   console::out << "  " << f7.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f7) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f7) << environment::new_line;
+  console::out << string::format("  {}", f7) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f7) << environment::new_line;
   console::out << "  0b" << f7.to_string("b8", std::locale {}) << environment::new_line;
   console::write_line();
   console::write_line("foo7 write_line :");

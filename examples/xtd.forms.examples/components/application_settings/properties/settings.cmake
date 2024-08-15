@@ -15,4 +15,4 @@ setting(location xtd::drawing::point USER "{100, 50}")
 setting(size xtd::drawing::size USER "{335, 45}")
 
 # Application settings
-setting(text xtd::ustring APPLICATION "\"Settings example\"")
+setting(text xtd::string APPLICATION "\"Settings example\"")

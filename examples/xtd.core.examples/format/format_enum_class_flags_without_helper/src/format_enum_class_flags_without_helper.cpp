@@ -22,23 +22,23 @@ template<> struct xtd::enum_set_attribute<text_styles> {
   explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 
-// This operator is needed for text_styles enum class to be recognized by xtd::ustring::format().
+// This operator is needed for text_styles enum class to be recognized by xtd::string::format().
 template<> struct xtd::enum_register<text_styles> {
   explicit operator auto() const noexcept {return xtd::enum_collection<text_styles> {{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
 };
 
 auto main() -> int {
-  console::out << ustring::format("{}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0b{:b}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0b{:B}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("{:d}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("{:D}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("{:g}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("{:G}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0{:o}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0{:O}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0x{:x}", text_styles::bold | text_styles::italic) << environment::new_line;
-  console::out << ustring::format("0x{:X}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("{}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0b{:b}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0b{:B}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("{:d}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("{:D}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("{:g}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("{:G}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0{:o}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0{:O}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0x{:x}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << string::format("0x{:X}", text_styles::bold | text_styles::italic) << environment::new_line;
 }
 
 // This code produces the following output :

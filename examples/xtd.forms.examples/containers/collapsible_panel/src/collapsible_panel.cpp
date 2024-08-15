@@ -35,7 +35,7 @@ public:
     button_add.click += [&] {
       auto item = new_ptr<label>();
       item->parent(collapsible_panel2);
-      item->text(ustring::format("item{}", ++count));
+      item->text(string::format("item{}", ++count));
       item->dock(dock_style::top);
       control_items.push_back(item);
     };

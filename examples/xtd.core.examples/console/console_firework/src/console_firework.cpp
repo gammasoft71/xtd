@@ -19,7 +19,7 @@ namespace console_firework_example {
     virtual void paint() const = 0;
     
   protected:
-    static void write(int x, int y, const ustring& str) {
+    static void write(int x, int y, const string& str) {
       console::set_cursor_position(x, y);
       console::write(str);
     }

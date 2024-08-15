@@ -12,7 +12,7 @@ public:
 class person : public object {
 public:
   int age = 0;
-  ptr<ustring> name = new_ptr<ustring>();
+  ptr<string> name = new_ptr<string>();
   ptr<::id_info> id_info = new_ptr<::id_info>(0);
   
   uptr<person> shallow_copy() {
@@ -22,7 +22,7 @@ public:
   uptr<person> deep_copy() {
     auto other = memberwise_clone<person>();
     other->id_info = new_ptr<::id_info>(this->id_info->id_number);
-    other->name = new_ptr<ustring>(*name);
+    other->name = new_ptr<string>(*name);
     return other;
   }
 };

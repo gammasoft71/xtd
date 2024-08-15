@@ -18,7 +18,7 @@ public:
     find_button.location({10, 10});
     find_button.click += [&] {
       find_box::show(*this, "Gammasoft", "Find", [&](object& sender, const find_event_args& e) {
-        diagnostics::debug::write_line(ustring::format("Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]", e.find_string(), e.match_case(), e.search_direction(), e.whole_word()));
+        diagnostics::debug::write_line(string::format("Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]", e.find_string(), e.match_case(), e.search_direction(), e.whole_word()));
       });
     };
   }

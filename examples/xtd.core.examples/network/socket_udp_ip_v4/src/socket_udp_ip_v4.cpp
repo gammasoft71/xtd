@@ -22,7 +22,7 @@ auto main() -> int {
       auto incoming_end_point = ip_end_point {};
       auto number_of_byte_received = server_socket.receive_from(buffer, incoming_end_point);
       if (!(number_of_byte_received == 1 && buffer[0] == 0xFF))
-        console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
+        console::write_line(string(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
   }};
   
@@ -31,7 +31,7 @@ auto main() -> int {
     
     auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("counter={}", ++counter);
+      auto str = string::format("counter={}", ++counter);
       client_socket.send_to(list<unsigned char> {str.begin(), str.end()}, ip_end_point {ip_address::loopback, 9400});
       thread::sleep(50_ms);
     }

@@ -39,7 +39,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_height_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_height_text_box_.location({85, 65});
   custom_height_text_box_.parent(*this);
-  custom_height_text_box_.text(ustring::format("{}", custom_height_));
+  custom_height_text_box_.text(string::format("{}", custom_height_));
   custom_height_text_box_.width(50);
   
   custom_width_label_.auto_size(true);
@@ -50,7 +50,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_width_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_width_text_box_.location({85, 95});
   custom_width_text_box_.parent(*this);
-  custom_width_text_box_.text(ustring::format("{}", custom_width_));
+  custom_width_text_box_.text(string::format("{}", custom_width_));
   custom_width_text_box_.width(50);
   
   custom_mines_label_.auto_size(true);
@@ -61,7 +61,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_mines_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_mines_text_box_.location({85, 125});
   custom_mines_text_box_.parent(*this);
-  custom_mines_text_box_.text(ustring::format("{}", custom_mines_));
+  custom_mines_text_box_.text(string::format("{}", custom_mines_));
   custom_mines_text_box_.width(50);
   
   ok_button_.parent(*this);
@@ -84,7 +84,7 @@ void custom_field_dialog::custom_height(int value) noexcept {
   custom_height_ = value;
   if (custom_height_ < minimum_height_) custom_height_ = minimum_height_;
   else if (custom_height_ > maximum_height_) custom_height_ = maximum_height_;
-  custom_height_text_box_.text(ustring::format("{}", custom_height_));
+  custom_height_text_box_.text(string::format("{}", custom_height_));
 }
 
 int custom_field_dialog::custom_width() const noexcept {
@@ -95,7 +95,7 @@ void custom_field_dialog::custom_width(int value) noexcept {
   custom_width_ = value;
   if (custom_width_ < minimum_width_) custom_width_ = minimum_width_;
   else if (custom_width_ > maximum_width_) custom_width_ = maximum_width_;
-  custom_width_text_box_.text(ustring::format("{}", custom_width_));
+  custom_width_text_box_.text(string::format("{}", custom_width_));
 }
 
 int custom_field_dialog::custom_mines() const noexcept {
@@ -106,7 +106,7 @@ void custom_field_dialog::custom_mines(int value) noexcept {
   custom_mines_ = value;
   if (custom_mines_ < minimum_mines_) custom_mines_ = minimum_mines_;
   else if (custom_mines_ > maximum_mines_) custom_mines_ = maximum_mines_;
-  custom_mines_text_box_.text(ustring::format("{}", custom_mines_));
+  custom_mines_text_box_.text(string::format("{}", custom_mines_));
 }
 
 void custom_field_dialog::on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e) {

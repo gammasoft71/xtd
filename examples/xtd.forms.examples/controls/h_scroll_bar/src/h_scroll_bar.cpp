@@ -23,7 +23,7 @@ namespace h_scroll_bar_example {
       h_scroll_bar2.value(10);
       h_scroll_bar2.width(220);
       h_scroll_bar2.scroll += [&] {
-        xtd::diagnostics::debug::write_line(xtd::ustring::format("h_scroll_bar2 value = {}", h_scroll_bar2.value()));
+        xtd::diagnostics::debug::write_line(xtd::string::format("h_scroll_bar2 value = {}", h_scroll_bar2.value()));
       };
     }
     

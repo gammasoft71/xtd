@@ -272,7 +272,7 @@ namespace colors_example {
       hsv_text_box_.text(xtd::drawing::color_translator::to_hsv(color_, true));
       html_text_box_.text(xtd::drawing::color_translator::to_html(color_));
       rgb_text_box_.text(xtd::drawing::color_translator::to_rgb(color_, true));
-      win32_text_box_.text(xtd::ustring::format("0x{:x6}", xtd::drawing::color_translator::to_win32(color_)));
+      win32_text_box_.text(xtd::string::format("0x{:x6}", xtd::drawing::color_translator::to_win32(color_)));
       color_changed(*this, e);
     }
     

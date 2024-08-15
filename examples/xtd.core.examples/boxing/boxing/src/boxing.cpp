@@ -17,22 +17,22 @@ public:
   
   // The add_key_value method has an xtd::object as the second parameter to force
   // the application to use the boxing method for native and non-native setup parameters.
-  void add_key_value(const ustring& key, const object& value) {
+  void add_key_value(const string& key, const object& value) {
     key_values_.push_back({key, value.to_string()});
   }
   
-  void title(const ustring& title) {title_ = title;}
+  void title(const string& title) {title_ = title;}
   
-  ustring to_string() const noexcept override {
-    auto result = ustring::format("[{}]{}{}", title_, environment::new_line());
+  string to_string() const noexcept override {
+    auto result = string::format("[{}]{}{}", title_, environment::new_line());
     for (const auto& [key, value] : key_values_)
-      result += ustring::format("{}={}{}", key, value, environment::new_line());
+      result += string::format("{}={}{}", key, value, environment::new_line());
     return result;
   }
   
 private:
   pair_collection key_values_;
-  ustring title_;
+  string title_;
 };
 
 struct setup {
@@ -40,7 +40,7 @@ struct setup {
   int y = 0;
   int width = 0;
   int height = 0;
-  ustring text;
+  string text;
   xtd::version version;
 };
 

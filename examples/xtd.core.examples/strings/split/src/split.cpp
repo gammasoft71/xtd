@@ -4,7 +4,7 @@
 using namespace xtd;
 
 auto main() -> int {
-  auto strings = ustring("One Two Three\tFour\nFive").split();
+  auto strings = string("One Two Three\tFour\nFive").split();
   
   console::write_line("strings.size = {}", strings.size());
   for (auto string : strings)

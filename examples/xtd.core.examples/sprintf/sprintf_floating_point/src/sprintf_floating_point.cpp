@@ -6,18 +6,18 @@
 using namespace xtd;
 
 auto main() -> int {
-  console::out << ustring::sprintf("%f", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%F", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%e", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%E", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%g", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%G", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("0x%a", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("0x%A", 12.345) << environment::new_line;
-  console::out << ustring::sprintf("%G", double_object::epsilon) << environment::new_line;
-  console::out << ustring::sprintf("%f", double_object::NaN) << environment::new_line;
-  console::out << ustring::sprintf("%f", double_object::positive_infinity) << environment::new_line;
-  console::out << ustring::sprintf("%f", double_object::negative_infinity) << environment::new_line;
+  console::out << string::sprintf("%f", 12.345) << environment::new_line;
+  console::out << string::sprintf("%F", 12.345) << environment::new_line;
+  console::out << string::sprintf("%e", 12.345) << environment::new_line;
+  console::out << string::sprintf("%E", 12.345) << environment::new_line;
+  console::out << string::sprintf("%g", 12.345) << environment::new_line;
+  console::out << string::sprintf("%G", 12.345) << environment::new_line;
+  console::out << string::sprintf("0x%a", 12.345) << environment::new_line;
+  console::out << string::sprintf("0x%A", 12.345) << environment::new_line;
+  console::out << string::sprintf("%G", double_object::epsilon) << environment::new_line;
+  console::out << string::sprintf("%f", double_object::NaN) << environment::new_line;
+  console::out << string::sprintf("%f", double_object::positive_infinity) << environment::new_line;
+  console::out << string::sprintf("%f", double_object::negative_infinity) << environment::new_line;
 }
 
 // This code produces the following output :

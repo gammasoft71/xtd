@@ -25,7 +25,7 @@ public:
       dialog.show_dialog(*this);
       for (auto step = 1; step <= dialog.maximum(); ++step) {
         dialog.value(step);
-        dialog.message(ustring::format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
+        dialog.message(string::format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
         thread::sleep(100_ms);
       }
     };

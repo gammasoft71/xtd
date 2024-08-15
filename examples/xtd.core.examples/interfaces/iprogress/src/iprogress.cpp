@@ -8,7 +8,7 @@ using namespace xtd;
 class generic_progress {
 public:
   generic_progress() = default;
-  generic_progress(int val, int min = 0, int max = 100, const ustring& msg = "") : message_(msg) {
+  generic_progress(int val, int min = 0, int max = 100, const string& msg = "") : message_(msg) {
     minimum(min);
     maximum(max);
     value(val);
@@ -30,8 +30,8 @@ public:
     return *this;
   }
   
-  const ustring& message() const noexcept {return message_;}
-  generic_progress& message(const ustring& message) noexcept {
+  const string& message() const noexcept {return message_;}
+  generic_progress& message(const string& message) noexcept {
     message_ = message;
     return *this;
   }
@@ -44,7 +44,7 @@ public:
   }
   
   generic_progress& perform_step() noexcept {return increment(step());}
-  generic_progress& perform_step(const ustring& message) noexcept {
+  generic_progress& perform_step(const string& message) noexcept {
     message_ = message;
     return perform_step();
   }
@@ -66,7 +66,7 @@ private:
   int maximum_ = 100;
   int step_ = 1;
   int value_ = 0;
-  ustring message_;
+  string message_;
 };
 
 class print_generic_progress : public iprogress<generic_progress> {

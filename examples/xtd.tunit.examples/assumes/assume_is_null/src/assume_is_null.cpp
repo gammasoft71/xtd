@@ -7,12 +7,12 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto s = ptr<ustring> {};
+      auto s = ptr<string> {};
       assume::is_null(s);
     }
     
     void test_method_(test_case_aborted) {
-      auto s = new_ptr<ustring>("string");
+      auto s = new_ptr<string>("string");
       assume::is_null(s);
     }
   };

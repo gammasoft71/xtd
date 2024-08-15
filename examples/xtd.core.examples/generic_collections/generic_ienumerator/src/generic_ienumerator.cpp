@@ -15,7 +15,7 @@ struct box : public iequatable<::box>, public icomparable<::box> {
   
   int32 compare_to(const ::box& o) const noexcept override {return 0;}
   bool equals(const ::box& o) const noexcept override {return length == o.length && width == o.width && height == o.height;}
-  ustring to_string() const noexcept {return ustring::format("box [length={}, width={}, height={}]", length, width, height);}
+  string to_string() const noexcept {return string::format("box [length={}, width={}, height={}]", length, width, height);}
 };
 
 using box_collection = list<::box>;

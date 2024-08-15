@@ -11,7 +11,7 @@ class binomial {
 public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
-  static auto main(const list<ustring>& args) {
+  static auto main(const list<string>& args) {
     auto possibilities = .0l;
     auto iter = .0l;
     
@@ -33,9 +33,9 @@ public:
         const auto MAX_POSSIBILITIES = 99.0l;
         possibilities = parse<decimal>(args[0]);
         if (possibilities < 0 || possibilities > MAX_POSSIBILITIES)
-          throw new system_exception(ustring::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
+          throw new system_exception(string::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
       } catch (const system_exception& ex) {
-        auto fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
+        auto fail_message = string::format("\"{}\" is not a valid number of possibilities.", args[0]);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -52,13 +52,13 @@ public:
     
     for (iter = 0; iter <= possibilities; iter++) {
       auto result = .0l;
-      auto binomial = ustring::empty_string;
+      auto binomial = string::empty_string;
       
       // Compute the next binomial coefficient and handle all exceptions.
       try {
         result = calc_binomial(possibilities, iter);
       } catch (const system_exception& ex) {
-        auto fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+        auto fail_message = string::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -66,9 +66,9 @@ public:
       }
       
       // Format the trace and console output.
-      binomial = ustring::format("Binomial( {0}, {1} ) = ", possibilities, iter);
+      binomial = string::format("Binomial( {0}, {1} ) = ", possibilities, iter);
       default_listener->write(binomial);
-      default_listener->write_line(ustring::format("{}", result));
+      default_listener->write_line(string::format("{}", result));
       console::write_line("{0} {1}", binomial, result);
     }
   }

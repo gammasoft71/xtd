@@ -48,9 +48,9 @@ public:
   // date_time structure converted to local time, and the date_time
   // structure converted to universal time.
   
-  static void display(const ustring& title, const date_time& input_dt) {
+  static void display(const string& title, const date_time& input_dt) {
     auto disp_dt = input_dt;
-    auto dt_string = ustring::empty_string;
+    auto dt_string = string::empty_string;
     
     // display the original date_time.
     
@@ -81,7 +81,7 @@ public:
   
   // display the value and kind property for date_time::now() and date_time::utc_now().
   
-  static void display_now(const ustring& title, const date_time& input_dt) {
+  static void display_now(const string& title, const date_time& input_dt) {
     auto dt_string = input_dt.to_string("u");
     console::write_line("{0} {1}, kind = {2}", title, dt_string, input_dt.kind());
   }

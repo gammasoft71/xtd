@@ -26,7 +26,7 @@ void board_control::start() {
   
   clear_board();
   
-  status_bar_.text(ustring::format("{}", num_lines_removed_));
+  status_bar_.text(string::format("{}", num_lines_removed_));
   new_piece();
   timer_.start();
 }
@@ -40,7 +40,7 @@ void board_control::pause() {
     status_bar_.text("paused"_t);
   } else {
     timer_.start();
-    status_bar_.text(ustring::format("{}", num_lines_removed_));
+    status_bar_.text(string::format("{}", num_lines_removed_));
   }
   refresh();
 }
@@ -136,7 +136,7 @@ void board_control::remove_full_lines() {
   
   if (num_full_lines > 0) {
     num_lines_removed_ += num_full_lines;
-    status_bar_.text(ustring::format("{}", num_lines_removed_));
+    status_bar_.text(string::format("{}", num_lines_removed_));
     falling_finished_ = true;
     cur_piece_ = shape {tetrominoes::no_shape};
     refresh();

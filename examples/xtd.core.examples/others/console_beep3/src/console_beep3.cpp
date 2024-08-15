@@ -12,7 +12,7 @@ auto main(int argc, char* argv[]) -> int {
   //
   if ((argc == 2) && (int32_object::try_parse(argv[1], x) == true) && ((x >= 1) && (x <= 9))) {
     for (auto i = 1; i <= x; i++) {
-      console::out << ustring::format("Beep number {}.", i) << beep() << environment::new_line;
+      console::out << string::format("Beep number {}.", i) << beep() << environment::new_line;
       threading::thread::sleep(100_ms);
     }
   } else

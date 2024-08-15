@@ -32,8 +32,8 @@ auto main() -> int {
   label.text("  0.0");
   
   timer.tick += [&] {
-    label.text(ustring::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
-    debug::write_line(ustring::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
+    label.text(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
+    debug::write_line(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
   };
   
   label.mouse_down += [&] {

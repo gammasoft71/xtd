@@ -112,7 +112,7 @@ void minesweeper_form::new_game() {
           if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].contains_mine())
             cells_[x][y].neighbors(cells_[x][y].number_of_neighbouring_mines() + 1);
             
-  mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
+  mine_count_label_.text(string::format("{:D3}", mine_count_ - flagged_mine_count_));
   stopwatch_label_.text("000");
   start_game_.image(bitmap {properties::resources::smiley1(), {24, 24}});
   invalidate();
@@ -280,8 +280,8 @@ void minesweeper_form::mark_cell(int x, int y) {
     cell.state(cell_state::question);
     --flagged_mine_count_;
   } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
-  if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
-  else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(ustring::format("{:D2}", mine_count_ - flagged_mine_count_));
+  if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label_.text(string::format("{:D3}", mine_count_ - flagged_mine_count_));
+  else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label_.text(string::format("{:D2}", mine_count_ - flagged_mine_count_));
   invalidate();
 }
 
@@ -437,7 +437,7 @@ void minesweeper_form::on_status_panel_resize(object& sender, const event_args& 
 
 void minesweeper_form::on_stopwatch_tick() {
   if (stopwatch_count_ < 999)
-    stopwatch_label_.text(ustring::format("{:D3}", ++stopwatch_count_));
+    stopwatch_label_.text(string::format("{:D3}", ++stopwatch_count_));
 }
 
 void minesweeper_form::uncover_cell(int x, int y) {
@@ -475,7 +475,7 @@ void minesweeper_form::you_win() {
   mine_count_label_.text("000");
   
   if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}} [level_]) {
-    auto gamer_name = std::map<level, ustring> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}} [level_];
+    auto gamer_name = std::map<level, string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}} [level_];
     minesweeper::input_name_dialog input_name_dialog;
     input_name_dialog.gammer_name(gamer_name);
     input_name_dialog.level(level_);
@@ -483,7 +483,7 @@ void minesweeper_form::you_win() {
       gamer_name = input_name_dialog.gammer_name();
       
     std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {[](int value) {properties::settings::default_settings().beginner_high_scores_value(value);}}}, {level::intermediate, {[](int value) {properties::settings::default_settings().intermediate_high_scores_value(value);}}}, {level::expert, {[](int value) {properties::settings::default_settings().expert_high_scores_value(value);}}}};
-    std::map<level, delegate<void(ustring)>> set_settings_high_scores_names {{level::beginner, {[](ustring name) {properties::settings::default_settings().beginner_high_scores_name(name);}}}, {level::intermediate, {[](ustring name) {properties::settings::default_settings().intermediate_high_scores_name(name);}}}, {level::expert, {[](ustring name) {properties::settings::default_settings().expert_high_scores_name(name);}}}};
+    std::map<level, delegate<void(string)>> set_settings_high_scores_names {{level::beginner, {[](string name) {properties::settings::default_settings().beginner_high_scores_name(name);}}}, {level::intermediate, {[](string name) {properties::settings::default_settings().intermediate_high_scores_name(name);}}}, {level::expert, {[](string name) {properties::settings::default_settings().expert_high_scores_name(name);}}}};
     set_settings_high_scores_values[level_](stopwatch_count_);
     set_settings_high_scores_names[level_](gamer_name);
     properties::settings::default_settings().save();

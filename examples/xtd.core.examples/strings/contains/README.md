@@ -1,6 +1,6 @@
 # contains
 
-Shows how to use [xtd::ustring::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1) method.
+Shows how to use [xtd::string::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1) method.
 
 ## Sources
 

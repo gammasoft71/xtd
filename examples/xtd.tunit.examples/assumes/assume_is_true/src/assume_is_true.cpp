@@ -7,13 +7,13 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto s = ustring::empty_string;
-      assume::is_true(ustring::is_empty(s));
+      auto s = string::empty_string;
+      assume::is_true(string::is_empty(s));
     }
     
     void test_method_(test_case_aborted) {
       auto s = "string";
-      assume::is_true(ustring::is_empty(s));
+      assume::is_true(string::is_empty(s));
     }
   };
 }

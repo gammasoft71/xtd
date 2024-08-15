@@ -40,7 +40,7 @@ auto main() -> int {
     //translator::locale("fr_FR");
     translator::locale("ru_RU");
   } catch (const std::exception& e) {
-    message_box::show(ustring::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
+    message_box::show(string::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
   }
   application::run(form1 {});
