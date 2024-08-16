@@ -9,7 +9,7 @@ var classxtd_1_1box =
     [ "compare_to", "classxtd_1_1box_a76aedcf3c5bf4019ba6ae7c11e28303f.html#a76aedcf3c5bf4019ba6ae7c11e28303f", null ],
     [ "equals", "classxtd_1_1box_a21d8840a5c0b85223517fb9791b11e2d.html#a21d8840a5c0b85223517fb9791b11e2d", null ],
     [ "equals", "classxtd_1_1box_a414e95ab47c6ebf3baaee95df240cb4e.html#a414e95ab47c6ebf3baaee95df240cb4e", null ],
-    [ "to_string", "classxtd_1_1box_af89624c019d48890afa5a40ee7f80ebf.html#af89624c019d48890afa5a40ee7f80ebf", null ],
-    [ "to_string", "classxtd_1_1box_ab3142886d9e2b4cda8a1f1425ae38da2.html#ab3142886d9e2b4cda8a1f1425ae38da2", null ],
-    [ "to_string", "classxtd_1_1box_acc858ec483d722c551045c8e396ee28d.html#acc858ec483d722c551045c8e396ee28d", null ]
+    [ "to_string", "classxtd_1_1box_a47284e5c71e959a04a4bbd6b246393cd.html#a47284e5c71e959a04a4bbd6b246393cd", null ],
+    [ "to_string", "classxtd_1_1box_af1ed0c8a2e2ff572230ff3025ac0551a.html#af1ed0c8a2e2ff572230ff3025ac0551a", null ],
+    [ "to_string", "classxtd_1_1box_ae9a230c5e833b34b527c04e2a9263364.html#ae9a230c5e833b34b527c04e2a9263364", null ]
 ];

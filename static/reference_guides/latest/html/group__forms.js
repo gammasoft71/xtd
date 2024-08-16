@@ -5,8 +5,8 @@ var group__forms =
       [ "trace_listener", "classxtd_1_1forms_1_1debug__form_a2b7119c1686435fc0596698e52b24409.html#a2b7119c1686435fc0596698e52b24409", null ],
       [ "trace_listener", "classxtd_1_1forms_1_1debug__form_abadccbf757ef83c87ce42abe5c9aafb2.html#abadccbf757ef83c87ce42abe5c9aafb2", null ],
       [ "flush", "classxtd_1_1forms_1_1debug__form_afa64993e8d65c80b03457b5287c3e98c.html#afa64993e8d65c80b03457b5287c3e98c", null ],
-      [ "write", "classxtd_1_1forms_1_1debug__form_a743f8c2ffba90a4dc7df598fd8435df2.html#a743f8c2ffba90a4dc7df598fd8435df2", null ],
-      [ "write_line", "classxtd_1_1forms_1_1debug__form_a7c305cbf4581b7798596df9156cbe294.html#a7c305cbf4581b7798596df9156cbe294", null ],
+      [ "write", "classxtd_1_1forms_1_1debug__form_ad478ccfbcddade1cb3599059f8a9678a.html#ad478ccfbcddade1cb3599059f8a9678a", null ],
+      [ "write_line", "classxtd_1_1forms_1_1debug__form_a919529e12a12735866c301077f5c22c0.html#a919529e12a12735866c301077f5c22c0", null ],
       [ "clone", "classxtd_1_1forms_1_1debug__form_a20c3bef8734ab2a2f071ace419a4c74e.html#a20c3bef8734ab2a2f071ace419a4c74e", null ]
     ] ],
     [ "xtd::forms::form", "classxtd_1_1forms_1_1form.html", [
@@ -101,8 +101,8 @@ var group__forms =
       [ "trace_form", "classxtd_1_1forms_1_1trace__form_a196c7c1cec1f99088ca031dcf539b301.html#a196c7c1cec1f99088ca031dcf539b301", null ],
       [ "trace_listener", "classxtd_1_1forms_1_1trace__form_a11333a0533eb8edb0e6e87714146a015.html#a11333a0533eb8edb0e6e87714146a015", null ],
       [ "trace_listener", "classxtd_1_1forms_1_1trace__form_a5e5cc5a59ad9a83b29e0735560187da3.html#a5e5cc5a59ad9a83b29e0735560187da3", null ],
-      [ "write", "classxtd_1_1forms_1_1trace__form_a4ed349c6333e99e85b05557225554532.html#a4ed349c6333e99e85b05557225554532", null ],
-      [ "write_line", "classxtd_1_1forms_1_1trace__form_a7b6fc183b44c6046e7e62d7f0b3c8bb4.html#a7b6fc183b44c6046e7e62d7f0b3c8bb4", null ],
+      [ "write", "classxtd_1_1forms_1_1trace__form_abc93f652b3a038ed75d9529a5e9dc0f5.html#abc93f652b3a038ed75d9529a5e9dc0f5", null ],
+      [ "write_line", "classxtd_1_1forms_1_1trace__form_a7c34687aca282a0f7b974d46f699ae73.html#a7c34687aca282a0f7b974d46f699ae73", null ],
       [ "flush", "classxtd_1_1forms_1_1trace__form_ae34f0786a29bba9e4d99144d1fc151ca.html#ae34f0786a29bba9e4d99144d1fc151ca", null ],
       [ "clone", "classxtd_1_1forms_1_1trace__form_a8c73e2a27e4bfe3d12f3f1daab81a691.html#a8c73e2a27e4bfe3d12f3f1daab81a691", null ]
     ] ]

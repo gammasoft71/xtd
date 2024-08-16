@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('object_memberwise_clone_8cpp-example.h
 <div class="line"><span class="keyword">class </span>person : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> age = 0;</div>
-<div class="line">  <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;ustring&gt;</a> name = new_ptr&lt;ustring&gt;();</div>
+<div class="line">  <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;string&gt;</a> name = new_ptr&lt;string&gt;();</div>
 <div class="line">  <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;::id_info&gt;</a> id_info = new_ptr&lt;::id_info&gt;(0);</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;person&gt;</a> shallow_copy() {</div>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('object_memberwise_clone_8cpp-example.h
 <div class="line">  <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;person&gt;</a> deep_copy() {</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a> = memberwise_clone&lt;person&gt;();</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>-&gt;id_info = new_ptr&lt;::id_info&gt;(this-&gt;id_info-&gt;id_number);</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>-&gt;name = new_ptr&lt;ustring&gt;(*name);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>-&gt;name = new_ptr&lt;string&gt;(*name);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -214,7 +214,7 @@ $(document).ready(function(){initNavTree('object_memberwise_clone_8cpp-example.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

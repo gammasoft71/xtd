@@ -53,7 +53,7 @@ var group__interfaces =
       [ "equals", "classxtd_1_1iequatable_a1f8bbde943d2e5ecf565734c60e23903.html#a1f8bbde943d2e5ecf565734c60e23903", null ]
     ] ],
     [ "xtd::iformatable", "classxtd_1_1iformatable.html", [
-      [ "to_string", "classxtd_1_1iformatable_ad1fb96e88a1e35931794bccf5bb2e9ef.html#ad1fb96e88a1e35931794bccf5bb2e9ef", null ]
+      [ "to_string", "classxtd_1_1iformatable_abfc4c1659181f5440288794d23385aa9.html#abfc4c1659181f5440288794d23385aa9", null ]
     ] ],
     [ "xtd::iobservable< type_t >", "classxtd_1_1iobservable.html", [
       [ "subscribe", "classxtd_1_1iobservable_a6f2db48cba351e9b26dcd633ff78294f.html#a6f2db48cba351e9b26dcd633ff78294f", null ],
@@ -68,7 +68,7 @@ var group__interfaces =
       [ "report", "classxtd_1_1iprogress_a38779f56847fb833d787c02248a7d94e.html#a38779f56847fb833d787c02248a7d94e", null ]
     ] ],
     [ "xtd::istringable", "classxtd_1_1istringable.html", [
-      [ "to_string", "classxtd_1_1istringable_ab2b4f8d4ca5b6bbcd8cd6481988becf2.html#ab2b4f8d4ca5b6bbcd8cd6481988becf2", null ]
+      [ "to_string", "classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325", null ]
     ] ],
     [ "xtd::isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", [
       [ "invoke_required", "classxtd_1_1isynchronize__invoke_a5434e03732b52c1b9b9861e1571a56a4.html#a5434e03732b52c1b9b9861e1571a56a4", null ],
@@ -86,8 +86,8 @@ var group__interfaces =
       [ "perform_click", "classxtd_1_1forms_1_1ibutton__control_ae7886211d05fbeef4468a9c8dd0508cb.html#ae7886211d05fbeef4468a9c8dd0508cb", null ]
     ] ],
     [ "xtd::forms::icontrol_trace", "classxtd_1_1forms_1_1icontrol__trace.html", [
-      [ "write", "classxtd_1_1forms_1_1icontrol__trace_a6c99989382b424c3c956c68e274cdd70.html#a6c99989382b424c3c956c68e274cdd70", null ],
-      [ "write_line", "classxtd_1_1forms_1_1icontrol__trace_ab023639af44916435b6218029c560770.html#ab023639af44916435b6218029c560770", null ],
+      [ "write", "classxtd_1_1forms_1_1icontrol__trace_a2bce5652d2c96f363f75755a6d4bfac9.html#a2bce5652d2c96f363f75755a6d4bfac9", null ],
+      [ "write_line", "classxtd_1_1forms_1_1icontrol__trace_a08ceae0f56d891195925b53d9f8a6093.html#a08ceae0f56d891195925b53d9f8a6093", null ],
       [ "flush", "classxtd_1_1forms_1_1icontrol__trace_a8754265c0baeece5aadfcadb43375d86.html#a8754265c0baeece5aadfcadb43375d86", null ]
     ] ],
     [ "xtd::forms::imessage_filter", "classxtd_1_1forms_1_1imessage__filter.html", [

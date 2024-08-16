@@ -148,7 +148,7 @@ class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> test_stream_reader_enumerable() {</div>
 <div class="line">    <span class="comment">// Check the memory before the iterator is used.</span></div>
 <div class="line">    <span class="keyword">auto</span> memory_before = memory_information::get_used_process_memory();</div>
-<div class="line">    <span class="keyword">auto</span> strings_found = <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;ustring&gt;</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> strings_found = <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;string&gt;</a> {};</div>
 <div class="line">    <span class="comment">// Open a file with the stream_reader_enumerable and check for a string.</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> line : stream_reader_enumerable {<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>::combine(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>::get_temp_path(), <span class="stringliteral">&quot;temp_file.txt&quot;</span>)})</div>
@@ -167,7 +167,7 @@ class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> test_reading_file() {</div>
 <div class="line">    <a class="code hl_typedef" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> memory_before = memory_information::get_used_process_memory();</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">auto</span> file_contents = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;ustring&gt;</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> file_contents = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {path::combine(path::get_temp_path(), <span class="stringliteral">&quot;temp_file.txt&quot;</span>)};</div>
 <div class="line">      <span class="comment">// Add the file contents to a generic list of strings.</span></div>
@@ -180,7 +180,7 @@ class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Check for the string.</span></div>
-<div class="line">    <span class="keyword">auto</span> strings_found = <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;ustring&gt;</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> strings_found = <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;string&gt;</a> {};</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> line : file_contents)</div>
 <div class="line">      if (line.contains(<span class="stringliteral">&quot;string to search for&quot;</span>)) strings_found.push_back(line);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Found: {}&quot;</span>, strings_found.size());</div>
@@ -191,36 +191,36 @@ class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// you must also implement xtd::collections::generic::ienumerable &lt;type_t&gt; and xtd::collections::generic::ienumerator &lt;type_t&gt;</span></div>
-<div class="line">  <span class="keyword">class </span>stream_reader_enumerable : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt;ustring&gt; {</div>
+<div class="line">  <span class="keyword">class </span>stream_reader_enumerable : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt;string&gt; {</div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> file_path_;</div>
+<div class="line">    <span class="keywordtype">string</span> file_path_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    stream_reader_enumerable(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; file_path) : file_path_ {file_path} {}</div>
+<div class="line">    stream_reader_enumerable(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_path) : file_path_ {file_path} {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Must implement get_enumerator, which returns a new stream_reader_enumerator.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator&lt;ustring&gt;</a> get_enumerator()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> {new_ptr&lt;stream_reader_enumerator&gt;(file_path_)};}</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator&lt;string&gt;</a> get_enumerator()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> {new_ptr&lt;stream_reader_enumerator&gt;(file_path_)};}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// When you implement xtd::collections::generic::ienumerable &lt;type_t&gt;, you must also implement xtd::collections::generic::ienumerator &lt;type_t&gt;, which will walk through the contents of the file one line at a time.</span></div>
-<div class="line">  <span class="keyword">class </span>stream_reader_enumerator : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html">ienumerator</a>&lt;ustring&gt; {</div>
+<div class="line">  <span class="keyword">class </span>stream_reader_enumerator : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html">ienumerator</a>&lt;string&gt; {</div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr_;</div>
-<div class="line">    std::optional&lt;ustring&gt; current_;</div>
+<div class="line">    std::optional&lt;string&gt; current_;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    stream_reader_enumerator(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; file_path) : sr_ {file_path} {}</div>
+<div class="line">    stream_reader_enumerator(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_path) : sr_ {file_path} {}</div>
 <div class="line">    ~stream_reader_enumerator() {sr_.<a class="code hl_function" href="classxtd_1_1io_1_1stream__reader_af0f498a017dadaef3d4d50b7a2ceed6f.html#af0f498a017dadaef3d4d50b7a2ceed6f">close</a>();}</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Implement current, move_next and reset, which are required by ienumerator.</span></div>
-<div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; current()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; current()<span class="keyword"> const override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (!current_.has_value()) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1invalid__operation__exception.html">invalid_operation_exception</a> {<a class="code hl_define" href="group__keywords_gaf8b977f43d229f177b7b399c3b3a60a6.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>};</div>
 <div class="line">      <span class="keywordflow">return</span> current_.value();</div>
 <div class="line">    }</div>
 <div class="line">        </div>
 <div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (sr_.<a class="code hl_function" href="classxtd_1_1io_1_1stream__reader_af86ae00e44bfc363b2bf51986a9e58d0.html#af86ae00e44bfc363b2bf51986a9e58d0">end_of_stream</a>()) current_.reset();</div>
-<div class="line">      <span class="keywordflow">else</span> current_ = sr_.<a class="code hl_function" href="classxtd_1_1io_1_1text__reader_a18c34f5d077adfb00394881b511c1e91.html#a18c34f5d077adfb00394881b511c1e91">read_line</a>();</div>
+<div class="line">      <span class="keywordflow">else</span> current_ = sr_.<a class="code hl_function" href="classxtd_1_1io_1_1text__reader_a9cf821e2697031031471e69c91cce0ca.html#a9cf821e2697031031471e69c91cce0ca">read_line</a>();</div>
 <div class="line">      <span class="keywordflow">return</span> current_.has_value();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -251,9 +251,8 @@ class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_af0f498a017dadaef3d4d50b7a2ceed6f_html_af0f498a017dadaef3d4d50b7a2ceed6f"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader_af0f498a017dadaef3d4d50b7a2ceed6f.html#af0f498a017dadaef3d4d50b7a2ceed6f">xtd::io::stream_reader::close</a></div><div class="ttdeci">void close() override</div><div class="ttdoc">Closes the stream_reader object and the underlying stream, and releases any system resources associat...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_af86ae00e44bfc363b2bf51986a9e58d0_html_af86ae00e44bfc363b2bf51986a9e58d0"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader_af86ae00e44bfc363b2bf51986a9e58d0.html#af86ae00e44bfc363b2bf51986a9e58d0">xtd::io::stream_reader::end_of_stream</a></div><div class="ttdeci">bool end_of_stream() const</div><div class="ttdoc">Gets a value that indicates whether the current stream position is at the end of the stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:28</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1text__reader_a18c34f5d077adfb00394881b511c1e91_html_a18c34f5d077adfb00394881b511c1e91"><div class="ttname"><a href="classxtd_1_1io_1_1text__reader_a18c34f5d077adfb00394881b511c1e91.html#a18c34f5d077adfb00394881b511c1e91">xtd::io::text_reader::read_line</a></div><div class="ttdeci">virtual xtd::ustring read_line()</div><div class="ttdoc">Reads a line of characters from the current stream and returns the data as a string.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1text__reader_a9cf821e2697031031471e69c91cce0ca_html_a9cf821e2697031031471e69c91cce0ca"><div class="ttname"><a href="classxtd_1_1io_1_1text__reader_a9cf821e2697031031471e69c91cce0ca.html#a9cf821e2697031031471e69c91cce0ca">xtd::io::text_reader::read_line</a></div><div class="ttdeci">virtual xtd::string read_line()</div><div class="ttdoc">Reads a line of characters from the current stream and returns the data as a string.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:40</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
 <div class="ttc" id="agroup__keywords_ga44bd440a34d147923e428eacd1c8eedd_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
 <div class="ttc" id="agroup__keywords_gaf8b977f43d229f177b7b399c3b3a60a6_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords_gaf8b977f43d229f177b7b399c3b3a60a6.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="agroup__system_ga23ad3a72b3c9da7418d0b2020076a40a_html_ga23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the b...</div><div class="ttdef"><b>Definition</b> array.h:23</div></div>
@@ -317,7 +316,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections.html">collections</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections_1_1generic.html">generic</a></li><li class="navelem"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a></li>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:32:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

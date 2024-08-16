@@ -2,28 +2,28 @@ var group__xtd__tunit =
 [
     [ "xtd::tunit::abort_error", "classxtd_1_1tunit_1_1abort__error.html", [
       [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a29aeda41026ec067c6ae99daa8ccf793.html#a29aeda41026ec067c6ae99daa8ccf793", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_abb47898efc4a0ec106f80d044fe48b15.html#abb47898efc4a0ec106f80d044fe48b15", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_ac64e8dda97e38a924becf536d9ba15bb.html#ac64e8dda97e38a924becf536d9ba15bb", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_aa28ddb39431492985b9b54f72ae07481.html#aa28ddb39431492985b9b54f72ae07481", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a64d7295991ce1f192d7140d63d455fa5.html#a64d7295991ce1f192d7140d63d455fa5", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a1f87c6408f21f88613432b2faf699790.html#a1f87c6408f21f88613432b2faf699790", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a7984bb3b300df9cc12fc9218301ab7fa.html#a7984bb3b300df9cc12fc9218301ab7fa", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a95cb7c979085b40a1df316c64cf91cf7.html#a95cb7c979085b40a1df316c64cf91cf7", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a603447f79263ef2ceb6d7a3dda0a87d9.html#a603447f79263ef2ceb6d7a3dda0a87d9", null ],
       [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a00c6655c8b3ea173d300031453037f59.html#a00c6655c8b3ea173d300031453037f59", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a53418cd954de647574ee4c2e773fcd84.html#a53418cd954de647574ee4c2e773fcd84", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_ae89e0da3710d14dc73b9b091251efb01.html#ae89e0da3710d14dc73b9b091251efb01", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_af502880c08fa72eb1d34a0332576633a.html#af502880c08fa72eb1d34a0332576633a", null ],
-      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_acffd55f64325af47cddef93ba2df08ee.html#acffd55f64325af47cddef93ba2df08ee", null ]
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a9676b500d32efd474697f490513cc6af.html#a9676b500d32efd474697f490513cc6af", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a31ca300184022dffce591eebd6ae0e3e.html#a31ca300184022dffce591eebd6ae0e3e", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a713aabcd8239b442d7cfcb5b38016425.html#a713aabcd8239b442d7cfcb5b38016425", null ],
+      [ "abort_error", "classxtd_1_1tunit_1_1abort__error_a7a8ad2aa1dd67f1a0ffe775a3a52a5e5.html#a7a8ad2aa1dd67f1a0ffe775a3a52a5e5", null ]
     ] ],
     [ "xtd::tunit::assert", "classxtd_1_1tunit_1_1assert.html", null ],
     [ "xtd::tunit::assert_error", "classxtd_1_1tunit_1_1assert__error.html", [
       [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a045dbc74d0c8493ffb39533e23ac2265.html#a045dbc74d0c8493ffb39533e23ac2265", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a87d43b5cdbfc9222d78436d655a0e957.html#a87d43b5cdbfc9222d78436d655a0e957", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_adda0aaec38c3fe9ad4b8964b5236e451.html#adda0aaec38c3fe9ad4b8964b5236e451", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a52587c65a3a5cfc28f9734bce9947f5d.html#a52587c65a3a5cfc28f9734bce9947f5d", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a104f35bc62a48fbf34a5e817b0e319da.html#a104f35bc62a48fbf34a5e817b0e319da", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a66583635a8a0729d96d31eaa3eb557a8.html#a66583635a8a0729d96d31eaa3eb557a8", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a1dbc7f66244e806998fe7079677ac66a.html#a1dbc7f66244e806998fe7079677ac66a", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a02dae93fa28e8046f2a077d36dde0120.html#a02dae93fa28e8046f2a077d36dde0120", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a8c99f93be943481b92192c710fbf14e8.html#a8c99f93be943481b92192c710fbf14e8", null ],
       [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a3fa743110a04578e70f0abccad728789.html#a3fa743110a04578e70f0abccad728789", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_aef20e90f82a45534ce697a40c93745ef.html#aef20e90f82a45534ce697a40c93745ef", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a560897288e17db3ea6ae4f3cc5d7b4db.html#a560897288e17db3ea6ae4f3cc5d7b4db", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a8e9fce1d3e6941c8030adebe040da130.html#a8e9fce1d3e6941c8030adebe040da130", null ],
-      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a31b75281cad460e0024992fd1f3d40ab.html#a31b75281cad460e0024992fd1f3d40ab", null ]
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_aa397ab0790b5269fda147f8df5d34a09.html#aa397ab0790b5269fda147f8df5d34a09", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_a4f40aa0d28fd63d90a6056692bf6f0e2.html#a4f40aa0d28fd63d90a6056692bf6f0e2", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_aee4d32dccc2051af76fced7189c5ec2d.html#aee4d32dccc2051af76fced7189c5ec2d", null ],
+      [ "assert_error", "classxtd_1_1tunit_1_1assert__error_ad86b5bd752928ae7dd2f68b0994e8a12.html#ad86b5bd752928ae7dd2f68b0994e8a12", null ]
     ] ],
     [ "xtd::tunit::assume", "classxtd_1_1tunit_1_1assume.html", null ],
     [ "xtd::tunit::base_assert", "classxtd_1_1tunit_1_1base__assert.html", null ],
@@ -78,15 +78,15 @@ var group__xtd__tunit =
     [ "xtd::tunit::file_valid", "classxtd_1_1tunit_1_1file__valid.html", null ],
     [ "xtd::tunit::ignore_error", "classxtd_1_1tunit_1_1ignore__error.html", [
       [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a1de20a995f858abd7f75c96a02b28792.html#a1de20a995f858abd7f75c96a02b28792", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a383505d20ea493ecc69f756fc8b5a947.html#a383505d20ea493ecc69f756fc8b5a947", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a7d21fe67f4f1a3472e4d061d11e9fea1.html#a7d21fe67f4f1a3472e4d061d11e9fea1", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a43ffd28086d42e66261e62cdeb0e6b47.html#a43ffd28086d42e66261e62cdeb0e6b47", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_abd228e939d9e615b5b79e2117858280a.html#abd228e939d9e615b5b79e2117858280a", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a903ad9150e4a69dd2c8f8bae2fc521ba.html#a903ad9150e4a69dd2c8f8bae2fc521ba", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a18635042d13a97377f15b76e18b4ef9d.html#a18635042d13a97377f15b76e18b4ef9d", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a87e04119988b21ff6c466e31535b5b45.html#a87e04119988b21ff6c466e31535b5b45", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a5587bd3925e9bf0a6cdd1db1197e0e5a.html#a5587bd3925e9bf0a6cdd1db1197e0e5a", null ],
       [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a2a76f64401627b82052091d61d66be0b.html#a2a76f64401627b82052091d61d66be0b", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a096c587ede35bb6d309e568ae115e935.html#a096c587ede35bb6d309e568ae115e935", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a1c5f97fecabf05c9936e3befa3591907.html#a1c5f97fecabf05c9936e3befa3591907", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a9955f46e7dcc0797a9305defc4461d18.html#a9955f46e7dcc0797a9305defc4461d18", null ],
-      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_ac148c6d9a297fa35879a15d233ab6a6b.html#ac148c6d9a297fa35879a15d233ab6a6b", null ]
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_abc11dd10c3650ea5e2330dec73fac4c1.html#abc11dd10c3650ea5e2330dec73fac4c1", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_aba8f4302af187ff10b873e248e5136d2.html#aba8f4302af187ff10b873e248e5136d2", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a526ce2c9f2f99ddcff2bd1ef74e43820.html#a526ce2c9f2f99ddcff2bd1ef74e43820", null ],
+      [ "ignore_error", "classxtd_1_1tunit_1_1ignore__error_a9eda3fb6fdf362963cabfee39576c939.html#a9eda3fb6fdf362963cabfee39576c939", null ]
     ] ],
     [ "xtd::tunit::ostream_event_listener", "classxtd_1_1tunit_1_1ostream__event__listener.html", [
       [ "ostream_event_listener", "classxtd_1_1tunit_1_1ostream__event__listener_aea12aefadf59d40592eda90a4f44f132.html#aea12aefadf59d40592eda90a4f44f132", null ],
@@ -107,12 +107,12 @@ var group__xtd__tunit =
       [ "ostream_unit_test", "classxtd_1_1tunit_1_1ostream__unit__test_a3f7b73b153133dbe9f25614481eb79ca.html#a3f7b73b153133dbe9f25614481eb79ca", null ],
       [ "ostream", "classxtd_1_1tunit_1_1ostream__unit__test_afdd8405179918c5f9dffcb837fbb1b82.html#afdd8405179918c5f9dffcb837fbb1b82", null ],
       [ "count_tests", "classxtd_1_1tunit_1_1ostream__unit__test_a196023f3d9c85121b444f8878fe316c4.html#a196023f3d9c85121b444f8878fe316c4", null ],
-      [ "list_tests", "classxtd_1_1tunit_1_1ostream__unit__test_a490ac569ce0cfc026578d1fd8e42fc2f.html#a490ac569ce0cfc026578d1fd8e42fc2f", null ],
-      [ "parse_arguments", "classxtd_1_1tunit_1_1ostream__unit__test_a98c128d3afd8b4022f5d7b5ce23b516e.html#a98c128d3afd8b4022f5d7b5ce23b516e", null ],
+      [ "list_tests", "classxtd_1_1tunit_1_1ostream__unit__test_a6be20adcb92d482eecfbc716de0ffe76.html#a6be20adcb92d482eecfbc716de0ffe76", null ],
+      [ "parse_arguments", "classxtd_1_1tunit_1_1ostream__unit__test_ab20889e02624a13812855c299e5398e4.html#ab20889e02624a13812855c299e5398e4", null ],
       [ "write_help", "classxtd_1_1tunit_1_1ostream__unit__test_a97a827c9d058c07603c35c7128f17c69.html#a97a827c9d058c07603c35c7128f17c69", null ]
     ] ],
     [ "xtd::tunit::registered_test_class", "classxtd_1_1tunit_1_1registered__test__class.html", [
-      [ "registered_test_class", "classxtd_1_1tunit_1_1registered__test__class_a6df7df313d5123b12ea248719fcc8dc6.html#a6df7df313d5123b12ea248719fcc8dc6", null ]
+      [ "registered_test_class", "classxtd_1_1tunit_1_1registered__test__class_a97265fc600f76196998072efb9b32e72.html#a97265fc600f76196998072efb9b32e72", null ]
     ] ],
     [ "xtd::tunit::settings", "classxtd_1_1tunit_1_1settings.html", [
       [ "settings", "classxtd_1_1tunit_1_1settings_a64df94b59f6bf5eda1b2c731f7b71362.html#a64df94b59f6bf5eda1b2c731f7b71362", null ],
@@ -128,11 +128,11 @@ var group__xtd__tunit =
       [ "count_tests", "classxtd_1_1tunit_1_1settings_a658a2fe401ef88d519e6dcf81f455003.html#a658a2fe401ef88d519e6dcf81f455003", null ],
       [ "exit_status", "classxtd_1_1tunit_1_1settings_a1c12d45fa2ddcffcf5bb0902c14c1110.html#a1c12d45fa2ddcffcf5bb0902c14c1110", null ],
       [ "exit_status", "classxtd_1_1tunit_1_1settings_a8e7ff2dfb09b08abd0dcb7476de8f692.html#a8e7ff2dfb09b08abd0dcb7476de8f692", null ],
-      [ "filter_tests", "classxtd_1_1tunit_1_1settings_ae55828772c9e436863da61c6c6acc1f0.html#ae55828772c9e436863da61c6c6acc1f0", null ],
-      [ "filter_tests", "classxtd_1_1tunit_1_1settings_ae4668fc54fd0577cceef7f66ad483c94.html#ae4668fc54fd0577cceef7f66ad483c94", null ],
+      [ "filter_tests", "classxtd_1_1tunit_1_1settings_a3f546f364ffd00f1ee33ea9a98156d1a.html#a3f546f364ffd00f1ee33ea9a98156d1a", null ],
+      [ "filter_tests", "classxtd_1_1tunit_1_1settings_aea48bca078642805b3fb423a5659e5b5.html#aea48bca078642805b3fb423a5659e5b5", null ],
       [ "gtest_compatibility", "classxtd_1_1tunit_1_1settings_af17a5673cab59ee9434d7c1cfb7987aa.html#af17a5673cab59ee9434d7c1cfb7987aa", null ],
       [ "gtest_compatibility", "classxtd_1_1tunit_1_1settings_ae4fcac69c5b46cbe8ff95e41525023b3.html#ae4fcac69c5b46cbe8ff95e41525023b3", null ],
-      [ "is_match_test_name", "classxtd_1_1tunit_1_1settings_a8e663735c3da4abf9d16cb448ca8e9d6.html#a8e663735c3da4abf9d16cb448ca8e9d6", null ],
+      [ "is_match_test_name", "classxtd_1_1tunit_1_1settings_aaf6288de794d27a3a0b6517c69cc65c4.html#aaf6288de794d27a3a0b6517c69cc65c4", null ],
       [ "list_tests", "classxtd_1_1tunit_1_1settings_af706d6c6774ccb5931d9d7c81f714c78.html#af706d6c6774ccb5931d9d7c81f714c78", null ],
       [ "list_tests", "classxtd_1_1tunit_1_1settings_a439be0d3b4a7cfd7df6b2070bf50f0ac.html#a439be0d3b4a7cfd7df6b2070bf50f0ac", null ],
       [ "output_color", "classxtd_1_1tunit_1_1settings_a8848b16a3b89845541f278d43a321134.html#a8848b16a3b89845541f278d43a321134", null ],
@@ -141,10 +141,10 @@ var group__xtd__tunit =
       [ "output_json", "classxtd_1_1tunit_1_1settings_aa909a051fca10de4153f4bcec676bb0d.html#aa909a051fca10de4153f4bcec676bb0d", null ],
       [ "output_xml", "classxtd_1_1tunit_1_1settings_a6dc5a05f7b7214c2e93952c80ecc8dd9.html#a6dc5a05f7b7214c2e93952c80ecc8dd9", null ],
       [ "output_xml", "classxtd_1_1tunit_1_1settings_a702853cec223985e521b54efe065bf38.html#a702853cec223985e521b54efe065bf38", null ],
-      [ "output_json_path", "classxtd_1_1tunit_1_1settings_a5505e264d5665777df478d0e24921a84.html#a5505e264d5665777df478d0e24921a84", null ],
-      [ "output_json_path", "classxtd_1_1tunit_1_1settings_a45723782547b7bf8bb4cee2068e3e544.html#a45723782547b7bf8bb4cee2068e3e544", null ],
-      [ "output_xml_path", "classxtd_1_1tunit_1_1settings_a0e46b101e15f5147af9998fc8fb9bd65.html#a0e46b101e15f5147af9998fc8fb9bd65", null ],
-      [ "output_xml_path", "classxtd_1_1tunit_1_1settings_a1fc2dc0c6b89777de7b8f0a746232549.html#a1fc2dc0c6b89777de7b8f0a746232549", null ],
+      [ "output_json_path", "classxtd_1_1tunit_1_1settings_a596d438f8a619a3cb5295f3603cc5c9c.html#a596d438f8a619a3cb5295f3603cc5c9c", null ],
+      [ "output_json_path", "classxtd_1_1tunit_1_1settings_ab9cc40e869045e0de4a3e0db8323e162.html#ab9cc40e869045e0de4a3e0db8323e162", null ],
+      [ "output_xml_path", "classxtd_1_1tunit_1_1settings_ab531866344683dbefd6ca3d2364467d3.html#ab531866344683dbefd6ca3d2364467d3", null ],
+      [ "output_xml_path", "classxtd_1_1tunit_1_1settings_a49e18829e40c0ff8236c89cab5864c88.html#a49e18829e40c0ff8236c89cab5864c88", null ],
       [ "shuffle_test", "classxtd_1_1tunit_1_1settings_a5d8c16c0d7b1a556f731a4a4df13ed16.html#a5d8c16c0d7b1a556f731a4a4df13ed16", null ],
       [ "shuffle_test", "classxtd_1_1tunit_1_1settings_a6978490f9f017e45897ae1b3c2f0e865.html#a6978490f9f017e45897ae1b3c2f0e865", null ],
       [ "random_seed", "classxtd_1_1tunit_1_1settings_a735f27d1b56a4967f86e414231ca9a8d.html#a735f27d1b56a4967f86e414231ca9a8d", null ],
@@ -163,12 +163,12 @@ var group__xtd__tunit =
     [ "xtd::tunit::string_valid", "classxtd_1_1tunit_1_1string__valid.html", null ],
     [ "xtd::tunit::test", "classxtd_1_1tunit_1_1test.html", [
       [ "test", "classxtd_1_1tunit_1_1test_ad574a9ea6827534eb60199e959dc581b.html#ad574a9ea6827534eb60199e959dc581b", null ],
-      [ "test", "classxtd_1_1tunit_1_1test_a3f97622b02e31e03c0f15a6133552df5.html#a3f97622b02e31e03c0f15a6133552df5", null ],
-      [ "test", "classxtd_1_1tunit_1_1test_a740cd0f85ee41830ba451b50cb1b235f.html#a740cd0f85ee41830ba451b50cb1b235f", null ],
+      [ "test", "classxtd_1_1tunit_1_1test_a9c113a879c7801f8d72f0640f3b9195d.html#a9c113a879c7801f8d72f0640f3b9195d", null ],
+      [ "test", "classxtd_1_1tunit_1_1test_aaffddef00fc14738ce9f434055076447.html#aaffddef00fc14738ce9f434055076447", null ],
       [ "aborted", "classxtd_1_1tunit_1_1test_a0b7da975c28ba707b78e0962a2722bbc.html#a0b7da975c28ba707b78e0962a2722bbc", null ],
-      [ "actual", "classxtd_1_1tunit_1_1test_afb04ba20e152c13012840705af03e756.html#afb04ba20e152c13012840705af03e756", null ],
+      [ "actual", "classxtd_1_1tunit_1_1test_aafec5005ef5d5cc649c5cd938c241896.html#aafec5005ef5d5cc649c5cd938c241896", null ],
       [ "elapsed_time", "classxtd_1_1tunit_1_1test_a3d8abf9536d7bd1fd05e5b11450895bf.html#a3d8abf9536d7bd1fd05e5b11450895bf", null ],
-      [ "expect", "classxtd_1_1tunit_1_1test_aa59fbc4399e7ccccf3fadfabf2011206.html#aa59fbc4399e7ccccf3fadfabf2011206", null ],
+      [ "expect", "classxtd_1_1tunit_1_1test_a2485c1f1b8dc4254e36a0d60a2d34207.html#a2485c1f1b8dc4254e36a0d60a2d34207", null ],
       [ "failed", "classxtd_1_1tunit_1_1test_ad6fbb202e9bed532bfa4b1ab3cfe442b.html#ad6fbb202e9bed532bfa4b1ab3cfe442b", null ],
       [ "ignored", "classxtd_1_1tunit_1_1test_a88a608dfd0839373a023526bd1dbccf8.html#a88a608dfd0839373a023526bd1dbccf8", null ],
       [ "not_started", "classxtd_1_1tunit_1_1test_a01ff9aa1c4c484a332765c9fee5d6254.html#a01ff9aa1c4c484a332765c9fee5d6254", null ],
@@ -176,14 +176,14 @@ var group__xtd__tunit =
       [ "stack_frame", "classxtd_1_1tunit_1_1test_ace4528cc77819985cbe49bd74e9b98ce.html#ace4528cc77819985cbe49bd74e9b98ce", null ],
       [ "start_time", "classxtd_1_1tunit_1_1test_a7cae2fbbc5f499b9d4fba5feaed4c305.html#a7cae2fbbc5f499b9d4fba5feaed4c305", null ],
       [ "method", "classxtd_1_1tunit_1_1test_aaa874d9e2ad7fb889e14f12892ea2eed.html#aaa874d9e2ad7fb889e14f12892ea2eed", null ],
-      [ "message", "classxtd_1_1tunit_1_1test_adf12e4123c636133225433c8e931333c.html#adf12e4123c636133225433c8e931333c", null ],
-      [ "name", "classxtd_1_1tunit_1_1test_a4dc9e44d72b75e4edd3a51643f1f7ee8.html#a4dc9e44d72b75e4edd3a51643f1f7ee8", null ],
-      [ "user_message", "classxtd_1_1tunit_1_1test_a1f80280245461d5417333a45f9bacca8.html#a1f80280245461d5417333a45f9bacca8", null ]
+      [ "message", "classxtd_1_1tunit_1_1test_a7248e99baed39d447324ff0337b7f2fa.html#a7248e99baed39d447324ff0337b7f2fa", null ],
+      [ "name", "classxtd_1_1tunit_1_1test_a9c3c8abe4741c0db9234e1fa76b9d790.html#a9c3c8abe4741c0db9234e1fa76b9d790", null ],
+      [ "user_message", "classxtd_1_1tunit_1_1test_a7434257f98bec56580337f4207c963c1.html#a7434257f98bec56580337f4207c963c1", null ]
     ] ],
     [ "xtd::tunit::test_class", "classxtd_1_1tunit_1_1test__class.html", [
       [ "test_class", "classxtd_1_1tunit_1_1test__class_a63624c46e622e23442d52f81d687d2bd.html#a63624c46e622e23442d52f81d687d2bd", null ],
       [ "elapsed_time", "classxtd_1_1tunit_1_1test__class_ab210151a6e90c8a73ef2ed0d3af946ed.html#ab210151a6e90c8a73ef2ed0d3af946ed", null ],
-      [ "name", "classxtd_1_1tunit_1_1test__class_ac757a32b771384c007f791ef199277df.html#ac757a32b771384c007f791ef199277df", null ],
+      [ "name", "classxtd_1_1tunit_1_1test__class_a75f5f2e97cd522b3023e2a170dd65079.html#a75f5f2e97cd522b3023e2a170dd65079", null ],
       [ "test_count", "classxtd_1_1tunit_1_1test__class_a6d573f85348f4d1550a7e39b77e29077.html#a6d573f85348f4d1550a7e39b77e29077", null ],
       [ "aborted_test_count", "classxtd_1_1tunit_1_1test__class_a7ad20eed3fa3ccb1318bd98b583fc1a6.html#a7ad20eed3fa3ccb1318bd98b583fc1a6", null ],
       [ "failed_test_count", "classxtd_1_1tunit_1_1test__class_aaddd0821b082101e9a250ecd6ccce5f0.html#aaddd0821b082101e9a250ecd6ccce5f0", null ],
@@ -198,7 +198,7 @@ var group__xtd__tunit =
       [ "add_test_method", "classxtd_1_1tunit_1_1test__class_a24a418a5edf9ca9774632649ae69ec09.html#a24a418a5edf9ca9774632649ae69ec09", null ]
     ] ],
     [ "xtd::tunit::test_class_attribute< test_class_t >", "classxtd_1_1tunit_1_1test__class__attribute.html", [
-      [ "test_class_attribute", "classxtd_1_1tunit_1_1test__class__attribute_a28d7cca10dc0340bae9863e4a34e5383.html#a28d7cca10dc0340bae9863e4a34e5383", null ]
+      [ "test_class_attribute", "classxtd_1_1tunit_1_1test__class__attribute_af439738fc5f88fa73817e6f2c13cf821.html#af439738fc5f88fa73817e6f2c13cf821", null ]
     ] ],
     [ "xtd::tunit::test_cleanup_attribute", "classxtd_1_1tunit_1_1test__cleanup__attribute.html", [
       [ "test_cleanup_attribute", "classxtd_1_1tunit_1_1test__cleanup__attribute_a4bf5955566d70d6c223ac4e5f19e3a5a.html#a4bf5955566d70d6c223ac4e5f19e3a5a", null ],
@@ -210,10 +210,10 @@ var group__xtd__tunit =
       [ "test_class", "classxtd_1_1tunit_1_1test__event__args_ad5920bd93e2e854e3950dcc762eda31d.html#ad5920bd93e2e854e3950dcc762eda31d", null ]
     ] ],
     [ "xtd::tunit::test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute.html", [
-      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_a71c7ac6f3b676cbe00530bb8c7fc4509.html#a71c7ac6f3b676cbe00530bb8c7fc4509", null ],
-      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_a6101bc11b08de918401f69eb59ac9396.html#a6101bc11b08de918401f69eb59ac9396", null ],
-      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_aa65b580d5dd4bcdf417dfa875442169c.html#aa65b580d5dd4bcdf417dfa875442169c", null ],
-      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_aeb22bfb2a710235f34c7b0708ad46c4f.html#aeb22bfb2a710235f34c7b0708ad46c4f", null ]
+      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_a3e0d6ae3536ecc552360dfbeaeb54c8a.html#a3e0d6ae3536ecc552360dfbeaeb54c8a", null ],
+      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_ae15fbf45badefc6a3ea1b56037cfc4a1.html#ae15fbf45badefc6a3ea1b56037cfc4a1", null ],
+      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_afdfb70b1557ea62d2a02fb3a2ea6b0fd.html#afdfb70b1557ea62d2a02fb3a2ea6b0fd", null ],
+      [ "test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute_ac316f7c00852fbc4362ed66b85202183.html#ac316f7c00852fbc4362ed66b85202183", null ]
     ] ],
     [ "xtd::tunit::tunit_event_args", "classxtd_1_1tunit_1_1tunit__event__args.html", [
       [ "tunit_event_args", "classxtd_1_1tunit_1_1tunit__event__args_a0b08926c0b6d0a4160d2b4680bb21725.html#a0b08926c0b6d0a4160d2b4680bb21725", null ],
@@ -228,18 +228,18 @@ var group__xtd__tunit =
       [ "test_cases_count", "classxtd_1_1tunit_1_1unit__test_af5195cba94c91af7685a6a72cf95122e.html#af5195cba94c91af7685a6a72cf95122e", null ],
       [ "test_count", "classxtd_1_1tunit_1_1unit__test_a280a3ab839e85615a153f9ec566c96ed.html#a280a3ab839e85615a153f9ec566c96ed", null ],
       [ "aborted_test_count", "classxtd_1_1tunit_1_1unit__test_ab1e840b5dd90bcac842793875c78a675.html#ab1e840b5dd90bcac842793875c78a675", null ],
-      [ "aborted_test_names", "classxtd_1_1tunit_1_1unit__test_a2cfc58dc7ff0b2633e55ee2be52fdf3a.html#a2cfc58dc7ff0b2633e55ee2be52fdf3a", null ],
+      [ "aborted_test_names", "classxtd_1_1tunit_1_1unit__test_a0a24bf1f78678e4402fad350b1569d4e.html#a0a24bf1f78678e4402fad350b1569d4e", null ],
       [ "elapsed_time", "classxtd_1_1tunit_1_1unit__test_aa6a6eff1651fb6841e55b7c8b8c22188.html#aa6a6eff1651fb6841e55b7c8b8c22188", null ],
       [ "ignored_test_count", "classxtd_1_1tunit_1_1unit__test_af2f1bb9ce9072223b42efaa91d3dfa50.html#af2f1bb9ce9072223b42efaa91d3dfa50", null ],
-      [ "ignored_test_names", "classxtd_1_1tunit_1_1unit__test_aa517a7325b4965f73a9e21a01c6ddc27.html#aa517a7325b4965f73a9e21a01c6ddc27", null ],
+      [ "ignored_test_names", "classxtd_1_1tunit_1_1unit__test_a5cbbc823c7ab08a613877a422c815632.html#a5cbbc823c7ab08a613877a422c815632", null ],
       [ "failed_test_count", "classxtd_1_1tunit_1_1unit__test_a277e93fd17aea926322e6e4f7f223e0c.html#a277e93fd17aea926322e6e4f7f223e0c", null ],
-      [ "failed_test_names", "classxtd_1_1tunit_1_1unit__test_a2850dea7e178dd0f2015b4c8d1877d23.html#a2850dea7e178dd0f2015b4c8d1877d23", null ],
+      [ "failed_test_names", "classxtd_1_1tunit_1_1unit__test_a21495a6aed4ac00d7964954865fe69bb.html#a21495a6aed4ac00d7964954865fe69bb", null ],
       [ "succeed_test_count", "classxtd_1_1tunit_1_1unit__test_ac12d603a82472d703747a21d4899f813.html#ac12d603a82472d703747a21d4899f813", null ],
-      [ "succeed_test_names", "classxtd_1_1tunit_1_1unit__test_a19491e6d8eb41f06fce5623d99f55394.html#a19491e6d8eb41f06fce5623d99f55394", null ],
+      [ "succeed_test_names", "classxtd_1_1tunit_1_1unit__test_ac5157135283c64458c0df4bd40976ea2.html#ac5157135283c64458c0df4bd40976ea2", null ],
       [ "run", "classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a", null ],
       [ "count_tests", "classxtd_1_1tunit_1_1unit__test_a675cc55ff1790a6893bd1f520eb4ac48.html#a675cc55ff1790a6893bd1f520eb4ac48", null ],
-      [ "list_tests", "classxtd_1_1tunit_1_1unit__test_afff9ff55db00d91cfc5068da8db455f9.html#afff9ff55db00d91cfc5068da8db455f9", null ],
-      [ "parse_arguments", "classxtd_1_1tunit_1_1unit__test_a98f0d275c971ee308fcb0bd446579d23.html#a98f0d275c971ee308fcb0bd446579d23", null ]
+      [ "list_tests", "classxtd_1_1tunit_1_1unit__test_afc6a0d6d1b6b4410ee02d8331a2bfc73.html#afc6a0d6d1b6b4410ee02d8331a2bfc73", null ],
+      [ "parse_arguments", "classxtd_1_1tunit_1_1unit__test_a7cc393dd18c481d468ec273a025354ab.html#a7cc393dd18c481d468ec273a025354ab", null ]
     ] ],
     [ "xtd::tunit::valid", "classxtd_1_1tunit_1_1valid.html", null ]
 ];

@@ -204,13 +204,13 @@ $(document).ready(function(){initNavTree('background_worker_8cpp-example.html','
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= progress.maximum(); ++step) {</div>
 <div class="line">          <span class="keywordflow">if</span> (worker.cancellation_pending()) <span class="keywordflow">break</span>; <span class="comment">// stop work...</span></div>
 <div class="line">          thread::sleep(100_ms); <span class="comment">// simulate work...</span></div>
-<div class="line">          worker.report_progress(step, ustring::format(<span class="stringliteral">&quot;step {} / {}&quot;</span>, step, progress.maximum()));</div>
+<div class="line">          worker.report_progress(step, string::format(<span class="stringliteral">&quot;step {} / {}&quot;</span>, step, progress.maximum()));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      worker.progress_changed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__changed__event__args.html">progress_changed_event_args</a> &amp; e) {</div>
 <div class="line">        progress.value(e.progress_percentage());</div>
-<div class="line">        progress_text.append_text(ustring::format(<span class="stringliteral">&quot;{}{}&quot;</span>, std::any_cast&lt;ustring&gt;(e.user_state()), environment::new_line()));</div>
+<div class="line">        progress_text.append_text(string::format(<span class="stringliteral">&quot;{}{}&quot;</span>, std::any_cast&lt;string&gt;(e.user_state()), environment::new_line()));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      worker.run_worker_completed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">run_worker_completed_event_args</a> &amp; e) {</div>
@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('background_worker_8cpp-example.html','
 <div class="line">        cancel_button.enabled(<span class="keyword">false</span>);</div>
 <div class="line">        progress.value(0);</div>
 <div class="line">        progress_text.text(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line">        status.text(ustring::format(<span class="stringliteral">&quot;Status : {}&quot;</span>, e.cancel() ? <span class="stringliteral">&quot;canceled&quot;</span> : <span class="stringliteral">&quot;completed&quot;</span>));</div>
+<div class="line">        status.text(string::format(<span class="stringliteral">&quot;Status : {}&quot;</span>, e.cancel() ? <span class="stringliteral">&quot;canceled&quot;</span> : <span class="stringliteral">&quot;completed&quot;</span>));</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('background_worker_8cpp-example.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

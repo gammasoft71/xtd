@@ -8,7 +8,7 @@ var classxtd_1_1drawing_1_1size__f =
     [ "is_empty", "classxtd_1_1drawing_1_1size__f_aba4f2efab0290b6e63daec3e51f9f978.html#aba4f2efab0290b6e63daec3e51f9f978", null ],
     [ "width", "classxtd_1_1drawing_1_1size__f_aafa9e1159608cbcad23642e328a9bcd2.html#aafa9e1159608cbcad23642e328a9bcd2", null ],
     [ "width", "classxtd_1_1drawing_1_1size__f_a21958410272f76307200f9f4fcdb0d28.html#a21958410272f76307200f9f4fcdb0d28", null ],
-    [ "to_string", "classxtd_1_1drawing_1_1size__f_a2ed32e88de26efd3ea788b552782f445.html#a2ed32e88de26efd3ea788b552782f445", null ],
+    [ "to_string", "classxtd_1_1drawing_1_1size__f_a17e45ba30cf023b477f6be97711f2722.html#a17e45ba30cf023b477f6be97711f2722", null ],
     [ "operator+", "classxtd_1_1drawing_1_1size__f_a616ae7d43b417b7cc6e59096d040b920.html#a616ae7d43b417b7cc6e59096d040b920", null ],
     [ "operator+", "classxtd_1_1drawing_1_1size__f_a0538894434d1715941f8b5e7f03c365f.html#a0538894434d1715941f8b5e7f03c365f", null ],
     [ "operator+=", "classxtd_1_1drawing_1_1size__f_a4ca5351166c9ceef3fe6d2ea2caf8109.html#a4ca5351166c9ceef3fe6d2ea2caf8109", null ],

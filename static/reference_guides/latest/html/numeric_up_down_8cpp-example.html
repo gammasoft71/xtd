@@ -132,7 +132,6 @@ $(document).ready(function(){initNavTree('numeric_up_down_8cpp-example.html','')
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/numeric_up_down&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/cdebug&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -147,10 +146,10 @@ $(document).ready(function(){initNavTree('numeric_up_down_8cpp-example.html','')
 <div class="line">      numeric_up_down1.location({80, 50});</div>
 <div class="line">      numeric_up_down1.wrapped(<span class="keyword">true</span>);</div>
 <div class="line">      numeric_up_down1.value_changed += [&amp;] {</div>
-<div class="line">        label1.text(ustring::format(<span class="stringliteral">&quot;value = {}&quot;</span>, numeric_up_down1.value()));</div>
+<div class="line">        label1.text(string::format(<span class="stringliteral">&quot;value = {}&quot;</span>, numeric_up_down1.value()));</div>
 <div class="line">      };</div>
 <div class="line">      numeric_up_down1.text_changed += [&amp;] {</div>
-<div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;text = {}&quot;</span>, numeric_up_down1.text()) &lt;&lt; endl;</div>
+<div class="line">        cdebug &lt;&lt; string::format(<span class="stringliteral">&quot;text = {}&quot;</span>, numeric_up_down1.text()) &lt;&lt; environment::new_line;</div>
 <div class="line">      };</div>
 <div class="line">      numeric_up_down1.value(50);</div>
 <div class="line">      </div>
@@ -186,7 +185,7 @@ $(document).ready(function(){initNavTree('numeric_up_down_8cpp-example.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

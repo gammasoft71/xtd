@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('date_time_now_8cpp-example.html',''); 
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {}, {}&quot;</span>, local_date.to_string(), local_date.kind());</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {}, {}\n&quot;</span>, utc_date.to_string(), utc_date.kind());</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">        console::write_line(ustring::format(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
+<div class="line">        console::write_line(string::format(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('date_time_now_8cpp-example.html',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

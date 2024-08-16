@@ -1,7 +1,7 @@
 var classxtd_1_1version =
 [
     [ "version", "classxtd_1_1version_a3504954441aa4d0d53ace55b4f518c42.html#a3504954441aa4d0d53ace55b4f518c42", null ],
-    [ "version", "classxtd_1_1version_a5ed016e6e05cf5054f5bebb308de6be7.html#a5ed016e6e05cf5054f5bebb308de6be7", null ],
+    [ "version", "classxtd_1_1version_a5aaab42b9083f24dcd4fa4402bf048d5.html#a5aaab42b9083f24dcd4fa4402bf048d5", null ],
     [ "version", "classxtd_1_1version_a7f0a17bda3075d568d7175a24b684f5e.html#a7f0a17bda3075d568d7175a24b684f5e", null ],
     [ "version", "classxtd_1_1version_a804f0086fd598ab86f098bbe4a9c9a66.html#a804f0086fd598ab86f098bbe4a9c9a66", null ],
     [ "version", "classxtd_1_1version_a857d0621a6d60896e158fc606cde6080.html#a857d0621a6d60896e158fc606cde6080", null ],
@@ -13,7 +13,7 @@ var classxtd_1_1version =
     [ "revision", "classxtd_1_1version_ae9c70a097280c1c51ecb33d13ab45dbb.html#ae9c70a097280c1c51ecb33d13ab45dbb", null ],
     [ "compare_to", "classxtd_1_1version_ab77b49d5430810732b4dd085272b5735.html#ab77b49d5430810732b4dd085272b5735", null ],
     [ "equals", "classxtd_1_1version_a1d1719bcebb970bfc503e5be2f996c74.html#a1d1719bcebb970bfc503e5be2f996c74", null ],
-    [ "to_string", "classxtd_1_1version_acba0ed89b1b36de5bd12f538e456c9bd.html#acba0ed89b1b36de5bd12f538e456c9bd", null ],
-    [ "to_string", "classxtd_1_1version_a45771bef8474b38a880b14b830393fea.html#a45771bef8474b38a880b14b830393fea", null ],
+    [ "to_string", "classxtd_1_1version_adb97d4a2c23991ee27bacacf55cad226.html#adb97d4a2c23991ee27bacacf55cad226", null ],
+    [ "to_string", "classxtd_1_1version_af0448bffdc9f6894780d9aef120325cf.html#af0448bffdc9f6894780d9aef120325cf", null ],
     [ "equals", "classxtd_1_1version_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

@@ -9,13 +9,14 @@ var searchData=
   ['pen_5falignment_6',['pen_alignment',['../namespacextd_1_1drawing_1_1drawing2d_a94f841a7e4babb28efbf3141a41aa793.html#a94f841a7e4babb28efbf3141a41aa793',1,'xtd::drawing::drawing2d']]],
   ['pen_5ftype_7',['pen_type',['../namespacextd_1_1drawing_1_1drawing2d_a8f2eac64e55d33f8685bffcd08eca6a5.html#a8f2eac64e55d33f8685bffcd08eca6a5',1,'xtd::drawing::drawing2d']]],
   ['pointer_8',['pointer',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator_ada885d892ffc866c499d5bdfd7b66526.html#ada885d892ffc866c499d5bdfd7b66526',1,'xtd::collections::generic::enumerable_iterators::iterator::pointer'],['../classxtd_1_1collections_1_1generic_1_1list_a2e1aab8d635844c6f266c0db1e4da36a.html#a2e1aab8d635844c6f266c0db1e4da36a',1,'xtd::collections::generic::list::pointer'],['../classxtd_1_1collections_1_1object__model_1_1read__only__collection_afc240e7e63f98fc6c983b22b75aae48c.html#afc240e7e63f98fc6c983b22b75aae48c',1,'xtd::collections::object_model::read_only_collection::pointer'],['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection_ac583e335292983f536a0f34b45052e59.html#ac583e335292983f536a0f34b45052e59',1,'xtd::forms::layout::arranged_element_collection::pointer']]],
-  ['points_5fcollection_9',['points_collection',['../classxtd_1_1forms_1_1dot__matrix__display_a8290530d8532857d7e620616c985891b.html#a8290530d8532857d7e620616c985891b',1,'xtd::forms::dot_matrix_display']]],
-  ['post_5fphase_5faction_10',['post_phase_action',['../classxtd_1_1threading_1_1barrier_a541a2b302cb76a52f869eaded0e0f518.html#a541a2b302cb76a52f869eaded0e0f518',1,'xtd::threading::barrier']]],
-  ['predicate_11',['predicate',['../group__xtd__core_gaa083bb9debdfafabdf55431467759471.html#gaa083bb9debdfafabdf55431467759471',1,'xtd']]],
-  ['program_5fexit_5fevent_5fhandler_12',['program_exit_event_handler',['../group__events_ga05028567f0783e489a1c6e338026b99d.html#ga05028567f0783e489a1c6e338026b99d',1,'xtd']]],
-  ['progress_5fchanged_5fevent_5fhandler_13',['progress_changed_event_handler',['../group__events_gab622f963701c9e772309591048e9f180.html#gab622f963701c9e772309591048e9f180',1,'xtd::forms']]],
-  ['property_5fmap_14',['property_map',['../property__map_8h_a8f98379cbe916d9dcf3e0cfac9eeaae6.html#a8f98379cbe916d9dcf3e0cfac9eeaae6',1,'xtd::web::css']]],
-  ['ptr_15',['ptr',['../group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec',1,'xtd']]],
-  ['ptrdiff_16',['ptrdiff',['../group__types_gac047942a62f03ba75e1b4f0bde7401ca.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]],
-  ['ptrdiff_5fobject_17',['ptrdiff_object',['../group__types_gae2497df51389819b9281a9a1217b3f1c.html#gae2497df51389819b9281a9a1217b3f1c',1,'xtd']]]
+  ['pointer_5ftype_9',['pointer_type',['../classxtd_1_1basic__string_a83f72e0f141f368ed35c9bc19d685b3e.html#a83f72e0f141f368ed35c9bc19d685b3e',1,'xtd::basic_string']]],
+  ['points_5fcollection_10',['points_collection',['../classxtd_1_1forms_1_1dot__matrix__display_a8290530d8532857d7e620616c985891b.html#a8290530d8532857d7e620616c985891b',1,'xtd::forms::dot_matrix_display']]],
+  ['post_5fphase_5faction_11',['post_phase_action',['../classxtd_1_1threading_1_1barrier_a541a2b302cb76a52f869eaded0e0f518.html#a541a2b302cb76a52f869eaded0e0f518',1,'xtd::threading::barrier']]],
+  ['predicate_12',['predicate',['../group__xtd__core_gaa083bb9debdfafabdf55431467759471.html#gaa083bb9debdfafabdf55431467759471',1,'xtd']]],
+  ['program_5fexit_5fevent_5fhandler_13',['program_exit_event_handler',['../group__events_ga05028567f0783e489a1c6e338026b99d.html#ga05028567f0783e489a1c6e338026b99d',1,'xtd']]],
+  ['progress_5fchanged_5fevent_5fhandler_14',['progress_changed_event_handler',['../group__events_gab622f963701c9e772309591048e9f180.html#gab622f963701c9e772309591048e9f180',1,'xtd::forms']]],
+  ['property_5fmap_15',['property_map',['../property__map_8h_a36b87df939c931d207de4cf349f0d8a4.html#a36b87df939c931d207de4cf349f0d8a4',1,'xtd::web::css']]],
+  ['ptr_16',['ptr',['../group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec',1,'xtd']]],
+  ['ptrdiff_17',['ptrdiff',['../group__types_gac047942a62f03ba75e1b4f0bde7401ca.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]],
+  ['ptrdiff_5fobject_18',['ptrdiff_object',['../group__types_gae2497df51389819b9281a9a1217b3f1c.html#gae2497df51389819b9281a9a1217b3f1c',1,'xtd']]]
 ];

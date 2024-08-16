@@ -128,7 +128,6 @@ $(document).ready(function(){initNavTree('message_box_appearance_8cpp-example.ht
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -185,7 +184,7 @@ $(document).ready(function(){initNavTree('message_box_appearance_8cpp-example.ht
 <div class="line">    button_try_it.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    button_try_it.click += [&amp;] {</div>
 <div class="line">      label_dialog_result.text(<span class="stringliteral">&quot;result = &quot;</span>);</div>
-<div class="line">      label_dialog_result.text(ustring::format(<span class="stringliteral">&quot;result = {}&quot;</span>, message_box::show(*<span class="keyword">this</span>, text_message.text(), text_caption.text(), any_cast&lt;message_box_buttons&gt;(choice_buttons.selected_item().tag()), any_cast&lt;message_box_icon&gt;(choice_icons.selected_item().tag()))));</div>
+<div class="line">      label_dialog_result.text(string::format(<span class="stringliteral">&quot;result = {}&quot;</span>, message_box::show(*<span class="keyword">this</span>, text_message.text(), text_caption.text(), any_cast&lt;message_box_buttons&gt;(choice_buttons.selected_item().tag()), any_cast&lt;message_box_icon&gt;(choice_icons.selected_item().tag()))));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    label_dialog_result.text(<span class="stringliteral">&quot;result = &quot;</span>);</div>
@@ -223,7 +222,7 @@ $(document).ready(function(){initNavTree('message_box_appearance_8cpp-example.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

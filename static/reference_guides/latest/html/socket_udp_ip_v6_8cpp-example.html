@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('socket_udp_ip_v6_8cpp-example.html',''
 <div class="line">      <span class="keyword">auto</span> incoming_end_point = <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> {};</div>
 <div class="line">      <span class="keyword">auto</span> number_of_byte_received = server_socket.receive_from(buffer, incoming_end_point);</div>
 <div class="line">      <span class="keywordflow">if</span> (!(number_of_byte_received == 1 &amp;&amp; buffer[0] == 0xFF))</div>
-<div class="line">        console::write_line(<a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>(buffer.begin(), buffer.begin() + number_of_byte_received));</div>
+<div class="line">        console::write_line(<span class="keywordtype">string</span>(buffer.begin(), buffer.begin() + number_of_byte_received));</div>
 <div class="line">    }</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('socket_udp_ip_v6_8cpp-example.html',''
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> counter = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
-<div class="line">      <span class="keyword">auto</span> str = ustring::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
+<div class="line">      <span class="keyword">auto</span> str = string::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
 <div class="line">      client_socket.send_to(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;unsigned char&gt;</a>(str.begin(), str.end()), <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> {ip_address::ip_v6_loopback, 9400});</div>
 <div class="line">      thread::sleep(50_ms);</div>
 <div class="line">    }</div>
@@ -166,7 +166,6 @@ $(document).ready(function(){initNavTree('socket_udp_ip_v6_8cpp-example.html',''
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_a0440f747b3ca6415815e92b700f0b559_html_a0440f747b3ca6415815e92b700f0b559"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket_a0440f747b3ca6415815e92b700f0b559.html#a0440f747b3ca6415815e92b700f0b559">xtd::net::sockets::socket::bind</a></div><div class="ttdeci">void bind(const end_point_t &amp;local_end_point)</div><div class="ttdoc">Associates a xtd::net::sockets::socket with a local endpoint.</div><div class="ttdef"><b>Definition</b> socket.h:797</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></div><div class="ttdoc">Implements the Berkeley sockets interface.</div><div class="ttdef"><b>Definition</b> socket.h:73</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:43</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> dictionary.h:15</div></div>
 <div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.h:16</div></div>
 <div class="ttc" id="anamespacextd_1_1net_html"><div class="ttname"><a href="namespacextd_1_1net.html">xtd::net</a></div><div class="ttdoc">The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...</div><div class="ttdef"><b>Definition</b> cookie_exception.h:10</div></div>
@@ -178,7 +177,7 @@ $(document).ready(function(){initNavTree('socket_udp_ip_v6_8cpp-example.html',''
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

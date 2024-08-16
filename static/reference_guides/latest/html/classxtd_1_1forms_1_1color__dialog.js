@@ -19,8 +19,8 @@ var classxtd_1_1forms_1_1color__dialog =
     [ "show_help", "classxtd_1_1forms_1_1color__dialog_a2f75ac874ef0f4dec9c0b79257c9ca7a.html#a2f75ac874ef0f4dec9c0b79257c9ca7a", null ],
     [ "solid_color_only", "classxtd_1_1forms_1_1color__dialog_aba2161ee86406ab110fd08e3d36b0d1d.html#aba2161ee86406ab110fd08e3d36b0d1d", null ],
     [ "solid_color_only", "classxtd_1_1forms_1_1color__dialog_a3a980362b9a279cb2254a7fc2e5ac061.html#a3a980362b9a279cb2254a7fc2e5ac061", null ],
-    [ "title", "classxtd_1_1forms_1_1color__dialog_a06daccf9c74760c21be427f8275a334b.html#a06daccf9c74760c21be427f8275a334b", null ],
-    [ "title", "classxtd_1_1forms_1_1color__dialog_a0a0b6a9c830b8976a4946bbaa2bc24d9.html#a0a0b6a9c830b8976a4946bbaa2bc24d9", null ],
+    [ "title", "classxtd_1_1forms_1_1color__dialog_ab00671c521af6cb956269dbefd2b1bc8.html#ab00671c521af6cb956269dbefd2b1bc8", null ],
+    [ "title", "classxtd_1_1forms_1_1color__dialog_a5f15831140f80975caecff9c0fe5036d.html#a5f15831140f80975caecff9c0fe5036d", null ],
     [ "reset", "classxtd_1_1forms_1_1color__dialog_abf277a53a9a1a3ebce10f4d297fafc0f.html#abf277a53a9a1a3ebce10f4d297fafc0f", null ],
     [ "run_dialog", "classxtd_1_1forms_1_1color__dialog_a8f7b92ca500640904944ded664194fce.html#a8f7b92ca500640904944ded664194fce", null ],
     [ "run_sheet", "classxtd_1_1forms_1_1color__dialog_a94c91348250afd566838fee1b430139f.html#a94c91348250afd566838fee1b430139f", null ]

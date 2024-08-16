@@ -12,12 +12,12 @@ var group__diagnostics =
       [ "default_trace_listener", "classxtd_1_1diagnostics_1_1default__trace__listener_ae06931956a267da1613348d09efba5b2.html#ae06931956a267da1613348d09efba5b2", null ],
       [ "assert_ui_enabled", "classxtd_1_1diagnostics_1_1default__trace__listener_a9882c5b70dd3d2dd3bb5ce447463d829.html#a9882c5b70dd3d2dd3bb5ce447463d829", null ],
       [ "assert_ui_enabled", "classxtd_1_1diagnostics_1_1default__trace__listener_a2ddf110226f03464644daab3acd751f8.html#a2ddf110226f03464644daab3acd751f8", null ],
-      [ "log_file_name", "classxtd_1_1diagnostics_1_1default__trace__listener_a7ab13fc243f7989648ba946f750faa0b.html#a7ab13fc243f7989648ba946f750faa0b", null ],
-      [ "log_file_name", "classxtd_1_1diagnostics_1_1default__trace__listener_ab80743f701dbb2c50603112a4283f814.html#ab80743f701dbb2c50603112a4283f814", null ],
+      [ "log_file_name", "classxtd_1_1diagnostics_1_1default__trace__listener_ae2c8042b6b4ba4894bb9b9c02110fce7.html#ae2c8042b6b4ba4894bb9b9c02110fce7", null ],
+      [ "log_file_name", "classxtd_1_1diagnostics_1_1default__trace__listener_a2933e87baa3d0885db5a0bc675a5e051.html#a2933e87baa3d0885db5a0bc675a5e051", null ],
       [ "close", "classxtd_1_1diagnostics_1_1default__trace__listener_a142005437393cd56157bd51aad6517e3.html#a142005437393cd56157bd51aad6517e3", null ],
       [ "flush", "classxtd_1_1diagnostics_1_1default__trace__listener_a5398c5cba303f4012f6b8384736a4efc.html#a5398c5cba303f4012f6b8384736a4efc", null ],
-      [ "write", "classxtd_1_1diagnostics_1_1default__trace__listener_a292765c894cc58331ce91ea2bc783742.html#a292765c894cc58331ce91ea2bc783742", null ],
-      [ "write_line", "classxtd_1_1diagnostics_1_1default__trace__listener_afa8e950981b0286f3a1dabdcf8a8a1d7.html#afa8e950981b0286f3a1dabdcf8a8a1d7", null ]
+      [ "write", "classxtd_1_1diagnostics_1_1default__trace__listener_ab2b8e2834b07464bec2388ce1a0a312c.html#ab2b8e2834b07464bec2388ce1a0a312c", null ],
+      [ "write_line", "classxtd_1_1diagnostics_1_1default__trace__listener_a631bd7c2d4b72acbf9e6aba509b0bed0.html#a631bd7c2d4b72acbf9e6aba509b0bed0", null ]
     ] ],
     [ "xtd::diagnostics::ostream_trace_listener", "classxtd_1_1diagnostics_1_1ostream__trace__listener.html", [
       [ "ostream_trace_listener", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a8059bcba47a3afb9ecf1fcc5d9d7d722.html#a8059bcba47a3afb9ecf1fcc5d9d7d722", null ],
@@ -25,8 +25,8 @@ var group__diagnostics =
       [ "ostream", "classxtd_1_1diagnostics_1_1ostream__trace__listener_aad7150c8441df44fd0979b3be4fe4efa.html#aad7150c8441df44fd0979b3be4fe4efa", null ],
       [ "close", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a7580047dbf2d7f83ec8f192f74ca11de.html#a7580047dbf2d7f83ec8f192f74ca11de", null ],
       [ "flush", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a00944461901b186fd090ba8adfa7138b.html#a00944461901b186fd090ba8adfa7138b", null ],
-      [ "write", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a9a60f9310e0a21c38edec31863e4ec25.html#a9a60f9310e0a21c38edec31863e4ec25", null ],
-      [ "write_line", "classxtd_1_1diagnostics_1_1ostream__trace__listener_ab2d6606cff3b1107697cfa1fd23d5f79.html#ab2d6606cff3b1107697cfa1fd23d5f79", null ]
+      [ "write", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a9d6ee8fc56e35ee4e0bd5c64d6d94ec3.html#a9d6ee8fc56e35ee4e0bd5c64d6d94ec3", null ],
+      [ "write_line", "classxtd_1_1diagnostics_1_1ostream__trace__listener_a9b2ca07e08d0d487312cb0ab8f0d18c3.html#a9b2ca07e08d0d487312cb0ab8f0d18c3", null ]
     ] ],
     [ "xtd::diagnostics::process", "classxtd_1_1diagnostics_1_1process.html", [
       [ "process", "classxtd_1_1diagnostics_1_1process_a81ba433310fc43b2e2422753227e8b44.html#a81ba433310fc43b2e2422753227e8b44", null ],
@@ -38,10 +38,10 @@ var group__diagnostics =
       [ "handle", "classxtd_1_1diagnostics_1_1process_a95f547249f59864f171fd07a0ad6f5de.html#a95f547249f59864f171fd07a0ad6f5de", null ],
       [ "has_exited", "classxtd_1_1diagnostics_1_1process_aa387a8e10f9caad84c0c870d3116ae74.html#aa387a8e10f9caad84c0c870d3116ae74", null ],
       [ "id", "classxtd_1_1diagnostics_1_1process_a1567f4da9adb40a6b40a27600b31524c.html#a1567f4da9adb40a6b40a27600b31524c", null ],
-      [ "machine_name", "classxtd_1_1diagnostics_1_1process_ad2d493e6b000ee2885e4e958b62662dd.html#ad2d493e6b000ee2885e4e958b62662dd", null ],
+      [ "machine_name", "classxtd_1_1diagnostics_1_1process_a8d52c1cfeab3da444993825ff8822c28.html#a8d52c1cfeab3da444993825ff8822c28", null ],
       [ "priority_class", "classxtd_1_1diagnostics_1_1process_a208dcfd152f0ffc41cc7ffcd3d768f39.html#a208dcfd152f0ffc41cc7ffcd3d768f39", null ],
       [ "priority_class", "classxtd_1_1diagnostics_1_1process_a430062fcf6eae5e31ca8fc5583609156.html#a430062fcf6eae5e31ca8fc5583609156", null ],
-      [ "process_name", "classxtd_1_1diagnostics_1_1process_a291296a705e27aa8205a47fba62fe1a9.html#a291296a705e27aa8205a47fba62fe1a9", null ],
+      [ "process_name", "classxtd_1_1diagnostics_1_1process_a174d0f694f3ba522aa26218428d0eefe.html#a174d0f694f3ba522aa26218428d0eefe", null ],
       [ "standard_error", "classxtd_1_1diagnostics_1_1process_a9e09a8c158d401459b4ab4aa37a6f06e.html#a9e09a8c158d401459b4ab4aa37a6f06e", null ],
       [ "standard_input", "classxtd_1_1diagnostics_1_1process_a847f429e7d5a0a3c584213ab693d27b0.html#a847f429e7d5a0a3c584213ab693d27b0", null ],
       [ "standard_output", "classxtd_1_1diagnostics_1_1process_a2cda84618767aa8e357f49efc3186f4d.html#a2cda84618767aa8e357f49efc3186f4d", null ],
@@ -64,17 +64,17 @@ var group__diagnostics =
       [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a2a4018fdec1c7379214cd1809e70b8e3.html#a2a4018fdec1c7379214cd1809e70b8e3", null ],
       [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_ad7594dc1df9d1d2be08012b553c38acc.html#ad7594dc1df9d1d2be08012b553c38acc", null ],
       [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_aeb7e327338b0f9f9baa6ecc7901407ac.html#aeb7e327338b0f9f9baa6ecc7901407ac", null ],
-      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_afaf29b3b47e0f3e84c4141fc990bedd8.html#afaf29b3b47e0f3e84c4141fc990bedd8", null ],
-      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a55396f2d8d1def5f4a912c1b2462e2d6.html#a55396f2d8d1def5f4a912c1b2462e2d6", null ],
-      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_acafc008e91f33cc2a319969f4fffa862.html#acafc008e91f33cc2a319969f4fffa862", null ],
-      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a78bb1589818bdea876940e6224d1ebb2.html#a78bb1589818bdea876940e6224d1ebb2", null ],
-      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a25af3522596dfd97dded1fa68d2089a4.html#a25af3522596dfd97dded1fa68d2089a4", null ],
+      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a4877a0217055f3151dc50f7e9a5b18cc.html#a4877a0217055f3151dc50f7e9a5b18cc", null ],
+      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a0f3be5c19cb4bb4b136fbf1b8cde10c0.html#a0f3be5c19cb4bb4b136fbf1b8cde10c0", null ],
+      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a9880752ce7496e26d34157e5304a9819.html#a9880752ce7496e26d34157e5304a9819", null ],
+      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a8027b7f3880ebb82342779f4494c3243.html#a8027b7f3880ebb82342779f4494c3243", null ],
+      [ "stack_frame", "classxtd_1_1diagnostics_1_1stack__frame_a78336ce9e3aad6acbd23c875c4fda15c.html#a78336ce9e3aad6acbd23c875c4fda15c", null ],
       [ "get_file_column_number", "classxtd_1_1diagnostics_1_1stack__frame_a7496f96bd9e3f7cd9e79f294aee72ac9.html#a7496f96bd9e3f7cd9e79f294aee72ac9", null ],
       [ "get_file_line_number", "classxtd_1_1diagnostics_1_1stack__frame_a1832cdfb7233ada545f1af44983843ae.html#a1832cdfb7233ada545f1af44983843ae", null ],
-      [ "get_file_name", "classxtd_1_1diagnostics_1_1stack__frame_a3c7c3064010482060dc20aeb53b48797.html#a3c7c3064010482060dc20aeb53b48797", null ],
-      [ "get_method", "classxtd_1_1diagnostics_1_1stack__frame_ae946fcdc9bfcf32e2a832815c40eeb08.html#ae946fcdc9bfcf32e2a832815c40eeb08", null ],
+      [ "get_file_name", "classxtd_1_1diagnostics_1_1stack__frame_a1ff0d465067415c180c80027ab1a8551.html#a1ff0d465067415c180c80027ab1a8551", null ],
+      [ "get_method", "classxtd_1_1diagnostics_1_1stack__frame_ab249fbb59dc173c7fa651f7a9c895224.html#ab249fbb59dc173c7fa651f7a9c895224", null ],
       [ "get_offset", "classxtd_1_1diagnostics_1_1stack__frame_a5d3c0caad738e5c22c17909a7e8db9ce.html#a5d3c0caad738e5c22c17909a7e8db9ce", null ],
-      [ "to_string", "classxtd_1_1diagnostics_1_1stack__frame_a5aa33a16f44ae88f1f7e6068ec32e376.html#a5aa33a16f44ae88f1f7e6068ec32e376", null ],
+      [ "to_string", "classxtd_1_1diagnostics_1_1stack__frame_a34c6f93525aebc5e6ca9aad3ebce83c6.html#a34c6f93525aebc5e6ca9aad3ebce83c6", null ],
       [ "equals", "classxtd_1_1diagnostics_1_1stack__frame_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::diagnostics::stack_trace", "classxtd_1_1diagnostics_1_1stack__trace.html", [
@@ -91,7 +91,7 @@ var group__diagnostics =
       [ "frame_count", "classxtd_1_1diagnostics_1_1stack__trace_a424374815e3f722a156fedeb6a77e30e.html#a424374815e3f722a156fedeb6a77e30e", null ],
       [ "get_frame", "classxtd_1_1diagnostics_1_1stack__trace_afca6ea9bd4c06cb0d38fac6d699c1a61.html#afca6ea9bd4c06cb0d38fac6d699c1a61", null ],
       [ "get_frames", "classxtd_1_1diagnostics_1_1stack__trace_a0dc0078046589430dca4ad039bcebeaa.html#a0dc0078046589430dca4ad039bcebeaa", null ],
-      [ "to_string", "classxtd_1_1diagnostics_1_1stack__trace_a45340399230b6ac22957236d2bbe7fb2.html#a45340399230b6ac22957236d2bbe7fb2", null ]
+      [ "to_string", "classxtd_1_1diagnostics_1_1stack__trace_a235e78773f4e91ad1cce80add64f1e8f.html#a235e78773f4e91ad1cce80add64f1e8f", null ]
     ] ],
     [ "xtd::diagnostics::stopwatch", "classxtd_1_1diagnostics_1_1stopwatch.html", [
       [ "stopwatch", "classxtd_1_1diagnostics_1_1stopwatch_a8d385ccc393bc5b63c37c46eca5a30fc.html#a8d385ccc393bc5b63c37c46eca5a30fc", null ],
