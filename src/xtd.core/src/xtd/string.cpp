@@ -922,16 +922,18 @@ string string::pad_left(xtd::size total_width) const noexcept {
   return pad_left(total_width, ' ');
 }
 
-string string::pad_left(xtd::size total_width, value_type padding_char) const noexcept {
-  return pad_left_char(total_width, padding_char);
+string string::pad_left(xtd::size total_width, char32 padding_char) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return total_width < str.size() ? str : std::u32string(total_width - str.size(), padding_char) + str;
 }
 
 string string::pad_right(xtd::size total_width) const noexcept {
   return pad_right(total_width, ' ');
 }
 
-string string::pad_right(xtd::size total_width, value_type padding_char) const noexcept {
-  return pad_right_char(total_width, padding_char);
+string string::pad_right(xtd::size total_width, char32 padding_char) const noexcept {
+  auto str = convert_string::to_u32string(*this);
+  return total_width < str.size() ? str : str + std::u32string(total_width - str.size(), padding_char);
 }
 
 string string::quoted() const {
@@ -1140,54 +1142,6 @@ string string::get_class_name(const string& full_name) {
   if (length == npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
-}
-
-string string::pad_left_char(xtd::size total_width, char padding_char) const noexcept {
-  return total_width < size() ? *this : string(total_width - size(), padding_char) + *this;
-}
-
-string string::pad_left_char8(xtd::size total_width, char8 padding_char) const noexcept {
-  auto str = convert_string::to_u8string(*this);
-  return total_width < str.size() ? str : std::u8string(total_width - str.size(), padding_char) + str;
-}
-
-string string::pad_left_char16(xtd::size total_width, char16 padding_char) const noexcept {
-  auto str = convert_string::to_u16string(*this);
-  return total_width < str.size() ? str : std::u16string(total_width - str.size(), padding_char) + str;
-}
-
-string string::pad_left_char32(xtd::size total_width, char32 padding_char) const noexcept {
-  auto str = convert_string::to_u32string(*this);
-  return total_width < str.size() ? str : std::u32string(total_width - str.size(), padding_char) + str;
-}
-
-string string::pad_left_wchar(xtd::size total_width, wchar padding_char) const noexcept {
-  auto str = convert_string::to_wstring(*this);
-  return total_width < str.size() ? str : std::wstring(total_width - str.size(), padding_char) + str;
-}
-
-string string::pad_right_char(xtd::size total_width, char padding_char) const noexcept {
-  return total_width < size() ? *this : *this + string(total_width - size(), padding_char);
-}
-
-string string::pad_right_char8(xtd::size total_width, char8 padding_char) const noexcept {
-  auto str = convert_string::to_u8string(*this);
-  return total_width < str.size() ? str : str + std::u8string(total_width - str.size(), padding_char);
-}
-
-string string::pad_right_char16(xtd::size total_width, char16 padding_char) const noexcept {
-  auto str = convert_string::to_u16string(*this);
-  return total_width < str.size() ? str : str + std::u16string(total_width - str.size(), padding_char);
-}
-
-string string::pad_right_char32(xtd::size total_width, char32 padding_char) const noexcept {
-  auto str = convert_string::to_u32string(*this);
-  return total_width < str.size() ? str : str + std::u32string(total_width - str.size(), padding_char);
-}
-
-string string::pad_right_wchar(xtd::size total_width, wchar padding_char) const noexcept {
-  auto str = convert_string::to_wstring(*this);
-  return total_width < str.size() ? str : str + std::wstring(total_width - str.size(), padding_char);
 }
 
 string xtd::to_ustring(int val) {
