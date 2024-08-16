@@ -102,17 +102,18 @@ $(document).ready(function(){initNavTree('sprintf_boolean_8cpp-example.html','')
   <div class="headertitle"><div class="title">sprintf_boolean.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="group__format__parse_ga0c65606fb81f84e4d9ea43002114d8de.html#ga0c65606fb81f84e4d9ea43002114d8de" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::ustring::sprintf</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<p>Shows how to use <a class="el" href="group__format__parse_ga41e4a638cc8fc1d76cad41c972d98723.html#ga41e4a638cc8fc1d76cad41c972d98723" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::string::sprintf</a> method.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%d&quot;</span>, <span class="keyword">true</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%o&quot;</span>, <span class="keyword">true</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%x&quot;</span>, <span class="keyword">true</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%X&quot;</span>, <span class="keyword">true</span>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%d&quot;</span>, <span class="keyword">true</span>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%o&quot;</span>, <span class="keyword">true</span>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%x&quot;</span>, <span class="keyword">true</span>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%X&quot;</span>, <span class="keyword">true</span>) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -128,7 +129,7 @@ $(document).ready(function(){initNavTree('sprintf_boolean_8cpp-example.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

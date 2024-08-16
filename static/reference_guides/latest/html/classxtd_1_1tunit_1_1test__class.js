@@ -2,7 +2,7 @@ var classxtd_1_1tunit_1_1test__class =
 [
     [ "test_class", "classxtd_1_1tunit_1_1test__class_a63624c46e622e23442d52f81d687d2bd.html#a63624c46e622e23442d52f81d687d2bd", null ],
     [ "elapsed_time", "classxtd_1_1tunit_1_1test__class_ab210151a6e90c8a73ef2ed0d3af946ed.html#ab210151a6e90c8a73ef2ed0d3af946ed", null ],
-    [ "name", "classxtd_1_1tunit_1_1test__class_ac757a32b771384c007f791ef199277df.html#ac757a32b771384c007f791ef199277df", null ],
+    [ "name", "classxtd_1_1tunit_1_1test__class_a75f5f2e97cd522b3023e2a170dd65079.html#a75f5f2e97cd522b3023e2a170dd65079", null ],
     [ "test_count", "classxtd_1_1tunit_1_1test__class_a6d573f85348f4d1550a7e39b77e29077.html#a6d573f85348f4d1550a7e39b77e29077", null ],
     [ "aborted_test_count", "classxtd_1_1tunit_1_1test__class_a7ad20eed3fa3ccb1318bd98b583fc1a6.html#a7ad20eed3fa3ccb1318bd98b583fc1a6", null ],
     [ "failed_test_count", "classxtd_1_1tunit_1_1test__class_aaddd0821b082101e9a250ecd6ccce5f0.html#aaddd0821b082101e9a250ecd6ccce5f0", null ],

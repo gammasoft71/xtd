@@ -26,6 +26,6 @@ var classxtd_1_1forms_1_1horizontal__control__layout__style =
     [ "horizontal_control_layout_style", "classxtd_1_1forms_1_1horizontal__control__layout__style_a7d2f0f041b77201c4b9b93abc415fd30.html#a7d2f0f041b77201c4b9b93abc415fd30", null ],
     [ "width", "classxtd_1_1forms_1_1horizontal__control__layout__style_a8f9300b3f4d34e60f1cd4a2947c380a6.html#a8f9300b3f4d34e60f1cd4a2947c380a6", null ],
     [ "width", "classxtd_1_1forms_1_1horizontal__control__layout__style_af961067e88022abb21272d2b174bdfca.html#af961067e88022abb21272d2b174bdfca", null ],
-    [ "to_string", "classxtd_1_1forms_1_1horizontal__control__layout__style_a27980e1797b88e483565b03e61bfd1be.html#a27980e1797b88e483565b03e61bfd1be", null ],
+    [ "to_string", "classxtd_1_1forms_1_1horizontal__control__layout__style_a27387c861bfbfec56d2a93ce0b05253f.html#a27387c861bfbfec56d2a93ce0b05253f", null ],
     [ "equals", "classxtd_1_1forms_1_1horizontal__control__layout__style_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

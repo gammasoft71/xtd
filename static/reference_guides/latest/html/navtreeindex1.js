@@ -243,11 +243,11 @@ var NAVTREEINDEX1 =
 "base__assert_8h_source.html":[22,4,0,0,0,7],
 "basic__colors_8h.html":[22,2,0,0,0,8],
 "basic__colors_8h_source.html":[22,2,0,0,0,8],
+"basic__string_8h.html":[22,1,0,0,32],
+"basic__string_8h_source.html":[22,1,0,0,32],
 "battery__charge__status_8h.html":[22,3,0,0,0,19],
 "battery__charge__status_8h_source.html":[22,3,0,0,0,19],
-"beep_8h.html":[22,1,0,0,32],
-"beep_8h_source.html":[22,1,0,0,32],
-"binary__reader_8h.html":[22,1,0,0,4,0],
-"binary__reader_8h_source.html":[22,1,0,0,4,0],
-"binary__writer_8h.html":[22,1,0,0,4,1]
+"beep_8h.html":[22,1,0,0,33],
+"beep_8h_source.html":[22,1,0,0,33],
+"binary__reader_8h.html":[22,1,0,0,4,0]
 };

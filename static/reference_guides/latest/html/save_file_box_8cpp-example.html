@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('save_file_box_8cpp-example.html',''); 
 <div class="line">      <span class="keyword">auto</span> file_name = <span class="stringliteral">&quot;MyFile.txt&quot;</span>_s;</div>
 <div class="line">      <span class="keyword">auto</span> res = save_file_box::show(file_name, *<span class="keyword">this</span>, <span class="stringliteral">&quot;Save file as...&quot;</span>, environment::get_folder_path(environment::special_folder::my_documents), <span class="stringliteral">&quot;*.txt&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
-<div class="line">        message_box::show(ustring::format(<span class="stringliteral">&quot;File will be saved as:\n{}&quot;</span>, file_name));</div>
+<div class="line">        message_box::show(string::format(<span class="stringliteral">&quot;File will be saved as:\n{}&quot;</span>, file_name));</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('save_file_box_8cpp-example.html',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

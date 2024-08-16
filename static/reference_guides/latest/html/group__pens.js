@@ -27,7 +27,7 @@ var group__pens =
       [ "type", "classxtd_1_1drawing_1_1pen_a850fa6811ab3f96cd0420a6afb01ba25.html#a850fa6811ab3f96cd0420a6afb01ba25", null ],
       [ "width", "classxtd_1_1drawing_1_1pen_a3aed4c4ec4e630bde307ddbe8b32981a.html#a3aed4c4ec4e630bde307ddbe8b32981a", null ],
       [ "width", "classxtd_1_1drawing_1_1pen_aa89aec262e21df8953cd6db3cec3a6ef.html#aa89aec262e21df8953cd6db3cec3a6ef", null ],
-      [ "to_string", "classxtd_1_1drawing_1_1pen_ae81c71e67a99116788f6079baeb528a3.html#ae81c71e67a99116788f6079baeb528a3", null ],
+      [ "to_string", "classxtd_1_1drawing_1_1pen_a88599f829dcf837af47938fb6ad491f6.html#a88599f829dcf837af47938fb6ad491f6", null ],
       [ "equals", "classxtd_1_1drawing_1_1pen_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::drawing::pens", "classxtd_1_1drawing_1_1pens.html", null ],

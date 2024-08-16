@@ -18,7 +18,7 @@ var classxtd_1_1forms_1_1progress__bar =
     [ "increment", "classxtd_1_1forms_1_1progress__bar_a30c5e2fb30c9eaa4f10714b04a2030c6.html#a30c5e2fb30c9eaa4f10714b04a2030c6", null ],
     [ "perform_step", "classxtd_1_1forms_1_1progress__bar_af58f6f7b6e736256197fcebadfd91759.html#af58f6f7b6e736256197fcebadfd91759", null ],
     [ "set_range", "classxtd_1_1forms_1_1progress__bar_a27d55c46adf2ffcb85d7bc47c0400d99.html#a27d55c46adf2ffcb85d7bc47c0400d99", null ],
-    [ "to_string", "classxtd_1_1forms_1_1progress__bar_aaa2357d5fab5eddbfbe4bb4e05bc39df.html#aaa2357d5fab5eddbfbe4bb4e05bc39df", null ],
+    [ "to_string", "classxtd_1_1forms_1_1progress__bar_a62ef92d00dd165ef4c1b0f10a083e0a3.html#a62ef92d00dd165ef4c1b0f10a083e0a3", null ],
     [ "create_params", "classxtd_1_1forms_1_1progress__bar_a19774adf0beef9995a9386e7b200d8a2.html#a19774adf0beef9995a9386e7b200d8a2", null ],
     [ "default_size", "classxtd_1_1forms_1_1progress__bar_a48e875d4c50a8468f1595b101da9ce89.html#a48e875d4c50a8468f1595b101da9ce89", null ],
     [ "clone", "classxtd_1_1forms_1_1progress__bar_a3cf9fd9785af4d2efdfb64cd7e64ddc9.html#a3cf9fd9785af4d2efdfb64cd7e64ddc9", null ],

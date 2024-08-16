@@ -103,15 +103,17 @@ $(document).ready(function(){initNavTree('format_associative_containers_8cpp-exa
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with associative containers.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, std::set&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; std::endl;</div>
-<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, std::multiset&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; std::endl;</div>
-<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, std::map&lt;int, ustring&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; std::endl;</div>
-<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, std::multimap&lt;int, ustring&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; std::endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::set&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::multiset&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::map&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::multimap&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -127,7 +129,7 @@ $(document).ready(function(){initNavTree('format_associative_containers_8cpp-exa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

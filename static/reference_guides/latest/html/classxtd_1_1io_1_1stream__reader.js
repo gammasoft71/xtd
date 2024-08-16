@@ -1,6 +1,6 @@
 var classxtd_1_1io_1_1stream__reader =
 [
-    [ "stream_reader", "classxtd_1_1io_1_1stream__reader_a0c2a243a3f268b18eddb9e6537e1f9ae.html#a0c2a243a3f268b18eddb9e6537e1f9ae", null ],
+    [ "stream_reader", "classxtd_1_1io_1_1stream__reader_a6341d2193c94a5e4c9c8fc005ac983f1.html#a6341d2193c94a5e4c9c8fc005ac983f1", null ],
     [ "stream_reader", "classxtd_1_1io_1_1stream__reader_aac9620331e8d4260602a74f051000b92.html#aac9620331e8d4260602a74f051000b92", null ],
     [ "base_stream", "classxtd_1_1io_1_1stream__reader_ac177a4392a1b81f29067b5eca5d69e50.html#ac177a4392a1b81f29067b5eca5d69e50", null ],
     [ "end_of_stream", "classxtd_1_1io_1_1stream__reader_af86ae00e44bfc363b2bf51986a9e58d0.html#af86ae00e44bfc363b2bf51986a9e58d0", null ],

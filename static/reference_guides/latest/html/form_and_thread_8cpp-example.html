@@ -149,13 +149,13 @@ $(document).ready(function(){initNavTree('form_and_thread_8cpp-example.html','')
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; environment::processor_count() - 1; ++index) {</div>
 <div class="line">      thread::start_new([&amp;] {</div>
 <div class="line">        <span class="keyword">auto</span> counter = 0u;</div>
-<div class="line">        <span class="keyword">auto</span> thread_name = ustring::format(<span class="stringliteral">&quot;thread {}&quot;</span>, thread::current_thread().managed_thread_id());</div>
+<div class="line">        <span class="keyword">auto</span> thread_name = string::format(<span class="stringliteral">&quot;thread {}&quot;</span>, thread::current_thread().managed_thread_id());</div>
 <div class="line">        thread::current_thread().name(thread_name);</div>
 <div class="line">        <span class="keywordflow">while</span> (!closed) {</div>
 <div class="line">          thread::sleep(50_ms);</div>
 <div class="line">          ++counter;</div>
 <div class="line">          messages.begin_invoke([&amp;, counter, thread_name] {</div>
-<div class="line">            messages.items().push_back(ustring::format(<span class="stringliteral">&quot;{}: counter: {}&quot;</span>, thread_name, counter));</div>
+<div class="line">            messages.items().push_back(string::format(<span class="stringliteral">&quot;{}: counter: {}&quot;</span>, thread_name, counter));</div>
 <div class="line">            messages.selected_index(messages.items().size() - 1);</div>
 <div class="line">          });</div>
 <div class="line">        }</div>
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('form_and_thread_8cpp-example.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

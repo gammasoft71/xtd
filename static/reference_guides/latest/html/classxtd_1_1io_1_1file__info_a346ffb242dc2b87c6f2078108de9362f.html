@@ -148,7 +148,6 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a346ffb24
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
@@ -169,7 +168,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a346ffb24
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the stream and read it back.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords_ga9ba81b3bf268ec1eb95752f516f563e9.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords_ga9ba81b3bf268ec1eb95752f516f563e9.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open(std::ios::in)) {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {fs};</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
@@ -190,7 +189,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a346ffb24
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, full read/write access to new files is granted to all users. </dd>
 <dd>
-This method is a wrapper for the functionality provided by <a class="el" href="classxtd_1_1io_1_1file_ac28499b9e514cc21fc187c1c3974c10a.html#ac28499b9e514cc21fc187c1c3974c10a" title="Creates or overwrites a file in the specified path.">xtd::io::file::create</a>. </dd></dl>
+This method is a wrapper for the functionality provided by <a class="el" href="classxtd_1_1io_1_1file_a373902d44c512eb84a6cb8a2c7768ce2.html#a373902d44c512eb84a6cb8a2c7768ce2" title="Creates or overwrites a file in the specified path.">xtd::io::file::create</a>. </dd></dl>
 
 </div>
 </div>
@@ -201,7 +200,7 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1file__info.html">file_info</a></li>
-		<li class="footer">Generated on Thu Aug 15 2024 14:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:32:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

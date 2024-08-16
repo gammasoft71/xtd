@@ -15,7 +15,7 @@ var searchData=
   ['saxophone_12',['saxophone',['../classxtd_1_1forms_1_1emoticons_a4309a1b93a23c51c5a4a3b6b0e4eeec6.html#a4309a1b93a23c51c5a4a3b6b0e4eeec6',1,'xtd::forms::emoticons']]],
   ['scales_13',['scales',['../classxtd_1_1forms_1_1emoticons_a4a461f909723c313ee166e89dea5c0f7.html#a4a461f909723c313ee166e89dea5c0f7',1,'xtd::forms::emoticons']]],
   ['scarf_14',['scarf',['../classxtd_1_1forms_1_1emoticons_a30b0ef3ecc1fb6a2aef977f7913a6b57.html#a30b0ef3ecc1fb6a2aef977f7913a6b57',1,'xtd::forms::emoticons']]],
-  ['scheme_5fdelimiter_15',['scheme_delimiter',['../classxtd_1_1uri_acbf3126399a2464ea7b759c5d54ae124.html#acbf3126399a2464ea7b759c5d54ae124',1,'xtd::uri']]],
+  ['scheme_5fdelimiter_15',['scheme_delimiter',['../classxtd_1_1uri_a631a51c6d0fc38bf8cd76b25b728429a.html#a631a51c6d0fc38bf8cd76b25b728429a',1,'xtd::uri']]],
   ['school_16',['school',['../classxtd_1_1forms_1_1emoticons_ab117fc1ce424ff03a0802bed158fdad0.html#ab117fc1ce424ff03a0802bed158fdad0',1,'xtd::forms::emoticons']]],
   ['school_5fsatchel_17',['school_satchel',['../classxtd_1_1forms_1_1emoticons_aa909d5fed3ee554a771546f4ed646015.html#aa909d5fed3ee554a771546f4ed646015',1,'xtd::forms::emoticons']]],
   ['scooter_18',['scooter',['../classxtd_1_1forms_1_1emoticons_a9f4ab3e72663184730f30011f7eee2ed.html#a9f4ab3e72663184730f30011f7eee2ed',1,'xtd::forms::emoticons']]],

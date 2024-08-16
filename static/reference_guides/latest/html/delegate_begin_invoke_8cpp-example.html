@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('delegate_begin_invoke_8cpp-example.htm
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> d1 = delegate&lt;int(<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> d1 = delegate&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -127,7 +127,6 @@ $(document).ready(function(){initNavTree('delegate_begin_invoke_8cpp-example.htm
 <div class="line"><span class="comment">// return = 42</span></div>
 <div class="line"><span class="comment">// (Thread 4) Hello Gammasoft!</span></div>
 <div class="line"><span class="comment">// return = 24</span></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
@@ -136,7 +135,7 @@ $(document).ready(function(){initNavTree('delegate_begin_invoke_8cpp-example.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

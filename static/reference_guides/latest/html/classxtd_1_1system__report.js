@@ -1,11 +1,11 @@
 var classxtd_1_1system__report =
 [
-    [ "environment_variable_collection", "classxtd_1_1system__report_aa050a4901f240029f45b85c8928a1869.html#aa050a4901f240029f45b85c8928a1869", null ],
-    [ "special_folder_collection", "classxtd_1_1system__report_a28f5e16fd31103b52764c331fa171639.html#a28f5e16fd31103b52764c331fa171639", null ],
-    [ "system_color_collection", "classxtd_1_1system__report_af97213a6ffe9d4c7c6131935fb02a734.html#af97213a6ffe9d4c7c6131935fb02a734", null ],
-    [ "system_font_collection", "classxtd_1_1system__report_aac658082e0c421b2bf027b0fdc8e96f3.html#aac658082e0c421b2bf027b0fdc8e96f3", null ],
-    [ "system_font_family_collection", "classxtd_1_1system__report_a57c207bef274635b67c51c8b8f6a380b.html#a57c207bef274635b67c51c8b8f6a380b", null ],
-    [ "system_information_collection", "classxtd_1_1system__report_ac8526ffc89d0ad3e42f549f1cdd15324.html#ac8526ffc89d0ad3e42f549f1cdd15324", null ],
+    [ "environment_variable_collection", "classxtd_1_1system__report_a32f008785a4a0c04f79a510ccacebb86.html#a32f008785a4a0c04f79a510ccacebb86", null ],
+    [ "special_folder_collection", "classxtd_1_1system__report_a3982d2c65720bd3443ed63a8621a654d.html#a3982d2c65720bd3443ed63a8621a654d", null ],
+    [ "system_color_collection", "classxtd_1_1system__report_a66afd8d710718c76c6cd72a72614e3e6.html#a66afd8d710718c76c6cd72a72614e3e6", null ],
+    [ "system_font_collection", "classxtd_1_1system__report_a550952332781cb1cc2f92d7ca1e1b507.html#a550952332781cb1cc2f92d7ca1e1b507", null ],
+    [ "system_font_family_collection", "classxtd_1_1system__report_a478097ec30b0c33095027585b37756f3.html#a478097ec30b0c33095027585b37756f3", null ],
+    [ "system_information_collection", "classxtd_1_1system__report_acc2aedc4d9186854ec34f8e4a4b8e9e4.html#acc2aedc4d9186854ec34f8e4a4b8e9e4", null ],
     [ "reports", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b", [
       [ "stack_trace", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c", null ],
       [ "libraries", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d", null ],

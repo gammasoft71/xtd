@@ -1,6 +1,6 @@
 var classxtd_1_1reflection_1_1assembly__description__attribute =
 [
-    [ "assembly_description_attribute", "classxtd_1_1reflection_1_1assembly__description__attribute_a7ff0d3c66be1ebfc325b40f405559b5e.html#a7ff0d3c66be1ebfc325b40f405559b5e", null ],
-    [ "description", "classxtd_1_1reflection_1_1assembly__description__attribute_a0144e0218df1077336df40d05be2ea39.html#a0144e0218df1077336df40d05be2ea39", null ],
+    [ "assembly_description_attribute", "classxtd_1_1reflection_1_1assembly__description__attribute_a2e474d1f629423991141eaca3ec1bdc8.html#a2e474d1f629423991141eaca3ec1bdc8", null ],
+    [ "description", "classxtd_1_1reflection_1_1assembly__description__attribute_ae298e5b563482ddffd1a08e177f26bbd.html#ae298e5b563482ddffd1a08e177f26bbd", null ],
     [ "get_type_id", "classxtd_1_1reflection_1_1assembly__description__attribute_adebc3ce1cdca903d2cd051639862e1c1.html#adebc3ce1cdca903d2cd051639862e1c1", null ]
 ];

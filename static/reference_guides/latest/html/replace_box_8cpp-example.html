@@ -146,11 +146,11 @@ $(document).ready(function(){initNavTree('replace_box_8cpp-example.html',''); in
 <div class="line">    find_button.location({10, 10});</div>
 <div class="line">    find_button.click += [&amp;] {</div>
 <div class="line">      replace_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;xtd&quot;</span>, <span class="stringliteral">&quot;Replace&quot;</span>, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1find__event__args.html">find_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.whole_word()));</div>
+<div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.whole_word()));</div>
 <div class="line">      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
+<div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Replace : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
 <div class="line">      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace all : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
+<div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Replace all : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
 <div class="line">      });</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('replace_box_8cpp-example.html',''); in
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

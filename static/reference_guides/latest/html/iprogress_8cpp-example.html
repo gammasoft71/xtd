@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <div class="line"><span class="keyword">class </span>generic_progress {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  generic_progress() = <span class="keywordflow">default</span>;</div>
-<div class="line">  generic_progress(<span class="keywordtype">int</span> val, <span class="keywordtype">int</span> min = 0, <span class="keywordtype">int</span> max = 100, <span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; msg = <span class="stringliteral">&quot;&quot;</span>) : message_(msg) {</div>
+<div class="line">  generic_progress(<span class="keywordtype">int</span> val, <span class="keywordtype">int</span> min = 0, <span class="keywordtype">int</span> max = 100, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg = <span class="stringliteral">&quot;&quot;</span>) : message_(msg) {</div>
 <div class="line">    minimum(min);</div>
 <div class="line">    maximum(max);</div>
 <div class="line">    value(val);</div>
@@ -135,8 +135,8 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; message() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> message_;}</div>
-<div class="line">  generic_progress&amp; message(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; message) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> message_;}</div>
+<div class="line">  generic_progress&amp; message(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) <span class="keyword">noexcept</span> {</div>
 <div class="line">    message_ = message;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  generic_progress&amp; perform_step() <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> increment(step());}</div>
-<div class="line">  generic_progress&amp; perform_step(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; message) <span class="keyword">noexcept</span> {</div>
+<div class="line">  generic_progress&amp; perform_step(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) <span class="keyword">noexcept</span> {</div>
 <div class="line">    message_ = message;</div>
 <div class="line">    <span class="keywordflow">return</span> perform_step();</div>
 <div class="line">  }</div>
@@ -171,10 +171,10 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <div class="line">  <span class="keywordtype">int</span> maximum_ = 100;</div>
 <div class="line">  <span class="keywordtype">int</span> step_ = 1;</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> message_;</div>
+<div class="line">  <span class="keywordtype">string</span> message_;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>print_generic_progress : <span class="keyword">public</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1iprogress.html">iprogress</a>&lt;generic_progress&gt; {</div>
+<div class="line"><span class="keyword">class </span>print_generic_progress : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1iprogress.html">iprogress</a>&lt;generic_progress&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  print_generic_progress() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
@@ -215,7 +215,6 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <div class="line"><span class="comment">// completion=100%, message=&quot;Device closed&quot;</span></div>
 <div class="line"><span class="comment">// Ended</span></div>
 <div class="ttc" id="aclassxtd_1_1iprogress_html"><div class="ttname"><a href="classxtd_1_1iprogress.html">xtd::iprogress</a></div><div class="ttdoc">Defines a provider for progress updates.</div><div class="ttdef"><b>Definition</b> iprogress.h:19</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -223,7 +222,7 @@ $(document).ready(function(){initNavTree('iprogress_8cpp-example.html',''); init
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

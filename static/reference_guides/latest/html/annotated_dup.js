@@ -556,6 +556,7 @@ var annotated_dup =
       [ "arithmetic_exception", "classxtd_1_1arithmetic__exception.html", "classxtd_1_1arithmetic__exception" ],
       [ "attribute", "classxtd_1_1attribute.html", "classxtd_1_1attribute" ],
       [ "background_color", "classxtd_1_1background__color.html", "classxtd_1_1background__color" ],
+      [ "basic_string", "classxtd_1_1basic__string.html", "classxtd_1_1basic__string" ],
       [ "beep", "classxtd_1_1beep.html", "classxtd_1_1beep" ],
       [ "bit_converter", "classxtd_1_1bit__converter.html", "classxtd_1_1bit__converter" ],
       [ "box", "classxtd_1_1box.html", "classxtd_1_1box" ],
@@ -633,6 +634,7 @@ var annotated_dup =
       [ "software_termination_exception", "classxtd_1_1software__termination__exception.html", "classxtd_1_1software__termination__exception" ],
       [ "startup", "classxtd_1_1startup.html", null ],
       [ "static_object", "classxtd_1_1static__object.html", null ],
+      [ "string", "classxtd_1_1string.html", "classxtd_1_1string" ],
       [ "system_exception", "classxtd_1_1system__exception.html", "classxtd_1_1system__exception" ],
       [ "system_report", "classxtd_1_1system__report.html", "classxtd_1_1system__report" ],
       [ "target_type", "classxtd_1_1target__type.html", "classxtd_1_1target__type" ],
@@ -649,7 +651,6 @@ var annotated_dup =
       [ "uri", "classxtd_1_1uri.html", "classxtd_1_1uri" ],
       [ "uri_format_exception", "classxtd_1_1uri__format__exception.html", "classxtd_1_1uri__format__exception" ],
       [ "uri_template_match_exception", "classxtd_1_1uri__template__match__exception.html", "classxtd_1_1uri__template__match__exception" ],
-      [ "ustring", "classxtd_1_1ustring.html", "classxtd_1_1ustring" ],
       [ "version", "classxtd_1_1version.html", "classxtd_1_1version" ],
       [ "xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", "classxtd_1_1xml__syntax__exception" ]
     ] ]

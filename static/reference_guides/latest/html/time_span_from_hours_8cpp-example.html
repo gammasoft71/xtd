@@ -106,20 +106,20 @@ $(document).ready(function(){initNavTree('time_span_from_hours_8cpp-example.html
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_hours(<span class="keywordtype">double</span> hours) {</div>
-<div class="line">  <span class="comment">// Crée un objet time_span et une chaîne ustring à partir</span></div>
+<div class="line">  <span class="comment">// Crée un objet time_span et une chaîne string à partir</span></div>
 <div class="line">  <span class="comment">// d&#39;un nombre d&#39;heures.</span></div>
 <div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_struct" href="structxtd_1_1time__span.html">time_span</a> interval = time_span::from_hours(hours);</div>
-<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> timeInterval = interval.<a id="a2" name="a2"></a><a class="code hl_function" href="structxtd_1_1time__span_ad4b2295f38fc2aa8658888b2859e17f7.html#ad4b2295f38fc2aa8658888b2859e17f7">to_string</a>();</div>
+<div class="line">  <span class="keywordtype">string</span> timeInterval = interval.<a id="a1" name="a1"></a><a class="code hl_function" href="structxtd_1_1time__span_a469645d99afaf3ce16f24c40eafd7f4d.html#a469645d99afaf3ce16f24c40eafd7f4d">to_string</a>();</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Remplit la fin de la chaîne ustring avec des espaces si elle</span></div>
+<div class="line">  <span class="comment">// Remplit la fin de la chaîne string avec des espaces si elle</span></div>
 <div class="line">  <span class="comment">// ne contient pas de millisecondes.</span></div>
-<div class="line">  <span class="keywordtype">size_t</span> pIndex = timeInterval.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1ustring_a74e9d6260703cb75dbff5a8e458083e3.html#a74e9d6260703cb75dbff5a8e458083e3">index_of</a>(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line">  pIndex = timeInterval.<a class="code hl_function" href="classxtd_1_1ustring_a74e9d6260703cb75dbff5a8e458083e3.html#a74e9d6260703cb75dbff5a8e458083e3">index_of</a>( <span class="charliteral">&#39;.&#39;</span>, pIndex );</div>
+<div class="line">  <span class="keywordtype">size_t</span> pIndex = timeInterval.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1string_ae0a5b2b9a53ce37250a2958e8fe28d2c.html#ae0a5b2b9a53ce37250a2958e8fe28d2c">index_of</a>(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line">  pIndex = timeInterval.<a class="code hl_function" href="classxtd_1_1string_ae0a5b2b9a53ce37250a2958e8fe28d2c.html#ae0a5b2b9a53ce37250a2958e8fe28d2c">index_of</a>( <span class="charliteral">&#39;.&#39;</span>, pIndex );</div>
 <div class="line">  <span class="keywordflow">if</span> (pIndex &lt; 0) timeInterval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  console::write_line( <span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, hours, timeInterval );</div>
@@ -160,10 +160,9 @@ $(document).ready(function(){initNavTree('time_span_from_hours_8cpp-example.html
 <div class="line"><span class="comment">//                     1                  01:00:00</span></div>
 <div class="line"><span class="comment">//                    24                1.00:00:00</span></div>
 <div class="line"><span class="comment">//           500.3389445       20.20:20:20.2002000</span></div>
-<div class="ttc" id="aclassxtd_1_1ustring_a74e9d6260703cb75dbff5a8e458083e3_html_a74e9d6260703cb75dbff5a8e458083e3"><div class="ttname"><a href="classxtd_1_1ustring_a74e9d6260703cb75dbff5a8e458083e3.html#a74e9d6260703cb75dbff5a8e458083e3">xtd::ustring::index_of</a></div><div class="ttdeci">size_t index_of(value_type value) const noexcept</div><div class="ttdoc">Reports the index of the first occurrence of the specified character in this string.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
+<div class="ttc" id="aclassxtd_1_1string_ae0a5b2b9a53ce37250a2958e8fe28d2c_html_ae0a5b2b9a53ce37250a2958e8fe28d2c"><div class="ttname"><a href="classxtd_1_1string_ae0a5b2b9a53ce37250a2958e8fe28d2c.html#ae0a5b2b9a53ce37250a2958e8fe28d2c">xtd::string::index_of</a></div><div class="ttdeci">xtd::size index_of(value_type value) const noexcept</div><div class="ttdoc">Reports the index of the first occurrence of the specified character in this string.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
-<div class="ttc" id="astructxtd_1_1time__span_ad4b2295f38fc2aa8658888b2859e17f7_html_ad4b2295f38fc2aa8658888b2859e17f7"><div class="ttname"><a href="structxtd_1_1time__span_ad4b2295f38fc2aa8658888b2859e17f7.html#ad4b2295f38fc2aa8658888b2859e17f7">xtd::time_span::to_string</a></div><div class="ttdeci">xtd::ustring to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::ustring that represents the current object.</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_a469645d99afaf3ce16f24c40eafd7f4d_html_a469645d99afaf3ce16f24c40eafd7f4d"><div class="ttname"><a href="structxtd_1_1time__span_a469645d99afaf3ce16f24c40eafd7f4d.html#a469645d99afaf3ce16f24c40eafd7f4d">xtd::time_span::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
 <div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:29</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -171,7 +170,7 @@ $(document).ready(function(){initNavTree('time_span_from_hours_8cpp-example.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Thu Aug 15 2024 14:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 16 2024 13:31:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
