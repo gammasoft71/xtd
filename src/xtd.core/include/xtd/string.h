@@ -680,39 +680,11 @@ namespace xtd {
     string pad_left(xtd::size total_width) const noexcept;
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
-    /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical to the specified string.
-    /// @remarks An unicode space is defined as hexadecimal 0x20.
-    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
-    template<typename char_t>
-    string pad_left(xtd::size total_width) const noexcept {return pad_left<char_t>(total_width, char_t {' '});}
-    /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
-    /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
-    string pad_left(xtd::size total_width, value_type padding_char) const noexcept;
-    /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
-    /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
-    /// @param paddingChar An unicode padding character.
-    /// @return A new string that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new string object that is identical the specified string.
-    /// @remarks An unicode space is defined as hexadecimal 0x20.
-    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
-    template<typename char_t>
-    string pad_left(xtd::size total_width, char_t padding_char) const {return pad_left_any_char(total_width, padding_char);}
-
-    /// @cond
-    template<>
-    string pad_left<char>(xtd::size total_width, char padding_char) const {return pad_left_char(total_width, padding_char);}
-    template<>
-    string pad_left<char8>(xtd::size total_width, char8 padding_char) const {return pad_left_char8(total_width, padding_char);}
-    template<>
-    string pad_left<char16>(xtd::size total_width, char16 padding_char) const {return pad_left_char16(total_width, padding_char);}
-    template<>
-    string pad_left<char32>(xtd::size total_width, char32 padding_char) const {return pad_left_char32(total_width, padding_char);}
-    template<>
-    string pad_left<wchar>(xtd::size total_width, wchar padding_char) const {return pad_left_wchar(total_width, padding_char);}
-    /// @endcond
+    string pad_left(xtd::size total_width, char32 padding_char) const noexcept;
 
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
@@ -722,39 +694,11 @@ namespace xtd {
     string pad_right(xtd::size total_width) const noexcept;
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
-    /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
-    /// @remarks An unicode space is defined as hexadecimal 0x20.
-    /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
-    template<typename char_t>
-    string pad_right(xtd::size total_width) const noexcept {return pad_right<char_t>(total_width, char_t {' '});}
-    /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
-    /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::string::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
-    string pad_right(xtd::size total_width, value_type padding_char) const noexcept;
-    /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
-    /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
-    /// @param paddingChar An unicode padding character.
-    /// @return A new string that is equivalent to the specified string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new string object that is identical to the specified string.
-    /// @remarks An unicode space is defined as hexadecimal 0x20.
-    /// @remarks The xtd::string::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
-    template<typename char_t>
-    string pad_right(xtd::size total_width, char_t padding_char) const {return pad_right_any_char(total_width, padding_char);}
-    
-    /// @cond
-    template<>
-    string pad_right<char>(xtd::size total_width, char padding_char) const {return pad_right_char(total_width, padding_char);}
-    template<>
-    string pad_right<char8>(xtd::size total_width, char8 padding_char) const {return pad_right_char8(total_width, padding_char);}
-    template<>
-    string pad_right<char16>(xtd::size total_width, char16 padding_char) const {return pad_right_char16(total_width, padding_char);}
-    template<>
-    string pad_right<char32>(xtd::size total_width, char32 padding_char) const {return pad_right_char32(total_width, padding_char);}
-    template<>
-    string pad_right<wchar>(xtd::size total_width, wchar padding_char) const {return pad_right_wchar(total_width, padding_char);}
-    /// @endcond
+    string pad_right(xtd::size total_width, char32 padding_char) const noexcept;
 
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
     /// @return A new quoted string.
@@ -1703,22 +1647,6 @@ namespace xtd {
     
     static string get_class_name(const string& full_name);
     
-    template<typename char_t>
-    string pad_left_any_char(xtd::size total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
-    string pad_left_char(xtd::size total_width, char padding_char) const noexcept;
-    string pad_left_char8(xtd::size total_width, char8 padding_char) const noexcept;
-    string pad_left_char16(xtd::size total_width, char16 padding_char) const noexcept;
-    string pad_left_char32(xtd::size total_width, char32 padding_char) const noexcept;
-    string pad_left_wchar(xtd::size total_width, wchar padding_char) const noexcept;
-    
-    template<typename char_t>
-    string pad_right_any_char(xtd::size total_width, char padding_char) const  {__throw_ustring_invalid_char_type(__FILE__, __LINE__, __func__, typeid(padding_char)); return {};}
-    string pad_right_char(xtd::size total_width, char padding_char) const noexcept;
-    string pad_right_char8(xtd::size total_width, char8 padding_char) const noexcept;
-    string pad_right_char16(xtd::size total_width, char16 padding_char) const noexcept;
-    string pad_right_char32(xtd::size total_width, char32 padding_char) const noexcept;
-    string pad_right_wchar(xtd::size total_width, wchar padding_char) const noexcept;
-
     static const std::vector<value_type> default_split_separators;
     static const std::vector<value_type> default_trim_chars;
 

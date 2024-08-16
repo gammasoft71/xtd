@@ -12,14 +12,14 @@ void print_character(string text, char32 value, cap c) {
                  << "│  char     │   format   │      representation              │" << environment::new_line
                  << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {}         │ " << string::format("{}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:g}       │ " << string::format("{:g}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:G}       │ " << string::format("{:G}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:d}       │ " << string::format("{:d}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:D}       │ " << string::format("{:D}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:x}       │ " << string::format("{:x}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:X}       │ " << string::format("{:X}", value).pad_right<char32>(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right<char32>(9) << " │ {:ANY_FMT} │ " << string::format("{:ANY_FMT}", value).pad_right<char32>(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << string::format("{}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << string::format("{:ANY_FMT}", value).pad_right(32) << " |" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
@@ -30,11 +30,11 @@ void print_character(string text, char32 value, cap c) {
 auto main() -> int {
   console::output_code_page(65001);
   
-  print_character(string {'a'}, 'a', cap::title);
-  print_character(string {u8'1'}, u8'1', cap::middle);
-  print_character(string {L'\x1F603'}, L'\x1F603', cap::middle);
-  print_character(string {u'\u4eb0'}, u'\u4eb0', cap::middle);
-  print_character(string {U'\U0001F428'}, U'\U0001F428', cap::end);
+  print_character(string {"a"}, 'a', cap::title);
+  print_character(string {u8"1"}, u8'1', cap::middle);
+  print_character(string {L"\x1F603"}, L'\x1F603', cap::middle);
+  print_character(string {u"\u4eb0"}, u'\u4eb0', cap::middle);
+  print_character(string {U"\U0001F428"}, U'\U0001F428', cap::end);
 }
   
 // This code produces the following output :
