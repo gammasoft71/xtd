@@ -288,7 +288,7 @@ namespace xtd::collections::generic::tests {
       delegate<void()> {[&] {
         lock_ (synchronized_items.sync_root()) {
           synchronized_items.add(1);
-          threading::thread::sleep(2);
+          threading::thread::sleep(10);
           synchronized_items.add(2);
           synchronized_items.add(3);
         }
@@ -302,10 +302,10 @@ namespace xtd::collections::generic::tests {
         }
       }}.begin_invoke();
 
-      threading::thread::sleep(10);
+      threading::thread::sleep(20);
       lock_ (synchronized_items.sync_root()) {
-        collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
-      }      
+        collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items, csf_);
+      }
     }
     
     void test_method_(add) {
