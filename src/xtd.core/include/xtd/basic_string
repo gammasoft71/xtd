@@ -1,0 +1,2 @@
+#pragma once
+#include "basic_string.h"

@@ -1,44 +1,8 @@
 /// @file
-/// @brief Contains xtd::string class.
+/// @brief Contains xtd::string alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#define __XTD_CORE_INTERNAL__
-#include "internal/__format_information.h"
-#include "internal/__sprintf.h"
-#undef __XTD_CORE_INTERNAL__
-#define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.h"
-#undef __XTD_STD_INTERNAL__
-/// @endcond
-#include "icomparable.h"
-#include "iequatable.h"
-#include "string_comparison.h"
-#include "string_split_options.h"
-#include "types.h"
-#include "object.h"
-#include "parse.h"
-#include "to_string.h"
-#include "types.h"
-#include "unused.h"
-#if defined(__xtd__cpp_lib_format)
-#include <format>
-#endif
-#include <ostream>
-#include <string>
-
-/// @cond
-namespace xtd {
-  class string;
-}
-template<typename ...args_t>
-void __ustring_extract_format_arg(xtd::string& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
-void __throw_ustring_format_exception(const char* file, xtd::uint32 line, const char* func);
-void __throw_ustring_format_exception_close_bracket(const char* file, xtd::uint32 line, const char* func);
-void __throw_ustring_format_exception_open_bracket(const char* file, xtd::uint32 line, const char* func);
-void __throw_ustring_format_exception_start_colon(const char* file, xtd::uint32 line, const char* func);
-void __throw_ustring_invalid_char_type(const char* file, xtd::uint32 line, const char* func, const xtd::type& type);
-/// @endcond
+#include "basic_string.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -47,11 +11,23 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system strings
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
   /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
-  /// @remarks xtd::string cannot inherit from xtd::iequatable <xtd::string> because [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) defines the [== and != operators](https://en.cppreference.com/w/cpp/string/basic_string/operator_cmp).
+  /// @todo Rename `string_` to `string`.
+  using string_ = xtd::basic_string<char>;
+
+  /// @brief Represents text as a sequence of UTF-8 code units.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system strings
+  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
+  /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
+  /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
+  /// @todo Remove and use `using string = xtd::basic_string<char>;`.
   class string : public object, public xtd::icomparable<string>/*, public xtd::iequatable<string>*/, public std::basic_string<char> {
   public:
     /// @name Public Fields
@@ -1139,14 +1115,14 @@ namespace xtd {
       for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
         if (*iterator == '{') {
           if (++iterator == fmt.end())
-            __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+            __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
           if (*iterator == '{')
             result += *iterator;
           else {
             begin_format_iterator = iterator;
             while (iterator != fmt.end() && *iterator != '}') ++iterator;
             if (iterator == fmt.end())
-              __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+              __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
             end_format_iterator = iterator;
             __format_information<char> fi;
             fi.location = result.size();
@@ -1178,10 +1154,10 @@ namespace xtd {
                   index_str = std::move(format_str);
                 try {
                   for (auto c : index_str)
-                    if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                    if (!std::isdigit(c)) __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
                   fi.index = std::stoi(index_str);
                 } catch (...) {
-                  __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                  __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
                 }
               }
             }
@@ -1189,11 +1165,11 @@ namespace xtd {
           }
         } else if (*iterator == '}') {
           if (++iterator == fmt.end()) {
-            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
             break;
           }
           if (*iterator != '}') {
-            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
             break;
           }
           result += *iterator;
@@ -1721,7 +1697,7 @@ void __ustring_extract_format_arg(std::string& fmt, xtd::size& index, std::vecto
         try {
           alignment = std::stoi(format.alignment);
         } catch (...) {
-          __throw_ustring_format_exception(__FILE__, __LINE__, __func__);
+          __throw_basic_string_format_exception(__FILE__, __LINE__, __func__);
         }
         if (alignment > 0) arg_str = arg_str.pad_left(alignment);
         else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);
