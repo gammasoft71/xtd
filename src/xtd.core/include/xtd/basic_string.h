@@ -57,7 +57,7 @@ namespace xtd {
   /// @remarks If you want the same mutable basic_string class, you can use xtd::text::basic_string_builder <char_t> class.
   /// @remarks xtd::basic_string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string/basic_string) and therefore offers the full (immutable) API of std::basic_string.
   template<typename char_t, typename traits_t, typename allocator_t>
-  class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>/*, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>*/ /*, public xtd::ienumerable<basic_string<char_t, traits_t, allocator_t>>*/ {
+  class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>> /*, public xtd::ienumerable<basic_string<char_t, traits_t, allocator_t>>*/ {
   public:
     /// @name Public Aliases
     
@@ -114,8 +114,8 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     explicit basic_string(const allocator_type& allocator) noexcept : chars_(allocator) {}
     
-    //______________________________________________________________________________________________________________________________________________
-    
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string& str) noexcept : chars_(str.chars_) {}
@@ -151,7 +151,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(basic_string&& str, const allocator_type& allocator) noexcept : chars_(std::move(str.chars_), allocator) {str.chars_.clear();}
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
@@ -209,7 +209,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::wchar character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::wchar>(count, character), allocator) {}
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
@@ -350,7 +350,7 @@ namespace xtd {
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
     }
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
@@ -389,7 +389,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const std::basic_string<xtd::wchar>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str), allocator) {}
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
@@ -406,7 +406,7 @@ namespace xtd {
     /// @param string_view The basic_string view.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
@@ -433,7 +433,7 @@ namespace xtd {
     template<typename string_view_like_t>
     constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator) : chars_(string_view, index, count, allocator) {}
 
-    //______________________________________________________________________________________________________________________________________________
+    //----------------------------------------------------------------------------------------------------------------------------------------------
     
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
@@ -486,7 +486,7 @@ namespace xtd {
     const base_type& chars() const noexcept {return chars_;}
     /// @}
 
-    /// @todo To be removed when inheriting ienumerable.
+    /// @todo To be removed when inheriting xtd::collections::generic::ienumerable.
     /// @{
     const_iterator begin() const {return chars_.begin();}
     iterator begin() {return chars_.begin();}
@@ -502,23 +502,27 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    int32 compare_to(const object& value) const noexcept {return dynamic_cast<const basic_string*>(&value) && compare_to(static_cast<const basic_string&>(value));}
     int32 compare_to(const basic_string& value) const noexcept override {return chars_.compare(value.chars_);}
-    
+
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_string object, have the same value.
     /// @param obj The basic_string to compare to this instance.
     /// @return `true` if `obj` is a xtd::basic_string and its value is the same as this instance; otherwise, `false`.
-    bool equals(const object& obj) const noexcept /*override*/;
+    bool equals(const object& obj) const noexcept /*override*/ {return dynamic_cast<const basic_string*>(&obj) && equals(static_cast<const basic_string&>(obj));}
     /// @brief Determines whether this instance and another specified String object have the same value.
     /// @param value The basic_string to compare to this instance.
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
-    bool equals(const basic_string& value) const noexcept;
+    bool equals(const basic_string& value) const noexcept override {return equals(value, false);}
     /// @brief Determines whether this instance and another specified String object have the same value, ignoring or honoring their case.
     /// @param value The basic_string to compare to this instance.
     /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
-    bool equals(const basic_string& value, bool ignore_case) const noexcept;
+    bool equals(const basic_string& value, bool ignore_case) const noexcept {
+      //if (ignore_case) return to_upper().chars_ == value.to_upper().chars_;
+      return chars_ == value.chars_;
+    }
    
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
@@ -530,7 +534,8 @@ namespace xtd {
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
     
-    basic_string<char> to_string() const noexcept /*override*/ {return __xtd_convert_to_string<char>(*this);}
+    /// @todo Uncomment override when inheriting xtd::object.
+    basic_string<char> to_string() const noexcept /*override*/ {return __xtd_convert_to_string<char>(chars_);}
     /// @}
     
     /// @name Public Static Methods
@@ -1258,9 +1263,6 @@ namespace xtd {
       return *this;
     }
     
-    bool operator ==(const basic_string& other) const;
-    bool operator !=(const basic_string& other) const;
-
     bool operator ==(const std::basic_string<value_type, traits_type, allocator_type>& other) const;
     bool operator !=(const std::basic_string<value_type, traits_type, allocator_type>& other) const;
     bool operator ==(const value_type* other) const;
@@ -1338,7 +1340,57 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>
 }
 
 template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
+  auto out = std::basic_string<xtd::char16> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::char16>(codepoint));
+    }
+  }
+  return out;
+}
+
+template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(const std::basic_string<char>& str) noexcept {
+  auto out = std::basic_string<xtd::wchar> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (sizeof(xtd::wchar) > 2)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+      else if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+    }
+  }
+  return out;
+}
+
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::wchar> {};
   auto codepoint = 0u;
   auto str_ptr = str.data();
@@ -1381,4 +1433,50 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>
   }
   return out;
 }
+
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
+  auto out = std::basic_string<xtd::char32> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
+      out.append(1, static_cast<xtd::char32>(codepoint));
+  }
+  return out;
+}
+
+template<>
+inline std::basic_string<char> __xtd_convert_to_string<char, char>(const std::basic_string<char>& str) noexcept {return str;}
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char16>(const std::basic_string<xtd::char16>& str) noexcept {return str;}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {return str;}
+template<>
+inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {return str;}
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wchar>(const std::basic_string<xtd::wchar>& str) noexcept {return str;}
+template<>
+inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(const std::basic_string<char>& str) noexcept {return reinterpret_cast<const xtd::char8*>(str.c_str());}
+template<>
+inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {return reinterpret_cast<const char*>(str.c_str());}
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {return __xtd_convert_to_string<xtd::char16>(__xtd_convert_to_string<char>(str));}
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::wchar>(const std::basic_string<xtd::wchar>& str) noexcept {return __xtd_convert_to_string<xtd::char16>(__xtd_convert_to_string<char>(str));}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char16>(const std::basic_string<xtd::char16>& str) noexcept {return __xtd_convert_to_string<xtd::char32>(__xtd_convert_to_string<char>(str));}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::wchar>(const std::basic_string<xtd::wchar>& str) noexcept {return __xtd_convert_to_string<xtd::char32>(__xtd_convert_to_string<char>(str));}
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char16>(const std::basic_string<xtd::char16>& str) noexcept {return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(str));}
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(str));}
 /// @endcond
