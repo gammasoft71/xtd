@@ -81,6 +81,7 @@ add_sources(
   src/xtd/tests/argument_out_of_range_exception_tests.cpp
   src/xtd/tests/arithmetic_exception_tests.cpp
   src/xtd/tests/as_tests.cpp
+  src/xtd/tests/basic_string_tests.cpp
   src/xtd/tests/bit_converter_tests.cpp
   src/xtd/tests/box_tests.cpp
   src/xtd/tests/build_type.h

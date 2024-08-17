@@ -16,26 +16,6 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 
-void __throw_ustring_format_exception(const char* file, uint32 line, const char* func) {
-  throw format_exception { {file, line, func}};
-}
-
-void __throw_ustring_format_exception_close_bracket(const char* file, uint32 line, const char* func) {
-  throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, {file, line, func});
-}
-
-void __throw_ustring_format_exception_open_bracket(const char* file, uint32 line, const char* func) {
-  throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, {file, line, func});
-}
-
-void __throw_ustring_format_exception_start_colon(const char* file, uint32 line, const char* func) {
-  throw format_exception("Invalid format expression : format argument must be start by ':'"_t, {file, line, func});
-}
-
-void __throw_ustring_invalid_char_type(const char* file, uint32 line, const char* func, const xtd::type& type) {
-  throw argument_exception(string::format("Invalid argument type : {}", typeof_(type).full_name()), {file, line, func});
-}
-
 const string string::empty_string;
 
 const std::vector<string::value_type> string::default_split_separators {9, 10, 11, 12, 13, 32};

@@ -46,6 +46,8 @@ add_sources(
   include/xtd/availability_versions
   include/xtd/background_color.h
   include/xtd/background_color
+  include/xtd/basic_string.h
+  include/xtd/basic_string
   include/xtd/beep.h
   include/xtd/beep
   include/xtd/bit_converter.h
@@ -416,6 +418,12 @@ add_sources(
   include/xtd/typeof
   include/xtd/types.h
   include/xtd/types
+  include/xtd/u16string.h
+  include/xtd/u16string
+  include/xtd/u32string.h
+  include/xtd/u32string
+  include/xtd/u8string.h
+  include/xtd/u8string
   include/xtd/uint16.h
   include/xtd/uint16
   include/xtd/uint16_object.h
@@ -476,6 +484,8 @@ add_sources(
   include/xtd/wchar_object
   include/xtd/wptr.h
   include/xtd/wptr
+  include/xtd/wstring.h
+  include/xtd/wstring
   include/xtd/xml_syntax_exception.h
   include/xtd/xml_syntax_exception
   include/xtd/xtd.core
@@ -1000,6 +1010,7 @@ add_sources(
   src/xtd/abstract.cpp
   src/xtd/register_any_stringer.cpp
   src/xtd/attribute.cpp
+  src/xtd/basic_string.cpp
   src/xtd/bit_converter.cpp
   src/xtd/compiler.cpp
   src/xtd/console.cpp
