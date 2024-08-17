@@ -920,15 +920,15 @@ namespace xtd {
           return *this;
         }
         
-        /// @brief Returns a reference to the element at specified location pos.
+        /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
-        /// @remarks No bounds checking is performed.
+        /// @exception std::out_of_range If pos is not within the range of the container.
         const_reference operator [](size_type index) const override {return at(index);}
-        /// @brief Returns a reference to the element at specified location pos.
+        /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
-        /// @remarks No bounds checking is performed.
+        /// @exception std::out_of_range If `index` is not within the range of the container.
         reference operator [](size_type index) override {return at(index);}
         
         /// @brief Returns a reference to the underlying base type.
