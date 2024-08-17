@@ -20,6 +20,8 @@ namespace xtd {
 #endif
 }
 
+#if defined(__xtd__cpp_lib_char8_t)
 /// @todo To be removed when inheriting xtd::object.
 template<>
 inline std::string xtd::to_string(const xtd::u8string& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
+#endif

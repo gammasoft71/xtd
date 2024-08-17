@@ -109,7 +109,7 @@ namespace xtd {
     
     /// @{
     /// @brief Initializes a new instance of xtd::basic_string.
-    basic_string() noexcept = default;
+    basic_string() = default;
     /// @brief Initializes a new instance of xtd::basic_string with specified allocator.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     explicit basic_string(const allocator_type& allocator) noexcept : chars_(allocator) {}
@@ -186,6 +186,7 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::char32 character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char32>(count, character), allocator) {}
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -197,6 +198,7 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::char8 character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char8>(count, character), allocator) {}
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -229,12 +231,14 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char8* str) {  // Can't be explicit by design.
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
     }
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::wchar* str) {  // Can't be explicit by design.
@@ -263,6 +267,7 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -270,6 +275,7 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
     }
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -296,12 +302,14 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char8* str, xtd::size count) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::wchar* str, xtd::size count) {
@@ -333,6 +341,7 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
     /// @param str The string to copy.
     /// @param count The number of substring characters to copy.
@@ -341,6 +350,7 @@ namespace xtd {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
     /// @param str The string to copy.
     /// @param count The number of substring characters to copy.
@@ -361,9 +371,11 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char32>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str)) {}; // Can't be explicit by design.
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char8>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str)) {}; // Can't be explicit by design.
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::wchar>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str)) {}; // Can't be explicit by design.
@@ -380,10 +392,12 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const std::basic_string<xtd::char32>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str), allocator) {}
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const std::basic_string<xtd::char8>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str), allocator) {}
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -444,9 +458,11 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::char32> il) : basic_string(std::basic_string<xtd::char32>(il)) {}
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::char8> il) : basic_string(std::basic_string<xtd::char8>(il)) {}
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::wchar> il) : basic_string(std::basic_string<xtd::wchar>(il)) {}
@@ -463,10 +479,12 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(std::initializer_list<xtd::char32> il, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char32>(il), allocator) {}
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(std::initializer_list<xtd::char8> il, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char8>(il), allocator) {}
+#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -627,6 +645,7 @@ namespace xtd {
       return *this;
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -642,6 +661,7 @@ namespace xtd {
       str.clear();
       return *this;
     }
+#endif
 
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
@@ -678,6 +698,7 @@ namespace xtd {
       chars_.assign(__xtd_convert_to_string<value_type>(str));
       return *this;
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -687,6 +708,7 @@ namespace xtd {
       chars_.assign(__xtd_convert_to_string<value_type>(str));
       return *this;
     }
+#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -724,6 +746,7 @@ namespace xtd {
       chars_.assign(__xtd_convert_to_string<value_type>(str));
       return *this;
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -733,6 +756,7 @@ namespace xtd {
       chars_.assign(__xtd_convert_to_string<value_type>(str));
       return *this;
     }
+#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -764,6 +788,7 @@ namespace xtd {
       *this = basic_string(1, character);
       return  *this;
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
@@ -771,6 +796,7 @@ namespace xtd {
       *this = basic_string(1, character);
       return  *this;
     }
+#endif
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
@@ -800,6 +826,7 @@ namespace xtd {
       *this = basic_string(il);
       return *this;
     }
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of the specified initializer list.
     /// @param il The initialiazer list to use as data source.
     /// @return This current instance.
@@ -807,6 +834,7 @@ namespace xtd {
       *this = basic_string(il);
       return *this;
     }
+#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of the specified initializer list.
     /// @param il The initialiazer list to use as data source.
     /// @return This current instance.
@@ -918,6 +946,7 @@ namespace xtd {
       return result;
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -936,6 +965,7 @@ namespace xtd {
       result.chars_.append(basic_string(rhs).chars_);
       return result;
     }
+#endif
 
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
@@ -1013,6 +1043,7 @@ namespace xtd {
       return result;
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1031,6 +1062,7 @@ namespace xtd {
       result.chars_.append(rhs);
       return result;
     }
+#endif
     
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
@@ -1108,6 +1140,7 @@ namespace xtd {
       return result;
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -1126,6 +1159,7 @@ namespace xtd {
       result.chars_.append(basic_string(rhs).chars_);
       return result;
     }
+#endif
 
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
     /// @param lhs The string characters who will precede the `rhs`.
@@ -1203,6 +1237,7 @@ namespace xtd {
       return result;
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1221,6 +1256,7 @@ namespace xtd {
       result.chars_.append(rhs);
       return result;
     }
+#endif
 
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
     /// @param lhs The character who will precede the `rhs`.
@@ -1339,6 +1375,7 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>
   return out;
 }
 
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::char16> {};
@@ -1362,6 +1399,7 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::
   }
   return out;
 }
+#endif
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(const std::basic_string<char>& str) noexcept {
@@ -1389,6 +1427,7 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(c
   return out;
 }
 
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::wchar> {};
@@ -1414,6 +1453,7 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
   }
   return out;
 }
+#endif
 
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(const std::basic_string<char>& str) noexcept {
@@ -1434,6 +1474,7 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>
   return out;
 }
 
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::char32> {};
@@ -1452,6 +1493,7 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
   }
   return out;
 }
+#endif
 
 template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, char>(const std::basic_string<char>& str) noexcept {return str;}
@@ -1459,14 +1501,18 @@ template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char16>(const std::basic_string<xtd::char16>& str) noexcept {return str;}
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {return str;}
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {return str;}
+#endif
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wchar>(const std::basic_string<xtd::wchar>& str) noexcept {return str;}
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(const std::basic_string<char>& str) noexcept {return reinterpret_cast<const xtd::char8*>(str.c_str());}
 template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {return reinterpret_cast<const char*>(str.c_str());}
+#endif
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {return __xtd_convert_to_string<xtd::char16>(__xtd_convert_to_string<char>(str));}
 template<>
