@@ -162,6 +162,10 @@
     |   |     /// @brief Contains the underlying structure of the security system, including base classes for permissions.
     |   |     /// @ingroup system
     |   |     /// @defgroup security security
+    |   |- strings
+    |   |     /// @brief Contains mutable and immutable texts as a sequence of UTF-8, UTF-16 and TD-32 code units.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup strings strings
     |   |- synthesis
     |   |     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
     |   |     /// @ingroup system
