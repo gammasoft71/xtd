@@ -5,7 +5,7 @@
 #include "enumerator.h"
 #include "../../ptrdiff.h"
 #include "../../size.h"
-#include "../../size_object.h"
+#include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -86,8 +86,8 @@ namespace xtd {
           static iterator end(enumerator<type_t> enumerator) {
             auto end = iterator {};
             end.enumerator_ = enumerator;
-            end.pos_ = xtd::size_object::max_value;
-            end.initial_pos_ = xtd::size_object::max_value;
+            end.pos_ = std::numeric_limits<xtd::size>::max();
+            end.initial_pos_ = std::numeric_limits<xtd::size>::max();
             end.reset();
             return end;
           }
@@ -129,7 +129,7 @@ namespace xtd {
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
           iterator& operator ++() noexcept {
-            if (pos_ != xtd::size_object::max_value) pos_ = enumerator_.move_next() ? pos_ + 1 : xtd::size_object::max_value;
+            if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
             return *this;
           }
           /// @brief Post increments the underlying iterator.
@@ -152,7 +152,7 @@ namespace xtd {
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.
           difference_type operator -(iterator value) const noexcept {
-            if (pos_ == xtd::size_object::max_value) return xtd::size_object::max_value;
+            if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
             return static_cast<difference_type>(pos_ - value.pos_);
           }
           
@@ -170,8 +170,8 @@ namespace xtd {
 
           void reset() {
             enumerator_.reset();
-            if (pos_ == xtd::size_object::max_value) return;
-            for (auto index = 0_z; index <= pos_; ++index)
+            if (pos_ == std::numeric_limits<xtd::size>::max()) return;
+            for (auto index = xtd::size {}; index <= pos_; ++index)
               if (enumerator_.move_next() == false) break;
           }
 
