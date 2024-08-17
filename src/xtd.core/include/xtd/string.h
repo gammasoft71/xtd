@@ -17,7 +17,14 @@ namespace xtd {
   /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
   /// @todo Rename `string_` to `string`.
   using string_ = xtd::basic_string<char>;
+}
 
+/// @todo To be removed when inheriting xtd::object.
+template<>
+inline std::string xtd::to_string(const xtd::string_& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
   /// @par Namespace
   /// xtd

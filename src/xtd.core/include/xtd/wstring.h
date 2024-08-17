@@ -17,3 +17,7 @@ namespace xtd {
   /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
   using wstring = xtd::basic_string<xtd::wchar>;
 }
+
+/// @todo To be removed when inheriting xtd::object.
+template<>
+inline std::string xtd::to_string(const xtd::wstring& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}

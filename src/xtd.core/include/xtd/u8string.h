@@ -19,3 +19,7 @@ namespace xtd {
   using u8string = xtd::basic_string<xtd::char8>;
 #endif
 }
+
+/// @todo To be removed when inheriting xtd::object.
+template<>
+inline std::string xtd::to_string(const xtd::u8string& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
