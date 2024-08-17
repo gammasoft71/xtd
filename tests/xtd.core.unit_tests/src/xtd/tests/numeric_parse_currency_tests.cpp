@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template <typename Value>
+  template <typename value_t>
   class numeric_parse_string_currency_tests;
   
   test_class_attribute<numeric_parse_string_currency_tests<char>> numeric_parse_string_currency_tests_class_char_attr {"numeric_parse_string_currency_tests<char>"};
@@ -34,7 +34,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_currency_tests<uint64>> numeric_parse_string_currency_tests_class_uint64_attr {"numeric_parse_string_currency_tests<uint64>"};
   test_class_attribute<numeric_parse_string_currency_tests<uintptr>> numeric_parse_string_currency_tests_class_uintptr_attr {"numeric_parse_string_currency_tests<uintptr>"};
   
-  template <typename Value>
+  template <typename value_t>
   class numeric_parse_string_currency_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {
@@ -46,116 +46,116 @@ namespace xtd::tests {
     }
     
     void test_method_(parse_styles_currency) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_white_spaces) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>(" \f\n\r\t\v42", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>(" \f\n\r\t\v42", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_white_spaces) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42 \f\n\r\t\v", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42 \f\n\r\t\v", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_plus_sign) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("+42", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("+42", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_leading_plus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("++42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("++42", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_minus_sign) {
-      if (std::is_signed<Value>::value)
-        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("-42", number_styles::currency), csf_);
+      if (std::is_signed<value_t>::value)
+        assert::are_equal(static_cast<value_t>(-42), xtd::parse<value_t>("-42", number_styles::currency), csf_);
 #if !defined (__linux__)
       else
-        assert::throws<format_exception>([] {xtd::parse<Value>("-42", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<value_t>("-42", number_styles::currency);}, csf_);
 #endif
     }
     
     void test_method_(parse_styles_currency_with_two_leading_minus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("--42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("--42", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_plus_sign) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42+", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42+", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_trailing_plus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("42++", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("42++", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_minus_sign) {
-      if (std::is_signed<Value>::value)
-        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("42-", number_styles::currency), csf_);
+      if (std::is_signed<value_t>::value)
+        assert::are_equal(static_cast<value_t>(-42), xtd::parse<value_t>("42-", number_styles::currency), csf_);
 #if !defined (__linux__)
       else
-        assert::throws<format_exception>([] {xtd::parse<Value>("42-", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<value_t>("42-", number_styles::currency);}, csf_);
 #endif
     }
     
     void test_method_(parse_styles_currency_with_two_trailing_minus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("42--", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("42--", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_parentheses) {
-      if (std::is_signed<Value>::value)
-        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("(42)", number_styles::currency), csf_);
+      if (std::is_signed<value_t>::value)
+        assert::are_equal(static_cast<value_t>(-42), xtd::parse<value_t>("(42)", number_styles::currency), csf_);
 #if !defined (__linux__)
       else
-        assert::throws<format_exception>([] {xtd::parse<Value>("(42)", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<value_t>("(42)", number_styles::currency);}, csf_);
 #endif
     }
     
     void test_method_(parse_styles_currency_with_two_parentheses) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("((42))", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("((42))", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_decimal_point) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42.0", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42.0", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_decimal_point) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("4.2.0", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("4.2.0", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_thousands) {
-      if (!std::is_same<Value, sbyte>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
-        assert::are_equal(static_cast<Value>(1234), xtd::parse<Value>("1,234", number_styles::currency), csf_);
+      if (!std::is_same<value_t, sbyte>::value && !std::is_same<value_t, char>::value && !std::is_same<value_t, unsigned char>::value)
+        assert::are_equal(static_cast<value_t>(1234), xtd::parse<value_t>("1,234", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_thousands) {
-      if (!std::is_same<Value, sbyte>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
-        assert::throws<format_exception>([] {xtd::parse<Value>("1,,234", number_styles::currency);}, csf_);
+      if (!std::is_same<value_t, sbyte>::value && !std::is_same<value_t, char>::value && !std::is_same<value_t, unsigned char>::value)
+        assert::throws<format_exception>([] {xtd::parse<value_t>("1,,234", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_exponent) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("4E+01", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("4E+01", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_currency_symbol) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("$42", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("$42", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_currency_symbol) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42$", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42$", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_binary_specifier) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("0b101010", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("0b101010", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_octal_specifier) {
-      assert::are_equal(static_cast<Value>(52), xtd::parse<Value>("052", number_styles::currency), csf_);
+      assert::are_equal(static_cast<value_t>(52), xtd::parse<value_t>("052", number_styles::currency), csf_);
     }
     
     void test_method_(parse_styles_currency_with_hexa_specifier) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("0x2A", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("0x2A", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_invalid) {
-      assert::throws<format_exception>([] {xtd::parse<Value>("z42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<value_t>("z42", number_styles::currency);}, csf_);
     }
   };
 }
