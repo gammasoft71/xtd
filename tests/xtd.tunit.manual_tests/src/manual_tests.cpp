@@ -21,12 +21,12 @@ namespace xtd {
     public:
       void that(bool condition) {assert::is_true(condition);}
       void that(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {assert::is_true(condition, stack_frame);}
-      void that(bool condition, const xtd::ustring& message) {assert::is_true(condition, message);}
-      void that(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::is_true(condition, message, stack_frame);}
+      void that(bool condition, const xtd::string& message) {assert::is_true(condition, message);}
+      void that(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::is_true(condition, message, stack_frame);}
       
       template<typename ...args_t>
-      void that(bool condition, const xtd::ustring& message, args_t... args) {
-        assert::is_true(condition, ustring::format(message, args...));
+      void that(bool condition, const xtd::string& message, args_t... args) {
+        assert::is_true(condition, string::format(message, args...));
       }
       
       template <typename actual_t>
