@@ -229,8 +229,12 @@ var hierarchy =
     [ "xtd::enum_register< enum_t >", "structxtd_1_1enum__register.html", null ],
     [ "xtd::enum_set_attribute< enum_t >", "structxtd_1_1enum__set__attribute.html", null ],
     [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
+      [ "xtd::collections::generic::ienumerable< char_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
+        [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
+      ] ],
       [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ]
     ] ],
+    [ "xtd::collections::generic::enumerable_iterators< char_t, ienumerable< char_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
     [ "xtd::collections::generic::enumerable_iterators< list_type_t, ienumerable< list_type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
     [ "xtd::collections::generic::enumerable_iterators< type_t, ienumerable< type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
@@ -247,6 +251,9 @@ var hierarchy =
     [ "xtd::equality_operators< type_t, equatable_t >", "classxtd_1_1equality__operators.html", [
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", [
         [ "xtd::any_object", "classxtd_1_1any__object.html", null ]
+      ] ],
+      [ "xtd::iequatable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1iequatable.html", [
+        [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
       ] ],
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", [
         [ "xtd::box< type_t >", "classxtd_1_1box.html", null ]
@@ -556,6 +563,7 @@ var hierarchy =
     [ "xtd::equality_operators< adjustement_rule, iequatable< adjustement_rule > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< any_object, iequatable< any_object > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< background_image, iequatable< background_image > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< basic_string< char_t, traits_t, allocator_t >, iequatable< basic_string< char_t, traits_t, allocator_t > > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_color, iequatable< border_color > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_radius, iequatable< border_radius > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_style, iequatable< border_style > >", "classxtd_1_1equality__operators.html", null ],
@@ -778,6 +786,7 @@ var hierarchy =
       [ "xtd::event< xtd::forms::message_dialog, help_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::interface", "classxtd_1_1interface.html", [
+      [ "xtd::collections::generic::ienumerable< char_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::icomparable< any_object >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1icomparable.html", null ],
@@ -796,6 +805,7 @@ var hierarchy =
       [ "xtd::icomparable< time_zone_info >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< version >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< xtd::collections::generic::list< type_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< file_settings >", "classxtd_1_1iequatable.html", null ],
@@ -1024,7 +1034,6 @@ var hierarchy =
         [ "xtd::reflection::assembly_version_attribute", "classxtd_1_1reflection_1_1assembly__version__attribute.html", null ]
       ] ],
       [ "xtd::background_color", "classxtd_1_1background__color.html", null ],
-      [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ],
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
       [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],

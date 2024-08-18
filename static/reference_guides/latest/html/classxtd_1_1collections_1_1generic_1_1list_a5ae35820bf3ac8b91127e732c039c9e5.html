@@ -125,7 +125,7 @@ template&lt;typename type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a reference to the element at specified location pos. </p>
+<p>Returns a reference to the element at specified location index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The position of the element to return. </td></tr>
@@ -133,7 +133,12 @@ template&lt;typename type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the requested element. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>No bounds checking is performed. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>If `index` is not within the range of the container. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist_a52963baff21f5a49b9268e7963bcd372.html#a52963baff21f5a49b9268e7963bcd372">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
@@ -146,7 +151,7 @@ template&lt;typename type_t &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections.html">collections</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections_1_1generic.html">generic</a></li><li class="navelem"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a></li>
-		<li class="footer">Generated on Fri Aug 16 2024 13:32:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sun Aug 18 2024 16:44:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
