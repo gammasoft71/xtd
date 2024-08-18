@@ -99,10 +99,10 @@ namespace xtd {
     /// @{
     /// @brief Represents the empty basic_string.
     /// @remarks The value of this method is the zero-length basic_string, "".
-    inline static const basic_string empty_string;
+    static const basic_string empty_string;
     
     /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-    inline static size_type npos = base_type::npos;
+    inline static const size_type npos = base_type::npos;
     /// @}
     
     /// @name Public Constructors
@@ -1316,6 +1316,11 @@ namespace xtd {
   private:
     base_type chars_;
   };
+
+  /// @cond
+  template<typename char_t, typename traits_t, typename allocator_t>
+  inline const basic_string<char_t, traits_t, allocator_t> basic_string<char_t, traits_t, allocator_t>::empty_string;
+  /// @endcond
 }
 
 /// @cond
