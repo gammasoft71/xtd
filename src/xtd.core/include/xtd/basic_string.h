@@ -102,7 +102,7 @@ namespace xtd {
     static const basic_string empty_string;
     
     /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-    inline static const size_type npos = base_type::npos;
+    inline static constexpr size_type npos = base_type::npos;
     /// @}
     
     /// @name Public Constructors
