@@ -109,7 +109,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
     void test_method_(constructor_with_count_and_char_character) {
@@ -117,7 +117,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
     void test_method_(constructor_with_count_and_char16_character) {
@@ -125,7 +125,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
     void test_method_(constructor_with_count_and_char32_character) {
@@ -133,7 +133,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
 #if defined(__xtd__cpp_lib_char8_t)
@@ -142,7 +142,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 #endif
 
@@ -151,7 +151,7 @@ namespace xtd::tests {
       assert::are_equal(10_z, s.length(), csf_);
       assert::is_false(basic_string<char_t>::is_empty(s), csf_);
       for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal('*', s[index], csf_);
+        assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
     void test_method_(constructor_with_basic_string_and_index) {
