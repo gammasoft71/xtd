@@ -554,6 +554,14 @@ namespace xtd {
     
     /// @todo Uncomment override when inheriting xtd::object.
     basic_string<char> to_string() const noexcept /*override*/ {return __xtd_convert_to_string<char>(chars_);}
+    
+    basic_string<xtd::char16> to_u16string() const noexcept {return __xtd_convert_to_string<xtd::char16>(chars_);}
+    
+    basic_string<xtd::char32> to_u32string() const noexcept {return __xtd_convert_to_string<xtd::char32>(chars_);}
+    
+    basic_string<xtd::char8> to_u8string() const noexcept {return __xtd_convert_to_string<xtd::char8>(chars_);}
+    
+    basic_string<xtd::wchar> to_wstring() const noexcept {return __xtd_convert_to_string<xtd::wchar>(chars_);}
     /// @}
     
     /// @name Public Static Methods
@@ -852,7 +860,7 @@ namespace xtd {
       return *this;
     }
     
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -861,7 +869,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -870,7 +878,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -879,7 +887,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -889,7 +897,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -898,7 +906,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -908,7 +916,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -917,7 +925,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -927,7 +935,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -936,7 +944,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -947,7 +955,7 @@ namespace xtd {
     }
 
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -956,7 +964,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -967,7 +975,7 @@ namespace xtd {
     }
 #endif
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -976,7 +984,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -986,7 +994,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -995,7 +1003,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1005,7 +1013,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1014,7 +1022,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1024,7 +1032,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1033,7 +1041,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1044,7 +1052,7 @@ namespace xtd {
     }
 
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1053,7 +1061,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1064,7 +1072,7 @@ namespace xtd {
     }
 #endif
     
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1073,7 +1081,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1083,7 +1091,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1092,7 +1100,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1102,7 +1110,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1111,7 +1119,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1121,7 +1129,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1130,7 +1138,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1141,7 +1149,7 @@ namespace xtd {
     }
 
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1150,7 +1158,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1161,7 +1169,7 @@ namespace xtd {
     }
 #endif
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1170,7 +1178,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1180,7 +1188,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1189,7 +1197,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1199,7 +1207,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1208,7 +1216,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1218,7 +1226,7 @@ namespace xtd {
       return result;
     }
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1227,7 +1235,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1238,7 +1246,7 @@ namespace xtd {
     }
 
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1247,7 +1255,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1258,7 +1266,7 @@ namespace xtd {
     }
 #endif
 
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1267,7 +1275,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-    /// @brief Returns a string containing characters from this current instance followed by the specified character.
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1277,24 +1285,74 @@ namespace xtd {
       return result;
     }
 
-    basic_string& operator +=(const basic_string& rhs) {chars_.append(rhs.chars_); return *this;}
-    basic_string& operator +=(basic_string&& rhs) {chars_.append(std::move(rhs.chars_)); return *this;}
-    basic_string& operator +=(const char* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
-    basic_string& operator +=(const xtd::char16* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
-    basic_string& operator +=(const xtd::char32* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string& str) {chars_.append(str.chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string&& str) {chars_.append(std::move(str.chars_)); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const char* str) {chars_.append(basic_string(str).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char16* str) {chars_.append(basic_string(str).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char32* str) {chars_.append(basic_string(str).chars_); return *this;}
 #if defined(__xtd__cpp_lib_char8_t)
-    basic_string& operator +=(const xtd::char8* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char8* str) {chars_.append(basic_string(str).chars_); return *this;}
 #endif
-    basic_string& operator +=(const xtd::wchar* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
-    basic_string& operator +=(char rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
-    basic_string& operator +=(xtd::char16 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
-    basic_string& operator +=(xtd::char32 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::wchar* str) {chars_.append(basic_string(str).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(char ch) {chars_.append(basic_string(ch).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char16 ch) {chars_.append(basic_string(ch).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char32 ch) {chars_.append(basic_string(ch).chars_); return *this;}
 #if defined(__xtd__cpp_lib_char8_t)
-    basic_string& operator +=(xtd::char8 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char8 ch) {chars_.append(basic_string(ch).chars_); return *this;}
 #endif
-    basic_string& operator +=(xtd::wchar rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::wchar ch) {chars_.append(basic_string(ch).chars_); return *this;}
 
+    /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
+    /// @param os The character output stream.
+    /// @param str The string to be inserted.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
+    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
     friend std::ostream& operator <<(std::ostream& stream, const basic_string& str) {return stream << str.chars_;}
+    /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+    /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
+    /// * the end-of-file condition occurs in the stream is, or
+    /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
+    /// @param is The character input stream.
+    /// @param str The string to be extracted.
+    /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
+    /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
     friend std::istream& operator >>(std::istream& stream, basic_string& str) {
       decltype(str.chars_) s;
       stream >> s;
