@@ -714,6 +714,7 @@ add_sources(
   include/xtd/internal/__show_generic_exception_message
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__sprintf
+  include/xtd/internal/__string_definitions.h
   include/xtd/internal/__xtd_debugbreak.h
   include/xtd/internal/__xtd_debugbreak
   include/xtd/internal/__xtd_std_version.h

@@ -2,6 +2,9 @@
 /// @brief Contains xtd::wstring alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
 #include "basic_string.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

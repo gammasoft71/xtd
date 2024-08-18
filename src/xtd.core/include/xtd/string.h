@@ -2,24 +2,12 @@
 /// @brief Contains xtd::string alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
 #include "basic_string.h"
 
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents text as a sequence of UTF-8 code units.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system strings
-  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
-  /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
-  /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
-  /// @todo Rename `string_` to `string`.
-  using string_ = xtd::basic_string<char>;
-}
-
-/// @todo To be removed when inheriting xtd::object.
+/// @todo Rmove `string` class.
 template<>
 inline std::string xtd::to_string(const xtd::string_& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
 

@@ -6,6 +6,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__format_information.h"
 #include "internal/__sprintf.h"
+#include "internal/__string_definitions.h"
 #undef __XTD_CORE_INTERNAL__
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.h"
@@ -29,14 +30,11 @@
 #include <string>
 
 /// @cond
-namespace xtd {
-  template<typename char_t, typename traits_t = std::char_traits<char_t>, typename allocator_t = std::allocator<char_t>>
-  class basic_string;
-}
 template<typename char_t, typename ...args_t>
 void __ustring_extract_format_arg(xtd::basic_string<char_t>& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
 template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept;
+void __throw_basic_string_argument_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception_close_bracket(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception_open_bracket(const char* file, xtd::uint32 line, const char* func);
@@ -57,7 +55,7 @@ namespace xtd {
   /// @remarks If you want the same mutable basic_string class, you can use xtd::text::basic_string_builder <char_t> class.
   /// @remarks xtd::basic_string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string/basic_string) and therefore offers the full (immutable) API of std::basic_string.
   template<typename char_t, typename traits_t, typename allocator_t>
-  class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>> /*, public xtd::ienumerable<basic_string<char_t, traits_t, allocator_t>>*/ {
+  class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>, public xtd::collections::generic::ienumerable<char_t> {
   public:
     /// @name Public Aliases
     
@@ -84,10 +82,10 @@ namespace xtd {
     using const_pointer = base_type::const_pointer;
     /// @brief Represents the basic string iterator type.
     /// @todo replace xtd::ienumerable::iterator
-    using iterator = base_type::iterator;
+    using iterator = xtd::collections::generic::ienumerable<char_t>::iterator;
     /// @brief Represents the basic string const iterator type.
     /// @todo replace xtd::ienumerable::const_iterator
-    using const_iterator = base_type::const_iterator;
+    using const_iterator = xtd::collections::generic::ienumerable<char_t>::const_iterator;
     /// @brief Represents the basic string reverse iterator type.
     using reverse_iterator = base_type::reverse_iterator;
     /// @brief Represents the basic string const reverse iterator type.
@@ -113,8 +111,6 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified allocator.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     explicit basic_string(const allocator_type& allocator) noexcept : chars_(allocator) {}
-    
-    //----------------------------------------------------------------------------------------------------------------------------------------------
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
@@ -151,8 +147,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(basic_string&& str, const allocator_type& allocator) noexcept : chars_(std::move(str.chars_), allocator) {str.chars_.clear();}
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -211,8 +205,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::wchar character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::wchar>(count, character), allocator) {}
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const char* str) {  // Can't be explicit by design.
@@ -360,8 +352,6 @@ namespace xtd {
       chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
     }
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<char>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str)) {}; // Can't be explicit by design.
@@ -403,8 +393,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const std::basic_string<xtd::wchar>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str), allocator) {}
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
@@ -420,8 +408,6 @@ namespace xtd {
     /// @param string_view The basic_string view.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -447,8 +433,6 @@ namespace xtd {
     template<typename string_view_like_t>
     constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator) : chars_(string_view, index, count, allocator) {}
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<char> il) : basic_string(std::basic_string<char>(il)) {}
@@ -494,45 +478,113 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Gets the number of characters in the current String object.
-    /// @return The number of characters in the current string.
-    /// @remarks The xtd::basic_string::length property returns the number of xtd::basic_string::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::basic_string::value_type.
-    xtd::size length() const noexcept {return chars_.size();}
+    /// @brief Returns reference to the last character in the string.
+    /// @return Reference to the last character, equivalent to `operator[](size() - 1)`.
+    /// @exception xtd::index_out_of_range_exception If is empty.
+    const_reference back() const {return operator[](size() - 1);}
+    
+    /// @brief Returns an iterator to the first character of the string.
+    /// @return Iterator to the first character.
+    const_iterator begin() const override {return xtd::collections::generic::ienumerable<value_type>::begin();}
+    
+    /// @brief Returns a pointer to a null-terminated character array with data equivalent to those stored in the string.
+    /// @return Pointer to the underlying character storage.
+    /// @remarks The pointer is such that the range [`c_str()`, `c_str() + size()`] is valid and the values in it correspond to the values stored in the string with an additional null character after the last position.
+    /// @remarks The pointer obtained from c_str() may be invalidated by:
+    /// * Passing a non-const reference to the string to any standard library function, or
+    /// * Calling non-const member functions on the string, excluding operator[], at(), front(), back(), begin(), rbegin(), end() and rend().
+    /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
+    /// @remarks c_str() and data() perform the same function.
+    const value_type* c_str() const noexcept {return chars_.c_str();}
+    
+    /// @brief Returns the number of characters that the string has currently allocated space for.
+    /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
+    size_type capacity() const noexcept {return chars_.capacity();}
+    
+    /// @brief Returns an iterator to the first character of the string.
+    /// @return Iterator to the first character.
+    const_iterator cbegin() const override {return xtd::collections::generic::ienumerable<value_type>::cbegin();}
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     const base_type& chars() const noexcept {return chars_;}
-    /// @}
 
-    /// @todo To be removed when inheriting xtd::collections::generic::ienumerable.
-    /// @{
-    const_iterator begin() const {return chars_.begin();}
-    iterator begin() {return chars_.begin();}
-
-    const_iterator cbegin() const {return chars_.cbegin();}
-
-    const_iterator cend() const {return chars_.cend();}
+    /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
+    /// @return Iterator to the character following the last character.
+    const_iterator cend() const override {return xtd::collections::generic::ienumerable<value_type>::cend();}
     
-    const_iterator end() const {return chars_.end();}
-    iterator end() {return chars_.end();}
+    /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
+    /// @return A pointer to the underlying character storage.
+    /// @remarks The pointer obtained from `data()` may be invalidated by:
+    /// * Passing a non-const reference to the string to any standard library function, or
+    /// * Calling non-const member functions on the string, excluding operator[](), at(), front(), back(), begin(), end(), rbegin(), rend().
+    ///   1. Modifying the character array accessed through the const overload of data has undefined behavior.
+    ///   2. Modifying the past-the-end null terminator stored at data() + size() to any value other than char_t() has undefined behavior.
+    const value_type* data() const noexcept {return chars_.data();}
+    
+    /// @brief Checks if the string has no characters, i.e. whether `begin() == end()`.
+    /// @return `true` if the string is empty; otherwise `false`.
+    bool empty() const noexcept {return chars_.empty();}
+    
+    /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
+    /// @return Iterator to the character following the last character.
+    const_iterator end() const override {return xtd::collections::generic::ienumerable<value_type>::end();}
+    
+    /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is true.
+    /// @return Reference to the first character, equivalent to `operator[](0)`.
+    /// @exception xtd::index_out_of_range_exception If is empty.
+    const_reference front() const {return operator[](0);}
+
+    /// @brief Gets the number of characters in the current xtd::basic_string object.
+    /// @return The number of characters in the current string.
+    /// @remarks The xtd::basic_string::length property returns the number of xtd::basic_string::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::basic_string::value_type.
+    size_type length() const noexcept {return chars_.size();}
+    
+    /// @brief Returns the maximum number of elements the string is able to hold due to system or library implementation limitations, i.e. `std::distance(begin(), end())` for the largest string.
+    /// @return Maximum number of characters.
+    size_type max_size() const noexcept {return chars_.max_size();}
+    
+    /// @brief Returns the number of `char_t` elements in the string, i.e. `std::distance(begin(), end())`.
+    /// @return The number of `char_t` elements in the string.
+    size_type size() const noexcept {return chars_.size();}
     /// @}
 
     /// @name Public Methods
     
     /// @{
-    int32 compare_to(const object& value) const noexcept {return dynamic_cast<const basic_string*>(&value) && compare_to(static_cast<const basic_string&>(value));}
+    /// @brief Compares this instance with a specified xtd::object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified xtd::object.
+    /// @param value An object that evaluates to a xtd::basic_string.
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.
+    /// @exception xtd::argument_exception `value` is not a xtd::basic_string.
+    /// | Value             | Condition                                                         |
+    /// | ----------------- | ----------------------------------------------------------------- |
+    /// | Less than zero    | This instance precedes `value`.                                   |
+    /// | Zero              | This instance has the same position in the sort order as `value`. |
+    /// | Greater than zero | This instance follows `value`.                                    |
+    int32 compare_to(const object& value) const {
+      if (!dynamic_cast<const basic_string*>(&value)) __throw_basic_string_argument_exception(__FILE__, __LINE__, __func__);
+      return compare_to(static_cast<const basic_string&>(value));
+    }
+    /// @brief Compares this instance with a specified xtd::basic_string object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified string.
+    /// @param value The string to compare with this instance.
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the `value` parameter.
+    /// | Value             | Condition                                                         |
+    /// | ----------------- | ----------------------------------------------------------------- |
+    /// | Less than zero    | This instance precedes `value`.                                   |
+    /// | Zero              | This instance has the same position in the sort order as `value`. |
+    /// | Greater than zero | This instance follows `value`.                                    |
     int32 compare_to(const basic_string& value) const noexcept override {return chars_.compare(value.chars_);}
 
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_string object, have the same value.
     /// @param obj The basic_string to compare to this instance.
     /// @return `true` if `obj` is a xtd::basic_string and its value is the same as this instance; otherwise, `false`.
     bool equals(const object& obj) const noexcept /*override*/ {return dynamic_cast<const basic_string*>(&obj) && equals(static_cast<const basic_string&>(obj));}
-    /// @brief Determines whether this instance and another specified String object have the same value.
+    /// @brief Determines whether this instance and another specified xtd::basic_string object have the same value.
     /// @param value The basic_string to compare to this instance.
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
     bool equals(const basic_string& value) const noexcept override {return equals(value, false);}
-    /// @brief Determines whether this instance and another specified String object have the same value, ignoring or honoring their case.
+    /// @brief Determines whether this instance and another specified xtd::basic_string object have the same value, ignoring or honoring their case.
     /// @param value The basic_string to compare to this instance.
     /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
@@ -542,25 +594,57 @@ namespace xtd {
       return chars_ == value.chars_;
     }
    
+    /// @brief Returns the underlying base type.
+    /// @return The underlying base type.
+    virtual const base_type& get_base_type() const noexcept {return chars_;}
+    
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
     xtd::size get_hash_code() const noexcept /*override*/;
+    
+    xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
+      class basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
+      public:
+        explicit basic_string_enumerator(const basic_string& chars) : chars_(chars) {}
         
+        const value_type& current() const override {return chars_[index_];}
+        
+        bool move_next() override {return ++index_ < chars_.size();}
+        
+        void reset() override {index_ = basic_string::npos;}
+        
+      protected:
+        const basic_string& chars_;
+        xtd::size index_ = basic_string::npos;
+      };
+      return {new_ptr<basic_string_enumerator>(*this)};
+    }
+
     /// @brief Indicates whether this basic_string is an empty basic_string ("").
     /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
     /// @deprecated Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
     
+    /// @brief Converts the value of this instance to a xtd::basic_string <char>.
+    /// @return The current string.
     /// @todo Uncomment override when inheriting xtd::object.
     basic_string<char> to_string() const noexcept /*override*/ {return __xtd_convert_to_string<char>(chars_);}
     
+    /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char16>.
+    /// @return The current string.
     basic_string<xtd::char16> to_u16string() const noexcept {return __xtd_convert_to_string<xtd::char16>(chars_);}
     
+    /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char32>.
+    /// @return The current string.
     basic_string<xtd::char32> to_u32string() const noexcept {return __xtd_convert_to_string<xtd::char32>(chars_);}
     
+    /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char8>.
+    /// @return The current string.
     basic_string<xtd::char8> to_u8string() const noexcept {return __xtd_convert_to_string<xtd::char8>(chars_);}
     
+    /// @brief Converts the value of this instance to a xtd::basic_string <xtd::wchar>.
+    /// @return The current string.
     basic_string<xtd::wchar> to_wstring() const noexcept {return __xtd_convert_to_string<xtd::wchar>(chars_);}
     /// @}
     
@@ -579,7 +663,7 @@ namespace xtd {
     /// @brief Returns a reference to the character at specified location index.
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
-    /// @exception std::out_of_range If `index` is not within the range of the string.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
     const value_type& operator [](xtd::size index) const {
       if (index >= length()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return chars_[index];
@@ -1362,6 +1446,18 @@ namespace xtd {
     /// @}
 
   private:
+    base_type::iterator to_base_type_iterator(iterator value) noexcept {
+      if (value == begin()) return chars_.begin();
+      if (value == end()) return chars_.end();
+      return chars_.begin() + (value - begin());
+    }
+    
+    iterator to_iterator(base_type::iterator value) noexcept {
+      if (value == chars_.begin()) return begin();
+      if (value == chars_.end()) return end();
+      return begin() + (value - chars_.begin());
+    }
+
     base_type chars_;
   };
 
