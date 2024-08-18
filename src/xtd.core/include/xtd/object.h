@@ -6,6 +6,9 @@
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
 #include "core_export.h"
 #include "iequatable.h"
 #include "types.h"
@@ -20,7 +23,6 @@
 namespace xtd {
   /// @cond
   class type_object;
-  class string;
   /// @endcond
   
   /// @brief Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.

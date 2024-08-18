@@ -11,6 +11,10 @@
 
 using namespace xtd;
 
+void __throw_basic_string_argument_exception(const char* file, uint32 line, const char* func) {
+  throw argument_exception {{file, line, func}};
+}
+
 void __throw_basic_string_format_exception(const char* file, uint32 line, const char* func) {
   throw format_exception {{file, line, func}};
 }

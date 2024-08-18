@@ -2,15 +2,14 @@
 /// @brief Contains xtd::istringable interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
 #include "interface.h"
 #include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @cond
-  class string;
-  /// @endcond
-  
   /// @brief Provides a way to represent the current object as a string.
   /// @par Namespace
   /// xtd

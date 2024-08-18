@@ -2,17 +2,15 @@
 /// @brief Contains xtd::iformatable interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
 #include "interface.h"
 #include "types.h"
 #include <locale>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @cond
-  class string;
-  /// @endcond
-  
   /// @brief Provides functionality to format the value of an object into a string representation.
   /// @par Namespace
   /// xtd

@@ -1,15 +1,11 @@
 /// @file
 /// @brief Contains __format_stringer methods.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
 
 #define __XTD_STD_INTERNAL__
 #include "__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
+#include "__string_definitions.h"
 #include "../any.h"
 #include "../chrono.h"
 #include "../optional.h"
@@ -46,7 +42,6 @@
 namespace xtd {
   class iformatable;
   class object;
-  class string;
   
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
