@@ -858,7 +858,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string& rhs) {
       basic_string result = lhs;
-      result.chars_.append(rhs.chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -867,7 +867,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string&& rhs) {
       basic_string result = std::move(lhs);
-      result.chars_.append(std::move(rhs.chars_));
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -876,7 +876,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string& rhs) {
       basic_string result = std::move(lhs);
-      result.chars_.append(rhs.chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -885,7 +885,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string&& rhs) {
       basic_string result = lhs;
-      result.chars_.append(std::move(rhs.chars_));
+      result += rhs;
       return result;
     }
 
@@ -895,7 +895,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const char* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -904,7 +904,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const char* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -914,7 +914,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char16* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -923,7 +923,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char16* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -933,7 +933,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char32* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -942,7 +942,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char32* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -953,7 +953,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char8* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -962,7 +962,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char8* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 #endif
@@ -973,7 +973,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::wchar* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -982,7 +982,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::wchar* rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -992,7 +992,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1001,7 +1001,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1011,7 +1011,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1020,7 +1020,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1030,7 +1030,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1039,7 +1039,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1050,7 +1050,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1059,7 +1059,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 #endif
@@ -1070,7 +1070,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1079,7 +1079,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1089,7 +1089,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const char rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1098,7 +1098,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const char rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -1108,7 +1108,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char16 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1117,7 +1117,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char16 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -1127,7 +1127,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char32 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1136,7 +1136,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char32 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -1147,7 +1147,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char8 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1156,7 +1156,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char8 rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 #endif
@@ -1167,7 +1167,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::wchar rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1176,7 +1176,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::wchar rhs) {
       basic_string result = lhs;
-      result.chars_.append(basic_string(rhs).chars_);
+      result += rhs;
       return result;
     }
 
@@ -1186,7 +1186,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1195,7 +1195,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1205,7 +1205,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16 lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1214,7 +1214,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16 lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1224,7 +1224,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32 lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1233,7 +1233,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32 lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
@@ -1244,7 +1244,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8 lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1253,7 +1253,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8 lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 #endif
@@ -1264,7 +1264,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
     /// @brief Returns a string containing characters from this current instance followed by the specified character.
@@ -1273,37 +1273,27 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result.chars_.append(rhs);
+      result += rhs;
       return result;
     }
 
+    basic_string& operator +=(const basic_string& rhs) {chars_.append(rhs.chars_); return *this;}
+    basic_string& operator +=(basic_string&& rhs) {chars_.append(std::move(rhs.chars_)); return *this;}
+    basic_string& operator +=(const char* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    basic_string& operator +=(const xtd::char16* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    basic_string& operator +=(const xtd::char32* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+#if defined(__xtd__cpp_lib_char8_t)
+    basic_string& operator +=(const xtd::char8* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+#endif
+    basic_string& operator +=(const xtd::wchar* rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    basic_string& operator +=(char rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    basic_string& operator +=(xtd::char16 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+    basic_string& operator +=(xtd::char32 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+#if defined(__xtd__cpp_lib_char8_t)
+    basic_string& operator +=(xtd::char8 rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
+#endif
+    basic_string& operator +=(xtd::wchar rhs) {chars_.append(basic_string(rhs).chars_); return *this;}
 
-    basic_string& operator +=(const basic_string& str);
-    basic_string& operator +=(const std::basic_string<value_type, traits_type, allocator_type>& str);
-    basic_string& operator +=(const value_type* str);
-    template<typename other_char_t>
-    basic_string& operator +=(const std::basic_string<other_char_t>& str);
-    template<typename other_char_t>
-    basic_string& operator +=(const other_char_t* str);
-    
-    basic_string& operator +=(value_type character);
-    template<typename other_char_t>
-    basic_string& operator +=(other_char_t character);
-    basic_string& operator +=(const std::initializer_list<value_type>& il);
-    template<typename other_char_t>
-    basic_string& operator +=(const std::initializer_list<other_char_t>& il);
-    
-    template<typename type_t>
-    basic_string& operator +=(const type_t& object) {
-      *this = *this + basic_string(object);
-      return *this;
-    }
-    
-    bool operator ==(const std::basic_string<value_type, traits_type, allocator_type>& other) const;
-    bool operator !=(const std::basic_string<value_type, traits_type, allocator_type>& other) const;
-    bool operator ==(const value_type* other) const;
-    bool operator !=(const value_type* other) const;
-        
     friend std::ostream& operator <<(std::ostream& stream, const basic_string& str) {return stream << str.chars_;}
     friend std::istream& operator >>(std::istream& stream, basic_string& str) {
       decltype(str.chars_) s;
