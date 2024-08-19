@@ -130,7 +130,32 @@ class xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;</div><p>Represent
 <dd>
 If you want the same mutable <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> class, you can use xtd::text::basic_string_builder &lt;char_t&gt; class. </dd>
 <dd>
-<a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> implements <a href="https://en.cppreference.com/w/cpp/basic_string/basic_string">std::basic_string&lt;char&gt;</a> and therefore offers the full (immutable) API of std::basic_string. </dd></dl>
+<a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> implements <a href="https://en.cppreference.com/w/cpp/basic_string/basic_string">std::basic_string&lt;char&gt;</a> and therefore offers the full (immutable) API of std::basic_string. </dd>
+<dd>
+Several aliases for common character types are provided: </dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1string.html" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> &lt;char&gt;    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="group__strings_ga58c2647f79d37168ab1bf1009776a525.html#ga58c2647f79d37168ab1bf1009776a525" title="Represents text as a sequence of UTF-16 code units.">xtd::u16string</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> &lt;<a class="el" href="group__types_ga39d5c4947c807e5f78b8a9abe3692570.html#ga39d5c4947c807e5f78b8a9abe3692570" title="Represents a 16-bit unicode character.">xtd::char16</a>&gt;    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="group__strings_ga0bf154385b6774a82ab0e0566db85522.html#ga0bf154385b6774a82ab0e0566db85522" title="Represents text as a sequence of UTF-32 code units.">xtd::u32string</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> &lt;<a class="el" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92" title="Represents a 32-bit unicode character.">xtd::char32</a>&gt;    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="group__strings_gac1f6c3b1eafde935d9ac013688a9a3e4.html#gac1f6c3b1eafde935d9ac013688a9a3e4" title="Represents text as a sequence of UTF-8 code units.">xtd::u8string</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> &lt;<a class="el" href="group__types_ga1259090c8918e75847a8cb2a64b8912a.html#ga1259090c8918e75847a8cb2a64b8912a" title="Represents a 8-bit unicode character.">xtd::char8</a>&gt;    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0" title="Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows syste...">xtd::wstring</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> &lt;<a class="el" href="group__types_ga155357d92cf162b71b396e46accee518.html#ga155357d92cf162b71b396e46accee518" title="Represents a wide character.">xtd::wchar</a>&gt;   </td></tr>
+</table>
+</dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> is a sequential collection of characters that's used to represent text. A <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> object is a sequential collection of char that represent a <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. The value of the <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> object is the content of the sequential collection of <code>char_t</code>, and unlike <a href="https://en.cppreference.com/w/cpp/basic_string/basic_string">std::basic_string&lt;char_t&gt;</a> that value is immutable (that is, it is read-only). </dd>
+<dd>
+If you want the same mutable <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> class, you can use xtd::text::basic_string_builder &lt;char_t&gt; class. </dd>
+<dd>
+<a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> implements <a href="https://en.cppreference.com/w/cpp/basic_string/basic_string">std::basic_string&lt;char&gt;</a> and therefore offers the full (immutable) API of <a href="https://en.cppreference.com/w/cpp/string/basic_string">std::string</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a023c9110b9e82006d694c297f404e031"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string_a023c9110b9e82006d694c297f404e031.html#a023c9110b9e82006d694c297f404e031">base_type</a> = std::basic_string&lt; char_t, traits_t, allocator_t &gt;</td></tr>
@@ -664,7 +689,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1basic__string.html">basic_string</a></li>
-		<li class="footer">Generated on Sun Aug 18 2024 16:43:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sun Aug 18 2024 22:05:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

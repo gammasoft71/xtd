@@ -111,12 +111,14 @@ var NAVTREEINDEX0 =
 "____show__generic__exception__message_8h_source.html":[22,1,0,0,3,52],
 "____sprintf_8h.html":[22,1,0,0,3,53],
 "____sprintf_8h_source.html":[22,1,0,0,3,53],
+"____string__definitions_8h.html":[22,1,0,0,3,54],
+"____string__definitions_8h_source.html":[22,1,0,0,3,54],
 "____tunit__join____items_8h.html":[22,4,0,0,0,2],
 "____tunit__join____items_8h_source.html":[22,4,0,0,0,2],
-"____xtd__debugbreak_8h.html":[22,1,0,0,3,54],
-"____xtd__debugbreak_8h_source.html":[22,1,0,0,3,54],
-"____xtd__std__version_8h.html":[22,1,0,0,3,55],
-"____xtd__std__version_8h_source.html":[22,1,0,0,3,55],
+"____xtd__debugbreak_8h.html":[22,1,0,0,3,55],
+"____xtd__debugbreak_8h_source.html":[22,1,0,0,3,55],
+"____xtd__std__version_8h.html":[22,1,0,0,3,56],
+"____xtd__std__version_8h_source.html":[22,1,0,0,3,56],
 "_brushes_page.html":[2],
 "_brushes_page.html#HatchBrushSection":[2,0],
 "_c_make_build_option.html":[3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_images_appearances_page.html#CategoriesContext":[14,3],
 "_images_appearances_page.html#DevicesContext":[14,4],
 "_images_appearances_page.html#EmblemsContext":[14,5],
-"_images_appearances_page.html#EmotesContext":[14,6],
-"_images_appearances_page.html#MimeTypesContext":[14,7],
-"_images_appearances_page.html#PlacesContext":[14,8]
+"_images_appearances_page.html#EmotesContext":[14,6]
 };

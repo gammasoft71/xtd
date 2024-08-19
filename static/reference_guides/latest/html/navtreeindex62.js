@@ -1,5 +1,7 @@
 var NAVTREEINDEX62 =
 {
+"dir_380cff45e09b794b0ab37afd4deb3537.html":[22,0,0,0,0],
+"dir_39800f5c24f6454ba1e3db35e7aa96b3.html":[22,1,0,0,6],
 "dir_3ab350d5f172502f7737abc189bf5852.html":[22,1,0,0,2],
 "dir_449e59665e4424e5160231be82621c82.html":[22,3,0,0,0,3],
 "dir_451e630c56ea5a4a2eaec13aaa79664c.html":[22,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX62 =
 "exception__box_8h_source.html":[22,3,0,0,0,105],
 "exception__dialog_8h.html":[22,3,0,0,0,106],
 "exception__dialog_8h_source.html":[22,3,0,0,0,106],
-"exception_box_8cpp-example.html":[23,427],
-"exception_dialog_8cpp-example.html":[23,428],
-"exception_ptr_8cpp-example.html":[23,118]
+"exception_box_8cpp-example.html":[23,427]
 };

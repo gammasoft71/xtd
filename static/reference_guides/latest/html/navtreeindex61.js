@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"console__key__info_8h_source.html":[22,1,0,0,66],
+"console__modifiers_8h.html":[22,1,0,0,67],
 "console__modifiers_8h_source.html":[22,1,0,0,67],
 "console__special__key_8h.html":[22,1,0,0,68],
 "console__special__key_8h_source.html":[22,1,0,0,68],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "dir_2ce865490b9c38de5666b0f79a01a0be.html":[22,1,0,0,1],
 "dir_2e14385cc64d36e71e37c366d7d5dc4b.html":[22,2,0],
 "dir_2f30ba022707ade8846cc9eaf2d723f6.html":[22,3,0,0,0],
-"dir_2f47c67c442c532a52d4bf300890c090.html":[22,2,0,0,0,2],
-"dir_380cff45e09b794b0ab37afd4deb3537.html":[22,0,0,0,0],
-"dir_39800f5c24f6454ba1e3db35e7aa96b3.html":[22,1,0,0,6]
+"dir_2f47c67c442c532a52d4bf300890c090.html":[22,2,0,0,0,2]
 };

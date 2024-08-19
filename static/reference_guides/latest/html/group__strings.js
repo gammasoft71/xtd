@@ -351,5 +351,5 @@ var group__strings =
     [ "xtd::u16string", "group__strings_ga58c2647f79d37168ab1bf1009776a525.html#ga58c2647f79d37168ab1bf1009776a525", null ],
     [ "xtd::u32string", "group__strings_ga0bf154385b6774a82ab0e0566db85522.html#ga0bf154385b6774a82ab0e0566db85522", null ],
     [ "xtd::u8string", "group__strings_gac1f6c3b1eafde935d9ac013688a9a3e4.html#gac1f6c3b1eafde935d9ac013688a9a3e4", null ],
-    [ "xtd::wstring", "group__strings_ga90ded17888dcf0462baa02f74536543f.html#ga90ded17888dcf0462baa02f74536543f", null ]
+    [ "xtd::wstring", "group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0", null ]
 ];

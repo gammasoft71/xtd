@@ -5,5 +5,5 @@ var searchData=
   ['wchar_2',['wchar',['../group__types_ga155357d92cf162b71b396e46accee518.html#ga155357d92cf162b71b396e46accee518',1,'xtd']]],
   ['wchar_5fobject_3',['wchar_object',['../group__types_gaa5ac5641de5f9362829662a60349ecde.html#gaa5ac5641de5f9362829662a60349ecde',1,'xtd']]],
   ['wptr_4',['wptr',['../group__types_ga541ef37a59d2e67f6fd2ad9832ab220c.html#ga541ef37a59d2e67f6fd2ad9832ab220c',1,'xtd']]],
-  ['wstring_5',['wstring',['../group__strings_ga90ded17888dcf0462baa02f74536543f.html#ga90ded17888dcf0462baa02f74536543f',1,'xtd']]]
+  ['wstring_5',['wstring',['../group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0',1,'xtd']]]
 ];

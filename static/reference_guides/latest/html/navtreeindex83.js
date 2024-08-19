@@ -1,5 +1,7 @@
 var NAVTREEINDEX83 =
 {
+"progress_bar_8cpp-example.html":[23,398],
+"progress_box_8cpp-example.html":[23,441],
 "progress_dialog_8cpp-example.html":[23,442],
 "prompt_8h.html":[22,1,0,0,9,0,0],
 "prompt_8h_source.html":[22,1,0,0,9,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX83 =
 "split__container_8h.html":[22,3,0,0,0,262],
 "split__container_8h_source.html":[22,3,0,0,0,262],
 "split_container_8cpp-example.html":[23,366],
-"splitter_8cpp-example.html":[23,403],
-"splitter_8h.html":[22,3,0,0,0,263],
-"splitter_8h_source.html":[22,3,0,0,0,263]
+"splitter_8cpp-example.html":[23,403]
 };
