@@ -33,6 +33,8 @@
 template<typename char_t, typename ...args_t>
 void __ustring_extract_format_arg(xtd::basic_string<char_t>& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
 template<typename target_t, typename source_t>
+std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
+template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept;
 void __throw_basic_string_argument_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception(const char* file, xtd::uint32 line, const char* func);
@@ -1085,6 +1087,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::wchar>&& str) noexcept {
       chars_ = std::move(__xtd_convert_to_string<value_type>(str));
+      str.clear();
       return *this;
     }
 
@@ -1094,7 +1097,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const char* str) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+      chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str));
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
@@ -1103,7 +1106,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char16* str) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+      chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str));
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
@@ -1112,7 +1115,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char32* str) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+      chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -1122,7 +1125,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char8* str) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+      chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
       return *this;
     }
 #endif
@@ -1132,55 +1135,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::wchar* str) {
       if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String litteral pointer to use as data source.
-    /// @exception xtd::tring_null_pointer_exception The `str` is null.
-    /// @return This current instance.
-    basic_string& operator =(char* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String litteral pointer to use as data source.
-    /// @exception xtd::tring_null_pointer_exception The `str` is null.
-    /// @return This current instance.
-    basic_string& operator =(xtd::char16* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String litteral pointer to use as data source.
-    /// @exception xtd::tring_null_pointer_exception The `str` is null.
-    /// @return This current instance.
-    basic_string& operator =(xtd::char32* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-#if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String litteral pointer to use as data source.
-    /// @exception xtd::tring_null_pointer_exception The `str` is null.
-    /// @return This current instance.
-    basic_string& operator =(xtd::char8* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-#endif
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String litteral pointer to use as data source.
-    /// @exception xtd::tring_null_pointer_exception The `str` is null.
-    /// @return This current instance.
-    basic_string& operator =(xtd::wchar* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+      chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
       return *this;
     }
 
@@ -1257,15 +1212,6 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const std::initializer_list<xtd::wchar>& il) {
       *this = basic_string(il);
-      return *this;
-    }
-
-    /// @brief Copy assignment operator. Replaces the contents with the specified object.
-    /// @param object The object to use as data source.
-    /// @return This current instance.
-    template<typename type_t>
-    basic_string& operator =(const type_t& object) {
-      *this = basic_string(object);
       return *this;
     }
     
@@ -1793,6 +1739,213 @@ namespace xtd {
 }
 
 /// @cond
+template<typename target_t, typename source_t>
+inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept {
+  auto out = std::basic_string<target_t> {};
+  auto codepoint = 0u;
+  for (const auto& character : str) {
+    if (character >= 0xd800 && character <= 0xdbff)
+      codepoint = ((character - 0xd800) << 10) + 0x10000;
+    else  {
+      if (character >= 0xdc00 && character <= 0xdfff) codepoint |= character - 0xdc00;
+      else codepoint = character;
+      
+      if (codepoint <= 0x7f)
+        out.append(1, static_cast<target_t>(codepoint));
+      else if (codepoint <= 0x7ff) {
+        out.append(1, static_cast<target_t>(0xc0 | ((codepoint >> 6) & 0x1f)));
+        out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+      } else if (codepoint <= 0xffff) {
+        out.append(1, static_cast<target_t>(0xe0 | ((codepoint >> 12) & 0x0f)));
+        out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 6) & 0x3f)));
+        out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+      } else {
+        out.append(1, static_cast<target_t>(0xf0 | ((codepoint >> 18) & 0x07)));
+        out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 12) & 0x3f)));
+        out.append(1, static_cast<target_t>(0x80 | ((codepoint >> 6) & 0x3f)));
+        out.append(1, static_cast<target_t>(0x80 | (codepoint & 0x3f)));
+      }
+      codepoint = 0;
+    }
+  }
+  return std::move(out);
+}
+
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>(std::basic_string<char>&& str) noexcept {
+  auto out = std::basic_string<xtd::char16> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::char16>(codepoint));
+    }
+  }
+  return out;
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
+  auto out = std::basic_string<xtd::char16> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::char16>(codepoint));
+    }
+  }
+  return out;
+}
+#endif
+
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(std::basic_string<char>&& str) noexcept {
+  auto out = std::basic_string<xtd::wchar> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (sizeof(xtd::wchar) > 2)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+      else if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+    }
+  }
+  return out;
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
+  auto out = std::basic_string<xtd::wchar> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+      if (sizeof(xtd::wchar) > 2)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+      else if (codepoint > 0xffff) {
+        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
+        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+        out.append(1, static_cast<xtd::wchar>(codepoint));
+    }
+  }
+  return out;
+}
+#endif
+
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(std::basic_string<char>&& str) noexcept {
+  auto out = std::basic_string<xtd::char32> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
+      out.append(1, static_cast<xtd::char32>(codepoint));
+  }
+  return out;
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
+  auto out = std::basic_string<xtd::char32> {};
+  auto codepoint = 0u;
+  auto str_ptr = str.data();
+  while (*str_ptr != 0) {
+    auto ch = static_cast<unsigned char>(*str_ptr);
+    if (ch <= 0x7f) codepoint = ch;
+    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+    else if (ch <= 0xdf) codepoint = ch & 0x1f;
+    else if (ch <= 0xef) codepoint = ch & 0x0f;
+    else codepoint = ch & 0x07;
+    ++str_ptr;
+    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
+      out.append(1, static_cast<xtd::char32>(codepoint));
+  }
+  return out;
+}
+#endif
+
+template<>
+inline std::basic_string<char> __xtd_convert_to_string<char, char>(std::basic_string<char>&& str) noexcept {return std::move(str);}
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char16>(std::basic_string<xtd::char16>&& str) noexcept {return std::move(str);}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char32>(std::basic_string<xtd::char32>&& str) noexcept {return std::move(str);}
+#if defined(__xtd__cpp_lib_char8_t)
+template<>
+inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {return std::move(str);}
+#endif
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wchar>(std::basic_string<xtd::wchar>&& str) noexcept {return std::move(str);}
+#if defined(__xtd__cpp_lib_char8_t)
+template<>
+inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(std::basic_string<char>&& str) noexcept {return reinterpret_cast<const xtd::char8*>(str.c_str());}
+template<>
+inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {return reinterpret_cast<const char*>(str.c_str());}
+#endif
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char32>(std::basic_string<xtd::char32>&& str) noexcept {return __xtd_convert_to_string<xtd::char16>(__xtd_convert_to_string<char>(std::move(str)));}
+template<>
+inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::wchar>(std::basic_string<xtd::wchar>&& str) noexcept {return __xtd_convert_to_string<xtd::char16>(__xtd_convert_to_string<char>(std::move(str)));}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char16>(std::basic_string<xtd::char16>&& str) noexcept {return __xtd_convert_to_string<xtd::char32>(__xtd_convert_to_string<char>(std::move(str)));}
+template<>
+inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::wchar>(std::basic_string<xtd::wchar>&& str) noexcept {return __xtd_convert_to_string<xtd::char32>(__xtd_convert_to_string<char>(std::move(str)));}
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char16>(std::basic_string<xtd::char16>&& str) noexcept {return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));}
+template<>
+inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char32>(std::basic_string<xtd::char32>&& str) noexcept {return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));}
+
 template<typename target_t, typename source_t>
 inline std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept {
   auto out = std::basic_string<target_t> {};
