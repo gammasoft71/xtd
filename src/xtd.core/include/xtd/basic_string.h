@@ -1214,7 +1214,162 @@ namespace xtd {
       *this = basic_string(il);
       return *this;
     }
-    
+ 
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string<char>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string<xtd::char16>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string<xtd::char32>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string<xtd::char8>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+#endif
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const basic_string<xtd::wchar>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string<char>&& str) {
+      chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars()));
+      str.clear();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string<xtd::char16>&& str) {
+      chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars()));
+      str.clear();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string<xtd::char32>&& str) {
+      chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars()));
+      str.clear();
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string<xtd::char8>&& str) {
+      chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars()));
+      str.clear();
+      return *this;
+    }
+#endif
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(basic_string<xtd::wchar>&& str) {
+      chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars()));
+      str.clear();
+      return *this;
+    }
+
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const char* str) {
+      chars_ += basic_string(str).chars();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char16* str) {
+      chars_.append(basic_string(str).chars_); return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char32* str) {
+      chars_ += basic_string(str).chars();
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::char8* str) {
+      chars_ += basic_string(str).chars();
+      return *this;
+    }
+#endif
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const xtd::wchar* str) {
+      chars_ += basic_string(str).chars();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(char ch) {
+      chars_ += basic_string(1, ch).chars();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char16 ch) {
+      chars_ += basic_string(1, ch).chars();
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char32 ch) {
+      chars_ += basic_string(1, ch).chars();
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::char8 ch) {
+      chars_ += basic_string(1, ch).chars();
+      return *this;
+    }
+#endif
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param ch Character value to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(xtd::wchar ch) {
+      chars_ += basic_string(1, ch).chars();
+      return *this;
+    }
+
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1639,59 +1794,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const basic_string& str) {chars_.append(str.chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(basic_string&& str) {chars_.append(std::move(str.chars_)); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const char* str) {chars_.append(basic_string(str).chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const xtd::char16* str) {chars_.append(basic_string(str).chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const xtd::char32* str) {chars_.append(basic_string(str).chars_); return *this;}
-#if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const xtd::char8* str) {chars_.append(basic_string(str).chars_); return *this;}
-#endif
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param str string to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(const xtd::wchar* str) {chars_.append(basic_string(str).chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param ch Character value to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(char ch) {chars_.append(basic_string(ch).chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param ch Character value to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(xtd::char16 ch) {chars_.append(basic_string(ch).chars_); return *this;}
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param ch Character value to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(xtd::char32 ch) {chars_.append(basic_string(ch).chars_); return *this;}
-#if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param ch Character value to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(xtd::char8 ch) {chars_.append(basic_string(ch).chars_); return *this;}
-#endif
-    /// @brief Addition assignment operator. Appends additional characters to the string.
-    /// @param ch Character value to append.
-    /// @return This current instance with characters added.
-    basic_string& operator +=(xtd::wchar ch) {chars_.append(basic_string(ch).chars_); return *this;}
 
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
