@@ -70,6 +70,7 @@ namespace xtd {
     
     /// @{
     /// @brief Represents the basic string base type.
+    /// @remarks Is equal to `std::basic_string<char_t, traits_t, allocator_t>`.`
     using base_type = std::basic_string<char_t, traits_t, allocator_t>;
     /// @brief Represents the basic string traits type.
     using traits_type = base_type::traits_type;
@@ -357,11 +358,44 @@ namespace xtd {
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
     /// @param str The basic_string to move.
-    basic_string(basic_string&& str) noexcept : chars_(std::move(str.chars_)) {str.chars_.clear();}
+    basic_string(basic_string<char>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars()))) {str.clear();}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
+    /// @param str The basic_string to move.
+    basic_string(basic_string<xtd::char16>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars()))) {str.clear();}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
+    /// @param str The basic_string to move.
+    basic_string(basic_string<xtd::char32>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars()))) {str.clear();}
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
+    /// @param str The basic_string to move.
+    basic_string(basic_string<xtd::char8>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars()))) {str.clear();}
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
+    /// @param str The basic_string to move.
+    basic_string(basic_string<xtd::wchar>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars()))) {str.clear();}
+
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
     /// @param str The basic_string to move.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string&& str, const allocator_type& allocator) noexcept : chars_(std::move(str.chars_), allocator) {str.chars_.clear();}
+    basic_string(basic_string<char>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars())), allocator) {str.clear();}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
+    /// @param str The basic_string to move.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(basic_string<xtd::char16>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars())), allocator) {str.clear();}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
+    /// @param str The basic_string to move.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(basic_string<xtd::char32>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars())), allocator) {str.clear();}
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
+    /// @param str The basic_string to move.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(basic_string<xtd::char8>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars())), allocator) {str.clear();}
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
+    /// @param str The basic_string to move.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(basic_string<xtd::wchar>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(str.chars())), allocator) {str.clear();}
 
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
@@ -768,6 +802,10 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Removes all characters from the string as if by executing `erase(begin(), end())`.
+    /// @remarks All pointers, references, and iterators are invalidated.
+    void clear() noexcept {chars_.clear();}
+    
     /// @brief Compares this instance with a specified xtd::object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified xtd::object.
     /// @param value An object that evaluates to a xtd::basic_string.
     /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.
@@ -892,90 +930,161 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const basic_string& str) noexcept {
-      chars_.assign(str.chars_);
+    basic_string& operator =(const basic_string<char>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
-
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const basic_string<xtd::char16>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const basic_string<xtd::char32>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const basic_string<xtd::char8>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+#endif
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const basic_string<xtd::wchar>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      return *this;
+    }
+ 
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const basic_string&& str) noexcept {
-      chars_ = std::move(str.chars_);
-      return *this;
-    }
-
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String to use as data source.
-    /// @return This current instance.
-    basic_string& operator =(const std::basic_string<char, traits_type, allocator_type>& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String to use as data source.
-    /// @return This current instance.
-    basic_string& operator =(std::basic_string<char, traits_type, allocator_type>&& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+    basic_string& operator =(basic_string<char>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str.chars()));
       str.clear();
       return *this;
     }
-
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const std::basic_string<xtd::char16, traits_type, allocator_type>& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String to use as data source.
-    /// @return This current instance.
-    basic_string& operator =(std::basic_string<xtd::char16, traits_type, allocator_type>&& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+    basic_string& operator =(basic_string<xtd::char16>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str.chars()));
       str.clear();
       return *this;
     }
-
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const std::basic_string<xtd::char32, traits_type, allocator_type>& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String to use as data source.
-    /// @return This current instance.
-    basic_string& operator =(std::basic_string<xtd::char32, traits_type, allocator_type>&& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+    basic_string& operator =(basic_string<xtd::char32>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str.chars()));
       str.clear();
       return *this;
     }
-
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const std::basic_string<xtd::char8, traits_type, allocator_type>& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
-      return *this;
-    }
-    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
-    /// @param str String to use as data source.
-    /// @return This current instance.
-    basic_string& operator =(std::basic_string<xtd::char8, traits_type, allocator_type>&& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+    basic_string& operator =(basic_string<xtd::char8>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str.chars()));
       str.clear();
       return *this;
     }
 #endif
+    /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(basic_string<xtd::wchar>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str.chars()));
+      str.clear();
+      return *this;
+    }
 
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
-    basic_string& operator =(const std::basic_string<xtd::wchar, traits_type, allocator_type>& str) noexcept {
-      chars_.assign(__xtd_convert_to_string<value_type>(str));
+    basic_string& operator =(const std::basic_string<char>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const std::basic_string<xtd::char16>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const std::basic_string<xtd::char32>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const std::basic_string<xtd::char8>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+#endif
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(const std::basic_string<xtd::wchar>& str) noexcept {
+      chars_ = __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(std::basic_string<char>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str));
+      str.clear();
+      return *this;
+    }
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(std::basic_string<xtd::char16>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str));
+      str.clear();
+      return *this;
+    }
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(std::basic_string<xtd::char32>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str));
+      str.clear();
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(std::basic_string<xtd::char8>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str));
+      str.clear();
+      return *this;
+    }
+#endif
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
+    /// @param str String to use as data source.
+    /// @return This current instance.
+    basic_string& operator =(std::basic_string<xtd::wchar>&& str) noexcept {
+      chars_ = std::move(__xtd_convert_to_string<value_type>(str));
       return *this;
     }
 
