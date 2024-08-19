@@ -54,6 +54,15 @@ namespace xtd {
   /// @remarks A basic_string is a sequential collection of characters that's used to represent text. A xtd::basic_string object is a sequential collection of char that represent a basic_string. The value of the xtd::basic_string object is the content of the sequential collection of `char_t`, and unlike [std::basic_string<char_t>](https://en.cppreference.com/w/cpp/basic_string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable basic_string class, you can use xtd::text::basic_string_builder <char_t> class.
   /// @remarks xtd::basic_string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string/basic_string) and therefore offers the full (immutable) API of std::basic_string.
+  /// @remarks Several aliases for common character types are provided:
+  /// @remarks
+  /// | Type           | Definition                      |
+  /// | -------------- | ------------------------------- |
+  /// | xtd::string    | xtd::basic_string <char>        |
+  /// | xtd::u16string | xtd::basic_string <xtd::char16> |
+  /// | xtd::u32string | xtd::basic_string <xtd::char32> |
+  /// | xtd::u8string  | xtd::basic_string <xtd::char8>  |
+  /// | xtd::wstring   | xtd::basic_string <xtd::wchar>  |
   template<typename char_t, typename traits_t, typename allocator_t>
   class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>, public xtd::collections::generic::ienumerable<char_t> {
   public:
@@ -114,31 +123,238 @@ namespace xtd {
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
-    basic_string(const basic_string& str) noexcept : chars_(str.chars_) {}
+    basic_string(const basic_string<char>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars())) {}
+
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
+    /// @param str The string to copy.
+    basic_string(const basic_string<xtd::char16>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars())) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
+    /// @param str The string to copy.
+    basic_string(const basic_string<xtd::char32>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars())) {}
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
+    /// @param str The string to copy.
+    basic_string(const basic_string<xtd::char8>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars())) {}
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
+    /// @param str The string to copy.
+    basic_string(const basic_string<xtd::wchar>& str) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars())) {}
+
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string& str, const allocator_type& allocator) noexcept : chars_(str.chars_, allocator) {}
+    basic_string(const basic_string<char>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars()), allocator) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(const basic_string<xtd::char16>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars()), allocator) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(const basic_string<xtd::char32>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars()), allocator) {}
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(const basic_string<xtd::char8>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars()), allocator) {}
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
+    /// @param str The string to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    basic_string(const basic_string<xtd::wchar>& str, const allocator_type& allocator) noexcept : chars_(__xtd_convert_to_string<value_type>(str.chars()), allocator) {}
+
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
-    basic_string(const basic_string& str, xtd::size index) : chars_(str.chars_, index) {}
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<char>& str, xtd::size index) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars(), index)));
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char16>& str, xtd::size index) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars(), index)));
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char32>& str, xtd::size index) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars(), index)));
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char8>& str, xtd::size index) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars(), index)));
+    }
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::wchar>& str, xtd::size index) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars(), index)));
+    }
+
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string& str, xtd::size index, const allocator_type& allocator) : chars_(str.chars_, index, allocator) {}
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<char>& str, xtd::size index, const allocator_type& allocator) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars(), index)), allocator);
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char16>& str, xtd::size index, const allocator_type& allocator) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars(), index)), allocator);
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char32>& str, xtd::size index, const allocator_type& allocator) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars(), index)), allocator);
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char8>& str, xtd::size index, const allocator_type& allocator) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars(), index)), allocator);
+    }
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::wchar>& str, xtd::size index, const allocator_type& allocator) {
+      if (index > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars(), index)), allocator);
+    }
+
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
-    basic_string(const basic_string& str, xtd::size index, xtd::size count) : chars_(str.chars_, index, count) {}
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<char>& str, xtd::size index, xtd::size count) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars(), index, count)));
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char16>& str, xtd::size index, xtd::size count) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars(), index, count)));
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char32>& str, xtd::size index, xtd::size count) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars(), index, count)));
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char8>& str, xtd::size index, xtd::size count) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars(), index, count)));
+    }
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::wchar>& str, xtd::size index, xtd::size count) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars(), index, count)));
+    }
+
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string& str, xtd::size index, xtd::size count, const allocator_type& allocator) : chars_(str.chars_, index, count, allocator) {}
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<char>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars(), index, count)), allocator);
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char16>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars(), index, count)), allocator);
+    }
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char32>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars(), index, count)), allocator);
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::char8>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars(), index, count)), allocator);
+    }
+#endif
+    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
+    /// @param str The string to copy.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @param allocator The allocator to use for all memory allocations of this basic_string.
+    /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
+    basic_string(const basic_string<xtd::wchar>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
+      if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars(), index, count)), allocator);
+    }
+
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
     /// @param str The basic_string to move.
     basic_string(basic_string&& str) noexcept : chars_(std::move(str.chars_)) {str.chars_.clear();}
@@ -1428,7 +1644,7 @@ namespace xtd {
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
-    friend std::ostream& operator <<(std::ostream& stream, const basic_string& str) {return stream << str.chars_;}
+    friend std::ostream& operator <<(std::ostream& stream, const basic_string& str) {return stream << str.to_string().chars();}
     /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
     /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
     /// * the end-of-file condition occurs in the stream is, or
