@@ -1359,7 +1359,7 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const basic_string& rhs) {
+    friend basic_string operator +(const basic_string& lhs, const basic_string<char>& rhs) {
       basic_string result = lhs;
       result += rhs;
       return result;
@@ -1368,27 +1368,182 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(basic_string&& lhs, basic_string&& rhs) {
-      basic_string result = std::move(lhs);
-      result += rhs;
-      return result;
-    }
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(basic_string&& lhs, const basic_string& rhs) {
-      basic_string result = std::move(lhs);
-      result += rhs;
-      return result;
-    }
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, basic_string&& rhs) {
+    friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char16>& rhs) {
       basic_string result = lhs;
       result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char32>& rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char8>& rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::wchar>& rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, basic_string<char>&& rhs) {
+      basic_string result = std::move(lhs);
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char16>&& rhs) {
+      basic_string result = std::move(lhs);
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char32>&& rhs) {
+      basic_string result = std::move(lhs);
+      result += std::move(rhs);
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char8>&& rhs) {
+      basic_string result = std::move(lhs);
+      result += std::move(rhs);
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, basic_string<xtd::wchar>&& rhs) {
+      basic_string result = std::move(lhs);
+      result += std::move(rhs);
+      return result;
+    }
+
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, const basic_string<char>& rhs) {
+      basic_string result = std::move(lhs);
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char16>& rhs) {
+      basic_string result = std::move(lhs);
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char32>& rhs) {
+      basic_string result = std::move(lhs);
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char8>& rhs) {
+      basic_string result = std::move(lhs);
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::wchar>& rhs) {
+      basic_string result = std::move(lhs);
+      result += rhs;
+      return result;
+    }
+
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, basic_string<char>&& rhs) {
+      basic_string result = lhs;
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char16>&& rhs) {
+      basic_string result = lhs;
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char32>&& rhs) {
+      basic_string result = lhs;
+      result += std::move(rhs);
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char8>&& rhs) {
+      basic_string result = lhs;
+      result += std::move(rhs);
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, basic_string<xtd::wchar>&& rhs) {
+      basic_string result = lhs;
+      result += std::move(rhs);
       return result;
     }
 
@@ -1405,8 +1560,37 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(basic_string&& lhs, const char* rhs) {
-      basic_string result = std::move(lhs);
+    friend basic_string operator +(const basic_string& lhs, const xtd::char16* rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::char32* rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::char8* rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::wchar* rhs) {
+      basic_string result = lhs;
       result += rhs;
       return result;
     }
@@ -1415,8 +1599,8 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char16* rhs) {
-      basic_string result = lhs;
+    friend basic_string operator +(basic_string&& lhs, const char* rhs) {
+      basic_string result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1429,16 +1613,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char32* rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1448,17 +1622,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char8* rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1469,16 +1633,6 @@ namespace xtd {
       return result;
     }
 #endif
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::wchar* rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1502,16 +1656,6 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const char* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
-      return result;
-    }
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
       result += rhs;
@@ -1521,9 +1665,29 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char16* lhs, basic_string&& rhs) {
+    friend basic_string operator +(const xtd::char32* lhs, const basic_string& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const xtd::char8* lhs, const basic_string& rhs) {
+      basic_string result = basic_string(lhs).chars_;
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const xtd::wchar* lhs, const basic_string& rhs) {
+      basic_string result = basic_string(lhs).chars_;
+      result += rhs;
       return result;
     }
 
@@ -1531,9 +1695,18 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char32* lhs, const basic_string& rhs) {
+    friend basic_string operator +(const char* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
-      result += rhs;
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const xtd::char16* lhs, basic_string&& rhs) {
+      basic_string result = basic_string(lhs).chars_;
+      result += std::move(rhs);
       return result;
     }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
@@ -1551,31 +1724,12 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char8* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += rhs;
-      return result;
-    }
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8* lhs, basic_string&& rhs) {
       basic_string result = basic_string(lhs).chars_;
       result += std::move(rhs);
       return result;
     }
 #endif
-    
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::wchar* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -1599,8 +1753,37 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(basic_string&& lhs, const char rhs) {
-      basic_string result = std::move(lhs);
+    friend basic_string operator +(const basic_string& lhs, const xtd::char16 rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The character who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::char32 rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The character who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::char8 rhs) {
+      basic_string result = lhs;
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The character who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const xtd::wchar rhs) {
+      basic_string result = lhs;
       result += rhs;
       return result;
     }
@@ -1609,8 +1792,8 @@ namespace xtd {
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char16 rhs) {
-      basic_string result = lhs;
+    friend basic_string operator +(basic_string&& lhs, const char rhs) {
+      basic_string result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1623,16 +1806,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The character who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char32 rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -1642,17 +1815,7 @@ namespace xtd {
       result += rhs;
       return result;
     }
-
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The character who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::char8 rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -1663,16 +1826,6 @@ namespace xtd {
       return result;
     }
 #endif
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The string characters who will precede the `rhs`.
-    /// @param rhs The character who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const basic_string& lhs, const xtd::wchar rhs) {
-      basic_string result = lhs;
-      result += rhs;
-      return result;
-    }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -1687,8 +1840,8 @@ namespace xtd {
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const char lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+    friend basic_string operator +(char lhs, const basic_string& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
       result += rhs;
       return result;
     }
@@ -1696,18 +1849,8 @@ namespace xtd {
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const char lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
-      return result;
-    }
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The character who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char16 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+    friend basic_string operator +(xtd::char16 lhs, const basic_string& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
       result += rhs;
       return result;
     }
@@ -1715,67 +1858,76 @@ namespace xtd {
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char16 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
-      return result;
-    }
-
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The character who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char32 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+    friend basic_string operator +(xtd::char32 lhs, const basic_string& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
       result += rhs;
       return result;
     }
-    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
-    /// @param lhs The character who will precede the `rhs`.
-    /// @param rhs The string characters who will follow the `lhs`.
-    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char32 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
-      return result;
-    }
-
 #if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char8 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+    friend basic_string operator +(xtd::char8 lhs, const basic_string& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
       result += rhs;
       return result;
     }
+#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::char8 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += std::move(rhs);
+    friend basic_string operator +(xtd::wchar lhs, const basic_string& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
+      result += rhs;
       return result;
     }
-#endif
 
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::wchar lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
-      result += rhs;
+    friend basic_string operator +(char lhs, basic_string&& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
+      result += std::move(rhs);
       return result;
     }
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
-    friend basic_string operator +(const xtd::wchar lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+    friend basic_string operator +(xtd::char16 lhs, basic_string&& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
+      result += std::move(rhs);
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The character who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(xtd::char32 lhs, basic_string&& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
+      result += std::move(rhs);
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The character who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(xtd::char8 lhs, basic_string&& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
+      result += std::move(rhs);
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The character who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(xtd::wchar lhs, basic_string&& rhs) {
+      basic_string result = basic_string(1, lhs).chars_;
       result += std::move(rhs);
       return result;
     }
@@ -1786,7 +1938,42 @@ namespace xtd {
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
-    friend std::ostream& operator <<(std::ostream& stream, const basic_string& str) {return stream << str.to_string().chars_;}
+    friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
+    
+    /*
+    /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
+    /// @param os The character output stream.
+    /// @param str The string to be inserted.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
+    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    friend std::basic_ostream<xtd::char16>& operator <<(std::basic_ostream<xtd::char16>& stream, const basic_string& str) {return stream << str.to_u16string().chars_;}
+    /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
+    /// @param os The character output stream.
+    /// @param str The string to be inserted.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
+    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    friend std::basic_ostream<xtd::char32>& operator <<(std::basic_ostream<xtd::char32>& stream, const basic_string& str) {return stream << str.to_u32string().chars_;}
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
+    /// @param os The character output stream.
+    /// @param str The string to be inserted.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
+    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    friend std::basic_ostream<xtd::char8>& operator <<(std::basic_ostream<xtd::char8>& stream, const basic_string& str) {return stream << str.to_u8string().chars_;}
+#endif
+     */
+    
+    /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
+    /// @param os The character output stream.
+    /// @param str The string to be inserted.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
+    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string& str) {return stream << str.to_wstring().chars_;}
+
     /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
     /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
     /// * the end-of-file condition occurs in the stream is, or
@@ -1795,8 +1982,70 @@ namespace xtd {
     /// @param str The string to be extracted.
     /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
     /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
-    friend std::istream& operator >>(std::istream& stream, basic_string& str) {
-      decltype(str.chars_) s;
+    friend std::basic_istream<char>& operator >>(std::basic_istream<char>& stream, basic_string& str) {
+      auto s = std::basic_string<char> {};
+      stream >> s;
+      str = s;
+      return stream;
+    }
+    
+    /*
+    /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+    /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
+    /// * the end-of-file condition occurs in the stream is, or
+    /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
+    /// @param is The character input stream.
+    /// @param str The string to be extracted.
+    /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
+    /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
+    friend std::basic_istream<xtd::char16>& operator >>(std::basic_istream<xtd::char16>& stream, basic_string& str) {
+      auto s = std::basic_string<xtd::char16> {};
+      stream >> s;
+      str = s;
+      return stream;
+    }
+    /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+    /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
+    /// * the end-of-file condition occurs in the stream is, or
+    /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
+    /// @param is The character input stream.
+    /// @param str The string to be extracted.
+    /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
+    /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
+    friend std::basic_istream<xtd::char32>& operator >>(std::basic_istream<xtd::char32>& stream, basic_string& str) {
+      auto s = std::basic_string<xtd::char32> {};
+      stream >> s;
+      str = s;
+      return stream;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+    /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
+    /// * the end-of-file condition occurs in the stream is, or
+    /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
+    /// @param is The character input stream.
+    /// @param str The string to be extracted.
+    /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
+    /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
+    friend std::basic_istream<xtd::char8>& operator >>(std::basic_istream<xtd::char8>& stream, basic_string& str) {
+      auto s = std::basic_string<xtd::char8> {};
+      stream >> s;
+      str = s;
+      return stream;
+    }
+#endif
+     */
+    
+    /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+    /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
+    /// * the end-of-file condition occurs in the stream is, or
+    /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
+    /// @param is The character input stream.
+    /// @param str The string to be extracted.
+    /// @remarks If no characters are extracted then std::ios::failbit is set on `is`, which may throw [std::ios_base::failure](https://en.cppreference.com/w/cpp/io/ios_base/failure).
+    /// @remarks Finally, calls `is.width(0)` to cancel the effects of [std::setw](https://en.cppreference.com/w/cpp/io/manip/setw), if any.
+    friend std::basic_istream<xtd::wchar>& operator >>(std::basic_istream<xtd::wchar>& stream, basic_string& str) {
+      auto s = std::basic_string<xtd::wchar> {};
       stream >> s;
       str = s;
       return stream;
