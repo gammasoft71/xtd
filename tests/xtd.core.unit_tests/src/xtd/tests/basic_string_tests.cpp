@@ -489,5 +489,208 @@ namespace xtd::tests {
       assert::are_equal(L"A test string", s1, csf_);
       assert::is_empty(s2, csf_);
     }
+
+    void test_method_(equal_operator_std_basic_string_char) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char>("A test string");
+      s1 = s2;
+      assert::are_equal("A test string", s1, csf_);
+      assert::are_equal("A test string", s2, csf_);
+    }
+    
+    void test_method_(equal_operator_std_basic_string_char16) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char16>(u"A test string");
+      s1 = s2;
+      assert::are_equal(u"A test string", s1, csf_);
+      assert::are_equal(u"A test string", s2, csf_);
+    }
+    
+    void test_method_(equal_operator_std_basic_string_char32) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char32>(U"A test string");
+      s1 = s2;
+      assert::are_equal(U"A test string", s1, csf_);
+      assert::are_equal(U"A test string", s2, csf_);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(equal_operator_std_basic_string_char8) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char8>(u8"A test string");
+      s1 = s2;
+      assert::are_equal(u8"A test string", s1, csf_);
+      assert::are_equal(u8"A test string", s2, csf_);
+    }
+#endif
+    
+    void test_method_(equal_operator_std_basic_string_wchar) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<wchar>(L"A test string");
+      s1 = s2;
+      assert::are_equal(L"A test string", s1, csf_);
+      assert::are_equal(L"A test string", s2, csf_);
+    }
+
+    void test_method_(equal_operator_move_std_basic_string_char) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char>("A test string");
+      s1 = std::move(s2);
+      assert::are_equal("A test string", s1, csf_);
+      assert::is_empty(s2, csf_);
+    }
+    
+    void test_method_(equal_operator_move_std_basic_string_char16) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char16>(u"A test string");
+      s1 = std::move(s2);
+      assert::are_equal(u"A test string", s1, csf_);
+      assert::is_empty(s2, csf_);
+    }
+    
+    void test_method_(equal_operator_move_std_basic_string_char32) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char32>(U"A test string");
+      s1 = std::move(s2);
+      assert::are_equal(U"A test string", s1, csf_);
+      assert::is_empty(s2, csf_);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(equal_operator_move_std_basic_string_char8) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<char8>(u8"A test string");
+      s1 = std::move(s2);
+      assert::are_equal(u8"A test string", s1, csf_);
+      assert::is_empty(s2, csf_);
+    }
+#endif
+    
+    void test_method_(equal_operator_move_std_basic_string_wchar) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = std::basic_string<wchar>(L"A test string");
+      s1 = std::move(s2);
+      assert::are_equal(L"A test string", s1, csf_);
+      assert::is_empty(s2, csf_);
+    }
+
+    void test_method_(equal_operator_char_pointer) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = "A test string";
+      s1 = s2;
+      assert::are_equal("A test string", s1, csf_);
+      assert::are_equal("A test string", s2, csf_);
+    }
+    
+    void test_method_(equal_operator_char16_pointer) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = u"A test string";
+      s1 = s2;
+      assert::are_equal(u"A test string", s1, csf_);
+      assert::are_equal(u"A test string", s2, csf_);
+    }
+    
+    void test_method_(equal_operator_char32_pointer) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = U"A test string";
+      s1 = s2;
+      assert::are_equal(U"A test string", s1, csf_);
+      assert::are_equal(U"A test string", s2, csf_);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(equal_operator_char8_pointer) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = u8"A test string";
+      s1 = s2;
+      assert::are_equal(u8"A test string", s1, csf_);
+      assert::are_equal(u8"A test string", s2, csf_);
+    }
+#endif
+    
+    void test_method_(equal_operator_wchar_pointer) {
+      auto s1 = basic_string<char_t> {};
+      auto s2 = L"A test string";
+      s1 = s2;
+      assert::are_equal(L"A test string", s1, csf_);
+      assert::are_equal(L"A test string", s2, csf_);
+    }
+
+    void test_method_(equal_operator_char) {
+      auto s = basic_string<char_t> {};
+      auto c = 'C';
+      s = c;
+      assert::are_equal('C', c, csf_);
+      assert::are_equal("C", s, csf_);
+    }
+
+    void test_method_(equal_operator_char16) {
+      auto s = basic_string<char_t> {};
+      auto c = u'C';
+      s = c;
+      assert::are_equal(u'C', c, csf_);
+      assert::are_equal("C", s, csf_);
+    }
+
+    void test_method_(equal_operator_char32) {
+      auto s = basic_string<char_t> {};
+      auto c = U'C';
+      s = c;
+      assert::are_equal(U'C', c, csf_);
+      assert::are_equal("C", s, csf_);
+    }
+
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(equal_operator_char8) {
+      auto s = basic_string<char_t> {};
+      auto c = u8'C';
+      s = c;
+      assert::are_equal(u8'C', c, csf_);
+      assert::are_equal("C", s, csf_);
+    }
+#endif
+
+    void test_method_(equal_operator_wchar) {
+      auto s = basic_string<char_t> {};
+      auto c = L'C';
+      s = c;
+      assert::are_equal(L'C', c, csf_);
+      assert::are_equal("C", s, csf_);
+    }
+
+    void test_method_(equal_operator_initializer_list_char) {
+      auto s = basic_string<char_t> {};
+      auto il = std::initializer_list<char> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
+      s = il;
+      assert::are_equal("A test string", s, csf_);
+    }
+
+    void test_method_(equal_operator_initializer_list_char16) {
+      auto s = basic_string<char_t> {};
+      auto il = std::initializer_list<char16> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
+      s = il;
+      assert::are_equal(u"A test string", s, csf_);
+    }
+
+    void test_method_(equal_operator_initializer_list_char32) {
+      auto s = basic_string<char_t> {};
+      auto il = std::initializer_list<char32> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
+      s = il;
+      assert::are_equal(U"A test string", s, csf_);
+    }
+
+    void test_method_(equal_operator_initializer_list_char8) {
+      auto s = basic_string<char_t> {};
+      auto il = std::initializer_list<char8> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
+      s = il;
+      assert::are_equal(u8"A test string", s, csf_);
+    }
+
+    void test_method_(equal_operator_initializer_list_wchar) {
+      auto s = basic_string<char_t> {};
+      auto il = std::initializer_list<wchar> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
+      s = il;
+      assert::are_equal(L"A test string", s, csf_);
+    }
   };
 }
