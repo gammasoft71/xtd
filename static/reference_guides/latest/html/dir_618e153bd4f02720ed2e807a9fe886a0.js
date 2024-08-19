@@ -54,6 +54,7 @@ var dir_618e153bd4f02720ed2e807a9fe886a0 =
     [ "__parse.h", "____parse_8h.html", null ],
     [ "__show_generic_exception_message.h", "____show__generic__exception__message_8h.html", null ],
     [ "__sprintf.h", "____sprintf_8h.html", null ],
+    [ "__string_definitions.h", "____string__definitions_8h.html", "____string__definitions_8h" ],
     [ "__xtd_debugbreak.h", "____xtd__debugbreak_8h.html", null ],
     [ "__xtd_std_version.h", "____xtd__std__version_8h.html", null ]
 ];

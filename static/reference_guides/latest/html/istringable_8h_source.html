@@ -104,23 +104,25 @@ $(document).ready(function(){initNavTree('istringable_8h_source.html',''); initR
 <div class="contents">
 <a href="istringable_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8h.html">interface.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">class </span>string;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classxtd_1_1istringable.html">   24</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a> <a class="code hl_define" href="group__keywords_ga64c32b24bd922fc8189a487213592ccf.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classxtd_1_1string.html">xtd::string</a> <a class="code hl_function" href="classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325">to_string</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a>&amp; obj);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  };</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="____string__definitions_8h.html">internal/__string_definitions.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8h.html">interface.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classxtd_1_1istringable.html">   23</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a> <a class="code hl_define" href="group__keywords_ga64c32b24bd922fc8189a487213592ccf.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325">   30</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classxtd_1_1string.html">xtd::string</a> <a class="code hl_function" href="classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325">to_string</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a>&amp; obj);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="ttc" id="a____string__definitions_8h_html"><div class="ttname"><a href="____string__definitions_8h.html">__string_definitions.h</a></div><div class="ttdoc">Contains string definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1istringable_a938940eaf830158edf5c54772df5e325_html_a938940eaf830158edf5c54772df5e325"><div class="ttname"><a href="classxtd_1_1istringable_a938940eaf830158edf5c54772df5e325.html#a938940eaf830158edf5c54772df5e325">xtd::istringable::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const =0</div><div class="ttdoc">Gets a string that represents the current object.</div></div>
-<div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1string_html"><div class="ttname"><a href="classxtd_1_1string.html">xtd::string</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> string.h:38</div></div>
+<div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1string_html"><div class="ttname"><a href="classxtd_1_1string.html">xtd::string</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> string.h:26</div></div>
 <div class="ttc" id="agroup__keywords_ga64c32b24bd922fc8189a487213592ccf_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords_ga64c32b24bd922fc8189a487213592ccf.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.h:58</div></div>
 <div class="ttc" id="ainterface_8h_html"><div class="ttname"><a href="interface_8h.html">interface.h</a></div><div class="ttdoc">Contains xtd::interface interface.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
@@ -132,7 +134,7 @@ $(document).ready(function(){initNavTree('istringable_8h_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="istringable_8h.html">istringable.h</a></li>
-		<li class="footer">Generated on Sun Aug 18 2024 16:48:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sun Aug 18 2024 22:05:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

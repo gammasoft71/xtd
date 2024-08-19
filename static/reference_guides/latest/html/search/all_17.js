@@ -188,6 +188,6 @@ var searchData=
   ['write_5fonly_185',['write_only',['../group__xtd__drawing_gaab4cc0f15617caca1bed28c92505fd3b.html#ggaab4cc0f15617caca1bed28c92505fd3ba2629564984b808cf7e6cfc61a0286d69',1,'xtd::drawing::imaging']]],
   ['write_5ftext_186',['write_text',['../classxtd_1_1io_1_1file_a55a3721edf1cacc593aff2ed515d940a.html#a55a3721edf1cacc593aff2ed515d940a',1,'xtd::io::file']]],
   ['writing_5fhand_187',['writing_hand',['../classxtd_1_1forms_1_1emoticons_a3f65fcaa686f117bfcf04df15c736356.html#a3f65fcaa686f117bfcf04df15c736356',1,'xtd::forms::emoticons']]],
-  ['wstring_188',['wstring',['../group__strings_ga90ded17888dcf0462baa02f74536543f.html#ga90ded17888dcf0462baa02f74536543f',1,'xtd']]],
+  ['wstring_188',['wstring',['../group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0',1,'xtd']]],
   ['wstring_2eh_189',['wstring.h',['../wstring_8h.html',1,'']]]
 ];

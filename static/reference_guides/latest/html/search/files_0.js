@@ -55,7 +55,8 @@ var searchData=
   ['_5f_5fparse_2eh_52',['__parse.h',['../____parse_8h.html',1,'']]],
   ['_5f_5fshow_5fgeneric_5fexception_5fmessage_2eh_53',['__show_generic_exception_message.h',['../____show__generic__exception__message_8h.html',1,'']]],
   ['_5f_5fsprintf_2eh_54',['__sprintf.h',['../____sprintf_8h.html',1,'']]],
-  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_55',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
-  ['_5f_5fxtd_5fdebugbreak_2eh_56',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
-  ['_5f_5fxtd_5fstd_5fversion_2eh_57',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]]
+  ['_5f_5fstring_5fdefinitions_2eh_55',['__string_definitions.h',['../____string__definitions_8h.html',1,'']]],
+  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_56',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
+  ['_5f_5fxtd_5fdebugbreak_2eh_57',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
+  ['_5f_5fxtd_5fstd_5fversion_2eh_58',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]]
 ];

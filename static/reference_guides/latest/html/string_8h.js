@@ -1,6 +1,5 @@
 var string_8h =
 [
-    [ "string_", "string_8h.html#ga15c0d68a2525f5757ecbbc29331e8ecd", null ],
     [ "to_ustring", "string_8h.html#aae1965b1c168e265a8ee7212ffce794a", null ],
     [ "to_ustring", "string_8h.html#a507a56be9b64bb16928f81c308f3805d", null ],
     [ "to_ustring", "string_8h.html#abaeae86f107f2df54a57138551d6a922", null ],

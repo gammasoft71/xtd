@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"exception_dialog_8cpp-example.html":[23,428],
+"exception_ptr_8cpp-example.html":[23,118],
 "exit__mode_8h.html":[22,1,0,0,106],
 "exit__mode_8h_source.html":[22,1,0,0,106],
 "exit__status_8h.html":[22,1,0,0,107],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "functions_h.html":[21,3,0,7],
 "functions_i.html":[21,3,0,8],
 "functions_j.html":[21,3,0,9],
-"functions_k.html":[21,3,0,10],
-"functions_l.html":[21,3,0,11],
-"functions_m.html":[21,3,0,12]
+"functions_k.html":[21,3,0,10]
 };
