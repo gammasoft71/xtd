@@ -659,9 +659,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     template<typename input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last, const allocator_type& allocator) : chars_(first, last, allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
-    /// @param string_view The basic_string view.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
@@ -733,10 +730,6 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Returns a reference to the character at specified location `pos`.
-    /// @return Reference to the requested character.
-    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-    const_reference at(size_type pos) const {return operator [](pos);}
     /// @brief Returns reference to the last character in the string.
     /// @return Reference to the last character, equivalent to `operator[](size() - 1)`.
     /// @exception xtd::index_out_of_range_exception If is empty.
@@ -811,6 +804,11 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Returns a reference to the character at specified location `pos`.
+    /// @return Reference to the requested character.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+    const_reference at(size_type pos) const {return operator [](pos);}
+
     /// @brief Compares two character sequences.
     /// @param str The other string to compare to.
     /// @return
@@ -851,7 +849,7 @@ namespace xtd {
     /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
     /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
     /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-    int32 compare(size_type pos1, size_type count1, basic_string& str) const {return chars_.compare(pos1, count1, str);}
+    int32 compare(size_type pos1, size_type count1, const basic_string& str) const {return chars_.compare(pos1, count1, str);}
     /// @brief Compares two character sequences.
     /// @param pos1 The position of the first character in this string to compare.
     /// @param count1 The number of characters of this string to compare.
@@ -965,91 +963,6 @@ namespace xtd {
     /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
     /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
     int32 compare(size_type pos1, size_type count1, const_pointer s, size_type count2) const {return chars_.compare(pos1, count1, s, count2);}
-    /// @brief Compares two character sequences.
-    /// @param t The object (convertible to std::basic_string_view) to compare to.
-    /// @return
-    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-    /// * Zero if both character sequences compare equivalent.
-    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then compares this string to `sv`;
-    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-    /// @remarks
-    /// | Condition                                                     | Result                          | Return value |
-    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-    template<class string_view_like_t>
-    int32 compare(const string_view_like_t& t) const noexcept {return chars_.compare(t);}
-    /// @brief Compares two character sequences.
-    /// @param pos1 The position of the first character in this string to compare.
-    /// @param count1 The number of characters of this string to compare.
-    /// @param t The object (convertible to std::basic_string_view) to compare to.
-    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
-    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-    /// * Zero if both character sequences compare equivalent.
-    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then compares a [`pos1`, `pos1 + count1`) substring of this string to `sv`, as if by `std::basic_string_view<char_t, traits_t>(*this).substr(pos1, count1).compare(sv)`;
-    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-    /// @remarks
-    /// | Condition                                                     | Result                          | Return value |
-    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-    template<class string_view_like_t>
-    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t) const noexcept {return chars_.compare(pos1, count1, t);}
-    /// @brief Compares two character sequences.
-    /// @param pos1 The position of the first character in this string to compare.
-    /// @param count1 The number of characters of this string to compare.
-    /// @param t The object (convertible to std::basic_string_view) to compare to.
-    /// @param pos2 The position of the first character of the given string to compare.
-    /// @return
-    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-    /// * Zero if both character sequences compare equivalent.
-    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then  compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `sv`, as if by `std::basic_string_view<char_t, traits_t>(*this).substr(pos1, count1).compare(sv.substr(pos2, count2))`.
-    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-    /// @remarks
-    /// | Condition                                                     | Result                          | Return value |
-    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-    template<class string_view_like_t>
-    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t, size_type pos2) const noexcept {return chars_.compare(pos1, count1, t, pos2);}
-    /// @brief Compares two character sequences.
-    /// @param pos1 The position of the first character in this string to compare.
-    /// @param count1 The number of characters of this string to compare.
-    /// @param t The object (convertible to std::basic_string_view) to compare to.
-    /// @param pos2 The position of the first character of the given string to compare.
-    /// @param count2 The number of characters of the given string to compare.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then
-    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-    /// @remarks
-    /// | Condition                                                     | Result                          | Return value |
-    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-    template<class string_view_like_t>
-    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t, size_type pos2, size_type count2) const noexcept {return chars_.compare(pos1, count1, t, pos2, count2);}
 
     /// @brief Compares this instance with a specified xtd::object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified xtd::object.
     /// @param value An object that evaluates to a xtd::basic_string.
@@ -1135,20 +1048,6 @@ namespace xtd {
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
     size_type find(value_type ch, size_type pos) const {return chars_.find(ch, pos);}
-    /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
-    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
-    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
-    template<class string_view_like_t>
-    size_type find(const string_view_like_t& t) const noexcept {return chars_.find(t);}
-    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
-    /// @param pos The position at which to start the search
-    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
-    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find(t, pos);}
 
     /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
     /// @parzm str The string identifying characters to search for.
@@ -1193,21 +1092,6 @@ namespace xtd {
     /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
     /// @remarks Finds the first character equal to `ch`.
     size_type find_first_of(char_t ch, size_type pos) const {return chars_.find_first_of(ch, pos);}
-    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_first_of(const string_view_like_t& t) const noexcept {return chars_.find_first_of(t);}
-    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @param pos The position at which to begin searching.
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_first_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_first_of(t, pos);}
 
     /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
     /// @parzm str The string identifying characters to search for.
@@ -1252,21 +1136,6 @@ namespace xtd {
     /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
     /// @remarks Finds the first character equal to `ch`.
     size_type find_first_not_of(char_t ch, size_type pos) const {return chars_.find_first_not_of(ch, pos);}
-    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_first_not_of(const string_view_like_t& t) const noexcept {return chars_.find_first_not_of(t);}
-    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @param pos The position at which to begin searching.
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_first_not_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_first_not_of(t, pos);}
 
     /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
     /// @parzm str The string identifying characters to search for.
@@ -1311,21 +1180,6 @@ namespace xtd {
     /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
     /// @remarks Finds the first character equal to `ch`.
     size_type find_last_of(char_t ch, size_type pos) const {return chars_.find_last_of(ch, pos);}
-    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_last_of(const string_view_like_t& t) const noexcept {return chars_.find_last_of(t);}
-    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @param pos The position at which to begin searching.
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_last_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_last_of(t, pos);}
     
     /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
     /// @parzm str The string identifying characters to search for.
@@ -1370,21 +1224,6 @@ namespace xtd {
     /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
     /// @remarks Finds the first character equal to `ch`.
     size_type find_last_not_of(char_t ch, size_type pos) const {return chars_.find_last_not_of(ch, pos);}
-    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_last_not_of(const string_view_like_t& t) const noexcept {return chars_.find_last_not_of(t);}
-    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
-    /// @param pos The position at which to begin searching.
-    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
-    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type find_last_not_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_last_not_of(t, pos);}
 
     /// @brief Returns the allocator associated with the string.
     /// @return The associated allocator.
@@ -1396,7 +1235,7 @@ namespace xtd {
     
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
-    xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(basic_string<value_type> {*this});}
+    xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(chars_);}
     
     enumerator_type get_enumerator() const noexcept override {
       class basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
@@ -1464,20 +1303,6 @@ namespace xtd {
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
     size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
-    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
-    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
-    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
-    template<class string_view_like_t>
-    size_type rfind(const string_view_like_t& t) const noexcept {return chars_.rfind(t);}
-    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
-    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
-    /// @param pos The position at which to start the search
-    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
-    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
-    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-    template<class string_view_like_t>
-    size_type rfind(const string_view_like_t& t, size_type pos) const noexcept {return chars_.rfind(t, pos);}
 
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
