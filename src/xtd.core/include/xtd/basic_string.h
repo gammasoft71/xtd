@@ -12,9 +12,10 @@
 #include "internal/__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
 /// @endcond
+#include "collections/generic/ienumerable.h"
+#include "hash_code.h"
 #include "icomparable.h"
 #include "iequatable.h"
-#include "collections/generic/ienumerable.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
 #include "types.h"
@@ -66,7 +67,7 @@ namespace xtd {
   /// | xtd::u8string  | xtd::basic_string <xtd::char8>  |
   /// | xtd::wstring   | xtd::basic_string <xtd::wchar>  |
   template<typename char_t, typename traits_t, typename allocator_t>
-  class basic_string : /*public object,*/ public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>, public xtd::collections::generic::ienumerable<char_t> {
+  class basic_string : public object, public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>, public xtd::collections::generic::ienumerable<char_t> {
   public:
     /// @name Public Aliases
     
@@ -730,6 +731,10 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Returns a reference to the character at specified location `pos`.
+    /// @return Reference to the requested character.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+    const_reference at(size_type pos) const {return operator [](pos);}
     /// @brief Returns reference to the last character in the string.
     /// @return Reference to the last character, equivalent to `operator[](size() - 1)`.
     /// @exception xtd::index_out_of_range_exception If is empty.
@@ -804,10 +809,6 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    /// @brief Removes all characters from the string as if by executing `erase(begin(), end())`.
-    /// @remarks All pointers, references, and iterators are invalidated.
-    void clear() noexcept {chars_.clear();}
-    
     /// @brief Compares this instance with a specified xtd::object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified xtd::object.
     /// @param value An object that evaluates to a xtd::basic_string.
     /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.
@@ -834,7 +835,7 @@ namespace xtd {
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_string object, have the same value.
     /// @param obj The basic_string to compare to this instance.
     /// @return `true` if `obj` is a xtd::basic_string and its value is the same as this instance; otherwise, `false`.
-    bool equals(const object& obj) const noexcept /*override*/ {return dynamic_cast<const basic_string*>(&obj) && equals(static_cast<const basic_string&>(obj));}
+    bool equals(const object& obj) const noexcept override {return dynamic_cast<const basic_string*>(&obj) && equals(static_cast<const basic_string&>(obj));}
     /// @brief Determines whether this instance and another specified xtd::basic_string object have the same value.
     /// @param value The basic_string to compare to this instance.
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
@@ -849,6 +850,303 @@ namespace xtd {
       //if (ignore_case) return to_upper().chars_ == value.to_upper().chars_;
       return chars_ == value.chars_;
     }
+    
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to `str`.
+    size_type find(const basic_string& str) const {return chars_.find(str);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
+    /// @param str The string to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to `str`.
+    size_type find(const basic_string& str, size_type pos) const {return chars_.find(str, pos);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
+    /// @param str The string to search for.
+    /// @param pos The position at which to start the search
+    /// @param count The length of substring to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the range [s, s + count).
+    /// @remarks This range may contain null characters. If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type find(const_pointer s, size_type pos, size_type count) const {return chars_.find(s, pos, count);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
+    /// @param s The pointer to a character string to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find(const_pointer s) const {return chars_.find(s);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
+    /// @param s The pointer to a character string to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find(const_pointer s, size_type pos) const {return chars_.find(s, pos);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
+    /// @param ch The character to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
+    size_type find(value_type ch) const {return chars_.find(ch);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
+    size_type find(value_type ch, size_type pos) const {return chars_.find(ch, pos);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
+    template<class string_view_like_t>
+    size_type find(const string_view_like_t& t) const noexcept {return chars_.find(t);}
+    /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find(t, pos);}
+
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @parzm str The string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_first_of(const basic_string& str) const {return chars_.find_first_of(str);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param str The string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_first_of(const basic_string& str, size_type pos) const {return chars_.find_first_of(str, pos);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @param count The length of character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
+    /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type find_first_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_first_of(s, pos, count);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_first_of(const_pointer s) const {return chars_.find_first_of(s);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_first_of(const_pointer s, size_type pos) const {return chars_.find_first_of(s, pos);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_first_of(char_t ch) const {return chars_.find_first_of(ch);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_first_of(char_t ch, size_type pos) const {return chars_.find_first_of(ch, pos);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_first_of(const string_view_like_t& t) const noexcept {return chars_.find_first_of(t);}
+    /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_first_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_first_of(t, pos);}
+
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @parzm str The string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_first_not_of(const basic_string& str) const {return chars_.find_first_not_of(str);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param str The string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_first_not_of(const basic_string& str, size_type pos) const {return chars_.find_first_not_of(str, pos);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @param count The length of character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
+    /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type find_first_not_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_first_not_of(s, pos, count);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_first_not_of(const_pointer s) const {return chars_.find_first_not_of(s);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_first_not_of(const_pointer s, size_type pos) const {return chars_.find_first_not_of(s, pos);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_first_not_of(char_t ch) const {return chars_.find_first_not_of(ch);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_first_not_of(char_t ch, size_type pos) const {return chars_.find_first_not_of(ch, pos);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_first_not_of(const string_view_like_t& t) const noexcept {return chars_.find_first_not_of(t);}
+    /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_first_not_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_first_not_of(t, pos);}
+
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @parzm str The string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_last_of(const basic_string& str) const {return chars_.find_last_of(str);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param str The string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_last_of(const basic_string& str, size_type pos) const {return chars_.find_last_of(str, pos);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @param count The length of character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
+    /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type find_last_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_last_of(s, pos, count);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_last_of(const_pointer s) const {return chars_.find_last_of(s);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_last_of(const_pointer s, size_type pos) const {return chars_.find_last_of(s, pos);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_last_of(char_t ch) const {return chars_.find_last_of(ch);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_last_of(char_t ch, size_type pos) const {return chars_.find_last_of(ch, pos);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_last_of(const string_view_like_t& t) const noexcept {return chars_.find_last_of(t);}
+    /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_last_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_last_of(t, pos);}
+    
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @parzm str The string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_last_not_of(const basic_string& str) const {return chars_.find_last_not_of(str);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param str The string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in `str`.
+    size_type find_last_not_of(const basic_string& str, size_type pos) const {return chars_.find_last_not_of(str, pos);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @param count The length of character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
+    /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type find_last_not_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_last_not_of(s, pos, count);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_last_not_of(const_pointer s) const {return chars_.find_last_not_of(s);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param s The pointer to a character string identifying characters to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type find_last_not_of(const_pointer s, size_type pos) const {return chars_.find_last_not_of(s, pos);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_last_not_of(char_t ch) const {return chars_.find_last_not_of(ch);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Finds the first character equal to `ch`.
+    size_type find_last_not_of(char_t ch, size_type pos) const {return chars_.find_last_not_of(ch, pos);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_last_not_of(const string_view_like_t& t) const noexcept {return chars_.find_last_not_of(t);}
+    /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::basic_string::npos will be returned.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) identifying characters to search for
+    /// @param pos The position at which to begin searching.
+    /// @return Position of the found character or xtd::basic_string::npos if no such character is found.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first character equal to one of the characters in `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true`and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type find_last_not_of(const string_view_like_t& t, size_type pos) const noexcept {return chars_.find_last_not_of(t, pos);}
+
+    /// @brief Returns the allocator associated with the string.
+    /// @return The associated allocator.
+    allocator_type get_allocator() const {return chars_.get_allocator();}
    
     /// @brief Returns the underlying base type.
     /// @return The underlying base type.
@@ -856,7 +1154,7 @@ namespace xtd {
     
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
-    xtd::size get_hash_code() const noexcept /*override*/;
+    xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(basic_string<value_type> {*this});}
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
       class basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
@@ -882,10 +1180,68 @@ namespace xtd {
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
     
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to `str`.
+    size_type rfind(const basic_string& str) const {return chars_.rfind(str);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
+    /// @param str The string to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to `str`.
+    size_type rfind(const basic_string& str, size_type pos) const {return chars_.rfind(str, pos);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
+    /// @param str The string to search for.
+    /// @param pos The position at which to start the search
+    /// @param count The length of substring to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the range [s, s + count).
+    /// @remarks This range may contain null characters. If [`s`, `s + count`) is not a valid range, the behavior is undefined.
+    size_type rfind(const_pointer s, size_type pos, size_type count) const {return chars_.rfind(s, pos, count);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @param s The pointer to a character string to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type rfind(const_pointer s) const {return chars_.rfind(s);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
+    /// @param s The pointer to a character string to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
+    /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
+    size_type rfind(const_pointer s, size_type pos) const {return chars_.rfind(s, pos);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @param ch The character to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
+    size_type rfind(value_type ch) const {return chars_.rfind(ch);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
+    /// @param ch The character to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
+    size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
+    template<class string_view_like_t>
+    size_type rfind(const string_view_like_t& t) const noexcept {return chars_.rfind(t);}
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as `pos`, the whole string will be searched.
+    /// @param t object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) to search for.
+    /// @param pos The position at which to start the search
+    /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
+    /// @remarks Implicitly converts `t` to a string view sv as if by `std::basic_string_view<char_t, traits_t> sv = t;`, then finds the first substring equal to `sv`.
+    /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, traits_t>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
+    template<class string_view_like_t>
+    size_type rfind(const string_view_like_t& t, size_type pos) const noexcept {return chars_.rfind(t, pos);}
+
     /// @brief Converts the value of this instance to a xtd::basic_string <char>.
     /// @return The current string.
-    /// @todo Uncomment override when inheriting xtd::object.
-    basic_string<char> to_string() const noexcept /*override*/ {return __xtd_convert_to_string<char>(chars_);}
+    /// @todo Uncomment the folllowing line and remove the next..
+    //xtd::string to_string() const noexcept override {return __xtd_convert_to_string<char>(chars_);}
+    xtd::string to_string() const noexcept override;
     
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char16>.
     /// @return The current string.
@@ -920,7 +1276,7 @@ namespace xtd {
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-    const value_type& operator [](xtd::size index) const {
+    const_reference operator [](xtd::size index) const {
       if (index >= length()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return chars_[index];
     }
@@ -1932,13 +2288,16 @@ namespace xtd {
       return result;
     }
 
+    /// @todo uncomment following operators
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
     /// @param str The string to be inserted.
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
-    friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
+    /// @todo uncomment following line and remove the next.
+    //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
+    friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << __xtd_convert_to_string<char>(str.chars_);}
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
     /// @param str The string to be inserted.

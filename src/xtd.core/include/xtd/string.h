@@ -7,10 +7,6 @@
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.h"
 
-/// @todo Rmove `string` class.
-template<>
-inline std::string xtd::to_string(const xtd::string_& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
@@ -1676,6 +1672,10 @@ namespace xtd {
   string to_ustring(type_t val) {
     return string::format("{}", val);
   }
+
+  /// @todo Uncomment the folllowing line and remove the next..
+  template<typename char_t, typename traits_t, typename allocator_t>
+  inline xtd::string basic_string<char_t, traits_t, allocator_t>::to_string() const noexcept {return __xtd_convert_to_string<char>(chars_);}
 }
 
 /// @cond
@@ -1724,3 +1724,8 @@ struct std::formatter<xtd::string> : std::formatter<std::string> {
 #endif
 /// @endcond
 */
+
+/// @todo Rmove `string` class.
+template<>
+inline std::string xtd::to_string(const xtd::string_& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
+

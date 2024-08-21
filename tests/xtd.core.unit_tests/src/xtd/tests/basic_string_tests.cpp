@@ -469,6 +469,25 @@ namespace xtd::tests {
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
 
+    void test_method_(at) {
+      auto s = basic_string<char_t>("A test string");
+      assert::are_equal(char_t {'A'}, s.at(0), csf_);
+      assert::are_equal(char_t {' '}, s.at(1), csf_);
+      assert::are_equal(char_t {'t'}, s.at(2), csf_);
+      assert::are_equal(char_t {'e'}, s.at(3), csf_);
+      assert::are_equal(char_t {'s'}, s.at(4), csf_);
+      assert::are_equal(char_t {'t'}, s.at(5), csf_);
+      assert::are_equal(char_t {' '}, s.at(6), csf_);
+      assert::are_equal(char_t {'s'}, s.at(7), csf_);
+      assert::are_equal(char_t {'t'}, s.at(8), csf_);
+      assert::are_equal(char_t {'r'}, s.at(9), csf_);
+      assert::are_equal(char_t {'i'}, s.at(10), csf_);
+      assert::are_equal(char_t {'n'}, s.at(11), csf_);
+      assert::are_equal(char_t {'g'}, s.at(12), csf_);
+      assert::throws<index_out_of_range_exception>([&]{s.at(13);}, csf_);
+      assert::throws<index_out_of_range_exception>([&]{basic_string<char_t> {}.at(0);}, csf_);
+    }
+    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                 Static Methods
 
@@ -490,6 +509,7 @@ namespace xtd::tests {
       assert::are_equal(char_t {'n'}, s[11], csf_);
       assert::are_equal(char_t {'g'}, s[12], csf_);
       assert::throws<index_out_of_range_exception>([&]{s[13];}, csf_);
+      assert::throws<index_out_of_range_exception>([&]{basic_string<char_t> {}[0];}, csf_);
     }
 
     void test_method_(cast_operator_base_type) {
