@@ -1,4 +1,5 @@
 #include <xtd/basic_string>
+#include <xtd/argument_exception>
 #include <xtd/char16>
 #include <xtd/char32>
 #include <xtd/char8>
@@ -488,6 +489,97 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([&]{basic_string<char_t> {}.at(0);}, csf_);
     }
     
+    void test_method_(compare) {
+      assert::is_zero(basic_string<char_t> {"A test string"}.compare("A test string"), csf_);
+      assert::is_zero(basic_string<char_t> {"A test string"}.compare(1, 9, "B test strong", 1, 9), csf_);
+      assert::is_negative(basic_string<char_t> {"A test string"}.compare("B test strong"), csf_);
+      assert::is_positive(basic_string<char_t> {"B test strong"}.compare("A test string"), csf_);
+    }
+    
+    void test_method_(compare_to_object) {
+      auto s1 = basic_string<char_t> {"A test string"};
+      auto s2 = basic_string<char_t> {"A test string"};
+      auto& o1 = static_cast<object&>(s2);
+      auto o2 = object {};
+      assert::is_zero(s1.compare_to(o1), csf_);
+      assert::throws<argument_exception>([&] {s1.compare_to(o2);}, csf_);
+    }
+    
+    void test_method_(compare_to) {
+      assert::is_zero(basic_string<char_t> {"A test string"}.compare_to("A test string"), csf_);
+      assert::is_negative(basic_string<char_t> {"A test string"}.compare_to("B test strong"), csf_);
+      assert::is_positive(basic_string<char_t> {"B test strong"}.compare_to("A test string"), csf_);
+    }
+
+    void test_method_(get_base_type) {
+      assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string<char_t> {}.get_base_type()), csf_);
+      assert::is_empty(basic_string<char_t> {}.get_base_type(), csf_);
+      collection_assert::are_equal({'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.get_base_type(), csf_);
+    }
+    
+    void test_method_(get_hash_code) {
+      assert::are_equal(basic_string<char_t> {"01234"}.get_hash_code(), basic_string<char_t> {"01234"}.get_hash_code(), csf_);
+      assert::are_not_equal(basic_string<char_t> {"01235"}.get_hash_code(), basic_string<char_t> {"01234"}.get_hash_code(), csf_);
+    }
+    
+    void test_method_(get_enumerator) {
+      auto s = basic_string<char_t> {"A test string"};
+      auto r = s;
+      
+      r = basic_string<char_t>::empty_string;
+      auto e = s.get_enumerator();
+      while (e.move_next())
+        r += e.current() + basic_string<char_t> {", "};
+      assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
+      
+      r = basic_string<char_t>::empty_string;
+      for (auto c : s)
+        r += c + basic_string<char_t> {", "};
+      assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
+      
+      r = basic_string<char_t>::empty_string;
+      for (auto iterator = s.begin(); iterator != s.end(); ++iterator)
+        r += *iterator + basic_string<char_t> {", "};
+      assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
+      
+      r = basic_string<char_t>::empty_string;
+      for (auto iterator = s.cbegin(); iterator != s.cend(); iterator++)
+        r += *iterator + basic_string<char_t> {", "};
+      assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
+    }
+
+    void test_method_(to_string) {
+      auto s = basic_string<char_t> {"A test string"};
+      assert::is_instance_of<string>(s.to_string(), csf_);
+      assert::are_equal("A test string", s.to_string(), csf_);
+    }
+    
+    void test_method_(to_u16string) {
+      auto s = basic_string<char_t> {"A test string"};
+      assert::is_instance_of<u16string>(s.to_u16string(), csf_);
+      assert::are_equal(u"A test string", s.to_u16string(), csf_);
+    }
+    
+    void test_method_(to_u32string) {
+      auto s = basic_string<char_t> {"A test string"};
+      assert::is_instance_of<u32string>(s.to_u32string(), csf_);
+      assert::are_equal(U"A test string", s.to_u32string(), csf_);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(to_u8string) {
+      auto s = basic_string<char_t> {"A test string"};
+      assert::is_instance_of<u8string>(s.to_u8string(), csf_);
+      assert::are_equal(u8"A test string", s.to_u8string(), csf_);
+    }
+#endif
+    
+    void test_method_(to_wstring) {
+      auto s = basic_string<char_t> {"A test string"};
+      assert::is_instance_of<wstring>(s.to_wstring(), csf_);
+      assert::are_equal(u"A test string", s.to_wstring(), csf_);
+    }
+
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                 Static Methods
 
