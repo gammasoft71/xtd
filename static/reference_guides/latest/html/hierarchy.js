@@ -228,7 +228,7 @@ var hierarchy =
     ] ],
     [ "xtd::enum_register< enum_t >", "structxtd_1_1enum__register.html", null ],
     [ "xtd::enum_set_attribute< enum_t >", "structxtd_1_1enum__set__attribute.html", null ],
-    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
+    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerable_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "xtd::collections::generic::ienumerable< char_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
         [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
       ] ],
@@ -960,7 +960,7 @@ var hierarchy =
     [ "item_check_event_handler", null, [
       [ "xtd::event< xtd::forms::checked_list_box, item_check_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
-    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >::iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html", null ],
+    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerable_t >::iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html", null ],
     [ "key_event_handler", null, [
       [ "xtd::event< xtd::forms::control, key_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -1034,6 +1034,7 @@ var hierarchy =
         [ "xtd::reflection::assembly_version_attribute", "classxtd_1_1reflection_1_1assembly__version__attribute.html", null ]
       ] ],
       [ "xtd::background_color", "classxtd_1_1background__color.html", null ],
+      [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ],
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
       [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
