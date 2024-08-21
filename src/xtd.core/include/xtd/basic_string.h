@@ -103,6 +103,8 @@ namespace xtd {
     using reverse_iterator = base_type::reverse_iterator;
     /// @brief Represents the basic string const reverse iterator type.
     using const_reverse_iterator = base_type::const_reverse_iterator;
+    /// @brief Represents the basic string enumerator type.
+    using enumerator_type = xtd::collections::generic::enumerator<value_type>;
     /// @}
 
     /// @name Public Fields
@@ -769,7 +771,7 @@ namespace xtd {
     /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
     /// @return Iterator to the character following the last character.
     const_iterator cend() const override {return xtd::collections::generic::ienumerable<value_type>::cend();}
-    
+
     /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
     /// @return A pointer to the underlying character storage.
     /// @remarks The pointer obtained from `data()` may be invalidated by:
@@ -809,15 +811,255 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Compares two character sequences.
+    /// @param str The other string to compare to.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares this string to str.
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(const basic_string& str) const {return chars_.compare(str);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param str The other string to compare to.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to `str`.
+    /// * If `count1 > size() - pos1`, the substring is [`pos1`, size()).
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(size_type pos1, size_type count1, basic_string& str) const {return chars_.compare(pos1, count1, str);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param str The other string to compare to.
+    /// @param pos2 The position of the first character of the given string to compare.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
+    /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
+    /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(size_type pos1, size_type count1, const basic_string& str, size_type pos2) const {return chars_.compare(pos1, count1, str, pos2);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param str The other string to compare to.
+    /// @param pos2 The position of the first character of the given string to compare.
+    /// @param count2 The number of characters of the given string to compare.
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
+    /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
+    /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(size_type pos1, size_type count1, const basic_string& str, size_type pos2, size_type count2) const {return chars_.compare(pos1, count1, str, pos2, count2);}
+    /// @brief Compares two character sequences.
+    /// @param s pointer to the character string to compare to.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares this string to the null-terminated character sequence beginning at the character pointed to by `s` with length `traits_t::length(s)`.
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(const_pointer s) const {return chars_.compare(s);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param s pointer to the character string to compare to.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to the null-terminated character sequence beginning at the character pointed to by `s` with length `traits_t::length(s)`.
+    /// * If `count1 > size() - pos1`, the substring is [`pos1$ , size()).
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(size_type pos1, size_type count1, const_pointer s) const {return chars_.compare(pos1, count1, s);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param s pointer to the character string to compare to.
+    /// @param count2 The number of characters of the given string to compare.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to the characters in the range [`s`, `s + count2`). The characters in [`s`, `s + count2`) may include null characters.
+    /// * If `count1 > size() - pos1`, the substring is [`pos1`, size()).
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    int32 compare(size_type pos1, size_type count1, const_pointer s, size_type count2) const {return chars_.compare(pos1, count1, s, count2);}
+    /// @brief Compares two character sequences.
+    /// @param t The object (convertible to std::basic_string_view) to compare to.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then compares this string to `sv`;
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    template<class string_view_like_t>
+    int32 compare(const string_view_like_t& t) const noexcept {return chars_.compare(t);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param t The object (convertible to std::basic_string_view) to compare to.
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then compares a [`pos1`, `pos1 + count1`) substring of this string to `sv`, as if by `std::basic_string_view<char_t, traits_t>(*this).substr(pos1, count1).compare(sv)`;
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    template<class string_view_like_t>
+    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t) const noexcept {return chars_.compare(pos1, count1, t);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param t The object (convertible to std::basic_string_view) to compare to.
+    /// @param pos2 The position of the first character of the given string to compare.
+    /// @return
+    /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
+    /// * Zero if both character sequences compare equivalent.
+    /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then  compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `sv`, as if by `std::basic_string_view<char_t, traits_t>(*this).substr(pos1, count1).compare(sv.substr(pos2, count2))`.
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    template<class string_view_like_t>
+    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t, size_type pos2) const noexcept {return chars_.compare(pos1, count1, t, pos2);}
+    /// @brief Compares two character sequences.
+    /// @param pos1 The position of the first character in this string to compare.
+    /// @param count1 The number of characters of this string to compare.
+    /// @param t The object (convertible to std::basic_string_view) to compare to.
+    /// @param pos2 The position of the first character of the given string to compare.
+    /// @param count2 The number of characters of the given string to compare.
+    /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, traits_t> sv = t`;, then
+    /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
+    /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
+    /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
+    /// @remarks
+    /// | Condition                                                     | Result                          | Return value |
+    /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
+    /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
+    /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
+    /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
+    template<class string_view_like_t>
+    int32 compare(size_type pos1, size_type count1, const string_view_like_t& t, size_type pos2, size_type count2) const noexcept {return chars_.compare(pos1, count1, t, pos2, count2);}
+
     /// @brief Compares this instance with a specified xtd::object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified xtd::object.
     /// @param value An object that evaluates to a xtd::basic_string.
     /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.
-    /// @exception xtd::argument_exception `value` is not a xtd::basic_string.
     /// | Value             | Condition                                                         |
     /// | ----------------- | ----------------------------------------------------------------- |
     /// | Less than zero    | This instance precedes `value`.                                   |
     /// | Zero              | This instance has the same position in the sort order as `value`. |
     /// | Greater than zero | This instance follows `value`.                                    |
+    /// @exception xtd::argument_exception `value` is not a xtd::basic_string.
     int32 compare_to(const object& value) const {
       if (!dynamic_cast<const basic_string*>(&value)) __throw_basic_string_argument_exception(__FILE__, __LINE__, __func__);
       return compare_to(static_cast<const basic_string&>(value));
@@ -1156,7 +1398,7 @@ namespace xtd {
     /// @return A hash code.
     xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(basic_string<value_type> {*this});}
     
-    xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
+    enumerator_type get_enumerator() const noexcept override {
       class basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
       public:
         explicit basic_string_enumerator(const basic_string& chars) : chars_(chars) {}
@@ -1237,6 +1479,25 @@ namespace xtd {
     template<class string_view_like_t>
     size_type rfind(const string_view_like_t& t, size_type pos) const noexcept {return chars_.rfind(t, pos);}
 
+    /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
+    /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
+    /// @exception `std::out_of_range` if `pos > size()`.
+    /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
+    basic_string substr() const {return chars_.sustr();}
+    /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
+    /// @param pos The position of the first character to include.
+    /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
+    /// @exception `std::out_of_range` if `pos > size()`.
+    /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
+    basic_string substr(size_type pos) const {return chars_.sustr(pos);}
+    /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
+    /// @param pos The position of the first character to include.
+    /// @param count The length of the substring.
+    /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
+    /// @exception `std::out_of_range` if `pos > size()`.
+    /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
+    basic_string substr(size_type pos, size_type count) const {return chars_.sustr(pos, count);}
+    
     /// @brief Converts the value of this instance to a xtd::basic_string <char>.
     /// @return The current string.
     /// @todo Uncomment the folllowing line and remove the next..
