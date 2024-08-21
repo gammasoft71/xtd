@@ -99,6 +99,7 @@ namespace xtd::tests {
     void test_method_(empty_string) {
       assert::is_zero(basic_string<char_t>::empty_string.length(), csf_);
       assert::is_true(basic_string<char_t>::is_empty(basic_string<char_t>::empty_string), csf_);
+      assert::are_equal("", basic_string<char_t>::empty_string, csf_);
     }
 
     void test_method_(npos) {
@@ -372,8 +373,98 @@ namespace xtd::tests {
     void test_method_(constructor_with_initializer_list_wchar) {
       assert::are_equal(L"A test string", basic_string<char_t>(std::initializer_list<wchar> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}), csf_);
     }
+
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                     Properties
+    void test_method_(back) {
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {}.back();}, csf_);
+      assert::are_equal(char_t {'g'}, basic_string<char_t> {"A test string"}.back(), csf_);
+    }
+    
+    void test_method_(begin) {
+      auto s = basic_string<char_t> {"A test string"};
+      auto iterator = s.begin();
+      assert::are_equal(char_t {'A'}, *iterator++, csf_);
+      assert::are_equal(char_t {' '}, *iterator++, csf_);
+      assert::are_equal(char_t {'e'}, *++iterator, csf_);
+      assert::are_equal(char_t {'e'}, *iterator++, csf_);
+      assert::are_equal(char_t {'s'}, *iterator, csf_);
+      assert::are_equal(char_t {'i'}, *(iterator + 6), csf_);
+    }
+    
+    void test_method_(c_str) {
+      // Linker error on macOS : Undefined symbol: typeinfo for char8_t
+      //assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.c_str()), csf_);
+      assert::is_empty(basic_string<char_t> {}.c_str(), csf_);
+      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str(), csf_);
+    }
+    
+    void test_method_(capacity) {
+      assert::is_not_zero(basic_string<char_t> {}.capacity(), csf_);
+    }
+    
+    void test_method_(cbegin) {
+      auto s = basic_string<char_t> {"A test string"};
+      auto iterator = s.cbegin();
+      assert::are_equal(char_t {'A'}, *iterator++, csf_);
+      assert::are_equal(char_t {' '}, *iterator++, csf_);
+      assert::are_equal(char_t {'e'}, *++iterator, csf_);
+      assert::are_equal(char_t {'e'}, *iterator++, csf_);
+      assert::are_equal(char_t {'s'}, *iterator, csf_);
+      assert::are_equal(char_t {'i'}, *(iterator + 6), csf_);
+    }
+
+    void test_method_(chars) {
+      assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string<char_t> {}.chars()), csf_);
+      assert::is_empty(basic_string<char_t> {}.chars(), csf_);
+      collection_assert::are_equal({'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.chars(), csf_);
+    }
+    
+    void test_method_(cend) {
+      auto s = basic_string<char_t> {"A test string"};
+      auto iterator = s.cend();
+      assert::throws<index_out_of_range_exception>([&]{ [[maybe_unused]] auto v = *iterator;}, csf_);
+    }
+    
+    void test_method_(data) {
+      // Linker error on macOS : Undefined symbol: typeinfo for char8_t
+      //assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.data()), csf_);
+      assert::is_empty(basic_string<char_t> {}.data(), csf_);
+      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data(), csf_);
+    }
+    
+    void test_method_(empty) {
+      assert::is_true(basic_string<char_t> {}.empty(), csf_);
+      assert::is_true(basic_string<char_t>::empty_string.empty(), csf_);
+      assert::is_false(basic_string<char_t> {"A test string"}.empty(), csf_);
+    }
+    
+    void test_method_(end) {
+      auto s = basic_string<char_t> {"A test string"};
+      auto iterator = s.end();
+      assert::throws<index_out_of_range_exception>([&]{ [[maybe_unused]] auto v = *iterator;}, csf_);
+    }
+
+    void test_method_(front) {
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {}.front();}, csf_);
+      assert::are_equal(char_t {'A'}, basic_string<char_t> {"A test string"}.front(), csf_);
+    }
+    
+    void test_method_(length) {
+      assert::is_zero(basic_string<char_t> {}.length(), csf_);
+      assert::is_zero(basic_string<char_t>::empty_string.length(), csf_);
+      assert::are_equal(13_z, basic_string<char_t> {"A test string"}.length(), csf_);
+    }
+    
+    void test_method_(max_size) {
+      assert::is_not_zero(basic_string<char_t> {}.max_size(), csf_);
+    }
+    
+    void test_method_(size) {
+      assert::is_zero(basic_string<char_t> {}.size(), csf_);
+      assert::is_zero(basic_string<char_t>::empty_string.size(), csf_);
+      assert::are_equal(13_z, basic_string<char_t> {"A test string"}.size(), csf_);
+    }
 
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
@@ -1389,101 +1480,39 @@ namespace xtd::tests {
     }
     
     void test_method_(output_stream_operator_char) {
-      std::basic_stringstream<char> ss;
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char_t> {" string"};
       
+      std::basic_stringstream<char> ss;
       ss << s1 << s2;
       assert::are_equal("A test string", ss.str(), csf_);
     }
     
-    /*
-    void test_method_(output_stream_operator_char16) {
-      std::basic_stringstream<char16> ss;
-      auto s1 = basic_string<char_t> {"A test"};
-      auto s2 = basic_string<char_t> {" string"};
-      
-      ss << s1 << s2;
-      assert::are_equal(u"A test string", ss.str(), csf_);
-    }
-    
-    void test_method_(output_stream_operator_char32) {
-      std::basic_stringstream<char32> ss;
-      auto s1 = basic_string<char_t> {"A test"};
-      auto s2 = basic_string<char_t> {" string"};
-      
-      ss << s1 << s2;
-      assert::are_equal(U"A test string", ss.str(), csf_);
-    }
-    
-#if defined(__xtd__cpp_lib_char8_t)
-    void test_method_(output_stream_operator_char8) {
-      std::basic_stringstream<char8> ss;
-      auto s1 = basic_string<char_t> {"A test"};
-      auto s2 = basic_string<char_t> {" string"};
-      
-      ss << s1 << s2;
-      assert::are_equal(u8"A test string", ss.str(), csf_);
-    }
-#endif
-     */
-    
     void test_method_(output_stream_operator_wchar) {
-      std::basic_stringstream<wchar> ss;
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char_t> {" string"};
       
+      std::basic_stringstream<wchar> ss;
       ss << s1 << s2;
       assert::are_equal(L"A test string", ss.str(), csf_);
     }
 
     void test_method_(input_stream_operator_char) {
-      auto is = basic_string<char> {"A test string"};
+      auto is = basic_string<char> {"TestString"};
       std::basic_istringstream<char> iss {is};
       
       auto s = basic_string<char_t> {};
       iss >> s;
-      assert::are_equal("A test string", s, csf_);
+      assert::are_equal("TestString", s, csf_);
     }
-
-    /*
-    void test_method_(input_stream_operator_char16) {
-      auto is = basic_string<char16> {u"A test string"};
-      std::basic_istringstream<char16> iss {is};
-      
-      auto s = basic_string<char_t> {};
-      iss >> s;
-      assert::are_equal("A test string", s, csf_);
-    }
-
-    void test_method_(input_stream_operator_char32) {
-      auto is = basic_string<char32> {U"A test string"};
-      std::basic_istringstream<char32> iss {is};
-      
-      auto s = basic_string<char_t> {};
-      iss >> s;
-      assert::are_equal("A test string", s, csf_);
-    }
-
-#if defined(__xtd__cpp_lib_char8_t)
-    void test_method_(input_stream_operator_char8) {
-      auto is = basic_string<char8> {u8"A test string"};
-      std::basic_istringstream<char8> iss {is};
-      
-      auto s = basic_string<char_t> {};
-      iss >> s;
-      assert::are_equal("A test string", s, csf_);
-    }
-#endif
-     */
 
     void test_method_(input_stream_operator_wchar) {
-      auto is = basic_string<wchar> {L"A test string"};
+      auto is = basic_string<wchar> {L"TestString"};
       std::basic_istringstream<wchar> iss {is};
       
       auto s = basic_string<char_t> {};
       iss >> s;
-      assert::are_equal("A test string", s, csf_);
+      assert::are_equal("TestString", s, csf_);
     }
   };
 }
