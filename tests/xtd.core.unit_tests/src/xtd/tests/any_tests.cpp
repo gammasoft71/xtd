@@ -149,6 +149,7 @@ namespace xtd::tests {
       std::any a = foo {};
       register_any_stringer<foo>([](auto value) {return value.to_string();});
       assert::are_equal("foo string", string::format("{}", a), csf_);
+      unregister_any_stringer<foo>();
     }
     
     void test_method_(format_with_unregister_any_stringer) {
