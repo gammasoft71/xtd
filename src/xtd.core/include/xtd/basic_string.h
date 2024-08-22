@@ -1308,20 +1308,20 @@ namespace xtd {
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
-    basic_string substr() const {return chars_.sustr();}
+    basic_string substr() const {return chars_.substr();}
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
     /// @param pos The position of the first character to include.
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
-    basic_string substr(size_type pos) const {return chars_.sustr(pos);}
+    basic_string substr(size_type pos) const {return chars_.substr(pos);}
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
     /// @param pos The position of the first character to include.
     /// @param count The length of the substring.
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
-    basic_string substr(size_type pos, size_type count) const {return chars_.sustr(pos, count);}
+    basic_string substr(size_type pos, size_type count) const {return chars_.substr(pos, count);}
     
     /// @brief Converts the value of this instance to a xtd::basic_string <char>.
     /// @return The current string.
