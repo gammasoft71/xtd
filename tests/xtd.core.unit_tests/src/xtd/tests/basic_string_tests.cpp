@@ -510,6 +510,50 @@ namespace xtd::tests {
       assert::is_negative(basic_string<char_t> {"A test string"}.compare_to("B test strong"), csf_);
       assert::is_positive(basic_string<char_t> {"B test strong"}.compare_to("A test string"), csf_);
     }
+    
+    void test_method_(equals_object) {
+      auto s1 = basic_string<char_t> {"A test string"};
+      auto s2 = basic_string<char_t> {"A test string"};
+      auto& o1 = static_cast<object&>(s2);
+      auto o2 = object {};
+      assert::is_true(s1.equals(o1), csf_);
+      assert::is_false(s1.equals(o2), csf_);
+    }
+
+    void test_method_(equals) {
+      assert::is_true(basic_string<char_t> {"A test string"}.equals("A test string"), csf_);
+      assert::is_false(basic_string<char_t> {"A test string"}.equals("B test strong"), csf_);
+      assert::is_false(basic_string<char_t> {"B test strong"}.equals("A test string"), csf_);
+    }
+    
+    void test_method_(find) {
+      assert::are_equal(2_z, basic_string<char_t> {"A test string"}.find("test"), csf_);
+      assert::are_equal(4_z, basic_string<char_t> {"A test string"}.find(char_t {'s'}), csf_);
+    }
+    
+    void test_method_(find_first_of) {
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.find_first_of("tuvw"), csf_);
+      assert::are_equal(4_z, basic_string<char_t> {"A test string to test"}.find_first_of(char_t {'s'}), csf_);
+    }
+    
+    void test_method_(find_first_not_of) {
+      assert::are_equal(15_z, basic_string<char_t> {"A test string to test"}.find_first_not_of("Aeginrst "), csf_);
+      assert::are_equal(1_z, basic_string<char_t> {"A test string to test"}.find_first_not_of(char_t {'A'}), csf_);
+    }
+
+    void test_method_(find_last_of) {
+      assert::are_equal(15_z, basic_string<char_t> {"A test string to test"}.find_last_of("Baco"), csf_);
+      assert::are_equal(16_z, basic_string<char_t> {"A test string to test"}.find_last_of(char_t {' '}), csf_);
+    }
+
+    void test_method_(find_last_not_of) {
+      assert::are_equal(12_z, basic_string<char_t> {"A test string to test"}.find_last_not_of("eost "), csf_);
+      assert::are_equal(19_z, basic_string<char_t> {"A test string to test"}.find_last_not_of(char_t {'t'}), csf_);
+    }
+    
+    void test_method_(get_allocator) {
+      assert::are_equal(typeof_<typename std::allocator<char_t>>(), typeof_(basic_string<char_t> {"A test string"}.get_allocator()), csf_);
+    }
 
     void test_method_(get_base_type) {
       assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string<char_t> {}.get_base_type()), csf_);
@@ -547,6 +591,17 @@ namespace xtd::tests {
         r += *iterator + basic_string<char_t> {", "};
       assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
     }
+    
+    void test_method_(rfind) {
+      assert::are_equal(17_z, basic_string<char_t> {"A test string to test"}.rfind("test"), csf_);
+      assert::are_equal(19_z, basic_string<char_t> {"A test string to test"}.rfind(char_t {'s'}), csf_);
+    }
+    
+    void test_method_(substr) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.substr(), csf_);
+      assert::are_equal("test string", basic_string<char_t> {"A test string"}.substr(2), csf_);
+      assert::are_equal("test", basic_string<char_t> {"A test string"}.substr(2, 4), csf_);
+    }
 
     void test_method_(to_string) {
       auto s = basic_string<char_t> {"A test string"};
@@ -582,6 +637,12 @@ namespace xtd::tests {
 
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                 Static Methods
+    
+    void test_method_(is_empty) {
+      assert::is_true(basic_string<char_t>::is_empty(basic_string<char_t> {}), csf_);
+      assert::is_true(basic_string<char_t>::is_empty(basic_string<char_t>::empty_string), csf_);
+      assert::is_false(basic_string<char_t>::is_empty(basic_string<char_t> {"A test string"}), csf_);
+    }
 
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                      Operators
