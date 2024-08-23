@@ -17,6 +17,18 @@ namespace xtd {
   /// @ingroup xtd_core system strings
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
+  /// @remarks xtd::string implements xtd::basic_string and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
+  /// @todo Rename `string_` to `string`.
+  using string_ = xtd::basic_string<char>;
+  
+  /// @brief Represents text as a sequence of UTF-8 code units.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system strings
+  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
+  /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
   /// @remarks xtd::string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full (immutable) API of std::string.
   /// @todo Remove and use `using string = xtd::basic_string<char>;`.
   class string : public object, public xtd::icomparable<string>/*, public xtd::iequatable<string>*/, public std::basic_string<char> {
@@ -1725,7 +1737,7 @@ struct std::formatter<xtd::string> : std::formatter<std::string> {
 /// @endcond
 */
 
-/// @todo Rmove `string` class.
+/// @todo Remove `string` class.
 template<>
 inline std::string xtd::to_string(const xtd::string_& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
 

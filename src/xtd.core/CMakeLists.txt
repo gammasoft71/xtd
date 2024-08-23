@@ -909,6 +909,16 @@ add_sources(
   include/xtd/speech/synthesis/state_changed_event_handler
   include/xtd/speech/synthesis/synthesizer_state.h
   include/xtd/speech/synthesis/synthesizer_state
+  include/xtd/text/basic_string_builder.h
+  include/xtd/text/basic_string_builder
+  include/xtd/text/string_builder.h
+  include/xtd/text/string_builder
+  include/xtd/text/u16string_builder.h
+  include/xtd/text/u16string_builder
+  include/xtd/text/u32string_builder.h
+  include/xtd/text/u32string_builder
+  include/xtd/text/u8string_builder.h
+  include/xtd/text/u8string_builder
   include/xtd/threading/abandoned_mutex_exception.h
   include/xtd/threading/abandoned_mutex_exception
   include/xtd/threading/auto_reset_event.h
