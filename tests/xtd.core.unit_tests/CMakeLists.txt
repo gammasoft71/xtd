@@ -226,6 +226,7 @@ add_sources(
   src/xtd/tests/wstring_object_format_without_xtd_to_string_tests.cpp
   src/xtd/tests/wstring_string_format_tests.cpp
   src/xtd/tests/xml_syntax_exception_tests.cpp
+  src/xtd/text/tests/basic_string_builder_tests.cpp
   src/xtd/threading/tests/abandoned_mutex_exception_tests.cpp
   src/xtd/threading/tests/barrier_post_phase_exception_tests.cpp
   src/xtd/threading/tests/barrier_tests.cpp

@@ -16,6 +16,7 @@
 #include "hash_code.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "null.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
 #include "types.h"
@@ -1802,7 +1803,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string<char>& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -1811,7 +1812,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char16>& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -1820,7 +1821,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char32>& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -1830,7 +1831,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::char8>& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -1840,7 +1841,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const basic_string<xtd::wchar>& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -1850,7 +1851,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string<char>&& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -1859,7 +1860,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char16>&& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -1868,7 +1869,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char32>&& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -1878,7 +1879,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string<xtd::char8>&& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -1888,7 +1889,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, basic_string<xtd::wchar>&& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -1898,7 +1899,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string<char>& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1907,7 +1908,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char16>& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1916,7 +1917,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char32>& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1926,7 +1927,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::char8>& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1936,7 +1937,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const basic_string<xtd::wchar>& rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -1946,7 +1947,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string<char>&& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += std::move(rhs);
       return result;
     }
@@ -1955,7 +1956,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char16>&& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += std::move(rhs);
       return result;
     }
@@ -1964,7 +1965,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char32>&& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += std::move(rhs);
       return result;
     }
@@ -1974,7 +1975,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string<xtd::char8>&& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += std::move(rhs);
       return result;
     }
@@ -1984,7 +1985,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, basic_string<xtd::wchar>&& rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += std::move(rhs);
       return result;
     }
@@ -1994,7 +1995,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const char* rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2003,7 +2004,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char16* rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2012,7 +2013,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char32* rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2022,7 +2023,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char8* rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2032,7 +2033,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::wchar* rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2042,7 +2043,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const char* rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2051,7 +2052,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char16* rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2060,7 +2061,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char32* rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2070,7 +2071,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char8* rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2080,7 +2081,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::wchar* rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2090,7 +2091,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += rhs;
       return result;
     }
@@ -2099,7 +2100,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += rhs;
       return result;
     }
@@ -2108,7 +2109,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += rhs;
       return result;
     }
@@ -2118,7 +2119,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += rhs;
       return result;
     }
@@ -2128,7 +2129,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar* lhs, const basic_string& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += rhs;
       return result;
     }
@@ -2138,7 +2139,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const char* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2147,7 +2148,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char16* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2156,7 +2157,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char32* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2167,7 +2168,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::char8* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2177,7 +2178,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const xtd::wchar* lhs, basic_string&& rhs) {
-      basic_string result = basic_string(lhs).chars_;
+      auto result = basic_string(lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2187,7 +2188,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const char rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2196,7 +2197,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char16 rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2205,7 +2206,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char32 rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2215,7 +2216,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::char8 rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2225,7 +2226,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const basic_string& lhs, const xtd::wchar rhs) {
-      basic_string result = lhs;
+      auto result = lhs;
       result += rhs;
       return result;
     }
@@ -2235,7 +2236,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const char rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2244,7 +2245,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char16 rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2253,7 +2254,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char32 rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2263,7 +2264,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::char8 rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2273,7 +2274,7 @@ namespace xtd {
     /// @param rhs The character who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(basic_string&& lhs, const xtd::wchar rhs) {
-      basic_string result = std::move(lhs);
+      auto result = std::move(lhs);
       result += rhs;
       return result;
     }
@@ -2283,7 +2284,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(char lhs, const basic_string& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += rhs;
       return result;
     }
@@ -2292,7 +2293,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char16 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += rhs;
       return result;
     }
@@ -2301,7 +2302,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char32 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += rhs;
       return result;
     }
@@ -2311,7 +2312,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char8 lhs, const basic_string& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += rhs;
       return result;
     }
@@ -2321,7 +2322,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::wchar lhs, const basic_string& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += rhs;
       return result;
     }
@@ -2331,7 +2332,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(char lhs, basic_string&& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2340,7 +2341,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char16 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2349,7 +2350,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char32 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2359,7 +2360,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char8 lhs, basic_string&& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += std::move(rhs);
       return result;
     }
@@ -2369,7 +2370,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::wchar lhs, basic_string&& rhs) {
-      basic_string result = basic_string(1, lhs).chars_;
+      auto result = basic_string(1, lhs);
       result += std::move(rhs);
       return result;
     }

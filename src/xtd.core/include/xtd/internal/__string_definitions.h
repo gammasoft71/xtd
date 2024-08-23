@@ -10,6 +10,7 @@
 #include <string>
 #define __XTD_STD_INTERNAL__
 #include "__xtd_std_version.h"
+#include "../collections/generic/helpers/allocator.h"
 #include "../char16.h"
 #include "../char32.h"
 #include "../char8.h"
@@ -27,7 +28,7 @@ namespace xtd {
   /// @remarks A basic_string is a sequential collection of characters that's used to represent text. A xtd::basic_string object is a sequential collection of char that represent a basic_string. The value of the xtd::basic_string object is the content of the sequential collection of `char_t`, and unlike [std::basic_string<char_t>](https://en.cppreference.com/w/cpp/basic_string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable basic_string class, you can use xtd::text::basic_string_builder <char_t> class.
   /// @remarks xtd::basic_string implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string/basic_string) and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
-  template<typename char_t, typename traits_t = std::char_traits<char_t>, typename allocator_t = std::allocator<char_t>>
+  template<typename char_t, typename traits_t = std::char_traits<char_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<char_t>>
   class basic_string;
   
   /// @brief Represents text as a sequence of UTF-8 code units.

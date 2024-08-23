@@ -207,11 +207,13 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char32>(U"A test string"), 7, 7);}, csf_);
     }
 
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(constructor_with_basic_string_char8_and_index_and_count) {
       assert::are_equal(u8"str", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 3), csf_);
       assert::are_equal(u8"string", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 6), csf_);
       assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 7);}, csf_);
     }
+#endif
 
     void test_method_(constructor_with_basic_string_wchar_and_index_and_count) {
       assert::are_equal(L"str", basic_string<char_t>(basic_string<wchar>(L"A test string"), 7, 3), csf_);
