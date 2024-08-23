@@ -10,6 +10,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "reflection", "dir_c5ab95ebd4a6382f3072f9e8eddc25ab.html", "dir_c5ab95ebd4a6382f3072f9e8eddc25ab" ],
     [ "security", "dir_75de07c747a788ad0ad50f573738892e.html", "dir_75de07c747a788ad0ad50f573738892e" ],
     [ "speech", "dir_1ddb0e2b71182da087ecb577508ccc4e.html", "dir_1ddb0e2b71182da087ecb577508ccc4e" ],
+    [ "text", "dir_8c05fb3636688c61e5c98910e4c8e6d5.html", "dir_8c05fb3636688c61e5c98910e4c8e6d5" ],
     [ "threading", "dir_543e5a42b3131ff4772ce9703ee74064.html", "dir_543e5a42b3131ff4772ce9703ee74064" ],
     [ "timers", "dir_d6e67b5ef12bc964effbdc134c0e12ad.html", "dir_d6e67b5ef12bc964effbdc134c0e12ad" ],
     [ "web", "dir_c52e9d94cdf6381ff7513773ffbb764c.html", "dir_c52e9d94cdf6381ff7513773ffbb764c" ],

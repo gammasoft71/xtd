@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('____string__definitions_8h.html',''); 
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="____xtd__std__version_8h_source.html">__xtd_std_version.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="allocator_8h_source.html">../collections/generic/helpers/allocator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="char16_8h_source.html">../char16.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="char32_8h_source.html">../char32.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="char8_8h_source.html">../char8.h</a>&quot;</code><br />
@@ -126,18 +127,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga15c0d68a2525f5757ecbbc29331e8ecd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga15c0d68a2525f5757ecbbc29331e8ecd.html#ga15c0d68a2525f5757ecbbc29331e8ecd">xtd::string_</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char &gt;</td></tr>
-<tr class="memdesc:ga15c0d68a2525f5757ecbbc29331e8ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-8 code units.  <br /></td></tr>
-<tr class="separator:ga15c0d68a2525f5757ecbbc29331e8ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga58c2647f79d37168ab1bf1009776a525"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga58c2647f79d37168ab1bf1009776a525.html#ga58c2647f79d37168ab1bf1009776a525">xtd::u16string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga39d5c4947c807e5f78b8a9abe3692570.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt;</td></tr>
-<tr class="memdesc:ga58c2647f79d37168ab1bf1009776a525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-16 code units.  <br /></td></tr>
-<tr class="separator:ga58c2647f79d37168ab1bf1009776a525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0bf154385b6774a82ab0e0566db85522"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga0bf154385b6774a82ab0e0566db85522.html#ga0bf154385b6774a82ab0e0566db85522">xtd::u32string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt;</td></tr>
-<tr class="memdesc:ga0bf154385b6774a82ab0e0566db85522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-32 code units.  <br /></td></tr>
-<tr class="separator:ga0bf154385b6774a82ab0e0566db85522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1f6c3b1eafde935d9ac013688a9a3e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_gac1f6c3b1eafde935d9ac013688a9a3e4.html#gac1f6c3b1eafde935d9ac013688a9a3e4">xtd::u8string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga1259090c8918e75847a8cb2a64b8912a.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt;</td></tr>
-<tr class="memdesc:gac1f6c3b1eafde935d9ac013688a9a3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-8 code units.  <br /></td></tr>
-<tr class="separator:gac1f6c3b1eafde935d9ac013688a9a3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8eca5a16f87ec636f6be2518a914b21"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_gad8eca5a16f87ec636f6be2518a914b21.html#gad8eca5a16f87ec636f6be2518a914b21">xtd::string_</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:gad8eca5a16f87ec636f6be2518a914b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-8 code units.  <br /></td></tr>
+<tr class="separator:gad8eca5a16f87ec636f6be2518a914b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87efea41d4bd7beb815934226919d4cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga87efea41d4bd7beb815934226919d4cf.html#ga87efea41d4bd7beb815934226919d4cf">xtd::u16string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga39d5c4947c807e5f78b8a9abe3692570.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt;</td></tr>
+<tr class="memdesc:ga87efea41d4bd7beb815934226919d4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-16 code units.  <br /></td></tr>
+<tr class="separator:ga87efea41d4bd7beb815934226919d4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e905e9638523f5b5d380d8bcbcc834e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga8e905e9638523f5b5d380d8bcbcc834e.html#ga8e905e9638523f5b5d380d8bcbcc834e">xtd::u32string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt;</td></tr>
+<tr class="memdesc:ga8e905e9638523f5b5d380d8bcbcc834e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-32 code units.  <br /></td></tr>
+<tr class="separator:ga8e905e9638523f5b5d380d8bcbcc834e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10e56556495f88e0d68bde21820cdddf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga10e56556495f88e0d68bde21820cdddf.html#ga10e56556495f88e0d68bde21820cdddf">xtd::u8string</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga1259090c8918e75847a8cb2a64b8912a.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt;</td></tr>
+<tr class="memdesc:ga10e56556495f88e0d68bde21820cdddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-8 code units.  <br /></td></tr>
+<tr class="separator:ga10e56556495f88e0d68bde21820cdddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0">xtd::wstring</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types_ga155357d92cf162b71b396e46accee518.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt;</td></tr>
 <tr class="memdesc:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows systems.  <br /></td></tr>
 <tr class="separator:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,7 +150,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_618e153bd4f02720ed2e807a9fe886a0.html">internal</a></li><li class="navelem"><a class="el" href="____string__definitions_8h.html">__string_definitions.h</a></li>
-		<li class="footer">Generated on Wed Aug 21 2024 20:51:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Aug 23 2024 09:52:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
