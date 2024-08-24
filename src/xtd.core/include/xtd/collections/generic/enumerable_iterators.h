@@ -171,7 +171,10 @@ namespace xtd {
             enumerator_.reset();
             if (pos_ == std::numeric_limits<xtd::size>::max()) return;
             for (auto index = xtd::size {}; index <= pos_; ++index)
-              if (enumerator_.move_next() == false) break;
+              if (enumerator_.move_next() == false) {
+                pos_ = std::numeric_limits<xtd::size>::max();
+                break;
+              }
           }
 
           enumerable_t* enumerable_ = nullptr;
