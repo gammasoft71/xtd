@@ -1235,9 +1235,9 @@ namespace xtd {
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename ...args_t>
     static basic_string format(const basic_string<char>& fmt, args_t&& ... args) {
-      basic_string<char> result;
-      xtd::size index = 0;
-      std::vector<__format_information<char>> formats;
+      auto result = basic_string<char> {};
+      auto index = xtd::size {0};
+      auto formats = std::vector<__format_information<char>> {};
       auto begin_format_iterator = fmt.end();
       auto end_format_iterator = fmt.end();
       for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
@@ -1254,7 +1254,7 @@ namespace xtd {
             end_format_iterator = iterator;
             __format_information<char> fi;
             fi.location = result.size();
-            std::basic_string<char> format_str {begin_format_iterator, end_format_iterator};
+            auto format_str = std::basic_string<char> {begin_format_iterator, end_format_iterator};
             if (format_str.size() == 0)
               fi.index = index++;
             else {
@@ -1273,7 +1273,7 @@ namespace xtd {
               if (index_alignment_separator == 0 || index_format_separator == 0)
                 fi.index = index++;
               else {
-                std::basic_string<char> index_str;
+                auto index_str = std::basic_string<char> {};
                 if (index_alignment_separator != basic_string<char>::npos)
                   index_str = format_str.substr(0, index_alignment_separator);
                 else if (index_format_separator != basic_string<char>::npos)
@@ -1339,10 +1339,6 @@ namespace xtd {
       return {new_ptr<basic_string_enumerator>(*this)};
     }
 
-    /// @brief Reports the index of the first occurrence of the specified character in this basic_string.
-    /// @param value An unicode character to seek
-    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    xtd::size index_of(value_type value) const noexcept {return index_of(value, 0, size());}
     /// @brief Reports the index of the first occurrence of the specified basic_string in this basic_string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
@@ -1351,27 +1347,35 @@ namespace xtd {
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    xtd::size index_of(value_type value, xtd::size start_index) const noexcept {return index_of(value, start_index, size() - start_index);}
+    xtd::size index_of(const basic_string& value, xtd::size start_index) const {return index_of(value, start_index, size() - start_index);}
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size index_of(const basic_string& value, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto result = find(value, start_index);
+      return result > start_index + count ? npos : result;
+    }
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(value_type value) const noexcept {return index_of(value, 0, size());}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    xtd::size index_of(const basic_string& value, xtd::size start_index) const noexcept {return index_of(value, start_index, size() - start_index);}
+    xtd::size index_of(value_type value, xtd::size start_index) const {return index_of(value, start_index, size() - start_index);}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    xtd::size index_of(value_type value, xtd::size start_index, xtd::size count) const noexcept {
-      auto result = find(value, start_index);
-      return result > start_index + count ? npos : result;
-    }
-    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
-    /// @param value An unicode character to seek
-    /// @param start_index The search starting position
-    /// @param count The number of character positions to examine
-    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    xtd::size index_of(const basic_string& value, xtd::size start_index, xtd::size count) const noexcept {
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size index_of(value_type value, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       auto result = find(value, start_index);
       return result > start_index + count ? npos : result;
     }
@@ -1453,6 +1457,88 @@ namespace xtd {
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
     size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
     
+    /// @brief Splits this basic_string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    std::vector<basic_string> split() const noexcept {return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into substrings that are based on the characters in an array.
+    /// @param separator A character that delimits the substrings in this basic_string.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    std::vector<basic_string> split(value_type separator) const noexcept {return split(std::vector<value_type> {separator}, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
+    /// @param separator A character that delimits the substrings in this basic_string
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the options parameter is remove_empty_entries and the length of the specified basic_string is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string. For example, if separator includes two elements, "-" and "_", the value of the basic_string instance is "-_aa-_", and the value of the options argument is None, the method returns a basic_string array with the following five elements:
+    ///   1. empty basic_string, which represents the empty basic_string that precedes the "-" character at index 0.
+    ///   2. empty basic_string, which represents the empty basic_string between the "-" character at index 0 and the "_" character at index 1.
+    ///   3. "aa",
+    ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
+    ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<basic_string> split(value_type separator, xtd::string_split_options options) const noexcept {return split(std::vector<value_type> {separator}, std::numeric_limits<xtd::size>::max(), options);}
+    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @param separator A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
+    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
+    std::vector<basic_string> split(value_type separator, xtd::size count) const noexcept {return split(std::vector<value_type> {separator}, count, xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of the specified basic_string is zero, an empty array is returned.
+    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains an empty basic_string.
+    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<basic_string> split(value_type separator, xtd::size count, xtd::string_split_options options) const noexcept {return split(std::vector<value_type> {separator}, count, options);}
+
+    /// @brief Splits this basic_string into substrings that are based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    std::vector<basic_string> split(const std::vector<value_type>& separators) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the options parameter is remove_empty_entries and the length of the specified basic_string is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string. For example, if separator includes two elements, "-" and "_", the value of the basic_string instance is "-_aa-_", and the value of the options argument is None, the method returns a basic_string array with the following five elements:
+    ///   1. empty basic_string, which represents the empty basic_string that precedes the "-" character at index 0.
+    ///   2. empty basic_string, which represents the empty basic_string between the "-" character at index 0 and the "_" character at index 1.
+    ///   3. "aa",
+    ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
+    ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::string_split_options options) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), options);}
+    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
+    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
+    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::size count) const noexcept {return split(separators, count, xtd::string_split_options::none);}
     /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
@@ -1486,43 +1572,6 @@ namespace xtd {
       
       return list;
     }
-    /// @brief Splits this basic_string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
-    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
-    /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    std::vector<basic_string> split() const noexcept {return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
-    /// @brief Splits this basic_string into substrings that are based on the characters in an array.
-    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
-    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
-    /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    std::vector<basic_string> split(const std::vector<value_type>& separators) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
-    /// @brief Splits this basic_string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
-    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
-    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
-    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
-    /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    /// @remarks If the specified basic_string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified basic_string.
-    /// @remarks If the options parameter is remove_empty_entries and the length of the specified basic_string is zero, the method returns an empty array.
-    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string. For example, if separator includes two elements, "-" and "_", the value of the basic_string instance is "-_aa-_", and the value of the options argument is None, the method returns a basic_string array with the following five elements:
-    ///   1. empty basic_string, which represents the empty basic_string that precedes the "-" character at index 0.
-    ///   2. empty basic_string, which represents the empty basic_string between the "-" character at index 0 and the "_" character at index 1.
-    ///   3. "aa",
-    ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
-    ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
-    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
-    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::string_split_options options) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), options);}
-    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
-    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
-    /// @param count The maximum number of substrings to return.
-    /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
-    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
-    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
-    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::size count) const noexcept {return split(separators, count, xtd::string_split_options::none);}
 
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
@@ -2774,7 +2823,7 @@ namespace xtd {
 /// @cond
 template<typename arg_t>
 void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
-  xtd::size offset = 0;
+  auto offset = xtd::size {0};
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
@@ -2799,7 +2848,7 @@ void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& 
 
 template<typename ...args_t>
 void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
-  xtd::size index = 0;
+  auto index = xtd::size {0};
   (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
