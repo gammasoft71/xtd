@@ -25,6 +25,7 @@
 #include "to_string.h"
 #include "types.h"
 #include "unused.h"
+#include <cctype>
 #if defined(__xtd__cpp_lib_format)
 #include <format>
 #endif
@@ -32,8 +33,8 @@
 #include <string>
 
 /// @cond
-template<typename char_t, typename ...args_t>
-void __ustring_extract_format_arg(xtd::basic_string<char_t>& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
+template<typename ...args_t>
+void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args);
 template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
 template<typename target_t, typename source_t>
@@ -1003,7 +1004,7 @@ namespace xtd {
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     bool equals(const basic_string& value, bool ignore_case) const noexcept {
-      //if (ignore_case) return to_upper().chars_ == value.to_upper().chars_;
+      if (ignore_case) return to_upper().chars_ == value.to_upper().chars_;
       return chars_ == value.chars_;
     }
     
@@ -1226,6 +1227,88 @@ namespace xtd {
     /// @remarks Finds the first character equal to `ch`.
     size_type find_last_not_of(char_t ch, size_type pos) const {return chars_.find_last_not_of(ch, pos);}
 
+    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+    /// @param fmt A composite format string.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
+    /// @ingroup format_parse
+    /// @remarks for more information about format see @ref FormatPage "Format".
+    template<typename ...args_t>
+    static basic_string format(const basic_string<char>& fmt, args_t&& ... args) {
+      basic_string<char> result;
+      xtd::size index = 0;
+      std::vector<__format_information<char>> formats;
+      auto begin_format_iterator = fmt.end();
+      auto end_format_iterator = fmt.end();
+      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
+        if (*iterator == '{') {
+          if (++iterator == fmt.end())
+            __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+          if (*iterator == '{')
+            result += *iterator;
+          else {
+            begin_format_iterator = iterator;
+            while (iterator != fmt.end() && *iterator != '}') ++iterator;
+            if (iterator == fmt.end())
+              __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+            end_format_iterator = iterator;
+            __format_information<char> fi;
+            fi.location = result.size();
+            std::basic_string<char> format_str {begin_format_iterator, end_format_iterator};
+            if (format_str.size() == 0)
+              fi.index = index++;
+            else {
+              xtd::size index_alignment_separator = basic_string(format_str).index_of(',');
+              xtd::size index_format_separator = basic_string(format_str).index_of(u':');
+              
+              if (index_alignment_separator != std::basic_string<char>::npos && index_format_separator != std::basic_string<char>::npos && index_alignment_separator > index_format_separator)
+                index_alignment_separator = std::basic_string<char>::npos;
+              
+              if (index_alignment_separator != basic_string<char_t>::npos)
+                fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::basic_string<char>::npos ? index_format_separator - index_alignment_separator - 1 : std::basic_string<char>::npos);
+              
+              if (index_format_separator != basic_string<char>::npos)
+                fi.format = format_str.substr(index_format_separator + 1);
+              
+              if (index_alignment_separator == 0 || index_format_separator == 0)
+                fi.index = index++;
+              else {
+                std::basic_string<char> index_str;
+                if (index_alignment_separator != basic_string<char>::npos)
+                  index_str = format_str.substr(0, index_alignment_separator);
+                else if (index_format_separator != basic_string<char>::npos)
+                  index_str = format_str.substr(0, index_format_separator);
+                else
+                  index_str = std::move(format_str);
+                try {
+                  for (auto c : index_str)
+                    if (!std::isdigit(c)) __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                  fi.index = std::stoi(index_str);
+                } catch (...) {
+                  __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                }
+              }
+            }
+            formats.push_back(fi);
+          }
+        } else if (*iterator == '}') {
+          if (++iterator == fmt.end()) {
+            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            break;
+          }
+          if (*iterator != '}') {
+            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            break;
+          }
+          result += *iterator;
+        } else
+          result += *iterator;
+      }
+      
+      __basic_string_extract_format_arg(result, formats, std::forward<args_t>(args)...);
+      return result.c_str();
+    }
+
     /// @brief Returns the allocator associated with the string.
     /// @return The associated allocator.
     allocator_type get_allocator() const {return chars_.get_allocator();}
@@ -1256,12 +1339,77 @@ namespace xtd {
       return {new_ptr<basic_string_enumerator>(*this)};
     }
 
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(value_type value) const noexcept {return index_of(value, 0, size());}
+    /// @brief Reports the index of the first occurrence of the specified basic_string in this basic_string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(const basic_string& value) const noexcept {return index_of(value, 0, size());}
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(value_type value, xtd::size start_index) const noexcept {return index_of(value, start_index, size() - start_index);}
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(const basic_string& value, xtd::size start_index) const noexcept {return index_of(value, start_index, size() - start_index);}
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(value_type value, xtd::size start_index, xtd::size count) const noexcept {
+      auto result = find(value, start_index);
+      return result > start_index + count ? npos : result;
+    }
+    /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size index_of(const basic_string& value, xtd::size start_index, xtd::size count) const noexcept {
+      auto result = find(value, start_index);
+      return result > start_index + count ? npos : result;
+    }
+
     /// @brief Indicates whether this basic_string is an empty basic_string ("").
     /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
     /// @deprecated Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
     
+    /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
+    /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned basic_string. This means that, when used with right-to-left languages, it pads the right portion of the basic_string..
+    basic_string pad_left(xtd::size total_width) const noexcept {return pad_left(total_width, ' ');}
+    /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar An unicode padding character.
+    /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical the specified basic_string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned basic_string. This means that, when used with right-to-left languages, it pads the right portion of the basic_string..
+    basic_string pad_left(xtd::size total_width, char32 padding_char) const noexcept {return total_width < size() ? *this : basic_string(total_width - size(), padding_char) + *this;}
+    
+    /// @brief Left-aligns the characters in this basic_string, padding with spaces on the right for a specified total length.
+    /// @param totalWidth The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
+    /// @return A new basic_string that is equivalent to the specified basic_string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
+    basic_string pad_right(xtd::size total_width) const noexcept {return pad_right(total_width, ' ');}
+    /// @brief Left-aligns the characters in this basic_string, padding with spaces on the right for a specified total length.
+    /// @param totalWidth The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar An unicode padding character.
+    /// @return A new basic_string that is equivalent to the specified basic_string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
+    /// @remarks An unicode space is defined as hexadecimal 0x20.
+    /// @remarks The xtd::basic_string::pad_right method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
+    basic_string pad_right(xtd::size total_width, char32 padding_char) const noexcept {return total_width < size() ? *this : *this + basic_string(total_width - size(), padding_char);}
+
     /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first substring equal to `str`.
@@ -1304,6 +1452,77 @@ namespace xtd {
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
     size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
+    
+    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of the specified basic_string is zero, an empty array is returned.
+    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains an empty basic_string.
+    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::size count, xtd::string_split_options options) const noexcept {
+      if (count == 0) return {};
+      if (count == 1) return {*this};
+      
+      auto list = std::vector<basic_string> {};
+      auto sub_string = basic_string::empty_string;
+      auto split_char_separators = separators.size() == 0 ? default_split_separators : separators;
+      for (auto it = begin(); it != end(); ++it) {
+        auto is_separator = std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+        if (!is_separator) sub_string.chars_.append(basic_string(1, *it));
+        if ((static_cast<xtd::size>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != xtd::string_split_options::remove_empty_entries))) {
+          if (list.size() == count - 1) {
+            list.push_back(sub_string + basic_string(c_str(), it - begin() + (is_separator ? 0 : 1), length() - (it - begin()) + (is_separator ? 0 : 1)));
+            return list;
+          }
+          list.push_back(sub_string);
+          sub_string.chars_.clear();
+        }
+      }
+      
+      return list;
+    }
+    /// @brief Splits this basic_string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    std::vector<basic_string> split() const noexcept {return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into substrings that are based on the characters in an array.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    std::vector<basic_string> split(const std::vector<value_type>& separators) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);}
+    /// @brief Splits this basic_string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the options parameter is remove_empty_entries and the length of the specified basic_string is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string. For example, if separator includes two elements, "-" and "_", the value of the basic_string instance is "-_aa-_", and the value of the options argument is None, the method returns a basic_string array with the following five elements:
+    ///   1. empty basic_string, which represents the empty basic_string that precedes the "-" character at index 0.
+    ///   2. empty basic_string, which represents the empty basic_string between the "-" character at index 0 and the "_" character at index 1.
+    ///   3. "aa",
+    ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
+    ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::string_split_options options) const noexcept {return split(separators, std::numeric_limits<xtd::size>::max(), options);}
+    /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
+    /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
+    std::vector<basic_string> split(const std::vector<value_type>& separators, xtd::size count) const noexcept {return split(separators, count, xtd::string_split_options::none);}
 
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
     /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
@@ -1323,13 +1542,47 @@ namespace xtd {
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
     basic_string substr(size_type pos, size_type count) const {return chars_.substr(pos, count);}
-    
+  
+    /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param str basic_string to substring.
+    /// @param start_index The zero-based starting character position of a substring in this instance.
+    /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
+    basic_string substring(xtd::size start_index) const noexcept {
+      if (start_index >= size()) return "";
+      return substr(start_index);
+    }
+    /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param start_index The zero-based starting character position of a substring in this instance.
+    /// @param length The number of characters in the substring.
+    /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
+    basic_string substring(xtd::size start_index, xtd::size length) const noexcept {
+      if (start_index >= size()) return "";
+      return substr(start_index, length);
+    }
+
+    /// @brief Returns a copy of the current xtd::basic_string converted to lowercase.
+    /// @return A string in lowercase.
+    basic_string to_lower() const noexcept {
+      auto result = basic_string::empty_string;
+      std::for_each(begin(), end(), [&](auto c) {result += static_cast<value_type>(std::tolower(c));});
+      return result;
+    }
+
     /// @brief Converts the value of this instance to a xtd::basic_string <char>.
     /// @return The current string.
     /// @todo Uncomment the folllowing line and remove the next..
     //xtd::string to_string() const noexcept override {return __xtd_convert_to_string<char>(chars_);}
     xtd::string to_string() const noexcept override;
     
+    /// @brief Converts the current basic_string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
+    /// @return A new basic_string in title case.
+    basic_string to_title_case() const noexcept {
+      auto words = split({' '});
+      for (auto& word : words)
+        if (word.size() && word != word.to_upper()) word = static_cast<value_type>(toupper(word[0])) + word.substring(1).to_lower();
+      return basic_string::join(" ", words);
+    }
+
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char16>.
     /// @return The current string.
     basic_string<xtd::char16> to_u16string() const noexcept {return __xtd_convert_to_string<xtd::char16>(chars_);}
@@ -1342,6 +1595,14 @@ namespace xtd {
     /// @return The current string.
     basic_string<xtd::char8> to_u8string() const noexcept {return __xtd_convert_to_string<xtd::char8>(chars_);}
     
+    /// @brief Returns a copy of the current xtd::basic_string converted to uppercase.
+    /// @return A string in uppercase.
+    basic_string to_upper() const noexcept {
+      auto result = basic_string::empty_string;
+      std::for_each(begin(), end(), [&](auto c) {result += static_cast<value_type>(std::toupper(c));});
+      return result;
+    }
+
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::wchar>.
     /// @return The current string.
     basic_string<xtd::wchar> to_wstring() const noexcept {return __xtd_convert_to_string<xtd::wchar>(chars_);}
@@ -1354,6 +1615,53 @@ namespace xtd {
     /// @param string The xtd::basic_string to check if empty.
     /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
     static bool is_empty(const xtd::basic_string<value_type, traits_type, allocator_type>& string) noexcept {return !string.length();}
+    
+    /// @brief Concatenates a specified separator basic_string between each element of a specified object array, yielding a single concatenated basic_string.
+    /// @param separator A basic_string separator.
+    /// @param values An array of Object.
+    /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static basic_string join(const basic_string separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
+    /// @brief Concatenates a specified separator basic_string between each element of a specified object array, yielding a single concatenated basic_string.
+    /// @param separator A basic_string separator.
+    /// @param values An array of Object.
+    /// @param start_index The first array element in value to use.
+    /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static basic_string join(const basic_string& separator, const collection_t& values, xtd::size index) noexcept {return join(separator, values, index, values.size() - index);}
+    /// @brief Concatenates a specified separator basic_string between each element of a specified Object array, yielding a single concatenated basic_string.
+    /// @param separator A basic_string separator.
+    /// @param values An array of Object.
+    /// @param start_index The first array element in value to use.
+    /// @param count The number of elements of value to use.
+    /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static basic_string join(const basic_string& separator, const collection_t& values, xtd::size index, xtd::size count) noexcept {
+      xtd::size i = 0;
+      basic_string result;
+      for (const auto& item : values) {
+        if (i >= index) {
+          if (i != index) result += separator;
+          result += format("{}", item);
+        }
+        if (++i >= index + count) break;
+      }
+      return result;
+    }
+    /// @cond
+    template<typename value_t>
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
+    template<typename value_t>
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) noexcept {return join(separator, std::vector<value_t>(values), index);}
+    template<typename value_t>
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
+    /// @endcond
     /// @}
     
     /// @name Public Operators
@@ -2432,13 +2740,16 @@ namespace xtd {
 #endif
     friend class basic_string<xtd::wchar>;
 
-    base_type::iterator to_base_type_iterator(iterator value) noexcept {
+    static const std::vector<char_t> default_split_separators;
+    static const std::vector<char_t> default_trim_chars;
+
+    base_type::iterator to_base_type_iterator(iterator value) const noexcept {
       if (value == begin()) return chars_.begin();
       if (value == end()) return chars_.end();
       return chars_.begin() + (value - begin());
     }
     
-    iterator to_iterator(base_type::iterator value) noexcept {
+    iterator to_iterator(base_type::iterator value) const noexcept {
       if (value == chars_.begin()) return begin();
       if (value == chars_.end()) return end();
       return begin() + (value - chars_.begin());
@@ -2450,10 +2761,49 @@ namespace xtd {
   /// @cond
   template<typename char_t, typename traits_t, typename allocator_t>
   inline const basic_string<char_t, traits_t, allocator_t> basic_string<char_t, traits_t, allocator_t>::empty_string;
+  
+  template<typename char_t, typename traits_t, typename allocator_t>
+  inline const std::vector<char_t> basic_string<char_t, traits_t, allocator_t>::default_split_separators = {9, 10, 11, 12, 13, 32};
+
+  template<typename char_t, typename traits_t, typename allocator_t>
+  inline const std::vector<char_t> basic_string<char_t, traits_t, allocator_t>::default_trim_chars = default_split_separators;
+
   /// @endcond
 }
 
 /// @cond
+template<typename arg_t>
+void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
+  xtd::size offset = 0;
+  for (auto& format : formats) {
+    format.location += offset;
+    if (format.index == index) {
+      xtd::basic_string<char> arg_str = xtd::to_string(arg, format.format);
+      
+      if (!format.alignment.empty()) {
+        xtd::int32 alignment = 0;
+        try {
+          alignment = std::stoi(format.alignment);
+        } catch (...) {
+          __throw_basic_string_format_exception(__FILE__, __LINE__, __func__);
+        }
+        if (alignment > 0) arg_str = arg_str.pad_left(alignment);
+        else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);
+      }
+      fmt.insert(format.location, arg_str);
+      offset += arg_str.size();
+    }
+  }
+  ++index;
+}
+
+template<typename ...args_t>
+void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
+  xtd::size index = 0;
+  (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);
+  unused_(index); // workaround to mute gcc warning: unused-but-set-variable
+}
+
 template<typename target_t, typename source_t>
 inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept {
   auto out = std::basic_string<target_t> {};
