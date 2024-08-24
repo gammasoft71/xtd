@@ -560,6 +560,48 @@ namespace xtd::tests {
       assert::are_equal(19_z, basic_string<char_t> {"A test string to test"}.find_last_not_of(char_t {'t'}), csf_);
     }
     
+    void test_method_(format_char) {
+      assert::are_equal("A test string to test", basic_string<char_t>::format("{}", "A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format("{}", u"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format("{}", U"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format("{}", u8"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format("{}", L"A test string to test"), csf_);
+    }
+    
+    void test_method_(format_char16) {
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u"{}", "A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u"{}", u"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u"{}", U"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u"{}", u8"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u"{}", L"A test string to test"), csf_);
+    }
+    
+    void test_method_(format_char32) {
+      assert::are_equal("A test string to test", basic_string<char_t>::format(U"{}", "A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(U"{}", u"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(U"{}", U"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(U"{}", u8"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(U"{}", L"A test string to test"), csf_);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(format_char8) {
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", "A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", u"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", U"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", u8"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", L"A test string to test"), csf_);
+    }
+#endif
+    
+    void test_method_(format_wchar) {
+      assert::are_equal("A test string to test", basic_string<char_t>::format(L"{}", "A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(L"{}", u"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(L"{}", U"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(L"{}", u8"A test string to test"), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t>::format(L"{}", L"A test string to test"), csf_);
+    }
+
     void test_method_(get_allocator) {
       assert::are_equal(typeof_<typename std::allocator<char_t>>(), typeof_(basic_string<char_t> {"A test string"}.get_allocator()), csf_);
     }
@@ -601,11 +643,99 @@ namespace xtd::tests {
       assert::are_equal("A,  , t, e, s, t,  , s, t, r, i, n, g, ", r, csf_);
     }
     
+    void test_method_(index_of_string) {
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of("test"), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of("tist"), csf_);
+    }
+    
+    void test_method_(index_of_string_with_start_index) {
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of("test", 0), csf_);
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of("test", 2), csf_);
+      assert::are_equal(17_z, basic_string<char_t> {"A test string to test"}.index_of("test", 3), csf_);
+      assert::are_equal(17_z, basic_string<char_t> {"A test string to test"}.index_of("test", 17), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of("test", 18), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of("test", 22);}, csf_);
+    }
+    
+    void test_method_(index_of_string_with_start_index_and_count) {
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of("test", 1, 6), csf_);
+      assert::are_equal(17_z, basic_string<char_t> {"A test string to test"}.index_of("test", 3, 18), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of("test", 3, 6), csf_);
+    }
+    
+    void test_method_(index_of_value_type) {
+      assert::are_equal(4_z, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of('z'), csf_);
+    }
+    
+    void test_method_(index_of_value_type_with_start_index) {
+      assert::are_equal(4_z, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}, 0), csf_);
+      assert::are_equal(7_z, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}, 6), csf_);
+      assert::are_equal(7_z, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}, 7), csf_);
+      assert::are_equal(19_z, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}, 19), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of(char_t {'s'}, 20), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of('s', 22);}, csf_);
+    }
+    
+    void test_method_(pad_left) {
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(0), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(21), csf_);
+      assert::are_equal(" A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(22), csf_);
+      assert::are_equal("          A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(31), csf_);
+    }
+    
+    void test_method_(pad_left_with_padding_char) {
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(0, char_t {'*'}), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(21, char_t {'*'}), csf_);
+      assert::are_equal("*A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(22, char_t {'*'}), csf_);
+      assert::are_equal("**********A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(31, char_t {'*'}), csf_);
+    }
+    
+    void test_method_(pad_right) {
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_right(0), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_right(21), csf_);
+      assert::are_equal("A test string to test ", basic_string<char_t> {"A test string to test"}.pad_right(22), csf_);
+      assert::are_equal("A test string to test          ", basic_string<char_t> {"A test string to test"}.pad_right(31), csf_);
+    }
+    
+    void test_method_(pad_right_with_padding_char) {
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_right(0, char_t {'*'}), csf_);
+      assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_right(21, char_t {'*'}), csf_);
+      assert::are_equal("A test string to test*", basic_string<char_t> {"A test string to test"}.pad_right(22, char_t {'*'}), csf_);
+      assert::are_equal("A test string to test**********", basic_string<char_t> {"A test string to test"}.pad_right(31, char_t {'*'}), csf_);
+    }
+
     void test_method_(rfind) {
       assert::are_equal(17_z, basic_string<char_t> {"A test string to test"}.rfind("test"), csf_);
       assert::are_equal(19_z, basic_string<char_t> {"A test string to test"}.rfind(char_t {'s'}), csf_);
     }
+
+    void test_method_(split) {
+      assert::are_equal(std::vector<basic_string<char_t>> {}, basic_string<char_t> {""}.split({'+', '-', '='}));
+      assert::are_equal(std::vector<basic_string<char_t>> {"a"}, basic_string<char_t> {"a"}.split({'+', '-', '='}));
+      assert::are_equal((std::vector<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100 42\t142"}.split());
+      assert::are_equal((std::vector<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100+42=142"}.split({'+', '-', '='}));
+      assert::are_equal(std::vector<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({'%', '*'}));
+      assert::are_equal(std::vector<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({}));
+      assert::are_equal((std::vector<basic_string<char_t>> {"a", "b", "c"}), basic_string<char_t> {"a,b,c"}.split(','));
+      assert::are_equal((std::vector<basic_string<char_t>> {"a", "", "", "b", "", "c"}), basic_string<char_t> {"a,,,b,,c"}.split(','));
+    }
     
+    void test_method_(split_count) {
+      assert::are_equal((std::vector<basic_string<char_t>> {"42", " 12, 19"}), basic_string<char_t> {"42, 12, 19"}.split({',', ' '}, 2));
+      assert::are_equal((std::vector<basic_string<char_t>> {"42", "", "12", ".19"}), basic_string<char_t> {"42..12..19"}.split({'.'}, 4));
+      assert::are_equal(std::vector<basic_string<char_t>> {"Banana"}, basic_string<char_t> {"Banana"}.split({','}, 2));
+      assert::are_equal(std::vector<basic_string<char_t>> {"Darb\nSmarba "}, basic_string<char_t> {"Darb\nSmarba "}.split({}, 1));
+    }
+    
+    void test_method_(split_with_string_split_option_remove_empty_entries) {
+      assert::are_equal(std::vector<basic_string<char_t>> {"a", "b", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::remove_empty_entries));
+    }
+    
+    void test_method_(split_with_string_split_optio_none) {
+      assert::are_equal(std::vector<basic_string<char_t>> {"a", "", "", "b", "", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::none));
+    }
+
     void test_method_(substr) {
       assert::are_equal("A test string", basic_string<char_t> {"A test string"}.substr(), csf_);
       assert::are_equal("test string", basic_string<char_t> {"A test string"}.substr(2), csf_);
