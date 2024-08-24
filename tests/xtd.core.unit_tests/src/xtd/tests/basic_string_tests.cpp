@@ -527,7 +527,14 @@ namespace xtd::tests {
       assert::is_false(basic_string<char_t> {"A test string"}.equals("B test strong"), csf_);
       assert::is_false(basic_string<char_t> {"B test strong"}.equals("A test string"), csf_);
     }
-    
+
+    void test_method_(equals_with_ignore_case) {
+      assert::is_true(basic_string<char_t> {"A test string"}.equals("A test string", true), csf_);
+      assert::is_true(basic_string<char_t> {"A test string"}.equals("A test string", false), csf_);
+      assert::is_true(basic_string<char_t> {"A tEsT sTrInG"}.equals("a TeSt StRiNg", true), csf_);
+      assert::is_false(basic_string<char_t> {"A tEsT sTrInG"}.equals("a TeSt StRiNg", false), csf_);
+    }
+
     void test_method_(find) {
       assert::are_equal(2_z, basic_string<char_t> {"A test string"}.find("test"), csf_);
       assert::are_equal(4_z, basic_string<char_t> {"A test string"}.find(char_t {'s'}), csf_);
@@ -604,6 +611,13 @@ namespace xtd::tests {
       assert::are_equal("test string", basic_string<char_t> {"A test string"}.substr(2), csf_);
       assert::are_equal("test", basic_string<char_t> {"A test string"}.substr(2, 4), csf_);
     }
+    
+    void test_method_(to_lower) {
+      assert::are_equal("a test string", basic_string<char_t> {"a test string"}.to_lower(), csf_);
+      assert::are_equal("a test string", basic_string<char_t> {"A TEST STRING"}.to_lower(), csf_);
+      assert::are_equal("a test string", basic_string<char_t> {"A tEsT sTrInG"}.to_lower(), csf_);
+      assert::are_equal("a test string", basic_string<char_t> {"A tEsT sTrInG"}.to_lower(), csf_);
+    }
 
     void test_method_(to_string) {
       auto s = basic_string<char_t> {"A test string"};
@@ -611,6 +625,13 @@ namespace xtd::tests {
       assert::are_equal("A test string", s.to_string(), csf_);
     }
     
+    void test_method_(to_title_case) {
+      assert::are_equal("A Test String", basic_string<char_t> {"a test string"}.to_title_case(), csf_);
+      assert::are_equal("A TEST STRING", basic_string<char_t> {"A TEST STRING"}.to_title_case(), csf_);
+      assert::are_equal("A Test String", basic_string<char_t> {"A tEsT sTrInG"}.to_title_case(), csf_);
+      assert::are_equal("A Test String", basic_string<char_t> {"A tEsT sTrInG"}.to_title_case(), csf_);
+    }
+
     void test_method_(to_u16string) {
       auto s = basic_string<char_t> {"A test string"};
       assert::is_instance_of<u16string>(s.to_u16string(), csf_);
@@ -631,6 +652,13 @@ namespace xtd::tests {
     }
 #endif
     
+    void test_method_(to_upper) {
+      assert::are_equal("A TEST STRING", basic_string<char_t> {"A TEST STRING"}.to_upper(), csf_);
+      assert::are_equal("A TEST STRING", basic_string<char_t> {"a test string"}.to_upper(), csf_);
+      assert::are_equal("A TEST STRING", basic_string<char_t> {"A tEsT sTrInG"}.to_upper(), csf_);
+      assert::are_equal("A TEST STRING", basic_string<char_t> {"A tEsT sTrInG"}.to_upper(), csf_);
+    }
+
     void test_method_(to_wstring) {
       auto s = basic_string<char_t> {"A test string"};
       assert::is_instance_of<wstring>(s.to_wstring(), csf_);

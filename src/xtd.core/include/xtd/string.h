@@ -7,6 +7,11 @@
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.h"
 
+/// @cond
+template<typename ...args_t>
+void __ustring_extract_format_arg(xtd::string& fmt, std::vector<__format_information<char>>& formats, args_t&& ... args);
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents text as a sequence of UTF-8 code units.
