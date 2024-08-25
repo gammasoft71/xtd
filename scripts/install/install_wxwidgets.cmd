@@ -32,10 +32,10 @@ cd 3rdparty
 git clone https://github.com/wxWidgets/wxWidgets.git -b %wxwidgets_version% --depth 1
 cd wxwidgets
 git submodule update --init
-cd..
-if not exist "wxwidgets mkdir wxwidgets
+cd ..
+if not exist "wxwidgets" mkdir wxwidgets
 cd wxwidgets
-if not exist "build_cmake mkdir build_cmake
+if not exist "build_cmake" mkdir build_cmake
 cd build_cmake
 cmake .. -DwxBUILD_SHARED=OFF %*
 cmake --build . --target install --config Debug
