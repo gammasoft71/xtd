@@ -29,7 +29,9 @@
 #if defined(__xtd__cpp_lib_format)
 #include <format>
 #endif
+#include <iomanip>
 #include <ostream>
+#include <sstream>
 #include <string>
 
 /// @cond
@@ -759,6 +761,10 @@ namespace xtd {
     /// @return Iterator to the first character.
     const_iterator cbegin() const override {return xtd::collections::generic::ienumerable<value_type>::cbegin();}
     
+    /// @brief Returns a reverse iterator to the first character of the string.
+    /// @return Reverse iterator to the first character.
+    const_reverse_iterator crbegin() const {return chars_.crbegin();}
+    
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     const base_type& chars() const noexcept {return chars_;}
@@ -766,6 +772,10 @@ namespace xtd {
     /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
     /// @return Iterator to the character following the last character.
     const_iterator cend() const override {return xtd::collections::generic::ienumerable<value_type>::cend();}
+
+    /// @brief Returns a reverse  iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
+    /// @return Return iterator to the character following the last character.
+    const_reverse_iterator crend() const {return chars_.crend();}
 
     /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
     /// @return A pointer to the underlying character storage.
@@ -798,6 +808,14 @@ namespace xtd {
     /// @return Maximum number of characters.
     size_type max_size() const noexcept {return chars_.max_size();}
     
+    /// @brief Returns a reverse iterator to the first character of the string.
+    /// @return Reverse iterator to the first character.
+    const_reverse_iterator rbegin() const {return chars_.crbegin();}
+
+    /// @brief Returns a reverse  iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
+    /// @return Return iterator to the character following the last character.
+    const_reverse_iterator rend() const {return chars_.crend();}
+
     /// @brief Returns the number of `char_t` elements in the string, i.e. `std::distance(begin(), end())`.
     /// @return The number of `char_t` elements in the string.
     size_type size() const noexcept {return chars_.size();}
@@ -1514,6 +1532,36 @@ namespace xtd {
       return result < start_index ? npos : result;
     }
 
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    xtd::size last_index_of_any(const std::vector<value_type>& values) const noexcept {return last_index_of_any(values, 0, size());}
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index) const {return last_index_of_any(values, start_index, size() - start_index);}
+    /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine.
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto index = size() - 1;
+      for (auto iterator = crbegin(); iterator != crend(); ++iterator) {
+        if (index-- > start_index + count) continue;
+        if (index + 1 < start_index) break;
+        if (std::find(values.begin(), values.end(), *iterator) != values.end()) return index + 1;
+      }
+      return npos;
+    }
+    /// @cond
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values) const noexcept {return last_index_of_any(std::vector<value_type>(values));}
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {return last_index_of_any(std::vector<value_type>(values), start_index);}
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {return last_index_of_any(std::vector<value_type>(values), start_index, count);}
+    /// @endcond
+
     /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
     /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
@@ -1541,6 +1589,70 @@ namespace xtd {
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::basic_string::pad_right method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
     basic_string pad_right(xtd::size total_width, char32 padding_char) const noexcept {return total_width < size() ? *this : *this + basic_string(total_width - size(), padding_char);}
+
+    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
+    /// @return A new quoted basic_string.
+    /// @remarks the delimiter is set to @verbatim " @endverbatim by default and the escape is set to `\` by  default.
+    /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
+    basic_string quoted() const {return quoted('"', '\\');}
+    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML) ith specified delimiter.
+    /// @param delimiter The character to use as the delimiter, defaults to `"`.
+    /// @return A new quoted basic_string.
+    /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
+    basic_string quoted(value_type delimiter) const {return quoted(delimiter, '\\');}
+      /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML) ith specified delimiter and escape.
+      /// @param delimiter The character to use as the delimiter, defaults to `"`.
+      /// @param escape The character to use as the escape character, defaults to `\`.
+      /// @return A new quoted basic_string.
+      /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
+      basic_string quoted(value_type delimiter, value_type escape) const {
+      std::stringstream ss;
+      ss << std::quoted(__xtd_convert_to_string<char>(chars_), static_cast<char>(delimiter), static_cast<char>(escape));
+      return ss.str();
+    }
+    
+    /// @brief Deletes all the characters from this basic_string beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @return A new basic_string object that is equivalent to this basic_string less the removed characters.
+    basic_string remove(xtd::size start_index) const {return remove(start_index, size() - start_index);}
+    /// @brief Deletes all the characters from this basic_string beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @param count The number of characters to delete.
+    /// @return A new basic_string object that is equivalent to this basic_string less the removed characters.
+    basic_string remove(xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto result = *this;
+      result.chars_.erase(start_index, count);
+      return result;
+    }
+    
+    /// @brief Replaces all occurrences of a specified char_t in this basic_string with another specified char_t.
+    /// @param old_char A char_t to be replaced.
+    /// @param new_char A char_t to replace all occurrences of old_char.
+    /// @return A new basic_string equivalent to the specified basic_string but with all instances of old_char replaced with new_char.
+    basic_string replace(value_type old_char, value_type new_char) const noexcept {return replace(string(1, old_char), string(1, new_char));}
+    /// @brief Replaces all occurrences of a specified basic_string in this basic_string with another specified basic_string.
+    /// @param old_string A basic_string to be replaced.
+    /// @param new_string A basic_string to replace all occurrences of old_string.
+    /// @return A new basic_string equivalent to the specified basic_string but with all instances of old_string replaced with new_string.
+    /// @remarks If new_string is empty, all occurrences of old_string are removed
+    basic_string replace(const basic_string& old_string, const basic_string& new_string) const noexcept {
+      auto result = *this;
+      auto old_size = old_string.size();
+      auto new_size = new_string.size();
+      auto index = xtd::size {0};
+      while (true) {
+        index = result.find(old_string, index);
+        if (index == npos) break;
+        if (old_size == new_size) result.chars_.replace(index, old_size, new_string);
+        else {
+          result.chars_.erase(index, old_string.size());
+          result.chars_.insert(index, new_string);
+        }
+        index += new_string.size();
+      }
+      return result;
+    }
 
     /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
