@@ -744,20 +744,20 @@ namespace xtd::tests {
     }
 
     void test_method_(index_of_any) {
-      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}));
-      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}));
+      assert::are_equal(2_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}), csf_);
     }
 
     void test_method_(index_of_any_with_start_index) {
-      assert::are_equal(7_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6));
-      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6));
+      assert::are_equal(7_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6), csf_);
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);}, csf_);
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);}, csf_);
     }
 
     void test_method_(index_of_any_with_start_index_and_count) {
-      assert::are_equal(10_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 'u', 'v'}, 6, 5));
-      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6, 5));
+      assert::are_equal(10_z, basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 'u', 'v'}, 6, 5), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6, 5), csf_);
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);}, csf_);
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);}, csf_);
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6, 16);}, csf_);
@@ -805,6 +805,29 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of('s', 22);}, csf_);
     }
 
+    void test_method_(last_index_of_any) {
+      assert::are_equal(20_z, basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}), csf_);
+    }
+    
+    void test_method_(last_index_of_any_with_start_index) {
+      assert::are_equal(20_z, basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 6), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);}, csf_);
+    }
+    
+    void test_method_(last_index_of_any_with_start_index_and_count) {
+      assert::are_equal(10_z, basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 'u', 'v'}, 6, 5), csf_);
+      assert::are_equal(basic_string<char_t>::npos, basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6, 5), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 6, 16);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6, 16);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22, 5);}, csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22, 5);}, csf_);
+    }
+
     void test_method_(pad_left) {
       assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(0), csf_);
       assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_left(21), csf_);
@@ -831,6 +854,49 @@ namespace xtd::tests {
       assert::are_equal("A test string to test", basic_string<char_t> {"A test string to test"}.pad_right(21, char_t {'*'}), csf_);
       assert::are_equal("A test string to test*", basic_string<char_t> {"A test string to test"}.pad_right(22, char_t {'*'}), csf_);
       assert::are_equal("A test string to test**********", basic_string<char_t> {"A test string to test"}.pad_right(31, char_t {'*'}), csf_);
+    }
+    
+    void test_method_(quoted) {
+      assert::are_equal("\"A test string to test\"", basic_string<char_t> {"A test string to test"}.quoted(), csf_);
+      auto result = basic_string<char_t> {"\"A test string to test\""}.quoted();
+      assert::are_equal("\"\\\"A test string to test\\\"\"", basic_string<char_t> {"\"A test string to test\""}.quoted(), csf_);
+      assert::are_equal("\"A test \\\"string\\\" to test\"", basic_string<char_t> {"A test \"string\" to test"}.quoted(), csf_);
+    }
+    
+    void test_method_(quoted_with_delimiter) {
+      assert::are_equal("$A test string to test$", basic_string<char_t> {"A test string to test"}.quoted('$'), csf_);
+      assert::are_equal("$\\$A test string to test\\$$", basic_string<char_t> {"$A test string to test$"}.quoted('$'), csf_);
+      assert::are_equal("$A test \\$string\\$ to test$", basic_string<char_t> {"A test $string$ to test"}.quoted('$'), csf_);
+    }
+    
+    void test_method_(quoted_with_delimiter_and_escape) {
+      assert::are_equal("$A test string to test$", basic_string<char_t> {"A test string to test"}.quoted('$', '%'), csf_);
+      assert::are_equal("$%$A test string to test%$$", basic_string<char_t> {"$A test string to test$"}.quoted('$', '%'), csf_);
+      assert::are_equal("$A test %$string%$ to test$", basic_string<char_t> {"A test $string$ to test"}.quoted('$', '%'), csf_);
+    }
+    
+    void test_method_(remove_with_start_index) {
+      assert::are_equal("", basic_string<char_t> {"abc123ABC"}.remove(0), csf_);
+      assert::are_equal("abc", basic_string<char_t> {"abc123ABC"}.remove(3), csf_);
+      assert::are_equal("abc123ABC", basic_string<char_t> {"abc123ABC"}.remove(9), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"abc123ABC"}.remove(10);}, csf_);
+    }
+    
+    void test_method_(remove_with_index_and_count) {
+      assert::are_equal("abcABC", basic_string<char_t> {"abc123ABC"}.remove(3, 3), csf_);
+      assert::are_equal("abc", basic_string<char_t> {"abc123ABC"}.remove(3, 6), csf_);
+      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {"abc123ABC"}.remove(8, 2);}, csf_);
+    }
+
+    void test_method_(replace_value_type) {
+      assert::are_equal("This*is*the*beast*of*the*beast", basic_string<char_t> {"This is the beast of the beast"}.replace(' ', '*'));
+      assert::are_equal("This is thE bEast of thE bEast", basic_string<char_t> {"This is the beast of the beast"}.replace('e', 'E'));
+    }
+
+    void test_method_(replace_string) {
+      assert::are_equal("Thare are the beast of the beast", basic_string<char_t> {"This is the beast of the beast"}.replace("is", "are"));
+      assert::are_equal("Th  the beast of the beast", basic_string<char_t> {"This is the beast of the beast"}.replace("is", ""));
+      assert::are_equal("This text has\\_unescaped\\_\\_underscores !", basic_string<char_t> {"This text has_unescaped__underscores !"}.replace("_", "\\_"));
     }
 
     void test_method_(rfind) {
