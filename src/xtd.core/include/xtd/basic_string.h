@@ -989,6 +989,15 @@ namespace xtd {
     /// | Greater than zero | This instance follows `value`.                                    |
     int32 compare_to(const basic_string& value) const noexcept override {return chars_.compare(value.chars_);}
 
+    /// @brief Returns a value indicating whether a specified char occurs within this basic_string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this basic_string; otherwise, false.
+    virtual bool contains(value_type value) const noexcept {return find(value) != npos;}
+    /// @brief Returns a value indicating whether a specified substring occurs within this basic_string.
+    /// @param value The basic_string to seek.
+    /// @return true if the value parameter occurs within this basic_string, or if value is the empty basic_string (""); otherwise, false.
+    virtual bool contains(const basic_string& value) const noexcept {return find(value) != npos;}
+
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_string object, have the same value.
     /// @param obj The basic_string to compare to this instance.
     /// @return `true` if `obj` is a xtd::basic_string and its value is the same as this instance; otherwise, `false`.
@@ -1007,7 +1016,37 @@ namespace xtd {
       if (ignore_case) return to_upper().chars_ == value.to_upper().chars_;
       return chars_ == value.chars_;
     }
-    
+
+    /// @brief Determines whether the end of this basic_string matches the specified character.
+    /// @param value The char_t to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(value_type value) const noexcept {return ends_with(value, false);}
+    /// @brief Determines whether the end of this basic_string matches the specified character, ignoring or honoring their case.
+    /// @param value The char_t to compare to the substring at the end of this instance.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(value_type value, bool ignore_case) const noexcept {
+      if (ignore_case) return to_lower().rfind(static_cast<value_type>(tolower(value))) == size() - 1;
+      return rfind(value) == size() - 1;
+    }
+    /// @brief Determines whether the end of this basic_string matches the specified basic_string.
+    /// @param value The basic_string to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
+    bool ends_with(const basic_string& value) const noexcept {return ends_with(value, xtd::string_comparison::ordinal);}
+    /// @brief Determines whether the end of this basic_string instance matches the specified basic_string, ignoring or honoring their case.
+    /// @param value The string to compare to the substring at the end of this instance.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return bool true if value matches the end of the specified basic_string; otherwise, false.
+    bool ends_with(const basic_string& value, bool ignore_case) const noexcept {return ends_with(value, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
+    /// @brief Determines whether the end of this basic_string matches the specified basic_string when compared using the specified comparison option.
+    /// @param value The string to compare to the substring at the end of this instance.
+    /// @param comparison_type One of the enumeration values that determines how this basic_string and value are compared.
+    /// @return bool true if value matches the end of the specified basic_string; otherwise, false.
+    bool ends_with(const basic_string& value, xtd::string_comparison comparison_type) const noexcept {
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().rfind(value.to_lower()) + value.to_lower().size() == size();
+      return rfind(value) + value.size() == size();
+    }
+
     /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first substring equal to `str`.
@@ -1379,6 +1418,51 @@ namespace xtd {
       auto result = find(value, start_index);
       return result > start_index + count ? npos : result;
     }
+    
+    /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    xtd::size index_of_any(const std::vector<value_type>& values) const noexcept {return index_of_any(values, 0, size());}
+    /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index) const {return index_of_any(values, start_index, size() - start_index);}
+    /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
+    /// @param values An unicode character array containing one or more characters to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine.
+    /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto index = xtd::size {0};
+      for (const auto& item : *this) {
+        if (index++ < start_index) continue;
+        if (index - 1 > start_index + count) break;
+        if (std::find(values.begin(), values.end(), item) != values.end()) return index - 1;
+      }
+      return npos;
+    }
+    /// @cond
+    xtd::size index_of_any(const std::initializer_list<value_type>& values) const noexcept {return index_of_any(std::vector<value_type>(values));}
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {return index_of_any(std::vector<value_type>(values), start_index);}
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {return index_of_any(std::vector<value_type>(values), start_index, count);}
+    /// @endcond
+    
+    /// @brief Inserts a specified instance of basic_string at a specified index position in this instance.
+    /// @param start_index The index position of the insertion.
+    /// @param value The basic_string to insert.
+    /// @return A new basic_string equivalent to this instance but with value inserted at position start_index.
+    /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
+    /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
+    basic_string insert(xtd::size start_index, const basic_string& value) const {
+      if (start_index > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto result = *this;
+      result.chars_.insert(start_index, value);
+      return result;
+    }
 
     /// @brief Indicates whether this basic_string is an empty basic_string ("").
     /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
@@ -1386,6 +1470,50 @@ namespace xtd {
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
     
+    /// @brief Reports the index of the last occurrence of the specified basic_string in this basic_string.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size last_index_of(const basic_string& value) const noexcept {return last_index_of(value, 0, size());}
+    /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size last_index_of(const basic_string& value, xtd::size start_index) const {return last_index_of(value, start_index, size() - start_index);}
+    /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size last_index_of(const basic_string& value, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto result = rfind(value, start_index + count - value.size());
+      return result < start_index ? npos : result;
+    }
+    /// @brief Reports the index of the last occurrence of the specified character in this tring.
+    /// @param value An unicode character to seek
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    xtd::size last_index_of(value_type value) const noexcept {return last_index_of(value, 0, size());}
+    /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size last_index_of(value_type value, xtd::size start_index) const {return last_index_of(value, start_index, size() - start_index);}
+    /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A basic_string to find last index of.
+    /// @param value An unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
+    /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
+    xtd::size last_index_of(value_type value, xtd::size start_index, xtd::size count) const {
+      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      auto result = rfind(value, start_index + count - 1);
+      return result < start_index ? npos : result;
+    }
+
     /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
     /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
@@ -1506,7 +1634,6 @@ namespace xtd {
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<basic_string> split(value_type separator, xtd::size count, xtd::string_split_options options) const noexcept {return split(std::vector<value_type> {separator}, count, options);}
-
     /// @brief Splits this basic_string into substrings that are based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
     /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
@@ -1571,6 +1698,40 @@ namespace xtd {
       }
       
       return list;
+    }
+    
+    /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string.
+    /// @param value A xtd::basic_string to compare to.
+    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
+    bool starts_with(value_type value) const noexcept {return starts_with(value, false);}
+    /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string, ignoring or honoring their case.
+    /// @param value A xtd::basic_string to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified basic_string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
+    bool starts_with(value_type value, bool ignore_case) const noexcept {
+      if (ignore_case) return to_lower().find(static_cast<value_type>(tolower(value))) == 0;
+      return find(value) == 0;
+    }
+    /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string.
+    /// @param value A xtd::basic_string to compare to.
+    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
+    bool starts_with(const basic_string& value) const noexcept {return starts_with(value, string_comparison::ordinal);}
+    /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string, ignoring or honoring their case.
+    /// @param value A xtd::basic_string to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified basic_string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
+    bool starts_with(const basic_string& value, bool ignore_case) const noexcept {return starts_with(value, ignore_case ? string_comparison::ordinal_ignore_case : string_comparison::ordinal);}
+    /// @brief Determines whether the end of this basic_string matches the specified basic_string when compared using the specified comparison option.
+    /// @param value The string to compare to the substring at the end of this instance.
+    /// @param comparison_type One of the enumeration values that determines how this basic_string and value are compared.
+    /// @return bool true if value matches the end of the specified basic_string; otherwise, false.
+    bool starts_with(const basic_string& value, xtd::string_comparison comparison_type) const noexcept {
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().find(value.to_lower()) == 0;
+      return find(value) == 0;
     }
 
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
