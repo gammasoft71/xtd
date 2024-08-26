@@ -95,9 +95,9 @@ namespace xtd {
         /// @brief Represents the const iterator of list value type.
         using const_iterator = ilist<type_t>::const_iterator;
         /// @brief Represents the reverse iterator of list value type.
-        using reverse_iterator = base_type::reverse_iterator;
+        using reverse_iterator = typename base_type::reverse_iterator;
         /// @brief Represents the const reverse iterator of list value type.
-        using const_reverse_iterator = base_type::const_reverse_iterator;
+        using const_reverse_iterator = typename base_type::const_reverse_iterator;
         /// @brief Represents the read only collection of of list.
         using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
@@ -940,13 +940,13 @@ namespace xtd {
         /// @}
         
       private:
-        base_type::iterator to_base_type_iterator(iterator value) noexcept {
+        typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
           if (value == begin()) return data_->items.begin();
           if (value == end()) return data_->items.end();
           return data_->items.begin() + (value - begin());
         }
         
-        iterator to_iterator(base_type::iterator value) noexcept {
+        iterator to_iterator(typename base_type::iterator value) noexcept {
           if (value == data_->items.begin()) return begin();
           if (value == data_->items.end()) return end();
           return begin() + (value - data_->items.begin());

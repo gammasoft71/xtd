@@ -40,33 +40,33 @@ namespace xtd {
       /// @remarks Is equal to `std::basic_string<char_t, traits_t, allocator_t>`.`
       using base_type = std::basic_string<char_t, traits_t, allocator_t>;
       /// @brief Represents the basic string traits type.
-      using traits_type = base_type::traits_type;
+      using traits_type = typename base_type::traits_type;
       /// @brief Represents the basic string value type.
-      using value_type = base_type::value_type;
+      using value_type = typename base_type::value_type;
       /// @brief Represents the basic string allocator type.
-      using allocator_type = base_type::allocator_type;
+      using allocator_type = typename base_type::allocator_type;
       /// @brief Represents the basic string size type.
-      using size_type = base_type::size_type;
+      using size_type = typename base_type::size_type;
       /// @brief Represents the basic string difference type.
-      using difference_type = base_type::difference_type;
+      using difference_type = typename base_type::difference_type;
       /// @brief Represents the basic string referecne type.
-      using reference = base_type::reference;
+      using reference = typename base_type::reference;
       /// @brief Represents the basic string const referecne type.
-      using const_reference = base_type::const_reference;
+      using const_reference = typename base_type::const_reference;
       /// @brief Represents the basic string pointer type.
-      using pointer = base_type::pointer;
+      using pointer = typename base_type::pointer;
       /// @brief Represents the basic string const pointer type.
-      using const_pointer = base_type::const_pointer;
+      using const_pointer = typename base_type::const_pointer;
       /// @brief Represents the basic string iterator type.
       /// @todo replace xtd::ienumerable::iterator
-      using iterator = base_type::iterator;
+      using iterator = typename base_type::iterator;
       /// @brief Represents the basic string const iterator type.
       /// @todo replace xtd::ienumerable::const_iterator
-      using const_iterator = base_type::const_iterator;
+      using const_iterator = typename base_type::const_iterator;
       /// @brief Represents the basic string reverse iterator type.
-      using reverse_iterator = base_type::reverse_iterator;
+      using reverse_iterator = typename base_type::reverse_iterator;
       /// @brief Represents the basic string const reverse iterator type.
-      using const_reverse_iterator = base_type::const_reverse_iterator;
+      using const_reverse_iterator = typename base_type::const_reverse_iterator;
       /// @}
       
       /// @name Public Fields

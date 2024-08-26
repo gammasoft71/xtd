@@ -34,19 +34,19 @@ command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode v
 }
 
 string& command_link_button::main_text() const noexcept {
-  return get<0>(data_->texts);
+  return std::get<0>(data_->texts);
 }
 
 command_link_button& command_link_button::main_text(const string& value) {
-  return texts({value, get<1>(data_->texts)});
+  return texts({value, std::get<1>(data_->texts)});
 }
 
 string& command_link_button::supplementary_text() const noexcept {
-  return get<1>(data_->texts);
+  return std::get<1>(data_->texts);
 }
 
 command_link_button& command_link_button::supplementary_text(const string& value) {
-  return texts({get<0>(data_->texts), value});
+  return texts({std::get<0>(data_->texts), value});
 }
 
 string& command_link_button::text() const noexcept {
@@ -66,7 +66,7 @@ std::tuple<string, string> command_link_button::texts() const noexcept {
 command_link_button& command_link_button::texts(const std::tuple<string, string>& texts) {
   if (data_->texts == texts) return *this;
   data_->texts = texts;
-  data_->text = string::is_empty(get<1>(texts)) ? string::format("{}", get<0>(texts)) : string::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
+  data_->text = string::is_empty(std::get<1>(texts)) ? string::format("{}", std::get<0>(texts)) : string::format("{}{}{}", std::get<0>(texts), environment::new_line(), std::get<1>(texts));
   if (is_handle_created()) native::command_link_button::texts(handle(), data_->texts);
   on_text_changed(event_args::empty);
   return *this;

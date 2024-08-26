@@ -158,7 +158,7 @@ std::any convert::to_any(wchar* value) noexcept {
 
 bool convert::to_boolean(std::any value) {
   try {
-    return any_cast<bool>(value);
+    return std::any_cast<bool>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -312,7 +312,7 @@ bool convert::to_boolean(wchar* value) {
 
 xtd::byte convert::to_byte(std::any value) {
   try {
-    return any_cast<xtd::byte>(value);
+    return std::any_cast<xtd::byte>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -491,7 +491,7 @@ xtd::byte convert::to_byte(wchar* value) {
 
 char convert::to_char(std::any value) {
   try {
-    return any_cast<char>(value);
+    return std::any_cast<char>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -853,10 +853,10 @@ char8 convert::to_char8(wchar* value) {
 
 char16 convert::to_char16(std::any value) {
   try {
-    return any_cast<char16>(value);
+    return std::any_cast<char16>(value);
   } catch (...) {
     try {
-      return *any_cast<char16*>(value);
+      return *std::any_cast<char16*>(value);
     } catch (...) {
       throw invalid_cast_exception {csf_};
     }
@@ -1039,10 +1039,10 @@ char16 convert::to_char16(wchar* value) {
 
 char32 convert::to_char32(std::any value) {
   try {
-    return any_cast<char32>(value);
+    return std::any_cast<char32>(value);
   } catch (...) {
     try {
-      return *any_cast<char32*>(value);
+      return *std::any_cast<char32*>(value);
     } catch (...) {
       throw invalid_cast_exception {csf_};
     }
@@ -1223,10 +1223,10 @@ char32 convert::to_char32(wchar* value) {
 
 wchar convert::to_wchar(std::any value) {
   try {
-    return any_cast<wchar>(value);
+    return std::any_cast<wchar>(value);
   } catch (...) {
     try {
-      return *any_cast<wchar*>(value);
+      return *std::any_cast<wchar*>(value);
     } catch (...) {
       throw invalid_cast_exception {csf_};
     }
@@ -1409,7 +1409,7 @@ wchar convert::to_wchar(wchar* value) {
 
 decimal convert::to_decimal(std::any value) {
   try {
-    return any_cast<decimal>(value);
+    return std::any_cast<decimal>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -1563,7 +1563,7 @@ decimal convert::to_decimal(wchar* value) {
 
 double convert::to_double(std::any value) {
   try {
-    return any_cast<double>(value);
+    return std::any_cast<double>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -1717,7 +1717,7 @@ double convert::to_double(wchar* value) {
 
 float convert::to_single(std::any value) {
   try {
-    return any_cast<float>(value);
+    return std::any_cast<float>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -1871,7 +1871,7 @@ float convert::to_single(wchar* value) {
 
 int16 convert::to_int16(std::any value) {
   try {
-    return any_cast<int16>(value);
+    return std::any_cast<int16>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2046,7 +2046,7 @@ int16 convert::to_int16(wchar* value) {
 
 int32 convert::to_int32(std::any value) {
   try {
-    return any_cast<int32>(value);
+    return std::any_cast<int32>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2217,7 +2217,7 @@ int32 convert::to_int32(wchar* value) {
 
 int64 convert::to_int64(std::any value) {
   try {
-    return any_cast<int64>(value);
+    return std::any_cast<int64>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2383,7 +2383,7 @@ int64 convert::to_int64(wchar* value) {
 
 slong convert::to_llong(std::any value) {
   try {
-    return any_cast<slong>(value);
+    return std::any_cast<slong>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2549,7 +2549,7 @@ slong convert::to_llong(wchar* value) {
 
 sbyte convert::to_sbyte(std::any value) {
   try {
-    return any_cast<sbyte>(value);
+    return std::any_cast<sbyte>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2727,7 +2727,7 @@ sbyte convert::to_sbyte(wchar* value) {
 
 uint16 convert::to_uint16(std::any value) {
   try {
-    return any_cast<uint16>(value);
+    return std::any_cast<uint16>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -2903,7 +2903,7 @@ uint16 convert::to_uint16(wchar* value) {
 
 uint32 convert::to_uint32(std::any value) {
   try {
-    return any_cast<uint32>(value);
+    return std::any_cast<uint32>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -3077,7 +3077,7 @@ uint32 convert::to_uint32(wchar* value) {
 
 uint64 convert::to_uint64(std::any value) {
   try {
-    return any_cast<uint64>(value);
+    return std::any_cast<uint64>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }
@@ -3249,7 +3249,7 @@ uint64 convert::to_uint64(wchar* value) {
 
 xtd::ulong convert::to_ullong(std::any value) {
   try {
-    return any_cast<xtd::ulong>(value);
+    return std::any_cast<xtd::ulong>(value);
   } catch (...) {
     throw invalid_cast_exception {csf_};
   }

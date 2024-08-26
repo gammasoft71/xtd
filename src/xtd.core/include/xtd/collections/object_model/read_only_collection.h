@@ -38,8 +38,8 @@ namespace xtd {
         template<typename list_type_t>
         class empty_list : public generic::ilist<list_type_t> {
         public:
-          using iterator = generic::ilist<list_type_t>::iterator;
-          using const_iterator = generic::ilist<list_type_t>::const_iterator;
+          using iterator = typename generic::ilist<list_type_t>::iterator;
+          using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
           
           inline static constexpr xtd::size npos = xtd::size_object::max_value;
           

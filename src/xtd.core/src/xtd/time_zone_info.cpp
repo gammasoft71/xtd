@@ -176,7 +176,7 @@ xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time, c
   
   auto daylight_saving_time_offset = ticks {0};
   if (source_time_zone.supports_daylight_saving_time() && source_time_zone.is_daylight_saving_time(date_time))
-    daylight_saving_time_offset = duration_cast<ticks>(std::chrono::hours(1));
+    daylight_saving_time_offset = std::chrono::duration_cast<ticks>(std::chrono::hours(1));
     
   auto offset_local = -(source_time_zone.base_utc_offset() + daylight_saving_time_offset);
   
