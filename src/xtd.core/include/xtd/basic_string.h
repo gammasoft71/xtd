@@ -80,35 +80,35 @@ namespace xtd {
     /// @remarks Is equal to `std::basic_string<char_t, traits_t, allocator_t>`.`
     using base_type = std::basic_string<char_t, traits_t, allocator_t>;
     /// @brief Represents the basic string traits type.
-    using traits_type = base_type::traits_type;
+    using traits_type = typename base_type::traits_type;
     /// @brief Represents the basic string value type.
-    using value_type = base_type::value_type;
+    using value_type = typename base_type::value_type;
     /// @brief Represents the basic string allocator type.
-    using allocator_type = base_type::allocator_type;
+    using allocator_type = typename base_type::allocator_type;
     /// @brief Represents the basic string size type.
-    using size_type = base_type::size_type;
+    using size_type = typename base_type::size_type;
     /// @brief Represents the basic string difference type.
-    using difference_type = base_type::difference_type;
+    using difference_type = typename base_type::difference_type;
     /// @brief Represents the basic string referecne type.
-    using reference = base_type::reference;
+    using reference = typename base_type::reference;
     /// @brief Represents the basic string const referecne type.
-    using const_reference = base_type::const_reference;
+    using const_reference = typename base_type::const_reference;
     /// @brief Represents the basic string pointer type.
-    using pointer = base_type::pointer;
+    using pointer = typename base_type::pointer;
     /// @brief Represents the basic string const pointer type.
-    using const_pointer = base_type::const_pointer;
+    using const_pointer = typename base_type::const_pointer;
     /// @brief Represents the basic string iterator type.
     /// @todo replace xtd::ienumerable::iterator
-    using iterator = xtd::collections::generic::ienumerable<char_t>::iterator;
+    using iterator = typename xtd::collections::generic::ienumerable<char_t>::iterator;
     /// @brief Represents the basic string const iterator type.
     /// @todo replace xtd::ienumerable::const_iterator
-    using const_iterator = xtd::collections::generic::ienumerable<char_t>::const_iterator;
+    using const_iterator = typename xtd::collections::generic::ienumerable<char_t>::const_iterator;
     /// @brief Represents the basic string reverse iterator type.
-    using reverse_iterator = base_type::reverse_iterator;
+    using reverse_iterator = typename base_type::reverse_iterator;
     /// @brief Represents the basic string const reverse iterator type.
-    using const_reverse_iterator = base_type::const_reverse_iterator;
+    using const_reverse_iterator = typename base_type::const_reverse_iterator;
     /// @brief Represents the basic string enumerator type.
-    using enumerator_type = xtd::collections::generic::enumerator<value_type>;
+    using enumerator_type = typename xtd::collections::generic::enumerator<value_type>;
     /// @}
 
     /// @name Public Fields
@@ -1913,9 +1913,11 @@ namespace xtd {
     /// @return The current string.
     basic_string<xtd::char32> to_u32string() const noexcept {return __xtd_convert_to_string<xtd::char32>(chars_);}
     
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char8>.
     /// @return The current string.
     basic_string<xtd::char8> to_u8string() const noexcept {return __xtd_convert_to_string<xtd::char8>(chars_);}
+#endif
     
     /// @brief Returns a copy of the current xtd::basic_string converted to uppercase.
     /// @return A string in uppercase.
@@ -3014,14 +3016,14 @@ namespace xtd {
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
     /// @todo uncomment following line and remove the next.
     //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
-    friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << __xtd_convert_to_string<char>(str.chars_);}
+    friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << __xtd_convert_to_string<char>(str.chars());}
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
     /// @param str The string to be inserted.
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
-    friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string& str) {return stream << str.to_wstring().chars_;}
+    friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string& str) {return stream << str.to_wstring().chars();}
 
     /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
     /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
@@ -3065,13 +3067,13 @@ namespace xtd {
     static const std::vector<char_t> default_split_separators;
     static const std::vector<char_t> default_trim_chars;
 
-    base_type::iterator to_base_type_iterator(iterator value) const noexcept {
+    typename base_type::iterator to_base_type_iterator(iterator value) const noexcept {
       if (value == begin()) return chars_.begin();
       if (value == end()) return chars_.end();
       return chars_.begin() + (value - begin());
     }
     
-    iterator to_iterator(base_type::iterator value) const noexcept {
+    iterator to_iterator(typename base_type::iterator value) const noexcept {
       if (value == chars_.begin()) return begin();
       if (value == chars_.end()) return end();
       return begin() + (value - chars_.begin());

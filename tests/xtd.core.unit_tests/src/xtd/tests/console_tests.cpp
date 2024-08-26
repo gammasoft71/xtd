@@ -479,7 +479,9 @@ namespace xtd::tests {
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       console::write(std::string {"Item1"});
+#if defined(__xtd__cpp_lib_char8_t)
       console::write(std::u8string {u8"Item2"});
+#endif
       console::write(std::u16string {u"Item3"});
       console::write(std::u32string {U"Item4"});
       console::write(std::wstring {L"Item5"});
@@ -550,7 +552,9 @@ namespace xtd::tests {
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       console::write_line(std::string {"Item1"});
+#if defined(__xtd__cpp_lib_char8_t)
       console::write_line(std::u8string {u8"Item2"});
+#endif
       console::write_line(std::u16string {u"Item3"});
       console::write_line(std::u32string {U"Item4"});
       console::write_line(std::wstring {L"Item5"});

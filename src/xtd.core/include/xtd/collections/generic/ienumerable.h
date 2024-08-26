@@ -38,9 +38,9 @@ namespace xtd {
         
         /// @{
         /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
-        using iterator = enumerable_iterators<type_t, ienumerable<type_t>>::iterator;
+        using iterator = typename enumerable_iterators<type_t, ienumerable<type_t>>::iterator;
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
-        using const_iterator = enumerable_iterators<type_t, ienumerable<type_t>>::const_iterator;
+        using const_iterator = typename enumerable_iterators<type_t, ienumerable<type_t>>::const_iterator;
         /// @}
 
         /// @name Public Methods

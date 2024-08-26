@@ -28,7 +28,7 @@ public:
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
     tab_control.selected_index_changed += [&] {
-      if (tab_control.selected_index() < default_buttons.size())
+      if (this->tab_control.selected_index() < default_buttons.size())
         accept_button(*default_buttons[tab_control.selected_index()]);
     };
     

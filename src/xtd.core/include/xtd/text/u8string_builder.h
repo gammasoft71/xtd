@@ -9,6 +9,7 @@
 namespace xtd {
   /// @brief Contains classes that represent ASCII and Unicode character encodings; abstract base classes for converting blocks of characters to and from blocks of bytes; and a helper class that manipulates and formats xtd::string objects without creating intermediate instances of xtd::string.
   namespace text {
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Represents text as a sequence of UTF-32 code units.
     /// @par Namespace
     /// xtd
@@ -19,5 +20,6 @@ namespace xtd {
     /// @remarks If you want the same mutable string class, you can use xtd::text::u8string_builder class.
     /// @remarks xtd::u32string implements xtd::basic_string and therefore offers the full (immutable) API of [std::u32string](https://en.cppreference.com/w/cpp/string).
     using u8string_builder = xtd::text::basic_string_builder<xtd::char8>;
+#endif
   }
 }
