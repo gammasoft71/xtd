@@ -59,7 +59,7 @@ combo_box_style combo_box::drop_down_style() const noexcept {
 }
 
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
-  if (data_->drop_down_style == drop_down_style)
+  if (data_->drop_down_style == drop_down_style) return *this;
   data_->drop_down_style = drop_down_style;
   post_recreate_handle();
   on_drop_down_style_changed(event_args::empty);
