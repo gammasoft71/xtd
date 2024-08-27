@@ -1606,8 +1606,8 @@ namespace xtd {
       /// @return A new quoted basic_string.
       /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
       basic_string quoted(value_type delimiter, value_type escape) const {
-      std::stringstream ss;
-      ss << std::quoted(__xtd_convert_to_string<char>(chars_), static_cast<char>(delimiter), static_cast<char>(escape));
+      std::wstringstream ss;
+      ss << std::quoted(__xtd_convert_to_string<xtd::wchar>(chars_), static_cast<xtd::wchar>(delimiter), static_cast<xtd::wchar>(escape));
       return ss.str();
     }
     
@@ -3158,7 +3158,7 @@ inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<sou
     }
   }
   str.clear();
-  return std::move(out);
+  return out;
 }
 
 template<>
