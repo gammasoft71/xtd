@@ -184,7 +184,7 @@ date_time_kind date_time::kind() const noexcept {
 }
 
 uint32 date_time::millisecond() const noexcept {
-  return duration_cast<std::chrono::milliseconds>(value_).count() % 1000;
+  return std::chrono::duration_cast<std::chrono::milliseconds>(value_).count() % 1000;
 }
 
 uint32 date_time::minute() const noexcept {
@@ -199,7 +199,7 @@ uint32 date_time::month() const noexcept {
 
 date_time date_time::now() noexcept {
   std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-  auto now_ticks = duration_cast<xtd::ticks>(now.time_since_epoch()) % ticks_per_second;
+  auto now_ticks = std::chrono::duration_cast<xtd::ticks>(now.time_since_epoch()) % ticks_per_second;
   return from_time_t(std::chrono::system_clock::to_time_t(now), date_time_kind::local).add(now_ticks);
 }
 
@@ -333,7 +333,7 @@ date_time date_time::from_time_t(std::time_t value) {
 }
 
 date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
-  return date_time::specify_kind(date_time(duration_cast<xtd::ticks>(std::chrono::seconds(value) + seconds_offset_1970), date_time_kind::utc), kind);
+  return date_time::specify_kind(date_time(std::chrono::duration_cast<xtd::ticks>(std::chrono::seconds(value) + seconds_offset_1970), date_time_kind::utc), kind);
 }
 
 date_time date_time::from_tm(const tm& value) {
@@ -362,7 +362,7 @@ std::vector<string> date_time::get_date_time_formats() const noexcept {
 
 bool date_time::is_daylight_saving_time() const noexcept {
   if (kind_ != date_time_kind::local) return false;
-  return native::date_time::is_daylight((duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count());
+  return native::date_time::is_daylight((std::chrono::duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count());
 }
 
 bool date_time::is_leap_year(uint32 year) {
@@ -398,7 +398,7 @@ date_time date_time::subtract(const time_span& value) const {
 }
 
 int64 date_time::to_binary() const {
-  return (duration_cast<std::chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
+  return (std::chrono::duration_cast<std::chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
 }
 
 int64 date_time::to_file_time() const {
@@ -505,7 +505,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
 }
 
 std::time_t date_time::to_time_t() const {
-  return (duration_cast<std::chrono::seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
+  return (std::chrono::duration_cast<std::chrono::seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
 }
 
 std::tm date_time::to_tm() const {
@@ -609,7 +609,7 @@ std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_t
 }
 
 xtd::ticks date_time::utc_offset() const {
-  return duration_cast<xtd::ticks>(std::chrono::seconds(native::date_time::utc_offset((duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count())));
+  return std::chrono::duration_cast<xtd::ticks>(std::chrono::seconds(native::date_time::utc_offset((std::chrono::duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count())));
 }
 
 void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind) {
