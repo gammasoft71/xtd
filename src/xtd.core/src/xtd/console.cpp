@@ -405,6 +405,6 @@ void console::write_(const string& value) {
 
 void console::write_line_(const string& value) {
   auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
-  out << value << std::endl;
+  out << value << '\n';
   if (auto_flush_out()) out.flush();
 }
