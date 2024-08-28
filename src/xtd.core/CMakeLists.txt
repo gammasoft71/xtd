@@ -48,6 +48,7 @@ add_sources(
   include/xtd/background_color
   include/xtd/basic_string.h
   include/xtd/basic_string
+  include/xtd/basic_string.hpp
   include/xtd/beep.h
   include/xtd/beep
   include/xtd/bit_converter.h
@@ -631,6 +632,7 @@ add_sources(
   include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/trace_switch
+  include/xtd/internal/__array_definition.h
   include/xtd/internal/__as_any_object.h
   include/xtd/internal/__as_bool.h
   include/xtd/internal/__as_byte.h
