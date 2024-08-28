@@ -4,6 +4,7 @@
 #include "../../include/xtd/basic_string.h"
 #include "../../include/xtd/typeof.h"
 #include "../../include/xtd/argument_exception.h"
+#include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/index_out_of_range_exception.h"
 #include "../../include/xtd/null_pointer_exception.h"
@@ -13,6 +14,10 @@ using namespace xtd;
 
 void __throw_basic_string_argument_exception(const char* file, uint32 line, const char* func) {
   throw argument_exception {{file, line, func}};
+}
+
+void __throw_basic_string_argument_out_of_range_exception(const char* file, uint32 line, const char* func) {
+  throw argument_out_of_range_exception {{file, line, func}};
 }
 
 void __throw_basic_string_format_exception(const char* file, uint32 line, const char* func) {

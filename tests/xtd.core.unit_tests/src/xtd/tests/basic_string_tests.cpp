@@ -3,6 +3,7 @@
 #include <xtd/char16>
 #include <xtd/char32>
 #include <xtd/char8>
+#include <xtd/argument_out_of_range_exception.h>
 #include <xtd/index_out_of_range_exception.h>
 #include <xtd/size_object>
 #include <xtd/wchar>
@@ -988,10 +989,32 @@ namespace xtd::tests {
 
     void test_method_(substr) {
       assert::are_equal("A test string", basic_string<char_t> {"A test string"}.substr(), csf_);
+    }
+
+    void test_method_(substr_with_start_index) {
       assert::are_equal("test string", basic_string<char_t> {"A test string"}.substr(2), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(14);}, csf_);
       assert::are_equal("test", basic_string<char_t> {"A test string"}.substr(2, 4), csf_);
     }
+
+    void test_method_(substr_with_start_index_and_length) {
+      assert::are_equal("test", basic_string<char_t> {"A test string"}.substr(2, 4), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(2, 12);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(14, 4);}, csf_);
+    }
+
+    void test_method_(substring_with_start_index) {
+      assert::are_equal("test string", basic_string<char_t> {"A test string"}.substring(2), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substring(14);}, csf_);
+      assert::are_equal("test", basic_string<char_t> {"A test string"}.substring(2, 4), csf_);
+    }
     
+    void test_method_(substring_with_start_index_and_length) {
+      assert::are_equal("test", basic_string<char_t> {"A test string"}.substring(2, 4), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substring(2, 12);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substring(14, 4);}, csf_);
+    }
+
     void test_method_(to_lower) {
       assert::are_equal("a test string", basic_string<char_t> {"a test string"}.to_lower(), csf_);
       assert::are_equal("a test string", basic_string<char_t> {"A TEST STRING"}.to_lower(), csf_);
@@ -1043,6 +1066,132 @@ namespace xtd::tests {
       auto s = basic_string<char_t> {"A test string"};
       assert::is_instance_of<wstring>(s.to_wstring(), csf_);
       assert::are_equal(u"A test string", s.to_wstring(), csf_);
+    }
+    
+    void test_method_(trim) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string "}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {" A test string"}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {" A test string "}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"  A test string   "}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"   A test string  "}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string\t"}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"\tA test string"}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"\tA test string\t"}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"\t A test string\t\t "}.trim(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"\t\t A test string\t "}.trim(), csf_);
+    }
+    
+    void test_method_(trim_with_trim_char) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string*"}.trim(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string"}.trim(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string*"}.trim(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"**A test string***"}.trim(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"***A test string**"}.trim(char_t {'*'}), csf_);
+    }
+    
+    void test_method_(trim_with_trim_chars) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string*"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string+"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string-"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"+A test string"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"-A test string"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string*"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"+A test string+"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"-A test string-"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"**A test string***"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"++A test string+++"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"--A test string---"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"***A test string**"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"+++A test string++"}.trim({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"---A test string--"}.trim({'*', '+', '-'}), csf_);
+    }
+    
+    void test_method_(trim_end) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_end(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string "}.trim_end(), csf_);
+      assert::are_equal(" A test string", basic_string<char_t> {" A test string"}.trim_end(), csf_);
+      assert::are_equal(" A test string", basic_string<char_t> {" A test string "}.trim_end(), csf_);
+      assert::are_equal("  A test string", basic_string<char_t> {"  A test string   "}.trim_end(), csf_);
+      assert::are_equal("   A test string", basic_string<char_t> {"   A test string  "}.trim_end(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string\t"}.trim_end(), csf_);
+      assert::are_equal("\tA test string", basic_string<char_t> {"\tA test string"}.trim_end(), csf_);
+      assert::are_equal("\tA test string", basic_string<char_t> {"\tA test string\t"}.trim_end(), csf_);
+      assert::are_equal("\t A test string", basic_string<char_t> {"\t A test string\t\t "}.trim_end(), csf_);
+      assert::are_equal("\t\t A test string", basic_string<char_t> {"\t\t A test string\t "}.trim_end(), csf_);
+    }
+    
+    void test_method_(trim_end_with_trim_char) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_end(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string*"}.trim_end(char_t {'*'}), csf_);
+      assert::are_equal("*A test string", basic_string<char_t> {"*A test string"}.trim_end(char_t {'*'}), csf_);
+      assert::are_equal("*A test string", basic_string<char_t> {"*A test string*"}.trim_end(char_t {'*'}), csf_);
+      assert::are_equal("**A test string", basic_string<char_t> {"**A test string***"}.trim_end(char_t {'*'}), csf_);
+      assert::are_equal("***A test string", basic_string<char_t> {"***A test string**"}.trim_end(char_t {'*'}), csf_);
+    }
+    
+    void test_method_(trim_end_with_trim_chars) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string*"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string+"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"A test string-"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("*A test string", basic_string<char_t> {"*A test string"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("+A test string", basic_string<char_t> {"+A test string"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("-A test string", basic_string<char_t> {"-A test string"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("*A test string", basic_string<char_t> {"*A test string*"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("+A test string", basic_string<char_t> {"+A test string+"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("-A test string", basic_string<char_t> {"-A test string-"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("**A test string", basic_string<char_t> {"**A test string***"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("++A test string", basic_string<char_t> {"++A test string+++"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("--A test string", basic_string<char_t> {"--A test string---"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("***A test string", basic_string<char_t> {"***A test string**"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("+++A test string", basic_string<char_t> {"+++A test string++"}.trim_end({'*', '+', '-'}), csf_);
+      assert::are_equal("---A test string", basic_string<char_t> {"---A test string--"}.trim_end({'*', '+', '-'}), csf_);
+    }
+    
+    void test_method_(trim_start) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_start(), csf_);
+      assert::are_equal("A test string ", basic_string<char_t> {"A test string "}.trim_start(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {" A test string"}.trim_start(), csf_);
+      assert::are_equal("A test string ", basic_string<char_t> {" A test string "}.trim_start(), csf_);
+      assert::are_equal("A test string   ", basic_string<char_t> {"  A test string   "}.trim_start(), csf_);
+      assert::are_equal("A test string  ", basic_string<char_t> {"   A test string  "}.trim_start(), csf_);
+      assert::are_equal("A test string\t", basic_string<char_t> {"A test string\t"}.trim_start(), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"\tA test string"}.trim_start(), csf_);
+      assert::are_equal("A test string\t", basic_string<char_t> {"\tA test string\t"}.trim_start(), csf_);
+      assert::are_equal("A test string\t\t ", basic_string<char_t> {"\t A test string\t\t "}.trim_start(), csf_);
+      assert::are_equal("A test string\t ", basic_string<char_t> {"\t\t A test string\t "}.trim_start(), csf_);
+    }
+    
+    void test_method_(trim_start_with_trim_char) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_start(char_t {'*'}), csf_);
+      assert::are_equal("A test string*", basic_string<char_t> {"A test string*"}.trim_start(char_t {'*'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string"}.trim_start(char_t {'*'}), csf_);
+      assert::are_equal("A test string*", basic_string<char_t> {"*A test string*"}.trim_start(char_t {'*'}), csf_);
+      assert::are_equal("A test string***", basic_string<char_t> {"**A test string***"}.trim_start(char_t {'*'}), csf_);
+      assert::are_equal("A test string**", basic_string<char_t> {"***A test string**"}.trim_start(char_t {'*'}), csf_);
+    }
+    
+    void test_method_(trim_start_with_trim_chars) {
+      assert::are_equal("A test string", basic_string<char_t> {"A test string"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string*", basic_string<char_t> {"A test string*"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string+", basic_string<char_t> {"A test string+"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string-", basic_string<char_t> {"A test string-"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"*A test string"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"+A test string"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string", basic_string<char_t> {"-A test string"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string*", basic_string<char_t> {"*A test string*"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string+", basic_string<char_t> {"+A test string+"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string-", basic_string<char_t> {"-A test string-"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string***", basic_string<char_t> {"**A test string***"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string+++", basic_string<char_t> {"++A test string+++"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string---", basic_string<char_t> {"--A test string---"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string**", basic_string<char_t> {"***A test string**"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string++", basic_string<char_t> {"+++A test string++"}.trim_start({'*', '+', '-'}), csf_);
+      assert::are_equal("A test string--", basic_string<char_t> {"---A test string--"}.trim_start({'*', '+', '-'}), csf_);
     }
 
     // ______________________________________________________________________________________________________________________________________________
