@@ -101,7 +101,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::val
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array(xtd::size start_index, xtd::size length) const {
-  return to_array(index, length);
+  return to_array(start_index, length);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
