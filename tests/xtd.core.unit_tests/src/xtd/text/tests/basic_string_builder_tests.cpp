@@ -1,5 +1,6 @@
 #include <xtd/text/basic_string_builder>
 #include <xtd/argument_exception>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/char16>
 #include <xtd/char32>
 #include <xtd/char8>
@@ -346,10 +347,20 @@ namespace xtd::tests {
     
     void test_method_(substr) {
       assert::are_equal("A test string", basic_string_builder<char_t> {"A test string"}.substr().to_string(), csf_);
+    }
+    
+    void test_method_(substr_with_start_index) {
       assert::are_equal("test string", basic_string_builder<char_t> {"A test string"}.substr(2).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.substr(14);}, csf_);
       assert::are_equal("test", basic_string_builder<char_t> {"A test string"}.substr(2, 4).to_string(), csf_);
     }
     
+    void test_method_(substr_with_start_index_and_length) {
+      assert::are_equal("test", basic_string_builder<char_t> {"A test string"}.substr(2, 4).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(2, 12);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(14, 4);}, csf_);
+    }
+
     void test_method_(to_string) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::is_instance_of<string>(s.to_string(), csf_);

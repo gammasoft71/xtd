@@ -760,14 +760,20 @@ namespace xtd {
       /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
       /// @exception `std::out_of_range` if `pos > size()`.
       /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
-      basic_string_builder substr(size_type pos) const {return chars_.substr(pos);}
+      basic_string_builder substr(size_type pos) const {
+        if (pos > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+        return chars_.substr(pos);
+      }
       /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string_builder::npos), the returned substring is [`pos`, size()).
       /// @param pos The position of the first character to include.
       /// @param count The length of the substring.
       /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
       /// @exception `std::out_of_range` if `pos > size()`.
       /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
-      basic_string_builder substr(size_type pos, size_type count) const {return chars_.substr(pos, count);}
+      basic_string_builder substr(size_type pos, size_type count) const {
+        if (pos > size() || pos + count > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+        return chars_.substr(pos, count);
+      }
       
       /// @brief Converts the value of this instance to a xtd::basic_string_builder <char>.
       /// @return The current string.
