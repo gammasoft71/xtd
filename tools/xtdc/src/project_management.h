@@ -179,7 +179,7 @@ namespace xtdc_command {
     
     xtd::string generate(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! GenertaeGenertae project aborted.";
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Generate project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Genertae project aborted.";
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Genertae project aborted.", path_);
