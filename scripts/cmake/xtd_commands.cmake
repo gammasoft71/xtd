@@ -2148,6 +2148,14 @@ if (NOT "${XTD_BUILD_CPP_STANDARD}" STREQUAL "compiler_default")
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif ()
 
+# Configuration types
+choice_options(XTD_CONFIGURATION_TYPES "Choose configuration types to build xtd projects" "Debug Release" "Debug Release MinSizeRel RelWithDebInfo")
+if ("${XTD_CONFIGURATION_TYPES}" STREQUAL "Debug Release")
+  set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
+else ()
+  set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo" CACHE STRING "" FORCE)
+endif ()
+
 # Enumeration introspection
 # brief The following option activate the enum introspection.
 if (NOT XTD_USE_ENUMERATION_INTROSPECTION)
@@ -2198,8 +2206,7 @@ if (MSVC)
     set(BUILD_ON_MULTIPLE_PROCESSES /MP${MULTI_PROCESS_COUNT})
   endif()
   add_compile_options(${BUILD_ON_MULTIPLE_PROCESSES} /utf-8 /wd4251 /wd4275 /Zc:__cplusplus)
-  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /bigobj")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
   
   # The following linker flag goes against Microsoft's note.
   # But this is not a problem at the moment. If there is ever a problem or doubt, it should be addressed and removed it.
