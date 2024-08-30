@@ -12,6 +12,27 @@
 
 using namespace xtd;
 
+namespace xtd {
+  class __xtd_demangle {
+  public:
+    std::basic_string<char> operator()(const std::basic_string<char>& value) {
+      return native::types::demangle(value);
+    }
+  };
+}
+
+std::basic_string<char> __xtd_demangle(const std::basic_string<char>& value) noexcept {
+  return xtd::__xtd_demangle {}(value);
+}
+
+std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexcept {
+  return typeof_(value).name();
+}
+
+std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) noexcept {
+  return typeof_(value).full_name();
+}
+
 void __throw_basic_string_argument_exception(const char* file, uint32 line, const char* func) {
   throw argument_exception {{file, line, func}};
 }

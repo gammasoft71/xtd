@@ -16,6 +16,7 @@
 namespace xtd {
   /// @cond
   class string;
+  class __xtd_demangle;
   namespace threading {
     class thread;
     class wait_handle;
@@ -34,6 +35,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ types final {
       types() = delete;
+      friend xtd::__xtd_demangle;
       friend xtd::string;
       friend xtd::threading::thread;
       friend xtd::threading::wait_handle;
