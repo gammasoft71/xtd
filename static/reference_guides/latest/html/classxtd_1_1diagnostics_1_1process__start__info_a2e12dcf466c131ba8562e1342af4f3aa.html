@@ -258,7 +258,7 @@ There is a similar issue when you read all text from both the standard output an
 <dd>
 You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to <a class="el" href="classxtd_1_1io_1_1text__reader_a9cf821e2697031031471e69c91cce0ca.html#a9cf821e2697031031471e69c91cce0ca" title="Reads a line of characters from the current stream and returns the data as a string.">xtd::io::stream_reader::read_line</a> on the <a class="el" href="classxtd_1_1diagnostics_1_1process_a2cda84618767aa8e357f49efc3186f4d.html#a2cda84618767aa8e357f49efc3186f4d" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call <a class="el" href="classxtd_1_1io_1_1text__reader_a9cf821e2697031031471e69c91cce0ca.html#a9cf821e2697031031471e69c91cce0ca" title="Reads a line of characters from the current stream and returns the data as a string.">xtd::io::stream_reader::read_line</a> for the <a class="el" href="classxtd_1_1diagnostics_1_1process_a9e09a8c158d401459b4ab4aa37a6f06e.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a39">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a40">test_forms.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -270,7 +270,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1diagnostics.html">diagnostics</a></li><li class="navelem"><a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a></li>
-		<li class="footer">Generated on Sun Aug 25 2024 15:55:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sat Aug 31 2024 20:53:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -14,8 +14,8 @@ var group__interfaces =
       [ "remove", "classxtd_1_1collections_1_1generic_1_1icollection_a86dc990732868e3e519a93f4d7f03112.html#a86dc990732868e3e519a93f4d7f03112", null ]
     ] ],
     [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
-      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_ab7559e3d624ff28ff9e975b4836c20e1.html#ab7559e3d624ff28ff9e975b4836c20e1", null ],
-      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a0b6ff667de781839d1cad82e0d50f4a4.html#a0b6ff667de781839d1cad82e0d50f4a4", null ],
+      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_afc56db5ef5a8996ff05e4e88775f9368.html#afc56db5ef5a8996ff05e4e88775f9368", null ],
+      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a63b54b517dad29751cce354ab5e53e4d.html#a63b54b517dad29751cce354ab5e53e4d", null ],
       [ "get_enumerator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a16aefd65a94ba2edba5583e8bb8dc6dd.html#a16aefd65a94ba2edba5583e8bb8dc6dd", null ]
     ] ],
     [ "xtd::collections::generic::ienumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", [

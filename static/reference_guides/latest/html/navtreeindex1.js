@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_images_appearances_page.html#EmblemsContext":[14,5],
+"_images_appearances_page.html#EmotesContext":[14,6],
 "_images_appearances_page.html#MimeTypesContext":[14,7],
 "_images_appearances_page.html#PlacesContext":[14,8],
 "_images_appearances_page.html#StatusContext":[14,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "basic__colors_8h_source.html":[22,2,0,0,0,8],
 "basic__string_8h.html":[22,1,0,0,33],
 "basic__string_8h_source.html":[22,1,0,0,33],
-"basic__string__builder_8h.html":[22,1,0,0,10,0],
-"basic__string__builder_8h_source.html":[22,1,0,0,10,0],
-"battery__charge__status_8h.html":[22,3,0,0,0,19]
+"basic__string__builder_8h.html":[22,1,0,0,10,0]
 };
