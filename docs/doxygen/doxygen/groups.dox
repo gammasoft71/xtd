@@ -170,6 +170,10 @@
     |   |     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
     |   |     /// @ingroup system
     |   |     /// @defgroup synthesis synthesis
+    |   |- text
+    |   |     /// @brief Contains text definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup text text
     |   |- threading
     |   |     /// @brief Contains threading definitions.
     |   |     /// @ingroup system

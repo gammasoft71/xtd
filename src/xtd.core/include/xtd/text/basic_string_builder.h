@@ -2,13 +2,11 @@
 /// @brief Contains xtd::basic_string_builder class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
 #include "../basic_string.h"
 #include "../argument_exception.h"
 #include "../index_out_of_range_exception.h"
 #include "../null_pointer_exception.h"
-
-/// @cond
+///
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Contains classes that represent ASCII and Unicode character encodings; abstract base classes for converting blocks of characters to and from blocks of bytes; and a helper class that manipulates and formats xtd::string objects without creating intermediate instances of xtd::string.
