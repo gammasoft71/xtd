@@ -51,7 +51,7 @@ std::locale translator::locale() {
 }
 
 void translator::locale(const xtd::string& value) {
-  auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split({'_'});
+  auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split('_');
   auto extension = value.find_last_of(".") == value.npos ? ".utf-8" : value.substring(value.find_last_of("."));
   if (parts.size() != 0 && parts.size() != 2) throw argument_exception(csf_);
   auto language = parts.size() == 0 ? "en" : parts[0].to_lower();

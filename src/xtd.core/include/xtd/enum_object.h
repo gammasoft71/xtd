@@ -201,7 +201,7 @@ namespace xtd {
     }
     
     static enum_type parse_flags(const xtd::string& value, bool ignore_case) {
-      std::vector<xtd::string> values = value.split({','});
+      std::vector<xtd::string> values = value.split(',');
       for (xtd::string& str : values)
         str = str.trim(' ');
         
@@ -634,7 +634,7 @@ namespace xtd {
       case 'o':
       case 'O':
       case 'x':
-      case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value_), std::locale());
+      case 'X': return __numeric_formatter(fmt.chars(), static_cast<long long int>(value_), std::locale());
       case 'f':
       case 'F':
       case 'g':

@@ -67,7 +67,7 @@ namespace sleepfor {
         else if (args[index] == "-i" || args[index] == "--indefinitely") indefinitely = true;
         else if (args[index] == "-v" || args[index] == "--version") show_version = true;
         else if (args[index] == "-h" || args[index] == "--help") show_help = true;
-        else if (!try_parse(args[index], duration)) return false;
+        else if (!string::try_parse(args[index], duration)) return false;
       }
       return true;
     }

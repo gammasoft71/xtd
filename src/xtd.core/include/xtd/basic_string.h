@@ -369,47 +369,15 @@ namespace xtd {
       if (index + count > str.size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index, count)), allocator);
     }
-
+    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
     /// @param str The basic_string to move.
-    basic_string(basic_string<char>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)))) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
-    /// @param str The basic_string to move.
-    basic_string(basic_string<xtd::char16>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)))) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
-    /// @param str The basic_string to move.
-    basic_string(basic_string<xtd::char32>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)))) {}
-#if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
-    /// @param str The basic_string to move.
-    basic_string(basic_string<xtd::char8>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)))) {}
-#endif
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
-    /// @param str The basic_string to move.
-    basic_string(basic_string<xtd::wchar>&& str) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)))) {}
+    basic_string(basic_string&&) = default;
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
     /// @param str The basic_string to move.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string<char>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_))), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
-    /// @param str The basic_string to move.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string<xtd::char16>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_))), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
-    /// @param str The basic_string to move.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string<xtd::char32>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_))), allocator) {}
-#if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
-    /// @param str The basic_string to move.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string<xtd::char8>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_))), allocator) {}
-#endif
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
-    /// @param str The basic_string to move.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string<xtd::wchar>&& str, const allocator_type& allocator) noexcept : chars_(std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_))), allocator) {}
+    basic_string(basic_string&& str, const allocator_type& allocator) noexcept : chars_(std::move(str.chars_)) {}
 
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param str The string to copy.
@@ -1818,7 +1786,7 @@ namespace xtd {
     /// @return A string in lowercase.
     basic_string to_lower() const noexcept {
       auto result = basic_string::empty_string;
-      std::for_each(begin(), end(), [&](auto c) {result += static_cast<value_type>(std::tolower(c));});
+      std::for_each(chars_.begin(), chars_.end(), [&](auto c) {result += static_cast<value_type>(std::tolower(c));});
       return result;
     }
 
@@ -1850,7 +1818,7 @@ namespace xtd {
     /// @return A string in uppercase.
     basic_string to_upper() const noexcept {
       auto result = basic_string::empty_string;
-      std::for_each(begin(), end(), [&](auto c) {result += static_cast<value_type>(std::toupper(c));});
+      std::for_each(chars_.begin(), chars_.end(), [&](auto c) {result += static_cast<value_type>(std::toupper(c));});
       return result;
     }
 
@@ -1890,9 +1858,9 @@ namespace xtd {
     /// @return The xtd::basic_string that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified xtd::basic_string.
     basic_string trim_end(const std::vector<value_type>& trim_chars) const noexcept {
       if (!size()) return *this;
-      auto result = *this;
+      auto result = chars_;
       while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
-        result.chars_.erase(result.size() - 1, 1);
+        result.erase(result.size() - 1, 1);
       return result;
     }
     
@@ -1912,9 +1880,9 @@ namespace xtd {
     /// @return The xtd::basic_string that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified xtd::basic_string.
     basic_string trim_start(const std::vector<value_type>& trim_chars) const noexcept {
       if (!size()) return *this;
-      auto result = *this;
+      auto result = chars_;
       while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
-        result.chars_.erase(0, 1);
+        result.erase(0, 1);
       return result;
     }
     /// @}
@@ -2417,21 +2385,21 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<char>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars_);
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char16>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars_);
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char32>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars_);
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2439,7 +2407,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char8>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars_);
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
 #endif
@@ -2447,7 +2415,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::wchar>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars_);
+      chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
  
@@ -2764,6 +2732,44 @@ namespace xtd {
       chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return *this;
     }
+    
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const std::basic_string<char>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const std::basic_string<xtd::char16>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const std::basic_string<xtd::char32>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const std::basic_string<xtd::char8>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
+#endif
+    /// @brief Addition assignment operator. Appends additional characters to the string.
+    /// @param str string to append.
+    /// @return This current instance with characters added.
+    basic_string& operator +=(const std::basic_string<xtd::wchar>& str) {
+      chars_ += __xtd_convert_to_string<value_type>(str);
+      return *this;
+    }
 
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
@@ -3028,6 +3034,102 @@ namespace xtd {
     friend basic_string operator +(const basic_string& lhs, basic_string<xtd::wchar>&& rhs) {
       auto result = lhs;
       result += std::move(rhs);
+      return result;
+    }
+
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const std::basic_string<char>& rhs) {
+      auto result = lhs;
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const std::basic_string<xtd::char16>& rhs) {
+      auto result = lhs;
+      result += rhs;
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const std::basic_string<xtd::char32>& rhs) {
+      auto result = lhs;
+      result += rhs;
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const std::basic_string<xtd::char8>& rhs) {
+      auto result = lhs;
+      result += rhs;
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const basic_string& lhs, const std::basic_string<xtd::wchar>& rhs) {
+      auto result = lhs;
+      result += rhs;
+      return result;
+    }
+
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const std::basic_string<char>& lhs, const basic_string& rhs) {
+      auto result = lhs;
+      result += __xtd_convert_to_string<char>(rhs.chars());
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const std::basic_string<xtd::char16>& lhs, const basic_string& rhs) {
+      auto result = lhs;
+      result += __xtd_convert_to_string<xtd::char16>(rhs.chars());
+      return result;
+    }
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const std::basic_string<xtd::char32>& lhs, const basic_string& rhs) {
+      auto result = lhs;
+      result += __xtd_convert_to_string<xtd::char32>(rhs.chars());
+      return result;
+    }
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const std::basic_string<xtd::char8>& lhs, const basic_string& rhs) {
+      auto result = lhs;
+      result += __xtd_convert_to_string<xtd::char8>(rhs.chars());
+      return result;
+    }
+#endif
+    /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
+    /// @param lhs The string characters who will precede the `rhs`.
+    /// @param rhs The string characters who will follow the `lhs`.
+    /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
+    friend basic_string operator +(const std::basic_string<xtd::wchar>& lhs, const basic_string& rhs) {
+      auto result = lhs;
+      result += __xtd_convert_to_string<xtd::wchar>(rhs.chars());
       return result;
     }
 

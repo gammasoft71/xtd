@@ -417,7 +417,7 @@ void link_label::on_paint(paint_event_args& e) {
     e.graphics().clear(back_color());
   auto line_number = 0_z;
   auto index = 0_z;
-  for (auto line : text().split({'\n'})) {
+  for (auto line : text().split('\n')) {
     auto text_location = get_text_location(line_number);
     auto line_index = 0_z;
     auto size_text = drawing::size {};
@@ -440,7 +440,7 @@ void link_label::on_paint(paint_event_args& e) {
       }
       
       if (index <= link.start() && line.length() + index > link.start()) {
-        text = line.substring(link.start() - index, link.length());
+        text = line.substring(link.start() - index, link.length() - link.start() - index);
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         if (enabled())
           e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
@@ -452,7 +452,7 @@ void link_label::on_paint(paint_event_args& e) {
     }
     
     if (line_index < line.length()) {
-      text = line.substring(line_index, line.length());
+      text = line.substring(line_index, line.length() - line_index);
       size_text = drawing::size::ceiling(e.graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
       if (enabled())
         e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
@@ -490,7 +490,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {
   auto line_index = 0_z;
-  for (auto line : text().split({'\n'})) {
+  for (auto line : text().split('\n')) {
     auto text_location = point {};
     auto text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
     switch (text_align()) {
@@ -515,7 +515,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
   auto text_rects = std::vector<std::tuple<xtd::drawing::rectangle, bool>> {};
   auto line_number = 0_z;
   auto index = 0_z;
-  for (auto line : text().split({'\n'})) {
+  for (auto line : text().split('\n')) {
     auto line_index = 0_z;
     auto text_location = get_text_location(line_number);
     auto size_text = drawing::size {};
@@ -530,7 +530,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
       }
       
       if (index <= link.start() && line.length() + index > link.start()) {
-        text = line.substring(link.start() - index, link.length());
+        text = line.substring(link.start() - index, link.length() - link.start() - index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         text_rects.push_back({{text_location, size_text}, true});
         text_location.x(text_location.x() + size_text.width());
@@ -539,7 +539,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     }
     
     if (line_index < line.length()) {
-      text = line.substring(line_index, line.length());
+      text = line.substring(line_index, line.length() - line_index);
       size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
       text_rects.push_back({{text_location, size_text}, false});
       line_index = line.length();

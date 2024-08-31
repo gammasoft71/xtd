@@ -578,21 +578,21 @@ color style_sheet::color_from_css(const string& css_text, const color& default_v
 length style_sheet::length_from_css(const string& css_text, const length& default_value) const noexcept {
   if (css_text.to_lower() == "auto" || css_text.to_lower() == "initial" || css_text.to_lower() == "inherit") return length(-1);
   auto l = .0;
-  if (css_text.to_lower().ends_with("cm") && ::try_parse<double>(css_text.to_lower().replace("cm", string::empty_string), l)) return length(l, length_unit::centimeters);
-  if (css_text.to_lower().ends_with("mm") && ::try_parse<double>(css_text.to_lower().replace("mm", string::empty_string), l)) return length(l, length_unit::millimeters);
-  if (css_text.to_lower().ends_with("in") && ::try_parse<double>(css_text.to_lower().replace("in", string::empty_string), l)) return length(l, length_unit::inches);
-  if (css_text.to_lower().ends_with("px") && ::try_parse<double>(css_text.to_lower().replace("px", string::empty_string), l)) return length(l, length_unit::pixels);
-  if (css_text.to_lower().ends_with("pt") && ::try_parse<double>(css_text.to_lower().replace("pt", string::empty_string), l)) return length(l, length_unit::points);
-  if (css_text.to_lower().ends_with("pc") && ::try_parse<double>(css_text.to_lower().replace("pc", string::empty_string), l)) return length(l, length_unit::picas);
-  if (css_text.to_lower().ends_with("em") && ::try_parse<double>(css_text.to_lower().replace("em", string::empty_string), l)) return length(l, length_unit::element);
-  if (css_text.to_lower().ends_with("ex") && ::try_parse<double>(css_text.to_lower().replace("ex", string::empty_string), l)) return length(l, length_unit::element_x_height);
-  if (css_text.to_lower().ends_with("ch") && ::try_parse<double>(css_text.to_lower().replace("ch", string::empty_string), l)) return length(l, length_unit::chase);
-  if (css_text.to_lower().ends_with("rem") && ::try_parse<double>(css_text.to_lower().replace("rem", string::empty_string), l)) return length(l, length_unit::root_element);
-  if (css_text.to_lower().ends_with("vw") && ::try_parse<double>(css_text.to_lower().replace("vw", string::empty_string), l)) return length(l, length_unit::viewport_width);
-  if (css_text.to_lower().ends_with("vh") && ::try_parse<double>(css_text.to_lower().replace("vh", string::empty_string), l)) return length(l, length_unit::viewport_height);
-  if (css_text.to_lower().ends_with("vmin") && ::try_parse<double>(css_text.to_lower().replace("vmin", string::empty_string), l)) return length(l, length_unit::viewport_min);
-  if (css_text.to_lower().ends_with("vmax") && ::try_parse<double>(css_text.to_lower().replace("vmax", string::empty_string), l)) return length(l, length_unit::viewport_max);
-  if (css_text.to_lower().ends_with("%") && ::try_parse<double>(css_text.replace("%", string::empty_string), l)) return length(l, length_unit::percent);
+  if (css_text.to_lower().ends_with("cm") && string::try_parse<double>(css_text.to_lower().replace("cm", string::empty_string), l)) return length(l, length_unit::centimeters);
+  if (css_text.to_lower().ends_with("mm") && string::try_parse<double>(css_text.to_lower().replace("mm", string::empty_string), l)) return length(l, length_unit::millimeters);
+  if (css_text.to_lower().ends_with("in") && string::try_parse<double>(css_text.to_lower().replace("in", string::empty_string), l)) return length(l, length_unit::inches);
+  if (css_text.to_lower().ends_with("px") && string::try_parse<double>(css_text.to_lower().replace("px", string::empty_string), l)) return length(l, length_unit::pixels);
+  if (css_text.to_lower().ends_with("pt") && string::try_parse<double>(css_text.to_lower().replace("pt", string::empty_string), l)) return length(l, length_unit::points);
+  if (css_text.to_lower().ends_with("pc") && string::try_parse<double>(css_text.to_lower().replace("pc", string::empty_string), l)) return length(l, length_unit::picas);
+  if (css_text.to_lower().ends_with("em") && string::try_parse<double>(css_text.to_lower().replace("em", string::empty_string), l)) return length(l, length_unit::element);
+  if (css_text.to_lower().ends_with("ex") && string::try_parse<double>(css_text.to_lower().replace("ex", string::empty_string), l)) return length(l, length_unit::element_x_height);
+  if (css_text.to_lower().ends_with("ch") && string::try_parse<double>(css_text.to_lower().replace("ch", string::empty_string), l)) return length(l, length_unit::chase);
+  if (css_text.to_lower().ends_with("rem") && string::try_parse<double>(css_text.to_lower().replace("rem", string::empty_string), l)) return length(l, length_unit::root_element);
+  if (css_text.to_lower().ends_with("vw") && string::try_parse<double>(css_text.to_lower().replace("vw", string::empty_string), l)) return length(l, length_unit::viewport_width);
+  if (css_text.to_lower().ends_with("vh") && string::try_parse<double>(css_text.to_lower().replace("vh", string::empty_string), l)) return length(l, length_unit::viewport_height);
+  if (css_text.to_lower().ends_with("vmin") && string::try_parse<double>(css_text.to_lower().replace("vmin", string::empty_string), l)) return length(l, length_unit::viewport_min);
+  if (css_text.to_lower().ends_with("vmax") && string::try_parse<double>(css_text.to_lower().replace("vmax", string::empty_string), l)) return length(l, length_unit::viewport_max);
+  if (css_text.to_lower().ends_with("%") && string::try_parse<double>(css_text.replace("%", string::empty_string), l)) return length(l, length_unit::percent);
   if (css_text == "0") return length(0);
   return default_value;
 }
@@ -777,7 +777,7 @@ std::vector<string> style_sheet::split_values_from_text(const string& text) cons
     if (color_keyword != "") {
       result.push_back(value.substring(0, value.find(')') + 1).trim());
       value = value.remove(0, value.find(')') + 1).trim();
-      if (value[0] == ',') value = value.remove(0, 1).trim();
+      if (value.size() && value[0] == ',') value = value.remove(0, 1).trim();
     } else if (value.find(',') == string::npos) {
       result.push_back(value.trim());
       value = "";
@@ -1084,42 +1084,42 @@ bool style_sheet::try_parse_color(const string& text, xtd::drawing::color& resul
 bool style_sheet::try_parse_hex_color(const string& text, color& result) const noexcept {
   if (text.starts_with("#") && text.size() == 4_z) {
     xtd::byte r = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(1, 1).chars(), r, number_styles::hex_number) == false) return false;
     r += r * 16;
     xtd::byte g = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(2, 1), g, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(2, 1).chars(), g, number_styles::hex_number) == false) return false;
     g += g * 16;
     xtd::byte b = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(3, 1), b, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(3, 1).chars(), b, number_styles::hex_number) == false) return false;
     b += b * 16;
     result = color::from_argb(r, g, b);
     return true;
   }
   if (text.starts_with("#") && text.size() == 5_z) {
     xtd::byte a = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(1, 1), a, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(1, 1).chars(), a, number_styles::hex_number) == false) return false;
     a += a * 16;
     xtd::byte r = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(2, 1), r, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(2, 1).chars(), r, number_styles::hex_number) == false) return false;
     r += r * 16;
     xtd::byte g = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(3, 1), g, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(3, 1).chars(), g, number_styles::hex_number) == false) return false;
     g += g * 16;
     xtd::byte b = 0;
-    if (xtd::try_parse<xtd::byte>(text.substring(4, 1), b, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<xtd::byte>(text.substring(4, 1).chars(), b, number_styles::hex_number) == false) return false;
     b += b * 16;
     result = color::from_argb(a, r, g, b);
     return true;
   }
   if (text.starts_with("#") && text.size() == 7_z) {
     auto rgb = 0u;
-    if (xtd::try_parse<uint32>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<uint32>(text.substring(1).chars(), rgb, number_styles::hex_number) == false) return false;
     result = color::from_argb(rgb + 0xFF000000u);
     return true;
   }
   if (text.starts_with("#") && text.size() == 9_z) {
     auto argb = 0u;
-    if (xtd::try_parse<uint32>(text.substring(1), argb, number_styles::hex_number) == false) return false;
+    if (xtd::try_parse<uint32>(text.substring(1).chars(), argb, number_styles::hex_number) == false) return false;
     result = color::from_argb(argb);
     return true;
   }
@@ -1158,7 +1158,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
       angle = 315;
     } else if (argument.ends_with("deg")) {
       argument = argument.replace("deg", string::empty_string);
-      if (angle != -1 || xtd::try_parse<int32>(argument, angle) == false) return false;
+      if (angle != -1 || string::try_parse<int32>(argument, angle) == false) return false;
     } else if (try_parse_color(argument, gradient_color))
       colors.push_back(gradient_color);
   }
@@ -1169,90 +1169,90 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
 
 bool style_sheet::try_parse_rgb_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("rgb(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   xtd::byte r = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
   xtd::byte g = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[1], g) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[1], g) == false) return false;
   xtd::byte b = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[2], b) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[2], b) == false) return false;
   result = color::from_argb(r, g, b);
   return true;
 }
 
 bool style_sheet::try_parse_rgba_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("rgba(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   xtd::byte r = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
   xtd::byte g = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[1], g) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[1], g) == false) return false;
   xtd::byte b = 0;
-  if (xtd::try_parse<xtd::byte>(color_parts[2], b) == false) return false;
+  if (string::try_parse<xtd::byte>(color_parts[2], b) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  if (string::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), r, g, b);
   return true;
 }
 
 bool style_sheet::try_parse_hsv_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("hsv(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   float h = 0;
-  if (xtd::try_parse<float>(color_parts[0], h) == false) return false;
+  if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
-  if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
+  if (string::try_parse<float>(color_parts[1], s) == false) return false;
   float v = 0;
-  if (xtd::try_parse<float>(color_parts[2], v) == false) return false;
+  if (string::try_parse<float>(color_parts[2], v) == false) return false;
   result = color::from_hsb(h, s, v);
   return true;
 }
 
 bool style_sheet::try_parse_hsva_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("hsva(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   float h = 0;
-  if (xtd::try_parse<float>(color_parts[0], h) == false) return false;
+  if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
-  if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
+  if (string::try_parse<float>(color_parts[1], s) == false) return false;
   float v = 0;
-  if (xtd::try_parse<float>(color_parts[2], v) == false) return false;
+  if (string::try_parse<float>(color_parts[2], v) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  if (string::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsb(h, s, v));
   return true;
 }
 
 bool style_sheet::try_parse_hsl_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("hsl(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   float h = 0;
-  if (xtd::try_parse<float>(color_parts[0], h) == false) return false;
+  if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
-  if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
+  if (string::try_parse<float>(color_parts[1], s) == false) return false;
   float l = 0;
-  if (xtd::try_parse<float>(color_parts[2], l) == false) return false;
+  if (string::try_parse<float>(color_parts[2], l) == false) return false;
   result = color::from_hsl(h, s, l);
   return true;
 }
 
 bool style_sheet::try_parse_hsla_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("hsla(", string::empty_string);
-  auto color_parts = value.split({','});
+  auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   float h = 0;
-  if (xtd::try_parse<float>(color_parts[0], h) == false) return false;
+  if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
-  if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
+  if (string::try_parse<float>(color_parts[1], s) == false) return false;
   float l = 0;
-  if (xtd::try_parse<float>(color_parts[2], l) == false) return false;
+  if (string::try_parse<float>(color_parts[2], l) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  if (string::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsl(h, s, l));
   return true;
 }

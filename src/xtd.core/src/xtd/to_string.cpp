@@ -28,7 +28,7 @@ namespace xtd {
   }
   
   std::string to_string(const xtd::string& value, const std::string& fmt, const std::locale& loc) {
-    return __string_formatter(fmt, value, loc);
+    return __string_formatter(fmt, value.chars(), loc);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)

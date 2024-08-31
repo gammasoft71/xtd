@@ -130,7 +130,7 @@ namespace xtd {
     /// @param value A string containing a type_t to convert.
     /// @param result A type_t equivalent to the number contained in value.
     /// @return true if s was converted successfully; otherwise, false.
-    static bool try_parse(const xtd::string& value, type_t& result) noexcept {return xtd::try_parse<type_t>(value, result);}
+    static bool try_parse(const xtd::string& value, type_t& result) noexcept {return xtd::try_parse<type_t>(value.chars(), result);}
     /// @}
     
   private:

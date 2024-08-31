@@ -15,9 +15,9 @@ bool boolean_switch::enabled() const {
   if (!enabled_.has_value() && !this->value().empty() == true) {
     auto bool_value = false;
     auto int_value = 0;
-    if (try_parse(this->value(), bool_value) == true)
+    if (string::try_parse(this->value(), bool_value) == true)
       enabled_ = bool_value;
-    else if (try_parse(this->value(), int_value) == true) enabled_ = int_value != 0;
+    else if (string::try_parse(this->value(), int_value) == true) enabled_ = int_value != 0;
     else throw format_exception {"Input xtd::string was not in a correct format."_t, csf_};
   }
   return enabled_.value();

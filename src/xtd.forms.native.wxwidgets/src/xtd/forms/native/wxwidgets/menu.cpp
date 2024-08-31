@@ -45,6 +45,6 @@ void menu::remove_item(intptr menu, size_t pos) {
 void menu::text(intptr menu, const xtd::string& text) {
   if (menu == 0) throw argument_exception {csf_};
   auto wx_menu = reinterpret_cast<wxMenu*>(menu);
-  if (wx_menu->GetMenuBar()) wx_menu->GetMenuBar()->SetMenuLabel(wx_menu->GetMenuBar()->FindMenu(wx_menu->GetTitle()), text);
-  else wx_menu->SetTitle(text);
+  if (wx_menu->GetMenuBar()) wx_menu->GetMenuBar()->SetMenuLabel(wx_menu->GetMenuBar()->FindMenu(wx_menu->GetTitle()), text.chars());
+  else wx_menu->SetTitle(text.chars());
 }

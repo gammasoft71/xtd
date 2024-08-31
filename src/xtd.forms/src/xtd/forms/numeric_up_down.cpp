@@ -415,7 +415,7 @@ void numeric_up_down::on_value_changed(const event_args& e) {
 void numeric_up_down::on_lost_focus(const event_args& e) {
   up_down_base::on_lost_focus(e);
   auto text_value = .0;
-  if (try_parse<double>(text(), text_value, number_styles::number))
+  if (try_parse<double>(text().chars(), text_value, number_styles::number))
     value(text_value);
 }
 

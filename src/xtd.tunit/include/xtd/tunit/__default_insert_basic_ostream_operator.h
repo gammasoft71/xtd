@@ -642,7 +642,7 @@ inline xtd::string __tunit_to_string(const std::string& value) {
 
 inline xtd::string __tunit_to_string(const xtd::string& value) {
   std::stringstream ss;
-  ss << std::quoted(value);
+  ss << std::quoted(value.chars());
   return ss.str();
 }
 

@@ -93,7 +93,7 @@ bool uri::is_default_port() const {
   if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
   
   auto prt = -1;
-  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
+  if (string::try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
   return true;
 }
 
@@ -131,7 +131,7 @@ string uri::path_and_query() const {
 
 int32 uri::port() const {
   auto port = -1;
-  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return port;
+  if (string::try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return port;
   if (scheme() == uri::uri_scheme_ftp) return 21;
   if (scheme() == uri::uri_scheme_gopher) return 70;
   if (scheme() == uri::uri_scheme_http) return 80;

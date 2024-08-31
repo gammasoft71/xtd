@@ -41,5 +41,5 @@ void context_menu::remove_item(intptr context_menu, size_t pos) {
 
 void context_menu::text(intptr context_menu, const xtd::string& text) {
   if (context_menu == 0) throw argument_exception {csf_};
-  reinterpret_cast<wxMenu*>(context_menu)->SetTitle(text);
+  reinterpret_cast<wxMenu*>(context_menu)->SetTitle(text.chars());
 }

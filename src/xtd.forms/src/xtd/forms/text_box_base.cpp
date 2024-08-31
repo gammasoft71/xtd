@@ -65,7 +65,7 @@ text_box_base& text_box_base::border_style(std::nullptr_t) {
 }
 
 std::vector<xtd::string> text_box_base::lines() const noexcept {
-  return text().split({'\n'});
+  return text().split('\n');
 }
 
 text_box_base& text_box_base::lines(const std::vector<xtd::string>& lines) {

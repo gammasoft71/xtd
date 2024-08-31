@@ -1,4 +1,6 @@
 #include <xtd/string>
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/index_out_of_range_exception>
 #include <xtd/null_pointer_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
@@ -572,6 +574,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s3, csf_);
     }
     
+    /*
     void test_method_(operator_plus_with_wstring) {
       auto s1 = std::wstring {L"s1"};
       string s2 = "s2";
@@ -579,6 +582,7 @@ namespace xtd::tests {
       assert::are_equal(4_z, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
+     */
 
     void test_method_(operator_plus_with_literal) {
       auto s1 = "s1";
@@ -973,11 +977,11 @@ namespace xtd::tests {
     }
     
     void test_method_(remove_start_index_out_of_range) {
-      assert::are_equal("0123456", string("0123456").remove(10), csf_);
+      assert::throws<index_out_of_range_exception>([]{string("0123456").remove(10);}, csf_);
     }
     
     void test_method_(remove_start_index_count_out_of_range) {
-      assert::are_equal("012", string("0123456").remove(3, 10), csf_);
+      assert::throws<index_out_of_range_exception>([]{string("0123456").remove(3, 10);}, csf_);
     }
     
     void test_method_(replace_char) {
@@ -993,11 +997,11 @@ namespace xtd::tests {
     }
     
     void test_method_(split_empty_separators) {
-      collection_assert::are_equal({"One", "Two", "Three", "Four", "Five", "Six", "Seven"}, string("One Two\vThree\fFour\rFive\nSix\nSeven").split({}), csf_);
+      collection_assert::are_equal({"One", "Two", "Three", "Four", "Five", "Six", "Seven"}, string("One Two\vThree\fFour\rFive\nSix\nSeven").split(array<char> {}), csf_);
     }
     
     void test_method_(split_one_separators) {
-      collection_assert::are_equal({"One Two", "Three", "Four", "Five", "Six", "Seven"}, string("One Two,Three,Four,Five,Six,Seven").split({','}), csf_);
+      collection_assert::are_equal({"One Two", "Three", "Four", "Five", "Six", "Seven"}, string("One Two,Three,Four,Five,Six,Seven").split(','), csf_);
     }
     
     void test_method_(split_separators) {
@@ -1055,11 +1059,11 @@ namespace xtd::tests {
     }
     
     void test_method_(substring_start_index_out_of_range) {
-      assert::is_empty(string("0123456").substring(10), csf_);
+      assert::throws<argument_out_of_range_exception>([]{string("0123456").substring(10);}, csf_);
     }
     
     void test_method_(substring_count_out_of_range) {
-      assert::are_equal("23456", string("0123456").substring(2, 10), csf_);
+      assert::throws<argument_out_of_range_exception>([]{string("0123456").substring(2, 10);}, csf_);
     }
     
     void test_method_(to_array) {

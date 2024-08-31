@@ -40,20 +40,7 @@ namespace xtd {
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
   /// @remarks xtd::string implements xtd::basic_string and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
-  /// @todo Rename `string_` to `string`.
-  using string_ = xtd::basic_string<char>;
-  
-  /// @brief Represents text as a sequence of UTF-8 code units.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system strings
-  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
-  /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
-  /// @remarks xtd::string implements xtd::basic_string and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string).
-  /// @todo Remove `string` class.
-  class string;
+  using string = xtd::basic_string<char>;
   
   /// @brief Represents text as a sequence of UTF-16 code units.
   /// @par Namespace

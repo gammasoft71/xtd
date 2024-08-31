@@ -165,7 +165,7 @@ void assert::are_not_equal(const wchar_t* expected, const wchar_t* actual, const
 
 void assert::contains(char item, const char* values, const string& message, const stack_frame& stack_frame) {
   auto s = string {values};
-  auto result = find(s.begin(), s.end(), item);
+  auto result = std::find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
   else
@@ -175,7 +175,7 @@ void assert::contains(char item, const char* values, const string& message, cons
 #if defined(__xtd__cpp_lib_char8_t)
 void assert::contains(char8 item, const char8* values, const string& message, const stack_frame& stack_frame) {
   auto s = std::u8string {values};
-  auto result = find(s.begin(), s.end(), item);
+  auto result = std::find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
   else
@@ -185,7 +185,7 @@ void assert::contains(char8 item, const char8* values, const string& message, co
 
 void assert::contains(char16 item, const char16* values, const string& message, const stack_frame& stack_frame) {
   auto s = std::u16string {values};
-  auto result = find(s.begin(), s.end(), item);
+  auto result = std::find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
   else
@@ -194,7 +194,7 @@ void assert::contains(char16 item, const char16* values, const string& message, 
 
 void assert::contains(char32 item, const char32* values, const string& message, const stack_frame& stack_frame) {
   auto s = std::u32string {values};
-  auto result = find(s.begin(), s.end(), item);
+  auto result = std::find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
   else
@@ -203,7 +203,7 @@ void assert::contains(char32 item, const char32* values, const string& message, 
 
 void assert::contains(wchar_t item, const wchar_t* values, const string& message, const stack_frame& stack_frame) {
   auto s = std::wstring {values};
-  auto result = find(s.begin(), s.end(), item);
+  auto result = std::find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
   else
