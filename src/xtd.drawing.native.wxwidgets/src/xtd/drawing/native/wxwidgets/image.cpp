@@ -239,7 +239,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
   auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
-  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(filename);
+  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(wxString {filename.chars()});
   return reinterpret_cast<intptr>(img);
 }
 

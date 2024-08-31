@@ -11,7 +11,7 @@ namespace xtdc_command {
     static xtd::string get_project_full_path_from_path(const xtd::string& path) noexcept {
       if (path.empty() || path == ".") return xtd::environment::current_directory();
       else if (path == "..") {
-        auto directories = xtd::environment::current_directory().split({xtd::io::path::directory_separator_char()});
+        auto directories = xtd::environment::current_directory().split(xtd::io::path::directory_separator_char());
         if (directories.size() < 2) return "";
         directories.erase(directories.begin() + directories.size() - 2);
         return xtd::io::path::combine(directories);
@@ -20,7 +20,7 @@ namespace xtdc_command {
     }
     
     static xtd::string get_project_name_from_path(const xtd::string& path) noexcept {
-      auto directories = get_project_full_path_from_path(path).split({xtd::io::path::directory_separator_char()});
+      auto directories = get_project_full_path_from_path(path).split(xtd::io::path::directory_separator_char());
       if (directories.size() == 0) return "";
       return directories[directories.size() - 1];
     }

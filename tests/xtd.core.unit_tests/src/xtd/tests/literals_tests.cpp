@@ -22,7 +22,7 @@ namespace xtd::tests {
     
     void test_method_(operator_sd_on_unsigned_long_long) {
       auto s = 42_sd;
-      assert::is_instance_of<std::string>(s);
+      assert::is_instance_of<string>(s);
       assert::are_equal("42", s, csf_);
     }
   };

@@ -1202,7 +1202,7 @@ namespace xtd::tests {
       assert::is_positive(basic_string<char_t>::compare(basic_string<char_t> {"A test strong"}, basic_string<char_t> {"A test string"}), csf_);
     }
     
-    void test_method_(compare_with_string_string_and_ignore_case_to_false) {
+    void test_method_(compare_with_basic_string_basic_string_and_ignore_case_to_false) {
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {""}, basic_string<char_t>::empty_string, false), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A test string"}, basic_string<char_t> {"A test string"}, false), csf_);
       assert::is_negative(basic_string<char_t>::compare(basic_string<char_t> {"A TeSt StRiNg"}, basic_string<char_t> {"A test string"}, false), csf_);
@@ -1211,7 +1211,7 @@ namespace xtd::tests {
       assert::is_positive(basic_string<char_t>::compare(basic_string<char_t> {"A test strong"}, basic_string<char_t> {"A test string"}, false), csf_);
     }
     
-    void test_method_(compare_with_string_string_and_ignore_case_to_true) {
+    void test_method_(compare_with_basic_string_basic_string_and_ignore_case_to_true) {
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {""}, basic_string<char_t>::empty_string, true), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A test string"}, basic_string<char_t> {"A test string"}, true), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A TeSt StRiNg"}, basic_string<char_t> {"A test string"}, true), csf_);
@@ -1220,7 +1220,7 @@ namespace xtd::tests {
       assert::is_positive(basic_string<char_t>::compare(basic_string<char_t> {"A test strong"}, basic_string<char_t> {"A test string"}, true), csf_);
     }
     
-    void test_method_(compare_with_string_string_and_string_comparison_ordinal) {
+    void test_method_(compare_with_basic_string_basic_string_and_string_comparison_ordinal) {
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {""}, basic_string<char_t>::empty_string, string_comparison::ordinal), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A test string"}, basic_string<char_t> {"A test string"}, string_comparison::ordinal), csf_);
       assert::is_negative(basic_string<char_t>::compare(basic_string<char_t> {"A TeSt StRiNg"}, basic_string<char_t> {"A test string"}, string_comparison::ordinal), csf_);
@@ -1229,7 +1229,7 @@ namespace xtd::tests {
       assert::is_positive(basic_string<char_t>::compare(basic_string<char_t> {"A test strong"}, basic_string<char_t> {"A test string"}, string_comparison::ordinal), csf_);
     }
     
-    void test_method_(compare_with_string_string_and_string_comparison_ordinal_ignore_case) {
+    void test_method_(compare_with_basic_string_basic_string_and_string_comparison_ordinal_ignore_case) {
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {""}, basic_string<char_t>::empty_string, string_comparison::ordinal_ignore_case), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A test string"}, basic_string<char_t> {"A test string"}, string_comparison::ordinal_ignore_case), csf_);
       assert::is_zero(basic_string<char_t>::compare(basic_string<char_t> {"A TeSt StRiNg"}, basic_string<char_t> {"A test string"}, string_comparison::ordinal_ignore_case), csf_);
@@ -2007,6 +2007,48 @@ namespace xtd::tests {
       assert::is_empty(s2, csf_);
     }
 
+    void test_method_(addition_assignment_operator_std_basic_string_char) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char> {" string"};
+      s1 += s2;
+      assert::are_equal("A test string", s1, csf_);
+      assert::are_equal(" string", s2, csf_);
+    }
+    
+    void test_method_(addition_assignment_operator_std_basic_string_char16) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char16> {u" string"};
+      s1 += s2;
+      assert::are_equal(u"A test string", s1, csf_);
+      assert::are_equal(u" string", s2, csf_);
+    }
+    
+    void test_method_(addition_assignment_operator_std_basic_string_char32) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char32> {U" string"};
+      s1 += s2;
+      assert::are_equal(U"A test string", s1, csf_);
+      assert::are_equal(U" string", s2, csf_);
+    }
+    
+    void test_method_(addition_assignment_operator_std_basic_string_char8) {
+#if defined(__xtd__cpp_lib_char8_t)
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char8> {u8" string"};
+      s1 += s2;
+      assert::are_equal(u8"A test string", s1, csf_);
+      assert::are_equal(u8" string", s2, csf_);
+#endif
+    }
+    
+    void test_method_(addition_assignment_operator_std_basic_string_wchar) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<wchar> {L" string"};
+      s1 += s2;
+      assert::are_equal(L"A test string", s1, csf_);
+      assert::are_equal(L" string", s2, csf_);
+    }
+
     void test_method_(addition_assignment_operator_char_pointer) {
       auto s = basic_string<char_t> {"A test"};
       s += " string";
@@ -2259,6 +2301,53 @@ namespace xtd::tests {
       assert::is_empty(s2, csf_);
     }
     
+    void test_method_(addition_operator_std_basic_string_char) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char> {" string"};
+      auto s3 = s1 + s2;
+      assert::are_equal("A test string", s3, csf_);
+      assert::are_equal("A test", s1, csf_);
+      assert::are_equal(" string", s2, csf_);
+    }
+    
+    void test_method_(addition_operator_std_basic_string_char16) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char16> {u" string"};
+      auto s3 = s1 + s2;
+      assert::are_equal("A test string", s3, csf_);
+      assert::are_equal("A test", s1, csf_);
+      assert::are_equal(u" string", s2, csf_);
+    }
+    
+    void test_method_(addition_operator_std_basic_string_char32) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char32> {U" string"};
+      auto s3 = s1 + s2;
+      assert::are_equal("A test string", s3, csf_);
+      assert::are_equal("A test", s1, csf_);
+      assert::are_equal(U" string", s2, csf_);
+    }
+    
+    void test_method_(addition_operator_std_basic_string_char8) {
+#if defined(__xtd__cpp_lib_char8_t)
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<char8> {u8" string"};
+      auto s3 = s1 + s2;
+      assert::are_equal("A test string", s3, csf_);
+      assert::are_equal("A test", s1, csf_);
+      assert::are_equal(u8" string", s2, csf_);
+#endif
+    }
+    
+    void test_method_(addition_operator_std_basic_string_wchar) {
+      auto s1 = basic_string<char_t> {"A test"};
+      auto s2 = std::basic_string<wchar> {L" string"};
+      auto s3 = s1 + s2;
+      assert::are_equal("A test string", s3, csf_);
+      assert::are_equal("A test", s1, csf_);
+      assert::are_equal(L" string", s2, csf_);
+    }
+
     void test_method_(addition_operator_char_pointer_rhs) {
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = " string";

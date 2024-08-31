@@ -113,7 +113,7 @@ string guid::to_string(const string& format, const std::locale& loc) const {
     if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15))) result += ",";
     if (hexadecimal && (index == 0 || index == 8)) result += "{";
     if (hexadecimal && (index == 0 || index == 4 || index == 6 || (index >= 8 && index <= 15))) result += "0x";
-    result += xtd::to_string(data_[index], "x2");
+    result += xtd::to_string(data_[index], "x2").c_str();
     if (hexadecimal && index == 15) result += "}}";
     if (hyphens && (index == 3 || index == 5 || index == 7 || index == 9)) result += "-";
   }

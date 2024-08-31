@@ -205,7 +205,7 @@ uint64 ip_address::network_to_host_order(uint64 network) {
 }
 
 ip_address ip_address::parse(const string& str) {
-  block_scope_(std::vector<string> address_parts = str.split({'.'})) {
+  block_scope_(std::vector<string> address_parts = str.split('.')) {
     if (address_parts.size() == 4) {
       std::vector<xtd::byte> addresses(4);
       for (auto index = 0_z; index < address_parts.size(); index++)
@@ -222,7 +222,7 @@ ip_address ip_address::parse(const string& str) {
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   
-  block_scope_(std::vector<string> address_parts = work_ip_string.split({':'})) {
+  block_scope_(std::vector<string> address_parts = work_ip_string.split(':')) {
     for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
       if (it->empty()) {
         *it = "0";

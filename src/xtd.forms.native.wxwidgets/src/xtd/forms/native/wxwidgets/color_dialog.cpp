@@ -55,7 +55,7 @@ bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::co
   #endif
   wxColourDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), &color_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
-  dialog.SetTitle(title == "" ? "Color" : title);
+  dialog.SetTitle(title == "" ? "Color" : title.chars());
   bool result = dialog.ShowModal() == wxID_OK;
   if (result) {
     wxColour colour = dialog.GetColourData().GetColour();

@@ -17,43 +17,43 @@ using namespace xtd::forms::native;
 namespace {
   #if defined(__WXOSX__)
   static bool is_about_item(const xtd::string& text) {
-    wxString itemText = text;
-    itemText.Replace("&", string::empty_string);
-    itemText.Replace(".", string::empty_string);
+    wxString itemText = text.chars();
+    itemText.Replace("&", "");
+    itemText.Replace(".", "");
     itemText.LowerCase();
     wxString aboutText = "&About..."_t;
-    aboutText.Replace("&", string::empty_string);
-    aboutText.Replace(".", string::empty_string);
+    aboutText.Replace("&", "");
+    aboutText.Replace(".", "");
     aboutText.LowerCase();
     return itemText == aboutText || itemText == "about";
   }
 #endif
 
   static bool is_quit_item(const xtd::string& text, size_t shortcut) {
-    wxString itemText = text;
-    itemText.Replace("&", string::empty_string);
-    itemText.Replace(".", string::empty_string);
+    wxString itemText = text.chars();
+    itemText.Replace("&", "");
+    itemText.Replace(".", "");
     itemText.LowerCase();
     wxString exitText = "E&xit"_t;
-    exitText.Replace("&", string::empty_string);
-    exitText.Replace(".", string::empty_string);
+    exitText.Replace("&", "");
+    exitText.Replace(".", "");
     exitText.LowerCase();
     return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_CONTROL_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
   }
 
 #if defined(__WXOSX__)
   static bool is_preferences_item(const xtd::string& text) {
-    wxString itemText = text;
-    itemText.Replace("&", string::empty_string);
-    itemText.Replace(".", string::empty_string);
+    wxString itemText = text.chars();
+    itemText.Replace("&", "");
+    itemText.Replace(".", "");
     itemText.LowerCase();
 #  ifdef __MAC_13_0
     wxString preferenceText = "&Settings..."_t;
 #  else
     wxString preferenceText = "&Preferences"_t;
 #  endif
-    preferenceText.Replace("&", string::empty_string);
-    preferenceText.Replace(".", string::empty_string);
+    preferenceText.Replace("&", "");
+    preferenceText.Replace(".", "");
     preferenceText.LowerCase();
     return itemText == preferenceText || itemText == "preferences" || itemText == "options" || itemText == "settings";
   }

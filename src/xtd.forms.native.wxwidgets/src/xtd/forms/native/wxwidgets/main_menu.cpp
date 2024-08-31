@@ -13,7 +13,7 @@ using namespace xtd::forms::native;
 #if defined(__WXOSX__)
 namespace {
   static bool is_help_item(const xtd::string& text) {
-    wxString itemText = text;
+    wxString itemText = text.chars();
     itemText.Replace(L"&", L"");
     itemText.Replace(L".", L"");
     itemText.LowerCase();
@@ -21,7 +21,7 @@ namespace {
   }
   
   static bool is_window_item(const xtd::string& text) {
-    wxString itemText = text;
+    wxString itemText = text.chars();
     itemText.Replace(L"&", L"");
     itemText.Replace(L".", L"");
     itemText.LowerCase();
@@ -57,7 +57,7 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
       auto title = wx_main_menu->GetMenu(index)->GetTitle();
       if (is_window_item(title.c_str().AsWChar())) has_window_menu = true;
     }
-    if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
+    if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t.chars());
   }
   #endif
   

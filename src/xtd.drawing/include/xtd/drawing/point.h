@@ -376,7 +376,7 @@ namespace xtd {
   
   template<>
   inline drawing::point parse<drawing::point>(const std::string& str) {
-    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" y=", xtd::string::empty_string).replace("{x=", xtd::string::empty_string).split({','});
+    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" y=", xtd::string::empty_string).replace("{x=", xtd::string::empty_string).split(',');
     return {xtd::parse<int32>(values[0]), xtd::parse<int32>(values[1])};
   }
 }

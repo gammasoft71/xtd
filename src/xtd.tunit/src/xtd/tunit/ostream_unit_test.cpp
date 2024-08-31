@@ -27,7 +27,7 @@ int ostream_unit_test::list_tests(const std::vector<string>& tests) {
   } else {
     std::map<std::string, std::vector<string>> lists;
     for (auto name : tests) {
-      auto key_value = string(name).split({'.'});
+      auto key_value = string(name).split('.');
       if (key_value.size() == 2) {
         if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
         lists.at(key_value[0]).push_back(key_value[1]);

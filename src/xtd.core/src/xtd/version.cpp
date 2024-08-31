@@ -67,7 +67,7 @@ bool version::equals(const version& v) const noexcept {
 version version::parse(const xtd::string& input) {
   auto rgx = std::regex {"\\."};
   auto versions = xtd::collections::specialized::string_collection {};
-  for (auto it = std::sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
+  for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     
   switch (versions.size()) {

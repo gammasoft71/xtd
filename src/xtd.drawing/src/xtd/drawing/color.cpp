@@ -647,7 +647,7 @@ color color::light(const color& color, double percent) noexcept {
 
 color color::parse(const string& color) noexcept {
   try {
-    auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split({','});
+    auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split(',');
     if (argb.size() == 1) return color::from_argb(xtd::parse<uint32>(argb.at(0), xtd::number_styles::hex_number));
     return color::from_argb(string::parse<xtd::byte>(argb.at(0)), string::parse<xtd::byte>(argb.at(1)), string::parse<xtd::byte>(argb.at(2)), string::parse<xtd::byte>(argb.at(3)));
   } catch (...) {

@@ -162,7 +162,7 @@ namespace xtd {
   /// @cond
   template<>
   inline drawing::size_f parse<drawing::size_f>(const std::string& str) {
-    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" height=", xtd::string::empty_string).replace("{width=", xtd::string::empty_string).split({','});
+    auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" height=", xtd::string::empty_string).replace("{width=", xtd::string::empty_string).split(',');
     return {xtd::parse<float>(values[0]), xtd::parse<float>(values[1])};
   }
   /// @endcond

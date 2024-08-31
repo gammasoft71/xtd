@@ -123,7 +123,7 @@ int startup::run(xtd::delegate<void(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
   auto argv = std::vector<char*>(args.size(), nullptr);
   for (auto index = 0_z; index < args.size(); ++index)
-    argv[index] = args[index].data();
+    argv[index] = const_cast<char*>(args[index].data());
   main_function(as<int32>(args.size()), argv.data());
   return environment::exit_code();
 }
@@ -137,7 +137,7 @@ int startup::run(void (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
   auto argv = std::vector<char*>(args.size(), nullptr);
   for (auto index = 0_z; index < args.size(); ++index)
-    argv[index] = args[index].data();
+    argv[index] = const_cast<char*>(args[index].data());
   main_function(as<int32>(args.size()), argv.data());
   return environment::exit_code();
 }
@@ -210,7 +210,7 @@ int startup::run(xtd::delegate<int(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
   auto argv = std::vector<char*>(args.size(), nullptr);
   for (auto index = 0_z; index < args.size(); ++index)
-    argv[index] = args[index].data();
+    argv[index] = const_cast<char*>(args[index].data());
   auto exit_code = main_function(as<int32>(args.size()), argv.data());
   return exit_code;
 }
@@ -223,7 +223,7 @@ int startup::run(int (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
   auto argv = std::vector<char*>(args.size(), nullptr);
   for (auto index = 0_z; index < args.size(); ++index)
-    argv[index] = args[index].data();
+    argv[index] = const_cast<char*>(args[index].data());
   auto exit_code = main_function(as<int32>(args.size()), argv.data());
   return exit_code;
 }

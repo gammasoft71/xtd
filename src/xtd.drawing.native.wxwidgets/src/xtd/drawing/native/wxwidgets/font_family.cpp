@@ -34,7 +34,7 @@ namespace {
 intptr font_family::create(const string& name) {
   toolkit::initialize(); // Must be first
   if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr>(new string(name));
-  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr>(new string(name)) : 0;
+  return wxFontEnumerator::IsValidFacename(name.chars()) ? reinterpret_cast<intptr>(new string(name)) : 0;
 }
 
 void font_family::destroy(intptr font_family) {

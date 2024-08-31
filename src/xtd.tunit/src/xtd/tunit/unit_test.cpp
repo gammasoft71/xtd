@@ -214,8 +214,8 @@ bool unit_test::parse_arguments(const std::vector<string>& args) {
     if (arg == "--count_tests") settings::default_settings().count_tests(true);
     else if (arg == "--list_tests") settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") settings::default_settings().list_tests(true);
-    else if (arg.find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split({'|'}));
-    else if (arg.find("--gtest_filter=") == 0) settings::default_settings().filter_tests(arg.substring(15).split({':'}));
+    else if (arg.find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split('|'));
+    else if (arg.find("--gtest_filter=") == 0) settings::default_settings().filter_tests(arg.substring(15).split(':'));
     else if (arg == "--also_run_ignored_tests") settings::default_settings().also_run_ignored_tests(true);
     else if (arg == "--gtest_also_run_disabled_tests") settings::default_settings().also_run_ignored_tests(true);
     // Test execution:
@@ -302,7 +302,7 @@ string unit_test::cdata_message_to_xml_string(const test& test) {
 }
 
 string unit_test::escape_path_to_json_string(const string& path) {
-  return string::join(string::format("\\{}", io::path::directory_separator_char()), string(path).split({io::path::directory_separator_char()}));
+  return string::join(string::format("\\{}", io::path::directory_separator_char()), string(path).split(io::path::directory_separator_char()));
 }
 
 string unit_test::escape_to_json_string(const string& str) {
