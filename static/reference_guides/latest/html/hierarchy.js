@@ -11,9 +11,6 @@ var hierarchy =
     [ "animation_updated_event_handler", null, [
       [ "xtd::event< xtd::forms::animation, animation_updated_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
-    [ "std::basic_string< Char >", null, [
-      [ "xtd::string", "classxtd_1_1string.html", null ]
-    ] ],
     [ "xtd::call_once", "structxtd_1_1call__once.html", null ],
     [ "xtd::tunit::class_cleanup_attribute", "classxtd_1_1tunit_1_1class__cleanup__attribute.html", null ],
     [ "xtd::tunit::class_initialize_attribute", "classxtd_1_1tunit_1_1class__initialize__attribute.html", null ],
@@ -131,9 +128,6 @@ var hierarchy =
       [ "xtd::icomparable< guid >", "classxtd_1_1icomparable.html", [
         [ "xtd::guid", "structxtd_1_1guid.html", null ]
       ] ],
-      [ "xtd::icomparable< string >", "classxtd_1_1icomparable.html", [
-        [ "xtd::string", "classxtd_1_1string.html", null ]
-      ] ],
       [ "xtd::icomparable< event_wait_handle >", "classxtd_1_1icomparable.html", [
         [ "xtd::threading::event_wait_handle", "classxtd_1_1threading_1_1event__wait__handle.html", [
           [ "xtd::threading::auto_reset_event", "classxtd_1_1threading_1_1auto__reset__event.html", null ],
@@ -168,7 +162,6 @@ var hierarchy =
     [ "xtd::comparison_operators< item, icomparable< item > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< mutex, icomparable< mutex > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< semaphore, icomparable< semaphore > >", "classxtd_1_1comparison__operators.html", null ],
-    [ "xtd::comparison_operators< string, icomparable< string > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< time_span, icomparable< time_span > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< time_zone_info, icomparable< time_zone_info > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< type_t, icomparable< type_t > >", "classxtd_1_1comparison__operators.html", [
@@ -202,8 +195,8 @@ var hierarchy =
       [ "xtd::event< xtd::forms::application, delegate< void(const xtd::event_args &)> >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, type_t &item)> >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, message_notifier_button_ref &item)> >", "classxtd_1_1event.html", null ],
-      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< void(size_t index, const xtd::string &text, const xtd::string &name)> >", "classxtd_1_1event.html", null ],
-      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< iterator(const_iterator pos, const xtd::string &text, const xtd::string &name)> >", "classxtd_1_1event.html", null ]
+      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< void(size_t index, const xtd::basic_string &text, const xtd::basic_string &name)> >", "classxtd_1_1event.html", null ],
+      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< iterator(const_iterator pos, const xtd::basic_string &text, const xtd::basic_string &name)> >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::delegate", null, [
       [ "xtd::event< xtd::net::sockets::socket_async_event_args, xtd::delegate< void(const xtd::net::sockets::socket_async_event_args &)> >", "classxtd_1_1event.html", null ]
@@ -522,6 +515,7 @@ var hierarchy =
       [ "xtd::iequatable< udp_client >", "classxtd_1_1iequatable.html", [
         [ "xtd::net::sockets::udp_client", "classxtd_1_1net_1_1sockets_1_1udp__client.html", null ]
       ] ],
+      [ "xtd::iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< cancellation_token >", "classxtd_1_1iequatable.html", [
         [ "xtd::threading::cancellation_token", "classxtd_1_1threading_1_1cancellation__token.html", null ]
       ] ],
@@ -564,6 +558,7 @@ var hierarchy =
     [ "xtd::equality_operators< any_object, iequatable< any_object > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< background_image, iequatable< background_image > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< basic_string< char_t, traits_t, allocator_t >, iequatable< basic_string< char_t, traits_t, allocator_t > > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > >, iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_color, iequatable< border_color > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_radius, iequatable< border_radius > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_style, iequatable< border_style > >", "classxtd_1_1equality__operators.html", null ],
@@ -654,7 +649,8 @@ var hierarchy =
     [ "xtd::equality_operators< type_t, iequatable< type_t > >", "classxtd_1_1equality__operators.html", [
       [ "xtd::iequatable< type_t >", "classxtd_1_1iequatable.html", [
         [ "xtd::delegate< result_t(arguments_t...)>< value_t >", "classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html", null ],
-        [ "xtd::enum_object< enum_t >", "classxtd_1_1enum__object.html", null ]
+        [ "xtd::enum_object< enum_t >", "classxtd_1_1enum__object.html", null ],
+        [ "xtd::text::basic_string_builder< char_t, traits_t, allocator_t >", "classxtd_1_1text_1_1basic__string__builder.html", null ]
       ] ]
     ] ],
     [ "xtd::equality_operators< udp_client, iequatable< udp_client > >", "classxtd_1_1equality__operators.html", null ],
@@ -797,7 +793,6 @@ var hierarchy =
       [ "xtd::icomparable< item >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< control >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< guid >", "classxtd_1_1icomparable.html", null ],
-      [ "xtd::icomparable< string >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< event_wait_handle >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< mutex >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< semaphore >", "classxtd_1_1icomparable.html", null ],
@@ -887,6 +882,7 @@ var hierarchy =
       [ "xtd::iequatable< tcp_client >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< tcp_listener >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< udp_client >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< cancellation_token >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< event_wait_handle >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< mutex >", "classxtd_1_1iequatable.html", null ],
@@ -1245,9 +1241,9 @@ var hierarchy =
       [ "xtd::security::secure_string", "classxtd_1_1security_1_1secure__string.html", null ],
       [ "xtd::speech::synthesis::prompt", "classxtd_1_1speech_1_1synthesis_1_1prompt.html", null ],
       [ "xtd::speech::synthesis::speech_synthesizer", "classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html", null ],
-      [ "xtd::string", "classxtd_1_1string.html", null ],
       [ "xtd::system_exception", "classxtd_1_1system__exception.html", null ],
       [ "xtd::target_type", "classxtd_1_1target__type.html", null ],
+      [ "xtd::text::basic_string_builder< char_t, traits_t, allocator_t >", "classxtd_1_1text_1_1basic__string__builder.html", null ],
       [ "xtd::threading::barrier", "classxtd_1_1threading_1_1barrier.html", null ],
       [ "xtd::threading::cancellation_token", "classxtd_1_1threading_1_1cancellation__token.html", null ],
       [ "xtd::threading::cancellation_token_registration", "classxtd_1_1threading_1_1cancellation__token__registration.html", null ],

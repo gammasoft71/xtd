@@ -455,6 +455,9 @@ var annotated_dup =
           [ "state_changed_event_args", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args.html", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args" ]
         ] ]
       ] ],
+      [ "text", "namespacextd_1_1text.html", [
+        [ "basic_string_builder", "classxtd_1_1text_1_1basic__string__builder.html", "classxtd_1_1text_1_1basic__string__builder" ]
+      ] ],
       [ "threading", "namespacextd_1_1threading.html", [
         [ "abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", "classxtd_1_1threading_1_1abandoned__mutex__exception" ],
         [ "auto_reset_event", "classxtd_1_1threading_1_1auto__reset__event.html", "classxtd_1_1threading_1_1auto__reset__event" ],
@@ -634,7 +637,6 @@ var annotated_dup =
       [ "software_termination_exception", "classxtd_1_1software__termination__exception.html", "classxtd_1_1software__termination__exception" ],
       [ "startup", "classxtd_1_1startup.html", null ],
       [ "static_object", "classxtd_1_1static__object.html", null ],
-      [ "string", "classxtd_1_1string.html", "classxtd_1_1string" ],
       [ "system_exception", "classxtd_1_1system__exception.html", "classxtd_1_1system__exception" ],
       [ "system_report", "classxtd_1_1system__report.html", "classxtd_1_1system__report" ],
       [ "target_type", "classxtd_1_1target__type.html", "classxtd_1_1target__type" ],

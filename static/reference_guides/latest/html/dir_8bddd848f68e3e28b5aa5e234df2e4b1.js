@@ -204,7 +204,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "startup.h", "startup_8h.html", "startup_8h" ],
     [ "static.h", "static_8h.html", "static_8h" ],
     [ "std.h", "std_8h.html", null ],
-    [ "string.h", "string_8h.html", "string_8h" ],
+    [ "string.h", "string_8h.html", null ],
     [ "string_comparison.h", "string__comparison_8h.html", "string__comparison_8h" ],
     [ "string_split_options.h", "string__split__options_8h.html", "string__split__options_8h" ],
     [ "system_exception.h", "system__exception_8h.html", "system__exception_8h" ],

@@ -51,8 +51,8 @@ var group__generic__collections =
       [ "remove", "classxtd_1_1collections_1_1generic_1_1icollection_a86dc990732868e3e519a93f4d7f03112.html#a86dc990732868e3e519a93f4d7f03112", null ]
     ] ],
     [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
-      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_ab7559e3d624ff28ff9e975b4836c20e1.html#ab7559e3d624ff28ff9e975b4836c20e1", null ],
-      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a0b6ff667de781839d1cad82e0d50f4a4.html#a0b6ff667de781839d1cad82e0d50f4a4", null ],
+      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_afc56db5ef5a8996ff05e4e88775f9368.html#afc56db5ef5a8996ff05e4e88775f9368", null ],
+      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a63b54b517dad29751cce354ab5e53e4d.html#a63b54b517dad29751cce354ab5e53e4d", null ],
       [ "get_enumerator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a16aefd65a94ba2edba5583e8bb8dc6dd.html#a16aefd65a94ba2edba5583e8bb8dc6dd", null ]
     ] ],
     [ "xtd::collections::generic::ienumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", [
@@ -86,8 +86,8 @@ var group__generic__collections =
       [ "const_pointer", "classxtd_1_1collections_1_1generic_1_1list_abf6caeba5880b5e6d80c079f30ef8edb.html#abf6caeba5880b5e6d80c079f30ef8edb", null ],
       [ "iterator", "classxtd_1_1collections_1_1generic_1_1list_a9ef1d4e7b6304314301694f73d7749a6.html#a9ef1d4e7b6304314301694f73d7749a6", null ],
       [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1list_a364d487176273df8cddd7069df52ec16.html#a364d487176273df8cddd7069df52ec16", null ],
-      [ "reverse_iterator", "classxtd_1_1collections_1_1generic_1_1list_aa99b6f04636ae59a117180738a566f44.html#aa99b6f04636ae59a117180738a566f44", null ],
-      [ "const_reverse_iterator", "classxtd_1_1collections_1_1generic_1_1list_a04c42bd12dbb9c48dd4a4ee55fed2224.html#a04c42bd12dbb9c48dd4a4ee55fed2224", null ],
+      [ "reverse_iterator", "classxtd_1_1collections_1_1generic_1_1list_ad10bb0ecd242e07f6b5b4b512727c8c7.html#ad10bb0ecd242e07f6b5b4b512727c8c7", null ],
+      [ "const_reverse_iterator", "classxtd_1_1collections_1_1generic_1_1list_a7b4955c3e5ab0834f4cc11244e9ad342.html#a7b4955c3e5ab0834f4cc11244e9ad342", null ],
       [ "read_only_collection", "classxtd_1_1collections_1_1generic_1_1list_ae74a03882b6c19585a0c703b9427cdcd.html#ae74a03882b6c19585a0c703b9427cdcd", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_accf8a642ed6905d1d90091a14cb0b715.html#accf8a642ed6905d1d90091a14cb0b715", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_ae0ae391bd2f3fd35ada3ce2fd367fa14.html#ae0ae391bd2f3fd35ada3ce2fd367fa14", null ],
