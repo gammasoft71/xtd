@@ -1,25 +1,26 @@
 #include <xtd/console>
 #include <xtd/environment>
 #include <xtd/string>
+#include <xtd/u32string>
 
 using namespace xtd;
 
 enum class cap {title, middle, end};
 
-void print_character(string text, char32 value, cap c) {
+void print_character(u32string text, char32 value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  char     │   format   │      representation              │" << environment::new_line
                  << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
-  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << string::format("{}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << string::format("{:ANY_FMT}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << u32string::format("{}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << u32string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << u32string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << u32string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << u32string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << u32string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << u32string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << u32string::format("{:ANY_FMT}", value).pad_right(32) << " |" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
