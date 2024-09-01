@@ -190,6 +190,6 @@ var searchData=
   ['writing_5fhand_187',['writing_hand',['../classxtd_1_1forms_1_1emoticons_a3f65fcaa686f117bfcf04df15c736356.html#a3f65fcaa686f117bfcf04df15c736356',1,'xtd::forms::emoticons']]],
   ['wstring_188',['wstring',['../group__strings_ga0852e1ddc5f45ee30560e3f95d6915b0.html#ga0852e1ddc5f45ee30560e3f95d6915b0',1,'xtd']]],
   ['wstring_2eh_189',['wstring.h',['../wstring_8h.html',1,'']]],
-  ['wstring_5fbuilder_190',['wstring_builder',['../group__strings_ga667a288a2af22a957f60b9871f2ce27d.html#ga667a288a2af22a957f60b9871f2ce27d',1,'wstring_builder.h']]],
+  ['wstring_5fbuilder_190',['wstring_builder',['../group__strings_ga516498bf5a31bcaeee8b68db8b27166d.html#ga516498bf5a31bcaeee8b68db8b27166d',1,'xtd::text']]],
   ['wstring_5fbuilder_2eh_191',['wstring_builder.h',['../wstring__builder_8h.html',1,'']]]
 ];
