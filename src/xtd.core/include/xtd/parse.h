@@ -413,8 +413,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
-  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value) noexcept {
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<char>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
       return true;
@@ -422,15 +422,77 @@ namespace xtd {
       return false;
     }
   }
-  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
-  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value, const std::locale& locale) noexcept {
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value) noexcept {
+    try {
+      value = parse<value_t>(str);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value) noexcept {
+    try {
+      value = parse<value_t>(str);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#if defined(__xtd__cpp_lib_char8_t)
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value) noexcept {
+    try {
+      value = parse<value_t>(str);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#endif
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value) noexcept {
+    try {
+      value = parse<value_t>(str);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<char>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -438,7 +500,69 @@ namespace xtd {
       return false;
     }
   }
-  
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#if defined(__xtd__cpp_lib_char8_t)
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#endif
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -467,8 +591,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
-  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value, number_styles style) noexcept {
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -476,15 +600,77 @@ namespace xtd {
       return false;
     }
   }
-  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
-  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style) noexcept {
+    try {
+      value = parse<value_t>(str, style);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style) noexcept {
+    try {
+      value = parse<value_t>(str, style);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#if defined(__xtd__cpp_lib_char8_t)
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style) noexcept {
+    try {
+      value = parse<value_t>(str, style);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#endif
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style) noexcept {
+    try {
+      value = parse<value_t>(str, style);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -492,7 +678,69 @@ namespace xtd {
       return false;
     }
   }
-  
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, style, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, style, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#if defined(__xtd__cpp_lib_char8_t)
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, style, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+#endif
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t>
+  inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+    try {
+      value = parse<value_t>(str, style, locale);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
