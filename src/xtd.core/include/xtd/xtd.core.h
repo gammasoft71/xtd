@@ -176,6 +176,7 @@
 #include "text/u16string_builder.h"
 #include "text/u32string_builder.h"
 #include "text/u8string_builder.h"
+#include "text/wstring_builder.h"
 #include "threading/abandoned_mutex_exception.h"
 #include "threading/auto_reset_event.h"
 #include "threading/barrier.h"

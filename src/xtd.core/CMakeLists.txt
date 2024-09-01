@@ -921,6 +921,8 @@ add_sources(
   include/xtd/text/u32string_builder
   include/xtd/text/u8string_builder.h
   include/xtd/text/u8string_builder
+  include/xtd/text/wstring_builder.h
+  include/xtd/text/wstring_builder
   include/xtd/threading/abandoned_mutex_exception.h
   include/xtd/threading/abandoned_mutex_exception
   include/xtd/threading/auto_reset_event.h
