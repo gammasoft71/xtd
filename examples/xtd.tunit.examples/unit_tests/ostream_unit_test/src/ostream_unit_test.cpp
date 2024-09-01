@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::tunit;
+using namespace xtd::text;
 
 namespace unit_tests {
   class test_class_(test) {
@@ -19,8 +20,8 @@ auto main() -> int {
   auto result = ostream_unit_test(ss).run();
   
   // display string stream on console::out line by line
-  auto line = string {};
-  while (std::getline(ss, line))
+  auto line = string_builder {};
+  while (std::getline(ss, line.chars()))
     console::out << line << environment::new_line;
     
   return result;
