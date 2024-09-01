@@ -2116,6 +2116,14 @@ namespace xtd {
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
     static bool equals(const basic_string& a, const basic_string& b) noexcept{return a.equals(b);}
+    /// @brief Determines whether two specified xtd::basic_string objects have the same value.
+    /// @param a The first basic_string to compare.
+    /// @param b The second basic_string to compare.
+    /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
+    /// @remarks This method performs an ordinal (case-sensitive) comparison.
+    template<typename char_a_t, typename char_b_t>
+    static bool equals(const char_a_t* a, const char_b_t* b) noexcept{return basic_string {a}.equals(basic_string {b});}
+
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
     /// @param a The first basic_string to compare.
     /// @param b The second basic_string to compare.
@@ -2123,6 +2131,14 @@ namespace xtd {
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     static bool equals(const basic_string& a, const basic_string& b, bool ignore_case) noexcept {return a.equals(b, ignore_case);}
+    /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
+    /// @param a The first basic_string to compare.
+    /// @param b The second basic_string to compare.
+    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
+    /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
+    /// @remarks This method performs an ordinal comparison.
+    template<typename char_a_t, typename char_b_t>
+    static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept{return basic_string {a}.equals(basic_string {b}, ignore_case);}
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
