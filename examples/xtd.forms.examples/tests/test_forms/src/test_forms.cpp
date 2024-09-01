@@ -56,7 +56,7 @@ private:
     if (!command_line.empty()) {
       xtd::diagnostics::process_start_info start_info;
       try {
-        auto args = command_line.split({' '});
+        auto args = command_line.split(' ');
         start_info.file_name(args[0]);
         if (args.size() > 1)
           start_info.arguments(xtd::string::join(" ", xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));
