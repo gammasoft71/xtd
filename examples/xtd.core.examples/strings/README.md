@@ -12,6 +12,7 @@
 * [string_format](string_format/README.md) shows how to use [xtd::ustring::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
 * [string_format_with_order](string_format_with_order/README.md) shows how to use [xtd::ustring::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
 * [string_unicode](string_unicode/README.md) shows how to use [xtd::ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class with unicode.
+* [strings](strings/README.md) shows how to use [xtd::basic_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__string.html) constructors.
 
 ## Build and run any project
 

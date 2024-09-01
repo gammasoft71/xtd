@@ -14,4 +14,5 @@ add_projects(
   string_format
   string_format_with_order
   string_unicode
+  strings
 )
