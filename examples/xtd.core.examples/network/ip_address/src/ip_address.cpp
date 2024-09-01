@@ -1,6 +1,7 @@
 #include <xtd/net/sockets/socket>
 #include <xtd/net/dns>
 #include <xtd/net/ip_address>
+#include <xtd/text/string_builder>
 #include <xtd/console>
 #include <xtd/startup>
 #include <regex>
@@ -9,11 +10,12 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
+using namespace xtd::text;
 
 class test_ip_address {
 public:
   static auto main(const list<string>& args) {
-    auto server = string::empty_string;
+    auto server = string_builder {};
     
     // Define a regular expression to parse user's input.
     // This is a security check. It allows only
@@ -27,14 +29,14 @@ public:
       console::write_line("Using current host: {}", server);
     } else {
       server = args[0];
-      if (!regex_match(server, rex)) {
+      if (!regex_match(server.chars(), rex)) {
         console::write_line("Input string format not allowed.");
         return;
       }
     }
     
     // Get the list of the addresses associated with the requested server.
-    ip_addresses(server);
+    ip_addresses(server.to_string());
     
     // Get additional address information.
     ip_address_additional_info();
