@@ -125,6 +125,7 @@ you can use this class as you want as for example communicate between network. <
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1text.html">xtd::text</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
@@ -141,8 +142,8 @@ you can use this class as you want as for example communicate between network. <
 <div class="line">  <span class="keyword">auto</span> result = <a class="code hl_class" href="classxtd_1_1tunit_1_1ostream__unit__test.html">ostream_unit_test</a>(ss).<a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display string stream on console::out line by line</span></div>
-<div class="line">  <span class="keyword">auto</span> line = <span class="keywordtype">string</span> {};</div>
-<div class="line">  <span class="keywordflow">while</span> (std::getline(ss, line))</div>
+<div class="line">  <span class="keyword">auto</span> line = <a class="code hl_class" href="classxtd_1_1text_1_1basic__string__builder.html">string_builder</a> {};</div>
+<div class="line">  <span class="keywordflow">while</span> (std::getline(ss, line.chars()))</div>
 <div class="line">    console::out &lt;&lt; line &lt;&lt; environment::new_line;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keywordflow">return</span> result;</div>
@@ -157,9 +158,11 @@ you can use this class as you want as for example communicate between network. <
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">// End 1 test from 1 test case ran. (0 ms total)</span></div>
+<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html"><div class="ttname"><a href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a></div><div class="ttdoc">Represents a mutable string of characters. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> basic_string_builder.h:33</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1ostream__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1ostream__unit__test.html">xtd::tunit::ostream_unit_test</a></div><div class="ttdoc">The ostream_unit_test class is ostream unit test interface.</div><div class="ttdef"><b>Definition</b> ostream_unit_test.h:22</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
+<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.h:14</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -251,7 +254,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1tunit.html">tunit</a></li><li class="navelem"><a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html">ostream_event_listener</a></li>
-		<li class="footer">Generated on Sat Aug 31 2024 20:53:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sun Sep 1 2024 18:18:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
