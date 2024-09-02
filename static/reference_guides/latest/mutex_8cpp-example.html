@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('mutex_8cpp-example.html',''); initResi
 <div class="line">      <span class="comment">// Create the threads that will use the protected resource.</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; num_threads; ++i) {</div>
 <div class="line">        threads.emplace_back(thread_proc);</div>
-<div class="line">        threads.back().name(ustring::format(<span class="stringliteral">&quot;thread_{0}&quot;</span>, i + 1));</div>
+<div class="line">        threads.back().name(string::format(<span class="stringliteral">&quot;thread_{0}&quot;</span>, i + 1));</div>
 <div class="line">        threads.back().start();</div>
 <div class="line">      }</div>
 <div class="line">      </div>
@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('mutex_8cpp-example.html',''); initResi
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -316,7 +316,7 @@ $(document).ready(function(){initNavTree('images2_8cpp-example.html',''); initRe
 <div class="line">      picture_xtd_theme.image(images::from_name(<span class="stringliteral">&quot;xtd&quot;</span>, images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name(<span class="stringliteral">&quot;xtd&quot;</span>, images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));</div>
 <div class="line">      label_picture_context.text(images::contexts()[current_context_index]);</div>
 <div class="line">      label_picture_name.text(images::names(images::contexts()[current_context_index])[current_name_index]);</div>
-<div class="line">      label_picture_size.text(ustring::format(<span class="stringliteral">&quot;{}x{} pixels&quot;</span>, images::sizes()[current_size_index].width(), images::sizes()[current_size_index].height()));</div>
+<div class="line">      label_picture_size.text(string::format(<span class="stringliteral">&quot;{}x{} pixels&quot;</span>, images::sizes()[current_size_index].width(), images::sizes()[current_size_index].height()));</div>
 <div class="line">      button_context_previous.enabled(current_context_index &gt; 0);</div>
 <div class="line">      button_context_next.enabled(current_context_index &lt; images::contexts().size() - 1);</div>
 <div class="line">      button_name_previous.enabled(current_name_index &gt; 0);</div>
@@ -373,7 +373,7 @@ $(document).ready(function(){initNavTree('images2_8cpp-example.html',''); initRe
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

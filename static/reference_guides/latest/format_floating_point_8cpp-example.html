@@ -103,31 +103,32 @@ $(document).ready(function(){initNavTree('format_floating_point_8cpp-example.htm
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with floating points.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  locale::global(locale {<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>}); <span class="comment">// change to us for currency</span></div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:c}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:C}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:e}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:E}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:f}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:F}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:g}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:G}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:n}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:N}&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:p}&quot;</span>, .0012345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:P}&quot;</span>, .0012345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::positive_infinity) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::negative_infinity) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::NaN) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, std::numeric_limits&lt;double&gt;::signaling_NaN()) &lt;&lt; endl;</div>
+<div class="line">  std::locale::global(std::locale {<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>}); <span class="comment">// change to us for currency</span></div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:c}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:C}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:e}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:E}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:f}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:F}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:g}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:G}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:n}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:N}&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:p}&quot;</span>, .0012345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{:P}&quot;</span>, .0012345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::positive_infinity) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::negative_infinity) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, double_object::NaN) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::numeric_limits&lt;double&gt;::signaling_NaN()) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -156,7 +157,7 @@ $(document).ready(function(){initNavTree('format_floating_point_8cpp-example.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

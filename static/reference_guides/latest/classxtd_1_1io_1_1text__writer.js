@@ -1,11 +1,11 @@
 var classxtd_1_1io_1_1text__writer =
 [
     [ "text_writer", "classxtd_1_1io_1_1text__writer_a90b3e80352303d25362d280f2f9b5e33.html#a90b3e80352303d25362d280f2f9b5e33", null ],
-    [ "new_line", "classxtd_1_1io_1_1text__writer_aa2b2f694e3563633e64988daaf4652c0.html#aa2b2f694e3563633e64988daaf4652c0", null ],
-    [ "new_line", "classxtd_1_1io_1_1text__writer_a4e27a6d175cdc9d7db1562c9786f89ca.html#a4e27a6d175cdc9d7db1562c9786f89ca", null ],
+    [ "new_line", "classxtd_1_1io_1_1text__writer_a281c23a89207fd098b8a679c95645996.html#a281c23a89207fd098b8a679c95645996", null ],
+    [ "new_line", "classxtd_1_1io_1_1text__writer_a448277462561e06a08f8ce4c1aecd7ac.html#a448277462561e06a08f8ce4c1aecd7ac", null ],
     [ "close", "classxtd_1_1io_1_1text__writer_ab453370d7c0be12e2178b4effbbe22e0.html#ab453370d7c0be12e2178b4effbbe22e0", null ],
     [ "flush", "classxtd_1_1io_1_1text__writer_a12df2c07f35731cf365d431ef309ef01.html#a12df2c07f35731cf365d431ef309ef01", null ],
-    [ "write", "classxtd_1_1io_1_1text__writer_a8d13fc012efd84779130b80a0d6ddb1c.html#a8d13fc012efd84779130b80a0d6ddb1c", null ],
+    [ "write", "classxtd_1_1io_1_1text__writer_a6cd994a2a2e9fca393308aca8973b4d6.html#a6cd994a2a2e9fca393308aca8973b4d6", null ],
     [ "write", "classxtd_1_1io_1_1text__writer_a5c7d9b3124170e00c6da13b40829d58a.html#a5c7d9b3124170e00c6da13b40829d58a", null ],
     [ "write", "classxtd_1_1io_1_1text__writer_a92244dbde517929cbe931e6c51935cf7.html#a92244dbde517929cbe931e6c51935cf7", null ],
     [ "write", "classxtd_1_1io_1_1text__writer_a7849b46982b59f9d8fccb1672cb9b03c.html#a7849b46982b59f9d8fccb1672cb9b03c", null ],
@@ -18,9 +18,9 @@ var classxtd_1_1io_1_1text__writer =
     [ "write", "classxtd_1_1io_1_1text__writer_a92443bcf9ea7b8de5eae0909bffd1c3c.html#a92443bcf9ea7b8de5eae0909bffd1c3c", null ],
     [ "write", "classxtd_1_1io_1_1text__writer_acd1d6fafab14c0c7206fda3f8a63d34e.html#acd1d6fafab14c0c7206fda3f8a63d34e", null ],
     [ "write", "classxtd_1_1io_1_1text__writer_a00b98f1471f6f886b876d34b51bc8a1b.html#a00b98f1471f6f886b876d34b51bc8a1b", null ],
-    [ "write", "classxtd_1_1io_1_1text__writer_a9eb28031545b2ed55e9f8334e8679b06.html#a9eb28031545b2ed55e9f8334e8679b06", null ],
+    [ "write", "classxtd_1_1io_1_1text__writer_a75d973d40205d290f3aaeea9038e6bb3.html#a75d973d40205d290f3aaeea9038e6bb3", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_ad9bfc3262634aa04d439143f62e51c0c.html#ad9bfc3262634aa04d439143f62e51c0c", null ],
-    [ "write_line", "classxtd_1_1io_1_1text__writer_a4c3a56d538a98adb83dc4b9f32aeacd8.html#a4c3a56d538a98adb83dc4b9f32aeacd8", null ],
+    [ "write_line", "classxtd_1_1io_1_1text__writer_a6b0ee030f9d5a7f8d9b7bb4e47dde20f.html#a6b0ee030f9d5a7f8d9b7bb4e47dde20f", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_acc1771cd4a14dc9d6ebf568505da6249.html#acc1771cd4a14dc9d6ebf568505da6249", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_a2ae6bcbc353e6509c09cbdc3e5376fbc.html#a2ae6bcbc353e6509c09cbdc3e5376fbc", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_aa1abc40fa3d5b4114ff0cb8006c71ea8.html#aa1abc40fa3d5b4114ff0cb8006c71ea8", null ],
@@ -33,5 +33,5 @@ var classxtd_1_1io_1_1text__writer =
     [ "write_line", "classxtd_1_1io_1_1text__writer_a72a082f445e2d801244e757e3b7d6f4e.html#a72a082f445e2d801244e757e3b7d6f4e", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_a1951f50e680f860a1056084d7c10057a.html#a1951f50e680f860a1056084d7c10057a", null ],
     [ "write_line", "classxtd_1_1io_1_1text__writer_a932ea397a1f87c6214eb5bbc25b23882.html#a932ea397a1f87c6214eb5bbc25b23882", null ],
-    [ "write_line", "classxtd_1_1io_1_1text__writer_a3e69af07680ec51d185fc890b4bc2b5e.html#a3e69af07680ec51d185fc890b4bc2b5e", null ]
+    [ "write_line", "classxtd_1_1io_1_1text__writer_a9b7274e2eb608c5361e04350fb53d489.html#a9b7274e2eb608c5361e04350fb53d489", null ]
 ];

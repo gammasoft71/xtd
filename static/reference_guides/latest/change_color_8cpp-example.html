@@ -148,19 +148,19 @@ $(document).ready(function(){initNavTree('change_color_8cpp-example.html',''); i
 <div class="line">    change_color_button.click += [&amp;] {</div>
 <div class="line">      back_color(color::from_argb(rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;(), rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;(), rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;()));</div>
 <div class="line">      fore_color(color::from_argb(rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;(), rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;(), rand.next&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>&gt;()));</div>
-<div class="line">      label1.text(ustring::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label1.back_color(), label1.fore_color()));</div>
-<div class="line">      label2.text(ustring::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label2.back_color(), label2.fore_color()));</div>
+<div class="line">      label1.text(string::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label1.back_color(), label1.fore_color()));</div>
+<div class="line">      label2.text(string::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label2.back_color(), label2.fore_color()));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    label1.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label1.location({10, 50});</div>
-<div class="line">    label1.text(ustring::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label1.back_color(), label1.fore_color()));</div>
+<div class="line">    label1.text(string::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label1.back_color(), label1.fore_color()));</div>
 <div class="line">    </div>
 <div class="line">    label2.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label2.back_color(color::dark_cyan);</div>
 <div class="line">    label2.fore_color(color::black);</div>
 <div class="line">    label2.location({10, 110});</div>
-<div class="line">    label2.text(ustring::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label2.back_color(), label2.fore_color()));</div>
+<div class="line">    label2.text(string::format(<span class="stringliteral">&quot;back_color = {}\nfore_color = {}&quot;</span>, label2.back_color(), label2.fore_color()));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
@@ -187,7 +187,7 @@ $(document).ready(function(){initNavTree('change_color_8cpp-example.html',''); i
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

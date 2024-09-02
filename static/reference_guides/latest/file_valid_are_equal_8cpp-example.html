@@ -105,19 +105,18 @@ $(document).ready(function(){initNavTree('file_valid_are_equal_8cpp-example.html
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1file__valid_afd1bb97a8f86b14d617c43a56d732ab6.html#afd1bb97a8f86b14d617c43a56d732ab6" title="Validate that two files are equal.">xtd::tunit::file_valid::are_equal</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      <span class="keyword">auto</span> is = istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>};</div>
-<div class="line">      file_valid::are_equal(istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>}, is);</div>
+<div class="line">      <span class="keyword">auto</span> is = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>};</div>
+<div class="line">      file_valid::are_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>}, is);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
-<div class="line">      <span class="keyword">auto</span> is = istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>};</div>
-<div class="line">      file_valid::are_equal(istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equel example.&quot;</span>}, is);</div>
+<div class="line">      <span class="keyword">auto</span> is = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equal example.&quot;</span>};</div>
+<div class="line">      file_valid::are_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_valid::are_equel example.&quot;</span>}, is);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -150,7 +149,7 @@ $(document).ready(function(){initNavTree('file_valid_are_equal_8cpp-example.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

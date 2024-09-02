@@ -190,13 +190,12 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> years = <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;unsigned int, 2&gt;</a> {2012, 2014};</div>
+<div class="line">    <span class="keyword">auto</span> years = std::array&lt;unsigned int, 2&gt; {2012, 2014};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Days in the Month for the Gregorian calendar\n&quot;</span>);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
@@ -241,7 +240,6 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line"><span class="comment">//  2014      october          31</span></div>
 <div class="line"><span class="comment">//  2014      november         30</span></div>
 <div class="line"><span class="comment">//  2014      december         31</span></div>
-<div class="ttc" id="agroup__system_ga23ad3a72b3c9da7418d0b2020076a40a_html_ga23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the b...</div><div class="ttdef"><b>Definition</b> array.h:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time_a40879b595b63ab7c1e4ad108e0898b6b.html#a40879b595b63ab7c1e4ad108e0898b6b" title="Returns the number of days in the specified month and year.">xtd::date_time::days_in_month</a> method always interprets month and year as the month and year of the Gregorian calendar. </dd></dl>
@@ -255,7 +253,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1date__time.html">date_time</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

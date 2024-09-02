@@ -1,19 +1,19 @@
 var classxtd_1_1operating__system =
 [
     [ "operating_system", "classxtd_1_1operating__system_a7899d0d1e2d83033564f88ced4b1dcc7.html#a7899d0d1e2d83033564f88ced4b1dcc7", null ],
-    [ "operating_system", "classxtd_1_1operating__system_a15ab00355338c2dd6471f5958e1412ce.html#a15ab00355338c2dd6471f5958e1412ce", null ],
-    [ "operating_system", "classxtd_1_1operating__system_a7d7f7dca8dfc41c67ff6ee7f253ca4fa.html#a7d7f7dca8dfc41c67ff6ee7f253ca4fa", null ],
-    [ "operating_system", "classxtd_1_1operating__system_a31ac607189fe26588bbc79a755ff0b14.html#a31ac607189fe26588bbc79a755ff0b14", null ],
-    [ "operating_system", "classxtd_1_1operating__system_a6575a874ef5f40d67ab80f3e663d7c63.html#a6575a874ef5f40d67ab80f3e663d7c63", null ],
-    [ "operating_system", "classxtd_1_1operating__system_a545c6436f3ecc03653aba4ea6e6a2f25.html#a545c6436f3ecc03653aba4ea6e6a2f25", null ],
-    [ "desktop_environment", "classxtd_1_1operating__system_af12a595588c40595f9963b10f4e1248d.html#af12a595588c40595f9963b10f4e1248d", null ],
-    [ "desktop_theme", "classxtd_1_1operating__system_a2a677fe9b624fc9b8cddddfed8f1d945.html#a2a677fe9b624fc9b8cddddfed8f1d945", null ],
+    [ "operating_system", "classxtd_1_1operating__system_a7258a914281a1c505193ee0369b22bea.html#a7258a914281a1c505193ee0369b22bea", null ],
+    [ "operating_system", "classxtd_1_1operating__system_aab9d24518e7871096aeeddf4202f8419.html#aab9d24518e7871096aeeddf4202f8419", null ],
+    [ "operating_system", "classxtd_1_1operating__system_a490c1c644b5001d17d9f444f1241c331.html#a490c1c644b5001d17d9f444f1241c331", null ],
+    [ "operating_system", "classxtd_1_1operating__system_aa4b9997e8828e9306920a8998c233d2b.html#aa4b9997e8828e9306920a8998c233d2b", null ],
+    [ "operating_system", "classxtd_1_1operating__system_a918670d17779d3297b4dea9ca4fbe6de.html#a918670d17779d3297b4dea9ca4fbe6de", null ],
+    [ "desktop_environment", "classxtd_1_1operating__system_ae97ed16fdb49bb25b0304e68f56eb1ba.html#ae97ed16fdb49bb25b0304e68f56eb1ba", null ],
+    [ "desktop_theme", "classxtd_1_1operating__system_a87ab83e87e53b8e606420b0c39410c42.html#a87ab83e87e53b8e606420b0c39410c42", null ],
     [ "distribution", "classxtd_1_1operating__system_a0ab47a2a61ee8add26e6885b78da271b.html#a0ab47a2a61ee8add26e6885b78da271b", null ],
-    [ "name", "classxtd_1_1operating__system_aef91eef9c854f27e4dd694b084b9d65e.html#aef91eef9c854f27e4dd694b084b9d65e", null ],
+    [ "name", "classxtd_1_1operating__system_aaa05ea87fb572af7f702c404a4d184be.html#aaa05ea87fb572af7f702c404a4d184be", null ],
     [ "platform", "classxtd_1_1operating__system_aec03022d5b4102302e7863db39bf8c26.html#aec03022d5b4102302e7863db39bf8c26", null ],
-    [ "service_pack", "classxtd_1_1operating__system_afe643484dd54c74c9c356baeeaf1cc20.html#afe643484dd54c74c9c356baeeaf1cc20", null ],
+    [ "service_pack", "classxtd_1_1operating__system_ad82a1c7c695714838f52e8f71331f60c.html#ad82a1c7c695714838f52e8f71331f60c", null ],
     [ "version", "classxtd_1_1operating__system_a568247bd88390f665e646774aeadbc09.html#a568247bd88390f665e646774aeadbc09", null ],
-    [ "version_string", "classxtd_1_1operating__system_a890ee772d4a2ea3dd23fdb896a4f8ad3.html#a890ee772d4a2ea3dd23fdb896a4f8ad3", null ],
+    [ "version_string", "classxtd_1_1operating__system_aaaf307c3f2607c0673129003a46630a8.html#aaaf307c3f2607c0673129003a46630a8", null ],
     [ "is_64_bit", "classxtd_1_1operating__system_ad450e063ad67ea232a0da61d995084b5.html#ad450e063ad67ea232a0da61d995084b5", null ],
     [ "is_android", "classxtd_1_1operating__system_aaf9ae5c1b2aca4e0e845d2396ea1b791.html#aaf9ae5c1b2aca4e0e845d2396ea1b791", null ],
     [ "is_free_bsd", "classxtd_1_1operating__system_acde3e3e646b3407740e5ae7926ad65aa.html#acde3e3e646b3407740e5ae7926ad65aa", null ],
@@ -32,5 +32,5 @@ var classxtd_1_1operating__system =
     [ "is_windows_ce", "classxtd_1_1operating__system_a171d7f8ea5fd51ee21c9c80f6000e3a2.html#a171d7f8ea5fd51ee21c9c80f6000e3a2", null ],
     [ "is_windows_platform", "classxtd_1_1operating__system_aa8a223afb664f98034d5427951aef62b.html#aa8a223afb664f98034d5427951aef62b", null ],
     [ "is_xbox", "classxtd_1_1operating__system_a6c6beee19061278858a1dfbaf758bb6f.html#a6c6beee19061278858a1dfbaf758bb6f", null ],
-    [ "to_string", "classxtd_1_1operating__system_ad0bd8ca3c0d781aba809af5a3c359e5b.html#ad0bd8ca3c0d781aba809af5a3c359e5b", null ]
+    [ "to_string", "classxtd_1_1operating__system_a126c28eee41954cc844374fb5c83a793.html#a126c28eee41954cc844374fb5c83a793", null ]
 ];

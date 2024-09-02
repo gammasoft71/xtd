@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('month_calendar_8cpp-example.html','');
 <div class="line">    month_calendar1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    month_calendar1.location({10, 10});</div>
 <div class="line">    month_calendar1.date_changed += [&amp;](<span class="keywordtype">object</span>&amp;, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a> &amp; e) {</div>
-<div class="line">      label1.text(ustring::format(<span class="stringliteral">&quot;selection range: [{:d}, {:d}]&quot;</span>, month_calendar1.selection_start(), month_calendar1.selection_end()));</div>
+<div class="line">      label1.text(string::format(<span class="stringliteral">&quot;selection range: [{:d}, {:d}]&quot;</span>, month_calendar1.selection_start(), month_calendar1.selection_end()));</div>
 <div class="line">    };</div>
 <div class="line">    month_calendar1.selection_range({date_time::now(), date_time::now()});</div>
 <div class="line">    month_calendar1.min_date(date_time::now().subtract(months(3)));</div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('month_calendar_8cpp-example.html','');
 <div class="line">    label1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    label1.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label1.location({10, 180});</div>
-<div class="line">    label1.text(ustring::format(<span class="stringliteral">&quot;selection range: [{:d}, {:d}]&quot;</span>, month_calendar1.selection_start(), month_calendar1.selection_end()));</div>
+<div class="line">    label1.text(string::format(<span class="stringliteral">&quot;selection range: [{:d}, {:d}]&quot;</span>, month_calendar1.selection_start(), month_calendar1.selection_end()));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('month_calendar_8cpp-example.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

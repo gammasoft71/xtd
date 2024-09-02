@@ -13,5 +13,5 @@ var classxtd_1_1diagnostics_1_1stack__trace =
     [ "frame_count", "classxtd_1_1diagnostics_1_1stack__trace_a424374815e3f722a156fedeb6a77e30e.html#a424374815e3f722a156fedeb6a77e30e", null ],
     [ "get_frame", "classxtd_1_1diagnostics_1_1stack__trace_afca6ea9bd4c06cb0d38fac6d699c1a61.html#afca6ea9bd4c06cb0d38fac6d699c1a61", null ],
     [ "get_frames", "classxtd_1_1diagnostics_1_1stack__trace_a0dc0078046589430dca4ad039bcebeaa.html#a0dc0078046589430dca4ad039bcebeaa", null ],
-    [ "to_string", "classxtd_1_1diagnostics_1_1stack__trace_a45340399230b6ac22957236d2bbe7fb2.html#a45340399230b6ac22957236d2bbe7fb2", null ]
+    [ "to_string", "classxtd_1_1diagnostics_1_1stack__trace_a235e78773f4e91ad1cce80add64f1e8f.html#a235e78773f4e91ad1cce80add64f1e8f", null ]
 ];

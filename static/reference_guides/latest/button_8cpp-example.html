@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('button_8cpp-example.html',''); initRes
 <div class="line">      button1.text(<span class="stringliteral">&quot;Button 1&quot;</span>);</div>
 <div class="line">      button1.location({50, 50});</div>
 <div class="line">      button1.click += [&amp;] {</div>
-<div class="line">        label1.text(ustring::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
+<div class="line">        label1.text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button2.parent(*<span class="keyword">this</span>);</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('button_8cpp-example.html',''); initRes
 <div class="line">      button2.auto_repeat(<span class="keyword">true</span>);</div>
 <div class="line">      button2.size({200, 75});</div>
 <div class="line">      button2.click += [&amp;] {</div>
-<div class="line">        label2.text(ustring::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
+<div class="line">        label2.text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      label1.parent(*<span class="keyword">this</span>);</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('button_8cpp-example.html',''); initRes
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

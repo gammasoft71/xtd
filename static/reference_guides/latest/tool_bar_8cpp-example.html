@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('tool_bar_8cpp-example.html',''); initR
 <div class="line">      choice1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_value_changed += [&amp;] {</div>
-<div class="line">        list_box1.items().push_back(ustring::format(<span class="stringliteral">&quot;{} selected&quot;</span>, choice1.selected_item()));</div>
+<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;{} selected&quot;</span>, choice1.selected_item()));</div>
 <div class="line">        list_box1.selected_index(list_box1.items().size() - 1);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -185,14 +185,14 @@ $(document).ready(function(){initNavTree('tool_bar_8cpp-example.html',''); initR
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">tool_bar_button_click_event_args</a>&amp; e) {</div>
 <div class="line">      <span class="keywordflow">if</span> (e.button().style() == tool_bar_button_style::toggle_button)</div>
-<div class="line">        list_box1.items().push_back(ustring::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, e.button().text(), e.button().pushed()));</div>
+<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, e.button().text(), e.button().pushed()));</div>
 <div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        list_box1.items().push_back(ustring::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, e.button().text()));</div>
+<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, e.button().text()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().size() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      list_box1.items().push_back(ustring::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).text()));</div>
+<div class="line">      list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).text()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().size() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -261,7 +261,7 @@ $(document).ready(function(){initNavTree('tool_bar_8cpp-example.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

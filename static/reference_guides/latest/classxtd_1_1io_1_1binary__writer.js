@@ -1,6 +1,6 @@
 var classxtd_1_1io_1_1binary__writer =
 [
-    [ "binary_writer", "classxtd_1_1io_1_1binary__writer_acaa2321c2c5dcbfa73769eb7dad06d76.html#acaa2321c2c5dcbfa73769eb7dad06d76", null ],
+    [ "binary_writer", "classxtd_1_1io_1_1binary__writer_a6471c386d80b0b9abd17a928cc39950c.html#a6471c386d80b0b9abd17a928cc39950c", null ],
     [ "binary_writer", "classxtd_1_1io_1_1binary__writer_acd0be5272029b7ccddf7d5ca485d052b.html#acd0be5272029b7ccddf7d5ca485d052b", null ],
     [ "base_stream", "classxtd_1_1io_1_1binary__writer_a8aa6a96787a578dcf4ec105f442b0ad3.html#a8aa6a96787a578dcf4ec105f442b0ad3", null ],
     [ "close", "classxtd_1_1io_1_1binary__writer_a938f8b59a0c78de5b3c73873436b085d.html#a938f8b59a0c78de5b3c73873436b085d", null ],
@@ -21,7 +21,7 @@ var classxtd_1_1io_1_1binary__writer =
     [ "write", "classxtd_1_1io_1_1binary__writer_a254d0f7b3bc1c7fc0fa0225fbcc01e6f.html#a254d0f7b3bc1c7fc0fa0225fbcc01e6f", null ],
     [ "write", "classxtd_1_1io_1_1binary__writer_adeac25b45530854065a3d99d1c678c7a.html#adeac25b45530854065a3d99d1c678c7a", null ],
     [ "write", "classxtd_1_1io_1_1binary__writer_ae036329c9803d478bdba73b23ac7d9f2.html#ae036329c9803d478bdba73b23ac7d9f2", null ],
-    [ "write", "classxtd_1_1io_1_1binary__writer_aab04cb12de55b47d63574d82730f0463.html#aab04cb12de55b47d63574d82730f0463", null ],
+    [ "write", "classxtd_1_1io_1_1binary__writer_afdb8e36d75629446050ae9e5bcf94523.html#afdb8e36d75629446050ae9e5bcf94523", null ],
     [ "write", "classxtd_1_1io_1_1binary__writer_ac7b58fda4e1c3b276e467220e817ca55.html#ac7b58fda4e1c3b276e467220e817ca55", null ],
     [ "write", "classxtd_1_1io_1_1binary__writer_a789b8e5dc0c9a6cb434eaab2b34764ae.html#a789b8e5dc0c9a6cb434eaab2b34764ae", null ],
     [ "write", "classxtd_1_1io_1_1binary__writer_a6cf2c9f6fbfdea66b568bfa176b5e285.html#a6cf2c9f6fbfdea66b568bfa176b5e285", null ]

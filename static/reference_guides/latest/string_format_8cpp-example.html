@@ -102,16 +102,16 @@ $(document).ready(function(){initNavTree('string_format_8cpp-example.html',''); 
   <div class="headertitle"><div class="title">string_format.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::ustring::format</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<p>Shows how to use <a class="el" href="group__format__parse_ga591487f7c52877614fd80f43a332d455.html#ga591487f7c52877614fd80f43a332d455" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::string::format</a> method.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{0,10} {1} {2:D3} {3}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>_s, <span class="stringliteral">&quot;literal&quot;</span>, 42, <span class="charliteral">&#39;a&#39;</span>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{0,10} {1} {2:D3} {3}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>_s, <span class="stringliteral">&quot;literal&quot;</span>, 42, <span class="charliteral">&#39;a&#39;</span>) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('string_format_8cpp-example.html',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
