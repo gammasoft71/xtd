@@ -1,6 +1,7 @@
 #include "../../../include/xtd/tunit/test.h"
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/diagnostics//debug_break>
+#include <xtd/null_pointer_exception>
 #include <exception>
 
 using namespace xtd;
@@ -77,14 +78,17 @@ const string& test::user_message() const noexcept {
 }
 
 test& test::current_test() {
+  if (!has_current_test()) throw null_pointer_exception {csf_};
   return *current_test_;
 }
 
 const test_class& test::current_test_class() {
+  if (!has_current_test_class()) throw null_pointer_exception {csf_};
   return *current_test_class_;
 }
 
 const unit_test& test::current_unit_test() {
+  if (!has_current_unit_test()) throw null_pointer_exception {csf_};
   return *current_unit_test_;
 }
 
