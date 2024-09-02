@@ -154,8 +154,8 @@ The following example uses the xtd::io::directory::get_file_system_entries metho
 @icode{cpp} 
 #include &lt;xtd/xtd&gt;
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 class program {
 public:
@@ -175,7 +175,7 @@ public:
   void print_file_system_entries(const ustring&amp; path) {
     try {
       // Obtain the file system entries in the directory path.
-      vector&lt;ustring&gt; directory_entries = io::directory::get_file_system_entries(path);
+      list&lt;ustring&gt; directory_entries = io::directory::get_file_system_entries(path);
 
    for (xtd::ustring str : directory_entries) {
         console::write_line(str);
@@ -192,7 +192,7 @@ public:
   void print_file_system_entries(string path, string pattern) {
     try {
       // Obtain the file system entries in the directory path that match the pattern.
-      vector&lt;ustring&gt; directory_entries = io::directory::get_file_system_entries(path, pattern);
+      list&lt;ustring&gt; directory_entries = io::directory::get_file_system_entries(path, pattern);
 
       for (ustring str : directory_entries) {
         console::write_line(str);
@@ -209,7 +209,7 @@ public:
   // Print out all logical drives on the system.
   void get_logical_drives() {
     try {
-      vector&lt;ustring&gt; drives = io::directory::get_logical_drives();
+      list&lt;ustring&gt; drives = io::directory::get_logical_drives();
 
       for (ustring str : drives) {
         console::write_line(str);
@@ -287,7 +287,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1directory.html">directory</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 15 2024 14:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

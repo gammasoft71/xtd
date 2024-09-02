@@ -11,6 +11,6 @@ var classxtd_1_1forms_1_1message =
     [ "wparam", "classxtd_1_1forms_1_1message_a06840dbec8da266cd42c61b3a3a3910a.html#a06840dbec8da266cd42c61b3a3a3910a", null ],
     [ "wparam", "classxtd_1_1forms_1_1message_a32f40d066b93d1911ef1ebeba180ddc5.html#a32f40d066b93d1911ef1ebeba180ddc5", null ],
     [ "get_lparam", "classxtd_1_1forms_1_1message_ad5a0a20d74679a40e643637ad9572172.html#ad5a0a20d74679a40e643637ad9572172", null ],
-    [ "to_msg_string", "classxtd_1_1forms_1_1message_ad72df2a9336d7febf41f073e83086b39.html#ad72df2a9336d7febf41f073e83086b39", null ],
-    [ "to_string", "classxtd_1_1forms_1_1message_a0c907979e836b86366e832a273da9b65.html#a0c907979e836b86366e832a273da9b65", null ]
+    [ "to_msg_string", "classxtd_1_1forms_1_1message_a18e77ce2ce163fac0ad3e6d143fd0415.html#a18e77ce2ce163fac0ad3e6d143fd0415", null ],
+    [ "to_string", "classxtd_1_1forms_1_1message_a71c8f53dad62e418ca9955b26285716c.html#a71c8f53dad62e418ca9955b26285716c", null ]
 ];

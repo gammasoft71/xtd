@@ -193,7 +193,8 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div class="line">  note() = <span class="keywordflow">default</span>;</div>
 <div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
 <div class="line">  note&amp; operator=(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
-<div class="line">  </div>
+<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> note&amp; rhs) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> tone_val == rhs.tone_val &amp;&amp; dur_val == rhs.dur_val;}</div>
+<div class="line"> </div>
 <div class="line">  <span class="comment">// Define properties to return the note&#39;s tone and duration.</span></div>
 <div class="line">  tone note_tone() const noexcept {<span class="keywordflow">return</span> tone_val;}</div>
 <div class="line">  duration note_duration() const noexcept {<span class="keywordflow">return</span> dur_val;}</div>
@@ -205,7 +206,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread_a42bc6e2bb805f928e50ae73d243b95f2.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      std::cout &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
+<div class="line">      console::out &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -254,7 +255,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1beep.html">beep</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -63,9 +63,10 @@ var searchData=
   ['ip_5fv6_5fmulticast_5foption_2eh_60',['ip_v6_multicast_option.h',['../ip__v6__multicast__option_8h.html',1,'']]],
   ['iprogress_2eh_61',['iprogress.h',['../iprogress_8h.html',1,'']]],
   ['is_2eh_62',['is.h',['../is_8h.html',1,'']]],
-  ['isynchronize_5finvoke_2eh_63',['isynchronize_invoke.h',['../isynchronize__invoke_8h.html',1,'']]],
-  ['item_5fcheck_5fevent_5fargs_2eh_64',['item_check_event_args.h',['../item__check__event__args_8h.html',1,'']]],
-  ['item_5fcheck_5fevent_5fhandler_2eh_65',['item_check_event_handler.h',['../item__check__event__handler_8h.html',1,'']]],
-  ['itext_5fmodel_2eh_66',['itext_model.h',['../itext__model_8h.html',1,'']]],
-  ['iwin32_5fwindow_2eh_67',['iwin32_window.h',['../iwin32__window_8h.html',1,'']]]
+  ['istringable_2eh_63',['istringable.h',['../istringable_8h.html',1,'']]],
+  ['isynchronize_5finvoke_2eh_64',['isynchronize_invoke.h',['../isynchronize__invoke_8h.html',1,'']]],
+  ['item_5fcheck_5fevent_5fargs_2eh_65',['item_check_event_args.h',['../item__check__event__args_8h.html',1,'']]],
+  ['item_5fcheck_5fevent_5fhandler_2eh_66',['item_check_event_handler.h',['../item__check__event__handler_8h.html',1,'']]],
+  ['itext_5fmodel_2eh_67',['itext_model.h',['../itext__model_8h.html',1,'']]],
+  ['iwin32_5fwindow_2eh_68',['iwin32_window.h',['../iwin32__window_8h.html',1,'']]]
 ];

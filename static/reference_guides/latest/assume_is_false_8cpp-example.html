@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('assume_is_false_8cpp-example.html','')
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1assume_a7a8a9392f55aaa14fc7d01cba25718ff.html#a7a8a9392f55aaa14fc7d01cba25718ff" title="Assumes that ta condition is false.">xtd::tunit::assume::is_false</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
@@ -113,12 +113,12 @@ $(document).ready(function(){initNavTree('assume_is_false_8cpp-example.html','')
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
 <div class="line">      <span class="keyword">auto</span> s = <span class="stringliteral">&quot;string&quot;</span>;</div>
-<div class="line">      assume::is_false(ustring::is_empty(s));</div>
+<div class="line">      assume::is_false(string::is_empty(s));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_aborted) {</div>
-<div class="line">      <span class="keyword">auto</span> s = ustring::empty_string;</div>
-<div class="line">      assume::is_false(ustring::is_empty(s));</div>
+<div class="line">      <span class="keyword">auto</span> s = string::empty_string;</div>
+<div class="line">      assume::is_false(string::is_empty(s));</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('assume_is_false_8cpp-example.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

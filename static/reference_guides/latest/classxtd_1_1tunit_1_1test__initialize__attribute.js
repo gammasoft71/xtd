@@ -1,5 +1,5 @@
 var classxtd_1_1tunit_1_1test__initialize__attribute =
 [
-    [ "test_initialize_attribute", "classxtd_1_1tunit_1_1test__initialize__attribute_afd5831ff2a49f54719c0d58d568eb413.html#afd5831ff2a49f54719c0d58d568eb413", null ],
-    [ "test_initialize_attribute", "classxtd_1_1tunit_1_1test__initialize__attribute_a4552b78a237b242234d146f95a4982fa.html#a4552b78a237b242234d146f95a4982fa", null ]
+    [ "test_initialize_attribute", "classxtd_1_1tunit_1_1test__initialize__attribute_a10d3e6f3de8c7d5cd3a0620b2d0f512a.html#a10d3e6f3de8c7d5cd3a0620b2d0f512a", null ],
+    [ "test_initialize_attribute", "classxtd_1_1tunit_1_1test__initialize__attribute_aa546edaeab3535f3fbfe170f404cefed.html#aa546edaeab3535f3fbfe170f404cefed", null ]
 ];

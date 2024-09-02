@@ -14,7 +14,7 @@ var classxtd_1_1forms_1_1numeric__up__down =
     [ "wrapped", "classxtd_1_1forms_1_1numeric__up__down_a87d0f98e1ed34d064740fb05d352456e.html#a87d0f98e1ed34d064740fb05d352456e", null ],
     [ "wrapped", "classxtd_1_1forms_1_1numeric__up__down_a0d83da908eabe3e55db4fe6743ff1df6.html#a0d83da908eabe3e55db4fe6743ff1df6", null ],
     [ "set_range", "classxtd_1_1forms_1_1numeric__up__down_a3404e97391dcf0e7e5a09b4f66fe7bf7.html#a3404e97391dcf0e7e5a09b4f66fe7bf7", null ],
-    [ "to_string", "classxtd_1_1forms_1_1numeric__up__down_a8a987530e97d6f7f3c20f22c06375558.html#a8a987530e97d6f7f3c20f22c06375558", null ],
+    [ "to_string", "classxtd_1_1forms_1_1numeric__up__down_a75c2a4c114d81991e27f25325e357e36.html#a75c2a4c114d81991e27f25325e357e36", null ],
     [ "create_params", "classxtd_1_1forms_1_1numeric__up__down_a4a8d2276da1b073abd661017d6471889.html#a4a8d2276da1b073abd661017d6471889", null ],
     [ "default_back_color", "classxtd_1_1forms_1_1numeric__up__down_a0d4432db90b75a535fb1b81bec8ca4f8.html#a0d4432db90b75a535fb1b81bec8ca4f8", null ],
     [ "default_fore_color", "classxtd_1_1forms_1_1numeric__up__down_af57848b297ccdeb5cfe9fdc80e2d2196.html#af57848b297ccdeb5cfe9fdc80e2d2196", null ],

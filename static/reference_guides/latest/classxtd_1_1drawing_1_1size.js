@@ -8,7 +8,7 @@ var classxtd_1_1drawing_1_1size =
     [ "is_empty", "classxtd_1_1drawing_1_1size_aa3a8a8f24768fe2fce000a5e50c24634.html#aa3a8a8f24768fe2fce000a5e50c24634", null ],
     [ "width", "classxtd_1_1drawing_1_1size_ae4218f2f5f296e8fb5a9e0792361454d.html#ae4218f2f5f296e8fb5a9e0792361454d", null ],
     [ "width", "classxtd_1_1drawing_1_1size_af6faba4b66dd35c2b251d0d181acce1a.html#af6faba4b66dd35c2b251d0d181acce1a", null ],
-    [ "to_string", "classxtd_1_1drawing_1_1size_a8609c861422490f9880bc794d4d466a2.html#a8609c861422490f9880bc794d4d466a2", null ],
+    [ "to_string", "classxtd_1_1drawing_1_1size_ae4116583081462c10bcb166cb1b254d5.html#ae4116583081462c10bcb166cb1b254d5", null ],
     [ "operator+", "classxtd_1_1drawing_1_1size_a95842848ee30e017c17347dd5c5d11b3.html#a95842848ee30e017c17347dd5c5d11b3", null ],
     [ "operator+=", "classxtd_1_1drawing_1_1size_a778c9ea4e94b1614cc7581f8745b677c.html#a778c9ea4e94b1614cc7581f8745b677c", null ],
     [ "operator-", "classxtd_1_1drawing_1_1size_ad596869c01f8927c12bd049f37f51e09.html#ad596869c01f8927c12bd049f37f51e09", null ],

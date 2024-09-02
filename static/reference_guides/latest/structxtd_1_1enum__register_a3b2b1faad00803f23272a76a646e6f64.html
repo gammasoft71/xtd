@@ -123,7 +123,7 @@ template&lt;typename enum_t &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Allows to register an enumeration that can be used by <a class="el" href="classxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a>. </p><dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="group__xtd__core_ga027f28f28cc82b406e03b0020a62891d.html#ga027f28f28cc82b406e03b0020a62891d" title="Represents a pair of an enum_t value and a string of an enum of type enum_t.">xtd::enum_collection</a> collection that represent enumeration. </dd></dl>
+<p>Allows to register an enumeration that can be used by <a class="el" href="classxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a>. </p><dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="group__xtd__core_gae83ccb7f8916e8a1b712dd897db78889.html#gae83ccb7f8916e8a1b712dd897db78889" title="Represents a pair of an enum_t value and a string of an enum of type enum_t.">xtd::enum_collection</a> collection that represent enumeration. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>To register an enumeration just override <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code show how to register the values enum class. <div class="fragment"><div class="line"><span class="keyword">enum class</span> values {</div>
 <div class="line">  value_one,</div>
@@ -132,9 +132,9 @@ template&lt;typename enum_t &gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register&lt;values&gt;</a> {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core_ga027f28f28cc82b406e03b0020a62891d.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection&lt;values&gt;</a> {{values::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {values::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core_gae83ccb7f8916e8a1b712dd897db78889.html#gae83ccb7f8916e8a1b712dd897db78889">xtd::enum_collection&lt;values&gt;</a> {{values::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {values::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}};}</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__xtd__core_ga027f28f28cc82b406e03b0020a62891d_html_ga027f28f28cc82b406e03b0020a62891d"><div class="ttname"><a href="group__xtd__core_ga027f28f28cc82b406e03b0020a62891d.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; xtd::collections::generic::key_value_pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:22</div></div>
+<div class="ttc" id="agroup__xtd__core_gae83ccb7f8916e8a1b712dd897db78889_html_gae83ccb7f8916e8a1b712dd897db78889"><div class="ttname"><a href="group__xtd__core_gae83ccb7f8916e8a1b712dd897db78889.html#gae83ccb7f8916e8a1b712dd897db78889">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; xtd::collections::generic::key_value_pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:22</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -147,7 +147,7 @@ template&lt;typename enum_t &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="structxtd_1_1enum__register.html">enum_register</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

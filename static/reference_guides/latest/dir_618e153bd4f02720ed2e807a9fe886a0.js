@@ -1,5 +1,6 @@
 var dir_618e153bd4f02720ed2e807a9fe886a0 =
 [
+    [ "__array_definition.h", "____array__definition_8h.html", null ],
     [ "__as_any_object.h", "____as__any__object_8h.html", "____as__any__object_8h" ],
     [ "__as_bool.h", "____as__bool_8h.html", "____as__bool_8h" ],
     [ "__as_byte.h", "____as__byte_8h.html", "____as__byte_8h" ],
@@ -18,12 +19,12 @@ var dir_618e153bd4f02720ed2e807a9fe886a0 =
     [ "__as_pointer.h", "____as__pointer_8h.html", "____as__pointer_8h" ],
     [ "__as_sbyte.h", "____as__sbyte_8h.html", "____as__sbyte_8h" ],
     [ "__as_slong.h", "____as__slong_8h.html", "____as__slong_8h" ],
+    [ "__as_std_string.h", "____as__std__string_8h.html", "____as__std__string_8h" ],
     [ "__as_string.h", "____as__string_8h.html", "____as__string_8h" ],
     [ "__as_uint16.h", "____as__uint16_8h.html", "____as__uint16_8h" ],
     [ "__as_uint32.h", "____as__uint32_8h.html", "____as__uint32_8h" ],
     [ "__as_uint64.h", "____as__uint64_8h.html", "____as__uint64_8h" ],
     [ "__as_ulong.h", "____as__ulong_8h.html", "____as__ulong_8h" ],
-    [ "__as_ustring.h", "____as__ustring_8h.html", "____as__ustring_8h" ],
     [ "__as_wchar.h", "____as__wchar_8h.html", "____as__wchar_8h" ],
     [ "__binary_formatter.h", "____binary__formatter_8h.html", null ],
     [ "__boolean_formatter.h", "____boolean__formatter_8h.html", null ],
@@ -54,6 +55,7 @@ var dir_618e153bd4f02720ed2e807a9fe886a0 =
     [ "__parse.h", "____parse_8h.html", null ],
     [ "__show_generic_exception_message.h", "____show__generic__exception__message_8h.html", null ],
     [ "__sprintf.h", "____sprintf_8h.html", null ],
+    [ "__string_definitions.h", "____string__definitions_8h.html", "____string__definitions_8h" ],
     [ "__xtd_debugbreak.h", "____xtd__debugbreak_8h.html", null ],
     [ "__xtd_std_version.h", "____xtd__std__version_8h.html", null ]
 ];

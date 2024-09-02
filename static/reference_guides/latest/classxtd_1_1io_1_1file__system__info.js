@@ -8,8 +8,8 @@ var classxtd_1_1io_1_1file__system__info =
     [ "creation_time_utc", "classxtd_1_1io_1_1file__system__info_a3e1dd4201f2e203a4a4e5f65dac7246e.html#a3e1dd4201f2e203a4a4e5f65dac7246e", null ],
     [ "creation_time_utc", "classxtd_1_1io_1_1file__system__info_a6c2b71f6b25feea7a3f70db731f43b4e.html#a6c2b71f6b25feea7a3f70db731f43b4e", null ],
     [ "exists", "classxtd_1_1io_1_1file__system__info_add411f5f5ab91240dc07aace59fbbe18.html#add411f5f5ab91240dc07aace59fbbe18", null ],
-    [ "extension", "classxtd_1_1io_1_1file__system__info_a9b5e207d2b394016e08250dc85f2ce47.html#a9b5e207d2b394016e08250dc85f2ce47", null ],
-    [ "full_name", "classxtd_1_1io_1_1file__system__info_a34649c2f8db1b1d13b7be1ecf4ecc52a.html#a34649c2f8db1b1d13b7be1ecf4ecc52a", null ],
+    [ "extension", "classxtd_1_1io_1_1file__system__info_af6d543605d03a44a4da90eebdc41cb64.html#af6d543605d03a44a4da90eebdc41cb64", null ],
+    [ "full_name", "classxtd_1_1io_1_1file__system__info_a4fb28d3aa102d283c21a9ac5dc2710b5.html#a4fb28d3aa102d283c21a9ac5dc2710b5", null ],
     [ "last_access_time", "classxtd_1_1io_1_1file__system__info_a137ecb09f64d663e22033301865e231b.html#a137ecb09f64d663e22033301865e231b", null ],
     [ "last_access_time", "classxtd_1_1io_1_1file__system__info_ad164b6069da537569404d6ef098f2d1c.html#ad164b6069da537569404d6ef098f2d1c", null ],
     [ "last_access_time_utc", "classxtd_1_1io_1_1file__system__info_a68dd0569d6362d2cbc303c1a72b3a1fa.html#a68dd0569d6362d2cbc303c1a72b3a1fa", null ],
@@ -22,7 +22,7 @@ var classxtd_1_1io_1_1file__system__info =
     [ "permissions", "classxtd_1_1io_1_1file__system__info_a8c58fa4cf662e1bf7ac8501bef641e29.html#a8c58fa4cf662e1bf7ac8501bef641e29", null ],
     [ "refresh", "classxtd_1_1io_1_1file__system__info_ab062e3d38143d80d6e2001a3e8873863.html#ab062e3d38143d80d6e2001a3e8873863", null ],
     [ "remove", "classxtd_1_1io_1_1file__system__info_af4c8e4db944ac7b768b81226d5e282cb.html#af4c8e4db944ac7b768b81226d5e282cb", null ],
-    [ "to_string", "classxtd_1_1io_1_1file__system__info_a28286ced7c613d44ffd44ffb906bf03f.html#a28286ced7c613d44ffd44ffb906bf03f", null ],
-    [ "full_path_", "classxtd_1_1io_1_1file__system__info_a89dc314a9b60df4a00cf5be63af2f390.html#a89dc314a9b60df4a00cf5be63af2f390", null ],
-    [ "original_path_", "classxtd_1_1io_1_1file__system__info_acf4dff6b8eb28963d44cd9e03fbeb201.html#acf4dff6b8eb28963d44cd9e03fbeb201", null ]
+    [ "to_string", "classxtd_1_1io_1_1file__system__info_ac7b828b45b24a032ddd9dbdc23a574ce.html#ac7b828b45b24a032ddd9dbdc23a574ce", null ],
+    [ "full_path_", "classxtd_1_1io_1_1file__system__info_a1c243f6bbc102c42637aaa3c0873fb95.html#a1c243f6bbc102c42637aaa3c0873fb95", null ],
+    [ "original_path_", "classxtd_1_1io_1_1file__system__info_aa45066e713be4415a7def84b85516072.html#aa45066e713be4415a7def84b85516072", null ]
 ];

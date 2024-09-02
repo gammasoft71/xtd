@@ -103,16 +103,17 @@ $(document).ready(function(){initNavTree('format_unordered_associative_container
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with unordered associative containers.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, unordered_set&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, unordered_multiset&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, unordered_map&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, unordered_multimap&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::unordered_set&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::unordered_multiset&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::unordered_map&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::unordered_multimap&lt;int, string&gt; {{1, <span class="stringliteral">&quot;one&quot;</span>}, {2, <span class="stringliteral">&quot;two&quot;</span>}, {3, <span class="stringliteral">&quot;three&quot;</span>}, {4, <span class="stringliteral">&quot;four&quot;</span>}}) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -128,7 +129,7 @@ $(document).ready(function(){initNavTree('format_unordered_associative_container
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

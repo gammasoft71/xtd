@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('find_box_8cpp-example.html',''); initR
 <div class="line">    find_button.location({10, 10});</div>
 <div class="line">    find_button.click += [&amp;] {</div>
 <div class="line">      find_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Find&quot;</span>, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1find__event__args.html">find_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.search_direction(), e.whole_word()));</div>
+<div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.search_direction(), e.whole_word()));</div>
 <div class="line">      });</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('find_box_8cpp-example.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

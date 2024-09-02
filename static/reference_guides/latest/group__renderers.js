@@ -10,7 +10,7 @@ var group__renderers =
     [ "xtd::forms::panel_renderer", "classxtd_1_1forms_1_1panel__renderer.html", null ],
     [ "xtd::forms::radio_button_renderer", "classxtd_1_1forms_1_1radio__button__renderer.html", null ],
     [ "xtd::forms::renderer", "classxtd_1_1forms_1_1renderer.html", [
-      [ "to_string", "classxtd_1_1forms_1_1renderer_aa5d12757ef4b17eb6a6f8bce60aad63e.html#aa5d12757ef4b17eb6a6f8bce60aad63e", null ],
+      [ "to_string", "classxtd_1_1forms_1_1renderer_ae6787f34cdbeafdd82f626e0a1789b70.html#ae6787f34cdbeafdd82f626e0a1789b70", null ],
       [ "equals", "classxtd_1_1forms_1_1renderer_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::forms::status_bar_panel_renderer", "classxtd_1_1forms_1_1status__bar__panel__renderer.html", null ],

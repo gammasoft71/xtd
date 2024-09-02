@@ -455,6 +455,9 @@ var annotated_dup =
           [ "state_changed_event_args", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args.html", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args" ]
         ] ]
       ] ],
+      [ "text", "namespacextd_1_1text.html", [
+        [ "basic_string_builder", "classxtd_1_1text_1_1basic__string__builder.html", "classxtd_1_1text_1_1basic__string__builder" ]
+      ] ],
       [ "threading", "namespacextd_1_1threading.html", [
         [ "abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", "classxtd_1_1threading_1_1abandoned__mutex__exception" ],
         [ "auto_reset_event", "classxtd_1_1threading_1_1auto__reset__event.html", "classxtd_1_1threading_1_1auto__reset__event" ],
@@ -556,6 +559,7 @@ var annotated_dup =
       [ "arithmetic_exception", "classxtd_1_1arithmetic__exception.html", "classxtd_1_1arithmetic__exception" ],
       [ "attribute", "classxtd_1_1attribute.html", "classxtd_1_1attribute" ],
       [ "background_color", "classxtd_1_1background__color.html", "classxtd_1_1background__color" ],
+      [ "basic_string", "classxtd_1_1basic__string.html", "classxtd_1_1basic__string" ],
       [ "beep", "classxtd_1_1beep.html", "classxtd_1_1beep" ],
       [ "bit_converter", "classxtd_1_1bit__converter.html", "classxtd_1_1bit__converter" ],
       [ "box", "classxtd_1_1box.html", "classxtd_1_1box" ],
@@ -606,6 +610,7 @@ var annotated_dup =
       [ "iobservable", "classxtd_1_1iobservable.html", "classxtd_1_1iobservable" ],
       [ "iobserver", "classxtd_1_1iobserver.html", "classxtd_1_1iobserver" ],
       [ "iprogress", "classxtd_1_1iprogress.html", "classxtd_1_1iprogress" ],
+      [ "istringable", "classxtd_1_1istringable.html", "classxtd_1_1istringable" ],
       [ "isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", "classxtd_1_1isynchronize__invoke" ],
       [ "length_exception", "classxtd_1_1length__exception.html", "classxtd_1_1length__exception" ],
       [ "math", "classxtd_1_1math.html", null ],
@@ -648,7 +653,6 @@ var annotated_dup =
       [ "uri", "classxtd_1_1uri.html", "classxtd_1_1uri" ],
       [ "uri_format_exception", "classxtd_1_1uri__format__exception.html", "classxtd_1_1uri__format__exception" ],
       [ "uri_template_match_exception", "classxtd_1_1uri__template__match__exception.html", "classxtd_1_1uri__template__match__exception" ],
-      [ "ustring", "classxtd_1_1ustring.html", "classxtd_1_1ustring" ],
       [ "version", "classxtd_1_1version.html", "classxtd_1_1version" ],
       [ "xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", "classxtd_1_1xml__syntax__exception" ]
     ] ]

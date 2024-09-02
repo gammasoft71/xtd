@@ -1,4 +1,4 @@
 var classxtd_1_1io_1_1null__text__writer =
 [
-    [ "write", "classxtd_1_1io_1_1null__text__writer_a89d68e0a440d48d617da13bc2b7b0e23.html#a89d68e0a440d48d617da13bc2b7b0e23", null ]
+    [ "write", "classxtd_1_1io_1_1null__text__writer_ade8f189ab754aec2be75c62e4de43842.html#ade8f189ab754aec2be75c62e4de43842", null ]
 ];

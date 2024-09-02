@@ -3,9 +3,9 @@ var namespacextd_1_1collections =
     [ "generic", "namespacextd_1_1collections_1_1generic.html", "namespacextd_1_1collections_1_1generic" ],
     [ "object_model", "namespacextd_1_1collections_1_1object__model.html", "namespacextd_1_1collections_1_1object__model" ],
     [ "specialized", "namespacextd_1_1collections_1_1specialized.html", [
-      [ "string_collection", "group__specialized__collections_gaf251564b11f05da91a1237f8524ffe24.html#gaf251564b11f05da91a1237f8524ffe24", null ],
-      [ "string_dictionary", "group__specialized__collections_ga2249ba8b2968b085d427898767c71a2b.html#ga2249ba8b2968b085d427898767c71a2b", null ],
-      [ "string_key_value_pair", "group__specialized__collections_ga9d61d95f2bc768e1444e2af1fcea2ed7.html#ga9d61d95f2bc768e1444e2af1fcea2ed7", null ],
+      [ "string_collection", "group__specialized__collections_ga2ef4a53fb8b9fd6c223dd185bff30b5f.html#ga2ef4a53fb8b9fd6c223dd185bff30b5f", null ],
+      [ "string_dictionary", "group__specialized__collections_ga54c5251c7b91f92ce85cf44e7c8c808c.html#ga54c5251c7b91f92ce85cf44e7c8c808c", null ],
+      [ "string_key_value_pair", "group__specialized__collections_gabd8bfa42886ef512eb41620bbe307ceb.html#gabd8bfa42886ef512eb41620bbe307ceb", null ],
       [ "string_map", "group__specialized__collections_ga952ea58fd97f1ecb473c985be27c6a60.html#ga952ea58fd97f1ecb473c985be27c6a60", null ],
       [ "string_pair", "group__specialized__collections_gaacbd5424dc3517bb5c660790f798ae09.html#gaacbd5424dc3517bb5c660790f798ae09", null ],
       [ "string_vector", "group__specialized__collections_ga01b1a39b158780dbbaac1feb258530a3.html#ga01b1a39b158780dbbaac1feb258530a3", null ]

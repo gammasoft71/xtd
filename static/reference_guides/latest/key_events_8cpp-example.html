@@ -132,7 +132,6 @@ $(document).ready(function(){initNavTree('key_events_8cpp-example.html',''); ini
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/trace_form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/ctrace&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -145,16 +144,16 @@ $(document).ready(function(){initNavTree('key_events_8cpp-example.html',''); ini
 <div class="line">    control1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    </div>
 <div class="line">    control1.key_down += [&amp;](<span class="keywordtype">object</span> &amp; sender, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">key_event_args</a> &amp; e) {</div>
-<div class="line">      ctrace &lt;&lt; ustring::format(<span class="stringliteral">&quot;key_down={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}&quot;</span>, e.key_code(), e.key_data(), e.key_value(), e.modifiers()) &lt;&lt; endl;</div>
+<div class="line">      ctrace &lt;&lt; string::format(<span class="stringliteral">&quot;key_down={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}&quot;</span>, e.key_code(), e.key_data(), e.key_value(), e.modifiers()) &lt;&lt; environment::new_line;</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    control1.key_press += [&amp;](<span class="keywordtype">object</span> &amp; sender, <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a> &amp; e) {</div>
-<div class="line">      ctrace &lt;&lt; ustring::format(<span class="stringliteral">&quot;key_press={{key_char={}}}&quot;</span>, e.key_char() == 0 ? <span class="stringliteral">&quot;[none]&quot;</span> : ustring::format(<span class="stringliteral">&quot;&#39;{}&#39;&quot;</span>, e.key_char())) &lt;&lt; endl;</div>
+<div class="line">      ctrace &lt;&lt; string::format(<span class="stringliteral">&quot;key_press={{key_char={}}}&quot;</span>, e.key_char() == 0 ? <span class="stringliteral">&quot;[none]&quot;</span> : string::format(<span class="stringliteral">&quot;&#39;{}&#39;&quot;</span>, e.key_char())) &lt;&lt; environment::new_line;</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    control1.key_up += [&amp;](<span class="keywordtype">object</span> &amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">key_event_args</a> &amp; e) {</div>
-<div class="line">      ctrace &lt;&lt; ustring::format(<span class="stringliteral">&quot;key_up={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}&quot;</span>, e.key_code(), e.key_data(), e.key_value(), e.modifiers()) &lt;&lt; endl;</div>
-<div class="line">      <span class="keywordflow">if</span> (e.modifiers() == keys::none) ctrace &lt;&lt; endl;</div>
+<div class="line">      ctrace &lt;&lt; string::format(<span class="stringliteral">&quot;key_up={{key_code={}, key_data=[{}], value=0x{:X4}, modifiers=[{}]}}&quot;</span>, e.key_code(), e.key_data(), e.key_value(), e.modifiers()) &lt;&lt; environment::new_line;</div>
+<div class="line">      <span class="keywordflow">if</span> (e.modifiers() == keys::none) ctrace &lt;&lt; environment::new_line;</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -179,7 +178,7 @@ $(document).ready(function(){initNavTree('key_events_8cpp-example.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 18:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Mon Sep 2 2024 21:04:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
