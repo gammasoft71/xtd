@@ -173,21 +173,21 @@ namespace xtd::tests {
       assert::are_equal("string", basic_string<char_t>(basic_string<char>("A test string"), 7), csf_);
       assert::are_equal("g", basic_string<char_t>(basic_string<char>("A test string"), 12), csf_);
       assert::is_empty(basic_string<char_t>(basic_string<char>("A test string"), 13), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char>("A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char>("A test string"), 14);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char16_and_index) {
       assert::are_equal(u"string", basic_string<char_t>(basic_string<char16>(u"A test string"), 7), csf_);
       assert::are_equal(u"g", basic_string<char_t>(basic_string<char16>(u"A test string"), 12), csf_);
       assert::is_empty(basic_string<char_t>(basic_string<char16>(u"A test string"), 13), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char16>("A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char16>("A test string"), 14);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char32_and_index) {
       assert::are_equal(U"string", basic_string<char_t>(basic_string<char32>(U"A test string"), 7), csf_);
       assert::are_equal(U"g", basic_string<char_t>(basic_string<char32>(U"A test string"), 12), csf_);
       assert::is_empty(basic_string<char_t>(basic_string<char32>(U"A test string"), 13), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char32>(U"A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char32>(U"A test string"), 14);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char8_and_index) {
@@ -195,7 +195,7 @@ namespace xtd::tests {
       assert::are_equal(u8"string", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7), csf_);
       assert::are_equal(u8"g", basic_string<char_t>(basic_string<char8>(u8"A test string"), 12), csf_);
       assert::is_empty(basic_string<char_t>(basic_string<char8>(u8"A test string"), 13), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 14);}, csf_);
 #endif
     }
 
@@ -203,39 +203,39 @@ namespace xtd::tests {
       assert::are_equal(L"string", basic_string<char_t>(basic_string<wchar>(L"A test string"), 7), csf_);
       assert::are_equal(L"g", basic_string<char_t>(basic_string<wchar>(L"A test string"), 12), csf_);
       assert::is_empty(basic_string<char_t>(basic_string<wchar>(L"A test string"), 13), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<wchar>(L"A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<wchar>(L"A test string"), 14);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char_and_index_and_count) {
       assert::are_equal("str", basic_string<char_t>(basic_string<char>("A test string"), 7, 3), csf_);
       assert::are_equal("string", basic_string<char_t>(basic_string<char>("A test string"), 7, 6), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char>("A test string"), 7, 7);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char>("A test string"), 7, 7);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char16_and_index_and_count) {
       assert::are_equal(u"str", basic_string<char_t>(basic_string<char16>(u"A test string"), 7, 3), csf_);
       assert::are_equal(u"string", basic_string<char_t>(basic_string<char16>(u"A test string"), 7, 6), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char16>(u"A test string"), 7, 7);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char16>(u"A test string"), 7, 7);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char32_and_index_and_count) {
       assert::are_equal(U"str", basic_string<char_t>(basic_string<char32>(U"A test string"), 7, 3), csf_);
       assert::are_equal(U"string", basic_string<char_t>(basic_string<char32>(U"A test string"), 7, 6), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char32>(U"A test string"), 7, 7);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char32>(U"A test string"), 7, 7);}, csf_);
     }
 
     void test_method_(constructor_with_basic_string_char8_and_index_and_count) {
 #if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal(u8"str", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 3), csf_);
       assert::are_equal(u8"string", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 6), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 7);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 7);}, csf_);
 #endif
     }
 
     void test_method_(constructor_with_basic_string_wchar_and_index_and_count) {
       assert::are_equal(L"str", basic_string<char_t>(basic_string<wchar>(L"A test string"), 7, 3), csf_);
       assert::are_equal(L"string", basic_string<char_t>(basic_string<wchar>(L"A test string"), 7, 6), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string<char_t>(basic_string<wchar>(L"A test string"), 7, 7);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<wchar>(L"A test string"), 7, 7);}, csf_);
     }
 
     void test_method_(move_constructor_with_basic_string) {
