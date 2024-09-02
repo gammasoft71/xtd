@@ -2401,21 +2401,24 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<char>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      if constexpr(std::is_same<char_t, char>::value) chars_ = str.chars_;
+      else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char16>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = str.chars_;
+      else chars_ = chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char32>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = str.chars_;
+      else chars_ = chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2423,7 +2426,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char8>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = str.chars_;
+      else chars_ = chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
 #endif
@@ -2431,7 +2435,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::wchar>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str.chars());
+      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = str.chars_;
+      else chars_ = chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
  
@@ -2439,21 +2444,24 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<char>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
+      if constexpr(std::is_same<char_t, char>::value) chars_ = std::move(str.chars_);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char16>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
+      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str.chars_);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char32>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
+      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str.chars_);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2461,7 +2469,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char8>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
+      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str.chars_);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
 #endif
@@ -2469,7 +2478,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::wchar>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
+      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str.chars_);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
 
@@ -2477,21 +2487,24 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<char>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str);
+      if constexpr(std::is_same<char_t, char>::value) chars_ = str;
+      else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char16>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str);
+      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = str;
+      else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char32>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str);
+      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = str;
+      else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2499,7 +2512,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char8>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str);
+      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = str;
+      else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
 #endif
@@ -2507,7 +2521,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::wchar>& str) noexcept {
-      chars_ = __xtd_convert_to_string<value_type>(str);
+      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = str;
+      else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
 
@@ -2515,21 +2530,24 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<char>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
+      if constexpr(std::is_same<char_t, char>::value) chars_ = std::move(str);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char16>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
+      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char32>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
+      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2537,7 +2555,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char8>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
+      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
 #endif
@@ -2545,7 +2564,8 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::wchar>&& str) noexcept {
-      chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
+      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str);
+      else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
 
