@@ -86,6 +86,7 @@ namespace xtd {
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
       stack_frame& operator =(const stack_frame&) = default;
+      stack_frame& operator =(stack_frame&&) = default;
       /// @endcond
       /// @}
       
