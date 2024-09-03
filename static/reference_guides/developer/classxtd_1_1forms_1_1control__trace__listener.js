@@ -5,6 +5,6 @@ var classxtd_1_1forms_1_1control__trace__listener =
     [ "control_trace", "classxtd_1_1forms_1_1control__trace__listener_a5087598380856bd847d116ba4b8efab3.html#a5087598380856bd847d116ba4b8efab3", null ],
     [ "close", "classxtd_1_1forms_1_1control__trace__listener_a3869a885f9e24805884867dbb4306b44.html#a3869a885f9e24805884867dbb4306b44", null ],
     [ "flush", "classxtd_1_1forms_1_1control__trace__listener_af681459a01303b6735eef9f3dfeba634.html#af681459a01303b6735eef9f3dfeba634", null ],
-    [ "write", "classxtd_1_1forms_1_1control__trace__listener_a52465d4f09684dfc4467956080df3ea1.html#a52465d4f09684dfc4467956080df3ea1", null ],
-    [ "write_line", "classxtd_1_1forms_1_1control__trace__listener_a8032f3c29afb83168cb291ee897c844c.html#a8032f3c29afb83168cb291ee897c844c", null ]
+    [ "write", "classxtd_1_1forms_1_1control__trace__listener_ad1f04b09cb009c842c8cd86dd3ff1ebe.html#ad1f04b09cb009c842c8cd86dd3ff1ebe", null ],
+    [ "write_line", "classxtd_1_1forms_1_1control__trace__listener_af7fc816bff479927b965323430b01f25.html#af7fc816bff479927b965323430b01f25", null ]
 ];

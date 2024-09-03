@@ -16,8 +16,8 @@ var group__xtd__forms__native =
     [ "xtd::forms::native::context_menu", "classxtd_1_1forms_1_1native_1_1context__menu.html", null ],
     [ "xtd::forms::native::control", "classxtd_1_1forms_1_1native_1_1control.html", null ],
     [ "xtd::forms::native::create_params", "structxtd_1_1forms_1_1native_1_1create__params.html", [
-      [ "caption", "structxtd_1_1forms_1_1native_1_1create__params_a8ea95c6ec5e624ce3e05ac96a8ba15e0.html#a8ea95c6ec5e624ce3e05ac96a8ba15e0", null ],
-      [ "class_name", "structxtd_1_1forms_1_1native_1_1create__params_aae88863d2446b7703fa6b2cc0a798913.html#aae88863d2446b7703fa6b2cc0a798913", null ],
+      [ "caption", "structxtd_1_1forms_1_1native_1_1create__params_ace153d29b6a37c184b77a3fa936a9f69.html#ace153d29b6a37c184b77a3fa936a9f69", null ],
+      [ "class_name", "structxtd_1_1forms_1_1native_1_1create__params_a19d594693baedd82a481146ddc0482e5.html#a19d594693baedd82a481146ddc0482e5", null ],
       [ "class_style", "structxtd_1_1forms_1_1native_1_1create__params_a4702afa173edbb0d209af1f48458282d.html#a4702afa173edbb0d209af1f48458282d", null ],
       [ "ex_style", "structxtd_1_1forms_1_1native_1_1create__params_a3d6de0eeac1deb7f20d73b3f508dd397.html#a3d6de0eeac1deb7f20d73b3f508dd397", null ],
       [ "location", "structxtd_1_1forms_1_1native_1_1create__params_ad9360c78c2267b8a6ea5af7125e0415c.html#ad9360c78c2267b8a6ea5af7125e0415c", null ],

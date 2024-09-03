@@ -17,6 +17,9 @@ var annotated_dup =
           [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", "classxtd_1_1collections_1_1generic_1_1ilist" ],
           [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ]
         ] ],
+        [ "object_model", "namespacextd_1_1collections_1_1object__model.html", [
+          [ "read_only_collection", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", "classxtd_1_1collections_1_1object__model_1_1read__only__collection" ]
+        ] ],
         [ "key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", "classxtd_1_1collections_1_1key__not__found__exception" ]
       ] ],
       [ "configuration", "namespacextd_1_1configuration.html", [
@@ -490,6 +493,7 @@ var annotated_dup =
         [ "file_system", "classxtd_1_1native_1_1file__system.html", null ],
         [ "guid", "classxtd_1_1native_1_1guid.html", null ],
         [ "interlocked", "classxtd_1_1native_1_1interlocked.html", null ],
+        [ "memory", "classxtd_1_1native_1_1memory.html", null ],
         [ "named_event_wait_handle", "classxtd_1_1native_1_1named__event__wait__handle.html", null ],
         [ "named_mutex", "classxtd_1_1native_1_1named__mutex.html", null ],
         [ "named_semaphore", "classxtd_1_1native_1_1named__semaphore.html", null ],
@@ -562,6 +566,9 @@ var annotated_dup =
           [ "speech_synthesizer", "classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html", "classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer" ],
           [ "state_changed_event_args", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args.html", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args" ]
         ] ]
+      ] ],
+      [ "text", "namespacextd_1_1text.html", [
+        [ "basic_string_builder", "classxtd_1_1text_1_1basic__string__builder.html", "classxtd_1_1text_1_1basic__string__builder" ]
       ] ],
       [ "threading", "namespacextd_1_1threading.html", [
         [ "abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", "classxtd_1_1threading_1_1abandoned__mutex__exception" ],
@@ -664,6 +671,7 @@ var annotated_dup =
       [ "arithmetic_exception", "classxtd_1_1arithmetic__exception.html", "classxtd_1_1arithmetic__exception" ],
       [ "attribute", "classxtd_1_1attribute.html", "classxtd_1_1attribute" ],
       [ "background_color", "classxtd_1_1background__color.html", "classxtd_1_1background__color" ],
+      [ "basic_string", "classxtd_1_1basic__string.html", "classxtd_1_1basic__string" ],
       [ "beep", "classxtd_1_1beep.html", "classxtd_1_1beep" ],
       [ "bit_converter", "classxtd_1_1bit__converter.html", "classxtd_1_1bit__converter" ],
       [ "box", "classxtd_1_1box.html", "classxtd_1_1box" ],
@@ -714,9 +722,11 @@ var annotated_dup =
       [ "iobservable", "classxtd_1_1iobservable.html", "classxtd_1_1iobservable" ],
       [ "iobserver", "classxtd_1_1iobserver.html", "classxtd_1_1iobserver" ],
       [ "iprogress", "classxtd_1_1iprogress.html", "classxtd_1_1iprogress" ],
+      [ "istringable", "classxtd_1_1istringable.html", "classxtd_1_1istringable" ],
       [ "isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", "classxtd_1_1isynchronize__invoke" ],
       [ "length_exception", "classxtd_1_1length__exception.html", "classxtd_1_1length__exception" ],
       [ "math", "classxtd_1_1math.html", null ],
+      [ "memory_information", "classxtd_1_1memory__information.html", null ],
       [ "non_const_overload", "structxtd_1_1non__const__overload.html", "structxtd_1_1non__const__overload" ],
       [ "not_finite_number_exception", "classxtd_1_1not__finite__number__exception.html", "classxtd_1_1not__finite__number__exception" ],
       [ "not_implemented_exception", "classxtd_1_1not__implemented__exception.html", "classxtd_1_1not__implemented__exception" ],
@@ -755,7 +765,6 @@ var annotated_dup =
       [ "uri", "classxtd_1_1uri.html", "classxtd_1_1uri" ],
       [ "uri_format_exception", "classxtd_1_1uri__format__exception.html", "classxtd_1_1uri__format__exception" ],
       [ "uri_template_match_exception", "classxtd_1_1uri__template__match__exception.html", "classxtd_1_1uri__template__match__exception" ],
-      [ "ustring", "classxtd_1_1ustring.html", "classxtd_1_1ustring" ],
       [ "version", "classxtd_1_1version.html", "classxtd_1_1version" ],
       [ "xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", "classxtd_1_1xml__syntax__exception" ]
     ] ],

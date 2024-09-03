@@ -23,6 +23,7 @@ var dir_c2e0eb911d20a3081884aa79218209e4 =
     [ "file_system.h", "file__system_8h.html", null ],
     [ "guid.h", "xtd_8core_8native_2include_2xtd_2native_2guid_8h.html", null ],
     [ "interlocked.h", "xtd_8core_8native_2include_2xtd_2native_2interlocked_8h.html", null ],
+    [ "memory.h", "memory_8h.html", null ],
     [ "named_event_wait_handle.h", "named__event__wait__handle_8h.html", null ],
     [ "named_mutex.h", "named__mutex_8h.html", null ],
     [ "named_semaphore.h", "named__semaphore_8h.html", null ],

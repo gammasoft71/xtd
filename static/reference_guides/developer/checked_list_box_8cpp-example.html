@@ -131,7 +131,6 @@ $(document).ready(function(){initNavTree('checked_list_box_8cpp-example.html',''
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/cdebug&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -148,11 +147,11 @@ $(document).ready(function(){initNavTree('checked_list_box_8cpp-example.html',''
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
-<div class="line">        checked_list_box1.items().push_back({ustring::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
+<div class="line">        checked_list_box1.items().push_back({string::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
 <div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += [](<span class="keywordtype">object</span> &amp; sender, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1item__check__event__args.html">item_check_event_args</a> &amp; e) {</div>
-<div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, e.index(), e.new_value(), e.current_value()) &lt;&lt; endl;</div>
+<div class="line">        cdebug &lt;&lt; string::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, e.index(), e.new_value(), e.current_value()) &lt;&lt; environment::new_line;</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -175,7 +174,7 @@ $(document).ready(function(){initNavTree('checked_list_box_8cpp-example.html',''
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

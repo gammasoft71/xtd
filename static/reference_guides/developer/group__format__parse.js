@@ -1,6 +1,6 @@
 var group__format__parse =
 [
-    [ "xtd::ustring::format", "group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd", null ],
-    [ "xtd::ustring::sprintf", "group__format__parse_ga0c65606fb81f84e4d9ea43002114d8de.html#ga0c65606fb81f84e4d9ea43002114d8de", null ],
+    [ "xtd::basic_string::format", "group__format__parse_ga591487f7c52877614fd80f43a332d455.html#ga591487f7c52877614fd80f43a332d455", null ],
+    [ "xtd::basic_string::sprintf", "group__format__parse_ga06d4b243f60f84e512a0fb001f40f066.html#ga06d4b243f60f84e512a0fb001f40f066", null ],
     [ "xtd::parse< drawing::color >", "group__format__parse_gaa980ebef2b93ecd8c9b9f7018e81bcb6.html#gaa980ebef2b93ecd8c9b9f7018e81bcb6", null ]
 ];

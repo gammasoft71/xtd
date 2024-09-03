@@ -102,102 +102,101 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
   <div class="headertitle"><div class="title">to_ustring.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1convert_a1de05be36bc70b03e74ec7d9586b0199.html#a1de05be36bc70b03e74ec7d9586b0199" title="Convert std::any to ustring.">xtd::convert::to_string</a> method and <a class="el" href="classxtd_1_1convert__string.html" title="Represents API to convert string containers.">xtd::convert_string</a> class.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1convert_a7ea5769242bd72dbf6fbd9c1a1ff3ea6.html#a7ea5769242bd72dbf6fbd9c1a1ff3ea6" title="Convert std::any to string.">xtd::convert::to_string</a> method and <a class="el" href="classxtd_1_1convert__string.html" title="Represents API to convert string containers.">xtd::convert_string</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/convert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/convert_string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;any&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to ustring :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to string :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> value = 42;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(value)            = {}&quot;</span>, to_ustring(value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(value)           = {}&quot;</span>, as&lt;ustring&gt;(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;string&gt;(value)           = {}&quot;</span>, as&lt;string&gt;(value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(value)   = {}&quot;</span>, convert::to_ustring(value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, value) = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;string::format(\&quot;{{}}\&quot;, value) = {}&quot;</span>, string::format(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert float to ustring :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert float to string :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;--------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> float_value = 42.5f;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(float_value)            = {}&quot;</span>, to_ustring(float_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(float_value)           = {}&quot;</span>, as&lt;ustring&gt;(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;string&gt;(float_value)           = {}&quot;</span>, as&lt;string&gt;(float_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(float_value)   = {}&quot;</span>, convert::to_ustring(float_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, float_value) = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;string::format(\&quot;{{}}\&quot;, float_value) = {}&quot;</span>, string::format(<span class="stringliteral">&quot;{}&quot;</span>, float_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to ustring :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to string :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
-<div class="line">  <span class="keyword">auto</span> any_value = make_any&lt;int&gt;(42);</div>
+<div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;int&gt;(42);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(any_value)            = {}&quot;</span>, to_ustring(any_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(any_value)           = {}&quot;</span>, as&lt;ustring&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;string&gt;(any_value)           = {}&quot;</span>, as&lt;string&gt;(any_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(any_value)   = {}&quot;</span>, convert::to_ustring(any_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, any_value) = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;string::format(\&quot;{{}}\&quot;, any_value) = {}&quot;</span>, string::format(<span class="stringliteral">&quot;{}&quot;</span>, any_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert const char16 to ustring :&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert const char16 to string :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> const_char16_value = u<span class="stringliteral">&quot;A string value&quot;</span>;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(wstring_value)                      = {}&quot;</span>, to_ustring(const_char16_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(const_char16_value)                = {}&quot;</span>, as&lt;ustring&gt;(const_char16_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;string&gt;(const_char16_value)                = {}&quot;</span>, as&lt;string&gt;(const_char16_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(const_char16_value)        = {}&quot;</span>, convert::to_ustring(const_char16_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert_string::to_ustring(const_char16_value) = {}&quot;</span>, convert_string::to_ustring(const_char16_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, const_char16_value)      = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, const_char16_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;string::format(\&quot;{{}}\&quot;, const_char16_value)      = {}&quot;</span>, string::format(<span class="stringliteral">&quot;{}&quot;</span>, const_char16_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert wstring to ustring :&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;----------------------------&quot;</span>);</div>
-<div class="line">  wstring wstring_value = L<span class="stringliteral">&quot;A string value&quot;</span>;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(wstring_value)                 = {}&quot;</span>, to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(wstring_value)                = {}&quot;</span>, as&lt;ustring&gt;(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(wstring_value)        = {}&quot;</span>, convert::to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert_string::to_ustring(wstring_value) = {}&quot;</span>, convert_string::to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, wstring_value)      = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, wstring_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert const wchar to string :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;--------------------------------&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> const_wchar_value = L<span class="stringliteral">&quot;A string value&quot;</span>;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(const_wchar_value)                 = {}&quot;</span>, to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;string&gt;(const_wchar_value)                = {}&quot;</span>, as&lt;string&gt;(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(const_wchar_value)        = {}&quot;</span>, convert::to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert_string::to_ustring(const_wchar_value) = {}&quot;</span>, convert_string::to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;string::format(\&quot;{{}}\&quot;, const_wchar_value)      = {}&quot;</span>, string::format(<span class="stringliteral">&quot;{}&quot;</span>, const_wchar_value));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code can produces the following output:</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert int to ustring :</span></div>
+<div class="line"><span class="comment">// Convert int to string :</span></div>
 <div class="line"><span class="comment">// ------------------------</span></div>
 <div class="line"><span class="comment">// to_ustring(value)            = 42</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(value)           = 42</span></div>
+<div class="line"><span class="comment">// as&lt;string&gt;(value)           = 42</span></div>
 <div class="line"><span class="comment">// convert::to_ustring(value)   = 42</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, value) = 42</span></div>
+<div class="line"><span class="comment">// string::format(&quot;{}&quot;, value) = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert float to ustring :</span></div>
+<div class="line"><span class="comment">// Convert float to string :</span></div>
 <div class="line"><span class="comment">// --------------------------</span></div>
 <div class="line"><span class="comment">// to_ustring(float_value)            = 42.5</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(float_value)           = 42.5</span></div>
+<div class="line"><span class="comment">// as&lt;string&gt;(float_value)           = 42.5</span></div>
 <div class="line"><span class="comment">// convert::to_ustring(float_value)   = 42.5</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, float_value) = 42.5</span></div>
+<div class="line"><span class="comment">// string::format(&quot;{}&quot;, float_value) = 42.5</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert any to ustring :</span></div>
+<div class="line"><span class="comment">// Convert any to string :</span></div>
 <div class="line"><span class="comment">// ------------------------</span></div>
 <div class="line"><span class="comment">// to_ustring(any_value)            = 42</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(any_value)           = 42</span></div>
+<div class="line"><span class="comment">// as&lt;string&gt;(any_value)           = 42</span></div>
 <div class="line"><span class="comment">// convert::to_ustring(any_value)   = 42</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, any_value) = 42</span></div>
+<div class="line"><span class="comment">// string::format(&quot;{}&quot;, any_value) = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert const char16 to ustring :</span></div>
-<div class="line"><span class="comment">// -----------------------------------</span></div>
+<div class="line"><span class="comment">// Convert const char16 to string :</span></div>
+<div class="line"><span class="comment">// ---------------------------------</span></div>
 <div class="line"><span class="comment">// to_ustring(wstring_value)                      = A string value</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(const_char16_value)                = A string value</span></div>
+<div class="line"><span class="comment">// as&lt;string&gt;(const_char16_value)                = A string value</span></div>
 <div class="line"><span class="comment">// convert::to_ustring(const_char16_value)        = A string value</span></div>
 <div class="line"><span class="comment">// convert_string::to_ustring(const_char16_value) = A string value</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, const_char16_value)      = A string value</span></div>
+<div class="line"><span class="comment">// string::format(&quot;{}&quot;, const_char16_value)      = A string value</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert wstring to ustring :</span></div>
-<div class="line"><span class="comment">// ----------------------------</span></div>
-<div class="line"><span class="comment">// to_ustring(wstring_value)                 = A string value</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(wstring_value)                = A string value</span></div>
-<div class="line"><span class="comment">// convert::to_ustring(wstring_value)        = A string value</span></div>
-<div class="line"><span class="comment">// convert_string::to_ustring(wstring_value) = A string value</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, wstring_value)      = A string value</span></div>
+<div class="line"><span class="comment">// Convert const wchar to string :</span></div>
+<div class="line"><span class="comment">// --------------------------------</span></div>
+<div class="line"><span class="comment">// to_ustring(const_wchar_value)                 = A string value</span></div>
+<div class="line"><span class="comment">// as&lt;string&gt;(const_wchar_value)                = A string value</span></div>
+<div class="line"><span class="comment">// convert::to_ustring(const_wchar_value)        = A string value</span></div>
+<div class="line"><span class="comment">// convert_string::to_ustring(const_wchar_value) = A string value</span></div>
+<div class="line"><span class="comment">// string::format(&quot;{}&quot;, const_wchar_value)      = A string value</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -205,7 +204,7 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

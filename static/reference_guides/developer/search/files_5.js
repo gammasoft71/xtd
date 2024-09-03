@@ -23,7 +23,7 @@ var searchData=
   ['enum_5fset_5fattribute_2eh_20',['enum_set_attribute.h',['../enum__set__attribute_8h.html',1,'']]],
   ['enum_5fstruct_2eh_21',['enum_struct.h',['../enum__struct_8h.html',1,'']]],
   ['enumerable_5fiterators_2eh_22',['enumerable_iterators.h',['../enumerable__iterators_8h.html',1,'']]],
-  ['enumerator_2eh_23',['enumerator.h',['../enumerator_8h.html',1,'']]],
+  ['enumerator_2eh_23',['enumerator.h',['../enumerator_8h.html',1,'(Global Namespace)'],['../generic_2enumerator_8h.html',1,'(Global Namespace)']]],
   ['environment_2eh_24',['environment.h',['../xtd_8core_8native_2include_2xtd_2native_2environment_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2environment_8h.html',1,'(Global Namespace)']]],
   ['environment_5fvariable_5ftarget_2eh_25',['environment_variable_target.h',['../xtd_8core_2include_2xtd_2environment__variable__target_8h.html',1,'(Global Namespace)'],['../xtd_8core_8native_2include_2xtd_2native_2environment__variable__target_8h.html',1,'(Global Namespace)']]],
   ['equality_5foperators_2eh_26',['equality_operators.h',['../equality__operators_8h.html',1,'']]],

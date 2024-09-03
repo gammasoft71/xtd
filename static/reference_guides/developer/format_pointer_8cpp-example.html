@@ -103,33 +103,34 @@ $(document).ready(function(){initNavTree('format_pointer_8cpp-example.html','');
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with memory addresses (pointers).</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">  <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a> = <span class="keyword">new</span> int(42);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">  <span class="keyword">delete</span> <a class="code hl_typedef" href="group__types_ga14f390dd1d27bfab4cc2f26c1502c8ec.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a> = <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;int&gt;</a> {};</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">  <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a> = new_sptr&lt;int&gt;(42);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92">sptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a> = <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;int&gt;</a> {};</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">  <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a> = new_uptr&lt;int&gt;(42);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code can produces the following output :</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// (null)</span></div>
 <div class="line"><span class="comment">// 0x1007380f0</span></div>
@@ -150,7 +151,7 @@ $(document).ready(function(){initNavTree('format_pointer_8cpp-example.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

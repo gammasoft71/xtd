@@ -9,7 +9,7 @@ var classxtd_1_1forms_1_1choice =
     [ "selected_item", "classxtd_1_1forms_1_1choice_a0badf2e57b51ce642d047f3fd8a8eb16.html#a0badf2e57b51ce642d047f3fd8a8eb16", null ],
     [ "sorted", "classxtd_1_1forms_1_1choice_a98abdc3e9186b274c9ae924526d4ec4c.html#a98abdc3e9186b274c9ae924526d4ec4c", null ],
     [ "sorted", "classxtd_1_1forms_1_1choice_a79aa4adffd32b504fd052d695921fa8f.html#a79aa4adffd32b504fd052d695921fa8f", null ],
-    [ "text", "classxtd_1_1forms_1_1choice_a7b7dd8353cf3fd0a0c15c9e159d0c26a.html#a7b7dd8353cf3fd0a0c15c9e159d0c26a", null ],
+    [ "text", "classxtd_1_1forms_1_1choice_afc3c886220f47bcaa099c4a363414836.html#afc3c886220f47bcaa099c4a363414836", null ],
     [ "begin_update", "classxtd_1_1forms_1_1choice_a7e2227307fc585108d0d00603f004c68.html#a7e2227307fc585108d0d00603f004c68", null ],
     [ "end_update", "classxtd_1_1forms_1_1choice_a675bf4228461addf7018d7b6570ee74d.html#a675bf4228461addf7018d7b6570ee74d", null ],
     [ "create_params", "classxtd_1_1forms_1_1choice_ab4f0db6636547de019c63a7834d3e7ec.html#ab4f0db6636547de019c63a7834d3e7ec", null ],

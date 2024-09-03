@@ -1,6 +1,7 @@
 var group__collections =
 [
     [ "generic", "group__generic__collections.html", "group__generic__collections" ],
+    [ "object model", "group__object__model__collections.html", "group__object__model__collections" ],
     [ "specialized", "group__specialized__collections.html", "group__specialized__collections" ],
     [ "xtd::forms::layout::arranged_element_collection< type_t, sorter_t >", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html", [
       [ "value_type", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html", null ],
@@ -79,6 +80,7 @@ var group__collections =
     ] ],
     [ "xtd::collections::any_pair", "group__collections_ga8a76f3f05751df733bfba833f2016757.html#ga8a76f3f05751df733bfba833f2016757", null ],
     [ "xtd::collections::array_list", "group__collections_gaf064333715d42a26e1ec3999ff384557.html#gaf064333715d42a26e1ec3999ff384557", null ],
+    [ "xtd::collections::enumerator", "group__collections_ga46ca5358d7207b976828dddad86adcf8.html#ga46ca5358d7207b976828dddad86adcf8", null ],
     [ "xtd::collections::hashtable", "group__collections_gaf94efa3cbd1251ed0a6bf8db67406922.html#gaf94efa3cbd1251ed0a6bf8db67406922", null ],
     [ "xtd::collections::vector_list", "group__collections_ga3c07efce71e0899524aa31dfd0431817.html#ga3c07efce71e0899524aa31dfd0431817", null ]
 ];

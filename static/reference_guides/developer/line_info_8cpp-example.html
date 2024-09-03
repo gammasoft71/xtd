@@ -104,43 +104,43 @@ $(document).ready(function(){initNavTree('line_info_8cpp-example.html',''); init
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class and csf_ keyword.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> trace_message(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message, <span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf) {</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; message &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;member name: &quot;</span> &lt;&lt; sf.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_ae946fcdc9bfcf32e2a832815c40eeb08.html#ae946fcdc9bfcf32e2a832815c40eeb08">get_method</a>() &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;source file path: &quot;</span> &lt;&lt; sf.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_a3c7c3064010482060dc20aeb53b48797.html#a3c7c3064010482060dc20aeb53b48797">get_file_name</a>() &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;source line number: &quot;</span> &lt;&lt; sf.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_a1832cdfb7233ada545f1af44983843ae.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a>() &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; message &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;member name: &quot;</span> &lt;&lt; sf.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_ab249fbb59dc173c7fa651f7a9c895224.html#ab249fbb59dc173c7fa651f7a9c895224">get_method</a>() &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;source file path: &quot;</span> &lt;&lt; sf.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_a1ff0d465067415c180c80027ab1a8551.html#a1ff0d465067415c180c80027ab1a8551">get_file_name</a>() &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;source line number: &quot;</span> &lt;&lt; sf.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame_a1832cdfb7233ada545f1af44983843ae.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a>() &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  trace_message(<span class="stringliteral">&quot;Something happened.&quot;</span>, <a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords_gaf8b977f43d229f177b7b399c3b3a60a6.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// message: Something happened.</span></div>
 <div class="line"><span class="comment">// member name: main</span></div>
 <div class="line"><span class="comment">// source file path: !---OMITTED---!/line_info/src/line_info.cpp</span></div>
 <div class="line"><span class="comment">// source line number: 16</span></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_a1832cdfb7233ada545f1af44983843ae_html_a1832cdfb7233ada545f1af44983843ae"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame_a1832cdfb7233ada545f1af44983843ae.html#a1832cdfb7233ada545f1af44983843ae">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual uint32 get_file_line_number() const noexcept</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_a3c7c3064010482060dc20aeb53b48797_html_a3c7c3064010482060dc20aeb53b48797"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame_a3c7c3064010482060dc20aeb53b48797.html#a3c7c3064010482060dc20aeb53b48797">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_ae946fcdc9bfcf32e2a832815c40eeb08_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame_ae946fcdc9bfcf32e2a832815c40eeb08.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_a1ff0d465067415c180c80027ab1a8551_html_a1ff0d465067415c180c80027ab1a8551"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame_a1ff0d465067415c180c80027ab1a8551.html#a1ff0d465067415c180c80027ab1a8551">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::string &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_ab249fbb59dc173c7fa651f7a9c895224_html_ab249fbb59dc173c7fa651f7a9c895224"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame_ab249fbb59dc173c7fa651f7a9c895224.html#ab249fbb59dc173c7fa651f7a9c895224">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::string &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:40</div></div>
 <div class="ttc" id="agroup__keywords_gaf8b977f43d229f177b7b399c3b3a60a6_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords_gaf8b977f43d229f177b7b399c3b3a60a6.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

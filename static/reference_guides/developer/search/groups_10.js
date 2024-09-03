@@ -15,8 +15,9 @@ var searchData=
   ['string_20alignment_12',['string alignment',['../group__sa.html',1,'']]],
   ['string_20format_13',['string format',['../group__sf.html',1,'']]],
   ['string_20trimming_14',['string trimming',['../group__st.html',1,'']]],
-  ['style_20sheets_15',['style sheets',['../group__style__sheets.html',1,'']]],
-  ['synthesis_16',['synthesis',['../group__synthesis.html',1,'']]],
-  ['system_17',['system',['../group__system.html',1,'']]],
-  ['system_20information_18',['system information',['../group__system__information.html',1,'']]]
+  ['strings_15',['strings',['../group__strings.html',1,'']]],
+  ['style_20sheets_16',['style sheets',['../group__style__sheets.html',1,'']]],
+  ['synthesis_17',['synthesis',['../group__synthesis.html',1,'']]],
+  ['system_18',['system',['../group__system.html',1,'']]],
+  ['system_20information_19',['system information',['../group__system__information.html',1,'']]]
 ];

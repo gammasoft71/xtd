@@ -92,6 +92,7 @@ var group__native =
     [ "xtd::native::file_system", "classxtd_1_1native_1_1file__system.html", null ],
     [ "xtd::native::guid", "classxtd_1_1native_1_1guid.html", null ],
     [ "xtd::native::interlocked", "classxtd_1_1native_1_1interlocked.html", null ],
+    [ "xtd::native::memory", "classxtd_1_1native_1_1memory.html", null ],
     [ "xtd::native::named_event_wait_handle", "classxtd_1_1native_1_1named__event__wait__handle.html", null ],
     [ "xtd::native::named_mutex", "classxtd_1_1native_1_1named__mutex.html", null ],
     [ "xtd::native::named_semaphore", "classxtd_1_1native_1_1named__semaphore.html", null ],

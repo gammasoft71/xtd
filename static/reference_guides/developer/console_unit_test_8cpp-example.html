@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('console_unit_test_8cpp-example.html','
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
@@ -119,10 +119,10 @@ $(document).ready(function(){initNavTree('console_unit_test_8cpp-example.html','
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">return</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
 <div class="line">  <span class="comment">// is same :</span></div>
-<div class="line">  <span class="comment">// return unit_test(std::new_uptr&lt;ostream_event_listener&gt;(cout)).run();</span></div>
+<div class="line">  <span class="comment">//return unit_test(new_uptr&lt;ostream_event_listener&gt;(console::out)).run();</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Start 1 test from 1 test case</span></div>
 <div class="line"><span class="comment">// Run tests:</span></div>
@@ -135,13 +135,14 @@ $(document).ready(function(){initNavTree('console_unit_test_8cpp-example.html','
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

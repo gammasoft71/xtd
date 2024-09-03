@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('iasync_result_8cpp-example.html',''); 
   <div class="headertitle"><div class="title">iasync_result.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use how to use xtd:: iasync_result interface.</p>
+<p>Shows how to use xtd:: iasync_result interface.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/iasync_result&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
@@ -113,17 +113,17 @@ $(document).ready(function(){initNavTree('iasync_result_8cpp-example.html',''); 
 <div class="line"><span class="keyword">class </span>async_demo {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="comment">// The method to be executed asynchronously.</span></div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> test_method(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id) {</div>
+<div class="line">  <span class="keywordtype">string</span> test_method(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Test method begins.&quot;</span>);</div>
 <div class="line">    thread::sleep(call_duration);</div>
 <div class="line">    *thread_id = thread::current_thread().managed_thread_id();</div>
-<div class="line">    <span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;My call time was {}.&quot;</span>, call_duration);</div>
+<div class="line">    <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;My call time was {}.&quot;</span>, call_duration);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The delegate must have the same signature as the method</span></div>
 <div class="line"><span class="comment">// it will call asynchronously.</span></div>
-<div class="line"><span class="keyword">using </span>async_method_caller = delegate&lt;<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id)&gt;;</div>
+<div class="line"><span class="keyword">using </span>async_method_caller = delegate&lt;<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1basic__string.html">string</a>(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id)&gt;;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// The asynchronous method puts the thread id here.</span></div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('iasync_result_8cpp-example.html',''); 
 <div class="line"><span class="comment">// Main thread 1 does some work.</span></div>
 <div class="line"><span class="comment">// Test method begins.</span></div>
 <div class="line"><span class="comment">// The call executed on thread 2, with return value &quot;My call time was 3000.&quot;.</span></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html"><div class="ttname"><a href="classxtd_1_1basic__string.html">xtd::basic_string</a></div><div class="ttdoc">Represents text as a sequence of character units.</div><div class="ttdef"><b>Definition</b> basic_string.h:79</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('iasync_result_8cpp-example.html',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -193,7 +193,8 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div class="line">  note() = <span class="keywordflow">default</span>;</div>
 <div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
 <div class="line">  note&amp; operator=(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
-<div class="line">  </div>
+<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> note&amp; rhs) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> tone_val == rhs.tone_val &amp;&amp; dur_val == rhs.dur_val;}</div>
+<div class="line"> </div>
 <div class="line">  <span class="comment">// Define properties to return the note&#39;s tone and duration.</span></div>
 <div class="line">  tone note_tone() const noexcept {<span class="keywordflow">return</span> tone_val;}</div>
 <div class="line">  duration note_duration() const noexcept {<span class="keywordflow">return</span> dur_val;}</div>
@@ -205,7 +206,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread_a42bc6e2bb805f928e50ae73d243b95f2.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      std::cout &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
+<div class="line">      console::out &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -229,7 +230,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div class="line">  <span class="comment">// Play the song</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:64</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:70</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_a42bc6e2bb805f928e50ae73d243b95f2_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread_a42bc6e2bb805f928e50ae73d243b95f2.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__xtd__core_gacc628237bd3e274afe3d5d836e2db786_html_ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="group__xtd__core_gacc628237bd3e274afe3d5d836e2db786.html#ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::console_modifiers::none</a></div><div class="ttdeci">@ none</div><div class="ttdoc">No modifier key.</div></div>
 <div class="ttc" id="agroup__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div></div>
@@ -254,7 +255,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1beep_a7abedc670e1e4830b1e5
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1beep.html">beep</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

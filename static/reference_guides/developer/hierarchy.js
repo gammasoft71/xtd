@@ -12,9 +12,6 @@ var hierarchy =
     [ "animation_updated_event_handler", null, [
       [ "xtd::event< xtd::forms::animation, animation_updated_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
-    [ "std::basic_string< Char >", null, [
-      [ "xtd::ustring", "classxtd_1_1ustring.html", null ]
-    ] ],
     [ "xtd::call_once", "structxtd_1_1call__once.html", null ],
     [ "xtd::tunit::class_cleanup_attribute", "classxtd_1_1tunit_1_1class__cleanup__attribute.html", null ],
     [ "xtd::tunit::class_initialize_attribute", "classxtd_1_1tunit_1_1class__initialize__attribute.html", null ],
@@ -25,6 +22,9 @@ var hierarchy =
     [ "xtd::comparison_operators< type_t, comparable_t >", "classxtd_1_1comparison__operators.html", [
       [ "xtd::icomparable< any_object >", "classxtd_1_1icomparable.html", [
         [ "xtd::any_object", "classxtd_1_1any__object.html", null ]
+      ] ],
+      [ "xtd::icomparable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1icomparable.html", [
+        [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
       ] ],
       [ "xtd::icomparable< box< type_t > >", "classxtd_1_1icomparable.html", [
         [ "xtd::box< type_t >", "classxtd_1_1box.html", [
@@ -147,14 +147,12 @@ var hierarchy =
       [ "xtd::icomparable< time_zone_info >", "classxtd_1_1icomparable.html", [
         [ "xtd::time_zone_info", "classxtd_1_1time__zone__info.html", null ]
       ] ],
-      [ "xtd::icomparable< ustring >", "classxtd_1_1icomparable.html", [
-        [ "xtd::ustring", "classxtd_1_1ustring.html", null ]
-      ] ],
       [ "xtd::icomparable< version >", "classxtd_1_1icomparable.html", [
         [ "xtd::version", "classxtd_1_1version.html", null ]
       ] ]
     ] ],
     [ "xtd::comparison_operators< any_object, icomparable< any_object > >", "classxtd_1_1comparison__operators.html", null ],
+    [ "xtd::comparison_operators< basic_string< char_t, traits_t, allocator_t >, icomparable< basic_string< char_t, traits_t, allocator_t > > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< box< type_t >, icomparable< box< type_t > > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< control, icomparable< control > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< date_time, icomparable< date_time > >", "classxtd_1_1comparison__operators.html", null ],
@@ -172,7 +170,6 @@ var hierarchy =
         [ "xtd::enum_object< enum_t >", "classxtd_1_1enum__object.html", null ]
       ] ]
     ] ],
-    [ "xtd::comparison_operators< ustring, icomparable< ustring > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< version, icomparable< version > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::native::condition_variable", "classxtd_1_1native_1_1condition__variable.html", null ],
     [ "xtd::native::console", "classxtd_1_1native_1_1console.html", null ],
@@ -206,8 +203,8 @@ var hierarchy =
       [ "xtd::event< xtd::forms::application, delegate< void(const xtd::event_args &)> >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, type_t &item)> >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, message_notifier_button_ref &item)> >", "classxtd_1_1event.html", null ],
-      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< void(size_t index, const xtd::ustring &text, const xtd::ustring &name)> >", "classxtd_1_1event.html", null ],
-      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< iterator(const_iterator pos, const xtd::ustring &text, const xtd::ustring &name)> >", "classxtd_1_1event.html", null ]
+      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< void(size_t index, const xtd::basic_string &text, const xtd::basic_string &name)> >", "classxtd_1_1event.html", null ],
+      [ "xtd::event< xtd::forms::tab_control::tab_page_collection, delegate< iterator(const_iterator pos, const xtd::basic_string &text, const xtd::basic_string &name)> >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::delegate", null, [
       [ "xtd::event< xtd::net::sockets::socket_async_event_args, xtd::delegate< void(const xtd::net::sockets::socket_async_event_args &)> >", "classxtd_1_1event.html", null ]
@@ -236,12 +233,22 @@ var hierarchy =
     ] ],
     [ "xtd::enum_register< enum_t >", "structxtd_1_1enum__register.html", null ],
     [ "xtd::enum_set_attribute< enum_t >", "structxtd_1_1enum__set__attribute.html", null ],
-    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
+    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerable_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
+      [ "xtd::collections::generic::ienumerable< char_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
+        [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
+      ] ],
+      [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ]
+    ] ],
+    [ "xtd::collections::generic::enumerable_iterators< char_t, ienumerable< char_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
+    [ "xtd::collections::generic::enumerable_iterators< list_type_t, ienumerable< list_type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
     [ "xtd::collections::generic::enumerable_iterators< type_t, ienumerable< type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
+        [ "xtd::collections::generic::icollection< list_type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", null ],
         [ "xtd::collections::generic::icollection< type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", [
+          [ "xtd::collections::generic::ilist< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
           [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
-            [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
+            [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
+            [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ]
           ] ]
         ] ]
       ] ]
@@ -251,8 +258,14 @@ var hierarchy =
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", [
         [ "xtd::any_object", "classxtd_1_1any__object.html", null ]
       ] ],
+      [ "xtd::iequatable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1iequatable.html", [
+        [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ]
+      ] ],
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", [
         [ "xtd::box< type_t >", "classxtd_1_1box.html", null ]
+      ] ],
+      [ "xtd::iequatable< xtd::collections::generic::list< type_t > >", "classxtd_1_1iequatable.html", [
+        [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
       ] ],
       [ "xtd::iequatable< file_settings >", "classxtd_1_1iequatable.html", [
         [ "xtd::configuration::file_settings", "classxtd_1_1configuration_1_1file__settings.html", null ]
@@ -515,6 +528,7 @@ var hierarchy =
       [ "xtd::iequatable< udp_client >", "classxtd_1_1iequatable.html", [
         [ "xtd::net::sockets::udp_client", "classxtd_1_1net_1_1sockets_1_1udp__client.html", null ]
       ] ],
+      [ "xtd::iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< cancellation_token >", "classxtd_1_1iequatable.html", [
         [ "xtd::threading::cancellation_token", "classxtd_1_1threading_1_1cancellation__token.html", null ]
       ] ],
@@ -556,6 +570,8 @@ var hierarchy =
     [ "xtd::equality_operators< adjustement_rule, iequatable< adjustement_rule > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< any_object, iequatable< any_object > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< background_image, iequatable< background_image > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< basic_string< char_t, traits_t, allocator_t >, iequatable< basic_string< char_t, traits_t, allocator_t > > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > >, iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_color, iequatable< border_color > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_radius, iequatable< border_radius > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< border_style, iequatable< border_style > >", "classxtd_1_1equality__operators.html", null ],
@@ -646,13 +662,15 @@ var hierarchy =
     [ "xtd::equality_operators< type_t, iequatable< type_t > >", "classxtd_1_1equality__operators.html", [
       [ "xtd::iequatable< type_t >", "classxtd_1_1iequatable.html", [
         [ "xtd::delegate< result_t(arguments_t...)>< value_t >", "classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html", null ],
-        [ "xtd::enum_object< enum_t >", "classxtd_1_1enum__object.html", null ]
+        [ "xtd::enum_object< enum_t >", "classxtd_1_1enum__object.html", null ],
+        [ "xtd::text::basic_string_builder< char_t, traits_t, allocator_t >", "classxtd_1_1text_1_1basic__string__builder.html", null ]
       ] ]
     ] ],
     [ "xtd::equality_operators< udp_client, iequatable< udp_client > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< uri, iequatable< uri > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< version, iequatable< version > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< vertical_control_layout_style, iequatable< vertical_control_layout_style > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< xtd::collections::generic::list< type_t >, iequatable< xtd::collections::generic::list< type_t > > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::collections::generic::helpers::equator< key_t >", "structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html", null ],
     [ "event_handler", null, [
       [ "xtd::event< xtd::forms::application_context, event_handler >", "classxtd_1_1event.html", null ],
@@ -784,7 +802,10 @@ var hierarchy =
     [ "HELPINFO", "struct_h_e_l_p_i_n_f_o.html", null ],
     [ "HWND__", "struct_h_w_n_d____.html", null ],
     [ "xtd::interface", "classxtd_1_1interface.html", [
+      [ "xtd::collections::generic::ienumerable< char_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
+      [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::icomparable< any_object >", "classxtd_1_1icomparable.html", null ],
+      [ "xtd::icomparable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< box< type_t > >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< date_time >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< image_format >", "classxtd_1_1icomparable.html", null ],
@@ -797,10 +818,11 @@ var hierarchy =
       [ "xtd::icomparable< semaphore >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< time_span >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< time_zone_info >", "classxtd_1_1icomparable.html", null ],
-      [ "xtd::icomparable< ustring >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< version >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< basic_string< char_t, traits_t, allocator_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< xtd::collections::generic::list< type_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< file_settings >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< console_key_info >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< date_time >", "classxtd_1_1iequatable.html", null ],
@@ -880,6 +902,7 @@ var hierarchy =
       [ "xtd::iequatable< tcp_client >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< tcp_listener >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< udp_client >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< basic_string_builder< char_t, std::char_traits< char_t >, xtd::collections::generic::helpers::allocator< char_t > > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< cancellation_token >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< event_wait_handle >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< mutex >", "classxtd_1_1iequatable.html", null ],
@@ -939,6 +962,7 @@ var hierarchy =
       [ "xtd::iobservable< type_t >", "classxtd_1_1iobservable.html", null ],
       [ "xtd::iobserver< type_t >", "classxtd_1_1iobserver.html", null ],
       [ "xtd::iprogress< type_t >", "classxtd_1_1iprogress.html", null ],
+      [ "xtd::istringable", "classxtd_1_1istringable.html", null ],
       [ "xtd::isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", [
         [ "xtd::forms::control", "classxtd_1_1forms_1_1control.html", null ]
       ] ]
@@ -953,7 +977,7 @@ var hierarchy =
     [ "item_check_event_handler", null, [
       [ "xtd::event< xtd::forms::checked_list_box, item_check_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
-    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >::iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html", null ],
+    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerable_t >::iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html", null ],
     [ "key_event_handler", null, [
       [ "xtd::event< xtd::forms::control, key_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -963,6 +987,7 @@ var hierarchy =
     [ "link_label_clicked_event_handler", null, [
       [ "xtd::event< xtd::forms::link_label, link_label_clicked_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::memory", "classxtd_1_1native_1_1memory.html", null ],
     [ "mouse_event_handler", null, [
       [ "xtd::event< xtd::forms::control, mouse_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -1031,9 +1056,11 @@ var hierarchy =
         [ "xtd::reflection::assembly_version_attribute", "classxtd_1_1reflection_1_1assembly__version__attribute.html", null ]
       ] ],
       [ "xtd::background_color", "classxtd_1_1background__color.html", null ],
+      [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ],
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
       [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
+      [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ],
       [ "xtd::compiler", "classxtd_1_1compiler.html", null ],
       [ "xtd::configuration::file_settings", "classxtd_1_1configuration_1_1file__settings.html", null ],
       [ "xtd::configuration::settings", "classxtd_1_1configuration_1_1settings.html", null ],
@@ -1242,6 +1269,7 @@ var hierarchy =
       [ "xtd::speech::synthesis::speech_synthesizer", "classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html", null ],
       [ "xtd::system_exception", "classxtd_1_1system__exception.html", null ],
       [ "xtd::target_type", "classxtd_1_1target__type.html", null ],
+      [ "xtd::text::basic_string_builder< char_t, traits_t, allocator_t >", "classxtd_1_1text_1_1basic__string__builder.html", null ],
       [ "xtd::threading::barrier", "classxtd_1_1threading_1_1barrier.html", null ],
       [ "xtd::threading::cancellation_token", "classxtd_1_1threading_1_1cancellation__token.html", null ],
       [ "xtd::threading::cancellation_token_registration", "classxtd_1_1threading_1_1cancellation__token__registration.html", null ],
@@ -1264,7 +1292,6 @@ var hierarchy =
       [ "xtd::tracestreambuf", "classxtd_1_1tracestreambuf.html", null ],
       [ "xtd::type_object", "classxtd_1_1type__object.html", null ],
       [ "xtd::uri", "classxtd_1_1uri.html", null ],
-      [ "xtd::ustring", "classxtd_1_1ustring.html", null ],
       [ "xtd::version", "classxtd_1_1version.html", null ],
       [ "xtd::web::css::css_reader", "classxtd_1_1web_1_1css_1_1css__reader.html", null ],
       [ "xtd::web::css::css_writer", "classxtd_1_1web_1_1css_1_1css__writer.html", null ],
@@ -1292,6 +1319,7 @@ var hierarchy =
       [ "xtd::event< xtd::forms::background_worker, run_worker_completed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::scope_exit", "structxtd_1_1scope__exit.html", null ],
+    [ "xtd::native::settings", "classxtd_1_1native_1_1settings.html", null ],
     [ "xtd::tunit::settings", "classxtd_1_1tunit_1_1settings.html", null ],
     [ "signal_cancel_event_handler", null, [
       [ "xtd::event< xtd::environment, signal_cancel_event_handler >", "classxtd_1_1event.html", null ]
@@ -1494,7 +1522,7 @@ var hierarchy =
       [ "xtd::io::path", "classxtd_1_1io_1_1path.html", null ],
       [ "xtd::math", "classxtd_1_1math.html", null ],
       [ "xtd::media::system_sounds", "classxtd_1_1media_1_1system__sounds.html", null ],
-      [ "xtd::native::settings", "classxtd_1_1native_1_1settings.html", null ],
+      [ "xtd::memory_information", "classxtd_1_1memory__information.html", null ],
       [ "xtd::net::dns", "classxtd_1_1net_1_1dns.html", null ],
       [ "xtd::startup", "classxtd_1_1startup.html", null ],
       [ "xtd::system_report", "classxtd_1_1system__report.html", null ],

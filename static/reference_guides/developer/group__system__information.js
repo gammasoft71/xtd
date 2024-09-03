@@ -1,12 +1,12 @@
 var group__system__information =
 [
     [ "xtd::system_report", "classxtd_1_1system__report.html", [
-      [ "environment_variable_collection", "classxtd_1_1system__report_aa050a4901f240029f45b85c8928a1869.html#aa050a4901f240029f45b85c8928a1869", null ],
-      [ "special_folder_collection", "classxtd_1_1system__report_a28f5e16fd31103b52764c331fa171639.html#a28f5e16fd31103b52764c331fa171639", null ],
-      [ "system_color_collection", "classxtd_1_1system__report_af97213a6ffe9d4c7c6131935fb02a734.html#af97213a6ffe9d4c7c6131935fb02a734", null ],
-      [ "system_font_collection", "classxtd_1_1system__report_aac658082e0c421b2bf027b0fdc8e96f3.html#aac658082e0c421b2bf027b0fdc8e96f3", null ],
-      [ "system_font_family_collection", "classxtd_1_1system__report_a57c207bef274635b67c51c8b8f6a380b.html#a57c207bef274635b67c51c8b8f6a380b", null ],
-      [ "system_information_collection", "classxtd_1_1system__report_ac8526ffc89d0ad3e42f549f1cdd15324.html#ac8526ffc89d0ad3e42f549f1cdd15324", null ],
+      [ "environment_variable_collection", "classxtd_1_1system__report_a32f008785a4a0c04f79a510ccacebb86.html#a32f008785a4a0c04f79a510ccacebb86", null ],
+      [ "special_folder_collection", "classxtd_1_1system__report_a3982d2c65720bd3443ed63a8621a654d.html#a3982d2c65720bd3443ed63a8621a654d", null ],
+      [ "system_color_collection", "classxtd_1_1system__report_a66afd8d710718c76c6cd72a72614e3e6.html#a66afd8d710718c76c6cd72a72614e3e6", null ],
+      [ "system_font_collection", "classxtd_1_1system__report_a550952332781cb1cc2f92d7ca1e1b507.html#a550952332781cb1cc2f92d7ca1e1b507", null ],
+      [ "system_font_family_collection", "classxtd_1_1system__report_a478097ec30b0c33095027585b37756f3.html#a478097ec30b0c33095027585b37756f3", null ],
+      [ "system_information_collection", "classxtd_1_1system__report_acc2aedc4d9186854ec34f8e4a4b8e9e4.html#acc2aedc4d9186854ec34f8e4a4b8e9e4", null ],
       [ "reports", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b", [
         [ "stack_trace", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c", null ],
         [ "libraries", "classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d", null ],
@@ -28,12 +28,12 @@ var group__system__information =
     ] ],
     [ "xtd::environment", "classxtd_1_1environment.html", [
       [ "xtd_library", "classxtd_1_1environment_1_1xtd__library.html", [
-        [ "include_path", "classxtd_1_1environment_1_1xtd__library_afcd3b21fa1bd1f8b8ba4862406003c47.html#afcd3b21fa1bd1f8b8ba4862406003c47", null ],
-        [ "library_path", "classxtd_1_1environment_1_1xtd__library_a1c8851b129b8ed0a516763a861bf52f9.html#a1c8851b129b8ed0a516763a861bf52f9", null ],
-        [ "name", "classxtd_1_1environment_1_1xtd__library_a2ae32547ad811bca874280af3074e599.html#a2ae32547ad811bca874280af3074e599", null ],
-        [ "resources_path", "classxtd_1_1environment_1_1xtd__library_a61a727562ff4514a5b66e32bc70c3bf5.html#a61a727562ff4514a5b66e32bc70c3bf5", null ],
+        [ "include_path", "classxtd_1_1environment_1_1xtd__library_a2353f1d5eb74af9bd8d821566e944c12.html#a2353f1d5eb74af9bd8d821566e944c12", null ],
+        [ "library_path", "classxtd_1_1environment_1_1xtd__library_aa08d15cc67bc0acc601673b7e63db173.html#aa08d15cc67bc0acc601673b7e63db173", null ],
+        [ "name", "classxtd_1_1environment_1_1xtd__library_afa9552304869b29c02c6661af27e5aa6.html#afa9552304869b29c02c6661af27e5aa6", null ],
+        [ "resources_path", "classxtd_1_1environment_1_1xtd__library_a8a9eeb9849e8c9d4e4b972bb1341dd72.html#a8a9eeb9849e8c9d4e4b972bb1341dd72", null ],
         [ "version", "classxtd_1_1environment_1_1xtd__library_aae91f57335891e1134a0de1482051c5e.html#aae91f57335891e1134a0de1482051c5e", null ],
-        [ "to_string", "classxtd_1_1environment_1_1xtd__library_a24a9cb01f67c8c17ede8ffb1155993ab.html#a24a9cb01f67c8c17ede8ffb1155993ab", null ]
+        [ "to_string", "classxtd_1_1environment_1_1xtd__library_a4372ba97432cffc9197462730516eb55.html#a4372ba97432cffc9197462730516eb55", null ]
       ] ],
       [ "xtd_library_collection", "classxtd_1_1environment_aab2a5dac26e835c40c5abeabdbeb4a86.html#aab2a5dac26e835c40c5abeabdbeb4a86", null ],
       [ "special_folder", "classxtd_1_1environment_a2fb2b59eded52f8745b88b44ae9e7057.html#a2fb2b59eded52f8745b88b44ae9e7057", [
@@ -110,5 +110,6 @@ var group__system__information =
         [ "create", "classxtd_1_1environment_aa3283d0bed4263754162eb02707e90c1.html#aa3283d0bed4263754162eb02707e90c1a76ea0bebb3c22822b4f0dd9c9fd021c5", null ]
       ] ]
     ] ],
+    [ "xtd::memory_information", "classxtd_1_1memory__information.html", null ],
     [ "xtd::forms::system_information", "classxtd_1_1forms_1_1system__information.html", null ]
 ];

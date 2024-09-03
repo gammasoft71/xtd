@@ -11,7 +11,7 @@ var classxtd_1_1drawing_1_1point =
     [ "y", "classxtd_1_1drawing_1_1point_a2bd44f25dc4d0f63a277332d14ee1bf9.html#a2bd44f25dc4d0f63a277332d14ee1bf9", null ],
     [ "offset", "classxtd_1_1drawing_1_1point_a813937ec5b83642dc5a45335fd55fb3b.html#a813937ec5b83642dc5a45335fd55fb3b", null ],
     [ "offset", "classxtd_1_1drawing_1_1point_a475ce4ddda7f7c04acffb387a3dbbf3c.html#a475ce4ddda7f7c04acffb387a3dbbf3c", null ],
-    [ "to_string", "classxtd_1_1drawing_1_1point_a2b63643c3621c354f7faab8f358ca236.html#a2b63643c3621c354f7faab8f358ca236", null ],
+    [ "to_string", "classxtd_1_1drawing_1_1point_a6953dfdc7fd750ffa9c4edee8beec7b4.html#a6953dfdc7fd750ffa9c4edee8beec7b4", null ],
     [ "operator+", "classxtd_1_1drawing_1_1point_a8b0e24be89a14efbce2394fe48c500dc.html#a8b0e24be89a14efbce2394fe48c500dc", null ],
     [ "operator+", "classxtd_1_1drawing_1_1point_ad92ba2d4346517d9149f2f4f63d634cc.html#ad92ba2d4346517d9149f2f4f63d634cc", null ],
     [ "operator+=", "classxtd_1_1drawing_1_1point_a524907752886fca34e5d7165279c4d3a.html#a524907752886fca34e5d7165279c4d3a", null ],

@@ -147,7 +147,7 @@ The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_a9be292d3fe3c501d21
 <dl class="section note"><dt>Note</dt><dd>If you are using a connection-oriented protocol and did not call <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_a0440f747b3ca6415815e92b700f0b559.html#a0440f747b3ca6415815e92b700f0b559" title="Associates a xtd::net::sockets::socket with a local endpoint.">xtd::net::sockets::socket::bind</a> before calling <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_a9be292d3fe3c501d212641d4428a2293.html#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a>, the underlying service provider will assign the local network address and port number. If you are using a connectionless protocol, the service provider will not assign a local network address and port number until you complete a send or receive operation. If you want to change the default remote host, call <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_a9be292d3fe3c501d212641d4428a2293.html#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a> again with the desired endpoint. </dd>
 <dd>
 If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_ad91d1a49bad131679b1a8a5898108d8e.html#ad91d1a49bad131679b1a8a5898108d8e" title="Begins an asynchronous request for a remote host connection.">xtd::net::sockets::socket::begin_connect</a> methods to reconnect. This is a limitation of the underlying provider. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_8cpp-example.html#a6">socket_tcp_ip_v4.cpp</a>, and <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#a6">socket_tcp_ip_v6.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_8cpp-example.html#a5">socket_tcp_ip_v4.cpp</a>, and <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#a5">socket_tcp_ip_v6.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -159,7 +159,7 @@ If the socket has been previously disconnected, then you cannot use this method 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net.html">net</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net_1_1sockets.html">sockets</a></li><li class="navelem"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:10:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
