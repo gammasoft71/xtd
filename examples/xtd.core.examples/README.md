@@ -368,6 +368,10 @@
 * [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class with unicode.
 * [strings](strings/strings/README.md) shows how to use [xtd::basic_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__string.html) constructors.
 
+## [text](text/README.md)
+
+* [compare](text/string_builder_append/README.md) shows how to use [xtd::text::basic_string_builder::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1text_1_1basic__string__builder_a01a81c0e4a6288fe54b854c98ad485b8.html#a01a81c0e4a6288fe54b854c98ad485b8) method.
+
 ## [Threading](threading/README.md)
 
 * [auto_reset_event](threading/auto_reset_event/README.md) shows how to use [xtd::threading::auto_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1auto_reset_event.html) class.
