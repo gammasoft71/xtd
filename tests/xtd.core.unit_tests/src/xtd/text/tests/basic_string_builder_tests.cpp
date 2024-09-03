@@ -136,13 +136,13 @@ namespace xtd::tests {
       assert::are_equal("string", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7).to_string(), csf_);
       assert::are_equal("g", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 12).to_string(), csf_);
       assert::is_empty(basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 13).to_string(), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 14);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 14);}, csf_);
     }
     
     void test_method_(constructor_with_basic_string_and_index_and_count) {
       assert::are_equal("str", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 3).to_string(), csf_);
       assert::are_equal("string", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 6).to_string(), csf_);
-      assert::throws<index_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();}, csf_);
     }
     
     void test_method_(move_constructor_with_basic_string) {
@@ -355,6 +355,89 @@ namespace xtd::tests {
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
 
+    void test_method_(append_basic_string) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      s.append(basic_string<char_t> {" to test"});
+      assert::are_equal("A test string to test", s.to_string(), csf_);
+      s.append(basic_string<char_t> {""});
+      assert::are_equal("A test string to test", s.to_string(), csf_);
+      s.append(basic_string<char_t> {" and other"});
+      assert::are_equal("A test string to test and other", s.to_string(), csf_);
+    }
+    
+    void test_method_(append_basic_string_start_index_and_count) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      s.append(basic_string<char_t> {" to test"}, 1, 4);
+      assert::are_equal("A test stringto t", s.to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string<char_t> {" value"}, 7, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string<char_t> {" value"}, 2, 5);}, csf_);
+    }
+
+    void test_method_(append_bool) {
+      assert::are_equal("A test string false", basic_string_builder<char_t> {"A test string "}.append(false).to_string(), csf_);
+      assert::are_equal("A test string true", basic_string_builder<char_t> {"A test string "}.append(true).to_string(), csf_);
+    }
+
+    void test_method_(append_byte) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s8).to_string(), csf_);
+    }
+
+    void test_method_(append_decimal) {
+      assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42l).to_string(), csf_);
+    }
+
+    void test_method_(append_double) {
+      assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42).to_string(), csf_);
+    }
+
+    void test_method_(append_float) {
+      assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42_f).to_string(), csf_);
+    }
+
+    void test_method_(append_int16) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s16).to_string(), csf_);
+    }
+
+    void test_method_(append_int32) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s32).to_string(), csf_);
+    }
+
+    void test_method_(append_int64) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s64).to_string(), csf_);
+    }
+
+    void test_method_(append_sbyte) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u8).to_string(), csf_);
+    }
+
+    void test_method_(append_uint16) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u16).to_string(), csf_);
+    }
+    
+    void test_method_(append_uint32) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u32).to_string(), csf_);
+    }
+    
+    void test_method_(append_uint64) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u64).to_string(), csf_);
+    }
+    
+    void test_method_(append_size) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_z).to_string(), csf_);
+    }
+    
+    void test_method_(append_object_t) {
+      assert::are_equal("A test string 02:03:24", basic_string_builder<char_t> {"A test string "}.append(2_h + 3_min + 24_s).to_string(), csf_);
+    }
+    
+    void test_method_(append_value_type) {
+      assert::are_equal("A test string @", basic_string_builder<char_t> {"A test string "}.append(char_t {'@'}).to_string(), csf_);
+    }
+    
+    void test_method_(append_value_type_and_repeat_count) {
+      assert::are_equal("A test string @@@@@", basic_string_builder<char_t> {"A test string "}.append(char_t {'@'}, 5).to_string(), csf_);
+    }
+
     void test_method_(append_basic_string_builder) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string_builder<char_t> {" to test"});
@@ -432,7 +515,13 @@ namespace xtd::tests {
       s.append({' ', 't', 'o', ' ', 't', 'e', 's', 't'});
       assert::are_equal("A test string to test", s.to_string(), csf_);
     }
-    
+ 
+    void test_method_(append_format_with_args) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      s.append_format(" {} {}", "to", "test");
+      assert::are_equal("A test string to test", s.to_string(), csf_);
+    }
+
     void test_method_(at_const) {
       const auto s = basic_string_builder<char_t>("A test string");
       assert::are_equal(char_t {'A'}, s.at(0), csf_);
