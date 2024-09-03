@@ -39,6 +39,7 @@
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
+* [Text](xtd.core.examples/text/README.md) contains text examples.
 * [Threading](xtd.core.examples/threading/README.md) contains threading examples.
 * [Time span](xtd.core.examples/time_span/README.md) contains time span examples.
 * [Timers](xtd.core.examples/timers/README.md) contains timers examples.
