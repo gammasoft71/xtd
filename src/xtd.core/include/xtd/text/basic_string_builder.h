@@ -1702,15 +1702,6 @@ namespace xtd {
       /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {return insert(pos, basic_string_builder(ilist));}
       
-      /// @brief Removes the specified range of characters from this instance.
-      /// @param start_index The zero-based position in this instance where removal begins.
-      /// @param length The number of characters to remove.
-      /// @return A reference to this instance after the excise operation has completed.
-      /// @exception xtd::argument_out_of_range_exception If `start_index` + `length` is greater than the length of this instance.
-      /// @remarks The current method removes the specified range of characters from the current instance. The characters at (`start_index` + `length`) are moved to `start_index`, and the string value of the current instance is shortened by `length`. The capacity of the current instance is unaffected.
-      /// @warning The xtd::text::basic_string_builder::remove method modifies the value of the current xtd::text::basic_string_builder instance and returns that instance. It does not create and return a new xtd::text::basic_string_builder object.
-      basic_string_builder& remove(size_type start_index, size_type length) {return erase(start_index, length);}
-
       /// @brief Removes the last character from the string.
       /// @remarks Equivalent to `erase(end() - 1)`. The behavior is undefined if the string is empty.
       void pop_back() {chars_.pop_back();}
@@ -1719,6 +1710,15 @@ namespace xtd {
       /// @param ch The character to append.
       void push_back(value_type ch) {chars_.push_back(ch);}
 
+      /// @brief Removes the specified range of characters from this instance.
+      /// @param start_index The zero-based position in this instance where removal begins.
+      /// @param length The number of characters to remove.
+      /// @return A reference to this instance after the excise operation has completed.
+      /// @exception xtd::argument_out_of_range_exception If `start_index` + `length` is greater than the length of this instance.
+      /// @remarks The current method removes the specified range of characters from the current instance. The characters at (`start_index` + `length`) are moved to `start_index`, and the string value of the current instance is shortened by `length`. The capacity of the current instance is unaffected.
+      /// @warning The xtd::text::basic_string_builder::remove method modifies the value of the current xtd::text::basic_string_builder instance and returns that instance. It does not create and return a new xtd::text::basic_string_builder object.
+      basic_string_builder& remove(size_type start_index, size_type length) {return erase(start_index, length);}
+      
       /// @brief Replaces all occurrences of a specified character in this instance with another specified character.
       /// @param old_char The character to replace.
       /// @param new_char The character that replaces `old_char`.
