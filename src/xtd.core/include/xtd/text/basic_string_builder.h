@@ -464,8 +464,8 @@ namespace xtd {
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::boolean value) {return append_format("{}", value);}
-      /// @brief Appends the string representation of a specified byte value to this instance.
-      /// @param value The byte value to append.
+      /// @brief Appends the string representation of a specified 8-bit unsigned value to this instance.
+      /// @param value The 8-bit unsigned value to append.
       /// @return A reference to this instance after the append operation has completed.
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks The xtd::text::basic_string_builder::append (xtd::byte) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
@@ -541,16 +541,209 @@ namespace xtd {
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::single value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 16-bit signed integer value to this instance.
+      /// @param value The 16-bit signed value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::int16) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_s16;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::int16 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 32-bit signed integer value to this instance.
+      /// @param value The 32-bit signed value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::int32) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::int32 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 64-bit signed integer value to this instance.
+      /// @param value The 64-bit signed value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::int64) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_s64;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::int64 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 8-bit signed integer value to this instance.
+      /// @param value The 8-bit signed integer value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::sbyte) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto bytes = array<sbyte> {16, 132, 27, 253};
+      /// auto sb = xtd::text::string_builder {};
+      /// for (auto value : bytes)
+      ///   sb.append(value).append(" ");
+      /// console::write_line("The byte array: {0}", sb.to_string());
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // The byte array: 16 132 27 253
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::sbyte value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified size value to this instance.
+      /// @param value The size value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::size) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_z;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::size value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 16-bit unsigned integer value to this instance.
+      /// @param value The 16-bit unsigned value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::uint16) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_u16;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::uint16 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 32-bit unsigned integer value to this instance.
+      /// @param value The 32-bit unsigned value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::uint32) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_u32;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::uint32 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified 64-bit unsigned integer value to this instance.
+      /// @param value The 64-bit unsigned value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::uint64) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346_u64;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(xtd::uint64 value) {return append_format("{}", value);}
+      /// @brief Appends the string representation of a specified xtd::text::basic_string_builder::value_type value to this instance.
+      /// @param value The xtd::text::basic_string_builder::value_type value to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::text::basic_string_builder::value_type) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto str = "Characters in a string.";
+      /// auto sb = xtd::text::string_builder {};
+      /// for (auto ch : str)
+      ///   sb.append(" '").append(ch).append("' ");
+      ///
+      /// console::write_line("Characters in the string:");
+      /// console::write_line("  {}", sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // Characters in the string:
+      /// //   'C'  'h'  'a'  'r'  'a'  'c'  't'  'e'  'r'  's'  ' '  'i'  'n'  ' '  'a'  ' '  's'  't' 'r'  'i'  'n'  'g'  '.'
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(value_type value) {return append(1_z, value);}
-      basic_string_builder& append(value_type value, xtd::size repeat_count) {return append(repeat_count, value);}
+      /// @brief Appends a specified number of copies of the string representation of a Unicode character to this instance.
+      /// @param value The character to append.
+      /// @param repeat_count The number of times to append `value`.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (xtd::text::basic_string_builder::value_type, xtd::text::basic_string_builder::size_type) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates.
+      /// ```
+      /// auto value = 1346.19;
+      /// auto sb = xtd::text::string_builder {};
+      /// sb.append('*', 5).append(value).append('*', 5);
+      /// console::write_line(sb);
+      ///
+      /// // The example displays the following output:
+      /// //
+      /// // *****1346.19*****
+      /// ```
+      /// @remarks The capacity of this instance is adjusted as needed.
+      /// @par Notes to Callers
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      basic_string_builder& append(value_type value, size_type repeat_count) {return append(repeat_count, value);}
+      /// @brief Appends the string representation of a specified object to this instance.
+      /// @tparam object_t The type of object to append.
+      /// @param value The object to append.
+      /// @return A reference to this instance after the append operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks The xtd::text::basic_string_builder::append (object_t) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a xtd::text::basic_string_builder object, as the following example illustrates. It defines a `dog` class, creates a `dog` object, and makes three calls to the xtd::text::basic_string_builder::append method to create a string that contains the dog's name and breed.
+      /// @include string_builder_append.cpp
       template<typename object_t>
       basic_string_builder& append(object_t value) {return append_format("{}", value);}
       /// @brief Appends additional characters to the string.
