@@ -333,11 +333,26 @@ namespace xtd::tests {
       assert::are_equal(char_t {'B'}, s.front(), csf_);
     }
 
-    void test_method_(length) {
+    void test_method_(length_const) {
       assert::is_zero(basic_string_builder<char_t> {}.length(), csf_);
       assert::are_equal(13_z, basic_string_builder<char_t> {"A test string"}.length(), csf_);
     }
-    
+
+    void test_method_(length) {
+      auto s =  basic_string_builder<char_t> {"A test string"};
+      assert::are_equal(13_z, s.length(), csf_);
+      s.length(16_z);
+      assert::are_equal(16_z, s.length(), csf_);
+      assert::are_equal(char_t {'\0'}, s[13], csf_);
+      assert::are_equal(char_t {'\0'}, s[14], csf_);
+      assert::are_equal(char_t {'\0'}, s[15], csf_);
+      s.length(3_z);
+      assert::are_equal(3_z, s.length(), csf_);
+      assert::are_equal(char_t {'A'}, s[0], csf_);
+      assert::are_equal(char_t {' '}, s[1], csf_);
+      assert::are_equal(char_t {'t'}, s[2], csf_);
+    }
+
     void test_method_(max_capacity) {
       assert::are_equal(std::basic_string<char_t> {}.max_size(), basic_string_builder<char_t> {}.max_capacity(), csf_);
       assert::are_equal(1024_z, basic_string_builder<char_t> (255_z, 1024_z).max_capacity(), csf_);
@@ -511,15 +526,27 @@ namespace xtd::tests {
     }
     
     void test_method_(append_initializer_list) {
-      auto s = basic_string_builder<char_t> {"A test string"};
-      s.append({' ', 't', 'o', ' ', 't', 'e', 's', 't'});
-      assert::are_equal("A test string to test", s.to_string(), csf_);
+      assert::are_equal("A test string to test", basic_string_builder<char_t> {"A test string"}.append({' ', 't', 'o', ' ', 't', 'e', 's', 't'}).to_string(), csf_);
     }
  
     void test_method_(append_format_with_args) {
-      auto s = basic_string_builder<char_t> {"A test string"};
-      s.append_format(" {} {}", "to", "test");
-      assert::are_equal("A test string to test", s.to_string(), csf_);
+      assert::are_equal("A test string to test", basic_string_builder<char_t> {"A test string"}.append_format(" {} {}", "to", "test").to_string(), csf_);
+    }
+    
+    void test_method_(append_join_with_string_separator) {
+      assert::are_equal("A test string 0, 5, 10, 15, 20, 25", basic_string_builder<char_t> {"A test string "}.append_join(", ", {0, 5, 10, 15, 20, 25}).to_string(), csf_);
+    }
+    
+    void test_method_(append_join_with_value_type_separator) {
+      assert::are_equal("A test string 0*5*10*15*20*25", basic_string_builder<char_t> {"A test string "}.append_join(char_t {'*'}, {0, 5, 10, 15, 20, 25}).to_string(), csf_);
+    }
+    
+    void test_method_(append_line) {
+      assert::are_equal("A test string\n", basic_string_builder<char_t> {"A test string"}.append_line().to_string(), csf_);
+    }
+    
+    void test_method_(append_line_with_basic_string) {
+      assert::are_equal("A test string to test\n", basic_string_builder<char_t> {"A test string"}.append_line(" to test").to_string(), csf_);
     }
 
     void test_method_(at_const) {
@@ -548,6 +575,10 @@ namespace xtd::tests {
       assert::are_equal(char_t {'b'}, s.at(2), csf_);
       assert::throws<index_out_of_range_exception>([&]{s.at(13) = char_t {'z'};}, csf_);
       assert::are_equal("A best string", s.to_string(), csf_);
+    }
+    
+    void test_method_(clear) {
+      assert::is_empty(basic_string_builder<char_t>("A test string").clear().to_string(), csf_);
     }
     
     void test_method_(compare) {
@@ -587,6 +618,22 @@ namespace xtd::tests {
       assert::are_equal(char_t {'t'}, a[3], csf_);
       assert::throws<argument_out_of_range_exception>([&] {s.copy(a.data(), 0, 14);}, csf_);
       assert::throws<argument_out_of_range_exception>([&] {s.copy(a.data(), 4, 10);}, csf_);
+    }
+    
+    void test_method_(copy_to) {
+      auto a = array<char_t>(7);
+      auto s = basic_string_builder<char_t>("A test string");
+      s.copy_to(3, a, 2, 4);
+      assert::are_equal(char_t {}, a[0], csf_);
+      assert::are_equal(char_t {}, a[1], csf_);
+      assert::are_equal(char_t {'e'}, a[2], csf_);
+      assert::are_equal(char_t {'s'}, a[3], csf_);
+      assert::are_equal(char_t {'t'}, a[4], csf_);
+      assert::are_equal(char_t {' '}, a[5], csf_);
+      assert::are_equal(char_t {}, a[6], csf_);
+      assert::throws<argument_out_of_range_exception>([&] {s.copy_to(13, a, 2, 4);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&] {s.copy_to(3, a, 7, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&] {s.copy_to(3, a, 2, 6);}, csf_);
     }
 
     void test_method_(equals_object) {
