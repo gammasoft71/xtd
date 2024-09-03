@@ -1430,6 +1430,8 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, const xtd::basic_string<char_t>& value) {return insert(index, basic_string_builder {value}, 0, value.length());}
       /// @brief Inserts one or more copies of a specified string into this instance at the specified character position.
       /// @param index The position in this instance where insertion begins.
@@ -1439,22 +1441,170 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, const xtd::basic_string<char_t>& value, size_type count) {return insert(index, basic_string_builder {value}, 0, count);}
+      /// @brief Inserts the string representation of a boolean value into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::boolean value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 8-bit unsigned integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::byte value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 8decimal into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::decimal value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified double into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, double value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified single into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::single value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 16-bit signed integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::int16 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 32-bit signed integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::int32 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 64-bit signed integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::int64 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 8-bit signed integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::sbyte value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified size into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::size value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 16-bit unsigned integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::uint16 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 32-bit unsigned integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::uint32 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified 64-bit unsigned integer into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, xtd::uint64 value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
+      /// @brief Inserts the string representation of a specified Unicode character into this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, value_type value) {return insert(index, 1, value);}
+      /// @brief Inserts a specified number of copies of the string representation of a Unicode character to this instance at the specified character position.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The character to insert.
+      /// @param repeat_count The number of times to append value.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       basic_string_builder& insert(size_type index, value_type value, size_type repeat_count) {return insert(index, repeat_count, value);}
+      /// @brief Inserts the string representation of a specified object into this instance at the specified character position.
+      /// @tparam object_t The type of object to insert.
+      /// @param index The position in this instance where insertion begins.
+      /// @param value The value to insert.
+      /// @return A reference to this instance after the insert operation has completed.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
+      /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
+      /// @par Notes to Callers
+      /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
       template<typename object_t>
       basic_string_builder& insert(size_type index, object_t value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
       /// @brief Inserts characters into the string.
@@ -1552,6 +1702,15 @@ namespace xtd {
       /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {return insert(pos, basic_string_builder(ilist));}
       
+      /// @brief Removes the specified range of characters from this instance.
+      /// @param start_index The zero-based position in this instance where removal begins.
+      /// @param length The number of characters to remove.
+      /// @return A reference to this instance after the excise operation has completed.
+      /// @exception xtd::argument_out_of_range_exception If `start_index` + `length` is greater than the length of this instance.
+      /// @remarks The current method removes the specified range of characters from the current instance. The characters at (`start_index` + `length`) are moved to `start_index`, and the string value of the current instance is shortened by `length`. The capacity of the current instance is unaffected.
+      /// @warning The xtd::text::basic_string_builder::remove method modifies the value of the current xtd::text::basic_string_builder instance and returns that instance. It does not create and return a new xtd::text::basic_string_builder object.
+      basic_string_builder& remove(size_type start_index, size_type length) {return erase(start_index, length);}
+
       /// @brief Removes the last character from the string.
       /// @remarks Equivalent to `erase(end() - 1)`. The behavior is undefined if the string is empty.
       void pop_back() {chars_.pop_back();}
@@ -1560,6 +1719,41 @@ namespace xtd {
       /// @param ch The character to append.
       void push_back(value_type ch) {chars_.push_back(ch);}
 
+      /// @brief Replaces all occurrences of a specified character in this instance with another specified character.
+      /// @param old_char The character to replace.
+      /// @param new_char The character that replaces `old_char`.
+      /// @return A reference to this instance with `old_char` replaced by `new_char`.
+      /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_char` in the current instance. The size of the current xtd::text::basic_string_builder instance is unchanged after the replacement.
+      basic_string_builder& replace(value_type old_char, value_type new_char) noexcept {return replace(old_char, new_char, 0, length());}
+      /// @brief Replaces, within a substring of this instance, all occurrences of a specified character with another specified character.
+      /// @param old_char The character to replace.
+      /// @param new_char The character that replaces `old_char`.
+      /// @param start_index The position in this instance where the substring begins.
+      /// @param count The length of the substring.
+      /// @return A reference to this instance with `old_char` replaced by `new_char` in the range from `start_ index` to `start_index` + `count` - 1.
+      /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_char` in the current instance. The size of the current xtd::text::basic_string_builder object is unchanged after the replacement.
+      basic_string_builder& replace(value_type old_char, value_type new_char, size_type start_index, size_type count) {return replace(xtd::basic_string<char_t>(1, old_char), xtd::basic_string<char_t>(1, new_char), start_index, count);}
+      basic_string_builder& replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value) noexcept {return replace(old_value, new_value, 0, length());}
+      basic_string_builder& replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value, size_type start_index, size_type count) {
+        if (start_index > length() || start_index + count > length()) throw argument_out_of_range_exception {csf_};
+        auto old_size = old_value.size();
+        auto new_size = new_value.size();
+        auto index = xtd::size {0};
+        while (true) {
+          index = find(old_value, index);
+          if (index == npos || index > start_index + count) break;
+          if (index >= start_index) {
+            if (old_size == new_size) chars_.replace(index, old_size, new_value);
+            else {
+              chars_.erase(index, old_value.size());
+              chars_.insert(index, new_value);
+            }
+          }
+          index += new_value.size();
+        }
+        return *this;
+      }
+      
       /// @brief Replaces the characters in the range [`begin() + pos`, `begin() + std::min(pos + count, size())`) or [`first`, `last`) with given characters.
       /// @param pos The start of the substring that is going to be replaced.
       /// @param count The length of the substring that is going to be replaced.
