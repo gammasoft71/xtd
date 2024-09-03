@@ -1733,7 +1733,21 @@ namespace xtd {
       /// @return A reference to this instance with `old_char` replaced by `new_char` in the range from `start_ index` to `start_index` + `count` - 1.
       /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_char` in the current instance. The size of the current xtd::text::basic_string_builder object is unchanged after the replacement.
       basic_string_builder& replace(value_type old_char, value_type new_char, size_type start_index, size_type count) {return replace(xtd::basic_string<char_t>(1, old_char), xtd::basic_string<char_t>(1, new_char), start_index, count);}
+      /// @brief Replaces all occurrences of a specified string in this instance with another specified string.
+      /// @param old_value The string to replace.
+      /// @param new_value The string that replaces 'old_value`.
+      /// @return A reference to this instance with all instances of `old_value` replaced by `new_value`.
+      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_value` in the current instance. If `new_value` is xtd::basic_string::empty_string, all occurrences of `old_value` are removed.
       basic_string_builder& replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value) noexcept {return replace(old_value, new_value, 0, length());}
+      /// @brief Replaces, within a substring of this instance, all occurrences of a specified string with another specified string.
+      /// @param old_value The string to replace.
+      /// @param new_value The string that replaces 'old_value`.
+      /// @param start_index The position in this instance where the substring begins.
+      /// @param count The length of the substring.
+      /// @return A reference to this instance with all instances of `old_value` replaced by `new_value` in the range from `start_index` to `start_index` + `count` - 1.
+      /// @exception xtd::argument_out_of_range_exception `start_index` plus `count` indicates a character position not within this instance.<br>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_value` in the substring of this current instance. If `new_value` is xtd::basic_string::empty_string, all occurrences of `old_value` are removed.
       basic_string_builder& replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value, size_type start_index, size_type count) {
         if (start_index > length() || start_index + count > length()) throw argument_out_of_range_exception {csf_};
         auto old_size = old_value.size();
@@ -1743,10 +1757,10 @@ namespace xtd {
           index = find(old_value, index);
           if (index == npos || index > start_index + count) break;
           if (index >= start_index) {
-            if (old_size == new_size) chars_.replace(index, old_size, new_value);
+            if (old_size == new_size) replace(index, old_size, new_value);
             else {
-              chars_.erase(index, old_value.size());
-              chars_.insert(index, new_value);
+              erase(index, old_value.size());
+              insert(index, new_value);
             }
           }
           index += new_value.size();
