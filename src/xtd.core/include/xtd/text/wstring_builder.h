@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief Contains classes that represent ASCII and Unicode character encodings; abstract base classes for converting blocks of characters to and from blocks of bytes; and a helper class that manipulates and formats xtd::string objects without creating intermediate instances of xtd::string.
   namespace text {
-    /// @brief Represents text as a sequence of UTF-32 code units.
+    /// @brief Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows systems.
     /// @par Namespace
     /// xtd
     /// @par Library
