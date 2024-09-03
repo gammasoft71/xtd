@@ -20,7 +20,7 @@ var classxtd_1_1forms_1_1list__box =
     [ "selection_mode", "classxtd_1_1forms_1_1list__box_ad37da97cbec597bb6e3cfb99e2f37615.html#ad37da97cbec597bb6e3cfb99e2f37615", null ],
     [ "sorted", "classxtd_1_1forms_1_1list__box_ab477af04d547444d53950d9dd9512886.html#ab477af04d547444d53950d9dd9512886", null ],
     [ "sorted", "classxtd_1_1forms_1_1list__box_aeb2118dec4b9bfb4315ddddef792c867.html#aeb2118dec4b9bfb4315ddddef792c867", null ],
-    [ "text", "classxtd_1_1forms_1_1list__box_a21fb8148792fbfa1eb04e4ba5da6d1a2.html#a21fb8148792fbfa1eb04e4ba5da6d1a2", null ],
+    [ "text", "classxtd_1_1forms_1_1list__box_ad9c4db05b82dd1a025725c2d905dc428.html#ad9c4db05b82dd1a025725c2d905dc428", null ],
     [ "begin_update", "classxtd_1_1forms_1_1list__box_a82af205ef8c691c7d0dcc547bd308178.html#a82af205ef8c691c7d0dcc547bd308178", null ],
     [ "end_update", "classxtd_1_1forms_1_1list__box_ae1378d3b234f02322bf8d8c6e441f865.html#ae1378d3b234f02322bf8d8c6e441f865", null ],
     [ "allow_selection", "classxtd_1_1forms_1_1list__box_a881f34717a34f6822434524664e47ce6.html#a881f34717a34f6822434524664e47ce6", null ],

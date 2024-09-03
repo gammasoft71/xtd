@@ -14,6 +14,5 @@ var searchData=
   ['uri_5ftemplate_5fmatch_5fexception_11',['uri_template_match_exception',['../classxtd_1_1uri__template__match__exception.html',1,'xtd']]],
   ['use_5fwait_5fcursor_12',['use_wait_cursor',['../classxtd_1_1forms_1_1use__wait__cursor.html',1,'xtd::forms']]],
   ['user_5fcontrol_13',['user_control',['../classxtd_1_1forms_1_1native_1_1user__control.html',1,'xtd::forms::native::user_control'],['../classxtd_1_1forms_1_1user__control.html',1,'xtd::forms::user_control']]],
-  ['user_5fcontrol_5frenderer_14',['user_control_renderer',['../classxtd_1_1forms_1_1user__control__renderer.html',1,'xtd::forms']]],
-  ['ustring_15',['ustring',['../classxtd_1_1ustring.html',1,'xtd']]]
+  ['user_5fcontrol_5frenderer_14',['user_control_renderer',['../classxtd_1_1forms_1_1user__control__renderer.html',1,'xtd::forms']]]
 ];

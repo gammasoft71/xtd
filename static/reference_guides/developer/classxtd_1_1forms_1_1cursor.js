@@ -8,6 +8,6 @@ var classxtd_1_1forms_1_1cursor =
     [ "tag", "classxtd_1_1forms_1_1cursor_a6c88b50432be3a65650417fd568ca29c.html#a6c88b50432be3a65650417fd568ca29c", null ],
     [ "tag", "classxtd_1_1forms_1_1cursor_aefc67192b05c5a3030dde8fdb0f8770b.html#aefc67192b05c5a3030dde8fdb0f8770b", null ],
     [ "copy_handle", "classxtd_1_1forms_1_1cursor_a9dd42ec26af4fc3f14d563f48498584a.html#a9dd42ec26af4fc3f14d563f48498584a", null ],
-    [ "to_string", "classxtd_1_1forms_1_1cursor_a575e65e7b5affacbe78f4f266ad852a7.html#a575e65e7b5affacbe78f4f266ad852a7", null ],
+    [ "to_string", "classxtd_1_1forms_1_1cursor_aaf1bd6ec288183ec223c7d8154e9d6a1.html#aaf1bd6ec288183ec223c7d8154e9d6a1", null ],
     [ "equals", "classxtd_1_1forms_1_1cursor_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

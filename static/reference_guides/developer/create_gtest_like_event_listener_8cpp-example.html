@@ -104,9 +104,7 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="contents">
 <p>Shows how to create your own <a class="el" href="classxtd_1_1tunit_1_1event__listener.html" title="Represent the event listener class. Unit test call theses events when unit tests are processing.">xtd::tunit::event_listener</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
@@ -115,7 +113,7 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> on_unit_test_start(<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_unit_test_start(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[==========] Running &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case.&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[==========] Running &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case.&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args&amp; e) const override {</span></div>
@@ -124,12 +122,12 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_unit_test_initialize_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_unit_test_initialize_end(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment set-up.&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment set-up.&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_class_start(<span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_class_start(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_class_initialize_start(const xtd::tunit::class_event_args&amp; e) const override {</span></div>
@@ -150,12 +148,12 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_test_start(<span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_test_start(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[ RUN      ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[ RUN      ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_test_succeed(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_test_succeed(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[       OK ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_microseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[       OK ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_microseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_test_aborted(const xtd::tunit::test_event_args&amp; e) const override {</span></div>
@@ -164,11 +162,11 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_test_failed(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_test_failed(e);</div>
-<div class="line">    cout &lt;&lt; e.test().stack_frame().get_file_name() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.test().stack_frame().get_file_line_number() &lt;&lt; <span class="stringliteral">&quot;: Failure&quot;</span> &lt;&lt; endl;</div>
-<div class="line">    <span class="keywordflow">if</span> (e.test().actual() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; <span class="stringliteral">&quot;  Actual: &quot;</span> &lt;&lt; e.test().actual() &lt;&lt; endl;</div>
-<div class="line">    <span class="keywordflow">if</span> (e.test().expect() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; <span class="stringliteral">&quot;Expected: &quot;</span> &lt;&lt; e.test().expect() &lt;&lt; endl;</div>
-<div class="line">    <span class="keywordflow">if</span> (e.test().message() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; e.test().message() &lt;&lt; endl;</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; e.test().stack_frame().get_file_name() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.test().stack_frame().get_file_line_number() &lt;&lt; <span class="stringliteral">&quot;: Failure&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">    <span class="keywordflow">if</span> (e.test().actual() != <span class="stringliteral">&quot;&quot;</span>) console::out &lt;&lt; <span class="stringliteral">&quot;  Actual: &quot;</span> &lt;&lt; e.test().actual() &lt;&lt; environment::new_line;</div>
+<div class="line">    <span class="keywordflow">if</span> (e.test().expect() != <span class="stringliteral">&quot;&quot;</span>) console::out &lt;&lt; <span class="stringliteral">&quot;Expected: &quot;</span> &lt;&lt; e.test().expect() &lt;&lt; environment::new_line;</div>
+<div class="line">    <span class="keywordflow">if</span> (e.test().message() != <span class="stringliteral">&quot;&quot;</span>) console::out &lt;&lt; e.test().message() &lt;&lt; environment::new_line;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_test_ignored(const xtd::tunit::test_event_args&amp; e) const override {</span></div>
@@ -197,7 +195,7 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_class_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_class_end(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test_class().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test_class().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args&amp; e) const override {</span></div>
@@ -206,22 +204,22 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_unit_test_cleanup_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_unit_test_cleanup_end(e);</div>
-<div class="line">    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment tear-down&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; environment::new_line &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment tear-down&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_unit_test_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_unit_test_end(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[==========] &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case ran. (&quot;</span> &lt;&lt; as&lt;int&gt;(e.unit_test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms total)&quot;</span> &lt;&lt; endl;</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[  PASSED  ] &quot;</span> &lt;&lt; e.unit_test().succeed_test_count() &lt;&lt; <span class="stringliteral">&quot; tests.&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[==========] &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case ran. (&quot;</span> &lt;&lt; as&lt;int&gt;(e.unit_test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms total)&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[  PASSED  ] &quot;</span> &lt;&lt; e.unit_test().succeed_test_count() &lt;&lt; <span class="stringliteral">&quot; tests.&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">    <span class="keywordflow">if</span> (e.unit_test().failed_test_count()) {</div>
-<div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.unit_test().failed_test_count() &lt;&lt; <span class="stringliteral">&quot; test, listed below:&quot;</span> &lt;&lt; endl;</div>
+<div class="line">      console::out &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.unit_test().failed_test_count() &lt;&lt; <span class="stringliteral">&quot; test, listed below:&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">string</span> name : e.unit_test().failed_test_names())</div>
-<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; name &lt;&lt; endl;</div>
-<div class="line">      cout &lt;&lt; endl;</div>
-<div class="line">      cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; e.unit_test().failed_test_count() &lt;&lt; <span class="stringliteral">&quot; FAILED TEST&quot;</span> &lt;&lt; endl;</div>
+<div class="line">        console::out &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; name &lt;&lt; environment::new_line;</div>
+<div class="line">      console::out &lt;&lt; environment::new_line;</div>
+<div class="line">      console::out &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; e.unit_test().failed_test_count() &lt;&lt; <span class="stringliteral">&quot; FAILED TEST&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span> (!e.unit_test().failed_test_count() &amp;&amp; e.unit_test().ignored_test_count()) cout &lt;&lt; endl;</div>
-<div class="line">    <span class="keywordflow">if</span> (e.unit_test().ignored_test_count()) cout &lt;&lt; <span class="stringliteral">&quot;  YOU HAVE &quot;</span> &lt;&lt; e.unit_test().ignored_test_count() &lt;&lt; <span class="stringliteral">&quot; DISABLED TESTS&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (!e.unit_test().failed_test_count() &amp;&amp; e.unit_test().ignored_test_count()) console::out &lt;&lt; environment::new_line;</div>
+<div class="line">    <span class="keywordflow">if</span> (e.unit_test().ignored_test_count()) console::out &lt;&lt; <span class="stringliteral">&quot;  YOU HAVE &quot;</span> &lt;&lt; e.unit_test().ignored_test_count() &lt;&lt; <span class="stringliteral">&quot; DISABLED TESTS&quot;</span> &lt;&lt; environment::new_line &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -254,7 +252,7 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <div class="line">  <span class="comment">// return unit_test(std::new_uptr&lt;gtest_event_listener&gt;()).run();</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// [==========] Running 3 tests from 1 test case.</span></div>
 <div class="line"><span class="comment">// [----------] Global test environment set-up.</span></div>
@@ -294,7 +292,7 @@ $(document).ready(function(){initNavTree('create_gtest_like_event_listener_8cpp-
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

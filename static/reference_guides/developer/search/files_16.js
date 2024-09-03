@@ -12,5 +12,7 @@ var searchData=
   ['window_5fdefinitions_2eh_9',['window_definitions.h',['../window__definitions_8h.html',1,'']]],
   ['window_5fmessages_2eh_10',['window_messages.h',['../window__messages_8h.html',1,'']]],
   ['window_5fstyles_2eh_11',['window_styles.h',['../window__styles_8h.html',1,'']]],
-  ['wptr_2eh_12',['wptr.h',['../wptr_8h.html',1,'']]]
+  ['wptr_2eh_12',['wptr.h',['../wptr_8h.html',1,'']]],
+  ['wstring_2eh_13',['wstring.h',['../wstring_8h.html',1,'']]],
+  ['wstring_5fbuilder_2eh_14',['wstring_builder.h',['../wstring__builder_8h.html',1,'']]]
 ];

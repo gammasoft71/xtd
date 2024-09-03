@@ -2,7 +2,7 @@ var group__style__sheets =
 [
     [ "xtd::forms::style_sheets::background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image.html", [
       [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_aaa7db2874e070a5c69f6fc7adf158f52.html#aaa7db2874e070a5c69f6fc7adf158f52", null ],
-      [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a9527ab004ee61f25f385de39680acf8c.html#a9527ab004ee61f25f385de39680acf8c", null ],
+      [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a5f72978e2ccb771bb47ab68d419e3ea8.html#a5f72978e2ccb771bb47ab68d419e3ea8", null ],
       [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_ab000e9737b4b175c18027d80f5d83338.html#ab000e9737b4b175c18027d80f5d83338", null ],
       [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a6758e0ff2649c7cc80ad0b743d253131.html#a6758e0ff2649c7cc80ad0b743d253131", null ],
       [ "background_image", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a9ab9d3cb101fb752038001c88154f2f9.html#a9ab9d3cb101fb752038001c88154f2f9", null ],
@@ -15,7 +15,7 @@ var group__style__sheets =
       [ "url", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a9c3b18689d9b840a9fb223f2c942ad40.html#a9c3b18689d9b840a9fb223f2c942ad40", null ],
       [ "image_type", "classxtd_1_1forms_1_1style__sheets_1_1background__image_ae2d41e6148a19941440cc4bfd70f0649.html#ae2d41e6148a19941440cc4bfd70f0649", null ],
       [ "image_type", "classxtd_1_1forms_1_1style__sheets_1_1background__image_aba1c5219e11c5f0e0efd56163f8ef8c8.html#aba1c5219e11c5f0e0efd56163f8ef8c8", null ],
-      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1background__image_adde8ac16c30cbca66ef455c6c77ee94b.html#adde8ac16c30cbca66ef455c6c77ee94b", null ],
+      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1background__image_acac14f71119c5b0a9b787746b38a7f47.html#acac14f71119c5b0a9b787746b38a7f47", null ],
       [ "equals", "classxtd_1_1forms_1_1style__sheets_1_1background__image_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::forms::style_sheets::border_color", "classxtd_1_1forms_1_1style__sheets_1_1border__color.html", [
@@ -168,7 +168,7 @@ var group__style__sheets =
       [ "unit", "classxtd_1_1forms_1_1style__sheets_1_1length_a538a10305b0b26bda7348d6445e1dd84.html#a538a10305b0b26bda7348d6445e1dd84", null ],
       [ "unit", "classxtd_1_1forms_1_1style__sheets_1_1length_a446a8b494bdb9aa8a8b1a065c2d7cc03.html#a446a8b494bdb9aa8a8b1a065c2d7cc03", null ],
       [ "get_pixels", "classxtd_1_1forms_1_1style__sheets_1_1length_aa0d72976c7a1c55a299659e2c6ba4262.html#aa0d72976c7a1c55a299659e2c6ba4262", null ],
-      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1length_a076884519420af2445eb58cc00d29f26.html#a076884519420af2445eb58cc00d29f26", null ],
+      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1length_af0beb1ad722c6495faadb8934ae92766.html#af0beb1ad722c6495faadb8934ae92766", null ],
       [ "equals", "classxtd_1_1forms_1_1style__sheets_1_1length_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::forms::style_sheets::lengths", "classxtd_1_1forms_1_1style__sheets_1_1lengths.html", [
@@ -185,7 +185,7 @@ var group__style__sheets =
       [ "right", "classxtd_1_1forms_1_1style__sheets_1_1lengths_a58560a5fc98243be9cd3d9df6cdf0ce3.html#a58560a5fc98243be9cd3d9df6cdf0ce3", null ],
       [ "top", "classxtd_1_1forms_1_1style__sheets_1_1lengths_aa06a9d716fc3db631cad8debf3689b50.html#aa06a9d716fc3db631cad8debf3689b50", null ],
       [ "top", "classxtd_1_1forms_1_1style__sheets_1_1lengths_a878a80a5e5a0f0d84ef9ec1ddd3179e7.html#a878a80a5e5a0f0d84ef9ec1ddd3179e7", null ],
-      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1lengths_ab98d200dc77e0233e258e54fdffe3758.html#ab98d200dc77e0233e258e54fdffe3758", null ],
+      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1lengths_adaee0ebee467ee4fdf8b506d798cd157.html#adaee0ebee467ee4fdf8b506d798cd157", null ],
       [ "equals", "classxtd_1_1forms_1_1style__sheets_1_1lengths_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::forms::style_sheets::shadow", "classxtd_1_1forms_1_1style__sheets_1_1shadow.html", [
@@ -206,8 +206,8 @@ var group__style__sheets =
       [ "labels_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a9fad2fb991b71077b5613cba2f7d18e6.html#a9fad2fb991b71077b5613cba2f7d18e6", null ],
       [ "link_labels_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a85e8986defa85032d79151580f46504d.html#a85e8986defa85032d79151580f46504d", null ],
       [ "panels_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_ae1ddf69a5f561082156ab04d7615d3e1.html#ae1ddf69a5f561082156ab04d7615d3e1", null ],
-      [ "style_sheets_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a6c7a8798ae139cac7d9af36ebd8112c2.html#a6c7a8798ae139cac7d9af36ebd8112c2", null ],
-      [ "style_sheet_names_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_acadafd1055e3ef4899aeb46114e5a111.html#acadafd1055e3ef4899aeb46114e5a111", null ],
+      [ "style_sheets_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a3d3851260e8765a01259b71955844ad9.html#a3d3851260e8765a01259b71955844ad9", null ],
+      [ "style_sheet_names_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a8af218bb682059ce675cee83c5307e7d.html#a8af218bb682059ce675cee83c5307e7d", null ],
       [ "status_bars_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a30a2bcbca9692f51700cb095c70415ed.html#a30a2bcbca9692f51700cb095c70415ed", null ],
       [ "status_bar_panels_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a01a5f044f881a67722847693b4678a70.html#a01a5f044f881a67722847693b4678a70", null ],
       [ "toggle_buttons_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a230911379abcd8e49b354844609258b2.html#a230911379abcd8e49b354844609258b2", null ],
@@ -215,7 +215,7 @@ var group__style__sheets =
       [ "tool_bar_buttons_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a06daf163499e05bec6e2841f5739f7dd.html#a06daf163499e05bec6e2841f5739f7dd", null ],
       [ "user_controls_t", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a93ca4fcf2e6cddd91b4a094b79c908ed.html#a93ca4fcf2e6cddd91b4a094b79c908ed", null ],
       [ "style_sheet", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a4ba9e2d3163b58503683271ef093d92f.html#a4ba9e2d3163b58503683271ef093d92f", null ],
-      [ "style_sheet", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_ae93a8d26e71c4aec0d71fe10ace16f46.html#ae93a8d26e71c4aec0d71fe10ace16f46", null ],
+      [ "style_sheet", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a03d3575d7cb3ed9861da8139f2bb68ce.html#a03d3575d7cb3ed9861da8139f2bb68ce", null ],
       [ "button", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a5fa717cb54e990a1b6bfdbb5fd9c0ab7.html#a5fa717cb54e990a1b6bfdbb5fd9c0ab7", null ],
       [ "button", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a0e92263006cd5ec2233ded4e3c4546ce.html#a0e92263006cd5ec2233ded4e3c4546ce", null ],
       [ "buttons", "classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a5a3a72bc044e4cd4e48748183fdf2eca.html#a5a3a72bc044e4cd4e48748183fdf2eca", null ],
@@ -357,20 +357,20 @@ var group__style__sheets =
     ] ],
     [ "xtd::forms::style_sheets::theme", "classxtd_1_1forms_1_1style__sheets_1_1theme.html", [
       [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_afac32f028dcf3800afa3311afc8c66ba.html#afac32f028dcf3800afa3311afc8c66ba", null ],
-      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_a0e011f9d7572716840941a78ff0993fc.html#a0e011f9d7572716840941a78ff0993fc", null ],
-      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_afd67cae9d197c6869fadbd45971d4def.html#afd67cae9d197c6869fadbd45971d4def", null ],
-      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_ae28c59ba7832acadc3607ca06d2c2950.html#ae28c59ba7832acadc3607ca06d2c2950", null ],
-      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_a256756d219dd4c6a36202ba6a022fb7a.html#a256756d219dd4c6a36202ba6a022fb7a", null ],
-      [ "authors", "classxtd_1_1forms_1_1style__sheets_1_1theme_ae7cb708568a6fb3dcd38511a2b79f968.html#ae7cb708568a6fb3dcd38511a2b79f968", null ],
-      [ "authors", "classxtd_1_1forms_1_1style__sheets_1_1theme_a8dd1a2a1e9e39483eeef50607ee74388.html#a8dd1a2a1e9e39483eeef50607ee74388", null ],
-      [ "description", "classxtd_1_1forms_1_1style__sheets_1_1theme_a4ddeded8b351678a140067bbc5c4271f.html#a4ddeded8b351678a140067bbc5c4271f", null ],
-      [ "description", "classxtd_1_1forms_1_1style__sheets_1_1theme_a50736bd19852fe0629c60d4587452568.html#a50736bd19852fe0629c60d4587452568", null ],
-      [ "name", "classxtd_1_1forms_1_1style__sheets_1_1theme_aad2e14e80f96cbd259c2be200881f030.html#aad2e14e80f96cbd259c2be200881f030", null ],
-      [ "name", "classxtd_1_1forms_1_1style__sheets_1_1theme_af00ee2c8f8303846c7a10c5e24944ff3.html#af00ee2c8f8303846c7a10c5e24944ff3", null ],
+      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_aef872904d69909d0470c90f50a5b2353.html#aef872904d69909d0470c90f50a5b2353", null ],
+      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_a5355526459aae853dad054e4a71253b3.html#a5355526459aae853dad054e4a71253b3", null ],
+      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_a32926dc613c82725951838ff54f7d3b6.html#a32926dc613c82725951838ff54f7d3b6", null ],
+      [ "theme", "classxtd_1_1forms_1_1style__sheets_1_1theme_a5586d59ed2df5831947a26bd142ae24e.html#a5586d59ed2df5831947a26bd142ae24e", null ],
+      [ "authors", "classxtd_1_1forms_1_1style__sheets_1_1theme_affadb086cad8141a4ab496749aafdb14.html#affadb086cad8141a4ab496749aafdb14", null ],
+      [ "authors", "classxtd_1_1forms_1_1style__sheets_1_1theme_ad54d30aa271c3fa99665d8e82f8c7cb9.html#ad54d30aa271c3fa99665d8e82f8c7cb9", null ],
+      [ "description", "classxtd_1_1forms_1_1style__sheets_1_1theme_a7169cfba11f240c42bf526e53d0ba4fd.html#a7169cfba11f240c42bf526e53d0ba4fd", null ],
+      [ "description", "classxtd_1_1forms_1_1style__sheets_1_1theme_a105900039c3519f3f6d1316ae5d6b73e.html#a105900039c3519f3f6d1316ae5d6b73e", null ],
+      [ "name", "classxtd_1_1forms_1_1style__sheets_1_1theme_a61b3e6f19e69aeda9d8d3f92f981b275.html#a61b3e6f19e69aeda9d8d3f92f981b275", null ],
+      [ "name", "classxtd_1_1forms_1_1style__sheets_1_1theme_a2ded0a4efe7ebc647245ba0b820ba74a.html#a2ded0a4efe7ebc647245ba0b820ba74a", null ],
       [ "website", "classxtd_1_1forms_1_1style__sheets_1_1theme_a1d6cddf2a761f020dcc9ae6162f946a2.html#a1d6cddf2a761f020dcc9ae6162f946a2", null ],
       [ "website", "classxtd_1_1forms_1_1style__sheets_1_1theme_adadef74cc73ebbc1f791e1ce5a11f4f5.html#adadef74cc73ebbc1f791e1ce5a11f4f5", null ],
-      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1theme_a80ffc01cdbf730bb64c616ada4cd26db.html#a80ffc01cdbf730bb64c616ada4cd26db", null ],
-      [ "to_css", "classxtd_1_1forms_1_1style__sheets_1_1theme_a3e1b33d6d62d68c0a54e7a223d0440e3.html#a3e1b33d6d62d68c0a54e7a223d0440e3", null ],
+      [ "to_string", "classxtd_1_1forms_1_1style__sheets_1_1theme_ad8fd5dfe06b31440e5c7f4083bfededf.html#ad8fd5dfe06b31440e5c7f4083bfededf", null ],
+      [ "to_css", "classxtd_1_1forms_1_1style__sheets_1_1theme_ab9bddf0d487c67a361dd3c776fbf44bd.html#ab9bddf0d487c67a361dd3c776fbf44bd", null ],
       [ "equals", "classxtd_1_1forms_1_1style__sheets_1_1theme_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::forms::style_sheets::border_width", "group__style__sheets_gabaac5179e059b488f618f7af1189d3da.html#gabaac5179e059b488f618f7af1189d3da", null ],

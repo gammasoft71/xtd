@@ -9,8 +9,8 @@ var group__events =
     ] ],
     [ "xtd::diagnostics::data_received_event_args", "classxtd_1_1diagnostics_1_1data__received__event__args.html", [
       [ "data_received_event_args", "classxtd_1_1diagnostics_1_1data__received__event__args_a31be3dc923dc45a50a34de05c150bff2.html#a31be3dc923dc45a50a34de05c150bff2", null ],
-      [ "data_received_event_args", "classxtd_1_1diagnostics_1_1data__received__event__args_a579d272cef4abe0bd68054946dc37759.html#a579d272cef4abe0bd68054946dc37759", null ],
-      [ "data", "classxtd_1_1diagnostics_1_1data__received__event__args_ae729ce888160cded2107fe6758f38591.html#ae729ce888160cded2107fe6758f38591", null ]
+      [ "data_received_event_args", "classxtd_1_1diagnostics_1_1data__received__event__args_aea7204e176864c3d9f2492d78a7916dc.html#aea7204e176864c3d9f2492d78a7916dc", null ],
+      [ "data", "classxtd_1_1diagnostics_1_1data__received__event__args_a7c111f3e965216a9912191aeb64421ab.html#a7c111f3e965216a9912191aeb64421ab", null ]
     ] ],
     [ "xtd::diagnostics::process::error_data_received_event", "classxtd_1_1diagnostics_1_1process_1_1error__data__received__event.html", [
       [ "is_empty", "classxtd_1_1diagnostics_1_1process_1_1error__data__received__event_a30de144e524fd2a5e1105acd89a73498.html#a30de144e524fd2a5e1105acd89a73498", null ],
@@ -108,8 +108,8 @@ var group__events =
     ] ],
     [ "xtd::forms::find_event_args", "classxtd_1_1forms_1_1find__event__args.html", [
       [ "find_event_args", "classxtd_1_1forms_1_1find__event__args_a5f40fd97721cdee472947634f4357d56.html#a5f40fd97721cdee472947634f4357d56", null ],
-      [ "find_event_args", "classxtd_1_1forms_1_1find__event__args_acfe74f398503494e348ef15ac1f0fdf5.html#acfe74f398503494e348ef15ac1f0fdf5", null ],
-      [ "find_string", "classxtd_1_1forms_1_1find__event__args_afafd6198d4a063eb65b157c3e8e0c38a.html#afafd6198d4a063eb65b157c3e8e0c38a", null ],
+      [ "find_event_args", "classxtd_1_1forms_1_1find__event__args_a84bc6ba22f79c47e74c6780ae66c056c.html#a84bc6ba22f79c47e74c6780ae66c056c", null ],
+      [ "find_string", "classxtd_1_1forms_1_1find__event__args_a15bcf0ea166a17d4c372447601298123.html#a15bcf0ea166a17d4c372447601298123", null ],
       [ "match_case", "classxtd_1_1forms_1_1find__event__args_a06cafb30c36ebdef1736d16a23c8cf12.html#a06cafb30c36ebdef1736d16a23c8cf12", null ],
       [ "search_direction", "classxtd_1_1forms_1_1find__event__args_aaa9740ffdaf617dac975faef3f4e64ab.html#aaa9740ffdaf617dac975faef3f4e64ab", null ],
       [ "whole_word", "classxtd_1_1forms_1_1find__event__args_aa0768286ade62007b916925386024769.html#aa0768286ade62007b916925386024769", null ]
@@ -198,9 +198,9 @@ var group__events =
     ] ],
     [ "xtd::forms::replace_event_args", "classxtd_1_1forms_1_1replace__event__args.html", [
       [ "replace_event_args", "classxtd_1_1forms_1_1replace__event__args_ab488255417c34c96036fefb857cf237a.html#ab488255417c34c96036fefb857cf237a", null ],
-      [ "replace_event_args", "classxtd_1_1forms_1_1replace__event__args_ac69465cb4e0a64f3fe3af98f5132ccd0.html#ac69465cb4e0a64f3fe3af98f5132ccd0", null ],
-      [ "find_string", "classxtd_1_1forms_1_1replace__event__args_adfa6d63a290d255442bd76205658657c.html#adfa6d63a290d255442bd76205658657c", null ],
-      [ "replace_string", "classxtd_1_1forms_1_1replace__event__args_acdf179fa0fb1fb3717c50d7033386fa0.html#acdf179fa0fb1fb3717c50d7033386fa0", null ],
+      [ "replace_event_args", "classxtd_1_1forms_1_1replace__event__args_a5e8893d6f7f193233ac8857ba1de6aa3.html#a5e8893d6f7f193233ac8857ba1de6aa3", null ],
+      [ "find_string", "classxtd_1_1forms_1_1replace__event__args_a15d3f2f9f01a30891585aa314fae76f0.html#a15d3f2f9f01a30891585aa314fae76f0", null ],
+      [ "replace_string", "classxtd_1_1forms_1_1replace__event__args_ad1fe5b5d914c72ef47226b1749828785.html#ad1fe5b5d914c72ef47226b1749828785", null ],
       [ "match_case", "classxtd_1_1forms_1_1replace__event__args_a73762eb79f189eebae5165d45e3127bd.html#a73762eb79f189eebae5165d45e3127bd", null ],
       [ "whole_word", "classxtd_1_1forms_1_1replace__event__args_a5d1d3cc5bbb5649ed4485618416e435b.html#a5d1d3cc5bbb5649ed4485618416e435b", null ]
     ] ],

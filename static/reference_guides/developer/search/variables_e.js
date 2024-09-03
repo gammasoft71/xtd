@@ -62,7 +62,7 @@ var searchData=
   ['orange_5fheart_59',['orange_heart',['../classxtd_1_1forms_1_1emoticons_a6048c2f92f2c317cf042e4e50ac0550b.html#a6048c2f92f2c317cf042e4e50ac0550b',1,'xtd::forms::emoticons']]],
   ['orange_5fred_60',['orange_red',['../classxtd_1_1drawing_1_1color_a19f05708bf4000cc29dc74f8ff5227d9.html#a19f05708bf4000cc29dc74f8ff5227d9',1,'xtd::drawing::color']]],
   ['orchid_61',['orchid',['../classxtd_1_1drawing_1_1color_a94ce76352507ef37c3f45eb461b166ba.html#a94ce76352507ef37c3f45eb461b166ba',1,'xtd::drawing::color']]],
-  ['original_5fpath_5f_62',['original_path_',['../classxtd_1_1io_1_1file__system__info_acf4dff6b8eb28963d44cd9e03fbeb201.html#acf4dff6b8eb28963d44cd9e03fbeb201',1,'xtd::io::file_system_info']]],
+  ['original_5fpath_5f_62',['original_path_',['../classxtd_1_1io_1_1file__system__info_aa45066e713be4415a7def84b85516072.html#aa45066e713be4415a7def84b85516072',1,'xtd::io::file_system_info']]],
   ['orthodox_5fcross_63',['orthodox_cross',['../classxtd_1_1forms_1_1emoticons_aa1b018d2b457ba3ea9875e695589d250.html#aa1b018d2b457ba3ea9875e695589d250',1,'xtd::forms::emoticons']]],
   ['out_64',['out',['../classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888',1,'xtd::console']]],
   ['outbox_5ftray_65',['outbox_tray',['../classxtd_1_1forms_1_1emoticons_ab8132679b7118e34c7782afb30e79302.html#ab8132679b7118e34c7782afb30e79302',1,'xtd::forms::emoticons']]],

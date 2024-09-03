@@ -1,6 +1,6 @@
 var classxtd_1_1io_1_1binary__reader =
 [
-    [ "binary_reader", "classxtd_1_1io_1_1binary__reader_a242c02d60c9b68ad2985596d796e2d77.html#a242c02d60c9b68ad2985596d796e2d77", null ],
+    [ "binary_reader", "classxtd_1_1io_1_1binary__reader_a00eb62e33b1b792b7501a9145293a574.html#a00eb62e33b1b792b7501a9145293a574", null ],
     [ "binary_reader", "classxtd_1_1io_1_1binary__reader_a48a53a1cf9b1fcb4d2bbfb3b4219ed0a.html#a48a53a1cf9b1fcb4d2bbfb3b4219ed0a", null ],
     [ "base_stream", "classxtd_1_1io_1_1binary__reader_acc792e3772745ff8059f6d4600e740a8.html#acc792e3772745ff8059f6d4600e740a8", null ],
     [ "end_of_stream", "classxtd_1_1io_1_1binary__reader_a7b27c50a0c887a3d1b55f4f0de392835.html#a7b27c50a0c887a3d1b55f4f0de392835", null ],
@@ -22,7 +22,7 @@ var classxtd_1_1io_1_1binary__reader =
     [ "read_int64", "classxtd_1_1io_1_1binary__reader_acc6d242c053dc7358bf2dca3aa70ffca.html#acc6d242c053dc7358bf2dca3aa70ffca", null ],
     [ "read_sbyte", "classxtd_1_1io_1_1binary__reader_a3d873aa4e07fdd2133d35c61e2b55986.html#a3d873aa4e07fdd2133d35c61e2b55986", null ],
     [ "read_single", "classxtd_1_1io_1_1binary__reader_a26b57a62d9b712ed33438d40adcd569c.html#a26b57a62d9b712ed33438d40adcd569c", null ],
-    [ "read_string", "classxtd_1_1io_1_1binary__reader_a036fe7ec5f26473183c6fe7ccbfcbbfa.html#a036fe7ec5f26473183c6fe7ccbfcbbfa", null ],
+    [ "read_string", "classxtd_1_1io_1_1binary__reader_aaea1c3b221c899a9d2ec91cf735cdae5.html#aaea1c3b221c899a9d2ec91cf735cdae5", null ],
     [ "read_uint16", "classxtd_1_1io_1_1binary__reader_a71458651683e298dc533f827ca03efa3.html#a71458651683e298dc533f827ca03efa3", null ],
     [ "read_uint32", "classxtd_1_1io_1_1binary__reader_a3328d99acd0c9749a8b341131eb59dc7.html#a3328d99acd0c9749a8b341131eb59dc7", null ],
     [ "read_uint64", "classxtd_1_1io_1_1binary__reader_a394f72a73048073ed85716b48004b45b.html#a394f72a73048073ed85716b48004b45b", null ],

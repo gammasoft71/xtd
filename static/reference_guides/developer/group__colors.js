@@ -16,7 +16,7 @@ var group__colors =
       [ "is_light", "classxtd_1_1drawing_1_1color_aa45cd631077a69d281c6849e4cd6a9a4.html#aa45cd631077a69d281c6849e4cd6a9a4", null ],
       [ "is_named_color", "classxtd_1_1drawing_1_1color_a5ff714417471d5eddda3897246b2c52c.html#a5ff714417471d5eddda3897246b2c52c", null ],
       [ "is_system_color", "classxtd_1_1drawing_1_1color_adda07c45844cc2af1b9875f953ce3c0b.html#adda07c45844cc2af1b9875f953ce3c0b", null ],
-      [ "name", "classxtd_1_1drawing_1_1color_a595fc1a780c83e72058190ae5d406af6.html#a595fc1a780c83e72058190ae5d406af6", null ],
+      [ "name", "classxtd_1_1drawing_1_1color_ae53d5f6c0f61e3f7c156729ab3035620.html#ae53d5f6c0f61e3f7c156729ab3035620", null ],
       [ "r", "classxtd_1_1drawing_1_1color_a2c502f2c82f55d9cb421419ba2d46f03.html#a2c502f2c82f55d9cb421419ba2d46f03", null ],
       [ "get_brightness", "classxtd_1_1drawing_1_1color_ae2d8f08586764e39ed2b4321454c8e28.html#ae2d8f08586764e39ed2b4321454c8e28", null ],
       [ "get_hue", "classxtd_1_1drawing_1_1color_aeffd2462f9e56d4b958a816c3e337ef1.html#aeffd2462f9e56d4b958a816c3e337ef1", null ],
@@ -27,7 +27,7 @@ var group__colors =
       [ "get_y", "classxtd_1_1drawing_1_1color_a854d45c41cddcc9869835d9c9ae1057f.html#a854d45c41cddcc9869835d9c9ae1057f", null ],
       [ "to_argb", "classxtd_1_1drawing_1_1color_a1842c31fd793563740ed1a6c7e09e775.html#a1842c31fd793563740ed1a6c7e09e775", null ],
       [ "to_known_color", "classxtd_1_1drawing_1_1color_aac84de282d2b99c7523ab31aa41627f9.html#aac84de282d2b99c7523ab31aa41627f9", null ],
-      [ "to_string", "classxtd_1_1drawing_1_1color_a7b0f535f2d391dea8a2168b97a9c0834.html#a7b0f535f2d391dea8a2168b97a9c0834", null ],
+      [ "to_string", "classxtd_1_1drawing_1_1color_adceee81f7a0a0542e4ee31887bdffba9.html#adceee81f7a0a0542e4ee31887bdffba9", null ],
       [ "equals", "classxtd_1_1drawing_1_1color_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
     [ "xtd::drawing::color_converter", "classxtd_1_1drawing_1_1color__converter.html", null ],

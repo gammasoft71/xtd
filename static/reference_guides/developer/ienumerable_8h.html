@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/collections/generic/ienumerable.h File Reference</title>
+		<title>xtd: xtd.core/include/xtd/collections/ienumerable.h File Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -100,24 +100,21 @@ $(document).ready(function(){initNavTree('ienumerable_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">ienumerable.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="enumerable__iterators_8h_source.html">enumerable_iterators.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="generic_2ienumerable_8h_source.html">generic/ienumerable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="enumerator_8h_source.html">enumerator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="as_8h_source.html">../as.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="any__object_8h_source.html">../any_object.h</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains xtd::collections::generic::ienumarable &lt;type_t&gt; interface. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c" title="Exposes an enumerator, which supports a simple iteration over a non-generic collection.">xtd::collections::ienumerable</a> alias. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="ienumerable_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; type_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supports a simple iteration over a generic collection.  <a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html">xtd</a></td></tr>
@@ -126,9 +123,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd_1_1collections"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections.html">xtd::collections</a></td></tr>
 <tr class="memdesc:namespacextd_1_1collections"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacextd_1_1collections_1_1generic"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></td></tr>
-<tr class="memdesc:namespacextd_1_1collections_1_1generic"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gad6394329e5e329f3fda6d45017ee1a7c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c">xtd::collections::ienumerable</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &gt;</td></tr>
+<tr class="memdesc:gad6394329e5e329f3fda6d45017ee1a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes an enumerator, which supports a simple iteration over a non-generic collection.  <br /></td></tr>
+<tr class="separator:gad6394329e5e329f3fda6d45017ee1a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -136,8 +136,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_542c9d25259ad96780b291a0ddab28d3.html">collections</a></li><li class="navelem"><a class="el" href="dir_81271ef585a681156e8d0e24c1cacb07.html">generic</a></li><li class="navelem"><a class="el" href="ienumerable_8h.html">ienumerable.h</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+    <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_542c9d25259ad96780b291a0ddab28d3.html">collections</a></li><li class="navelem"><a class="el" href="ienumerable_8h.html">ienumerable.h</a></li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

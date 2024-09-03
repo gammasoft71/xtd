@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a55020a4b
 <div class="line"><span class="comment">// is Extra</span></div>
 <div class="line"><span class="comment">// Text</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">//When you run this application a second time, you will see the following output:</span></div>
+<div class="line"><span class="comment">//When you run this application a second time, you will see the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Hello</span></div>
 <div class="line"><span class="comment">// And</span></div>
@@ -187,14 +187,13 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a55020a4b
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
-<div class="line">     <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
+<div class="line">    <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw = fi.append_text();</div>
 <div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer_ad9bfc3262634aa04d439143f62e51c0c.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
 <div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer_ad9bfc3262634aa04d439143f62e51c0c.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
@@ -202,7 +201,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a55020a4b
 <div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1stream__writer_a8b391cfcc3e3ab88f17aac43bb25e8df.html#a8b391cfcc3e3ab88f17aac43bb25e8df">close</a>();</div>
 <div class="line">    <span class="comment">// Get the information out of the file and display it.</span></div>
 <div class="line">    <span class="comment">// Remember that the file might have other lines if it already existed.</span></div>
-<div class="line">    ifstream ifs(fi.open_read());</div>
+<div class="line">    std::ifstream ifs(fi.open_read());</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr(ifs);</div>
 <div class="line">    <span class="keywordflow">while</span> (sr.peek() != -1)</div>
 <div class="line">      console::write_line(sr.read_line());</div>
@@ -231,7 +230,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a55020a4b
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1file__info.html">file_info</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:10:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -1,8 +1,8 @@
 var classxtd_1_1net_1_1dns__end__point =
 [
-    [ "dns_end_point", "classxtd_1_1net_1_1dns__end__point_aa32dc2e81afda7816f5826fc6d56419a.html#aa32dc2e81afda7816f5826fc6d56419a", null ],
-    [ "dns_end_point", "classxtd_1_1net_1_1dns__end__point_a23d92152269d26787f8998748df5c96a.html#a23d92152269d26787f8998748df5c96a", null ],
-    [ "host", "classxtd_1_1net_1_1dns__end__point_a765f5b5ba0ae658ddaab514e6a458959.html#a765f5b5ba0ae658ddaab514e6a458959", null ],
+    [ "dns_end_point", "classxtd_1_1net_1_1dns__end__point_a2126317bc7ca386f5e47377f28237b8c.html#a2126317bc7ca386f5e47377f28237b8c", null ],
+    [ "dns_end_point", "classxtd_1_1net_1_1dns__end__point_a42e9028e0c4125d6cebab1b901198348.html#a42e9028e0c4125d6cebab1b901198348", null ],
+    [ "host", "classxtd_1_1net_1_1dns__end__point_af2d64266ffea534488cfde775a83b57b.html#af2d64266ffea534488cfde775a83b57b", null ],
     [ "port", "classxtd_1_1net_1_1dns__end__point_a565d4e1c03e38fbca4b83fe3e7f2f79d.html#a565d4e1c03e38fbca4b83fe3e7f2f79d", null ],
-    [ "to_string", "classxtd_1_1net_1_1dns__end__point_a494f0fef6104a8ad6e243bfa6c947b34.html#a494f0fef6104a8ad6e243bfa6c947b34", null ]
+    [ "to_string", "classxtd_1_1net_1_1dns__end__point_ad5f15255baac69c5b24d422d370213b7.html#ad5f15255baac69c5b24d422d370213b7", null ]
 ];

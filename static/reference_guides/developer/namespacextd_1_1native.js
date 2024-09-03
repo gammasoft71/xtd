@@ -14,6 +14,7 @@ var namespacextd_1_1native =
     [ "file_system", "classxtd_1_1native_1_1file__system.html", null ],
     [ "guid", "classxtd_1_1native_1_1guid.html", null ],
     [ "interlocked", "classxtd_1_1native_1_1interlocked.html", null ],
+    [ "memory", "classxtd_1_1native_1_1memory.html", null ],
     [ "named_event_wait_handle", "classxtd_1_1native_1_1named__event__wait__handle.html", null ],
     [ "named_mutex", "classxtd_1_1native_1_1named__mutex.html", null ],
     [ "named_semaphore", "classxtd_1_1native_1_1named__semaphore.html", null ],

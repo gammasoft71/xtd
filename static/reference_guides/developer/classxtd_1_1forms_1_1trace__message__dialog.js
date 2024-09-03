@@ -2,8 +2,8 @@ var classxtd_1_1forms_1_1trace__message__dialog =
 [
     [ "trace_message_dialog", "classxtd_1_1forms_1_1trace__message__dialog_ab479e9a80d9195104eabbb5fbac00852.html#ab479e9a80d9195104eabbb5fbac00852", null ],
     [ "dialog_result", "classxtd_1_1forms_1_1trace__message__dialog_afb94a2afb5179a2235d1093d937701b2.html#afb94a2afb5179a2235d1093d937701b2", null ],
-    [ "message", "classxtd_1_1forms_1_1trace__message__dialog_aa84a5f2aab01c5e824d160585c348300.html#aa84a5f2aab01c5e824d160585c348300", null ],
-    [ "message", "classxtd_1_1forms_1_1trace__message__dialog_a16e9fb3b3570ed8427f4156a9460cde9.html#a16e9fb3b3570ed8427f4156a9460cde9", null ],
+    [ "message", "classxtd_1_1forms_1_1trace__message__dialog_a7dca3c1cb91bf979199edf57f4ac3e3b.html#a7dca3c1cb91bf979199edf57f4ac3e3b", null ],
+    [ "message", "classxtd_1_1forms_1_1trace__message__dialog_aba443400218ad06649b5e3acf91c3581.html#aba443400218ad06649b5e3acf91c3581", null ],
     [ "reset", "classxtd_1_1forms_1_1trace__message__dialog_a6cbd43d2ad5aabc783c01f0121a5642d.html#a6cbd43d2ad5aabc783c01f0121a5642d", null ],
     [ "show_dialog", "classxtd_1_1forms_1_1trace__message__dialog_a7f4af7a1d9030fbe165f2f284b19adf6.html#a7f4af7a1d9030fbe165f2f284b19adf6", null ],
     [ "show_dialog", "classxtd_1_1forms_1_1trace__message__dialog_a480f9dd172f09a9e848188dcc2afe9a8.html#a480f9dd172f09a9e848188dcc2afe9a8", null ],

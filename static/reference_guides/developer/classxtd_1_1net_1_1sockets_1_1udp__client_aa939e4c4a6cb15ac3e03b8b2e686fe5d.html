@@ -118,14 +118,14 @@ $(document).ready(function(){initNavTree('classxtd_1_1net_1_1sockets_1_1udp__cli
 <p>Ends a pending asynchronous send. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">async_result</td><td>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object returned by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_ac0d374323fcf61256f5673bc9343c7f3.html#ac0d374323fcf61256f5673bc9343c7f3" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a>. </td></tr>
+    <tr><td class="paramname">async_result</td><td>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object returned by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_ab6ece03c032f46f632a81b378b1eb0fd.html#ab6ece03c032f46f632a81b378b1eb0fd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If successful, the number of bytes sent to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_ac0d374323fcf61256f5673bc9343c7f3.html#ac0d374323fcf61256f5673bc9343c7f3" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> method. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_ab6ece03c032f46f632a81b378b1eb0fd.html#ab6ece03c032f46f632a81b378b1eb0fd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> method. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the underlying socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1net_1_1sockets_1_1udp__cli
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method blocks until the operation is complete. </dd>
 <dd>
-To perform this operation synchronously, use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_a6142694b2512f6e8553b59a741a37f7c.html#a6142694b2512f6e8553b59a741a37f7c" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> method. </dd></dl>
+To perform this operation synchronously, use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client_a46dfdc48e601b2d123de8ed070b8ee33.html#a46dfdc48e601b2d123de8ed070b8ee33" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1system__exception_aae8a2e1635e67b7879c21ee09edbe738.html#aae8a2e1635e67b7879c21ee09edbe738" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
@@ -145,7 +145,7 @@ To perform this operation synchronously, use the <a class="el" href="classxtd_1_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net.html">net</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net_1_1sockets.html">sockets</a></li><li class="navelem"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:10:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

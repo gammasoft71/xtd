@@ -52,10 +52,10 @@ var classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path =
     [ "add_rounded_rectangle", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a11981275d283720aecc97206b0a50011.html#a11981275d283720aecc97206b0a50011", null ],
     [ "add_rounded_rectangle", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a37e76f54c12cba28dd6dfa32ae4c726d.html#a37e76f54c12cba28dd6dfa32ae4c726d", null ],
     [ "add_rounded_rectangle", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_aac7905dc18ccfcf918d6e8e5004d62dd.html#aac7905dc18ccfcf918d6e8e5004d62dd", null ],
-    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_ac69cdaec342c03a56f4c62b69ace6cc6.html#ac69cdaec342c03a56f4c62b69ace6cc6", null ],
-    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a7123d647429b0994c9e50cda3d4b6d55.html#a7123d647429b0994c9e50cda3d4b6d55", null ],
-    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_ae86e5d0d0dcd3b256f5a31b78898ab60.html#ae86e5d0d0dcd3b256f5a31b78898ab60", null ],
-    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a5a481d5ae1033de1d9e586c565b58539.html#a5a481d5ae1033de1d9e586c565b58539", null ],
+    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_ae0774b5cbadc1b2da6103a903ac99430.html#ae0774b5cbadc1b2da6103a903ac99430", null ],
+    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_afff15133adb467445d79399012e7807c.html#afff15133adb467445d79399012e7807c", null ],
+    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a5beb0532f11f1ec2f5d427321d2767a9.html#a5beb0532f11f1ec2f5d427321d2767a9", null ],
+    [ "add_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a873787588bf4e17cf31cbc6ec99d5cd0.html#a873787588bf4e17cf31cbc6ec99d5cd0", null ],
     [ "close_all_figures", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a4e862c105c55e76847884056d55c2013.html#a4e862c105c55e76847884056d55c2013", null ],
     [ "close_figure", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_ab20f3e2f433c68ae1cd138b99e5c8539.html#ab20f3e2f433c68ae1cd138b99e5c8539", null ],
     [ "flatten", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_acbe6e6ebcffc2bec82de6f555e286b8f.html#acbe6e6ebcffc2bec82de6f555e286b8f", null ],
@@ -68,6 +68,6 @@ var classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path =
     [ "reset", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a9bf48cb9db78fc6faffd51deb31ce615.html#a9bf48cb9db78fc6faffd51deb31ce615", null ],
     [ "reverse", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a7b6c3a03d228f78a71511cec40a85ed7.html#a7b6c3a03d228f78a71511cec40a85ed7", null ],
     [ "start_figure", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_adb5a755e361d08fa8bea1b061bf15f75.html#adb5a755e361d08fa8bea1b061bf15f75", null ],
-    [ "to_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a14afe17575953a519d157e2aadb7b3f4.html#a14afe17575953a519d157e2aadb7b3f4", null ],
+    [ "to_string", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a14588d88873f8752b2f91016d83f7a35.html#a14588d88873f8752b2f91016d83f7a35", null ],
     [ "equals", "classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

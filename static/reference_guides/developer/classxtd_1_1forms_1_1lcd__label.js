@@ -17,7 +17,7 @@ var classxtd_1_1forms_1_1lcd__label =
     [ "dot_matrix_style", "classxtd_1_1forms_1_1lcd__label_a1521a19a5a889f2812f87167f8697dc2.html#a1521a19a5a889f2812f87167f8697dc2", null ],
     [ "thickness", "classxtd_1_1forms_1_1lcd__label_ac21b0b4851024ab81b8102490856ad26.html#ac21b0b4851024ab81b8102490856ad26", null ],
     [ "thickness", "classxtd_1_1forms_1_1lcd__label_ad544539a20711ced37131c4a7b03d193.html#ad544539a20711ced37131c4a7b03d193", null ],
-    [ "text", "classxtd_1_1forms_1_1lcd__label_acae2a9f9d9aecce3288f9d3d428205ed.html#acae2a9f9d9aecce3288f9d3d428205ed", null ],
+    [ "text", "classxtd_1_1forms_1_1lcd__label_a1267e83429a9f0adb684e46e7a335d71.html#a1267e83429a9f0adb684e46e7a335d71", null ],
     [ "valid_characters", "classxtd_1_1forms_1_1lcd__label_ad3cb103da341b4a07cc46820538bec61.html#ad3cb103da341b4a07cc46820538bec61", null ],
     [ "default_size", "classxtd_1_1forms_1_1lcd__label_adfced6718b1378a790a3bc413df70fe3.html#adfced6718b1378a790a3bc413df70fe3", null ],
     [ "clone", "classxtd_1_1forms_1_1lcd__label_a611aaeeb03bc4f626752955d905d28f0.html#a611aaeeb03bc4f626752955d905d28f0", null ],
@@ -27,6 +27,6 @@ var classxtd_1_1forms_1_1lcd__label =
     [ "on_handle_created", "classxtd_1_1forms_1_1lcd__label_a303c657af2fc2171a72b68e15ddb9e60.html#a303c657af2fc2171a72b68e15ddb9e60", null ],
     [ "on_size_changed", "classxtd_1_1forms_1_1lcd__label_a03d95620e55b55fa75a81b5b012436ef.html#a03d95620e55b55fa75a81b5b012436ef", null ],
     [ "on_resize", "classxtd_1_1forms_1_1lcd__label_ac4045ca670c98d51f2f39706c4f61dac.html#ac4045ca670c98d51f2f39706c4f61dac", null ],
-    [ "text", "classxtd_1_1forms_1_1lcd__label_a254433fdf3532bdc36f3bb9743236c85.html#a254433fdf3532bdc36f3bb9743236c85", null ],
-    [ "text", "classxtd_1_1forms_1_1lcd__label_adfeade0da8a1a897b9ed9468954f6da1.html#adfeade0da8a1a897b9ed9468954f6da1", null ]
+    [ "text", "classxtd_1_1forms_1_1lcd__label_ac12513e127a5cc7bb9ee8b238afa2fd5.html#ac12513e127a5cc7bb9ee8b238afa2fd5", null ],
+    [ "text", "classxtd_1_1forms_1_1lcd__label_adfd3a7f97ad50ae2066fa6273935a802.html#adfd3a7f97ad50ae2066fa6273935a802", null ]
 ];

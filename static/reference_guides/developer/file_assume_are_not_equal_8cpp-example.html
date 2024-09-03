@@ -105,19 +105,18 @@ $(document).ready(function(){initNavTree('file_assume_are_not_equal_8cpp-example
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1file__assume_a2f028d4c7ebe85856bbf37d19de47f9c.html#a2f028d4c7ebe85856bbf37d19de47f9c" title="Assumes that two files are not equal.">xtd::tunit::file_assume::are_not_equal</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      <span class="keyword">auto</span> is = istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>};</div>
-<div class="line">      file_assume::are_not_equal(istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equel example.&quot;</span>}, is);</div>
+<div class="line">      <span class="keyword">auto</span> is = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>};</div>
+<div class="line">      file_assume::are_not_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equel example.&quot;</span>}, is);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
-<div class="line">      <span class="keyword">auto</span> is = istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>};</div>
-<div class="line">      file_assume::are_not_equal(istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>}, is);</div>
+<div class="line">      <span class="keyword">auto</span> is = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>};</div>
+<div class="line">      file_assume::are_not_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_not_equal example.&quot;</span>}, is);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -126,7 +125,7 @@ $(document).ready(function(){initNavTree('file_assume_are_not_equal_8cpp-example
 <div class="line">  <span class="keywordflow">return</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Start 2 tests from 1 test case</span></div>
 <div class="line"><span class="comment">// Run tests:</span></div>
@@ -151,7 +150,7 @@ $(document).ready(function(){initNavTree('file_assume_are_not_equal_8cpp-example
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 2 2024 19:09:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 13:55:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -29,8 +29,8 @@ var classxtd_1_1drawing_1_1image =
     [ "get_rgb", "classxtd_1_1drawing_1_1image_a8c3bbae794db6fdfcec7b4c910004a92.html#a8c3bbae794db6fdfcec7b4c910004a92", null ],
     [ "get_thmbnail_image", "classxtd_1_1drawing_1_1image_a14a6bacdfb6fa3c2168f012ff9c4e06f.html#a14a6bacdfb6fa3c2168f012ff9c4e06f", null ],
     [ "rotate_flip", "classxtd_1_1drawing_1_1image_a8b00a68b8f0ca12b0fdb0b9149083e2b.html#a8b00a68b8f0ca12b0fdb0b9149083e2b", null ],
-    [ "save", "classxtd_1_1drawing_1_1image_a5dbb39c4b87af777f49be06c7cc370e9.html#a5dbb39c4b87af777f49be06c7cc370e9", null ],
-    [ "save", "classxtd_1_1drawing_1_1image_a3c4b271c12fd051e474ee57246cfab4b.html#a3c4b271c12fd051e474ee57246cfab4b", null ],
+    [ "save", "classxtd_1_1drawing_1_1image_ac5122a1e0ff6c8d0bc80019f9e0a659c.html#ac5122a1e0ff6c8d0bc80019f9e0a659c", null ],
+    [ "save", "classxtd_1_1drawing_1_1image_ae637c236398c984aa82ceb86facb65b7.html#ae637c236398c984aa82ceb86facb65b7", null ],
     [ "save", "classxtd_1_1drawing_1_1image_ad0943efc3d1a4daafe10d7029df906bf.html#ad0943efc3d1a4daafe10d7029df906bf", null ],
     [ "equals", "classxtd_1_1drawing_1_1image_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

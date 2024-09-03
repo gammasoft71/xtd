@@ -1,12 +1,12 @@
 var classxtd_1_1forms_1_1country =
 [
-    [ "alpha_2_code", "classxtd_1_1forms_1_1country_affc69337cd2aef69572ac1659a264075.html#affc69337cd2aef69572ac1659a264075", null ],
-    [ "alpha_3_code", "classxtd_1_1forms_1_1country_a309916575e4172dec507503b85c74cbe.html#a309916575e4172dec507503b85c74cbe", null ],
-    [ "emoticon", "classxtd_1_1forms_1_1country_aa9a31d45109f0d5e9abbd360e56abbd5.html#aa9a31d45109f0d5e9abbd360e56abbd5", null ],
+    [ "alpha_2_code", "classxtd_1_1forms_1_1country_af1e75374de2b917ca2dd5ce10737aa07.html#af1e75374de2b917ca2dd5ce10737aa07", null ],
+    [ "alpha_3_code", "classxtd_1_1forms_1_1country_aa6044ad9b6c240f548dfa1e07ce201ce.html#aa6044ad9b6c240f548dfa1e07ce201ce", null ],
+    [ "emoticon", "classxtd_1_1forms_1_1country_aac81b2b3a87c2fee090e0c168fb11b32.html#aac81b2b3a87c2fee090e0c168fb11b32", null ],
     [ "flag", "classxtd_1_1forms_1_1country_ae3dcfd3c4e0ce9310f56feaa335b95da.html#ae3dcfd3c4e0ce9310f56feaa335b95da", null ],
     [ "flag_squared", "classxtd_1_1forms_1_1country_ac3f2d39941059e3eb73f4a14568de1c5.html#ac3f2d39941059e3eb73f4a14568de1c5", null ],
-    [ "name", "classxtd_1_1forms_1_1country_a76e30fca5306816632156b0e1f3847ea.html#a76e30fca5306816632156b0e1f3847ea", null ],
+    [ "name", "classxtd_1_1forms_1_1country_ad4ef895260cd0badd54b3afae4f7105a.html#ad4ef895260cd0badd54b3afae4f7105a", null ],
     [ "numeric_code", "classxtd_1_1forms_1_1country_ab605abb9350001d91b17a4424c2af589.html#ab605abb9350001d91b17a4424c2af589", null ],
-    [ "to_string", "classxtd_1_1forms_1_1country_a4cdd2f12798a52dfdae21ecc4b0563bd.html#a4cdd2f12798a52dfdae21ecc4b0563bd", null ],
+    [ "to_string", "classxtd_1_1forms_1_1country_a68c2a670a4d3d74d3ac89d873ef2ed49.html#a68c2a670a4d3d74d3ac89d873ef2ed49", null ],
     [ "equals", "classxtd_1_1forms_1_1country_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
 ];

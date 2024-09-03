@@ -1,8 +1,8 @@
 var classxtd_1_1forms_1_1find__dialog =
 [
     [ "find_dialog", "classxtd_1_1forms_1_1find__dialog_a6089359e60f630c0e9b80e01aac8b9de.html#a6089359e60f630c0e9b80e01aac8b9de", null ],
-    [ "find_string", "classxtd_1_1forms_1_1find__dialog_afe7f70270e57ca04d888fae024259e5f.html#afe7f70270e57ca04d888fae024259e5f", null ],
-    [ "find_string", "classxtd_1_1forms_1_1find__dialog_a0222d01c6f9c14da50cbb29680b66290.html#a0222d01c6f9c14da50cbb29680b66290", null ],
+    [ "find_string", "classxtd_1_1forms_1_1find__dialog_ab6235033f81724c8fbb87d16fd03f0b7.html#ab6235033f81724c8fbb87d16fd03f0b7", null ],
+    [ "find_string", "classxtd_1_1forms_1_1find__dialog_a62d77562b3e9474e0ea80a27dc1fa5c1.html#a62d77562b3e9474e0ea80a27dc1fa5c1", null ],
     [ "location", "classxtd_1_1forms_1_1find__dialog_a96a253efc0f2cbabbc122e50ce61fdb2.html#a96a253efc0f2cbabbc122e50ce61fdb2", null ],
     [ "location", "classxtd_1_1forms_1_1find__dialog_a2e306e57520671d657c3a3f374284365.html#a2e306e57520671d657c3a3f374284365", null ],
     [ "match_case", "classxtd_1_1forms_1_1find__dialog_a8de1e3b9b772bfdd06426ff16e4f38d3.html#a8de1e3b9b772bfdd06426ff16e4f38d3", null ],
@@ -15,8 +15,8 @@ var classxtd_1_1forms_1_1find__dialog =
     [ "show_up_down", "classxtd_1_1forms_1_1find__dialog_adc314abd4a7e7c7263cd2017e9b59f70.html#adc314abd4a7e7c7263cd2017e9b59f70", null ],
     [ "show_whole_word", "classxtd_1_1forms_1_1find__dialog_ad0913c058a89cb45f9762fad4dc0aa9b.html#ad0913c058a89cb45f9762fad4dc0aa9b", null ],
     [ "show_whole_word", "classxtd_1_1forms_1_1find__dialog_a98b9770d5c720fddfdd196d481b1e97a.html#a98b9770d5c720fddfdd196d481b1e97a", null ],
-    [ "title", "classxtd_1_1forms_1_1find__dialog_a4b1871b32f7b003979795c70428a3a93.html#a4b1871b32f7b003979795c70428a3a93", null ],
-    [ "title", "classxtd_1_1forms_1_1find__dialog_a21f398edef05833d016975eb5c9b318a.html#a21f398edef05833d016975eb5c9b318a", null ],
+    [ "title", "classxtd_1_1forms_1_1find__dialog_ad63b281f4a5707a6c7ac205874ffa22e.html#ad63b281f4a5707a6c7ac205874ffa22e", null ],
+    [ "title", "classxtd_1_1forms_1_1find__dialog_ac1819ce4dc36194e14474ed346052d42.html#ac1819ce4dc36194e14474ed346052d42", null ],
     [ "whole_word", "classxtd_1_1forms_1_1find__dialog_a9dbe9e6466b7ee6b4f9603edd8d25955.html#a9dbe9e6466b7ee6b4f9603edd8d25955", null ],
     [ "whole_word", "classxtd_1_1forms_1_1find__dialog_a94b709e585d556b54159b5dae09db8f5.html#a94b709e585d556b54159b5dae09db8f5", null ],
     [ "close", "classxtd_1_1forms_1_1find__dialog_a94315b98282ccf5399485ec8df5b0491.html#a94315b98282ccf5399485ec8df5b0491", null ],
