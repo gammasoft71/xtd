@@ -146,9 +146,17 @@ template&lt;class input_iterator_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to this instance after the append operation has completed. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>Enlarging the value of this instance would exceed <a class="el" href="classxtd_1_1text_1_1basic__string__builder_a82a9b0e909ef5975e6ac07821b8b100e.html#a82a9b0e909ef5975e6ac07821b8b100e" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::max_capacity</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Appends characters in the range [<code>first</code>, <code>last</code>). </dd>
 <dd>
-This overload only participates in overload resolution if <code>input_iterator_t</code> qualifies as a <a href="https://en.cppreference.com/w/cpp/named_req/InputIterator">LegacyInputIterator</a>. </dd></dl>
+This overload only participates in overload resolution if <code>input_iterator_t</code> qualifies as a <a href="https://en.cppreference.com/w/cpp/named_req/InputIterator">LegacyInputIterator</a>. </dd>
+<dd>
+The capacity of this instance is adjusted as needed. </dd></dl>
 
 </div>
 </div>
@@ -159,7 +167,7 @@ This overload only participates in overload resolution if <code>input_iterator_t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1text.html">text</a></li><li class="navelem"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">basic_string_builder</a></li>
-		<li class="footer">Generated on Tue Sep 3 2024 13:53:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Tue Sep 3 2024 22:03:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
