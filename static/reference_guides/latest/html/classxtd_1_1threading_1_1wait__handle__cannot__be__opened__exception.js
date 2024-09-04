@@ -1,0 +1,13 @@
+var classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception =
+[
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a9aae55210871115228a7b330bed30662.html#a9aae55210871115228a7b330bed30662", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_aa6ca8c455df8144e68587d4afa68fc17.html#aa6ca8c455df8144e68587d4afa68fc17", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a1472161f8b13d77e81503d10fd946601.html#a1472161f8b13d77e81503d10fd946601", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a221e983e2070720e7fdc0d29c84d1826.html#a221e983e2070720e7fdc0d29c84d1826", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_aac96e87b102ee98cac1d727010ee0717.html#aac96e87b102ee98cac1d727010ee0717", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a3dc48288ef60e3941ea5e385b6d54a71.html#a3dc48288ef60e3941ea5e385b6d54a71", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_ab4da315c839af5cc18f79496432e662c.html#ab4da315c839af5cc18f79496432e662c", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a01c4eef40d0429046d5358617bf5bcd8.html#a01c4eef40d0429046d5358617bf5bcd8", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a5738ebb60e7c421a3fa86b7e454d63b5.html#a5738ebb60e7c421a3fa86b7e454d63b5", null ],
+    [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception_a4c3753e1ba46ede8faf7428d6e8ef0ba.html#a4c3753e1ba46ede8faf7428d6e8ef0ba", null ]
+];
