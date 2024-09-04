@@ -8,6 +8,7 @@
 #include "../environment.h"
 #include "../index_out_of_range_exception.h"
 #include "../null_pointer_exception.h"
+#include <iterator>
 ///
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -210,18 +211,26 @@ namespace xtd {
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       basic_string_builder(basic_string_builder&& str, const allocator_type& allocator) noexcept : chars_(std::move(str.chars_), allocator) {}
       
-      /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character.
       /// @param str The string to copy.
       /// @param count The number of copies of character.
       /// @param character The character copied.
       basic_string_builder(xtd::size count, value_type character) : chars_(count, character) {}
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character and specified allocator.
-      /// @param str The string to copy.
       /// @param count The number of copies of character.
       /// @param character The character copied.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       basic_string_builder(xtd::size count, value_type character, const allocator_type& allocator) : chars_(count, character, allocator) {}
       
+      /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character.
+      /// @param character The character copied.
+      /// @param count The number of copies of character.
+      basic_string_builder(value_type character, xtd::size count) : chars_(count, character) {}
+      /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character and specified allocator.
+      /// @param character The character copied.
+      /// @param count The number of copies of character.
+      /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
+      basic_string_builder(value_type character, xtd::size count, const allocator_type& allocator) : chars_(count, character, allocator) {}
+
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified string to copy.
       /// @param str The string to copy.
       basic_string_builder(const_pointer str) {  // Can't be explicit by design.
@@ -308,7 +317,7 @@ namespace xtd {
       /// * Calling non-const member functions on the string, excluding operator[], at(), front(), back(), begin(), rbegin(), end() and rend().
       /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
       /// @remarks c_str() and data() perform the same function.
-      const value_type* c_str() const noexcept {return chars_.c_str();}
+      const_pointer c_str() const noexcept {return chars_.c_str();}
       
       /// @brief Returns the number of characters that the string has currently allocated space for.
       /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
@@ -1427,7 +1436,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The string to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1438,7 +1447,7 @@ namespace xtd {
       /// @param value The string to insert.
       /// @param count The number of times to insert `value`.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1448,7 +1457,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1458,7 +1467,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1468,7 +1477,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1478,7 +1487,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1488,7 +1497,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1498,7 +1507,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1508,7 +1517,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1518,7 +1527,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1528,7 +1537,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1538,7 +1547,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1558,7 +1567,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1568,7 +1577,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1578,7 +1587,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1589,7 +1598,7 @@ namespace xtd {
       /// @param value The character to insert.
       /// @param repeat_count The number of times to append value.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1600,7 +1609,7 @@ namespace xtd {
       /// @param index The position in this instance where insertion begins.
       /// @param value The value to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Existing characters are shifted to make room for the new text. The capacity is adjusted as needed.
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
@@ -1612,18 +1621,19 @@ namespace xtd {
       /// @param count The number of characters to insert.
       /// @param ch The character to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts `count` copies of character `ch` at the position `index`.
       basic_string_builder& insert(size_type index, size_type count, value_type ch) {
+        if (index > length()) throw argument_out_of_range_exception {csf_};
         if (length() + count > max_capacity()) throw argument_out_of_range_exception {csf_};
-        chars_.append(index, count, ch);
+        chars_.insert(index, count, ch);
         return *this;
       }
       /// @brief Inserts characters into the string.
       /// @param index The position at which the content will be inserted.
       /// @param s The pointer to the character string to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts null-terminated character string pointed to by `s` at the position `index`. The length of the string is determined by the first null character using `traits_t::length(s).
       basic_string_builder& insert(size_type index, const_pointer s) {return insert(index, basic_string_builder(s));}
       /// @brief Inserts characters into the string.
@@ -1631,14 +1641,14 @@ namespace xtd {
       /// @param s The pointer to the character string to insert.
       /// @param count The number of characters to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts the characters in the range [`s`, `s + count`) at the position `index`. The range can contain null characters.
       basic_string_builder& insert(size_type index, const_pointer s, size_type count) {return insert(index, basic_string_builder(s, count));}
       /// @brief Inserts characters into the string.
       /// @param index The position at which the content will be inserted.
       /// @param str The string to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts string `str` at the position `index`.
       basic_string_builder& insert(size_type index, const basic_string_builder& str) {return insert(index, str, 0, str.length());}
       /// @brief Inserts characters into the string.
@@ -1647,10 +1657,11 @@ namespace xtd {
       /// @param s_index The position of the first character in str to insert.
       /// @param count The number of characters to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts a string, obtained by `str.substr(s_index, count)` at the position `index.
       basic_string_builder& insert(size_type index, const basic_string_builder& str, size_type s_index, size_type count) {
         if (length() + count > max_capacity()) throw argument_out_of_range_exception {csf_};
+        if (index > length()) throw argument_out_of_range_exception {csf_};
         if (s_index > str.size() || s_index + count > str.length()) throw xtd::argument_out_of_range_exception {csf_};
         chars_.insert(index, str.chars_, s_index, count);
         return *this;
@@ -1660,14 +1671,14 @@ namespace xtd {
       /// @param str The string to insert.
       /// @param s_index The position of the first character in str to insert.
       /// @return A reference to this instance after the insert operation has completed.
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts a string, obtained by `str.substr(s_index, str.length())` at the position `index.
-      basic_string_builder& insert(size_type index, const basic_string_builder& str, size_type s_index) {return insert(index, str.chars_, s_index, str.length());}
+      basic_string_builder& insert(size_type index, const basic_string_builder& str, size_type s_index) {return insert(index, str.chars_, s_index, str.length() - s_index);}
       /// @brief Inserts characters into the string.
       /// @param pos The iterator before which the characters will be inserted.
       /// @param ch The character to insert.
       /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts character `ch` before the character pointed by `pos`.
       iterator insert(const_iterator pos, value_type ch) {return insert(pos, 1, ch);}
       /// @brief Inserts characters into the string.
@@ -1675,22 +1686,24 @@ namespace xtd {
       /// @param count The number of characters to insert.
       /// @param ch The character to insert.
       /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts `count` copies of character `ch` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, size_type count, value_type ch ) {
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {csf_};
         if (length() + count > max_capacity()) throw argument_out_of_range_exception {csf_};
-        return chars_.insert(pos, ch);
+        return chars_.insert(pos, count, ch);
       }
       /// @brief Inserts characters into the string.
       /// @param pos The iterator before which the characters will be inserted.
       /// @param first The firs position of range defining characters to insert.
       /// @param last The last position of range defining characters to insert.
       /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts characters from the range [`first`, `last`) before the element (if any) pointed by `pos`, as if by `insert(pos - begin(), basic_string(first, last, get_allocator()))`.
       /// @remarks This overload does not participate in overload resolution if input_iterator_t does not satisfy [LegacyInputIterator](https://en.cppreference.com/w/cpp/named_req/InputIterator).
       template<typename input_iterator_t>
       iterator insert( const_iterator pos, input_iterator_t first, input_iterator_t last) {
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {csf_};
         if (length() + std::distance(first, last) > max_capacity()) throw argument_out_of_range_exception {csf_};
         return chars_.insert(pos, first, last);
       }
@@ -1698,9 +1711,12 @@ namespace xtd {
       /// @param pos The iterator before which the characters will be inserted.
       /// @param ilist The [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) to insert the characters from
       /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
-      /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
+      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
-      iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {return insert(pos, basic_string_builder(ilist));}
+      iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {csf_};
+        return chars_.insert(pos, ilist);
+      }
       
       /// @brief Removes the last character from the string.
       /// @remarks Equivalent to `erase(end() - 1)`. The behavior is undefined if the string is empty.
@@ -1755,7 +1771,7 @@ namespace xtd {
         auto index = xtd::size {0};
         while (true) {
           index = find(old_value, index);
-          if (index == npos || index > start_index + count) break;
+          if (index == npos || index >= start_index + count) break;
           if (index >= start_index) {
             if (old_size == new_size) replace(index, old_size, new_value);
             else {
@@ -1906,60 +1922,6 @@ namespace xtd {
       /// @remarks If [`begin()`, `first`) or [`first`, last`) is not a valid range, the behavior is undefined.
       basic_string_builder& replace(const_iterator first, const_iterator last, std::initializer_list<value_type> ilist) {
         chars_.replace(first, last, ilist);
-        return *this;
-      }
-      /// @brief Replaces the characters in the range [`begin() + pos`, `begin() + std::min(pos + count, size())`) or [`first`, `last`) with given characters.
-      /// @param pos The start of the substring that is going to be replaced.
-      /// @param count The length of the substring that is going to be replaced.
-      /// @param t The object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) with the characters to use for replacement.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Implicitly converts t to a string view `sv` as if by `std::basic_string_view<char_t, Traits> sv = t;`, then those characters are replaced with the characters from `sv`.
-      /// @remarks These overloads participate in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, Traits>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-      template<typename string_view_like_t>
-      basic_string_builder& replace(size_type pos, size_type count, const string_view_like_t& t) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {csf_};
-        chars_.replace(pos, count, t);
-        return *this;
-      }
-      /// @brief Replaces the characters in the range [`begin() + pos`, `begin() + std::min(pos + count, size())`) or [`first`, `last`) with given characters.
-      /// @param first The first itrator of range of characters that is going to be replaced.
-      /// @param last The last itrator of range of characters that is going to be replaced.
-      /// @param t The object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) with the characters to use for replacement.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Implicitly converts t to a string view `sv` as if by `std::basic_string_view<char_t, Traits> sv = t;`, then those characters are replaced with the characters from `sv`.
-      /// @remarks These overloads participate in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, Traits>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-      /// @remarks If [`begin()`, `first`) or [`first`, last`) is not a valid range, the behavior is undefined.
-      template<typename string_view_like_t>
-      basic_string_builder& replace(const_iterator first, const_iterator last, const string_view_like_t& t) {
-        chars_.replace(first, last, t);
-        return *this;
-      }
-      /// @brief Replaces the characters in the range [`begin() + pos`, `begin() + std::min(pos + count, size())`) or [`first`, `last`) with given characters.
-      /// @param pos The start of the substring that is going to be replaced.
-      /// @param count The length of the substring that is going to be replaced.
-      /// @param t The object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) with the characters to use for replacement.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, Traits> sv = t;`, then those characters are replaced with the characters from the subview `sv.substr(pos2, count2)`.
-      /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, Traits>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-      template<typename string_view_like_t>
-      basic_string_builder& replace(size_type pos, size_type count, const string_view_like_t& t, size_type pos2) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {csf_};
-        chars_.replace(pos, count, t, pos2);
-        return *this;
-      }
-      /// @brief Replaces the characters in the range [`begin() + pos`, `begin() + std::min(pos + count, size())`) or [`first`, `last`) with given characters.
-      /// @param pos The start of the substring that is going to be replaced.
-      /// @param count The length of the substring that is going to be replaced.
-      /// @param t The object (convertible to [std::basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view)) with the characters to use for replacement.
-      /// @param pos2 The start of the substring to replace with.
-      /// @param count2 The number of characters to replace with.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Implicitly converts `t` to a string view `sv` as if by `std::basic_string_view<char_t, Traits> sv = t;`, then those characters are replaced with the characters from the subview `sv.substr(pos2, count2)`.
-      /// @remarks This overload participates in overload resolution only if `std::is_convertible_v<const string_view_like_t&, std::basic_string_view<char_t, Traits>>` is `true` and `std::is_convertible_v<const string_view_like_t&, const char_t*>` is `false`.
-      template<typename string_view_like_t>
-      basic_string_builder& replace(size_type pos, size_type count, const string_view_like_t& t, size_type pos2, size_type count2) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {csf_};
-        chars_.replace(pos, count, t, pos2, count2);
         return *this;
       }
 

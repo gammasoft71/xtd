@@ -339,7 +339,7 @@ namespace xtd::tests {
     }
 
     void test_method_(length) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length(), csf_);
       s.length(16_z);
       assert::are_equal(16_z, s.length(), csf_);
@@ -720,6 +720,191 @@ namespace xtd::tests {
       assert::are_not_equal(basic_string_builder<char_t> {"01235"}.get_hash_code(), basic_string_builder<char_t> {"01234"}.get_hash_code(), csf_);
     }
     
+    void test_method_(insert_with_index_and_basic_string) {
+      assert::are_equal("A test to test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string<char_t> {" to test"}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string<char_t> {" to test"});}, csf_);
+    }
+    
+    void test_method_(insert_with_index_basic_string_and_count) {
+      assert::are_equal("A test to string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string<char_t> {" to test"}, 3).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string<char_t> {" to test"}, 3);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string<char_t> {" to test"}, 9);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_boolean) {
+      assert::are_equal("A test false string", basic_string_builder<char_t> {"A test  string"}.insert(7, false).to_string(), csf_);
+      assert::are_equal("A test true string", basic_string_builder<char_t> {"A test  string"}.insert(7, true).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, false);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_byte) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_u8).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u8);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_decimal) {
+      assert::are_equal("A test 0.42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, .42l).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, .42l);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_double) {
+      assert::are_equal("A test 0.42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, .42).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, .42);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_single) {
+      assert::are_equal("A test 0.42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, .42f).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, .42f);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_int16) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_s16).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_s16);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_int32) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_s32).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_s32);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_int64) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_s64).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_s64);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_sbyte) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_s8).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_s8);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_size) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_z).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_z);}, csf_);
+    }
+
+    void test_method_(insert_with_index_and_uint16) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_u16).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u16);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_uint32) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_u32).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u32);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_uint64) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_u64).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u64);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_value_type) {
+      assert::are_equal("A test $ string", basic_string_builder<char_t> {"A test  string"}.insert(7, char_t {'$'}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, char_t {'$'});}, csf_);
+    }
+    
+    void test_method_(insert_with_index_value_type_and_repeat_count) {
+      assert::are_equal("A test $$$$$ string", basic_string_builder<char_t> {"A test  string"}.insert(7, char_t {'$'}, 5).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, char_t {'$'}, 5);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_object) {
+      assert::are_equal("A test 09:24:03 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 9_h + 24_min + 3_s).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 9_h + 24_min + 3_s);}, csf_);
+    }
+    
+    void test_method_(insert_with_index_count_and_ch) {
+      assert::are_equal("A test $$$$$ string", basic_string_builder<char_t> {"A test  string"}.insert(7, 5, char_t {'$'}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 5, char_t {'$'});}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_const_pointer) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test");
+      if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test");
+      if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test");
+#if defined(__xtd__cpp_lib_char8_t)
+      if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test");
+#endif
+      if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test");
+      assert::are_equal("A test to test string", s.to_string(), csf_);
+    }
+    
+    void test_method_(insert_with_index_const_pointer_and_count) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test", 8);
+      if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test", 8);
+      if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test", 8);
+#if defined(__xtd__cpp_lib_char8_t)
+      if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test", 8);
+#endif
+      if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test", 8);
+      assert::are_equal("A test to test string", s.to_string(), csf_);
+
+      if constexpr(std::is_same<char_t, char>::value) s.insert(9, " and check", 4);
+      if constexpr(std::is_same<char_t, char16>::value) s.insert(9, u" and check", 4);
+      if constexpr(std::is_same<char_t, char32>::value) s.insert(9, U" and check", 4);
+#if defined(__xtd__cpp_lib_char8_t)
+      if constexpr(std::is_same<char_t, char8>::value) s.insert(9, u8" and check", 4);
+#endif
+      if constexpr(std::is_same<char_t, wchar>::value) s.insert(9, L" and check", 4);
+      assert::are_equal("A test to and test string", s.to_string(), csf_);
+    }
+
+    void test_method_(insert_with_index_and_basic_string_builder) {
+      assert::are_equal("A test to test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"});}, csf_);
+    }
+
+    void test_method_(insert_with_index_basic_string_builder_index_and_count) {
+      assert::are_equal("A test test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3, 5).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"}, 3, 5);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 9, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3, 6);}, csf_);
+    }
+
+    void test_method_(insert_with_index_basic_string_builder_and_index) {
+      assert::are_equal("A test test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"}, 3);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 9);}, csf_);
+    }
+    
+    void test_method_(insert_with_pos_and_ch) {
+      auto s = basic_string_builder<char_t> {"A test  string"};
+      auto i = s.insert(s.begin() + 7, char_t {'$'});
+      assert::are_equal("A test $ string", s.to_string(), csf_);
+      assert::are_equal(char_t {'$'}, *i, csf_);
+      s = basic_string_builder<char_t> {"A test string"};
+      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, char_t {'$'});}, csf_);
+    }
+    
+    void test_method_(insert_with_pos_count_and_ch) {
+      auto s = basic_string_builder<char_t> {"A test  string"};
+      auto i = s.insert(s.begin() + 7, 5, char_t {'$'});
+      assert::are_equal("A test $$$$$ string", s.to_string(), csf_);
+      assert::are_equal(char_t {'$'}, *i, csf_);
+      s = basic_string_builder<char_t> {"A test string"};
+      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, 5, char_t {'$'});}, csf_);
+    }
+    
+    void test_method_(insert_with_pos_first_and_last_iterators) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      auto si = basic_string_builder<char_t> {" to test"};
+      auto i = s.insert(s.begin() + 6, si.begin(), si.end());
+      assert::are_equal("A test to test string", s.to_string(), csf_);
+      assert::are_equal(char_t {' '}, *i, csf_);
+      s = basic_string_builder<char_t> {"A test string"};
+      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, si.begin(), si.end());}, csf_);
+    }
+    
+    void test_method_(insert_with_pos_and_ilist) {
+      auto s = basic_string_builder<char_t> {"A test string"};
+      auto i = s.insert(s.begin() + 6, {' ', 't', 'o', ' ', 't', 'e', 's', 't'});
+      assert::are_equal("A test to test string", s.to_string(), csf_);
+      assert::are_equal(char_t {' '}, *i, csf_);
+      s = basic_string_builder<char_t> {"A test string"};
+      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, {' ', 't', 'o', ' ', 't', 'e', 's', 't'});}, csf_);
+    }
+
     void test_method_(pop_back) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.pop_back();
@@ -732,14 +917,34 @@ namespace xtd::tests {
       assert::are_equal("A test string ", s.to_string(), csf_);
     }
     
+    void test_method_(replace_old_char_with_new_char) {
+      assert::are_equal("A $es$ s$ring", basic_string_builder<char_t> {"A test string"}.replace(char_t {'t'}, char_t {'$'}).to_string(), csf_);
+    }
+    
+    void test_method_(replace_old_char_with_new_char_and_start_index_and_count) {
+      assert::are_equal("A tes$ string", basic_string_builder<char_t> {"A test string"}.replace(char_t {'t'}, char_t {'$'}, 3, 5).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.replace(char_t {'t'}, char_t {'$'}, 14, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.replace(char_t {'t'}, char_t {'$'}, 3, 11);}, csf_);
+    }
+    
+    void test_method_(replace_old_value_with_new_value) {
+      assert::are_equal("A test string to test", basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test")).to_string(), csf_);
+    }
+    
+    void test_method_(replace_old_value_with_new_value_and_start_index_and_count) {
+      assert::are_equal("A test string to value", basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test"), 2, 5).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test"), 24, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test"), 2, 22);}, csf_);
+    }
+
     void test_method_(replace_with_pos_count_and_str) {
       assert::are_equal("A value string", basic_string_builder<char_t> {"A test string"}.replace(2_z, 4_z, basic_string_builder<char_t> {"value"}).to_string(), csf_);
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(14_z, 0_z, basic_string_builder<char_t> {"value"});}, csf_);
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(2_z, 12_z, basic_string_builder<char_t> {"value"});}, csf_);
     }
-    
+
     void test_method_(replace_with_first_last_and_str) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A value string", s.replace(s.begin() + 2_z, s.begin() + 6_z, basic_string_builder<char_t> {"value"}).to_string(), csf_);
     }
     
@@ -810,12 +1015,12 @@ namespace xtd::tests {
     }
 
     void test_method_(replace_with_first_last_count2_and_ch) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A ***** string", s.replace(s.begin() + 2_z, s.begin() + 6_z, 5_z, char_t {'*'}).to_string(), csf_);
     }
 
     void test_method_(replace_with_first_last_and_ilist) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A value string", s.replace(s.begin() + 2_z, s.begin() + 6_z, {'v', 'a', 'l', 'u', 'e'}).to_string(), csf_);
     }
     
@@ -828,7 +1033,7 @@ namespace xtd::tests {
     }
 
     void test_method_(resize_with_count) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length(), csf_);
       s.resize(16_z);
       assert::are_equal(16_z, s.length(), csf_);
@@ -843,7 +1048,7 @@ namespace xtd::tests {
     }
 
     void test_method_(resize_with_count_and_char) {
-      auto s =  basic_string_builder<char_t> {"A test string"};
+      auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length(), csf_);
       s.resize(16_z, char_t {'*'});
       assert::are_equal(16_z, s.length(), csf_);
