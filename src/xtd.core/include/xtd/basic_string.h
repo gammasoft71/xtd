@@ -1371,33 +1371,24 @@ namespace xtd {
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    xtd::size index_of_any(const std::vector<value_type>& values) const noexcept {return index_of_any(values, 0, size());}
+    xtd::size index_of_any(const xtd::array<value_type>& values) const noexcept;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index) const {return index_of_any(values, start_index, size() - start_index);}
+    xtd::size index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    xtd::size index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
-      auto index = xtd::size {0};
-      for (const auto& item : *this) {
-        if (index++ < start_index) continue;
-        if (index - 1 > start_index + count) break;
-        if (std::find(values.begin(), values.end(), item) != values.end()) return index - 1;
-      }
-      return npos;
-    }
+    xtd::size index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const;
     /// @cond
-    xtd::size index_of_any(const std::initializer_list<value_type>& values) const noexcept {return index_of_any(std::vector<value_type>(values));}
-    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {return index_of_any(std::vector<value_type>(values), start_index);}
-    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {return index_of_any(std::vector<value_type>(values), start_index, count);}
+    xtd::size index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const;
+    xtd::size index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const;
     /// @endcond
     
     /// @brief Inserts a specified instance of basic_string at a specified index position in this instance.
@@ -1466,31 +1457,22 @@ namespace xtd {
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    xtd::size last_index_of_any(const std::vector<value_type>& values) const noexcept {return last_index_of_any(values, 0, size());}
+    xtd::size last_index_of_any(const xtd::array<value_type>& values) const noexcept;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index) const {return last_index_of_any(values, start_index, size() - start_index);}
+    xtd::size last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    xtd::size last_index_of_any(const std::vector<value_type>& values, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
-      auto index = size() - 1;
-      for (auto iterator = crbegin(); iterator != crend(); ++iterator) {
-        if (index-- > start_index + count) continue;
-        if (index + 1 < start_index) break;
-        if (std::find(values.begin(), values.end(), *iterator) != values.end()) return index + 1;
-      }
-      return npos;
-    }
+    xtd::size last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const;
     /// @cond
-    xtd::size last_index_of_any(const std::initializer_list<value_type>& values) const noexcept {return last_index_of_any(std::vector<value_type>(values));}
-    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {return last_index_of_any(std::vector<value_type>(values), start_index);}
-    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {return last_index_of_any(std::vector<value_type>(values), start_index, count);}
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values) const noexcept;
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const;
+    xtd::size last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const;
     /// @endcond
 
     /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
@@ -1875,12 +1857,12 @@ namespace xtd {
     /// @param str xtd::basic_string to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specified xtd::basic_string.
-    basic_string trim(value_type trim_char) const noexcept {return trim(std::vector<value_type> {trim_char});}
+    basic_string trim(value_type trim_char) const noexcept;
     /// @brief Removes all leading and trailing occurrences of a set of characters specified in an array from the specified xtd::basic_string.
     /// @param str xtd::basic_string to trim end.
     /// @param trim_chars An array of characters to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified xtd::basic_string.
-    basic_string trim(const std::vector<value_type>& trim_chars) const noexcept {return trim_start(trim_chars).trim_end(trim_chars);}
+    basic_string trim(const xtd::array<value_type>& trim_chars) const noexcept;
     
     /// @brief Removes all trailing occurrences of white-space characters from the specified xtd::basic_string.
     /// @param str xtd::basic_string to trim end.
@@ -1891,18 +1873,12 @@ namespace xtd {
     /// @param str xtd::basic_string to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified xtd::basic_string.
-    basic_string trim_end(value_type trim_char) const noexcept {return trim_end(std::vector<value_type> {trim_char});}
+    basic_string trim_end(value_type trim_char) const noexcept;
     /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified xtd::basic_string.
     /// @param str xtd::basic_string to trim end.
     /// @param trim_chars An array of characters to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified xtd::basic_string.
-    basic_string trim_end(const std::vector<value_type>& trim_chars) const noexcept {
-      if (!size()) return *this;
-      auto result = chars_;
-      while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
-        result.erase(result.size() - 1, 1);
-      return result;
-    }
+    basic_string trim_end(const xtd::array<value_type>& trim_chars) const noexcept;
     
     /// @brief Removes all leading occurrences of white-space characters from the specified xtd::basic_string.
     /// @param str xtd::basic_string to trim start.
@@ -1913,18 +1889,12 @@ namespace xtd {
     /// @param str xtd::basic_string to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified xtd::basic_string.
-    basic_string trim_start(value_type trim_char) const noexcept {return trim_start(std::vector<value_type> {trim_char});}
+    basic_string trim_start(value_type trim_char) const noexcept;
     /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified xtd::basic_string.
     /// @param str An xtd::basic_string to trim start.
     /// @param trim_chars An array of characters to remove.
     /// @return The xtd::basic_string that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified xtd::basic_string.
-    basic_string trim_start(const std::vector<value_type>& trim_chars) const noexcept {
-      if (!size()) return *this;
-      auto result = chars_;
-      while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
-        result.erase(0, 1);
-      return result;
-    }
+    basic_string trim_start(const xtd::array<value_type>& trim_chars) const noexcept;
     /// @}
     
     /// @name Public Static Methods
@@ -2067,23 +2037,11 @@ namespace xtd {
     /// @brief Concatenates the elements of a specified basic_string array.
     /// @param values An array of basic_string instances.
     /// @return The concatenated elements of values.
-    static basic_string concat(const std::vector<basic_string>& values) noexcept {
-      auto result = basic_string::empty_string;
-      std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
-      return result;
-    }
+    static basic_string concat(const xtd::array<basic_string>& values) noexcept;
     /// @cond
-    static basic_string concat(const std::vector<const_pointer>& values) noexcept {
-      auto result = basic_string::empty_string;
-      std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
-      return result;
-    }
+    static basic_string concat(const xtd::array<const_pointer>& values) noexcept;
     template<typename other_char_t>
-    static basic_string concat(const std::vector<const other_char_t*>& values) noexcept {
-      auto result = basic_string::empty_string;
-      std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
-      return result;
-    }
+    static basic_string concat(const xtd::array<const other_char_t*>& values) noexcept;
     static basic_string concat(const std::initializer_list<basic_string>& values) noexcept {
       auto result = basic_string::empty_string;
       std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
@@ -2105,12 +2063,7 @@ namespace xtd {
     /// @param args An object array that contains the elements to concatenate.
     /// @return The concatenated basic_string representations of the values of the elements in args.
     template<typename object_t>
-    static basic_string concat(const std::vector<object_t>& args) noexcept {
-      basic_string result;
-      for (const auto& arg : args)
-        result += format("{}", arg);
-      return result;
-    }
+    static basic_string concat(const xtd::array<object_t>& args) noexcept;
     /// @cond
     template<typename object_t>
     static basic_string concat(const std::initializer_list<object_t>& args) noexcept {
@@ -2187,80 +2140,7 @@ namespace xtd {
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename ...args_t>
-    static basic_string format(const basic_string<char>& fmt, args_t&& ... args) {
-      auto result = basic_string<char> {};
-      auto index = xtd::size {0};
-      auto formats = std::vector<__format_information<char>> {};
-      auto begin_format_iterator = fmt.end();
-      auto end_format_iterator = fmt.end();
-      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
-        if (*iterator == '{') {
-          if (++iterator == fmt.end())
-            __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
-          if (*iterator == '{')
-            result += *iterator;
-          else {
-            begin_format_iterator = iterator;
-            while (iterator != fmt.end() && *iterator != '}') ++iterator;
-            if (iterator == fmt.end())
-              __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
-            end_format_iterator = iterator;
-            __format_information<char> fi;
-            fi.location = result.size();
-            auto format_str = std::basic_string<char> {begin_format_iterator, end_format_iterator};
-            if (format_str.size() == 0)
-              fi.index = index++;
-            else {
-              xtd::size index_alignment_separator = basic_string(format_str).index_of(',');
-              xtd::size index_format_separator = basic_string(format_str).index_of(u':');
-              
-              if (index_alignment_separator != std::basic_string<char>::npos && index_format_separator != std::basic_string<char>::npos && index_alignment_separator > index_format_separator)
-                index_alignment_separator = std::basic_string<char>::npos;
-              
-              if (index_alignment_separator != basic_string<char_t>::npos)
-                fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::basic_string<char>::npos ? index_format_separator - index_alignment_separator - 1 : std::basic_string<char>::npos);
-              
-              if (index_format_separator != basic_string<char>::npos)
-                fi.format = format_str.substr(index_format_separator + 1);
-              
-              if (index_alignment_separator == 0 || index_format_separator == 0)
-                fi.index = index++;
-              else {
-                auto index_str = std::basic_string<char> {};
-                if (index_alignment_separator != basic_string<char>::npos)
-                  index_str = format_str.substr(0, index_alignment_separator);
-                else if (index_format_separator != basic_string<char>::npos)
-                  index_str = format_str.substr(0, index_format_separator);
-                else
-                  index_str = std::move(format_str);
-                try {
-                  for (auto c : index_str)
-                    if (!std::isdigit(c)) __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
-                  fi.index = std::stoi(index_str);
-                } catch (...) {
-                  __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
-                }
-              }
-            }
-            formats.push_back(fi);
-          }
-        } else if (*iterator == '}') {
-          if (++iterator == fmt.end()) {
-            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
-            break;
-          }
-          if (*iterator != '}') {
-            __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
-            break;
-          }
-          result += *iterator;
-        } else
-          result += *iterator;
-      }
-      
-      __basic_string_extract_format_arg(result, formats, std::forward<args_t>(args)...);
-      return result.c_str();
-    }
+    static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
 
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
@@ -2329,11 +2209,11 @@ namespace xtd {
     }
     /// @cond
     template<typename value_t>
-    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept;
     template<typename value_t>
-    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) {return join(separator, std::vector<value_t>(values), index);}
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index);
     template<typename value_t>
-    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) {return join(separator, std::vector<value_t>(values), index, count);}
+    static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count);
     /// @endcond
     
     /// @brief Converts a basic_string into a value_t type.
