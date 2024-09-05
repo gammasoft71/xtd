@@ -75,7 +75,7 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = type_t;
         /// @brief Represents the list allocator type.
-        using allocator_type = helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
+        using allocator_type = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
         /// @brief Represents the list base type.
         using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
         /// @brief Represents the list size type (usually xtd::size).
@@ -91,9 +91,9 @@ namespace xtd {
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
         /// @brief Represents the iterator of list value type.
-        using iterator = ilist<type_t>::iterator;
+        using iterator = xtd::collections::generic::ilist<type_t>::iterator;
         /// @brief Represents the const iterator of list value type.
-        using const_iterator = ilist<type_t>::const_iterator;
+        using const_iterator = xtd::collections::generic::ilist<type_t>::const_iterator;
         /// @brief Represents the reverse iterator of list value type.
         using reverse_iterator = typename base_type::reverse_iterator;
         /// @brief Represents the const reverse iterator of list value type.
@@ -106,10 +106,10 @@ namespace xtd {
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = ilist<type_t>::npos;
+        inline static constexpr xtd::size npos = xtd::collections::generic::ilist<type_t>::npos;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::collections::generic::list class that is empty.
