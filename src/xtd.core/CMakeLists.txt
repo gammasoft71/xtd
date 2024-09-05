@@ -99,6 +99,8 @@ add_sources(
   include/xtd/chrono
   include/xtd/cnull.h
   include/xtd/cnull
+  include/xtd/comparison.h
+  include/xtd/comparison
   include/xtd/comparison_operators.h
   include/xtd/comparison_operators
   include/xtd/compiler.h
@@ -525,6 +527,8 @@ add_sources(
   include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/icollection.h
   include/xtd/collections/generic/icollection
+  include/xtd/collections/generic/icomparer.h
+  include/xtd/collections/generic/icomparer
   include/xtd/collections/generic/ienumerable.h
   include/xtd/collections/generic/ienumerable
   include/xtd/collections/generic/ienumerator.h
