@@ -281,6 +281,43 @@ namespace xtd::tests {
         assert::are_equal(char_t {'*'}, s[index], csf_);
     }
 
+    void test_method_(constructor_with_char_character_and_count) {
+      auto s = basic_string<char_t>(char {'*'}, 10);
+      assert::are_equal(10_z, s.length(), csf_);
+      for (auto index = 0_z; index < s.length(); ++index)
+        assert::are_equal(char_t {'*'}, s[index], csf_);
+    }
+    
+    void test_method_(constructor_with_char16_character_and_count) {
+      auto s = basic_string<char_t>(char16 {'*'}, 10);
+      assert::are_equal(10_z, s.length(), csf_);
+      for (auto index = 0_z; index < s.length(); ++index)
+        assert::are_equal(char_t {'*'}, s[index], csf_);
+    }
+    
+    void test_method_(constructor_with_char32_character_and_count) {
+      auto s = basic_string<char_t>(char32 {'*'}, 10);
+      assert::are_equal(10_z, s.length(), csf_);
+      for (auto index = 0_z; index < s.length(); ++index)
+        assert::are_equal(char_t {'*'}, s[index], csf_);
+    }
+    
+    void test_method_(constructor_with_char8_character_and_count) {
+#if defined(__xtd__cpp_lib_char8_t)
+      auto s = basic_string<char_t>(char8 {'*'}, 10);
+      assert::are_equal(10_z, s.length(), csf_);
+      for (auto index = 0_z; index < s.length(); ++index)
+        assert::are_equal(char_t {'*'}, s[index], csf_);
+#endif
+    }
+    
+    void test_method_(constructor_with_wchar_character_and_count) {
+      auto s = basic_string<char_t>(wchar {'*'}, 10);
+      assert::are_equal(10_z, s.length(), csf_);
+      for (auto index = 0_z; index < s.length(); ++index)
+        assert::are_equal(char_t {'*'}, s[index], csf_);
+    }
+
     void test_method_(constructor_with_count_and_char_pointer) {
       auto p = "A test string\U0001F603";
       auto s = basic_string<char_t>(p);
@@ -344,7 +381,7 @@ namespace xtd::tests {
       auto s = basic_string<char_t>(p, 6);
       assert::are_equal(L"A test", s, csf_);
     }
-
+    
     void test_method_(constructor_with_std_basic_string_char) {
       assert::are_equal("A test string", basic_string<char_t>(std::basic_string<char>("A test string")), csf_);
     }
