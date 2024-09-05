@@ -105,8 +105,8 @@ namespace xtd {
         /// @name Public Fields
         
         /// @{
-        /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = xtd::collections::generic::ilist<type_t>::npos;
+        /// @brief This is a special value equal to the maximum value representable by the type size_type.
+        inline static constexpr size_type npos = xtd::collections::generic::ilist<type_t>::npos;
         /// @}
         
         /// @name Public Constructors
@@ -114,7 +114,7 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::collections::generic::list class that is empty.
         /// @remarks The capacity of a xtd::collections::generic::list is the number of elements that the xtd::collections::generic::list can hold. As elements are added to a xtd::collections::generic::list, the capacity is automatically increased as required by reallocating the internal array.
-        /// @remarks If the size of the collection can be estimated, using the xtd::collections::generic::list(xtd::size) constructor and specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::list.
+        /// @remarks If the size of the collection can be estimated, using the xtd::collections::generic::list (size_type) constructor and specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::list.
         /// @remarks The capacity can be decreased by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks The following code example demonstrates the default constructor of the xtd::collections::generic::list generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::collections::generic::list::capacity property.
@@ -284,7 +284,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list::capacity is always greater than or equal to xtd::collections::generic::list::count. If xtd::collections::generic::list::count exceeds xtd::collections::generic::list::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-        xtd::size count() const noexcept override {return size();}
+        size_type count() const noexcept override {return size();}
         
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
@@ -484,7 +484,7 @@ namespace xtd {
         /// @include ListCopyTo.cpp
         virtual void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
         
-        void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {copy_to(0, array, array_index, count());}
+        void copy_to(xtd::array<type_t>& array, size_type array_index) const override {copy_to(0, array, array_index, count());}
         
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
@@ -500,7 +500,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
-        virtual void copy_to(xtd::size index, xtd::array<type_t>& array, xtd::size array_index, xtd::size count) const {
+        virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
           if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
           auto i = 0_z, c = 0_z;
           for (const type_t& item : *this) {
@@ -577,7 +577,7 @@ namespace xtd {
         enumerator<value_type> get_enumerator() const noexcept override {
           class list_enumerator : public ienumerator<value_type> {
           public:
-            explicit list_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
+            explicit list_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
               if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
@@ -591,13 +591,13 @@ namespace xtd {
             
             void reset() override {
               version_ = items_.data_->version;
-              index_ = xtd::box_integer<xtd::size>::max_value;
+              index_ = xtd::box_integer<size_type>::max_value;
             }
             
           protected:
             const list& items_;
-            xtd::size index_ = xtd::box_integer<xtd::size>::max_value;
-            xtd::size version_ = 0;
+            size_type index_ = xtd::box_integer<size_type>::max_value;
+            size_type version_ = 0;
           };
           return {new_ptr<list_enumerator>(*this, data_->version)};
         }
@@ -614,7 +614,7 @@ namespace xtd {
         /// @remarks A shallow copy of a collection of value types, or a subset of that collection, contains the elements of the collection. However, if the elements of the collection contain references to other objects, those objects are ! copied. The references in the elements of the new collection point to the same objects as the references in the elements of the original collection.
         /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
         /// @remarks This method is an O(n) operation, where n is count.
-        list get_range(xtd::size index, xtd::size count) {
+        list get_range(size_type index, size_type count) {
           if (index + count > this->count()) throw xtd::argument_exception {csf_};
           
           return list<type_t> {begin() + index, begin() + index + count};
@@ -623,7 +623,7 @@ namespace xtd {
         /// @brief Determines the index of a specific item in the List.xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the List.
         /// @return The index of value if found in the list; otherwise, xtd::collections::generic::ilist::npos.
-        xtd::size index_of(const type_t& value) const noexcept override {
+        size_type index_of(const type_t& value) const noexcept override {
           if (count() == 0)  return npos;
           return index_of(value, 0, count());
         }
@@ -633,7 +633,7 @@ namespace xtd {
         /// @param index The zero-based starting index of the search.
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` is outside the range of valid indexes for the xtd::collections::generic::list <type_t>.
-        virtual xtd::size index_of(const type_t& value, xtd::size index) const {return index_of(value, index, count() - index);}
+        virtual size_type index_of(const type_t& value, size_type index) const {return index_of(value, index, count() - index);}
         
         /// @brief Determines the index of a specific item in the xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
@@ -641,7 +641,7 @@ namespace xtd {
         /// @param count The number of elements in the section to search
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
-        virtual xtd::size index_of(const type_t& value, xtd::size index, xtd::size count) const {
+        virtual size_type index_of(const type_t& value, size_type index, size_type count) const {
           if (index >= this->count()) throw xtd::argument_out_of_range_exception {csf_};
           if (index + count > this->count()) throw xtd::argument_out_of_range_exception {csf_};
           
@@ -709,7 +709,7 @@ namespace xtd {
         /// @param value The element should be inserted into the xtd::collections::generic::list <type_t>.
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
-        void insert(xtd::size index, const type_t& value) override {
+        void insert(size_type index, const type_t& value) override {
           if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
           insert(begin() + index, value);
         }
@@ -723,7 +723,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
-        virtual void insert_range(xtd::size index, const xtd::collections::generic::ienumerable<type_t>& enumerable) {
+        virtual void insert_range(size_type index, const xtd::collections::generic::ienumerable<type_t>& enumerable) {
           if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
 
           // If the collection is this instance, it must be copied to avoid an infinite loop.
@@ -745,14 +745,14 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
-        virtual void insert_range(xtd::size index, const std::initializer_list<type_t>& items) {
+        virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
           if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
           insert(begin() + index, items);
         }
 
         /// @cond
         template<typename ienumerable_t>
-        void insert_range(xtd::size index, const ienumerable_t& enumerable) {
+        void insert_range(size_type index, const ienumerable_t& enumerable) {
           if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
@@ -804,7 +804,7 @@ namespace xtd {
         /// @brief Removes the element at the specified index of the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than sxtd::collections::generic::list::count.
-        void remove_at(xtd::size index) override {
+        void remove_at(size_type index) override {
           if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
 
           if (index == count() - 1) pop_back();
@@ -819,7 +819,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @exception xtd::argument_out_of_range_exception index or count is less than 0 or index + count is greater than xtd::collections::generic::list::count.
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
-        virtual void remove_range(xtd::size index, xtd::size count) {
+        virtual void remove_range(size_type index, size_type count) {
           if (index + count >= this->count()) throw xtd::argument_out_of_range_exception {csf_};
           
           erase(begin() + index, begin() + index + count);
@@ -974,7 +974,7 @@ namespace xtd {
           data& operator =(const data&) = default;
 
           base_type items;
-          xtd::size version = 0;
+          size_type version = 0;
           xtd::object sync_root;
         };
         
