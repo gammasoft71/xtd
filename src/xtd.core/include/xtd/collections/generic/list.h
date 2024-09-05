@@ -289,12 +289,12 @@ namespace xtd {
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
+        virtual const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
         
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        const_reverse_iterator crend() const noexcept {return data_->items.crend();}
+        virtual const_reverse_iterator crend() const noexcept {return data_->items.crend();}
         
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
@@ -343,20 +343,20 @@ namespace xtd {
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        reverse_iterator rbegin() noexcept {return data_->items.rbegin();}
+        virtual reverse_iterator rbegin() noexcept {return data_->items.rbegin();}
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        const_reverse_iterator rbegin() const noexcept {return data_->items.rbegin();}
+        virtual const_reverse_iterator rbegin() const noexcept {return data_->items.rbegin();}
         
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        reverse_iterator rend() noexcept {return data_->items.rend();}
+        virtual reverse_iterator rend() noexcept {return data_->items.rend();}
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        const_reverse_iterator rend() const noexcept {return data_->items.rend();}
+        virtual const_reverse_iterator rend() const noexcept {return data_->items.rend();}
         
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
@@ -869,7 +869,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
-        xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(begin(), end());}
+        virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(begin(), end());}
         
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
                 
@@ -906,7 +906,7 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
-        list& operator =(const list&& other) noexcept {
+        list& operator =(list&& other) noexcept {
           data_->version = std::move(other.data_->version);
           data_->items = std::move(other.data_->items);
           return *this;
