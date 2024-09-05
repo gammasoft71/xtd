@@ -577,7 +577,7 @@ namespace xtd {
         enumerator<value_type> get_enumerator() const noexcept override {
           class list_enumerator : public ienumerator<value_type> {
           public:
-            explicit list_enumerator(const list& items, xtd::int64 version) : items_(items), version_(version) {}
+            explicit list_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
               if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
@@ -597,7 +597,7 @@ namespace xtd {
           protected:
             const list& items_;
             xtd::size index_ = xtd::box_integer<xtd::size>::max_value;
-            xtd::int64 version_ = 0;
+            xtd::size version_ = 0;
           };
           return {new_ptr<list_enumerator>(*this, data_->version)};
         }
@@ -974,7 +974,7 @@ namespace xtd {
           data& operator =(const data&) = default;
 
           base_type items;
-          xtd::int64 version = 0;
+          xtd::size version = 0;
           xtd::object sync_root;
         };
         
