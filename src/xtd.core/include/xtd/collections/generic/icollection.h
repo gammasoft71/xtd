@@ -3,7 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerable.h"
-#include "../../array.h"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__array_definition.h"
+#undef __XTD_CORE_INTERNAL__
 #include "../../object.h"
 #include "../../size.h"
 
