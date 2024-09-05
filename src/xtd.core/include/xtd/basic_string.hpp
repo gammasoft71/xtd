@@ -14,6 +14,80 @@ template<typename char_t, typename traits_t, typename allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t>::basic_string(const allocator_type& allocator) noexcept : chars_(allocator) {}
 
 template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values) const noexcept {
+  return index_of_any(values, 0, size());
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const {
+  return index_of_any(values, start_index, size() - start_index);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const {
+  if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+  auto index = xtd::size {0};
+  for (const auto& item : *this) {
+    if (index++ < start_index) continue;
+    if (index - 1 > start_index + count) break;
+    if (std::find(values.begin(), values.end(), item) != values.end()) return index - 1;
+  }
+  return npos;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values) const noexcept {
+  return index_of_any(xtd::array<value_type>(values));
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {
+  return index_of_any(xtd::array<value_type>(values), start_index);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {
+  return index_of_any(xtd::array<value_type>(values), start_index, count);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values) const noexcept {
+  return last_index_of_any(values, 0, size());
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const {
+  return last_index_of_any(values, start_index, size() - start_index);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const {
+  if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+  auto index = size() - 1;
+  for (auto iterator = crbegin(); iterator != crend(); ++iterator) {
+    if (index-- > start_index + count) continue;
+    if (index + 1 < start_index) break;
+    if (std::find(values.begin(), values.end(), *iterator) != values.end()) return index + 1;
+  }
+  return npos;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values) const noexcept {
+  return last_index_of_any(xtd::array<value_type>(values));
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const {
+  return last_index_of_any(xtd::array<value_type>(values), start_index);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const {
+  return last_index_of_any(xtd::array<value_type>(values), start_index, count);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
 inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd::basic_string<char_t, traits_t, allocator_t>::split() const noexcept {
   return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
 }
@@ -110,6 +184,168 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
   for (auto& word : words)
     if (word.size() && word != word.to_upper()) word = static_cast<value_type>(toupper(word[0])) + word.substring(1).to_lower();
   return basic_string::join(" ", words);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim(value_type trim_char) const noexcept {
+  return trim(xtd::array<value_type> {trim_char});}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim(const xtd::array<value_type>& trim_chars) const noexcept {
+  return trim_start(trim_chars).trim_end(trim_chars);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(value_type trim_char) const noexcept {
+  return trim_end(xtd::array<value_type> {trim_char});
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(const xtd::array<value_type>& trim_chars) const noexcept {
+  if (!size()) return *this;
+  auto result = chars_;
+  while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
+    result.erase(result.size() - 1, 1);
+  return result;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_start(value_type trim_char) const noexcept {return trim_start(xtd::array<value_type> {trim_char});}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_start(const xtd::array<value_type>& trim_chars) const noexcept {
+  if (!size()) return *this;
+  auto result = chars_;
+  while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
+    result.erase(0, 1);
+  return result;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<basic_string>& values) noexcept {
+  auto result = basic_string::empty_string;
+  std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
+  return result;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<const_pointer>& values) noexcept {
+  auto result = basic_string::empty_string;
+  std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
+  return result;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename other_char_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<const other_char_t*>& values) noexcept {
+  auto result = basic_string::empty_string;
+  std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
+  return result;
+}
+
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename object_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<object_t>& args) noexcept {
+  basic_string result;
+  for (const auto& arg : args)
+    result += format("{}", arg);
+  return result;
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename ...args_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::format(const basic_string<char>& fmt, args_t&& ... args) {
+  auto result = basic_string<char> {};
+  auto index = xtd::size {0};
+  auto formats = xtd::array<__format_information<char>> {};
+  auto begin_format_iterator = fmt.end();
+  auto end_format_iterator = fmt.end();
+  for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
+    if (*iterator == '{') {
+      if (++iterator == fmt.end())
+        __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+      if (*iterator == '{')
+        result += *iterator;
+      else {
+        begin_format_iterator = iterator;
+        while (iterator != fmt.end() && *iterator != '}') ++iterator;
+        if (iterator == fmt.end())
+          __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+        end_format_iterator = iterator;
+        __format_information<char> fi;
+        fi.location = result.size();
+        auto format_str = std::basic_string<char> {begin_format_iterator, end_format_iterator};
+        if (format_str.size() == 0)
+          fi.index = index++;
+        else {
+          xtd::size index_alignment_separator = basic_string(format_str).index_of(',');
+          xtd::size index_format_separator = basic_string(format_str).index_of(u':');
+          
+          if (index_alignment_separator != std::basic_string<char>::npos && index_format_separator != std::basic_string<char>::npos && index_alignment_separator > index_format_separator)
+            index_alignment_separator = std::basic_string<char>::npos;
+          
+          if (index_alignment_separator != basic_string<char_t>::npos)
+            fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::basic_string<char>::npos ? index_format_separator - index_alignment_separator - 1 : std::basic_string<char>::npos);
+          
+          if (index_format_separator != basic_string<char>::npos)
+            fi.format = format_str.substr(index_format_separator + 1);
+          
+          if (index_alignment_separator == 0 || index_format_separator == 0)
+            fi.index = index++;
+          else {
+            auto index_str = std::basic_string<char> {};
+            if (index_alignment_separator != basic_string<char>::npos)
+              index_str = format_str.substr(0, index_alignment_separator);
+            else if (index_format_separator != basic_string<char>::npos)
+              index_str = format_str.substr(0, index_format_separator);
+            else
+              index_str = std::move(format_str);
+            try {
+              for (auto c : index_str)
+                if (!std::isdigit(c)) __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+              fi.index = std::stoi(index_str);
+            } catch (...) {
+              __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+            }
+          }
+        }
+        formats.push_back(fi);
+      }
+    } else if (*iterator == '}') {
+      if (++iterator == fmt.end()) {
+        __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+        break;
+      }
+      if (*iterator != '}') {
+        __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+        break;
+      }
+      result += *iterator;
+    } else
+      result += *iterator;
+  }
+  
+  __basic_string_extract_format_arg(result, formats, std::forward<args_t>(args)...);
+  return result.c_str();
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept {
+  return join(separator, xtd::array<value_t>(values));
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) {
+  return join(separator, xtd::array<value_t>(values), index);
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
+inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) {
+  return join(separator, xtd::array<value_t>(values), index, count);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
