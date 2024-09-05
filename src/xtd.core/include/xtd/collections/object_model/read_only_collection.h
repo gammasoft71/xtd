@@ -5,6 +5,7 @@
 #include "../generic/ilist.h"
 #include "../../argument_out_of_range_exception.h"
 #include "../../invalid_operation_exception.h"
+#include "../../size_object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
