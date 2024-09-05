@@ -34,6 +34,7 @@ add_sources(
   include/xtd/arithmetic_exception
   include/xtd/array.h
   include/xtd/array
+  include/xtd/array.hpp
   include/xtd/as.h
   include/xtd/as
   include/xtd/async_callback.h
