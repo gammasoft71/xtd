@@ -4,6 +4,7 @@
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.h"
+#include "internal/__external_exceptions.h"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/enumerator.h"
 #include "collections/generic/icomparer.h"
@@ -90,7 +91,7 @@ namespace xtd {
     basic_array_object(const array_<size_type, 1>& lengths);
     
     basic_array_object(const_pointer array, xtd::size length) {
-      //if (array == null) throw xtd::argument_null_exception(csf_);
+      if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
       data_->array = base_type {array, length};
       data_->upper_bound[0] = length - 1;
     }
