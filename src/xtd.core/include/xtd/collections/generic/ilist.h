@@ -3,7 +3,8 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "icollection.h"
-#include "../../size_object.h"
+#include "../../size.h"
+#include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,7 +53,7 @@ namespace xtd {
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = xtd::size_object::max_value;
+        inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
         /// @}
         
         /// @name Public Properties
