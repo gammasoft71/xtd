@@ -8,11 +8,15 @@
 #endif
 /// @endcond
 #include "../collections/generic/helpers/allocator.h"
-#include "../int32.h"
+#include "../size.h"
 #include <vector> // @todo remove line
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @todo remove and rename array_ to array
+  template<typename type_t>
+  using array = std::vector<type_t>;
+  
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
@@ -26,8 +30,19 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<typename type_t>
-  using array = std::vector<type_t>;
-  //template<typename type_t = nullptr, int32 rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<value_t>>
-  //class array;
+  template<typename type_t = nullptr_t, xtd::size rank_size = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  class array_;
+  
+  /// @brief Base object that represent array.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  template<typename type_t, typename allocator_t>
+  class basic_array_object;
+  
+  /// @brief Base object that represent array.
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  class array_object;
 }
