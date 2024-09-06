@@ -441,6 +441,14 @@ namespace xtd::tests {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_z).to_string(), csf_);
     }
     
+    void test_method_(append_slong) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(slong {42}).to_string(), csf_);
+    }
+    
+    void test_method_(append_ulong) {
+      assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(ulong {42}).to_string(), csf_);
+    }
+
     void test_method_(append_object_t) {
       assert::are_equal("A test string 02:03:24", basic_string_builder<char_t> {"A test string "}.append(2_h + 3_min + 24_s).to_string(), csf_);
     }
@@ -797,6 +805,21 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u64);}, csf_);
     }
     
+    void test_method_(insert_with_index_and_slong) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, slong {42}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, slong {42});}, csf_);
+    }
+    
+    void test_method_(insert_with_index_and_ulong) {
+      assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, ulong {42}).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, ulong {42});}, csf_);
+    }
+
+    void test_method_(insert_with_index_and_object) {
+      assert::are_equal("A test 09:24:03 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 9_h + 24_min + 3_s).to_string(), csf_);
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 9_h + 24_min + 3_s);}, csf_);
+    }
+
     void test_method_(insert_with_index_and_value_type) {
       assert::are_equal("A test $ string", basic_string_builder<char_t> {"A test  string"}.insert(7, char_t {'$'}).to_string(), csf_);
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, char_t {'$'});}, csf_);
@@ -805,11 +828,6 @@ namespace xtd::tests {
     void test_method_(insert_with_index_value_type_and_repeat_count) {
       assert::are_equal("A test $$$$$ string", basic_string_builder<char_t> {"A test  string"}.insert(7, char_t {'$'}, 5).to_string(), csf_);
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, char_t {'$'}, 5);}, csf_);
-    }
-    
-    void test_method_(insert_with_index_and_object) {
-      assert::are_equal("A test 09:24:03 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 9_h + 24_min + 3_s).to_string(), csf_);
-      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 9_h + 24_min + 3_s);}, csf_);
     }
     
     void test_method_(insert_with_index_count_and_ch) {
