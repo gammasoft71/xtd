@@ -473,12 +473,12 @@ namespace xtd {
         }
         
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
-        /// @param array The one-dimensional sxtd::array that is the destination of the elements copied from ICollection. The sxtd::array must have zero-based indexing.
+        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
-        /// @remarks TThis method uses sxtd::array::copy to copy the elements.
-        /// @remarks The elements are copied to the sxtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
-        /// @remarks This method is an O(n) operation, where n is sxtd::collections::generic::list::count.
+        /// @remarks TThis method uses xtd::array::copy to copy the elements.
+        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
@@ -488,21 +488,21 @@ namespace xtd {
         
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
-        /// @param array The one-dimensional sxtd::array that is the destination of the elements copied from ICollection. The sxtd::array must have zero-based indexing.
+        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @param arrayIndex The zero-based index in array at which copying begins;
         /// @param count The number of elements to copy.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentOutOfRangeException The arrayIndex or count is less than 0.
         /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
-        /// @remarks TThis method uses sxtd::array::copy to copy the elements.
-        /// @remarks The elements are copied to the sxtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
-        /// @remarks This method is an O(n) operation, where n is sxtd::collections::generic::list::count.
+        /// @remarks TThis method uses xtd::array::copy to copy the elements.
+        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
           if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
-          auto i = 0_z, c = 0_z;
+          auto i = size_type {0}, c = size_type {0};
           for (const type_t& item : *this) {
             if (i >= index + count) return;
             if (i >= index) {
@@ -591,12 +591,12 @@ namespace xtd {
             
             void reset() override {
               version_ = items_.data_->version;
-              index_ = xtd::box_integer<size_type>::max_value;
+              index_ = list::npos;
             }
             
           protected:
             const list& items_;
-            size_type index_ = xtd::box_integer<size_type>::max_value;
+            size_type index_ = list::npos;
             size_type version_ = 0;
           };
           return {new_ptr<list_enumerator>(*this, data_->version)};
@@ -793,7 +793,7 @@ namespace xtd {
         
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
-          for (auto index = 0_z; index < count(); ++index) {
+          for (auto index = size_type {0}; index < count(); ++index) {
             if (at(index) != item) continue;
             remove_at(index);
             return true;
@@ -803,7 +803,7 @@ namespace xtd {
         
         /// @brief Removes the element at the specified index of the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
-        /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than sxtd::collections::generic::list::count.
+        /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
           if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
 
@@ -864,8 +864,8 @@ namespace xtd {
         
         /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
         /// @return An array containing copies of the elements of the xtd::collections::generic::list <type_t>.
-        /// @remarks The elements are copied using sxtd::array::copy, which is an O(n) operation, where n is sxtd::collections::generic::list::count.
-        /// @remarks This method is an O(n) operation, where n is sxtd::collections::generic::list::count.
+        /// @remarks The elements are copied using xtd::array::copy, which is an O(n) operation, where n is xtd::collections::generic::list::count.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
