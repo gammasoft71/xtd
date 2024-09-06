@@ -44,7 +44,7 @@ namespace xtd {
     /// @name Public Constructors
     
     /// @{
-    /// @brief Create a new instance of the ultimate base class object
+    /// @brief Create a new instance of the ultimate base class object.
     /// @remarks This constructor is called by constructors in derived classes, but it can also be used to directly create an instance of the object class.
     object() = default;
     /// @}
