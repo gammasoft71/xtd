@@ -10,11 +10,19 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       /// @brief An object of type xtd::params <type_t> is a lightweight proxy object that provides access to an array of objects of type const `type_t` (that may be allocated in read-only memory).
+      /// ```cpp
+      /// template<typename type_t>
+      /// class params : public xtd::object
+      /// ```
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/collections/generic/params
+      /// ```
       /// @par Namespace
-      /// xtd
+      /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core system
+      /// @ingroup xtd_core generic_collections
       /// @remarks This class cannot be inherited.
       /// @remarks A xtd::params object is automatically constructed when:
       /// * A brace-enclosed params is used to initialize an object, where the corresponding constructor accepts an xtd::params or [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) parameter,
@@ -23,7 +31,7 @@ namespace xtd {
       /// @remarks xtd::params may be implemented as a pair of pointers or pointer and length. Copying a xtd::params does not copy the backing array of the corresponding params.
       /// @remarks xtd::params is exactly The same as [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) object.
       template<typename type_t>
-      class params : public xtd::object {
+      class params final : public xtd::object {
       public:
         /// @name Public Alias
         
