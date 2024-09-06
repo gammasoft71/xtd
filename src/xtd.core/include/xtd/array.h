@@ -13,6 +13,7 @@
 #include "int64.h"
 #include "new_ptr.h"
 #include "object.h"
+#include <algorithm>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -45,31 +46,31 @@ namespace xtd {
     /// @name Public Aliases
     
     /// @{
-    /// @brief Represents the list value type.
+    /// @brief Represents the array value type.
     using value_type = type_t;
-    /// @brief Represents the list allocator type.
+    /// @brief Represents the array allocator type.
     using allocator_type = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
-    /// @brief Represents the list base type.
+    /// @brief Represents the array base type.
     using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
-    /// @brief Represents the list size type (usually xtd::size).
+    /// @brief Represents the array size type (usually xtd::size).
     using size_type = xtd::size;
-    /// @brief Represents the list difference type (usually xtd::ptrdiff).
+    /// @brief Represents the array difference type (usually xtd::ptrdiff).
     using difference_type = xtd::ptrdiff;
-    /// @brief Represents the reference of list value type.
+    /// @brief Represents the reference of array value type.
     using reference = value_type&;
-    /// @brief Represents the const reference of list value type.
+    /// @brief Represents the const reference of array value type.
     using const_reference = const value_type&;
-    /// @brief Represents the pointer of list value type.
+    /// @brief Represents the pointer of array value type.
     using pointer = value_type*;
-    /// @brief Represents the const pointer of list value type.
+    /// @brief Represents the const pointer of array value type.
     using const_pointer = const value_type*;
-    /// @brief Represents the iterator of list value type.
+    /// @brief Represents the iterator of array value type.
     using iterator = xtd::collections::generic::ilist<type_t>::iterator;
-    /// @brief Represents the const iterator of list value type.
+    /// @brief Represents the const iterator of array value type.
     using const_iterator = xtd::collections::generic::ilist<type_t>::const_iterator;
-    /// @brief Represents the reverse iterator of list value type.
+    /// @brief Represents the reverse iterator of array value type.
     using reverse_iterator = typename base_type::reverse_iterator;
-    /// @brief Represents the const reverse iterator of list value type.
+    /// @brief Represents the const reverse iterator of array value type.
     using const_reverse_iterator = typename base_type::const_reverse_iterator;
     /// @}
     
@@ -112,32 +113,32 @@ namespace xtd {
     /// @return Iterator to the element following the last element.
     const_iterator cend() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::cend();}
     
-    /// @brief Gets the number of elements contained in the xtd::collections::generic::list <type_t>.
-    /// @return The number of elements contained in the xtd::collections::generic::list <type_t>.
+    /// @brief Gets the number of elements contained in the xtd::array <type_t>.
+    /// @return The number of elements contained in the xtd::array <type_t>.
     /// @par Examples
-    /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
+    /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::array <type_t>.
     /// @include generic_list.cpp
-    /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class of type string. (For an example of a xtd::collections::generic::list <type_t> of complex types, see the xtd::collections::generic::list::contains method.)
+    /// The following example demonstrates several properties and methods of the xtd::array <type_t> generic class of type string. (For an example of a xtd::array <type_t> of complex types, see the xtd::array::contains method.)
     ///
-    /// The parameterless constructor is used to create a list of strings with the default capacity. The xtd::collections::generic::list::capacity property is displayed and then the xtd::collections::generic::list::add method is used to add several items. The items are listed, and the xtd::collections::generic::list::capacity property is displayed again, along with the xtd::collections::generic::list::count property, to show that the capacity has been increased as needed.
+    /// The parameterless constructor is used to create a array of strings with the default capacity. The xtd::array::capacity property is displayed and then the xtd::array::add method is used to add several items. The items are listed, and the xtd::array::capacity property is displayed again, along with the xtd::array::count property, to show that the capacity has been increased as needed.
     ///
-    /// The xtd::collections::generic::list::contains method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.
+    /// The xtd::array::contains method is used to test for the presence of an item in the array, the Insert method is used to insert a new item in the middle of the array, and the contents of the array are displayed again.
     ///
-    /// The default xtd::collections::generic::list::operator [] is used to retrieve an item, the xtd::collections::generic::list::remove method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The xtd::collections::generic::list::remove method always removes the first instance it encounters.
+    /// The default xtd::array::operator [] is used to retrieve an item, the xtd::array::remove method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The xtd::array::remove method always removes the first instance it encounters.
     ///
-    /// The xtd::collections::generic::list::trim_excess method is used to reduce the capacity to match the count, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.
+    /// The xtd::array::trim_excess method is used to reduce the capacity to match the count, and the xtd::array::capacity and xtd::array::count properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the array would not have been resized.
     ///
-    /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
+    /// Finally, the xtd::array::clear method is used to remove all items from the array, and the xtd::array::capacity and xtd::array::count properties are displayed.
     /// @include generic_list2.cpp
-    /// @remarks xtd::collections::generic::list::capacity is the number of elements that the xtd::collections::generic::list <type_t> can store before resizing is required, whereas xtd::collections::generic::list::count is the number of elements that are actually in the xtd::collections::generic::list <type_t>.
-    /// @remarks xtd::collections::generic::list::capacity is always greater than or equal to xtd::collections::generic::list::count. If xtd::collections::generic::list::count exceeds xtd::collections::generic::list::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
-    /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
+    /// @remarks xtd::array::capacity is the number of elements that the xtd::array <type_t> can store before resizing is required, whereas xtd::array::count is the number of elements that are actually in the xtd::array <type_t>.
+    /// @remarks xtd::array::capacity is always greater than or equal to xtd::array::count. If xtd::array::count exceeds xtd::array::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
+    /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::array <type_t>, you can decrease capacity by calling the xtd::array::trim_excess method or by setting the xtd::array::capacity property explicitly to a lower value. When the value of xtd::array::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
     /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
     size_type count() const noexcept override {return size();}
 
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
     /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
     virtual const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
     
     /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
@@ -147,14 +148,14 @@ namespace xtd {
     
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
-    /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+    /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
     virtual pointer data() noexcept {return (pointer)data_->items.data();}
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
-    /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+    /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
     virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
     
-    /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
+    /// @brief Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().
     /// @return true if the container is empty, false otherwise.
     virtual bool empty() const noexcept {return data_->items.empty();}
 
@@ -197,7 +198,7 @@ namespace xtd {
     /// @remarks Retrieving the value of this property is an O(1) operation.
     virtual xtd::int64 long_length() {return static_cast<xtd::int64>(size());}
     
-    /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()) for the largest container.
+    /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::array::begin(), xtd::array::end()) for the largest container.
     /// @return Maximum number of elements.
     virtual size_type max_size() const noexcept {return data_->items.max_size();}
 
@@ -208,13 +209,13 @@ namespace xtd {
     /// @include ArrayGetLength.cpp
     virtual xtd::size rank() const noexcept {return 1;}
 
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
     /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
     virtual reverse_iterator rbegin() noexcept {return data_->items.rbegin();}
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
     /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
     virtual const_reverse_iterator rbegin() const noexcept {return data_->items.rbegin();}
     
     /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
@@ -226,7 +227,7 @@ namespace xtd {
     /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
     virtual const_reverse_iterator rend() const noexcept {return data_->items.rend();}
 
-    /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
+    /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).
     /// @return The number of elements in the container.
     virtual size_type size() const noexcept {return data_->items.size();}
     
@@ -236,6 +237,24 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Adds an object to the end of the xtd::array <type_t>.
+    /// @param item The object to be added to the end of the xtd::array <type_t>.
+    /// @)ar Examples
+    /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::array <type_t>.
+    /// @include generic_list4.cpp
+    /// The following example demonstrates several properties and methods of the xtd::array <type_t> generic class, including the xtd::array::add method.
+    /// The parameterless constructor is used to create a array of strings with a capacity of 0. The xtd::array::capacity property is displayed, and then the xtd::array::add method is used to add several items. The items are listed, and the xtd::array::capacity property is displayed again, along with the xtd::array::count property, to show that the capacity has been increased as needed.
+    ///
+    /// Other properties and methods are used to search for, insert, and remove elements from the array, and finally to clear the array.
+    /// @include generic_list2.cpp
+    /// @remarks xtd::array <type_t>  allows duplicate elements.
+    /// @remarks If xtd::array::count already equals xtd::array::capacity, the capacity of the xtd::array <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
+    /// @remarks If xtd::array::count is less than xtd::array::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::array::count.
+    void add(const type_t& item) override {
+      ++data_->version;
+      data_->items.push_back(item);
+    }
+
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
@@ -252,8 +271,154 @@ namespace xtd {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
     }
+
+    void clear() override {
+      ++data_->version;
+      data_->items.clear();
+    }
+    
+    bool contains(const type_t& value) const noexcept override {
+      for (const type_t& item : data_->items)
+        if (item == value) return true;
+      return false;
+    }
+
+    void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
+      if (array_index + length() > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      
+      for (auto increment = size_type {0}; increment < length(); ++increment)
+        array[array_index + increment] = at(increment);
+    }
+    
+    bool equals(const object& obj) const noexcept override {return is<basic_array<value_type>>(obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
+    bool equals(const basic_array& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version && data_->lowerbound == rhs.data_->lowerbound && data_->upperbound == rhs.data_->upperbound;}
+
+    /// @brief Assigns the value to all elements in the container.
+    /// @param value The value to assign to the elements.
+    virtual void fill(const value_type& value) noexcept {
+      std::fill(begin(), end(), value);
+    }
+
+    xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
+      class basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
+      public:
+        explicit basic_array_enumerator(const basic_array& items, size_type version) : items_(items), version_(version) {}
+        
+        const value_type& current() const override {
+          if (version_ != items_.data_->version) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+          return items_.at(index_);
+        }
+        
+        bool move_next() override {
+          if (version_ != items_.data_->version) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+          return ++index_ < items_.count();
+        }
+        
+        void reset() override {
+          version_ = items_.data_->version;
+          index_ = basic_array::npos;
+        }
+        
+      protected:
+        const basic_array& items_;
+        size_type index_ = basic_array::npos;
+        size_type version_ = 0;
+      };
+      return {new_ptr<basic_array_enumerator>(*this, data_->version)};
+    }
+
+    /// @brief Determines the index of a specific item in the List.xtd::array <type_t>.
+    /// @param value The object to locate in the List.
+    /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
+    size_type index_of(const type_t& value) const noexcept override {
+      if (count() == 0)  return npos;
+      return index_of(*this, value, 0, count());
+    }
+    
+    /// @brief Inserts an element into the xtd::array <type_t> at the specified index.
+    /// @param index The zero-based index at which the new element should be inserted.
+    /// @param value The element should be inserted into the xtd::array <type_t>.
+    /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::array::count.
+    /// @remarks xtd::array <type_t> allows duplicate elements.
+    void insert(size_type index, const type_t& value) override {
+      if (index > count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      data_->items.insert(to_base_type_iterator(begin()) + index, value);
+    }
+    
+    bool remove(const type_t& item) override {
+      if (count() == 0)  return false;
+      for (auto index = size_type {0}; index < count(); ++index) {
+        if (at(index) != item) continue;
+        remove_at(index);
+        return true;
+      }
+      return false;
+    }
+    
+    /// @brief Removes the element at the specified index of the xtd::array <type_t>.
+    /// @param index The zero-based index of the item to remove
+    /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::array::count.
+    void remove_at(size_type index) override {
+      if (index >= count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      
+      if (index == count() - 1) data_->items.pop_back();
+      else data_->items.erase(to_base_type_iterator(begin()) + index);
+    }
+
+    /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
+    /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
+    virtual void swap(basic_array& other) noexcept {
+      ++data_->version;
+      data_->items.swap(other.data_->items);
+    }
+
+    string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}    
     /// @}
     
+    /// @name Public Static Methods
+    
+    /// @{
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the Array.
+    /// @param value The object to locate in the Array.
+    /// @return int32 The index of value if found in the Array; otherwise, -1.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include ArrayIndexOf.cpp
+    static size_type index_of(const basic_array& array, const value_type& value) {return index_of(array, value, 0, array.Length);}
+    
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the Array.
+    /// @param value The object to locate in the Array.
+    /// @param index The zero-based starting index of the search.
+    /// @return int32 The index of value if found in the Array; otherwise, -1.
+    /// @exception ArgumentOutOfRangeException The parameters index is less than 0.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include ArrayIndexOf.cpp
+    static size_type index_of(const basic_array& array, const value_type& value, size_type index) {return index_of(array, value, index, array.Length - index);}
+    
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the Array.
+    /// @param value The object to locate in the Array.
+    /// @param index The zero-based starting index of the search.
+    /// @param count The number of elements in the section to search
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception ArgumentOutOfRangeException The parameters index is less than 0 or The parameters count is less than 0 or index and count do ! specify a valid section in the Array.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include ArrayIndexOf.cpp
+    static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
+      if (index > array.length() || index + count > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      
+      for (auto increment = size_type {0}; increment < count; ++increment) {
+        if (array[index + increment] == value)
+          return index + increment;
+      }
+      return npos;
+    }
+    /// @}
+
     /// @name Public Operators
     
     /// @{
@@ -310,6 +475,18 @@ namespace xtd {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
       data_->items = base_type {array, length};
       data_->upper_bound[0] = length - 1;
+    }
+    
+    typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
+      if (value == begin()) return data_->items.begin();
+      if (value == end()) return data_->items.end();
+      return data_->items.begin() + (value - begin());
+    }
+    
+    iterator to_iterator(typename base_type::iterator value) noexcept {
+      if (value == data_->items.begin()) return begin();
+      if (value == data_->items.end()) return end();
+      return begin() + (value - data_->items.begin());
     }
     
     struct data {
