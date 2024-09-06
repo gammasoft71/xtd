@@ -1,7 +1,9 @@
 /// @file
-/// @brief Contains xtd::params class.
+/// @brief Contains xtd::collections::generic::params class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "../../object.h"
+#include "../../string.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -9,7 +11,7 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @brief An object of type xtd::params <type_t> is a lightweight proxy object that provides access to an array of objects of type const `type_t` (that may be allocated in read-only memory).
+      /// @brief An object of type xtd::collections::generic::params <type_t> is a lightweight proxy object that provides access to an array of objects of type const `type_t` (that may be allocated in read-only memory).
       /// ```cpp
       /// template<typename type_t>
       /// class params : public xtd::object
@@ -24,12 +26,12 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks This class cannot be inherited.
-      /// @remarks A xtd::params object is automatically constructed when:
-      /// * A brace-enclosed params is used to initialize an object, where the corresponding constructor accepts an xtd::params or [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) parameter,
-      /// * A brace-enclosed params is used as the right operand of assignment or as a function call argument, and the corresponding assignment operator/function accepts an xtd::params or [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) parameter.
+      /// @remarks A xtd::collections::generic::params object is automatically constructed when:
+      /// * A brace-enclosed params is used to initialize an object, where the corresponding constructor accepts an xtd::collections::generic::params or [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) parameter,
+      /// * A brace-enclosed params is used as the right operand of assignment or as a function call argument, and the corresponding assignment operator/function accepts an xtd::collections::generic::params or [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) parameter.
       /// * A brace-enclosed params is bound to auto, including in a [ranged for loop](https://en.cppreference.com/w/cpp/language/range-for).
-      /// @remarks xtd::params may be implemented as a pair of pointers or pointer and length. Copying a xtd::params does not copy the backing array of the corresponding params.
-      /// @remarks xtd::params is exactly The same as [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) object.
+      /// @remarks xtd::collections::generic::params may be implemented as a pair of pointers or pointer and length. Copying a xtd::collections::generic::params does not copy the backing array of the corresponding params.
+      /// @remarks xtd::collections::generic::params is exactly The same as [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) object.
       template<typename type_t>
       class params final : public xtd::object {
       public:
@@ -44,10 +46,6 @@ namespace xtd {
         using reference = base_type::reference;
         /// @brief Represents the const reference of params value type.
         using const_reference = base_type::const_reference;
-        /// @brief Represents the pointer of params value type.
-        using pointer = const base_type*;
-        /// @brief Represents the const pointer of params value type.
-        using const_pointer = const base_type*;
         /// @brief Represents the params size type (usually xtd::size).
         using size_type = base_type::size_type;
         /// @brief Represents the iterator of params value type.
@@ -59,7 +57,7 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        /// @brief Create a new instance of the class xtd::params.
+        /// @brief Create a new instance of the class xtd::collections::generic::params.
         params() noexcept = default;
         /// @}
         
@@ -101,7 +99,6 @@ namespace xtd {
         /// @}
         
       private:
-        params(const_pointer p, size_type l) noexcept : items_(p, l) {}
         base_type items_;
       };
     }
