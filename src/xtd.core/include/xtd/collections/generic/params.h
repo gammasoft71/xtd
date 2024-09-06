@@ -78,7 +78,7 @@ namespace xtd {
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
         iterator end() const noexcept {return items_.end();}
         
-        xtd::string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", items_));}
+        xtd::string to_string() const noexcept override {return xtd::string::format("{}", items_);}
         /// @}
         
         /// @name Public Operators
