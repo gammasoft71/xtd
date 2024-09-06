@@ -542,6 +542,8 @@ add_sources(
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
   include/xtd/collections/generic/list
+  include/xtd/collections/generic/params.h
+  include/xtd/collections/generic/params
   include/xtd/collections/generic/sorted_dictionary.h
   include/xtd/collections/generic/sorted_dictionary
   include/xtd/collections/generic/sorted_set.h
