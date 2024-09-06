@@ -61,7 +61,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(size) {
       assert::is_zero(params<int> {}.size(), csf_);
-      assert::are_equal(5, params {1, 2, 3, 4, 5}.size(), csf_);
+      assert::are_equal(5_z, params {1, 2, 3, 4, 5}.size(), csf_);
     }
   };
 }
