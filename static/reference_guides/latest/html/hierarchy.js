@@ -11,6 +11,7 @@ var hierarchy =
     [ "animation_updated_event_handler", null, [
       [ "xtd::event< xtd::forms::animation, animation_updated_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::array_< type_t, rank_size, allocator_t >", "classxtd_1_1array__.html", null ],
     [ "xtd::call_once", "structxtd_1_1call__once.html", null ],
     [ "xtd::tunit::class_cleanup_attribute", "classxtd_1_1tunit_1_1class__cleanup__attribute.html", null ],
     [ "xtd::tunit::class_initialize_attribute", "classxtd_1_1tunit_1_1class__initialize__attribute.html", null ],
@@ -235,6 +236,7 @@ var hierarchy =
         [ "xtd::collections::generic::icollection< type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", [
           [ "xtd::collections::generic::ilist< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
           [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
+            [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ],
             [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
             [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ]
           ] ]
@@ -896,6 +898,7 @@ var hierarchy =
       [ "xtd::iequatable< uri >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< version >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< delegate< value_t(arguments_t...)> >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::collections::generic::icomparer< type_t >", "classxtd_1_1collections_1_1generic_1_1icomparer.html", null ],
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::collections::generic::ienumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", [
         [ "xtd::collections::generic::enumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1enumerator.html", null ]
@@ -1014,6 +1017,9 @@ var hierarchy =
         ] ]
       ] ],
       [ "xtd::any_object", "classxtd_1_1any__object.html", null ],
+      [ "xtd::array_object", "classxtd_1_1array__object.html", [
+        [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ]
+      ] ],
       [ "xtd::attribute", "classxtd_1_1attribute.html", [
         [ "xtd::reflection::assembly_company_attribute", "classxtd_1_1reflection_1_1assembly__company__attribute.html", null ],
         [ "xtd::reflection::assembly_configuration_attribute", "classxtd_1_1reflection_1_1assembly__configuration__attribute.html", null ],
@@ -1034,6 +1040,7 @@ var hierarchy =
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
       [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
+      [ "xtd::collections::generic::params< type_t >", "classxtd_1_1collections_1_1generic_1_1params.html", null ],
       [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ],
       [ "xtd::compiler", "classxtd_1_1compiler.html", null ],
       [ "xtd::configuration::file_settings", "classxtd_1_1configuration_1_1file__settings.html", null ],
