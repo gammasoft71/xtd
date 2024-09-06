@@ -6,6 +6,7 @@
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/format_exception.h"
 #include "../../../include/xtd/index_out_of_range_exception.h"
+#include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/null_pointer_exception.h"
 #include "../../../include/xtd/diagnostics/stack_frame.h"
 
@@ -73,6 +74,14 @@ void __throw_index_out_of_range_exception(const char* message, const char* file,
 
 void __throw_index_out_of_range_exception(const char* file, xtd::uint32 line, const char* func) {
   throw index_out_of_range_exception {{file, line, func}};
+}
+
+void __throw_invalid_operation_exception(const char* message, const char* file, xtd::uint32 line, const char* func) {
+  throw invalid_operation_exception {message, {file, line, func}};
+}
+
+void __throw_invalid_operation_exception(const char* file, xtd::uint32 line, const char* func) {
+  throw invalid_operation_exception {{file, line, func}};
 }
 
 void __throw_null_pointer_exception(const char* message, const char* file, xtd::uint32 line, const char* func) {
