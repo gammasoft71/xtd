@@ -25,5 +25,7 @@ void __throw_format_exception_start_colon(const char* message, const char* file,
 void __throw_format_exception_start_colon(const char* file, xtd::uint32 line, const char* func);
 void __throw_index_out_of_range_exception(const char* message, const char* file, xtd::uint32 line, const char* func);
 void __throw_index_out_of_range_exception(const char* file, xtd::uint32 line, const char* func);
+void __throw_invalid_operation_exception(const char* message, const char* file, xtd::uint32 line, const char* func);
+void __throw_invalid_operation_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_null_pointer_exception(const char* message, const char* file, xtd::uint32 line, const char* func);
 void __throw_null_pointer_exception(const char* file, xtd::uint32 line, const char* func);
