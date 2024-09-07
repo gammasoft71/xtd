@@ -1,5 +1,7 @@
 var NAVTREEINDEX95 =
 {
+"paint__event__args_8h.html":[22,5,0,0,0,215],
+"paint__event__args_8h_source.html":[22,5,0,0,0,215],
 "paint__event__handler_8h.html":[22,5,0,0,0,216],
 "paint__event__handler_8h_source.html":[22,5,0,0,0,216],
 "painting_8cpp-example.html":[23,544],
@@ -247,7 +249,5 @@ var NAVTREEINDEX95 =
 "shadows_8h_source.html":[22,5,0,0,0,258],
 "shortcut_8h.html":[22,5,0,0,0,259],
 "shortcut_8h_source.html":[22,5,0,0,0,259],
-"signal_8h.html":[22,1,0,0,191],
-"signal_8h_source.html":[22,1,0,0,191],
-"signal__cancel__event__args_8h.html":[22,1,0,0,192]
+"signal_8h.html":[22,1,0,0,191]
 };

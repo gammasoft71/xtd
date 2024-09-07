@@ -1,5 +1,7 @@
 var NAVTREEINDEX96 =
 {
+"signal_8h_source.html":[22,1,0,0,191],
+"signal__cancel__event__args_8h.html":[22,1,0,0,192],
 "signal__cancel__event__args_8h_source.html":[22,1,0,0,192],
 "signal__cancel__event__handler_8h.html":[22,1,0,0,193],
 "signal__cancel__event__handler_8h_source.html":[22,1,0,0,193],
@@ -247,7 +249,5 @@ var NAVTREEINDEX96 =
 "string_format_8cpp-example.html":[23,274],
 "string_format_with_order_8cpp-example.html":[23,275],
 "string_unicode_8cpp-example.html":[23,276],
-"string_valid_8cpp-example.html":[23,738],
-"string_valid_are_equal_ignoring_case_8cpp-example.html":[23,739],
-"string_valid_are_not_equal_ignoring_case_8cpp-example.html":[23,740]
+"string_valid_8cpp-example.html":[23,738]
 };

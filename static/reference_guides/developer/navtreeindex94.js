@@ -1,5 +1,7 @@
 var NAVTREEINDEX94 =
 {
+"lock__guard_8h.html":[22,1,0,0,11,12],
+"lock__guard_8h_source.html":[22,1,0,0,11,12],
 "lock__recursion__exception_8h.html":[22,1,0,0,11,13],
 "lock__recursion__exception_8h_source.html":[22,1,0,0,11,13],
 "lock_guard_8cpp-example.html":[23,286],
@@ -247,7 +249,5 @@ var NAVTREEINDEX94 =
 "owner_button_8cpp-example.html":[23,575],
 "padding_8h.html":[22,5,0,0,0,214],
 "padding_8h_source.html":[22,5,0,0,0,214],
-"pages.html":[],
-"paint__event__args_8h.html":[22,5,0,0,0,215],
-"paint__event__args_8h_source.html":[22,5,0,0,0,215]
+"pages.html":[]
 };

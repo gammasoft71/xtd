@@ -1,5 +1,7 @@
 var NAVTREEINDEX98 =
 {
+"system__brushes_8h.html":[22,3,0,0,0,64],
+"system__brushes_8h_source.html":[22,3,0,0,0,64],
 "system__exception_8h.html":[22,1,0,0,208],
 "system__exception_8h_source.html":[22,1,0,0,208],
 "system__icons_8h.html":[22,3,0,0,0,67],
@@ -247,7 +249,5 @@ var NAVTREEINDEX98 =
 "type_8h_source.html":[22,1,0,0,221],
 "type__object_8h.html":[22,1,0,0,222],
 "type__object_8h_source.html":[22,1,0,0,222],
-"typeof_8h.html":[22,1,0,0,223],
-"typeof_8h_source.html":[22,1,0,0,223],
-"u16string_8h.html":[22,1,0,0,225]
+"typeof_8h.html":[22,1,0,0,223]
 };
