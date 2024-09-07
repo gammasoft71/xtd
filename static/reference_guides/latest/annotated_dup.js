@@ -11,11 +11,13 @@ var annotated_dup =
           [ "enumerable_iterators", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators" ],
           [ "enumerator", "classxtd_1_1collections_1_1generic_1_1enumerator.html", "classxtd_1_1collections_1_1generic_1_1enumerator" ],
           [ "icollection", "classxtd_1_1collections_1_1generic_1_1icollection.html", "classxtd_1_1collections_1_1generic_1_1icollection" ],
+          [ "icomparer", "classxtd_1_1collections_1_1generic_1_1icomparer.html", "classxtd_1_1collections_1_1generic_1_1icomparer" ],
           [ "ienumerable", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", "classxtd_1_1collections_1_1generic_1_1ienumerable" ],
           [ "ienumerator", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", "classxtd_1_1collections_1_1generic_1_1ienumerator" ],
           [ "iequality_comparer", "classxtd_1_1collections_1_1generic_1_1iequality__comparer.html", "classxtd_1_1collections_1_1generic_1_1iequality__comparer" ],
           [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", "classxtd_1_1collections_1_1generic_1_1ilist" ],
-          [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ]
+          [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ],
+          [ "params", "classxtd_1_1collections_1_1generic_1_1params.html", "classxtd_1_1collections_1_1generic_1_1params" ]
         ] ],
         [ "object_model", "namespacextd_1_1collections_1_1object__model.html", [
           [ "read_only_collection", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", "classxtd_1_1collections_1_1object__model_1_1read__only__collection" ]
@@ -557,8 +559,11 @@ var annotated_dup =
       [ "argument_null_exception", "classxtd_1_1argument__null__exception.html", "classxtd_1_1argument__null__exception" ],
       [ "argument_out_of_range_exception", "classxtd_1_1argument__out__of__range__exception.html", "classxtd_1_1argument__out__of__range__exception" ],
       [ "arithmetic_exception", "classxtd_1_1arithmetic__exception.html", "classxtd_1_1arithmetic__exception" ],
+      [ "array_", "classxtd_1_1array__.html", null ],
+      [ "array_object", "classxtd_1_1array__object.html", null ],
       [ "attribute", "classxtd_1_1attribute.html", "classxtd_1_1attribute" ],
       [ "background_color", "classxtd_1_1background__color.html", "classxtd_1_1background__color" ],
+      [ "basic_array", "classxtd_1_1basic__array.html", "classxtd_1_1basic__array" ],
       [ "basic_string", "classxtd_1_1basic__string.html", "classxtd_1_1basic__string" ],
       [ "beep", "classxtd_1_1beep.html", "classxtd_1_1beep" ],
       [ "bit_converter", "classxtd_1_1bit__converter.html", "classxtd_1_1bit__converter" ],
