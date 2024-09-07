@@ -4,6 +4,7 @@
 #pragma once
 #include "helpers/allocator.h"
 #include "ilist.h"
+#include "params.h"
 #include "../object_model/read_only_collection.h"
 #include "../../argument_exception.h"
 #include "../../index_out_of_range_exception.h"
@@ -169,6 +170,10 @@ namespace xtd {
         /// @param items The initializer list to initialize the elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
         list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(items, alloc)) {}
+        /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
+        /// @param items The initializer list to initialize the elements of the container with.
+        /// @param alloc The allocator to use for all memory allocations of this container.
+        list(xtd::collections::generic::params<type_t> items, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(std::initializer_list<type_t>(items), alloc)) {}
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
