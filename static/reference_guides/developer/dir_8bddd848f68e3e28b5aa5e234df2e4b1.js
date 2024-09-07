@@ -59,6 +59,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "char_object.h", "char__object_8h.html", "char__object_8h" ],
     [ "chrono.h", "chrono_8h.html", null ],
     [ "cnull.h", "cnull_8h.html", "cnull_8h" ],
+    [ "comparison.h", "comparison_8h.html", "comparison_8h" ],
     [ "comparison_operators.h", "comparison__operators_8h.html", null ],
     [ "compiler.h", "compiler_8h.html", null ],
     [ "compiler_id.h", "compiler__id_8h.html", "compiler__id_8h" ],
