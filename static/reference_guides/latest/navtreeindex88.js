@@ -1,5 +1,7 @@
 var NAVTREEINDEX88 =
 {
+"object_reference_equals_8cpp-example.html":[23,218],
+"object_to_string_8cpp-example.html":[23,219],
 "open__file__box_8h.html":[22,3,0,0,0,210],
 "open__file__box_8h_source.html":[22,3,0,0,0,210],
 "open__file__box__options_8h.html":[22,3,0,0,0,211],
@@ -247,7 +249,5 @@ var NAVTREEINDEX88 =
 "sbyte_8h.html":[22,1,0,0,186],
 "sbyte_8h_source.html":[22,1,0,0,186],
 "sbyte__object_8h.html":[22,1,0,0,187],
-"sbyte__object_8h_source.html":[22,1,0,0,187],
-"scope__exit_8h.html":[22,1,0,0,188],
-"scope__exit_8h_source.html":[22,1,0,0,188]
+"sbyte__object_8h_source.html":[22,1,0,0,187]
 };
