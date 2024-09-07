@@ -1,5 +1,7 @@
 var NAVTREEINDEX89 =
 {
+"scope__exit_8h.html":[22,1,0,0,188],
+"scope__exit_8h_source.html":[22,1,0,0,188],
 "screen_8cpp-example.html":[23,356],
 "screen_8h.html":[22,3,0,0,0,246],
 "screen_8h_source.html":[22,3,0,0,0,246],
@@ -247,7 +249,5 @@ var NAVTREEINDEX89 =
 "string__format_8h.html":[22,2,0,0,0,61],
 "string__format_8h_source.html":[22,2,0,0,0,61],
 "string__format__flags_8h.html":[22,2,0,0,0,62],
-"string__format__flags_8h_source.html":[22,2,0,0,0,62],
-"string__key__value__pair_8h.html":[22,1,0,0,0,2,2],
-"string__key__value__pair_8h_source.html":[22,1,0,0,0,2,2]
+"string__format__flags_8h_source.html":[22,2,0,0,0,62]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX86 =
 {
+"ibutton__control_8h.html":[22,3,0,0,0,145],
+"ibutton__control_8h_source.html":[22,3,0,0,0,145],
 "iclonable_8cpp-example.html":[23,156],
 "iclonable_8h.html":[22,1,0,0,121],
 "iclonable_8h_source.html":[22,1,0,0,121],
@@ -247,7 +249,5 @@ var NAVTREEINDEX86 =
 "length_8h_source.html":[22,3,0,0,0,2,14],
 "length__exception_8h.html":[22,1,0,0,147],
 "length__exception_8h_source.html":[22,1,0,0,147],
-"length__unit_8h.html":[22,3,0,0,0,2,15],
-"length__unit_8h_source.html":[22,3,0,0,0,2,15],
-"lengths_8h.html":[22,3,0,0,0,2,16]
+"length__unit_8h.html":[22,3,0,0,0,2,15]
 };

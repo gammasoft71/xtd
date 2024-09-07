@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"drawing2d_2pen__type_8h_source.html":[22,2,0,0,0,0,5],
+"drawing__2d_2hatch__brush_8h.html":[22,2,0,0,0,1,10],
 "drawing__2d_2hatch__brush_8h.html#abd9c313af180cd366442e09c33331296":[22,2,0,0,0,1,10,0],
 "drawing__2d_2hatch__brush_8h_source.html":[22,2,0,0,0,1,10],
 "drawing__2d_2hatch__style_8h.html":[22,2,0,0,0,1,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX68 =
 "font__picker__event__handler_8h_source.html":[22,3,0,0,0,123],
 "font__style_8h.html":[22,2,0,0,0,31],
 "font__style_8h_source.html":[22,2,0,0,0,31],
-"font_box_8cpp-example.html":[23,433],
-"font_changed_event_8cpp-example.html":[23,465],
-"font_dialog_8cpp-example.html":[23,434]
+"font_box_8cpp-example.html":[23,433]
 };
