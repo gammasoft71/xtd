@@ -1,6 +1,6 @@
 var dir_618e153bd4f02720ed2e807a9fe886a0 =
 [
-    [ "__array_definition.h", "____array__definition_8h.html", null ],
+    [ "__array_definition.h", "____array__definition_8h.html", "____array__definition_8h" ],
     [ "__as_any_object.h", "____as__any__object_8h.html", "____as__any__object_8h" ],
     [ "__as_bool.h", "____as__bool_8h.html", "____as__bool_8h" ],
     [ "__as_byte.h", "____as__byte_8h.html", "____as__byte_8h" ],
@@ -43,6 +43,7 @@ var dir_618e153bd4f02720ed2e807a9fe886a0 =
     [ "__enum_formatter.h", "____enum__formatter_8h.html", null ],
     [ "__enum_introspection.h", "____enum__introspection_8h_source.html", null ],
     [ "__equator.h", "____equator_8h.html", null ],
+    [ "__external_exceptions.h", "____external__exceptions_8h.html", null ],
     [ "__floating_point_formatter.h", "____floating__point__formatter_8h.html", null ],
     [ "__format_exception.h", "____format__exception_8h.html", null ],
     [ "__format_information.h", "____format__information_8h.html", null ],

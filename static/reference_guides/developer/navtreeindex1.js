@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"_images_appearances_page.html#ApplicationsContext":[14,2],
+"_images_appearances_page.html#CategoriesContext":[14,3],
+"_images_appearances_page.html#DevicesContext":[14,4],
 "_images_appearances_page.html#EmblemsContext":[14,5],
 "_images_appearances_page.html#EmotesContext":[14,6],
 "_images_appearances_page.html#MimeTypesContext":[14,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "barrier__post__phase__exception_8h_source.html":[22,1,0,0,11,3],
 "barrier_simple_8cpp-example.html":[23,280],
 "base__assert_8h.html":[22,7,0,0,0,7],
-"base__assert_8h_source.html":[22,7,0,0,0,7],
-"basic__colors_8h.html":[22,3,0,0,0,8],
-"basic__colors_8h_source.html":[22,3,0,0,0,8],
-"basic__string_8h.html":[22,1,0,0,33]
+"base__assert_8h_source.html":[22,7,0,0,0,7]
 };
