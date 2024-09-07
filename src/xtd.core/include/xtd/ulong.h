@@ -10,6 +10,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Native types
+  
+  /// @{
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Header
   /// ```cpp
