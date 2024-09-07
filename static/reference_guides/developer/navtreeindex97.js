@@ -1,5 +1,7 @@
 var NAVTREEINDEX97 =
 {
+"string_valid_are_equal_ignoring_case_8cpp-example.html":[23,739],
+"string_valid_are_not_equal_ignoring_case_8cpp-example.html":[23,740],
 "string_valid_contains_8cpp-example.html":[23,741],
 "string_valid_does_not_contain_8cpp-example.html":[23,742],
 "string_valid_does_not_end_with_8cpp-example.html":[23,743],
@@ -247,7 +249,5 @@ var NAVTREEINDEX97 =
 "synchronization__lock__exception_8h.html":[22,1,0,0,11,22],
 "synchronization__lock__exception_8h_source.html":[22,1,0,0,11,22],
 "synthesizer__state_8h.html":[22,1,0,0,9,0,9],
-"synthesizer__state_8h_source.html":[22,1,0,0,9,0,9],
-"system__brushes_8h.html":[22,3,0,0,0,64],
-"system__brushes_8h_source.html":[22,3,0,0,0,64]
+"synthesizer__state_8h_source.html":[22,1,0,0,9,0,9]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX93 =
 {
+"image__layout_8h.html":[22,5,0,0,0,147],
+"image__layout_8h_source.html":[22,5,0,0,0,147],
 "image__lock__mode_8h.html":[22,3,0,0,0,2,9],
 "image__lock__mode_8h_source.html":[22,3,0,0,0,2,9],
 "image__renderer_8h.html":[22,5,0,0,0,149],
@@ -247,7 +249,5 @@ var NAVTREEINDEX93 =
 "loading_indicators_8cpp-example.html":[23,393],
 "lock_8cpp-example.html":[23,184],
 "lock_8h.html":[22,1,0,0,149],
-"lock_8h_source.html":[22,1,0,0,149],
-"lock__guard_8h.html":[22,1,0,0,11,12],
-"lock__guard_8h_source.html":[22,1,0,0,11,12]
+"lock_8h_source.html":[22,1,0,0,149]
 };

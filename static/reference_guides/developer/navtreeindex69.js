@@ -1,5 +1,7 @@
 var NAVTREEINDEX69 =
 {
+"emotes__system__images_8h_source.html":[22,3,0,0,0,27],
+"emoticon_8h.html":[22,5,0,0,0,102],
 "emoticon_8h_source.html":[22,5,0,0,0,102],
 "emoticons_8cpp-example.html":[23,349],
 "emoticons_8h.html":[22,5,0,0,0,103],
@@ -247,7 +249,5 @@ var NAVTREEINDEX69 =
 "form_show_8cpp-example.html":[23,525],
 "form_show_hide_8cpp-example.html":[23,526],
 "form_window_state_8cpp-example.html":[23,527],
-"format_8cpp-example.html":[23,120],
-"format__exception_8h.html":[22,1,0,0,112],
-"format__exception_8h_source.html":[22,1,0,0,112]
+"format_8cpp-example.html":[23,120]
 };

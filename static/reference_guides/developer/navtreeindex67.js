@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"collection_assume_all_items_are_not_null_8cpp-example.html":[23,653],
+"collection_assume_all_items_are_unique_8cpp-example.html":[23,654],
 "collection_assume_are_equal_8cpp-example.html":[23,655],
 "collection_assume_are_equivalent_8cpp-example.html":[23,656],
 "collection_assume_are_not_equal_8cpp-example.html":[23,657],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "date_time_add_years_8cpp-example.html":[23,55],
 "date_time_date_8cpp-example.html":[23,56],
 "date_time_day_of_week_8cpp-example.html":[23,57],
-"date_time_day_of_year_8cpp-example.html":[23,58],
-"date_time_days_in_month2_8cpp-example.html":[23,60],
-"date_time_days_in_month_8cpp-example.html":[23,59]
+"date_time_day_of_year_8cpp-example.html":[23,58]
 };

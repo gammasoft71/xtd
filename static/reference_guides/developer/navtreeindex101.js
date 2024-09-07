@@ -1,5 +1,7 @@
 var NAVTREEINDEX101 =
 {
+"xtd_8forms_8native_2include_2xtd_2forms_2native_2application_8h_source.html":[22,6,0,0,0,0,1],
+"xtd_8forms_8native_2include_2xtd_2forms_2native_2busy__dialog_8h.html":[22,6,0,0,0,0,3],
 "xtd_8forms_8native_2include_2xtd_2forms_2native_2busy__dialog_8h_source.html":[22,6,0,0,0,0,3],
 "xtd_8forms_8native_2include_2xtd_2forms_2native_2button_8h.html":[22,6,0,0,0,0,4],
 "xtd_8forms_8native_2include_2xtd_2forms_2native_2button_8h_source.html":[22,6,0,0,0,0,4],

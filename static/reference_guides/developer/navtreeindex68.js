@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"date_time_days_in_month2_8cpp-example.html":[23,60],
+"date_time_days_in_month_8cpp-example.html":[23,59],
 "date_time_max_value_8cpp-example.html":[23,61],
 "date_time_min_value_8cpp-example.html":[23,62],
 "date_time_now2_8cpp-example.html":[23,64],
@@ -247,7 +249,5 @@ var NAVTREEINDEX68 =
 "elapsed__event__handler_8h_source.html":[22,1,0,0,12,1],
 "emblems__system__images_8h.html":[22,3,0,0,0,26],
 "emblems__system__images_8h_source.html":[22,3,0,0,0,26],
-"emotes__system__images_8h.html":[22,3,0,0,0,27],
-"emotes__system__images_8h_source.html":[22,3,0,0,0,27],
-"emoticon_8h.html":[22,5,0,0,0,102]
+"emotes__system__images_8h.html":[22,3,0,0,0,27]
 };

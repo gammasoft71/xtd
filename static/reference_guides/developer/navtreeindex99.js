@@ -1,5 +1,7 @@
 var NAVTREEINDEX99 =
 {
+"typeof_8h_source.html":[22,1,0,0,223],
+"u16string_8h.html":[22,1,0,0,225],
 "u16string_8h_source.html":[22,1,0,0,225],
 "u16string__builder_8h.html":[22,1,0,0,10,2],
 "u16string__builder_8h_source.html":[22,1,0,0,10,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX99 =
 "xtd_8core_8h.html":[22,1,0,0,261],
 "xtd_8core_8h_source.html":[22,1,0,0,261],
 "xtd_8core_8native_2include_2xtd_2native_2console_8h.html":[22,2,0,0,0,3],
-"xtd_8core_8native_2include_2xtd_2native_2console_8h_source.html":[22,2,0,0,0,3],
-"xtd_8core_8native_2include_2xtd_2native_2console__color_8h.html":[22,2,0,0,0,4],
-"xtd_8core_8native_2include_2xtd_2native_2console__color_8h_source.html":[22,2,0,0,0,4]
+"xtd_8core_8native_2include_2xtd_2native_2console_8h_source.html":[22,2,0,0,0,3]
 };

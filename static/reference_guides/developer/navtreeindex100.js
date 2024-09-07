@@ -1,5 +1,7 @@
 var NAVTREEINDEX100 =
 {
+"xtd_8core_8native_2include_2xtd_2native_2console__color_8h.html":[22,2,0,0,0,4],
+"xtd_8core_8native_2include_2xtd_2native_2console__color_8h_source.html":[22,2,0,0,0,4],
 "xtd_8core_8native_2include_2xtd_2native_2console__special__key_8h.html":[22,2,0,0,0,5],
 "xtd_8core_8native_2include_2xtd_2native_2console__special__key_8h_source.html":[22,2,0,0,0,5],
 "xtd_8core_8native_2include_2xtd_2native_2date__time_8h.html":[22,2,0,0,0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX100 =
 "xtd_8forms_8h_source.html":[22,5,0,0,3],
 "xtd_8forms_8native_2include_2xtd_2forms_2native_2about__dialog_8h.html":[22,6,0,0,0,0,0],
 "xtd_8forms_8native_2include_2xtd_2forms_2native_2about__dialog_8h_source.html":[22,6,0,0,0,0,0],
-"xtd_8forms_8native_2include_2xtd_2forms_2native_2application_8h.html":[22,6,0,0,0,0,1],
-"xtd_8forms_8native_2include_2xtd_2forms_2native_2application_8h_source.html":[22,6,0,0,0,0,1],
-"xtd_8forms_8native_2include_2xtd_2forms_2native_2busy__dialog_8h.html":[22,6,0,0,0,0,3]
+"xtd_8forms_8native_2include_2xtd_2forms_2native_2application_8h.html":[22,6,0,0,0,0,1]
 };
