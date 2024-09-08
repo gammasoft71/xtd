@@ -72,13 +72,9 @@ namespace xtd {
         params(base_type&& il) noexcept : items_(il) {}
         /// @endcond
         
-        /// @name Public Methods
+        /// @name Public Properties
         
         /// @{
-        /// @brief Returns the number of elements in the params, i.e. `std::distance(begin(), end())`.
-        /// @return The number of elements in the params.
-        constexpr size_type size() const noexcept {return items_.size();}
-        
         /// @brief Returns a pointer to the first element in the params.
         /// @return A pointer to the first element in the params.
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
@@ -88,6 +84,14 @@ namespace xtd {
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
         constexpr iterator end() const noexcept {return items_.end();}
         
+        /// @brief Returns the number of elements in the params, i.e. `std::distance(begin(), end())`.
+        /// @return The number of elements in the params.
+        constexpr size_type size() const noexcept {return items_.size();}
+        /// @}
+        
+        /// @name Public Methods
+        
+        /// @{
         xtd::string to_string() const noexcept override {return xtd::string::format("{}", items_);}
         /// @}
         
