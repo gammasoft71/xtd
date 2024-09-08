@@ -58,10 +58,48 @@ namespace xtd::collections::generic::tests {
     void test_method_(constructor) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, params {1, 2, 3, 4, 5}, csf_);
     }
+    
+    void test_method_(copy_constructor) {
+      auto items = params {1, 2, 3, 4, 5};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, params {items}, csf_);
+    }
+    
+    void test_method_(copy_constructor_with_str_initializer_list) {
+      auto items = std::initializer_list<int> {1, 2, 3, 4, 5};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, params<int> {items}, csf_);
+    }
+    
+    void test_method_(move_constructor) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, params {params {1, 2, 3, 4, 5}}, csf_);
+    }
+    
+    void test_method_(move_constructor_with_str_initializer_list) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, params<int> {std::initializer_list<int> {1, 2, 3, 4, 5}}, csf_);
+    }
 
     void test_method_(size) {
       assert::is_zero(params<int> {}.size(), csf_);
       assert::are_equal(5_z, params {1, 2, 3, 4, 5}.size(), csf_);
+    }
+
+    void test_method_(begin) {
+      assert::are_equal(1, *params {1, 2, 3, 4, 5}.begin(), csf_);
+    }
+
+    void test_method_(end) {
+      auto items = params {1, 2, 3, 4, 5};
+      assert::are_equal(items.begin() + items.size(), items.end(), csf_);
+    }
+    
+    void test_method_(to_String) {
+      assert::are_equal("[1, 2, 3, 4, 5]", params {1, 2, 3, 4, 5}.to_string(), csf_);
+    }
+    
+    void test_method_(for_each) {
+      auto result= 0;
+      for (auto i : params {1, 2, 3, 4, 5})
+        result += i;
+      assert::are_equal(15, result,  csf_);
     }
   };
 }
