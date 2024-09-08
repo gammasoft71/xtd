@@ -61,7 +61,7 @@ namespace xtd {
         
         /// @{
         /// @brief Create a new instance of the class xtd::collections::generic::params.
-        params() noexcept = default;
+        constexpr params() noexcept = default;
         /// @}
         
         /// @cond
@@ -69,7 +69,6 @@ namespace xtd {
         params(params&&) noexcept = default;
         params(const base_type& il) noexcept : items_(il) {}
         params(base_type&& il) noexcept : items_(il) {}
-        params(const value_type* p, size_type s) : items_(p, s) {}
         /// @endcond
         
         /// @name Public Methods
@@ -77,16 +76,16 @@ namespace xtd {
         /// @{
         /// @brief Returns the number of elements in the params, i.e. `std::distance(begin(), end())`.
         /// @return The number of elements in the params.
-        size_type size() const noexcept {return items_.size();}
+        constexpr size_type size() const noexcept {return items_.size();}
         
         /// @brief Returns a pointer to the first element in the params.
         /// @return A pointer to the first element in the params.
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
-        iterator begin() const noexcept {return items_.begin();}
+        constexpr iterator begin() const noexcept {return items_.begin();}
         /// @brief Returns a pointer to one past the last element in the params, i.e. begin() + size().
         /// @return A pointer to one past the last element in the params.
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
-        iterator end() const noexcept {return items_.end();}
+        constexpr iterator end() const noexcept {return items_.end();}
         
         xtd::string to_string() const noexcept override {return xtd::string::format("{}", items_);}
         /// @}
