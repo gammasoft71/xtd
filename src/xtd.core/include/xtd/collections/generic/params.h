@@ -32,6 +32,7 @@ namespace xtd {
       /// * A brace-enclosed params is bound to auto, including in a [ranged for loop](https://en.cppreference.com/w/cpp/language/range-for).
       /// @remarks xtd::collections::generic::params may be implemented as a pair of pointers or pointer and length. Copying a xtd::collections::generic::params does not copy the backing array of the corresponding params.
       /// @remarks xtd::collections::generic::params is exactly The same as [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) object.
+      /// @warning When creating your own container, use the [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) object instead of the xtd::collections::generic::params object for the constructor, because C++ compilers use a magic trick (such as a private constructor) to initialize elements correctly. Use xtd::collections::generic::params when initializing elements yourself.
       /// @par Examples
       /// The following example demonstrates how to usea xtd::collections::generic::params <type_t> class.
       /// @include generic_params.cpp
