@@ -35,6 +35,10 @@ add_sources(
   include/xtd/array.h
   include/xtd/array
   include/xtd/array.hpp
+  include/xtd/array_1.h
+  include/xtd/array_2.h
+  include/xtd/array_3.h
+  include/xtd/array_object.h
   include/xtd/as.h
   include/xtd/as
   include/xtd/async_callback.h
@@ -47,6 +51,7 @@ add_sources(
   include/xtd/availability_versions
   include/xtd/background_color.h
   include/xtd/background_color
+  include/xtd/basic_array.h
   include/xtd/basic_string.h
   include/xtd/basic_string
   include/xtd/basic_string.hpp

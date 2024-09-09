@@ -4,16 +4,23 @@
 #pragma once
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
-#error "Do not include this file: Internal use only. Include <basic_string> or <basic_string.h> instead."
+#error "Do not include this file: Internal use only. Include <array> or <array.h> instead."
 #endif
 
+#include "string.h"
+
 template<typename type_t, typename allocator_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd::array<xtd::size>& indexes) const {
+inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd::array_<xtd::size>& indexes) const {
   return operator()(indexes);
 }
 
 template<typename type_t, typename allocator_t>
-inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) {
+inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noexcept {
+  return xtd::string::format("[{}]", xtd::string::join(", ", *this));
+}
+
+template<typename type_t, typename allocator_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array_<xtd::size>& indexes) {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
     if (indexes[index1] > get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
@@ -26,7 +33,7 @@ inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::arra
 }
 
 template<typename type_t, typename allocator_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) const {
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array_<xtd::size>& indexes) const {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
     if (indexes[index1] > get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
