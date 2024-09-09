@@ -300,11 +300,11 @@ namespace xtd {
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual pointer data() noexcept {return (pointer)data_->items.data();}
+        virtual pointer data() noexcept {return reinterpret_cast<pointer>(data_->items.data());}
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
+        virtual const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(data_->items.data());}
 
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
         /// @return true if the container is empty, false otherwise.
@@ -451,7 +451,7 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual reference at(size_type index) {
           if (index >= count()) throw index_out_of_range_exception {csf_};
-          return (reference)data_->items.at(index);
+          return reinterpret_cast<reference>(data_->items.at(index));
         }
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
         /// @param index The position of the element to return.
@@ -459,7 +459,7 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
           if (index >= count()) throw index_out_of_range_exception {csf_};
-          return (reference)data_->items.at(index);
+          return reinterpret_cast<const_reference>(data_->items.at(index));
         }
         
         void clear() override {
