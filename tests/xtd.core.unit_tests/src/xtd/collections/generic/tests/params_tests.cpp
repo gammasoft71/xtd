@@ -77,20 +77,29 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({1, 2, 3, 4, 5}, params<int> {std::initializer_list<int> {1, 2, 3, 4, 5}}, csf_);
     }
 
-    void test_method_(size) {
-      assert::is_zero(params<int> {}.size(), csf_);
-      assert::are_equal(5_z, params {1, 2, 3, 4, 5}.size(), csf_);
-    }
-
     void test_method_(begin) {
       assert::are_equal(1, *params {1, 2, 3, 4, 5}.begin(), csf_);
+    }
+
+    void test_method_(data) {
+      assert::are_equal(1, *params {1, 2, 3, 4, 5}.data(), csf_);
     }
 
     void test_method_(end) {
       auto items = params {1, 2, 3, 4, 5};
       assert::are_equal(items.begin() + items.size(), items.end(), csf_);
     }
-    
+
+    void test_method_(items) {
+      assert::are_equal(typeof_<params<int>::base_type>(), typeof_(params {1, 2, 3, 4, 5}.items()), csf_);
+      collection_assert::are_equal({1, 2, 3, 4, 5}, params {1, 2, 3, 4, 5}.items(), csf_);
+    }
+
+    void test_method_(size) {
+      assert::is_zero(params<int> {}.size(), csf_);
+      assert::are_equal(5_z, params {1, 2, 3, 4, 5}.size(), csf_);
+    }
+
     void test_method_(to_String) {
       assert::are_equal("[1, 2, 3, 4, 5]", params {1, 2, 3, 4, 5}.to_string(), csf_);
     }
