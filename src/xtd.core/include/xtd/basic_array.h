@@ -548,7 +548,10 @@ namespace xtd {
     
     basic_array(const_pointer array, size_type length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
-      data_->items = base_type {array, array + length};
+      //data_->items = base_type {array, array + length};
+      data_->items = base_type(length);
+      for (auto index = size_type {0}; index < length; ++index)
+        data_->items[index] = array[index];
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
@@ -570,13 +573,13 @@ namespace xtd {
     }
     
     basic_array(std::initializer_list<type_t> il) {
-      data_->items.assign(il);
+      data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
     basic_array(std::initializer_list<std::initializer_list<type_t>> il)  {
       for (const std::initializer_list<type_t>& il1 : il)
-        data_->items.insert(data_->items.end(), il1);
+        data_->items.insert(data_->items.end(), il1.begin(), il1.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
@@ -585,7 +588,7 @@ namespace xtd {
     basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il)  {
       for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
         for (const std::initializer_list<type_t>& il2 : il1)
-          data_->items.insert(data_->items.end(), il2);
+          data_->items.insert(data_->items.end(), il2.begin(), il2.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
