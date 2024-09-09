@@ -44,9 +44,9 @@ namespace xtd {
         
         /// @{
         /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
-        using iterator = icollection<type_t>::iterator;
+        using iterator = typename icollection<type_t>::iterator;
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
-        using const_iterator = icollection<type_t>::const_iterator;
+        using const_iterator = typename icollection<type_t>::const_iterator;
         /// @}
         
         /// @name Public Fields
