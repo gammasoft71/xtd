@@ -370,7 +370,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception `index` is is greater than xtd::array::count.
     /// @remarks xtd::array <type_t> allows duplicate elements.
     void insert(size_type index, const type_t& value) override {
-      if (index > count()) ____throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       data_->items.insert(to_base_type_iterator(begin()) + index, value);
     }
     
@@ -388,7 +388,7 @@ namespace xtd {
     /// @param index The zero-based index of the item to remove
     /// @exception xtd::argument_out_of_range_exception `index` is greater than xtd::array::count.
     void remove_at(size_type index) override {
-      if (index >= count()) ____throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index >= count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       
       if (index == count() - 1) data_->items.pop_back();
       else data_->items.erase(to_base_type_iterator(begin()) + index);
