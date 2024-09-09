@@ -67,8 +67,8 @@ namespace xtd {
       ///
       /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
       /// @include generic_list2.cpp
-      template<typename type_t>
-      class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t>> {
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t>> {
       public:
         /// @name Public Aliases
         
@@ -481,7 +481,7 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
-        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the copy_to(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
         
@@ -499,7 +499,7 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
-        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
           if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
@@ -621,8 +621,8 @@ namespace xtd {
           return list<type_t> {begin() + index, begin() + index + count};
         }
 
-        /// @brief Determines the index of a specific item in the List.xtd::collections::generic::list <type_t>.
-        /// @param value The object to locate in the List.
+        /// @brief Determines the index of a specific item in the xtd::collections::generic::list <type_t>.
+        /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
         /// @return The index of value if found in the list; otherwise, xtd::collections::generic::ilist::npos.
         size_type index_of(const type_t& value) const noexcept override {
           if (count() == 0)  return npos;
@@ -982,6 +982,32 @@ namespace xtd {
         
         xtd::ptr<struct data> data_ = xtd::new_ptr<struct data>();
       };
+      
+      /// @cond
+      // C++17 deduction
+      // {
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(std::initializer_list<type_t>) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(const xtd::collections::generic::ienumerable<type_t>&) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(const xtd::collections::generic::ilist<type_t>&) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(const std::vector<type_t>&) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(const list<type_t, allocator_t>&) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(std::vector<type_t>&&) -> list<type_t, allocator_t>;
+      
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      list(list<type_t, allocator_t>&&) -> list<type_t, allocator_t>;
+      // }
+      /// @endcond
     }
   }
 }
