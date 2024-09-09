@@ -274,14 +274,14 @@ namespace xtd {
     }
     
     void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
-      if (array_index + length() > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      if (array_index + length() > array.size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
       
       for (auto increment = size_type {0}; increment < length(); ++increment)
         array[array_index + increment] = at(increment);
     }
     
-    bool equals(const object& obj) const noexcept override {return is<basic_array<value_type>>(obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
-    bool equals(const basic_array& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version && data_->lowerbound == rhs.data_->lowerbound && data_->upperbound == rhs.data_->upperbound;}
+    bool equals(const object& obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
+    bool equals(const basic_array& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version && data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;}
     
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
@@ -548,7 +548,7 @@ namespace xtd {
     
     basic_array(const_pointer array, size_type length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
-      data_->items = base_type {array, length};
+      data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
@@ -569,15 +569,14 @@ namespace xtd {
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    
     basic_array(std::initializer_list<type_t> il) {
-      data_->items.append(il);
+      data_->items.assign(il);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
     basic_array(std::initializer_list<std::initializer_list<type_t>> il)  {
       for (const std::initializer_list<type_t>& il1 : il)
-        data_->items.append(il1);
+        data_->items.insert(data_->items.end(), il1);
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
@@ -586,7 +585,7 @@ namespace xtd {
     basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il)  {
       for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
         for (const std::initializer_list<type_t>& il2 : il1)
-          data_->items.append(il2);
+          data_->items.insert(data_->items.end(), il2);
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
@@ -596,7 +595,7 @@ namespace xtd {
     
     template<typename iterator_t>
     basic_array(iterator_t first, iterator_t last) {
-      data_->items.append(first, last);
+      data_->items.assign(first, last);
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back(data_->items.size() - 1);
     }

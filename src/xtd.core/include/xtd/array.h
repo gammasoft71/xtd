@@ -67,13 +67,23 @@ namespace xtd {
     array_(const array_&& array) : xtd::basic_array<type_t, allocator_t>(std::move(array)) {}
     /// @}
 
+    /// @name Public Properties
+    
+    /// @{
+    xtd::size rank() const noexcept override {return rank_;}
+    /// @}
+
     /// @name Public Operators
     
     /// @{
     array_& operator=(const array_&) = default;
     array_& operator=(array_&&) = default;
     /// @}
-  };
+
+  private:
+    friend class array_<>;
+    array_(const array_<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
+   };
 }
 
 #define __XTD_ARRAY_INTERNAL__
