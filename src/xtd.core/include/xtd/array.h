@@ -84,6 +84,8 @@ namespace xtd {
     /// @name Public Constructors
     
     /// @{
+    basic_array(const basic_array& array) {*data_ = *array.data_;}
+    basic_array(basic_array&& array) = default;
     /// @}
     
     /// @name Public Properties
@@ -206,7 +208,7 @@ namespace xtd {
     /// @return int32 The rank (number of dimensions) of the array.
     /// @par Examples
     /// The following code example demonstrates methods to get the rank of an array.
-    /// @include ArrayGetLength.cpp
+    /// @include arrayGetLength.cpp
     virtual xtd::size rank() const noexcept {return 1;}
 
     /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
@@ -258,7 +260,7 @@ namespace xtd {
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If pos is not within the range of the container.
+    /// @exception std::out_of_range If `pos` is not within the range of the container.
     virtual reference at(size_type index) {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
@@ -266,7 +268,7 @@ namespace xtd {
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If pos is not within the range of the container.
+    /// @exception std::out_of_range If `pos` is not within the range of the container.
     virtual const_reference at(size_type index) const {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
@@ -277,7 +279,9 @@ namespace xtd {
       data_->items.clear();
     }
     
-    bool contains(const type_t& value) const noexcept override {
+    /// @brief Determines whether an element is in the array.
+    /// @param value The object to be added to the end of the array.
+    constexpr bool contains(const type_t& value) const noexcept override {
       for (const type_t& item : data_->items)
         if (item == value) return true;
       return false;
@@ -326,7 +330,46 @@ namespace xtd {
       };
       return {new_ptr<basic_array_enumerator>(*this, data_->version)};
     }
+    
+    /// @brief Gets the total number of elements in all the dimensions of the array.
+    /// @param dimension A zero-based dimension of the array whose length needs to be determined.
+    /// @return The total number of elements in all the dimensions of the array; zero if there are no elements in the array.
+    /// @exception xtd::argument_out_of_range_exception `dimension` is equal to or greater than xtd::basic_array::rank.
+    /// @par Examples
+    /// The following code example demonstrates methods to get the length of an array.
+    /// @include array_get_length.cpp
+    constexpr size_type get_length(size_type dimension) const {return get_upper_bound(dimension) + 1;}
+    
+    /// @brief Gets the lower bound of the specified dimension in the array.
+    /// @param dimension A zero-based dimension of the array whose lower bound needs to be determined.
+    /// @return The lower bound of the specified dimension in the array.
+    /// @exception xtd::argument_out_of_range_exception `dimension` is equal to or greater than xtd::basic_array::rank.
+    /// @par Examples
+    /// The following code example uses xtd::array::get_lower_bound and xtd::array::get_upper_bound to initialize a one-dimensional array and a multidimensional array.
+    /// @include array_get_lower_bound.cpp
+    constexpr size_type get_lower_bound(size_type dimension) const {
+      if (dimension >= rank()) throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      return data_->lower_bound[dimension];
+    }
+    
+    /// @brief Gets the upper bound of the specified dimension in the array.
+    /// @param dimension A zero-based dimension of the array whose upper bound needs to be determined.
+    /// @return The upper bound of the specified dimension in the array.
+    /// @exception xtd::argument_out_of_range_exception `dimension` is equal to or greater than xtd::basic_array::rank.
+    /// @par Examples
+    /// The following code example uses xtd::array::get_lower_bound and xtd::array::get_upper_bound to initialize a one-dimensional array and a multidimensional array.
+    /// @include array_get_lower_bound.cpp
+    constexpr size_type get_upper_bound(size_type dimension) const {
+      if (dimension >= rank()) throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      return data_->upper_bound[dimension];
+    }
 
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as 32-bit integers array.
+    /// @param indexes An array that represents the position of the element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
+    const value_type& get_value(const xtd::array<xtd::size>& indexes) const;
+    
     /// @brief Determines the index of a specific item in the List.xtd::array <type_t>.
     /// @param value The object to locate in the List.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
@@ -338,7 +381,7 @@ namespace xtd {
     /// @brief Inserts an element into the xtd::array <type_t> at the specified index.
     /// @param index The zero-based index at which the new element should be inserted.
     /// @param value The element should be inserted into the xtd::array <type_t>.
-    /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::array::count.
+    /// @exception xtd::argument_out_of_range_exception `index` is is greater than xtd::array::count.
     /// @remarks xtd::array <type_t> allows duplicate elements.
     void insert(size_type index, const type_t& value) override {
       if (index > count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
@@ -357,13 +400,19 @@ namespace xtd {
     
     /// @brief Removes the element at the specified index of the xtd::array <type_t>.
     /// @param index The zero-based index of the item to remove
-    /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::array::count.
+    /// @exception xtd::argument_out_of_range_exception `index` is greater than xtd::array::count.
     void remove_at(size_type index) override {
       if (index >= count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       
       if (index == count() - 1) data_->items.pop_back();
       else data_->items.erase(to_base_type_iterator(begin()) + index);
     }
+
+    /// @brief Sets a value to the element at the specified position in the multidimensional array.
+    /// @param value The new value for the specified element.
+    /// @param indexes An array that represents the position of the element to set.
+    /// @exception IndexOutOfRangeException Either `indexes` is outside the range of valid indexes for the current array.
+    void set_value(const type_t& value, const array<xtd::size>& indexes) {operator()(indexes) = value;}
 
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
@@ -379,35 +428,35 @@ namespace xtd {
     
     /// @{
     /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the Array.
-    /// @param value The object to locate in the Array.
-    /// @return int32 The index of value if found in the Array; otherwise, -1.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include ArrayIndexOf.cpp
+    /// @include array_index_of.cpp
     static size_type index_of(const basic_array& array, const value_type& value) {return index_of(array, value, 0, array.Length);}
     
     /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the Array.
-    /// @param value The object to locate in the Array.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
     /// @param index The zero-based starting index of the search.
-    /// @return int32 The index of value if found in the Array; otherwise, -1.
-    /// @exception ArgumentOutOfRangeException The parameters index is less than 0.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include ArrayIndexOf.cpp
+    /// @include array_index_of.cpp
     static size_type index_of(const basic_array& array, const value_type& value, size_type index) {return index_of(array, value, index, array.Length - index);}
     
     /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the Array.
-    /// @param value The object to locate in the Array.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
     /// @param index The zero-based starting index of the search.
     /// @param count The number of elements in the section to search
     /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @exception ArgumentOutOfRangeException The parameters index is less than 0 or The parameters count is less than 0 or index and count do ! specify a valid section in the Array.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include ArrayIndexOf.cpp
+    /// @include array_index_of.cpp
     static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
       if (index > array.length() || index + count > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
       
@@ -425,23 +474,18 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another container to use as data source.
     /// @return This current instance.
-    basic_array& operator =(const basic_array& other) = default;
+    basic_array& operator =(const basic_array& other) {*data_ = *other.data_;}
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
     /// @param other Another base type container to use as data source.
     /// @return This current instance.
-    basic_array& operator =(basic_array&& other) noexcept {
-      data_->version = std::move(other.data_->version);
-      data_->items = std::move(other.data_->items);
-      data_->lower_bound = std::move(other.data_->lower_bound);
-      data_->upper_bound = std::move(other.data_->upper_bound);
-      return *this;
-    }
+    basic_array& operator =(basic_array&& other) noexcept = default;
     /// @brief Replaces the contents with those identified by initializer list ilist.
     /// @param items Initializer list to use as data source
     /// @return This current instance.
     basic_array& operator =(std::initializer_list<type_t>& items) {
       data_->version = 0;
       data_->items = items;
+      data_->upper_bound[0] = data_->items.size() - 1;
       return *this;
     }
     
@@ -462,6 +506,24 @@ namespace xtd {
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     virtual operator base_type&() noexcept {return data_->items;}
+
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception IndexOutOfRangeException Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include arrayarrayOperatorFunctor.cpp
+    type_t& operator()(const array<xtd::size>& indexes);
+    
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception IndexOutOfRangeException Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include arrayarrayOperatorFunctor.cpp
+    const type_t& operator()(const array<xtd::size>& indexes) const;
     /// @}
 
   private:
@@ -474,9 +536,58 @@ namespace xtd {
     basic_array(const_pointer array, xtd::size length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
       data_->items = base_type {array, length};
-      data_->upper_bound[0] = length - 1;
+      data_->upper_bound[0] = data_->items.size() - 1;
     }
     
+    basic_array(const xtd::collections::generic::ienumerable<type_t>& enumerable) {
+      for (const auto& value : enumerable)
+        data_->items.push_back(value);
+      data_->lower_bound.push_back(0);
+      data_->upper_bound[0] = data_->items.size() - 1;
+    }
+    
+    basic_array(const std::vector<type_t>& array) {
+      data_->items = array;
+      data_->upper_bound[0] = data_->items.size() - 1;
+    }
+    
+    basic_array(std::vector<type_t>&& array) {
+      data_->items = std::move(array);
+      data_->upper_bound[0] = data_->items.size() - 1;
+    }
+    
+    
+    basic_array(std::initializer_list<type_t> il) {
+      data_->items.append(il);
+      data_->upper_bound[0] = data_->items.size() - 1;
+    }
+    
+    basic_array(std::initializer_list<std::initializer_list<type_t>> il)  {
+      for (const std::initializer_list<type_t>& il1 : il)
+        data_->items.append(il1);
+      data_->upper_bound[0] = il.size() - 1;
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*il.begin()).size() - 1);
+    }
+    
+    basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il)  {
+      for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
+        for (const std::initializer_list<type_t>& il2 : il1)
+          data_->items.append(il2);
+      data_->upper_bound[0] = il.size() - 1;
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*il.begin()).size() - 1);
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*(*il.begin()).begin()).size() - 1);
+    }
+    
+    template<typename iterator_t>
+    basic_array(iterator_t first, iterator_t last) {
+      data_->items.append(first, last);
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back(data_->items.size() - 1);
+    }
+
     typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
