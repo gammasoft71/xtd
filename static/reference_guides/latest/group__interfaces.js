@@ -1,8 +1,8 @@
 var group__interfaces =
 [
     [ "xtd::collections::generic::icollection< type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", [
-      [ "iterator", "classxtd_1_1collections_1_1generic_1_1icollection_aa5d9246e495c6917d223078b48c7ab31.html#aa5d9246e495c6917d223078b48c7ab31", null ],
-      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1icollection_a8eb2e299c1ea306aa60b965fa0b424cb.html#a8eb2e299c1ea306aa60b965fa0b424cb", null ],
+      [ "iterator", "classxtd_1_1collections_1_1generic_1_1icollection_ae03aec8810a74286ec16e7c12c7ea36a.html#ae03aec8810a74286ec16e7c12c7ea36a", null ],
+      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1icollection_adb3ef4f4d07b613ae49e9124d6c77698.html#adb3ef4f4d07b613ae49e9124d6c77698", null ],
       [ "count", "classxtd_1_1collections_1_1generic_1_1icollection_ab1b79f5d91774cc70b8a4e21d979e1ea.html#ab1b79f5d91774cc70b8a4e21d979e1ea", null ],
       [ "is_read_only", "classxtd_1_1collections_1_1generic_1_1icollection_a817ed0a0b5cdb551aac7512c52ed4c96.html#a817ed0a0b5cdb551aac7512c52ed4c96", null ],
       [ "is_synchronized", "classxtd_1_1collections_1_1generic_1_1icollection_a182c2916a22a16eba26db94e8e9c0423.html#a182c2916a22a16eba26db94e8e9c0423", null ],
@@ -31,8 +31,8 @@ var group__interfaces =
       [ "get_hash_code", "classxtd_1_1collections_1_1generic_1_1iequality__comparer_a06a1a48a6f69dd2eb1e59904213cb461.html#a06a1a48a6f69dd2eb1e59904213cb461", null ]
     ] ],
     [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
-      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ilist_a94a2091fc2af107af1976d65dd15051a.html#a94a2091fc2af107af1976d65dd15051a", null ],
-      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ilist_a3ad57b0ba72194698f0931c8ba84f79a.html#a3ad57b0ba72194698f0931c8ba84f79a", null ],
+      [ "iterator", "classxtd_1_1collections_1_1generic_1_1ilist_a192132ce093e3a233f34095a389b4236.html#a192132ce093e3a233f34095a389b4236", null ],
+      [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ilist_a2d0527f45d40666d178eb5dd97067f36.html#a2d0527f45d40666d178eb5dd97067f36", null ],
       [ "is_fixed_size", "classxtd_1_1collections_1_1generic_1_1ilist_a27d1e03ba6f5666f4e84f9bd7e96ce72.html#a27d1e03ba6f5666f4e84f9bd7e96ce72", null ],
       [ "index_of", "classxtd_1_1collections_1_1generic_1_1ilist_af0181344a04570eaab3bbe6cd28712f5.html#af0181344a04570eaab3bbe6cd28712f5", null ],
       [ "insert", "classxtd_1_1collections_1_1generic_1_1ilist_ae33563c47a20a0bbb17e16d86efacce2.html#ae33563c47a20a0bbb17e16d86efacce2", null ],
