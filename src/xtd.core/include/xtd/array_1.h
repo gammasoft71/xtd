@@ -28,6 +28,37 @@ namespace xtd {
   template<typename type_t, typename allocator_t>
   class array_<type_t, 1, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
   public:
+    /// @name Public Aliases
+    
+    /// @{
+    /// @brief Represents the array value type.
+    using value_type = type_t;
+    /// @brief Represents the array allocator type.
+    using allocator_type = typename xtd::basic_array<type_t, allocator_t>::allocator_type;
+    /// @brief Represents the array base type.
+    using base_type = typename xtd::basic_array<type_t, allocator_t>::base_type;
+    /// @brief Represents the array size type (usually xtd::size).
+    using size_type = typename xtd::basic_array<type_t, allocator_t>::size_type;
+    /// @brief Represents the array difference type (usually xtd::ptrdiff).
+    using difference_type = typename xtd::basic_array<type_t, allocator_t>::difference_type;
+    /// @brief Represents the reference of array value type.
+    using reference = typename xtd::basic_array<type_t, allocator_t>::reference;
+    /// @brief Represents the const reference of array value type.
+    using const_reference = typename xtd::basic_array<type_t, allocator_t>::const_reference;
+    /// @brief Represents the pointer of array value type.
+    using pointer = typename xtd::basic_array<type_t, allocator_t>::pointer;
+    /// @brief Represents the const pointer of array value type.
+    using const_pointer = typename xtd::basic_array<type_t, allocator_t>::const_pointer;
+    /// @brief Represents the iterator of array value type.
+    using iterator = typename xtd::basic_array<type_t, allocator_t>::iterator;
+    /// @brief Represents the const iterator of array value type.
+    using const_iterator = typename xtd::basic_array<type_t, allocator_t>::const_iterator;
+    /// @brief Represents the reverse iterator of array value type.
+    using reverse_iterator = typename xtd::basic_array<type_t, allocator_t>::reverse_iterator;
+    /// @brief Represents the const reverse iterator of array value type.
+    using const_reverse_iterator = typename xtd::basic_array<type_t, allocator_t>::const_reverse_iterator;
+    /// @}
+
     /// @name Public Constructors
     
     /// @{
@@ -37,6 +68,76 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     array_() = default;
+    /// @brief Copy constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array_(const array_& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Move constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array_(const array_&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
+    /// @brief Copy constructor with specified base type array.
+    /// @param array The xtd::array::base_type which elements will be inserted from.
+    array_(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Move constructor with specified base type array.
+    /// @param array The xtd::array::base_type which elements will be moved from.
+    array_(base_type&& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Initializes a new instance of the array class with lengths for each rank specified.
+    /// @param length the length for the first rank.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array_(size_type length) : basic_array<type_t, allocator_t>(array_<xtd::size> {length}) {}
+    /// @brief Constructs the container with the contents of the specified initializer list.
+    /// @param items The initializer list to initialize the elements of the container with.
+    array_(std::initializer_list<type_t> items) : basic_array<type_t, allocator_t>(items) {}
+    /// @brief Initializes a new instance of the array and copy array[] type_t.
+    /// @param array the array to copy.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    template<xtd::size length>
+    array_(const type_t(&array)[length]) : basic_array<type_t, allocator_t>(array, length) {}
+    /// @brief Initializes a new instance of the array and copy array[] type_t with length specified.
+    /// @param array the array to copy.
+    /// @param length length of the array.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array_(const type_t* array, size_type length) : basic_array<type_t, allocator_t>(array, length) {}
+    /// @brief Initializes a new instance of the array and copy array array specified.
+    /// @param array the array to copy.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array_(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    /// @brief Initializes a new instance of the array and copy array array specified.
+    /// @param array the array to copy.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array_(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
+    /// @brief Constructs the container with the contents of the range [first, last).
+    /// @param first The first iterator the range to copy the elements from.
+    /// @param last The last iterator the range to copy the elements from.
+    template<typename iterator_t>
+    array_(iterator_t first, iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    /// @}
+
+    /// @name Public Properties
+    
+    /// @{
+    xtd::size rank() const noexcept override {return 1;}
+    /// @}
+
+    /// @name Public Operators
+    
+    /// @{
+    array_& operator=(const array_&) = default;
+    array_& operator=(array_&&) = default;
     /// @}
   };
 }

@@ -8,6 +8,37 @@
 #endif
 
 #include "string.h"
+#include <numeric>
+
+/// @cond
+namespace xtd {
+  /// C++17 deduction
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::iterator_traits<type_t>::value_type>>
+  array_(type_t, type_t, allocator_t = allocator_t()) -> array_<typename std::iterator_traits<type_t>::value_type, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(std::initializer_list<type_t>) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(const xtd::collections::generic::ienumerable<type_t>&) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(const xtd::collections::generic::ilist<type_t>&) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(const std::vector<type_t>&) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(const array_<type_t, rank, allocator_t>&) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(std::vector<type_t>&&) -> array_<type_t, rank, allocator_t>;
+  
+  template<typename type_t, int rank = 1, typename allocator_t = std::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(array_<type_t, rank, allocator_t>&&) -> array_<type_t, rank, allocator_t>;
+}
+/// @endcond
+
 
 template<typename type_t, typename allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd::array_<xtd::size>& indexes) const {
@@ -43,4 +74,15 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
     position += indexes[index1] * multiplicand;
   }
   return data_->items[position];
+}
+
+template<typename type_t, typename allocator_t>
+inline xtd::basic_array<type_t, allocator_t>::basic_array(const array_<size_type, 1>& lengths) {
+  data_->items = std::vector<value_type, allocator_t>(std::accumulate(lengths.begin(), lengths.end(), size_type {0}));
+  data_->lower_bound.clear();
+  data_->upper_bound.clear();
+  for (auto length : lengths) {
+    data_->lower_bound.push_back(0);
+    data_->upper_bound.push_back(length - 1);
+  }
 }
