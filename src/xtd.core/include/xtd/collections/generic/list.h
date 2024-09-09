@@ -838,6 +838,7 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
         virtual void resize(size_type count) {
+          if (count == size()) return;
           ++data_->version;
           data_->items.resize(count);
         }
