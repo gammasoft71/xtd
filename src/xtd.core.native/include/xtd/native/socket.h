@@ -188,9 +188,9 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t receive_from(intmax_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, std::vector<uint8_t>& socket_address);
       /// @brief Determines the status of one or more sockets.
-      /// @param check_read An IList of Socket instances to check for readability.
-      /// @param check_write An IList of Socket instances to check for writability.
-      /// @param check_error An IList of Socket instances to check for errors.
+      /// @param check_read An xtd::collections::generic::ilist of Socket instances to check for readability.
+      /// @param check_write An xtd::collections::generic::ilist of Socket instances to check for writability.
+      /// @param check_error An xtd::collections::generic::ilist of Socket instances to check for errors.
       /// @param microseconds The time-out value, in microseconds. A -1 value indicates an infinite time-out.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
