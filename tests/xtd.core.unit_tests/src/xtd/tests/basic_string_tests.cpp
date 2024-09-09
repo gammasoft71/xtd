@@ -1490,8 +1490,8 @@ namespace xtd::tests {
     }
     
     void test_method_(demangle) {
-      assert::are_not_equal("xtd::collections::generic::list<float>", typeid(xtd::collections::generic::list<float>).name(), csf_);
-      assert::are_equal("xtd::collections::generic::list<float>", basic_string<char_t>::demangle(typeid(xtd::collections::generic::list<float>).name()), csf_);
+      string_assert::does_not_start_with("xtd::collections::generic::list<float", typeid(xtd::collections::generic::list<float>).name(), csf_);
+      string_assert::starts_with("xtd::collections::generic::list<float", basic_string<char_t>::demangle(typeid(xtd::collections::generic::list<float>).name()), csf_);
     }
 
     void test_method_(equals_with_two_string) {
