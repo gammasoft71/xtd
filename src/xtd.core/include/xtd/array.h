@@ -209,7 +209,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the rank of an array.
     /// @include arrayGetLength.cpp
-    virtual xtd::size rank() const noexcept {return 1;}
+    virtual size_type rank() const noexcept {return 1;}
 
     /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
     /// @return Reverse iterator to the first element.
@@ -368,7 +368,7 @@ namespace xtd {
     /// @param indexes An array that represents the position of the element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
-    const value_type& get_value(const xtd::array<xtd::size>& indexes) const;
+    const value_type& get_value(const xtd::array<size_type>& indexes) const;
     
     /// @brief Determines the index of a specific item in the List.xtd::array <type_t>.
     /// @param value The object to locate in the List.
@@ -407,12 +407,39 @@ namespace xtd {
       if (index == count() - 1) data_->items.pop_back();
       else data_->items.erase(to_base_type_iterator(begin()) + index);
     }
+    
+    /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+    /// @param new_size The new size of the container.
+    /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
+    /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
+    void resize(size_type new_size) noexcept {
+      if (new_size == length()) return;
+      ++data_->version;
+      data_->items_.resize(new_size);
+      data_->upper_bound[0] = new_size - 1;
+    }
+    
+    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
+    void reverse() noexcept {std::reverse(0, count());}
+    /// @brief Reverses the order of the elements in the specified range.
+    /// @param index The zero-based starting index of the range to reverse.
+    /// @param count The number of elements in the range to reverse.
+    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is `count`.
+    void reverse(size_type index, size_type count) {
+      if (index > size() || index + count > size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      ++data_->version;
+      std::reverse(data_->items_.begin() + index, data_->items_.begin() + index + count);
+    }
 
     /// @brief Sets a value to the element at the specified position in the multidimensional array.
     /// @param value The new value for the specified element.
     /// @param indexes An array that represents the position of the element to set.
-    /// @exception IndexOutOfRangeException Either `indexes` is outside the range of valid indexes for the current array.
-    void set_value(const type_t& value, const array<xtd::size>& indexes) {operator()(indexes) = value;}
+    /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
+    void set_value(const type_t& value, const array<size_type>& indexes) {operator()(indexes) = value;}
 
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
@@ -492,12 +519,12 @@ namespace xtd {
     /// @brief Returns a reference to the element at specified location index.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If pos is not within the range of the container.
+    /// @exception xtd::index_out_of_range_exception If pos is not within the range of the container.
     const_reference operator [](size_type index) const override {return at(index);}
     /// @brief Returns a reference to the element at specified location index.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If `index` is not within the range of the container.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     reference operator [](size_type index) override {return at(index);}
     
     /// @brief Returns a reference to the underlying base type.
@@ -510,30 +537,30 @@ namespace xtd {
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
-    /// @exception IndexOutOfRangeException Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
-    /// @include arrayarrayOperatorFunctor.cpp
-    type_t& operator()(const array<xtd::size>& indexes);
+    /// @include array_array_operator_functor.cpp
+    type_t& operator()(const array<size_type>& indexes);
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
-    /// @exception IndexOutOfRangeException Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
-    /// @include arrayarrayOperatorFunctor.cpp
-    const type_t& operator()(const array<xtd::size>& indexes) const;
+    /// @include array_array_operator_functor.cpp
+    const type_t& operator()(const array<size_type>& indexes) const;
     /// @}
 
   private:
-    template<typename type_array_t, xtd::size rank_array_t, typename allocator_array_t>
+    template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
     friend class array_;
     
     basic_array() = default;
     basic_array(const array_<size_type, 1>& lengths);
     
-    basic_array(const_pointer array, xtd::size length) {
+    basic_array(const_pointer array, size_type length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
       data_->items = base_type {array, length};
       data_->upper_bound[0] = data_->items.size() - 1;
@@ -604,7 +631,7 @@ namespace xtd {
       size_type version = 0;
       base_type items;
       std::vector<size_type> lower_bound {0};
-      std::vector<size_type> upper_bound {std::numeric_limits<xtd::size>::max()};
+      std::vector<size_type> upper_bound {std::numeric_limits<size_type>::max()};
       object sync_root;
     };
     
