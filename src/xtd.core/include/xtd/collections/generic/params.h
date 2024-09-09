@@ -50,6 +50,8 @@ namespace xtd {
         using reference = base_type::reference;
         /// @brief Represents the const reference of params value type.
         using const_reference = base_type::const_reference;
+        /// @brief Represents the const pointer of params value type.
+        using const_pointer = const value_type*;
         /// @brief Represents the params size type (usually xtd::size).
         using size_type = base_type::size_type;
         /// @brief Represents the iterator of params value type.
@@ -79,11 +81,21 @@ namespace xtd {
         /// @return A pointer to the first element in the params.
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
         constexpr iterator begin() const noexcept {return items_.begin();}
+
+        /// @brief Returns pointer to the underlying array serving as element storage.
+        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
+        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+        virtual const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(begin());}
+
         /// @brief Returns a pointer to one past the last element in the params, i.e. begin() + size().
         /// @return A pointer to one past the last element in the params.
         /// @remarks If the params is empty, the values of begin() and end() are unspecified, but will be identical.
         constexpr iterator end() const noexcept {return items_.end();}
-        
+
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        virtual const base_type& items() const noexcept {return items_;}
+
         /// @brief Returns the number of elements in the params, i.e. `std::distance(begin(), end())`.
         /// @return The number of elements in the params.
         constexpr size_type size() const noexcept {return items_.size();}
