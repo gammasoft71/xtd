@@ -225,24 +225,6 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    /// @brief Adds an object to the end of the xtd::array <type_t>.
-    /// @param item The object to be added to the end of the xtd::array <type_t>.
-    /// @)ar Examples
-    /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::array <type_t>.
-    /// @include generic_list4.cpp
-    /// The following example demonstrates several properties and methods of the xtd::array <type_t> generic class, including the xtd::array::add method.
-    /// The parameterless constructor is used to create a array of strings with a capacity of 0. The xtd::array::capacity property is displayed, and then the xtd::array::add method is used to add several items. The items are listed, and the xtd::array::capacity property is displayed again, along with the xtd::array::count property, to show that the capacity has been increased as needed.
-    ///
-    /// Other properties and methods are used to search for, insert, and remove elements from the array, and finally to clear the array.
-    /// @include generic_list2.cpp
-    /// @remarks xtd::array <type_t>  allows duplicate elements.
-    /// @remarks If xtd::array::count already equals xtd::array::capacity, the capacity of the xtd::array <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
-    /// @remarks If xtd::array::count is less than xtd::array::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::array::count.
-    void add(const type_t& item) override {
-      ++data_->version;
-      data_->items.push_back(item);
-    }
-    
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
@@ -258,11 +240,6 @@ namespace xtd {
     virtual const_reference at(size_type index) const {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
-    }
-    
-    void clear() override {
-      ++data_->version;
-      data_->items.clear();
     }
     
     /// @brief Determines whether an element is in the array.
@@ -285,9 +262,7 @@ namespace xtd {
     
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
-    virtual void fill(const value_type& value) noexcept {
-      std::fill(begin(), end(), value);
-    }
+    virtual void fill(const value_type& value) noexcept {std::fill(begin(), end(), value);}
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
       class basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
@@ -364,47 +339,25 @@ namespace xtd {
       return index_of(*this, value, 0, count());
     }
     
-    /// @brief Inserts an element into the xtd::array <type_t> at the specified index.
-    /// @param index The zero-based index at which the new element should be inserted.
-    /// @param value The element should be inserted into the xtd::array <type_t>.
-    /// @exception xtd::argument_out_of_range_exception `index` is is greater than xtd::array::count.
-    /// @remarks xtd::array <type_t> allows duplicate elements.
-    void insert(size_type index, const type_t& value) override {
-      if (index > count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
-      data_->items.insert(to_base_type_iterator(begin()) + index, value);
-    }
-    
-    bool remove(const type_t& item) override {
-      if (count() == 0)  return false;
-      for (auto index = size_type {0}; index < count(); ++index) {
-        if (at(index) != item) continue;
-        remove_at(index);
-        return true;
-      }
-      return false;
-    }
-    
-    /// @brief Removes the element at the specified index of the xtd::array <type_t>.
-    /// @param index The zero-based index of the item to remove
-    /// @exception xtd::argument_out_of_range_exception `index` is greater than xtd::array::count.
-    void remove_at(size_type index) override {
-      if (index >= count()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
-      
-      if (index == count() - 1) data_->items.pop_back();
-      else data_->items.erase(to_base_type_iterator(begin()) + index);
-    }
-    
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
     /// @param new_size The new size of the container.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
-    void resize(size_type new_size) noexcept {
+    void resize(size_type new_size) {resize(new_size, value_type {});}
+    
+    /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+    /// @param new_size The new size of the container.
+    /// @param value The value to initialize the new elements with.
+    /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
+    /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
+    void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
+      if (new_size > max_size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       ++data_->version;
-      data_->items_.resize(new_size);
+      data_->items_.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
     }
-    
+
     /// @brief Reverses the order of the elements in the entire xtd::basic_array.
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
     /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
@@ -548,10 +501,7 @@ namespace xtd {
     
     basic_array(const_pointer array, size_type length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
-      //data_->items = base_type {array, array + length};
-      data_->items = base_type(length);
-      for (auto index = size_type {0}; index < length; ++index)
-        data_->items[index] = array[index];
+      data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
@@ -603,6 +553,12 @@ namespace xtd {
       data_->upper_bound.push_back(data_->items.size() - 1);
     }
     
+    void add(const type_t& item) override {}
+    void clear() override {}
+    void insert(size_type index, const type_t& value) override {}
+    bool remove(const type_t& item) override {return false;}
+    void remove_at(size_type index) override {}
+
     typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
