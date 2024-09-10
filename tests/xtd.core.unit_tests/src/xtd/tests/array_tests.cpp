@@ -496,9 +496,9 @@ namespace xtd::tests {
     }
     
     void test_method_(index_of_with_value_type) {
-      auto items = array_ {84, 42, 21, 42};
-      assert::are_equal(1_z, items.index_of(42), csf_);
-      assert::are_equal(items.npos, items.index_of(0), csf_);
+      assert::are_equal(array_<int>::npos, array_<int> {}.index_of(42), csf_);
+      assert::are_equal(1_z, array_ {84, 42, 21, 42}.index_of(42), csf_);
+      assert::are_equal(array_<int>::npos, array_ {84, 42, 21, 42}.index_of(0), csf_);
     }
 
     void test_method_(resize) {
@@ -539,6 +539,12 @@ namespace xtd::tests {
       items.resize(0, 42);
       assert::is_zero(items.count(), csf_);
       collection_assert::is_empty(items, csf_);
+    }
+    
+    void test_method_(reverse) {
+      auto items = array_<int> {1, 2, 3, 4, 5};
+      array_<int>::reverse(items);
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items, csf_);
     }
 
     void test_method_(index_operator) {
