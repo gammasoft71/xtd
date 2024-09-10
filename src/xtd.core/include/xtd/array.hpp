@@ -57,12 +57,13 @@ template<typename type_t, typename allocator_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array_<xtd::size>& indexes) {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
-    if (indexes[index1] > get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+    if (indexes[index1] >= get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
     auto multiplicand = xtd::size {1};
     for (auto index2 = index1 + 1; index2 < indexes.size(); ++index2)
       multiplicand *= get_length(index2);
     position += indexes[index1] * multiplicand;
   }
+  if (position >= size()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
   return data_->items[position];
 }
 
@@ -70,12 +71,13 @@ template<typename type_t, typename allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array_<xtd::size>& indexes) const {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
-    if (indexes[index1] > get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+    if (indexes[index1] >= get_length(index1)) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
     auto multiplicand = xtd::size {1};
     for (auto index2 = index1 + 1; index2 < indexes.size(); ++index2)
       multiplicand *= get_length(index2);
     position += indexes[index1] * multiplicand;
   }
+  if (position >= size()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
   return data_->items[position];
 }
 
