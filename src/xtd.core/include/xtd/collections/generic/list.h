@@ -837,17 +837,15 @@ namespace xtd {
         /// @param count The new size of the container.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
-        virtual void resize(size_type count) {
-          if (count == size()) return;
-          ++data_->version;
-          data_->items.resize(count);
-        }
+        virtual void resize(size_type count)  {resize(count, value_type {});}
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
         /// @param value The value to initialize the new elements with.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual void resize(size_type count, const value_type& value) {
+          if (count > max_size()) throw xtd::argument_out_of_range_exception {csf_};
+          if (count == size()) return;
           ++data_->version;
           data_->items.resize(count, value);
         }
