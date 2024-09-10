@@ -343,10 +343,7 @@ namespace xtd {
     /// @brief Determines the index of a specific item in the List.xtd::array <type_t>.
     /// @param value The object to locate in the List.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
-    size_type index_of(const type_t& value) const noexcept override {
-      if (count() == 0)  return npos;
-      return index_of(*this, value, 0, count());
-    }
+    size_type index_of(const type_t& value) const noexcept override {return index_of(*this, value, 0, count());}
     
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
     /// @param new_size The new size of the container.
@@ -435,6 +432,7 @@ namespace xtd {
     static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
       if (index > array.length() || index + count > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
       
+      if (array.size() == 0) return npos;
       for (auto increment = size_type {0}; increment < count; ++increment) {
         if (array[index + increment] == value)
           return index + increment;
