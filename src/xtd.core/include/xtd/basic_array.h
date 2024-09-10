@@ -80,11 +80,11 @@ namespace xtd {
     /// @brief Returns a reference to the last element in the container.
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual reference back() {return at(count() - 1);}
+    virtual reference back() {return at(size() - 1);}
     /// @brief Returns a reference to the last element in the container.
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual const_reference back() const {return at(count() - 1);}
+    virtual const_reference back() const {return at(size() - 1);}
     
     /// @brief Returns an iterator to the first element of the enumarable.
     /// @return Iterator to the first element.
@@ -163,7 +163,7 @@ namespace xtd {
     /// @remarks Calling front on an empty container causes undefined behavior.
     virtual const_reference front() const {return at(0);}
     
-    bool is_fixed_size() const noexcept override {return false;}
+    bool is_fixed_size() const noexcept override {return true;}
     bool is_read_only() const noexcept override {return false;}
     bool is_synchronized() const noexcept override {return false;}
     
@@ -354,7 +354,7 @@ namespace xtd {
       if (new_size == length()) return;
       if (new_size > max_size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       ++data_->version;
-      data_->items_.resize(new_size, value);
+      data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
     }
 
