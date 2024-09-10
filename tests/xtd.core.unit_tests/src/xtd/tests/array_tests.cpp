@@ -225,14 +225,14 @@ namespace xtd::tests {
       assert::are_equal(21, *(ptr + 2), csf_);
       
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::are_equal(0, *(ptr + 3), csf_);
+      //assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = *(ptr + 3);}, csf_);
       
       *(ptr) = 63;
       *(ptr + 1) = 31;
       *(ptr + 2) = 10;
       
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //*(ptr + 3) = 6;
+      //assert::throws<index_out_of_range_exception>([&]{*(ptr + 3) = 5;}, csf_);
       
       collection_assert::are_equal({63, 31, 10}, items, csf_);
     }
@@ -298,14 +298,14 @@ namespace xtd::tests {
       assert::are_equal(21, inners[2], csf_);
       
       // Attempting to access index that exceeds size() results in undefined behaviour.
-      //assert::are_equal(0, inners[3], csf_);
+      //assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = inners[3];}, csf_);
 
       inners[0] = 63;
       inners[1] = 31;
       inners[2] = 10;
       
       // Attempting to access index that exceeds size() results in undefined behaviour.
-      //inners[3] = 6;
+      //assert::throws<index_out_of_range_exception>([&]{inners[3] = 5;}, csf_);
       
       collection_assert::are_equal({63, 31, 10}, items, csf_);
     }
@@ -365,6 +365,136 @@ namespace xtd::tests {
       assert::are_not_equal(a.sync_root(), b.sync_root(), csf_);
     }
 
+    void test_method_(at) {
+      auto items = array_ {84, 42, 21};
+
+      assert::are_equal(84, items.at(0), csf_);
+      assert::are_equal(42, items.at(1), csf_);
+      assert::are_equal(21, items.at(2), csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items[3];}, csf_);
+      
+      items.at(0) = 63;
+      items.at(1) = 31;
+      items.at(2) = 10;
+      assert::throws<index_out_of_range_exception>([&]{items[3] = 5;}, csf_);
+
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
+    }
+    
+    void test_method_(contains) {
+      auto items = array_ {84, 42, 21};
+      assert::is_true(items.contains(84), csf_);
+      assert::is_true(items.contains(42), csf_);
+      assert::is_true(items.contains(21), csf_);
+      assert::is_false(items.contains(0), csf_);
+      assert::is_false(items.contains(12), csf_);
+      assert::is_false(items.contains(items.npos), csf_);
+    }
+    
+    void test_method_(copy_to) {
+      auto items = array_ {84, 42, 21};
+      auto dest = array<int>(3);
+      items.copy_to(dest, 0);
+      collection_assert::are_equal({84, 42, 21}, dest, csf_);
+
+      dest = array<int>(5);
+      items.copy_to(dest, 2);
+      collection_assert::are_equal({0, 0, 84, 42, 21}, dest, csf_);
+
+      dest = array<int>(7);
+      items.copy_to(dest, 2);
+      collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest, csf_);
+    }
+    
+    void test_method_(equals_object) {
+      auto items1 = array_ {84, 42, 21};
+      auto items2 = array_ {84, 42, 21};
+      assert::is_true(items1.equals(as<object>(items2)), csf_);
+      auto items3 = array_ {84, 42, 33};
+      assert::is_false(items1.equals(as<object>(items3)), csf_);
+      auto items4 = list {84, 42, 21};
+      assert::is_false(items1.equals(items4), csf_);
+    }
+    
+    void test_method_(equals_array) {
+      auto items1 = array_ {84, 42, 21};
+      auto items2 = array_ {84, 42, 21};
+      assert::is_true(items1.equals(items2), csf_);
+      auto items3 = array_ {84, 42, 33};
+      assert::is_false(items1.equals(items3), csf_);
+    }
+    
+    void test_method_(fill) {
+      auto items = array_<int>(5);
+      items.fill(84);
+      collection_assert::are_equal({84, 84, 84, 84, 84}, items, csf_);
+      items.fill(42);
+      collection_assert::are_equal({42, 42, 42, 42, 42}, items, csf_);
+      items.fill(21);
+      collection_assert::are_equal({21, 21, 21, 21, 21}, items, csf_);
+    }
+    
+    void test_method_(for_each) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      auto accumulator = 0;
+      for (auto item: items)
+        accumulator += item;
+      assert::are_equal(15, accumulator, csf_);
+    }
+
+    void test_method_(get_enumerator) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      auto enumerator = items.get_enumerator();
+      auto accumulator = 0;
+      while(enumerator.move_next())
+        accumulator += enumerator.current();
+      assert::are_equal(15, accumulator, csf_);
+    }
+    
+    void test_method_(get_length) {
+      auto items = array_ {84, 42, 21};
+      assert::are_equal(3_z, items.get_length(0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{[[maybe_unused]] auto l = items.get_length(1);}, csf_);
+    }
+    
+    void test_method_(get_long_length) {
+      auto items = array_ {84, 42, 21};
+      assert::are_equal(3, items.get_long_length(0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{[[maybe_unused]] auto l = items.get_long_length(1);}, csf_);
+    }
+
+    void test_method_(get_lower_bound) {
+      auto items = array_ {84, 42, 21};
+      assert::is_zero(items.get_lower_bound(0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{[[maybe_unused]] auto l = items.get_lower_bound(1);}, csf_);
+    }
+    
+    void test_method_(get_upper_bound) {
+      auto items = array_ {84, 42, 21};
+      assert::are_equal(2_z, items.get_upper_bound(0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{[[maybe_unused]] auto l = items.get_upper_bound(1);}, csf_);
+    }
+    
+    void test_method_(get_value_with_index) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      assert::are_equal(1, items.get_value(0), csf_);
+      assert::are_equal(2, items.get_value(1), csf_);
+      assert::are_equal(3, items.get_value(2), csf_);
+      assert::are_equal(4, items.get_value(3), csf_);
+      assert::are_equal(5, items.get_value(4), csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items.get_value(5);}, csf_);
+    }
+    
+    void test_method_(get_value_with_indexes_array) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      assert::are_equal(1, items.get_value(array_ {0_z}), csf_);
+      assert::are_equal(2, items.get_value(array_ {1_z}), csf_);
+      assert::are_equal(3, items.get_value(array_ {2_z}), csf_);
+      assert::are_equal(4, items.get_value(array_ {3_z}), csf_);
+      assert::are_equal(5, items.get_value(array_ {4_z}), csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items.get_value(array_ {5_z});}, csf_);
+    }
+
     void test_method_(resize) {
       auto items = array_<int> {};
       assert::is_zero(items.count(), csf_);
@@ -373,10 +503,10 @@ namespace xtd::tests {
       collection_assert::are_equal({0, 0, 0, 0, 0}, items, csf_);
       items.resize(50);
       assert::are_equal(50_z, items.count(), csf_);
-      assert::are_equal(0, items[0] , csf_);
-      assert::are_equal(0, items[4] , csf_);
-      assert::are_equal(0, items[5] , csf_);
-      assert::are_equal(0, items[49] , csf_);
+      assert::are_equal(0, items[0], csf_);
+      assert::are_equal(0, items[4], csf_);
+      assert::are_equal(0, items[5], csf_);
+      assert::are_equal(0, items[49], csf_);
       items.resize(5);
       assert::are_equal(5_z, items.count(), csf_);
       collection_assert::are_equal({0, 0, 0, 0, 0}, items, csf_);
@@ -393,16 +523,64 @@ namespace xtd::tests {
       collection_assert::are_equal({84, 84, 84, 84, 84}, items, csf_);
       items.resize(50, 42);
       assert::are_equal(50_z, items.count(), csf_);
-      assert::are_equal(84, items[0] , csf_);
-      assert::are_equal(84, items[4] , csf_);
-      assert::are_equal(42, items[5] , csf_);
-      assert::are_equal(42, items[49] , csf_);
+      assert::are_equal(84, items[0], csf_);
+      assert::are_equal(84, items[4], csf_);
+      assert::are_equal(42, items[5], csf_);
+      assert::are_equal(42, items[49], csf_);
       items.resize(5, 42);
       assert::are_equal(5_z, items.count(), csf_);
       collection_assert::are_equal({84, 84, 84, 84, 84}, items, csf_);
       items.resize(0, 42);
       assert::is_zero(items.count(), csf_);
       collection_assert::is_empty(items, csf_);
+    }
+
+    void test_method_(index_operator) {
+      auto items = array_ {84, 42, 21};
+      
+      assert::are_equal(84, items[0], csf_);
+      assert::are_equal(42, items[1], csf_);
+      assert::are_equal(21, items[2], csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items[3];}, csf_);
+      
+      items[0] = 63;
+      items[1] = 31;
+      items[2] = 10;
+      assert::throws<index_out_of_range_exception>([&]{items[3] = 5;}, csf_);
+      
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
+    }
+
+    void test_method_(index_functor) {
+      auto items = array_ {84, 42, 21};
+      
+      assert::are_equal(84, items(0), csf_);
+      assert::are_equal(42, items(1), csf_);
+      assert::are_equal(21, items(2), csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items(3);}, csf_);
+      
+      items(0) = 63;
+      items(1) = 31;
+      items(2) = 10;
+      assert::throws<index_out_of_range_exception>([&]{items(3) = 5;}, csf_);
+      
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
+    }
+
+    void test_method_(indexes_array_functor) {
+      auto items = array_ {84, 42, 21};
+      
+      assert::are_equal(84, items(array_ {0_z}), csf_);
+      assert::are_equal(42, items(array_ {1_z}), csf_);
+      assert::are_equal(21, items(array_ {2_z}), csf_);
+      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items(array_ {3_z});}, csf_);
+      
+      items(array_ {0_z}) = 63;
+      items(array_ {1_z}) = 31;
+      items(array_ {2_z}) = 10;
+      assert::throws<index_out_of_range_exception>([&]{items(array_ {3_z}) = 5;}, csf_);
+      
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
     }
   };
 }
