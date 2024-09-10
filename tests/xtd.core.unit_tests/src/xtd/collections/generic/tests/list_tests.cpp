@@ -129,14 +129,16 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(const_back) {
-      auto items = list {84, 42, 21};
-      assert::are_equal(21, items.back(), csf_);
+      assert::are_equal(21, list {84, 42, 21}.back(), csf_);
+      assert::throws<index_out_of_range_exception>([] {list<int> {}.back();}, csf_);
     }
     
     void test_method_(back) {
       auto items = list {84, 42, 21};
       items.back() = 5;
       assert::are_equal(5, items.back(), csf_);
+      auto empty_items = list<int> {};
+      assert::throws<index_out_of_range_exception>([&] {empty_items.back() = 5;}, csf_);
     }
     
     void test_method_(begin) {
@@ -205,7 +207,6 @@ namespace xtd::collections::generic::tests {
       //*(ptr + 3) = 6;
       
       collection_assert::are_equal({63, 31, 10}, items, csf_);
-
     }
 
     void test_method_(empty) {
@@ -229,11 +230,18 @@ namespace xtd::collections::generic::tests {
       assert::throws<index_out_of_range_exception>([&] {*items.end();}, csf_);
     }
     
-    void test_method_(front) {
+    void test_method_(front_const) {
       auto items = list {84, 42, 21};
       assert::are_equal(84, items.front(), csf_);
-
       assert::throws<index_out_of_range_exception>([&] {list<int> {}.front();}, csf_);
+    }
+      
+    void test_method_(front) {
+      auto items = list {84, 42, 21};
+      items.front() = 10;
+      assert::are_equal(10, items.front(), csf_);
+      auto empty_items = list<int> {};
+      assert::throws<index_out_of_range_exception>([&] {empty_items.front() = 10;}, csf_);
     }
 
     void test_method_(is_fixed_size) {
@@ -249,6 +257,33 @@ namespace xtd::collections::generic::tests {
     void test_method_(is_synchronized) {
       // Is always false;
       assert::is_false(list<int> {}.is_synchronized(), csf_);
+    }
+    
+    void test_method_(items_const) {
+      assert::are_equal(typeof_<list<int>::base_type>(), typeof_(list {1, 2, 3, 4, 5}.items()), csf_);
+      collection_assert::are_equal({1, 2, 3, 4, 5}, list {1, 2, 3, 4, 5}.items(), csf_);
+    }
+
+    void test_method_(items) {
+      auto items = list {84, 42, 21};
+      assert::are_equal(typeof_<array_<int>::base_type>(), typeof_(items.items()), csf_);
+      
+      auto& inners = items.items();
+      assert::are_equal(84, inners[0], csf_);
+      assert::are_equal(42, inners[1], csf_);
+      assert::are_equal(21, inners[2], csf_);
+      
+      // Attempting to access index that exceeds size() results in undefined behaviour.
+      //assert::are_equal(0, inners[3], csf_);
+      
+      inners[0] = 63;
+      inners[1] = 31;
+      inners[2] = 10;
+      
+      // Attempting to access index that exceeds size() results in undefined behaviour.
+      //inners[3] = 6;
+      
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
     }
     
     void test_method_(max_size) {
@@ -287,12 +322,13 @@ namespace xtd::collections::generic::tests {
       
       delegate<void()> {[&] {
         lock_ (synchronized_items.sync_root()) {
-          synchronized_items.add(1);
           threading::thread::sleep(10);
+          synchronized_items.add(1);
           synchronized_items.add(2);
           synchronized_items.add(3);
         }
       }}.begin_invoke();
+      threading::thread::sleep(5);
 
       delegate<void()> {[&] {
         lock_ (synchronized_items.sync_root()) {
@@ -302,7 +338,7 @@ namespace xtd::collections::generic::tests {
         }
       }}.begin_invoke();
 
-      threading::thread::sleep(20);
+      threading::thread::sleep(15);
       lock_ (synchronized_items.sync_root()) {
         collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items, csf_);
       }
