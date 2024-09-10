@@ -363,22 +363,6 @@ namespace xtd {
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
     }
-
-    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
-    void reverse() noexcept {std::reverse(0, count());}
-    /// @brief Reverses the order of the elements in the specified range.
-    /// @param index The zero-based starting index of the range to reverse.
-    /// @param count The number of elements in the range to reverse.
-    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is `count`.
-    void reverse(size_type index, size_type count) {
-      if (index > size() || index + count > size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
-      ++data_->version;
-      std::reverse(data_->items_.begin() + index, data_->items_.begin() + index + count);
-    }
     
     /// @brief Sets a value to the element at the specified position in the multidimensional array.
     /// @param value The new value for the specified element.
@@ -438,6 +422,22 @@ namespace xtd {
           return index + increment;
       }
       return npos;
+    }
+
+    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
+    static void reverse(basic_array& array) noexcept {reverse(array, 0, array.count());}
+    /// @brief Reverses the order of the elements in the specified range.
+    /// @param index The zero-based starting index of the range to reverse.
+    /// @param count The number of elements in the range to reverse.
+    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is `count`.
+    static void reverse(basic_array& array, size_type index, size_type count) {
+      if (index > array.size() || index + count > array.size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      ++array.data_->version;
+      std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
     }
     /// @}
     
