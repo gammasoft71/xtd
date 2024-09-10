@@ -494,6 +494,12 @@ namespace xtd::tests {
       assert::are_equal(5, items.get_value(array_ {4_z}), csf_);
       assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items.get_value(array_ {5_z});}, csf_);
     }
+    
+    void test_method_(index_of_with_value_type) {
+      auto items = array_ {84, 42, 21, 42};
+      assert::are_equal(1_z, items.index_of(42), csf_);
+      assert::are_equal(items.npos, items.index_of(0), csf_);
+    }
 
     void test_method_(resize) {
       auto items = array_<int> {};
