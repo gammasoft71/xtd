@@ -301,6 +301,15 @@ namespace xtd {
     /// @include array_get_length.cpp
     constexpr size_type get_length(size_type dimension) const {return get_upper_bound(dimension) + 1;}
     
+    /// @brief Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.
+    /// @param dimension A zero-based dimension of the array whose length needs to be determined.
+    /// @return A 64-bit integer that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
+    /// @exception xtd::argument_out_of_range_exception `dimension` is equal to or greater than xtd::basic_array::rank.
+    /// @par Examples
+    /// The following code example demonstrates methods to get the length of an array.
+    /// @include array_get_length.cpp
+    constexpr xtd::int64 get_long_length(size_type dimension) const {return static_cast<xtd::int64>(get_upper_bound(dimension) + 1);}
+    
     /// @brief Gets the lower bound of the specified dimension in the array.
     /// @param dimension A zero-based dimension of the array whose lower bound needs to be determined.
     /// @return The lower bound of the specified dimension in the array.
@@ -474,7 +483,7 @@ namespace xtd {
     virtual operator base_type&() noexcept {return data_->items;}
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
-    /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
     /// @par Examples
@@ -483,7 +492,7 @@ namespace xtd {
     type_t& operator()(const xtd::array_<size_type>& indexes);
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
-    /// @param indexes A 32-bit integer array that represents the multidimension index of the array element to get.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
     /// @par Examples
