@@ -38,6 +38,7 @@ add_sources(
   include/xtd/array_1.h
   include/xtd/array_2.h
   include/xtd/array_3.h
+  include/xtd/array_static.h
   include/xtd/array_object.h
   include/xtd/as.h
   include/xtd/as
