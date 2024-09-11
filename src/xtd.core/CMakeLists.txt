@@ -530,6 +530,8 @@ add_sources(
   include/xtd/collections/generic/comparer
   include/xtd/collections/generic/dictionary.h
   include/xtd/collections/generic/dictionary
+  include/xtd/collections/generic/empty_comparer.h
+  include/xtd/collections/generic/empty_comparer
   include/xtd/collections/generic/enumerable_iterators.h
   include/xtd/collections/generic/enumerable_iterators
   include/xtd/collections/generic/enumerator.h

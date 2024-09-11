@@ -15,6 +15,7 @@
 #include "collections/key_not_found_exception.h"
 #include "collections/generic/comparer.h"
 #include "collections/generic/dictionary.h"
+#include "collections/generic/empty_comparer.h"
 #include "collections/generic/enumerator.h"
 #include "collections/generic/hash_set.h"
 #include "collections/generic/icollection.h"
