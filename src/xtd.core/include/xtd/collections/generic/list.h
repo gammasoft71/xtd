@@ -7,6 +7,7 @@
 #include "params.h"
 #include "../object_model/read_only_collection.h"
 #include "../../argument_exception.h"
+#include "../../argument_out_of_range_exception.h"
 #include "../../index_out_of_range_exception.h"
 #include "../../box_integer.h"
 #include "../../invalid_operation_exception.h"
@@ -431,11 +432,7 @@ namespace xtd {
         /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
         /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
         /// @remarks This method is an O(1) operation.
-        read_only_collection as_read_only() const noexcept {
-          auto read_only_list = new_ptr<list<value_type>>();
-          read_only_list->data_ = data_;
-          return read_only_collection {read_only_list};
-        }
+        read_only_collection as_read_only() const noexcept {return read_only_collection {new_ptr<list<value_type>>(*this)};}
         
         /// @brief Replaces the contents with the elements from the initializer list items.
         /// @param items the initializer list to copy the values from.
