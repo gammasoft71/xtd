@@ -31,6 +31,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "array_2.h", "array__2_8h.html", null ],
     [ "array_3.h", "array__3_8h.html", null ],
     [ "array_object.h", "array__object_8h.html", null ],
+    [ "array_static.h", "array__static_8h.html", null ],
     [ "as.h", "as_8h.html", null ],
     [ "async_callback.h", "async__callback_8h.html", null ],
     [ "async_result.h", "async__result_8h.html", "async__result_8h" ],
