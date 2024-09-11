@@ -346,6 +346,8 @@ add_sources(
   include/xtd/ptrdiff_object
   include/xtd/random.h
   include/xtd/random
+  include/xtd/rank_exception.h
+  include/xtd/rank_exception
   include/xtd/register_any_stringer.h
   include/xtd/register_any_stringer
   include/xtd/reset_color.h
