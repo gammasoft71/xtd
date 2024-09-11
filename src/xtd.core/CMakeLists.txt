@@ -39,7 +39,7 @@ add_sources(
   include/xtd/array_2.h
   include/xtd/array_3.h
   include/xtd/array_static.h
-  include/xtd/array_object.h
+  include/xtd/array_abstract_object.h
   include/xtd/as.h
   include/xtd/as
   include/xtd/async_callback.h

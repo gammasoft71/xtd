@@ -66,10 +66,10 @@ namespace xtd {
   template<typename type_t, typename allocator_t>
   class basic_array;
   
-  /// @brief Base object that represent array.
+  /// @brief Abstract object that represent array.
   /// @par Definition
   /// ```cpp
-  /// class array_object : public xtd::object;
+  /// class array_abstract_object abstract_;
   /// ```
   /// @par Header
   /// ```cpp
@@ -80,5 +80,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  class array_object;
+  class array_abstract_object;
 }
