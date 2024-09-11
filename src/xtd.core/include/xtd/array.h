@@ -92,6 +92,10 @@ namespace xtd {
     array_& operator=(const array_&) = default;
     array_& operator=(array_&&) = default;
     /// @}
+
+  private:
+    friend class array_<>;
+    array_(const array_<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
    };
 }
 
