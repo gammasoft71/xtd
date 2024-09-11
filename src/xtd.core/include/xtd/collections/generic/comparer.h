@@ -11,31 +11,24 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @brief Exposes a method that compares two objects.
+      /// @brief Provides a base class for implementations of the xtd::collections::generic::icomparer <type_t> generic interface.
       /// @par Definition
       /// ```cpp
       /// template<typename type_t>
-      /// class icomparer interface_
+      /// class comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t>;
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/icomparer
+      /// #include <xtd/collections/generic/comparer
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core generic_collections interfaces
+      /// @ingroup xtd_core generic_collections
       template<typename type_t>
       class comparer : public object, public icomparer<type_t> {
       public:
-        /// @name Public Constructors
-        
-        /// @{
-        /// @brief Initializes a new instance of the Comparer<T> class.
-        comparer() = default;
-        /// @}
-        
         /// @name Public Properties
         
         /// @{
@@ -57,16 +50,15 @@ namespace xtd {
         /// | Greater than zero | x is greater than y. |
         int32 compare(const type_t& x, const type_t& y) const override {return x < y ? -1 : (x == y ? 0 : 1);}
         /// @}
+
+      protected:
+        /// @name Protected Constructors
+        
+        /// @{
+        /// @brief Initializes a new instance of the xtd::collections::generic::comparer <type_t> class.
+        comparer() = default;
+        /// @}
       };
-      
-      /// @cond
-      template<typename type_t>
-      class empty_comparer : public object, public icomparer<type_t> {
-      public:
-        empty_comparer() {}
-        int32 compare(const type_t& x, const type_t& y) const override {return 0;}
-      };
-      /// @endcond
     }
   }
 }
