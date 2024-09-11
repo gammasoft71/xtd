@@ -64,7 +64,7 @@ namespace xtd {
     
     /// @cond
     array_(const array_& array) : xtd::basic_array<type_t, allocator_t>(array) {}
-    array_(const array_&& array) = default;
+    array_(array_&& array) = default;
     /// @}
 
     /// @name Public Properties
