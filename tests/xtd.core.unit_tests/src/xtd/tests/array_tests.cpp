@@ -546,10 +546,122 @@ namespace xtd::tests {
       array_<int>::reverse(items);
       collection_assert::are_equal({5, 4, 3, 2, 1}, items, csf_);
     }
+    
+    void test_method_(reverse_with_index_and_count) {
+      auto items = array_<int> {1, 2, 3, 4, 5};
+      array_<int>::reverse(items, 1, 3);
+      collection_assert::are_equal({1, 4, 3, 2, 5}, items, csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::reverse(items, 6, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::reverse(items, 1, 5);}, csf_);
+    }
+    
+    void test_method_(set_value_with_index) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      items.set_value(6, 0);
+      items.set_value(7, 1);
+      items.set_value(8, 2);
+      items.set_value(9, 3);
+      items.set_value(10, 4);
+      assert::throws<index_out_of_range_exception>([&]{items.set_value(11, 5);}, csf_);
+      collection_assert::are_equal({6, 7, 8, 9, 10}, items, csf_);
+    }
+    
+    void test_method_(set_value_with_indexes_array) {
+      auto items = array_ {1, 2, 3, 4, 5};
+      items.set_value(6, array_ {0_z});
+      items.set_value(7, array_ {1_z});
+      items.set_value(8, array_ {2_z});
+      items.set_value(9, array_ {3_z});
+      items.set_value(10, array_ {4_z});
+      assert::throws<index_out_of_range_exception>([&]{items.set_value(11, array_ {5_z});}, csf_);
+      collection_assert::are_equal({6, 7, 8, 9, 10}, items, csf_);
+    }
+    
+    void test_method_(swap) {
+      auto items1 = array_<int> {1, 2, 3, 4, 5};
+      auto items2 = array_<int> {6, 7, 8, 9, 10};
+      items1.swap(items2);
+      collection_assert::are_equal({6, 7, 8, 9, 10}, items1, csf_);
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items2, csf_);
+    }
+    
+    void test_method_(to_string) {
+      assert::are_equal("[1, 2, 3, 4, 5]", array_ {1, 2, 3, 4, 5}.to_string(), csf_);
+      assert::are_equal("[one, two, three, four, five]", array_ {"one", "two", "three", "four", "five"}.to_string(), csf_);
+    }
+
+    void test_method_(index_of_with_array_and_value_type) {
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_<int> {}, 42), csf_);
+      assert::are_equal(1_z, array_<int>::index_of(array_ {84, 42, 21, 42}, 42), csf_);
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_ {84, 42, 21, 42}, 0), csf_);
+    }
+
+    void test_method_(index_of_with_array_value_type_and_index) {
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_<int> {}, 42, 0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {}, 42, 1);}, csf_);
+      assert::are_equal(1_z, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 0), csf_);
+      assert::are_equal(3_z, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 2), csf_);
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 4), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {84, 42, 21, 42}, 42, 5);}, csf_);
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_ {84, 42, 21, 42}, 0, 0), csf_);
+    }
+
+    void test_method_(index_of_with_array_value_type_index_and_count) {
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_<int> {}, 42, 0, 0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {}, 42, 1, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {}, 42, 0, 1);}, csf_);
+      assert::are_equal(1_z, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 0, 4), csf_);
+      assert::are_equal(3_z, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 2, 2), csf_);
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_ {84, 42, 21, 42}, 42, 4, 0), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {84, 42, 21, 42}, 42, 4, 1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([&]{array_<int>::index_of(array_<int> {84, 42, 21, 42}, 42, 5, 0);}, csf_);
+      assert::are_equal(array_<int>::npos, array_<int>::index_of(array_ {84, 42, 21, 42}, 0, 0, 4), csf_);
+    }
+    
+    void test_method_(equal_copy_operator_with_array) {
+      auto items1 = array_<int> {};
+      auto items2 = array_ {84, 42, 21};
+      collection_assert::is_empty(items1, csf_);
+      items1 = items2;
+      collection_assert::are_equal({84, 42, 21}, items1, csf_);
+      auto items3 = array_<int> {};
+      items1 = items3;
+      collection_assert::is_empty(items1, csf_);
+    }
+    
+    void test_method_(equal_copy_operator_with_initializer_list) {
+      auto items = array_<int> {};
+      collection_assert::is_empty(items, csf_);
+      items = {84, 42, 21};
+      collection_assert::are_equal({84, 42, 21}, items, csf_);
+      items = {};
+      collection_assert::is_empty(items, csf_);
+    }
+
+    void test_method_(equal_move_operator_with_array) {
+      auto items = array_<int> {};
+      collection_assert::is_empty(items, csf_);
+      items = array_ {84, 42, 21};
+      collection_assert::are_equal({84, 42, 21}, items, csf_);
+      items = array_<int> {};
+      collection_assert::is_empty(items, csf_);
+    }
+
+    void test_method_(const_base_type_cast_operator) {
+      const auto items = array_ {84, 42, 21};
+      const std::vector<int> base_itmes = items;
+      collection_assert::are_equal({84, 42, 21}, base_itmes, csf_);
+    }
+
+    void test_method_(base_type_cast_operator) {
+      auto items = array_ {84, 42, 21};
+      std::vector<int> base_itmes = items;
+      collection_assert::are_equal({84, 42, 21}, base_itmes, csf_);
+    }
 
     void test_method_(index_operator) {
       auto items = array_ {84, 42, 21};
-      
+
       assert::are_equal(84, items[0], csf_);
       assert::are_equal(42, items[1], csf_);
       assert::are_equal(21, items[2], csf_);
