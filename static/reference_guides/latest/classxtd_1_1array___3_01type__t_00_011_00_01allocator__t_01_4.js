@@ -25,5 +25,12 @@ var classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4 =
     [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_ae85c5199e027e2e95426e3148731b0e8.html#ae85c5199e027e2e95426e3148731b0e8", null ],
     [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a8d2f763b214f2dab9515c1ff6cb5352c.html#a8d2f763b214f2dab9515c1ff6cb5352c", null ],
     [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a493b5fffc563b787c0bbf5491edd96c0.html#a493b5fffc563b787c0bbf5491edd96c0", null ],
-    [ "rank", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a4a24846c3bb7be098b8f309133793fcf.html#a4a24846c3bb7be098b8f309133793fcf", null ]
+    [ "rank", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a4a24846c3bb7be098b8f309133793fcf.html#a4a24846c3bb7be098b8f309133793fcf", null ],
+    [ "copy_to", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a199a1c6c5c8f85495fcfe0619321c594.html#a199a1c6c5c8f85495fcfe0619321c594", null ],
+    [ "get_value", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_af3949d32661662103f1e5abbff8bfe1d.html#af3949d32661662103f1e5abbff8bfe1d", null ],
+    [ "set_value", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a964258b5fff46ee925d837907032fd70.html#a964258b5fff46ee925d837907032fd70", null ],
+    [ "operator()", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_ab54c1baaef4b4ccdb28b7e5d235e70cd.html#ab54c1baaef4b4ccdb28b7e5d235e70cd", null ],
+    [ "operator()", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a14bbfbc0ff10bde0998d4d0df73cba27.html#a14bbfbc0ff10bde0998d4d0df73cba27", null ],
+    [ "operator[]", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a2f6a7d47afc9df774584f7fd0c4750b8.html#a2f6a7d47afc9df774584f7fd0c4750b8", null ],
+    [ "operator[]", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_af38b5caa7ccf01a144b2368979733d30.html#af38b5caa7ccf01a144b2368979733d30", null ]
 ];

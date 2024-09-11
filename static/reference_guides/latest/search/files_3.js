@@ -53,7 +53,7 @@ var searchData=
   ['command_5flink_5fbutton_2eh_50',['command_link_button.h',['../command__link__button_8h.html',1,'']]],
   ['command_5flink_5fbuttons_2eh_51',['command_link_buttons.h',['../command__link__buttons_8h.html',1,'']]],
   ['common_5fdialog_2eh_52',['common_dialog.h',['../common__dialog_8h.html',1,'']]],
-  ['comparer_2eh_53',['comparer.h',['../comparer_8h.html',1,'']]],
+  ['comparer_2eh_53',['comparer.h',['../helpers_2comparer_8h.html',1,'(Global Namespace)'],['../comparer_8h.html',1,'(Global Namespace)']]],
   ['comparison_2eh_54',['comparison.h',['../comparison_8h.html',1,'']]],
   ['comparison_5foperators_2eh_55',['comparison_operators.h',['../comparison__operators_8h.html',1,'']]],
   ['compiler_2eh_56',['compiler.h',['../compiler_8h.html',1,'']]],

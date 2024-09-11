@@ -751,6 +751,7 @@ var hierarchy =
         [ "xtd::object_closed_exception", "classxtd_1_1object__closed__exception.html", null ],
         [ "xtd::operation_canceled_exception", "classxtd_1_1operation__canceled__exception.html", null ],
         [ "xtd::out_of_memory_exception", "classxtd_1_1out__of__memory__exception.html", null ],
+        [ "xtd::rank_exception", "classxtd_1_1rank__exception.html", null ],
         [ "xtd::security::security_exception", "classxtd_1_1security_1_1security__exception.html", null ],
         [ "xtd::software_termination_exception", "classxtd_1_1software__termination__exception.html", null ],
         [ "xtd::threading::abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", null ],
@@ -911,7 +912,10 @@ var hierarchy =
       [ "xtd::iequatable< uri >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< version >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< delegate< value_t(arguments_t...)> >", "classxtd_1_1iequatable.html", null ],
-      [ "xtd::collections::generic::icomparer< type_t >", "classxtd_1_1collections_1_1generic_1_1icomparer.html", null ],
+      [ "xtd::collections::generic::icomparer< type_t >", "classxtd_1_1collections_1_1generic_1_1icomparer.html", [
+        [ "xtd::collections::generic::comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1comparer.html", null ],
+        [ "xtd::collections::generic::empty_comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1empty__comparer.html", null ]
+      ] ],
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::collections::generic::ienumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", [
         [ "xtd::collections::generic::enumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1enumerator.html", null ]
@@ -1008,6 +1012,10 @@ var hierarchy =
       ] ],
       [ "xtd::forms::layout::arranged_element_collection< message_notifier_button_ref >", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html", null ],
       [ "xtd::abstract_object", "classxtd_1_1abstract__object.html", [
+        [ "xtd::array_abstract_object", "classxtd_1_1array__abstract__object.html", [
+          [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ],
+          [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ]
+        ] ],
         [ "xtd::diagnostics::trace_filter", "classxtd_1_1diagnostics_1_1trace__filter.html", [
           [ "xtd::diagnostics::event_type_filter", "classxtd_1_1diagnostics_1_1event__type__filter.html", null ],
           [ "xtd::diagnostics::source_filter", "classxtd_1_1diagnostics_1_1source__filter.html", null ]
@@ -1030,10 +1038,6 @@ var hierarchy =
         ] ]
       ] ],
       [ "xtd::any_object", "classxtd_1_1any__object.html", null ],
-      [ "xtd::array_object", "classxtd_1_1array__object.html", [
-        [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ],
-        [ "xtd::basic_array< type_t, allocator_t >", "classxtd_1_1basic__array.html", null ]
-      ] ],
       [ "xtd::attribute", "classxtd_1_1attribute.html", [
         [ "xtd::reflection::assembly_company_attribute", "classxtd_1_1reflection_1_1assembly__company__attribute.html", null ],
         [ "xtd::reflection::assembly_configuration_attribute", "classxtd_1_1reflection_1_1assembly__configuration__attribute.html", null ],
@@ -1053,6 +1057,8 @@ var hierarchy =
       [ "xtd::basic_string< char_t, traits_t, allocator_t >", "classxtd_1_1basic__string.html", null ],
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
+      [ "xtd::collections::generic::comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1comparer.html", null ],
+      [ "xtd::collections::generic::empty_comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1empty__comparer.html", null ],
       [ "xtd::collections::generic::list< type_t, allocator_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
       [ "xtd::collections::generic::params< type_t >", "classxtd_1_1collections_1_1generic_1_1params.html", null ],
       [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ],
@@ -1325,6 +1331,7 @@ var hierarchy =
       [ "xtd::event< xtd::speech::synthesis::speech_synthesizer, state_changed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::static_object", "classxtd_1_1static__object.html", [
+      [ "xtd::array_<>", "classxtd_1_1array___3_4.html", null ],
       [ "xtd::bit_converter", "classxtd_1_1bit__converter.html", null ],
       [ "xtd::console", "classxtd_1_1console.html", null ],
       [ "xtd::convert", "classxtd_1_1convert.html", null ],

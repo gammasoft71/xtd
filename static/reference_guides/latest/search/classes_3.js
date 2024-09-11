@@ -31,7 +31,7 @@ var searchData=
   ['command_5flink_5fbutton_28',['command_link_button',['../classxtd_1_1forms_1_1command__link__button.html',1,'xtd::forms']]],
   ['command_5flink_5fbuttons_29',['command_link_buttons',['../classxtd_1_1forms_1_1command__link__buttons.html',1,'xtd::forms']]],
   ['common_5fdialog_30',['common_dialog',['../classxtd_1_1forms_1_1common__dialog.html',1,'xtd::forms']]],
-  ['comparer_31',['comparer',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html',1,'xtd::collections::generic::helpers']]],
+  ['comparer_31',['comparer',['../classxtd_1_1collections_1_1generic_1_1comparer.html',1,'xtd::collections::generic::comparer&lt; type_t &gt;'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html',1,'xtd::collections::generic::helpers::comparer&lt; type_t &gt;']]],
   ['comparison_5foperators_32',['comparison_operators',['../classxtd_1_1comparison__operators.html',1,'xtd']]],
   ['comparison_5foperators_3c_20any_5fobject_2c_20icomparable_3c_20any_5fobject_20_3e_20_3e_33',['comparison_operators&lt; any_object, icomparable&lt; any_object &gt; &gt;',['../classxtd_1_1comparison__operators.html',1,'xtd']]],
   ['comparison_5foperators_3c_20basic_5fstring_3c_20char_5ft_2c_20traits_5ft_2c_20allocator_5ft_20_3e_2c_20icomparable_3c_20basic_5fstring_3c_20char_5ft_2c_20traits_5ft_2c_20allocator_5ft_20_3e_20_3e_20_3e_34',['comparison_operators&lt; basic_string&lt; char_t, traits_t, allocator_t &gt;, icomparable&lt; basic_string&lt; char_t, traits_t, allocator_t &gt; &gt; &gt;',['../classxtd_1_1comparison__operators.html',1,'xtd']]],
