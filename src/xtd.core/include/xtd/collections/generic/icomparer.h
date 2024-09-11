@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::iequality_comparer <type_t> interface.
+/// @brief Contains xtd::collections::generic::icomparer <type_t> interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../../interface.h"
@@ -32,7 +32,7 @@ namespace xtd {
         /// @brief Compares two entities and returns a value indicating whether one is less than, equal to, or greater than the other.
         /// @param x The first entity to compare.
         /// @param y The second entity to compare.
-        /// @return int32 A 32-bit signed integer that indicates the relative order of the entities being compared. The return value has these meanings:
+        /// @return A 32-bit signed integer that indicates the relative order of the entities being compared. The return value has these meanings:
         /// | Value             | Condition            |
         /// |-------------------|----------------------|
         /// | Less than zero    | x is less than y.    |
