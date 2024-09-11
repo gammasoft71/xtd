@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::array <type_t, 2> class.
+/// @brief Contains xtd::array <> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
@@ -25,18 +25,12 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t, typename allocator_t>
-  class array_<type_t, 2, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
+  template<>
+  class array_<> static_ {
   public:
-    /// @name Public Constructors
+    /// @name Public Statix Methods
     
     /// @{
-    /// @brief Initializes a new instance of the Array class that is empty.
-    /// @remarks The Array class is not thread safe.
-    /// @par Examples
-    /// The following code example demonstrates different methods to create an array.
-    /// @include array_constructor.cpp
-    array_()= default;
     /// @}
   };
 }

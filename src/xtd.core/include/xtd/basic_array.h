@@ -103,24 +103,6 @@ namespace xtd {
     
     /// @brief Gets the number of elements contained in the xtd::array <type_t>.
     /// @return The number of elements contained in the xtd::array <type_t>.
-    /// @par Examples
-    /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::array <type_t>.
-    /// @include generic_list.cpp
-    /// The following example demonstrates several properties and methods of the xtd::array <type_t> generic class of type string. (For an example of a xtd::array <type_t> of complex types, see the xtd::array::contains method.)
-    ///
-    /// The parameterless constructor is used to create a array of strings with the default capacity. The xtd::array::capacity property is displayed and then the xtd::array::add method is used to add several items. The items are listed, and the xtd::array::capacity property is displayed again, along with the xtd::array::count property, to show that the capacity has been increased as needed.
-    ///
-    /// The xtd::array::contains method is used to test for the presence of an item in the array, the Insert method is used to insert a new item in the middle of the array, and the contents of the array are displayed again.
-    ///
-    /// The default xtd::array::operator [] is used to retrieve an item, the xtd::array::remove method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The xtd::array::remove method always removes the first instance it encounters.
-    ///
-    /// The xtd::array::trim_excess method is used to reduce the capacity to match the count, and the xtd::array::capacity and xtd::array::count properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the array would not have been resized.
-    ///
-    /// Finally, the xtd::array::clear method is used to remove all items from the array, and the xtd::array::capacity and xtd::array::count properties are displayed.
-    /// @include generic_list2.cpp
-    /// @remarks xtd::array::capacity is the number of elements that the xtd::array <type_t> can store before resizing is required, whereas xtd::array::count is the number of elements that are actually in the xtd::array <type_t>.
-    /// @remarks xtd::array::capacity is always greater than or equal to xtd::array::count. If xtd::array::count exceeds xtd::array::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
-    /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::array <type_t>, you can decrease capacity by calling the xtd::array::trim_excess method or by setting the xtd::array::capacity property explicitly to a lower value. When the value of xtd::array::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
     /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
     size_type count() const noexcept override {return size();}
     
@@ -191,10 +173,10 @@ namespace xtd {
     virtual size_type max_size() const noexcept {return data_->items.max_size();}
     
     /// @brief Gets the rank (number of dimensions) of the array.
-    /// @return int32 The rank (number of dimensions) of the array.
+    /// @return The rank (number of dimensions) of the array.
     /// @par Examples
     /// The following code example demonstrates methods to get the rank of an array.
-    /// @include arrayGetLength.cpp
+    /// @include array_get_length.cpp
     virtual size_type rank() const noexcept {return 1;}
     
     /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
@@ -228,7 +210,7 @@ namespace xtd {
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If `pos` is not within the range of the container.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual reference at(size_type index) {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
@@ -236,7 +218,7 @@ namespace xtd {
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception std::out_of_range If `pos` is not within the range of the container.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual const_reference at(size_type index) const {
       if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
       return (reference)data_->items.at(index);
@@ -337,16 +319,17 @@ namespace xtd {
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as 32-bit integers array.
     /// @param indexes An array that represents the position of the element to get.
     /// @return The value at the specified position in the multidimensional array.
-    /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @exception xtd::index_out_of_range_exception If `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
     const value_type& get_value(const xtd::array_<size_type>& indexes) const;
     
-    /// @brief Determines the index of a specific item in the List.xtd::array <type_t>.
-    /// @param value The object to locate in the List.
+    /// @brief Determines the index of a specific item in the xtd::array <type_t>.
+    /// @param value The object to locate in the xtd::array.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
     size_type index_of(const type_t& value) const noexcept override {return index_of(*this, value, 0, count());}
     
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
     /// @param new_size The new size of the container.
+    /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size) {resize(new_size, value_type {});}
@@ -354,6 +337,7 @@ namespace xtd {
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
     /// @param new_size The new size of the container.
     /// @param value The value to initialize the new elements with.
+    /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size, value_type value) {
