@@ -9,6 +9,7 @@
 #include "collections/generic/enumerator.h"
 #include "collections/generic/icomparer.h"
 #include "collections/generic/ilist.h"
+#include "abstract.h"
 #include "core_export.h"
 #include "int64.h"
 #include "iequatable.h"
@@ -19,7 +20,7 @@
 #include <vector>
 
 #define __XTD_ARRAY_INTERNAL__
-#include "array_object.h"
+#include "array_abstract_object.h"
 #include "basic_array.h"
 #undef __XTD_ARRAY_INTERNAL__
 

@@ -171,7 +171,7 @@ namespace xtd::tests {
     
     void test_method_(const_back) {
       assert::are_equal(21, array_ {84, 42, 21}.back(), csf_);
-      assert::throws<index_out_of_range_exception>([] {array_ {}.back();}, csf_);
+      assert::throws<index_out_of_range_exception>([] {array_<int> {}.back();}, csf_);
     }
     
     void test_method_(back) {
