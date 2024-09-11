@@ -3,9 +3,11 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../generic/ilist.h"
-#include "../../argument_out_of_range_exception.h"
-#include "../../invalid_operation_exception.h"
-#include "../../size_object.h"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__external_exceptions.h"
+#undef __XTD_CORE_INTERNAL__
+#include "../../size.h"
+#include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -42,14 +44,14 @@ namespace xtd {
           using iterator = typename generic::ilist<list_type_t>::iterator;
           using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
           
-          inline static constexpr xtd::size npos = xtd::size_object::max_value;
+          inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
           
           bool contains(const list_type_t& item) const noexcept override {return false;}
           void copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const override {}
           generic::enumerator<list_type_t> get_enumerator() const noexcept {
             class empty_enumerator : public generic::ienumerator<list_type_t> {
             public:
-              const list_type_t& current() const override {throw argument_out_of_range_exception {csf_};}
+              const list_type_t& current() const override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
               bool move_next() override {return false;}
               void reset() override {}
             private:
@@ -58,8 +60,8 @@ namespace xtd {
           }
           xtd::size index_of(const list_type_t& item) const noexcept override {return npos;}
           
-          const list_type_t& operator [](xtd::size index) const override {throw argument_out_of_range_exception {csf_};}
-          list_type_t& operator [](xtd::size index) override {throw argument_out_of_range_exception {csf_};}
+          const list_type_t& operator [](xtd::size index) const override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
+          list_type_t& operator [](xtd::size index) override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
 
         private:
           bool is_fixed_size() const noexcept override {return false;}
@@ -100,7 +102,7 @@ namespace xtd {
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = xtd::size_object::max_value;
+        inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
         /// @}
 
         /// @name Public Constructors
@@ -252,7 +254,7 @@ namespace xtd {
         /// @}
 
       private:
-        reference operator [](size_type index) override {throw invalid_operation_exception {csf_};}
+        reference operator [](size_type index) override {__throw_invalid_operation_exception(__FILE__, __LINE__, __func__);}
         bool is_fixed_size() const noexcept override {return false;}
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
