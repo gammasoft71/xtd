@@ -390,7 +390,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
-    static size_type index_of(const basic_array& array, const value_type& value) {return index_of(array, value, 0, array.Length);}
+    static size_type index_of(const basic_array& array, const value_type& value) noexcept {return index_of(array, value, 0, array.length());}
     
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
@@ -401,7 +401,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
-    static size_type index_of(const basic_array& array, const value_type& value, size_type index) {return index_of(array, value, index, array.Length - index);}
+    static size_type index_of(const basic_array& array, const value_type& value, size_type index) {return index_of(array, value, index, array.length() - index);}
     
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
@@ -414,7 +414,7 @@ namespace xtd {
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
     static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
-      if (index > array.length() || index + count > array.length()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      if (index > array.length() || index + count > array.length()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       
       if (array.size() == 0) return npos;
       for (auto increment = size_type {0}; increment < count; ++increment) {
@@ -435,7 +435,8 @@ namespace xtd {
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
     /// @remarks This method is an O(n) operation, where n is `count`.
     static void reverse(basic_array& array, size_type index, size_type count) {
-      if (index > array.size() || index + count > array.size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      if (index > array.size() || index + count > array.size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (count == 0) return;
       ++array.data_->version;
       std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
     }
@@ -447,7 +448,10 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another container to use as data source.
     /// @return This current instance.
-    basic_array& operator =(const basic_array& other) {*data_ = *other.data_;}
+    basic_array& operator =(const basic_array& other) {
+      *data_ = *other.data_;
+      return *this;
+    }
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
     /// @param other Another base type container to use as data source.
     /// @return This current instance.
