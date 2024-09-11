@@ -29,3 +29,5 @@ void __throw_invalid_operation_exception(const char* message, const char* file, 
 void __throw_invalid_operation_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_null_pointer_exception(const char* message, const char* file, xtd::uint32 line, const char* func);
 void __throw_null_pointer_exception(const char* file, xtd::uint32 line, const char* func);
+void __throw_rank_exception(const char* message, const char* file, xtd::uint32 line, const char* func);
+void __throw_rank_exception(const char* file, xtd::uint32 line, const char* func);
