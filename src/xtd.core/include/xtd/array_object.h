@@ -9,6 +9,16 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
   /// @brief Base object that represent array.
+  /// @par Definition
+  /// ```cpp
+  /// class array_object : public xtd::object;
+  /// ```
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/array>
+  /// ```
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
