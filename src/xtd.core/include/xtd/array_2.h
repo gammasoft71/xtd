@@ -9,6 +9,17 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
+  /// @par Definition
+  /// ```cpp
+  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// class array : public xtd::basic_array<type_t, allocator_t>;
+  /// ```
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/array>
+  /// ```
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
