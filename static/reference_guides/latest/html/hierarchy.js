@@ -1325,6 +1325,7 @@ var hierarchy =
       [ "xtd::event< xtd::speech::synthesis::speech_synthesizer, state_changed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::static_object", "classxtd_1_1static__object.html", [
+      [ "xtd::array_<>", "classxtd_1_1array___3_4.html", null ],
       [ "xtd::bit_converter", "classxtd_1_1bit__converter.html", null ],
       [ "xtd::console", "classxtd_1_1console.html", null ],
       [ "xtd::convert", "classxtd_1_1convert.html", null ],

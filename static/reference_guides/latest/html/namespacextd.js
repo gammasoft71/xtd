@@ -157,6 +157,7 @@ var namespacextd =
     [ "array_< type_t, 1, allocator_t >", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4.html", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4" ],
     [ "array_< type_t, 2, allocator_t >", "classxtd_1_1array___3_01type__t_00_012_00_01allocator__t_01_4.html", "classxtd_1_1array___3_01type__t_00_012_00_01allocator__t_01_4" ],
     [ "array_< type_t, 3, allocator_t >", "classxtd_1_1array___3_01type__t_00_013_00_01allocator__t_01_4.html", "classxtd_1_1array___3_01type__t_00_013_00_01allocator__t_01_4" ],
+    [ "array_<>", "classxtd_1_1array___3_4.html", null ],
     [ "array_object", "classxtd_1_1array__object.html", null ],
     [ "attribute", "classxtd_1_1attribute.html", "classxtd_1_1attribute" ],
     [ "background_color", "classxtd_1_1background__color.html", "classxtd_1_1background__color" ],
