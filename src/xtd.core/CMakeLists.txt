@@ -526,6 +526,8 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
+  include/xtd/collections/generic/comparer.h
+  include/xtd/collections/generic/comparer
   include/xtd/collections/generic/dictionary.h
   include/xtd/collections/generic/dictionary
   include/xtd/collections/generic/enumerable_iterators.h
