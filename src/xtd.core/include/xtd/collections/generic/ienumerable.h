@@ -50,10 +50,6 @@ namespace xtd {
         /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
         virtual enumerator<type_t> get_enumerator() const = 0;
         /// @}
-
-        /// @cond
-        ienumerable() : enumerable_iterators<type_t, ienumerable<type_t>>(this) {}
-        /// @endcond
       };
     }
   }

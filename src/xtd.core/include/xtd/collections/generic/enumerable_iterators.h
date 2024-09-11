@@ -71,7 +71,7 @@ namespace xtd {
           /// @brief Create begin xtd::collections::generic::iterator with specified enumerator.
           /// @param enumerator The enumerator to iterate with.
           /// @return The begin xtd::collections::generic::iterator.
-          static iterator begin(enumerable_t* enumerable) {
+          static iterator begin(const enumerable_t* enumerable) {
             auto begin = iterator {};
             begin.enumerable_ = enumerable;
             begin.enumerator_ = begin.enumerable_->get_enumerator();
@@ -83,7 +83,7 @@ namespace xtd {
           /// @brief Create end xtd::collections::generic::iterator with specified enumerator.
           /// @param enumerator The enumerator to iterate with.
           /// @return The end xtd::collections::generic::iterator.
-          static iterator end(enumerable_t* enumerable) {
+          static iterator end(const enumerable_t* enumerable) {
             auto end = iterator {};
             end.enumerable_ = enumerable;
             end.enumerator_ = end.enumerable_->get_enumerator();
@@ -177,7 +177,7 @@ namespace xtd {
               }
           }
 
-          enumerable_t* enumerable_ = nullptr;
+          const enumerable_t* enumerable_ = nullptr;
           enumerator<type_t> enumerator_;
           xtd::size pos_ = 0;
         };
@@ -195,31 +195,26 @@ namespace xtd {
         /// @{
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator begin() const {return iterator::begin(enumerable_);}
+        virtual const_iterator begin() const {return const_iterator::begin(static_cast<const enumerable_t*>(this));}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual iterator begin() {return iterator::begin(enumerable_);}
+        virtual iterator begin() {return iterator::begin(static_cast<enumerable_t*>(this));}
 
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator cbegin() const {return iterator::begin(enumerable_);}
+        virtual const_iterator cbegin() const {return const_iterator::begin(static_cast<const enumerable_t*>(this));}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator cend() const {return iterator::end(enumerable_);}
+        virtual const_iterator cend() const {return const_iterator::end(static_cast<const enumerable_t*>(this));}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator end() const {return iterator::end(enumerable_);}
+        virtual const_iterator end() const {return const_iterator::end(static_cast<const enumerable_t*>(this));}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual iterator end() {return iterator::end(enumerable_);}
+        virtual iterator end() {return iterator::end(static_cast<enumerable_t*>(this));}
         /// @}
-        
-      private:
-        friend enumerable_t;
-        explicit enumerable_iterators(enumerable_t* enumerable) : enumerable_(enumerable) {}
-        enumerable_t* enumerable_ = nullptr;
       };
     }
   }
