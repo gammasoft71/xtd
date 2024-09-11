@@ -241,13 +241,22 @@ namespace xtd {
       return false;
     }
     
-    void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
-      if (array_index + length() > array.size()) __throw_argument_exception(__FILE__, __LINE__, __func__);
-      
+    void copy_to(xtd::array<type_t>& array, size_type index) const override {
+      /// @todo uncomment want array_ remamed into array.
+      //if (array.rank() != 1) __throw_argument_exception(__FILE__, __LINE__, __func__);
+      if (rank() != 1) __throw_rank_exception(__FILE__, __LINE__, __func__);
+      if (index + length() > array.size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       for (auto increment = size_type {0}; increment < length(); ++increment)
-        array[array_index + increment] = at(increment);
+        array[index + increment] = at(increment);
     }
     
+    /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 64-bit integer.
+    /// @param array The one-dimensional array that is the destination of the elements copied from the current array.
+    /// @param index A 64-bit integer that represents the index in array at which copying begins.
+    /// @exception xtd::argument_exception `array` is multidimensional.
+    /// @exception xtd::argument_out_of_range_exception `index` is outside the range of valid indexes for array.
+    void copy_to(xtd::array<type_t>& array, xtd::int64 index) const {copy_to(array, static_cast<xtd::size>(index));}
+
     bool equals(const object& obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
     bool equals(const basic_array& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version && data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;}
     
