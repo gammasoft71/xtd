@@ -433,6 +433,18 @@ var group__exceptions =
       [ "platform_not_supported_exception", "classxtd_1_1platform__not__supported__exception_ae2b0d6f723ee1798df7fa38a1387a20b.html#ae2b0d6f723ee1798df7fa38a1387a20b", null ],
       [ "platform_not_supported_exception", "classxtd_1_1platform__not__supported__exception_a0de2993159ef96b8edbdf89412e80a6e.html#a0de2993159ef96b8edbdf89412e80a6e", null ]
     ] ],
+    [ "xtd::rank_exception", "classxtd_1_1rank__exception.html", [
+      [ "rank_exception", "classxtd_1_1rank__exception_a9fed20a8f1424292a4f14d2e9660d5f1.html#a9fed20a8f1424292a4f14d2e9660d5f1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a178b25d962a40f6379f9d43be7df5f50.html#a178b25d962a40f6379f9d43be7df5f50", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a1ddd7b6d6fb6101ebc5264d0cf9cf6fc.html#a1ddd7b6d6fb6101ebc5264d0cf9cf6fc", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a127986639628ba532c1c1f770b00bc76.html#a127986639628ba532c1c1f770b00bc76", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a0e10da824738ad0644776a878319bfe1.html#a0e10da824738ad0644776a878319bfe1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_ade14c8c2d928d0330c812508beaf1649.html#ade14c8c2d928d0330c812508beaf1649", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a25e225f0d6028f47a254d7fbbf1b46a5.html#a25e225f0d6028f47a254d7fbbf1b46a5", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a968b3916d497a57b172482ebaeeacc16.html#a968b3916d497a57b172482ebaeeacc16", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a3f45f93b9aefd339ef01e3cdc6564db1.html#a3f45f93b9aefd339ef01e3cdc6564db1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_ab4e83fdad4ee40fca9ea9ef24514c475.html#ab4e83fdad4ee40fca9ea9ef24514c475", null ]
+    ] ],
     [ "xtd::security::security_exception", "classxtd_1_1security_1_1security__exception.html", [
       [ "security_exception", "classxtd_1_1security_1_1security__exception_a162f4c2e3693d6a7da1f2a1fd070b2d5.html#a162f4c2e3693d6a7da1f2a1fd070b2d5", null ],
       [ "security_exception", "classxtd_1_1security_1_1security__exception_ae609761f33b55efcab71b953da083173.html#ae609761f33b55efcab71b953da083173", null ],
@@ -745,6 +757,7 @@ var group__exceptions =
     [ "out_of_memory_exception_", "group__exceptions_ga913721d3ab483cb0437023fc77fe1766.html#ga913721d3ab483cb0437023fc77fe1766", null ],
     [ "overflow_exception_", "group__exceptions_ga174bd6da3c2ac760f11036bcf1326797.html#ga174bd6da3c2ac760f11036bcf1326797", null ],
     [ "platform_not_supported_exception_", "group__exceptions_gac60da3ca311b8d2383ab62f7decb386c.html#gac60da3ca311b8d2383ab62f7decb386c", null ],
+    [ "rank_exception_", "group__exceptions_gad6adc02777e19a9aec176c55c101bce5.html#gad6adc02777e19a9aec176c55c101bce5", null ],
     [ "security_exception_", "group__exceptions_ga56fe4fd61f0e3f3754e13554a525a271.html#ga56fe4fd61f0e3f3754e13554a525a271", null ],
     [ "software_termination_exception_", "group__exceptions_gad95df5a252437cbfda16fa452ff326d2.html#gad95df5a252437cbfda16fa452ff326d2", null ],
     [ "system_exception_", "group__exceptions_gaf07161ee3c6661bd02d445084810f858.html#gaf07161ee3c6661bd02d445084810f858", null ],

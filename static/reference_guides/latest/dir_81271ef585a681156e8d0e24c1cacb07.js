@@ -1,7 +1,9 @@
 var dir_81271ef585a681156e8d0e24c1cacb07 =
 [
     [ "helpers", "dir_f776332eb97f9f81b7aba46fc6a9aaf9.html", "dir_f776332eb97f9f81b7aba46fc6a9aaf9" ],
+    [ "comparer.h", "comparer_8h.html", null ],
     [ "dictionary.h", "dictionary_8h.html", "dictionary_8h" ],
+    [ "empty_comparer.h", "empty__comparer_8h.html", null ],
     [ "enumerable_iterators.h", "enumerable__iterators_8h.html", "enumerable__iterators_8h" ],
     [ "enumerator.h", "generic_2enumerator_8h.html", null ],
     [ "hash_set.h", "hash__set_8h.html", "hash__set_8h" ],

@@ -1,6 +1,8 @@
 var namespacextd_1_1collections_1_1generic =
 [
     [ "helpers", "namespacextd_1_1collections_1_1generic_1_1helpers.html", "namespacextd_1_1collections_1_1generic_1_1helpers" ],
+    [ "comparer", "classxtd_1_1collections_1_1generic_1_1comparer.html", "classxtd_1_1collections_1_1generic_1_1comparer" ],
+    [ "empty_comparer", "classxtd_1_1collections_1_1generic_1_1empty__comparer.html", "classxtd_1_1collections_1_1generic_1_1empty__comparer" ],
     [ "enumerable_iterators", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators" ],
     [ "enumerator", "classxtd_1_1collections_1_1generic_1_1enumerator.html", "classxtd_1_1collections_1_1generic_1_1enumerator" ],
     [ "icollection", "classxtd_1_1collections_1_1generic_1_1icollection.html", "classxtd_1_1collections_1_1generic_1_1icollection" ],

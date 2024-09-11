@@ -104,7 +104,14 @@ var group__xtd__core =
       [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_ae85c5199e027e2e95426e3148731b0e8.html#ae85c5199e027e2e95426e3148731b0e8", null ],
       [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a8d2f763b214f2dab9515c1ff6cb5352c.html#a8d2f763b214f2dab9515c1ff6cb5352c", null ],
       [ "array_", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a493b5fffc563b787c0bbf5491edd96c0.html#a493b5fffc563b787c0bbf5491edd96c0", null ],
-      [ "rank", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a4a24846c3bb7be098b8f309133793fcf.html#a4a24846c3bb7be098b8f309133793fcf", null ]
+      [ "rank", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a4a24846c3bb7be098b8f309133793fcf.html#a4a24846c3bb7be098b8f309133793fcf", null ],
+      [ "copy_to", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a199a1c6c5c8f85495fcfe0619321c594.html#a199a1c6c5c8f85495fcfe0619321c594", null ],
+      [ "get_value", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_af3949d32661662103f1e5abbff8bfe1d.html#af3949d32661662103f1e5abbff8bfe1d", null ],
+      [ "set_value", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a964258b5fff46ee925d837907032fd70.html#a964258b5fff46ee925d837907032fd70", null ],
+      [ "operator()", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_ab54c1baaef4b4ccdb28b7e5d235e70cd.html#ab54c1baaef4b4ccdb28b7e5d235e70cd", null ],
+      [ "operator()", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a14bbfbc0ff10bde0998d4d0df73cba27.html#a14bbfbc0ff10bde0998d4d0df73cba27", null ],
+      [ "operator[]", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_a2f6a7d47afc9df774584f7fd0c4750b8.html#a2f6a7d47afc9df774584f7fd0c4750b8", null ],
+      [ "operator[]", "classxtd_1_1array___3_01type__t_00_011_00_01allocator__t_01_4_af38b5caa7ccf01a144b2368979733d30.html#af38b5caa7ccf01a144b2368979733d30", null ]
     ] ],
     [ "xtd::array_< type_t, 2, allocator_t >", "classxtd_1_1array___3_01type__t_00_012_00_01allocator__t_01_4.html", [
       [ "array_", "classxtd_1_1array___3_01type__t_00_012_00_01allocator__t_01_4_afe6d57044a184fb8789f306fa72f66b9.html#afe6d57044a184fb8789f306fa72f66b9", null ]
@@ -112,7 +119,8 @@ var group__xtd__core =
     [ "xtd::array_< type_t, 3, allocator_t >", "classxtd_1_1array___3_01type__t_00_013_00_01allocator__t_01_4.html", [
       [ "array_", "classxtd_1_1array___3_01type__t_00_013_00_01allocator__t_01_4_a5e5b462d413125aa96d26fd651a2dc83.html#a5e5b462d413125aa96d26fd651a2dc83", null ]
     ] ],
-    [ "xtd::array_object", "classxtd_1_1array__object.html", null ],
+    [ "xtd::array_abstract_object", "classxtd_1_1array__abstract__object.html", null ],
+    [ "xtd::array_<>", "classxtd_1_1array___3_4.html", null ],
     [ "xtd::attribute", "classxtd_1_1attribute.html", [
       [ "attribute", "classxtd_1_1attribute_a5109e3bf7cf91c9d4d4a9ab42e4c70ca.html#a5109e3bf7cf91c9d4d4a9ab42e4c70ca", null ],
       [ "type_id", "classxtd_1_1attribute_a47213251717ed65e45966dbbc7f93396.html#a47213251717ed65e45966dbbc7f93396", null ],
@@ -166,26 +174,22 @@ var group__xtd__core =
       [ "rend", "classxtd_1_1basic__array_a3432941b86f8c8e7c78bcf7132843e6d.html#a3432941b86f8c8e7c78bcf7132843e6d", null ],
       [ "size", "classxtd_1_1basic__array_af2ad3488e28e4140835dece83723e7eb.html#af2ad3488e28e4140835dece83723e7eb", null ],
       [ "sync_root", "classxtd_1_1basic__array_aee5a20a84786e5ae303364a521972609.html#aee5a20a84786e5ae303364a521972609", null ],
-      [ "add", "classxtd_1_1basic__array_ab478cf85a431f7b6e0decd715b827599.html#ab478cf85a431f7b6e0decd715b827599", null ],
       [ "at", "classxtd_1_1basic__array_a34472044617550faf939f05c223b6227.html#a34472044617550faf939f05c223b6227", null ],
       [ "at", "classxtd_1_1basic__array_aadefb8b17214889a16b31088e0131431.html#aadefb8b17214889a16b31088e0131431", null ],
-      [ "clear", "classxtd_1_1basic__array_a783f3e60b5b57e54ad412cc824edfd75.html#a783f3e60b5b57e54ad412cc824edfd75", null ],
       [ "contains", "classxtd_1_1basic__array_a659906a6f1060c2205d787b49bb129fc.html#a659906a6f1060c2205d787b49bb129fc", null ],
-      [ "copy_to", "classxtd_1_1basic__array_aea6a2d0839f3fa39259425f9ad93e3b6.html#aea6a2d0839f3fa39259425f9ad93e3b6", null ],
+      [ "copy_to", "classxtd_1_1basic__array_a6766e45b973a8659323055151b0cff9e.html#a6766e45b973a8659323055151b0cff9e", null ],
+      [ "copy_to", "classxtd_1_1basic__array_a88ff0322a96e0ed8a3c268fd8a3d4eca.html#a88ff0322a96e0ed8a3c268fd8a3d4eca", null ],
       [ "equals", "classxtd_1_1basic__array_a391534692d321eadc7a5810486c16650.html#a391534692d321eadc7a5810486c16650", null ],
       [ "fill", "classxtd_1_1basic__array_a92ef003c8174b830377e38610e743e4f.html#a92ef003c8174b830377e38610e743e4f", null ],
       [ "get_enumerator", "classxtd_1_1basic__array_a6753ddfe99de81064d777312541cea34.html#a6753ddfe99de81064d777312541cea34", null ],
       [ "get_length", "classxtd_1_1basic__array_a4132e3affe66da23dc58780f520124e2.html#a4132e3affe66da23dc58780f520124e2", null ],
+      [ "get_long_length", "classxtd_1_1basic__array_a06fe84abedf478ba9a5059c08b7ff020.html#a06fe84abedf478ba9a5059c08b7ff020", null ],
       [ "get_lower_bound", "classxtd_1_1basic__array_a6ac6c2f6144b73e261745e2bec9f6771.html#a6ac6c2f6144b73e261745e2bec9f6771", null ],
       [ "get_upper_bound", "classxtd_1_1basic__array_ab74ed5a54361b742c7e27ff7b180a986.html#ab74ed5a54361b742c7e27ff7b180a986", null ],
       [ "get_value", "classxtd_1_1basic__array_ab7241f2c62089b168c5796d57e323798.html#ab7241f2c62089b168c5796d57e323798", null ],
       [ "index_of", "classxtd_1_1basic__array_a63ff23cf9bbd59f42928e36dcc042425.html#a63ff23cf9bbd59f42928e36dcc042425", null ],
-      [ "insert", "classxtd_1_1basic__array_a88673ff05243126701682a35b7e85c81.html#a88673ff05243126701682a35b7e85c81", null ],
-      [ "remove", "classxtd_1_1basic__array_aa02b4241f4fb2bfbe507f02534e023b2.html#aa02b4241f4fb2bfbe507f02534e023b2", null ],
-      [ "remove_at", "classxtd_1_1basic__array_af17f20207f123ac30b450d0c378beac7.html#af17f20207f123ac30b450d0c378beac7", null ],
-      [ "resize", "classxtd_1_1basic__array_abfa3f4e5918c504ef38249d42d03543d.html#abfa3f4e5918c504ef38249d42d03543d", null ],
-      [ "reverse", "classxtd_1_1basic__array_aa2c58e298172542e8b098073e9d22502.html#aa2c58e298172542e8b098073e9d22502", null ],
-      [ "reverse", "classxtd_1_1basic__array_a8949dd45541ac51521ee70371a5ef98e.html#a8949dd45541ac51521ee70371a5ef98e", null ],
+      [ "resize", "classxtd_1_1basic__array_a388eccad9eb3e3645fa5f8341014c9e7.html#a388eccad9eb3e3645fa5f8341014c9e7", null ],
+      [ "resize", "classxtd_1_1basic__array_a795fd3bff66d49a57311b81cf697953f.html#a795fd3bff66d49a57311b81cf697953f", null ],
       [ "set_value", "classxtd_1_1basic__array_a36ccd2da9fa829ff222758a05f112006.html#a36ccd2da9fa829ff222758a05f112006", null ],
       [ "swap", "classxtd_1_1basic__array_ac29d8f865aaa14d1f3ce4ae201fdf1b5.html#ac29d8f865aaa14d1f3ce4ae201fdf1b5", null ],
       [ "to_string", "classxtd_1_1basic__array_ac4ec27387ef0582948fc499fde1eba65.html#ac4ec27387ef0582948fc499fde1eba65", null ],
@@ -636,6 +640,14 @@ var group__xtd__core =
     [ "xtd::box_floating_point< type_t >", "classxtd_1_1box__floating__point.html", null ],
     [ "xtd::box_integer< type_t >", "classxtd_1_1box__integer.html", null ],
     [ "xtd::call_once", "structxtd_1_1call__once.html", null ],
+    [ "xtd::collections::generic::comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1comparer.html", [
+      [ "comparer", "classxtd_1_1collections_1_1generic_1_1comparer_a21df9dd538bf9e282e1ed7e02c9aa165.html#a21df9dd538bf9e282e1ed7e02c9aa165", null ],
+      [ "compare", "classxtd_1_1collections_1_1generic_1_1comparer_a8c739d4670d294d5a06268a1916772cb.html#a8c739d4670d294d5a06268a1916772cb", null ]
+    ] ],
+    [ "xtd::collections::generic::empty_comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1empty__comparer.html", [
+      [ "empty_comparer", "classxtd_1_1collections_1_1generic_1_1empty__comparer_adca104a11b067ea711a6606e256b933d.html#adca104a11b067ea711a6606e256b933d", null ],
+      [ "compare", "classxtd_1_1collections_1_1generic_1_1empty__comparer_af898b1616c31d43cada85b0d14f2ae06.html#af898b1616c31d43cada85b0d14f2ae06", null ]
+    ] ],
     [ "xtd::collections::generic::enumerable_iterators< type_t, enumerable_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html", [
         [ "iterator_category", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator_a6522f93737f9b683208e144eb77e3eaf.html#a6522f93737f9b683208e144eb77e3eaf", null ],
@@ -2708,6 +2720,18 @@ var group__xtd__core =
       [ "next_values", "classxtd_1_1random_a423bd1ccf2965d97a2ee3d71ed509ded.html#a423bd1ccf2965d97a2ee3d71ed509ded", null ],
       [ "next_double", "classxtd_1_1random_a3b3a3230f08a0faf168e3ba47f2195c3.html#a3b3a3230f08a0faf168e3ba47f2195c3", null ],
       [ "sample", "classxtd_1_1random_af5a84d2617f754220f6a383520bfa98f.html#af5a84d2617f754220f6a383520bfa98f", null ]
+    ] ],
+    [ "xtd::rank_exception", "classxtd_1_1rank__exception.html", [
+      [ "rank_exception", "classxtd_1_1rank__exception_a9fed20a8f1424292a4f14d2e9660d5f1.html#a9fed20a8f1424292a4f14d2e9660d5f1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a178b25d962a40f6379f9d43be7df5f50.html#a178b25d962a40f6379f9d43be7df5f50", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a1ddd7b6d6fb6101ebc5264d0cf9cf6fc.html#a1ddd7b6d6fb6101ebc5264d0cf9cf6fc", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a127986639628ba532c1c1f770b00bc76.html#a127986639628ba532c1c1f770b00bc76", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a0e10da824738ad0644776a878319bfe1.html#a0e10da824738ad0644776a878319bfe1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_ade14c8c2d928d0330c812508beaf1649.html#ade14c8c2d928d0330c812508beaf1649", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a25e225f0d6028f47a254d7fbbf1b46a5.html#a25e225f0d6028f47a254d7fbbf1b46a5", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a968b3916d497a57b172482ebaeeacc16.html#a968b3916d497a57b172482ebaeeacc16", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_a3f45f93b9aefd339ef01e3cdc6564db1.html#a3f45f93b9aefd339ef01e3cdc6564db1", null ],
+      [ "rank_exception", "classxtd_1_1rank__exception_ab4e83fdad4ee40fca9ea9ef24514c475.html#ab4e83fdad4ee40fca9ea9ef24514c475", null ]
     ] ],
     [ "xtd::reflection::assembly", "classxtd_1_1reflection_1_1assembly.html", [
       [ "assembly", "classxtd_1_1reflection_1_1assembly_a4ca96af20e1b367d38c50a4fb73cbc54.html#a4ca96af20e1b367d38c50a4fb73cbc54", null ],
