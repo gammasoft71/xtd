@@ -1,5 +1,6 @@
 #include "../../../include/xtd/diagnostics/stack_frame.h"
 #include "../../../include/xtd/literals.h"
+#include "../../../include/xtd/string.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -8,63 +9,78 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
-stack_frame::stack_frame() {
+struct stack_frame::data {
+  data() = default;
+  data(const string& file_name, xtd::size line_number) : file_name {file_name}, file_line_number {line_number} {}
+  data(const string& file_name, xtd::size line_number, const string& method_name) : file_name {file_name}, file_line_number {line_number}, method_name{method_name} {}
+  data(const string& file_name, xtd::size line_number, const string& method_name, xtd::size column_number) : file_name {file_name}, file_line_number {line_number}, method_name{method_name}, file_column_number {column_number} {}
+  data(const string& file_name, xtd::size line_number, xtd::size column_number) : file_name {file_name}, file_line_number {line_number}, file_column_number {column_number} {}
+  data(const string& file_name, xtd::size line_number, const string& method_name, xtd::size column_number, xtd::size offset) : file_name {file_name}, file_line_number {line_number}, method_name{method_name}, file_column_number {column_number}, offset{offset} {}
+  
+  xtd::string file_name;
+  xtd::size file_line_number = 0;
+  xtd::string method_name;
+  xtd::size file_column_number = 0;
+  xtd::size offset = OFFSET_UNKNOWN;
+};
+
+stack_frame::stack_frame() : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", 0, false);
   if (frames.size()) {
-    file_name_ = frames[0].file_name_;
-    file_line_number_ = frames[0].file_line_number_;
-    file_column_number_ = frames[0].file_column_number_;
-    method_name_ = frames[0].method_name_;
-    offset_ = frames[0].offset_;
+    data_->file_name = frames[0].data_->file_name;
+    data_->file_line_number = frames[0].data_->file_line_number;
+    data_->file_column_number = frames[0].data_->file_column_number;
+    data_->method_name = frames[0].data_->method_name;
+    data_->offset = frames[0].data_->offset;
   }
 }
 
-stack_frame::stack_frame(size_t skip_frame) {
+stack_frame::stack_frame(xtd::size skip_frame) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", skip_frame, false);
   if (frames.size()) {
-    file_name_ = frames[0].file_name_;
-    file_line_number_ = frames[0].file_line_number_;
-    file_column_number_ = frames[0].file_column_number_;
-    method_name_ = frames[0].method_name_;
-    offset_ = frames[0].offset_;
+    data_->file_name = frames[0].data_->file_name;
+    data_->file_line_number = frames[0].data_->file_line_number;
+    data_->file_column_number = frames[0].data_->file_column_number;
+    data_->method_name = frames[0].data_->method_name;
+    data_->offset = frames[0].data_->offset;
   }
 }
 
-stack_frame::stack_frame(bool need_file_info) {
+stack_frame::stack_frame(bool need_file_info) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", 0, need_file_info);
   if (frames.size()) {
-    file_name_ = frames[0].file_name_;
-    file_line_number_ = frames[0].file_line_number_;
-    file_column_number_ = frames[0].file_column_number_;
-    method_name_ = frames[0].method_name_;
-    offset_ = frames[0].offset_;
+    data_->file_name = frames[0].data_->file_name;
+    data_->file_line_number = frames[0].data_->file_line_number;
+    data_->file_column_number = frames[0].data_->file_column_number;
+    data_->method_name = frames[0].data_->method_name;
+    data_->offset = frames[0].data_->offset;
   }
 }
 
-stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
+stack_frame::stack_frame(xtd::size skip_frame, bool need_file_info) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", skip_frame, need_file_info);
   if (frames.size()) {
-    file_name_ = frames[0].file_name_;
-    file_line_number_ = frames[0].file_line_number_;
-    file_column_number_ = frames[0].file_column_number_;
-    method_name_ = frames[0].method_name_;
-    offset_ = frames[0].offset_;
+    data_->file_name = frames[0].data_->file_name;
+    data_->file_line_number = frames[0].data_->file_line_number;
+    data_->file_column_number = frames[0].data_->file_column_number;
+    data_->method_name = frames[0].data_->method_name;
+    data_->offset = frames[0].data_->offset;
   }
 }
 
-stack_frame::stack_frame(const string& file_name, uint32 line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const string& file_name, xtd::size line_number) : data_{new_ptr<data>(file_name, line_number)} {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const string& file_name, xtd::size line_number, const string& method_name) : data_{new_ptr<data>(file_name, line_number, method_name)} {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, xtd::size line_number, const string& method_name, xtd::size column_number) : data_{new_ptr<data>(file_name, line_number, method_name, column_number)} {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32 line_number, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const string& file_name, xtd::size line_number, xtd::size column_number) : data_{new_ptr<data>(file_name, line_number, column_number)} {
 }
 
-stack_frame::stack_frame(const string& file_name, uint32 line_number, const string& method_name, uint32 column_number, uint32 offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
+stack_frame::stack_frame(const string& file_name, xtd::size line_number, const string& method_name, xtd::size column_number, xtd::size offset) : data_{new_ptr<data>(file_name, line_number, method_name, column_number, offset)} {
 }
 
 stack_frame stack_frame::empty() noexcept {
@@ -72,35 +88,35 @@ stack_frame stack_frame::empty() noexcept {
 }
 
 bool stack_frame::equals(const stack_frame& sf) const noexcept {
-  return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;
+  return data_->file_name == sf.data_->file_name && data_->file_line_number == sf.data_->file_line_number && data_->method_name == sf.data_->method_name && data_->file_column_number == sf.data_->file_column_number && data_->offset == sf.data_->offset;
 }
 
-uint32 stack_frame::get_file_column_number() const noexcept {
-  return file_column_number_;
+xtd::size stack_frame::get_file_column_number() const noexcept {
+  return data_->file_column_number;
 }
 
-uint32 stack_frame::get_file_line_number() const noexcept {
-  return file_line_number_;
+xtd::size stack_frame::get_file_line_number() const noexcept {
+  return data_->file_line_number;
 }
 
 const string& stack_frame::get_file_name() const noexcept {
-  return file_name_;
+  return data_->file_name;
 }
 
 const string& stack_frame::get_method() const noexcept {
-  return method_name_;
+  return data_->method_name;
 }
 
-uint32 stack_frame::get_offset() const noexcept {
-  return offset_;
+xtd::size stack_frame::get_offset() const noexcept {
+  return data_->offset;
 }
 
 string stack_frame::to_string() const noexcept {
   if (*this == empty()) return "";
-  return string::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
+  return string::format("{} at offset {} in file:line:column {}:{}:{}", data_->method_name.empty() ? "<unknown method>" : data_->method_name, data_->offset == OFFSET_UNKNOWN || data_->file_name.empty() ? "<unknown offset>" : std::to_string(data_->offset), data_->file_name.empty() ? "<filename unknown>" : data_->file_name, data_->file_line_number, data_->file_column_number);
 }
 
-std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, size_t skip_frames, bool need_file_info) noexcept {
+std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::size skip_frames, bool need_file_info) noexcept {
   auto call_stack = native::stack_trace::get_frames(2);
   auto skip_frames_before_str = 0_z;
   if (!str.empty()) {
@@ -122,7 +138,7 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, size_t
     for (auto starting_str : {"__startup__::run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
       if (string(function).starts_with(starting_str)) skip = true;
     if (skip) continue;
-    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? static_cast<uint32>(line) : 0, function, need_file_info ? static_cast<uint32>(column) : 0, static_cast<uint32>(offset)));
+    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, function, need_file_info ? column : 0, offset));
   }
   return stack_frames;
 }
