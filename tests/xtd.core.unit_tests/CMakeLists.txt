@@ -17,6 +17,7 @@ add_sources(
   src/xtd/diagnostics/tests/process_window_style_tests.cpp
   src/xtd/diagnostics/tests/process_start_info_tests.cpp
   src/xtd/diagnostics/tests/source_levels_tests.cpp
+  src/xtd/diagnostics/tests/stack_frame_tests.cpp
   src/xtd/diagnostics/tests/stopwatch_tests.cpp
   src/xtd/diagnostics/tests/trace_event_type_tests.cpp
   src/xtd/diagnostics/tests/trace_level_tests.cpp
