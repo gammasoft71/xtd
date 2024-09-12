@@ -48,7 +48,7 @@ namespace xtd {
         /// | Less than zero    | x is less than y.    |
         /// | Zero              | x equals y.          |
         /// | Greater than zero | x is greater than y. |
-        int32 compare(const type_t& x, const type_t& y) const override {return x < y ? -1 : (x == y ? 0 : 1);}
+        int32 compare(const type_t& x, const type_t& y) const noexcept override {return x < y ? -1 : (x > y ? 1 : 0);}
         /// @}
 
       protected:
