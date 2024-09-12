@@ -24,9 +24,9 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    /// @brief Indicates wheth er the current object is equal to another object of the same type.
+    /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
-    /// @return true if the current object is equal to the other parameter; otherwise, false.
+    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     virtual bool equals(const type_t&) const noexcept = 0;
     /// @}    
   };
