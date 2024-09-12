@@ -8,6 +8,7 @@
 #include "core_export.h"
 #include "literals.h"
 #include "object.h"
+#include "size.h"
 #include "string.h"
 #include <cstdint>
 #include <stdexcept>
@@ -114,7 +115,7 @@ namespace xtd {
     
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
-    virtual uint32 line_number() const noexcept;
+    virtual xtd::size line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred

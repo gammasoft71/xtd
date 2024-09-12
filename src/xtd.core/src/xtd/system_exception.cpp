@@ -32,7 +32,7 @@ system_exception::exception_ref system_exception::inner_exception() const noexce
   return inner_exception_;
 }
 
-uint32 system_exception::line_number() const noexcept {
+xtd::size system_exception::line_number() const noexcept {
   return information_.get_file_line_number();
 }
 
