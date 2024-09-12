@@ -5,6 +5,9 @@
 #include <exception>
 #include <memory>
 #include "stack_frame.h"
+#define __XTD_CORE_INTERNAL__
+#include "../internal/__array_definition.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -40,7 +43,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a stack_frame collection.
-      using stack_frame_collection = std::vector<xtd::diagnostics::stack_frame>;
+      using stack_frame_collection = xtd::array<xtd::diagnostics::stack_frame>;
       /// @}
       
       /// @name Public Constructors
@@ -329,7 +332,8 @@ namespace xtd {
       stack_trace(const xtd::string& str, size_t skip_frames, bool need_file_info);
       xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const noexcept;
       
-      stack_frame_collection frames_;
+      struct data;
+      ptr<data> data_;
     };
   }
 }
