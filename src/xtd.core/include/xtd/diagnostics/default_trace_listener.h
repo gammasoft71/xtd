@@ -67,7 +67,7 @@ namespace xtd {
       /// // Compute the next binomial coefficient and handle all exceptions.
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
-      /// } catch (const system_exception& ex) {
+      /// } catch (const exception& ex) {
       ///   string fail_message = string::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())
@@ -84,7 +84,7 @@ namespace xtd {
       /// // Compute the next binomial coefficient and handle all exceptions.
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
-      /// } catch (const system_exception& ex) {
+      /// } catch (const exception& ex) {
       ///   string fail_message = string::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
       ///   default_listener->fail(fail_message, ex.message());
       ///   if (!default_listener->assert_ui_enabled())

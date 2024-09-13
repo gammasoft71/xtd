@@ -31,7 +31,7 @@ namespace assert_unit_tests {
     
     static int run_all_tests() noexcept {
       return xtd::startup::safe_run(xtd::delegate<int()>([] {
-        xtd::system_exception::enable_stack_trace(false);
+        xtd::exception::enable_stack_trace(false);
         xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
         std::cout << "Start unit tests" << std::endl;
         try {

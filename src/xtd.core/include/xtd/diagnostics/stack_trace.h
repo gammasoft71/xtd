@@ -57,7 +57,7 @@ namespace xtd {
       ///   try {
       ///     class_level_6 nested_class;
       ///     nested_class.level_6_method();
-      ///   } catch (const system_exception& e) {
+      ///   } catch (const exception& e) {
       ///     console::write_line(" Level_5_method exception handler");
       ///
       ///     stack_trace st;
@@ -95,7 +95,7 @@ namespace xtd {
       ///   try {
       ///     class_level_6 nested_class;
       ///     nested_class.level_6_method();
-      ///   } catch (const system_exception& e) {
+      ///   } catch (const exception& e) {
       ///     console::write_line(" Level_5_method exception handler");
       ///
       ///     stack_trace st;
@@ -161,7 +161,7 @@ namespace xtd {
       ///   try {
       ///     class_level_6 nested_class;
       ///     nested_class.level_6_method();
-      ///   } catch (const system_exception& e) {
+      ///   } catch (const exception& e) {
       ///     console::write_line(" Level_5_method exception handler");
       ///
       ///     stack_trace st;
@@ -227,7 +227,7 @@ namespace xtd {
       ///   try {
       ///     class_level_6 nested_class;
       ///     nested_class.level_6_method();
-      ///   } catch (const system_exception& e) {
+      ///   } catch (const exception& e) {
       ///     console::write_line(" Level_5_method exception handler");
       ///
       ///     stack_trace st;
@@ -269,7 +269,7 @@ namespace xtd {
       ///   try {
       ///     class_level_6 nested_class;
       ///     nested_class.level_6_method();
-      ///   } catch (const system_exception& e) {
+      ///   } catch (const ƒexception& e) {
       ///     console::write_line(" Level_5_method exception handler");
       ///
       ///     stack_trace st;

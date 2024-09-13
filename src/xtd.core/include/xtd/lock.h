@@ -29,7 +29,7 @@ namespace xtd {
 ///   void withdraw(decimal amount) {
 ///     lock_ (balance) {
 ///       if (amount > balance)
-///         throw system_exception("Insufficient funds");
+///         throw exception("Insufficient funds");
 ///       balance -= amount;
 ///     }
 ///   }

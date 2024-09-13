@@ -151,7 +151,7 @@ namespace xtd {
         std::vector<xtd::byte> buffer_;
         std::vector<std::vector<xtd::byte>> buffer_list_;
         size_t bytes_transferred_ = 0;
-        xtd::uptr<xtd::system_exception> connect_by_name_error_;
+        xtd::uptr<xtd::exception> connect_by_name_error_;
         xtd::net::sockets::socket connect_socket_;
         size_t count_ = 0;
         bool disconnect_reuse_socket_ = false;

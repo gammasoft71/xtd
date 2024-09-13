@@ -6,7 +6,7 @@
 #include "../../optional.h"
 #include "../../any.h"
 #include "../../event_args.h"
-#include "../../system_exception.h"
+#include "../../exception.h"
 #include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

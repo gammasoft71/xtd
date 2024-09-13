@@ -313,6 +313,7 @@
 #include "event.h"
 #include "event_args.h"
 #include "event_handler.h"
+#include "exception.h"
 #include "exit_mode.h"
 #include "exit_status.h"
 #include "flags_attribute.h"

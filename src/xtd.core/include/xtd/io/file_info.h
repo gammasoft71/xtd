@@ -493,7 +493,7 @@ namespace xtd {
       ///       console::write_line("{0}This is the information in the second file:", environment::new_line());
       ///       while (sr.peek() != -1)
       ///         console::write_line(sr.read_line());
-      ///     } catch(const system_exception& e) {
+      ///     } catch(const exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -781,7 +781,7 @@ namespace xtd {
       ///       //Delete the newly created file.
       ///       fi2.remove();
       ///       console::write_line("{0} was successfully deleted.", path2);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }

@@ -10,7 +10,7 @@
 #include "layout/arranged_element_collection.h"
 #include <xtd/version>
 #include <xtd/drawing/icon>
-#include <xtd/system_exception>
+#include <xtd/exception>
 #include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

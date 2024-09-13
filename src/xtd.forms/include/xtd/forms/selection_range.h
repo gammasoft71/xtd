@@ -29,7 +29,7 @@ namespace xtd {
     ///   // Set the selection_range with start and end dates from text boxes.
     ///   try {
     ///     month_calendar1.selection_range(selection_range(date_time::parse(text_box1.text(), date_time::parse(text_box2.text()));
-    ///   } catch(const system_exception& ex) {
+    ///   } catch(const exception& ex) {
     ///     message_box::show(ex.message());
     ///   }
     /// }

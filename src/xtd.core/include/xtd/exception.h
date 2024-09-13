@@ -180,9 +180,9 @@ namespace xtd {
 /// @remarks Is equivalent to xtd::exception {{any argument}, csf_}
 /// ```cpp
 /// void my_func() {
-///   if (invalid_info) throw system_exception_(); // same as : throw exception {csf_};
-///   if (invalid_value) throw system_exception_("Bad value"); // same as : throw exception {"Bad value", csf_};
+///   if (invalid_info) throw exception_(); // same as : throw exception {csf_};
+///   if (invalid_value) throw exception_("Bad value"); // same as : throw exception {"Bad value", csf_};
 ///   ...
 /// }
 /// ```
-#define system_exception_(...) exception(add_csf_(__VA_ARGS__))
+#define exception_(...) exception(add_csf_(__VA_ARGS__))
