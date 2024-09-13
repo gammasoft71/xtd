@@ -80,7 +80,7 @@ var searchData=
   ['help_5fevent_5fhandler_77',['help_event_handler',['../group__events_gaae5e1074f328eef5208f78149f5cc29b.html#gaae5e1074f328eef5208f78149f5cc29b',1,'xtd::forms']]],
   ['help_5fevent_5fhandler_2eh_78',['help_event_handler.h',['../help__event__handler_8h.html',1,'']]],
   ['help_5ffaq_79',['help_faq',['../classxtd_1_1drawing_1_1actions__system__images_a181109f64bd2efd3bbeedd0f8d8eee2b.html#a181109f64bd2efd3bbeedd0f8d8eee2b',1,'xtd::drawing::actions_system_images::help_faq() noexcept'],['../classxtd_1_1drawing_1_1actions__system__images_a504ba7feba2d602a1127d49684870a18.html#a504ba7feba2d602a1127d49684870a18',1,'xtd::drawing::actions_system_images::help_faq(const xtd::drawing::size &amp;size) noexcept']]],
-  ['help_5flink_80',['help_link',['../classxtd_1_1system__exception_a726e90816717f3172d3988c018e66a24.html#a726e90816717f3172d3988c018e66a24',1,'xtd::system_exception']]],
+  ['help_5flink_80',['help_link',['../classxtd_1_1exception_af6397881321f0c343500c6184963bd0c.html#af6397881321f0c343500c6184963bd0c',1,'xtd::exception']]],
   ['help_5frequest_81',['help_request',['../classxtd_1_1forms_1_1common__dialog_a659fa6e69886eb7e87a9cfb4e5163384.html#a659fa6e69886eb7e87a9cfb4e5163384',1,'xtd::forms::common_dialog::help_request'],['../classxtd_1_1forms_1_1message__dialog_ab7b63d10bb56fb1f4ead3366700c269c.html#ab7b63d10bb56fb1f4ead3366700c269c',1,'xtd::forms::message_dialog::help_request']]],
   ['help_5frequested_82',['help_requested',['../classxtd_1_1forms_1_1control_a0d068514bbfa4a101ce0ddbbc3981cf5.html#a0d068514bbfa4a101ce0ddbbc3981cf5',1,'xtd::forms::control']]],
   ['helpers_83',['helpers',['../group__helpers__generic__collections.html',1,'']]],

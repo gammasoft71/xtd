@@ -184,7 +184,7 @@ This method does not block until the operation completes. To block until the ope
 To cancel a pending <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_acbac2ad3546190ef5ceb9434115bba41.html#acbac2ad3546190ef5ceb9434115bba41" title="Begins to asynchronously receive the specified number of bytes of data into the specified location of...">xtd::net::sockets::socket::begin_receive_message_from</a>, call the xtd::net::sockets::socket::socket::close method. </dd>
 <dd>
 This method reads data into the buffer parameter, and captures the remote host endpoint from which the data is sent, as well as information about the received packet. For information on how to retrieve this endpoint, refer to <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket_ae3d3db44eb312a3be8312a19ed648219.html#ae3d3db44eb312a3be8312a19ed648219" title="Ends a pending asynchronous read from a specific endpoint.">xtd::net::sockets::socket::end_receive_from</a>. This method is most useful if you intend to asynchronously receive connectionless datagrams from an unknown host or multiple hosts. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> exception, use the <a class="el" href="classxtd_1_1system__exception_aae8a2e1635e67b7879c21ee09edbe738.html#aae8a2e1635e67b7879c21ee09edbe738" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> exception, use the <a class="el" href="classxtd_1_1exception_aecfa3c69099791188edd753e196e6053.html#aecfa3c69099791188edd753e196e6053" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
@@ -195,7 +195,7 @@ This method reads data into the buffer parameter, and captures the remote host e
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net.html">net</a></li><li class="navelem"><a class="el" href="namespacextd_1_1net_1_1sockets.html">sockets</a></li><li class="navelem"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a></li>
-		<li class="footer">Generated on Wed Sep 11 2024 22:08:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Fri Sep 13 2024 20:27:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

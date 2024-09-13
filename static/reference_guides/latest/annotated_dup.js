@@ -603,6 +603,7 @@ var annotated_dup =
       [ "equality_operators", "classxtd_1_1equality__operators.html", "classxtd_1_1equality__operators" ],
       [ "event", "classxtd_1_1event.html", "classxtd_1_1event" ],
       [ "event_args", "classxtd_1_1event__args.html", "classxtd_1_1event__args" ],
+      [ "exception", "classxtd_1_1exception.html", "classxtd_1_1exception" ],
       [ "foreground_color", "classxtd_1_1foreground__color.html", "classxtd_1_1foreground__color" ],
       [ "format_exception", "classxtd_1_1format__exception.html", "classxtd_1_1format__exception" ],
       [ "guid", "structxtd_1_1guid.html", "structxtd_1_1guid" ],

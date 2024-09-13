@@ -16,7 +16,7 @@ var dir_94985abd7ce76a434742fce249483c3e =
     [ "socket_async_event_args.h", "socket__async__event__args_8h.html", null ],
     [ "socket_async_operation.h", "socket__async__operation_8h.html", "socket__async__operation_8h" ],
     [ "socket_error.h", "socket__error_8h.html", "socket__error_8h" ],
-    [ "socket_exception.h", "socket__exception_8h.html", "socket__exception_8h" ],
+    [ "socket_exception.h", "socket__exception_8h.html", null ],
     [ "socket_flags.h", "socket__flags_8h.html", "socket__flags_8h" ],
     [ "socket_information.h", "socket__information_8h.html", null ],
     [ "socket_information_options.h", "socket__information__options_8h.html", "socket__information__options_8h" ],

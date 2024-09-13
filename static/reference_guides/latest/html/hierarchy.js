@@ -707,70 +707,72 @@ var hierarchy =
       [ "xtd::tunit::ostream_event_listener", "classxtd_1_1tunit_1_1ostream__event__listener.html", null ]
     ] ],
     [ "std::exception", null, [
-      [ "xtd::system_exception", "classxtd_1_1system__exception.html", [
-        [ "xtd::access_violation_exception", "classxtd_1_1access__violation__exception.html", null ],
-        [ "xtd::argument_exception", "classxtd_1_1argument__exception.html", [
-          [ "xtd::argument_null_exception", "classxtd_1_1argument__null__exception.html", null ],
-          [ "xtd::argument_out_of_range_exception", "classxtd_1_1argument__out__of__range__exception.html", null ]
+      [ "xtd::exception", "classxtd_1_1exception.html", [
+        [ "xtd::system_exception", "classxtd_1_1system__exception.html", [
+          [ "xtd::access_violation_exception", "classxtd_1_1access__violation__exception.html", null ],
+          [ "xtd::argument_exception", "classxtd_1_1argument__exception.html", [
+            [ "xtd::argument_null_exception", "classxtd_1_1argument__null__exception.html", null ],
+            [ "xtd::argument_out_of_range_exception", "classxtd_1_1argument__out__of__range__exception.html", null ]
+          ] ],
+          [ "xtd::arithmetic_exception", "classxtd_1_1arithmetic__exception.html", [
+            [ "xtd::divided_by_zero_exception", "classxtd_1_1divided__by__zero__exception.html", null ],
+            [ "xtd::not_finite_number_exception", "classxtd_1_1not__finite__number__exception.html", null ],
+            [ "xtd::overflow_exception", "classxtd_1_1overflow__exception.html", null ],
+            [ "xtd::underflow_exception", "classxtd_1_1underflow__exception.html", null ]
+          ] ],
+          [ "xtd::collections::key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", null ],
+          [ "xtd::domain_exception", "classxtd_1_1domain__exception.html", null ],
+          [ "xtd::format_exception", "classxtd_1_1format__exception.html", [
+            [ "xtd::io::file_format_exception", "classxtd_1_1io_1_1file__format__exception.html", null ],
+            [ "xtd::net::cookie_exception", "classxtd_1_1net_1_1cookie__exception.html", null ],
+            [ "xtd::net::protocol_violation_exception", "classxtd_1_1net_1_1protocol__violation__exception.html", null ],
+            [ "xtd::net::web_exception", "classxtd_1_1net_1_1web__exception.html", null ],
+            [ "xtd::uri_format_exception", "classxtd_1_1uri__format__exception.html", null ]
+          ] ],
+          [ "xtd::index_out_of_range_exception", "classxtd_1_1index__out__of__range__exception.html", null ],
+          [ "xtd::interrupt_exception", "classxtd_1_1interrupt__exception.html", null ],
+          [ "xtd::invalid_cast_exception", "classxtd_1_1invalid__cast__exception.html", null ],
+          [ "xtd::invalid_operation_exception", "classxtd_1_1invalid__operation__exception.html", null ],
+          [ "xtd::invalid_program_exception", "classxtd_1_1invalid__program__exception.html", null ],
+          [ "xtd::io::io_exception", "classxtd_1_1io_1_1io__exception.html", [
+            [ "xtd::io::directory_not_found_exception", "classxtd_1_1io_1_1directory__not__found__exception.html", null ],
+            [ "xtd::io::drive_not_found_exception", "classxtd_1_1io_1_1drive__not__found__exception.html", null ],
+            [ "xtd::io::end_of_stream_exception", "classxtd_1_1io_1_1end__of__stream__exception.html", null ],
+            [ "xtd::io::file_load_exception", "classxtd_1_1io_1_1file__load__exception.html", null ],
+            [ "xtd::io::file_not_found_exception", "classxtd_1_1io_1_1file__not__found__exception.html", null ],
+            [ "xtd::io::path_too_long_exception", "classxtd_1_1io_1_1path__too__long__exception.html", null ]
+          ] ],
+          [ "xtd::length_exception", "classxtd_1_1length__exception.html", null ],
+          [ "xtd::net::sockets::socket_exception", "classxtd_1_1net_1_1sockets_1_1socket__exception.html", null ],
+          [ "xtd::not_implemented_exception", "classxtd_1_1not__implemented__exception.html", null ],
+          [ "xtd::not_supported_exception", "classxtd_1_1not__supported__exception.html", [
+            [ "xtd::platform_not_supported_exception", "classxtd_1_1platform__not__supported__exception.html", null ]
+          ] ],
+          [ "xtd::null_pointer_exception", "classxtd_1_1null__pointer__exception.html", null ],
+          [ "xtd::object_closed_exception", "classxtd_1_1object__closed__exception.html", null ],
+          [ "xtd::operation_canceled_exception", "classxtd_1_1operation__canceled__exception.html", null ],
+          [ "xtd::out_of_memory_exception", "classxtd_1_1out__of__memory__exception.html", null ],
+          [ "xtd::rank_exception", "classxtd_1_1rank__exception.html", null ],
+          [ "xtd::security::security_exception", "classxtd_1_1security_1_1security__exception.html", null ],
+          [ "xtd::software_termination_exception", "classxtd_1_1software__termination__exception.html", null ],
+          [ "xtd::threading::abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", null ],
+          [ "xtd::threading::barrier_post_phase_exception", "classxtd_1_1threading_1_1barrier__post__phase__exception.html", null ],
+          [ "xtd::threading::lock_recursion_exception", "classxtd_1_1threading_1_1lock__recursion__exception.html", null ],
+          [ "xtd::threading::semaphore_full_exception", "classxtd_1_1threading_1_1semaphore__full__exception.html", null ],
+          [ "xtd::threading::synchronization_lock_exception", "classxtd_1_1threading_1_1synchronization__lock__exception.html", null ],
+          [ "xtd::threading::thread_abort_exception", "classxtd_1_1threading_1_1thread__abort__exception.html", null ],
+          [ "xtd::threading::thread_interrupted_exception", "classxtd_1_1threading_1_1thread__interrupted__exception.html", null ],
+          [ "xtd::threading::thread_state_exception", "classxtd_1_1threading_1_1thread__state__exception.html", null ],
+          [ "xtd::threading::wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html", null ],
+          [ "xtd::time_zone_not_found_exception", "classxtd_1_1time__zone__not__found__exception.html", null ],
+          [ "xtd::timeout_exception", "classxtd_1_1timeout__exception.html", null ],
+          [ "xtd::unauthorized_access_exception", "classxtd_1_1unauthorized__access__exception.html", null ],
+          [ "xtd::uri_template_match_exception", "classxtd_1_1uri__template__match__exception.html", null ],
+          [ "xtd::xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", null ]
         ] ],
-        [ "xtd::arithmetic_exception", "classxtd_1_1arithmetic__exception.html", [
-          [ "xtd::divided_by_zero_exception", "classxtd_1_1divided__by__zero__exception.html", null ],
-          [ "xtd::not_finite_number_exception", "classxtd_1_1not__finite__number__exception.html", null ],
-          [ "xtd::overflow_exception", "classxtd_1_1overflow__exception.html", null ],
-          [ "xtd::underflow_exception", "classxtd_1_1underflow__exception.html", null ]
-        ] ],
-        [ "xtd::collections::key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", null ],
-        [ "xtd::domain_exception", "classxtd_1_1domain__exception.html", null ],
-        [ "xtd::format_exception", "classxtd_1_1format__exception.html", [
-          [ "xtd::io::file_format_exception", "classxtd_1_1io_1_1file__format__exception.html", null ],
-          [ "xtd::net::cookie_exception", "classxtd_1_1net_1_1cookie__exception.html", null ],
-          [ "xtd::net::protocol_violation_exception", "classxtd_1_1net_1_1protocol__violation__exception.html", null ],
-          [ "xtd::net::web_exception", "classxtd_1_1net_1_1web__exception.html", null ],
-          [ "xtd::uri_format_exception", "classxtd_1_1uri__format__exception.html", null ]
-        ] ],
-        [ "xtd::index_out_of_range_exception", "classxtd_1_1index__out__of__range__exception.html", null ],
-        [ "xtd::interrupt_exception", "classxtd_1_1interrupt__exception.html", null ],
-        [ "xtd::invalid_cast_exception", "classxtd_1_1invalid__cast__exception.html", null ],
-        [ "xtd::invalid_operation_exception", "classxtd_1_1invalid__operation__exception.html", null ],
-        [ "xtd::invalid_program_exception", "classxtd_1_1invalid__program__exception.html", null ],
-        [ "xtd::io::io_exception", "classxtd_1_1io_1_1io__exception.html", [
-          [ "xtd::io::directory_not_found_exception", "classxtd_1_1io_1_1directory__not__found__exception.html", null ],
-          [ "xtd::io::drive_not_found_exception", "classxtd_1_1io_1_1drive__not__found__exception.html", null ],
-          [ "xtd::io::end_of_stream_exception", "classxtd_1_1io_1_1end__of__stream__exception.html", null ],
-          [ "xtd::io::file_load_exception", "classxtd_1_1io_1_1file__load__exception.html", null ],
-          [ "xtd::io::file_not_found_exception", "classxtd_1_1io_1_1file__not__found__exception.html", null ],
-          [ "xtd::io::path_too_long_exception", "classxtd_1_1io_1_1path__too__long__exception.html", null ]
-        ] ],
-        [ "xtd::length_exception", "classxtd_1_1length__exception.html", null ],
-        [ "xtd::net::sockets::socket_exception", "classxtd_1_1net_1_1sockets_1_1socket__exception.html", null ],
-        [ "xtd::not_implemented_exception", "classxtd_1_1not__implemented__exception.html", null ],
-        [ "xtd::not_supported_exception", "classxtd_1_1not__supported__exception.html", [
-          [ "xtd::platform_not_supported_exception", "classxtd_1_1platform__not__supported__exception.html", null ]
-        ] ],
-        [ "xtd::null_pointer_exception", "classxtd_1_1null__pointer__exception.html", null ],
-        [ "xtd::object_closed_exception", "classxtd_1_1object__closed__exception.html", null ],
-        [ "xtd::operation_canceled_exception", "classxtd_1_1operation__canceled__exception.html", null ],
-        [ "xtd::out_of_memory_exception", "classxtd_1_1out__of__memory__exception.html", null ],
-        [ "xtd::rank_exception", "classxtd_1_1rank__exception.html", null ],
-        [ "xtd::security::security_exception", "classxtd_1_1security_1_1security__exception.html", null ],
-        [ "xtd::software_termination_exception", "classxtd_1_1software__termination__exception.html", null ],
-        [ "xtd::threading::abandoned_mutex_exception", "classxtd_1_1threading_1_1abandoned__mutex__exception.html", null ],
-        [ "xtd::threading::barrier_post_phase_exception", "classxtd_1_1threading_1_1barrier__post__phase__exception.html", null ],
-        [ "xtd::threading::lock_recursion_exception", "classxtd_1_1threading_1_1lock__recursion__exception.html", null ],
-        [ "xtd::threading::semaphore_full_exception", "classxtd_1_1threading_1_1semaphore__full__exception.html", null ],
-        [ "xtd::threading::synchronization_lock_exception", "classxtd_1_1threading_1_1synchronization__lock__exception.html", null ],
-        [ "xtd::threading::thread_abort_exception", "classxtd_1_1threading_1_1thread__abort__exception.html", null ],
-        [ "xtd::threading::thread_interrupted_exception", "classxtd_1_1threading_1_1thread__interrupted__exception.html", null ],
-        [ "xtd::threading::thread_state_exception", "classxtd_1_1threading_1_1thread__state__exception.html", null ],
-        [ "xtd::threading::wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html", null ],
-        [ "xtd::time_zone_not_found_exception", "classxtd_1_1time__zone__not__found__exception.html", null ],
-        [ "xtd::timeout_exception", "classxtd_1_1timeout__exception.html", null ],
         [ "xtd::tunit::abort_error", "classxtd_1_1tunit_1_1abort__error.html", null ],
         [ "xtd::tunit::assert_error", "classxtd_1_1tunit_1_1assert__error.html", null ],
-        [ "xtd::tunit::ignore_error", "classxtd_1_1tunit_1_1ignore__error.html", null ],
-        [ "xtd::unauthorized_access_exception", "classxtd_1_1unauthorized__access__exception.html", null ],
-        [ "xtd::uri_template_match_exception", "classxtd_1_1uri__template__match__exception.html", null ],
-        [ "xtd::xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", null ]
+        [ "xtd::tunit::ignore_error", "classxtd_1_1tunit_1_1ignore__error.html", null ]
       ] ]
     ] ],
     [ "xtd::forms::find_event_handler", null, [
@@ -1154,6 +1156,7 @@ var hierarchy =
         [ "xtd::speech::synthesis::state_changed_event_args", "classxtd_1_1speech_1_1synthesis_1_1state__changed__event__args.html", null ],
         [ "xtd::timers::elapsed_event_args", "classxtd_1_1timers_1_1elapsed__event__args.html", null ]
       ] ],
+      [ "xtd::exception", "classxtd_1_1exception.html", null ],
       [ "xtd::foreground_color", "classxtd_1_1foreground__color.html", null ],
       [ "xtd::forms::application_context", "classxtd_1_1forms_1_1application__context.html", null ],
       [ "xtd::forms::component", "classxtd_1_1forms_1_1component.html", [
@@ -1268,7 +1271,6 @@ var hierarchy =
       [ "xtd::security::secure_string", "classxtd_1_1security_1_1secure__string.html", null ],
       [ "xtd::speech::synthesis::prompt", "classxtd_1_1speech_1_1synthesis_1_1prompt.html", null ],
       [ "xtd::speech::synthesis::speech_synthesizer", "classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html", null ],
-      [ "xtd::system_exception", "classxtd_1_1system__exception.html", null ],
       [ "xtd::target_type", "classxtd_1_1target__type.html", null ],
       [ "xtd::text::basic_string_builder< char_t, traits_t, allocator_t >", "classxtd_1_1text_1_1basic__string__builder.html", null ],
       [ "xtd::threading::barrier", "classxtd_1_1threading_1_1barrier.html", null ],

@@ -3,7 +3,7 @@ var group__generic__collections =
     [ "helpers", "group__helpers__generic__collections.html", "group__helpers__generic__collections" ],
     [ "xtd::collections::generic::comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1comparer.html", [
       [ "comparer", "classxtd_1_1collections_1_1generic_1_1comparer_a21df9dd538bf9e282e1ed7e02c9aa165.html#a21df9dd538bf9e282e1ed7e02c9aa165", null ],
-      [ "compare", "classxtd_1_1collections_1_1generic_1_1comparer_a8c739d4670d294d5a06268a1916772cb.html#a8c739d4670d294d5a06268a1916772cb", null ]
+      [ "compare", "classxtd_1_1collections_1_1generic_1_1comparer_ab4497f8bf108e5141ac8dfef780e53fe.html#ab4497f8bf108e5141ac8dfef780e53fe", null ]
     ] ],
     [ "xtd::collections::generic::empty_comparer< type_t >", "classxtd_1_1collections_1_1generic_1_1empty__comparer.html", [
       [ "empty_comparer", "classxtd_1_1collections_1_1generic_1_1empty__comparer_adca104a11b067ea711a6606e256b933d.html#adca104a11b067ea711a6606e256b933d", null ],
