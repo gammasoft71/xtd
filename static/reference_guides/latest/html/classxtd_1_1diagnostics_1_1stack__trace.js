@@ -1,6 +1,6 @@
 var classxtd_1_1diagnostics_1_1stack__trace =
 [
-    [ "stack_frame_collection", "classxtd_1_1diagnostics_1_1stack__trace_a4de5e19fa6298a8e1cbb95c734947cce.html#a4de5e19fa6298a8e1cbb95c734947cce", null ],
+    [ "stack_frame_collection", "classxtd_1_1diagnostics_1_1stack__trace_a28424a12796167ec42678c35821a2c6b.html#a28424a12796167ec42678c35821a2c6b", null ],
     [ "stack_trace", "classxtd_1_1diagnostics_1_1stack__trace_add39ad4c93594ef103f0a51751787ced.html#add39ad4c93594ef103f0a51751787ced", null ],
     [ "stack_trace", "classxtd_1_1diagnostics_1_1stack__trace_ad901428f2098cfa6adc7bf403363eaf2.html#ad901428f2098cfa6adc7bf403363eaf2", null ],
     [ "stack_trace", "classxtd_1_1diagnostics_1_1stack__trace_a9b6e3b2a9fb8e6a6ef53544e71d6a997.html#a9b6e3b2a9fb8e6a6ef53544e71d6a997", null ],

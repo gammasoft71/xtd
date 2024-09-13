@@ -23,7 +23,7 @@ var searchData=
   ['speak_5fstarted_5fevent_5fhandler_20',['speak_started_event_handler',['../group__synthesis_ga25912585ab83cbc758e787345f1cf051.html#ga25912585ab83cbc758e787345f1cf051',1,'xtd::speech::synthesis']]],
   ['special_5ffolder_5fcollection_21',['special_folder_collection',['../classxtd_1_1system__report_a3982d2c65720bd3443ed63a8621a654d.html#a3982d2c65720bd3443ed63a8621a654d',1,'xtd::system_report']]],
   ['sptr_22',['sptr',['../group__types_gac95736233f2252af878f18687efabb92.html#gac95736233f2252af878f18687efabb92',1,'xtd']]],
-  ['stack_5fframe_5fcollection_23',['stack_frame_collection',['../classxtd_1_1diagnostics_1_1stack__trace_a4de5e19fa6298a8e1cbb95c734947cce.html#a4de5e19fa6298a8e1cbb95c734947cce',1,'xtd::diagnostics::stack_trace']]],
+  ['stack_5fframe_5fcollection_23',['stack_frame_collection',['../classxtd_1_1diagnostics_1_1stack__trace_a28424a12796167ec42678c35821a2c6b.html#a28424a12796167ec42678c35821a2c6b',1,'xtd::diagnostics::stack_trace']]],
   ['state_5fchanged_5fevent_5fhandler_24',['state_changed_event_handler',['../group__synthesis_gaaf87e7449de97e496b7b83109f120fec.html#gaaf87e7449de97e496b7b83109f120fec',1,'xtd::speech::synthesis']]],
   ['status_5fbar_25',['status_bar',['../group__style__sheets_ga70f09ff7f6aef3421b97a947dabdd4d3.html#ga70f09ff7f6aef3421b97a947dabdd4d3',1,'xtd::forms::style_sheets']]],
   ['status_5fbar_5fdraw_5fitem_5fevent_5fhandler_26',['status_bar_draw_item_event_handler',['../group__events_ga0bb009bf9754901cb50017cbca2f9038.html#ga0bb009bf9754901cb50017cbca2f9038',1,'xtd::forms']]],

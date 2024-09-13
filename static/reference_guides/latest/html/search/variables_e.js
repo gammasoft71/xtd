@@ -4,7 +4,7 @@ var searchData=
   ['octopus_1',['octopus',['../classxtd_1_1forms_1_1emoticons_ac7fc0ab8ded63a99b2936bffdb018c20.html#ac7fc0ab8ded63a99b2936bffdb018c20',1,'xtd::forms::emoticons']]],
   ['oden_2',['oden',['../classxtd_1_1forms_1_1emoticons_a6c9b8dde8f8071f30068ca29dba91c99.html#a6c9b8dde8f8071f30068ca29dba91c99',1,'xtd::forms::emoticons']]],
   ['office_5fbuilding_3',['office_building',['../classxtd_1_1forms_1_1emoticons_a4ffe7996c275b84a16f6648194f44617.html#a4ffe7996c275b84a16f6648194f44617',1,'xtd::forms::emoticons']]],
-  ['offset_5funknown_4',['OFFSET_UNKNOWN',['../classxtd_1_1diagnostics_1_1stack__frame_a905552095a96ae3144ea7e63fd38b859.html#a905552095a96ae3144ea7e63fd38b859',1,'xtd::diagnostics::stack_frame']]],
+  ['offset_5funknown_4',['OFFSET_UNKNOWN',['../classxtd_1_1diagnostics_1_1stack__frame_ab2b895b981a0a94acb747cf5018dae56.html#ab2b895b981a0a94acb747cf5018dae56',1,'xtd::diagnostics::stack_frame']]],
   ['oil_5fdrum_5',['oil_drum',['../classxtd_1_1forms_1_1emoticons_aa80aab6dc5795ee94a6274b87b5a2f2f.html#aa80aab6dc5795ee94a6274b87b5a2f2f',1,'xtd::forms::emoticons']]],
   ['ok_5fhand_5fsign_6',['ok_hand_sign',['../classxtd_1_1forms_1_1emoticons_a39f99a4a472f90629c2b399169489b80.html#a39f99a4a472f90629c2b399169489b80',1,'xtd::forms::emoticons']]],
   ['old_5fkey_7',['old_key',['../classxtd_1_1forms_1_1emoticons_a0ee071022c6e7fff4715b6be73a71364.html#a0ee071022c6e7fff4715b6be73a71364',1,'xtd::forms::emoticons']]],

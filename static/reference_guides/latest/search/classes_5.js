@@ -207,7 +207,8 @@ var searchData=
   ['event_5flistener_204',['event_listener',['../classxtd_1_1tunit_1_1event__listener.html',1,'xtd::tunit']]],
   ['event_5ftype_5ffilter_205',['event_type_filter',['../classxtd_1_1diagnostics_1_1event__type__filter.html',1,'xtd::diagnostics']]],
   ['event_5fwait_5fhandle_206',['event_wait_handle',['../classxtd_1_1threading_1_1event__wait__handle.html',1,'xtd::threading']]],
-  ['exception_5fbox_207',['exception_box',['../classxtd_1_1forms_1_1exception__box.html',1,'xtd::forms']]],
-  ['exception_5fdialog_208',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
-  ['exit_5fevent_209',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]]
+  ['exception_207',['exception',['../classxtd_1_1exception.html',1,'xtd']]],
+  ['exception_5fbox_208',['exception_box',['../classxtd_1_1forms_1_1exception__box.html',1,'xtd::forms']]],
+  ['exception_5fdialog_209',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
+  ['exit_5fevent_210',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]]
 ];

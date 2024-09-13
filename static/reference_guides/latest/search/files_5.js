@@ -35,10 +35,11 @@ var searchData=
   ['event_5freset_5fmode_2eh_32',['event_reset_mode.h',['../event__reset__mode_8h.html',1,'']]],
   ['event_5ftype_5ffilter_2eh_33',['event_type_filter.h',['../event__type__filter_8h.html',1,'']]],
   ['event_5fwait_5fhandle_2eh_34',['event_wait_handle.h',['../event__wait__handle_8h.html',1,'']]],
-  ['exception_5fbox_2eh_35',['exception_box.h',['../exception__box_8h.html',1,'']]],
-  ['exception_5fdialog_2eh_36',['exception_dialog.h',['../exception__dialog_8h.html',1,'']]],
-  ['exit_5fmode_2eh_37',['exit_mode.h',['../exit__mode_8h.html',1,'']]],
-  ['exit_5fstatus_2eh_38',['exit_status.h',['../exit__status_8h.html',1,'']]],
-  ['export_2eh_39',['export.h',['../export_8h.html',1,'']]],
-  ['extended_5fcolors_2eh_40',['extended_colors.h',['../extended__colors_8h.html',1,'']]]
+  ['exception_2eh_35',['exception.h',['../exception_8h.html',1,'']]],
+  ['exception_5fbox_2eh_36',['exception_box.h',['../exception__box_8h.html',1,'']]],
+  ['exception_5fdialog_2eh_37',['exception_dialog.h',['../exception__dialog_8h.html',1,'']]],
+  ['exit_5fmode_2eh_38',['exit_mode.h',['../exit__mode_8h.html',1,'']]],
+  ['exit_5fstatus_2eh_39',['exit_status.h',['../exit__status_8h.html',1,'']]],
+  ['export_2eh_40',['export.h',['../export_8h.html',1,'']]],
+  ['extended_5fcolors_2eh_41',['extended_colors.h',['../extended__colors_8h.html',1,'']]]
 ];
