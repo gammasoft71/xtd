@@ -3,7 +3,7 @@
 #include <list>
 #include <xtd/char32_object>
 #include <xtd/environment>
-#include <xtd/system_exception>
+#include <xtd/exception>
 #include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/process>
 #include <xtd/drawing/system_icons>

@@ -96,4 +96,4 @@ namespace xtd {
 ///   ...
 /// }
 /// ```
-#define interrupt_exception_(...) system_exception(add_csf_(__VA_ARGS__))
+#define system_exception_(...) system_exception(add_csf_(__VA_ARGS__))

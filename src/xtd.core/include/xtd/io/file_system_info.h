@@ -324,7 +324,7 @@ namespace xtd {
       ///     try {
       ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("Error: {0}", e.message());
       ///     }
       ///   }
@@ -379,7 +379,7 @@ namespace xtd {
       ///     try {
       ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("Error: {0}", e.message());
       ///     }
       ///   }
@@ -466,7 +466,7 @@ namespace xtd {
       ///     try {
       ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("Error: {0}", e.message());
       ///     }
       ///   }
@@ -521,7 +521,7 @@ namespace xtd {
       ///     try {
       ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("Error: {0}", e.message());
       ///     }
       ///   }

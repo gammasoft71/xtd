@@ -60,7 +60,7 @@ namespace xtd {
     ///       di.remove();
     ///       console::write_line("The directory was deleted successfully.");
     ///     }
-    ///     catch (const system_exception& e) {
+    ///     catch (const exception& e) {
     ///       console::write_line("The process failed: {0}", e.to_string());
     ///     }
     ///   }
@@ -272,7 +272,7 @@ namespace xtd {
       ///       console::write_line("I am about to attempt to delete {0}.", di1.name());
       ///       di1.remove();
       ///       console::write_line("The delete operation was successful, which was unexpected.");
-      ///     } catch (const system_exception&) {
+      ///     } catch (const exception&) {
       ///       console::write_line("The delete operation failed as expected.");
       ///     }
       ///   }
@@ -475,7 +475,7 @@ namespace xtd {
       ///       di.remove();
       ///       console::write_line("The directory was deleted successfully.");
       ///     }
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -874,7 +874,7 @@ namespace xtd {
       ///       for (directory_info di_next : dirs) {
       ///         console::write_line("The number of files in {0} is {1}", di_next, di_next.get_files().size());
       ///       }
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -1083,7 +1083,7 @@ namespace xtd {
       ///       // Display the results to the console.
       ///       console::write_line("Directories: {0}", directories);
       ///       console::write_line("Files: {0}", files);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -1172,7 +1172,7 @@ namespace xtd {
       ///       // Display the results to the console.
       ///       console::write_line("Directories: {0}", directories);
       ///       console::write_line("Files: {0}", files);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -1258,7 +1258,7 @@ namespace xtd {
       ///       // Attempt to delete the subdirectory. Note that because it has been
       ///       // moved, an exception is thrown.
       ///       dis.remove(true);
-      ///     } catch (const system_exception&) {
+      ///     } catch (const exception&) {
       ///       // Handle this exception in some way, such as with the following code:
       ///       // console::write_line("That directory does not exist.");
       ///     }
@@ -1306,7 +1306,7 @@ namespace xtd {
       ///       console::write_line("I am about to attempt to delete {0}", di1.name());
       ///       di1.remove();
       ///       console::write_line("The Delete operation was successful, which was unexpected.");
-      ///     } catch (const system_exception&) {
+      ///     } catch (const exception&) {
       ///       console::write_line("The Delete operation failed as expected.");
       ///     }
       ///   }

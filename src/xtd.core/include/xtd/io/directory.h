@@ -49,7 +49,7 @@ namespace xtd {
     ///         string file_name = current_file.substring(source_directory.size() + 1);
     ///         directory::move(current_file, path::combine(archive_directory, file_name));
     ///       }
-    ///     } catch (system_exception& e) {
+    ///     } catch (exception& e) {
     ///       console::write_line(e.message());
     ///     }
     ///   }
@@ -73,7 +73,7 @@ namespace xtd {
     ///
     ///     try {
     ///       directory::move(source_directory, destination_directory);
-    ///     } catch (const system_exception& e) {
+    ///     } catch (const exception& e) {
     ///       console::write_line(e.message());
     ///     }
     ///   }
@@ -233,7 +233,7 @@ namespace xtd {
       ///       di.remove();
       ///       console::write_line("The directory was deleted successfully.");
       ///     }
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -381,7 +381,7 @@ namespace xtd {
       ///         string file_name = current_file.substring(source_directory.size() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
-      ///     } catch (system_exception& e) {
+      ///     } catch (exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -422,7 +422,7 @@ namespace xtd {
       ///         string file_name = current_file.substring(source_directory.size() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
-      ///     } catch (system_exception& e) {
+      ///     } catch (exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -562,7 +562,7 @@ namespace xtd {
       ///       } else {
       ///         console::write_line("This directory was created on {0}", dt);
       ///       }
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -603,7 +603,7 @@ namespace xtd {
       ///       } else {
       ///         console::write_line("You are not in the temp directory.");
       ///       }
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -705,7 +705,7 @@ namespace xtd {
       ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -859,7 +859,7 @@ namespace xtd {
       ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -1161,7 +1161,7 @@ namespace xtd {
       ///       console::write_line("The last access time for this directory was {0}", dt);
       ///     }
       ///
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -1213,7 +1213,7 @@ namespace xtd {
       ///       console::write_line("The last write time for this directory was {0}", dt);
       ///     }
       ///
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -1476,7 +1476,7 @@ namespace xtd {
       ///
       ///     try {
       ///       directory::move(source_directory, destination_directory);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line(e.message());
       ///     }
       ///   }
@@ -1519,7 +1519,7 @@ namespace xtd {
       ///
       ///       console::write_line("top-level directory exists: {0}", directory_exists);
       ///       console::write_line("sub-directory exists: {0}", sub_directory_exists);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.message());
       ///     }
       ///   }
@@ -1569,7 +1569,7 @@ namespace xtd {
       ///       bool directory_exists = directory::exists(top_path);
       ///
       ///       console::write_line("top-level directory exists: {0}", directory_exists);
-      ///     } catch (const system_exception& e) {
+      ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.message());
       ///     }
       ///   }
@@ -1778,7 +1778,7 @@ namespace xtd {
       ///       console::write_line("The last access time for this directory was {0}", dt);
       ///     }
       ///
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }
@@ -1826,7 +1826,7 @@ namespace xtd {
       ///       console::write_line("The last write time for this directory was {0}", dt);
       ///     }
       ///
-      ///     catch (const system_exception& e) {
+      ///     catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
       ///     }
       ///   }

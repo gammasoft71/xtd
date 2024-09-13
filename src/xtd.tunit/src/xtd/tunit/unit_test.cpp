@@ -154,7 +154,7 @@ int32 unit_test::run() noexcept {
       return list_tests(tests);
     }
     
-    system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
+    exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
     
     auto random = settings::default_settings().random_seed() ? xtd::random(settings::default_settings().random_seed()) : xtd::random();
     

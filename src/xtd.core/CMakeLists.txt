@@ -594,6 +594,8 @@ add_sources(
   include/xtd/diagnostics/boolean_switch
   include/xtd/diagnostics/console_trace_listener.h
   include/xtd/diagnostics/console_trace_listener
+  include/xtd/diagnostics/current_stack_frame.h
+  include/xtd/diagnostics/current_stack_frame
   include/xtd/diagnostics/data_received_event_args.h
   include/xtd/diagnostics/data_received_event_args
   include/xtd/diagnostics/data_received_event_handler.h
