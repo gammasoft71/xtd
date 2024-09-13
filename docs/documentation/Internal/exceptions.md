@@ -105,12 +105,12 @@ sidebar_position: 2
 
 * [System.Exception](https://learn.microsoft.com/en-us/dotnet/api/system.exception?view=net-8.0)
   * [System.AggregateException](https://learn.microsoft.com/en-us/dotnet/api/system.aggregateexception?view=net-8.0)
-  * System.ApplicationException
+  * [System.ApplicationException](https://learn.microsoft.com/en-us/dotnet/api/system.applicationexception?view=net-8.0)
     * [System.Threading.WaitHandleCannotBeOpenedException](https://learn.microsoft.com/en-us/dotnet/api/system.threading.waithandlecannotbeopenedexception?view=net-8.0)
-  * InvalidTimeZoneException
-  * LockRecursionException
-  * SystemException
-    * AbandonedMutexException
+  * [System.InvalidTimeZoneException](https://learn.microsoft.com/en-us/dotnet/api/system.invalidtimezoneexception?view=net-8.0)
+  * [System.Threading.LockRecursionException](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lockrecursionexception?view=net-8.0)
+  * [System.SystemException](https://learn.microsoft.com/en-us/dotnet/api/system.systemexception?view=net-8.0)
+    * [System.Threading.AbandonedMutexException](https://learn.microsoft.com/en-us/dotnet/api/system.threading.abandonedmutexexception?view=net-8.0)
     * AccessViolationException
     * AppDomainUnloadException
     * ArgumentException
