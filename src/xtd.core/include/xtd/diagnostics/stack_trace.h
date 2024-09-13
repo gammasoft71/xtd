@@ -12,7 +12,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class system_exception;
+  class exception;
   /// @endcond
   
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
@@ -328,7 +328,7 @@ namespace xtd {
       /// @}
       
     private:
-      friend class xtd::system_exception;
+      friend class xtd::exception;
       stack_trace(const xtd::string& str, size_t skip_frames, bool need_file_info);
       xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) const noexcept;
       
