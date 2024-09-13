@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "An software termination occured."_t;}
   };
 }
-
-/// @brief Helper on xtd::software_termination_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::software_termination_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw software_termination_exception_(); // same as : throw software_termination_exception {csf_};
-///   if (invalid_value) throw software_termination_exception_("Bad value"); // same as : throw software_termination_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define software_termination_exception_(...) software_termination_exception(add_csf_(__VA_ARGS__))

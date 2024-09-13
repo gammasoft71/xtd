@@ -90,21 +90,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::net::cookie_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/net/cookie_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::net::cookie_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw cookie_exception_(); // same as : throw cookie_exception {csf_};
-///   if (invalid_value) throw cookie_exception_("Bad value"); // same as : throw cookie_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define cookie_exception_(...) cookie_exception(add_csf_(__VA_ARGS__))

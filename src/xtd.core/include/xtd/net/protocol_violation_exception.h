@@ -90,21 +90,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::net::protocol_violation_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/net/protocol_violation_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::net::protocol_violation_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw protocol_violation_exception_(); // same as : throw protocol_violation_exception {csf_};
-///   if (invalid_value) throw protocol_violation_exception_("Bad value"); // same as : throw protocol_violation_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define protocol_violation_exception_(...) protocol_violation_exception(add_csf_(__VA_ARGS__))

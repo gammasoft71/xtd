@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept;
   };
 }
-
-/// @brief Helper on xtd::system_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::system_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw interrupt_exception_(); // same as : throw system_exception {csf_};
-///   if (invalid_value) throw interrupt_exception_("Bad value"); // same as : throw system_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define system_exception_(...) system_exception(add_csf_(__VA_ARGS__))

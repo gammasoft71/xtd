@@ -90,21 +90,3 @@ namespace xtd {
     const std::error_code default_error() const noexcept {return {static_cast<int>(0x80131517), std::system_category()};}
   };
 }
-
-/// @brief Helper on xtd::rank_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/rank_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::rank_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw rank_exception_(); // same as : throw rank_exception {csf_};
-///   if (invalid_value) throw rank_exception_("Bad value"); // same as : throw rank_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define rank_exception_(...) rank_exception(add_csf_(__VA_ARGS__))

@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "The operation has timed out."_t;}
   };
 }
-
-/// @brief Helper on xtd::timeout_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::timeout_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw timeout_exception_(); // same as : throw timeout_exception {csf_};
-///   if (invalid_value) throw timeout_exception_("Bad value"); // same as : throw timeout_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define timeout_exception_(...) timeout_exception(add_csf_(__VA_ARGS__))

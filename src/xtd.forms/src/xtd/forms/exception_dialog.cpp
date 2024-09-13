@@ -21,7 +21,7 @@ namespace {
   using link_label = label;
   class exception_dialog_standard : public form {
   public:
-    exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : std_exception_(exception) {
+    exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
       panel_top_.location({0, 0});
       panel_top_.size({480, 150});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
@@ -38,7 +38,7 @@ namespace {
       label_exception_.location({85, 10});
       label_exception_.size({385, 95});
       label_exception_.text_align(content_alignment::top_left);
-      label_exception_.text(string::format("Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"_t, environment::new_line(), std_exception_ ? std_exception_->what() : "(Unknown exception)"_t));
+      label_exception_.text(string::format("Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"_t, environment::new_line(), exception_ ? exception_->what() : "(Unknown exception)"_t));
       
       button_details_.location({10, 115});
       button_details_.width(100);
@@ -119,10 +119,10 @@ namespace {
     
     string generate_exception_report() const {
       auto report = string::format("{0} Exception text {0}{1}"_t, string(14, '*'), environment::new_line());
-      if (std_exception_ && dynamic_cast<const xtd::exception*>(std_exception_))
-        report += string::format("{}{}", static_cast<const xtd::exception*>(std_exception_)->to_string(), environment::new_line());
-      else if (std_exception_ && dynamic_cast<const std::exception*>(std_exception_))
-        report += string::format("{0}: {1}{2}", typeof_(*std_exception_), static_cast<const std::exception*>(std_exception_)->what(), environment::new_line());
+      if (exception_ && dynamic_cast<const xtd::exception*>(exception_))
+        report += string::format("{}{}", static_cast<const xtd::exception*>(exception_)->to_string(), environment::new_line());
+      else if (exception_ && dynamic_cast<const std::exception*>(exception_))
+        report += string::format("{0}: {1}{2}", typeof_(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
       else
         report += string::format("(Unknown exception){0}"_t, environment::new_line());
       report += environment::new_line();
@@ -178,7 +178,7 @@ namespace {
       return report;
     }
     
-    const std::exception* std_exception_ = nullptr;
+    const std::exception* exception_ = nullptr;
     panel panel_top_;
     panel panel_bottom_;
     picture_box picture_box_error_;

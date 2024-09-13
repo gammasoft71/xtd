@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "One of identified items is an invalid format."_t;}
   };
 }
-
-/// @brief Helper on xtd::format_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::format_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw format_exception_(); // same as : throw format_exception {csf_};
-///   if (invalid_value) throw format_exception_("Bad value"); // same as : throw format_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define format_exception_(...) format_exception(add_csf_(__VA_ARGS__))

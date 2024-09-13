@@ -94,21 +94,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::io::io_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/io/io_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::io::io_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw io_exception_(); // same as : throw io_exception {csf_};
-///   if (invalid_value) throw io_exception_("Bad value"); // same as : throw io_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define io_exception_(...) io_exception(add_csf_(__VA_ARGS__))

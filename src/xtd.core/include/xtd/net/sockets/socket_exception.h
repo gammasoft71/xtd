@@ -103,21 +103,3 @@ namespace xtd {
     }
   }
 }
-
-/// @brief Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/net/sockets/socket_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::net::sockets::socket_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw socket_exception_(); // same as : throw socket_exception {csf_};
-///   if (invalid_value) throw socket_exception_("Bad value"); // same as : throw socket_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define socket_exception_(...) socket_exception(add_csf_(__VA_ARGS__))

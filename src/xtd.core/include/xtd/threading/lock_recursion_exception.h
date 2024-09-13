@@ -94,17 +94,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::lock_recursion_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::lock_recursion_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw lock_recursion_exception_(); // same as : throw lock_recursion_exception {csf_};
-///   if (invalid_value) throw lock_recursion_exception_("Bad value"); // same as : throw lock_recursion_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define lock_recursion_exception_(...) lock_recursion_exception(add_csf_(__VA_ARGS__))

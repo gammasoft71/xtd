@@ -90,17 +90,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::thread_interrupted_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::thread_interrupted_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw thread_interrupted_exception_(); // same as : throw thread_interrupted_exception {csf_};
-///   if (invalid_value) throw thread_interrupted_exception_("Bad value"); // same as : throw thread_interrupted_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define thread_interrupted_exception_(...) thread_interrupted_exception(add_csf_(__VA_ARGS__))

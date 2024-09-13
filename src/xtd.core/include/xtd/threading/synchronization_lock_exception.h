@@ -94,17 +94,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::synchronization_lock_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::synchronization_lock_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw synchronization_lock_exception_(); // same as : throw synchronization_lock_exception {csf_};
-///   if (invalid_value) throw synchronization_lock_exception_("Bad value"); // same as : throw synchronization_lock_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define synchronization_lock_exception_(...) synchronization_lock_exception(add_csf_(__VA_ARGS__))

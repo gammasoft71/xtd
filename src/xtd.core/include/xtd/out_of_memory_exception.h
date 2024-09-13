@@ -88,21 +88,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Insufficient memory to continue the execution of the program"_t;}
   };
 }
-
-/// @brief Helper on xtd::out_of_memory_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/out_of_memory_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::out_of_memory_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw out_of_memory_exception_(); // same as : throw out_of_memory_exception {csf_};
-///   if (invalid_value) throw out_of_memory_exception_("Bad value"); // same as : throw out_of_memory_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define out_of_memory_exception_(...) out_of_memory_exception(add_csf_(__VA_ARGS__))

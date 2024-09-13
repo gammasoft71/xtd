@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "An interruption occured."_t;}
   };
 }
-
-/// @brief Helper on xtd::interrupt_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::interrupt_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw interrupt_exception_(); // same as : throw interrupt_exception {csf_};
-///   if (invalid_value) throw interrupt_exception_("Bad value"); // same as : throw interrupt_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define interrupt_exception_(...) interrupt_exception(add_csf_(__VA_ARGS__))

@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Exceed implementation defined length limits."_t;}
   };
 }
-
-/// @brief Helper on xtd::length_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::length_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw length_exception_(); // same as : throw length_exception {csf_};
-///   if (invalid_value) throw length_exception_("Bad value"); // same as : throw length_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define length_exception_(...) length_exception(add_csf_(__VA_ARGS__))

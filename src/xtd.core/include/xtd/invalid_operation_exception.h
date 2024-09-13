@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Operation is not valid due to the current state of the object."_t;}
   };
 }
-
-/// @brief Helper on xtd::invalid_operation_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::invalid_operation_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw invalid_operation_exception_(); // same as : throw invalid_operation_exception {csf_};
-///   if (invalid_value) throw invalid_operation_exception_("Bad value"); // same as : throw invalid_operation_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define invalid_operation_exception_(...) invalid_operation_exception(add_csf_(__VA_ARGS__))
