@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Specified method is not supported."_t;}
   };
 }
-
-/// @brief Helper on xtd::not_supported_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::not_supported_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw not_supported_exception_(); // same as : throw not_supported_exception {csf_};
-///   if (invalid_value) throw not_supported_exception_("Bad value"); // same as : throw not_supported_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define not_supported_exception_(...) not_supported_exception(add_csf_(__VA_ARGS__))

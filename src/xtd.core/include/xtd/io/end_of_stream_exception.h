@@ -95,21 +95,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::io::end_of_stream_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/io/end_of_stream_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::io::end_of_stream_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw end_of_stream_exception_(); // same as : throw end_of_stream_exception {csf_};
-///   if (invalid_value) throw end_of_stream_exception_("Bad value"); // same as : throw end_of_stream_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define end_of_stream_exception_(...) end_of_stream_exception(add_csf_(__VA_ARGS__))

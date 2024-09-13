@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Arithmetic operation resulted in an underflow."_t;}
   };
 }
-
-/// @brief Helper on xtd::underflow_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::underflow_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw underflow_exception_(); // same as : throw underflow_exception {csf_};
-///   if (invalid_value) throw underflow_exception_("Bad value"); // same as : throw underflow_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define underflow_exception_(...) underflow_exception(add_csf_(__VA_ARGS__))

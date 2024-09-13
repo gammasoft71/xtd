@@ -84,17 +84,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Attempted to perform an unauthorized operation."_t;}
   };
 }
-
-/// @brief Helper on xtd::unauthorized_access_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::unauthorized_access_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw unauthorized_access_exception_(); // same as : throw unauthorized_access_exception {csf_};
-///   if (invalid_value) throw unauthorized_access_exception_("Bad value"); // same as : throw unauthorized_access_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define unauthorized_access_exception_(...) unauthorized_access_exception(add_csf_(__VA_ARGS__))

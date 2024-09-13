@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "An access violation occured."_t;}
   };
 }
-
-/// @brief Helper on xtd::access_violation_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::access_violation_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw access_violation_exception_(); // same as : throw access_violation_exception {csf_};
-///   if (invalid_value) throw access_violation_exception_("Bad value"); // same as : throw access_violation_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define access_violation_exception_(...) access_violation_exception(add_csf_(__VA_ARGS__))

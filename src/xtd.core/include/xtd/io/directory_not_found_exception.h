@@ -94,21 +94,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::io::directory_not_found_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/io/directory_not_found_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::io::directory_not_found_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw directory_not_found_exception_(); // same as : throw directory_not_found_exception {csf_};
-///   if (invalid_value) throw directory_not_found_exception_("Bad value"); // same as : throw directory_not_found_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define directory_not_found_exception_(...) directory_not_found_exception(add_csf_(__VA_ARGS__))

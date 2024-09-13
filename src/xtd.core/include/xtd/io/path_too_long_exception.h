@@ -94,21 +94,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::io::path_too_long_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/io/path_too_long_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::io::path_too_long_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw path_too_long_exception_(); // same as : throw path_too_long_exception {csf_};
-///   if (invalid_value) throw path_too_long_exception_("Bad value"); // same as : throw path_too_long_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define path_too_long_exception_(...) path_too_long_exception(add_csf_(__VA_ARGS__))

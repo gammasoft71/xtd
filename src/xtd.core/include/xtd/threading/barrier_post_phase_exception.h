@@ -93,17 +93,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::barrier_post_phase_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::barrier_post_phase_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw barrier_post_phase_exception_(); // same as : throw barrier_post_phase_exception {csf_};
-///   if (invalid_value) throw barrier_post_phase_exception_("Bad value"); // same as : throw barrier_post_phase_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define barrier_post_phase_exception_(...) barrier_post_phase_exception(add_csf_(__VA_ARGS__))

@@ -87,21 +87,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Value cannot be null."_t;}
   };
 }
-
-/// @brief Helper on xtd::argument_null_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/argument_null_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::argument_null_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw argument_null_exception_(); // same as : throw argument_null_exception {csf_};
-///   if (invalid_value) throw argument_null_exception_("Bad value"); // same as : throw argument_null_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define argument_null_exception_(...) argument_null_exception(add_csf_(__VA_ARGS__))

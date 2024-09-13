@@ -93,17 +93,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::wait_handle_cannot_be_opened_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::wait_handle_cannot_be_opened_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw wait_handle_cannot_be_opened_exception_(); // same as : throw wait_handle_cannot_be_opened_exception {csf_};
-///   if (invalid_value) throw wait_handle_cannot_be_opened_exception_("Bad value"); // same as : throw wait_handle_cannot_be_opened_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define wait_handle_cannot_be_opened_exception_(...) wait_handle_cannot_be_opened_exception(add_csf_(__VA_ARGS__))

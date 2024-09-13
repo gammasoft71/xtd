@@ -83,17 +83,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Object pointer not set to an instance of an object."_t;}
   };
 }
-
-/// @brief Helper on xtd::null_pointer_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::null_pointer_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw null_pointer_exception_(); // same as : throw null_pointer_exception {csf_};
-///   if (invalid_value) throw null_pointer_exception_("Bad value"); // same as : throw null_pointer_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define null_pointer_exception_(...) null_pointer_exception(add_csf_(__VA_ARGS__))

@@ -87,21 +87,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Attempt to divide by zero."_t;}
   };
 }
-
-/// @brief Helper on xtd::divided_by_zero_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/divided_by_zero_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::divided_by_zero_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw divided_by_zero_exception_(); // same as : throw divided_by_zero_exception {csf_};
-///   if (invalid_value) throw divided_by_zero_exception_("Bad value"); // same as : throw divided_by_zero_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define divided_by_zero_exception_(...) divided_by_zero_exception(add_csf_(__VA_ARGS__))

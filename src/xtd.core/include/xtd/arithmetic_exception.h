@@ -87,21 +87,3 @@ namespace xtd {
     const char* default_message() const noexcept {return "Overflow or underflow in the arithmetic operation."_t;}
   };
 }
-
-/// @brief Helper on xtd::arithmetic_exception to call it with current stack frame information.
-/// @par Header
-/// ```cpp
-/// #include <xtd/arithmetic_exception>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::arithmetic_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw arithmetic_exception_(); // same as : throw arithmetic_exception {csf_};
-///   if (invalid_value) throw arithmetic_exception_("Bad value"); // same as : throw arithmetic_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define arithmetic_exception_(...) arithmetic_exception(add_csf_(__VA_ARGS__))

@@ -93,17 +93,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on xtd::thread_state_exception to call it with current stack frame information.
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::thread_state_exception {{any argument}, csf_}
-/// ```cpp
-/// void my_func() {
-///   if (invalid_info) throw thread_state_exception_(); // same as : throw thread_state_exception {csf_};
-///   if (invalid_value) throw thread_state_exception_("Bad value"); // same as : throw thread_state_exception {"Bad value", csf_};
-///   ...
-/// }
-/// ```
-#define thread_state_exception_(...) thread_state_exception(add_csf_(__VA_ARGS__))
