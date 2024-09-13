@@ -200,6 +200,7 @@ add_sources(
   include/xtd/event_args
   include/xtd/event_handler.h
   include/xtd/event_handler
+  include/xtd/exception.h
   include/xtd/exit_mode.h
   include/xtd/exit_mode
   include/xtd/exit_status.h
@@ -1027,6 +1028,7 @@ add_sources(
   src/xtd/date_time.cpp
   src/xtd/distribution.cpp
   src/xtd/event_args.cpp
+  src/xtd/exception.cpp
   src/xtd/guid.cpp
   src/xtd/hash_code.cpp
   src/xtd/iformatable.cpp

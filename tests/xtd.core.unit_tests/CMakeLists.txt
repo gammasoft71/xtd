@@ -135,6 +135,7 @@ add_sources(
   src/xtd/tests/event_args_tests.cpp
   src/xtd/tests/event_tests.cpp
   src/xtd/tests/event_tests.cpp
+  src/xtd/tests/exception_tests.cpp
   src/xtd/tests/exit_mode_tests.cpp
   src/xtd/tests/exit_status_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
