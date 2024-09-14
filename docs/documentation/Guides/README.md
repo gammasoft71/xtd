@@ -57,7 +57,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Observer Design Pattern](/docs/documentation/Guides/xtd.core/Events/observer_design_pattern)
   * Exceptions
     * [Overview](/docs/documentation/Guides/xtd.core/Exceptions/overview)
-    * [system_exception class and properties](/docs/documentation/Guides/xtd.core/Exceptions/system_exception_class_and_properties)
+    * [exception class and properties](/docs/documentation/Guides/xtd.core/Exceptions/exception_class_and_properties)
     * How-tos
       * [Use the try-catch block to catch exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_try_catch)
       * [Use specific exceptions in a catch block](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_use_specific_exceptions)

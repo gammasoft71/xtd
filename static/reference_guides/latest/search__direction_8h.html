@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('search__direction_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('search__direction_8h.html',''); initRe
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_22757387fb8bcf74226156786c64e6ad.html">xtd.forms</a></li><li class="navelem"><a class="el" href="dir_298807ade15d4a8fa179fb0191fd7521.html">include</a></li><li class="navelem"><a class="el" href="dir_da66df903092a3bb114fad0cb3d9d4e8.html">xtd</a></li><li class="navelem"><a class="el" href="dir_2f30ba022707ade8846cc9eaf2d723f6.html">forms</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
@@ -107,7 +91,7 @@ $(document).ready(function(){initNavTree('search__direction_8h.html',''); initRe
 <div class="contents">
 <div class="textblock"><code>#include &lt;xtd/enum&gt;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__xtd__forms_gab18767a2227f66ce7024681300ea8d53.html#gab18767a2227f66ce7024681300ea8d53" title="Specifies the search direction for xtd::forms::find_dialog dialog.">xtd::forms::search_direction</a> enum class. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__xtd__forms.html#gab18767a2227f66ce7024681300ea8d53" title="Specifies the search direction for xtd::forms::find_dialog dialog.">xtd::forms::search_direction</a> enum class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="search__direction_8h_source.html">Go to the source code of this file.</a></p>
@@ -123,24 +107,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:gab18767a2227f66ce7024681300ea8d53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms_gab18767a2227f66ce7024681300ea8d53.html#gab18767a2227f66ce7024681300ea8d53">xtd::forms::search_direction</a> { <br />
-&#160;&#160;<a class="el" href="group__xtd__forms_gab18767a2227f66ce7024681300ea8d53.html#ggab18767a2227f66ce7024681300ea8d53a74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::search_direction::down</a>
+<tr class="memitem:gab18767a2227f66ce7024681300ea8d53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms.html#gab18767a2227f66ce7024681300ea8d53">xtd::forms::search_direction</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__forms.html#ggab18767a2227f66ce7024681300ea8d53a74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::search_direction::down</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__forms_gab18767a2227f66ce7024681300ea8d53.html#ggab18767a2227f66ce7024681300ea8d53a46c48bec0d282018b9d167eef7711b2c">xtd::forms::search_direction::up</a>
+&#160;&#160;<a class="el" href="group__xtd__forms.html#ggab18767a2227f66ce7024681300ea8d53a46c48bec0d282018b9d167eef7711b2c">xtd::forms::search_direction::up</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gab18767a2227f66ce7024681300ea8d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the search direction for <a class="el" href="classxtd_1_1forms_1_1find__dialog.html" title="Represents a dialog box that displays find dialog.">xtd::forms::find_dialog</a> dialog.  <a href="group__xtd__forms_gab18767a2227f66ce7024681300ea8d53.html#gab18767a2227f66ce7024681300ea8d53">More...</a><br /></td></tr>
+<tr class="memdesc:gab18767a2227f66ce7024681300ea8d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the search direction for <a class="el" href="classxtd_1_1forms_1_1find__dialog.html" title="Represents a dialog box that displays find dialog.">xtd::forms::find_dialog</a> dialog.  <a href="group__xtd__forms.html#gab18767a2227f66ce7024681300ea8d53">More...</a><br /></td></tr>
 <tr class="separator:gab18767a2227f66ce7024681300ea8d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_22757387fb8bcf74226156786c64e6ad.html">xtd.forms</a></li><li class="navelem"><a class="el" href="dir_298807ade15d4a8fa179fb0191fd7521.html">include</a></li><li class="navelem"><a class="el" href="dir_da66df903092a3bb114fad0cb3d9d4e8.html">xtd</a></li><li class="navelem"><a class="el" href="dir_2f30ba022707ade8846cc9eaf2d723f6.html">forms</a></li><li class="navelem"><a class="el" href="search__direction_8h.html">search_direction.h</a></li>
-		<li class="footer">Generated on Sat Sep 14 2024 21:17:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Sat Sep 14 2024 22:12:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

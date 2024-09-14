@@ -31,32 +31,32 @@ var namespacextd_1_1threading =
     [ "timer", "classxtd_1_1threading_1_1timer.html", "classxtd_1_1threading_1_1timer" ],
     [ "wait_handle", "classxtd_1_1threading_1_1wait__handle.html", "classxtd_1_1threading_1_1wait__handle" ],
     [ "wait_handle_cannot_be_opened_exception", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html", "classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception" ],
-    [ "parameterized_thread_start", "group__xtd__core_gab1ffc0e2d9a77d461783d8eef5aaa856.html#gab1ffc0e2d9a77d461783d8eef5aaa856", null ],
-    [ "thread_start", "group__xtd__core_gaf06e74c3474ef92b55e4c26a5fdb1155.html#gaf06e74c3474ef92b55e4c26a5fdb1155", null ],
-    [ "timer_callback", "group__xtd__core_ga9c5796114b4b8c6296894196f9898bc9.html#ga9c5796114b4b8c6296894196f9898bc9", null ],
-    [ "wait_callback", "group__xtd__core_ga8e591282c14ed5ae0c0038b503b1373d.html#ga8e591282c14ed5ae0c0038b503b1373d", null ],
-    [ "wait_or_timer_callback", "group__xtd__core_gae8743c04a110382ce68fbd35eef2f782.html#gae8743c04a110382ce68fbd35eef2f782", null ],
-    [ "event_reset_mode", "group__threading_ga0d88594f6d137d04a3d0aa7b102664b3.html#ga0d88594f6d137d04a3d0aa7b102664b3", [
-      [ "auto_reset", "group__threading_ga0d88594f6d137d04a3d0aa7b102664b3.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794", null ],
-      [ "manual_reset", "group__threading_ga0d88594f6d137d04a3d0aa7b102664b3.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d", null ]
+    [ "parameterized_thread_start", "group__xtd__core.html#gab1ffc0e2d9a77d461783d8eef5aaa856", null ],
+    [ "thread_start", "group__xtd__core.html#gaf06e74c3474ef92b55e4c26a5fdb1155", null ],
+    [ "timer_callback", "group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9", null ],
+    [ "wait_callback", "group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d", null ],
+    [ "wait_or_timer_callback", "group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782", null ],
+    [ "event_reset_mode", "group__threading.html#ga0d88594f6d137d04a3d0aa7b102664b3", [
+      [ "auto_reset", "group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794", null ],
+      [ "manual_reset", "group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d", null ]
     ] ],
-    [ "thread_priority", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#gaeee08cba07c5c4d4d10ada96a70bf28d", [
-      [ "lowest", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d", null ],
-      [ "below_normal", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#ggaeee08cba07c5c4d4d10ada96a70bf28da2edc2f9ab095292ee3f25311dea5c1d1", null ],
-      [ "normal", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#ggaeee08cba07c5c4d4d10ada96a70bf28dafea087517c26fadd409bd4b9dc642555", null ],
-      [ "above_normal", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#ggaeee08cba07c5c4d4d10ada96a70bf28da7c7aa07cf5b0bbc3827604b42aad0061", null ],
-      [ "highest", "group__threading_gaeee08cba07c5c4d4d10ada96a70bf28d.html#ggaeee08cba07c5c4d4d10ada96a70bf28dade3706d29d1ad44cd7fdb9a5696491e2", null ]
+    [ "thread_priority", "group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d", [
+      [ "lowest", "group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d", null ],
+      [ "below_normal", "group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da2edc2f9ab095292ee3f25311dea5c1d1", null ],
+      [ "normal", "group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28dafea087517c26fadd409bd4b9dc642555", null ],
+      [ "above_normal", "group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da7c7aa07cf5b0bbc3827604b42aad0061", null ],
+      [ "highest", "group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28dade3706d29d1ad44cd7fdb9a5696491e2", null ]
     ] ],
-    [ "thread_state", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#gad404f38f7d4e370680b792bc0f397d04", [
-      [ "running", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689", null ],
-      [ "stop_requested", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04accb6f701c7581522cb24c0648d9576b1", null ],
-      [ "suspend_requested", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04afc1b8f4354805a73d0c02c36d9beb81c", null ],
-      [ "background", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04ad229bbf31eaeebc7c88897732d8b932d", null ],
-      [ "unstarted", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865", null ],
-      [ "stopped", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04af0a0bfe6bc7d2c58d2989034f83183e0", null ],
-      [ "wait_sleep_join", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04a39c85f6d7fe5d8369799963a01b17f3b", null ],
-      [ "suspended", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04a735fda5d72b5c650f3f0435195a211bd", null ],
-      [ "abort_requested", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055", null ],
-      [ "aborted", "group__threading_gad404f38f7d4e370680b792bc0f397d04.html#ggad404f38f7d4e370680b792bc0f397d04adfb7069bfc6e0064a6c667626eca07b4", null ]
+    [ "thread_state", "group__threading.html#gad404f38f7d4e370680b792bc0f397d04", [
+      [ "running", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689", null ],
+      [ "stop_requested", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04accb6f701c7581522cb24c0648d9576b1", null ],
+      [ "suspend_requested", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04afc1b8f4354805a73d0c02c36d9beb81c", null ],
+      [ "background", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04ad229bbf31eaeebc7c88897732d8b932d", null ],
+      [ "unstarted", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865", null ],
+      [ "stopped", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04af0a0bfe6bc7d2c58d2989034f83183e0", null ],
+      [ "wait_sleep_join", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a39c85f6d7fe5d8369799963a01b17f3b", null ],
+      [ "suspended", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a735fda5d72b5c650f3f0435195a211bd", null ],
+      [ "abort_requested", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055", null ],
+      [ "aborted", "group__threading.html#ggad404f38f7d4e370680b792bc0f397d04adfb7069bfc6e0064a6c667626eca07b4", null ]
     ] ]
 ];
