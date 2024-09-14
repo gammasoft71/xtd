@@ -37,8 +37,8 @@ var namespacextd_1_1tunit =
     [ "tunit_event_args", "classxtd_1_1tunit_1_1tunit__event__args.html", "classxtd_1_1tunit_1_1tunit__event__args" ],
     [ "unit_test", "classxtd_1_1tunit_1_1unit__test.html", "classxtd_1_1tunit_1_1unit__test" ],
     [ "valid", "classxtd_1_1tunit_1_1valid.html", null ],
-    [ "test_state", "group__tunit_ga46f8455e2ce33fac305f44bea7a1c3d2.html#ga46f8455e2ce33fac305f44bea7a1c3d2", [
-      [ "considered", "group__tunit_ga46f8455e2ce33fac305f44bea7a1c3d2.html#gga46f8455e2ce33fac305f44bea7a1c3d2ac9e661c6cd0e6e343ae44fbf34c16b6e", null ],
-      [ "ignored", "group__tunit_ga46f8455e2ce33fac305f44bea7a1c3d2.html#gga46f8455e2ce33fac305f44bea7a1c3d2af3f98c5d41d7c992a6fb63799f700f2b", null ]
+    [ "test_state", "group__tunit.html#ga46f8455e2ce33fac305f44bea7a1c3d2", [
+      [ "considered", "group__tunit.html#gga46f8455e2ce33fac305f44bea7a1c3d2ac9e661c6cd0e6e343ae44fbf34c16b6e", null ],
+      [ "ignored", "group__tunit.html#gga46f8455e2ce33fac305f44bea7a1c3d2af3f98c5d41d7c992a6fb63799f700f2b", null ]
     ] ]
 ];

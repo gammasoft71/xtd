@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1ibutton__control.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1ibutton__control.
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html">ibutton_control</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1ibutton__control-members.html">List of all members</a>  </div>
@@ -124,33 +108,165 @@ Inheritance diagram for xtd::forms::ibutton_control:</div>
 <dl class="section user"><dt>Notes to implementers</dt><dd>Implement this interface in classes that act as button controls. The members of this interface will provide basic button functionality, such as providing a dialog_result to the parent form or the ability to perform a click event, or acting as the default button of a form. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ae834f8ee83cfa6f7e2c711feb9b10e0a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__forms_ga4f0cffaa8fcb3708782f28d60386c525.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control_ae834f8ee83cfa6f7e2c711feb9b10e0a.html#ae834f8ee83cfa6f7e2c711feb9b10e0a">dialog_result</a> () const noexcept=0</td></tr>
+<tr class="memitem:ae834f8ee83cfa6f7e2c711feb9b10e0a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html#ae834f8ee83cfa6f7e2c711feb9b10e0a">dialog_result</a> () const noexcept=0</td></tr>
 <tr class="memdesc:ae834f8ee83cfa6f7e2c711feb9b10e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value returned to the parent form when the button is clicked.  <br /></td></tr>
 <tr class="separator:ae834f8ee83cfa6f7e2c711feb9b10e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e72d8e076874a4e8aee8383cda7919"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control_ad9e72d8e076874a4e8aee8383cda7919.html#ad9e72d8e076874a4e8aee8383cda7919">dialog_result</a> (<a class="el" href="group__xtd__forms_ga4f0cffaa8fcb3708782f28d60386c525.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a> <a class="el" href="group__xtd__forms_ga4f0cffaa8fcb3708782f28d60386c525.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>)=0</td></tr>
+<tr class="memitem:ad9e72d8e076874a4e8aee8383cda7919"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html#ad9e72d8e076874a4e8aee8383cda7919">dialog_result</a> (<a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a> <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>)=0</td></tr>
 <tr class="memdesc:ad9e72d8e076874a4e8aee8383cda7919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value returned to the parent form when the button is clicked.  <br /></td></tr>
 <tr class="separator:ad9e72d8e076874a4e8aee8383cda7919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:aa67d33cafe2bafaca37e33f733294213"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control_aa67d33cafe2bafaca37e33f733294213.html#aa67d33cafe2bafaca37e33f733294213">notify_default</a> (bool value)=0</td></tr>
+<tr class="memitem:aa67d33cafe2bafaca37e33f733294213"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html#aa67d33cafe2bafaca37e33f733294213">notify_default</a> (bool value)=0</td></tr>
 <tr class="memdesc:aa67d33cafe2bafaca37e33f733294213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.  <br /></td></tr>
 <tr class="separator:aa67d33cafe2bafaca37e33f733294213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7886211d05fbeef4468a9c8dd0508cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control_ae7886211d05fbeef4468a9c8dd0508cb.html#ae7886211d05fbeef4468a9c8dd0508cb">perform_click</a> ()=0</td></tr>
+<tr class="memitem:ae7886211d05fbeef4468a9c8dd0508cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html#ae7886211d05fbeef4468a9c8dd0508cb">perform_click</a> ()=0</td></tr>
 <tr class="memdesc:ae7886211d05fbeef4468a9c8dd0508cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a click event for the control.  <br /></td></tr>
 <tr class="separator:ae7886211d05fbeef4468a9c8dd0508cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae834f8ee83cfa6f7e2c711feb9b10e0a" name="ae834f8ee83cfa6f7e2c711feb9b10e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae834f8ee83cfa6f7e2c711feb9b10e0a">&#9670;&#160;</a></span>dialog_result() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a> xtd::forms::ibutton_control::dialog_result </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value returned to the parent form when the button is clicked. </p>
+<dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> values. The default value is <a class="el" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a334c4a4c42fdb79d7ebc3e73b517e6f8" title="Nothing is returned from the dialog box. This means that the modal dialog continues running.">xtd::forms::dialog_result::none</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When a form is shown as a dialog box using the <a class="el" href="classxtd_1_1forms_1_1form.html#a0bf6f24235128b10a5428f55295c0a4b" title="Shows the form as a modal dialog box.">xtd::forms::form::show_dialog</a> method and one of its buttons is clicked, the button's <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> value is assigned to the form's <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> property. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1button.html#a8da10d70ab4c81922404cfa6feb674cd">xtd::forms::button</a>.</p>
+
+</div>
+</div>
+<a id="ad9e72d8e076874a4e8aee8383cda7919" name="ad9e72d8e076874a4e8aee8383cda7919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9e72d8e076874a4e8aee8383cda7919">&#9670;&#160;</a></span>dialog_result() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp; xtd::forms::ibutton_control::dialog_result </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a>&#160;</td>
+          <td class="paramname"><em>dialog_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the value returned to the parent form when the button is clicked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog_result</td><td>One of the <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> values. The default value is <a class="el" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a334c4a4c42fdb79d7ebc3e73b517e6f8" title="Nothing is returned from the dialog box. This means that the modal dialog continues running.">xtd::forms::dialog_result::none</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When a form is shown as a dialog box using the <a class="el" href="classxtd_1_1forms_1_1form.html#a0bf6f24235128b10a5428f55295c0a4b" title="Shows the form as a modal dialog box.">xtd::forms::form::show_dialog</a> method and one of its buttons is clicked, the button's <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> value is assigned to the form's <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> property. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1button.html#af3c94f9c9e119d6287e73f342ff8cf0a">xtd::forms::button</a>.</p>
+
+</div>
+</div>
+<a id="aa67d33cafe2bafaca37e33f733294213" name="aa67d33cafe2bafaca37e33f733294213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67d33cafe2bafaca37e33f733294213">&#9670;&#160;</a></span>notify_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xtd::forms::ibutton_control::notify_default </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if the control should behave as a default button; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1button.html#ab77c7743635ef1c0bff01ec714a1b115">xtd::forms::button</a>.</p>
+
+</div>
+</div>
+<a id="ae7886211d05fbeef4468a9c8dd0508cb" name="ae7886211d05fbeef4468a9c8dd0508cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7886211d05fbeef4468a9c8dd0508cb">&#9670;&#160;</a></span>perform_click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xtd::forms::ibutton_control::perform_click </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a click event for the control. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1button.html#a01e8a38395469111f6afff1b82bed092">xtd::forms::button</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms/include/xtd/forms/<a class="el" href="ibutton__control_8h_source.html">ibutton_control.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1ibutton__control.html">ibutton_control</a></li>
-		<li class="footer">Generated on Sat Sep 14 2024 21:17:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Sat Sep 14 2024 22:12:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

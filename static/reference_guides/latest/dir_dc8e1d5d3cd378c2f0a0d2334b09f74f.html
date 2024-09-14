@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_dc8e1d5d3cd378c2f0a0d2334b09f74f.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('dir_dc8e1d5d3cd378c2f0a0d2334b09f74f.h
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f9416a92c2e8392ae4a56fe51806e980.html">xtd.drawing</a></li><li class="navelem"><a class="el" href="dir_2e14385cc64d36e71e37c366d7d5dc4b.html">include</a></li><li class="navelem"><a class="el" href="dir_dc1fd8376b2992c54a8813b6c7fbea95.html">xtd</a></li><li class="navelem"><a class="el" href="dir_dc8e1d5d3cd378c2f0a0d2334b09f74f.html">drawing</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">drawing Directory Reference</div></div>
 </div><!--header-->
@@ -135,7 +119,7 @@ Files</h2></td></tr>
 <tr class="memdesc:bitmap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1bitmap.html" title="Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....">xtd::drawing::bitmap</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="black__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="black__colors_8h.html">black_colors.h</a></td></tr>
-<tr class="memdesc:black__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors_gab80da8035442ffdeab6f6ebe0a2b3a59.html#gab80da8035442ffdeab6f6ebe0a2b3a59" title="Gray and black colors for all the hmtl gray and black colors.">xtd::drawing::black_colors</a> factory. <br /></td></tr>
+<tr class="memdesc:black__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors.html#gab80da8035442ffdeab6f6ebe0a2b3a59" title="Gray and black colors for all the hmtl gray and black colors.">xtd::drawing::black_colors</a> factory. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="blue__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blue__colors_8h.html">blue_colors.h</a></td></tr>
 <tr class="memdesc:blue__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1blue__colors.html" title="Blue colors for all the hmtl blue colors. This class cannot be inherited.">xtd::drawing::blue_colors</a> factory. <br /></td></tr>
@@ -171,7 +155,7 @@ Files</h2></td></tr>
 <tr class="memdesc:colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1colors.html" title="colors for all the standard colors. This class cannot be inherited.">xtd::drawing::colors</a> factory. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="copy__pixel__operation_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="copy__pixel__operation_8h.html">copy_pixel_operation.h</a></td></tr>
-<tr class="memdesc:copy__pixel__operation_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing_ga5a8edc9c35f0925441603048859eef6e.html#ga5a8edc9c35f0925441603048859eef6e" title="Determines how the source color in a copy pixel operation is combined with the destination color to r...">xtd::drawing::copy_pixel_operation</a> enum class. <br /></td></tr>
+<tr class="memdesc:copy__pixel__operation_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing.html#ga5a8edc9c35f0925441603048859eef6e" title="Determines how the source color in a copy pixel operation is combined with the destination color to r...">xtd::drawing::copy_pixel_operation</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="crayons__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crayons__colors_8h.html">crayons_colors.h</a></td></tr>
 <tr class="memdesc:crayons__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1crayons__colors.html" title="Apple colors for all the Apple colors. This class cannot be inherited.">xtd::drawing::crayons_colors</a> factory. <br /></td></tr>
@@ -189,7 +173,7 @@ Files</h2></td></tr>
 <tr class="memdesc:emotes__system__images_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1emotes__system__images.html" title="Each property of the xtd::drawing::emotes_system_images class is an xtd::drawing::image object for Wi...">xtd::drawing::emotes_system_images</a> factory. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="extended__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extended__colors_8h.html">extended_colors.h</a></td></tr>
-<tr class="memdesc:extended__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors_gab61979abd08f9b1a4a9b528f54879237.html#gab61979abd08f9b1a4a9b528f54879237" title="extended_colors for all the html extended colors.">xtd::drawing::extended_colors</a> alias. <br /></td></tr>
+<tr class="memdesc:extended__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors.html#gab61979abd08f9b1a4a9b528f54879237" title="extended_colors for all the html extended colors.">xtd::drawing::extended_colors</a> alias. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="font_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8h.html">font.h</a></td></tr>
 <tr class="memdesc:font_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1font.html" title="Defines a particular format for text, including font face, size, and style attributes....">xtd::drawing::font</a> class. <br /></td></tr>
@@ -198,13 +182,13 @@ Files</h2></td></tr>
 <tr class="memdesc:font__family_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1font__family.html" title="Defines a group of type faces having a similar basic design and certain variations in styles....">xtd::drawing::font_family</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="font__style_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__style_8h.html">font_style.h</a></td></tr>
-<tr class="memdesc:font__style_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#ga5622feb39a9d16672cef53957d224571" title="Specifies style information applied to text. This enumeration has a flags attribute that allows a bit...">xtd::drawing::font_style</a> enum class. <br /></td></tr>
+<tr class="memdesc:font__style_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__fonts.html#ga5622feb39a9d16672cef53957d224571" title="Specifies style information applied to text. This enumeration has a flags attribute that allows a bit...">xtd::drawing::font_style</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="graphics_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html">graphics.h</a></td></tr>
 <tr class="memdesc:graphics_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="graphics__unit_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics__unit_8h.html">graphics_unit.h</a></td></tr>
-<tr class="memdesc:graphics__unit_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing_ga35e450ae5d06c5a8ef29e54c607add86.html#ga35e450ae5d06c5a8ef29e54c607add86" title="Specifies the unit of measure for the given data. This enumeration has a flags attribute that allows ...">xtd::drawing::graphics_unit</a> enum class. <br /></td></tr>
+<tr class="memdesc:graphics__unit_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing.html#ga35e450ae5d06c5a8ef29e54c607add86" title="Specifies the unit of measure for the given data. This enumeration has a flags attribute that allows ...">xtd::drawing::graphics_unit</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="gray__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gray__colors_8h.html">gray_colors.h</a></td></tr>
 <tr class="memdesc:gray__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1gray__colors.html" title="Gray and black colors for all the hmtl gray and black colors. This class cannot be inherited.">xtd::drawing::gray_colors</a> factory. <br /></td></tr>
@@ -225,10 +209,10 @@ Files</h2></td></tr>
 <tr class="memdesc:international__system__images_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1international__system__images.html" title="Each property of the xtd::drawing::international_system_images class is an xtd::drawing::image object...">xtd::drawing::international_system_images</a> factory. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="known__color_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="known__color_8h.html">known_color.h</a></td></tr>
-<tr class="memdesc:known__color_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors_gabb6249e3fb8a4388778157257e99049b.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enum class. <br /></td></tr>
+<tr class="memdesc:known__color_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="magenta__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="magenta__colors_8h.html">magenta_colors.h</a></td></tr>
-<tr class="memdesc:magenta__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors_ga93fe9c12f0db7ff77ce77110a1f0e430.html#ga93fe9c12f0db7ff77ce77110a1f0e430" title="Purple, violet and magenta colors for all the hmtl purple, violet and magenta colors.">xtd::drawing::magenta_colors</a> alias. <br /></td></tr>
+<tr class="memdesc:magenta__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors.html#ga93fe9c12f0db7ff77ce77110a1f0e430" title="Purple, violet and magenta colors for all the hmtl purple, violet and magenta colors.">xtd::drawing::magenta_colors</a> alias. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="mimetypes__system__images_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mimetypes__system__images_8h.html">mimetypes_system_images.h</a></td></tr>
 <tr class="memdesc:mimetypes__system__images_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1mimetypes__system__images.html" title="Each property of the xtd::drawing::mimetypes_system_images class is an xtd::drawing::image object for...">xtd::drawing::mimetypes_system_images</a> factory. <br /></td></tr>
@@ -270,7 +254,7 @@ Files</h2></td></tr>
 <tr class="memdesc:region_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="rotate__flip__type_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotate__flip__type_8h.html">rotate_flip_type.h</a></td></tr>
-<tr class="memdesc:rotate__flip__type_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing_gab56dabbbe7320df1f0de54a00ab869fa.html#gab56dabbbe7320df1f0de54a00ab869fa" title="Specifies how much an image is rotated and the axis used to flip the image.">xtd::drawing::rotate_flip_type</a> enum class. <br /></td></tr>
+<tr class="memdesc:rotate__flip__type_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__xtd__drawing.html#gab56dabbbe7320df1f0de54a00ab869fa" title="Specifies how much an image is rotated and the axis used to flip the image.">xtd::drawing::rotate_flip_type</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="xtd_8drawing_2include_2xtd_2drawing_2size_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xtd_8drawing_2include_2xtd_2drawing_2size_8h.html">size.h</a></td></tr>
 <tr class="memdesc:xtd_8drawing_2include_2xtd_2drawing_2size_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> class. <br /></td></tr>
@@ -285,16 +269,16 @@ Files</h2></td></tr>
 <tr class="memdesc:status__system__images_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1status__system__images.html" title="Each property of the xtd::drawing::status_system_images class is an xtd::drawing::image object for Wi...">xtd::drawing::status_system_images</a> factory. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="string__alignment_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string__alignment_8h.html">string_alignment.h</a></td></tr>
-<tr class="memdesc:string__alignment_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts_gaeabc0d01ec6dd7e8fed212ca30f4b9de.html#gaeabc0d01ec6dd7e8fed212ca30f4b9de" title="Specifies the alignment of a text string relative to its layout rectangle.">xtd::drawing::string_alignment</a> enum class. <br /></td></tr>
+<tr class="memdesc:string__alignment_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts.html#gaeabc0d01ec6dd7e8fed212ca30f4b9de" title="Specifies the alignment of a text string relative to its layout rectangle.">xtd::drawing::string_alignment</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="string__format_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string__format_8h.html">string_format.h</a></td></tr>
 <tr class="memdesc:string__format_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1string__format.html" title="Encapsulates text layout information (such as alignment, orientation and tab stops) display manipulat...">xtd::drawing::string_format</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="string__format__flags_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string__format__flags_8h.html">string_format_flags.h</a></td></tr>
-<tr class="memdesc:string__format__flags_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts_ga63ef7b1199e6714fa004a93a52836ccf.html#ga63ef7b1199e6714fa004a93a52836ccf" title="Specifies the display and layout information for text strings. This enumeration allows a bitwise comb...">xtd::drawing::string_format_flags</a> enum class. <br /></td></tr>
+<tr class="memdesc:string__format__flags_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts.html#ga63ef7b1199e6714fa004a93a52836ccf" title="Specifies the display and layout information for text strings. This enumeration allows a bitwise comb...">xtd::drawing::string_format_flags</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="string__trimming_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string__trimming_8h.html">string_trimming.h</a></td></tr>
-<tr class="memdesc:string__trimming_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts_ga4a9aacc71fbf7e6926da08f783acbfd9.html#ga4a9aacc71fbf7e6926da08f783acbfd9" title="Specifies how to trim characters from a string that does not completely fit into a layout shape.">xtd::drawing::string_trimming</a> enum class. <br /></td></tr>
+<tr class="memdesc:string__trimming_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__texts.html#ga4a9aacc71fbf7e6926da08f783acbfd9" title="Specifies how to trim characters from a string that does not completely fit into a layout shape.">xtd::drawing::string_trimming</a> enum class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="system__brushes_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__brushes_8h.html">system_brushes.h</a></td></tr>
 <tr class="memdesc:system__brushes_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1system__brushes.html" title="Each property of the xtd::drawing::system_brushes class is a xtd::drawing::solid_brush that is the co...">xtd::drawing::system_brushes</a> factory. <br /></td></tr>
@@ -324,7 +308,7 @@ Files</h2></td></tr>
 <tr class="memdesc:texture__brush_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1texture__brush.html" title="Each property of the xtd::drawing::texture_brush class is a xtd::drawing::brush object that uses an i...">xtd::drawing::texture_brush</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="violet__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="violet__colors_8h.html">violet_colors.h</a></td></tr>
-<tr class="memdesc:violet__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors_ga00b820083dc10635d0003659f19bea3f.html#ga00b820083dc10635d0003659f19bea3f" title="Purple, violet and magenta colors for all the hmtl purple, violet and magenta colors.">xtd::drawing::violet_colors</a> alias. <br /></td></tr>
+<tr class="memdesc:violet__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="group__colors.html#ga00b820083dc10635d0003659f19bea3f" title="Purple, violet and magenta colors for all the hmtl purple, violet and magenta colors.">xtd::drawing::violet_colors</a> alias. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="white__colors_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="white__colors_8h.html">white_colors.h</a></td></tr>
 <tr class="memdesc:white__colors_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains <a class="el" href="classxtd_1_1drawing_1_1white__colors.html" title="White colors for all the hmtl white colors. This class cannot be inherited.">xtd::drawing::white_colors</a> factory. <br /></td></tr>
@@ -337,14 +321,10 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_f9416a92c2e8392ae4a56fe51806e980.html">xtd.drawing</a></li><li class="navelem"><a class="el" href="dir_2e14385cc64d36e71e37c366d7d5dc4b.html">include</a></li><li class="navelem"><a class="el" href="dir_dc1fd8376b2992c54a8813b6c7fbea95.html">xtd</a></li><li class="navelem"><a class="el" href="dir_dc8e1d5d3cd378c2f0a0d2334b09f74f.html">drawing</a></li>
-		<li class="footer">Generated on Sat Sep 14 2024 21:17:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Sat Sep 14 2024 22:12:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>
