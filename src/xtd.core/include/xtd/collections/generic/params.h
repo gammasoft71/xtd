@@ -45,19 +45,19 @@ namespace xtd {
         /// @brief Represents the params base type.
         using base_type = std::initializer_list<type_t>;
         /// @brief Represents the params value type.
-        using value_type = base_type::value_type;
+        using value_type = typename base_type::value_type;
         /// @brief Represents the reference of params value type.
-        using reference = base_type::reference;
+        using reference = typename base_type::reference;
         /// @brief Represents the const reference of params value type.
-        using const_reference = base_type::const_reference;
+        using const_reference = typename base_type::const_reference;
         /// @brief Represents the const pointer of params value type.
         using const_pointer = const value_type*;
         /// @brief Represents the params size type (usually xtd::size).
-        using size_type = base_type::size_type;
+        using size_type = typename base_type::size_type;
         /// @brief Represents the iterator of params value type.
-        using iterator = base_type::iterator;
+        using iterator = typename base_type::iterator;
         /// @brief Represents the const iterator of params value type.
-        using const_iterator = base_type::const_iterator;
+        using const_iterator = typename base_type::const_iterator;
         /// @}
         
         /// @name Public Constructors
