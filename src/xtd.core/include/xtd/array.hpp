@@ -30,9 +30,6 @@ namespace xtd {
   array_(const xtd::collections::generic::ilist<type_t>&) -> array_<type_t, rank, allocator_t>;
   
   template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
-  array_(const std::initializer_list<type_t>&) -> array_<type_t, rank, allocator_t>;
-
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array_(const std::vector<type_t>&) -> array_<type_t, rank, allocator_t>;
   
   template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
