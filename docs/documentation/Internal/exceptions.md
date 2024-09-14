@@ -37,7 +37,7 @@ sidebar_position: 2
     * [std::underflow_error](https://en.cppreference.com/w/cpp/error/underflow_error)
     * [std::tx_exception](https://en.cppreference.com/w/cpp/error/tx_exception)
 
-## xtd
+## xtd.core
 
 * [std::exception](https://en.cppreference.com/w/cpp/error/exception)
   * [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html)
@@ -97,9 +97,15 @@ sidebar_position: 2
       * [xtd::timeout_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timeout__exception.html)
       * [xtd::unauthorized_access_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1unauthorized__access__exception.html)
       * [xtd::uri_template_match_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1uri__template__match__exception.html)
+
+## xtd.tunit
+
+* [std::exception](https://en.cppreference.com/w/cpp/error/exception)
+  * [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html)
     * [xtd::tunit::abort_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1abort__error.html)
     * [xtd::tunit::assert_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__error.html)
     * [xtd::tunit::ignore_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1ignore__error.html)
+
 
 ## mscorelib (.Net Framework)
 
@@ -111,33 +117,39 @@ sidebar_position: 2
   * [System.Threading.LockRecursionException](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lockrecursionexception?view=net-8.0)
   * [System.SystemException](https://learn.microsoft.com/en-us/dotnet/api/system.systemexception?view=net-8.0)
     * [System.Threading.AbandonedMutexException](https://learn.microsoft.com/en-us/dotnet/api/system.threading.abandonedmutexexception?view=net-8.0)
-    * AccessViolationException
-    * AppDomainUnloadException
-    * ArgumentException
-      * ArgumentNullException
-      * ArgumentOutOfRangeException
-      * DuplicateWaitException
-    * ArithmeticException
-      * DivideByZeroException
-      * NotFiniteNumberException
-      * OverflowException
-    * ArrayTypeMismatchException
-    * BadImageFormatException
-    * CannotUploadAppDomainException
-    * ContextMarshalException
-    * DataMissalignedException
-    * ExecutionEngineException
-    * FormatException
-      * FileFormatException
-    * HostProtectionException
-    * IOException
-      * DirectoryNotFoundException
-      * DriveNotFoundException
-      * EndOfStreamException
-      * FileLoadException
-      * FileNotFoundException
-      * PathTooLongException
-    * IndexOutOfRangeException
+    * [System.AccessViolationException](https://learn.microsoft.com/en-us/dotnet/api/system.accessviolationexception?view=net-8.0)
+    * [System.AppDomainUnloadedException](https://learn.microsoft.com/en-us/dotnet/api/system.appdomainunloadedexception?view=net-8.0)
+    * [System.ArgumentException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentexception?view=net-8.0)
+      * [System.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception?view=net-8.0)
+      * [System.ArgumentOutOfRangeException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentoutofrangeexception?view=net-8.0)
+      * [System.DuplicateWaitException](https://learn.microsoft.com/en-us/dotnet/api/system.duplicatewaitobjectexception?view=net-8.0)
+    * [System.ArithmeticException](https://learn.microsoft.com/en-us/dotnet/api/system.arithmeticexception?view=net-8.0)
+      * [System.DivideByZeroException](https://learn.microsoft.com/en-us/dotnet/api/system.dividebyzeroexception?view=net-8.0)
+      * [System.NotFiniteNumberException](https://learn.microsoft.com/en-us/dotnet/api/system.notfinitenumberexception?view=net-8.0)
+      * [System.OverflowException](https://learn.microsoft.com/en-us/dotnet/api/system.overflowexception?view=net-8.0)
+    * [System.ArrayTypeMismatchException](https://learn.microsoft.com/en-us/dotnet/api/system.arraytypemismatchexception?view=net-8.0)
+    * [System.BadImageFormatException](https://learn.microsoft.com/en-us/dotnet/api/system.badimageformatexception?view=net-8.0)
+    * [System.CannotUnloadAppDomainException](https://learn.microsoft.com/en-us/dotnet/api/system.cannotunloadappdomainexception?view=net-8.0)
+    * [System.ContextMarshalException](https://learn.microsoft.com/en-us/dotnet/api/system.contextmarshalexception?view=net-8.0)
+    * [System.DataMissalignedException](https://learn.microsoft.com/en-us/dotnet/api/system.datamisalignedexception?view=net-8.0)
+    * [System.ExecutionEngineException](https://learn.microsoft.com/en-us/dotnet/api/system.executionengineexception?view=net-8.0)
+    * [System.FormatException](https://learn.microsoft.com/en-us/dotnet/api/system.formatexception?view=net-8.0)
+      * [System.IO.FileFormatException](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileformatexception?view=net-8.0)
+      * [System.Net.CookieException](https://learn.microsoft.com/en-us/dotnet/api/system.net.cookieexception?view=net-8.0)
+      * [System.Reflection.CustomAttributeFormatException](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.customattributeformatexception?view=net-8.0)
+      * [System.UriFormatException](https://learn.microsoft.com/en-us/dotnet/api/system.uriformatexception?view=net-8.0)
+    * [System.Security.HostProtectionException](https://learn.microsoft.com/en-us/dotnet/api/system.security.hostprotectionexception?view=net-8.0)
+    * [System.IO.IOException](https://learn.microsoft.com/en-us/dotnet/api/system.io.ioexception?view=net-8.0)
+      * [System.IO.DirectoryNotFoundException](https://learn.microsoft.com/en-us/dotnet/api/system.io.directorynotfoundexception?view=net-8.0)
+      * [System.IO.DriveNotFoundException](https://learn.microsoft.com/en-us/dotnet/api/system.io.drivenotfoundexception?view=net-8.0)
+      * [System.IO.EndOfStreamException](https://learn.microsoft.com/en-us/dotnet/api/system.io.endofstreamexception?view=net-8.0)
+      * [System.IO.FileLoadException](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileloadexception?view=net-8.0)
+      * [System.IO.FileNotFoundException](https://learn.microsoft.com/en-us/dotnet/api/system.io.filenotfoundexception?view=net-8.0)
+      * [System.IO.PathTooLongException](https://learn.microsoft.com/en-us/dotnet/api/system.io.pathtoolongexception?view=net-8.0)
+      * [System.IO.PipeException](https://learn.microsoft.com/en-us/dotnet/api/system.io.pipeexception?view=net-8.0)
+      * [System.Net.Http.HttpIOException](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpioexception?view=net-8.0)
+      * [System.Net.Quic.QuicException](https://learn.microsoft.com/en-us/dotnet/api/system.net.quic.quicexception?view=net-8.0)
+    * [System.IndexOutOfRangeException](https://learn.microsoft.com/en-us/dotnet/api/system.indexoutofrangeexception?view=net-8.0)
     * InsufficientExecutionStackException
     * InvalidCastException
     * InvalidOperationException
