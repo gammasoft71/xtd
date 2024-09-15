@@ -3,13 +3,10 @@
 The [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) class is the base class from which exceptions inherit. 
 For example, the [xtd::invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html) class hierarchy is as follows:
 
-[xtd::object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html)
-  
-  [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html)
-  
-    [xtd::system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html)
-    
-      [xtd::invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html)
+* [xtd::object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html)
+  * [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html)
+    * [xtd::system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html)
+      * [xtd::invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html)
 
 The [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) class has the following properties that help make understanding an exception easier.
 
