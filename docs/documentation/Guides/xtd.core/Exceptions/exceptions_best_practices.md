@@ -15,6 +15,7 @@ The following best practices concern how you handle exceptions:
 * [Use try/catch/finally blocks to recover from errors or release resources](#use-try-catch-blocks-to-recover-from-errors-or-release-resources)
 * [Handle common conditions to avoid exceptions](#handle-common-conditions-to-avoid-exceptions)
 * [Call Try* methods to avoid exceptions](#call-try-methods-to-avoid-exceptions)
+* [Catch cancellation and asynchronous exceptions](#catch-cancellation-and-asynchronous-exceptions)
 
 ### Use try/catch blocks to recover from errors or release resources
 
@@ -64,6 +65,12 @@ If the performance cost of exceptions is prohibitive, some xtd library methods p
 For example, [xtd::int32_object::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box.html#ae719848b746e3df3c3e5755d87a24c6d) throws an [xtd::overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) if the value to be parsed is too large to be represented by [xtd::int32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga205462e259a4eca1545511085c2c350e).
 However, [xtd::int32_object::try_parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box.html#a45ebbd8f1e23cadfa07d79b2282205ac) doesn't throw this exception. Instead, it returns a boolean and has an `out` parameter that contains the parsed valid integer upon success.
 [xd::collections::generic::dictionary<key_t,value_t>::try_get_value](https://gammasoft71.github.io/xtd/reference_guides/latest/group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960) has similar behavior for attempting to get a value from a dictionary.
+
+### Catch cancellation and asynchronous exceptions
+
+It's better to catch [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html) instead of [xtd::threading::tasks::task_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task__canceled__exception.html), which derives from [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html), when you call an asynchronous method.
+Many asynchronous methods throw an [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html) exception if cancellation is requested.
+These exceptions enable execution to be efficiently halted and the callstack to be unwound once a cancellation request is observed.
 
 # See also
 ​
