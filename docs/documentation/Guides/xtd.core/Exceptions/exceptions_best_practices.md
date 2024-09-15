@@ -57,6 +57,10 @@ The approach to choose depends on how often you expect the event to occur.
 > [!TIP]
 > Up-front checks eliminate exceptions most of the time. However, there can be race conditions where the guarded condition changes between the check and the operation, and in that case, you could still incur an exception.
 
+### Call Try* methods to avoid exceptions
+
+
+
 # See also
 ​
 * [Guides](/docs/documentation/Guides)
