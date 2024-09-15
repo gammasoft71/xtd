@@ -14,7 +14,7 @@ The following best practices concern how you handle exceptions:
 
 * [Use try/catch/finally blocks to recover from errors or release resources](#use-try-catch-blocks-to-recover-from-errors-or-release-resources)
 * [Handle common conditions to avoid exceptions](#handle-common-conditions-to-avoid-exceptions)
-* [Call Try* methods to avoid exceptions](#call-try*-methods-to-avoid-exceptions)
+* [Call Try* methods to avoid exceptions](#call-try-methods-to-avoid-exceptions)
 
 ### Use try/catch blocks to recover from errors or release resources
 
