@@ -914,7 +914,9 @@ add_sources(
   include/xtd/text/u8string_builder.h
   include/xtd/text/u8string_builder
   include/xtd/text/wstring_builder.h
-  include/xtd/text/wstring_builder
+  include/xtd/text/string_builder
+  include/xtd/threading/tasks/task_canceled_exception.h
+  include/xtd/threading/tasks/task_canceled_exception
   include/xtd/threading/abandoned_mutex_exception.h
   include/xtd/threading/abandoned_mutex_exception
   include/xtd/threading/auto_reset_event.h

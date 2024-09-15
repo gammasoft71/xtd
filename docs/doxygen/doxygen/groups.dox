@@ -131,9 +131,9 @@
     |   |   |         /// @ingroup generic_collections
     |   |   |         /// @defgroup helpers_generic_collections helpers
     |   |   |- object_model_collections
-    |   |   |   | /// @brief Contains object model collections definitions.
-    |   |   |   | /// @ingroup collections
-    |   |   |   | /// @defgroup object_model_collections object model
+    |   |   |     /// @brief Contains object model collections definitions.
+    |   |   |     /// @ingroup collections
+    |   |   |     /// @defgroup object_model_collections object model
     |   |   |- specialized_collections
     |   |         /// @brief Contains specialized collections definitions.
     |   |         /// @ingroup collections
@@ -175,9 +175,13 @@
     |   |     /// @ingroup system
     |   |     /// @defgroup text text
     |   |- threading
-    |   |     /// @brief Contains threading definitions.
-    |   |     /// @ingroup system
-    |   |     /// @defgroup threading threading
+    |   |   | /// @brief Contains threading definitions.
+    |   |   | /// @ingroup system
+    |   |   | /// @defgroup threading threading
+    |   |   |- tasks
+    |   |         /// @brief Contains tasks definitions.
+    |   |         /// @ingroup threading
+    |   |         /// @defgroup tasks tasks
     |   |- timers
     |   |     /// @brief Contains timers definitions.
     |   |     /// @ingroup system
