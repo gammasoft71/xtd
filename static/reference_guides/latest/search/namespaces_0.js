@@ -26,12 +26,13 @@ var searchData=
   ['speech_23',['speech',['../namespacextd_1_1speech.html',1,'xtd']]],
   ['style_5fsheets_24',['style_sheets',['../namespacextd_1_1forms_1_1style__sheets.html',1,'xtd::forms']]],
   ['synthesis_25',['synthesis',['../namespacextd_1_1speech_1_1synthesis.html',1,'xtd::speech']]],
-  ['text_26',['text',['../namespacextd_1_1drawing_1_1text.html',1,'xtd::drawing::text'],['../namespacextd_1_1text.html',1,'xtd::text']]],
-  ['threading_27',['threading',['../namespacextd_1_1threading.html',1,'xtd']]],
-  ['timers_28',['timers',['../namespacextd_1_1timers.html',1,'xtd']]],
-  ['tunit_29',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
-  ['visual_5fstyles_30',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
-  ['web_31',['web',['../namespacextd_1_1web.html',1,'xtd']]],
-  ['windows_32',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
-  ['xtd_33',['xtd',['../namespacextd.html',1,'']]]
+  ['tasks_26',['tasks',['../namespacextd_1_1threading_1_1tasks.html',1,'xtd::threading']]],
+  ['text_27',['text',['../namespacextd_1_1drawing_1_1text.html',1,'xtd::drawing::text'],['../namespacextd_1_1text.html',1,'xtd::text']]],
+  ['threading_28',['threading',['../namespacextd_1_1threading.html',1,'xtd']]],
+  ['timers_29',['timers',['../namespacextd_1_1timers.html',1,'xtd']]],
+  ['tunit_30',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
+  ['visual_5fstyles_31',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
+  ['web_32',['web',['../namespacextd_1_1web.html',1,'xtd']]],
+  ['windows_33',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
+  ['xtd_34',['xtd',['../namespacextd.html',1,'']]]
 ];
