@@ -1,6 +1,6 @@
 # Best practices for exceptions (xtd.core)
 
-* [Handling exceptions](handling-exceptions)
+* [Handling exceptions](#handling-exceptions)
 
 Proper exception handling is essential for application reliability. 
 You can intentionally handle expected exceptions to prevent your app from crashing. 
@@ -12,8 +12,8 @@ This article describes best practices for handling and creating exceptions.
 
 The following best practices concern how you handle exceptions:
 
-* [Use try/catch/finally blocks to recover from errors or release resources](Use-try-catch-blocks-to-recover-from-errors-or-release-resources)
-* [Handle common conditions to avoid exceptions](handle-common-conditions-to-avoid-exceptions)
+* [Use try/catch/finally blocks to recover from errors or release resources](#use-try-catch-blocks-to-recover-from-errors-or-release-resources)
+* [Handle common conditions to avoid exceptions](#handle-common-conditions-to-avoid-exceptions)
 
 ### Use try/catch blocks to recover from errors or release resources
 
