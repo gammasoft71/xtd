@@ -16,6 +16,8 @@ The following best practices concern how you handle exceptions:
 * [Handle common conditions to avoid exceptions](#handle-common-conditions-to-avoid-exceptions)
 * [Call Try* methods to avoid exceptions](#call-try-methods-to-avoid-exceptions)
 * [Catch cancellation and asynchronous exceptions](#catch-cancellation-and-asynchronous-exceptions)
+* [Design classes so that exceptions can be avoided](#design-classes-so-that-exceptions-can-be-avoided)
+* [Restore state when methods don't complete due to exceptions](#restore-state-when-methods-don-t-complete-due-to-exceptions)
 
 ### Use try/catch blocks to recover from errors or release resources
 
@@ -71,6 +73,75 @@ However, [xtd::int32_object::try_parse](https://gammasoft71.github.io/xtd/refere
 It's better to catch [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html) instead of [xtd::threading::tasks::task_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task__canceled__exception.html), which derives from [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html), when you call an asynchronous method.
 Many asynchronous methods throw an [xd::operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html) exception if cancellation is requested.
 These exceptions enable execution to be efficiently halted and the callstack to be unwound once a cancellation request is observed.
+
+### Design classes so that exceptions can be avoided
+
+A class can provide methods or properties that enable you to avoid making a call that would trigger an exception.
+For example, the xtd:collections::generic::list class provides methods that help determine the number of items.
+You can call these methods to avoid the exception that is thrown if you try to access an element outside the range.
+
+The following example shows how to access list itemsd without triggering an exception:
+
+```cpp
+class program {
+public:
+  // Sums up a list of items using the specified initial value without throwing an exception.
+  static constexpr int accumulate(const list<int>& items, int init_value = 0) noexcept {
+    int result = init_value;
+    // Accesses all elements in the element list using the xtd::collections::generic::list::size method to prevent accessing an element outside the list range.
+    for (xtd::size index = 0; index < items.size(); ++index)
+      result += items[index];
+    return result;
+  }
+};
+```
+
+It is also advisable to add the `noexcept` attribute to the method to guarantee the user that the method will not throw an exception.
+
+### Restore state when methods don't complete due to exceptions
+
+Callers should be able to assume that there are no side effects when an exception is thrown from a method. 
+For example, if you have code that transfers money by withdrawing from one account and depositing in another account, and an exception is thrown while executing the deposit, you don't want the withdrawal to remain in effect.
+
+```cpp
+static void transfer_funds(account& from, &ccount& to, decimal amount) noexcept {
+  from.withdrawal(amount);
+  // If the deposit fails, the withdrawal shouldn't remain in effect.
+  to.deposit(amount);
+}
+```
+
+The preceding method doesn't directly throw any exceptions. However, you must write the method so that the withdrawal is reversed if the deposit operation fails.
+
+One way to handle this situation is to catch any exceptions thrown by the deposit transaction and roll back the withdrawal.
+
+```cpp
+static void transfer_funds(account& from, account& to, decimal amount) noexcept {
+  string withdrawal_trx_id = from.withdrawal(amount);
+  try {
+    to.deposit(amount);
+  } catch (...) {
+    from.rollback_transaction(withdrawal_trx_id);
+    throw;
+  }
+}
+```
+
+This example illustrates the use of throw to rethrow the original exception, making it easier for callers to see the real cause of the problem without having to examine the [inner_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384) property.
+An alternative is to throw a new exception and include the original exception as the inner exception.
+
+
+```cpp
+static void transfer_funds(account& from, account& to, decimal amount) noexcept {
+  string withdrawal_trx_id = from.withdrawal(amount);
+  try {
+    to.deposit(amount);
+  } catch (const exception& ex) {
+    from.rollback_transaction(withdrawal_trx_id);
+    throw transfer_funds_exception("Withdrawal failed.", ex);
+  }
+}
+```
 
 # See also
 ​
