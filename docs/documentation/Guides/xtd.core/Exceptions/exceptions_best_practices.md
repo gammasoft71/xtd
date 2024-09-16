@@ -18,6 +18,7 @@ The following best practices concern how you handle exceptions:
 * [Catch cancellation and asynchronous exceptions](#catch-cancellation-and-asynchronous-exceptions)
 * [Design classes so that exceptions can be avoided](#design-classes-so-that-exceptions-can-be-avoided)
 * [Restore state when methods don't complete due to exceptions](#restore-state-when-methods-don-t-complete-due-to-exceptions)
+* [Capture and rethrow exceptions properly](#capture-and-rethrow-exceptions-properly)
 
 ### Use try/catch blocks to recover from errors or release resources
 
@@ -142,6 +143,10 @@ static void transfer_funds(account& from, account& to, decimal amount) noexcept 
   }
 }
 ```
+
+### Capture and rethrow exceptions properly
+
+
 
 # See also
 ​
