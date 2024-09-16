@@ -1,0 +1,27 @@
+var classxtd_1_1forms_1_1replace__dialog =
+[
+    [ "replace_dialog", "classxtd_1_1forms_1_1replace__dialog.html#ad4b22884bfedd6142382b5292983945e", null ],
+    [ "find_string", "classxtd_1_1forms_1_1replace__dialog.html#a523f40ce317fe1f71b1eeb368bc6a4b6", null ],
+    [ "find_string", "classxtd_1_1forms_1_1replace__dialog.html#ae5f83fc854cbb2d37bd81f051c2947ce", null ],
+    [ "replace_string", "classxtd_1_1forms_1_1replace__dialog.html#aff817768aaa00952724ff30d7d4c2584", null ],
+    [ "replace_string", "classxtd_1_1forms_1_1replace__dialog.html#aff10677d854c80ebc6fc6985adfc99d0", null ],
+    [ "location", "classxtd_1_1forms_1_1replace__dialog.html#a269448ed8d228f21dcab62f2306d53b6", null ],
+    [ "location", "classxtd_1_1forms_1_1replace__dialog.html#a4fc72e094308f7f3a94df076794c9dc6", null ],
+    [ "match_case", "classxtd_1_1forms_1_1replace__dialog.html#a7afc5a51b4dd216007b22db7ba4f42e7", null ],
+    [ "match_case", "classxtd_1_1forms_1_1replace__dialog.html#aff2d3fed5af6eaf53ccf410451da44c1", null ],
+    [ "show_match_case", "classxtd_1_1forms_1_1replace__dialog.html#ad76e9796feabf1c127aeaf84498582a5", null ],
+    [ "show_match_case", "classxtd_1_1forms_1_1replace__dialog.html#a538389353a49a5e623f019eab5cd1d3c", null ],
+    [ "show_whole_word", "classxtd_1_1forms_1_1replace__dialog.html#a2287ffbea97bead5510fd4ac5cdcd0f3", null ],
+    [ "show_whole_word", "classxtd_1_1forms_1_1replace__dialog.html#ac4c8978d7614300d8703c605b3940a74", null ],
+    [ "title", "classxtd_1_1forms_1_1replace__dialog.html#a8f7d71833af5c0f37044b53b7a613779", null ],
+    [ "title", "classxtd_1_1forms_1_1replace__dialog.html#a4fa5c5c882a49797d9c9f7f03e578ff2", null ],
+    [ "whole_word", "classxtd_1_1forms_1_1replace__dialog.html#a1f134704d146123c9c430de0d89e8d6b", null ],
+    [ "whole_word", "classxtd_1_1forms_1_1replace__dialog.html#adad4165bbb5ff140b394014c0af5d334", null ],
+    [ "close", "classxtd_1_1forms_1_1replace__dialog.html#a412f7c28499b9229d065ba09a96c6585", null ],
+    [ "reset", "classxtd_1_1forms_1_1replace__dialog.html#ab40721e7907cdd60991a183b74639986", null ],
+    [ "show", "classxtd_1_1forms_1_1replace__dialog.html#a14d6748e4ba1d4fc70791aa1b223be6b", null ],
+    [ "find_next", "classxtd_1_1forms_1_1replace__dialog.html#ae1f317b3de096f9a7a4f6baf9674b182", null ],
+    [ "replace", "classxtd_1_1forms_1_1replace__dialog.html#a816f2865e3cc36dae81ef98c0af6eefe", null ],
+    [ "replace_all", "classxtd_1_1forms_1_1replace__dialog.html#aa9c1d6cb1170e0521f1d21f88ab30085", null ],
+    [ "dialog_closed", "classxtd_1_1forms_1_1replace__dialog.html#ab9a4ca62e9c12413a12f4ae8830e4914", null ]
+];
