@@ -7,6 +7,7 @@
 #import <Cocoa/Cocoa.h>
 //#endif
 #import <Foundation/Foundation.h>
+#include <cstdlib>
 #include <libproc.h>
 #include <syslog.h>
 
