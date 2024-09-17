@@ -39,7 +39,7 @@ namespace xtd {
       template<typename type_t>
       class params final : public xtd::object {
       public:
-        /// @name Public Alias
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents the params base type.
