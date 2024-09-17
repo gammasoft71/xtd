@@ -8,12 +8,59 @@ using namespace xtd;
 
 bool exception::enable_stack_trace_ = true;
 
+struct exception::data {
+  data(const string& message, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& information) : message {message}, error {error}, help_link {help_link}, information {information} {}
+  mutable xtd::string name;
+  xtd::string message;
+  exception_ref inner_exception;
+  std::error_code error;
+  xtd::string help_link;
+  xtd::diagnostics::stack_frame information;
+  xtd::sptr<xtd::diagnostics::stack_trace> stack_trace;
+};
+
+exception::exception(const xtd::diagnostics::stack_frame& information) : exception(default_message(), nullptr, std::error_code(), xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, std::error_code(), xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, error, xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, std::error_code(), help_link, information) {
+}
+
+exception::exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, error, help_link, information) {
+}
+
+exception::exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information) : exception(default_message(), &inner_exception, std::error_code(), xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, std::error_code(), xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, error, xtd::string::empty_string, information) {
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, std::error_code(), help_link, information) {
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, error, help_link, information) {
+}
+
+exception::exception(const string& message, const std::exception* inner_exception, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& information) : data_ {new_ptr<data>(message, error, help_link, information)} {
+  if (inner_exception) data_->inner_exception = *inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+  //if (!data_->stack_trace.size()) data_->stack_trace.push_back(data_->information.to_string());
+}
+
 const xtd::string& exception::file_path() const noexcept {
-  return information_.get_file_name();
+  return data_->information.get_file_name();
 }
 
 const xtd::string& exception::help_link() const noexcept {
-  return help_link_;
+  return data_->help_link;
 }
 
 bool exception::enable_stack_trace() noexcept {
@@ -25,30 +72,30 @@ void exception::enable_stack_trace(bool enable) noexcept {
 }
 
 std::error_code exception::error_code() const noexcept {
-  return error_;
+  return data_->error;
 }
 
 exception::exception_ref exception::inner_exception() const noexcept {
-  return inner_exception_;
+  return data_->inner_exception;
 }
 
 xtd::size exception::line_number() const noexcept {
-  return information_.get_file_line_number();
+  return data_->information.get_file_line_number();
 }
 
 const xtd::string& exception::member_name() const noexcept {
-  return information_.get_method();
+  return data_->information.get_method();
 }
 
 const xtd::string& exception::message() const noexcept {
-  return message_;
+  return data_->message;
 }
 
 const xtd::string& exception::name() const noexcept {
   call_once_ {
     environment::__signal_catcher_check__();
   };
-  return (name_ = get_type().full_name());
+  return (data_->name = get_type().full_name());
 }
 
 xtd::string exception::stack_trace() const noexcept {
@@ -67,19 +114,13 @@ const char* exception::what() const noexcept {
 }
 
 string exception::stack_trace_to_string() const noexcept {
-  if (!stack_trace_) return information_.to_string();
+  if (!data_->stack_trace) return data_->information.to_string();
   
-  auto skip_frames = stack_trace_->frame_count();
-  for (auto index = 0_z; index < stack_trace_->frame_count(); ++index)
-    if (stack_trace_->get_frame(index).get_method().starts_with(name()))
+  auto skip_frames = data_->stack_trace->frame_count();
+  for (auto index = 0_z; index < data_->stack_trace->frame_count(); ++index)
+    if (data_->stack_trace->get_frame(index).get_method().starts_with(name()))
       skip_frames = index;
-  return stack_trace_->to_string(skip_frames + 1, information_);
-}
-
-exception::exception(const string& message, const std::exception* inner_exception, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& information) : message_(message), error_(error), help_link_(help_link), information_(information) {
-  if (inner_exception) inner_exception_ = *inner_exception;
-  if (enable_stack_trace_) stack_trace_ = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
-  //if (!stack_trace_.size()) stack_trace_.push_back(information_.to_string());
+  return data_->stack_trace->to_string(skip_frames + 1, data_->information);
 }
 
 const char* exception::default_message() const noexcept {
