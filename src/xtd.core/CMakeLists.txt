@@ -879,6 +879,8 @@ add_sources(
   include/xtd/reflection/assembly_version_attribute
   include/xtd/reflection/assembly.h
   include/xtd/reflection/assembly
+  include/xtd/runtime/exception_services/exception_dispatch_info.h
+  include/xtd/runtime/exception_services/exception_dispatch_info
   include/xtd/security/secure_string.h
   include/xtd/security/secure_string
   include/xtd/security/security_exception.h
