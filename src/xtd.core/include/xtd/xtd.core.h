@@ -163,6 +163,7 @@
 #include "reflection/assembly_title_attribute.h"
 #include "reflection/assembly_trademark_attribute.h"
 #include "reflection/assembly_version_attribute.h"
+#include "runtime/exception_services/exception_dispatch_info.h"
 #include "security/secure_string.h"
 #include "security/security_exception.h"
 #include "speech/synthesis/prompt.h"
