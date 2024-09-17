@@ -3,7 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "icomparer.h"
+//#include "../../comparison.h"
 #include "../../object.h"
+#include "../../ptr.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,7 +35,7 @@ namespace xtd {
         
         /// @{
         /// @brief Returns a default sort order comparer for the type specified by the generic argument
-        static const comparer default_comparer;
+        inline static const comparer<type_t> default_comparer;
         /// @}
         
         /// @name Public Methods
@@ -49,8 +51,12 @@ namespace xtd {
         /// | Zero              | x equals y.          |
         /// | Greater than zero | x is greater than y. |
         int32 compare(const type_t& x, const type_t& y) const noexcept override {return x < y ? -1 : (x > y ? 1 : 0);}
+        
+        //static ptr<comparer<type_t>> create (xtd::comparison<type_t> comparison) {
+        //  return {};
+        //}
         /// @}
-
+        
       protected:
         /// @name Protected Constructors
         
@@ -59,11 +65,6 @@ namespace xtd {
         comparer() = default;
         /// @}
       };
-
-      /// @cond
-      template<typename type_t>
-      const comparer<type_t> comparer<type_t>::default_comparer;
-      /// @endcond
     }
   }
 }
