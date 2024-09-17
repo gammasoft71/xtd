@@ -146,7 +146,37 @@ static void transfer_funds(account& from, account& to, decimal amount) noexcept 
 
 ### Capture and rethrow exceptions properly
 
+Once an exception is thrown, part of the information it carries is the stack trace.
+The stack trace is a list of the method call hierarchy that starts with the method that throws the exception and ends with the method that catches the exception.
+If you rethrow an exception by specifying the exception in the `throw` statement, for example, `throw e`, the stack trace is restarted at the current method and the list of method calls between the original method that threw the exception and the current method is lost.
+To keep the original stack trace information with the exception, there are two options that depend on where you're rethrowing the exception from:
 
+* If you rethrow the exception from within the handler (`catch` block) that's caught the exception instance, use the throw statement without specifying the exception.
+* If you're rethrowing the exception from somewhere other than the handler (`catch` block), use [xtd::runtime::exception_services::exception_dispatch_info::capture(const xtd:exception&)](.) to capture the exception in the handler and [xtd::runtime::exception_services::exception_dispatch_info::rerhrow()](.) when you want to rethrow it. You can use the [xtd::runtime::exception_services::exception_dispatch_info::source_exception](.) property to inspect the captured exception.
+
+The following example shows how the [xtd::runtime::exception_services::exception_dispatch_info](.) class can be used, and what the output might look like.
+
+```cpp
+auto edi = exception_dispatch_info {};
+try {
+  auto txt = file::read_all_text("C:\\temp\\file.txt");
+} catch (const file_not_found_exception& e) {
+  edi = exception_dispatch_info::capture(e);
+}
+
+// ...
+
+console::write_line("I was here.");
+
+if (edi.exception_captured())
+  edi.rethrow();
+```
+
+If the file in the example code doesn't exist, the following output is produced:
+
+```
+
+```
 
 # See also
 ​
