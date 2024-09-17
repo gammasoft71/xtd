@@ -7,7 +7,7 @@
 #    define __standard_name__ "C++ 26"
 #  elif __cplusplus < 202601L && __cplusplus > 202302L
 #    define __standard_name__ "Experimental C++ 26"
-#  elif __cplusplus == 202002L
+#  elif __cplusplus == 202302L
 #    define __standard_name__ "C++ 23"
 #  elif __cplusplus < 202302L && __cplusplus > 202002L
 #    define __standard_name__ "Experimental C++ 23"
