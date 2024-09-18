@@ -1,6 +1,7 @@
 # Best practices for exceptions (xtd.core)
 
 * [Handling exceptions](#handling-exceptions)
+* [Throwing exceptions](#throwing-exceptions)
 
 Proper exception handling is essential for application reliability. 
 You can intentionally handle expected exceptions to prevent your app from crashing. 
@@ -175,7 +176,59 @@ if (edi.exception_captured())
 If the file in the example code doesn't exist, the following output is produced:
 
 ```
+I was here.
 
+Unhandled exception: xtd::io::file_not_found_exception : Unable to find the specified file.
+   at xtd::io::file::read_all_text [0x0000037C] in C:\Users\yves\Projects\xtd\src\xtd.core\src\xtd\io\file.cpp:line 225
+   at xtd_console_app::program::main [0x00000080] in C:\Users\yves\Projects\xtd_console_app\xtd_console_app\src\program.cpp:line 12
+   at xtd::startup::run [0x000000A0] in C:\Users\yves\Projects\xtd\src\xtd.core\src\xtd\startup.cpp:line 157
+   at xtd::startup::internal_safe_run<void (__cdecl*)(xtd::collections::generic::list<xtd::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<xtd::basic_string<char,std::char_traits<char>,std::allocator<char> > > > const &)> [0x000000F8] in C:\Users\yves\Projects\xtd\src\xtd.core\include\xtd\startup.h:line 105
+   at xtd::startup::safe_run [0x0000009C] in C:\Users\yves\Projects\xtd\src\xtd.core\src\xtd\startup.cpp:line 70
+   at main [0x0000003C] in C:\Users\yves\Projects\xtd_console_app\xtd_console_app\properties\startup.cpp:line 10
+```
+
+## Throwing exceptions
+
+The following best practices concern how you throw exceptions:
+
+* [Use predefined exception types](#use-predefined-exception-types)
+* [Use exception builder methods](#use-exception-builder-methods)
+
+### Use predefined exception types
+
+Introduce a new exception class only when a predefined one doesn't apply. For example:
+
+* If a property set or method call isn't appropriate given the object's current state, throw an [xtd::invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) exception.
+* If invalid parameters are passed, throw an [xtd::argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html) exception or one of the predefined classes that derive from [xtd::argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html).
+
+> **Notes**
+> While it's best to use predefined exception types when possible, you shouldn't raise some reserved exception types, such as [xtd::access_violation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1access__violation__exception.html), [xtd::index_out_of_range_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1index__out__of__range__exception.html), and [xtd::null_pointer_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1null__pointer__exception.html). See [exceptions](https://gammasoft71.github.io/xtd/reference_guides/latest/group__exceptions.html) to view all xtd exceptions.
+
+### Use exception builder methods
+
+It's common for a class to throw the same exception from different places in its implementation. 
+To avoid excessive code, create a helper method that creates the exception and returns it.
+For example:
+
+```cpp
+class file_reader {
+public:
+  file_reader(const string& path) noexcept : file_name_ {path} {}
+
+  optional<array<byte>> read(int bytes) {
+    optional<array<byte>> results = file_utils.read_from_file(file_name_, bytes);
+    if (!results) throw file_reader_exception();
+    return results;
+  }
+
+  static file_io_exception file_reader_exception() noexcept {
+    string description = "My file_reader_exception description";
+    return file_io_exception {description};
+  }
+
+private:
+  string file_name_;
+};
 ```
 
 # See also
