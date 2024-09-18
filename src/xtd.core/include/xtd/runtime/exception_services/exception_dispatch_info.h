@@ -68,7 +68,8 @@ namespace xtd {
         /// @brief Rethrows the exception that's represented by the current xtd::runtime::exception_services::exception_dispatch_info object, after restoring the state that was saved when the exception was captured.
         void rethrow() {if (exception_captured()) std::rethrow_exception(exception_ptr_);}
         /// @brief Rehrows the source exception, maintaining the original stack trace information.
-        static void rethrow(const xtd::exception& source) {exception_dispatch_info {source}.rethrow();}
+        template <typename exception_t>
+        static void rethrow(const exception_t& source) {exception_dispatch_info {source}.rethrow();}
         /// @}
         
         /// @name Public Operators
