@@ -15,6 +15,7 @@ namespace xtd::runtime::exception_services::tests {
     }
     
     void test_method_(exception_captured) {
+      assert::is_false(exception_dispatch_info {}.exception_captured(), csf_);
       assert::is_true(exception_dispatch_info::capture(exception {csf_}).exception_captured(), csf_);
     }
     
@@ -35,8 +36,19 @@ namespace xtd::runtime::exception_services::tests {
         assert::fail(csf_);
       }
     }
+    
+    void test_method_(rethrow_with_exception) {
+      try {
+        exception_dispatch_info::rethrow(argument_out_of_range_exception {"The first index is out of range", csf_});
+      } catch (const argument_out_of_range_exception& e) {
+        assert::are_equal("The first index is out of range", e.message(), csf_);
+      } catch (...) {
+        assert::fail(csf_);
+      }
+    }
 
     void test_method_(convert_to_bool_operator) {
+      assert::is_false(exception_dispatch_info {} ? true : false, csf_);
       assert::is_true(exception_dispatch_info::capture(exception {csf_}) ? true : false, csf_);
     }
   };
