@@ -1754,7 +1754,7 @@ namespace xtd {
       /// ```
       template<typename value_t>
       static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (value != 0)
+        if (value != static_cast<value_t>(0))
           succeed(message, stack_frame);
         else
           fail("not zero", "0", message, stack_frame);
