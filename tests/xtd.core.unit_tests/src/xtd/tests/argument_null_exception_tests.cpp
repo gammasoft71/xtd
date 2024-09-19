@@ -304,16 +304,54 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
-    void test_method_(throw_if_null) {
+    void test_method_(throw_if_null_with_ptr) {
       assert::does_not_throw([]{argument_null_exception::throw_if_null(new_ptr<object>());}, csf_);
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(ptr<object> {});}, csf_);
+    }
+    
+    void test_method_(throw_if_null_with_sptr) {
       assert::does_not_throw([]{argument_null_exception::throw_if_null(new_sptr<object>());}, csf_);
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(sptr<object> {});}, csf_);
+    }
+    
+    void test_method_(throw_if_null_with_uptr) {
       assert::does_not_throw([]{argument_null_exception::throw_if_null(new_uptr<object>());}, csf_);
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(uptr<object> {});}, csf_);
+
+    }
+    
+    void test_method_(throw_if_null_with_raw_ptr) {
       assert::does_not_throw([]{argument_null_exception::throw_if_null(new_ptr<object>().get());}, csf_);
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(ptr<object> {}.get());}, csf_);
+    }
+    
+    void test_method_(throw_if_null_with_nullptr) {
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(null);}, csf_);
+    }
+    
+    void test_method_(throw_if_null_verify_exception) {
+      auto exception = argument_null_exception {};
+      
+      try {
+        argument_null_exception::throw_if_null(null);
+      } catch(const argument_null_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter '')", exception.message(), csf_);
+
+      try {
+        argument_null_exception::throw_if_null(null, "null");
+      } catch(const argument_null_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter 'null')", exception.message(), csf_);
+
+      try {
+        argument_null_exception::throw_if_null(null, "null", csf_);
+      } catch(const argument_null_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter 'null')", exception.message(), csf_);
     }
   };
 }
