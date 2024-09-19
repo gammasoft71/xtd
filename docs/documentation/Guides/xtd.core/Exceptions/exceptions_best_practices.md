@@ -231,6 +231,25 @@ private:
 };
 ```
 
+Some key xtd exception types have such static throw helper methods that allocate and throw the exception. 
+You should call these methods instead of constructing and throwing the corresponding exception type:
+
+* [xtd::argument_null_exception::throw_if_null](.)
+* [xtd::argument_exception::throw_if_empty](.)
+* [xtd::argument_exception::throw_if_empty_or_white_space](.)
+* [xtd::argument_out_of_range_exception::throw_if_zero](.)
+* [xtd::argument_out_of_range_exception::throw_if_negative](.)
+* [xtd::argument_out_of_range_exception::throw_if_positive](.)
+* [xtd::argument_out_of_range_exception::throw_if_equal](.)
+* [xtd::argument_out_of_range_exception::throw_if_less_than](.)
+* [xtd::argument_out_of_range_exception::throw_if_not_equal](.)
+* [xtd::argument_out_of_range_exception::throw_if_negative_or_zero](.)
+* [xtd::argument_out_of_range_exception::throw_if_positive_or_zero](.)
+* [xtd::argument_out_of_range_exception::throw_if_greater_than](.)
+* [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](.)
+* [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](.)
+* [](.)
+
 # See also
 ​
 * [Guides](/docs/documentation/Guides)
