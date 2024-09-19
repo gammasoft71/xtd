@@ -303,5 +303,17 @@ namespace xtd::tests {
       assert::are_equal("xtd::argument_null_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
+    
+    void test_method_(throw_if_null) {
+      assert::does_not_throw([]{argument_null_exception::throw_if_null(new_ptr<object>());}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(ptr<object> {});}, csf_);
+      assert::does_not_throw([]{argument_null_exception::throw_if_null(new_sptr<object>());}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(sptr<object> {});}, csf_);
+      assert::does_not_throw([]{argument_null_exception::throw_if_null(new_uptr<object>());}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(uptr<object> {});}, csf_);
+      assert::does_not_throw([]{argument_null_exception::throw_if_null(new_ptr<object>().get());}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(ptr<object> {}.get());}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(null);}, csf_);
+    }
   };
 }
