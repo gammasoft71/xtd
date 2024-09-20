@@ -63,9 +63,10 @@ namespace xtd {
     /// * std::strong_ordering::greater : if lhs greater than rhs;
     /// * std::strong_ordering::equivalent : if lhs is equal to rhs.
     friend std::strong_ordering operator <=>(const type_t& lhs, const type_t& rhs) noexcept {
-      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0) return std::strong_ordering::less;
-      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0) return std::strong_ordering::greater;
-      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
+      auto rhs_ptr = &rhs;
+      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0) return std::strong_ordering::less;
+      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0) return std::strong_ordering::greater;
+      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
       return std::strong_ordering::less;
     }
 #endif
