@@ -4,25 +4,26 @@
 #pragma once
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
-#error "Do not include this file: Internal use only. Include <array> or <array.h> instead."
+#error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.h> instead."
 #endif
 
 #include "string.h"
+#include "collections/object_model/read_only_collection.h"
 #include <numeric>
 
 /// @cond
 namespace xtd {
   // C++17 deduction
   // {
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::iterator_traits<type_t>::value_type>>
-  array_(type_t, type_t, allocator_t = allocator_t()) -> array_<typename std::iterator_traits<type_t>::value_type, rank, allocator_t>;
+  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  array_(type_t, type_t, allocator_t = allocator_t()) -> array_<type_t, rank, allocator_t>;
   
   template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array_(std::initializer_list<type_t>) -> array_<type_t, rank, allocator_t>;
   
   template<typename type_t, xtd::size length, int rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array_(const type_t(&array)[length]) -> array_<type_t, rank, allocator_t>;
-
+  
   template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array_(const xtd::collections::generic::ienumerable<type_t>&) -> array_<type_t, rank, allocator_t>;
   
@@ -90,5 +91,11 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array_<size_type
     data_->lower_bound.push_back(0);
     data_->upper_bound.push_back(length - 1);
   }
+}
+
+//template<>
+template<typename type_t, typename allocator_t>
+inline xtd::collections::object_model::read_only_collection<type_t> xtd::array_<>::as_read_only(const xtd::array_<type_t, 1, allocator_t>& array) {
+  return xtd::collections::object_model::read_only_collection<type_t> {new_ptr<class xtd::array_<type_t>>(array)};
 }
 /// @endcond

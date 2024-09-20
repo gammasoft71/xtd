@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
-#error "Do not include this file: Internal use only. Include <array> or <array.h> instead."
+#error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.h> instead."
 #endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
