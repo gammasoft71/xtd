@@ -49,7 +49,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string<char_t>::value_type>(), csf_);
+      else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string<char_t>::value_type>(), csf_);
     }
     
     void test_method_(allocator_type) {
@@ -69,7 +69,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string<char_t>::reference>(), csf_);
+      else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string<char_t>::reference>(), csf_);
     }
     
     void test_method_(const_reference) {
@@ -77,7 +77,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string<char_t>::const_reference>(), csf_);
+      else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string<char_t>::const_reference>(), csf_);
     }
     
     void test_method_(pointer) {
@@ -85,7 +85,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string<char_t>::pointer>(), csf_);
+      else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string<char_t>::pointer>(), csf_);
     }
     
     void test_method_(const_pointer) {
@@ -93,7 +93,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string<char_t>::const_pointer>(), csf_);
+      else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string<char_t>::const_pointer>(), csf_);
     }
     
     void test_method_(iterator) {
@@ -456,9 +456,11 @@ namespace xtd::tests {
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str(), csf_);
       if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.c_str()), csf_);
-      assert::is_empty(basic_string<char_t> {}.c_str(), csf_);
-      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str(), csf_);
+      else {
+        assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.c_str()), csf_);
+        assert::is_empty(basic_string<char_t> {}.c_str(), csf_);
+        assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str(), csf_);
+      }
     }
     
     void test_method_(capacity) {
@@ -494,10 +496,16 @@ namespace xtd::tests {
       assert::is_empty(basic_string<char_t> {}.data(), csf_);
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data(), csf_);
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else {
+        assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.data()), csf_);
+        assert::is_empty(basic_string<char_t> {}.data(), csf_);
+        assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data(), csf_);
+      }
+#else
       assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.data()), csf_);
       assert::is_empty(basic_string<char_t> {}.data(), csf_);
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data(), csf_);
+#endif
     }
     
     void test_method_(empty) {
@@ -1591,47 +1599,47 @@ namespace xtd::tests {
 
     void test_method_(sprintf_char) {
       if constexpr(std::is_same<char_t, char16>::value) return;
-      if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
 #if defined(__xtd__cpp_lib_char8_t)
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal("A test string to test", basic_string<char_t>::sprintf("%s", "A test string to test"), csf_);
+      else assert::are_equal("A test string to test", basic_string<char_t>::sprintf("%s", "A test string to test"), csf_);
     }
 
     void test_method_(sprintf_char16) {
       if constexpr(std::is_same<char_t, char16>::value) return;
-      if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
 #if defined(__xtd__cpp_lib_char8_t)
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u"%s", "A test string to test"), csf_);
+      else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u"%s", "A test string to test"), csf_);
     }
 
     void test_method_(sprintf_char32) {
       if constexpr(std::is_same<char_t, char16>::value) return;
-      if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
 #if defined(__xtd__cpp_lib_char8_t)
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal("A test string to test", basic_string<char_t>::sprintf(U"%s", "A test string to test"), csf_);
+      else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(U"%s", "A test string to test"), csf_);
     }
 
     void test_method_(sprintf_char8) {
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char16>::value) return;
-      if constexpr(std::is_same<char_t, char32>::value) return;
-      if constexpr(std::is_same<char_t, char8>::value) return;
-      assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u8"%s", "A test string to test"), csf_);
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u8"%s", "A test string to test"), csf_);
 #endif
     }
 
     void test_method_(sprintf_wchar) {
       if constexpr(std::is_same<char_t, char16>::value) return;
-      if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
 #if defined(__xtd__cpp_lib_char8_t)
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
-      assert::are_equal("A test string to test", basic_string<char_t>::sprintf(L"%s", "A test string to test"), csf_);
+      else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(L"%s", "A test string to test"), csf_);
     }
 
     void test_method_(try_parse) {
