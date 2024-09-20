@@ -248,7 +248,6 @@ You should call these methods instead of constructing and throwing the correspon
 * [xtd::argument_out_of_range_exception::throw_if_greater_than](.)
 * [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](.)
 * [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](.)
-* [](.)
 
 # See also
 ​
