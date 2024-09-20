@@ -3629,7 +3629,7 @@ namespace xtd {
     //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
     friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {
       if constexpr (std::is_same_v<char, char_t>) return stream << str.chars();
-      return stream << __xtd_convert_to_string<char>(str.chars());
+      else return stream << __xtd_convert_to_string<char>(str.chars());
     }
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
