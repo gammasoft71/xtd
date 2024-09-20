@@ -393,7 +393,7 @@ namespace xtd::collections::generic::tests {
       assert::is_true(items.contains(21), csf_);
       assert::is_false(items.contains(0), csf_);
       assert::is_false(items.contains(12), csf_);
-      assert::is_false(items.contains(items.npos), csf_);
+      assert::is_false(items.contains(-1), csf_);
     }
     
     void test_method_(copy_to) {
