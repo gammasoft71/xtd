@@ -4,7 +4,7 @@
 #pragma once
 /// @cond
 #if !defined(__XTD_BASIC_STRING_INTERNAL__)
-#error "Do not include this file: Internal use only. Include <basic_string> or <basic_string.h> instead."
+#error "Do not include this file: Internal use only. Include <xtd/basic_string> or <xtd/basic_string.h> instead."
 #endif
 
 #include "array.h"
@@ -147,7 +147,6 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
       sub_string.chars_.clear();
     }
   }
-  
   return list;
 }
 
@@ -419,7 +418,6 @@ inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<sou
       codepoint = 0;
     }
   }
-  str.clear();
   return out;
 }
 
@@ -444,7 +442,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>
         out.append(1, static_cast<xtd::char16>(codepoint));
     }
   }
-  str.clear();
   return out;
 }
 
@@ -470,7 +467,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::
         out.append(1, static_cast<xtd::char16>(codepoint));
     }
   }
-  str.clear();
   return out;
 }
 #endif
@@ -498,7 +494,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(s
         out.append(1, static_cast<xtd::wchar>(codepoint));
     }
   }
-  str.clear();
   return out;
 }
 
@@ -526,7 +521,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
         out.append(1, static_cast<xtd::wchar>(codepoint));
     }
   }
-  str.clear();
   return out;
 }
 #endif
@@ -547,7 +541,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>
     if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
       out.append(1, static_cast<xtd::char32>(codepoint));
   }
-  str.clear();
   return out;
 }
 
@@ -568,7 +561,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
     if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
       out.append(1, static_cast<xtd::char32>(codepoint));
   }
-  str.clear();
   return out;
 }
 #endif
@@ -603,16 +595,12 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wc
 #if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(std::basic_string<char>&& str) noexcept {
-  auto result = std::basic_string<xtd::char8> {reinterpret_cast<const xtd::char8*>(str.c_str())};
-  str.clear();
-  return result;
+  return std::basic_string<xtd::char8> {reinterpret_cast<const xtd::char8*>(str.c_str())};
 }
 
 template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
-  auto result = std::basic_string<char> {reinterpret_cast<const char*>(str.c_str())};
-  str.clear();
-  return result;
+  return std::basic_string<char> {reinterpret_cast<const char*>(str.c_str())};
 }
 #endif
 

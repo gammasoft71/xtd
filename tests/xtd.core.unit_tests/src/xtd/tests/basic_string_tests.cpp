@@ -1718,7 +1718,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char>("A test string");
       s1 = std::move(s2);
       assert::are_equal("A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_basic_string_char16) {
@@ -1726,7 +1725,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char16>(u"A test string");
       s1 = std::move(s2);
       assert::are_equal(u"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_basic_string_char32) {
@@ -1734,7 +1732,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char32>(U"A test string");
       s1 = std::move(s2);
       assert::are_equal(U"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_basic_string_char8) {
@@ -1743,7 +1740,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char8>(u8"A test string");
       s1 = std::move(s2);
       assert::are_equal(u8"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -1752,7 +1748,6 @@ namespace xtd::tests {
       auto s2 = basic_string<wchar>(L"A test string");
       s1 = std::move(s2);
       assert::are_equal(L"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
 
     void test_method_(equal_operator_std_basic_string_char) {
@@ -1802,7 +1797,6 @@ namespace xtd::tests {
       auto s2 = std::basic_string<char>("A test string");
       s1 = std::move(s2);
       assert::are_equal("A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_std_basic_string_char16) {
@@ -1810,7 +1804,6 @@ namespace xtd::tests {
       auto s2 = std::basic_string<char16>(u"A test string");
       s1 = std::move(s2);
       assert::are_equal(u"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_std_basic_string_char32) {
@@ -1818,7 +1811,6 @@ namespace xtd::tests {
       auto s2 = std::basic_string<char32>(U"A test string");
       s1 = std::move(s2);
       assert::are_equal(U"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(equal_operator_move_std_basic_string_char8) {
@@ -1827,7 +1819,6 @@ namespace xtd::tests {
       auto s2 = std::basic_string<char8>(u8"A test string");
       s1 = std::move(s2);
       assert::are_equal(u8"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -1836,7 +1827,6 @@ namespace xtd::tests {
       auto s2 = std::basic_string<wchar>(L"A test string");
       s1 = std::move(s2);
       assert::are_equal(L"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
 
     void test_method_(equal_operator_char_pointer) {
@@ -2007,7 +1997,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char> {" string"};
       s1 += std::move(s2);
       assert::are_equal("A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_assignment_operator_move_basic_string_char16) {
@@ -2015,7 +2004,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char16> {u" string"};
       s1 += std::move(s2);
       assert::are_equal(u"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_assignment_operator_move_basic_string_char32) {
@@ -2023,7 +2011,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char32> {U" string"};
       s1 += std::move(s2);
       assert::are_equal(U"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_assignment_operator_move_basic_string_char8) {
@@ -2032,7 +2019,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char8> {u8" string"};
       s1 += std::move(s2);
       assert::are_equal(u8"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -2041,7 +2027,6 @@ namespace xtd::tests {
       auto s2 = basic_string<wchar> {L" string"};
       s1 += std::move(s2);
       assert::are_equal(L"A test string", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
 
     void test_method_(addition_assignment_operator_std_basic_string_char) {
@@ -2203,7 +2188,6 @@ namespace xtd::tests {
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::is_empty(s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_basic_string_char16) {
@@ -2212,7 +2196,6 @@ namespace xtd::tests {
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::is_empty(s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_basic_string_char32) {
@@ -2221,7 +2204,6 @@ namespace xtd::tests {
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::is_empty(s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_basic_string_char8) {
@@ -2231,7 +2213,6 @@ namespace xtd::tests {
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::is_empty(s1, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -2241,7 +2222,6 @@ namespace xtd::tests {
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::is_empty(s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_lhs_basic_string_char) {
@@ -2297,7 +2277,6 @@ namespace xtd::tests {
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::are_equal("A test", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_rhs_basic_string_char16) {
@@ -2306,7 +2285,6 @@ namespace xtd::tests {
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::are_equal("A test", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_rhs_basic_string_char32) {
@@ -2315,7 +2293,6 @@ namespace xtd::tests {
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::are_equal("A test", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_move_rhs_basic_string_char8) {
@@ -2325,7 +2302,6 @@ namespace xtd::tests {
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::are_equal("A test", s1, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -2335,7 +2311,6 @@ namespace xtd::tests {
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
       assert::are_equal("A test", s1, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_std_basic_string_char) {
@@ -2516,7 +2491,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_char16_pointer_lhs_move_rhs) {
@@ -2524,7 +2498,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_char32_pointer_lhs_move_rhs) {
@@ -2532,7 +2505,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_char8_pointer_lhs_move_rhs) {
@@ -2541,7 +2513,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
-      assert::is_empty(s2, csf_);
 #endif
     }
     
@@ -2550,7 +2521,6 @@ namespace xtd::tests {
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3, csf_);
-      assert::is_empty(s2, csf_);
     }
     
     void test_method_(addition_operator_char_rhs) {
@@ -2700,7 +2670,6 @@ namespace xtd::tests {
       auto r = c + std::move(s);
       assert::are_equal("$A test", r, csf_);
       assert::are_equal('$', c, csf_);
-      assert::is_empty(s, csf_);
     }
     
     void test_method_(addition_operator_char16_rlhs_move_rhs) {
@@ -2709,7 +2678,6 @@ namespace xtd::tests {
       auto r = c + std::move(s);
       assert::are_equal("$A test", r, csf_);
       assert::are_equal(u'$', c, csf_);
-      assert::is_empty(s, csf_);
     }
     
     void test_method_(addition_operator_char32_lhs_move_rhs) {
@@ -2718,7 +2686,6 @@ namespace xtd::tests {
       auto r = c + std::move(s);
       assert::are_equal("$A test", r, csf_);
       assert::are_equal(U'$', c, csf_);
-      assert::is_empty(s, csf_);
     }
     
     void test_method_(addition_operator_char8_lhs_move_rhs) {
@@ -2728,7 +2695,6 @@ namespace xtd::tests {
       auto r = c + std::move(s);
       assert::are_equal("$A test", r, csf_);
       assert::are_equal(u8'$', c, csf_);
-      assert::is_empty(s, csf_);
 #endif
     }
     
@@ -2738,7 +2704,6 @@ namespace xtd::tests {
       auto r = c + std::move(s);
       assert::are_equal("$A test", r, csf_);
       assert::are_equal(L'$', c, csf_);
-      assert::is_empty(s, csf_);
     }
     
     void test_method_(output_stream_operator_char) {
