@@ -48,8 +48,10 @@ namespace xtd::tests {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string_builder<char_t>::value_type>(), csf_);
+#else
       assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string_builder<char_t>::value_type>(), csf_);
+#endif
     }
     
     void test_method_(allocator_type) {
@@ -68,32 +70,40 @@ namespace xtd::tests {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string_builder<char_t>::reference>(), csf_);
+#else
       assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string_builder<char_t>::reference>(), csf_);
+#endif
     }
     
     void test_method_(const_reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string_builder<char_t>::const_reference>(), csf_);
+#else
       assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string_builder<char_t>::const_reference>(), csf_);
+#endif
     }
     
     void test_method_(pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string_builder<char_t>::pointer>(), csf_);
+#else
       assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string_builder<char_t>::pointer>(), csf_);
+#endif
     }
     
     void test_method_(const_pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
 #if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
+      else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string_builder<char_t>::const_pointer>(), csf_);
+#else
       assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string_builder<char_t>::const_pointer>(), csf_);
+#endif
     }
     
     void test_method_(iterator) {
