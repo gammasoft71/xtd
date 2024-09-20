@@ -236,7 +236,7 @@ namespace xtd {
     /// @brief Determines whether an element is in the array.
     /// @param value The object to be added to the end of the array.
     constexpr bool contains(const type_t& value) const noexcept override {
-      for (const type_t& item : data_->items)
+      for (const auto& item : data_->items)
         if (item == value) return true;
       return false;
     }
