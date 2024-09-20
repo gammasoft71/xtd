@@ -213,7 +213,7 @@ namespace xtd::tests {
     
     void test_method_(crend) {
       auto items = array_ {84, 42, 21};
-      assert::does_not_throw([&] {*items.crend();}, csf_);
+      assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.crend();}, csf_);
     }
     
     void test_method_(data) {
@@ -347,7 +347,7 @@ namespace xtd::tests {
     
     void test_method_(rend) {
       auto items = array_ {84, 42, 21};
-      assert::does_not_throw([&] {*items.rend();}, csf_);
+      assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.rend();}, csf_);
     }
 
     void test_method_(size) {
@@ -388,7 +388,7 @@ namespace xtd::tests {
       assert::is_true(items.contains(21), csf_);
       assert::is_false(items.contains(0), csf_);
       assert::is_false(items.contains(12), csf_);
-      assert::is_false(items.contains(items.npos), csf_);
+      assert::is_false(items.contains(-1), csf_);
     }
     
     void test_method_(copy_to) {
