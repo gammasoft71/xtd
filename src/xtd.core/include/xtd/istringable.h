@@ -31,7 +31,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const istringable& obj);
+    friend std::ostream& operator <<(std::ostream& os, const istringable& obj) noexcept;
     /// @endcond
   };
 }

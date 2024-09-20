@@ -24,7 +24,7 @@ size hash_code::combine_iterator(size seed) noexcept {
 
 size hash_code::hash_combine(size seed, size value) noexcept {
   // https://stackoverflow.com/questions/35985960/c-why-is-boosthash-combine-the-best-way-to-combine-hash-values
-  return seed ^ value + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+  return (seed ^ value) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
 }
 
 size hash_code::generate_uniqueness_seed() noexcept {
