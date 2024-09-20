@@ -35,7 +35,7 @@ namespace xtd {
         
         /// @{
         /// @brief Returns a default sort order comparer for the type specified by the generic argument
-        inline static const comparer<type_t> default_comparer;
+        static const comparer<type_t> default_comparer;
         /// @}
         
         /// @name Public Methods
@@ -65,6 +65,11 @@ namespace xtd {
         comparer() = default;
         /// @}
       };
+
+      /// @cond
+      template<typename type_t>
+      inline const comparer<type_t> comparer<type_t>::default_comparer;
+      /// @endcond
     }
   }
 }
