@@ -286,7 +286,7 @@ namespace xtd::tests {
     void test_method_(chars) {
       assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string_builder<char_t> {}.chars()), csf_);
       assert::is_empty(basic_string_builder<char_t> {}.chars(), csf_);
-      collection_assert::are_equal({'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.chars(), csf_);
+      collection_assert::are_equal(params<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.chars(), csf_);
     }
     
     void test_method_(cend) {
@@ -730,7 +730,7 @@ namespace xtd::tests {
     void test_method_(get_base_type) {
       assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string_builder<char_t> {}.get_base_type()), csf_);
       assert::is_empty(basic_string_builder<char_t> {}.get_base_type(), csf_);
-      collection_assert::are_equal({'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.get_base_type(), csf_);
+      collection_assert::are_equal(params<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.get_base_type(), csf_);
     }
     
     void test_method_(get_hash_code) {
@@ -1158,7 +1158,7 @@ namespace xtd::tests {
     void test_method_(cast_operator_base_type) {
       auto s = std::basic_string<char_t> {};
       s = basic_string_builder<char_t>("A test string");
-      collection_assert::are_equal({'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, s, csf_);
+      collection_assert::are_equal(params<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, s, csf_);
     }
 
     void test_method_(equal_operator_basic_string) {
