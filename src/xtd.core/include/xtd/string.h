@@ -64,10 +64,6 @@ namespace xtd {
   string to_ustring(type_t val) {
     return string::format("{}", val);
   }
-
-  /// @todo Uncomment the folllowing line and remove the next..
-  template<typename char_t, typename traits_t, typename allocator_t>
-  inline xtd::string basic_string<char_t, traits_t, allocator_t>::to_string() const noexcept {return __xtd_convert_to_string<char>(chars_);}
 }
 
 /*
