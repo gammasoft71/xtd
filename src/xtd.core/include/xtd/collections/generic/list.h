@@ -466,7 +466,7 @@ namespace xtd {
         
         bool contains(const type_t& value) const noexcept override {
           for (const auto& item : data_->items)
-            if (item == value) return true;
+            if (reinterpret_cast<const type_t&>(item) == value) return true;
           return false;
         }
         
