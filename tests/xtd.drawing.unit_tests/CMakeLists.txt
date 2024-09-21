@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.20)
 project(xtd.drawing.unit_tests)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
-add_references(xtd.drawing)
 add_sources(
   src/main.cpp 
   src/xtd/drawing/drawing_2d/tests/compositing_mode_tests.cpp

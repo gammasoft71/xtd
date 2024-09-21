@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.20)
 project(xtd.core.unit_tests)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
-add_references(xtd.core)
 add_sources(
   src/main.cpp 
   src/xtd/collections/tests/key_not_found_exception_tests.cpp
