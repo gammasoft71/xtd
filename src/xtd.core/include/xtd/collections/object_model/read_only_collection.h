@@ -93,9 +93,9 @@ namespace xtd {
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
         /// @brief Represents the iterator of list value type.
-        using iterator = generic::icollection<type_t>::iterator;
+        using iterator = typename generic::icollection<type_t>::iterator;
         /// @brief Represents the const iterator of list value type.
-        using const_iterator = generic::icollection<type_t>::const_iterator;
+        using const_iterator = typename generic::icollection<type_t>::const_iterator;
         /// @}
         
         /// @name Public Fields
