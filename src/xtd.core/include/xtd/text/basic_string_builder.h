@@ -2043,10 +2043,10 @@ namespace xtd {
 
       /// @brief Returns a reference to the underlying base type.
       /// @return Reference to the underlying base type.
-      virtual operator const base_type&() const noexcept {return chars_;}
+      operator const base_type&() const noexcept {return chars_;}
       /// @brief Returns a reference to the underlying base type.
       /// @return Reference to the underlying base type.
-      virtual operator base_type&() noexcept {return chars_;}
+      operator base_type&() noexcept {return chars_;}
 
       /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
       /// @param str String to use as data source.

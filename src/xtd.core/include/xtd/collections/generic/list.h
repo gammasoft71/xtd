@@ -930,10 +930,10 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual operator const base_type&() const noexcept {return data_->items;}
+        operator const base_type&() const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual operator base_type&() noexcept {return data_->items;}
+        operator base_type&() noexcept {return data_->items;}
         /// @}
         
       private:
