@@ -312,6 +312,9 @@ namespace xtd {
         /// @}
 
       private:
+        using xtd::forms::layout::arranged_element_collection<control_ref>::insert;
+        using xtd::forms::layout::arranged_element_collection<control_ref>::push_back;
+
         bool keep_cloned_controls_ = false;
         static std::vector<xtd::uptr<xtd::forms::control>> controls_;
       };
