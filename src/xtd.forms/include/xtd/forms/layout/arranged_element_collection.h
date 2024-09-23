@@ -268,7 +268,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
-        virtual iterator insert(const_iterator pos, const value_type&& value) {
+        virtual iterator insert(const_iterator pos, value_type&& value) {
           size_t index = pos - begin();
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
