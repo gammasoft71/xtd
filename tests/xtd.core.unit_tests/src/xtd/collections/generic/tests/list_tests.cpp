@@ -2,7 +2,7 @@
 #include <xtd/as>
 #include <xtd/boolean>
 #include <xtd/environment>
-#include <xtd/int64_object>
+#include <xtd/size_object>
 #include <xtd/lock>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
@@ -287,7 +287,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(max_size) {
-      assert::are_equal(as<xtd::size>(environment::os_version().is_linux() ? int64_object::max_value / 4 : int64_object::max_value / 2), list<int> {}.max_size(), csf_);
+      assert::are_equal(environment::os_version().is_linux() ? size_object::max_value / 8 : size_object::max_value / 4, list<int> {}.max_size(), csf_);
     }
     
     void test_method_(rbegin) {
