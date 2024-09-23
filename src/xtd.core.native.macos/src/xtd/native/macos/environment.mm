@@ -54,27 +54,27 @@ namespace {
       }
     }
     
-    if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
-    if (major == 10 && minor == 1) return make_tuple("OS X", "Puma", version);
-    if (major == 10 && minor == 2) return make_tuple("OS X", "Jaguar", version);
-    if (major == 10 && minor == 3) return make_tuple("OS X", "Panther", version);
-    if (major == 10 && minor == 4) return make_tuple("OS X", "Tiger", version);
-    if (major == 10 && minor == 5) return make_tuple("OS X", "Leopard", version);
-    if (major == 10 && minor == 6) return make_tuple("OS X", "Snow Leopard", version);
-    if (major == 10 && minor == 7) return make_tuple("OS X", "Lion", version);
-    if (major == 10 && minor == 8) return make_tuple("OS X", "Montain Lion", version);
-    if (major == 10 && minor == 9) return make_tuple("OS X", "Mavericks", version);
-    if (major == 10 && minor == 10) return make_tuple("OS X", "Yosemite", version);
-    if (major == 10 && minor == 11) return make_tuple("OS X", "El Capitan", version);
-    if (major == 10 && minor == 12) return make_tuple("macOS", "Sierra", version);
-    if (major == 10 && minor == 13) return make_tuple("macOS", "High Sierra", version);
-    if (major == 10 && minor == 14) return make_tuple("macOS", "Mojave", version);
-    if (major == 10 && minor == 15) return make_tuple("macOS", "Catalina", version);
-    if (major == 11) return make_tuple("macOS", "Big Sur", version);
-    if (major == 12) return make_tuple("macOS", "Monterey", version);
-    if (major == 13) return make_tuple("macOS", "Ventura", version);
-    if (major == 14) return make_tuple("macOS", "Sonoma", version);
     if (major == 15) return make_tuple("macOS", "Sequoia", version);
+    if (major == 14) return make_tuple("macOS", "Sonoma", version);
+    if (major == 13) return make_tuple("macOS", "Ventura", version);
+    if (major == 12) return make_tuple("macOS", "Monterey", version);
+    if (major == 11) return make_tuple("macOS", "Big Sur", version);
+    if (major == 10 && minor == 15) return make_tuple("macOS", "Catalina", version);
+    if (major == 10 && minor == 14) return make_tuple("macOS", "Mojave", version);
+    if (major == 10 && minor == 13) return make_tuple("macOS", "High Sierra", version);
+    if (major == 10 && minor == 12) return make_tuple("macOS", "Sierra", version);
+    if (major == 10 && minor == 11) return make_tuple("OS X", "El Capitan", version);
+    if (major == 10 && minor == 10) return make_tuple("OS X", "Yosemite", version);
+    if (major == 10 && minor == 9) return make_tuple("OS X", "Mavericks", version);
+    if (major == 10 && minor == 8) return make_tuple("OS X", "Montain Lion", version);
+    if (major == 10 && minor == 7) return make_tuple("OS X", "Lion", version);
+    if (major == 10 && minor == 6) return make_tuple("OS X", "Snow Leopard", version);
+    if (major == 10 && minor == 5) return make_tuple("OS X", "Leopard", version);
+    if (major == 10 && minor == 4) return make_tuple("OS X", "Tiger", version);
+    if (major == 10 && minor == 3) return make_tuple("OS X", "Panther", version);
+    if (major == 10 && minor == 2) return make_tuple("OS X", "Jaguar", version);
+    if (major == 10 && minor == 1) return make_tuple("OS X", "Puma", version);
+    if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
     return std::make_tuple(name, codename, version);
   }
   
