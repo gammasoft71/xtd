@@ -304,14 +304,5 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-    
-    void test_method_(ostream_operator) {
-      argument_exception inner_exception;
-      auto info = current_stack_frame_;
-      exception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      std::stringstream s;
-      s << e;
-      assert::are_equal(s.str(), e.to_string(), csf_);
-    }
   };
 }

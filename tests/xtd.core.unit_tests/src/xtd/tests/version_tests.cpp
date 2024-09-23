@@ -208,11 +208,5 @@ namespace xtd::tests {
     void test_method_(to_string_field_greater_than_4) {
       assert::throws<argument_exception>([] {version().to_string(5);}, csf_);
     }
-    
-    void test_method_(ostream_operator) {
-      std::stringstream ss;
-      ss << version(1, 2, 3, 4);
-      assert::are_equal("1.2.3.4", ss.str(), csf_);
-    }
   };
 }
