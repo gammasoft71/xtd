@@ -13,7 +13,7 @@ namespace lcd_label_appearance_example {
       text("LCD label example");
       controls().push_back_range({group_box_properties, label_lcd_label});
       
-      group_box_properties.controls().push_back({panel_properties});
+      group_box_properties.controls().push_back(panel_properties);
       group_box_properties.location({10, 10});
       group_box_properties.size({340, 220});
       group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
