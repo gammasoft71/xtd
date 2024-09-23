@@ -29,9 +29,9 @@ namespace xtd {
     /// @return A string that represents the current object.
     virtual xtd::string to_string() const = 0;
     /// @}
-    
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const istringable& obj) noexcept;
-    /// @endcond
   };
 }
+
+/// @cond
+std::ostream& operator <<(std::ostream& os, const xtd::istringable& obj) noexcept;
+/// @endcond
