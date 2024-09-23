@@ -12,7 +12,7 @@ public:
     client_size({800, 450});
     controls().push_back_range({group_box_properties, button_demo});
     
-    group_box_properties.controls().push_back({panel_properties});
+    group_box_properties.controls().push_back(panel_properties);
     group_box_properties.location({10, 10});
     group_box_properties.size({340, 430});
     group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
