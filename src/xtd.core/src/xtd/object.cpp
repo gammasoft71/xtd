@@ -38,7 +38,6 @@ void object::__throw_invalid_cast_exception(const string& file, uint32 line, con
   throw invalid_cast_exception {{file, line, method}};
 }
 
-std::ostream& xtd::operator <<(std::ostream& os, const object& obj) noexcept {
+std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }
-

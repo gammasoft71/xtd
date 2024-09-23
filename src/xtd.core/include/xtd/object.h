@@ -145,11 +145,11 @@ namespace xtd {
   private:
     void __throw_invalid_cast_exception(const string& file, uint32 line, const string& method) const;
   };
-  
-  /// @cond
-  std::ostream& operator <<(std::ostream& os, const object& obj) noexcept;
-  /// @endcond
 }
+
+/// @cond
+std::ostream& operator <<(std::ostream& os, const xtd::object& obj) noexcept;
+/// @endcond
 
 #include "type.h"
 
