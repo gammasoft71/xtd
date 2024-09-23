@@ -329,7 +329,7 @@ namespace xtd::tests {
     }
     
     void test_method_(max_size) {
-      assert::are_equal(as<xtd::size>(environment::os_version().is_linux() ? int64_object::max_value / 4 : int64_object::max_value / 2), array_<int> {}.max_size(), csf_);
+      assert::are_equal(environment::os_version().is_linux() ? size_object::max_value / 8 : size_object::max_value / 4, array_<int> {}.max_size(), csf_);
     }
 
     void test_method_(rank) {
