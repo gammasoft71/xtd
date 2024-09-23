@@ -55,6 +55,7 @@ xtd::string compiler::to_string() const noexcept {
 xtd::string compiler::get_apple_clang_additional_information() const noexcept {
   // https://en.wikipedia.org/wiki/Xcode
   auto version_string = get_compiler_version_string("clang");
+  if (version_string.contains("16.0.0 (clang-1600.0.26.3)")) return "Xcode 16.1";
   if (version_string.contains("15.0.0 (clang-1500.3.9.4)")) return "Xcode 15.3";
   if (version_string.contains("15.0.0 (clang-1500.1.0.2.5)")) return "Xcode 15.2";
   if (version_string.contains("15.0.0 (clang-1500.1.0.2.5)")) return "Xcode 15.1";
@@ -129,6 +130,7 @@ xtd::string compiler::get_apple_clang_additional_information() const noexcept {
   if (version_string.contains("1.5 (60)")) return "Xcode 3.2.3, 3.2.4";
   if (version_string.contains("1.0.2")) return "Xcode 3.2";
 
+  if (version().major() == 16) return "Xcode 16.0, 16.1";
   if (version().major() == 15) return "Xcode 15.0, 15.0.1, 15.1, 15.2, 15.3";
   if (version().major() == 14) return "Xcode 14.0, 14.0.1, 14.1, 14.2, 14.3, 14.3.1";
   if (version().major() == 13 && version().minor() == 1) return "Xcode 13.3, 13.3.1, 13.4, 13.4.1";
@@ -163,21 +165,22 @@ xtd::string compiler::get_apple_clang_additional_information() const noexcept {
 }
 
 xtd::string compiler::get_compiler_version_string(const xtd::string& compiler_name) const noexcept {
-  static auto version_string = string::empty_string;
-  if (!string::is_empty(version_string)) return version_string;
+  static auto version_strings = std::map<xtd::string, xtd::string> {};
+  auto iterator = version_strings.find(compiler_name);
+  if (iterator != version_strings.end()) return iterator->second;
   try {
     auto psi = process_start_info {compiler_name, "--version"};
     auto p = process::start(psi.use_shell_execute(false).redirect_standard_output(true)).wait_for_exit();
-    version_string = stream_reader(p.standard_output()).read_line();
+    version_strings[compiler_name] = stream_reader(p.standard_output()).read_line();
   } catch(...) {
-    version_string = string::format("{} {}", name(), version());
+    version_strings[compiler_name] = string::format("{} {}", name(), version());
   }
-  return version_string;
+  return version_strings[compiler_name];
 }
 
 xtd::string compiler::get_msvc_additional_information() const noexcept {
   // https://learn.microsoft.com/fr-fr/cpp/overview/compiler-versions?view=msvc-170
-  if (version().major() == 19 && version().minor() == 40) return "Visual Studio 20222 version 17.10";
+  if (version().major() == 19 && version().minor() == 40) return "Visual Studio 2022 version 17.10";
   if (version().major() == 19 && version().minor() == 39) return "Visual Studio 2022 version 17.9";
   if (version().major() == 19 && version().minor() == 38) return "Visual Studio 2022 version 17.8";
   if (version().major() == 19 && version().minor() == 37) return "Visual Studio 2022 version 17.7";
