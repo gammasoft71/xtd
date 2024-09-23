@@ -54,10 +54,9 @@ namespace xtd::tests {
       assert::is_false(c.is_build_type_debug(), csf_);
       assert::are_equal("Clang", c.name(), csf_);
       assert::are_equal(version {1, 2, 3}, c.version(), csf_);
-#if !defined (__APPLE__)
-      assert::are_equal("Clang 1.2.3", c.version_string(), csf_);
-      assert::are_equal("Clang 1.2.3", c.to_string(), csf_);
-#endif
+      // The result cannot be tested as it is the actual version of the command line, which varies according to OS and compiler version.
+      //assert::are_equal("Clang 1.2.3", c.version_string(), csf_);
+      //assert::are_equal("Clang 1.2.3", c.to_string(), csf_);
     }
     
     void test_method_(create_compiler_with_compiler_id_gcc_version_build_type_release_and_is_64_bit) {
@@ -68,15 +67,14 @@ namespace xtd::tests {
       assert::is_false(c.is_build_type_debug(), csf_);
       assert::are_equal("GCC", c.name(), csf_);
       assert::are_equal(version {1, 2, 3}, c.version(), csf_);
-#if !defined (__APPLE__)
-      assert::are_equal("GCC 1.2.3", c.version_string(), csf_);
-      assert::are_equal("GCC 1.2.3", c.to_string(), csf_);
-#endif
+      // The result cannot be tested as it is the actual version of the command line, which varies according to OS and compiler version.
+      //assert::are_equal("GCC 1.2.3", c.version_string(), csf_);
+      //assert::are_equal("GCC 1.2.3", c.to_string(), csf_);
     }
     
     void test_method_(create_compiler_with_compiler_id_invalid_version_build_type_release_and_is_64_bit) {
 #if !defined (__APPLE__)
-      assert::throws<argument_exception>([] {compiler {static_cast<compiler_id>(3), {1, 2, 3}, build_type::release, true};}, csf_);
+      assert::throws<argument_exception>([] {compiler {static_cast<compiler_id>(4), {1, 2, 3}, build_type::release, true};}, csf_);
 #endif
     }
   };
