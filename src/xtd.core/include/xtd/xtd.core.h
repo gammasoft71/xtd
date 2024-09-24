@@ -26,7 +26,6 @@
 #include "collections/generic/ilist.h"
 #include "collections/generic/key_value_pair.h"
 #include "collections/generic/list.h"
-#include "collections/generic/params.h"
 #include "collections/generic/sorted_dictionary.h"
 #include "collections/generic/sorted_set.h"
 #include "collections/generic/helpers/allocator.h"

@@ -4,7 +4,6 @@
 #pragma once
 #include "helpers/allocator.h"
 #include "ilist.h"
-#include "params.h"
 #include "../object_model/read_only_collection.h"
 #include "../../argument_exception.h"
 #include "../../argument_out_of_range_exception.h"
