@@ -84,6 +84,23 @@ namespace xtd {
     argument_exception& operator =(const argument_exception&) = default;
     /// @endcond
     
+    /// @name Public static Methods
+    
+    /// @{
+    /// @brief Throws an exception if `argument` is empty.
+    /// @param argument The string argument to validate as non-empty.
+    /// @param param_name (optional) The name of the parameter with which argument corresponds.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @exception xtd::argument_exception `argument` is empty.
+    static void throw_if_empty(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument)) throw argument_exception {string::format("The value cannot be an empty string. (Parameter '{}')", param_name, info)};}
+    /// @brief Throws an exception if argument is empty, or consists only of white-space characters.
+    /// @param argument The string argument to validate.
+    /// @param param_name (optional) The name of the parameter with which argument corresponds.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @exception xtd::argument_exception `argument` is empty or consists only of white-space characters.
+    static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument.replace(" ", ""))) throw argument_exception {string::format("The value cannot be an empty string. (Parameter '{}')", param_name, info)};}
+    /// @}
+
   private:
     const char* default_message() const noexcept {return "Value does not fall within the expected range."_t;}
   };
