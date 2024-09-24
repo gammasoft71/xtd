@@ -337,21 +337,21 @@ namespace xtd::tests {
       } catch(const argument_null_exception& e) {
         exception = e;
       }
-      assert::are_equal("The value cannot be an empty string. (Parameter '')", exception.message(), csf_);
+      assert::are_equal("The value cannot be null. (Parameter '')", exception.message(), csf_);
 
       try {
         argument_null_exception::throw_if_null(null, "null");
       } catch(const argument_null_exception& e) {
         exception = e;
       }
-      assert::are_equal("The value cannot be an empty string. (Parameter 'null')", exception.message(), csf_);
+      assert::are_equal("The value cannot be null. (Parameter 'null')", exception.message(), csf_);
 
       try {
         argument_null_exception::throw_if_null(null, "null", csf_);
       } catch(const argument_null_exception& e) {
         exception = e;
       }
-      assert::are_equal("The value cannot be an empty string. (Parameter 'null')", exception.message(), csf_);
+      assert::are_equal("The value cannot be null. (Parameter 'null')", exception.message(), csf_);
     }
   };
 }
