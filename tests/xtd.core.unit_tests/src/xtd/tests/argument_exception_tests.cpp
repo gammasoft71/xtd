@@ -309,12 +309,62 @@ namespace xtd::tests {
       assert::does_not_throw([]{argument_exception::throw_if_empty("a");}, csf_);
     }
     
+    void test_method_(throw_if_empty_verify_exception) {
+      auto exception = argument_exception {};
+      
+      try {
+        argument_exception::throw_if_empty("");
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter '')", exception.message(), csf_);
+      
+      try {
+        argument_exception::throw_if_empty("", "(empty)");
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter '(empty)')", exception.message(), csf_);
+      
+      try {
+        argument_exception::throw_if_empty("", "(empty)", csf_);
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string. (Parameter '(empty)')", exception.message(), csf_);
+    }
+
     void test_method_(throw_if_empty_or_white_space) {
       assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space("");}, csf_);
       assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space(" ");}, csf_);
       assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space("      ");}, csf_);
       assert::does_not_throw([]{argument_exception::throw_if_empty_or_white_space("a");}, csf_);
       assert::does_not_throw([]{argument_exception::throw_if_empty_or_white_space("    a    ");}, csf_);
+    }
+    
+    void test_method_(throw_if_empty_or_white_space_verify_exception) {
+      auto exception = argument_exception {};
+      
+      try {
+        argument_exception::throw_if_empty_or_white_space("    ");
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string or composed entirely of whitespace. (Parameter '')", exception.message(), csf_);
+      
+      try {
+        argument_exception::throw_if_empty_or_white_space("    ", "    ");
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string or composed entirely of whitespace. (Parameter '    ')", exception.message(), csf_);
+      
+      try {
+        argument_exception::throw_if_empty_or_white_space("    ", "    ", csf_);
+      } catch(const argument_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("The value cannot be an empty string or composed entirely of whitespace. (Parameter '    ')", exception.message(), csf_);
     }
   };
 }
