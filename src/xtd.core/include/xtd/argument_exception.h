@@ -98,7 +98,7 @@ namespace xtd {
     /// @param param_name (optional) The name of the parameter with which argument corresponds.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_exception `argument` is empty or consists only of white-space characters.
-    static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument.replace(" ", ""))) throw argument_exception {string::format("The value cannot be an empty string. (Parameter '{}')", param_name, info)};}
+    static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument.replace(" ", ""))) throw argument_exception {string::format("The value cannot be an empty string or composed entirely of whitespace. (Parameter '{}')", param_name, info)};}
     /// @}
 
   private:
