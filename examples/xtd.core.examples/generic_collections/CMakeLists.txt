@@ -14,5 +14,4 @@ add_projects(
   generic_list3
   generic_list4
   generic_list_as_read_only
-  generic_params
 )
