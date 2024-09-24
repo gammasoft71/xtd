@@ -303,5 +303,35 @@ namespace xtd::tests {
       assert::are_equal("xtd::argument_out_of_range_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
+    
+    void test_method_(throw_if_zero) {
+      assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_zero(0);}, csf_);
+      assert::does_not_throw([]{argument_out_of_range_exception::throw_if_zero(1);}, csf_);
+    }
+    
+    void test_method_(throw_if_zero_verify_exception) {
+      auto exception = argument_out_of_range_exception {};
+      
+      try {
+        argument_out_of_range_exception::throw_if_zero(.0);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("0 ('0') must be a non-zero value. (Parameter '')\nActual value was 0.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_zero(.0, ".0");
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("0 ('0') must be a non-zero value. (Parameter '.0')\nActual value was 0.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_zero(.0, ".0", csf_);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("0 ('0') must be a non-zero value. (Parameter '.0')\nActual value was 0.", exception.message(), csf_);
+    }
   };
 }
