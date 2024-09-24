@@ -303,5 +303,18 @@ namespace xtd::tests {
       assert::are_equal("xtd::argument_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
+    
+    void test_method_(throw_if_empty) {
+      assert::throws<argument_exception>([]{argument_exception::throw_if_empty("");}, csf_);
+      assert::does_not_throw([]{argument_exception::throw_if_empty("a");}, csf_);
+    }
+    
+    void test_method_(throw_if_empty_or_white_space) {
+      assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space("");}, csf_);
+      assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space(" ");}, csf_);
+      assert::throws<argument_exception>([]{argument_exception::throw_if_empty_or_white_space("      ");}, csf_);
+      assert::does_not_throw([]{argument_exception::throw_if_empty_or_white_space("a");}, csf_);
+      assert::does_not_throw([]{argument_exception::throw_if_empty_or_white_space("    a    ");}, csf_);
+    }
   };
 }
