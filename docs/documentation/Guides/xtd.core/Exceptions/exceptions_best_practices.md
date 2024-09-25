@@ -2,6 +2,7 @@
 
 * [Handling exceptions](#handling-exceptions)
 * [Throwing exceptions](#throwing-exceptions)
+* [Custom exception types](#custom-exception-types)
 
 Proper exception handling is essential for application reliability. 
 You can intentionally handle expected exceptions to prevent your app from crashing. 
@@ -193,6 +194,11 @@ The following best practices concern how you throw exceptions:
 
 * [Use predefined exception types](#use-predefined-exception-types)
 * [Use exception builder methods](#use-exception-builder-methods)
+* [Include a localized string message](#include-a-localized-string-message)
+* [Use proper grammar](#use-proper-grammar)
+* [Place throw statements well](#place-throw-statements-well)
+* [Don't raise exceptions in noexcept methods](#don-t-raise-exceptions-in-noexcept-methods)
+* [Throw argument validation exceptions synchronously](#throw-argument-validation-exceptions-synchronously)
 
 ### Use predefined exception types
 
@@ -249,7 +255,75 @@ You should call these methods instead of constructing and throwing the correspon
 * [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a120e488fa6378121a110404733282f98)
 * [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a665d7e453ad6aab6cc61f182a4906e3b)
 
-If you're implementing an asynchronous method, call [xtd::threading::cancellation_token::throw_if_cancellation_requested()](.) instead of checking if cancellation was requested and then constructing and throwing [operation_canceledexception](.).
+If you're implementing an asynchronous method, call [xtd::threading::cancellation_token::throw_if_cancellation_requested()](.) instead of checking if cancellation was requested and then constructing and throwing [operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html).
+
+### Include a localized string message
+
+The error message the user sees is derived from the [xtd::exception::message](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600) property of the exception that was thrown, and not from the name of the exception class. 
+Typically, you assign a value to the [xtd::exception::message](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600) property by passing the message string to the message argument of an [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) constructor.
+
+For localized applications, you should provide a localized message string for every exception that your application can throw. 
+You use `locale` files to provide localized error messages.
+For information on localizing applications and retrieving localized strings, see the following article:
+
+* [Internationalization](/docs/documentation/Guides/xtd.core/internationalization)
+
+### Use proper grammar
+
+Write clear sentences and include ending punctuation. 
+Each sentence in the string assigned to the [xtd::exception::message](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600) property should end in a period. 
+For example, "The log table has overflowed." uses correct grammar and punctuation.
+
+### Place throw statements well
+
+Place throw statements where the stack trace will be helpful.
+The stack trace begins at the statement where the exception is thrown and ends at the catch statement that catches the exception.
+
+### Don't raise exceptions in noexcept methods
+
+Don't raise exceptions in noexcept methods. For example:
+
+```cpp
+void the_method() noexcept {
+  throw argument_exception {csf_}; // Error because you specify to the user that the_method has no exception, yet you throw an exception.
+}
+```
+
+### Throw argument validation exceptions synchronously
+
+In task-returning methods, you should validate arguments and throw any corresponding exceptions, such as [xtd::argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html) and [xtd::argument_null_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__null__exception.html), before entering the asynchronous part of the method. 
+Exceptions that are thrown in the asynchronous part of the method are stored in the returned task and don't emerge until, for example, the task is awaited.
+
+## Custom exception types
+
+The following best practices concern custom exception types:
+
+* [End exception class names with `_exception`](#end-exception-class-names-with-exception)
+* [Include three constructors](#include-three-constructors)
+* [Provide additional properties as needed](#provide-additional-properties-as-needed)
+
+### End exception class names with `_exception`
+
+When a custom exception is necessary, name it appropriately and derive it from the [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) class. For example:
+
+```cpp
+class my_file_not_found_exception : public xtd::exception {
+
+};
+```
+
+### Include three constructors
+
+Use at least the three common constructors when creating your own exception classes: the parameterless constructor, a constructor that takes a string message, and a constructor that takes a string message and an inner exception.
+
+  * [xtd::exception(const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a292b8c4b43580256fdb1513113a20fca), which uses default values and optional stack frame.
+  * [xtd::exception(const xtd::string &message, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#ad43693d8a3723ec0b995123b2d14a297), which accepts a string message and optional stack frame.
+  * [xtd::exception(const xtd::string &message, const std::exception &inner_exception, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a946c0dec93a72997929197b1699e7040), which accepts a string message, an inner exception and optional stack frame.
+
+### Provide additional properties as needed
+
+Provide additional properties for an exception (in addition to the custom message string) only when there's a programmatic scenario where the additional information is useful.
+For example, the [xtd::io::file_not_found_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__not__found__exception.html) provides the [file_name](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__not__found__exception.html#a7cd16d6b427a9f14245ad77bcc19b4eb) property.
 
 # See also
 ​
