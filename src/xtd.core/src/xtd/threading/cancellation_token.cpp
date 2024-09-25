@@ -1,5 +1,6 @@
 #include "../../../include/xtd/threading/cancellation_token.h"
 #include "../../../include/xtd/threading/cancellation_token_source.h"
+#include "../../../include/xtd/operation_canceled_exception.h"
 #include "../../../include/xtd/threading/manual_reset_event.h"
 
 using namespace xtd;
@@ -33,6 +34,12 @@ threading::wait_handle& cancellation_token::wait_handle() noexcept {
 bool cancellation_token::equals(const cancellation_token& other) const noexcept {
   return token_source_ == other.token_source_;
 }
+
+void cancellation_token::throw_if_cancellation_requested() const {
+  if (!is_cancellation_requested()) return;
+  throw operation_canceled_exception {csf_};
+}
+
 
 cancellation_token::cancellation_token(cancellation_token_source& token_source) {
   token_source_ = &token_source;

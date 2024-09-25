@@ -88,6 +88,15 @@ namespace xtd {
       /// @{
       using object::equals;
       bool equals(const cancellation_token& other) const noexcept;
+      
+      /// @brief Throws a xtd::operation_canceled_exception if this token has had cancellation requested.
+      /// @exception xtd::operation_canceled_exception The token has had cancellation requested.
+      /// @remarks This method provides functionality equivalent to:
+      /// ```cpp
+      /// if (tpken.is_cancellation_requested())
+      ///   throw xtd::operation_canceled_exception {csf_};
+      /// ```
+      void throw_if_cancellation_requested() const;
       /// @}
 
     private:
