@@ -46,11 +46,6 @@ namespace xtd {
       explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, error, info) {}
       /// @brief Create a new instance of class file_not_found_exception
       /// @param message Message string associate to the exception.
-      /// @param help_link Help link string associate to the exception.
-      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit file_not_found_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, help_link, info) {}
-      /// @brief Create a new instance of class file_not_found_exception
-      /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, error, help_link, info) {}
@@ -83,14 +78,35 @@ namespace xtd {
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, inner_exception, error, help_link, info) {}
+      /// @brief Create a new instance of class file_not_found_exception
+      /// @param message Message string associate to the exception.
+      /// @param file_name The full name of the file that cannot be found.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      file_not_found_exception(const xtd::string& message, const xtd::string& file_name, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, info), file_name_ {file_name} {}
+      /// @brief Create a new instance of class file_not_found_exception
+      /// @param message Message string associate to the exception.
+      /// @param file_name The full name of the file that cannot be found.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      file_not_found_exception(const xtd::string& message, const xtd::string& file_name, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, inner_exception, info), file_name_ {file_name} {}
       /// @}
       /// @cond
       file_not_found_exception(const file_not_found_exception&) = default;
       file_not_found_exception& operator =(const file_not_found_exception&) = default;
       /// @endcond
       
+      /// @name Public Properties
+      
+      /// @{
+      /// @brief Gets the name of the file that cannot be found.
+      /// @return The name of the file, or `empty` if no file name was passed to the constructor for this instance.
+      /// @remrks This property is read-only.
+      const xtd::string& file_name() const noexcept {return file_name_;}
+      /// @}
+      
     private:
       const char* default_message() const noexcept {return "Unable to find the specified file."_t;}
+      xtd::string file_name_;
     };
   }
 }
