@@ -309,6 +309,11 @@ namespace xtd::tests {
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(ptr<object> {});}, csf_);
     }
     
+    void test_method_(throw_if_null_with_optional) {
+      assert::does_not_throw([]{argument_null_exception::throw_if_null(std::optional<object> {object {}});}, csf_);
+      assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(std::optional<object> {});}, csf_);
+    }
+    
     void test_method_(throw_if_null_with_sptr) {
       assert::does_not_throw([]{argument_null_exception::throw_if_null(new_sptr<object>());}, csf_);
       assert::throws<argument_null_exception>([]{argument_null_exception::throw_if_null(sptr<object> {});}, csf_);
