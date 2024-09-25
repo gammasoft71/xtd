@@ -530,7 +530,7 @@ $(function() {
 <div class="line"><a id="l01742" name="l01742"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1assert.html#a44ea599bca30c02582108d47f31fd616"> 1742</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1assert.html#a44ea599bca30c02582108d47f31fd616">is_not_zero</a>(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message) {<a class="code hl_function" href="classxtd_1_1tunit_1_1assert.html#a44ea599bca30c02582108d47f31fd616">is_not_zero</a>(value, message, <a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a>());}</div>
 <div class="line"><a id="l01755" name="l01755"></a><span class="lineno"> 1755</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><a id="l01756" name="l01756"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1assert.html#abcab48cf3320f0a1cd4ae8d8f4f403e3"> 1756</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1assert.html#abcab48cf3320f0a1cd4ae8d8f4f403e3">is_not_zero</a>(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a>&amp; stack_frame) {</div>
-<div class="line"><a id="l01757" name="l01757"></a><span class="lineno"> 1757</span>        <span class="keywordflow">if</span> (value != 0)</div>
+<div class="line"><a id="l01757" name="l01757"></a><span class="lineno"> 1757</span>        <span class="keywordflow">if</span> (value != <span class="keyword">static_cast&lt;</span>value_t<span class="keyword">&gt;</span>(0))</div>
 <div class="line"><a id="l01758" name="l01758"></a><span class="lineno"> 1758</span>          succeed(message, stack_frame);</div>
 <div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l01760" name="l01760"></a><span class="lineno"> 1760</span>          fail(<span class="stringliteral">&quot;not zero&quot;</span>, <span class="stringliteral">&quot;0&quot;</span>, message, stack_frame);</div>
@@ -917,7 +917,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 15 2024 22:27:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 25 2024 16:41:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
