@@ -249,6 +249,8 @@ You should call these methods instead of constructing and throwing the correspon
 * [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a120e488fa6378121a110404733282f98)
 * [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a665d7e453ad6aab6cc61f182a4906e3b)
 
+If you're implementing an asynchronous method, call [xtd::threading::cancellation_token::throw_if_cancellation_requested()](.) instead of checking if cancellation was requested and then constructing and throwing [operation_canceledexception](.).
+
 # See also
 ​
 * [Guides](/docs/documentation/Guides)
