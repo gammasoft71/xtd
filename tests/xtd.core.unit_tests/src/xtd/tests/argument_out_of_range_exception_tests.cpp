@@ -340,7 +340,63 @@ namespace xtd::tests {
       assert::does_not_throw([]{argument_out_of_range_exception::throw_if_negative(0);}, csf_);
       assert::does_not_throw([]{argument_out_of_range_exception::throw_if_negative(1);}, csf_);
     }
+
+    void test_method_(throw_if_negative_verify_exception) {
+      auto exception = argument_out_of_range_exception {};
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative(-1);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative value. (Parameter '')\nActual value was -1.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative(-1, "my_value");
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative(-1, "my_value", csf_);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
+    }
+
+    void test_method_(throw_if_negative_or_zero) {
+      assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_negative_or_zero(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_negative_or_zero(0);}, csf_);
+      assert::does_not_throw([]{argument_out_of_range_exception::throw_if_negative(1);}, csf_);
+    }
     
+    void test_method_(throw_if_negative_or_zero_verify_exception) {
+      auto exception = argument_out_of_range_exception {};
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative_or_zero(-1);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative and non-zero value. (Parameter '')\nActual value was -1.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative_or_zero(-1, "my_value");
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative and non-zero value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_negative_or_zero(-1, "my_value", csf_);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('-1') must be a non-negative and non-zero value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
+    }
+
     void test_method_(throw_if_not_equal) {
       assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_not_equal(42, 84);}, csf_);
       assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_not_equal(42, 21);}, csf_);
@@ -370,31 +426,6 @@ namespace xtd::tests {
         exception = e;
       }
       assert::are_equal("value ('42') must be equal to `21`. (Parameter 'my_value')\nActual value was 42.", exception.message(), csf_);
-    }
-
-    void test_method_(throw_if_negative_verify_exception) {
-      auto exception = argument_out_of_range_exception {};
-      
-      try {
-        argument_out_of_range_exception::throw_if_negative(-1);
-      } catch(const argument_out_of_range_exception& e) {
-        exception = e;
-      }
-      assert::are_equal("value ('-1') must be a non-negative value. (Parameter '')\nActual value was -1.", exception.message(), csf_);
-      
-      try {
-        argument_out_of_range_exception::throw_if_negative(-1, "my_value");
-      } catch(const argument_out_of_range_exception& e) {
-        exception = e;
-      }
-      assert::are_equal("value ('-1') must be a non-negative value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
-      
-      try {
-        argument_out_of_range_exception::throw_if_negative(-1, "my_value", csf_);
-      } catch(const argument_out_of_range_exception& e) {
-        exception = e;
-      }
-      assert::are_equal("value ('-1') must be a non-negative value. (Parameter 'my_value')\nActual value was -1.", exception.message(), csf_);
     }
     
     void test_method_(throw_if_positive) {
