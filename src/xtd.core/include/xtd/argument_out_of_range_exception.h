@@ -102,6 +102,14 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template <typename value_t>
     static void throw_if_less_than_or_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (value <= other) throw argument_out_of_range_exception {string::format("value ('{0}') must not be greater than `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, info)};}
+    /// @brief Throws an xtd::argument_out_of_range_exception if `value` is greater than or equal to `other`.
+    /// @tparam value_t The type of the object to validate.
+    /// @param value The argument to validate as less than `other`.
+    /// @param other The value to compare with `value`.
+    /// @param param_name (optional) The name of the parameter with which `value` corresponds.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    template <typename value_t>
+    static void throw_if_greater_than_or_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (value >= other) throw argument_out_of_range_exception {string::format("value ('{0}') must not be less than `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, info)};}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is negative.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-negative.
