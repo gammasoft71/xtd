@@ -178,6 +178,14 @@ Inheritance diagram for xtd::argument_exception:</div>
 <tr class="memdesc:ad39bc90e06dd0de2fd01cb9b74454860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a>.  <br /></td></tr>
 <tr class="separator:ad39bc90e06dd0de2fd01cb9b74454860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public static Methods</h2></td></tr>
+<tr class="memitem:aa904822ef2bb340d8b5ac44d4c452b32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1argument__exception.html#aa904822ef2bb340d8b5ac44d4c452b32">throw_if_empty</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;argument, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;param_name=<a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;info=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a>())</td></tr>
+<tr class="memdesc:aa904822ef2bb340d8b5ac44d4c452b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws an exception if <code>argument</code> is empty.  <br /></td></tr>
+<tr class="separator:aa904822ef2bb340d8b5ac44d4c452b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73af69f77f9705387150935434a8e709"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1argument__exception.html#a73af69f77f9705387150935434a8e709">throw_if_empty_or_white_space</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;argument, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;param_name=<a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;info=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a>())</td></tr>
+<tr class="memdesc:a73af69f77f9705387150935434a8e709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws an exception if argument is empty, or consists only of white-space characters.  <br /></td></tr>
+<tr class="separator:a73af69f77f9705387150935434a8e709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1exception"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1exception')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1exception.html">xtd::exception</a></td></tr>
@@ -838,6 +846,123 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa904822ef2bb340d8b5ac44d4c452b32" name="aa904822ef2bb340d8b5ac44d4c452b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa904822ef2bb340d8b5ac44d4c452b32">&#9670;&#160;</a></span>throw_if_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::argument_exception::throw_if_empty </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>argument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>param_name</em> = <code><a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Throws an exception if <code>argument</code> is empty. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>The string argument to validate as non-empty. </td></tr>
+    <tr><td class="paramname">param_name</td><td>(optional) The name of the parameter with which argument corresponds. </td></tr>
+    <tr><td class="paramname">information</td><td>(optional) Contains current information about member name, file path and line number in the file where the exception is occurred. Typically <a class="el" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee" title="Provides information about the current stack frame.">current_stack_frame_</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`argument` is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73af69f77f9705387150935434a8e709" name="a73af69f77f9705387150935434a8e709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73af69f77f9705387150935434a8e709">&#9670;&#160;</a></span>throw_if_empty_or_white_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::argument_exception::throw_if_empty_or_white_space </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>argument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>param_name</em> = <code><a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Throws an exception if argument is empty, or consists only of white-space characters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>The string argument to validate. </td></tr>
+    <tr><td class="paramname">param_name</td><td>(optional) The name of the parameter with which argument corresponds. </td></tr>
+    <tr><td class="paramname">information</td><td>(optional) Contains current information about member name, file path and line number in the file where the exception is occurred. Typically <a class="el" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee" title="Provides information about the current stack frame.">current_stack_frame_</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`argument` is empty or consists only of white-space characters. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="argument__exception_8h_source.html">argument_exception.h</a></li>
 </ul>
@@ -845,7 +970,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 15 2024 22:27:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 25 2024 16:41:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
