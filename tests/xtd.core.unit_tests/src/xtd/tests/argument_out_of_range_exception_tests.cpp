@@ -304,6 +304,37 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
+    void test_method_(throw_if_equal) {
+      assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_equal(42, 42);}, csf_);
+      assert::does_not_throw([]{argument_out_of_range_exception::throw_if_equal(42, 84);}, csf_);
+      assert::does_not_throw([]{argument_out_of_range_exception::throw_if_equal(42, 21);}, csf_);
+    }
+    
+    void test_method_(throw_if_equal_verify_exception) {
+      auto exception = argument_out_of_range_exception {};
+      
+      try {
+        argument_out_of_range_exception::throw_if_equal(42, 42);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('42') must not  be equal to `42`. (Parameter '')\nActual value was 42.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_equal(42, 42, "my_value");
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('42') must not  be equal to `42`. (Parameter 'my_value')\nActual value was 42.", exception.message(), csf_);
+      
+      try {
+        argument_out_of_range_exception::throw_if_equal(42, 42, "my_value", csf_);
+      } catch(const argument_out_of_range_exception& e) {
+        exception = e;
+      }
+      assert::are_equal("value ('42') must not  be equal to `42`. (Parameter 'my_value')\nActual value was 42.", exception.message(), csf_);
+    }
+
     void test_method_(throw_if_negative) {
       assert::throws<argument_out_of_range_exception>([]{argument_out_of_range_exception::throw_if_negative(-1);}, csf_);
       assert::does_not_throw([]{argument_out_of_range_exception::throw_if_negative(0);}, csf_);
