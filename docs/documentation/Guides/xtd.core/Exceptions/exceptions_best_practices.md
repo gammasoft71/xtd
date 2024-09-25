@@ -234,20 +234,20 @@ private:
 Some key xtd exception types have such static throw helper methods that allocate and throw the exception. 
 You should call these methods instead of constructing and throwing the corresponding exception type:
 
-* [xtd::argument_null_exception::throw_if_null](.)
-* [xtd::argument_exception::throw_if_empty](.)
-* [xtd::argument_exception::throw_if_empty_or_white_space](.)
-* [xtd::argument_out_of_range_exception::throw_if_zero](.)
-* [xtd::argument_out_of_range_exception::throw_if_negative](.)
-* [xtd::argument_out_of_range_exception::throw_if_positive](.)
-* [xtd::argument_out_of_range_exception::throw_if_equal](.)
-* [xtd::argument_out_of_range_exception::throw_if_less_than](.)
-* [xtd::argument_out_of_range_exception::throw_if_not_equal](.)
-* [xtd::argument_out_of_range_exception::throw_if_negative_or_zero](.)
-* [xtd::argument_out_of_range_exception::throw_if_positive_or_zero](.)
-* [xtd::argument_out_of_range_exception::throw_if_greater_than](.)
-* [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](.)
-* [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](.)
+* [xtd::argument_null_exception::throw_if_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__null__exception.html#a2238e664c08b9a214361494544a9dee7)
+* [xtd::argument_exception::throw_if_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html#aa904822ef2bb340d8b5ac44d4c452b32)
+* [xtd::argument_exception::throw_if_empty_or_white_space](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html#a73af69f77f9705387150935434a8e709)
+* [xtd::argument_out_of_range_exception::throw_if_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a2882385050c42bf510bec42ee8177983)
+* [xtd::argument_out_of_range_exception::throw_if_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#aaef683b1532f1016a2aae21836a486ed)
+* [xtd::argument_out_of_range_exception::throw_if_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a0ca0b3dd187796f1b2bb03846d73c5b5)
+* [xtd::argument_out_of_range_exception::throw_if_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a84bda1e0473c5515ee86b869c33db9d8)
+* [xtd::argument_out_of_range_exception::throw_if_less_than](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a2a631cb65cbd57eebe3b2330af3aeda1)
+* [xtd::argument_out_of_range_exception::throw_if_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a8c0a02040287a3142ca095b11fade612)
+* [xtd::argument_out_of_range_exception::throw_if_negative_or_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a4fd301574e5c0e079ba93a0ca7d69d50)
+* [xtd::argument_out_of_range_exception::throw_if_positive_or_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a4dbf51ceefb8e881778ce0fa26baf2d7)
+* [xtd::argument_out_of_range_exception::throw_if_greater_than](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#ab46390f7974712fd8f942ba36b63faaf)
+* [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a120e488fa6378121a110404733282f98)
+* [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a665d7e453ad6aab6cc61f182a4906e3b)
 
 # See also
 ​
