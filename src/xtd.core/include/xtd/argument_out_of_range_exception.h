@@ -123,6 +123,13 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template <typename value_t>
     static void throw_if_positive(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (value > static_cast<value_t>(0)) throw argument_out_of_range_exception {string::format("value ('{0}') must be a non-positive value. (Parameter '{1}')\nActual value was {0}.", value, param_name, info)};}
+    /// @brief Throws an xtd::argument_out_of_range_exception if `value` is positive or zero.
+    /// @tparam value_t The type of the object to validate.
+    /// @param value The argument to validate as non-zero or non-positive.
+    /// @param param_name (optional) The name of the parameter with which `value` corresponds.
+    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    template <typename value_t>
+    static void throw_if_positive_or_zero(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (value >= static_cast<value_t>(0)) throw argument_out_of_range_exception {string::format("value ('{0}') must be a non-positive and non-zero value. (Parameter '{1}')\nActual value was {0}.", value, param_name, info)};}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is zero.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-zero.
