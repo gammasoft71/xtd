@@ -139,6 +139,9 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <tr class="memitem:acf04e48b9c03a9f7a7cf1ce12c68f099"><td class="memItemLeft" align="right" valign="top"><a id="acf04e48b9c03a9f7a7cf1ce12c68f099" name="acf04e48b9c03a9f7a7cf1ce12c68f099"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept</td></tr>
 <tr class="separator:acf04e48b9c03a9f7a7cf1ce12c68f099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ef851ab46202968d71ad6465242edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a43ef851ab46202968d71ad6465242edb">throw_if_cancellation_requested</a> () const</td></tr>
+<tr class="memdesc:a43ef851ab46202968d71ad6465242edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws a <a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a> if this token has had cancellation requested.  <br /></td></tr>
+<tr class="separator:a43ef851ab46202968d71ad6465242edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -295,6 +298,36 @@ If this property is true, it only guarantees that cancellation has been requeste
 
 <p>Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is signaled when the token is canceled. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Accessing this property causes a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> to be instantiated. It is preferable to only use this property when necessary, and to then dispose the associated <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> instance at the earliest opportunity (disposing the source will dispose of this allocated handle). The handle should not be closed directly. </dd></dl>
+
+</div>
+</div>
+<a id="a43ef851ab46202968d71ad6465242edb" name="a43ef851ab46202968d71ad6465242edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ef851ab46202968d71ad6465242edb">&#9670;&#160;</a></span>throw_if_cancellation_requested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::threading::cancellation_token::throw_if_cancellation_requested </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Throws a <a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a> if this token has had cancellation requested. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a></td><td>The token has had cancellation requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method provides functionality equivalent to: <div class="fragment"><div class="line"><span class="keywordflow">if</span> (tpken.is_cancellation_requested())</div>
+<div class="line">  <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a> {<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>};</div>
+<div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.h:18</div></div>
+<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -478,7 +511,7 @@ Two empty cancellation tokens are always equal. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 25 2024 16:42:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 25 2024 17:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
