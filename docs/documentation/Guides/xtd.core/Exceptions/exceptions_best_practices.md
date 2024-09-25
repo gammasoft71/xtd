@@ -327,7 +327,6 @@ For example, the [xtd::io::file_not_found_exception](https://gammasoft71.github.
 
 # See also
 ​
-* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions)
 * [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
