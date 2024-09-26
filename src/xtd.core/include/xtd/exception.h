@@ -105,11 +105,24 @@ namespace xtd {
     /// @brief Gets a link to the help file associated with this exception.
     /// @return A string represent a link to Help file associated with exception
     virtual const xtd::string& help_link() const noexcept;
+    /// @brief Sets a link to the help file associated with this exception.
+    /// @param value A string represent a link to Help file associated with exception
+    virtual void help_link(const xtd::string& value) noexcept;
+    
+    /// @brief Gets HRESULT, a coded numerical value that is assigned to a specific exception.
+    /// @return The HRESULT value.
+    virtual int32 h_result() const noexcept;
+    /// @brief Sets HRESULT, a coded numerical value that is assigned to a specific exception.
+    /// @param value The HRESULT value.
+    virtual void h_result(int32 value) noexcept;
     
     /// @brief Gets error associate to the exception
     /// @return An error_code represent a Error associate to the exception
-    virtual std::error_code error_code() const noexcept;
-    
+    virtual const std::error_code& error_code() const noexcept;
+    /// @brief Sets error associate to the exception
+    /// @param value An error_code represent a Error associate to the exception
+    virtual void error_code(const std::error_code& value) noexcept;
+
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
     virtual exception_ref inner_exception() const noexcept;
@@ -129,6 +142,15 @@ namespace xtd {
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
     virtual const xtd::string& name() const noexcept;
+    
+    /// @brief Gets the name of the application or the object that causes the error.
+    /// @return The name of the application or the object that causes the error.
+    /// @remarks If the xtd::exception::source property is not set explicitly, the runtime automatically sets it to the name of the assembly in which the exception originated.
+    virtual const xtd::string& source() const noexcept;
+    /// @brief Sets the name of the application or the object that causes the error.
+    /// @return The name of the application or the object that causes the error.
+    /// @remarks If the xtd::exception::source property is not set explicitly, the runtime automatically sets it to the name of the assembly in which the exception originated.
+    virtual void source(const xtd::string& value) noexcept;
     
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.

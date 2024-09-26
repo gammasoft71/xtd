@@ -3,6 +3,8 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
+#include "../../include/xtd/io/path.h"
+#include "../../include/xtd/reflection/assembly.h"
 
 using namespace xtd;
 
@@ -15,6 +17,8 @@ struct exception::data {
   exception_ref inner_exception;
   std::error_code error;
   xtd::string help_link;
+  int32 h_result = 0;
+  xtd::string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
   xtd::diagnostics::stack_frame information;
   xtd::sptr<xtd::diagnostics::stack_trace> stack_trace;
 };
@@ -63,6 +67,19 @@ const xtd::string& exception::help_link() const noexcept {
   return data_->help_link;
 }
 
+void exception::help_link(const xtd::string& value) noexcept {
+  if (data_->help_link == value) return;
+  data_->help_link = value;
+}
+
+int32 exception::h_result() const noexcept {
+  return data_->h_result;
+}
+
+void exception::h_result(int32 value) noexcept {
+  data_->h_result = value;
+}
+
 bool exception::enable_stack_trace() noexcept {
   return enable_stack_trace_;
 }
@@ -71,8 +88,13 @@ void exception::enable_stack_trace(bool enable) noexcept {
   enable_stack_trace_ = enable;
 }
 
-std::error_code exception::error_code() const noexcept {
+const std::error_code& exception::error_code() const noexcept {
   return data_->error;
+}
+
+void exception::error_code(const std::error_code& value) noexcept {
+  if (data_->error == value) return;
+  data_->error = value;
 }
 
 exception::exception_ref exception::inner_exception() const noexcept {
@@ -96,6 +118,15 @@ const xtd::string& exception::name() const noexcept {
     environment::__signal_catcher_check__();
   };
   return (data_->name = get_type().full_name());
+}
+
+const xtd::string& exception::source() const noexcept {
+  return data_->source;
+}
+
+void exception::source(const xtd::string& value) noexcept {
+  if (data_->source == value) return;
+  data_->source = value;
 }
 
 xtd::string exception::stack_trace() const noexcept {
