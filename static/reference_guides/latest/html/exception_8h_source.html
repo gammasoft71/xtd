@@ -126,40 +126,42 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a6f8529ae8b5a693dfa7b8be9f935a164">  103</a></span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; <a class="code hl_function" href="classxtd_1_1exception.html#a6f8529ae8b5a693dfa7b8be9f935a164">file_path</a>() const noexcept;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c">  107</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; help_link() const noexcept;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#aecfa3c69099791188edd753e196e6053">  111</a></span>    virtual std::error_code error_code() const noexcept;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">  115</a></span>    virtual <a class="code hl_typedef" href="classxtd_1_1exception.html#a2ff17936f0c3dbe0333452faaae3edfa">exception_ref</a> inner_exception() const noexcept;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ad2a426540bb6f472681951ddf791f137">  119</a></span>    virtual <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> line_number() const noexcept;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a004d25385f93f4ab7e26c33a97cf035e">  123</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; member_name() const noexcept;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">  127</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; message() const noexcept;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a9f05305efbed2ce26b8db349177e0daa">  131</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; name() const noexcept;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ae8b169a950f0f009661b21e472ebf6e4">  135</a></span>    virtual <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> stack_trace() const noexcept;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a2b577d452092bfc26f00e6b1a50b4f0d">  143</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string() const noexcept override;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#acc17fd22f4f1892ad2edacbfb1de0e1d">  147</a></span>    const <span class="keywordtype">char</span>* what() const noexcept override;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#afeb92288589a14efa6ea4c0d64cbd7f9">  155</a></span>    static <span class="keywordtype">bool</span> enable_stack_trace() noexcept;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#aa7fd731f8859f52fe0be0e8c13dd3685">  158</a></span>    static <span class="keywordtype">void</span> enable_stack_trace(<span class="keywordtype">bool</span> enable) noexcept;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  private:</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; message, const std::<a class="code hl_class" href="classxtd_1_1exception.html">exception</a>* inner_exception, const std::error_code&amp; error, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; help_link, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::diagnostics::stack_frame&amp; information);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> stack_trace_to_string() const noexcept;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    const <span class="keywordtype">char</span>* default_message() const noexcept;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    struct data;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt;data&gt; data_;    </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    static <span class="keywordtype">bool</span> enable_stack_trace_;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  };</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a36214a1d0af9632b80980c42f9996555">  110</a></span>    virtual <span class="keywordtype">void</span> help_link(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; value) noexcept;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba">  114</a></span>    virtual const std::error_code&amp; error_code() const noexcept;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a7bdeb02f213c1e324b6fcd86460f4b04">  117</a></span>    virtual <span class="keywordtype">void</span> error_code(const std::error_code&amp; value) noexcept;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">  121</a></span>    virtual <a class="code hl_typedef" href="classxtd_1_1exception.html#a2ff17936f0c3dbe0333452faaae3edfa">exception_ref</a> inner_exception() const noexcept;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ad2a426540bb6f472681951ddf791f137">  125</a></span>    virtual <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> line_number() const noexcept;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a004d25385f93f4ab7e26c33a97cf035e">  129</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; member_name() const noexcept;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">  133</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; message() const noexcept;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a9f05305efbed2ce26b8db349177e0daa">  137</a></span>    virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; name() const noexcept;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#ae8b169a950f0f009661b21e472ebf6e4">  141</a></span>    virtual <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> stack_trace() const noexcept;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#a2b577d452092bfc26f00e6b1a50b4f0d">  149</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string() const noexcept override;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#acc17fd22f4f1892ad2edacbfb1de0e1d">  153</a></span>    const <span class="keywordtype">char</span>* what() const noexcept override;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#afeb92288589a14efa6ea4c0d64cbd7f9">  161</a></span>    static <span class="keywordtype">bool</span> enable_stack_trace() noexcept;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classxtd_1_1exception.html#aa7fd731f8859f52fe0be0e8c13dd3685">  164</a></span>    static <span class="keywordtype">void</span> enable_stack_trace(<span class="keywordtype">bool</span> enable) noexcept;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  private:</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; message, const std::<a class="code hl_class" href="classxtd_1_1exception.html">exception</a>* inner_exception, const std::error_code&amp; error, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; help_link, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::diagnostics::stack_frame&amp; information);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> stack_trace_to_string() const noexcept;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    const <span class="keywordtype">char</span>* default_message() const noexcept;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    struct data;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt;data&gt; data_;    </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    static <span class="keywordtype">bool</span> enable_stack_trace_;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  };</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html"><div class="ttname"><a href="classxtd_1_1basic__string.html">xtd::basic_string</a></div><div class="ttdoc">Represents text as a sequence of character units.</div><div class="ttdef"><b>Definition</b> basic_string.h:79</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:46</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a9675ae4558328c82740671a909b5d479"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a></div><div class="ttdeci">static stack_frame empty() noexcept</div><div class="ttdoc">Return an empty stack frame.</div></div>
@@ -194,7 +196,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 25 2024 20:31:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 26 2024 09:53:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
