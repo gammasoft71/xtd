@@ -80,7 +80,7 @@ var searchData=
   ['help_5fevent_5fhandler_77',['help_event_handler',['../group__events.html#gaae5e1074f328eef5208f78149f5cc29b',1,'xtd::forms']]],
   ['help_5fevent_5fhandler_2eh_78',['help_event_handler.h',['../help__event__handler_8h.html',1,'']]],
   ['help_5ffaq_79',['help_faq',['../classxtd_1_1drawing_1_1actions__system__images.html#a181109f64bd2efd3bbeedd0f8d8eee2b',1,'xtd::drawing::actions_system_images::help_faq() noexcept'],['../classxtd_1_1drawing_1_1actions__system__images.html#a504ba7feba2d602a1127d49684870a18',1,'xtd::drawing::actions_system_images::help_faq(const xtd::drawing::size &amp;size) noexcept']]],
-  ['help_5flink_80',['help_link',['../classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c',1,'xtd::exception']]],
+  ['help_5flink_80',['help_link',['../classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c',1,'xtd::exception::help_link() const noexcept'],['../classxtd_1_1exception.html#a36214a1d0af9632b80980c42f9996555',1,'xtd::exception::help_link(const xtd::string &amp;value) noexcept']]],
   ['help_5frequest_81',['help_request',['../classxtd_1_1forms_1_1common__dialog.html#a659fa6e69886eb7e87a9cfb4e5163384',1,'xtd::forms::common_dialog::help_request'],['../classxtd_1_1forms_1_1message__dialog.html#ab7b63d10bb56fb1f4ead3366700c269c',1,'xtd::forms::message_dialog::help_request']]],
   ['help_5frequested_82',['help_requested',['../classxtd_1_1forms_1_1control.html#a0d068514bbfa4a101ce0ddbbc3981cf5',1,'xtd::forms::control']]],
   ['helpers_83',['helpers',['../group__helpers__generic__collections.html',1,'']]],
