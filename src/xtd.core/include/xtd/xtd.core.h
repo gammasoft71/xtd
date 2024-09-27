@@ -327,6 +327,8 @@
 #include "get_out_rdbuf.h"
 #include "guid.h"
 #include "hash_code.h"
+#include "h_results.h"
+#include "h_results_category.h"
 #include "iasync_result.h"
 #include "iclonable.h"
 #include "icomparable.h"
