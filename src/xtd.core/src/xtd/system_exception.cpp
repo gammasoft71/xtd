@@ -6,10 +6,10 @@
 
 using namespace xtd;
 
-system_exception::system_exception(const xtd::diagnostics::stack_frame& info) : exception(default_message(), info) {
+system_exception::system_exception(const xtd::diagnostics::stack_frame& info) : system_exception(string::empty_string, std::optional<xtd::exception> {}, info) {
 }
 
-system_exception::system_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+system_exception::system_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info) : system_exception(message, std::optional<xtd::exception> {}, info) {
 }
 
 system_exception::system_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info) : exception(message, error, info) {
