@@ -13,11 +13,11 @@ using namespace xtd;
 bool exception::enable_stack_trace_ = true;
 
 struct exception::data {
-  data(const string& message, uptr<exception>&& inner_exception, const diagnostics::stack_frame& stack_frame) : message {message}, inner_exception {std::move(inner_exception)}, stack_frame {stack_frame} {}
-  data(const string& message, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, help_link {help_link}, stack_frame {stack_frame} {}
-  data(const string& message, const std::error_code& error, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, error {error}, help_link {help_link}, stack_frame {stack_frame} {}
+  data(const std::optional<string>& message, uptr<exception>&& inner_exception, const diagnostics::stack_frame& stack_frame) : message {message}, inner_exception {std::move(inner_exception)}, stack_frame {stack_frame} {}
+  data(const std::optional<string>& message, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, help_link {help_link}, stack_frame {stack_frame} {}
+  data(const std::optional<string>& message, const std::error_code& error, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, error {error}, help_link {help_link}, stack_frame {stack_frame} {}
   mutable xtd::string name;
-  string message;
+  std::optional<string> message;
   uptr<exception> inner_exception;
   exception_ref inner_exception_deprecated;
   std::error_code error = std::error_code {h_results::COR_E_EXCEPTION, h_results::h_results_category()};
@@ -27,13 +27,13 @@ struct exception::data {
   sptr<xtd::diagnostics::stack_trace> stack_trace;
 };
 
-exception::exception(const xtd::diagnostics::stack_frame& stack_frame) : exception(string::empty_string, std::optional<xtd::exception> {}, stack_frame) {
+exception::exception(const xtd::diagnostics::stack_frame& stack_frame) : exception(std::nullopt, std::optional<xtd::exception> {}, stack_frame) {
 }
 
-exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) : exception(message, std::optional<xtd::exception> {}, stack_frame) {
+exception::exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : exception(message, std::optional<xtd::exception> {}, stack_frame) {
 }
 
-exception::exception(const xtd::string& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, std::move(inner_exception), stack_frame)} {
+exception::exception(const std::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, std::move(inner_exception), stack_frame)} {
   if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
 }
 
@@ -128,8 +128,10 @@ const xtd::string& exception::member_name() const noexcept {
   return get_last_stack_frame().get_method();
 }
 
-xtd::string exception::message() const noexcept {
-  return string::is_empty(data_->message) ? string {data_->error.message()} : data_->message;
+const xtd::string& exception::message() const noexcept {
+  static thread_local auto message = string::empty_string;
+  message = data_->message.value_or(string {data_->error.message()});
+  return message;
 }
 
 const xtd::string& exception::name() const noexcept {

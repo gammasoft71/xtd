@@ -43,13 +43,13 @@ namespace xtd {
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
+    explicit exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    exception(const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : exception(message, inner_exception.has_value() ? inner_exception.value().template memberwise_clone<exception_t>() : nullptr, info) {}
+    exception(const std::optional<xtd::string>& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : exception(message, inner_exception.has_value() ? inner_exception.value().template memberwise_clone<exception_t>() : nullptr, info) {}
 
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
@@ -158,7 +158,7 @@ namespace xtd {
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    virtual xtd::string message() const noexcept;
+    virtual const xtd::string& message() const noexcept;
     
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
@@ -206,7 +206,7 @@ namespace xtd {
     /// @}
 
   private:
-    exception(const xtd::string& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& information);
+    exception(const std::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& information);
     xtd::string stack_trace_to_string() const noexcept;
     const xtd::string& get_name() const noexcept;
 
