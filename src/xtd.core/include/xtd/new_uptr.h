@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "uptr.h"
+#include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,7 +21,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::make_unique](https://en.cppreference.com/w/cpp/memory/xtd::uptr/make_unique).
   template<typename type_t, typename ...args_t>
-  uptr<type_t> new_uptr(args_t&& ... args) {return uptr<type_t> {new type_t(args...)};}
+  uptr<type_t> new_uptr(args_t&& ... args) {return uptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @cond
   template<typename type_t>
