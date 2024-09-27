@@ -138,7 +138,7 @@ namespace xtd {
     static constexpr int32 COR_E_PATHTOOLONG = static_cast<int32>(0x800700CE);
     /// @brief
     static constexpr int32 COR_E_PLATFORMNOTSUPPORTED = static_cast<int32>(0x80131539);
-    /// @brief
+    /// @brief Attempted to operate on an array with the incorrect number of dimensions.
     static constexpr int32 COR_E_RANK = static_cast<int32>(0x80131517);
     /// @brief
     static constexpr int32 COR_E_REFLECTIONTYPELOAD = static_cast<int32>(0x80131602);
@@ -156,7 +156,7 @@ namespace xtd {
     static constexpr int32 COR_E_STACKOVERFLOW = static_cast<int32>(0x800703E9);
     /// @brief
     static constexpr int32 COR_E_SYNCHRONIZATIONLOCK = static_cast<int32>(0x80131518);
-    /// @brief
+    /// @brief System error.
     static constexpr int32 COR_E_SYSTEM = static_cast<int32>(0x80131501);
     /// @brief
     static constexpr int32 COR_E_TARGET = static_cast<int32>(0x80131603);
@@ -208,7 +208,7 @@ namespace xtd {
     static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057);
     /// @brief Not implemented.
     static constexpr int32 E_NOTIMPL = static_cast<int32>(0x80004001);
-    /// @brief Pointer that is not valid.
+    /// @brief Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
     static constexpr int32 E_POINTER = static_cast<int32>(0x80004003);
     /// @brief Unexpected failure.
     static constexpr int32 E_UNEXPECTED = static_cast<int32>(0x8000FFFF);

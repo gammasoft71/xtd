@@ -23,7 +23,7 @@ namespace xtd::tests {
     
     void test_method_(default_creator) {
       access_violation_exception e;
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -31,17 +31,17 @@ namespace xtd::tests {
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
       assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
-      assert::are_equal("An access violation occured.", e.message(), csf_);
+      assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", e.message(), csf_);
       assert::are_equal("xtd::access_violation_exception", e.name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
-      assert::are_equal("xtd::access_violation_exception : An access violation occured.", e.to_string(), csf_);
-      assert::are_equal("An access violation occured.", e.what(), csf_);
+      assert::are_equal("xtd::access_violation_exception : Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", e.to_string(), csf_);
+      assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", e.what(), csf_);
     }
     
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       access_violation_exception e(info);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -49,17 +49,17 @@ namespace xtd::tests {
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
-      assert::are_equal("An access violation occured.", e.message(), csf_);
+      assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", e.message(), csf_);
       assert::are_equal("xtd::access_violation_exception", e.name(), csf_);
       assert::are_equal(info.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::access_violation_exception : An access violation occured.\n" + info.to_string(), e.to_string(), csf_);
-      assert::are_equal("An access violation occured.", e.what(), csf_);
+      assert::are_equal("xtd::access_violation_exception : Attempted to read or write protected memory. This is often an indication that other memory is corrupt.\n" + info.to_string(), e.to_string(), csf_);
+      assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", e.what(), csf_);
     }
     
     void test_method_(creator_with_empty_message) {
       access_violation_exception e("");
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::E_POINTER, e.h_result(), csf_);
@@ -81,7 +81,7 @@ namespace xtd::tests {
       assert::are_equal(h_results::E_POINTER, e.h_result(), csf_);
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::is_empty(e.message(), csf_);
@@ -94,7 +94,7 @@ namespace xtd::tests {
     void test_method_(creator_with_message) {
       access_violation_exception e("Test excpetion message.");
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::E_POINTER, e.h_result(), csf_);
@@ -116,7 +116,7 @@ namespace xtd::tests {
       assert::are_equal(h_results::E_POINTER, e.h_result(), csf_);
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -130,7 +130,7 @@ namespace xtd::tests {
       system_exception inner_exception;
       access_violation_exception e("Test excpetion message.", inner_exception);
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::E_POINTER, e.h_result(), csf_);
@@ -154,7 +154,7 @@ namespace xtd::tests {
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
       //assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       //assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -169,7 +169,7 @@ namespace xtd::tests {
       auto info = current_stack_frame_;
       access_violation_exception e = access_violation_exception("Test excpetion message.", inner_exception, info);
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("", e.help_link(), csf_);
       //assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
@@ -189,7 +189,7 @@ namespace xtd::tests {
       access_violation_exception e;
       e = access_violation_exception("Test excpetion message.", inner_exception, info);
       assert::are_equal(h_results::E_POINTER, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("", e.help_link(), csf_);
       //assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);

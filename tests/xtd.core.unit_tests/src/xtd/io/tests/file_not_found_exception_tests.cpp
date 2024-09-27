@@ -24,11 +24,11 @@ namespace xtd::core::io::tests {
     
     void test_method_(default_creator) {
       file_not_found_exception e;
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
       assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Unable to find the specified file.", e.message(), csf_);
@@ -41,11 +41,11 @@ namespace xtd::core::io::tests {
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       file_not_found_exception e(info);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Unable to find the specified file.", e.message(), csf_);
@@ -57,8 +57,8 @@ namespace xtd::core::io::tests {
     
     void test_method_(creator_with_empty_message) {
       file_not_found_exception e("");
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -76,9 +76,9 @@ namespace xtd::core::io::tests {
       file_not_found_exception e("", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::is_empty(e.message(), csf_);
@@ -90,8 +90,8 @@ namespace xtd::core::io::tests {
     
     void test_method_(creator_with_message) {
       file_not_found_exception e("Test excpetion message.");
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -109,9 +109,9 @@ namespace xtd::core::io::tests {
       file_not_found_exception e("Test excpetion message.", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -141,8 +141,8 @@ namespace xtd::core::io::tests {
     void test_method_(creator_with_message_file_name_and_stack_frame) {
       auto info = current_stack_frame_;
       file_not_found_exception e("Test excpetion message.", "file.ext", info);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("file.ext", e.file_name(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -175,8 +175,8 @@ namespace xtd::core::io::tests {
     void test_method_(creator_with_message_and_inner_exception) {
       system_exception inner_exception;
       file_not_found_exception e("Test excpetion message.", inner_exception);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
@@ -196,10 +196,10 @@ namespace xtd::core::io::tests {
       file_not_found_exception e("Test excpetion message.", inner_exception, info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -232,8 +232,8 @@ namespace xtd::core::io::tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       file_not_found_exception e("Test excpetion message.", inner_exception, "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::COR_E_SYSTEM, e.error_code().value(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);

@@ -27,6 +27,9 @@ const std::error_category& xtd::h_results_category() noexcept {
         case h_results::COR_E_BADIMAGEFORMAT: return "Format of the executable (.exe) or library (.dll) is invalid."_t;
         case h_results::COR_E_CANNOTUNLOADAPPDOMAIN: return "Attempt to unload the AppDomain failed."_t;
         case h_results::COR_E_EXCEPTION: return "Exception of type 'xtd::exception' was thrown."_t;
+        case h_results::COR_E_RANK: return "Attempted to operate on an array with the incorrect number of dimensions."_t;
+        case h_results::COR_E_SYSTEM: return "System error."_t;
+        case h_results::E_POINTER: return "Attempted to read or write protected memory. This is often an indication that other memory is corrupt."_t;
         default: return string::format("Exception error 0x{0:X8} ({0})", static_cast<uint32>(h_result));
       }
     }

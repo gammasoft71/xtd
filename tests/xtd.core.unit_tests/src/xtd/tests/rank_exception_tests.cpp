@@ -23,7 +23,7 @@ namespace xtd::tests {
     
     void test_method_(default_creator) {
       rank_exception e;
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -40,7 +40,7 @@ namespace xtd::tests {
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       rank_exception e(info);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -57,7 +57,7 @@ namespace xtd::tests {
     void test_method_(creator_with_empty_message) {
       rank_exception e("");
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -77,7 +77,7 @@ namespace xtd::tests {
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::is_empty(e.message(), csf_);
@@ -90,7 +90,7 @@ namespace xtd::tests {
     void test_method_(creator_with_message) {
       rank_exception e("Test excpetion message.");
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -110,7 +110,7 @@ namespace xtd::tests {
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -141,7 +141,7 @@ namespace xtd::tests {
       auto info = current_stack_frame_;
       rank_exception e("Test excpetion message.", "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -175,7 +175,7 @@ namespace xtd::tests {
       system_exception inner_exception;
       rank_exception e("Test excpetion message.", inner_exception);
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
@@ -198,7 +198,7 @@ namespace xtd::tests {
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -232,7 +232,7 @@ namespace xtd::tests {
       auto info = current_stack_frame_;
       rank_exception e("Test excpetion message.", inner_exception, "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
       assert::are_equal(-2146233065, e.error_code().value(), csf_);
-      assert::are_equal(std::system_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
