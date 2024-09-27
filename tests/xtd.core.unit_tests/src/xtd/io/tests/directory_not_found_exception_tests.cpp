@@ -28,7 +28,7 @@ namespace xtd::io::tests {
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Attempted to access a path that is not on the disk.", e.message(), csf_);
@@ -45,7 +45,7 @@ namespace xtd::io::tests {
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
       assert::are_equal("Attempted to access a path that is not on the disk.", e.message(), csf_);
@@ -57,7 +57,7 @@ namespace xtd::io::tests {
     
     void test_method_(creator_with_empty_message) {
       directory_not_found_exception e("");
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -76,7 +76,7 @@ namespace xtd::io::tests {
       directory_not_found_exception e("", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
@@ -90,7 +90,7 @@ namespace xtd::io::tests {
     
     void test_method_(creator_with_message) {
       directory_not_found_exception e("Test excpetion message.");
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -109,7 +109,7 @@ namespace xtd::io::tests {
       directory_not_found_exception e("Test excpetion message.", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
@@ -141,7 +141,7 @@ namespace xtd::io::tests {
     void test_method_(creator_with_message_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       directory_not_found_exception e("Test excpetion message.", "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
@@ -175,7 +175,7 @@ namespace xtd::io::tests {
     void test_method_(creator_with_message_and_inner_exception) {
       system_exception inner_exception;
       directory_not_found_exception e("Test excpetion message.", inner_exception);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
@@ -196,7 +196,7 @@ namespace xtd::io::tests {
       directory_not_found_exception e("Test excpetion message.", inner_exception, info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
@@ -232,7 +232,7 @@ namespace xtd::io::tests {
       system_exception inner_exception;
       auto info = current_stack_frame_;
       directory_not_found_exception e("Test excpetion message.", inner_exception, "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      assert::are_equal(0, e.error_code().value(), csf_);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);

@@ -5,9 +5,10 @@
 #include "diagnostics/stack_frame.h"
 #include "diagnostics/stack_trace.h"
 #include "core_export.h"
-#include "optional.h"
+#include "h_results.h"
 #include "literals.h"
 #include "object.h"
+#include "optional.h"
 #include "ptr.h"
 #include "size.h"
 #include "string.h"
@@ -36,62 +37,79 @@ namespace xtd {
     
     /// @{
     /// @brief Create a new instance of class exception
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit exception(const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    explicit exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit exception(const xtd::string& message, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    explicit exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
-    /// @param error Error code associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
-    /// @brief Create a new instance of class exception
-    /// @param message Message string associate to the exception.
-    /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @param inner_exception The exception that is the cause of the current exception.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    template<typename exception_t>
+    exception(const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : exception(message, inner_exception.has_value() ? inner_exception.value().template memberwise_clone<exception_t>() : nullptr, info) {}
+
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_framee) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
+    /// @brief Create a new instance of class exception
+    /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_framee) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
+    /// @brief Create a new instance of class exception
+    /// @param message Message string associate to the exception.
+    /// @param error Error code associate to the exception.
+    /// @param help_link Help link string associate to the exception.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_framee) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @deprecated Use xtd::exception (const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& stack_framee) - Will be removed in version 0.4.0
+    explicit exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
-    /// @brief Create a new instance of class exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param error Error code associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
-    /// @brief Create a new instance of class exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& stack_framee) - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& stack_framee) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
+    /// @brief Create a new instance of class exception
+    /// @param message Message string associate to the exception.
+    /// @param inner_exception The exception that is the cause of the current exception.
     /// @param help_link Help link string associate to the exception.
-    /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty());
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& stack_framee) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
+    /// @brief Create a new instance of class exception
+    /// @param message Message string associate to the exception.
+    /// @param inner_exception The exception that is the cause of the current exception.
+    /// @param error Error code associate to the exception.
+    /// @param help_link Help link string associate to the exception.
+    /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::exception (const xtd::string& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& stack_framee) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0
+    exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty());
     /// @}
     
     /// @cond
+    exception(exception&&) = default;
     exception(const exception&) = default;
+    exception& operator =(exception&&) = default;
     exception& operator =(const exception&) = default;
     /// @endcond
     
@@ -100,6 +118,7 @@ namespace xtd {
     /// @{
     /// @brief Gets file path where exception occurred
     /// @return A string represent file path where exception occurred
+    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 0.4.0
     virtual const xtd::string& file_path() const noexcept;
     
     /// @brief Gets a link to the help file associated with this exception.
@@ -129,10 +148,12 @@ namespace xtd {
     
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
+    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0
     virtual xtd::size line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred
+    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 0.4.0
     virtual const xtd::string& member_name() const noexcept;
     
     /// @brief Gets message associate to the exception
@@ -141,6 +162,7 @@ namespace xtd {
     
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
+    /// @deprecated Replaced by xtd::exception::get_type().full_name() - Will be removed in version 0.4.0
     virtual const xtd::string& name() const noexcept;
     
     /// @brief Gets the name of the application or the object that causes the error.
@@ -160,10 +182,13 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Gets the last stack frame where the exception occurred
+    /// @return The last stack frame where exception occurred
+    virtual const xtd::diagnostics::stack_frame& get_last_stack_frame() const noexcept;
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
     xtd::string to_string() const noexcept override;
-    
+
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override;
@@ -181,10 +206,10 @@ namespace xtd {
     /// @}
 
   private:
-    exception(const xtd::string& message, const std::exception* inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information);
+    exception(const xtd::string& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& information);
     xtd::string stack_trace_to_string() const noexcept;
-    const char* default_message() const noexcept;
-    
+    const xtd::string& get_name() const noexcept;
+
     struct data;
     ptr<data> data_;    
     static bool enable_stack_trace_;
