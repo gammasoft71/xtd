@@ -219,6 +219,8 @@ add_sources(
   include/xtd/guid
   include/xtd/hash_code.h
   include/xtd/hash_code
+  include/xtd/h_results.h
+  include/xtd/h_results
   include/xtd/iasync_result.h
   include/xtd/iasync_result
   include/xtd/iclonable.h
