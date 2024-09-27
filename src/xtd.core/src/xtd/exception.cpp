@@ -2,6 +2,7 @@
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
+#include "../../include/xtd/h_results.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/reflection/assembly.h"
@@ -11,56 +12,71 @@ using namespace xtd;
 bool exception::enable_stack_trace_ = true;
 
 struct exception::data {
-  data(const string& message, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& information) : message {message}, error {error}, help_link {help_link}, information {information} {}
+  data(const string& message, uptr<exception>&& inner_exception, const diagnostics::stack_frame& stack_frame) : message {message}, inner_exception {std::move(inner_exception)}, stack_frame {stack_frame} {}
+  data(const string& message, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, help_link {help_link}, stack_frame {stack_frame} {}
+  data(const string& message, const std::error_code& error, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, error {error}, help_link {help_link}, stack_frame {stack_frame} {}
   mutable xtd::string name;
-  xtd::string message;
-  exception_ref inner_exception;
-  std::error_code error;
-  xtd::string help_link;
-  int32 h_result = 0;
-  xtd::string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
-  xtd::diagnostics::stack_frame information;
-  xtd::sptr<xtd::diagnostics::stack_trace> stack_trace;
+  string message;
+  uptr<exception> inner_exception;
+  exception_ref inner_exception_deprecated;
+  std::error_code error = std::error_code {h_results::COR_E_EXCEPTION, std::system_category()};
+  string help_link;
+  string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
+  diagnostics::stack_frame stack_frame;
+  sptr<xtd::diagnostics::stack_trace> stack_trace;
 };
 
-exception::exception(const xtd::diagnostics::stack_frame& information) : exception(default_message(), nullptr, std::error_code(), xtd::string::empty_string, information) {
+exception::exception(const xtd::diagnostics::stack_frame& stack_frame) : exception("Exception of type 'xtd::exception' was thrown."_t, std::optional<exception> {}, stack_frame) {
 }
 
-exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, std::error_code(), xtd::string::empty_string, information) {
+exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) : exception(message, std::optional<exception> {}, stack_frame) {
 }
 
-exception::exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, error, xtd::string::empty_string, information) {
-}
-
-exception::exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, std::error_code(), help_link, information) {
-}
-
-exception::exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, nullptr, error, help_link, information) {
-}
-
-exception::exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information) : exception(default_message(), &inner_exception, std::error_code(), xtd::string::empty_string, information) {
-}
-
-exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, std::error_code(), xtd::string::empty_string, information) {
-}
-
-exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, error, xtd::string::empty_string, information) {
-}
-
-exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, std::error_code(), help_link, information) {
-}
-
-exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& information) : exception(message, &inner_exception, error, help_link, information) {
-}
-
-exception::exception(const string& message, const std::exception* inner_exception, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& information) : data_ {new_ptr<data>(message, error, help_link, information)} {
-  if (inner_exception) data_->inner_exception = *inner_exception;
+exception::exception(const xtd::string& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, std::move(inner_exception), stack_frame)} {
   if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
-  //if (!data_->stack_trace.size()) data_->stack_trace.push_back(data_->information.to_string());
 }
+
+/// @todo To remove
+/// @{
+exception::exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, error, xtd::string::empty_string, stack_frame)} {
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, help_link, stack_frame)} {
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, error, help_link, stack_frame)} {
+}
+
+exception::exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : exception(stack_frame) {
+  data_->inner_exception_deprecated = inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, xtd::string::empty_string, stack_frame)} {
+  data_->inner_exception_deprecated = inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, error, xtd::string::empty_string, stack_frame)} {
+  data_->inner_exception_deprecated = inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, help_link, stack_frame)} {
+  data_->inner_exception_deprecated = inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+
+exception::exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, error, help_link, stack_frame)} {
+  data_->inner_exception_deprecated = inner_exception;
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+}
+/// @}
 
 const xtd::string& exception::file_path() const noexcept {
-  return data_->information.get_file_name();
+  return get_last_stack_frame().get_file_name();
 }
 
 const xtd::string& exception::help_link() const noexcept {
@@ -73,11 +89,12 @@ void exception::help_link(const xtd::string& value) noexcept {
 }
 
 int32 exception::h_result() const noexcept {
-  return data_->h_result;
+  return data_->error.value();
 }
 
 void exception::h_result(int32 value) noexcept {
-  data_->h_result = value;
+  if (data_->error.value() == value) return;
+  data_->error = std::error_code {value, data_->error.category()};
 }
 
 bool exception::enable_stack_trace() noexcept {
@@ -98,15 +115,15 @@ void exception::error_code(const std::error_code& value) noexcept {
 }
 
 exception::exception_ref exception::inner_exception() const noexcept {
-  return data_->inner_exception;
+  return data_->inner_exception_deprecated;
 }
 
 xtd::size exception::line_number() const noexcept {
-  return data_->information.get_file_line_number();
+  return get_last_stack_frame().get_file_line_number();
 }
 
 const xtd::string& exception::member_name() const noexcept {
-  return data_->information.get_method();
+  return get_last_stack_frame().get_method();
 }
 
 const xtd::string& exception::message() const noexcept {
@@ -114,10 +131,7 @@ const xtd::string& exception::message() const noexcept {
 }
 
 const xtd::string& exception::name() const noexcept {
-  call_once_ {
-    environment::__signal_catcher_check__();
-  };
-  return (data_->name = get_type().full_name());
+  return get_name();
 }
 
 const xtd::string& exception::source() const noexcept {
@@ -133,27 +147,34 @@ xtd::string exception::stack_trace() const noexcept {
   return stack_trace_to_string();
 }
 
+const xtd::diagnostics::stack_frame& exception::get_last_stack_frame() const noexcept {
+  return data_->stack_frame;
+}
+
 string exception::to_string() const noexcept {
-  if (message().empty() && stack_trace().empty()) return name();
-  if (message().empty()) return xtd::string::format("{}\n{}", name(), stack_trace());
-  if (stack_trace().empty()) return xtd::string::format("{} : {}", name(), message());
-  return xtd::string::format("{} : {}\n{}", name(), message(), stack_trace());
+  if (message().empty() && stack_trace().empty()) return get_name();
+  if (message().empty()) return xtd::string::format("{}\n{}", get_name(), stack_trace());
+  if (stack_trace().empty()) return xtd::string::format("{} : {}", get_name(), message());
+  return xtd::string::format("{} : {}\n{}", get_name(), message(), stack_trace());
 }
 
 const char* exception::what() const noexcept {
-  return message().empty() ? name().c_str() : message().c_str();
+  return message().empty() ? get_name().c_str() : message().c_str();
 }
 
 string exception::stack_trace_to_string() const noexcept {
-  if (!data_->stack_trace) return data_->information.to_string();
+  if (!data_->stack_trace) return data_->stack_frame.to_string();
   
   auto skip_frames = data_->stack_trace->frame_count();
   for (auto index = 0_z; index < data_->stack_trace->frame_count(); ++index)
-    if (data_->stack_trace->get_frame(index).get_method().starts_with(name()))
+    if (data_->stack_trace->get_frame(index).get_method().starts_with(get_name()))
       skip_frames = index;
-  return data_->stack_trace->to_string(skip_frames + 1, data_->information);
+  return data_->stack_trace->to_string(skip_frames + 1, data_->stack_frame);
 }
 
-const char* exception::default_message() const noexcept {
-  return "System error."_t;
+const xtd::string& exception::get_name() const noexcept {
+  call_once_ {
+    environment::__signal_catcher_check__();
+  };
+  return (data_->name = get_type().full_name());
 }
