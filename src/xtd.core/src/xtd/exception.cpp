@@ -3,6 +3,7 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
 #include "../../include/xtd/h_results.h"
+#include "../../include/xtd/h_results_category.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/reflection/assembly.h"
@@ -19,17 +20,17 @@ struct exception::data {
   string message;
   uptr<exception> inner_exception;
   exception_ref inner_exception_deprecated;
-  std::error_code error = std::error_code {h_results::COR_E_EXCEPTION, std::system_category()};
+  std::error_code error = std::error_code {h_results::COR_E_EXCEPTION, h_results::h_results_category()};
   string help_link;
   string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
   diagnostics::stack_frame stack_frame;
   sptr<xtd::diagnostics::stack_trace> stack_trace;
 };
 
-exception::exception(const xtd::diagnostics::stack_frame& stack_frame) : exception("Exception of type 'xtd::exception' was thrown."_t, std::optional<exception> {}, stack_frame) {
+exception::exception(const xtd::diagnostics::stack_frame& stack_frame) : exception(string::empty_string, std::optional<xtd::exception> {}, stack_frame) {
 }
 
-exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) : exception(message, std::optional<exception> {}, stack_frame) {
+exception::exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) : exception(message, std::optional<xtd::exception> {}, stack_frame) {
 }
 
 exception::exception(const xtd::string& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) : data_ {new_ptr<data>(message, std::move(inner_exception), stack_frame)} {
@@ -89,12 +90,13 @@ void exception::help_link(const xtd::string& value) noexcept {
 }
 
 int32 exception::h_result() const noexcept {
+  if (data_->error.category() != h_results::h_results_category()) return h_results::COR_E_EXCEPTION;
   return data_->error.value();
 }
 
 void exception::h_result(int32 value) noexcept {
-  if (data_->error.value() == value) return;
-  data_->error = std::error_code {value, data_->error.category()};
+  if (data_->error.value() == value && data_->error.category() == h_results::h_results_category()) return;
+  data_->error = std::error_code {value, h_results::h_results_category()};
 }
 
 bool exception::enable_stack_trace() noexcept {
@@ -126,8 +128,8 @@ const xtd::string& exception::member_name() const noexcept {
   return get_last_stack_frame().get_method();
 }
 
-const xtd::string& exception::message() const noexcept {
-  return data_->message;
+xtd::string exception::message() const noexcept {
+  return string::is_empty(data_->message) ? string {data_->error.message()} : data_->message;
 }
 
 const xtd::string& exception::name() const noexcept {
