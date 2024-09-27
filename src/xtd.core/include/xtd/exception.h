@@ -158,7 +158,7 @@ namespace xtd {
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    virtual const xtd::string& message() const noexcept;
+    virtual xtd::string message() const noexcept;
     
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
