@@ -6,6 +6,38 @@
 #include "int32.h"
 #include "static.h"
 
+/// @cond
+#if defined(_WIN32)
+#undef S_OK
+#undef S_FALSE
+#undef CO_E_NOTINITIALIZED
+#undef DISP_E_OVERFLOW
+#undef E_ABORT
+#undef E_BOUNDS
+#undef E_CHANGED_STATE
+#undef E_FAIL
+#undef E_HANDLE
+#undef E_INVALIDARG
+#undef E_NOTIMPL
+#undef E_POINTER
+#undef E_UNEXPECTED
+#undef ERROR_MRM_MAP_NOT_FOUND
+#undef ERROR_TIMEOUT
+#undef RO_E_CLOSED
+#undef RPC_E_CHANGED_MODE
+#undef TYPE_E_TYPEMISMATCH
+#undef STG_E_PATHNOTFOUND
+#undef ERROR_TOO_MANY_OPEN_FILES
+#undef ERROR_SHARING_VIOLATION
+#undef ERROR_LOCK_VIOLATION
+#undef ERROR_OPEN_FAILED
+#undef ERROR_DISK_CORRUPT
+#undef ERROR_UNRECOGNIZED_VOLUME
+#undef ERROR_DLL_INIT_FAILED
+#undef ERROR_FILE_INVALID
+#endif
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Contains the HRESULT values used by xtd.
