@@ -5,7 +5,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/collapsible_panel.h"
-#include <optional>
+#include <xtd/optional>
 
 using namespace xtd;
 using namespace xtd::forms;

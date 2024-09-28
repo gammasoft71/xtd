@@ -7,13 +7,13 @@
 #include "../../../include/xtd/threading/thread_local_object.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/not_implemented_exception.h"
+#include "../../../include/xtd/optional.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/condition_variable>
 #include <xtd/native/critical_section>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <atomic>
 #include <mutex>
-#include <optional>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

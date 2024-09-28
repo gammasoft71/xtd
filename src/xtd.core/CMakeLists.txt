@@ -305,8 +305,14 @@ add_sources(
   include/xtd/not_implemented_exception
   include/xtd/not_supported_exception.h
   include/xtd/not_supported_exception
+  include/xtd/null_opt.h
+  include/xtd/null_opt
+  include/xtd/null_ptr.h
+  include/xtd/null_ptr
   include/xtd/null.h
   include/xtd/null
+  include/xtd/nullopt.h
+  include/xtd/nullopt
   include/xtd/null_pointer_exception.h
   include/xtd/null_pointer_exception
   include/xtd/number_styles.h
@@ -1046,6 +1052,8 @@ add_sources(
   src/xtd/literals.cpp
   src/xtd/math.cpp
   src/xtd/memory_information.cpp
+  src/xtd/null.cpp
+  src/xtd/nullopt.cpp
   src/xtd/object.cpp
   src/xtd/operating_system.cpp
   src/xtd/processor.cpp
@@ -1060,7 +1068,6 @@ add_sources(
   src/xtd/toolkit.cpp
   src/xtd/translator.cpp
   src/xtd/type_object.cpp
-  src/xtd/types.cpp
   src/xtd/uri.cpp
   src/xtd/string.cpp
   src/xtd/version.cpp
