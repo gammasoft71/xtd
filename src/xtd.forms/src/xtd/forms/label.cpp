@@ -15,7 +15,7 @@
 #include <xtd/forms/native/toolkit>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <optional>
+#include <xtd/optional>
 #include <vector>
 
 using namespace xtd;

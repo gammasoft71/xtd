@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains std::optional type and std::bad_optional_access exception.
+/// @brief Contains xtd::optional type.
 #pragma once
 /// @cond
 #define __XTD_STD_INTERNAL__
@@ -158,3 +158,25 @@ namespace std {
 }
 #endif
 /// @endcond
+
+/// @file
+/// @brief Contains xtd::null_opt alias.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+#pragma once
+#include "optional.h"
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief Represents the null_opt alias on [std::nullopt_t](https://en.cppreference.com/w/cpp/utility/optional/nullopt_t).
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/null_opt>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  template<typename type_t>
+  using optional = std::optional<type_t>;
+}

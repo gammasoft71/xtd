@@ -7,7 +7,7 @@
 #include <xtd/forms/native/window_styles>
 #include <xtd/forms/native/static_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <optional>
+#include <xtd/optional>
 
 using namespace xtd;
 using namespace xtd::forms;

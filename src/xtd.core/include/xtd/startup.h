@@ -5,9 +5,9 @@
 #include "collections/specialized/string_collection.h"
 #include "core_export.h"
 #include "delegate.h"
+#include "optional.h"
 #include "static.h"
 #include <exception>
-#include <optional>
 #define __XTD_CORE_INTERNAL__
 #include "internal/__show_generic_exception_message.h"
 #undef __XTD_CORE_INTERNAL__

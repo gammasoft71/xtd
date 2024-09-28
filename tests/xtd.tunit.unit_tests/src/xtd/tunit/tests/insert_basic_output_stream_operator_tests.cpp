@@ -1,6 +1,7 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
+#include <xtd/optional>
 #include <array>
 #include <deque>
 #include <exception>
@@ -9,7 +10,6 @@
 #include <iostream>
 #include <list>
 #include <map>
-#include <optional>
 #include <set>
 #include <stack>
 #include <stdexcept>
