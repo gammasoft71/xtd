@@ -38,3 +38,7 @@ const std::error_category& xtd::h_results_category() noexcept {
   static auto result = h_results_category {};
   return result;
 }
+
+std::error_code xtd::make_error_code(int h_result) noexcept {
+  return std::error_code {h_result, h_results_category()};
+}

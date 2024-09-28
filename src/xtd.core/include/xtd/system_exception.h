@@ -33,22 +33,25 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    system_exception(const std::optional<xtd::string>& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : exception(message, inner_exception, info) {h_result(xtd::h_results::COR_E_SYSTEM);}
+    system_exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : exception(message, inner_exception, info) {error_code(make_error_code(h_results::COR_E_SYSTEM));}
 
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::system_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0
     explicit system_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+    /// @deprecated Use xtd::system_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0
     explicit system_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class system_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
+    /// @deprecated Use xtd::system_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0
     explicit system_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty());
     /// @brief Create a new instance of class system_exception
     /// @param inner_exception The exception that is the cause of the current exception.
