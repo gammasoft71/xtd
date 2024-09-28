@@ -37,7 +37,7 @@ namespace xtd {
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_zone_not_found_exception(const xtd::string& message, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
+    explicit time_zone_not_found_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
     /// @brief Create a new instance of class time_zone_not_found_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.

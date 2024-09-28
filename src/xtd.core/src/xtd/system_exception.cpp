@@ -6,38 +6,48 @@
 
 using namespace xtd;
 
-system_exception::system_exception(const xtd::diagnostics::stack_frame& info) : system_exception(std::nullopt, std::optional<xtd::exception> {}, info) {
+system_exception::system_exception(const xtd::diagnostics::stack_frame& info) : exception(info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
 }
 
-system_exception::system_exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& info) : system_exception(message, std::optional<xtd::exception> {}, info) {
+system_exception::system_exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
 }
 
-system_exception::system_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info) : exception(message, error, info) {
+system_exception::system_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(error);
 }
 
-system_exception::system_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, help_link, info) {
-  h_result(xtd::h_results::COR_E_SYSTEM);
+system_exception::system_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
+  this->help_link(help_link);
 }
 
-system_exception::system_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, error, help_link, info) {
+system_exception::system_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(error);
+  this->help_link(help_link);
 }
 
-system_exception::system_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info) : exception(default_message(), inner_exception, info) {
-  h_result(xtd::h_results::COR_E_SYSTEM);
+system_exception::system_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info) : exception(default_message(), info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
 }
 
-system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info) : exception(message, inner_exception, info) {
-  h_result(xtd::h_results::COR_E_SYSTEM);
+system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
 }
 
-system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info) : exception(message, inner_exception, error, info) {
+system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(error);
 }
 
-system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, inner_exception, help_link, info) {
-  h_result(xtd::h_results::COR_E_SYSTEM);
+system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(make_error_code(h_results::COR_E_SYSTEM));
+  this->help_link(help_link);
 }
 
-system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, inner_exception, error, help_link, info) {
+system_exception::system_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info) : exception(message, info) {
+  error_code(error);
+  this->help_link(help_link);
 }
 
 const char* system_exception::default_message() const noexcept {

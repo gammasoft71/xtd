@@ -23,7 +23,7 @@ namespace xtd::tests {
     }
     
     void test_method_(default_creator) {
-      exception e;
+      auto e = exception {};
       assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::is_empty(e.file_path(), csf_);
@@ -40,7 +40,7 @@ namespace xtd::tests {
     
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
-      exception e(info);
+      exception e = exception(info);
       assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
@@ -56,7 +56,7 @@ namespace xtd::tests {
     }
     
     void test_method_(creator_with_empty_message) {
-      exception e("");
+      exception e = exception("");
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
@@ -73,7 +73,7 @@ namespace xtd::tests {
     
     void test_method_(creator_with_message_empty_and_stack_frame) {
       auto info = current_stack_frame_;
-      exception e("", info);
+      exception e = exception("", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
@@ -89,7 +89,7 @@ namespace xtd::tests {
     }
     
     void test_method_(creator_with_message) {
-      exception e("Test excpetion message.");
+      exception e = exception("Test excpetion message.");
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
@@ -106,7 +106,7 @@ namespace xtd::tests {
     
     void test_method_(creator_with_message_and_stack_frame) {
       auto info = current_stack_frame_;
-      exception e("Test excpetion message.", info);
+      exception e = exception("Test excpetion message.", info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
@@ -122,8 +122,8 @@ namespace xtd::tests {
     }
     
     void test_method_(creator_with_message_and_inner_exception) {
-      argument_exception inner_exception;
-      exception e("Test excpetion message.", inner_exception);
+      auto inner_exception = argument_exception {};
+      exception e = exception("Test excpetion message.", inner_exception);
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(h_results::h_results_category(), e.error_code().category(), csf_);
       assert::is_empty(e.file_path(), csf_);
@@ -140,9 +140,9 @@ namespace xtd::tests {
     }
     
     void test_method_(creator_with_message_inner_exception_and_stack_frame) {
-      argument_exception inner_exception;
+      auto inner_exception = argument_exception {};
       auto info = current_stack_frame_;
-      exception e("Test excpetion message.", inner_exception, info);
+      auto e = exception("Test excpetion message.", inner_exception, info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
@@ -159,13 +159,13 @@ namespace xtd::tests {
     }
     
     void test_method_(copy_constructor) {
-      argument_exception inner_exception;
+      auto inner_exception = argument_exception {};
       auto info = current_stack_frame_;
-      exception e = exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      assert::are_equal(EBUSY, e.error_code().value(), csf_);
+      auto e = exception("Test excpetion message.", inner_exception, info);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::generic_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
-      assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
+      assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
@@ -178,14 +178,14 @@ namespace xtd::tests {
     }
     
     void test_method_(copy_operator) {
-      argument_exception inner_exception;
+      auto inner_exception = argument_exception {};
       auto info = current_stack_frame_;
-      exception e;
-      e = exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://gammasoft71.github.io/xtd/reference_guides/latest/", info);
-      assert::are_equal(EBUSY, e.error_code().value(), csf_);
+      auto e = exception {};
+      e = exception("Test excpetion message.", inner_exception, info);
+      assert::are_equal(h_results::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(std::generic_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
-      assert::are_equal("https://gammasoft71.github.io/xtd/reference_guides/latest/", e.help_link(), csf_);
+      assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);

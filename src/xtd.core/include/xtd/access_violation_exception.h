@@ -34,7 +34,7 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    access_violation_exception(const std::optional<xtd::string>& message, const std::optional<exception_t>& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {h_result(xtd::h_results::E_POINTER);}
+    access_violation_exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {h_result(xtd::h_results::E_POINTER);}
 
     /// @brief Create a new instance of class access_violation_exception
     /// @param message Message string associate to the exception.
