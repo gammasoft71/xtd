@@ -80,7 +80,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">exceptions</div></div>
 </div><!--header-->
 <div class="contents">
@@ -118,6 +119,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1format__exception.html">xtd::format_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.  <a href="classxtd_1_1format__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__results.html">xtd::h_results</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the HRESULT values used by xtd.  <a href="classxtd_1_1h__results.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1index__out__of__range__exception.html">xtd::index_out_of_range_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an attempt is made to access an element of an array with an index that is outside the bounds of the array.  <a href="classxtd_1_1index__out__of__range__exception.html#details">More...</a><br /></td></tr>
@@ -272,12 +276,93 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1ignore__error.html">xtd::tunit::ignore_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception to be thrown when something is ignored.  <a href="classxtd_1_1tunit_1_1ignore__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga685400b32df5c558cceaa6ecce05a9bf"><td class="memItemLeft" align="right" valign="top">const std::error_category &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga685400b32df5c558cceaa6ecce05a9bf">xtd::h_results_category</a> () noexcept</td></tr>
+<tr class="memdesc:ga685400b32df5c558cceaa6ecce05a9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_results_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__results.html" title="Contains the HRESULT values used by xtd.">xtd::h_results</a> error codes.  <br /></td></tr>
+<tr class="separator:ga685400b32df5c558cceaa6ecce05a9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae80914ccdaf9b80666bcafb1c633373e"><td class="memItemLeft" align="right" valign="top">std::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gae80914ccdaf9b80666bcafb1c633373e">xtd::make_error_code</a> (int h_result) noexcept</td></tr>
+<tr class="memdesc:gae80914ccdaf9b80666bcafb1c633373e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for <a class="el" href="classxtd_1_1h__results.html" title="Contains the HRESULT values used by xtd.">xtd::h_results</a> <code>h_result</code>.  <br /></td></tr>
+<tr class="separator:gae80914ccdaf9b80666bcafb1c633373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga685400b32df5c558cceaa6ecce05a9bf" name="ga685400b32df5c558cceaa6ecce05a9bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga685400b32df5c558cceaa6ecce05a9bf">&#9670;&#160;</a></span>h_results_category()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::error_category &amp; xtd::h_results_category </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="h__results__category_8h.html">xtd.core/include/xtd/h_results_category.h</a>&gt;</code></p>
+
+<p>Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_results_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__results.html" title="Contains the HRESULT values used by xtd.">xtd::h_results</a> error codes. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the static object of unspecified runtime type, derived from <a href="https://en.cppreference.com/w/cpp/error/error_category">std::error_category</a>. </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
+<a id="gae80914ccdaf9b80666bcafb1c633373e" name="gae80914ccdaf9b80666bcafb1c633373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae80914ccdaf9b80666bcafb1c633373e">&#9670;&#160;</a></span>make_error_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::error_code xtd::make_error_code </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="h__results__category_8h.html">xtd.core/include/xtd/h_results_category.h</a>&gt;</code></p>
+
+<p>Creates error code value for <a class="el" href="classxtd_1_1h__results.html" title="Contains the HRESULT values used by xtd.">xtd::h_results</a> <code>h_result</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h_result</td><td><a class="el" href="classxtd_1_1h__results.html" title="Contains the HRESULT values used by xtd.">xtd::h_results</a> error code to create error code for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error code corresponding to <code>h_result</code>. </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 25 2024 20:31:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 28 2024 22:09:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
