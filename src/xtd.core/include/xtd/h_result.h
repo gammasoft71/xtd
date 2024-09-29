@@ -1,40 +1,41 @@
 /// @file
-/// @brief Contains h_results class.
+/// @brief Contains h_result class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "h_results_category.h"
 #include "int32.h"
+#include "string.h"
 #include "static.h"
+#include <system_error>
 
 /// @cond
 #if defined(_WIN32)
-#undef S_OK
-#undef S_FALSE
-#undef CO_E_NOTINITIALIZED
-#undef DISP_E_OVERFLOW
-#undef E_ABORT
-#undef E_BOUNDS
-#undef E_CHANGED_STATE
-#undef E_FAIL
-#undef E_HANDLE
-#undef E_INVALIDARG
-#undef E_NOTIMPL
-#undef E_POINTER
-#undef E_UNEXPECTED
-#undef ERROR_MRM_MAP_NOT_FOUND
-#undef ERROR_TIMEOUT
-#undef RO_E_CLOSED
-#undef RPC_E_CHANGED_MODE
-#undef TYPE_E_TYPEMISMATCH
-#undef STG_E_PATHNOTFOUND
-#undef ERROR_TOO_MANY_OPEN_FILES
-#undef ERROR_SHARING_VIOLATION
-#undef ERROR_LOCK_VIOLATION
-#undef ERROR_OPEN_FAILED
-#undef ERROR_DISK_CORRUPT
-#undef ERROR_UNRECOGNIZED_VOLUME
-#undef ERROR_DLL_INIT_FAILED
-#undef ERROR_FILE_INVALID
+#  undef S_OK
+#  undef S_FALSE
+#  undef CO_E_NOTINITIALIZED
+#  undef DISP_E_OVERFLOW
+#  undef E_ABORT
+#  undef E_BOUNDS
+#  undef E_CHANGED_STATE
+#  undef E_FAIL
+#  undef E_HANDLE
+#  undef E_INVALIDARG
+#  undef E_NOTIMPL
+#  undef E_POINTER
+#  undef E_UNEXPECTED
+#  undef ERROR_MRM_MAP_NOT_FOUND
+#  undef ERROR_TIMEOUT
+#  undef RO_E_CLOSED
+#  undef RPC_E_CHANGED_MODE
+#  undef TYPE_E_TYPEMISMATCH
+#  undef STG_E_PATHNOTFOUND
+#  undef ERROR_TOO_MANY_OPEN_FILES
+#  undef ERROR_SHARING_VIOLATION
+#  undef ERROR_LOCK_VIOLATION
+#  undef ERROR_OPEN_FAILED
+#  undef ERROR_DISK_CORRUPT
+#  undef ERROR_UNRECOGNIZED_VOLUME
+#  undef ERROR_DLL_INIT_FAILED
+#  undef ERROR_FILE_INVALID
 #endif
 /// @endcond
 
@@ -47,7 +48,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core exceptions
   /// @remarks For more information, see Winerror.h from Micorosft's Win32 API.
-  class h_results static_ {
+  class h_result static_ {
   public:
     /// @name Public Fields
     
@@ -287,14 +288,14 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_results_category". It is used to identify error conditions that correspond to the xtd::h_results error codes.
+    /// @brief Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the xtd::h_result error codes.
     /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
-    static const std::error_category& h_results_category() noexcept {return xtd::h_results_category();}
+    static const std::error_category& h_result_category() noexcept;
     
-    /// @brief Creates error code value for xtd::h_results `h_result`.
-    /// @param h_result xtd::h_results error code to create error code for.
+    /// @brief Creates error code value for xtd::h_result `h_result`.
+    /// @param h_result xtd::h_result error code to create error code for.
     /// @return Error code corresponding to `h_result`.
-    static std::error_code make_error_code(int h_result) noexcept {return xtd::make_error_code(h_result);}
+    static std::error_code make_error_code(int h_result) noexcept;
     /// &}
   };
 }

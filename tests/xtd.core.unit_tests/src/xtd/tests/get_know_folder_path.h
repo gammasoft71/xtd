@@ -27,7 +27,7 @@ inline xtd::string __get_know_folder_path__(xtd::int32 id) {
     return __get_environment_variable__("HOMEPATH");
   DWORD path_size = 65535;
   std::wstring path(path_size, 0);
-  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == xtd::h_results::S_OK ? path.data() : L"";
+  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == xtd::h_result::S_OK ? path.data() : L"";
 }
 #else
 #include <xtd/string>

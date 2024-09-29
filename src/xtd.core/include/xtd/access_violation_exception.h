@@ -2,7 +2,7 @@
 /// @brief Contains xtd::access_violation_exception exception.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "h_results.h"
+#include "h_result.h"
 #include "system_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -34,7 +34,7 @@ namespace xtd {
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    access_violation_exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) : xtd::system_exception(message, inner_exception, stack_frame) {error_code(h_results::make_error_code(h_results::E_POINTER));}
+    access_violation_exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) : xtd::system_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::E_POINTER));}
 
     /// @brief Create a new instance of class access_violation_exception
     /// @param message Message string associate to the exception.

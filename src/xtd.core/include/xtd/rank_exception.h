@@ -87,6 +87,6 @@ namespace xtd {
     
   private:
     const char* default_message() const noexcept {return "Attempted to operate on an array with the incorrect number of dimensions."_t;}
-    const std::error_code default_error() const noexcept {return {h_results::COR_E_RANK, h_results::h_results_category()};}
+    const std::error_code default_error() const noexcept {return {h_result::COR_E_RANK, h_result::h_result_category()};}
   };
 }

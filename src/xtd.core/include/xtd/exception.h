@@ -5,7 +5,7 @@
 #include "diagnostics/stack_frame.h"
 #include "diagnostics/stack_trace.h"
 #include "core_export.h"
-#include "h_results.h"
+#include "h_result.h"
 #include "literals.h"
 #include "object.h"
 #include "optional.h"

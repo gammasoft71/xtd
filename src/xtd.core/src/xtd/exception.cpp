@@ -2,8 +2,8 @@
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
-#include "../../include/xtd/h_results.h"
-#include "../../include/xtd/h_results_category.h"
+#include "../../include/xtd/h_result.h"
+#include "../../include/xtd/h_result_category.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/reflection/assembly.h"
@@ -20,7 +20,7 @@ struct exception::data {
   std::optional<string> message;
   uptr<exception> inner_exception;
   exception_ref inner_exception_deprecated;
-  std::error_code error = h_results::make_error_code(h_results::COR_E_EXCEPTION);
+  std::error_code error = h_result::make_error_code(h_result::COR_E_EXCEPTION);
   string help_link;
   string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
   diagnostics::stack_frame stack_frame;
@@ -51,12 +51,12 @@ void exception::help_link(const xtd::string& value) noexcept {
 }
 
 int32 exception::h_result() const noexcept {
-  if (data_->error.category() != h_results::h_results_category()) return h_results::COR_E_EXCEPTION;
+  if (data_->error.category() != h_result::h_result_category()) return h_result::COR_E_EXCEPTION;
   return data_->error.value();
 }
 
 void exception::h_result(int32 value) noexcept {
-  if (data_->error.value() == value && data_->error.category() == h_results::h_results_category()) return;
+  if (data_->error.value() == value && data_->error.category() == h_result::h_result_category()) return;
   data_->error = make_error_code(value);
 }
 
