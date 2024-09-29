@@ -20,7 +20,7 @@ struct exception::data {
   std::optional<string> message;
   uptr<exception> inner_exception;
   exception_ref inner_exception_deprecated;
-  std::error_code error = std::error_code {h_results::COR_E_EXCEPTION, h_results::h_results_category()};
+  std::error_code error = h_results::make_error_code(h_results::COR_E_EXCEPTION);
   string help_link;
   string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
   diagnostics::stack_frame stack_frame;
