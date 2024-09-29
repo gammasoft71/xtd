@@ -141,6 +141,7 @@ add_sources(
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/get_know_folder_path.h
   src/xtd/tests/guid_tests.cpp
+  src/xtd/tests/h_results_tests.cpp
   src/xtd/tests/iasync_result_tests.cpp
   src/xtd/tests/icomparable_tests.cpp
   src/xtd/tests/iequatable_tests.cpp
