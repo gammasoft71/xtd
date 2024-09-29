@@ -39,6 +39,7 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       explicit key_not_found_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
+
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
