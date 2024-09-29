@@ -219,10 +219,10 @@ add_sources(
   include/xtd/guid
   include/xtd/hash_code.h
   include/xtd/hash_code
-  include/xtd/h_results.h
-  include/xtd/h_results
-  include/xtd/h_results_category.h
-  include/xtd/h_results_category
+  include/xtd/h_result.h
+  include/xtd/h_result
+  include/xtd/h_result_category.h
+  include/xtd/h_result_category
   include/xtd/iasync_result.h
   include/xtd/iasync_result
   include/xtd/iclonable.h
@@ -1046,7 +1046,8 @@ add_sources(
   src/xtd/exception.cpp
   src/xtd/guid.cpp
   src/xtd/hash_code.cpp
-  src/xtd/h_results_category.cpp
+  src/xtd/h_result.cpp
+  src/xtd/h_result_category.cpp
   src/xtd/iformatable.cpp
   src/xtd/istringable.cpp
   src/xtd/literals.cpp
