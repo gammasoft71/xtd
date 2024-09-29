@@ -55,7 +55,7 @@ namespace xtd {
     /// @brief Operation successful.
     static constexpr int32 S_OK = static_cast<int32>(0x00000000);
     /// @brief Operation successful but returned no results.
-    static constexpr int32 S_FALSE = static_cast<int32>(0x1);
+    static constexpr int32 S_FALSE = static_cast<int32>(0x00000001);
     /// @brief The wait completed due to an abandoned mutex.
     static constexpr int32 COR_E_ABANDONEDMUTEX = static_cast<int32>(0x8013152D);
     /// @brief Ambiguous implementation found.
@@ -287,7 +287,14 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-   static  const std::error_category& h_results_category() noexcept {return xtd::h_results_category();}
+    /// @brief Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_results_category". It is used to identify error conditions that correspond to the xtd::h_results error codes.
+    /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
+    static const std::error_category& h_results_category() noexcept {return xtd::h_results_category();}
+    
+    /// @brief Creates error code value for xtd::h_results `h_result`.
+    /// @param h_result xtd::h_results error code to create error code for.
+    /// @return Error code corresponding to `h_result`.
+    static std::error_code make_error_code(int h_result) noexcept {return xtd::make_error_code(h_result);}
     /// &}
   };
 }
