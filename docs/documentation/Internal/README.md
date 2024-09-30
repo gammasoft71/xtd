@@ -17,6 +17,7 @@ sidebar_position: 16
 
 * [Computer Guid](/docs/documentation/Internal/computer_guid) provides information about about computer guid.
 * [Exceptions](/docs/documentation/Internal/exceptions) provides information about exceptions.
+* [h_results](/docs/documentation/Internal/hresults) provides information about h_results.
 * [Gnome default size of controls](/docs/documentation/Internal/default_size_of_controls_g) provides information about default control sizes on Gnome.
 * [macOS default size of controls](/docs/documentation/Internal/default_size_of_controls_m) provides information about default control sizes on macOS.
 * [Windows default size of controls](/docs/documentation/Internal/default_size_of_controls_w) provides information about default control sizes on Windows.
