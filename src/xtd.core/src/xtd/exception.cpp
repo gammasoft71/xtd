@@ -36,10 +36,6 @@ exception::exception(const std::optional<xtd::string>& message, uptr<xtd::except
   if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
 }
 
-const xtd::string& exception::file_path() const noexcept {
-  return get_last_stack_frame().get_file_name();
-}
-
 const xtd::string& exception::help_link() const noexcept {
   return data_->help_link;
 }
@@ -80,22 +76,10 @@ exception::exception_ref exception::inner_exception() const noexcept {
   return data_->inner_exception ? exception_ref {*data_->inner_exception.get()} : nullopt;
 }
 
-xtd::size exception::line_number() const noexcept {
-  return get_last_stack_frame().get_file_line_number();
-}
-
-const xtd::string& exception::member_name() const noexcept {
-  return get_last_stack_frame().get_method();
-}
-
 const xtd::string& exception::message() const noexcept {
   static thread_local auto message = string::empty_string;
   message = data_->message.value_or(error_code().value() != h_result::COR_E_EXCEPTION ? string {data_->error.message()} : string::format("Exception of type '{}' was thrown.", typeof_(*this)));
   return message;
-}
-
-const xtd::string& exception::name() const noexcept {
-  return get_name();
 }
 
 const xtd::string& exception::source() const noexcept {

@@ -62,12 +62,6 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Gets file path where exception occurred
-    /// @return A string represent file path where exception occurred
-    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 0.4.0
-    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 0.4.0")]]
-    virtual const xtd::string& file_path() const noexcept;
-    
     /// @brief Gets a link to the help file associated with this exception.
     /// @return A string represent a link to Help file associated with exception
     virtual const xtd::string& help_link() const noexcept;
@@ -93,26 +87,9 @@ namespace xtd {
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
     virtual exception_ref inner_exception() const noexcept;
     
-    /// @brief Gets Line number where the exception occurred
-    /// @return the line number where exception occurred
-    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0
-    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0")]]
-    virtual xtd::size line_number() const noexcept;
-    
-    /// @brief Gets file member where exception occurred
-    /// @return A string represent member name where exception occurred
-    /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 0.4.0
-    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 0.4.0")]]
-    virtual const xtd::string& member_name() const noexcept;
-    
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     virtual const xtd::string& message() const noexcept;
-    
-    /// @brief Gets full class name the exception
-    /// @return A string represent a full class name of the exception
-    /// @deprecated Replaced by xtd::exception::get_type().full_name() - Will be removed in version 0.4.0
-    virtual const xtd::string& name() const noexcept;
     
     /// @brief Gets the name of the application or the object that causes the error.
     /// @return The name of the application or the object that causes the error.
