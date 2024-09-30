@@ -223,8 +223,8 @@ namespace xtd::tests {
       assert::are_equal(static_cast<int32>(0x80131515), h_result::COR_E_NOTSUPPORTED, csf_);
     }
 
-    void test_method_(COR_E_OBJECTDISPOSED) {
-      assert::are_equal(static_cast<int32>(0x80131622), h_result::COR_E_OBJECTDISPOSED, csf_);
+    void test_method_(COR_E_OBJECTCLOSED) {
+      assert::are_equal(static_cast<int32>(0x80131622), h_result::COR_E_OBJECTCLOSED, csf_);
     }
 
     void test_method_(COR_E_OPERATIONCANCELED) {
@@ -470,7 +470,13 @@ namespace xtd::tests {
     void test_method_(ERROR_FILE_INVALID) {
       assert::are_equal(static_cast<int32>(0x800703EE), h_result::ERROR_FILE_INVALID, csf_);
     }
-
+    
+    void test_method_(get_h_results) {
+      assert::are_equal(116_z, h_result::get_h_result_messages().size(), csf_);
+      assert::are_equal(116_z, h_result::get_h_result_names().size(), csf_);
+      assert::are_equal(116_z, h_result::get_h_results().size(), csf_);
+    }
+    
     void test_method_(get_name_with_S_OK) {
       assert::are_equal("Operation successful.", h_result::get_name(h_result::S_OK));
     }
