@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['h_5fresults_0',['h_results',['../classxtd_1_1h__results.html',1,'xtd']]],
+  ['h_5fresult_0',['h_result',['../classxtd_1_1h__result.html',1,'xtd']]],
   ['h_5fscroll_5fbar_1',['h_scroll_bar',['../classxtd_1_1forms_1_1h__scroll__bar.html',1,'xtd::forms']]],
   ['hash_5fcode_2',['hash_code',['../classxtd_1_1hash__code.html',1,'xtd']]],
   ['hasher_3',['hasher',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html',1,'xtd::collections::generic::helpers']]],
