@@ -268,14 +268,14 @@ const xtd::array<int32>& h_result::get_h_results() noexcept {
 }
 
 string h_result::get_message(int32 h_result) noexcept {
-  auto iterator = get_h_result_names().find(h_result);
-  if (iterator == get_h_result_names().end()) return string::format("Unknown h_result 0x{0:X8} ({0})", static_cast<uint32>(h_result));
+  auto iterator = get_h_result_messages().find(h_result);
+  if (iterator == get_h_result_messages().end()) return string::format("Unknown h_result 0x{0:X8} ({0})", static_cast<uint32>(h_result));
   return iterator->second;
 }
 
 string h_result::get_name(int32 h_result) noexcept {
-  auto iterator = get_h_result_messages().find(h_result);
-  if (iterator == get_h_result_messages().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
+  auto iterator = get_h_result_names().find(h_result);
+  if (iterator == get_h_result_names().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
   return iterator->second;
 }
 
