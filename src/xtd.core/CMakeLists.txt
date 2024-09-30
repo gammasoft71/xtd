@@ -285,6 +285,8 @@ add_sources(
   include/xtd/lock
   include/xtd/make_any_object.h
   include/xtd/make_any_object
+  include/xtd/make_error_code.h
+  include/xtd/make_error_code
   include/xtd/math.h
   include/xtd/math
   include/xtd/memory_information.h
@@ -1051,6 +1053,7 @@ add_sources(
   src/xtd/iformatable.cpp
   src/xtd/istringable.cpp
   src/xtd/literals.cpp
+  src/xtd/make_error_code.cpp
   src/xtd/math.cpp
   src/xtd/memory_information.cpp
   src/xtd/null.cpp
