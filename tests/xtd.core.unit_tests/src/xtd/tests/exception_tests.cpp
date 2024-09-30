@@ -32,7 +32,7 @@ namespace xtd::tests {
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown.", e.to_string(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
@@ -49,7 +49,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown.\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
@@ -65,7 +65,7 @@ namespace xtd::tests {
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
       assert::is_empty(e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception", e.to_string(), csf_);
       assert::are_equal("xtd::exception", e.what(), csf_);
@@ -82,7 +82,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::is_empty(e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("xtd::exception", e.what(), csf_);
@@ -98,7 +98,7 @@ namespace xtd::tests {
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
@@ -115,7 +115,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
@@ -133,7 +133,7 @@ namespace xtd::tests {
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
@@ -152,7 +152,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
@@ -171,7 +171,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
@@ -191,7 +191,7 @@ namespace xtd::tests {
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", e.name(), csf_);
+      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
