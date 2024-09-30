@@ -18,6 +18,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class system_exception;
+  /// @endcond
+  
   /// @brief Defines the base class for predefined exceptions in the xtd namespace.
   /// @par Namespace
   /// xtd
@@ -134,6 +138,8 @@ namespace xtd {
   private:
     exception(const std::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& information, bool);
     xtd::string stack_trace_to_string() const noexcept;
+    
+    friend class system_exception;
     const xtd::string& get_name() const noexcept;
 
     struct data;
