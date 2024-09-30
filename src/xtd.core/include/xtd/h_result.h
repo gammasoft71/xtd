@@ -19,7 +19,11 @@
 #  undef S_OK
 #  undef S_FALSE
 #  undef CO_E_NOTINITIALIZED
+#  undef DISP_E_PARAMNOTFOUND
+#  undef DISP_E_TYPEMISMATCH
+#  undef DISP_E_BADVARTYPE
 #  undef DISP_E_OVERFLOW
+#  undef DISP_E_DIVBYZERO
 #  undef E_ABORT
 #  undef E_BOUNDS
 #  undef E_CHANGED_STATE
