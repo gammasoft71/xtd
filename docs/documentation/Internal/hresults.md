@@ -1123,5 +1123,3 @@ To save everyone from looking things up from corerror.h and mscorrc.dll, I made 
 | NGEN_E_WORKER_UNEXPECTED_SYNC                                 | 0x80131f05 | <N/A>                                                                                                                                                                              |
 | NGEN_E_SYS_ASM_NI_MISSING                                     | 0x80131f06 | <N/A>                                                                                                                                                                              |
 | CLDB_E_INTERNALERROR                                          | 0x80131fff | <N/A>                                                                                                                                                                              |
-
-See [Interpreting HRESULTS returned from .NET/CLR: 0x8013XXXX](https://learn.microsoft.com/en-gb/archive/blogs/yizhang/interpreting-hresults-returned-from-netclr-0x8013xxxx) for more informations
