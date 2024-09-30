@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['s_5ffalse_0',['S_FALSE',['../classxtd_1_1h__results.html#aa3c40d97b92e26e46634c68b1a319f9c',1,'xtd::h_results']]],
-  ['s_5fok_1',['S_OK',['../classxtd_1_1h__results.html#a751b11017315358d2e69143412d7cc54',1,'xtd::h_results']]],
+  ['s_5ffalse_0',['S_FALSE',['../classxtd_1_1h__result.html#abaf7f60304e18904a74da6c734d05b3c',1,'xtd::h_result']]],
+  ['s_5fok_1',['S_OK',['../classxtd_1_1h__result.html#ac36faf3d0d39c9e720f290b9d4985d81',1,'xtd::h_result']]],
   ['saddle_5fbrown_2',['saddle_brown',['../classxtd_1_1drawing_1_1color.html#a7ebd2d91a7cb50d542e5cbd4f16c624a',1,'xtd::drawing::color']]],
   ['safety_5fpin_3',['safety_pin',['../classxtd_1_1forms_1_1emoticons.html#a12e214c80ce43a332879d4ec5a6ddd3c',1,'xtd::forms::emoticons']]],
   ['sagittarius_4',['sagittarius',['../classxtd_1_1forms_1_1emoticons.html#aede87d0508e406e76613109377121287',1,'xtd::forms::emoticons']]],

@@ -1,12 +1,12 @@
 var searchData=
 [
   ['e_0',['e',['../classxtd_1_1math.html#a683f98655e30eb7747031779e90700e3',1,'xtd::math::e'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32',1,'xtd::e'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32',1,'xtd::forms::e'],['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714ae1671797c52e15f763380b45e841ec32',1,'xtd::forms::e']]],
-  ['e_5fabort_1',['E_ABORT',['../classxtd_1_1h__results.html#ab2ef72c8a9d9fc8f694a0975d6711870',1,'xtd::h_results']]],
-  ['e_5ffail_2',['E_FAIL',['../classxtd_1_1h__results.html#ae39d1228a88d914706ba20ebb44980d9',1,'xtd::h_results']]],
+  ['e_5fabort_1',['E_ABORT',['../classxtd_1_1h__result.html#ae5ceb8116f91c163a7311e0963b87684',1,'xtd::h_result']]],
+  ['e_5ffail_2',['E_FAIL',['../classxtd_1_1h__result.html#ad7d6a1c8ea1893f554b621de8ef8a596',1,'xtd::h_result']]],
   ['e_5fmail_5fsymbol_3',['e_mail_symbol',['../classxtd_1_1forms_1_1emoticons.html#af6d9839e5e0a5b81573c24fb1521b298',1,'xtd::forms::emoticons']]],
-  ['e_5fnotimpl_4',['E_NOTIMPL',['../classxtd_1_1h__results.html#a7153ec1515e177d892e5caaebece8dd8',1,'xtd::h_results']]],
-  ['e_5fpointer_5',['E_POINTER',['../classxtd_1_1h__results.html#af3a71d3c6ae8177b9175f723c6584b4a',1,'xtd::h_results']]],
-  ['e_5funexpected_6',['E_UNEXPECTED',['../classxtd_1_1h__results.html#a246b260f6271d616f6b87587dc8f39d2',1,'xtd::h_results']]],
+  ['e_5fnotimpl_4',['E_NOTIMPL',['../classxtd_1_1h__result.html#ae5030e794a06a27f016f6e6c3aac11be',1,'xtd::h_result']]],
+  ['e_5fpointer_5',['E_POINTER',['../classxtd_1_1h__result.html#a097b410f718a8f487532df2e59849b6f',1,'xtd::h_result']]],
+  ['e_5funexpected_6',['E_UNEXPECTED',['../classxtd_1_1h__result.html#ade606f38a6b7107008b3dfdde9d40d2d',1,'xtd::h_result']]],
   ['eagle_7',['eagle',['../classxtd_1_1forms_1_1emoticons.html#a10a52bfd1e86b1dfaafe939704cee801',1,'xtd::forms::emoticons']]],
   ['ear_8',['ear',['../classxtd_1_1forms_1_1emoticons.html#a95fa6b490c6b5dfbccb0f9b23b167e43',1,'xtd::forms::emoticons']]],
   ['ear_5fof_5fmaize_9',['ear_of_maize',['../classxtd_1_1forms_1_1emoticons.html#a8b27eb25989511075839a17217a376e9',1,'xtd::forms::emoticons']]],

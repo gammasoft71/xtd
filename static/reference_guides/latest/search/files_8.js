@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['h_5fresults_2eh_0',['h_results.h',['../h__results_8h.html',1,'']]],
-  ['h_5fresults_5fcategory_2eh_1',['h_results_category.h',['../h__results__category_8h.html',1,'']]],
+  ['h_5fresult_2eh_0',['h_result.h',['../h__result_8h.html',1,'']]],
+  ['h_5fresult_5fcategory_2eh_1',['h_result_category.h',['../h__result__category_8h.html',1,'']]],
   ['h_5fscroll_5fbar_2eh_2',['h_scroll_bar.h',['../h__scroll__bar_8h.html',1,'']]],
   ['hash_5fcode_2eh_3',['hash_code.h',['../hash__code_8h.html',1,'']]],
   ['hash_5fset_2eh_4',['hash_set.h',['../hash__set_8h.html',1,'']]],
