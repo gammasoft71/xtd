@@ -548,6 +548,12 @@ namespace xtd::tests {
     void test_method_(get_message_with_E_POINTER) {
       assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", h_result::get_message(h_result::E_POINTER));
     }
+
+    /*
+    void test_method_(get_message_with_) {
+      assert::are_equal("", h_result::get_message(h_result::S_OK));
+    }
+     */
     
     void test_method_(make_error_code_with_S_OK) {
       assert::are_equal(static_cast<int32>(0x00000000), h_result::make_error_code(h_result::S_OK).value());
@@ -566,11 +572,5 @@ namespace xtd::tests {
       assert::are_equal("h_result_category", h_result::make_error_code(0xFF00FF00).category().name());
       assert::are_equal("Unknown h_result 0xFF00FF00 (4278255360)", h_result::make_error_code(0xFF00FF00).message());
     }
-
-    /*
-    void test_method_(get_message_with_) {
-      assert::are_equal("", h_result::get_message(h_result::S_OK));
-    }
-     */
   };
 }
