@@ -358,6 +358,7 @@
 #include "literals.h"
 #include "lock.h"
 #include "make_any_object.h"
+#include "make_error_code.h"
 #include "math.h"
 #include "memory_information.h"
 #include "month_of_year.h"

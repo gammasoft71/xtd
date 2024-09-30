@@ -6,7 +6,3 @@ using namespace xtd;
 const std::error_category& xtd::h_result_category() noexcept {
   return xtd::h_result::h_result_category();
 }
-
-std::error_code xtd::make_error_code(int h_result) noexcept {
-  return xtd::h_result::make_error_code(h_result);
-}
