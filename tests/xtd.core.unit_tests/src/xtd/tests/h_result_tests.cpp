@@ -351,8 +351,24 @@ namespace xtd::tests {
       assert::are_equal(static_cast<int32>(0x800401F0), h_result::CO_E_NOTINITIALIZED, csf_);
     }
 
+    void test_method_(DISP_E_PARAMNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x80020004), h_result::DISP_E_PARAMNOTFOUND, csf_);
+    }
+
+    void test_method_(DISP_E_TYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x80020005), h_result::DISP_E_TYPEMISMATCH, csf_);
+    }
+
+    void test_method_(DISP_E_BADVARTYPE) {
+      assert::are_equal(static_cast<int32>(0x80020008), h_result::DISP_E_BADVARTYPE, csf_);
+    }
+
     void test_method_(DISP_E_OVERFLOW) {
       assert::are_equal(static_cast<int32>(0x8002000A), h_result::DISP_E_OVERFLOW, csf_);
+    }
+
+    void test_method_(DISP_E_DIVBYZERO) {
+      assert::are_equal(static_cast<int32>(0x80020012), h_result::DISP_E_DIVBYZERO, csf_);
     }
 
     void test_method_(E_ABORT) {
