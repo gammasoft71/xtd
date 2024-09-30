@@ -2,6 +2,7 @@
 #include <xtd/interface>
 #include <xtd/string>
 #include <xtd/tunit/assert>
+#include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
@@ -469,5 +470,101 @@ namespace xtd::tests {
     void test_method_(ERROR_FILE_INVALID) {
       assert::are_equal(static_cast<int32>(0x800703EE), h_result::ERROR_FILE_INVALID, csf_);
     }
+
+    void test_method_(get_name_with_S_OK) {
+      assert::are_equal("Operation successful.", h_result::get_name(h_result::S_OK));
+    }
+
+    void test_method_(get_name_with_S_FALSE) {
+      assert::are_equal("Operation successful but returned no results.", h_result::get_name(h_result::S_FALSE));
+    }
+
+    void test_method_(get_name_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal("The wait completed due to an abandoned mutex.", h_result::get_name(h_result::COR_E_ABANDONEDMUTEX));
+    }
+
+    void test_method_(get_name_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal("Ambiguous implementation found.", h_result::get_name(h_result::COR_E_AMBIGUOUSIMPLEMENTATION));
+    }
+
+    void test_method_(get_name_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal("Ambiguous match found.", h_result::get_name(h_result::COR_E_AMBIGUOUSMATCH));
+    }
+
+    void test_method_(get_name_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal("Attempted to access an unloaded AppDomain.", h_result::get_name(h_result::COR_E_APPDOMAINUNLOADED));
+    }
+
+    void test_method_(get_name_with_COR_E_APPLICATION) {
+      assert::are_equal("Error in the application.", h_result::get_name(h_result::COR_E_APPLICATION));
+    }
+
+    void test_method_(get_name_with_COR_E_ARGUMENT) {
+      assert::are_equal("Value does not fall within the expected range.", h_result::get_name(h_result::COR_E_ARGUMENT));
+    }
+
+    void test_method_(get_name_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal("Specified argument was out of the range of valid values.", h_result::get_name(h_result::COR_E_ARGUMENTOUTOFRANGE));
+    }
+
+    void test_method_(get_name_with_COR_E_ARITHMETIC) {
+      assert::are_equal("Overflow or underflow in the arithmetic operation.", h_result::get_name(h_result::COR_E_ARITHMETIC));
+    }
+
+    void test_method_(get_name_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal("Attempted to access an element as a type incompatible with the array.", h_result::get_name(h_result::COR_E_ARRAYTYPEMISMATCH));
+    }
+
+    void test_method_(get_name_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal("Format of the executable (.exe) cannot be run.", h_result::get_name(h_result::COR_E_BADEXEFORMAT));
+    }
+
+    void test_method_(get_name_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal("Format of the executable (.exe) or library (.dll) is invalid.", h_result::get_name(h_result::COR_E_BADIMAGEFORMAT));
+    }
+
+    void test_method_(get_name_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal("Attempt to unload the AppDomain failed.", h_result::get_name(h_result::COR_E_CANNOTUNLOADAPPDOMAIN));
+    }
+
+    void test_method_(get_name_with_COR_E_EXCEPTION) {
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", h_result::get_name(h_result::COR_E_EXCEPTION));
+    }
+
+    void test_method_(get_name_with_COR_E_RANK) {
+      assert::are_equal("Attempted to operate on an array with the incorrect number of dimensions.", h_result::get_name(h_result::COR_E_RANK));
+    }
+
+    void test_method_(get_name_with_COR_E_SYSTEM) {
+      assert::are_equal("System error.", h_result::get_name(h_result::COR_E_SYSTEM));
+    }
+
+    void test_method_(get_name_with_E_POINTER) {
+      assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", h_result::get_name(h_result::E_POINTER));
+    }
+    
+    void test_method_(make_error_code_with_S_OK) {
+      assert::are_equal(static_cast<int32>(0x00000000), h_result::make_error_code(h_result::S_OK).value());
+      assert::are_equal("h_result_category", h_result::make_error_code(h_result::S_OK).category().name());
+      assert::are_equal("Operation successful.", h_result::make_error_code(h_result::S_OK).message());
+    }
+    
+    void test_method_(make_error_code_with_COR_E_RANK) {
+      assert::are_equal(static_cast<int32>(0x80131517), h_result::make_error_code(h_result::COR_E_RANK).value());
+      assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_RANK).category().name());
+      assert::are_equal("Attempted to operate on an array with the incorrect number of dimensions.", h_result::make_error_code(h_result::COR_E_RANK).message());
+    }
+    
+    void test_method_(make_error_code_with_unknown_value) {
+      assert::are_equal(static_cast<int32>(0xFF00FF00), h_result::make_error_code(0xFF00FF00).value());
+      assert::are_equal("h_result_category", h_result::make_error_code(0xFF00FF00).category().name());
+      assert::are_equal("Unknown h_result 0xFF00FF00 (4278255360)", h_result::make_error_code(0xFF00FF00).message());
+    }
+
+    /*
+    void test_method_(get_name_with_) {
+      assert::are_equal("", h_result::get_name(h_result::S_OK));
+    }
+     */
   };
 }
