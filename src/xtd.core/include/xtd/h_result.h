@@ -8,9 +8,11 @@
 #include "internal/__array_definition.h"
 #include "internal/__string_definitions.h"
 #undef __XTD_CORE_INTERNAL__
-#include <map>
+#include <unordered_map>
 #include <system_error>
 #include <vector>
+
+// See [Interpreting HRESULTS returned from .NET/CLR: 0x8013XXXX](https://learn.microsoft.com/en-gb/archive/blogs/yizhang/interpreting-hresults-returned-from-netclr-0x8013xxxx)
 
 /// @cond
 #if defined(_WIN32)
@@ -55,7 +57,7 @@ namespace xtd {
   /// @remarks For more information, see Winerror.h from Micorosft's Win32 API.
   class h_result static_ {
   public:
-    /// @name Public Fields
+    /// @name Public Static Fields
     
     /// @{
     /// @brief Operation successful.
@@ -73,7 +75,7 @@ namespace xtd {
     /// @brief Error in the application.
     static constexpr int32 COR_E_APPLICATION = static_cast<int32>(0x80131600);
     /// @brief Value does not fall within the expected range.
-    static constexpr int32 COR_E_ARGUMENT = static_cast<int32>(0x80070057);
+    static constexpr int32 COR_E_ARGUMENT = static_cast<int32>(0x80070057); // Duplicate with E_INVALIDARG
     /// @brief Specified argument was out of the range of valid values.
     static constexpr int32 COR_E_ARGUMENTOUTOFRANGE = static_cast<int32>(0x80131502);
     /// @brief Overflow or underflow in the arithmetic operation.
@@ -86,18 +88,18 @@ namespace xtd {
     static constexpr int32 COR_E_BADIMAGEFORMAT = static_cast<int32>(0x8007000B);
     /// @brief Attempt to unload the AppDomain failed.
     static constexpr int32 COR_E_CANNOTUNLOADAPPDOMAIN = static_cast<int32>(0x80131015);
-    /// @brief
+    /// @brief A code contract (ie, precondition, postcondition, invariant, or assert) failed.
     static constexpr int32 COR_E_CODECONTRACTFAILED = static_cast<int32>(0x80131542);
-    /// @brief
+    /// @brief Attempted to marshal an object across a context boundary.
     static constexpr int32 COR_E_CONTEXTMARSHAL = static_cast<int32>(0x80131504);
-    /// @brief
+    /// @brief Binary format of the specified custom attribute was invalid.
     static constexpr int32 COR_E_CUSTOMATTRIBUTEFORMAT = static_cast<int32>(0x80131605);
-    /// @brief
+    /// @brief A datatype misalignment was detected in a load or store instruction.
     static constexpr int32 COR_E_DATAMISALIGNED = static_cast<int32>(0x80131541);
-    /// @brief
+    /// @brief Attempted to access a path that is not on the disk.
     static constexpr int32 COR_E_DIRECTORYNOTFOUND = static_cast<int32>(0x80070003);
-    /// @brief
-    static constexpr int32 COR_E_DIVIDEBYZERO = static_cast<int32>(0x80020012); // DISP_E_DIVBYZERO
+    /// @brief Attempted to divide by zero.
+    static constexpr int32 COR_E_DIVIDEBYZERO = static_cast<int32>(0x80020012); // Duplicate with DISP_E_DIVBYZERO
     /// @brief
     static constexpr int32 COR_E_DLLNOTFOUND = static_cast<int32>(0x80131524);
     /// @brief
@@ -117,7 +119,7 @@ namespace xtd {
     /// @brief
     static constexpr int32 COR_E_FILELOAD = static_cast<int32>(0x80131621);
     /// @brief
-    static constexpr int32 COR_E_FILENOTFOUND = static_cast<int32>(0x80070002);
+    static constexpr int32 COR_E_FILENOTFOUND = static_cast<int32>(0x80070002); // Duplicate with E_FILENOTFOUND
     /// @brief
     static constexpr int32 COR_E_FORMAT = static_cast<int32>(0x80131537);
     /// @brief
@@ -164,8 +166,8 @@ namespace xtd {
     static constexpr int32 COR_E_NOTFINITENUMBER = static_cast<int32>(0x80131528);
     /// @brief
     static constexpr int32 COR_E_NOTSUPPORTED = static_cast<int32>(0x80131515);
-    /// @brief
-    static constexpr int32 COR_E_OBJECTDISPOSED = static_cast<int32>(0x80131622);
+    /// @brief Cannot access a closed object.
+    static constexpr int32 COR_E_OBJECTCLOSED = static_cast<int32>(0x80131622);
     /// @brief
     static constexpr int32 COR_E_OPERATIONCANCELED = static_cast<int32>(0x8013153B);
     /// @brief
@@ -229,7 +231,15 @@ namespace xtd {
     /// @brief
     static constexpr int32 CO_E_NOTINITIALIZED = static_cast<int32>(0x800401F0);
     /// @brief
+    static constexpr int32 DISP_E_PARAMNOTFOUND = static_cast<int32>(0x80020004);
+    /// @brief
+    static constexpr int32 DISP_E_TYPEMISMATCH = static_cast<int32>(0x80020005);
+    /// @brief
+    static constexpr int32 DISP_E_BADVARTYPE = static_cast<int32>(0x80020008);
+    /// @brief
     static constexpr int32 DISP_E_OVERFLOW = static_cast<int32>(0x8002000A);
+    /// @brief
+    static constexpr int32 DISP_E_DIVBYZERO = static_cast<int32>(0x80020012); // Duplicate with COR_E_DIVIDEBYZERO
     /// @brief Operation aborted.
     static constexpr int32 E_ABORT = static_cast<int32>(0x80004004);
     /// @brief
@@ -237,14 +247,14 @@ namespace xtd {
     /// @brief
     static constexpr int32 E_CHANGED_STATE = static_cast<int32>(0x8000000C);
     /// @brief
-    static constexpr int32 E_FILENOTFOUND = static_cast<int32>(0x80070002);
+    static constexpr int32 E_FILENOTFOUND = static_cast<int32>(0x80070002); // Duplicate with COR_E_FILENOTFOUND
     /// @brief Unspecified failure.
     static constexpr int32 E_FAIL = static_cast<int32>(0x80004005);
     /// @brief
     static constexpr int32 E_HANDLE = static_cast<int32>(0x80070006);
     /// @brief
-    static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057);
-    /// @brief Not implemented.
+    static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057); // Duplicate with COR_E_ARGUMENT
+    /// @brief The method or operation is not implemented.
     static constexpr int32 E_NOTIMPL = static_cast<int32>(0x80004001);
     /// @brief Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
     static constexpr int32 E_POINTER = static_cast<int32>(0x80004003);
@@ -293,13 +303,22 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
+    /// @brief Gets The h_result messages.
+    /// @return The h_result messages.
+    static const std::unordered_map<int32, string>& get_h_result_messages() noexcept;
+    
     /// @brief Gets The h_result names.
     /// @return The h_result names.
-    static const std::map<int32, string>& get_h_result_names() noexcept;
+    static const std::unordered_map<int32, string>& get_h_result_names() noexcept;
     
     /// @brief Gets an array of h_results.
     /// @return An array of h_results.
     static const xtd::array<int32>& get_h_results() noexcept;
+    
+    /// @brief Gets the message of the specified h_result.
+    /// @param h_result The xtd::h_result whose message will be getted.
+    /// @return The message of `h_result`.`
+    static string get_message(int32 h_result) noexcept;
     
     /// @brief Gets the name of the specified h_result.
     /// @param h_result The xtd::h_result whose name will be getted.
@@ -314,6 +333,11 @@ namespace xtd {
     /// @param h_result xtd::h_result error code to create error code for.
     /// @return Error code corresponding to `h_result`.
     static std::error_code make_error_code(int h_result) noexcept;
+    
+    /// @brief Gets the name of the specified h_result.
+    /// @param h_result The xtd::h_result whose name will be getted.
+    /// @return The name of `h_result`.`
+    static string to_String(int32 h_result) noexcept;
     /// &}
   };
 }
