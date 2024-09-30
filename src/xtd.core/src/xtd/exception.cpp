@@ -91,7 +91,7 @@ const xtd::string& exception::member_name() const noexcept {
 
 const xtd::string& exception::message() const noexcept {
   static thread_local auto message = string::empty_string;
-  message = data_->message.value_or(string {data_->error.message()});
+  message = data_->message.value_or(error_code().value() != h_result::COR_E_EXCEPTION ? string {data_->error.message()} : string::format("Exception of type '{}' was thrown.", typeof_(*this)));
   return message;
 }
 
