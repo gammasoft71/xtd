@@ -3,9 +3,14 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "int32.h"
-#include "string.h"
 #include "static.h"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__array_definition.h"
+#include "internal/__string_definitions.h"
+#undef __XTD_CORE_INTERNAL__
+#include <map>
 #include <system_error>
+#include <vector>
 
 /// @cond
 #if defined(_WIN32)
@@ -288,6 +293,19 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
+    /// @brief Gets The h_result names.
+    /// @return The h_result names.
+    static const std::map<int32, string>& get_h_result_names() noexcept;
+    
+    /// @brief Gets an array of h_results.
+    /// @return An array of h_results.
+    static const xtd::array<int32>& get_h_results() noexcept;
+    
+    /// @brief Gets the name of the specified h_result.
+    /// @param h_result The xtd::h_result whose name will be getted.
+    /// @return The name of `h_result`.`
+    static string get_name(int32 h_result) noexcept;
+    
     /// @brief Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the xtd::h_result error codes.
     /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
     static const std::error_category& h_result_category() noexcept;
