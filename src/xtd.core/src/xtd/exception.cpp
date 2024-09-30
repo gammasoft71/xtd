@@ -3,7 +3,6 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
 #include "../../include/xtd/h_result.h"
-#include "../../include/xtd/h_result_category.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/reflection/assembly.h"
@@ -57,7 +56,7 @@ int32 exception::h_result() const noexcept {
 
 void exception::h_result(int32 value) noexcept {
   if (data_->error.value() == value && data_->error.category() == h_result::h_result_category()) return;
-  data_->error = make_error_code(value);
+  data_->error = h_result::make_error_code(value);
 }
 
 bool exception::enable_stack_trace() noexcept {
