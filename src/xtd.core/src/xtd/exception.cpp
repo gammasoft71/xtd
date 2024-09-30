@@ -3,6 +3,7 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/exception.h"
 #include "../../include/xtd/h_result.h"
+#include "../../include/xtd/nullopt.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/reflection/assembly.h"
@@ -18,7 +19,6 @@ struct exception::data {
   mutable xtd::string name;
   std::optional<string> message;
   uptr<exception> inner_exception;
-  exception_ref inner_exception_deprecated;
   std::error_code error = h_result::make_error_code(h_result::COR_E_EXCEPTION);
   string help_link;
   string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
@@ -77,7 +77,7 @@ void exception::error_code(const std::error_code& value) noexcept {
 }
 
 exception::exception_ref exception::inner_exception() const noexcept {
-  return data_->inner_exception_deprecated;
+  return data_->inner_exception ? exception_ref {*data_->inner_exception.get()} : nullopt;
 }
 
 xtd::size exception::line_number() const noexcept {

@@ -65,6 +65,7 @@ namespace xtd {
     /// @brief Gets file path where exception occurred
     /// @return A string represent file path where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 0.4.0
+    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 0.4.0")]]
     virtual const xtd::string& file_path() const noexcept;
     
     /// @brief Gets a link to the help file associated with this exception.
@@ -95,11 +96,13 @@ namespace xtd {
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0
+    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0")]]
     virtual xtd::size line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 0.4.0
+    [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 0.4.0")]]
     virtual const xtd::string& member_name() const noexcept;
     
     /// @brief Gets message associate to the exception
