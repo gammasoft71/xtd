@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0")
+#  pragma message("Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0.")
 #else
-#  warning "Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0"
+#  warning "Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0."
 #endif
 #include "array_list.h"
 
@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows hows to use xtd::collections::array_list.
     /// @include array_list.cpp
-    /// @deprecated Replaced by xtd::collections::array_list - Will be removed in version 0.4.0
-    using vector_list [[deprecated("Replaced by xtd::collections::array_list - Will be removed in version 0.4.0")]] = array_list;
+    /// @deprecated Replaced by xtd::collections::array_list - Will be removed in version 0.4.0.
+    using vector_list [[deprecated("Replaced by xtd::collections::array_list - Will be removed in version 0.4.0.")]] = array_list;
   }
 }
