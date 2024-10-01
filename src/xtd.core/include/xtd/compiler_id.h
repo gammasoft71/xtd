@@ -29,8 +29,8 @@ namespace xtd {
     /// @brief The compiler is Apple clang.
     apple_clang,
     /// @brief The compiler is Microsoft Visual Studio.
-    /// @deprecated Replaced by xtd::compiler_id::msvc - Will be removed in version 0.4.0
-    microsoft_visual_studio [[deprecated("Replaced by xtd::compiler_id::msvc - Will be removed in version 0.4.0")]] = msvc,
+    /// @deprecated Replaced by xtd::compiler_id::msvc - Will be removed in version 0.4.0.
+    microsoft_visual_studio [[deprecated("Replaced by xtd::compiler_id::msvc - Will be removed in version 0.4.0.")]] = msvc,
   };
 }
 

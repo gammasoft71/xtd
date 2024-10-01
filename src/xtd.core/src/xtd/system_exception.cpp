@@ -64,5 +64,6 @@ const xtd::string& system_exception::member_name() const noexcept {
 }
 
 const xtd::string& system_exception::name() const noexcept {
-  return get_name();
+  thread_local static string name;
+  return (name = get_type().full_name());
 }

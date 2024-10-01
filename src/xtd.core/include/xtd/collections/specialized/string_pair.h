@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0")
+#  pragma message("Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0.")
 #else
-#  warning "Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0"
+#  warning "Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0."
 #endif
 #include "string_key_value_pair.h"
 
@@ -28,8 +28,8 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      /// @deprecated Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0
-      using string_pair [[deprecated("Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0")]] = string_key_value_pair;
+      /// @deprecated Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0.
+      using string_pair [[deprecated("Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0.")]] = string_key_value_pair;
     }
   }
 }
