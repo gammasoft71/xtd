@@ -64,5 +64,5 @@ const xtd::string& system_exception::member_name() const noexcept {
 }
 
 const xtd::string& system_exception::name() const noexcept {
-  return get_name();
+  return (data_->name = get_type().full_name());
 }
