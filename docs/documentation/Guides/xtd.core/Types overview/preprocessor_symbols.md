@@ -236,6 +236,8 @@ The following table represents the different preprocessor symbols for the C++ st
 | `__cplusplus = 201402L`| [C++14](https://en.wikipedia.org/wiki/C%2B%2B14) (not supported)  |
 | `__cplusplus = 201703L`| [C++17](https://en.wikipedia.org/wiki/C%2B%2B17)                  |
 | `__cplusplus = 202002L`| [C++20](https://en.wikipedia.org/wiki/C%2B%2B20)                  |
+| `__cplusplus = 202302L`| [C++23](https://en.wikipedia.org/wiki/C%2B%2B23)                  |
+| `__cplusplus = 202600L`| [C++26](https://en.wikipedia.org/wiki/C%2B%2B26)                  |
 
 For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Standards](https://sourceforge.net/p/predef/wiki/Standards/).
 
@@ -245,7 +247,11 @@ The following code shows how to detect the C++ standard with the preprocessor sy
 
 ```cpp
 #if defined(__cplusplus)
-#  if __cplusplus == 202002L
+#  if __cplusplus == 202600L
+#    define __standard_name__ "C++ 26"
+#  elif __cplusplus == 202302L
+#    define __standard_name__ "C++ 23"
+#  elif __cplusplus == 202002L
 #    define __standard_name__ "C++ 20"
 #  elif __cplusplus == 201703L
 #    define __standard_name__ "C++ 17"
