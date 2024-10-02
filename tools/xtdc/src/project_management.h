@@ -142,7 +142,7 @@ namespace xtdc_command {
       else
         launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return xtd::string::format("{0}Project {1} builded{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}Project {1} built{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::string clean(bool release) const {
