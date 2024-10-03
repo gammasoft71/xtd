@@ -578,15 +578,15 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_COR_E_DUPLICATEWAITOBJECT) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+      assert::are_equal("Duplicate objects in argument.", h_result::get_message(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
     }
     
     void test_method_(get_message_with_COR_E_ENDOFSTREAM) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_ENDOFSTREAM), csf_);
+      assert::are_equal("Attempted to read past the end of the stream.", h_result::get_message(h_result::COR_E_ENDOFSTREAM), csf_);
     }
     
     void test_method_(get_message_with_COR_E_ENTRYPOINTNOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+      assert::are_equal("Entry point was not found.", h_result::get_message(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
     }
     
     void test_method_(get_message_with_COR_E_EXCEPTION) {
@@ -594,115 +594,115 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_COR_E_EXECUTIONENGINE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_EXECUTIONENGINE), csf_);
+      assert::are_equal("Internal error in the runtime.", h_result::get_message(h_result::COR_E_EXECUTIONENGINE), csf_);
     }
     
     void test_method_(get_message_with_COR_E_FAILFAST) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_FAILFAST), csf_);
+      assert::are_equal("Fail fast.", h_result::get_message(h_result::COR_E_FAILFAST), csf_);
     }
     
     void test_method_(get_message_with_COR_E_FIELDACCESS) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_FIELDACCESS), csf_);
+      assert::are_equal("Attempted to access a field that is not accessible by the caller.", h_result::get_message(h_result::COR_E_FIELDACCESS), csf_);
     }
     
     void test_method_(get_message_with_COR_E_FILELOAD) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_FILELOAD), csf_);
+      assert::are_equal("Could not load the specified file.", h_result::get_message(h_result::COR_E_FILELOAD), csf_);
     }
     
     void test_method_(get_message_with_COR_E_FILENOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_FILENOTFOUND), csf_);
+      assert::are_equal("Unable to find the specified file.", h_result::get_message(h_result::COR_E_FILENOTFOUND), csf_);
     }
     
     void test_method_(get_message_with_COR_E_FORMAT) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_FORMAT), csf_);
+      assert::are_equal("One of the identified items was in an invalid format.", h_result::get_message(h_result::COR_E_FORMAT), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INDEXOUTOFRANGE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+      assert::are_equal("Index was outside the bounds of the array.", h_result::get_message(h_result::COR_E_INDEXOUTOFRANGE), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+      assert::are_equal("Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space.", h_result::get_message(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INSUFFICIENTMEMORY) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+      assert::are_equal("Insufficient memory to continue the execution of the program.", h_result::get_message(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDCAST) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDCAST), csf_);
+      assert::are_equal("Specified cast is not valid.", h_result::get_message(h_result::COR_E_INVALIDCAST), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDCOMOBJECT) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+      assert::are_equal("Attempt has been made to use a COM object that does not have a backing class factory.", h_result::get_message(h_result::COR_E_INVALIDCOMOBJECT), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDFILTERCRITERIA) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+      assert::are_equal("Specified filter criteria was invalid.", h_result::get_message(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDOLEVARIANTTYPE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+      assert::are_equal("Specified OLE variant was invalid.", h_result::get_message(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDOPERATION) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDOPERATION), csf_);
+      assert::are_equal("Operation is not valid due to the current state of the object.", h_result::get_message(h_result::COR_E_INVALIDOPERATION), csf_);
     }
     
     void test_method_(get_message_with_COR_E_INVALIDPROGRAM) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDPROGRAM), csf_);
+      assert::are_equal("xtd detected an invalid program.", h_result::get_message(h_result::COR_E_INVALIDPROGRAM), csf_);
     }
     
     void test_method_(get_message_with_COR_E_IO) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_IO), csf_);
+      assert::are_equal("I/O error occurred.", h_result::get_message(h_result::COR_E_IO), csf_);
     }
     
     void test_method_(get_message_with_COR_E_KEYNOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_KEYNOTFOUND), csf_);
+      assert::are_equal("The given key was not present in the dictionary.", h_result::get_message(h_result::COR_E_KEYNOTFOUND), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MARSHALDIRECTIVE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+      assert::are_equal("Marshaling directives are invalid.", h_result::get_message(h_result::COR_E_MARSHALDIRECTIVE), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MEMBERACCESS) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MEMBERACCESS), csf_);
+      assert::are_equal("Cannot access member.", h_result::get_message(h_result::COR_E_MEMBERACCESS), csf_);
     }
     
     void test_method_(get_message_with_COR_E_METHODACCESS) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_METHODACCESS), csf_);
+      assert::are_equal("Attempt to access the method failed.", h_result::get_message(h_result::COR_E_METHODACCESS), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MISSINGFIELD) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGFIELD), csf_);
+      assert::are_equal("Attempted to access a non-existing field.", h_result::get_message(h_result::COR_E_MISSINGFIELD), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MISSINGMANIFESTRESOURCE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+      assert::are_equal("Attempted to access a missing manifest resource.", h_result::get_message(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MISSINGMEMBER) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMEMBER), csf_);
+      assert::are_equal("Attempted to access a missing member.", h_result::get_message(h_result::COR_E_MISSINGMEMBER), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MISSINGMETHOD) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMETHOD), csf_);
+      assert::are_equal("Attempted to access a missing method.", h_result::get_message(h_result::COR_E_MISSINGMETHOD), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MISSINGSATELLITEASSEMBLY) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+      assert::are_equal("Resource lookup fell back to the ultimate fallback resources in a satellite assembly, but that satellite either was not found or could not be loaded. Please consider reinstalling or repairing the application.", h_result::get_message(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
     }
     
     void test_method_(get_message_with_COR_E_MULTICASTNOTSUPPORTED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+      assert::are_equal("Attempted to add multiple callbacks to a delegate that does not support multicast.", h_result::get_message(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
     }
     
     void test_method_(get_message_with_COR_E_NOTFINITENUMBER) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_NOTFINITENUMBER), csf_);
+      assert::are_equal("Number encountered was not a finite quantity.", h_result::get_message(h_result::COR_E_NOTFINITENUMBER), csf_);
     }
     
     void test_method_(get_message_with_COR_E_NOTSUPPORTED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_NOTSUPPORTED), csf_);
+      assert::are_equal("Specified method is not supported.", h_result::get_message(h_result::COR_E_NOTSUPPORTED), csf_);
     }
     
     void test_method_(get_message_with_COR_E_OBJECTCLOSED) {
@@ -710,23 +710,23 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_COR_E_OPERATIONCANCELED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_OPERATIONCANCELED), csf_);
+      assert::are_equal("The operation was canceled.", h_result::get_message(h_result::COR_E_OPERATIONCANCELED), csf_);
     }
     
     void test_method_(get_message_with_COR_E_OUTOFMEMORY) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_OUTOFMEMORY), csf_);
+      assert::are_equal("Insufficient memory to continue the execution of the program.", h_result::get_message(h_result::COR_E_OUTOFMEMORY), csf_);
     }
     
     void test_method_(get_message_with_COR_E_OVERFLOW) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_OVERFLOW), csf_);
+      assert::are_equal("Arithmetic operation resulted in an overflow.", h_result::get_message(h_result::COR_E_OVERFLOW), csf_);
     }
     
     void test_method_(get_message_with_COR_E_PATHTOOLONG) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_PATHTOOLONG), csf_);
+      assert::are_equal("The specified file name or path is too long, or a component of the specified path is too long.", h_result::get_message(h_result::COR_E_PATHTOOLONG), csf_);
     }
     
     void test_method_(get_message_with_COR_E_PLATFORMNOTSUPPORTED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+      assert::are_equal("Operation is not supported on this platform.", h_result::get_message(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
     }
 
     void test_method_(get_message_with_COR_E_RANK) {
@@ -734,35 +734,35 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_COR_E_REFLECTIONTYPELOAD) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+      assert::are_equal("Exception of type 'xtd::reflection::reflection_type_load_exception' was thrown.", h_result::get_message(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
     }
     
     void test_method_(get_message_with_COR_E_RUNTIMEWRAPPED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+      assert::are_equal("An object that does not derive from xtd:oobject has been wrapped in a runtime_wrapped_exception.", h_result::get_message(h_result::COR_E_RUNTIMEWRAPPED), csf_);
     }
     
     void test_method_(get_message_with_COR_E_SAFEARRAYRANKMISMATCH) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+      assert::are_equal("Specified array was not of the expected rank.", h_result::get_message(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
     }
     
     void test_method_(get_message_with_COR_E_SAFEARRAYTYPEMISMATCH) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+      assert::are_equal("Specified array was not of the expected type.", h_result::get_message(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
     }
     
     void test_method_(get_message_with_COR_E_SECURITY) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_SECURITY), csf_);
+      assert::are_equal("Security error.", h_result::get_message(h_result::COR_E_SECURITY), csf_);
     }
     
     void test_method_(get_message_with_COR_E_SERIALIZATION) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_SERIALIZATION), csf_);
+      assert::are_equal("Serialization error.", h_result::get_message(h_result::COR_E_SERIALIZATION), csf_);
     }
     
     void test_method_(get_message_with_COR_E_STACKOVERFLOW) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_STACKOVERFLOW), csf_);
+      assert::are_equal("Operation caused a stack overflow.", h_result::get_message(h_result::COR_E_STACKOVERFLOW), csf_);
     }
     
     void test_method_(get_message_with_COR_E_SYNCHRONIZATIONLOCK) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+      assert::are_equal("Object synchronization method was called from an unsynchronized block of code.", h_result::get_message(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
     }
 
     void test_method_(get_message_with_COR_E_SYSTEM) {
@@ -770,71 +770,71 @@ namespace xtd::tests {
     }
 
     void test_method_(get_message_with_COR_E_TARGET) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGET), csf_);
+      assert::are_equal("Exception of type 'xtd::reflection::target_exception' was thrown.", h_result::get_message(h_result::COR_E_TARGET), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TARGETINVOCATION) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGETINVOCATION), csf_);
+      assert::are_equal("Exception has been thrown by the target of an invocation.", h_result::get_message(h_result::COR_E_TARGETINVOCATION), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TARGETPARAMCOUNT) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+      assert::are_equal("Number of parameters specified does not match the expected number.", h_result::get_message(h_result::COR_E_TARGETPARAMCOUNT), csf_);
     }
 
     void test_method_(get_message_with_COR_E_THREADABORTED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADABORTED), csf_);
+      assert::are_equal("Thread was aborted.", h_result::get_message(h_result::COR_E_THREADABORTED), csf_);
     }
 
     void test_method_(get_message_with_COR_E_THREADINTERRUPTED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADINTERRUPTED), csf_);
+      assert::are_equal("Thread was interrupted from a waiting state.", h_result::get_message(h_result::COR_E_THREADINTERRUPTED), csf_);
     }
 
     void test_method_(get_message_with_COR_E_THREADSTART) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADSTART), csf_);
+      assert::are_equal("Thread start failure.", h_result::get_message(h_result::COR_E_THREADSTART), csf_);
     }
 
     void test_method_(get_message_with_COR_E_THREADSTATE) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADSTATE), csf_);
+      assert::are_equal("Thread was in an invalid state for the operation being executed.", h_result::get_message(h_result::COR_E_THREADSTATE), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TIMEOUT) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TIMEOUT), csf_);
+      assert::are_equal("The operation has timed out.", h_result::get_message(h_result::COR_E_TIMEOUT), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TYPEACCESS) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEACCESS), csf_);
+      assert::are_equal("Attempt to access the type failed.", h_result::get_message(h_result::COR_E_TYPEACCESS), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TYPEINITIALIZATION) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEINITIALIZATION), csf_);
+      assert::are_equal("The type initializer for 'value' threw an exception.", h_result::get_message(h_result::COR_E_TYPEINITIALIZATION), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TYPELOAD) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPELOAD), csf_);
+      assert::are_equal("Failure has occurred while loading a type.", h_result::get_message(h_result::COR_E_TYPELOAD), csf_);
     }
 
     void test_method_(get_message_with_COR_E_TYPEUNLOADED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEUNLOADED), csf_);
+      assert::are_equal("Type had been unloaded.", h_result::get_message(h_result::COR_E_TYPEUNLOADED), csf_);
     }
 
     void test_method_(get_message_with_COR_E_UNAUTHORIZEDACCESS) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+      assert::are_equal("Attempted to perform an unauthorized operation.", h_result::get_message(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
     }
 
     void test_method_(get_message_with_COR_E_VERIFICATION) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_VERIFICATION), csf_);
+      assert::are_equal("Operation could destabilize the runtime.", h_result::get_message(h_result::COR_E_VERIFICATION), csf_);
     }
 
     void test_method_(get_message_with_COR_E_WAITHANDLECANNOTBEOPENED) {
-      assert::are_equal("", h_result::get_message(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+      assert::are_equal("No handle of the given name exists.", h_result::get_message(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
     }
 
     void test_method_(get_message_with_CO_E_NOTINITIALIZED) {
-      assert::are_equal("", h_result::get_message(h_result::CO_E_NOTINITIALIZED), csf_);
+      assert::are_equal("Not initialized", h_result::get_message(h_result::CO_E_NOTINITIALIZED), csf_);
     }
 
     void test_method_(get_message_with_DISP_E_PARAMNOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::DISP_E_PARAMNOTFOUND), csf_);
+      assert::are_equal("Could not find the parameter.", h_result::get_message(h_result::DISP_E_PARAMNOTFOUND), csf_);
     }
 
     void test_method_(get_message_with_DISP_E_TYPEMISMATCH) {
@@ -866,7 +866,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_E_FILENOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::E_FILENOTFOUND), csf_);
+      assert::are_equal("Unable to find the specified file.", h_result::get_message(h_result::E_FILENOTFOUND), csf_);
     }
     
     void test_method_(get_message_with_E_FAIL) {
