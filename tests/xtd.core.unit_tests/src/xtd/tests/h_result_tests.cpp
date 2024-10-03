@@ -893,13 +893,82 @@ namespace xtd::tests {
       assert::are_equal("Unexpected failure.", h_result::get_message(h_result::E_UNEXPECTED), csf_);
     }
 
-    /*
- 
-     void test_method_(get_message_with_) {
-      assert::are_equal("", h_result::get_message(h_result::S_OK), csf_);
+    void test_method_(get_message_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
     }
-     */
-    
+
+    void test_method_(get_message_with_ERROR_TIMEOUT) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_TIMEOUT), csf_);
+    }
+
+    void test_method_(get_message_with_RO_E_CLOSED) {
+      assert::are_equal("", h_result::get_message(h_result::RO_E_CLOSED), csf_);
+    }
+
+    void test_method_(get_message_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal("", h_result::get_message(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+
+    void test_method_(get_message_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal("", h_result::get_message(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+
+    void test_method_(get_message_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+
+    void test_method_(get_message_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+
+    void test_method_(get_message_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+
+    void test_method_(get_message_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal("", h_result::get_message(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+
+    void test_method_(get_message_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal("", h_result::get_message(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_OPEN_FAILED) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+
+    void test_method_(get_message_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal("", h_result::get_message(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+
+    void test_method_(get_message_with_ERROR_FILE_INVALID) {
+      assert::are_equal("", h_result::get_message(h_result::ERROR_FILE_INVALID), csf_);
+    }
+
     void test_method_(make_error_code_with_S_OK) {
       assert::are_equal(static_cast<int32>(0x00000000), h_result::make_error_code(h_result::S_OK).value(), csf_);
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::S_OK).category().name(), csf_);
