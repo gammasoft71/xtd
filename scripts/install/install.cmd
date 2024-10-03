@@ -77,7 +77,7 @@ echo Installing xtd...
 if not exist "build" mkdir build
 cd build
 set cmake_install_prefix=%cmake_install_prefix_base%\xtd
-cmake .. -DXTD_BUILD_CPP_STANDARD="17" %*
+cmake .. %*
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..
