@@ -548,19 +548,315 @@ namespace xtd::tests {
     void test_method_(get_message_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
       assert::are_equal("Attempt to unload the AppDomain failed.", h_result::get_message(h_result::COR_E_CANNOTUNLOADAPPDOMAIN));
     }
-
+    
+    void test_method_(get_message_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal("A code contract (ie, precondition, postcondition, invariant, or assert) failed.", h_result::get_message(h_result::COR_E_CODECONTRACTFAILED));
+    }
+    
+    void test_method_(get_message_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal("Attempted to marshal an object across a context boundary.", h_result::get_message(h_result::COR_E_CONTEXTMARSHAL));
+    }
+    
+    void test_method_(get_message_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal("Binary format of the specified custom attribute was invalid.", h_result::get_message(h_result::COR_E_CUSTOMATTRIBUTEFORMAT));
+    }
+    
+    void test_method_(get_message_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal("A datatype misalignment was detected in a load or store instruction.", h_result::get_message(h_result::COR_E_DATAMISALIGNED));
+    }
+    
+    void test_method_(get_message_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal("Attempted to access a path that is not on the disk.", h_result::get_message(h_result::COR_E_DIRECTORYNOTFOUND));
+    }
+    
+    void test_method_(get_message_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal("Attempted to divide by zero.", h_result::get_message(h_result::COR_E_DIVIDEBYZERO));
+    }
+    
+    void test_method_(get_message_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal("Dll was not found.", h_result::get_message(h_result::COR_E_DLLNOTFOUND));
+    }
+    
+    void test_method_(get_message_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_DUPLICATEWAITOBJECT));
+    }
+    
+    void test_method_(get_message_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_ENDOFSTREAM));
+    }
+    
+    void test_method_(get_message_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_ENTRYPOINTNOTFOUND));
+    }
+    
     void test_method_(get_message_with_COR_E_EXCEPTION) {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", h_result::get_message(h_result::COR_E_EXCEPTION));
+    }
+    
+    void test_method_(get_message_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_EXECUTIONENGINE));
+    }
+    
+    void test_method_(get_message_with_COR_E_FAILFAST) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_FAILFAST));
+    }
+    
+    void test_method_(get_message_with_COR_E_FIELDACCESS) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_FIELDACCESS));
+    }
+    
+    void test_method_(get_message_with_COR_E_FILELOAD) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_FILELOAD));
+    }
+    
+    void test_method_(get_message_with_COR_E_FILENOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_FILENOTFOUND));
+    }
+    
+    void test_method_(get_message_with_COR_E_FORMAT) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_FORMAT));
+    }
+    
+    void test_method_(get_message_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INDEXOUTOFRANGE));
+    }
+    
+    void test_method_(get_message_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK));
+    }
+    
+    void test_method_(get_message_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INSUFFICIENTMEMORY));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDCAST) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDCAST));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDCOMOBJECT));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDFILTERCRITERIA));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDOLEVARIANTTYPE));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDOPERATION));
+    }
+    
+    void test_method_(get_message_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_INVALIDPROGRAM));
+    }
+    
+    void test_method_(get_message_with_COR_E_IO) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_IO));
+    }
+    
+    void test_method_(get_message_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_KEYNOTFOUND));
+    }
+    
+    void test_method_(get_message_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MARSHALDIRECTIVE));
+    }
+    
+    void test_method_(get_message_with_COR_E_MEMBERACCESS) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MEMBERACCESS));
+    }
+    
+    void test_method_(get_message_with_COR_E_METHODACCESS) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_METHODACCESS));
+    }
+    
+    void test_method_(get_message_with_COR_E_MISSINGFIELD) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGFIELD));
+    }
+    
+    void test_method_(get_message_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMANIFESTRESOURCE));
+    }
+    
+    void test_method_(get_message_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMEMBER));
+    }
+    
+    void test_method_(get_message_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGMETHOD));
+    }
+    
+    void test_method_(get_message_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MISSINGSATELLITEASSEMBLY));
+    }
+    
+    void test_method_(get_message_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_MULTICASTNOTSUPPORTED));
+    }
+    
+    void test_method_(get_message_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_NOTFINITENUMBER));
+    }
+    
+    void test_method_(get_message_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_NOTSUPPORTED));
+    }
+    
+    void test_method_(get_message_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal("Cannot access a closed object.", h_result::get_message(h_result::COR_E_OBJECTCLOSED));
+    }
+    
+    void test_method_(get_message_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_OPERATIONCANCELED));
+    }
+    
+    void test_method_(get_message_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_OUTOFMEMORY));
+    }
+    
+    void test_method_(get_message_with_COR_E_OVERFLOW) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_OVERFLOW));
+    }
+    
+    void test_method_(get_message_with_COR_E_PATHTOOLONG) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_PATHTOOLONG));
+    }
+    
+    void test_method_(get_message_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_PLATFORMNOTSUPPORTED));
     }
 
     void test_method_(get_message_with_COR_E_RANK) {
       assert::are_equal("Attempted to operate on an array with the incorrect number of dimensions.", h_result::get_message(h_result::COR_E_RANK));
+    }
+    
+    void test_method_(get_message_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_REFLECTIONTYPELOAD));
+    }
+    
+    void test_method_(get_message_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_RUNTIMEWRAPPED));
+    }
+    
+    void test_method_(get_message_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_SAFEARRAYRANKMISMATCH));
+    }
+    
+    void test_method_(get_message_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_SAFEARRAYTYPEMISMATCH));
+    }
+    
+    void test_method_(get_message_with_COR_E_SECURITY) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_SECURITY));
+    }
+    
+    void test_method_(get_message_with_COR_E_SERIALIZATION) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_SERIALIZATION));
+    }
+    
+    void test_method_(get_message_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_STACKOVERFLOW));
+    }
+    
+    void test_method_(get_message_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_SYNCHRONIZATIONLOCK));
     }
 
     void test_method_(get_message_with_COR_E_SYSTEM) {
       assert::are_equal("System error.", h_result::get_message(h_result::COR_E_SYSTEM));
     }
 
+    void test_method_(get_message_with_COR_E_TARGET) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGET));
+    }
+
+    void test_method_(get_message_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGETINVOCATION));
+    }
+
+    void test_method_(get_message_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TARGETPARAMCOUNT));
+    }
+
+    void test_method_(get_message_with_COR_E_THREADABORTED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADABORTED));
+    }
+
+    void test_method_(get_message_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADINTERRUPTED));
+    }
+
+    void test_method_(get_message_with_COR_E_THREADSTART) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADSTART));
+    }
+
+    void test_method_(get_message_with_COR_E_THREADSTATE) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_THREADSTATE));
+    }
+
+    void test_method_(get_message_with_COR_E_TIMEOUT) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TIMEOUT));
+    }
+
+    void test_method_(get_message_with_COR_E_TYPEACCESS) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEACCESS));
+    }
+
+    void test_method_(get_message_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEINITIALIZATION));
+    }
+
+    void test_method_(get_message_with_COR_E_TYPELOAD) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPELOAD));
+    }
+
+    void test_method_(get_message_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_TYPEUNLOADED));
+    }
+
+    void test_method_(get_message_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_UNAUTHORIZEDACCESS));
+    }
+
+    void test_method_(get_message_with_COR_E_VERIFICATION) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_VERIFICATION));
+    }
+
+    void test_method_(get_message_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal("", h_result::get_message(h_result::COR_E_WAITHANDLECANNOTBEOPENED));
+    }
+
+    void test_method_(get_message_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal("", h_result::get_message(h_result::CO_E_NOTINITIALIZED));
+    }
+
+    void test_method_(get_message_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal("", h_result::get_message(h_result::DISP_E_PARAMNOTFOUND));
+    }
+
+    void test_method_(get_message_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal("", h_result::get_message(h_result::DISP_E_TYPEMISMATCH));
+    }
+
+    void test_method_(get_message_with_DISP_E_BADVARTYPE) {
+      assert::are_equal("", h_result::get_message(h_result::DISP_E_BADVARTYPE));
+    }
+
+    void test_method_(get_message_with_DISP_E_OVERFLOW) {
+      assert::are_equal("", h_result::get_message(h_result::DISP_E_OVERFLOW));
+    }
+
+    void test_method_(get_message_with_DISP_E_DIVBYZERO) {
+      assert::are_equal("Attempted to divide by zero.", h_result::get_message(h_result::DISP_E_DIVBYZERO));
+    }
+
+    void test_method_(get_message_with_E_ABORT) {
+      assert::are_equal("Operation aborted.", h_result::get_message(h_result::E_ABORT));
+    }
+    
     void test_method_(get_message_with_E_POINTER) {
       assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", h_result::get_message(h_result::E_POINTER));
     }
