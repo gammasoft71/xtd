@@ -7,7 +7,34 @@
 
 using namespace xtd;
 
-const std::unordered_map<int32, string>& h_result::get_h_result_names() noexcept {
+bool h_result::failed(int32 h_result) noexcept {
+  return h_result < 0;
+}
+
+int32 h_result::get_code(int32 h_result) noexcept {
+  return h_result & static_cast<int32>(0xFFFF);
+}
+
+int32 h_result::get_facility(int32 h_result) noexcept {
+  return (h_result >> 16) & static_cast<int32>(0x1FFF);
+}
+
+const xtd::array<int32>& h_result::get_h_results() noexcept {
+  static auto h_results = xtd::array<int32> {};
+  call_once_ {
+    for (auto item : get_names())
+      h_results.push_back(item.first);
+  };
+  return h_results;
+}
+
+string h_result::get_message(int32 h_result) noexcept {
+  auto iterator = get_messages().find(h_result);
+  if (iterator == get_messages().end()) return string::format("Unknown h_result 0x{:X8} ({})", static_cast<uint32>(h_result), h_result);
+  return iterator->second;
+}
+
+const std::unordered_map<int32, string>& h_result::get_names() noexcept {
   static auto h_result_names = std::unordered_map<int32, string> {
     {S_OK, "S_OK"},
     {S_FALSE, "S_FALSE"},
@@ -131,8 +158,14 @@ const std::unordered_map<int32, string>& h_result::get_h_result_names() noexcept
   };
   return h_result_names;
 }
-  
-const std::unordered_map<int32, string>& h_result::get_h_result_messages() noexcept {
+ 
+string h_result::get_name(int32 h_result) noexcept {
+  auto iterator = get_names().find(h_result);
+  if (iterator == get_names().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
+  return iterator->second;
+}
+
+const std::unordered_map<int32, string>& h_result::get_messages() noexcept {
   static auto h_result_messages = std::unordered_map<int32, string> {
     {S_OK, "Operation successful."_t},
     {S_FALSE, "Operation successful but returned no results."_t},
@@ -234,7 +267,7 @@ const std::unordered_map<int32, string>& h_result::get_h_result_messages() noexc
     {E_INVALIDARG, ""_t},
     {E_NOTIMPL, "The method or operation is not implemented."_t},
     {E_POINTER, "Attempted to read or write protected memory. This is often an indication that other memory is corrupt."_t},
-    {E_UNEXPECTED, ""_t},
+    {E_UNEXPECTED, "Unexpected failure."_t},
     {ERROR_MRM_MAP_NOT_FOUND, ""_t},
     {ERROR_TIMEOUT, ""_t},
     {RO_E_CLOSED, ""_t},
@@ -258,30 +291,13 @@ const std::unordered_map<int32, string>& h_result::get_h_result_messages() noexc
   return h_result_messages;
 }
 
-const xtd::array<int32>& h_result::get_h_results() noexcept {
-  static auto h_results = xtd::array<int32> {};
-  call_once_ {
-    for (auto item : get_h_result_names())
-      h_results.push_back(item.first);
-  };
-  return h_results;
-}
-
-string h_result::get_message(int32 h_result) noexcept {
-  auto iterator = get_h_result_messages().find(h_result);
-  if (iterator == get_h_result_messages().end()) return string::format("Unknown h_result 0x{0:X8} ({0})", static_cast<uint32>(h_result));
-  return iterator->second;
-}
-
-string h_result::get_name(int32 h_result) noexcept {
-  auto iterator = get_h_result_names().find(h_result);
-  if (iterator == get_h_result_names().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
-  return iterator->second;
+int32 h_result::get_severity(int32 h_result) noexcept {
+  return (h_result >> 31) & static_cast<int32>(0x1);
 }
 
 const std::error_category& h_result::h_result_category() noexcept {
   struct h_result_category : public std::error_category {
-    std::string message(int h_result) const override {return  xtd::h_result::get_message(h_result);}
+    std::string message(int h_result) const override {return xtd::h_result::get_message(h_result);}
     const char* name() const noexcept override{return "h_result_category";}
   };
 
@@ -289,10 +305,18 @@ const std::error_category& h_result::h_result_category() noexcept {
   return result;
 }
 
+bool h_result::is_error(int32 h_result) noexcept {
+  return get_severity(h_result) == 1;
+}
+
 std::error_code h_result::make_error_code(int h_result) noexcept {
   return std::error_code {h_result, h_result_category()};
 }
 
-string h_result::to_String(int32 h_result) noexcept {
+bool h_result::succeeded(int32 h_result) noexcept {
+  return h_result >= 0;
+}
+
+string h_result::to_string(int32 h_result) noexcept {
   return get_name(h_result);
 }
