@@ -101,7 +101,43 @@ Inheritance diagram for xtd::h_result:</div>
 <div class="textblock"><p>Contains the HRESULT values used by xtd. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For more information, see Winerror.h from Micorosft's Win32 API. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more information, see Winerror.h from Micorosft's Win32 API. </dd>
+<dd>
+HRESULTs are 32 bit values laid out as follows: <div class="fragment"><div class="line"> 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1</div>
+<div class="line"> 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0</div>
+<div class="line">+-+-+-+-+-+---------------------+-------------------------------+</div>
+<div class="line">|S|R|C|N|<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">r</a>|    Facility         |               Code            |</div>
+<div class="line">+-+-+-+-+-+---------------------+-------------------------------+</div>
+<div class="line"> </div>
+<div class="line">where</div>
+<div class="line"> </div>
+<div class="line">    S - Severity - indicates <a class="code hl_enumvalue" href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076">success</a>/fail</div>
+<div class="line"> </div>
+<div class="line">        0 - Success</div>
+<div class="line">        1 - Fail (COERROR)</div>
+<div class="line"> </div>
+<div class="line">    R - reserved portion of the facility code, corresponds to NT<span class="stringliteral">&#39;s </span></div>
+<div class="line"><span class="stringliteral">            second severity bit.</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    C - reserved portion of the facility code, corresponds to NT&#39;</span><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a></div>
+<div class="line">            C field.</div>
+<div class="line"> </div>
+<div class="line">    N - reserved portion of the facility code. Used to indicate <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a></div>
+<div class="line">            mapped NT status value.</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">r</a> - reserved portion of the facility code. Reserved <span class="keywordflow">for</span> internal</div>
+<div class="line">            use. Used to indicate HRESULT values that are not status</div>
+<div class="line">            values, but are instead message ids <span class="keywordflow">for</span> display strings.</div>
+<div class="line"> </div>
+<div class="line">    Facility - <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> the facility code</div>
+<div class="line"> </div>
+<div class="line">    Code - <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> the facility<span class="stringliteral">&#39;s status code</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:365</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076"><div class="ttname"><a href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076">xtd::exit_status::success</a></div><div class="ttdeci">@ success</div><div class="ttdoc">Successful execution of a program. Is equal to EXIT_SUCCESS.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">xtd::console_key::r</a></div><div class="ttdeci">@ r</div><div class="ttdoc">The R key.</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Fields</h2></td></tr>
 <tr class="memitem:ac36faf3d0d39c9e720f290b9d4985d81"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#ac36faf3d0d39c9e720f290b9d4985d81">S_OK</a></td></tr>
@@ -164,8 +200,8 @@ Inheritance diagram for xtd::h_result:</div>
 <tr class="memitem:afb45ea49105fc227820978b0c51bcac3"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#afb45ea49105fc227820978b0c51bcac3">COR_E_DIVIDEBYZERO</a></td></tr>
 <tr class="memdesc:afb45ea49105fc227820978b0c51bcac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempted to divide by zero.  <br /></td></tr>
 <tr class="separator:afb45ea49105fc227820978b0c51bcac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af23d1569479e7d6e8e4345f273445743"><td class="memItemLeft" align="right" valign="top"><a id="af23d1569479e7d6e8e4345f273445743" name="af23d1569479e7d6e8e4345f273445743"></a>
-static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>COR_E_DLLNOTFOUND</b></td></tr>
+<tr class="memitem:af23d1569479e7d6e8e4345f273445743"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#af23d1569479e7d6e8e4345f273445743">COR_E_DLLNOTFOUND</a></td></tr>
+<tr class="memdesc:af23d1569479e7d6e8e4345f273445743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dll was not found.  <br /></td></tr>
 <tr class="separator:af23d1569479e7d6e8e4345f273445743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e945e75bb0af8a7a6a7ebfeab826c03"><td class="memItemLeft" align="right" valign="top"><a id="a4e945e75bb0af8a7a6a7ebfeab826c03" name="a4e945e75bb0af8a7a6a7ebfeab826c03"></a>
 static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>COR_E_DUPLICATEWAITOBJECT</b></td></tr>
@@ -371,8 +407,8 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 <tr class="memitem:a5834c92a478c400ebdecd57c4eaff4fa"><td class="memItemLeft" align="right" valign="top"><a id="a5834c92a478c400ebdecd57c4eaff4fa" name="a5834c92a478c400ebdecd57c4eaff4fa"></a>
 static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_E_OVERFLOW</b></td></tr>
 <tr class="separator:a5834c92a478c400ebdecd57c4eaff4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1da8ae0630ec3bb168cdee33c490745"><td class="memItemLeft" align="right" valign="top"><a id="ac1da8ae0630ec3bb168cdee33c490745" name="ac1da8ae0630ec3bb168cdee33c490745"></a>
-static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_E_DIVBYZERO</b></td></tr>
+<tr class="memitem:ac1da8ae0630ec3bb168cdee33c490745"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#ac1da8ae0630ec3bb168cdee33c490745">DISP_E_DIVBYZERO</a></td></tr>
+<tr class="memdesc:ac1da8ae0630ec3bb168cdee33c490745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempted to divide by zero.  <br /></td></tr>
 <tr class="separator:ac1da8ae0630ec3bb168cdee33c490745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ceb8116f91c163a7311e0963b87684"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#ae5ceb8116f91c163a7311e0963b87684">E_ABORT</a></td></tr>
 <tr class="memdesc:ae5ceb8116f91c163a7311e0963b87684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation aborted.  <br /></td></tr>
@@ -392,8 +428,8 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 <tr class="memitem:ac0b034a3439d4f3eb1c2c1cef5b922da"><td class="memItemLeft" align="right" valign="top"><a id="ac0b034a3439d4f3eb1c2c1cef5b922da" name="ac0b034a3439d4f3eb1c2c1cef5b922da"></a>
 static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>E_HANDLE</b></td></tr>
 <tr class="separator:ac0b034a3439d4f3eb1c2c1cef5b922da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa7f1ec57d7f337a726f058d105f7586"><td class="memItemLeft" align="right" valign="top"><a id="afa7f1ec57d7f337a726f058d105f7586" name="afa7f1ec57d7f337a726f058d105f7586"></a>
-static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>E_INVALIDARG</b></td></tr>
+<tr class="memitem:afa7f1ec57d7f337a726f058d105f7586"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#afa7f1ec57d7f337a726f058d105f7586">E_INVALIDARG</a></td></tr>
+<tr class="memdesc:afa7f1ec57d7f337a726f058d105f7586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value does not fall within the expected range.  <br /></td></tr>
 <tr class="separator:afa7f1ec57d7f337a726f058d105f7586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5030e794a06a27f016f6e6c3aac11be"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#ae5030e794a06a27f016f6e6c3aac11be">E_NOTIMPL</a></td></tr>
 <tr class="memdesc:ae5030e794a06a27f016f6e6c3aac11be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method or operation is not implemented.  <br /></td></tr>
@@ -463,34 +499,52 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 <tr class="separator:a9de93e079999f3935421e21e989dac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a6c0e8fb928c25561df8ab5c3e62d3592"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a6c0e8fb928c25561df8ab5c3e62d3592">get_h_result_messages</a> () noexcept</td></tr>
-<tr class="memdesc:a6c0e8fb928c25561df8ab5c3e62d3592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> messages.  <br /></td></tr>
-<tr class="separator:a6c0e8fb928c25561df8ab5c3e62d3592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c722892e3de28e808baf85d0524d465"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a3c722892e3de28e808baf85d0524d465">get_h_result_names</a> () noexcept</td></tr>
-<tr class="memdesc:a3c722892e3de28e808baf85d0524d465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> names.  <br /></td></tr>
-<tr class="separator:a3c722892e3de28e808baf85d0524d465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b78ba7cbe60f161113a71ceb65fea80"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a9b78ba7cbe60f161113a71ceb65fea80">failed</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a9b78ba7cbe60f161113a71ceb65fea80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a generic fail test for the specified HRESULT.  <br /></td></tr>
+<tr class="separator:a9b78ba7cbe60f161113a71ceb65fea80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab17f7b1f8221dbe424116633d24b902"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#aab17f7b1f8221dbe424116633d24b902">get_code</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:aab17f7b1f8221dbe424116633d24b902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the code portion of the specified HRESULT.  <br /></td></tr>
+<tr class="separator:aab17f7b1f8221dbe424116633d24b902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c73a3595bf008fca65b0a3c5f7f6242"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a9c73a3595bf008fca65b0a3c5f7f6242">get_facility</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a9c73a3595bf008fca65b0a3c5f7f6242"><td class="mdescLeft">&#160;</td><td class="mdescRight">The facility of the specified HRESULT, which indicates what API or framework originated this error.  <br /></td></tr>
+<tr class="separator:a9c73a3595bf008fca65b0a3c5f7f6242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae837ee801b05adfbfa5ef3c53bad3222"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#ae837ee801b05adfbfa5ef3c53bad3222">get_h_results</a> () noexcept</td></tr>
-<tr class="memdesc:ae837ee801b05adfbfa5ef3c53bad3222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of h_results.  <br /></td></tr>
+<tr class="memdesc:ae837ee801b05adfbfa5ef3c53bad3222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of HRESULT.  <br /></td></tr>
 <tr class="separator:ae837ee801b05adfbfa5ef3c53bad3222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a634287cac95b988922114e4698c3483d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a634287cac95b988922114e4698c3483d">get_message</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
-<tr class="memdesc:a634287cac95b988922114e4698c3483d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>.  <br /></td></tr>
+<tr class="memdesc:a634287cac95b988922114e4698c3483d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message of the specified HRESULT.  <br /></td></tr>
 <tr class="separator:a634287cac95b988922114e4698c3483d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087c331bdf9c4c13e98bc70c23ed00b1"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a087c331bdf9c4c13e98bc70c23ed00b1">get_messages</a> () noexcept</td></tr>
+<tr class="memdesc:a087c331bdf9c4c13e98bc70c23ed00b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets The HRESULT messages.  <br /></td></tr>
+<tr class="separator:a087c331bdf9c4c13e98bc70c23ed00b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4352b4c23959ad08357715e5b92c66a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a4352b4c23959ad08357715e5b92c66a5">get_name</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
-<tr class="memdesc:a4352b4c23959ad08357715e5b92c66a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>.  <br /></td></tr>
+<tr class="memdesc:a4352b4c23959ad08357715e5b92c66a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the specified HRESULT.  <br /></td></tr>
 <tr class="separator:a4352b4c23959ad08357715e5b92c66a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7075d23ceb96dc2c249426a47128601c"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a7075d23ceb96dc2c249426a47128601c">get_names</a> () noexcept</td></tr>
+<tr class="memdesc:a7075d23ceb96dc2c249426a47128601c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets The HRESULT names.  <br /></td></tr>
+<tr class="separator:a7075d23ceb96dc2c249426a47128601c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee6c06ebe9e877b25a014b37cc4aee5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a3ee6c06ebe9e877b25a014b37cc4aee5">get_severity</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a3ee6c06ebe9e877b25a014b37cc4aee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The severity of the specified HRESULT, which indicates what API or framework originated this error.  <br /></td></tr>
+<tr class="separator:a3ee6c06ebe9e877b25a014b37cc4aee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbc513b52bed26bad87a486d82fd04f0"><td class="memItemLeft" align="right" valign="top">static const std::error_category &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#afbc513b52bed26bad87a486d82fd04f0">h_result_category</a> () noexcept</td></tr>
-<tr class="memdesc:afbc513b52bed26bad87a486d82fd04f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to the static error category object for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> error codes.  <br /></td></tr>
+<tr class="memdesc:afbc513b52bed26bad87a486d82fd04f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes.  <br /></td></tr>
 <tr class="separator:afbc513b52bed26bad87a486d82fd04f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065a3d2ca137f2bfd418592905614b84"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a065a3d2ca137f2bfd418592905614b84">is_error</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a065a3d2ca137f2bfd418592905614b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a generic is error test for the specified HRESULT.  <br /></td></tr>
+<tr class="separator:a065a3d2ca137f2bfd418592905614b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3669ad3ef5337eedf2129a02c6098d12"><td class="memItemLeft" align="right" valign="top">static std::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a3669ad3ef5337eedf2129a02c6098d12">make_error_code</a> (int <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
-<tr class="memdesc:a3669ad3ef5337eedf2129a02c6098d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>.  <br /></td></tr>
+<tr class="memdesc:a3669ad3ef5337eedf2129a02c6098d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for the specified HRESULT.  <br /></td></tr>
 <tr class="separator:a3669ad3ef5337eedf2129a02c6098d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a097d35bf2b87392e32192f54c8bc208d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a097d35bf2b87392e32192f54c8bc208d">to_String</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
-<tr class="memdesc:a097d35bf2b87392e32192f54c8bc208d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>.  <br /></td></tr>
-<tr class="separator:a097d35bf2b87392e32192f54c8bc208d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc62196586ce082fe8751c193bb655d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a8cc62196586ce082fe8751c193bb655d">succeeded</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a8cc62196586ce082fe8751c193bb655d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a generic success test for the specified HRESULT.  <br /></td></tr>
+<tr class="separator:a8cc62196586ce082fe8751c193bb655d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a6f442a1ea2d77999e91e263851414"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1h__result.html#a93a6f442a1ea2d77999e91e263851414">to_string</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
+<tr class="memdesc:a93a6f442a1ea2d77999e91e263851414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the specified HRESULT.  <br /></td></tr>
+<tr class="separator:a93a6f442a1ea2d77999e91e263851414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6c0e8fb928c25561df8ab5c3e62d3592" name="a6c0e8fb928c25561df8ab5c3e62d3592"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c0e8fb928c25561df8ab5c3e62d3592">&#9670;&#160;</a></span>get_h_result_messages()</h2>
+<a id="a9b78ba7cbe60f161113a71ceb65fea80" name="a9b78ba7cbe60f161113a71ceb65fea80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b78ba7cbe60f161113a71ceb65fea80">&#9670;&#160;</a></span>failed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,9 +553,10 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp; xtd::h_result::get_h_result_messages </td>
+          <td class="memname">static bool xtd::h_result::failed </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -512,13 +567,19 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> messages. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> messages. </dd></dl>
+<p>Provides a generic fail test for the specified HRESULT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> is failed; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
-<a id="a3c722892e3de28e808baf85d0524d465" name="a3c722892e3de28e808baf85d0524d465"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c722892e3de28e808baf85d0524d465">&#9670;&#160;</a></span>get_h_result_names()</h2>
+<a id="aab17f7b1f8221dbe424116633d24b902" name="aab17f7b1f8221dbe424116633d24b902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab17f7b1f8221dbe424116633d24b902">&#9670;&#160;</a></span>get_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -527,9 +588,10 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp; xtd::h_result::get_h_result_names </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::get_code </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -540,8 +602,309 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> names. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> names. </dd></dl>
+<p>Gets the code portion of the specified HRESULT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The code portion of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
+
+</div>
+</div>
+<a id="a9c73a3595bf008fca65b0a3c5f7f6242" name="a9c73a3595bf008fca65b0a3c5f7f6242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c73a3595bf008fca65b0a3c5f7f6242">&#9670;&#160;</a></span>get_facility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::get_facility </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The facility of the specified HRESULT, which indicates what API or framework originated this error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The facility of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The facility of an HRESULT is stored in bits 16-26 of the HRESULT. </dd></dl>
+<dl class="section user"><dt>Possible values</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">FACILITY   </th><th class="markdownTableHeadNone">Decimal   </th><th class="markdownTableHeadNone">Hex    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_NULL   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0x0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_RPC   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0x1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DISPATCH   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">0x2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_STORAGE   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">0x3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_ITF   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">0x4    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WIN32   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">0x7    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WINDOWS   </td><td class="markdownTableBodyNone">8   </td><td class="markdownTableBodyNone">0x8    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SECURITY   </td><td class="markdownTableBodyNone">9   </td><td class="markdownTableBodyNone">0x9    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_SSPI   </td><td class="markdownTableBodyNone">9   </td><td class="markdownTableBodyNone">0x9    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_CONTROL   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">0xA    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_CERT   </td><td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">0xB    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_INTERNET   </td><td class="markdownTableBodyNone">12   </td><td class="markdownTableBodyNone">0xC    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_MEDIASERVER   </td><td class="markdownTableBodyNone">13   </td><td class="markdownTableBodyNone">0xD    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_MSMQ   </td><td class="markdownTableBodyNone">14   </td><td class="markdownTableBodyNone">0xE    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_SETUPAPI   </td><td class="markdownTableBodyNone">15   </td><td class="markdownTableBodyNone">0xF    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SCARD   </td><td class="markdownTableBodyNone">16   </td><td class="markdownTableBodyNone">0x10    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_COMPLUS   </td><td class="markdownTableBodyNone">17   </td><td class="markdownTableBodyNone">0x11    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_AAF   </td><td class="markdownTableBodyNone">18   </td><td class="markdownTableBodyNone">0x12    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_URT   </td><td class="markdownTableBodyNone">19   </td><td class="markdownTableBodyNone">0x13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_ACS   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">0x14    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DPLAY   </td><td class="markdownTableBodyNone">21   </td><td class="markdownTableBodyNone">0x15    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_UMI   </td><td class="markdownTableBodyNone">22   </td><td class="markdownTableBodyNone">0x16    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_SXS   </td><td class="markdownTableBodyNone">23   </td><td class="markdownTableBodyNone">0x17    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINDOWS_CE   </td><td class="markdownTableBodyNone">24   </td><td class="markdownTableBodyNone">0x18    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_HTTP   </td><td class="markdownTableBodyNone">25   </td><td class="markdownTableBodyNone">0x19    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_COMMONLOG   </td><td class="markdownTableBodyNone">26   </td><td class="markdownTableBodyNone">0x1A    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WER   </td><td class="markdownTableBodyNone">27   </td><td class="markdownTableBodyNone">0x1B    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_FILTER_MANAGER   </td><td class="markdownTableBodyNone">31   </td><td class="markdownTableBodyNone">0x1F    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_BACKGROUNDCOPY   </td><td class="markdownTableBodyNone">32   </td><td class="markdownTableBodyNone">0x20    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_CONFIGURATION   </td><td class="markdownTableBodyNone">33   </td><td class="markdownTableBodyNone">0x21    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WIA   </td><td class="markdownTableBodyNone">33   </td><td class="markdownTableBodyNone">0x21    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_STATE_MANAGEMENT   </td><td class="markdownTableBodyNone">34   </td><td class="markdownTableBodyNone">0x22    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_METADIRECTORY   </td><td class="markdownTableBodyNone">35   </td><td class="markdownTableBodyNone">0x23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINDOWSUPDATE   </td><td class="markdownTableBodyNone">36   </td><td class="markdownTableBodyNone">0x24    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DIRECTORYSERVICE   </td><td class="markdownTableBodyNone">37   </td><td class="markdownTableBodyNone">0x25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_GRAPHICS   </td><td class="markdownTableBodyNone">38   </td><td class="markdownTableBodyNone">0x26    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_NAP   </td><td class="markdownTableBodyNone">39   </td><td class="markdownTableBodyNone">0x27    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SHELL   </td><td class="markdownTableBodyNone">39   </td><td class="markdownTableBodyNone">0x27    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_TPM_SERVICES   </td><td class="markdownTableBodyNone">40   </td><td class="markdownTableBodyNone">0x28    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_TPM_SOFTWARE   </td><td class="markdownTableBodyNone">41   </td><td class="markdownTableBodyNone">0x29    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_UI   </td><td class="markdownTableBodyNone">42   </td><td class="markdownTableBodyNone">0x2A    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_XAML   </td><td class="markdownTableBodyNone">43   </td><td class="markdownTableBodyNone">0x2B    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_ACTION_QUEUE   </td><td class="markdownTableBodyNone">44   </td><td class="markdownTableBodyNone">0x2C    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_PLA   </td><td class="markdownTableBodyNone">48   </td><td class="markdownTableBodyNone">0x30    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WINDOWS_SETUP   </td><td class="markdownTableBodyNone">48   </td><td class="markdownTableBodyNone">0x30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_FVE   </td><td class="markdownTableBodyNone">49   </td><td class="markdownTableBodyNone">0x31    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_FWP   </td><td class="markdownTableBodyNone">50   </td><td class="markdownTableBodyNone">0x32    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINRM   </td><td class="markdownTableBodyNone">51   </td><td class="markdownTableBodyNone">0x33    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_NDIS   </td><td class="markdownTableBodyNone">52   </td><td class="markdownTableBodyNone">0x34    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_HYPERVISOR   </td><td class="markdownTableBodyNone">53   </td><td class="markdownTableBodyNone">0x35    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_CMI   </td><td class="markdownTableBodyNone">54   </td><td class="markdownTableBodyNone">0x36    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_VIRTUALIZATION   </td><td class="markdownTableBodyNone">55   </td><td class="markdownTableBodyNone">0x37    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_VOLMGR   </td><td class="markdownTableBodyNone">56   </td><td class="markdownTableBodyNone">0x38    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_BCD   </td><td class="markdownTableBodyNone">57   </td><td class="markdownTableBodyNone">0x39    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_VHD   </td><td class="markdownTableBodyNone">58   </td><td class="markdownTableBodyNone">0x3A    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SDIAG   </td><td class="markdownTableBodyNone">60   </td><td class="markdownTableBodyNone">0x3C    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WEBSERVICES   </td><td class="markdownTableBodyNone">61   </td><td class="markdownTableBodyNone">0x3D    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINPE   </td><td class="markdownTableBodyNone">61   </td><td class="markdownTableBodyNone">0x3D    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WPN   </td><td class="markdownTableBodyNone">62   </td><td class="markdownTableBodyNone">0x3E    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINDOWS_STORE   </td><td class="markdownTableBodyNone">63   </td><td class="markdownTableBodyNone">0x3F    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_INPUT   </td><td class="markdownTableBodyNone">64   </td><td class="markdownTableBodyNone">0x40    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_EAP   </td><td class="markdownTableBodyNone">66   </td><td class="markdownTableBodyNone">0x42    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WINDOWS_DEFENDER   </td><td class="markdownTableBodyNone">80   </td><td class="markdownTableBodyNone">0x50    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_OPC   </td><td class="markdownTableBodyNone">81   </td><td class="markdownTableBodyNone">0x51    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_XPS   </td><td class="markdownTableBodyNone">82   </td><td class="markdownTableBodyNone">0x52    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_RAS   </td><td class="markdownTableBodyNone">83   </td><td class="markdownTableBodyNone">0x53    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_MBN   </td><td class="markdownTableBodyNone">84   </td><td class="markdownTableBodyNone">0x54    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_POWERSHELL   </td><td class="markdownTableBodyNone">84   </td><td class="markdownTableBodyNone">0x54    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_EAS   </td><td class="markdownTableBodyNone">85   </td><td class="markdownTableBodyNone">0x55    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_P2P_INT   </td><td class="markdownTableBodyNone">98   </td><td class="markdownTableBodyNone">0x62    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_P2P   </td><td class="markdownTableBodyNone">99   </td><td class="markdownTableBodyNone">0x63    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DAF   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">0x64    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_BLUETOOTH_ATT   </td><td class="markdownTableBodyNone">101   </td><td class="markdownTableBodyNone">0x65    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_AUDIO   </td><td class="markdownTableBodyNone">102   </td><td class="markdownTableBodyNone">0x66    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_VISUALCPP   </td><td class="markdownTableBodyNone">109   </td><td class="markdownTableBodyNone">0x6D    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SCRIPT   </td><td class="markdownTableBodyNone">112   </td><td class="markdownTableBodyNone">0x70    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_PARSE   </td><td class="markdownTableBodyNone">113   </td><td class="markdownTableBodyNone">0x71    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_BLB   </td><td class="markdownTableBodyNone">120   </td><td class="markdownTableBodyNone">0x78    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_BLB_CLI   </td><td class="markdownTableBodyNone">121   </td><td class="markdownTableBodyNone">0x79    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WSBAPP   </td><td class="markdownTableBodyNone">122   </td><td class="markdownTableBodyNone">0x7A    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_BLBUI   </td><td class="markdownTableBodyNone">128   </td><td class="markdownTableBodyNone">0x80    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USN   </td><td class="markdownTableBodyNone">129   </td><td class="markdownTableBodyNone">0x81    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_VOLSNAP   </td><td class="markdownTableBodyNone">130   </td><td class="markdownTableBodyNone">0x82    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_TIERING   </td><td class="markdownTableBodyNone">131   </td><td class="markdownTableBodyNone">0x83    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WSB_ONLINE   </td><td class="markdownTableBodyNone">133   </td><td class="markdownTableBodyNone">0x85    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_ONLINE_ID   </td><td class="markdownTableBodyNone">134   </td><td class="markdownTableBodyNone">0x86    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DLS   </td><td class="markdownTableBodyNone">153   </td><td class="markdownTableBodyNone">0x99    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SOS   </td><td class="markdownTableBodyNone">160   </td><td class="markdownTableBodyNone">0xA0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEBUGGERS   </td><td class="markdownTableBodyNone">176   </td><td class="markdownTableBodyNone">0xB0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_SPACES   </td><td class="markdownTableBodyNone">231   </td><td class="markdownTableBodyNone">0xE7    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DMSERVER   </td><td class="markdownTableBodyNone">256   </td><td class="markdownTableBodyNone">0x100    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_RESTORE   </td><td class="markdownTableBodyNone">256   </td><td class="markdownTableBodyNone">0x100    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_SPP   </td><td class="markdownTableBodyNone">256   </td><td class="markdownTableBodyNone">0x100    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_SERVER   </td><td class="markdownTableBodyNone">257   </td><td class="markdownTableBodyNone">0x101    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_IMAGING   </td><td class="markdownTableBodyNone">258   </td><td class="markdownTableBodyNone">0x102    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_MANAGEMENT   </td><td class="markdownTableBodyNone">259   </td><td class="markdownTableBodyNone">0x103    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_UTIL   </td><td class="markdownTableBodyNone">260   </td><td class="markdownTableBodyNone">0x104    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_BINLSVC   </td><td class="markdownTableBodyNone">261   </td><td class="markdownTableBodyNone">0x105    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_PXE   </td><td class="markdownTableBodyNone">263   </td><td class="markdownTableBodyNone">0x107    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_TFTP   </td><td class="markdownTableBodyNone">264   </td><td class="markdownTableBodyNone">0x108    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_TRANSPORT_MANAGEMENT   </td><td class="markdownTableBodyNone">272   </td><td class="markdownTableBodyNone">0x110    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_DRIVER_PROVISIONING   </td><td class="markdownTableBodyNone">278   </td><td class="markdownTableBodyNone">0x116    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_MULTICAST_SERVER   </td><td class="markdownTableBodyNone">289   </td><td class="markdownTableBodyNone">0x121    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_MULTICAST_CLIENT   </td><td class="markdownTableBodyNone">290   </td><td class="markdownTableBodyNone">0x122    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DEPLOYMENT_SERVICES_CONTENT_PROVIDER   </td><td class="markdownTableBodyNone">293   </td><td class="markdownTableBodyNone">0x125    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_LINGUISTIC_SERVICES   </td><td class="markdownTableBodyNone">305   </td><td class="markdownTableBodyNone">0x131    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WEB   </td><td class="markdownTableBodyNone">885   </td><td class="markdownTableBodyNone">0x375    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WEB_SOCKET   </td><td class="markdownTableBodyNone">886   </td><td class="markdownTableBodyNone">0x376    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_AUDIOSTREAMING   </td><td class="markdownTableBodyNone">1094   </td><td class="markdownTableBodyNone">0x446    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_ACCELERATOR   </td><td class="markdownTableBodyNone">1536   </td><td class="markdownTableBodyNone">0x600    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_MOBILE   </td><td class="markdownTableBodyNone">1793   </td><td class="markdownTableBodyNone">0x701    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WMAAECMA   </td><td class="markdownTableBodyNone">1996   </td><td class="markdownTableBodyNone">0x7CC    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_WEP   </td><td class="markdownTableBodyNone">2049   </td><td class="markdownTableBodyNone">0x801    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_SYNCENGINE   </td><td class="markdownTableBodyNone">2050   </td><td class="markdownTableBodyNone">0x802    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DIRECTMUSIC   </td><td class="markdownTableBodyNone">2168   </td><td class="markdownTableBodyNone">0x878    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DIRECT3D10   </td><td class="markdownTableBodyNone">2169   </td><td class="markdownTableBodyNone">0x879    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DXGI   </td><td class="markdownTableBodyNone">2170   </td><td class="markdownTableBodyNone">0x87A    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DXGI_DDI   </td><td class="markdownTableBodyNone">2171   </td><td class="markdownTableBodyNone">0x87B    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DIRECT3D11   </td><td class="markdownTableBodyNone">2172   </td><td class="markdownTableBodyNone">0x87C    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_LEAP   </td><td class="markdownTableBodyNone">2184   </td><td class="markdownTableBodyNone">0x888    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_AUDCLNT   </td><td class="markdownTableBodyNone">2185   </td><td class="markdownTableBodyNone">0x889    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_WINCODEC_DWRITE_DWM   </td><td class="markdownTableBodyNone">2200   </td><td class="markdownTableBodyNone">0x898    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_DIRECT2D   </td><td class="markdownTableBodyNone">2201   </td><td class="markdownTableBodyNone">0x899    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_DEFRAG   </td><td class="markdownTableBodyNone">2304   </td><td class="markdownTableBodyNone">0x900    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_USERMODE_SDBUS   </td><td class="markdownTableBodyNone">2305   </td><td class="markdownTableBodyNone">0x901    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FACILITY_JSCRIPT   </td><td class="markdownTableBodyNone">2306   </td><td class="markdownTableBodyNone">0x902    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FACILITY_PIDGENX   </td><td class="markdownTableBodyNone">2561   </td><td class="markdownTableBodyNone">0xA01   </td></tr>
+</table>
+</dd></dl>
 
 </div>
 </div>
@@ -568,8 +931,8 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets an array of h_results. </p>
-<dl class="section return"><dt>Returns</dt><dd>An array of h_results. </dd></dl>
+<p>Gets an array of HRESULT. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of HRESULT. </dd></dl>
 
 </div>
 </div>
@@ -597,14 +960,42 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets the message of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>. </p>
+<p>Gets the message of the specified HRESULT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> whose message will be getted. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The message of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>.` </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The message of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
+
+</div>
+</div>
+<a id="a087c331bdf9c4c13e98bc70c23ed00b1" name="a087c331bdf9c4c13e98bc70c23ed00b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087c331bdf9c4c13e98bc70c23ed00b1">&#9670;&#160;</a></span>get_messages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp; xtd::h_result::get_messages </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets The HRESULT messages. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> messages. </dd></dl>
 
 </div>
 </div>
@@ -632,14 +1023,86 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets the name of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>. </p>
+<p>Gets the name of the specified HRESULT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> whose name will be getted. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The name of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>.` </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
+
+</div>
+</div>
+<a id="a7075d23ceb96dc2c249426a47128601c" name="a7075d23ceb96dc2c249426a47128601c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7075d23ceb96dc2c249426a47128601c">&#9670;&#160;</a></span>get_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const std::unordered_map&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &gt; &amp; xtd::h_result::get_names </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets The HRESULT names. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> names. </dd></dl>
+
+</div>
+</div>
+<a id="a3ee6c06ebe9e877b25a014b37cc4aee5" name="a3ee6c06ebe9e877b25a014b37cc4aee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee6c06ebe9e877b25a014b37cc4aee5">&#9670;&#160;</a></span>get_severity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::get_severity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The severity of the specified HRESULT, which indicates what API or framework originated this error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The severity of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
+<dl class="section user"><dt>Possible values</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">SEVERIFY   </th><th class="markdownTableHeadNone">Decimal   </th><th class="markdownTableHeadNone">Hex    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"> SEVERITY_SUCCESS   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0x0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"> SEVERITY_ERROR   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0x1   </td></tr>
+</table>
+</dd></dl>
 
 </div>
 </div>
@@ -666,8 +1129,43 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Obtains a reference to the static error category object for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> error codes. </p>
+<p>Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the static object of unspecified runtime type, derived from <a href="https://en.cppreference.com/w/cpp/error/error_category">std::error_category</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a065a3d2ca137f2bfd418592905614b84" name="a065a3d2ca137f2bfd418592905614b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065a3d2ca137f2bfd418592905614b84">&#9670;&#160;</a></span>is_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::h_result::is_error </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides a generic is error test for the specified HRESULT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> is error; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -695,10 +1193,10 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Creates error code value for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </p>
+<p>Creates error code value for the specified HRESULT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> error code to create error code for. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -706,8 +1204,8 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 
 </div>
 </div>
-<a id="a097d35bf2b87392e32192f54c8bc208d" name="a097d35bf2b87392e32192f54c8bc208d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a097d35bf2b87392e32192f54c8bc208d">&#9670;&#160;</a></span>to_String()</h2>
+<a id="a8cc62196586ce082fe8751c193bb655d" name="a8cc62196586ce082fe8751c193bb655d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc62196586ce082fe8751c193bb655d">&#9670;&#160;</a></span>succeeded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -716,7 +1214,7 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> xtd::h_result::to_String </td>
+          <td class="memname">static bool xtd::h_result::succeeded </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
           <td class="paramname"><em>h_result</em></td><td>)</td>
@@ -730,14 +1228,49 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </table>
 </div><div class="memdoc">
 
-<p>Gets the name of the specified <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a>. </p>
+<p>Provides a generic success test for the specified HRESULT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> whose name will be getted. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The name of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>.` </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> is secceeded; otherwise <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a93a6f442a1ea2d77999e91e263851414" name="a93a6f442a1ea2d77999e91e263851414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a6f442a1ea2d77999e91e263851414">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> xtd::h_result::to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>h_result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the specified HRESULT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></td><td>The HRESULT value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -1222,6 +1755,30 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 
 </div>
 </div>
+<a id="af23d1569479e7d6e8e4345f273445743" name="af23d1569479e7d6e8e4345f273445743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23d1569479e7d6e8e4345f273445743">&#9670;&#160;</a></span>COR_E_DLLNOTFOUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::COR_E_DLLNOTFOUND</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dll was not found. </p>
+
+</div>
+</div>
 <a id="ac218fff17505e8c95e0b20c5f076e251" name="ac218fff17505e8c95e0b20c5f076e251"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac218fff17505e8c95e0b20c5f076e251">&#9670;&#160;</a></span>COR_E_EXCEPTION</h2>
 
@@ -1318,6 +1875,30 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 
 </div>
 </div>
+<a id="ac1da8ae0630ec3bb168cdee33c490745" name="ac1da8ae0630ec3bb168cdee33c490745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1da8ae0630ec3bb168cdee33c490745">&#9670;&#160;</a></span>DISP_E_DIVBYZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::DISP_E_DIVBYZERO</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attempted to divide by zero. </p>
+
+</div>
+</div>
 <a id="ae5ceb8116f91c163a7311e0963b87684" name="ae5ceb8116f91c163a7311e0963b87684"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5ceb8116f91c163a7311e0963b87684">&#9670;&#160;</a></span>E_ABORT</h2>
 
@@ -1363,6 +1944,30 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 </div><div class="memdoc">
 
 <p>Unspecified failure. </p>
+
+</div>
+</div>
+<a id="afa7f1ec57d7f337a726f058d105f7586" name="afa7f1ec57d7f337a726f058d105f7586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7f1ec57d7f337a726f058d105f7586">&#9670;&#160;</a></span>E_INVALIDARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::h_result::E_INVALIDARG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Value does not fall within the expected range. </p>
 
 </div>
 </div>
@@ -1445,7 +2050,7 @@ static constexpr <a class="el" href="group__types.html#ga205462e259a4eca15455110
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 1 2024 09:31:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 3 2024 17:36:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
