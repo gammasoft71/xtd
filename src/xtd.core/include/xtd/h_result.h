@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains h_result class.
+/// @brief Contains xtd::h_result class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "int32.h"
@@ -59,6 +59,38 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core exceptions
   /// @remarks For more information, see Winerror.h from Micorosft's Win32 API.
+  /// @remarks HRESULTs are 32 bit values laid out as follows:
+  /// ```
+  ///   3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
+  ///   1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+  ///  +-+-+-+-+-+---------------------+-------------------------------+
+  ///  |S|R|C|N|r|    Facility         |               Code            |
+  ///  +-+-+-+-+-+---------------------+-------------------------------+
+  ///
+  ///  where
+  ///
+  ///      S - Severity - indicates success/fail
+  ///
+  ///          0 - Success
+  ///          1 - Fail (COERROR)
+  ///
+  ///      R - reserved portion of the facility code, corresponds to NT's 
+  ///              second severity bit.
+  ///
+  ///      C - reserved portion of the facility code, corresponds to NT's
+  ///              C field.
+  ///
+  ///      N - reserved portion of the facility code. Used to indicate a
+  ///              mapped NT status value.
+  ///
+  ///      r - reserved portion of the facility code. Reserved for internal
+  ///              use. Used to indicate HRESULT values that are not status
+  ///              values, but are instead message ids for display strings.
+  ///
+  ///      Facility - is the facility code
+  ///
+  ///      Code - is the facility's status code
+  /// ```
   class h_result static_ {
   public:
     /// @name Public Static Fields
@@ -256,7 +288,7 @@ namespace xtd {
     static constexpr int32 E_FAIL = static_cast<int32>(0x80004005);
     /// @brief
     static constexpr int32 E_HANDLE = static_cast<int32>(0x80070006);
-    /// @brief
+    /// @brief Value does not fall within the expected range.
     static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057); // Duplicate with COR_E_ARGUMENT
     /// @brief The method or operation is not implemented.
     static constexpr int32 E_NOTIMPL = static_cast<int32>(0x80004001);
@@ -307,41 +339,207 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Gets The h_result messages.
-    /// @return The h_result messages.
-    static const std::unordered_map<int32, string>& get_h_result_messages() noexcept;
-    
-    /// @brief Gets The h_result names.
-    /// @return The h_result names.
-    static const std::unordered_map<int32, string>& get_h_result_names() noexcept;
-    
-    /// @brief Gets an array of h_results.
-    /// @return An array of h_results.
+    /// @brief Provides a generic fail test for the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return `true` is failed; otherwise `false`.
+    static bool failed(int32 h_result) noexcept;
+
+    /// @brief Gets the code portion of the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return The code portion of `h_result`.
+    static int32 get_code(int32 h_result) noexcept;
+
+    /// @brief The facility of the specified HRESULT, which indicates what API or framework originated this error.
+    /// @param h_result The HRESULT value.
+    /// @return The facility of `h_result`.
+    /// @remarks The facility of an HRESULT is stored in bits 16-26 of the HRESULT.
+    /// @par Possible values
+    /// | FACILITY                                          | Decimal | Hex   |
+    /// | ------------------------------------------------- | ------- | ----- |
+    /// | FACILITY_NULL                                     | 0       | 0x0   |
+    /// | FACILITY_RPC                                      | 1       | 0x1   |
+    /// | FACILITY_DISPATCH                                 | 2       | 0x2   |
+    /// | FACILITY_STORAGE                                  | 3       | 0x3   |
+    /// | FACILITY_ITF                                      | 4       | 0x4   |
+    /// | FACILITY_WIN32                                    | 7       | 0x7   |
+    /// | FACILITY_WINDOWS                                  | 8       | 0x8   |
+    /// | FACILITY_SECURITY                                 | 9       | 0x9   |
+    /// | FACILITY_SSPI                                     | 9       | 0x9   |
+    /// | FACILITY_CONTROL                                  | 10      | 0xA   |
+    /// | FACILITY_CERT                                     | 11      | 0xB   |
+    /// | FACILITY_INTERNET                                 | 12      | 0xC   |
+    /// | FACILITY_MEDIASERVER                              | 13      | 0xD   |
+    /// | FACILITY_MSMQ                                     | 14      | 0xE   |
+    /// | FACILITY_SETUPAPI                                 | 15      | 0xF   |
+    /// | FACILITY_SCARD                                    | 16      | 0x10  |
+    /// | FACILITY_COMPLUS                                  | 17      | 0x11  |
+    /// | FACILITY_AAF                                      | 18      | 0x12  |
+    /// | FACILITY_URT                                      | 19      | 0x13  |
+    /// | FACILITY_ACS                                      | 20      | 0x14  |
+    /// | FACILITY_DPLAY                                    | 21      | 0x15  |
+    /// | FACILITY_UMI                                      | 22      | 0x16  |
+    /// | FACILITY_SXS                                      | 23      | 0x17  |
+    /// | FACILITY_WINDOWS_CE                               | 24      | 0x18  |
+    /// | FACILITY_HTTP                                     | 25      | 0x19  |
+    /// | FACILITY_USERMODE_COMMONLOG                       | 26      | 0x1A  |
+    /// | FACILITY_WER                                      | 27      | 0x1B  |
+    /// | FACILITY_USERMODE_FILTER_MANAGER                  | 31      | 0x1F  |
+    /// | FACILITY_BACKGROUNDCOPY                           | 32      | 0x20  |
+    /// | FACILITY_CONFIGURATION                            | 33      | 0x21  |
+    /// | FACILITY_WIA                                      | 33      | 0x21  |
+    /// | FACILITY_STATE_MANAGEMENT                         | 34      | 0x22  |
+    /// | FACILITY_METADIRECTORY                            | 35      | 0x23  |
+    /// | FACILITY_WINDOWSUPDATE                            | 36      | 0x24  |
+    /// | FACILITY_DIRECTORYSERVICE                         | 37      | 0x25  |
+    /// | FACILITY_GRAPHICS                                 | 38      | 0x26  |
+    /// | FACILITY_NAP                                      | 39      | 0x27  |
+    /// | FACILITY_SHELL                                    | 39      | 0x27  |
+    /// | FACILITY_TPM_SERVICES                             | 40      | 0x28  |
+    /// | FACILITY_TPM_SOFTWARE                             | 41      | 0x29  |
+    /// | FACILITY_UI                                       | 42      | 0x2A  |
+    /// | FACILITY_XAML                                     | 43      | 0x2B  |
+    /// | FACILITY_ACTION_QUEUE                             | 44      | 0x2C  |
+    /// | FACILITY_PLA                                      | 48      | 0x30  |
+    /// | FACILITY_WINDOWS_SETUP                            | 48      | 0x30  |
+    /// | FACILITY_FVE                                      | 49      | 0x31  |
+    /// | FACILITY_FWP                                      | 50      | 0x32  |
+    /// | FACILITY_WINRM                                    | 51      | 0x33  |
+    /// | FACILITY_NDIS                                     | 52      | 0x34  |
+    /// | FACILITY_USERMODE_HYPERVISOR                      | 53      | 0x35  |
+    /// | FACILITY_CMI                                      | 54      | 0x36  |
+    /// | FACILITY_USERMODE_VIRTUALIZATION                  | 55      | 0x37  |
+    /// | FACILITY_USERMODE_VOLMGR                          | 56      | 0x38  |
+    /// | FACILITY_BCD                                      | 57      | 0x39  |
+    /// | FACILITY_USERMODE_VHD                             | 58      | 0x3A  |
+    /// | FACILITY_SDIAG                                    | 60      | 0x3C  |
+    /// | FACILITY_WEBSERVICES                              | 61      | 0x3D  |
+    /// | FACILITY_WINPE                                    | 61      | 0x3D  |
+    /// | FACILITY_WPN                                      | 62      | 0x3E  |
+    /// | FACILITY_WINDOWS_STORE                            | 63      | 0x3F  |
+    /// | FACILITY_INPUT                                    | 64      | 0x40  |
+    /// | FACILITY_EAP                                      | 66      | 0x42  |
+    /// | FACILITY_WINDOWS_DEFENDER                         | 80      | 0x50  |
+    /// | FACILITY_OPC                                      | 81      | 0x51  |
+    /// | FACILITY_XPS                                      | 82      | 0x52  |
+    /// | FACILITY_RAS                                      | 83      | 0x53  |
+    /// | FACILITY_MBN                                      | 84      | 0x54  |
+    /// | FACILITY_POWERSHELL                               | 84      | 0x54  |
+    /// | FACILITY_EAS                                      | 85      | 0x55  |
+    /// | FACILITY_P2P_INT                                  | 98      | 0x62  |
+    /// | FACILITY_P2P                                      | 99      | 0x63  |
+    /// | FACILITY_DAF                                      | 100     | 0x64  |
+    /// | FACILITY_BLUETOOTH_ATT                            | 101     | 0x65  |
+    /// | FACILITY_AUDIO                                    | 102     | 0x66  |
+    /// | FACILITY_VISUALCPP                                | 109     | 0x6D  |
+    /// | FACILITY_SCRIPT                                   | 112     | 0x70  |
+    /// | FACILITY_PARSE                                    | 113     | 0x71  |
+    /// | FACILITY_BLB                                      | 120     | 0x78  |
+    /// | FACILITY_BLB_CLI                                  | 121     | 0x79  |
+    /// | FACILITY_WSBAPP                                   | 122     | 0x7A  |
+    /// | FACILITY_BLBUI                                    | 128     | 0x80  |
+    /// | FACILITY_USN                                      | 129     | 0x81  |
+    /// | FACILITY_USERMODE_VOLSNAP                         | 130     | 0x82  |
+    /// | FACILITY_TIERING                                  | 131     | 0x83  |
+    /// | FACILITY_WSB_ONLINE                               | 133     | 0x85  |
+    /// | FACILITY_ONLINE_ID                                | 134     | 0x86  |
+    /// | FACILITY_DLS                                      | 153     | 0x99  |
+    /// | FACILITY_SOS                                      | 160     | 0xA0  |
+    /// | FACILITY_DEBUGGERS                                | 176     | 0xB0  |
+    /// | FACILITY_USERMODE_SPACES                          | 231     | 0xE7  |
+    /// | FACILITY_DMSERVER                                 | 256     | 0x100 |
+    /// | FACILITY_RESTORE                                  | 256     | 0x100 |
+    /// | FACILITY_SPP                                      | 256     | 0x100 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_SERVER               | 257     | 0x101 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_IMAGING              | 258     | 0x102 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_MANAGEMENT           | 259     | 0x103 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_UTIL                 | 260     | 0x104 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_BINLSVC              | 261     | 0x105 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_PXE                  | 263     | 0x107 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_TFTP                 | 264     | 0x108 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_TRANSPORT_MANAGEMENT | 272     | 0x110 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_DRIVER_PROVISIONING  | 278     | 0x116 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_MULTICAST_SERVER     | 289     | 0x121 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_MULTICAST_CLIENT     | 290     | 0x122 |
+    /// | FACILITY_DEPLOYMENT_SERVICES_CONTENT_PROVIDER     | 293     | 0x125 |
+    /// | FACILITY_LINGUISTIC_SERVICES                      | 305     | 0x131 |
+    /// | FACILITY_WEB                                      | 885     | 0x375 |
+    /// | FACILITY_WEB_SOCKET                               | 886     | 0x376 |
+    /// | FACILITY_AUDIOSTREAMING                           | 1094    | 0x446 |
+    /// | FACILITY_ACCELERATOR                              | 1536    | 0x600 |
+    /// | FACILITY_MOBILE                                   | 1793    | 0x701 |
+    /// | FACILITY_WMAAECMA                                 | 1996    | 0x7CC |
+    /// | FACILITY_WEP                                      | 2049    | 0x801 |
+    /// | FACILITY_SYNCENGINE                               | 2050    | 0x802 |
+    /// | FACILITY_DIRECTMUSIC                              | 2168    | 0x878 |
+    /// | FACILITY_DIRECT3D10                               | 2169    | 0x879 |
+    /// | FACILITY_DXGI                                     | 2170    | 0x87A |
+    /// | FACILITY_DXGI_DDI                                 | 2171    | 0x87B |
+    /// | FACILITY_DIRECT3D11                               | 2172    | 0x87C |
+    /// | FACILITY_LEAP                                     | 2184    | 0x888 |
+    /// | FACILITY_AUDCLNT                                  | 2185    | 0x889 |
+    /// | FACILITY_WINCODEC_DWRITE_DWM                      | 2200    | 0x898 |
+    /// | FACILITY_DIRECT2D                                 | 2201    | 0x899 |
+    /// | FACILITY_DEFRAG                                   | 2304    | 0x900 |
+    /// | FACILITY_USERMODE_SDBUS                           | 2305    | 0x901 |
+    /// | FACILITY_JSCRIPT                                  | 2306    | 0x902 |
+    /// | FACILITY_PIDGENX                                  | 2561    | 0xA01 |
+    static int32 get_facility(int32 h_result) noexcept;
+
+    /// @brief Gets an array of HRESULT.
+    /// @return An array of HRESULT.
     static const xtd::array<int32>& get_h_results() noexcept;
     
-    /// @brief Gets the message of the specified h_result.
-    /// @param h_result The xtd::h_result whose message will be getted.
-    /// @return The message of `h_result`.`
+    /// @brief Gets the message of the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return The message of `h_result`.
     static string get_message(int32 h_result) noexcept;
-    
-    /// @brief Gets the name of the specified h_result.
-    /// @param h_result The xtd::h_result whose name will be getted.
-    /// @return The name of `h_result`.`
+
+    /// @brief Gets The HRESULT messages.
+    /// @return The h_result messages.
+    static const std::unordered_map<int32, string>& get_messages() noexcept;
+
+    /// @brief Gets the name of the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return The name of `h_result`.
     static string get_name(int32 h_result) noexcept;
     
-    /// @brief Obtains a reference to the static error category object for h_result errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the xtd::h_result error codes.
+    /// @brief Gets The HRESULT names.
+    /// @return The h_result names.
+    static const std::unordered_map<int32, string>& get_names() noexcept;
+
+    /// @brief The severity of the specified HRESULT, which indicates what API or framework originated this error.
+    /// @param h_result The HRESULT value.
+    /// @return The severity of `h_result`.
+    /// @par Possible values
+    /// | SEVERIFY         | Decimal | Hex |
+    /// | ---------------- | ------- | --- |
+    /// | SEVERITY_SUCCESS | 0       | 0x0 |
+    /// | SEVERITY_ERROR   | 1       | 0x1 |
+    static int32 get_severity(int32 h_result) noexcept;
+
+    /// @brief Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes.
     /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
     static const std::error_category& h_result_category() noexcept;
-    
-    /// @brief Creates error code value for xtd::h_result `h_result`.
-    /// @param h_result xtd::h_result error code to create error code for.
+
+    /// @brief Provides a generic is error test for the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return `true` is error; otherwise `false`.
+    static bool is_error(int32 h_result) noexcept;
+
+    /// @brief Creates error code value for the specified HRESULT.
+    /// @param h_result The HRESULT value.
     /// @return Error code corresponding to `h_result`.
     static std::error_code make_error_code(int h_result) noexcept;
-    
-    /// @brief Gets the name of the specified h_result.
-    /// @param h_result The xtd::h_result whose name will be getted.
-    /// @return The name of `h_result`.`
-    static string to_String(int32 h_result) noexcept;
+
+    /// @brief Provides a generic success test for the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return `true` is secceeded; otherwise `false`.
+    static bool succeeded(int32 h_result) noexcept;
+
+    /// @brief Gets the name of the specified HRESULT.
+    /// @param h_result The HRESULT value.
+    /// @return The name of `h_result`.
+    static string to_string(int32 h_result) noexcept;
     /// &}
   };
 }
