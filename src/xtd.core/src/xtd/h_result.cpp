@@ -154,7 +154,7 @@ const std::unordered_map<int32, string>& h_result::get_h_result_messages() noexc
     {COR_E_DATAMISALIGNED, "A datatype misalignment was detected in a load or store instruction."_t},
     {COR_E_DIRECTORYNOTFOUND, "Attempted to access a path that is not on the disk."_t},
     {COR_E_DIVIDEBYZERO, "Attempted to divide by zero."_t},
-    {COR_E_DLLNOTFOUND, ""_t},
+    {COR_E_DLLNOTFOUND, "Dll was not found."_t},
     {COR_E_DUPLICATEWAITOBJECT, ""_t},
     {COR_E_ENDOFSTREAM, ""_t},
     {COR_E_ENTRYPOINTNOTFOUND, ""_t},
