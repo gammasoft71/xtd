@@ -104,7 +104,7 @@ namespace xtd {
     static constexpr int32 COR_E_DIRECTORYNOTFOUND = static_cast<int32>(0x80070003);
     /// @brief Attempted to divide by zero.
     static constexpr int32 COR_E_DIVIDEBYZERO = static_cast<int32>(0x80020012); // Duplicate with DISP_E_DIVBYZERO
-    /// @brief
+    /// @brief Dll was not found.
     static constexpr int32 COR_E_DLLNOTFOUND = static_cast<int32>(0x80131524);
     /// @brief
     static constexpr int32 COR_E_DUPLICATEWAITOBJECT = static_cast<int32>(0x80131529);
@@ -242,7 +242,7 @@ namespace xtd {
     static constexpr int32 DISP_E_BADVARTYPE = static_cast<int32>(0x80020008);
     /// @brief
     static constexpr int32 DISP_E_OVERFLOW = static_cast<int32>(0x8002000A);
-    /// @brief
+    /// @brief Attempted to divide by zero.
     static constexpr int32 DISP_E_DIVBYZERO = static_cast<int32>(0x80020012); // Duplicate with COR_E_DIVIDEBYZERO
     /// @brief Operation aborted.
     static constexpr int32 E_ABORT = static_cast<int32>(0x80004004);
