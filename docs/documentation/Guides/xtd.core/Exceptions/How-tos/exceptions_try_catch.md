@@ -33,6 +33,15 @@ public:
 startup_(process_file::main);
 ```
 
+The xtd::startup_safe class, hidden behind the startup_ keyword, catches exceptions that are not handled by catch blocks. If an exception is caught by the xtd::startup_safe class, one of the following results may occur, depending on the application type running:
+
+* A Debug dialog box appears.
+* The program stops execution and a dialog box with exception information appears.
+* An error prints out to the standard error output stream.
+
+> [!note]
+> Most code can throw an exception, and some exceptions, such as xtd::out_of_memory_exception, can be thrown by xtd itself at any time. Although applications are not required to handle these exceptions, you should be aware of this possibility when writing libraries intended for use by others. To find out when to place code in a try block, see [Best practices for exceptions](/docs/documentation/Guides/xtd.core/Exceptions/exceptions_best_practices).
+
 # See also
 ​
 * [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
