@@ -599,25 +599,49 @@ bool console::background_color(int32_t color) {
   return true;
 }
 
+namespace {
+  class audio {
+  public:
+    audio() noexcept {
+      if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return;
+      if (snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, sample_rate, 1, 20000) < 0) {
+        snd_pcm_close(pcm_handle);
+        pcm_handle = nullptr;
+      }
+    }
+    
+    ~audio() noexcept {
+      if (pcm_handle) snd_pcm_close(pcm_handle);
+    }
+    
+    static bool beep(uint32_t frequency, uint32_t duration) {
+      if (!pcm_handle || frequency < 37 || frequency > 32767) return false;
+      
+      unsigned int total_frames = (duration / 1000.0) * sample_rate;
+      unsigned int frames_per_buffer = sample_rate / 10; // ex: buffer for 100ms
+      unsigned char* buffer = new unsigned char[frames_per_buffer];
+      
+      for (unsigned int frame_index = 0; frame_index < total_frames; frame_index += frames_per_buffer) {
+        snd_pcm_prepare(pcm_handle);
+        for (unsigned int buffer_index = 0; buffer_index < frames_per_buffer; ++buffer_index)
+          buffer[buffer_index] = (buffer_index % (sample_rate / frequency) < (sample_rate / frequency) / 2) ? 255 : 0;
+        
+        int written_frames = snd_pcm_writei(pcm_handle, buffer, frames_per_buffer);
+        if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
+      }
+      
+      delete[] buffer;
+      return true;
+    }
+    
+  private:
+    inline static constexpr auto sample_rate = 8000u;
+    inline static snd_pcm_t* pcm_handle = nullptr;
+  } __audio__;
+}
+
 bool console::beep(uint32_t frequency, uint32_t duration) {
-  if (frequency < 37 || frequency > 32767) return false;
-  
-  static constexpr uint32_t simple_rate = 8000;
-  static snd_pcm_t* pcm_handle = nullptr;
-  if (pcm_handle == nullptr) {
-    if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
-    snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, simple_rate, 1, 20000);
-  }
-  
-  unsigned char buffer[2400];
-  for (uint32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
-    snd_pcm_prepare(pcm_handle);
-    for (uint32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
-      buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
-    snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
-    if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
-  }
-  return true;
+  return audio::beep(frequency, duration);
 }
 
 int32_t console::buffer_height() {
