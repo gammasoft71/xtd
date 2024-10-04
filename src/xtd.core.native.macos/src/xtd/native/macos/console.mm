@@ -601,35 +601,35 @@ bool console::background_color(int32_t color) {
 namespace {
   class audio {
   public:
+    audio() noexcept {
+      AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
+      AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
+      
+      AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
+      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
+      
+      AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
+      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
+      
+      AudioUnitInitialize(audio_unit);
+      AudioOutputUnitStart(audio_unit);
+    }
+    
+    ~audio() noexcept {
+      AudioOutputUnitStop(audio_unit);
+      AudioUnitUninitialize(audio_unit);
+    }
+    
     static bool beep(uint32_t frequency, uint32_t duration) {
       if (frequency < 37 || frequency > 32767) return false;
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
       
-      [[maybe_unused]] static auto __call_once__ = [&] {
-        AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
-        AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
-        
-        AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
-        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
-        
-        AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
-        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
-        
-        AudioUnitInitialize(audio_unit);
-        AudioOutputUnitStart(audio_unit);
-        return true;
-      }();
-      
       beep_freq = frequency;
-      beep_samples = duration * bits_per_channel;
+      beep_samples = (duration / 1000.0) * simple_rate;
       
       dispatch_semaphore_signal(start_playing_semaphore);
-      
       dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
-      
-      //AudioOutputUnitStop(audio_unit);
-      //AudioUnitUninitialize(audio_unit);
       dispatch_semaphore_signal(idle_semaphore);
       return true;
     }
@@ -644,7 +644,8 @@ namespace {
       
       for (auto frames_index = 0u; frames_index < in_number_frames; ++frames_index) {
         static unsigned char theta = 0;
-        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (beep_freq * 255 * theta++ / simple_rate);
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (theta < simple_rate / (2 * beep_freq)) ? 255 : 0;
+        theta = (theta + 1) % (simple_rate / beep_freq);
         if (--counter == 0) {
           theta = 0;
           counter = 0;
@@ -663,7 +664,7 @@ namespace {
     inline static AudioUnit audio_unit;
     inline static unsigned int beep_freq = 0;
     inline static int32_t beep_samples = 0;
-  };
+  } __audio__;
 }
 
 bool console::beep(uint32_t frequency, uint32_t duration) {
