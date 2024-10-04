@@ -1,4 +1,4 @@
-# How to create user-defined exception (xtd.core)
+# How to create user-defined exception with localized exception messages (xtd.core)
 
 xtd provides a hierarchy of exception classes ultimately derived from the Exception base class. 
 However, if none of the predefined exceptions meet your needs, you can create your own exception class by deriving from the [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) class.
