@@ -618,8 +618,9 @@ namespace {
     
     ~audio() noexcept {
       if (!initialized) return;
-      if (AudioOutputUnitStop(audio_unit) != noErr) return;
-      if (AudioUnitUninitialize(audio_unit) != noErr) return;
+      // The following method blocks on an internal semaphore when application exit.
+      //if (AudioOutputUnitStop(audio_unit) != noErr) return;
+      //if (AudioUnitUninitialize(audio_unit) != noErr) return;
     }
     
     static bool beep(uint32_t frequency, uint32_t duration) {
