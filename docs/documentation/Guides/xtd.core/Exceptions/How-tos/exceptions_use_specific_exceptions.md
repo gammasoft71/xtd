@@ -4,6 +4,7 @@ Coming soon...
 
 # See also
 ​
+* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
 * [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
