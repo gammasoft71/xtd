@@ -40,11 +40,11 @@ enum class duration {
 struct note final {
 private:
   tone tone_val = tone::rest;
-  ::duration dur_val = ::duration::none;
+  duration dur_val = duration::none;
   
 public:
   // Define a constructor to create a specific note.
-  note(tone frequency, ::duration time) : tone_val(frequency), dur_val(time) {}
+  note(tone frequency, duration time) : tone_val(frequency), dur_val(time) {}
   
   note() = default;
   note(const note& note) = default;
@@ -69,19 +69,19 @@ void play(const list<note>& tune) {
 auto main() -> int {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
   auto mary = list {
-    note(tone::b, ::duration::quarter),
-    note(tone::a, ::duration::quarter),
-    note(tone::g_below_c, ::duration::quarter),
-    note(tone::a, ::duration::quarter),
-    note(tone::b, ::duration::quarter),
-    note(tone::b, ::duration::quarter),
-    note(tone::b, ::duration::half),
-    note(tone::a, ::duration::quarter),
-    note(tone::a, ::duration::quarter),
-    note(tone::a, ::duration::half),
-    note(tone::b, ::duration::quarter),
-    note(tone::d, ::duration::quarter),
-    note(tone::d, ::duration::half)
+    note(tone::b, duration::quarter),
+    note(tone::a, duration::quarter),
+    note(tone::g_below_c, duration::quarter),
+    note(tone::a, duration::quarter),
+    note(tone::b, duration::quarter),
+    note(tone::b, duration::quarter),
+    note(tone::b, duration::half),
+    note(tone::a, duration::quarter),
+    note(tone::a, duration::quarter),
+    note(tone::a, duration::half),
+    note(tone::b, duration::quarter),
+    note(tone::d, duration::quarter),
+    note(tone::d, duration::half)
   };
   // Play the song
   play(mary);
