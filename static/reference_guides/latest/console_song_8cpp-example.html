@@ -125,11 +125,11 @@ $(function() {
 <div class="line"><span class="keyword">struct </span>note final {</div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  tone tone_val = tone::rest;</div>
-<div class="line">  ::duration dur_val = ::duration::none;</div>
+<div class="line">  duration dur_val = duration::none;</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="comment">// Define a constructor to create a specific note.</span></div>
-<div class="line">  note(tone frequency, ::duration time) : tone_val(frequency), dur_val(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">time</a>) {}</div>
+<div class="line">  note(tone frequency, duration time) : tone_val(frequency), dur_val(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">time</a>) {}</div>
 <div class="line">  </div>
 <div class="line">  note() = <span class="keywordflow">default</span>;</div>
 <div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
@@ -154,19 +154,19 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
 <div class="line">  <span class="keyword">auto</span> mary = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {</div>
-<div class="line">    note(tone::b, ::duration::quarter),</div>
-<div class="line">    note(tone::a, ::duration::quarter),</div>
-<div class="line">    note(tone::g_below_c, ::duration::quarter),</div>
-<div class="line">    note(tone::a, ::duration::quarter),</div>
-<div class="line">    note(tone::b, ::duration::quarter),</div>
-<div class="line">    note(tone::b, ::duration::quarter),</div>
-<div class="line">    note(tone::b, ::duration::half),</div>
-<div class="line">    note(tone::a, ::duration::quarter),</div>
-<div class="line">    note(tone::a, ::duration::quarter),</div>
-<div class="line">    note(tone::a, ::duration::half),</div>
-<div class="line">    note(tone::b, ::duration::quarter),</div>
-<div class="line">    note(tone::d, ::duration::quarter),</div>
-<div class="line">    note(tone::d, ::duration::half)</div>
+<div class="line">    note(tone::b, duration::quarter),</div>
+<div class="line">    note(tone::a, duration::quarter),</div>
+<div class="line">    note(tone::g_below_c, duration::quarter),</div>
+<div class="line">    note(tone::a, duration::quarter),</div>
+<div class="line">    note(tone::b, duration::quarter),</div>
+<div class="line">    note(tone::b, duration::quarter),</div>
+<div class="line">    note(tone::b, duration::half),</div>
+<div class="line">    note(tone::a, duration::quarter),</div>
+<div class="line">    note(tone::a, duration::quarter),</div>
+<div class="line">    note(tone::a, duration::half),</div>
+<div class="line">    note(tone::b, duration::quarter),</div>
+<div class="line">    note(tone::d, duration::quarter),</div>
+<div class="line">    note(tone::d, duration::half)</div>
 <div class="line">  };</div>
 <div class="line">  <span class="comment">// Play the song</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
@@ -181,7 +181,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 30 2024 22:50:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Oct 4 2024 20:49:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
