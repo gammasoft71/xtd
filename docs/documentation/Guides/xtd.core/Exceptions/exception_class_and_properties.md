@@ -24,6 +24,7 @@ We recommend that you throw and catch only objects that derive from [xtd::except
 
 # See also
 ​
+* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
 * [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
