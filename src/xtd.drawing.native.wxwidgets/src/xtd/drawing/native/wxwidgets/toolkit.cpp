@@ -18,6 +18,11 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing::native;
 
+#if defined (_WIN32)
+__declspec(dllimport) extern int __argc;
+__declspec(dllimport) extern char** __argv;
+#endif
+
 namespace {
   wxAssertHandler_t original_assert_handler = nullptr;
   boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
@@ -65,7 +70,7 @@ intptr xtd::drawing::native::toolkit::initialize() {
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int32 argc = 0;
-  wxEntryStart(argc, reinterpret_cast<wxChar**>(0));
+  wxEntryStart(argc, reinterpret_cast<char**>(0));
   // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
 #if defined(__APPLE__)
   call_once_ {
