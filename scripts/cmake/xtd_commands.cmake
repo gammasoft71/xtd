@@ -485,7 +485,6 @@ macro(target_type TYPE)
     target_link_libraries(${TARGET_NAME} INTERFACE ${PROJECT_REFERENCES})
   else ()
     set(PROJECT_ALL_REFERENCES "${PROJECT_TYPE_REFERENCE};${PROJECT_REFERENCES}")
-    list(REMOVE_DUPLICATES PROJECT_ALL_REFERENCES)
     target_link_libraries(${TARGET_NAME} ${PROJECT_ALL_REFERENCES})
   endif ()
   if ("${TYPE}" STREQUAL "TEST_APPLICATION")
@@ -1106,7 +1105,6 @@ endmacro()
 macro(add_references)
   message(VERBOSE "Add references [${ARGN}]...")
   set(PROJECT_REFERENCES "${PROJECT_REFERENCES};${ARGN}")
-  list(REMOVE_DUPLICATES PROJECT_REFERENCES)
 endmacro()
 
 ## @brief Adds resource to current project.
@@ -2174,9 +2172,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
-if ("${BUILD_TYPE}" STREQUAL "Debug")
-  set(CMAKE_DEBUG_POSTFIX d)
-endif()
+set(CMAKE_DEBUG_POSTFIX d)
 
 enable_testing()
 
