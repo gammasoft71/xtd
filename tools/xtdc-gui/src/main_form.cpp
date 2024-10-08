@@ -68,9 +68,9 @@ main_form::main_form() {
   
   startup_title_label_.parent(startup_panel_);
   startup_title_label_.location({50, 50});
+  startup_title_label_.font({startup_title_label_.font(), 24.0});
   startup_title_label_.auto_size(true);
   startup_title_label_.text("Start");
-  startup_title_label_.font({startup_title_label_.font(), 24.0});
   
   startup_open_recent_project_title_label_.parent(startup_panel_);
   startup_open_recent_project_title_label_.location({50, 115});
