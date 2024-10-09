@@ -23,5 +23,5 @@ namespace xtd {
   /// foo = nullopt; // reset the optional foo variable.
   /// ```
   /// @ingroup xtd_core types
-  extern core_export_ null_opt nullopt;
+  constexpr null_opt nullopt = std::nullopt;
 }

@@ -1057,7 +1057,6 @@ add_sources(
   src/xtd/math.cpp
   src/xtd/memory_information.cpp
   src/xtd/null.cpp
-  src/xtd/nullopt.cpp
   src/xtd/object.cpp
   src/xtd/operating_system.cpp
   src/xtd/processor.cpp
