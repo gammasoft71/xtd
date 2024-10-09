@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.20)
 project(keycodes)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
-add_references(xtd)
 add_sources(
   src/key_control.h
   src/key_control.cpp
