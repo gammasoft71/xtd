@@ -28,55 +28,55 @@ namespace xtd {
     /// @brief Create a new instance of class argument_exception
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit argument_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
+    explicit argument_exception(const xtd::diagnostics::stack_frame& info = null) : system_exception(default_message(), info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
+    explicit argument_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, info) {}
+    explicit argument_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, error, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
+    explicit argument_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, help_link, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    explicit argument_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, help_link, info) {}
+    explicit argument_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, error, help_link, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit argument_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), inner_exception, info) {}
+    explicit argument_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : system_exception(default_message(), inner_exception, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {}
+    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, inner_exception, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, info) {}
+    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, inner_exception, error, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, help_link, info) {}
+    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, inner_exception, help_link, info) {}
     /// @brief Create a new instance of class argument_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+    explicit argument_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : system_exception(message, inner_exception, error, help_link, info) {}
     /// @}
     
     /// @cond
@@ -92,13 +92,13 @@ namespace xtd {
     /// @param param_name (optional) The name of the parameter with which argument corresponds.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_exception `argument` is empty.
-    static void throw_if_empty(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument)) throw argument_exception {string::format("The value cannot be an empty string. (Parameter '{}')", param_name, info)};}
+    static void throw_if_empty(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = null) {if (xtd::string::is_empty(argument)) throw argument_exception {string::format("The value cannot be an empty string. (Parameter '{}')", param_name, info)};}
     /// @brief Throws an exception if argument is empty, or consists only of white-space characters.
     /// @param argument The string argument to validate.
     /// @param param_name (optional) The name of the parameter with which argument corresponds.
     /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_exception `argument` is empty or consists only of white-space characters.
-    static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) {if (xtd::string::is_empty(argument.replace(" ", ""))) throw argument_exception {string::format("The value cannot be an empty string or composed entirely of whitespace. (Parameter '{}')", param_name, info)};}
+    static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& info = null) {if (xtd::string::is_empty(argument.replace(" ", ""))) throw argument_exception {string::format("The value cannot be an empty string or composed entirely of whitespace. (Parameter '{}')", param_name, info)};}
     /// @}
 
   private:
