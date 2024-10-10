@@ -268,25 +268,25 @@ namespace xtd {
     static constexpr int32 CO_E_NOTINITIALIZED = static_cast<int32>(0x800401F0);
     /// @brief Could not find the parameter.
     static constexpr int32 DISP_E_PARAMNOTFOUND = static_cast<int32>(0x80020004);
-    /// @brief
+    /// @brief Attempt to access a variable with an incompatible type.
     static constexpr int32 DISP_E_TYPEMISMATCH = static_cast<int32>(0x80020005);
-    /// @brief
+    /// @brief Invalid virable type.
     static constexpr int32 DISP_E_BADVARTYPE = static_cast<int32>(0x80020008);
-    /// @brief
+    /// @brief Arithmetic operation resulted in an overflow.
     static constexpr int32 DISP_E_OVERFLOW = static_cast<int32>(0x8002000A);
     /// @brief Attempted to divide by zero.
     static constexpr int32 DISP_E_DIVBYZERO = static_cast<int32>(0x80020012); // Duplicate with COR_E_DIVIDEBYZERO
     /// @brief Operation aborted.
     static constexpr int32 E_ABORT = static_cast<int32>(0x80004004);
-    /// @brief
+    /// @brief Bounds exception.
     static constexpr int32 E_BOUNDS = static_cast<int32>(0x8000000B);
-    /// @brief
+    /// @brief The state has been modified.
     static constexpr int32 E_CHANGED_STATE = static_cast<int32>(0x8000000C);
     /// @brief Unable to find the specified file.
     static constexpr int32 E_FILENOTFOUND = static_cast<int32>(0x80070002); // Duplicate with COR_E_FILENOTFOUND
     /// @brief Unspecified failure.
     static constexpr int32 E_FAIL = static_cast<int32>(0x80004005);
-    /// @brief
+    /// @brief The handle is invalid.
     static constexpr int32 E_HANDLE = static_cast<int32>(0x80070006);
     /// @brief Value does not fall within the expected range.
     static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057); // Duplicate with COR_E_ARGUMENT
@@ -296,21 +296,21 @@ namespace xtd {
     static constexpr int32 E_POINTER = static_cast<int32>(0x80004003);
     /// @brief Unexpected failure.
     static constexpr int32 E_UNEXPECTED = static_cast<int32>(0x8000FFFF);
-    /// @brief
+    /// @brief Resource map not found.
     static constexpr int32 ERROR_MRM_MAP_NOT_FOUND = static_cast<int32>(0x80073B1F);
-    /// @brief
+    /// @brief The operation has timed out.
     static constexpr int32 ERROR_TIMEOUT = static_cast<int32>(0x800705B4);
-    /// @brief
+    /// @brief The object has been closed.
     static constexpr int32 RO_E_CLOSED = static_cast<int32>(0x80000013);
-    /// @brief
+    /// @brief Cannot change the current thread mode.
     static constexpr int32 RPC_E_CHANGED_MODE = static_cast<int32>(0x80010106);
-    /// @brief
+    /// @brief Incompatible type.
     static constexpr int32 TYPE_E_TYPEMISMATCH = static_cast<int32>(0x80028CA0);
-    /// @brief
+    /// @brief Attempted to access a path that is not on the disk.
     static constexpr int32 STG_E_PATHNOTFOUND = static_cast<int32>(0x80030003);
-    /// @brief
+    /// @brief Attempted to access a path that is not on the disk.
     static constexpr int32 CTL_E_PATHNOTFOUND = static_cast<int32>(0x800A004C);
-    /// @brief
+    /// @brief Unable to find the specified file.
     static constexpr int32 CTL_E_FILENOTFOUND = static_cast<int32>(0x800A0035);
     /// @brief
     static constexpr int32 FUSION_E_INVALID_NAME = static_cast<int32>(0x80131047);
