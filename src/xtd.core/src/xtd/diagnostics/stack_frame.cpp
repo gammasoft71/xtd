@@ -83,8 +83,11 @@ stack_frame::stack_frame(const string& file_name, xtd::size line_number, xtd::si
 stack_frame::stack_frame(const string& file_name, xtd::size line_number, const string& method_name, xtd::size column_number, xtd::size offset) : data_{new_ptr<data>(file_name, line_number, method_name, column_number, offset)} {
 }
 
+stack_frame::stack_frame(xtd::null_ptr frame) : stack_frame{string::empty_string, 0, string::empty_string, 0, OFFSET_UNKNOWN} {
+}
+
 stack_frame stack_frame::empty() noexcept {
-  return {string::empty_string, 0, string::empty_string, 0, OFFSET_UNKNOWN};
+  return null;
 }
 
 bool stack_frame::equals(const stack_frame& sf) const noexcept {
