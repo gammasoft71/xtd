@@ -270,7 +270,7 @@ namespace xtd {
     static constexpr int32 DISP_E_PARAMNOTFOUND = static_cast<int32>(0x80020004);
     /// @brief Attempt to access a variable with an incompatible type.
     static constexpr int32 DISP_E_TYPEMISMATCH = static_cast<int32>(0x80020005);
-    /// @brief Invalid virable type.
+    /// @brief Invalid variable type.
     static constexpr int32 DISP_E_BADVARTYPE = static_cast<int32>(0x80020008);
     /// @brief Arithmetic operation resulted in an overflow.
     static constexpr int32 DISP_E_OVERFLOW = static_cast<int32>(0x8002000A);
@@ -312,27 +312,27 @@ namespace xtd {
     static constexpr int32 CTL_E_PATHNOTFOUND = static_cast<int32>(0x800A004C);
     /// @brief Unable to find the specified file.
     static constexpr int32 CTL_E_FILENOTFOUND = static_cast<int32>(0x800A0035);
-    /// @brief
+    /// @brief Fusion invalid name exception.
     static constexpr int32 FUSION_E_INVALID_NAME = static_cast<int32>(0x80131047);
-    /// @brief
+    /// @brief Fusion the reference definition is incompatible.
     static constexpr int32 FUSION_E_REF_DEF_MISMATCH = static_cast<int32>(0x80131040);
-    /// @brief
+    /// @brief Too many open files.
     static constexpr int32 ERROR_TOO_MANY_OPEN_FILES = static_cast<int32>(0x80070004);
-    /// @brief
+    /// @brief Sharing violation.
     static constexpr int32 ERROR_SHARING_VIOLATION = static_cast<int32>(0x80070020);
-    /// @brief
+    /// @brief Lock violations.
     static constexpr int32 ERROR_LOCK_VIOLATION = static_cast<int32>(0x80070021);
-    /// @brief
+    /// @brief Open failed.
     static constexpr int32 ERROR_OPEN_FAILED = static_cast<int32>(0x8007006E);
-    /// @brief
+    /// @brief Disk corrupt.
     static constexpr int32 ERROR_DISK_CORRUPT = static_cast<int32>(0x80070571);
-    /// @brief
+    /// @brief Unrecognized volume.
     static constexpr int32 ERROR_UNRECOGNIZED_VOLUME = static_cast<int32>(0x800703ED);
-    /// @brief
+    /// @brief DLL init failed.
     static constexpr int32 ERROR_DLL_INIT_FAILED = static_cast<int32>(0x8007045A);
-    /// @brief
+    /// @brief Assembly load in progress.
     static constexpr int32 MSEE_E_ASSEMBLYLOADINPROGRESS = static_cast<int32>(0x80131016);
-    /// @brief
+    /// @brief File invalid.
     static constexpr int32 ERROR_FILE_INVALID = static_cast<int32>(0x800703EE);
     /// @}
 
