@@ -838,15 +838,15 @@ namespace xtd::tests {
     }
 
     void test_method_(get_message_with_DISP_E_TYPEMISMATCH) {
-      assert::are_equal("", h_result::get_message(h_result::DISP_E_TYPEMISMATCH), csf_);
+      assert::are_equal("Attempt to access a variable with an incompatible type.", h_result::get_message(h_result::DISP_E_TYPEMISMATCH), csf_);
     }
 
     void test_method_(get_message_with_DISP_E_BADVARTYPE) {
-      assert::are_equal("", h_result::get_message(h_result::DISP_E_BADVARTYPE), csf_);
+      assert::are_equal("Invalid virable type.", h_result::get_message(h_result::DISP_E_BADVARTYPE), csf_);
     }
 
     void test_method_(get_message_with_DISP_E_OVERFLOW) {
-      assert::are_equal("", h_result::get_message(h_result::DISP_E_OVERFLOW), csf_);
+      assert::are_equal("Arithmetic operation resulted in an overflow.", h_result::get_message(h_result::DISP_E_OVERFLOW), csf_);
     }
 
     void test_method_(get_message_with_DISP_E_DIVBYZERO) {
@@ -858,11 +858,11 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_E_BOUNDS) {
-      assert::are_equal("", h_result::get_message(h_result::E_BOUNDS), csf_);
+      assert::are_equal("Bounds exception", h_result::get_message(h_result::E_BOUNDS), csf_);
     }
     
     void test_method_(get_message_with_E_CHANGED_STATE) {
-      assert::are_equal("", h_result::get_message(h_result::E_CHANGED_STATE), csf_);
+      assert::are_equal("The state has been modified.", h_result::get_message(h_result::E_CHANGED_STATE), csf_);
     }
     
     void test_method_(get_message_with_E_FILENOTFOUND) {
@@ -874,7 +874,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_message_with_E_HANDLE) {
-      assert::are_equal("", h_result::get_message(h_result::E_HANDLE), csf_);
+      assert::are_equal("The handle is invalid.", h_result::get_message(h_result::E_HANDLE), csf_);
     }
     
     void test_method_(get_message_with_E_INVALIDARG) {
@@ -894,35 +894,35 @@ namespace xtd::tests {
     }
 
     void test_method_(get_message_with_ERROR_MRM_MAP_NOT_FOUND) {
-      assert::are_equal("", h_result::get_message(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+      assert::are_equal("Resource map not found.", h_result::get_message(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
     }
 
     void test_method_(get_message_with_ERROR_TIMEOUT) {
-      assert::are_equal("", h_result::get_message(h_result::ERROR_TIMEOUT), csf_);
+      assert::are_equal("The operation has timed out.", h_result::get_message(h_result::ERROR_TIMEOUT), csf_);
     }
 
     void test_method_(get_message_with_RO_E_CLOSED) {
-      assert::are_equal("", h_result::get_message(h_result::RO_E_CLOSED), csf_);
+      assert::are_equal("The object has been closed.", h_result::get_message(h_result::RO_E_CLOSED), csf_);
     }
 
     void test_method_(get_message_with_RPC_E_CHANGED_MODE) {
-      assert::are_equal("", h_result::get_message(h_result::RPC_E_CHANGED_MODE), csf_);
+      assert::are_equal("Cannot change the current thread mode.", h_result::get_message(h_result::RPC_E_CHANGED_MODE), csf_);
     }
 
     void test_method_(get_message_with_TYPE_E_TYPEMISMATCH) {
-      assert::are_equal("", h_result::get_message(h_result::TYPE_E_TYPEMISMATCH), csf_);
+      assert::are_equal("Incompatible type.", h_result::get_message(h_result::TYPE_E_TYPEMISMATCH), csf_);
     }
 
     void test_method_(get_message_with_STG_E_PATHNOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::STG_E_PATHNOTFOUND), csf_);
+      assert::are_equal("Attempted to access a path that is not on the disk.", h_result::get_message(h_result::STG_E_PATHNOTFOUND), csf_);
     }
 
     void test_method_(get_message_with_CTL_E_PATHNOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::CTL_E_PATHNOTFOUND), csf_);
+      assert::are_equal("Attempted to access a path that is not on the disk.", h_result::get_message(h_result::CTL_E_PATHNOTFOUND), csf_);
     }
 
     void test_method_(get_message_with_CTL_E_FILENOTFOUND) {
-      assert::are_equal("", h_result::get_message(h_result::CTL_E_FILENOTFOUND), csf_);
+      assert::are_equal("Unable to find the specified file.", h_result::get_message(h_result::CTL_E_FILENOTFOUND), csf_);
     }
 
     void test_method_(get_message_with_FUSION_E_INVALID_NAME) {
