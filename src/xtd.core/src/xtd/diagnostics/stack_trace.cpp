@@ -55,7 +55,7 @@ size_t stack_trace::frame_count() const noexcept {
 }
 
 const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) noexcept {
-  static auto empty_stack_frame = xtd::diagnostics::stack_frame::empty();
+  static auto empty_stack_frame = null;
   if (data_->frames.size() == 0) return empty_stack_frame;
   if (index > data_->frames.size() - 1) index = data_->frames.size() - 1;
   return data_->frames[index];

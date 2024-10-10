@@ -145,7 +145,7 @@ namespace xtd {
       static const unit_test* current_unit_test_;
       xtd::string actual_;
       xtd::string expect_;
-      xtd::diagnostics::stack_frame stack_frame_ = xtd::diagnostics::stack_frame::empty();
+      xtd::diagnostics::stack_frame stack_frame_ = null;
       xtd::string message_;
       std::function<void()> method_;
       xtd::string name_;
