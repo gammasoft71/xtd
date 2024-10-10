@@ -88,6 +88,9 @@ namespace xtd {
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
       stack_frame(const xtd::string& file_name, xtd::size line_number, const xtd::string& method_name, xtd::size column_number, xtd::size offset);
+      /// @brief Initializes a new empty instance of the xtd::diagnostics::stack_frame.
+      /// @param frame nullptr.
+      stack_frame(xtd::null_ptr frame); // Not explicit by design.
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
