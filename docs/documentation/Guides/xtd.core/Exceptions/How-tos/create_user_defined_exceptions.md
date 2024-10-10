@@ -9,18 +9,19 @@ The example defines a new exception class named `employee_list_not_found_excepti
 ```cpp
 #include <xtd/exception>
 
-using xtd;
+using namespace xtd;
+using namespace xtd::diagnostics;
 
 class employee_list_not_found_exception : public exception {
 public:
-  employee_list_not_found_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) : exception {"The employee list does not exist."_t, stack_frame} {
+  employee_list_not_found_exception(const stack_frame& stack_frame = null) : exception {"The employee list does not exist."_t, stack_frame} {
   }
 
-  employee_list_not_found_exception(const string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) : exception {message, stack_frame} {
+  employee_list_not_found_exception(const string& message, const stack_frame& stack_frame = null) : exception {message, stack_frame} {
   }
 
   template<typename exception_t>
-  employee_list_not_found_exception(const string& message, const exception_t& inner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::empty()) : exception(message, inner, stack_frame) {
+  employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& stack_frame = null) : exception(message, inner, stack_frame) {
   }
 };
 ```
