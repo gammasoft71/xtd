@@ -7,4 +7,5 @@ add_projects(
   argument_exception
   exception_ptr
   system_exception
+  user_defined_exception
 )
