@@ -22,7 +22,7 @@ namespace xtd::tests {
     void test_method_(COR_E_ABANDONEDMUTEX) {
       assert::are_equal(static_cast<int32>(0x8013152D), h_result::COR_E_ABANDONEDMUTEX, csf_);
       assert::are_equal(static_cast<int32>(0x152D), h_result::get_code(h_result::COR_E_ABANDONEDMUTEX), csf_);
-      assert::are_equal(static_cast<int32>(0x0013), h_result::get_facility(h_result::COR_E_ABANDONEDMUTEX), csf_);
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ABANDONEDMUTEX), csf_);
       assert::are_equal(1, h_result::get_severity(h_result::COR_E_ABANDONEDMUTEX), csf_);
     }
 
@@ -953,13 +953,939 @@ namespace xtd::tests {
     void test_method_(failed_with_COR_E_SYSTEM) {
       assert::is_true(h_result::failed(h_result::COR_E_SYSTEM), csf_);
     }
-
-    void test_method_(get_h_results) {
-      assert::are_equal(116_z, h_result::get_messages().size(), csf_);
-      assert::are_equal(116_z, h_result::get_names().size(), csf_);
-      assert::are_equal(116_z, h_result::get_h_results().size(), csf_);
+    
+    void test_method_(get_code_with_ERROR_FILE_INVALID) {
+      assert::are_equal(static_cast<int32>(0x03EE), h_result::get_code(h_result::ERROR_FILE_INVALID), csf_);
     }
     
+    void test_method_(get_code_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal(static_cast<int32>(0x1016), h_result::get_code(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal(static_cast<int32>(0x03ED), h_result::get_code(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal(static_cast<int32>(0x0021), h_result::get_code(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal(static_cast<int32>(0x0020), h_result::get_code(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal(static_cast<int32>(0x0004), h_result::get_code(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(get_code_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal(static_cast<int32>(0x1040), h_result::get_code(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0035), h_result::get_code(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal(static_cast<int32>(0x0106), h_result::get_code(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(get_code_with_RO_E_CLOSED) {
+      assert::are_equal(static_cast<int32>(0x0013), h_result::get_code(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal(static_cast<int32>(0x3B1F), h_result::get_code(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal(static_cast<int32>(0x106A), h_result::get_code(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal(static_cast<int32>(0x1508), h_result::get_code(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_code_with_E_CHANGED_STATE) {
+      assert::are_equal(static_cast<int32>(0x000C), h_result::get_code(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_FIELDACCESS) {
+      assert::are_equal(static_cast<int32>(0x1507), h_result::get_code(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(get_code_with_E_BOUNDS) {
+      assert::are_equal(static_cast<int32>(0x000B), h_result::get_code(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(get_code_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x0005), h_result::get_code(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal(static_cast<int32>(0x152C), h_result::get_code(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(get_code_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x004C), h_result::get_code(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_VERIFICATION) {
+      assert::are_equal(static_cast<int32>(0x150D), h_result::get_code(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(get_code_with_E_POINTER) {
+      assert::are_equal(static_cast<int32>(0x4003), h_result::get_code(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_THREADSTATE) {
+      assert::are_equal(static_cast<int32>(0x1520), h_result::get_code(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_THREADSTART) {
+      assert::are_equal(static_cast<int32>(0x1525), h_result::get_code(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x1523), h_result::get_code(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal(static_cast<int32>(0x01F0), h_result::get_code(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal(static_cast<int32>(0x1519), h_result::get_code(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_THREADABORTED) {
+      assert::are_equal(static_cast<int32>(0x1530), h_result::get_code(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(get_code_with_E_UNEXPECTED) {
+      assert::are_equal(static_cast<int32>(0xFFFF), h_result::get_code(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal(static_cast<int32>(0x1518), h_result::get_code(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(get_code_with_E_FAIL) {
+      assert::are_equal(static_cast<int32>(0x4005), h_result::get_code(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TYPELOAD) {
+      assert::are_equal(static_cast<int32>(0x1522), h_result::get_code(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x03E9), h_result::get_code(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(get_code_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x8CA0), h_result::get_code(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SERIALIZATION) {
+      assert::are_equal(static_cast<int32>(0x150C), h_result::get_code(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SECURITY) {
+      assert::are_equal(static_cast<int32>(0x150A), h_result::get_code(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x1533), h_result::get_code(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_E_ABORT) {
+      assert::are_equal(static_cast<int32>(0x4004), h_result::get_code(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x1538), h_result::get_code(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal(static_cast<int32>(0x153D), h_result::get_code(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal(static_cast<int32>(0x1602), h_result::get_code(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x1539), h_result::get_code(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_PATHTOOLONG) {
+      assert::are_equal(static_cast<int32>(0x00CE), h_result::get_code(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_APPLICATION) {
+      assert::are_equal(static_cast<int32>(0x1600), h_result::get_code(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal(static_cast<int32>(0x153B), h_result::get_code(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(get_code_with_DISP_E_OVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x000A), h_result::get_code(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal(static_cast<int32>(0x1622), h_result::get_code(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x1515), h_result::get_code(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal(static_cast<int32>(0x1528), h_result::get_code(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x1514), h_result::get_code(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal(static_cast<int32>(0x1513), h_result::get_code(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal(static_cast<int32>(0x1512), h_result::get_code(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal(static_cast<int32>(0x0571), h_result::get_code(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal(static_cast<int32>(0x000E), h_result::get_code(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MISSINGFIELD) {
+      assert::are_equal(static_cast<int32>(0x1511), h_result::get_code(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_TIMEOUT) {
+      assert::are_equal(static_cast<int32>(0x05B4), h_result::get_code(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_METHODACCESS) {
+      assert::are_equal(static_cast<int32>(0x1510), h_result::get_code(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ARGUMENT) {
+      assert::are_equal(static_cast<int32>(0x0057), h_result::get_code(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_OVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x1516), h_result::get_code(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal(static_cast<int32>(0x1014), h_result::get_code(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x1577), h_result::get_code(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal(static_cast<int32>(0x153A), h_result::get_code(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal(static_cast<int32>(0x1601), h_result::get_code(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal(static_cast<int32>(0x1536), h_result::get_code(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDCAST) {
+      assert::are_equal(static_cast<int32>(0x4002), h_result::get_code(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal(static_cast<int32>(0x0005), h_result::get_code(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_FORMAT) {
+      assert::are_equal(static_cast<int32>(0x1537), h_result::get_code(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_FILELOAD) {
+      assert::are_equal(static_cast<int32>(0x1621), h_result::get_code(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal(static_cast<int32>(0x0012), h_result::get_code(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal(static_cast<int32>(0x1013), h_result::get_code(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_FAILFAST) {
+      assert::are_equal(static_cast<int32>(0x1623), h_result::get_code(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_EXCEPTION) {
+      assert::are_equal(static_cast<int32>(0x1500), h_result::get_code(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x1524), h_result::get_code(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal(static_cast<int32>(0x1506), h_result::get_code(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0003), h_result::get_code(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal(static_cast<int32>(0x1504), h_result::get_code(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal(static_cast<int32>(0x1502), h_result::get_code(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal(static_cast<int32>(0x211D), h_result::get_code(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x00C1), h_result::get_code(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal(static_cast<int32>(0x1578), h_result::get_code(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal(static_cast<int32>(0x1015), h_result::get_code(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal(static_cast<int32>(0x1604), h_result::get_code(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal(static_cast<int32>(0x1542), h_result::get_code(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(get_code_with_S_OK) {
+      assert::are_equal(static_cast<int32>(0x0000), h_result::get_code(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x000B), h_result::get_code(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TYPEACCESS) {
+      assert::are_equal(static_cast<int32>(0x1543), h_result::get_code(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(get_code_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0004), h_result::get_code(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal(static_cast<int32>(0x1047), h_result::get_code(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal(static_cast<int32>(0x0026), h_result::get_code(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal(static_cast<int32>(0x1529), h_result::get_code(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal(static_cast<int32>(0x153E), h_result::get_code(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TARGET) {
+      assert::are_equal(static_cast<int32>(0x1603), h_result::get_code(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal(static_cast<int32>(0x1541), h_result::get_code(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal(static_cast<int32>(0x1534), h_result::get_code(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ARITHMETIC) {
+      assert::are_equal(static_cast<int32>(0x0216), h_result::get_code(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal(static_cast<int32>(0x1531), h_result::get_code(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal(static_cast<int32>(0x1532), h_result::get_code(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TIMEOUT) {
+      assert::are_equal(static_cast<int32>(0x1505), h_result::get_code(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_FILENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0002), h_result::get_code(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal(static_cast<int32>(0x000E), h_result::get_code(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x1503), h_result::get_code(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_code_with_E_NOTIMPL) {
+      assert::are_equal(static_cast<int32>(0x4001), h_result::get_code(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal(static_cast<int32>(0x1535), h_result::get_code(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(get_code_with_DISP_E_BADVARTYPE) {
+      assert::are_equal(static_cast<int32>(0x0008), h_result::get_code(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_IO) {
+      assert::are_equal(static_cast<int32>(0x1620), h_result::get_code(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_OPEN_FAILED) {
+      assert::are_equal(static_cast<int32>(0x006E), h_result::get_code(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal(static_cast<int32>(0x152D), h_result::get_code(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(get_code_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal(static_cast<int32>(0x045A), h_result::get_code(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x1605), h_result::get_code(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(get_code_with_S_FALSE) {
+      assert::are_equal(static_cast<int32>(0x0001), h_result::get_code(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_MEMBERACCESS) {
+      assert::are_equal(static_cast<int32>(0x151A), h_result::get_code(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_RANK) {
+      assert::are_equal(static_cast<int32>(0x1517), h_result::get_code(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal(static_cast<int32>(0x1527), h_result::get_code(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(get_code_with_E_HANDLE) {
+      assert::are_equal(static_cast<int32>(0x0006), h_result::get_code(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal(static_cast<int32>(0x1509), h_result::get_code(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(get_code_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0003), h_result::get_code(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_code_with_COR_E_SYSTEM) {
+      assert::are_equal(static_cast<int32>(0x1501), h_result::get_code(h_result::COR_E_SYSTEM), csf_);
+    }
+
+    void test_method_(get_facility_with_ERROR_FILE_INVALID) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_FILE_INVALID), csf_);
+    }
+    
+    void test_method_(get_facility_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(get_facility_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0xA), h_result::get_facility(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal(static_cast<int32>(0x1), h_result::get_facility(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(get_facility_with_RO_E_CLOSED) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_CHANGED_STATE) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_FIELDACCESS) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_BOUNDS) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(get_facility_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(get_facility_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0xA), h_result::get_facility(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_VERIFICATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_POINTER) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_THREADSTATE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_THREADSTART) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal(static_cast<int32>(0x4), h_result::get_facility(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_THREADABORTED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_UNEXPECTED) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_FAIL) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TYPELOAD) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(get_facility_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SERIALIZATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SECURITY) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_ABORT) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_PATHTOOLONG) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_APPLICATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(get_facility_with_DISP_E_OVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MISSINGFIELD) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_TIMEOUT) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_METHODACCESS) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ARGUMENT) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_OVERFLOW) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDCAST) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_FORMAT) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_FILELOAD) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_FAILFAST) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_EXCEPTION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(get_facility_with_S_OK) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TYPEACCESS) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TARGET) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ARITHMETIC) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TIMEOUT) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_FILENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_NOTIMPL) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(get_facility_with_DISP_E_BADVARTYPE) {
+      assert::are_equal(static_cast<int32>(0x2), h_result::get_facility(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_IO) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_OPEN_FAILED) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(get_facility_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(get_facility_with_S_FALSE) {
+      assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_MEMBERACCESS) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_RANK) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(get_facility_with_E_HANDLE) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(get_facility_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x3), h_result::get_facility(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_facility_with_COR_E_SYSTEM) {
+      assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SYSTEM), csf_);
+    }
+
+    void test_method_(get_h_results) {
+      assert::are_equal(116_z, h_result::get_h_results().size(), csf_);
+    }
+
     void test_method_(get_message_with_S_OK) {
       assert::are_equal("Operation successful.", h_result::get_message(h_result::S_OK), csf_);
     }
@@ -1434,6 +2360,1410 @@ namespace xtd::tests {
 
     void test_method_(get_message_with_ERROR_FILE_INVALID) {
       assert::are_equal("File invalid.", h_result::get_message(h_result::ERROR_FILE_INVALID), csf_);
+    }
+
+    void test_method_(get_messages) {
+      assert::are_equal(116_z, h_result::get_messages().size(), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_FILE_INVALID) {
+      assert::are_equal("ERROR_FILE_INVALID", h_result::get_name(h_result::ERROR_FILE_INVALID), csf_);
+    }
+    
+    void test_method_(get_name_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal("MSEE_E_ASSEMBLYLOADINPROGRESS", h_result::get_name(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal("ERROR_UNRECOGNIZED_VOLUME", h_result::get_name(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal("ERROR_LOCK_VIOLATION", h_result::get_name(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal("ERROR_SHARING_VIOLATION", h_result::get_name(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal("ERROR_TOO_MANY_OPEN_FILES", h_result::get_name(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(get_name_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal("FUSION_E_REF_DEF_MISMATCH", h_result::get_name(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal("CTL_E_FILENOTFOUND", h_result::get_name(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal("RPC_E_CHANGED_MODE", h_result::get_name(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(get_name_with_RO_E_CLOSED) {
+      assert::are_equal("RO_E_CLOSED", h_result::get_name(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal("ERROR_MRM_MAP_NOT_FOUND", h_result::get_name(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal("COR_E_AMBIGUOUSIMPLEMENTATION", h_result::get_name(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal("COR_E_INDEXOUTOFRANGE", h_result::get_name(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_name_with_E_CHANGED_STATE) {
+      assert::are_equal("E_CHANGED_STATE", h_result::get_name(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_FIELDACCESS) {
+      assert::are_equal("COR_E_FIELDACCESS", h_result::get_name(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(get_name_with_E_BOUNDS) {
+      assert::are_equal("E_BOUNDS", h_result::get_name(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(get_name_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal("DISP_E_TYPEMISMATCH", h_result::get_name(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal("COR_E_WAITHANDLECANNOTBEOPENED", h_result::get_name(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(get_name_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal("CTL_E_PATHNOTFOUND", h_result::get_name(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_VERIFICATION) {
+      assert::are_equal("COR_E_VERIFICATION", h_result::get_name(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(get_name_with_E_POINTER) {
+      assert::are_equal("E_POINTER", h_result::get_name(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_THREADSTATE) {
+      assert::are_equal("COR_E_THREADSTATE", h_result::get_name(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_THREADSTART) {
+      assert::are_equal("COR_E_THREADSTART", h_result::get_name(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal("COR_E_ENTRYPOINTNOTFOUND", h_result::get_name(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal("CO_E_NOTINITIALIZED", h_result::get_name(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal("COR_E_THREADINTERRUPTED", h_result::get_name(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_THREADABORTED) {
+      assert::are_equal("COR_E_THREADABORTED", h_result::get_name(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(get_name_with_E_UNEXPECTED) {
+      assert::are_equal("E_UNEXPECTED", h_result::get_name(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal("COR_E_SYNCHRONIZATIONLOCK", h_result::get_name(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(get_name_with_E_FAIL) {
+      assert::are_equal("E_FAIL", h_result::get_name(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TYPELOAD) {
+      assert::are_equal("COR_E_TYPELOAD", h_result::get_name(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal("COR_E_STACKOVERFLOW", h_result::get_name(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(get_name_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal("TYPE_E_TYPEMISMATCH", h_result::get_name(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SERIALIZATION) {
+      assert::are_equal("COR_E_SERIALIZATION", h_result::get_name(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SECURITY) {
+      assert::are_equal("COR_E_SECURITY", h_result::get_name(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal("COR_E_SAFEARRAYTYPEMISMATCH", h_result::get_name(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_E_ABORT) {
+      assert::are_equal("E_ABORT", h_result::get_name(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal("COR_E_SAFEARRAYRANKMISMATCH", h_result::get_name(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal("COR_E_INSUFFICIENTMEMORY", h_result::get_name(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal("COR_E_REFLECTIONTYPELOAD", h_result::get_name(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal("COR_E_PLATFORMNOTSUPPORTED", h_result::get_name(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_PATHTOOLONG) {
+      assert::are_equal("COR_E_PATHTOOLONG", h_result::get_name(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_APPLICATION) {
+      assert::are_equal("COR_E_APPLICATION", h_result::get_name(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal("COR_E_OPERATIONCANCELED", h_result::get_name(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(get_name_with_DISP_E_OVERFLOW) {
+      assert::are_equal("DISP_E_OVERFLOW", h_result::get_name(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal("COR_E_OBJECTCLOSED", h_result::get_name(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal("COR_E_NOTSUPPORTED", h_result::get_name(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal("COR_E_NOTFINITENUMBER", h_result::get_name(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal("COR_E_MULTICASTNOTSUPPORTED", h_result::get_name(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal("COR_E_MISSINGMETHOD", h_result::get_name(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal("COR_E_MISSINGMEMBER", h_result::get_name(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal("ERROR_DISK_CORRUPT", h_result::get_name(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal("COR_E_OUTOFMEMORY", h_result::get_name(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MISSINGFIELD) {
+      assert::are_equal("COR_E_MISSINGFIELD", h_result::get_name(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_TIMEOUT) {
+      assert::are_equal("ERROR_TIMEOUT", h_result::get_name(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_METHODACCESS) {
+      assert::are_equal("COR_E_METHODACCESS", h_result::get_name(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ARGUMENT) {
+      assert::are_equal("COR_E_ARGUMENT", h_result::get_name(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_OVERFLOW) {
+      assert::are_equal("COR_E_OVERFLOW", h_result::get_name(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal("COR_E_APPDOMAINUNLOADED", h_result::get_name(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal("COR_E_KEYNOTFOUND", h_result::get_name(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal("COR_E_INVALIDPROGRAM", h_result::get_name(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal("COR_E_INVALIDFILTERCRITERIA", h_result::get_name(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal("COR_E_MISSINGSATELLITEASSEMBLY", h_result::get_name(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDCAST) {
+      assert::are_equal("COR_E_INVALIDCAST", h_result::get_name(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal("COR_E_UNAUTHORIZEDACCESS", h_result::get_name(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_FORMAT) {
+      assert::are_equal("COR_E_FORMAT", h_result::get_name(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_FILELOAD) {
+      assert::are_equal("COR_E_FILELOAD", h_result::get_name(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal("COR_E_DIVIDEBYZERO", h_result::get_name(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal("COR_E_TYPEUNLOADED", h_result::get_name(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_FAILFAST) {
+      assert::are_equal("COR_E_FAILFAST", h_result::get_name(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_EXCEPTION) {
+      assert::are_equal("COR_E_EXCEPTION", h_result::get_name(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal("COR_E_DLLNOTFOUND", h_result::get_name(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal("COR_E_EXECUTIONENGINE", h_result::get_name(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal("COR_E_DIRECTORYNOTFOUND", h_result::get_name(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal("COR_E_CONTEXTMARSHAL", h_result::get_name(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal("COR_E_ARGUMENTOUTOFRANGE", h_result::get_name(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal("COR_E_AMBIGUOUSMATCH", h_result::get_name(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal("COR_E_BADEXEFORMAT", h_result::get_name(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal("COR_E_INSUFFICIENTEXECUTIONSTACK", h_result::get_name(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal("COR_E_CANNOTUNLOADAPPDOMAIN", h_result::get_name(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal("COR_E_TARGETINVOCATION", h_result::get_name(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal("COR_E_CODECONTRACTFAILED", h_result::get_name(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(get_name_with_S_OK) {
+      assert::are_equal("S_OK", h_result::get_name(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal("COR_E_BADIMAGEFORMAT", h_result::get_name(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TYPEACCESS) {
+      assert::are_equal("COR_E_TYPEACCESS", h_result::get_name(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(get_name_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal("DISP_E_PARAMNOTFOUND", h_result::get_name(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal("FUSION_E_INVALID_NAME", h_result::get_name(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal("COR_E_ENDOFSTREAM", h_result::get_name(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal("COR_E_DUPLICATEWAITOBJECT", h_result::get_name(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal("COR_E_RUNTIMEWRAPPED", h_result::get_name(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TARGET) {
+      assert::are_equal("COR_E_TARGET", h_result::get_name(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal("COR_E_DATAMISALIGNED", h_result::get_name(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal("COR_E_TYPEINITIALIZATION", h_result::get_name(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ARITHMETIC) {
+      assert::are_equal("COR_E_ARITHMETIC", h_result::get_name(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal("COR_E_INVALIDOLEVARIANTTYPE", h_result::get_name(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal("COR_E_MISSINGMANIFESTRESOURCE", h_result::get_name(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TIMEOUT) {
+      assert::are_equal("COR_E_TIMEOUT", h_result::get_name(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_FILENOTFOUND) {
+      assert::are_equal("COR_E_FILENOTFOUND", h_result::get_name(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal("COR_E_TARGETPARAMCOUNT", h_result::get_name(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal("COR_E_ARRAYTYPEMISMATCH", h_result::get_name(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_name_with_E_NOTIMPL) {
+      assert::are_equal("E_NOTIMPL", h_result::get_name(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal("COR_E_MARSHALDIRECTIVE", h_result::get_name(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(get_name_with_DISP_E_BADVARTYPE) {
+      assert::are_equal("DISP_E_BADVARTYPE", h_result::get_name(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_IO) {
+      assert::are_equal("COR_E_IO", h_result::get_name(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_OPEN_FAILED) {
+      assert::are_equal("ERROR_OPEN_FAILED", h_result::get_name(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal("COR_E_ABANDONEDMUTEX", h_result::get_name(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(get_name_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal("ERROR_DLL_INIT_FAILED", h_result::get_name(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal("COR_E_CUSTOMATTRIBUTEFORMAT", h_result::get_name(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(get_name_with_S_FALSE) {
+      assert::are_equal("S_FALSE", h_result::get_name(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_MEMBERACCESS) {
+      assert::are_equal("COR_E_MEMBERACCESS", h_result::get_name(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_RANK) {
+      assert::are_equal("COR_E_RANK", h_result::get_name(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal("COR_E_INVALIDCOMOBJECT", h_result::get_name(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(get_name_with_E_HANDLE) {
+      assert::are_equal("E_HANDLE", h_result::get_name(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal("COR_E_INVALIDOPERATION", h_result::get_name(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(get_name_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal("STG_E_PATHNOTFOUND", h_result::get_name(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_name_with_COR_E_SYSTEM) {
+      assert::are_equal("COR_E_SYSTEM", h_result::get_name(h_result::COR_E_SYSTEM), csf_);
+    }
+
+    void test_method_(get_names) {
+      assert::are_equal(116_z, h_result::get_names().size(), csf_);
+    }
+
+    void test_method_(get_severity_with_ERROR_FILE_INVALID) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_FILE_INVALID), csf_);
+    }
+    
+    void test_method_(get_severity_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(get_severity_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal(1, h_result::get_severity(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(get_severity_with_RO_E_CLOSED) {
+      assert::are_equal(1, h_result::get_severity(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_CHANGED_STATE) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_FIELDACCESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_BOUNDS) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(get_severity_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(get_severity_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_VERIFICATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_POINTER) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_THREADSTATE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_THREADSTART) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal(1, h_result::get_severity(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_THREADABORTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_UNEXPECTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_FAIL) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TYPELOAD) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(get_severity_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SERIALIZATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SECURITY) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_ABORT) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_PATHTOOLONG) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_APPLICATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(get_severity_with_DISP_E_OVERFLOW) {
+      assert::are_equal(1, h_result::get_severity(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MISSINGFIELD) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_TIMEOUT) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_METHODACCESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ARGUMENT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_OVERFLOW) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDCAST) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_FORMAT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_FILELOAD) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_FAILFAST) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_EXCEPTION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(get_severity_with_S_OK) {
+      assert::is_zero(h_result::get_severity(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TYPEACCESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal(1, h_result::get_severity(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TARGET) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ARITHMETIC) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TIMEOUT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_FILENOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_NOTIMPL) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(get_severity_with_DISP_E_BADVARTYPE) {
+      assert::are_equal(1, h_result::get_severity(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_IO) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_OPEN_FAILED) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(get_severity_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal(1, h_result::get_severity(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(get_severity_with_S_FALSE) {
+      assert::is_zero(h_result::get_severity(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_MEMBERACCESS) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_RANK) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(get_severity_with_E_HANDLE) {
+      assert::are_equal(1, h_result::get_severity(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(get_severity_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(get_severity_with_COR_E_SYSTEM) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_SYSTEM), csf_);
+    }
+    
+    void test_method_(h_result_category) {
+      assert::are_equal("h_result_category", h_result::h_result_category().name(), csf_);
+    }
+
+    void test_method_(is_error_with_ERROR_FILE_INVALID) {
+      assert::is_true(h_result::is_error(h_result::ERROR_FILE_INVALID), csf_);
+    }
+    
+    void test_method_(is_error_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::is_true(h_result::is_error(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::is_true(h_result::is_error(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_LOCK_VIOLATION) {
+      assert::is_true(h_result::is_error(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_SHARING_VIOLATION) {
+      assert::is_true(h_result::is_error(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::is_true(h_result::is_error(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(is_error_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::is_true(h_result::is_error(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_CTL_E_FILENOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_RPC_E_CHANGED_MODE) {
+      assert::is_true(h_result::is_error(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(is_error_with_RO_E_CLOSED) {
+      assert::is_true(h_result::is_error(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::is_true(h_result::is_error(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INDEXOUTOFRANGE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(is_error_with_E_CHANGED_STATE) {
+      assert::is_true(h_result::is_error(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_FIELDACCESS) {
+      assert::is_true(h_result::is_error(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(is_error_with_E_BOUNDS) {
+      assert::is_true(h_result::is_error(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(is_error_with_DISP_E_TYPEMISMATCH) {
+      assert::is_true(h_result::is_error(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(is_error_with_CTL_E_PATHNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_VERIFICATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(is_error_with_E_POINTER) {
+      assert::is_true(h_result::is_error(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_THREADSTATE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_THREADSTART) {
+      assert::is_true(h_result::is_error(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_CO_E_NOTINITIALIZED) {
+      assert::is_true(h_result::is_error(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_THREADINTERRUPTED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_THREADABORTED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(is_error_with_E_UNEXPECTED) {
+      assert::is_true(h_result::is_error(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(is_error_with_E_FAIL) {
+      assert::is_true(h_result::is_error(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TYPELOAD) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_STACKOVERFLOW) {
+      assert::is_true(h_result::is_error(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(is_error_with_TYPE_E_TYPEMISMATCH) {
+      assert::is_true(h_result::is_error(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SERIALIZATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SECURITY) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_E_ABORT) {
+      assert::is_true(h_result::is_error(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::is_true(h_result::is_error(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_PATHTOOLONG) {
+      assert::is_true(h_result::is_error(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_APPLICATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_OPERATIONCANCELED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(is_error_with_DISP_E_OVERFLOW) {
+      assert::is_true(h_result::is_error(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_OBJECTCLOSED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_NOTSUPPORTED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_NOTFINITENUMBER) {
+      assert::is_true(h_result::is_error(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MISSINGMETHOD) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MISSINGMEMBER) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_DISK_CORRUPT) {
+      assert::is_true(h_result::is_error(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_OUTOFMEMORY) {
+      assert::is_true(h_result::is_error(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MISSINGFIELD) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_TIMEOUT) {
+      assert::is_true(h_result::is_error(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_METHODACCESS) {
+      assert::is_true(h_result::is_error(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ARGUMENT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_OVERFLOW) {
+      assert::is_true(h_result::is_error(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_APPDOMAINUNLOADED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_KEYNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDPROGRAM) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDCAST) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::is_true(h_result::is_error(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_FORMAT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_FILELOAD) {
+      assert::is_true(h_result::is_error(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DIVIDEBYZERO) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TYPEUNLOADED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_FAILFAST) {
+      assert::is_true(h_result::is_error(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_EXCEPTION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DLLNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_EXECUTIONENGINE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_CONTEXTMARSHAL) {
+      assert::is_true(h_result::is_error(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_AMBIGUOUSMATCH) {
+      assert::is_true(h_result::is_error(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_BADEXEFORMAT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::is_true(h_result::is_error(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TARGETINVOCATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_CODECONTRACTFAILED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(is_error_with_S_OK) {
+      assert::is_false(h_result::is_error(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_BADIMAGEFORMAT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TYPEACCESS) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(is_error_with_DISP_E_PARAMNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_FUSION_E_INVALID_NAME) {
+      assert::is_true(h_result::is_error(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ENDOFSTREAM) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_RUNTIMEWRAPPED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TARGET) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DATAMISALIGNED) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TYPEINITIALIZATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ARITHMETIC) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TIMEOUT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_FILENOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_TARGETPARAMCOUNT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_E_NOTIMPL) {
+      assert::is_true(h_result::is_error(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MARSHALDIRECTIVE) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(is_error_with_DISP_E_BADVARTYPE) {
+      assert::is_true(h_result::is_error(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_IO) {
+      assert::is_true(h_result::is_error(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_OPEN_FAILED) {
+      assert::is_true(h_result::is_error(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_ABANDONEDMUTEX) {
+      assert::is_true(h_result::is_error(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(is_error_with_ERROR_DLL_INIT_FAILED) {
+      assert::is_true(h_result::is_error(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(is_error_with_S_FALSE) {
+      assert::is_false(h_result::is_error(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_MEMBERACCESS) {
+      assert::is_true(h_result::is_error(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_RANK) {
+      assert::is_true(h_result::is_error(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDCOMOBJECT) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(is_error_with_E_HANDLE) {
+      assert::is_true(h_result::is_error(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_INVALIDOPERATION) {
+      assert::is_true(h_result::is_error(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(is_error_with_STG_E_PATHNOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_SYSTEM) {
+      assert::is_true(h_result::is_error(h_result::COR_E_SYSTEM), csf_);
     }
 
     void test_method_(make_error_code_with_ERROR_FILE_INVALID) {
@@ -2600,6 +4930,470 @@ namespace xtd::tests {
     
     void test_method_(succeeded_with_COR_E_SYSTEM) {
       assert::is_false(h_result::succeeded(h_result::COR_E_SYSTEM), csf_);
+    }
+
+    void test_method_(to_string_with_ERROR_FILE_INVALID) {
+      assert::are_equal("ERROR_FILE_INVALID", h_result::to_string(h_result::ERROR_FILE_INVALID), csf_);
+    }
+    
+    void test_method_(to_string_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
+      assert::are_equal("MSEE_E_ASSEMBLYLOADINPROGRESS", h_result::to_string(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_UNRECOGNIZED_VOLUME) {
+      assert::are_equal("ERROR_UNRECOGNIZED_VOLUME", h_result::to_string(h_result::ERROR_UNRECOGNIZED_VOLUME), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_LOCK_VIOLATION) {
+      assert::are_equal("ERROR_LOCK_VIOLATION", h_result::to_string(h_result::ERROR_LOCK_VIOLATION), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_SHARING_VIOLATION) {
+      assert::are_equal("ERROR_SHARING_VIOLATION", h_result::to_string(h_result::ERROR_SHARING_VIOLATION), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_TOO_MANY_OPEN_FILES) {
+      assert::are_equal("ERROR_TOO_MANY_OPEN_FILES", h_result::to_string(h_result::ERROR_TOO_MANY_OPEN_FILES), csf_);
+    }
+    
+    void test_method_(to_string_with_FUSION_E_REF_DEF_MISMATCH) {
+      assert::are_equal("FUSION_E_REF_DEF_MISMATCH", h_result::to_string(h_result::FUSION_E_REF_DEF_MISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_CTL_E_FILENOTFOUND) {
+      assert::are_equal("CTL_E_FILENOTFOUND", h_result::to_string(h_result::CTL_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_RPC_E_CHANGED_MODE) {
+      assert::are_equal("RPC_E_CHANGED_MODE", h_result::to_string(h_result::RPC_E_CHANGED_MODE), csf_);
+    }
+    
+    void test_method_(to_string_with_RO_E_CLOSED) {
+      assert::are_equal("RO_E_CLOSED", h_result::to_string(h_result::RO_E_CLOSED), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_MRM_MAP_NOT_FOUND) {
+      assert::are_equal("ERROR_MRM_MAP_NOT_FOUND", h_result::to_string(h_result::ERROR_MRM_MAP_NOT_FOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
+      assert::are_equal("COR_E_AMBIGUOUSIMPLEMENTATION", h_result::to_string(h_result::COR_E_AMBIGUOUSIMPLEMENTATION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INDEXOUTOFRANGE) {
+      assert::are_equal("COR_E_INDEXOUTOFRANGE", h_result::to_string(h_result::COR_E_INDEXOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(to_string_with_E_CHANGED_STATE) {
+      assert::are_equal("E_CHANGED_STATE", h_result::to_string(h_result::E_CHANGED_STATE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_FIELDACCESS) {
+      assert::are_equal("COR_E_FIELDACCESS", h_result::to_string(h_result::COR_E_FIELDACCESS), csf_);
+    }
+    
+    void test_method_(to_string_with_E_BOUNDS) {
+      assert::are_equal("E_BOUNDS", h_result::to_string(h_result::E_BOUNDS), csf_);
+    }
+    
+    void test_method_(to_string_with_DISP_E_TYPEMISMATCH) {
+      assert::are_equal("DISP_E_TYPEMISMATCH", h_result::to_string(h_result::DISP_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_WAITHANDLECANNOTBEOPENED) {
+      assert::are_equal("COR_E_WAITHANDLECANNOTBEOPENED", h_result::to_string(h_result::COR_E_WAITHANDLECANNOTBEOPENED), csf_);
+    }
+    
+    void test_method_(to_string_with_CTL_E_PATHNOTFOUND) {
+      assert::are_equal("CTL_E_PATHNOTFOUND", h_result::to_string(h_result::CTL_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_VERIFICATION) {
+      assert::are_equal("COR_E_VERIFICATION", h_result::to_string(h_result::COR_E_VERIFICATION), csf_);
+    }
+    
+    void test_method_(to_string_with_E_POINTER) {
+      assert::are_equal("E_POINTER", h_result::to_string(h_result::E_POINTER), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_THREADSTATE) {
+      assert::are_equal("COR_E_THREADSTATE", h_result::to_string(h_result::COR_E_THREADSTATE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_THREADSTART) {
+      assert::are_equal("COR_E_THREADSTART", h_result::to_string(h_result::COR_E_THREADSTART), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ENTRYPOINTNOTFOUND) {
+      assert::are_equal("COR_E_ENTRYPOINTNOTFOUND", h_result::to_string(h_result::COR_E_ENTRYPOINTNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_CO_E_NOTINITIALIZED) {
+      assert::are_equal("CO_E_NOTINITIALIZED", h_result::to_string(h_result::CO_E_NOTINITIALIZED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_THREADINTERRUPTED) {
+      assert::are_equal("COR_E_THREADINTERRUPTED", h_result::to_string(h_result::COR_E_THREADINTERRUPTED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_THREADABORTED) {
+      assert::are_equal("COR_E_THREADABORTED", h_result::to_string(h_result::COR_E_THREADABORTED), csf_);
+    }
+    
+    void test_method_(to_string_with_E_UNEXPECTED) {
+      assert::are_equal("E_UNEXPECTED", h_result::to_string(h_result::E_UNEXPECTED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SYNCHRONIZATIONLOCK) {
+      assert::are_equal("COR_E_SYNCHRONIZATIONLOCK", h_result::to_string(h_result::COR_E_SYNCHRONIZATIONLOCK), csf_);
+    }
+    
+    void test_method_(to_string_with_E_FAIL) {
+      assert::are_equal("E_FAIL", h_result::to_string(h_result::E_FAIL), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TYPELOAD) {
+      assert::are_equal("COR_E_TYPELOAD", h_result::to_string(h_result::COR_E_TYPELOAD), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_STACKOVERFLOW) {
+      assert::are_equal("COR_E_STACKOVERFLOW", h_result::to_string(h_result::COR_E_STACKOVERFLOW), csf_);
+    }
+    
+    void test_method_(to_string_with_TYPE_E_TYPEMISMATCH) {
+      assert::are_equal("TYPE_E_TYPEMISMATCH", h_result::to_string(h_result::TYPE_E_TYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SERIALIZATION) {
+      assert::are_equal("COR_E_SERIALIZATION", h_result::to_string(h_result::COR_E_SERIALIZATION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SECURITY) {
+      assert::are_equal("COR_E_SECURITY", h_result::to_string(h_result::COR_E_SECURITY), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SAFEARRAYTYPEMISMATCH) {
+      assert::are_equal("COR_E_SAFEARRAYTYPEMISMATCH", h_result::to_string(h_result::COR_E_SAFEARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_E_ABORT) {
+      assert::are_equal("E_ABORT", h_result::to_string(h_result::E_ABORT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SAFEARRAYRANKMISMATCH) {
+      assert::are_equal("COR_E_SAFEARRAYRANKMISMATCH", h_result::to_string(h_result::COR_E_SAFEARRAYRANKMISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INSUFFICIENTMEMORY) {
+      assert::are_equal("COR_E_INSUFFICIENTMEMORY", h_result::to_string(h_result::COR_E_INSUFFICIENTMEMORY), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_REFLECTIONTYPELOAD) {
+      assert::are_equal("COR_E_REFLECTIONTYPELOAD", h_result::to_string(h_result::COR_E_REFLECTIONTYPELOAD), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_PLATFORMNOTSUPPORTED) {
+      assert::are_equal("COR_E_PLATFORMNOTSUPPORTED", h_result::to_string(h_result::COR_E_PLATFORMNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_PATHTOOLONG) {
+      assert::are_equal("COR_E_PATHTOOLONG", h_result::to_string(h_result::COR_E_PATHTOOLONG), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_APPLICATION) {
+      assert::are_equal("COR_E_APPLICATION", h_result::to_string(h_result::COR_E_APPLICATION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_OPERATIONCANCELED) {
+      assert::are_equal("COR_E_OPERATIONCANCELED", h_result::to_string(h_result::COR_E_OPERATIONCANCELED), csf_);
+    }
+    
+    void test_method_(to_string_with_DISP_E_OVERFLOW) {
+      assert::are_equal("DISP_E_OVERFLOW", h_result::to_string(h_result::DISP_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_OBJECTCLOSED) {
+      assert::are_equal("COR_E_OBJECTCLOSED", h_result::to_string(h_result::COR_E_OBJECTCLOSED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_NOTSUPPORTED) {
+      assert::are_equal("COR_E_NOTSUPPORTED", h_result::to_string(h_result::COR_E_NOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_NOTFINITENUMBER) {
+      assert::are_equal("COR_E_NOTFINITENUMBER", h_result::to_string(h_result::COR_E_NOTFINITENUMBER), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MULTICASTNOTSUPPORTED) {
+      assert::are_equal("COR_E_MULTICASTNOTSUPPORTED", h_result::to_string(h_result::COR_E_MULTICASTNOTSUPPORTED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MISSINGMETHOD) {
+      assert::are_equal("COR_E_MISSINGMETHOD", h_result::to_string(h_result::COR_E_MISSINGMETHOD), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MISSINGMEMBER) {
+      assert::are_equal("COR_E_MISSINGMEMBER", h_result::to_string(h_result::COR_E_MISSINGMEMBER), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_DISK_CORRUPT) {
+      assert::are_equal("ERROR_DISK_CORRUPT", h_result::to_string(h_result::ERROR_DISK_CORRUPT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_OUTOFMEMORY) {
+      assert::are_equal("COR_E_OUTOFMEMORY", h_result::to_string(h_result::COR_E_OUTOFMEMORY), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MISSINGFIELD) {
+      assert::are_equal("COR_E_MISSINGFIELD", h_result::to_string(h_result::COR_E_MISSINGFIELD), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_TIMEOUT) {
+      assert::are_equal("ERROR_TIMEOUT", h_result::to_string(h_result::ERROR_TIMEOUT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_METHODACCESS) {
+      assert::are_equal("COR_E_METHODACCESS", h_result::to_string(h_result::COR_E_METHODACCESS), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ARGUMENT) {
+      assert::are_equal("COR_E_ARGUMENT", h_result::to_string(h_result::COR_E_ARGUMENT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_OVERFLOW) {
+      assert::are_equal("COR_E_OVERFLOW", h_result::to_string(h_result::COR_E_OVERFLOW), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_APPDOMAINUNLOADED) {
+      assert::are_equal("COR_E_APPDOMAINUNLOADED", h_result::to_string(h_result::COR_E_APPDOMAINUNLOADED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_KEYNOTFOUND) {
+      assert::are_equal("COR_E_KEYNOTFOUND", h_result::to_string(h_result::COR_E_KEYNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDPROGRAM) {
+      assert::are_equal("COR_E_INVALIDPROGRAM", h_result::to_string(h_result::COR_E_INVALIDPROGRAM), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDFILTERCRITERIA) {
+      assert::are_equal("COR_E_INVALIDFILTERCRITERIA", h_result::to_string(h_result::COR_E_INVALIDFILTERCRITERIA), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MISSINGSATELLITEASSEMBLY) {
+      assert::are_equal("COR_E_MISSINGSATELLITEASSEMBLY", h_result::to_string(h_result::COR_E_MISSINGSATELLITEASSEMBLY), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDCAST) {
+      assert::are_equal("COR_E_INVALIDCAST", h_result::to_string(h_result::COR_E_INVALIDCAST), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_UNAUTHORIZEDACCESS) {
+      assert::are_equal("COR_E_UNAUTHORIZEDACCESS", h_result::to_string(h_result::COR_E_UNAUTHORIZEDACCESS), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_FORMAT) {
+      assert::are_equal("COR_E_FORMAT", h_result::to_string(h_result::COR_E_FORMAT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_FILELOAD) {
+      assert::are_equal("COR_E_FILELOAD", h_result::to_string(h_result::COR_E_FILELOAD), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DIVIDEBYZERO) {
+      assert::are_equal("COR_E_DIVIDEBYZERO", h_result::to_string(h_result::COR_E_DIVIDEBYZERO), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TYPEUNLOADED) {
+      assert::are_equal("COR_E_TYPEUNLOADED", h_result::to_string(h_result::COR_E_TYPEUNLOADED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_FAILFAST) {
+      assert::are_equal("COR_E_FAILFAST", h_result::to_string(h_result::COR_E_FAILFAST), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_EXCEPTION) {
+      assert::are_equal("COR_E_EXCEPTION", h_result::to_string(h_result::COR_E_EXCEPTION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DLLNOTFOUND) {
+      assert::are_equal("COR_E_DLLNOTFOUND", h_result::to_string(h_result::COR_E_DLLNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_EXECUTIONENGINE) {
+      assert::are_equal("COR_E_EXECUTIONENGINE", h_result::to_string(h_result::COR_E_EXECUTIONENGINE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DIRECTORYNOTFOUND) {
+      assert::are_equal("COR_E_DIRECTORYNOTFOUND", h_result::to_string(h_result::COR_E_DIRECTORYNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_CONTEXTMARSHAL) {
+      assert::are_equal("COR_E_CONTEXTMARSHAL", h_result::to_string(h_result::COR_E_CONTEXTMARSHAL), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ARGUMENTOUTOFRANGE) {
+      assert::are_equal("COR_E_ARGUMENTOUTOFRANGE", h_result::to_string(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_AMBIGUOUSMATCH) {
+      assert::are_equal("COR_E_AMBIGUOUSMATCH", h_result::to_string(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_BADEXEFORMAT) {
+      assert::are_equal("COR_E_BADEXEFORMAT", h_result::to_string(h_result::COR_E_BADEXEFORMAT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INSUFFICIENTEXECUTIONSTACK) {
+      assert::are_equal("COR_E_INSUFFICIENTEXECUTIONSTACK", h_result::to_string(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
+      assert::are_equal("COR_E_CANNOTUNLOADAPPDOMAIN", h_result::to_string(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TARGETINVOCATION) {
+      assert::are_equal("COR_E_TARGETINVOCATION", h_result::to_string(h_result::COR_E_TARGETINVOCATION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_CODECONTRACTFAILED) {
+      assert::are_equal("COR_E_CODECONTRACTFAILED", h_result::to_string(h_result::COR_E_CODECONTRACTFAILED), csf_);
+    }
+    
+    void test_method_(to_string_with_S_OK) {
+      assert::are_equal("S_OK", h_result::to_string(h_result::S_OK), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_BADIMAGEFORMAT) {
+      assert::are_equal("COR_E_BADIMAGEFORMAT", h_result::to_string(h_result::COR_E_BADIMAGEFORMAT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TYPEACCESS) {
+      assert::are_equal("COR_E_TYPEACCESS", h_result::to_string(h_result::COR_E_TYPEACCESS), csf_);
+    }
+    
+    void test_method_(to_string_with_DISP_E_PARAMNOTFOUND) {
+      assert::are_equal("DISP_E_PARAMNOTFOUND", h_result::to_string(h_result::DISP_E_PARAMNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_FUSION_E_INVALID_NAME) {
+      assert::are_equal("FUSION_E_INVALID_NAME", h_result::to_string(h_result::FUSION_E_INVALID_NAME), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ENDOFSTREAM) {
+      assert::are_equal("COR_E_ENDOFSTREAM", h_result::to_string(h_result::COR_E_ENDOFSTREAM), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DUPLICATEWAITOBJECT) {
+      assert::are_equal("COR_E_DUPLICATEWAITOBJECT", h_result::to_string(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_RUNTIMEWRAPPED) {
+      assert::are_equal("COR_E_RUNTIMEWRAPPED", h_result::to_string(h_result::COR_E_RUNTIMEWRAPPED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TARGET) {
+      assert::are_equal("COR_E_TARGET", h_result::to_string(h_result::COR_E_TARGET), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DATAMISALIGNED) {
+      assert::are_equal("COR_E_DATAMISALIGNED", h_result::to_string(h_result::COR_E_DATAMISALIGNED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TYPEINITIALIZATION) {
+      assert::are_equal("COR_E_TYPEINITIALIZATION", h_result::to_string(h_result::COR_E_TYPEINITIALIZATION), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ARITHMETIC) {
+      assert::are_equal("COR_E_ARITHMETIC", h_result::to_string(h_result::COR_E_ARITHMETIC), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDOLEVARIANTTYPE) {
+      assert::are_equal("COR_E_INVALIDOLEVARIANTTYPE", h_result::to_string(h_result::COR_E_INVALIDOLEVARIANTTYPE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MISSINGMANIFESTRESOURCE) {
+      assert::are_equal("COR_E_MISSINGMANIFESTRESOURCE", h_result::to_string(h_result::COR_E_MISSINGMANIFESTRESOURCE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TIMEOUT) {
+      assert::are_equal("COR_E_TIMEOUT", h_result::to_string(h_result::COR_E_TIMEOUT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_FILENOTFOUND) {
+      assert::are_equal("COR_E_FILENOTFOUND", h_result::to_string(h_result::COR_E_FILENOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_TARGETPARAMCOUNT) {
+      assert::are_equal("COR_E_TARGETPARAMCOUNT", h_result::to_string(h_result::COR_E_TARGETPARAMCOUNT), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ARRAYTYPEMISMATCH) {
+      assert::are_equal("COR_E_ARRAYTYPEMISMATCH", h_result::to_string(h_result::COR_E_ARRAYTYPEMISMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_E_NOTIMPL) {
+      assert::are_equal("E_NOTIMPL", h_result::to_string(h_result::E_NOTIMPL), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MARSHALDIRECTIVE) {
+      assert::are_equal("COR_E_MARSHALDIRECTIVE", h_result::to_string(h_result::COR_E_MARSHALDIRECTIVE), csf_);
+    }
+    
+    void test_method_(to_string_with_DISP_E_BADVARTYPE) {
+      assert::are_equal("DISP_E_BADVARTYPE", h_result::to_string(h_result::DISP_E_BADVARTYPE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_IO) {
+      assert::are_equal("COR_E_IO", h_result::to_string(h_result::COR_E_IO), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_OPEN_FAILED) {
+      assert::are_equal("ERROR_OPEN_FAILED", h_result::to_string(h_result::ERROR_OPEN_FAILED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_ABANDONEDMUTEX) {
+      assert::are_equal("COR_E_ABANDONEDMUTEX", h_result::to_string(h_result::COR_E_ABANDONEDMUTEX), csf_);
+    }
+    
+    void test_method_(to_string_with_ERROR_DLL_INIT_FAILED) {
+      assert::are_equal("ERROR_DLL_INIT_FAILED", h_result::to_string(h_result::ERROR_DLL_INIT_FAILED), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_CUSTOMATTRIBUTEFORMAT) {
+      assert::are_equal("COR_E_CUSTOMATTRIBUTEFORMAT", h_result::to_string(h_result::COR_E_CUSTOMATTRIBUTEFORMAT), csf_);
+    }
+    
+    void test_method_(to_string_with_S_FALSE) {
+      assert::are_equal("S_FALSE", h_result::to_string(h_result::S_FALSE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_MEMBERACCESS) {
+      assert::are_equal("COR_E_MEMBERACCESS", h_result::to_string(h_result::COR_E_MEMBERACCESS), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_RANK) {
+      assert::are_equal("COR_E_RANK", h_result::to_string(h_result::COR_E_RANK), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDCOMOBJECT) {
+      assert::are_equal("COR_E_INVALIDCOMOBJECT", h_result::to_string(h_result::COR_E_INVALIDCOMOBJECT), csf_);
+    }
+    
+    void test_method_(to_string_with_E_HANDLE) {
+      assert::are_equal("E_HANDLE", h_result::to_string(h_result::E_HANDLE), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_INVALIDOPERATION) {
+      assert::are_equal("COR_E_INVALIDOPERATION", h_result::to_string(h_result::COR_E_INVALIDOPERATION), csf_);
+    }
+    
+    void test_method_(to_string_with_STG_E_PATHNOTFOUND) {
+      assert::are_equal("STG_E_PATHNOTFOUND", h_result::to_string(h_result::STG_E_PATHNOTFOUND), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_SYSTEM) {
+      assert::are_equal("COR_E_SYSTEM", h_result::to_string(h_result::COR_E_SYSTEM), csf_);
     }
   };
 }
