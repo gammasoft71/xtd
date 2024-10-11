@@ -21,7 +21,7 @@ public:
   }
 
   template<typename exception_t>
-  employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& stack_frame = null) : exception(message, inner, stack_frame) {
+  employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& stack_frame = null) : exception {message, inner, stack_frame} {
   }
 };
 ```
