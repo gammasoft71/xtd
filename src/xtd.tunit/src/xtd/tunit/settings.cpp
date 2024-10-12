@@ -3,9 +3,14 @@
 using namespace xtd;
 using namespace xtd::tunit;
 
-settings& settings::default_settings() noexcept {
-  static auto settings = tunit::settings {};
-  return settings;
+namespace {
+  auto pattern_compare(const string& name, const string& pattern) noexcept -> bool {
+    if (pattern == "") return name == "";
+    if (name == "") return false;
+    if (pattern == "*" || pattern == "*.*") return true;
+    if (pattern[0] == '*') return pattern_compare(name, pattern.substr(1)) || pattern_compare(name.substr(1), pattern);
+    return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
+  }
 }
 
 bool settings::also_run_ignored_tests() const noexcept {
@@ -32,14 +37,6 @@ void settings::brief(bool brief) noexcept {
   brief_ = brief;
 }
 
-bool settings::throw_on_failure() const noexcept {
-  return throw_on_failure_;
-}
-
-void settings::throw_on_failure(bool throw_on_failure) noexcept {
-  throw_on_failure_ = throw_on_failure;
-}
-
 bool settings::count_tests() const noexcept {
   return count_tests_;
 }
@@ -61,7 +58,7 @@ const std::vector<string>& settings::filter_tests() const noexcept {
 }
 
 void settings::filter_tests(const std::vector<string>& filter_tests) noexcept {
-  filter_tests_ = !filter_tests.empty() ? filter_tests : std::vector<string> {"*.*"};
+  filter_tests_ = filter_tests.empty() ? std::vector<string> {"*.*"} : filter_tests;
 }
 
 bool settings::gtest_compatibility() const noexcept {
@@ -74,15 +71,11 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
 
 bool settings::is_match_test_name(const string& test_class_name, const string& test_name) const noexcept {
   auto result = false;
-  auto found_filter_test_count = false;
-  for (auto filter_test : filter_tests())
-    if (!filter_test.starts_with('-')) {
+  for (const auto& filter_test : filter_tests())
+    if (!filter_test.starts_with('-'))
       result |= pattern_compare(test_class_name + "." + test_name, filter_test);
-      found_filter_test_count = true;
-    }
-  if (!found_filter_test_count) result = true; // same as filter_test {"*.*"}.
   
-  for (auto filter_test : filter_tests())
+  for (const auto& filter_test : filter_tests())
     if (filter_test.starts_with('-'))
       result &= !pattern_compare(test_class_name + "." + test_name, filter_test.substring(1));
 
@@ -185,12 +178,17 @@ void settings::enable_stack_trace(bool enable_stack_trace) noexcept {
   enable_stack_trace_ = enable_stack_trace;
 }
 
-bool settings::pattern_compare(const string& name, const string& pattern) const noexcept {
-  if (pattern == "") return name == "";
-  if (name == "") return false;
-  if (pattern == "*" || pattern == "*.*") return true;
-  if (pattern[0] == '*') return pattern_compare(name, pattern.substr(1)) || pattern_compare(name.substr(1), pattern);
-  return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
+bool settings::throw_on_failure() const noexcept {
+  return throw_on_failure_;
+}
+
+void settings::throw_on_failure(bool throw_on_failure) noexcept {
+  throw_on_failure_ = throw_on_failure;
+}
+
+settings& settings::default_settings() noexcept {
+  static auto settings = tunit::settings {};
+  return settings;
 }
 
 void settings::end_time(const date_time& end_time) noexcept {
