@@ -1,10 +1,10 @@
-#include <xtd/collections/key_not_found_exception>
+#include <xtd/collections/generic/key_not_found_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
-using namespace xtd::collections;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace xtd::collections::tests {
