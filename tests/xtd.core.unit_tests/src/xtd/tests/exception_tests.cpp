@@ -11,6 +11,7 @@ namespace xtd::tests {
   class test_class_(exception_tests) {
     inline static bool stack_trace_enabled = false;
     inline static std::locale previous_locale;
+    
     static void test_initialize_(test_initialize) {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
       stack_trace_enabled = exception::enable_stack_trace();
@@ -22,7 +23,7 @@ namespace xtd::tests {
       exception::enable_stack_trace(stack_trace_enabled);
     }
     
-    void test_method_(default_creator) {
+    void test_method_(default_constructor) {
       auto e = exception {};
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
@@ -38,7 +39,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
     }
     
-    void test_method_(default_creator_with_current_stack_frame) {
+    void test_method_(default_constructor_with_current_stack_frame) {
       auto stack_frame = current_stack_frame_;
       exception e = exception(stack_frame);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
@@ -55,7 +56,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
     }
     
-    void test_method_(creator_with_empty_message) {
+    void test_method_(constructor_with_empty_message) {
       exception e = exception("");
       assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
@@ -71,7 +72,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception", e.what(), csf_);
     }
     
-    void test_method_(creator_with_message_empty_and_stack_frame) {
+    void test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = current_stack_frame_;
       exception e = exception("", stack_frame);
       assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
@@ -88,7 +89,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception", e.what(), csf_);
     }
     
-    void test_method_(creator_with_message) {
+    void test_method_(constructor_with_message) {
       exception e = exception("Test excpetion message.");
       assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
@@ -104,7 +105,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
-    void test_method_(creator_with_message_and_stack_frame) {
+    void test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = current_stack_frame_;
       exception e = exception("Test excpetion message.", stack_frame);
       assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
@@ -121,7 +122,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
-    void test_method_(creator_with_message_and_inner_exception) {
+    void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       exception e = exception("Test excpetion message.", inner_exception);
       assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
@@ -139,7 +140,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
-    void test_method_(creator_with_message_inner_exception_and_stack_frame) {
+    void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = current_stack_frame_;
       auto e = exception("Test excpetion message.", inner_exception, stack_frame);
