@@ -563,6 +563,8 @@ add_sources(
   include/xtd/collections/generic/iequality_comparer
   include/xtd/collections/generic/ilist.h
   include/xtd/collections/generic/ilist
+  include/xtd/collections/generic/key_not_found_exception.h
+  include/xtd/collections/generic/key_not_found_exception
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
@@ -1075,6 +1077,7 @@ add_sources(
   src/xtd/string.cpp
   src/xtd/version.cpp
   src/xtd/collections/key_not_found_exception.cpp
+  src/xtd/collections/generic/key_not_found_exception.cpp
   src/xtd/configuration/file_settings.cpp
   src/xtd/configuration/settings.cpp
   src/xtd/diagnostics/boolean_switch.cpp

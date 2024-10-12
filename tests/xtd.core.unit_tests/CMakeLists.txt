@@ -6,8 +6,8 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_sources(
   src/main.cpp 
-  src/xtd/collections/tests/key_not_found_exception_tests.cpp
   src/xtd/collections/generic/tests/comparer_tests.cpp
+  src/xtd/collections/generic/tests/key_not_found_exception_tests.cpp
   src/xtd/collections/generic/tests/list_tests.cpp
   src/xtd/configuration/tests/file_settings_tests.cpp
   src/xtd/diagnostics/tests/assert_dialog_result_tests.cpp

@@ -26,7 +26,8 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an key_not_found_exception.
     /// @include key_not_found_exception.cpp
-    class key_not_found_exception : public xtd::system_exception {
+    /// @deprecated Use xtd::collections::generic::key_not_found_exception - Will be removed in version 0.4.0.
+    class [[deprecated("Use xtd::collections::generic::key_not_found_exception - Will be removed in version 0.4.0.")]] key_not_found_exception : public xtd::system_exception {
     public:
       /// @name Public Constructors
       
