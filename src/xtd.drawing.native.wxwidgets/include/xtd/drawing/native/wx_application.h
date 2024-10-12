@@ -13,6 +13,7 @@
 #include <wx/menu.h>
 #include <wx/window.h>
 #include <cstdint>
+#include <exception>
 #include <stdexcept>
 
 namespace xtd {

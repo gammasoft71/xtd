@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "diagnostics/stack_frame.h"
-#include "diagnostics/stack_trace.h"
 #include "core_export.h"
 #include "h_result.h"
 #include "literals.h"
