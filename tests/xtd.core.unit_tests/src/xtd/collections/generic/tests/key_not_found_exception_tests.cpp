@@ -13,7 +13,7 @@ using namespace xtd::io;
 using namespace xtd::reflection;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::collections::generic::tests {
   class test_class_(key_not_found_exception_tests) {
     inline static bool stack_trace_enabled = false;
     inline static std::locale previous_locale;
