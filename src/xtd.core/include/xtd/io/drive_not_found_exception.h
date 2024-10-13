@@ -65,6 +65,7 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::drive_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::drive_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
       explicit drive_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
