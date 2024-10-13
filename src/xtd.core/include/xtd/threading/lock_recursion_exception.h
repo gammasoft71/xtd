@@ -2,6 +2,7 @@
 /// @brief Contains xtd::threading::lock_recursion_exception exception.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "../literals.h"
 #include "../system_exception.h"
 #include "../typeof.h"
 

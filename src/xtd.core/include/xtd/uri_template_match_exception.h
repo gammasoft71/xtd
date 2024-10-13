@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::uri_template_match_exception exception.
 #pragma once
+#include "literals.h"
 #include "system_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

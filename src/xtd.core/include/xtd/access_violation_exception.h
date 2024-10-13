@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "h_result.h"
+#include "literals.h"
 #include "system_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,6 +2,7 @@
 /// @brief Contains xtd::uri_format_exception exception.
 #pragma once
 #include "format_exception.h"
+#include "literals.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

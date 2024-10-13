@@ -5,12 +5,9 @@
 #include "diagnostics/stack_frame.h"
 #include "core_export.h"
 #include "h_result.h"
-#include "literals.h"
-#include "nullopt.h"
 #include "object.h"
 #include "optional.h"
 #include "ptr.h"
-#include "size.h"
 #include "string.h"
 #include <cstdint>
 #include <stdexcept>
@@ -34,7 +31,7 @@ namespace xtd {
     
     /// @{
     /// @brief Optional reference wrapper on std::exception
-    using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
+    using exception_ref = xtd::optional<std::reference_wrapper<const xtd::exception>>;
     /// @}
     
     /// @name Public Constructors
@@ -47,13 +44,13 @@ namespace xtd {
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = null);
+    explicit exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = null);
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : exception(message, inner_exception.template memberwise_clone<exception_t>(), stack_frame, true) {}
+    exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : exception(message, inner_exception.template memberwise_clone<exception_t>(), stack_frame, true) {}
     /// @}
     
     /// @cond
@@ -136,7 +133,7 @@ namespace xtd {
     /// @}
 
   private:
-    exception(const std::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
+    exception(const xtd::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
     xtd::string stack_trace_to_string() const noexcept;
     
     const xtd::string& get_name() const noexcept;
