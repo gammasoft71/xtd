@@ -35,64 +35,85 @@ namespace xtd {
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      explicit end_of_stream_exception(const xtd::diagnostics::stack_frame& info = null) : io_exception(default_message(), info) {}
+      explicit end_of_stream_exception(const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, info) {}
+      explicit end_of_stream_exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::end_of_stream_exception
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      template<typename exception_t>
+      end_of_stream_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : io_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_ENDOFSTREAM));}
+
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, error, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, help_link, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
-      explicit end_of_stream_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, error, help_link, info) {}
+      /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      explicit end_of_stream_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : io_exception(default_message(), inner_exception, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, error, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, help_link, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, error, help_link, info) {}
+      /// @deprecated Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::end_of_stream_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit end_of_stream_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
       /// @}
       
       /// @cond
       end_of_stream_exception(const end_of_stream_exception&) = default;
       end_of_stream_exception& operator =(const end_of_stream_exception&) = default;
       /// @endcond
-      
-    private:
-      const char* default_message() const noexcept {return "Attempted to read past the end of the stream."_t;}
     };
   }
 }
