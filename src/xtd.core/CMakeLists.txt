@@ -1117,6 +1117,7 @@ add_sources(
   src/xtd/io/directory_not_found_exception.cpp
   src/xtd/io/drive_info.cpp
   src/xtd/io/drive_not_found_exception.cpp
+  src/xtd/io/end_of_stream_exception.cpp
   src/xtd/io/io_exception.cpp
   src/xtd/io/path.cpp
   src/xtd/io/stream_reader.cpp
