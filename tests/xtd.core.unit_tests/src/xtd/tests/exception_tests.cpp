@@ -1,10 +1,15 @@
 #include <xtd/exception>
 #include <xtd/argument_exception>
+#include <xtd/environment>
+#include <xtd/io/path>
+#include <xtd/reflection/assembly>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::io;
+using namespace xtd::reflection;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
@@ -23,119 +28,137 @@ namespace xtd::tests {
       exception::enable_stack_trace(stack_trace_enabled);
     }
     
+    void test_method_(exception_ref) {
+      assert::are_equal(typeof_<optional<std::reference_wrapper<const exception>>>(), typeof_<exception::exception_ref>(), csf_);
+    }
+    
     void test_method_(default_constructor) {
       auto e = exception {};
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown.", e.to_string(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
     }
     
     void test_method_(default_constructor_with_current_stack_frame) {
       auto stack_frame = current_stack_frame_;
-      exception e = exception(stack_frame);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown.\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
     }
     
     void test_method_(constructor_with_empty_message) {
-      exception e = exception("");
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {""};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_empty(e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::is_empty(e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception", e.to_string(), csf_);
       assert::are_equal("xtd::exception", e.what(), csf_);
     }
     
     void test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = current_stack_frame_;
-      exception e = exception("", stack_frame);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"", stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_empty(e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::is_empty(e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception" + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("xtd::exception", e.what(), csf_);
     }
     
     void test_method_(constructor_with_message) {
-      exception e = exception("Test excpetion message.");
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"Test excpetion message."};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      //assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
     void test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = current_stack_frame_;
-      exception e = exception("Test excpetion message.", stack_frame);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"Test excpetion message.", stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception : Test excpetion message." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
-      exception e = exception("Test excpetion message.", inner_exception);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"Test excpetion message.", inner_exception};
       assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_true(e.inner_exception().has_value(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
-      assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
@@ -143,38 +166,44 @@ namespace xtd::tests {
     void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = current_stack_frame_;
-      auto e = exception("Test excpetion message.", inner_exception, stack_frame);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"Test excpetion message.", inner_exception, stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
-      assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_true(e.inner_exception().has_value(), csf_);
+      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception : Test excpetion message." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
     void test_method_(copy_constructor) {
       auto inner_exception = argument_exception {};
       auto stack_frame = current_stack_frame_;
-      auto e = exception("Test excpetion message.", inner_exception, stack_frame);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      auto e = exception {"Test excpetion message.", inner_exception, stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_true(e.inner_exception().has_value(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
-      assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception : Test excpetion message." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
@@ -183,19 +212,74 @@ namespace xtd::tests {
       auto stack_frame = current_stack_frame_;
       auto e = exception {};
       e = exception("Test excpetion message.", inner_exception, stack_frame);
-      assert::are_equal(h_result::COR_E_EXCEPTION, e.error_code().value(), csf_);
-      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
-      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_true(e.inner_exception().has_value(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
-      assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Test excpetion message.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("Test excpetion message.", e.message(), csf_);
-      assert::are_equal("xtd::exception", typeof_(e).full_name(), csf_);
-      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
-      assert::are_equal("xtd::exception : Test excpetion message.\n" + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("xtd::exception : Test excpetion message." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
+    }
+    
+    void test_method_(help_link) {
+      auto e = exception {};
+      e.help_link("https://gammasoft71.github.io/xtd/");
+      assert::are_equal("https://gammasoft71.github.io/xtd/", e.help_link(), csf_);
+    }
+    
+    void test_method_(h_result_with_h_result_value) {
+      auto e = exception {};
+      e.h_result(h_result::E_HANDLE);
+      assert::are_equal(h_result::E_HANDLE, e.h_result(), csf_);
+      assert::are_equal(h_result::E_HANDLE, e.error_code().value(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+    }
+    
+    void test_method_(h_result_without_h_result_value) {
+      auto e = exception {};
+      e.h_result(42);
+      assert::are_equal(42, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+    }
+    
+    void test_method_(error_code_with_h_result_make_error_code) {
+      auto e = exception {};
+      e.error_code(h_result::make_error_code(h_result::E_HANDLE));
+      assert::are_equal(h_result::E_HANDLE, e.error_code().value(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_result::E_HANDLE, e.h_result(), csf_);
+    }
+    
+    void test_method_(error_code_with_std_make_error_code) {
+      auto e = exception {};
+      e.error_code(std::make_error_code(std::errc::invalid_argument));
+      assert::are_equal(EINVAL, e.error_code().value(), csf_);
+      assert::are_equal(std::generic_category(), e.error_code().category(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+    }
+    
+    void test_method_(source) {
+      auto e = exception {};
+      e.source("my_application");
+      assert::are_equal("my_application", e.source(), csf_);
+    }
+    
+    void test_method_(enable_stack_trace) {
+      auto e = exception {};
+      auto enable_stack_trace = e.enable_stack_trace();
+      e.enable_stack_trace(!enable_stack_trace);
+      assert::are_equal(!enable_stack_trace, e.enable_stack_trace(), csf_);
+      e.enable_stack_trace(enable_stack_trace);
     }
   };
 }
