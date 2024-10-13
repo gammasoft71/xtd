@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "io_exception.h"
-#include "../literals.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,7 +10,7 @@ namespace xtd {
   namespace io {
     /// @brief The exception that is thrown when part of a file or directory cannot be found.
     /// ```cpp
-    /// class directory_not_found_exception : public xtd::io::io_exception
+    /// class xtd::io::directory_not_found_exception : public xtd::io::io_exception
     /// ```
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::directory_not_found_exception
@@ -32,66 +31,87 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      explicit directory_not_found_exception(const xtd::diagnostics::stack_frame& info = null) : io_exception(default_message(), info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      explicit directory_not_found_exception(const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      explicit directory_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      template<typename exception_t>
+      directory_not_found_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : io_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_DIRECTORYNOTFOUND));}
+
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, error, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, help_link, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
-      explicit directory_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, error, help_link, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      explicit directory_not_found_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : io_exception(default_message(), inner_exception, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, error, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, help_link, info) {}
-      /// @brief Create a new instance of class directory_not_found_exception
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
+      /// @brief Create a new instance of class xtd::io::directory_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null) : io_exception(message, inner_exception, error, help_link, info) {}
+      /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit directory_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& info = null);
       /// @}
       /// @cond
       directory_not_found_exception(const directory_not_found_exception&) = default;
       directory_not_found_exception& operator =(const directory_not_found_exception&) = default;
       /// @endcond
-      
-    private:
-      const char* default_message() const noexcept {return "Attempted to access a path that is not on the disk."_t;}
     };
   }
 }
