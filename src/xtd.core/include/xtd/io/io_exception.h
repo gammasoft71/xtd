@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::io_exception exception.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../literals.h"
 #include "../system_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -114,9 +113,6 @@ namespace xtd {
       io_exception(const io_exception&) = default;
       io_exception& operator =(const io_exception&) = default;
       /// @endcond
-      
-    private:
-      const char* default_message() const noexcept {return "I/O error occurred."_t;}
     };
   }
 }
