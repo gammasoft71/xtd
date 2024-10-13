@@ -138,6 +138,8 @@ namespace xtd {
     static constexpr int32 COR_E_DIVIDEBYZERO = static_cast<int32>(0x80020012); // Duplicate with DISP_E_DIVBYZERO
     /// @brief Dll was not found.
     static constexpr int32 COR_E_DLLNOTFOUND = static_cast<int32>(0x80131524);
+    /// @brief Could not find the drive. The drive might not be ready or might not be mapped.
+    static constexpr int32 COR_E_DRIVENOTFOUND = static_cast<int32>(0x80070007);
     /// @brief Duplicate objects in argument.
     static constexpr int32 COR_E_DUPLICATEWAITOBJECT = static_cast<int32>(0x80131529);
     /// @brief Attempted to read past the end of the stream.

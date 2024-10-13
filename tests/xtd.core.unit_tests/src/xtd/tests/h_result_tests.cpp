@@ -100,6 +100,10 @@ namespace xtd::tests {
       assert::are_equal(static_cast<int32>(0x80131524), h_result::COR_E_DLLNOTFOUND, csf_);
     }
 
+    void test_method_(COR_E_DRIVENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x80070007), h_result::COR_E_DRIVENOTFOUND, csf_);
+    }
+
     void test_method_(COR_E_DUPLICATEWAITOBJECT) {
       assert::are_equal(static_cast<int32>(0x80131529), h_result::COR_E_DUPLICATEWAITOBJECT, csf_);
     }
@@ -796,6 +800,10 @@ namespace xtd::tests {
       assert::is_true(h_result::failed(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
     }
     
+    void test_method_(failed_with_COR_E_DRIVENOTFOUND) {
+      assert::is_true(h_result::failed(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+
     void test_method_(failed_with_COR_E_AMBIGUOUSMATCH) {
       assert::is_true(h_result::failed(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
@@ -1264,6 +1272,10 @@ namespace xtd::tests {
       assert::are_equal(static_cast<int32>(0x211D), h_result::get_code(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
     
+    void test_method_(get_code_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x0007), h_result::get_code(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+    
     void test_method_(get_code_with_COR_E_BADEXEFORMAT) {
       assert::are_equal(static_cast<int32>(0x00C1), h_result::get_code(h_result::COR_E_BADEXEFORMAT), csf_);
     }
@@ -1728,6 +1740,10 @@ namespace xtd::tests {
       assert::are_equal(static_cast<int32>(0x0), h_result::get_facility(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
     
+    void test_method_(get_facility_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+    
     void test_method_(get_facility_with_COR_E_BADEXEFORMAT) {
       assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::COR_E_BADEXEFORMAT), csf_);
     }
@@ -1885,7 +1901,7 @@ namespace xtd::tests {
     }
 
     void test_method_(get_h_results) {
-      assert::are_equal(116_z, h_result::get_h_results().size(), csf_);
+      assert::are_equal(117_z, h_result::get_h_results().size(), csf_);
       collection_assert::contains({h_result::ERROR_FILE_INVALID}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::MSEE_E_ASSEMBLYLOADINPROGRESS}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::ERROR_UNRECOGNIZED_VOLUME}, h_result::get_h_results(), csf_);
@@ -1963,6 +1979,7 @@ namespace xtd::tests {
       collection_assert::contains({h_result::COR_E_CONTEXTMARSHAL}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::COR_E_ARGUMENTOUTOFRANGE}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::COR_E_AMBIGUOUSMATCH}, h_result::get_h_results(), csf_);
+      collection_assert::contains({h_result::COR_E_DRIVENOTFOUND}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::COR_E_BADEXEFORMAT}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::COR_E_INSUFFICIENTEXECUTIONSTACK}, h_result::get_h_results(), csf_);
       collection_assert::contains({h_result::COR_E_CANNOTUNLOADAPPDOMAIN}, h_result::get_h_results(), csf_);
@@ -2092,6 +2109,10 @@ namespace xtd::tests {
       assert::are_equal("Duplicate objects in argument.", h_result::get_message(h_result::COR_E_DUPLICATEWAITOBJECT), csf_);
     }
     
+    void test_method_(get_message_with_COR_E_DRIVEOTFOUND) {
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", h_result::get_message(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+
     void test_method_(get_message_with_COR_E_ENDOFSTREAM) {
       assert::are_equal("Attempted to read past the end of the stream.", h_result::get_message(h_result::COR_E_ENDOFSTREAM), csf_);
     }
@@ -2481,7 +2502,7 @@ namespace xtd::tests {
     }
 
     void test_method_(get_messages) {
-      assert::are_equal(116_z, h_result::get_messages().size(), csf_);
+      assert::are_equal(117_z, h_result::get_messages().size(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::ERROR_FILE_INVALID, "File invalid."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::MSEE_E_ASSEMBLYLOADINPROGRESS, "Assembly load in progress."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::ERROR_UNRECOGNIZED_VOLUME, "Unrecognized volume."}}, h_result::get_messages(), csf_);
@@ -2559,6 +2580,7 @@ namespace xtd::tests {
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_CONTEXTMARSHAL, "Attempted to marshal an object across a context boundary."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_ARGUMENTOUTOFRANGE, "Specified argument was out of the range of valid values."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_AMBIGUOUSMATCH, "Ambiguous match found."}}, h_result::get_messages(), csf_);
+      collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_DRIVENOTFOUND, "Could not find the drive. The drive might not be ready or might not be mapped."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_BADEXEFORMAT, "Format of the executable (.exe) cannot be run."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_INSUFFICIENTEXECUTIONSTACK, "Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space."}}, h_result::get_messages(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_CANNOTUNLOADAPPDOMAIN, "Attempt to unload the AppDomain failed."}}, h_result::get_messages(), csf_);
@@ -2908,6 +2930,10 @@ namespace xtd::tests {
       assert::are_equal("COR_E_AMBIGUOUSMATCH", h_result::get_name(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
     
+    void test_method_(get_name_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal("COR_E_DRIVENOTFOUND", h_result::get_name(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+    
     void test_method_(get_name_with_COR_E_BADEXEFORMAT) {
       assert::are_equal("COR_E_BADEXEFORMAT", h_result::get_name(h_result::COR_E_BADEXEFORMAT), csf_);
     }
@@ -3065,7 +3091,7 @@ namespace xtd::tests {
     }
 
     void test_method_(get_names) {
-      assert::are_equal(116_z, h_result::get_names().size(), csf_);
+      assert::are_equal(117_z, h_result::get_names().size(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::ERROR_FILE_INVALID, "ERROR_FILE_INVALID"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::MSEE_E_ASSEMBLYLOADINPROGRESS, "MSEE_E_ASSEMBLYLOADINPROGRESS"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::ERROR_UNRECOGNIZED_VOLUME, "ERROR_UNRECOGNIZED_VOLUME"}}, h_result::get_names(), csf_);
@@ -3143,6 +3169,7 @@ namespace xtd::tests {
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_CONTEXTMARSHAL, "COR_E_CONTEXTMARSHAL"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_ARGUMENTOUTOFRANGE, "COR_E_ARGUMENTOUTOFRANGE"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_AMBIGUOUSMATCH, "COR_E_AMBIGUOUSMATCH"}}, h_result::get_names(), csf_);
+      collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_DRIVENOTFOUND, "COR_E_DRIVENOTFOUND"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_BADEXEFORMAT, "COR_E_BADEXEFORMAT"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_INSUFFICIENTEXECUTIONSTACK, "COR_E_INSUFFICIENTEXECUTIONSTACK"}}, h_result::get_names(), csf_);
       collection_assert::contains({key_value_pair<int32, string> {h_result::COR_E_CANNOTUNLOADAPPDOMAIN, "COR_E_CANNOTUNLOADAPPDOMAIN"}}, h_result::get_names(), csf_);
@@ -3492,6 +3519,10 @@ namespace xtd::tests {
       assert::are_equal(1, h_result::get_severity(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
     
+    void test_method_(get_severity_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal(1, h_result::get_severity(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+    
     void test_method_(get_severity_with_COR_E_BADEXEFORMAT) {
       assert::are_equal(1, h_result::get_severity(h_result::COR_E_BADEXEFORMAT), csf_);
     }
@@ -3727,6 +3758,7 @@ namespace xtd::tests {
       assert::are_equal("Attempted to marshal an object across a context boundary.", xtd::h_result::h_result_category().message(h_result::COR_E_CONTEXTMARSHAL), csf_);
       assert::are_equal("Specified argument was out of the range of valid values.", xtd::h_result::h_result_category().message(h_result::COR_E_ARGUMENTOUTOFRANGE), csf_);
       assert::are_equal("Ambiguous match found.", xtd::h_result::h_result_category().message(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", xtd::h_result::h_result_category().message(h_result::COR_E_DRIVENOTFOUND), csf_);
       assert::are_equal("Format of the executable (.exe) cannot be run.", xtd::h_result::h_result_category().message(h_result::COR_E_BADEXEFORMAT), csf_);
       assert::are_equal("Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space.", xtd::h_result::h_result_category().message(h_result::COR_E_INSUFFICIENTEXECUTIONSTACK), csf_);
       assert::are_equal("Attempt to unload the AppDomain failed.", xtd::h_result::h_result_category().message(h_result::COR_E_CANNOTUNLOADAPPDOMAIN), csf_);
@@ -4074,6 +4106,10 @@ namespace xtd::tests {
     
     void test_method_(is_error_with_COR_E_AMBIGUOUSMATCH) {
       assert::is_true(h_result::is_error(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(is_error_with_COR_E_DRIVENOTFOUND) {
+      assert::is_true(h_result::is_error(h_result::COR_E_DRIVENOTFOUND), csf_);
     }
     
     void test_method_(is_error_with_COR_E_BADEXEFORMAT) {
@@ -4694,6 +4730,12 @@ namespace xtd::tests {
       assert::are_equal("Ambiguous match found.", h_result::make_error_code(h_result::COR_E_AMBIGUOUSMATCH).message(), csf_);
     }
     
+    void test_method_(make_error_code_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal(static_cast<int32>(0x80070007), h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND).value(), csf_);
+      assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND).category().name(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND).message(), csf_);
+    }
+
     void test_method_(make_error_code_with_COR_E_BADEXEFORMAT) {
       assert::are_equal(static_cast<int32>(0x800700C1), h_result::make_error_code(h_result::COR_E_BADEXEFORMAT).value(), csf_);
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_BADEXEFORMAT).category().name(), csf_);
@@ -5242,6 +5284,10 @@ namespace xtd::tests {
       assert::is_false(h_result::succeeded(h_result::COR_E_AMBIGUOUSMATCH), csf_);
     }
     
+    void test_method_(succeeded_with_COR_E_DRIVENOTFOUND) {
+      assert::is_false(h_result::succeeded(h_result::COR_E_DRIVENOTFOUND), csf_);
+    }
+
     void test_method_(succeeded_with_COR_E_BADEXEFORMAT) {
       assert::is_false(h_result::succeeded(h_result::COR_E_BADEXEFORMAT), csf_);
     }
@@ -5704,6 +5750,10 @@ namespace xtd::tests {
     
     void test_method_(to_string_with_COR_E_AMBIGUOUSMATCH) {
       assert::are_equal("COR_E_AMBIGUOUSMATCH", h_result::to_string(h_result::COR_E_AMBIGUOUSMATCH), csf_);
+    }
+    
+    void test_method_(to_string_with_COR_E_DRIVENOTFOUND) {
+      assert::are_equal("COR_E_DRIVENOTFOUND", h_result::to_string(h_result::COR_E_DRIVENOTFOUND), csf_);
     }
     
     void test_method_(to_string_with_COR_E_BADEXEFORMAT) {
