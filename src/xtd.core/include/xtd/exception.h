@@ -9,8 +9,7 @@
 #include "optional.h"
 #include "ptr.h"
 #include "string.h"
-#include <cstdint>
-#include <stdexcept>
+#include <exception>
 #include <system_error>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
