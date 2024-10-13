@@ -2,63 +2,63 @@
 sidebar_position: 15
 ---
 
-# xtd in numbers (last update 2024-01-28)
+# xtd in numbers (last update 2024-10-13)
 
 ## Key dates
 
 * start project : Feb 6, 2019 (2019-02-06)
 * First release (beta) : Oct 9, 2021 (2021-10-09)
-* Last release (beta) : Jul 17, 2023 (2023-07-17)
+* Last release (beta) : Mar 12, 2024 (2024-03-12)
 
 ## Team
 
-* Contributors : 12
-  * 11 developers
+* Contributors : 13
+  * 10 developers
   *  1 translators (*)
-  *  0 documenters (*)
+  *  2 documenters (*)
   *  0 testers (*)
 
-(*) without developers
+(*) without also being a developer
 
 ## Files and lines
 
 ### src
 
-* Files : 2000
-* Lines : 308996
-  * 145682 code lines (46%)
-  * 130754 comment lines (44%)
-  *  32560 blank lines (10%)
+* Files : 2185
+* Lines : 440459
+  * 203128 code lines (46%)
+  * 191335 comment lines (44%)
+  *  45996 blank lines (10%)
 
 ### tests
 
-* Files : 867
-* Lines : 102163
-  * 87051 code lines (85%)
-  *  1159 comment lines (1%)
-  * 13953 blank lines (14%)
+* Files : 1008
+* Lines : 106032
+  * 89024 code lines (84%)
+  *  1399 comment lines (1%)
+  * 15609 blank lines (15%)
 
 ### examples
 
-* Examples : 766
-* Files : 2399
-* Lines : 77082
-  * 53323 code lines (69%)
-  *  7469 comment lines (10%)
-  * 16290 blank lines (21%)
+* Examples : 814
+* Files : 2694
+* Lines : 85945
+  * 58998 code lines (69%)
+  *  8950 comment lines (10%)
+  * 17997 blank lines (21%)
 
 ### tools
 
-* Files : 103
-* Lines : 10570
-  * 9155 code lines (87%)
-  *  274 comment lines (2%)
-  * 1141 blank lines (11%)
+* Files : 108
+* Lines : 11069
+  * 9512 code lines (86%)
+  *  347 comment lines (3%)
+  * 1210 blank lines (11%)
   
 ## Unit tests
 
-* Tests : 15927
-   * 11663 tests from 404 test cases (xtd.core.unit_test)
-   *  1947 tests from  45 test cases (xtd.drawing.unit_tests)
-   *  1259 tests from 111 test cases (xtd.forms.unit_tests)
+* Tests : 19445
+   * 15019 tests from 370 test cases (xtd.core.unit_test)
+   *  2020 tests from  46 test cases (xtd.drawing.unit_tests)
+   *  1348 tests from 115 test cases (xtd.forms.unit_tests)
    *  1058 tests from 529 test cases (xtd.forms.unit_tests)
