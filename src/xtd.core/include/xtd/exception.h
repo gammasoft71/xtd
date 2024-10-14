@@ -6,6 +6,7 @@
 #include "core_export.h"
 #include "h_result.h"
 #include "object.h"
+#include "nullopt.h"
 #include "optional.h"
 #include "ptr.h"
 #include "string.h"
