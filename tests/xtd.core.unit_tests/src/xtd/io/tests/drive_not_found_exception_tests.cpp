@@ -64,6 +64,43 @@ namespace xtd::io::tests {
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
     }
     
+    void test_method_(constructor_with_nullopt_message) {
+      auto e = drive_not_found_exception {nullopt};
+      assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_DRIVENOTFOUND, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped.", e.to_string(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
+    }
+    
+    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
+      auto stack_frame = current_stack_frame_;
+      auto e = drive_not_found_exception {nullopt, stack_frame};
+      assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_DRIVENOTFOUND, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
+    }
+
     void test_method_(constructor_with_empty_message) {
       auto e = drive_not_found_exception {""};
       assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
@@ -138,6 +175,47 @@ namespace xtd::io::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
+    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+      auto inner_exception = argument_exception {};
+      auto e = drive_not_found_exception {nullopt, inner_exception};
+      assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_DRIVENOTFOUND, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
+      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped.", e.to_string(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
+    }
+    
+    void test_method_(constructor_with_nullopt_message_and_stack_frame_inner_exception) {
+      auto inner_exception = argument_exception {};
+      auto stack_frame = current_stack_frame_;
+      auto e = drive_not_found_exception {nullopt, inner_exception, stack_frame};
+      assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_DRIVENOTFOUND, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
+      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
+    }
+
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = drive_not_found_exception {"Test excpetion message.", inner_exception};
