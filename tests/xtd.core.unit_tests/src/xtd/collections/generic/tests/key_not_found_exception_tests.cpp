@@ -47,7 +47,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
     
-    void test_method_(default_constructor_with_current_stack_frame) {
+    void test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = current_stack_frame_;
       auto e = key_not_found_exception {stack_frame};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name(), csf_);

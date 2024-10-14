@@ -45,7 +45,7 @@ namespace xtd::io::tests {
       assert::are_equal("Attempted to read past the end of the stream.", e.what(), csf_);
     }
     
-    void test_method_(default_constructor_with_current_stack_frame) {
+    void test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = current_stack_frame_;
       auto e = end_of_stream_exception {stack_frame};
       assert::are_equal("xtd::io::end_of_stream_exception", e.get_type().full_name(), csf_);

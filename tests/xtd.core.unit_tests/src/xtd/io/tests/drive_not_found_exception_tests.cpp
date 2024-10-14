@@ -45,7 +45,7 @@ namespace xtd::io::tests {
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what(), csf_);
     }
     
-    void test_method_(default_constructor_with_current_stack_frame) {
+    void test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = current_stack_frame_;
       auto e = drive_not_found_exception {stack_frame};
       assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name(), csf_);
