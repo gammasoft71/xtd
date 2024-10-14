@@ -34,7 +34,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("Attempted to read past the end of the stream.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
@@ -53,7 +53,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("Attempted to read past the end of the stream.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
@@ -71,7 +71,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::is_empty(e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
@@ -90,7 +90,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::is_empty(e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
@@ -108,7 +108,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
@@ -127,7 +127,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_false(e.inner_exception().has_value(), csf_);
+      assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
       assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
@@ -145,7 +145,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_true(e.inner_exception().has_value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
@@ -167,7 +167,7 @@ namespace xtd::io::tests {
       assert::are_equal(h_result::COR_E_ENDOFSTREAM, e.h_result(), csf_);
       assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
       assert::are_equal(e.h_result(), e.error_code().value(), csf_);
-      assert::is_true(e.inner_exception().has_value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
