@@ -88,9 +88,9 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
     }
     
-    void test_method_(constructor_with_nullopt_message_andstack_frame) {
+    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
       auto stack_frame = current_stack_frame_;
-      auto e = exception {stack_frame};
+      auto e = exception {nullopt, stack_frame};
       assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
@@ -181,6 +181,49 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
+    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+      auto inner_exception = argument_exception {};
+      auto e = exception {nullopt, inner_exception};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
+      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::is_empty(e.stack_trace(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown.", e.to_string(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
+    }
+    
+    void test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
+      auto inner_exception = argument_exception {};
+      auto stack_frame = current_stack_frame_;
+      auto e = exception {nullopt, inner_exception, stack_frame};
+      assert::are_equal("xtd::exception", e.get_type().full_name(), csf_);
+      assert::is_empty(e.help_link(), csf_);
+      assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result(), csf_);
+      assert::are_equal(h_result::h_result_category(), e.error_code().category(), csf_);
+      assert::are_equal(e.h_result(), e.error_code().value(), csf_);
+      assert::is_not_null(e.inner_exception(), csf_);
+      assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
+      assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.message(), csf_);
+      assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
+      assert::are_equal(stack_frame.to_string(), e.stack_trace(), csf_);
+      assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name(), csf_);
+      assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method(), csf_);
+      assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown." + environment::new_line() + stack_frame.to_string(), e.to_string(), csf_);
+      assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what(), csf_);
+    }
+
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = exception {"Test excpetion message.", inner_exception};
