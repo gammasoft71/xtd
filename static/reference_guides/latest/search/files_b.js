@@ -2,7 +2,7 @@ var searchData=
 [
   ['key_5fevent_5fargs_2eh_0',['key_event_args.h',['../key__event__args_8h.html',1,'']]],
   ['key_5fevent_5fhandler_2eh_1',['key_event_handler.h',['../key__event__handler_8h.html',1,'']]],
-  ['key_5fnot_5ffound_5fexception_2eh_2',['key_not_found_exception.h',['../key__not__found__exception_8h.html',1,'']]],
+  ['key_5fnot_5ffound_5fexception_2eh_2',['key_not_found_exception.h',['../generic_2key__not__found__exception_8h.html',1,'(Global Namespace)'],['../key__not__found__exception_8h.html',1,'(Global Namespace)']]],
   ['key_5fpress_5fevent_5fargs_2eh_3',['key_press_event_args.h',['../key__press__event__args_8h.html',1,'']]],
   ['key_5fpress_5fevent_5fhandler_2eh_4',['key_press_event_handler.h',['../key__press__event__handler_8h.html',1,'']]],
   ['key_5fvalue_5fpair_2eh_5',['key_value_pair.h',['../key__value__pair_8h.html',1,'']]],
