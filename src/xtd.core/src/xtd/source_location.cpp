@@ -48,6 +48,10 @@ size source_location::line() const noexcept {
   return data_->line;
 }
 
+xtd::string source_location::to_string() const noexcept {
+  return string::format("{} in file:line:column {}:{}:{}", function_name(), file_name(), line(), column());
+}
+
 source_location source_location::current(const __xtd_source_location__& value) noexcept {
   return source_location {value.file_name(), static_cast<xtd::size>(value.line()), value.function_name(), static_cast<xtd::size>(value.column())};
 }

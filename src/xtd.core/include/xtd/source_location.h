@@ -63,6 +63,12 @@ namespace xtd {
     xtd::size line() const noexcept;
     /// @}
     
+    /// @name Public Methods
+    
+    /// @{
+    xtd::string to_string() const noexcept override;
+    /// @}
+    
     /// @name Public Static Methods
     
     /// @{
