@@ -14,7 +14,7 @@
 /// @include current_stack_frame.cpp
 /// @remarks same as #csf_
 #define current_stack_frame_ \
-  xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
+  xtd::diagnostics::stack_frame::current()
 
 /// @brief Provides information about the current stack frame.
 /// @par Header
@@ -27,7 +27,8 @@
 /// The following example shows how to use the #csf_.
 /// @include csf.cpp
 /// @remarks same as #current_stack_frame_
-#define csf_ current_stack_frame_
+#define csf_ \
+  current_stack_frame_
 
 /// @brief Add current stack frame to the __VA_ARGS__ with a comma separator.
 /// @par Header
@@ -50,4 +51,5 @@
 /// @return __VA_ARGS__ with comma and current stack frame.
 /// @par Examples
 /// @remarks same as #add_current_stack_frame_
-#define add_csf_ add_current_stack_frame_
+#define add_csf_ \
+  add_current_stack_frame_

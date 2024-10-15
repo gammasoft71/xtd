@@ -86,6 +86,12 @@ stack_frame::stack_frame(const string& file_name, xtd::size line_number, const s
 stack_frame::stack_frame(xtd::null_ptr frame) : stack_frame{string::empty_string, 0, string::empty_string, 0, OFFSET_UNKNOWN} {
 }
 
+stack_frame::stack_frame(const xtd::source_location& source_location) : data_{new_ptr<data>(source_location.file_name(), source_location.line(), source_location.function_name(), source_location.column())} {
+}
+
+stack_frame::stack_frame(const xtd::source_location& source_location, xtd::size offset) : data_{new_ptr<data>(source_location.file_name(), source_location.line(), source_location.function_name(), source_location.column(), offset)} {
+}
+
 stack_frame stack_frame::empty() noexcept {
   return null;
 }
@@ -117,6 +123,10 @@ xtd::size stack_frame::get_offset() const noexcept {
 string stack_frame::to_string() const noexcept {
   if (*this == empty()) return "";
   return string::format("{} at offset {} in file:line:column {}:{}:{}", data_->method_name.empty() ? "<unknown method>" : data_->method_name, data_->offset == OFFSET_UNKNOWN || data_->file_name.empty() ? "<unknown offset>" : std::to_string(data_->offset), data_->file_name.empty() ? "<filename unknown>" : data_->file_name, data_->file_line_number, data_->file_column_number);
+}
+
+stack_frame stack_frame::current(const xtd::source_location& value) noexcept {
+  return stack_frame {value};
 }
 
 std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::size skip_frames, bool need_file_info) noexcept {
