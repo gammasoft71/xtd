@@ -91,20 +91,22 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="stack__frame_8h.html">stack_frame.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee">   16</a></span><span class="preprocessor">#define current_stack_frame_ \</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">  xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">  xtd::diagnostics::stack_frame::current()</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">   30</a></span><span class="preprocessor">#define csf_ current_stack_frame_</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__keywords.html#gab4cca34577f92c2f893cb53071686c84">   41</a></span><span class="preprocessor">#define add_current_stack_frame_(...) \</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">  __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="group__keywords.html#ga0586bf18163484f86413196776c0bf98">   53</a></span><span class="preprocessor">#define add_csf_ add_current_stack_frame_</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">   30</a></span><span class="preprocessor">#define csf_ \</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  current_stack_frame_</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="group__keywords.html#gab4cca34577f92c2f893cb53071686c84">   42</a></span><span class="preprocessor">#define add_current_stack_frame_(...) \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">  __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="group__keywords.html#ga0586bf18163484f86413196776c0bf98">   54</a></span><span class="preprocessor">#define add_csf_ \</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">  add_current_stack_frame_</span></div>
 <div class="ttc" id="astack__frame_8h_html"><div class="ttname"><a href="stack__frame_8h.html">stack_frame.h</a></div><div class="ttdoc">Contains xtd::diagnostics::stack_frame class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2024 10:34:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Oct 15 2024 20:44:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
