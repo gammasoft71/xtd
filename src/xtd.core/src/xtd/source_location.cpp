@@ -4,6 +4,9 @@
 using namespace xtd;
 
 struct source_location::data {
+  data() = default;
+  data(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column) : file {file}, line {line}, func {func}, column {column} {}
+
   xtd::string file;
   xtd::size line = 0;
   xtd::string func;
