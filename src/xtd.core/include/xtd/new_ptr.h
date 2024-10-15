@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "ptr.h"
+#include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,8 +21,8 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_ptr is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared).
   template<typename type_t, typename ...args_t>
-  ptr<type_t> new_ptr(args_t&& ... args) {return ptr<type_t> {new type_t(args...)};}
-
+  ptr<type_t> new_ptr(args_t&& ... args) {return ptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
+  
   /// @cond
   template<typename type_t>
   ptr<type_t> new_ptr(const type_t& arg) {return ptr<type_t> {new type_t(arg)};}
