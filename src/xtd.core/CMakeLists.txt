@@ -395,6 +395,8 @@ add_sources(
   include/xtd/slong_object
   include/xtd/software_termination_exception.h
   include/xtd/software_termination_exception
+  include/xtd/source_location
+  include/xtd/source_location.h
   include/xtd/sptr.h
   include/xtd/sptr
   include/xtd/startup.h
@@ -724,6 +726,7 @@ add_sources(
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_definitions.h
   include/xtd/internal/__xtd_debugbreak.h
+  include/xtd/internal/__xtd_source_location.h
   include/xtd/internal/__xtd_std_version.h
   include/xtd/io/binary_reader.h
   include/xtd/io/binary_reader
@@ -1064,6 +1067,7 @@ add_sources(
   src/xtd/processor.cpp
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
+  src/xtd/source_location.cpp
   src/xtd/startup.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp

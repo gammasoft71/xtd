@@ -43,4 +43,8 @@
 #define __xtd__cpp_lib_three_way_comparison
 #endif
 
+#if defined(__cpp_lib_source_location)
+#define __xtd__cpp_lib_source_location
+#endif
+
 /// @endcond
