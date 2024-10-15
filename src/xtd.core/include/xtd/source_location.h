@@ -29,8 +29,12 @@ namespace xtd {
   /// @remarks The xtd::source_location is same as [std::source_location](https://en.cppreference.com/w/cpp/utility/source_location).
   class core_export_ source_location : public xtd::object {
   public:
+    /// @name Public Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of the xtd::source_location class.
     source_location();
+    /// @}
     
     /// @cond
     source_location(source_location&& other);
@@ -39,6 +43,9 @@ namespace xtd {
     source_location& operator =(const source_location& other);
     /// @endcond
     
+    /// @name Public Properties
+    
+    /// @{
     /// @brief Gets the column number represented by this object.
     /// @return The column number represented by this object.
     /// @remarks Returns 0 when the column number is unknown.
@@ -54,7 +61,11 @@ namespace xtd {
     /// @return The line number represented by this object.
     /// @remarks Returns 0 when the line number is unknown.
     xtd::size line() const noexcept;
+    /// @}
     
+    /// @name Public Static Methods
+    
+    /// @{
     /// @brief Crates a new xtd::source_location object corresponding to the location of the call site.
     /// @return The currentsouce location informations.
     /// @remarks If xtd::source_location::current is invoked directly (via a function call that names xtd::source_location::current), it returns a source_location object with implementation-defined values representing the location of the call. The values should be affected by the [#line preprocessor directive](https://en.cppreference.com/w/cpp/preprocessor/line) in the same manner as the predefined macros `__LINE__` and `__FILE__`.
@@ -63,6 +74,7 @@ namespace xtd {
     /// @remarks If xtd::source_location::current is invoked in any other manner, the return value is unspecified.
     /// @note xtd::source_location::current typically requires compiler's built-in implementation.
     static source_location current(const __xtd_source_location__& value = __xtd_source_location__::current()) noexcept;
+    /// @}
     
   private:
     source_location(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column);
