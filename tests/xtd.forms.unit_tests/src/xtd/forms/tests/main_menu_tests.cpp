@@ -11,8 +11,8 @@ namespace xtd::forms::tests {
   class test_class_(main_menu_tests) {
     void test_method_(new_main_menu) {
       main_menu menu;
-      assert::is_not_zero(menu.handle(), csf_);
-      assert::is_zero(menu.menu_items().size(), csf_);
+      assert::is_not_zero(menu.handle());
+      assert::is_zero(menu.menu_items().size());
     }
   };
 }

@@ -31,24 +31,24 @@ namespace xtd::tests {
     
     void test_method_(interface_test_value) {
       interface_test it {42};
-      assert::are_equal(42, it.value(), csf_);
-      assert::are_equal(42, as<iinterface_test>(it).value(), csf_);
+      assert::are_equal(42, it.value());
+      assert::are_equal(42, as<iinterface_test>(it).value());
     }
     
     void test_method_(iinterface_test_value) {
       interface_test it {42};
       iinterface_test& iit = it;
-      assert::are_equal(42, it.value(), csf_);
-      assert::are_equal(42, iit.value(), csf_);
-      assert::are_equal(42, as<interface_test>(iit).value(), csf_);
+      assert::are_equal(42, it.value());
+      assert::are_equal(42, iit.value());
+      assert::are_equal(42, as<interface_test>(iit).value());
     }
     
     void test_method_(interface_value) {
       interface_test it {42};
       interface& i = it;
-      assert::are_equal(42, it.value(), csf_);
-      assert::are_equal(42, as<iinterface_test>(i).value(), csf_);
-      assert::are_equal(42, as<interface_test>(i).value(), csf_);
+      assert::are_equal(42, it.value());
+      assert::are_equal(42, as<iinterface_test>(i).value());
+      assert::are_equal(42, as<interface_test>(i).value());
     }
   };
 }

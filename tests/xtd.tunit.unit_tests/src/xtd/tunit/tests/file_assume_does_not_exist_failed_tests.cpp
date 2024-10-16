@@ -9,7 +9,7 @@ namespace xtd::tunit::tests {
     void test_method_(test_case_failed) {
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), "Test xtd::tunit::file_assume::does_not_exist.");
       
-      file_assume::does_not_exist(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), csf_);
+      file_assume::does_not_exist(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));
     }
   };
   

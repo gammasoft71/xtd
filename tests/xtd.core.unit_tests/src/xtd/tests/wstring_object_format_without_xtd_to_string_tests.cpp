@@ -21,23 +21,23 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::
 namespace xtd::tests {
   class test_class_(wstring_object_format_without_xtd_to_string_tests) {
     void test_method_(format_location_with_default_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format(L"{0}", ::size_wsof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::string::format(L"{0}", ::size_wsof {42, 24});});
     }
     
     void test_method_(format_location_with_left_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(L"{0,10}", ::size_wsof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {string::format(L"{0,10}", ::size_wsof {42, 24});});
     }
     
     void test_method_(format_location_with_right_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(L"{0, -10}", ::size_wsof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {string::format(L"{0, -10}", ::size_wsof {42, 24});});
     }
     
     void test_method_(format_location_with_zero_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(L"{0,0}", ::size_wsof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {string::format(L"{0,0}", ::size_wsof {42, 24});});
     }
     
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format(L"{0:G}", ::size_wsof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::string::format(L"{0:G}", ::size_wsof {42, 24});});
     }
   };
 }

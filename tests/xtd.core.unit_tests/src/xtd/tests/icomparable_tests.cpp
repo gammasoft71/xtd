@@ -28,9 +28,9 @@ namespace xtd::tests {
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
       
-      assert::is_zero(ic1.compare_to(ic2), csf_);
-      assert::is_negative(ic1.compare_to(ic3), csf_);
-      assert::is_positive(ic3.compare_to(ic1), csf_);
+      assert::is_zero(ic1.compare_to(ic2));
+      assert::is_negative(ic1.compare_to(ic3));
+      assert::is_positive(ic3.compare_to(ic1));
     }
     
     void test_method_(opearator_less) {
@@ -38,9 +38,9 @@ namespace xtd::tests {
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
       
-      assert::is_false(ic1 < ic2, csf_);
-      assert::is_true(ic1 < ic3, csf_);
-      assert::is_false(ic3 < ic1, csf_);
+      assert::is_false(ic1 < ic2);
+      assert::is_true(ic1 < ic3);
+      assert::is_false(ic3 < ic1);
     }
     
     void test_method_(opearator_less_or_equal) {
@@ -48,8 +48,8 @@ namespace xtd::tests {
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
       
-      assert::is_true(ic1 <= ic2, csf_);
-      assert::is_true(ic1 <= ic3, csf_);
+      assert::is_true(ic1 <= ic2);
+      assert::is_true(ic1 <= ic3);
       assert::is_false(ic3 <= ic1);
     }
     
@@ -58,9 +58,9 @@ namespace xtd::tests {
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
       
-      assert::is_false(ic1 > ic2, csf_);
-      assert::is_false(ic1 > ic3, csf_);
-      assert::is_true(ic3 > ic1, csf_);
+      assert::is_false(ic1 > ic2);
+      assert::is_false(ic1 > ic3);
+      assert::is_true(ic3 > ic1);
     }
     
     void test_method_(opearator_greater_or_equal) {
@@ -68,9 +68,9 @@ namespace xtd::tests {
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
       
-      assert::is_true(ic1 >= ic2, csf_);
-      assert::is_false(ic1 >= ic3, csf_);
-      assert::is_true(ic3 >= ic1, csf_);
+      assert::is_true(ic1 >= ic2);
+      assert::is_false(ic1 >= ic3);
+      assert::is_true(ic3 >= ic1);
     }
   };
 }

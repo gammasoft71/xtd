@@ -28,8 +28,8 @@ namespace xtd::tests {
       iequatable_test ie2 {42};
       iequatable_test ie3 {84};
       
-      assert::is_true(ie1.equals(ie2), csf_);
-      assert::is_false(ie1.equals(ie3), csf_);
+      assert::is_true(ie1.equals(ie2));
+      assert::is_false(ie1.equals(ie3));
     }
     
     void test_method_(opearator_equal) {
@@ -37,8 +37,8 @@ namespace xtd::tests {
       iequatable_test ie2 {42};
       iequatable_test ie3 {84};
       
-      assert::is_true(ie1 == ie2, csf_);
-      assert::is_false(ie1 == ie3, csf_);
+      assert::is_true(ie1 == ie2);
+      assert::is_false(ie1 == ie3);
     }
     
     void test_method_(opearator_inequal) {
@@ -46,8 +46,8 @@ namespace xtd::tests {
       iequatable_test ie2 {42};
       iequatable_test ie3 {84};
       
-      assert::is_false(ie1 != ie2, csf_);
-      assert::is_true(ie1 != ie3, csf_);
+      assert::is_false(ie1 != ie2);
+      assert::is_true(ie1 != ie3);
     }
   };
 }

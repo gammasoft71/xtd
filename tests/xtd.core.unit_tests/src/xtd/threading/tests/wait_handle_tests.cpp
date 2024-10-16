@@ -62,62 +62,62 @@ namespace xtd::tests {
     
     void test_method_(invalid_handle) {
 #if defined(_WIN32)
-      assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);
+      assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle);
 #elif defined(__linux__) || defined(__APPLE__)
-      assert::are_equal(reinterpret_cast<intptr>(SEM_FAILED), wait_handle::invalid_handle, csf_);
+      assert::are_equal(reinterpret_cast<intptr>(SEM_FAILED), wait_handle::invalid_handle);
 #endif
     }
 
     void test_method_(wait_timeout) {
-      assert::are_equal(std::numeric_limits<size_t>::max(), wait_handle::wait_timeout, csf_);
+      assert::are_equal(std::numeric_limits<size_t>::max(), wait_handle::wait_timeout);
     }
     
     void test_method_(handle) {
       auto m = unnamed_mutex {};
-      assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
+      assert::are_not_equal(wait_handle::invalid_handle, m.handle());
     }
     
     void test_method_(wait_one) {
       auto m = unnamed_mutex {};
-      assert::is_true(m.wait_one(), csf_);
-      assert::is_true(m.locked(), csf_);
+      assert::is_true(m.wait_one());
+      assert::is_true(m.locked());
     }
 
     void test_method_(wait_one_and_release_mutex) {
       auto m = unnamed_mutex {};
-      assert::is_true(m.wait_one(), csf_);
-      assert::does_not_throw([&] {m.release_mutex();}, csf_);
-      assert::is_false(m.locked(), csf_);
+      assert::is_true(m.wait_one());
+      assert::does_not_throw([&] {m.release_mutex();});
+      assert::is_false(m.locked());
     }
 
     void test_method_(wait_one_and_release_mutex_and_release_mutex) {
       auto m = unnamed_mutex {};
-      assert::is_true(m.wait_one(), csf_);
-      assert::does_not_throw([&] {m.release_mutex();}, csf_);
-      assert::does_not_throw([&] {m.release_mutex();}, csf_);
-      assert::is_false(m.locked(), csf_);
+      assert::is_true(m.wait_one());
+      assert::does_not_throw([&] {m.release_mutex();});
+      assert::does_not_throw([&] {m.release_mutex();});
+      assert::is_false(m.locked());
     }
 
     void test_method_(wait_one_and_wait_one_and_release_mutex) {
       auto m = unnamed_mutex {};
-      assert::is_true(m.wait_one(), csf_);
-      assert::is_true(m.wait_one(), csf_);
-      assert::is_true(m.locked(), csf_);
-      assert::does_not_throw([&] {m.release_mutex();}, csf_);
-      assert::is_false(m.locked(), csf_);
+      assert::is_true(m.wait_one());
+      assert::is_true(m.wait_one());
+      assert::is_true(m.locked());
+      assert::does_not_throw([&] {m.release_mutex();});
+      assert::is_false(m.locked());
     }
 
     void test_method_(close_and_wait_one) {
       auto m = unnamed_mutex {};
       m.close();
-      assert::throws<object_closed_exception>([&] {m.wait_one();}, csf_);
+      assert::throws<object_closed_exception>([&] {m.wait_one();});
     }
 
     void test_method_(close_and_release_mutex) {
       auto m = unnamed_mutex {};
       m.close();
-      assert::are_equal(wait_handle::invalid_handle, m.handle(), csf_);
-      assert::throws<object_closed_exception>([&] {m.release_mutex();}, csf_);
+      assert::are_equal(wait_handle::invalid_handle, m.handle());
+      assert::throws<object_closed_exception>([&] {m.release_mutex();});
     }
     
     void test_method_(signal_and_wait) {
@@ -135,14 +135,14 @@ namespace xtd::tests {
       auto m1 = unnamed_mutex {};
       auto m2 = unnamed_mutex {};
       auto m3 = unnamed_mutex {};
-      assert::is_true(wait_handle::wait_all({m1, m2, m3}), csf_);
+      assert::is_true(wait_handle::wait_all({m1, m2, m3}));
     }
     
     void test_method_(wait_any) {
       auto m1 = unnamed_mutex {};
       auto m2 = unnamed_mutex {};
       auto m3 = unnamed_mutex {};
-      assert::are_equal(0ul, wait_handle::wait_any({m1, m2, m3}), csf_);
+      assert::are_equal(0ul, wait_handle::wait_any({m1, m2, m3}));
     }
   };
 }
