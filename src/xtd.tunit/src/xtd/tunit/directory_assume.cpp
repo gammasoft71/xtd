@@ -6,16 +6,8 @@ using namespace xtd::io;
 using namespace xtd::tunit;
 
 #if defined(__xtd__cpp_lib_filesystem)
-void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {
-  are_equal(expected, actual, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const stack_frame& stack_frame) {
   are_equal(expected, actual, string::empty_string, stack_frame);
-}
-
-void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {
-  are_equal(expected, actual, message, stack_frame::empty());
 }
 
 void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
@@ -27,16 +19,8 @@ void directory_assume::are_equal(const std::filesystem::directory_entry& expecte
 }
 #endif
 
-void directory_assume::are_equal(const directory_info& expected, const directory_info& actual) {
-  are_equal(expected, actual, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::are_equal(const directory_info& expected, const directory_info& actual, const stack_frame& stack_frame) {
   are_equal(expected, actual, string::empty_string, stack_frame);
-}
-
-void directory_assume::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message) {
-  are_equal(expected, actual, message, stack_frame::empty());
 }
 
 void directory_assume::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
@@ -48,16 +32,8 @@ void directory_assume::are_equal(const directory_info& expected, const directory
 }
 
 #if defined(__xtd__cpp_lib_filesystem)
-void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {
-  are_not_equal(expected, actual, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const stack_frame& stack_frame) {
   are_not_equal(expected, actual, string::empty_string, stack_frame);
-}
-
-void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {
-  are_not_equal(expected, actual, message, stack_frame::empty());
 }
 
 void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
@@ -69,16 +45,8 @@ void directory_assume::are_not_equal(const std::filesystem::directory_entry& exp
 }
 #endif
 
-void directory_assume::are_not_equal(const directory_info& expected, const directory_info& actual) {
-  are_not_equal(expected, actual, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::are_not_equal(const directory_info& expected, const directory_info& actual, const stack_frame& stack_frame) {
   are_not_equal(expected, actual, string::empty_string, stack_frame);
-}
-
-void directory_assume::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message) {
-  are_not_equal(expected, actual, message, stack_frame::empty());
 }
 
 void directory_assume::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
@@ -90,16 +58,8 @@ void directory_assume::are_not_equal(const directory_info& expected, const direc
 }
 
 #if defined(__xtd__cpp_lib_filesystem)
-void directory_assume::does_not_exist(const std::filesystem::directory_entry& directory) {
-  does_not_exist(directory, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::does_not_exist(const std::filesystem::directory_entry& directory, const stack_frame& stack_frame) {
   does_not_exist(directory, string::empty_string, stack_frame);
-}
-
-void directory_assume::does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message) {
-  does_not_exist(directory, message, stack_frame::empty());
 }
 
 void directory_assume::does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const stack_frame& stack_frame) {
@@ -107,16 +67,8 @@ void directory_assume::does_not_exist(const std::filesystem::directory_entry& di
 }
 #endif
 
-void directory_assume::does_not_exist(const directory_info& directory) {
-  does_not_exist(directory, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::does_not_exist(const directory_info& directory, const stack_frame& stack_frame) {
   does_not_exist(directory, string::empty_string, stack_frame);
-}
-
-void directory_assume::does_not_exist(const directory_info& directory, const std::string& message) {
-  does_not_exist(directory, message, stack_frame::empty());
 }
 
 void directory_assume::does_not_exist(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
@@ -128,16 +80,8 @@ void directory_assume::does_not_exist(const directory_info& directory, const std
 }
 
 #if defined(__xtd__cpp_lib_filesystem)
-void directory_assume::exists(const std::filesystem::directory_entry& directory) {
-  exists(directory, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::exists(const std::filesystem::directory_entry& directory, const stack_frame& stack_frame) {
   exists(directory, string::empty_string, stack_frame);
-}
-
-void directory_assume::exists(const std::filesystem::directory_entry& directory, const std::string& message) {
-  exists(directory, message, stack_frame::empty());
 }
 
 void directory_assume::exists(const std::filesystem::directory_entry& directory, const std::string& message, const stack_frame& stack_frame) {
@@ -145,16 +89,8 @@ void directory_assume::exists(const std::filesystem::directory_entry& directory,
 }
 #endif
 
-void directory_assume::exists(const directory_info& directory) {
-  exists(directory, string::empty_string, stack_frame::empty());
-}
-
 void directory_assume::exists(const directory_info& directory, const stack_frame& stack_frame) {
   exists(directory, string::empty_string, stack_frame);
-}
-
-void directory_assume::exists(const directory_info& directory, const std::string& message) {
-  exists(directory, message, stack_frame::empty());
 }
 
 void directory_assume::exists(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
