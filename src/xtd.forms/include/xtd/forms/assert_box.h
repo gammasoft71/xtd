@@ -72,7 +72,7 @@ namespace xtd {
       /// @}
       
     private:
-      static dialog_result show_assert_box(const iwin32_window* owner, const xtd::string& message = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null);
+      static dialog_result show_assert_box(const iwin32_window* owner, const xtd::string& message = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_);
     };
   }
 }

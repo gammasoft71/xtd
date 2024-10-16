@@ -5,6 +5,7 @@
 #include <xtd/io/path>
 #include <xtd/reflection/assembly>
 #include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
@@ -39,11 +40,11 @@ namespace xtd::collections::generic::tests {
       assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
     
@@ -76,11 +77,11 @@ namespace xtd::collections::generic::tests {
       assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
     
@@ -113,11 +114,11 @@ namespace xtd::collections::generic::tests {
       assert::is_null(e.inner_exception(), csf_);
       assert::is_empty(e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception", e.to_string(), csf_);
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.what(), csf_);
     }
     
@@ -150,11 +151,11 @@ namespace xtd::collections::generic::tests {
       assert::is_null(e.inner_exception(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception : Test excpetion message.", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     
@@ -189,11 +190,11 @@ namespace xtd::collections::generic::tests {
       assert::is_instance_of<xtd::argument_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception : The given key was not present in the dictionary.", e.to_string(), csf_);
       assert::are_equal("The given key was not present in the dictionary.", e.what(), csf_);
     }
     
@@ -230,11 +231,11 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(inner_exception.to_string(), e.inner_exception().value().get().to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source(), csf_);
-      assert::is_empty(e.stack_trace(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_file_name(), csf_);
-      assert::are_equal(0u, e.get_last_stack_frame().get_file_line_number(), csf_);
-      assert::is_empty(e.get_last_stack_frame().get_method(), csf_);
-      assert::are_equal("xtd::collections::generic::key_not_found_exception : Test excpetion message.", e.to_string(), csf_);
+      assert::is_not_empty(e.stack_trace(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_file_name(), csf_);
+      assert::is_not_zero(e.get_last_stack_frame().get_file_line_number(), csf_);
+      assert::is_not_empty(e.get_last_stack_frame().get_method(), csf_);
+      string_assert::starts_with("xtd::collections::generic::key_not_found_exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
     

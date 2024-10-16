@@ -28,55 +28,55 @@ namespace xtd {
     /// @brief Create a new instance of class argument_null_exception
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit argument_null_exception(const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(default_message(), stack_frame) {}
+    explicit argument_null_exception(const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(default_message(), stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, error, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, error, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, help_link, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, help_link, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    explicit argument_null_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, error, help_link, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, error, help_link, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit argument_null_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(default_message(), inner_exception, stack_frame) {}
+    explicit argument_null_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(default_message(), inner_exception, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, inner_exception, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, inner_exception, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, inner_exception, error, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, inner_exception, error, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param help_link Help link string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, inner_exception, help_link, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, inner_exception, help_link, stack_frame) {}
     /// @brief Create a new instance of class argument_null_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = null) : argument_exception(message, inner_exception, error, help_link, stack_frame) {}
+    explicit argument_null_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_) : argument_exception(message, inner_exception, error, help_link, stack_frame) {}
     /// @}
     
     /// @cond
@@ -93,30 +93,30 @@ namespace xtd {
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_null_exception `argument` is null.
     template<typename object_t>
-    static void throw_if_null(const object_t* argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null) {if (!argument) throw argument_null_exception {string::format("The value cannot benull. (Parameter '{}')", param_name, stack_frame)};}
+    static void throw_if_null(const object_t* argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_) {if (!argument) throw argument_null_exception {string::format("The value cannot benull. (Parameter '{}')", param_name, stack_frame)};}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::uptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_null_exception `argument` is null.
     template<typename object_t>
-    static void throw_if_null(const std::optional<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
+    static void throw_if_null(const std::optional<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::sptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_null_exception `argument` is null.
     template<typename object_t>
-    static void throw_if_null(const xtd::sptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
+    static void throw_if_null(const xtd::sptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::uptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @exception xtd::argument_null_exception `argument` is null.
     template<typename object_t>
-    static void throw_if_null(const xtd::uptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
+    static void throw_if_null(const xtd::uptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_) {if (!argument) throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
     /// @cond
-    static void throw_if_null(std::nullptr_t argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = null) {throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
+    static void throw_if_null(std::nullptr_t argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = csf_) {throw argument_null_exception {string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame)};}
     /// @endcond
     /// @}
 

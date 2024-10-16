@@ -330,7 +330,7 @@ namespace xtd {
     private:
       friend class xtd::exception;
       stack_trace(const xtd::string& str, size_t skip_frames, bool need_file_info);
-      xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = null) const noexcept;
+      xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = csf_) const noexcept;
       
       struct data;
       ptr<data> data_;
