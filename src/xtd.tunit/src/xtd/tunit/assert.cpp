@@ -69,16 +69,8 @@ void assert::are_equal(long double expected, long double actual, const string& m
     fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
-void assert::are_equal(float expected, float actual, float tolerance) {
-  are_equal(expected, actual, tolerance, string::empty_string, stack_frame::empty());
-}
-
 void assert::are_equal(float expected, float actual, float tolerance, const stack_frame& stack_frame) {
   are_equal(expected, actual, tolerance, string::empty_string, stack_frame);
-}
-
-void assert::are_equal(float expected, float& actual, float tolerance, const string& message) {
-  are_equal(expected, actual, tolerance, message, stack_frame::empty());
 }
 
 void assert::are_equal(float expected, float actual, float tolerance, const string& message, const stack_frame& stack_frame) {
@@ -88,16 +80,8 @@ void assert::are_equal(float expected, float actual, float tolerance, const stri
     fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
-void assert::are_equal(double expected, double actual, double tolerance) {
-  are_equal(expected, actual, tolerance, string::empty_string, stack_frame::empty());
-}
-
 void assert::are_equal(double expected, double actual, double tolerance, const stack_frame& stack_frame) {
   are_equal(expected, actual, tolerance, string::empty_string, stack_frame);
-}
-
-void assert::are_equal(double expected, double actual, double tolerance, const string& message) {
-  are_equal(expected, actual, tolerance, message, stack_frame::empty());
 }
 
 void assert::are_equal(double expected, double actual, double tolerance, const string& message, const stack_frame& stack_frame) {
@@ -107,16 +91,8 @@ void assert::are_equal(double expected, double actual, double tolerance, const s
     fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
-void assert::are_equal(long double expected, long double actual, long double tolerance) {
-  are_equal(expected, actual, tolerance, string::empty_string, stack_frame::empty());
-}
-
 void assert::are_equal(long double expected, long double actual, long double tolerance, const stack_frame& stack_frame) {
   are_equal(expected, actual, tolerance, string::empty_string, stack_frame);
-}
-
-void assert::are_equal(long double expected, long double actual, long double tolerance, const string& message) {
-  are_equal(expected, actual, tolerance, message, stack_frame::empty());
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance, const string& message, const stack_frame& stack_frame) {
@@ -210,16 +186,8 @@ void assert::contains(wchar_t item, const wchar_t* values, const string& message
     fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
-void assert::does_not_throw(const std::function<void()>& statement) {
-  does_not_throw(statement, string::empty_string, stack_frame::empty());
-}
-
 void assert::does_not_throw(const std::function<void()>& statement, const stack_frame& stack_frame) {
   does_not_throw(statement, string::empty_string, stack_frame);
-}
-
-void assert::does_not_throw(const std::function<void()>& statement, const string& message) {
-  does_not_throw(statement, message, stack_frame::empty());
 }
 
 void assert::does_not_throw(const std::function<void()>& statement, const string& message, const stack_frame& stack_frame) {
@@ -275,16 +243,8 @@ void assert::is_empty(const wchar_t* value, const string& message, const stack_f
     fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
-void assert::is_false(bool condition) {
-  is_false(condition, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_false(bool condition, const stack_frame& stack_frame) {
   is_false(condition, string::empty_string, stack_frame);
-}
-
-void assert::is_false(bool condition, const string& message) {
-  is_false(condition, message, stack_frame::empty());
 }
 
 void assert::is_false(bool condition, const string& message, const stack_frame& stack_frame) {
@@ -442,16 +402,8 @@ void assert::is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const st
     fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
-void assert::is_NaN(double value) {
-  is_NaN(value, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_NaN(double value, const stack_frame& stack_frame) {
   is_NaN(value, string::empty_string, stack_frame);
-}
-
-void assert::is_NaN(double value, const string& message) {
-  is_NaN(value, message, stack_frame::empty());
 }
 
 void assert::is_NaN(double value, const string& message, const stack_frame& stack_frame) {
@@ -461,16 +413,8 @@ void assert::is_NaN(double value, const string& message, const stack_frame& stac
     fail("NaN", to_string(value), message, stack_frame);
 }
 
-void assert::is_NaN(long double value) {
-  is_NaN(value, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_NaN(long double value, const stack_frame& stack_frame) {
   is_NaN(value, string::empty_string, stack_frame);
-}
-
-void assert::is_NaN(long double value, const string& message) {
-  is_NaN(value, message, stack_frame::empty());
 }
 
 void assert::is_NaN(long double value, const string& message, const stack_frame& stack_frame) {
@@ -480,16 +424,8 @@ void assert::is_NaN(long double value, const string& message, const stack_frame&
     fail("NaN", to_string(value), message, stack_frame);
 }
 
-void assert::is_NaN(float value) {
-  is_NaN(value, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_NaN(float value, const stack_frame& stack_frame) {
   is_NaN(value, string::empty_string, stack_frame);
-}
-
-void assert::is_NaN(float value, const string& message) {
-  is_NaN(value, message, stack_frame::empty());
 }
 
 void assert::is_NaN(float value, const string& message, const stack_frame& stack_frame) {
@@ -536,48 +472,24 @@ void assert::is_not_empty(const wchar_t* value, const string& message, const sta
     fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
-void assert::is_not_null(nullptr_t pointer) {
-  is_not_null(pointer, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_not_null(nullptr_t pointer, const stack_frame& stack_frame) {
   is_not_null(pointer, string::empty_string, stack_frame);
-}
-
-void assert::is_not_null(nullptr_t pointer, const string& message) {
-  is_not_null(pointer, message, stack_frame::empty());
 }
 
 void assert::is_not_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   fail("not null", "null", message, stack_frame);
 }
 
-void assert::is_null(nullptr_t pointer) {
-  is_null(pointer, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_null(nullptr_t pointer, const stack_frame& stack_frame) {
   is_null(pointer, string::empty_string, stack_frame);
-}
-
-void assert::is_null(nullptr_t pointer, const string& message) {
-  is_null(pointer, message, stack_frame::empty());
 }
 
 void assert::is_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   succeed(message, stack_frame);
 }
 
-void assert::is_true(bool condition) {
-  is_true(condition, string::empty_string, stack_frame::empty());
-}
-
 void assert::is_true(bool condition, const stack_frame& stack_frame) {
   is_true(condition, string::empty_string, stack_frame);
-}
-
-void assert::is_true(bool condition, const string& message) {
-  is_true(condition, message, stack_frame::empty());
 }
 
 void assert::is_true(bool condition, const string& message, const stack_frame& stack_frame) {
@@ -587,16 +499,8 @@ void assert::is_true(bool condition, const string& message, const stack_frame& s
     fail("true", "false", message, stack_frame);
 }
 
-void assert::throws_any(const std::function<void()>& statement) {
-  throws_any(statement, string::empty_string, stack_frame::empty());
-}
-
 void assert::throws_any(const std::function<void()>& statement, const stack_frame& stack_frame) {
   throws_any(statement, string::empty_string, stack_frame);
-}
-
-void assert::throws_any(const std::function<void()>& statement, const string& message) {
-  throws_any(statement, message, stack_frame::empty());
 }
 
 void assert::throws_any(const std::function<void()>& statement, const string& message, const stack_frame& stack_frame) {
