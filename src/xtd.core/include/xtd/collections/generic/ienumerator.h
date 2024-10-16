@@ -88,7 +88,7 @@ namespace xtd {
         ///     try {
         ///       return people[position_];
         ///     } catch (const index_out_of_range_exception& e) {
-        ///       throw invalid_operation_exception {csf_};
+        ///       throw invalid_operation_exception {};
         ///     }
         ///   }
         /// };
@@ -135,7 +135,7 @@ namespace xtd {
         ///     try {
         ///       return people[position_];
         ///     } catch (const index_out_of_range_exception& e) {
-        ///       throw invalid_operation_exception {csf_};
+        ///       throw invalid_operation_exception {};
         ///     }
         ///   }
         /// };
@@ -174,7 +174,7 @@ namespace xtd {
         ///     try {
         ///       return people[position_];
         ///     } catch (const index_out_of_range_exception& e) {
-        ///       throw invalid_operation_exception {csf_};
+        ///       throw invalid_operation_exception {};
         ///     }
         ///   }
         /// };

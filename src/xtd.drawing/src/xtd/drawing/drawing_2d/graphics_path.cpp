@@ -170,13 +170,13 @@ void graphics_path::add_line(float x1, float y1, float x2, float y2) {
 }
 
 void graphics_path::add_lines(const std::vector<xtd::drawing::point>& points) {
-  if (points.size() < 2) throw argument_exception {csf_};
+  if (points.size() < 2) throw argument_exception {};
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
 }
 
 void graphics_path::add_lines(const std::vector<xtd::drawing::point_f>& points) {
-  if (points.size() < 2) throw argument_exception {csf_};
+  if (points.size() < 2) throw argument_exception {};
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
 }
@@ -202,14 +202,14 @@ void graphics_path::add_pie(float x, float y, float width, float height, float s
 }
 
 void graphics_path::add_polygon(const std::vector<xtd::drawing::point>& points) {
-  if (points.size() < 2) throw argument_exception {csf_};
+  if (points.size() < 2) throw argument_exception {};
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
   if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
 }
 
 void graphics_path::add_polygon(const std::vector<xtd::drawing::point_f>& points) {
-  if (points.size() < 2) throw argument_exception {csf_};
+  if (points.size() < 2) throw argument_exception {};
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
   if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);

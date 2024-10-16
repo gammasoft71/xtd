@@ -14,7 +14,7 @@ public:
   }
   
   void handle(intptr value) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   bool create(bool initial_state, bool manual_reset) override {
@@ -25,7 +25,7 @@ public:
   }
   
   bool create(bool initial_state, bool manual_reset, const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   void destroy() override {
@@ -34,7 +34,7 @@ public:
   }
   
   bool open(const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   bool set(bool& io_error) override {

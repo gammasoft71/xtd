@@ -18,7 +18,7 @@ public:
   }
   
   bool create(bool initially_owned) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
   
   bool create(bool initially_owned, const string& name) override {

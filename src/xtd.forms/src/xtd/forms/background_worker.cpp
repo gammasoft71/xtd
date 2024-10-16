@@ -80,7 +80,7 @@ void background_worker::report_progress(int32 percent_progress, std::any user_st
 }
 
 void background_worker::run_worker_async() {
-  if (data_->is_busy) throw invalid_operation_exception {csf_};
+  if (data_->is_busy) throw invalid_operation_exception {};
   data_->is_busy = true;
   if (data_->worker_result) data_->worker.end_invoke(data_->worker_result);
   data_->invoker = xtd::new_uptr<form>();

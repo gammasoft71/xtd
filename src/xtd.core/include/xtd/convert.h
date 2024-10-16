@@ -261,7 +261,7 @@ namespace xtd {
       try {
         return std::any(value);
       } catch (...) {
-        throw xtd::invalid_cast_exception {csf_};
+        throw xtd::invalid_cast_exception {};
       }
     }
     

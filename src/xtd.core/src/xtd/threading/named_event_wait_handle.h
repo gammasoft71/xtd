@@ -19,7 +19,7 @@ public:
   }
   
   bool create(bool initial_state, bool manual_reset) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
   
   bool create(bool initial_state, bool manual_reset, const string& name) override {

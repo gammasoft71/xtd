@@ -22,7 +22,7 @@ countdown_event::countdown_event() : countdown_event(0) {
 }
 
 countdown_event::countdown_event(int32 initial_count) : data_(xtd::new_sptr<data>()) {
-  if (initial_count < 0) throw argument_out_of_range_exception {csf_};
+  if (initial_count < 0) throw argument_out_of_range_exception {};
   data_->current_count = initial_count;
   data_->initial_count = initial_count;
   if (data_->current_count == 0) data_->event.set();
@@ -39,27 +39,27 @@ countdown_event::~countdown_event() {
 }
 
 int32 countdown_event::current_count() const {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   return data_->current_count;
 }
 
 int32 countdown_event::initial_count() const {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   return data_->initial_count;
 }
 
 bool countdown_event::is_set() const {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   return data_->current_count == 0;
 }
 
 const xtd::threading::wait_handle& countdown_event::wait_handle() const {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   return data_->event;
 }
 
 xtd::threading::wait_handle& countdown_event::wait_handle() {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   return data_->event;
 }
 
@@ -68,25 +68,25 @@ void countdown_event::close() {
 }
 
 void countdown_event::add_count() {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   add_count(1);
 }
 
 void countdown_event::add_count(int32 count) {
-  if (!data_) throw object_closed_exception {csf_};
-  if (count < 0) throw argument_out_of_range_exception {csf_};
-  if (data_->current_count == 0) throw invalid_operation_exception {csf_};
+  if (!data_) throw object_closed_exception {};
+  if (count < 0) throw argument_out_of_range_exception {};
+  if (data_->current_count == 0) throw invalid_operation_exception {};
   lock_(*data_) data_->current_count += count;
 }
 
 void countdown_event::reset() {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   reset(data_->initial_count);
 }
 
 void countdown_event::reset(int32 count) {
-  if (!data_) throw object_closed_exception {csf_};
-  if (count < 0) throw argument_out_of_range_exception {csf_};
+  if (!data_) throw object_closed_exception {};
+  if (count < 0) throw argument_out_of_range_exception {};
   lock_(*data_) {
     data_->event.reset();
     data_->initial_count = count;
@@ -99,9 +99,9 @@ bool countdown_event::signal() {
 }
 
 bool countdown_event::signal(int32 signal_count) {
-  if (!data_) throw object_closed_exception {csf_};
-  if (data_->current_count == 0) throw invalid_operation_exception {csf_};
-  if (signal_count < 0 || signal_count > data_->current_count) throw argument_out_of_range_exception {csf_};
+  if (!data_) throw object_closed_exception {};
+  if (data_->current_count == 0) throw invalid_operation_exception {};
+  if (signal_count < 0 || signal_count > data_->current_count) throw argument_out_of_range_exception {};
   auto lock = lock_guard {*data_};
   data_->current_count -= signal_count;
   if (data_->current_count == 0) data_->event.set();
@@ -123,8 +123,8 @@ void countdown_event::wait() {
 }
 
 bool countdown_event::wait(int32 milliseconds_timeout) {
-  if (!data_) throw object_closed_exception {csf_};
-  if (milliseconds_timeout < timeout::infinite) throw argument_out_of_range_exception {csf_};
+  if (!data_) throw object_closed_exception {};
+  if (milliseconds_timeout < timeout::infinite) throw argument_out_of_range_exception {};
   if (!data_->cancellation_token) return data_->event.wait_one(milliseconds_timeout);
   if (milliseconds_timeout == timeout::infinite) return wait_wtih_cancellation_token();
   return wait_wtih_cancellation_token(milliseconds_timeout);
@@ -150,7 +150,7 @@ bool countdown_event::wait(const time_span& timeout, const cancellation_token& c
 bool countdown_event::wait_wtih_cancellation_token() {
   auto result = false;
   while (!result) {
-    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {};
     result = data_->event.wait_one(1);
   }
   return result;
@@ -160,7 +160,7 @@ bool countdown_event::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   auto result = false;
   while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {
-    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {};
     result = data_->event.wait_one(1);
   }
   return result;

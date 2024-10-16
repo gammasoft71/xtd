@@ -42,10 +42,10 @@ bool file_info::is_read_only() const {
 
 void file_info::is_read_only(bool value) {
   auto attributes = 0;
-  if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception {csf_};
+  if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception {};
   if (value) attributes |= static_cast<int32>(file_attributes::read_only);
   else attributes &= ~static_cast<int32>(file_attributes::read_only);
-  if (native::file_system::set_attributes(full_path_, attributes) != 0) throw io_exception {csf_};
+  if (native::file_system::set_attributes(full_path_, attributes) != 0) throw io_exception {};
 }
 
 size_t file_info::length() const {
@@ -63,9 +63,9 @@ stream_writer file_info::append_text() const {
 }
 
 file_info file_info::copy_to(const xtd::string& dest_file_name) const {
-  if (!exists()) throw file_not_found_exception {csf_};
-  if (file::exists(dest_file_name)) throw io_exception {csf_};
-  if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception {csf_};
+  if (!exists()) throw file_not_found_exception {};
+  if (file::exists(dest_file_name)) throw io_exception {};
+  if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception {};
   return file_info {dest_file_name};
 }
 
@@ -83,9 +83,9 @@ stream_writer file_info::create_text() const {
 }
 
 void file_info::move_to(const xtd::string& dest_file_name) {
-  if (!exists()) throw file_not_found_exception {csf_};
-  if ((attributes() & file_attributes::directory) == file_attributes::directory) throw argument_exception {csf_};
-  if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception {csf_};
+  if (!exists()) throw file_not_found_exception {};
+  if ((attributes() & file_attributes::directory) == file_attributes::directory) throw argument_exception {};
+  if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception {};
   
   original_path_ = dest_file_name;
   refresh();

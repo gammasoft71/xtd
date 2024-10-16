@@ -21,7 +21,7 @@ namespace user_defined_exception {
 
 auto main() -> int {
   try {
-    throw user_defined_exception::employee_list_not_found_exception {csf_};
+    throw user_defined_exception::employee_list_not_found_exception {};
   } catch(const exception& e) {
     console::write_line("type              = {}", e.get_type());
     console::write_line("help_link         = {}", e.help_link());

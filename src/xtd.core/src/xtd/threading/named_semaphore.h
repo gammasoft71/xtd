@@ -18,7 +18,7 @@ public:
   }
   
   bool create(int32 initial_count, int32 maximum_count) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
   
   bool create(int32 initial_count, int32 maximum_count, const string& name) override {

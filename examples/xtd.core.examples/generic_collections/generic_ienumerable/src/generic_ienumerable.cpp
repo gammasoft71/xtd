@@ -81,7 +81,7 @@ public:
 
     // Implement current, move_next and reset, which are required by ienumerator.
     const string& current() const override {
-      if (!current_.has_value()) throw invalid_operation_exception {csf_};
+      if (!current_.has_value()) throw invalid_operation_exception {};
       return current_.value();
     }
         

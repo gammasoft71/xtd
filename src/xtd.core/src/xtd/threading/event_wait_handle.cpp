@@ -43,8 +43,8 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
-  if (!enum_object<>::is_defined(mode)) throw argument_exception {csf_};
-  if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (!enum_object<>::is_defined(mode)) throw argument_exception {};
+  if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {};
   auto created_new = false;
   create(initial_state, created_new);
 }
@@ -84,27 +84,27 @@ bool event_wait_handle::equals(const event_wait_handle& value) const noexcept {
 }
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {csf_};
-  if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (name.empty()) throw argument_exception {};
+  if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {};
   auto result = event_wait_handle{};
-  if (!try_open_existing(name, result)) throw io::io_exception {csf_};
+  if (!try_open_existing(name, result)) throw io::io_exception {};
   return result;
 }
 
 bool event_wait_handle::reset() {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   auto io_error = false;
   auto result = data_->event_wait_handle->reset(io_error);
-  if (io_error) throw io::io_exception {csf_};
+  if (io_error) throw io::io_exception {};
   return result;
 }
 
 bool event_wait_handle::set() {
-  if (!data_) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {};
   if (data_->is_set) return true;
   auto io_error = false;
   auto result = data_->event_wait_handle->set(io_error);
-  if (io_error) throw io::io_exception {csf_};
+  if (io_error) throw io::io_exception {};
   data_->is_set = true;
   return result;
 }
@@ -126,11 +126,11 @@ bool event_wait_handle::signal() {
 }
 
 bool event_wait_handle::wait(int32 milliseconds_timeout) {
-  if (!data_) throw object_closed_exception {csf_};
-  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
+  if (!data_) throw object_closed_exception {};
+  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {};
   auto result = data_->event_wait_handle->wait(milliseconds_timeout);
-  if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
-  if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
+  if (result == 0xFFFFFFFF) throw io::io_exception {};
+  if (result == 0x00000080) throw abandoned_mutex_exception {};
   if (result == 0x00000102) return false;
   data_->is_set = false;
   return true;
@@ -140,10 +140,10 @@ void event_wait_handle::create(bool initial_state, bool& created_new) {
   created_new = true;
   if (data_->name.empty()) {
     data_->event_wait_handle = xtd::new_uptr<event_wait_handle::unnamed_event_wait_handle>();
-    if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception {csf_};
+    if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception {};
   } else {
     data_->event_wait_handle = xtd::new_uptr<event_wait_handle::named_event_wait_handle>();
     created_new = data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset, data_->name);
-    if (!created_new && !data_->event_wait_handle->open(data_->name)) throw io::io_exception {csf_};
+    if (!created_new && !data_->event_wait_handle->open(data_->name)) throw io::io_exception {};
   }
 }

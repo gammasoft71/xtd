@@ -88,25 +88,25 @@ public:
     }
     
     void insert(size index, const program::box& item) override {
-      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.insert(boxes_.begin() + index, item);
     }
     
     bool remove(const program::box& item) override {return boxes_.remove(item);}
     
     void remove_at(size index) override {
-      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.erase(boxes_.begin() + index);
     }
     
     // Public Operators :
     const program::box& operator [](size index) const override {
-      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
     
     program::box& operator [](size index) override {
-      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
     

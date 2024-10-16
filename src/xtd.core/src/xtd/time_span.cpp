@@ -212,12 +212,12 @@ int32 time_span::compare_to(const time_span& value) const noexcept {
 }
 
 double time_span::divide(const time_span& ts) const {
-  if (ts.ticks_ == 0) throw divided_by_zero_exception {csf_};
+  if (ts.ticks_ == 0) throw divided_by_zero_exception {};
   return as<double>(ticks_) / ts.ticks_;
 }
 
 time_span time_span::divide(double divisor) const {
-  if (divisor == 0) throw divided_by_zero_exception {csf_};
+  if (divisor == 0) throw divided_by_zero_exception {};
   return time_span {static_cast<int64>(ticks_ / divisor)}; // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
@@ -250,8 +250,8 @@ time_span time_span::from_hours(std::chrono::hours value) {
 }
 
 time_span time_span::from_microseconds(double value) {
-  if (double_object::is_NaN(value)) throw argument_exception {csf_};
-  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw overflow_exception {csf_};
+  if (double_object::is_NaN(value)) throw argument_exception {};
+  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw overflow_exception {};
   return from_ticks(static_cast<int64>(value * ticks_per_microsecond)); // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
@@ -276,7 +276,7 @@ time_span time_span::from_minutes(std::chrono::minutes value) {
 }
 
 time_span time_span::from_nanoseconds(double value) {
-  if (double_object::is_NaN(value)) throw argument_exception {csf_};
+  if (double_object::is_NaN(value)) throw argument_exception {};
   return from_ticks(static_cast<int64>(value / nanoseconds_per_tick)); // Do not use as<int64>(...) because it rounds the value
 }
 
@@ -309,15 +309,15 @@ time_span time_span::multiply(double factor) const noexcept {
 }
 
 time_span time_span::negate() const {
-  if (*this == time_span::min_value) throw overflow_exception {csf_};
+  if (*this == time_span::min_value) throw overflow_exception {};
   return time_span {-ticks_};
 }
 
 time_span time_span::parse(const string& value) {
   auto result = time_span {};
   switch (try_parse_internal(value, result)) {
-    case parse_format: throw format_exception {csf_};
-    case parse_overflow: throw overflow_exception {csf_};
+    case parse_format: throw format_exception {};
+    case parse_overflow: throw overflow_exception {};
   }
   return result;
 }
@@ -368,10 +368,10 @@ bool time_span::try_parse(const string& value, time_span& result) {
 }
 
 time_span time_span::interval(double value, int scale) {
-  if (double_object::is_NaN(value)) throw argument_exception {csf_};
+  if (double_object::is_NaN(value)) throw argument_exception {};
   auto tmp = value * scale;
   auto millis = tmp + (value >= 0 ? 0.5 : -0.5);
-  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {csf_};
+  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {};
   return time_span(static_cast<int64>(millis) * ticks_per_millisecond); // Do not use as<int64>(...) because it rounds the value
 }
 

@@ -11,20 +11,20 @@ using namespace io;
 const drive_info drive_info::empty;
 
 drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
-  if (drive_name.empty()) throw argument_exception {csf_};
+  if (drive_name.empty()) throw argument_exception {};
   auto drives = native::drive::get_drives();
-  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {csf_};
+  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {};
 }
 
 size_t drive_info::available_free_space() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {csf_};
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {};
   return free_bytes;
 }
 
 string drive_info::drive_format() const {
   auto volume_name = std::string {}, file_system_name = std::string {};
-  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
+  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {};
   return file_system_name;
 }
 
@@ -48,19 +48,19 @@ directory_info drive_info::root_directory() const noexcept {
 
 size_t drive_info::total_free_space() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {csf_};
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {};
   return total_number_of_free_bytes;
 }
 
 size_t drive_info::total_size() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {csf_};
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {};
   return total_number_of_bytes;
 }
 
 string drive_info::volume_label() const {
   auto volume_name = std::string {}, file_system_name = std::string {};
-  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
+  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {};
   return volume_name;
 }
 

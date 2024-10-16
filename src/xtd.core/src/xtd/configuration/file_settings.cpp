@@ -161,7 +161,7 @@ void file_settings::load(const xtd::string& file_path) {
 }
 
 void file_settings::load(std::istream& stream) {
-  if (!stream.good()) throw io_exception {csf_};
+  if (!stream.good()) throw io_exception {};
   from_string(stream_reader {stream}.read_to_end());
 }
 

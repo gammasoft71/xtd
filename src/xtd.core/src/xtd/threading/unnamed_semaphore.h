@@ -17,7 +17,7 @@ public:
   }
   
   void handle(intptr value) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   bool create(int32 initial_count, int32 maximum_count) override {
@@ -29,7 +29,7 @@ public:
   }
   
   bool create(int32 initial_count, int32 maximum_count, const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   void destroy() override {
@@ -38,7 +38,7 @@ public:
   }
   
   bool open(const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   bool signal(bool& io_error, int32 release_count, int32& previous_count) override {

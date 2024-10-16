@@ -13,7 +13,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void choice::begin_update(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -22,7 +22,7 @@ void choice::begin_update(intptr control) {
 }
 
 void choice::delete_item(intptr control, size_t index) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -31,7 +31,7 @@ void choice::delete_item(intptr control, size_t index) {
 }
 
 void choice::end_update(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -40,7 +40,7 @@ void choice::end_update(intptr control) {
 }
 
 void choice::insert_item(intptr control, size_t index, const string& value) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -49,7 +49,7 @@ void choice::insert_item(intptr control, size_t index, const string& value) {
 }
 
 size_t choice::selected_index(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
@@ -58,7 +58,7 @@ size_t choice::selected_index(intptr control) {
 }
 
 void choice::selected_index(intptr control, size_t index) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -67,7 +67,7 @@ void choice::selected_index(intptr control, size_t index) {
 }
 
 void choice::update_item(intptr control, size_t index, const string& value) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;

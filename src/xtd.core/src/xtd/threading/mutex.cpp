@@ -22,7 +22,7 @@ mutex::mutex(const string& name, bool& created_new) : mutex(false, name, created
 }
 
 mutex::mutex(bool initially_owned, const string& name) : name_(name) {
-  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {};
   auto created_new = false;
   create(initially_owned, created_new);
 }
@@ -67,15 +67,15 @@ void mutex::lock() {
 }
 
 mutex mutex::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {csf_};
-  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (name.empty()) throw argument_exception {};
+  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {};
   auto result = mutex{};
-  if (!try_open_existing(name, result)) throw io::io_exception {csf_};
+  if (!try_open_existing(name, result)) throw io::io_exception {};
   return result;
 }
 
 void mutex::release_mutex() {
-  if (!signal()) throw io::io_exception {csf_};
+  if (!signal()) throw io::io_exception {};
 }
 
 bool mutex::try_lock() noexcept {
@@ -119,19 +119,19 @@ void mutex::unlock() {
 }
 
 bool mutex::signal() {
-  if (!mutex_) throw object_closed_exception {csf_};
+  if (!mutex_) throw object_closed_exception {};
   auto io_error = false;
   auto result = mutex_->signal(io_error);
-  if (io_error) throw io::io_exception {csf_};
+  if (io_error) throw io::io_exception {};
   return result;
 }
 
 bool mutex::wait(int32 milliseconds_timeout) {
-  if (!mutex_) throw object_closed_exception {csf_};
-  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
+  if (!mutex_) throw object_closed_exception {};
+  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {};
   auto result = mutex_->wait(milliseconds_timeout);
-  if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
-  if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
+  if (result == 0xFFFFFFFF) throw io::io_exception {};
+  if (result == 0x00000080) throw abandoned_mutex_exception {};
   if (result == 0x00000102) return false;
   return true;
 }
@@ -140,10 +140,10 @@ void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
   if (name_.empty()) {
     mutex_ = xtd::new_sptr<mutex::unnamed_mutex>();
-    if (!mutex_->create(initially_owned)) throw io::io_exception {csf_};
+    if (!mutex_->create(initially_owned)) throw io::io_exception {};
   } else {
     mutex_ = xtd::new_sptr<mutex::named_mutex>();
     created_new = mutex_->create(initially_owned, name_);
-    if (!created_new && !mutex_->open(name_)) throw io::io_exception {csf_};
+    if (!created_new && !mutex_->open(name_)) throw io::io_exception {};
   }
 }

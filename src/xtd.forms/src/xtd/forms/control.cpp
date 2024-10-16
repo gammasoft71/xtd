@@ -988,7 +988,7 @@ void control::destroy_control() {
 
 graphics control::create_graphics() const {
   if (!is_handle_created())
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   return graphics(native::control::create_graphics(handle()));
 }
 
@@ -1041,7 +1041,7 @@ size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
-  throw xtd::argument_exception {csf_};
+  throw xtd::argument_exception {};
 }
 
 size_t control::get_child_index(intptr child, bool& throw_exception) const {

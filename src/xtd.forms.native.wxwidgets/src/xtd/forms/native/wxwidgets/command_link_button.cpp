@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void command_link_button::image(intptr control, const drawing::image& image) {
-  if (!control || !wxTheApp || !image.handle()) throw argument_exception {csf_};
+  if (!control || !wxTheApp || !image.handle()) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -19,7 +19,7 @@ void command_link_button::image(intptr control, const drawing::image& image) {
 }
 
 void command_link_button::image_align(intptr control, uint32 align) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -38,7 +38,7 @@ void command_link_button::image_align(intptr control, uint32 align) {
 }
 
 void command_link_button::texts(intptr control, const std::tuple<string, string>& texts) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
