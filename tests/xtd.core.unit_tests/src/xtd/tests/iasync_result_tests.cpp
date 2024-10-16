@@ -40,7 +40,7 @@ namespace xtd::tests {
       }
       
       iasync_result& start() {
-        if (result_.async_state().has_value()) throw invalid_operation_exception("Already started", csf_);
+        if (result_.async_state().has_value()) throw invalid_operation_exception("Already started");
         result_.async_state("Started");
         result_.is_completed(false);
         thread_ = threading::thread {[this] {
@@ -54,7 +54,7 @@ namespace xtd::tests {
       }
       
       void wait(iasync_result& result) {
-        if (&result != &result_) throw invalid_operation_exception("iasync_result not valid", csf_);
+        if (&result != &result_) throw invalid_operation_exception("iasync_result not valid");
         result.async_wait_handle().wait_one();
       }
       
@@ -66,20 +66,20 @@ namespace xtd::tests {
      void test_method_(test_async_result_ctor) {
      test_async_result ar;
      
-     assert::is_false(ar.async_state().has_value(), csf_);
-     assert::is_false(ar.completed_synchronously(), csf_);
-     assert::is_false(ar.is_completed(), csf_);
-     assert::is_false(ar.async_wait_handle().wait_one(0), csf_);
+     assert::is_false(ar.async_state().has_value());
+     assert::is_false(ar.completed_synchronously());
+     assert::is_false(ar.is_completed());
+     assert::is_false(ar.async_wait_handle().wait_one(0));
      }
     
     void test_method_(execute_test_async_runner) {
       test_async_runner runner;
       auto& result = runner.start();
-      assert::are_equal("Started", as<string>(result.async_state()), csf_);
-      assert::is_false(result.is_completed(), csf_);
+      assert::are_equal("Started", as<string>(result.async_state()));
+      assert::is_false(result.is_completed());
       runner.wait(result);
-      assert::are_equal("Ended", as<string>(result.async_state()), csf_);
-      assert::is_true(result.is_completed(), csf_);
+      assert::are_equal("Ended", as<string>(result.async_state()));
+      assert::is_true(result.is_completed());
     }
   };
 }

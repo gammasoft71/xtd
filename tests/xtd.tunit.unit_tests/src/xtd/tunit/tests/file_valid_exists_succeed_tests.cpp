@@ -9,7 +9,7 @@ namespace xtd::tunit::tests {
     void test_method_(test_case_succeed) {
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), "Test xtd::tunit::file_valid::exists.");
       
-      file_valid::exists(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), csf_);
+      file_valid::exists(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));
       
       xtd::io::file::remove(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));
     }

@@ -15,16 +15,16 @@ namespace xtd::tests {
       size_t max_worker_threads = 0;
       size_t max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
-      assert::are_equal(800ul, max_worker_threads, csf_);
-      assert::are_equal(800ul, max_completion_port_threads, csf_);
+      assert::are_equal(800ul, max_worker_threads);
+      assert::are_equal(800ul, max_completion_port_threads);
     }
     
     void test_method_(get_min_threads) {
       size_t min_worker_threads = 0;
       size_t min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
-      assert::are_equal(environment::processor_count(), min_worker_threads, csf_);
-      assert::are_equal(environment::processor_count(), min_completion_port_threads, csf_);
+      assert::are_equal(environment::processor_count(), min_worker_threads);
+      assert::are_equal(environment::processor_count(), min_completion_port_threads);
     }
     
     void test_method_(queue_user_work_item_one) {
@@ -35,7 +35,7 @@ namespace xtd::tests {
       thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(1, count, csf_);
+      assert::are_equal(1, count);
     }
     
     void test_method_(queue_user_work_item_after_close) {
@@ -49,7 +49,7 @@ namespace xtd::tests {
       thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(2, count, csf_);
+      assert::are_equal(2, count);
     }
 
     void test_method_(queue_user_work_item_min_thread) {
@@ -64,7 +64,7 @@ namespace xtd::tests {
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(min_worker_threads, as<size_t>(count), csf_);
+      assert::are_equal(min_worker_threads, as<size_t>(count));
     }
     
     void test_method_(queue_user_work_item_max_thread) {
@@ -79,7 +79,7 @@ namespace xtd::tests {
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(max_worker_threads, as<size_t>(count), csf_);
+      assert::are_equal(max_worker_threads, as<size_t>(count));
     }
   };
 }

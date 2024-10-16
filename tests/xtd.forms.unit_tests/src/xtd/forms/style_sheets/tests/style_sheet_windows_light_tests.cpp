@@ -14,10 +14,10 @@ namespace xtd::forms::style_sheets::tests {
     void test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("Windows (light)")->second;
-      assert::are_equal("Windows (light)", style.theme().name(), csf_);
-      assert::are_equal("Contains Windows (light) theme.", style.theme().description(), csf_);
-      assert::are_equal("Gammasoft", style.theme().authors(), csf_);
-      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website().to_string(), csf_);
+      assert::are_equal("Windows (light)", style.theme().name());
+      assert::are_equal("Contains Windows (light) theme.", style.theme().description());
+      assert::are_equal("Gammasoft", style.theme().authors());
+      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website().to_string());
     }
   };
 }

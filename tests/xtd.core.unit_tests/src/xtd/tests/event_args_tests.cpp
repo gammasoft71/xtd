@@ -26,12 +26,12 @@ namespace xtd::tests {
     };
     
     void test_method_(event_args_ctor) {
-      assert::does_not_throw([] {event_args {};}, csf_);
+      assert::does_not_throw([] {event_args {};});
     }
     
     void test_method_(event_args_copy) {
       event_args e1;
-      assert::does_not_throw([&] {auto e2 = e1;}, csf_);
+      assert::does_not_throw([&] {auto e2 = e1;});
     }
     
     void test_method_(event_args_using) {
@@ -40,9 +40,9 @@ namespace xtd::tests {
         m_executed = true;
       };
       
-      assert::is_false(m_executed, csf_);
+      assert::is_false(m_executed);
       m(event_args {});
-      assert::is_true(m_executed, csf_);
+      assert::is_true(m_executed);
     }
     
     void test_method_(event_args_using_empty) {
@@ -51,35 +51,35 @@ namespace xtd::tests {
         m_executed = true;
       };
       
-      assert::is_false(m_executed, csf_);
+      assert::is_false(m_executed);
       m(event_args::empty);
-      assert::is_true(m_executed, csf_);
+      assert::is_true(m_executed);
     }
     
     void test_method_(event_args_copy_with_empty) {
-      assert::does_not_throw([&] {auto e = event_args::empty;}, csf_);
+      assert::does_not_throw([&] {auto e = event_args::empty;});
     }
     
     void test_method_(test_event_args_ctor) {
       test_event_args e{};
-      assert::is_zero(e.args(), csf_);
+      assert::is_zero(e.args());
     }
     
     void test_method_(test_event_args_ctor_with_args) {
       test_event_args e{42};
-      assert::are_equal(42, e.args(), csf_);
+      assert::are_equal(42, e.args());
     }
     
     void test_method_(test_event_args_copy) {
       test_event_args e1;
       auto e2 = e1;
-      assert::is_zero(e2.args(), csf_);
+      assert::is_zero(e2.args());
     }
     
     void test_method_(test_event_args_copy_with_args) {
       test_event_args e1 {42};
       auto e2 = e1;
-      assert::are_equal(42, e2.args(), csf_);
+      assert::are_equal(42, e2.args());
     }
   };
 }

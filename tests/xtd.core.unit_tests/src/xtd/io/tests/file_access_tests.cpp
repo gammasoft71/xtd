@@ -9,21 +9,21 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(file_access_tests) {
     void test_method_(read) {
-      assert::are_equal(1, enum_object<>::to_int32(file_access::read), csf_);
-      assert::are_equal("read", enum_object<>::to_string(file_access::read), csf_);
-      assert::are_equal(file_access::read, enum_object<>::parse<file_access>("read"), csf_);
+      assert::are_equal(1, enum_object<>::to_int32(file_access::read));
+      assert::are_equal("read", enum_object<>::to_string(file_access::read));
+      assert::are_equal(file_access::read, enum_object<>::parse<file_access>("read"));
     }
     
     void test_method_(write) {
-      assert::are_equal(2, enum_object<>::to_int32(file_access::write), csf_);
-      assert::are_equal("write", enum_object<>::to_string(file_access::write), csf_);
-      assert::are_equal(file_access::write, enum_object<>::parse<file_access>("write"), csf_);
+      assert::are_equal(2, enum_object<>::to_int32(file_access::write));
+      assert::are_equal("write", enum_object<>::to_string(file_access::write));
+      assert::are_equal(file_access::write, enum_object<>::parse<file_access>("write"));
     }
     
     void test_method_(read_write) {
-      assert::are_equal(3, enum_object<>::to_int32(file_access::read_write), csf_);
-      assert::are_equal("read_write", enum_object<>::to_string(file_access::read_write), csf_);
-      assert::are_equal(file_access::read_write, enum_object<>::parse<file_access>("read_write"), csf_);
+      assert::are_equal(3, enum_object<>::to_int32(file_access::read_write));
+      assert::are_equal("read_write", enum_object<>::to_string(file_access::read_write));
+      assert::are_equal(file_access::read_write, enum_object<>::parse<file_access>("read_write"));
     }
   };
 }

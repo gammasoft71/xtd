@@ -21,8 +21,8 @@ namespace xtd::io::tests {
       stream_reader sr(s);
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))), csf_);
-      assert::are_equal(10u, index, csf_);
+        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))));
+      assert::are_equal(10u, index);
     }
     
     void test_method_(create_stream_writer_from_stringstream_without_append) {
@@ -36,8 +36,8 @@ namespace xtd::io::tests {
       stream_reader sr(s);
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))), csf_);
-      assert::are_equal(10u, index, csf_);
+        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))));
+      assert::are_equal(10u, index);
     }
     
     void test_method_(create_stream_writer_from_stringstream_with_append) {
@@ -49,13 +49,13 @@ namespace xtd::io::tests {
         sw.write(i);
         
       stream_reader sr(s);
-      assert::are_equal('a', sr.read(), csf_);
-      assert::are_equal('b', sr.read(), csf_);
-      assert::are_equal('c', sr.read(), csf_);
+      assert::are_equal('a', sr.read());
+      assert::are_equal('b', sr.read());
+      assert::are_equal('c', sr.read());
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))), csf_);
-      assert::are_equal(10u, index, csf_);
+        assert::are_equal(data[index++], string::parse<int32>(string(1, static_cast<char>(value))));
+      assert::are_equal(10u, index);
     }
   };
 }

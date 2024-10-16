@@ -11,19 +11,19 @@ namespace xtd::tests {
     void test_method_(operator_s_on_char_ptr) {
       auto s = "string"_s;
       assert::is_instance_of<string>(s);
-      assert::are_equal("string", s, csf_);
+      assert::are_equal("string", s);
     }
     
     void test_method_(operator_s_on_char8_t_ptr) {
       auto s = u8"string"_s;
       assert::is_instance_of<string>(s);
-      assert::are_equal("string", s, csf_);
+      assert::are_equal("string", s);
     }
     
     void test_method_(operator_sd_on_unsigned_long_long) {
       auto s = 42_sd;
       assert::is_instance_of<string>(s);
-      assert::are_equal("42", s, csf_);
+      assert::are_equal("42", s);
     }
   };
 }
