@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void __set_button_bezel_style__(wxAnyButton* control, int32 height) {
-  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!control || !wxTheApp) throw argument_exception {};
   NSButton* button = reinterpret_cast<NSButton*>(control->GetHandle());
 #ifdef __MAC_14_0
   [button setBezelStyle: height <= 25 ? NSBezelStylePush : NSBezelStyleFlexiblePush];

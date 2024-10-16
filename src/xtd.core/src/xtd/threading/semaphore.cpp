@@ -44,9 +44,9 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& nam
 }
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
-  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
-  if (initial_count > maximum_count) throw argument_exception {csf_};
-  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
+  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
+  if (initial_count > maximum_count) throw argument_exception {};
+  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {};
   data_->name = name;
   create(initial_count, maximum_count, created_new);
 }
@@ -79,10 +79,10 @@ bool semaphore::equals(const semaphore& value) const noexcept {
 }
 
 semaphore semaphore::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {csf_};
-  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (name.empty()) throw argument_exception {};
+  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
   auto result = semaphore{};
-  if (!try_open_existing(name, result)) throw io::io_exception {csf_};
+  if (!try_open_existing(name, result)) throw io::io_exception {};
   return result;
 }
 
@@ -91,14 +91,14 @@ int32 semaphore::release() {
 }
 
 int32 semaphore::release(int32 release_count) {
-  if (release_count < 1) throw argument_out_of_range_exception {csf_};
-  if (!semaphore_) throw object_closed_exception {csf_};
-  if (data_->count + release_count > data_->maximum_count) throw semaphore_full_exception {csf_};
+  if (release_count < 1) throw argument_out_of_range_exception {};
+  if (!semaphore_) throw object_closed_exception {};
+  if (data_->count + release_count > data_->maximum_count) throw semaphore_full_exception {};
   auto io_error = false;
   auto previous_count = -1;
   semaphore_->signal(io_error, release_count, previous_count);
   if (previous_count != -1) data_->count.exchange(previous_count);
-  if (io_error) throw io::io_exception {csf_};
+  if (io_error) throw io::io_exception {};
   previous_count = data_->count;
   data_->count += release_count;
   return previous_count;
@@ -122,11 +122,11 @@ bool semaphore::signal() {
 }
 
 bool semaphore::wait(int32 milliseconds_timeout) {
-  if (!semaphore_) throw object_closed_exception {csf_};
-  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
+  if (!semaphore_) throw object_closed_exception {};
+  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {};
   auto result = semaphore_->wait(milliseconds_timeout);
-  if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
-  if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
+  if (result == 0xFFFFFFFF) throw io::io_exception {};
+  if (result == 0x00000080) throw abandoned_mutex_exception {};
   if (result == 0x00000102) return false;
   --data_->count;
   return true;
@@ -138,10 +138,10 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
   created_new = true;
   if (data_->name.empty()) {
     semaphore_ = xtd::new_sptr<semaphore::unnamed_semaphore>();
-    if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception {csf_};
+    if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception {};
   } else {
     semaphore_ = xtd::new_sptr<semaphore::named_semaphore>();
     created_new = semaphore_->create(initial_count, maximum_count, data_->name);
-    if (!created_new && !semaphore_->open(data_->name)) throw io::io_exception {csf_};
+    if (!created_new && !semaphore_->open(data_->name)) throw io::io_exception {};
   }
 }

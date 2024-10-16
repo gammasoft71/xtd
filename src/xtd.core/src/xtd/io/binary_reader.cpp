@@ -10,8 +10,8 @@ using namespace xtd;
 using namespace xtd::io;
 
 binary_reader::binary_reader(const string& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
-  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (!file::exists(path)) throw file_not_found_exception {csf_};
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (!file::exists(path)) throw file_not_found_exception {};
 }
 
 binary_reader::binary_reader(std::istream& stream) : stream_(&stream) {
@@ -63,7 +63,7 @@ int32 binary_reader::read() {
 }
 
 size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw argument_exception {csf_};
+  if (index + count > buffer.size()) throw argument_exception {};
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -73,7 +73,7 @@ size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t 
 }
 
 size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw argument_exception {csf_};
+  if (index + count > buffer.size()) throw argument_exception {};
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -93,7 +93,7 @@ xtd::byte binary_reader::read_byte() {
 std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
   auto result = std::vector<xtd::byte>(count);
   if (read(result, 0, count) != count)
-    throw end_of_stream_exception {csf_};
+    throw end_of_stream_exception {};
   return result;
 }
 
@@ -104,7 +104,7 @@ char binary_reader::read_char() {
 std::vector<char> binary_reader::read_chars(size_t count) {
   auto result = std::vector<char>(count);
   if (read(result, 0, count) != count)
-    throw end_of_stream_exception {csf_};
+    throw end_of_stream_exception {};
   return result;
 }
 

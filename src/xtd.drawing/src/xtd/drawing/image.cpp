@@ -73,7 +73,7 @@ image::image(const string& filename) : data_(xtd::new_sptr<data>()) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw argument_exception {csf_};
+    else throw argument_exception {};
   }
   update_properties();
 }
@@ -86,7 +86,7 @@ image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw argument_exception {csf_};
+    else throw argument_exception {};
   }
   update_properties();
 }
@@ -99,7 +99,7 @@ image::image(std::istream& stream) : data_(xtd::new_sptr<data>()) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw argument_exception {csf_};
+    else throw argument_exception {};
   }
   update_properties();
 }
@@ -112,7 +112,7 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw argument_exception {csf_};
+    else throw argument_exception {};
   }
   update_properties();
 }
@@ -124,38 +124,38 @@ image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
 }
 
 image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
-  if (width < 1 || height < 1) throw argument_exception {csf_};
+  if (width < 1 || height < 1) throw argument_exception {};
   data_->handle_ = native::image::create(width, height);
   update_properties();
 }
 
 image::image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) : data_(xtd::new_sptr<data>()) {
-  if (width < 1 || height < 1) throw argument_exception {csf_};
+  if (width < 1 || height < 1) throw argument_exception {};
   data_->handle_ = native::image::create(width, height, horizontal_resolution, vertical_resolution);
   update_properties();
 }
 
 image::image(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) {
-  if (width < 1 || height < 1) throw argument_exception {csf_};
+  if (width < 1 || height < 1) throw argument_exception {};
   data_->handle_ = native::image::create(width, height, as<int32>(format));
   update_properties();
 }
 
 image::image(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0) {
-  if (width < 1 || height < 1) throw argument_exception {csf_};
+  if (width < 1 || height < 1) throw argument_exception {};
   data_->handle_ = native::image::create(width, height, stride, as<int32>(format), scan0);
   update_properties();
 }
 
 image::image(const image& image, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
-  if (width < 1 || height < 1) throw argument_exception {csf_};
+  if (width < 1 || height < 1) throw argument_exception {};
   *this = image;
   rescale(width, height);
   update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
-  if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {csf_};
+  if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {};
   *this = image;
   crop(rect.left(), rect.top(), rect.width(), rect.height());
   update_properties();
@@ -307,7 +307,7 @@ xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd:
 
 size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
   auto iterator = find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
-  if (iterator == data_->frame_dimensions.end()) throw argument_exception {csf_};
+  if (iterator == data_->frame_dimensions.end()) throw argument_exception {};
   return iterator->second;
 }
 
@@ -318,7 +318,7 @@ int32 image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) n
 xtd::drawing::imaging::property_item image::get_property_item(int32 propid) {
   for (auto property_tiem : data_->property_items_)
     if (property_tiem.id() == propid) return property_tiem;
-  throw argument_exception {csf_};
+  throw argument_exception {};
 }
 
 const xtd::byte* image::get_rgb() const {
@@ -411,7 +411,7 @@ void image::update_properties() {
 }
 
 drawing::color image::get_pixel(int32 x, int32 y) const {
-  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
+  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {};
 
   auto alpha = get_alpha();
   auto rgb = reinterpret_cast<const ::rgb*>(get_rgb());
@@ -420,7 +420,7 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
 }
 
 void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
-  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
+  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {};
 
   auto alpha = get_alpha();
   auto rgb = reinterpret_cast<::rgb*>(get_rgb());
@@ -437,7 +437,7 @@ void image::blur(int32 radius) {
 
 void image::crop(int32 x, int32 y, int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
-  if (x < 0 || y < 0 || (x + width) > this->width() || (y + height) > this->height()) throw argument_exception {csf_};
+  if (x < 0 || y < 0 || (x + width) > this->width() || (y + height) > this->height()) throw argument_exception {};
   auto result = image {width, height};
   auto graphics = result.create_graphics();
   graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {x, y, width, height});

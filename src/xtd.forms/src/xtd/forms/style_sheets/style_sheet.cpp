@@ -23,7 +23,7 @@ using namespace xtd::web::css;
 
 namespace {
   string get_css_string_from_path(const string& path_name) {
-    if (!xtd::io::directory::exists(path_name)) throw xtd::io::directory_not_found_exception {csf_};
+    if (!xtd::io::directory::exists(path_name)) throw xtd::io::directory_not_found_exception {};
     auto theme_css = string::empty_string;
     for (auto theme_file : directory::enumerate_files(path_name, "*.css"))
       theme_css += file::read_all_text(theme_file);
@@ -174,7 +174,7 @@ const style_sheet& style_sheet::current_style_sheet() noexcept {
 }
 
 void style_sheet::current_style_sheet(const style_sheet& value) {
-  if (value == style_sheet::empty) throw argument_exception {csf_};
+  if (value == style_sheet::empty) throw argument_exception {};
   if (current_style_sheet_ != value) {
     current_style_sheet_ = value;
     on_style_sheet_changed(event_args::empty);
@@ -443,11 +443,11 @@ style_sheet style_sheet::get_style_sheet_from_name(const string& name) {
       return style_sheet(theme_css);
     }
   }
-  throw argument_exception {csf_};
+  throw argument_exception {};
 }
 
 style_sheet style_sheet::get_style_sheet_from_file(const string& file_name) {
-  if (!xtd::io::file::exists(file_name)) throw xtd::io::directory_not_found_exception {csf_};
+  if (!xtd::io::file::exists(file_name)) throw xtd::io::directory_not_found_exception {};
   auto theme_css = file::read_all_text(file_name);
   return style_sheet(theme_css);
 }

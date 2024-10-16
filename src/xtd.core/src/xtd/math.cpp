@@ -25,27 +25,27 @@ float math::abs(float value) {
 }
 
 int16 math::abs(int16 value) {
-  if (value == std::numeric_limits<int16>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int16>::lowest()) throw xtd::overflow_exception {};
   return value < 0 ? -value : value;
 }
 
 int32 math::abs(int32 value) {
-  if (value == std::numeric_limits<int32>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int32>::lowest()) throw xtd::overflow_exception {};
   return value < 0 ? -value : value;
 }
 
 int64 math::abs(int64 value) {
-  if (value == std::numeric_limits<int64>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int64>::lowest()) throw xtd::overflow_exception {};
   return value < 0 ? -value : value;
 }
 
 sbyte math::abs(sbyte value) {
-  if (value == std::numeric_limits<sbyte>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<sbyte>::lowest()) throw xtd::overflow_exception {};
   return value < 0 ? -value : value;
 }
 
 slong math::abs(slong value) {
-  if (value == std::numeric_limits<slong>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<slong>::lowest()) throw xtd::overflow_exception {};
   return value < 0 ? -value : value;
 }
 
@@ -333,12 +333,12 @@ double math::round(double value, int32 decimals) {
 }
 
 int32 math::sign(decimal value) {
-  if (value != value) throw arithmetic_exception {csf_};
+  if (value != value) throw arithmetic_exception {};
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
 int32 math::sign(double value) {
-  if (double_object::is_NaN(value)) throw arithmetic_exception {csf_};
+  if (double_object::is_NaN(value)) throw arithmetic_exception {};
   return value < 0.0 ? -1 : value == 0.0 ? 0 : 1;
 }
 
@@ -359,7 +359,7 @@ int32 math::sign(sbyte value) {
 }
 
 int32 math::sign(float value) {
-  if (value != value) throw arithmetic_exception {csf_};
+  if (value != value) throw arithmetic_exception {};
   return value < 0.0f ? -1 : value == 0.0f ? 0 : 1;
 }
 

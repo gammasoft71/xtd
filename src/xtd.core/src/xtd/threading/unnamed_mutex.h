@@ -22,7 +22,7 @@ public:
   }
   
   bool create(bool initially_owned, const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   void destroy() override {
@@ -31,7 +31,7 @@ public:
   }
   
   bool open(const string& name) override {
-    throw invalid_operation_exception {csf_};
+    throw invalid_operation_exception {};
   }
 
   bool signal(bool& io_error) override {

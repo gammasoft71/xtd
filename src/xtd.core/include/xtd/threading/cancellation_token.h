@@ -94,7 +94,7 @@ namespace xtd {
       /// @remarks This method provides functionality equivalent to:
       /// ```cpp
       /// if (tpken.is_cancellation_requested())
-      ///   throw xtd::operation_canceled_exception {csf_};
+      ///   throw xtd::operation_canceled_exception {};
       /// ```
       void throw_if_cancellation_requested() const;
       /// @}

@@ -543,7 +543,7 @@ color color::from_known_color(known_color color) {
     case known_color::window_frame: return drawing::color {color::from_handle(native::system_colors::window_frame()), color};
     case known_color::window_text: return drawing::color {color::from_handle(native::system_colors::window_text()), color};
 
-    default: throw xtd::argument_exception {"know_color invalid"_t, csf_};
+    default: throw xtd::argument_exception {"know_color invalid"_t};
   }
 }
 

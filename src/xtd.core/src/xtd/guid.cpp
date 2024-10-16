@@ -101,7 +101,7 @@ string guid::to_string(const string& format) const {
 string guid::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format.empty() ? "d" : format.to_lower();
   
-  if (fmt.size() != 1 || string("ndbpx").index_of(fmt) == string::npos) throw format_exception {csf_};
+  if (fmt.size() != 1 || string("ndbpx").index_of(fmt) == string::npos) throw format_exception {};
     
   auto hyphens = fmt != "n" && fmt != "x";
   auto braces = fmt == "b";

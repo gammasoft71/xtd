@@ -42,7 +42,7 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, 
 }
 
 radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius) : data_(xtd::new_sptr<data>()) {
-  if (radial_colors.size() < 2) throw argument_exception {csf_};
+  if (radial_colors.size() < 2) throw argument_exception {};
   
   data_->center_point = center;
   data_->focal_point = center;
@@ -96,7 +96,7 @@ radial_gradient_brush& radial_gradient_brush::focal_point(const point& value) no
 
 radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
   if (data_->radial_colors != value) {
-    if (value.size() < 2) throw argument_exception {csf_};
+    if (value.size() < 2) throw argument_exception {};
     data_->radial_colors = value;
     recreate_handle();
   }

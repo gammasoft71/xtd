@@ -60,7 +60,7 @@ public:
     void reset() override {position = array_list::npos;}
     
     const any_object& current() const override {
-      if (position >= people_.size()) throw invalid_operation_exception {csf_};
+      if (position >= people_.size()) throw invalid_operation_exception {};
       return people_[position];
     }
   };

@@ -53,12 +53,12 @@ int shape::min_y() const noexcept {
 }
 
 int shape::x(int index) const {
-  if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {csf_};
+  if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {};
   return coords_.at(index).first;
 }
 
 int shape::y(int index) const {
-  if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {csf_};
+  if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {};
   return coords_.at(index).second;
 }
 

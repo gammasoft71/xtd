@@ -61,7 +61,7 @@ string uri::host() const {
 }
 
 uri_host_name_type uri::host_name_type() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   
   if (!host().empty()) {
     auto address = ip_address();
@@ -90,7 +90,7 @@ bool uri::is_absolute_uri() const {
 }
 
 bool uri::is_default_port() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   
   auto prt = -1;
   if (string::try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
@@ -98,12 +98,12 @@ bool uri::is_default_port() const {
 }
 
 bool uri::is_file() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   return scheme() == uri_scheme_file;
 }
 
 bool uri::is_loopback() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   if (!host().empty()) {
     auto address = ip_address();
     if (ip_address::try_parse(host(), address) == true && ip_address::is_loopback(address)) return true;
@@ -112,7 +112,7 @@ bool uri::is_loopback() const {
 }
 
 bool uri::is_unc() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   return scheme() == uri::uri_scheme_file && !host().empty();
 }
 
@@ -121,7 +121,7 @@ string uri::local_path() const {
 }
 
 const string& uri::original_string() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   return original_uri_;
 }
 
@@ -192,7 +192,7 @@ bool uri::check_scheme_name(const string& scheme) {
 }
 
 string uri::escape_data_string(const string& value) {
-  if (value.size() > 32766_z) throw uri_format_exception {csf_};
+  if (value.size() > 32766_z) throw uri_format_exception {};
   
   auto escape_needed = false;
   for (auto index = 0_z; !escape_needed && index < value.size(); ++index)
@@ -211,7 +211,7 @@ string uri::escape_data_string(const string& value) {
 }
 
 string uri::escape_uri_string(const string& value) {
-  if (value.size() > 32766_z) throw uri_format_exception {csf_};
+  if (value.size() > 32766_z) throw uri_format_exception {};
   
   auto escape_needed = false;
   for (auto index = 0_z; !escape_needed && index < value.size(); ++index)
@@ -233,11 +233,11 @@ int32 uri::from_hex(char digit) {
   if ('0' <= digit && digit <= '9') return digit - '0';
   if ('a' <= digit && digit <= 'f') return 10 + digit - 'a';
   if ('A' <= digit && digit <= 'F') return 10 + digit - 'A';
-  throw argument_exception {csf_};
+  throw argument_exception {};
 }
 
 string uri::get_components(uri_components components, uri_format format) const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {csf_};
+  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
   
   auto str = string::empty_string;
   if ((components & uri_components::scheme) == uri_components::scheme) str += format_componant(scheme_, format);
@@ -266,7 +266,7 @@ string uri::get_left_part(uri_partial part) const {
     case uri_partial::query: return get_components(uri_components::scheme | uri_components::user_info | uri_components::host | uri_components::port | uri_components::path_and_query, uri_format::uri_escaped);
     default: break;
   }
-  throw argument_exception {csf_};
+  throw argument_exception {};
 }
 
 string uri::hex_escape(char character) {
@@ -440,7 +440,7 @@ void uri::set_port(string& escape_uri) {
     
     escape_uri = escape_uri.substring(index_start);
   } catch (...) {
-    throw uri_format_exception {csf_};
+    throw uri_format_exception {};
   }
 }
 
@@ -487,14 +487,14 @@ void uri::set_uri(const string& uri, uri_kind kind) {
   set_query(original_uri);
   
   if (kind_ == uri_kind::absolute) {
-    if (scheme_.size() == 0) throw uri_format_exception {csf_};
-    if (scheme_ != "news" && host_.size() == 0) throw uri_format_exception {csf_};
-    if (check_scheme_name(scheme_) == false) throw uri_format_exception {csf_};
+    if (scheme_.size() == 0) throw uri_format_exception {};
+    if (scheme_ != "news" && host_.size() == 0) throw uri_format_exception {};
+    if (check_scheme_name(scheme_) == false) throw uri_format_exception {};
   } else if (kind_ == uri_kind::relative) {
-    if (scheme_.size() != 0 && host_.size() != 0) throw uri_format_exception {csf_};
+    if (scheme_.size() != 0 && host_.size() != 0) throw uri_format_exception {};
   }
   
-  if (original_uri.size() != 0) throw uri_format_exception {csf_};
+  if (original_uri.size() != 0) throw uri_format_exception {};
 }
 
 void uri::set_user_info(string& escape_uri) {

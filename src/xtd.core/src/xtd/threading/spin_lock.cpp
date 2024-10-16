@@ -46,7 +46,7 @@ void spin_lock::exit() {
 }
 
 void spin_lock::exit(bool use_memory_barrier) {
-  if (data_->enable_thread_owner_tracking && data_->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+  if (data_->enable_thread_owner_tracking && data_->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {};
   if (use_memory_barrier) std::atomic_thread_fence(std::memory_order_acquire);
   if (data_->enable_thread_owner_tracking) data_->thread_id = thread::invalid_thread_id;
   data_->flag.clear(std::memory_order_release);
@@ -62,7 +62,7 @@ void spin_lock::try_enter(const time_span& timeout, bool& lock_taken) {
 }
 
 void spin_lock::try_enter(int32 milliseconds_timeout, bool& lock_taken) {
-  if (data_->enable_thread_owner_tracking && data_->thread_id == thread::current_thread().thread_id()) throw lock_recursion_exception {csf_};
+  if (data_->enable_thread_owner_tracking && data_->thread_id == thread::current_thread().thread_id()) throw lock_recursion_exception {};
   lock_taken = false;
   auto sw = stopwatch::start_new();
   while (data_->flag.test_and_set(std::memory_order_acquire)) {

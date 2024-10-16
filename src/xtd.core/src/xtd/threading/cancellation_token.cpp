@@ -37,7 +37,7 @@ bool cancellation_token::equals(const cancellation_token& other) const noexcept 
 
 void cancellation_token::throw_if_cancellation_requested() const {
   if (!is_cancellation_requested()) return;
-  throw operation_canceled_exception {csf_};
+  throw operation_canceled_exception {};
 }
 
 

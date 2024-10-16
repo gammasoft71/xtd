@@ -67,7 +67,7 @@ thread::thread(const xtd::threading::thread_start& start) : thread::thread(start
 }
 
 thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
-  if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
+  if (start.is_empty() || max_stack_size < 0) throw argument_exception {};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -81,7 +81,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start) : thread
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
-  if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
+  if (start.is_empty() || max_stack_size < 0) throw argument_exception {};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -107,7 +107,7 @@ bool thread::auto_join() const noexcept {
 }
 
 thread& thread::auto_join(bool value) {
-  if (is_aborted() || is_stopped()) throw thread_state_exception {csf_};
+  if (is_aborted() || is_stopped()) throw thread_state_exception {};
   data_->auto_join = value;
   return *this;
 }
@@ -177,8 +177,8 @@ xtd::threading::thread_priority thread::priority() const noexcept {
 }
 
 thread& thread::priority(xtd::threading::thread_priority value) {
-  if (!enum_object<>::is_defined(value)) throw argument_exception {csf_};
-  if (is_aborted() || is_stopped()) throw thread_state_exception {csf_};
+  if (!enum_object<>::is_defined(value)) throw argument_exception {};
+  if (is_aborted() || is_stopped()) throw thread_state_exception {};
   
   if (data_->priority == value) return *this;
   data_->priority = value;
@@ -195,7 +195,7 @@ xtd::threading::thread_state thread::thread_state() const noexcept {
 }
 
 void thread::abort() {
-  if (is_unstarted() || is_suspended()) throw thread_state_exception {csf_};
+  if (is_unstarted() || is_suspended()) throw thread_state_exception {};
   
   data_->state |= xtd::threading::thread_state::abort_requested;
   
@@ -226,8 +226,8 @@ void thread::join() {
 }
 
 bool thread::join(int32 milliseconds_timeout) {
-  if (is_unstarted()) throw thread_state_exception {csf_};
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
+  if (is_unstarted()) throw thread_state_exception {};
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
   
   if (data_->interrupted == true) interrupt_internal();
   if (!joinable()) return false;
@@ -278,7 +278,7 @@ bool thread::join_all(const time_span& timeout) {
 }
 
 void thread::resume() {
-  if (is_unstarted() || !is_suspended()) throw thread_state_exception {csf_};
+  if (is_unstarted() || !is_suspended()) throw thread_state_exception {};
   
   native::thread::resume(data_->handle);
   data_->state &= ~xtd::threading::thread_state::suspended;
@@ -289,7 +289,7 @@ void thread::sleep(const time_span& timeout) {
 }
 
 void thread::sleep(int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
   
   auto current_thread = thread::current_thread();
   
@@ -308,27 +308,27 @@ void thread::spin_wait(int32 iterations) {
 }
 
 void thread::start() {
-  if (!is_unstarted()) throw thread_state_exception {csf_};
-  if (data_->thread_start.is_empty() && data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {csf_};
+  if (!is_unstarted()) throw thread_state_exception {};
+  if (data_->thread_start.is_empty() && data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {};
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = nullptr;
   data_->handle = native::thread::create([&](intptr arg) {
     reinterpret_cast<threading::thread*>(arg)->thread_proc();
   }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
-  if (data_->handle == invalid_handle) throw io::io_exception {csf_};
+  if (data_->handle == invalid_handle) throw io::io_exception {};
 }
 
 void thread::start(std::any param) {
-  if (!is_unstarted()) throw thread_state_exception {csf_};
-  if (data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {csf_};
+  if (!is_unstarted()) throw thread_state_exception {};
+  if (data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {};
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = param;
   data_->handle = native::thread::create([](intptr arg) {
     reinterpret_cast<thread*>(arg)->thread_proc();
   }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
-  if (data_->handle == invalid_handle) throw io::io_exception {csf_};
+  if (data_->handle == invalid_handle) throw io::io_exception {};
 }
 
 thread thread::start_new(const xtd::threading::thread_start& start) {
@@ -344,7 +344,7 @@ thread thread::start_new(const xtd::threading::parameterized_thread_start& start
 }
 
 void thread::suspend() {
-  if (!is_alive()) throw thread_state_exception {csf_};
+  if (!is_alive()) throw thread_state_exception {};
   
   data_->state |= xtd::threading::thread_state::suspend_requested;
   native::thread::suspend(data_->handle);
@@ -423,7 +423,7 @@ void thread::close() {
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
   
   auto current_thread = thread::current_thread();
   if (current_thread.is_unmanaged_thread()) return wait_handle.wait(milliseconds_timeout);
@@ -481,7 +481,7 @@ void thread::interrupt_internal() {
   data_->interrupted = false;
   data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
   if (data_->managed_thread_id == 1) environment::raise(signal::interrupt);
-  else throw thread_interrupted_exception {csf_};
+  else throw thread_interrupted_exception {};
 }
 
 bool thread::is_aborted() const noexcept {
@@ -514,7 +514,7 @@ bool thread::is_wait_sleep_join() const noexcept {
 }
 
 bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
   
   thread::yield();
   if (milliseconds_timeout == timeout::infinite) {
@@ -540,10 +540,10 @@ void thread::thread_proc() {
 
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
-  else throw invalid_operation_exception {csf_};
+  else throw invalid_operation_exception {};
   
-  if (is_aborted()) throw thread_abort_exception {csf_};
-  if (is_aborted()) throw thread_interrupted_exception {csf_};
+  if (is_aborted()) throw thread_abort_exception {};
+  if (is_aborted()) throw thread_interrupted_exception {};
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();

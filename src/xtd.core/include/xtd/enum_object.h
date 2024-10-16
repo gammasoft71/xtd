@@ -225,7 +225,7 @@ namespace xtd {
           }
         }
         if (found == false)
-          throw xtd::format_exception {csf_};
+          throw xtd::format_exception {};
       }
       
       return to_enum(result);

@@ -71,8 +71,8 @@ timer::~timer() {
 }
 
 void timer::change(int32 due_time, int32 period) {
-  if (data_->callback.is_empty()) throw invalid_operation_exception {csf_};
-  if (due_time < timeout::infinite || period < timeout::infinite) throw argument_out_of_range_exception {csf_};
+  if (data_->callback.is_empty()) throw invalid_operation_exception {};
+  if (due_time < timeout::infinite || period < timeout::infinite) throw argument_out_of_range_exception {};
   
   data_->due_time = due_time;
   data_->period = period;

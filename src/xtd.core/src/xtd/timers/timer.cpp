@@ -68,7 +68,7 @@ bool timer::enabled() const noexcept {
 }
 
 timer& timer::enabled(bool value) {
-  if (data_->closed) throw object_closed_exception {csf_};
+  if (data_->closed) throw object_closed_exception {};
   if (data_->enabled && !value) data_->sleep.set();
   data_->enabled = value;
   if (value) thread_pool::queue_user_work_item(data_->timer_proc, this);
@@ -80,8 +80,8 @@ double timer::interval() const noexcept {
 }
 
 timer& timer::interval(double value) {
-  if (data_->closed) throw object_closed_exception {csf_};
-  if (math::ceiling(value) < 0 || math::ceiling(value) > int32_object::max_value) throw argument_exception {csf_};
+  if (data_->closed) throw object_closed_exception {};
+  if (math::ceiling(value) < 0 || math::ceiling(value) > int32_object::max_value) throw argument_exception {};
   data_->interval = time_span::from_milliseconds(value);
   return *this;
 }
@@ -101,7 +101,7 @@ timer& timer::synchronizing_object(std::nullptr_t value) {
 }
 
 void timer::close() {
-  if (data_->closed) throw object_closed_exception {csf_};
+  if (data_->closed) throw object_closed_exception {};
   stop();
   data_->event.wait_one();
   data_->closed = true;

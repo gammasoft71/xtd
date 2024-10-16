@@ -157,7 +157,7 @@ intptr menu_item::create(intptr menu, const string& text, const xtd::drawing::im
 
 void menu_item::destroy(intptr menu_item) {
   if (!wxTheApp) return;
-  if (menu_item == 0) throw argument_exception {csf_};
+  if (menu_item == 0) throw argument_exception {};
   delete reinterpret_cast<wxMenuItem*>(menu_item);
 }
 
@@ -166,11 +166,11 @@ void menu_item::enabled(intptr menu_item, bool enabled) {
 }
 
 intptr menu_item::menu_id(intptr menu_item) {
-  if (menu_item == 0) throw argument_exception {csf_};
+  if (menu_item == 0) throw argument_exception {};
   return static_cast<intptr>(reinterpret_cast<wxMenuItem*>(menu_item)->GetId());
 }
 
 void menu_item::text(intptr menu_item, const xtd::string& text, size_t shortcut) {
-  if (menu_item == 0) throw argument_exception {csf_};
+  if (menu_item == 0) throw argument_exception {};
   reinterpret_cast<wxMenuItem*>(menu_item)->SetItemLabel(convert_string::to_wstring(make_item_text(text, shortcut)));
 }

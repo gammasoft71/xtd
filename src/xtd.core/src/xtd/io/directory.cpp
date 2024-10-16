@@ -148,10 +148,10 @@ bool directory::file_system_entry_iterator::equals(const directory::file_system_
 }
 
 directory_info directory::create_directory(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   
   auto dir_info = directory_info {path};
   if (dir_info.exists()) return dir_info;
@@ -167,11 +167,11 @@ directory::directory_iterator directory::enumerate_directories(const string& pat
 }
 
 directory::directory_iterator directory::enumerate_directories(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   return directory_iterator {path, search_pattern};
 }
@@ -181,11 +181,11 @@ directory::file_iterator directory::enumerate_files(const string& path) {
 }
 
 directory::file_iterator directory::enumerate_files(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   return file_iterator {path, search_pattern};
 }
@@ -195,11 +195,11 @@ directory::file_system_entry_iterator directory::enumerate_file_system_entries(c
 }
 
 directory::file_system_entry_iterator directory::enumerate_file_system_entries(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   return file_system_entry_iterator {path, search_pattern};
 }
@@ -209,11 +209,11 @@ bool directory::exists(const string& path) {
 }
 
 date_time directory::get_creation_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(creation_time, date_time_kind::local);
@@ -221,7 +221,7 @@ date_time directory::get_creation_time(const string& path) {
 
 string directory::get_current_directory() {
   auto path = io::path::get_full_path(native::directory::get_current_directory());
-  if (path.empty()) throw not_supported_exception {csf_};
+  if (path.empty()) throw not_supported_exception {};
   return path;
 }
 
@@ -254,22 +254,22 @@ std::vector<string> directory::get_file_system_entries(const string& path, const
 }
 
 date_time directory::get_last_access_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(last_access_time, date_time_kind::local);
 }
 
 date_time directory::get_last_write_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(last_write_time, date_time_kind::local);
@@ -287,32 +287,32 @@ directory_info directory::get_parent(const string& path) {
 }
 
 xtd::io::file_permissions directory::get_permissions(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   auto permissions = 0;
-  if (native::file_system::get_permissions(path, permissions) != 0) throw io_exception {csf_};
+  if (native::file_system::get_permissions(path, permissions) != 0) throw io_exception {};
   return static_cast<xtd::io::file_permissions>(permissions);
 }
 
 void directory::move(const string& src, const string& dst) {
-  if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (src.empty() || src.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(src)) throw path_too_long_exception {csf_};
-  if (!exists(src)) throw directory_not_found_exception {csf_};
+  if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (src.empty() || src.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(src)) throw path_too_long_exception {};
+  if (!exists(src)) throw directory_not_found_exception {};
   
   if ((file::get_attributes(src) & file_attributes::directory) == file_attributes::directory) directory_info(src).move_to(dst);
   else file::move(src, dst);
 }
 
 void directory::remove(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
   
   directory_info(path).remove();
 }
@@ -322,47 +322,47 @@ void directory::remove(const string& path, bool recursive) {
 }
 
 void directory::set_creation_time(const xtd::string& path, const xtd::date_time& creation_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
-  if (native::file_system::set_creation_time(path, creation_time.to_time_t()) != 0) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
+  if (native::file_system::set_creation_time(path, creation_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_current_directory(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
-  if (native::directory::set_current_directory(path) != 0) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
+  if (native::directory::set_current_directory(path) != 0) throw io_exception {};
 }
 
 void directory::set_last_access_time(const xtd::string& path, const xtd::date_time& last_access_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
-  if (native::file_system::set_last_access_time(path, last_access_time.to_time_t()) != 0) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
+  if (native::file_system::set_last_access_time(path, last_access_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_last_write_time(const xtd::string& path, const xtd::date_time& last_write_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
-  if (native::file_system::set_last_write_time(path, last_write_time.to_time_t()) != 0) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
+  if (native::file_system::set_last_write_time(path, last_write_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_permissions(const xtd::string& path, xtd::io::file_permissions permissions) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
-  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if (!exists(path)) throw directory_not_found_exception {csf_};
-  if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {csf_};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
+  if (!exists(path)) throw directory_not_found_exception {};
+  if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {};
 }
 
 std::tuple<time_t, time_t, time_t> directory::get_file_times(const string& path) {
   auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
-  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
+  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {};
   return std::make_tuple(creation_time, last_access_time, last_write_time);
 }

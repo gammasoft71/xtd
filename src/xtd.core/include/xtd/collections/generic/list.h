@@ -252,7 +252,7 @@ namespace xtd {
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
         virtual void capacity(size_type value) {
-          if (value < count()) throw argument_out_of_range_exception {csf_};
+          if (value < count()) throw argument_out_of_range_exception {};
           reserve(value);
         }
         
@@ -446,7 +446,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual reference at(size_type index) {
-          if (index >= count()) throw index_out_of_range_exception {csf_};
+          if (index >= count()) throw index_out_of_range_exception {};
           return reinterpret_cast<reference>(data_->items.at(index));
         }
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -454,7 +454,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
-          if (index >= count()) throw index_out_of_range_exception {csf_};
+          if (index >= count()) throw index_out_of_range_exception {};
           return reinterpret_cast<const_reference>(data_->items.at(index));
         }
         
@@ -498,7 +498,7 @@ namespace xtd {
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
-          if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
+          if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {};
           auto i = size_type {0}, c = size_type {0};
           for (const type_t& item : *this) {
             if (i >= index + count) return;
@@ -577,12 +577,12 @@ namespace xtd {
             explicit list_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
               return items_.at(index_);
             }
             
             bool move_next() override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
               return ++index_ < items_.count();
             }
             
@@ -612,7 +612,7 @@ namespace xtd {
         /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
         /// @remarks This method is an O(n) operation, where n is count.
         list get_range(size_type index, size_type count) {
-          if (index + count > this->count()) throw xtd::argument_exception {csf_};
+          if (index + count > this->count()) throw xtd::argument_exception {};
           
           return list<type_t> {begin() + index, begin() + index + count};
         }
@@ -639,8 +639,8 @@ namespace xtd {
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
         virtual size_type index_of(const type_t& value, size_type index, size_type count) const {
-          if (index >= this->count()) throw xtd::argument_out_of_range_exception {csf_};
-          if (index + count > this->count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index >= this->count()) throw xtd::argument_out_of_range_exception {};
+          if (index + count > this->count()) throw xtd::argument_out_of_range_exception {};
           
           for (auto i = index; i < index + count; ++i)
             if (at(i) == value) return i;
@@ -707,7 +707,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(size_type index, const type_t& value) override {
-          if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index > count()) throw xtd::argument_out_of_range_exception {};
           insert(begin() + index, value);
         }
         
@@ -721,7 +721,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const xtd::collections::generic::ienumerable<type_t>& enumerable) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index > count()) throw xtd::argument_out_of_range_exception {};
 
           // If the collection is this instance, it must be copied to avoid an infinite loop.
           if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
@@ -743,14 +743,14 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index > count()) throw xtd::argument_out_of_range_exception {};
           insert(begin() + index, items);
         }
 
         /// @cond
         template<typename ienumerable_t>
         void insert_range(size_type index, const ienumerable_t& enumerable) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index > count()) throw xtd::argument_out_of_range_exception {};
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
           if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
@@ -802,7 +802,7 @@ namespace xtd {
         /// @param index The zero-based index of the item to remove
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
-          if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index >= count()) throw xtd::argument_out_of_range_exception {};
 
           if (index == count() - 1) pop_back();
           else erase(begin() + index);
@@ -817,7 +817,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index or count is less than 0 or index + count is greater than xtd::collections::generic::list::count.
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
         virtual void remove_range(size_type index, size_type count) {
-          if (index + count >= this->count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index + count >= this->count()) throw xtd::argument_out_of_range_exception {};
           
           erase(begin() + index, begin() + index + count);
         }
@@ -840,7 +840,7 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual void resize(size_type count, const value_type& value) {
-          if (count > max_size()) throw xtd::argument_out_of_range_exception {csf_};
+          if (count > max_size()) throw xtd::argument_out_of_range_exception {};
           if (count == size()) return;
           ++data_->version;
           data_->items.resize(count, value);
