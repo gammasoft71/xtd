@@ -149,7 +149,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {csf_};
+          throw exception {};
       } catch (const ignore_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(test_event_args(*this, test_class, unit_test));
       } catch (const std::exception& e) {
@@ -161,7 +161,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {csf_};
+          throw exception {};
       } catch (...) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <unknown> throws";
@@ -171,7 +171,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {csf_};
+          throw exception {};
       }
       
       if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_start(test_event_args(*this, test_class, unit_test));
