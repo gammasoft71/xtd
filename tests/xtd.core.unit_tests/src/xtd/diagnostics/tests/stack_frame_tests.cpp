@@ -1,5 +1,6 @@
 #include <xtd/diagnostics/stack_frame>
 #include <xtd/io/path>
+#include <xtd/environment>
 #include <xtd/size_object>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -109,8 +110,9 @@ namespace xtd::tests {
 
     void test_method_(csf) {
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(csf_.get_file_name()), csf_);
-      assert::are_equal(112_z, csf_.get_file_line_number(), csf_);
-      assert::are_equal("csf", csf_.get_method(), csf_);
+      assert::are_equal(113_z, csf_.get_file_line_number(), csf_);
+      if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::csf()", csf_.get_method(), csf_);
+      else assert::are_equal("csf", csf_.get_method(), csf_);
     }
   };
 }
