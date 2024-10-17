@@ -19,10 +19,8 @@ namespace xtd {
       /// @endcond
       
     public:
-      void that(bool condition) {assert::is_true(condition);}
-      void that(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {assert::is_true(condition, stack_frame);}
-      void that(bool condition, const xtd::string& message) {assert::is_true(condition, message);}
-      void that(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::is_true(condition, message, stack_frame);}
+      void that(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {assert::is_true(condition, stack_frame);}
+      void that(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {assert::is_true(condition, message, stack_frame);}
       
       template<typename ...args_t>
       void that(bool condition, const xtd::string& message, args_t... args) {
