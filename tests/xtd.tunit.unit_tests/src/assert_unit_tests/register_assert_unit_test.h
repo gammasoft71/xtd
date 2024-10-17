@@ -35,7 +35,7 @@ namespace assert_unit_tests {
         xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
         std::cout << "Run tests:" << std::endl;
         try {
-          for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
+          for (auto& assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
             assert_unit_test.method(assert_unit_test.name);
         } catch (...) {
           std::cout << std::endl << "Test results:" << std::endl;
