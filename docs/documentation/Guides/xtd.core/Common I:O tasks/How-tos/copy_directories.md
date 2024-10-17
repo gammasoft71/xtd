@@ -21,7 +21,7 @@ public:
     
     // Check if the source directory exists
     if (!dir.exists())
-      throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()), csf_);
+      throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()));
     
     // Cache directories before we start copying
     vector<directory_info> dirs = dir.get_directories();

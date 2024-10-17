@@ -285,7 +285,7 @@ Don't raise exceptions in noexcept methods. For example:
 
 ```cpp
 void the_method() noexcept {
-  throw argument_exception {csf_}; // Error because you specify to the user that the_method has no exception, yet you throw an exception.
+  throw argument_exception {}; // Error because you specify to the user that the_method has no exception, yet you throw an exception.
 }
 ```
 
