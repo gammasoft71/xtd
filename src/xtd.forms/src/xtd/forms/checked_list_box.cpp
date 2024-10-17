@@ -105,7 +105,7 @@ const list_box& checked_list_box::items(const object_collection& items) {
 
 list_control& checked_list_box::selected_index(size_t selected_index) {
   if (this->selected_index() == selected_index) return *this;
-  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t);
   set_selected_index(selected_index);
   if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index);
   
@@ -406,7 +406,7 @@ forms::create_params checked_list_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> checked_list_box::clone() const {
   auto result = xtd::new_uptr<checked_list_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

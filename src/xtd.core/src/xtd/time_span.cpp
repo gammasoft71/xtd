@@ -337,7 +337,7 @@ string time_span::to_string(const string& format) const {
 string time_span::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (fmt.empty()) fmt = "G";
-  if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
+  if (fmt.size() > 1) throw format_exception("Invalid format"_t);
   
   switch (fmt[0]) {
     case 'c': return make_string_from_duration(true);

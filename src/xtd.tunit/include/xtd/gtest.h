@@ -15,13 +15,13 @@ namespace testing {
   void InitGoogleTest(int argc, char* argv[]) {InitGoogleTest();}
 }
 
-#define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2, csf_)
-#define ASSERT_NE(val1, val2) xtd::tunit::assert::are_not_equal(val1, val2, csf_)
-#define ASSERT_FALSE(condition) xtd::tunit::assert::is_false(condition, csf_)
-#define ASSERT_TRUE(condition) xtd::tunit::assert::is_true(condition, csf_)
+#define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2)
+#define ASSERT_NE(val1, val2) xtd::tunit::assert::are_not_equal(val1, val2)
+#define ASSERT_FALSE(condition) xtd::tunit::assert::is_false(condition)
+#define ASSERT_TRUE(condition) xtd::tunit::assert::is_true(condition)
 
-#define EXPECT_FALSE(condition) xtd::tunit::assume::is_false(condition, csf_)
-#define EXPECT_TRUE(condition) xtd::tunit::assume::is_true(condition, csf_)
+#define EXPECT_FALSE(condition) xtd::tunit::assume::is_false(condition)
+#define EXPECT_TRUE(condition) xtd::tunit::assume::is_true(condition)
 
 #define RUN_ALL_TESTS xtd::tunit::console_unit_test().run
 

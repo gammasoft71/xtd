@@ -366,8 +366,8 @@ void console::set_out(const std::ostream& os)  {
 
 void console::set_window_position(int32 left, int32 top) {
   register_cancel_key_press(); // Must be first...
-  if (left < 0 || left + window_width() >= buffer_width()) throw argument_out_of_range_exception{csf_};
-  if (top < 0 || top + window_height() >= buffer_height()) throw argument_out_of_range_exception{csf_};
+  if (left < 0 || left + window_width() >= buffer_width()) throw argument_out_of_range_exception {};
+  if (top < 0 || top + window_height() >= buffer_height()) throw argument_out_of_range_exception {};
   window_left(left);
   window_top(top);
 }

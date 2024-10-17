@@ -34,7 +34,7 @@ double seven_segment_display::back_segment_opacity() const noexcept {
 }
 
 seven_segment_display& seven_segment_display::back_segment_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
+  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t);
   if (data_->back_segment_opacity == value) return *this;
   data_->back_segment_opacity = value;
   invalidate();
@@ -287,7 +287,7 @@ drawing::size seven_segment_display::default_size() const noexcept {
 
 xtd::uptr<xtd::object> seven_segment_display::clone() const {
   auto result = xtd::new_uptr<seven_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

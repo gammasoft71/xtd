@@ -28,7 +28,7 @@ using namespace xtdc_gui;
 namespace {
   static void copy_directory(const string& source_dir, const string& destination_dir, bool recursive) {
     auto dir = directory_info(source_dir);
-    if (!dir.exists()) throw directory_not_found_exception(string::format("Source directory not found: {}", dir.full_name()), csf_);
+    if (!dir.exists()) throw directory_not_found_exception(string::format("Source directory not found: {}", dir.full_name()));
     
     directory::create_directory(destination_dir);
     

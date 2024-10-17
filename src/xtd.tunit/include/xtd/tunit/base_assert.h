@@ -32,127 +32,72 @@ namespace xtd {
       
       /// @{
       /// @brief Abort current test. This is used by the other assert functions.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::abort(); // test throws an abort_error exception.
-      /// ```
-      static void abort();
-      /// @brief Abort current test. This is used by the other assert functions.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::assert::abort(csf_); // test throws an abort_error exception.
+      /// xtd::tunit::assert::abort(); // test throws an abort_error exception.
       /// ```
-      static void abort(const xtd::diagnostics::stack_frame& stack_frame);
-      /// @brief Abort current test. This is used by the other assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::abort("User message..."); // test throws an abort_error exception.
-      /// ```
-      static void abort(const xtd::string& message);
-      
+      static void abort(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Abort current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::assert::abort("User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::assert::abort("User message..."); // test throws an abort_error exception.
       /// ```
-      static void abort(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void abort(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::fail(); // test throws an assert_error exception.
       /// ```
-      static void fail();
-      /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::fail(csf_); // test throws an assert_error exception.
-      /// ```
-      static void fail(const xtd::diagnostics::stack_frame& stack_frame);
+      static void fail(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::fail("User message..."); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::string& message);
-      /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::fail("User message...", csf_); // test throws an assert_error exception.
-      /// ```
-      static void fail(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void fail(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Ignore current test. This is used by the other assert functions.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::ignore(); // test throws an ignore_error exception.
       /// ```
-      static void ignore();
-      /// @brief Ignore current test. This is used by the other assert functions.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::ignore(csf_); // test throws an ignore_error exception.
-      /// ```
-      static void ignore(const xtd::diagnostics::stack_frame& stack_frame);
+      static void ignore(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::ignore("User message..."); // test throws an ignore_error exception.
       /// ```
-      static void ignore(const xtd::string& message);
-      /// @brief Ignore current test. This is used by the other assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::ignore("User message...", csf_); // test throws an ignore_error exception.
-      /// ```
-      static void ignore(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void ignore(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::succeed(); // test ok.
       /// ```
-      static void succeed();
-      /// @brief Generates a success with a generic message. This is used by the other assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::succeed(csf_); // test ok.
-      /// ```
-      static void succeed(const xtd::diagnostics::stack_frame& stack_frame);
-      /// @brief Generates a success with a generic message. This is used by the other assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// ```cpp
-      /// xtd::tunit::assert::succeed("User message..."); // test ok.
-      /// ```
-      static void succeed(const xtd::string& message);
+      static void succeed(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::assert::succeed("User message...", csf_); // test ok.
+      /// xtd::tunit::assert::succeed("User message..."); // test ok.
       /// ```
-      static void succeed(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void succeed(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
     protected:
@@ -177,17 +122,17 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::assert::error(actual_str, expected_str, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::assert::error(actual_str, expected_str, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void error(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void error(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::tunit::assert::fail(actual_str, expected_str, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::assert::fail(actual_str, expected_str, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.

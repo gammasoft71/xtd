@@ -81,7 +81,7 @@ horizontal_layout_panel horizontal_layout_panel::create(const control& parent, c
 
 xtd::uptr<xtd::object> horizontal_layout_panel::clone() const {
   auto result = xtd::new_uptr<horizontal_layout_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

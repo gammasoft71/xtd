@@ -36,7 +36,7 @@ double dot_matrix_display::back_dot_opacity() const noexcept {
 }
 
 dot_matrix_display& dot_matrix_display::back_dot_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
+  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t);
   if (data_->back_dot_opacity == value) return *this;
   data_->back_dot_opacity = value;
   if (data_->back_dot_opacity < 0.0) data_->back_dot_opacity = 0.0;
@@ -344,7 +344,7 @@ xtd::drawing::size dot_matrix_display::default_size() const noexcept {
 
 xtd::uptr<xtd::object> dot_matrix_display::clone() const {
   auto result = xtd::new_uptr<dot_matrix_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

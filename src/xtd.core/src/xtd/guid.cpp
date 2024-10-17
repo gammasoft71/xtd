@@ -11,18 +11,18 @@ using namespace xtd;
 const guid guid::empty;
 
 guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()), csf_);
+  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()));
 }
 
 guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()), csf_);
+  if (data.size() != data_.size()) throw argument_exception(string::format("Vector size must be {}", data_.size()));
 }
 
 guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d) {
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
-  if (d.size() != data_.size() - 8) throw argument_exception(string::format("Vector size must be {}", data_.size() - 8), csf_);
+  if (d.size() != data_.size() - 8) throw argument_exception(string::format("Vector size must be {}", data_.size() - 8));
   
   auto index = 0_z;
   data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);

@@ -30,7 +30,7 @@ namespace xtd {
         friend xtd::forms::native::toggle_button;
       private:
         explicit wx_toggle_button(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_user_window_style(create_params.style, create_params.ex_style));
