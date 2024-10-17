@@ -92,14 +92,14 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span>user_defined_exception {</div>
 <div class="line">  <span class="keyword">class </span>employee_list_not_found_exception : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {<span class="stringliteral">&quot;The employee list does not exist.&quot;</span>_t, sf} {</div>
+<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; frame = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {<span class="stringliteral">&quot;The employee list does not exist.&quot;</span>_t, frame} {</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {message, sf} {</div>
+<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; frame = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {message, frame} {</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> exception_t&gt;</div>
-<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message, <span class="keyword">const</span> exception_t&amp; inner, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {message, inner, sf} {</div>
+<div class="line">    employee_list_not_found_exception(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message, <span class="keyword">const</span> exception_t&amp; inner, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; frame = stack_frame::current()) : <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {message, inner, frame} {</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -136,7 +136,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 14:13:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 19:46:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
