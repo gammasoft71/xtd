@@ -1068,7 +1068,7 @@ namespace xtd {
       ///       directory_info dir(directory);
       ///
       ///       if (!dir.exists()) {
-      ///         throw directory_not_found_exception("The directory does not exist.", csf_);
+      ///         throw directory_not_found_exception("The directory does not exist.");
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.
@@ -1157,7 +1157,7 @@ namespace xtd {
       ///       directory_info dir(directory);
       ///
       ///       if (!dir.exists()) {
-      ///         throw directory_not_found_exception("The directory does not exist.", csf_);
+      ///         throw directory_not_found_exception("The directory does not exist.");
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.

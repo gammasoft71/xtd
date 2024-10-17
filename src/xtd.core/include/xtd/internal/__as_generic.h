@@ -37,7 +37,7 @@ namespace xtd {
     try {
       return std::any_cast<new_type_t>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
   }
   
@@ -484,7 +484,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -512,7 +512,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -582,7 +582,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -605,7 +605,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -629,7 +629,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -652,7 +652,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -676,7 +676,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -699,7 +699,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -722,7 +722,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -745,7 +745,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -768,7 +768,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }
@@ -791,7 +791,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what(), csf_);
+      throw invalid_cast_exception(e.what());
     }
     throw std::bad_cast();
   }

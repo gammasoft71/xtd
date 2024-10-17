@@ -71,28 +71,16 @@ void debug::use_global_lock(bool use_global_lock) noexcept {
   __debug_use_debug_global_lock__ = use_global_lock;
 }
 
-void debug::cassert(bool condition) {
-  if (__should_aborted__(condition, string::empty_string, csf_)) debug_break_();
-}
-
-void debug::cassert(bool condition, const string& message) {
-  if (__should_aborted__(condition, message, csf_)) debug_break_();
+void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, string::empty_string, stack_frame)) debug_break_();
 }
 
 void debug::cassert(bool condition, const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) debug_break_();
 }
 
-void debug::cassert(bool condition, const string& message, const string& detail_message) {
-  if (__should_aborted__(condition, message, detail_message, csf_)) debug_break_();
-}
-
 void debug::cassert(bool condition, const string& message, const string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, detail_message, stack_frame)) debug_break_();
-}
-
-void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, string::empty_string, stack_frame)) debug_break_();
 }
 
 void debug::indent() noexcept {

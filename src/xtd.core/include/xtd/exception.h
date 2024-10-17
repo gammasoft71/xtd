@@ -40,17 +40,17 @@ namespace xtd {
     /// @brief Create a new instance of class exception
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit exception(const xtd::diagnostics::stack_frame& stack_frame = csf_);
+    explicit exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+    explicit exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
     /// @brief Create a new instance of class exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     template<typename exception_t>
-    exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_) : exception(message, inner_exception.template memberwise_clone<exception_t>(), stack_frame, true) {}
+    exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : exception(message, inner_exception.template memberwise_clone<exception_t>(), stack_frame, true) {}
     /// @}
     
     /// @cond

@@ -35,29 +35,29 @@ namespace xtd {
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      explicit file_not_found_exception(const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      explicit file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       template<typename exception_t>
-      file_not_found_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_) : io_exception(message, inner_exception, stack_frame), defined_message_ {message.has_value()} {error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));}
+      file_not_found_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame), defined_message_ {message.has_value()} {error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));}
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param file_name The full name of the file that cannot be found.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-      file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::optional<xtd::string>& file_name, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::optional<xtd::string>& file_name, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param file_name The full name of the file that cannot be found.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       template<typename exception_t>
-      file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::optional<xtd::string>& file_name, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_) : io_exception(message, inner_exception, stack_frame), file_name_ {file_name}, defined_message_ {message.has_value()} {error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));}
+      file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::optional<xtd::string>& file_name, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame), file_name_ {file_name}, defined_message_ {message.has_value()} {error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));}
 
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
@@ -65,28 +65,28 @@ namespace xtd {
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
@@ -94,7 +94,7 @@ namespace xtd {
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class xtd::io::file_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
@@ -111,14 +111,14 @@ namespace xtd {
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @deprecated Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
       [[deprecated("Use xtd::io::directory_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
-      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      explicit file_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       /// @cond
       file_not_found_exception(const file_not_found_exception&) = default;
       file_not_found_exception& operator =(const file_not_found_exception&) = default;
       template<typename char_t>
-      file_not_found_exception(const xtd::optional<xtd::string>& message, const char_t* file_name, const xtd::diagnostics::stack_frame& stack_frame = csf_) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
-      file_not_found_exception(const xtd::optional<xtd::string>& message, xtd::null_opt file_name, const xtd::diagnostics::stack_frame& stack_frame = csf_) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
+      file_not_found_exception(const xtd::optional<xtd::string>& message, const char_t* file_name, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
+      file_not_found_exception(const xtd::optional<xtd::string>& message, xtd::null_opt file_name, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
       /// @endcond
       
       /// @name Public Properties
