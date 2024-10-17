@@ -16,40 +16,40 @@ namespace xtd::runtime::exception_services::tests {
     
     void test_method_(exception_captured) {
       assert::is_false(exception_dispatch_info {}.exception_captured());
-      assert::is_true(exception_dispatch_info::capture(exception {csf_}).exception_captured());
+      assert::is_true(exception_dispatch_info::capture(exception {}).exception_captured());
     }
     
     void test_method_(source_exception) {
-      auto edi = exception_dispatch_info::capture(argument_out_of_range_exception {"The first index is out of range", csf_});
+      auto edi = exception_dispatch_info::capture(argument_out_of_range_exception {"The first index is out of range"});
       assert::is_not_null(edi.source_exception());
       assert::are_equal("The first index is out of range", edi.source_exception()->message());
       assert::are_equal(typeof_<argument_out_of_range_exception>(), typeof_(*edi.source_exception()));
     }
     
     void test_method_(rethrow) {
-      auto edi = exception_dispatch_info::capture(argument_out_of_range_exception {"The first index is out of range", csf_});
+      auto edi = exception_dispatch_info::capture(argument_out_of_range_exception {"The first index is out of range"});
       try {
         edi.rethrow();
       } catch (const argument_out_of_range_exception& e) {
         assert::are_equal("The first index is out of range", e.message());
       } catch (...) {
-        assert::fail(csf_);
+        assert::fail();
       }
     }
     
     void test_method_(rethrow_with_exception) {
       try {
-        exception_dispatch_info::rethrow(argument_out_of_range_exception {"The first index is out of range", csf_});
+        exception_dispatch_info::rethrow(argument_out_of_range_exception {"The first index is out of range"});
       } catch (const argument_out_of_range_exception& e) {
         assert::are_equal("The first index is out of range", e.message());
       } catch (...) {
-        assert::fail(csf_);
+        assert::fail();
       }
     }
 
     void test_method_(convert_to_bool_operator) {
       assert::is_false(exception_dispatch_info {} ? true : false);
-      assert::is_true(exception_dispatch_info::capture(exception {csf_}) ? true : false);
+      assert::is_true(exception_dispatch_info::capture(exception {}) ? true : false);
     }
   };
 }
