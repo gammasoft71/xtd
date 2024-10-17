@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('xtd_8core_8native_2include_2xtd_2native_2system__sound_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('xtd_8core_8native_2include_2xtd_2nativ
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">system_sound.h</div></div>
 </div><!--header-->
@@ -123,23 +107,19 @@ $(document).ready(function(){initNavTree('xtd_8core_8native_2include_2xtd_2nativ
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">xtd::media::system_sound</a>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1system__sound_ab16da61e766d7c38959a5cb1a92bb2bd.html#ab16da61e766d7c38959a5cb1a92bb2bd">   43</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1system__sound_ab16da61e766d7c38959a5cb1a92bb2bd.html#ab16da61e766d7c38959a5cb1a92bb2bd">play</a>(uint32_t sound);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1system__sound.html#ab16da61e766d7c38959a5cb1a92bb2bd">   43</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1system__sound.html#ab16da61e766d7c38959a5cb1a92bb2bd">play</a>(uint32_t sound);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    };</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 <div class="ttc" id="aclassxtd_1_1media_1_1system__sound_html"><div class="ttname"><a href="classxtd_1_1media_1_1system__sound.html">xtd::media::system_sound</a></div><div class="ttdoc">Represents a system sound type.</div><div class="ttdef"><b>Definition</b> system_sound.h:29</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1system__sound_ab16da61e766d7c38959a5cb1a92bb2bd_html_ab16da61e766d7c38959a5cb1a92bb2bd"><div class="ttname"><a href="classxtd_1_1native_1_1system__sound_ab16da61e766d7c38959a5cb1a92bb2bd.html#ab16da61e766d7c38959a5cb1a92bb2bd">xtd::native::system_sound::play</a></div><div class="ttdeci">static void play(uint32_t sound)</div><div class="ttdoc">Play system sound.</div></div>
 <div class="ttc" id="aclassxtd_1_1native_1_1system__sound_html"><div class="ttname"><a href="classxtd_1_1native_1_1system__sound.html">xtd::native::system_sound</a></div><div class="ttdoc">Contains system_sound native API.</div><div class="ttdef"><b>Definition</b> system_sound.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1system__sound_html_ab16da61e766d7c38959a5cb1a92bb2bd"><div class="ttname"><a href="classxtd_1_1native_1_1system__sound.html#ab16da61e766d7c38959a5cb1a92bb2bd">xtd::native::system_sound::play</a></div><div class="ttdeci">static void play(uint32_t sound)</div><div class="ttdoc">Play system sound.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li><li class="navelem"><a class="el" href="xtd_8core_8native_2include_2xtd_2native_2system__sound_8h.html">system_sound.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:02:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -15,7 +15,10 @@ var searchData=
   ['not_5fsupported_5fexception_2eh_12',['not_supported_exception.h',['../not__supported__exception_8h.html',1,'']]],
   ['notifier_5fappearance_2eh_13',['notifier_appearance.h',['../notifier__appearance_8h.html',1,'']]],
   ['null_2eh_14',['null.h',['../null_8h.html',1,'']]],
-  ['null_5fpointer_5fexception_2eh_15',['null_pointer_exception.h',['../null__pointer__exception_8h.html',1,'']]],
-  ['number_5fstyles_2eh_16',['number_styles.h',['../number__styles_8h.html',1,'']]],
-  ['numeric_5fup_5fdown_2eh_17',['numeric_up_down.h',['../xtd_8forms_8native_2include_2xtd_2forms_2native_2numeric__up__down_8h.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2numeric__up__down_8h.html',1,'(Global Namespace)']]]
+  ['null_5fopt_2eh_15',['null_opt.h',['../null__opt_8h.html',1,'']]],
+  ['null_5fpointer_5fexception_2eh_16',['null_pointer_exception.h',['../null__pointer__exception_8h.html',1,'']]],
+  ['null_5fptr_2eh_17',['null_ptr.h',['../null__ptr_8h.html',1,'']]],
+  ['nullopt_2eh_18',['nullopt.h',['../nullopt_8h.html',1,'']]],
+  ['number_5fstyles_2eh_19',['number_styles.h',['../number__styles_8h.html',1,'']]],
+  ['numeric_5fup_5fdown_2eh_20',['numeric_up_down.h',['../xtd_8forms_8native_2include_2xtd_2forms_2native_2numeric__up__down_8h.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2numeric__up__down_8h.html',1,'(Global Namespace)']]]
 ];

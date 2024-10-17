@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__progdlg.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,54 +90,429 @@ $(document).ready(function(){initNavTree('group__progdlg.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gadc58ec45998a8c098a862c9bc71dde28"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gadc58ec45998a8c098a862c9bc71dde28.html#gadc58ec45998a8c098a862c9bc71dde28">PROGDLG_NORMAL</a></td></tr>
+<tr class="memitem:gadc58ec45998a8c098a862c9bc71dde28"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gadc58ec45998a8c098a862c9bc71dde28">PROGDLG_NORMAL</a></td></tr>
 <tr class="memdesc:gadc58ec45998a8c098a862c9bc71dde28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normal progress dialog box behavior.  <br /></td></tr>
 <tr class="separator:gadc58ec45998a8c098a862c9bc71dde28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga696116ced30818b88e30b477971994b8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga696116ced30818b88e30b477971994b8.html#ga696116ced30818b88e30b477971994b8">PROGDLG_MODAL</a></td></tr>
+<tr class="memitem:ga696116ced30818b88e30b477971994b8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga696116ced30818b88e30b477971994b8">PROGDLG_MODAL</a></td></tr>
 <tr class="memdesc:ga696116ced30818b88e30b477971994b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The progress dialog box will be modal to the window specified by hwndParent. By default, a progress dialog box is modeless.  <br /></td></tr>
 <tr class="separator:ga696116ced30818b88e30b477971994b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcc581e479867791c713c0c72915bc81"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gafcc581e479867791c713c0c72915bc81.html#gafcc581e479867791c713c0c72915bc81">PROGDLG_AUTOTIME</a></td></tr>
+<tr class="memitem:gafcc581e479867791c713c0c72915bc81"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gafcc581e479867791c713c0c72915bc81">PROGDLG_AUTOTIME</a></td></tr>
 <tr class="memdesc:gafcc581e479867791c713c0c72915bc81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically estimate the remaining time and display the estimate on line 3. If this flag is set, IProgressDialog::SetLine can be used only to display text on lines 1 and 2.  <br /></td></tr>
 <tr class="separator:gafcc581e479867791c713c0c72915bc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ce02b98e846c1264219d634236d8bdc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga1ce02b98e846c1264219d634236d8bdc.html#ga1ce02b98e846c1264219d634236d8bdc">PROGDLG_NOTIME</a></td></tr>
+<tr class="memitem:ga1ce02b98e846c1264219d634236d8bdc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga1ce02b98e846c1264219d634236d8bdc">PROGDLG_NOTIME</a></td></tr>
 <tr class="memdesc:ga1ce02b98e846c1264219d634236d8bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not show the "time remaining" text.  <br /></td></tr>
 <tr class="separator:ga1ce02b98e846c1264219d634236d8bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb5723c90491369c0e03747f8461cf16"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gacb5723c90491369c0e03747f8461cf16.html#gacb5723c90491369c0e03747f8461cf16">PROGDLG_NOMINIMIZE</a></td></tr>
+<tr class="memitem:gacb5723c90491369c0e03747f8461cf16"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gacb5723c90491369c0e03747f8461cf16">PROGDLG_NOMINIMIZE</a></td></tr>
 <tr class="memdesc:gacb5723c90491369c0e03747f8461cf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not display a minimize button on the dialog box's caption bar.  <br /></td></tr>
 <tr class="separator:gacb5723c90491369c0e03747f8461cf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaffaa17448e160e38a98edb4037c27e27"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gaffaa17448e160e38a98edb4037c27e27.html#gaffaa17448e160e38a98edb4037c27e27">PROGDLG_NOPROGRESSBAR</a></td></tr>
+<tr class="memitem:gaffaa17448e160e38a98edb4037c27e27"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gaffaa17448e160e38a98edb4037c27e27">PROGDLG_NOPROGRESSBAR</a></td></tr>
 <tr class="memdesc:gaffaa17448e160e38a98edb4037c27e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not display a progress bar. Typically, an application can quantitatively determine how much of the operation remains and periodically pass that value to IProgressDialog::SetProgress. The progress dialog box uses this information to update its progress bar. This flag is typically set when the calling application must wait for an operation to finish, but does not have any quantitative information it can use to update the dialog box.  <br /></td></tr>
 <tr class="separator:gaffaa17448e160e38a98edb4037c27e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76277866761560f2d0fa2d9a26fead1e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga76277866761560f2d0fa2d9a26fead1e.html#ga76277866761560f2d0fa2d9a26fead1e">PROGDLG_MARQUEEPROGRESS</a></td></tr>
+<tr class="memitem:ga76277866761560f2d0fa2d9a26fead1e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga76277866761560f2d0fa2d9a26fead1e">PROGDLG_MARQUEEPROGRESS</a></td></tr>
 <tr class="memdesc:ga76277866761560f2d0fa2d9a26fead1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the progress bar to marquee mode. This causes the progress bar to scroll horizontally, similar to a marquee display. Use this when you wish to indicate that progress is being made, but the time required for the operation is unknown.  <br /></td></tr>
 <tr class="separator:ga76277866761560f2d0fa2d9a26fead1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2abf43af368c4c704390ca073ef8387"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gac2abf43af368c4c704390ca073ef8387.html#gac2abf43af368c4c704390ca073ef8387">PROGDLG_NOCANCEL</a></td></tr>
+<tr class="memitem:gac2abf43af368c4c704390ca073ef8387"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gac2abf43af368c4c704390ca073ef8387">PROGDLG_NOCANCEL</a></td></tr>
 <tr class="memdesc:gac2abf43af368c4c704390ca073ef8387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not display a cancel button. The operation cannot be canceled. Use this only when absolutely necessary.  <br /></td></tr>
 <tr class="separator:gac2abf43af368c4c704390ca073ef8387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacee980be04878b11fe376c81413bd499"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_gacee980be04878b11fe376c81413bd499.html#gacee980be04878b11fe376c81413bd499">PROGDLG_NOSKIP</a></td></tr>
+<tr class="memitem:gacee980be04878b11fe376c81413bd499"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#gacee980be04878b11fe376c81413bd499">PROGDLG_NOSKIP</a></td></tr>
 <tr class="memdesc:gacee980be04878b11fe376c81413bd499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not shows "Skip" button.  <br /></td></tr>
 <tr class="separator:gacee980be04878b11fe376c81413bd499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8ef0b4b2c651e89bc0d746bff16d938e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga8ef0b4b2c651e89bc0d746bff16d938e.html#ga8ef0b4b2c651e89bc0d746bff16d938e">PROGDLG_SMOOTH</a></td></tr>
+<tr class="memitem:ga8ef0b4b2c651e89bc0d746bff16d938e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga8ef0b4b2c651e89bc0d746bff16d938e">PROGDLG_SMOOTH</a></td></tr>
 <tr class="memdesc:ga8ef0b4b2c651e89bc0d746bff16d938e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increasing the size of a smooth.  <br /></td></tr>
 <tr class="separator:ga8ef0b4b2c651e89bc0d746bff16d938e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6610de64db8412988f19df39b2037594"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga6610de64db8412988f19df39b2037594.html#ga6610de64db8412988f19df39b2037594">PROGDLG_SMOOTH_REVERSE</a></td></tr>
+<tr class="memitem:ga6610de64db8412988f19df39b2037594"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga6610de64db8412988f19df39b2037594">PROGDLG_SMOOTH_REVERSE</a></td></tr>
 <tr class="memdesc:ga6610de64db8412988f19df39b2037594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increasing the size of a reverse smooth.  <br /></td></tr>
 <tr class="separator:ga6610de64db8412988f19df39b2037594"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga28ea13642ef20e6d8b2ec9081445d864"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga28ea13642ef20e6d8b2ec9081445d864.html#ga28ea13642ef20e6d8b2ec9081445d864">PROGDLG_ELAPSEDTIME</a></td></tr>
+<tr class="memitem:ga28ea13642ef20e6d8b2ec9081445d864"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga28ea13642ef20e6d8b2ec9081445d864">PROGDLG_ELAPSEDTIME</a></td></tr>
 <tr class="memdesc:ga28ea13642ef20e6d8b2ec9081445d864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the "elapsed time" text.  <br /></td></tr>
 <tr class="separator:ga28ea13642ef20e6d8b2ec9081445d864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c282aa79a92ada18c178cf250f96347"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg_ga9c282aa79a92ada18c178cf250f96347.html#ga9c282aa79a92ada18c178cf250f96347">PROGDLG_ESTIMATEDTIME</a></td></tr>
+<tr class="memitem:ga9c282aa79a92ada18c178cf250f96347"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__progdlg.html#ga9c282aa79a92ada18c178cf250f96347">PROGDLG_ESTIMATEDTIME</a></td></tr>
 <tr class="memdesc:ga9c282aa79a92ada18c178cf250f96347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the "estimated time" text.  <br /></td></tr>
 <tr class="separator:ga9c282aa79a92ada18c178cf250f96347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gadc58ec45998a8c098a862c9bc71dde28" name="gadc58ec45998a8c098a862c9bc71dde28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc58ec45998a8c098a862c9bc71dde28">&#9670;&#160;</a></span>PROGDLG_NORMAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NORMAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Normal progress dialog box behavior. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga696116ced30818b88e30b477971994b8" name="ga696116ced30818b88e30b477971994b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga696116ced30818b88e30b477971994b8">&#9670;&#160;</a></span>PROGDLG_MODAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_MODAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>The progress dialog box will be modal to the window specified by hwndParent. By default, a progress dialog box is modeless. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gafcc581e479867791c713c0c72915bc81" name="gafcc581e479867791c713c0c72915bc81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafcc581e479867791c713c0c72915bc81">&#9670;&#160;</a></span>PROGDLG_AUTOTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_AUTOTIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Automatically estimate the remaining time and display the estimate on line 3. If this flag is set, IProgressDialog::SetLine can be used only to display text on lines 1 and 2. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga1ce02b98e846c1264219d634236d8bdc" name="ga1ce02b98e846c1264219d634236d8bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ce02b98e846c1264219d634236d8bdc">&#9670;&#160;</a></span>PROGDLG_NOTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NOTIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Do not show the "time remaining" text. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gacb5723c90491369c0e03747f8461cf16" name="gacb5723c90491369c0e03747f8461cf16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb5723c90491369c0e03747f8461cf16">&#9670;&#160;</a></span>PROGDLG_NOMINIMIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NOMINIMIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Do not display a minimize button on the dialog box's caption bar. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaffaa17448e160e38a98edb4037c27e27" name="gaffaa17448e160e38a98edb4037c27e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffaa17448e160e38a98edb4037c27e27">&#9670;&#160;</a></span>PROGDLG_NOPROGRESSBAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NOPROGRESSBAR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Do not display a progress bar. Typically, an application can quantitatively determine how much of the operation remains and periodically pass that value to IProgressDialog::SetProgress. The progress dialog box uses this information to update its progress bar. This flag is typically set when the calling application must wait for an operation to finish, but does not have any quantitative information it can use to update the dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga76277866761560f2d0fa2d9a26fead1e" name="ga76277866761560f2d0fa2d9a26fead1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76277866761560f2d0fa2d9a26fead1e">&#9670;&#160;</a></span>PROGDLG_MARQUEEPROGRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_MARQUEEPROGRESS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Sets the progress bar to marquee mode. This causes the progress bar to scroll horizontally, similar to a marquee display. Use this when you wish to indicate that progress is being made, but the time required for the operation is unknown. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac2abf43af368c4c704390ca073ef8387" name="gac2abf43af368c4c704390ca073ef8387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2abf43af368c4c704390ca073ef8387">&#9670;&#160;</a></span>PROGDLG_NOCANCEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NOCANCEL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Do not display a cancel button. The operation cannot be canceled. Use this only when absolutely necessary. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gacee980be04878b11fe376c81413bd499" name="gacee980be04878b11fe376c81413bd499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacee980be04878b11fe376c81413bd499">&#9670;&#160;</a></span>PROGDLG_NOSKIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_NOSKIP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Do not shows "Skip" button. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8ef0b4b2c651e89bc0d746bff16d938e" name="ga8ef0b4b2c651e89bc0d746bff16d938e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ef0b4b2c651e89bc0d746bff16d938e">&#9670;&#160;</a></span>PROGDLG_SMOOTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_SMOOTH</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Increasing the size of a smooth. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6610de64db8412988f19df39b2037594" name="ga6610de64db8412988f19df39b2037594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6610de64db8412988f19df39b2037594">&#9670;&#160;</a></span>PROGDLG_SMOOTH_REVERSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_SMOOTH_REVERSE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Increasing the size of a reverse smooth. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga28ea13642ef20e6d8b2ec9081445d864" name="ga28ea13642ef20e6d8b2ec9081445d864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28ea13642ef20e6d8b2ec9081445d864">&#9670;&#160;</a></span>PROGDLG_ELAPSEDTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_ELAPSEDTIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Shows the "elapsed time" text. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9c282aa79a92ada18c178cf250f96347" name="ga9c282aa79a92ada18c178cf250f96347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c282aa79a92ada18c178cf250f96347">&#9670;&#160;</a></span>PROGDLG_ESTIMATEDTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t PROGDLG_ESTIMATEDTIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="progress__dialog__flags_8h.html">xtd.forms.native/include/xtd/forms/progress_dialog_flags.h</a>&gt;</code></p>
+
+<p>Shows the "estimated time" text. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

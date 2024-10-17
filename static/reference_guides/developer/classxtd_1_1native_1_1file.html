@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1file.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1file.html',''); 
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1file.html">file</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1file-members.html">List of all members</a>  </div>
@@ -111,34 +95,233 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1file.html',''); 
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a61ca8fe2d0f22fc01ffa082a0b1ae0f5"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file_a61ca8fe2d0f22fc01ffa082a0b1ae0f5.html#a61ca8fe2d0f22fc01ffa082a0b1ae0f5">copy</a> (const std::string &amp;source_file, const std::string &amp;target_file)</td></tr>
+<tr class="memitem:a61ca8fe2d0f22fc01ffa082a0b1ae0f5"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file.html#a61ca8fe2d0f22fc01ffa082a0b1ae0f5">copy</a> (const std::string &amp;source_file, const std::string &amp;target_file)</td></tr>
 <tr class="memdesc:a61ca8fe2d0f22fc01ffa082a0b1ae0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a specified source file to a target file.  <br /></td></tr>
 <tr class="separator:a61ca8fe2d0f22fc01ffa082a0b1ae0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7497cfe51ac8c019b9c5c0e84209de0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file_ab7497cfe51ac8c019b9c5c0e84209de0.html#ab7497cfe51ac8c019b9c5c0e84209de0">exists</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
+<tr class="memitem:ab7497cfe51ac8c019b9c5c0e84209de0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file.html#ab7497cfe51ac8c019b9c5c0e84209de0">exists</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:ab7497cfe51ac8c019b9c5c0e84209de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if specified file exist.  <br /></td></tr>
 <tr class="separator:ab7497cfe51ac8c019b9c5c0e84209de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82c61c0484924bf7e8a2b4a58142149b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file_a82c61c0484924bf7e8a2b4a58142149b.html#a82c61c0484924bf7e8a2b4a58142149b">get_size</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
+<tr class="memitem:a82c61c0484924bf7e8a2b4a58142149b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file.html#a82c61c0484924bf7e8a2b4a58142149b">get_size</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:a82c61c0484924bf7e8a2b4a58142149b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets file size of specified path.  <br /></td></tr>
 <tr class="separator:a82c61c0484924bf7e8a2b4a58142149b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250fe0e138d7ef28e648b3d6b26f0714"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file_a250fe0e138d7ef28e648b3d6b26f0714.html#a250fe0e138d7ef28e648b3d6b26f0714">move</a> (const std::string &amp;old_path, const std::string &amp;new_path)</td></tr>
+<tr class="memitem:a250fe0e138d7ef28e648b3d6b26f0714"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file.html#a250fe0e138d7ef28e648b3d6b26f0714">move</a> (const std::string &amp;old_path, const std::string &amp;new_path)</td></tr>
 <tr class="memdesc:a250fe0e138d7ef28e648b3d6b26f0714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a file or a directory and its contents to a new location.  <br /></td></tr>
 <tr class="separator:a250fe0e138d7ef28e648b3d6b26f0714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab46756bcf39d5464acdc2dd6c615e74d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file_ab46756bcf39d5464acdc2dd6c615e74d.html#ab46756bcf39d5464acdc2dd6c615e74d">remove</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1file.html">file</a>)</td></tr>
+<tr class="memitem:ab46756bcf39d5464acdc2dd6c615e74d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1file.html#ab46756bcf39d5464acdc2dd6c615e74d">remove</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1file.html">file</a>)</td></tr>
 <tr class="memdesc:ab46756bcf39d5464acdc2dd6c615e74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permanently deletes a speccified file.  <br /></td></tr>
 <tr class="separator:ab46756bcf39d5464acdc2dd6c615e74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61ca8fe2d0f22fc01ffa082a0b1ae0f5" name="a61ca8fe2d0f22fc01ffa082a0b1ae0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ca8fe2d0f22fc01ffa082a0b1ae0f5">&#9670;&#160;</a></span>copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::file::copy </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>source_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target_file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy a specified source file to a target file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source_file</td><td>The source file to copy. </td></tr>
+    <tr><td class="paramname">target_file</td><td>The target file where copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ab7497cfe51ac8c019b9c5c0e84209de0" name="ab7497cfe51ac8c019b9c5c0e84209de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7497cfe51ac8c019b9c5c0e84209de0">&#9670;&#160;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::file::exists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if specified file exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file path to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true is file exist; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a82c61c0484924bf7e8a2b4a58142149b" name="a82c61c0484924bf7e8a2b4a58142149b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c61c0484924bf7e8a2b4a58142149b">&#9670;&#160;</a></span>get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t xtd::native::file::get_size </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets file size of specified path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The relative or absolute path to the directory to get size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The file size. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a250fe0e138d7ef28e648b3d6b26f0714" name="a250fe0e138d7ef28e648b3d6b26f0714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250fe0e138d7ef28e648b3d6b26f0714">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::file::move </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>old_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>new_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves a file or a directory and its contents to a new location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old_path</td><td>The path of the file or directory to move. </td></tr>
+    <tr><td class="paramname">new_path</td><td>The path to the new location for old_path. If old_path is a file, then new_path must also be a file name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ab46756bcf39d5464acdc2dd6c615e74d" name="ab46756bcf39d5464acdc2dd6c615e74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab46756bcf39d5464acdc2dd6c615e74d">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::file::remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permanently deletes a speccified file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file name to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2file_8h_source.html">file.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1file.html">file</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

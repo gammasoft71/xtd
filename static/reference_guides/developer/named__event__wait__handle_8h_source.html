@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('named__event__wait__handle_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('named__event__wait__handle_8h_source.h
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">named_event_wait_handle.h</div></div>
 </div><!--header-->
@@ -124,41 +108,37 @@ $(document).ready(function(){initNavTree('named__event__wait__handle_8h_source.h
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_aa55171f842c6d8bcce50a5a7f95fb4ae.html#aa55171f842c6d8bcce50a5a7f95fb4ae">   47</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_aa55171f842c6d8bcce50a5a7f95fb4ae.html#aa55171f842c6d8bcce50a5a7f95fb4ae">create</a>(<span class="keywordtype">bool</span> initial_state, <span class="keywordtype">bool</span> manual_reset, <span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#aa55171f842c6d8bcce50a5a7f95fb4ae">   47</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#aa55171f842c6d8bcce50a5a7f95fb4ae">create</a>(<span class="keywordtype">bool</span> initial_state, <span class="keywordtype">bool</span> manual_reset, <span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_adbb5f58df427cfe2e48d15b84be7eeff.html#adbb5f58df427cfe2e48d15b84be7eeff">   53</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_adbb5f58df427cfe2e48d15b84be7eeff.html#adbb5f58df427cfe2e48d15b84be7eeff">destroy</a>(intmax_t handle, <span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#adbb5f58df427cfe2e48d15b84be7eeff">   53</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#adbb5f58df427cfe2e48d15b84be7eeff">destroy</a>(intmax_t handle, <span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_a3d6b6de46903efc2a55b8997fcec915e.html#a3d6b6de46903efc2a55b8997fcec915e">   58</a></span>      <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_a3d6b6de46903efc2a55b8997fcec915e.html#a3d6b6de46903efc2a55b8997fcec915e">max_name_size</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#a3d6b6de46903efc2a55b8997fcec915e">   58</a></span>      <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#a3d6b6de46903efc2a55b8997fcec915e">max_name_size</a>();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_a8ec4c90487b6b032fc33bfd0d73e48f6.html#a8ec4c90487b6b032fc33bfd0d73e48f6">   64</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_a8ec4c90487b6b032fc33bfd0d73e48f6.html#a8ec4c90487b6b032fc33bfd0d73e48f6">open</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#a8ec4c90487b6b032fc33bfd0d73e48f6">   64</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#a8ec4c90487b6b032fc33bfd0d73e48f6">open</a>(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_a2259b672212ec873b7449d62bb809946.html#a2259b672212ec873b7449d62bb809946">   70</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_a2259b672212ec873b7449d62bb809946.html#a2259b672212ec873b7449d62bb809946">set</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#a2259b672212ec873b7449d62bb809946">   70</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#a2259b672212ec873b7449d62bb809946">set</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">   76</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">reset</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">   76</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">reset</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle_ae9059bf0b1dcbac7d31ebc3c68d6f1f6.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">   88</a></span>      <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle_ae9059bf0b1dcbac7d31ebc3c68d6f1f6.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">wait</a>(intmax_t handle, int32_t milliseconds_timeout, <span class="keywordtype">bool</span> manual_reset);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1named__event__wait__handle.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">   88</a></span>      <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classxtd_1_1native_1_1named__event__wait__handle.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">wait</a>(intmax_t handle, int32_t milliseconds_timeout, <span class="keywordtype">bool</span> manual_reset);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    };</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_a2259b672212ec873b7449d62bb809946_html_a2259b672212ec873b7449d62bb809946"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_a2259b672212ec873b7449d62bb809946.html#a2259b672212ec873b7449d62bb809946">xtd::native::named_event_wait_handle::set</a></div><div class="ttdeci">static bool set(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_a3d6b6de46903efc2a55b8997fcec915e_html_a3d6b6de46903efc2a55b8997fcec915e"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_a3d6b6de46903efc2a55b8997fcec915e.html#a3d6b6de46903efc2a55b8997fcec915e">xtd::native::named_event_wait_handle::max_name_size</a></div><div class="ttdeci">static size_t max_name_size()</div><div class="ttdoc">Gets the maximum name size supported.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_a8ec4c90487b6b032fc33bfd0d73e48f6_html_a8ec4c90487b6b032fc33bfd0d73e48f6"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_a8ec4c90487b6b032fc33bfd0d73e48f6.html#a8ec4c90487b6b032fc33bfd0d73e48f6">xtd::native::named_event_wait_handle::open</a></div><div class="ttdeci">static intmax_t open(const std::string &amp;name)</div><div class="ttdoc">Open named event wait handle with specified name.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_aa55171f842c6d8bcce50a5a7f95fb4ae_html_aa55171f842c6d8bcce50a5a7f95fb4ae"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_aa55171f842c6d8bcce50a5a7f95fb4ae.html#aa55171f842c6d8bcce50a5a7f95fb4ae">xtd::native::named_event_wait_handle::create</a></div><div class="ttdeci">static intmax_t create(bool initial_state, bool manual_reset, const std::string &amp;name)</div><div class="ttdoc">Create named event wait handle with specified name, initial count and maxixum count.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86_html_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">xtd::native::named_event_wait_handle::reset</a></div><div class="ttdeci">static bool reset(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Sets the state of the event to nonsignaled, causing threads to block.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_adbb5f58df427cfe2e48d15b84be7eeff_html_adbb5f58df427cfe2e48d15b84be7eeff"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_adbb5f58df427cfe2e48d15b84be7eeff.html#adbb5f58df427cfe2e48d15b84be7eeff">xtd::native::named_event_wait_handle::destroy</a></div><div class="ttdeci">static void destroy(intmax_t handle, const std::string &amp;name)</div><div class="ttdoc">Destroy named event wait handle with specified event wait handle handle.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_ae9059bf0b1dcbac7d31ebc3c68d6f1f6_html_ae9059bf0b1dcbac7d31ebc3c68d6f1f6"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle_ae9059bf0b1dcbac7d31ebc3c68d6f1f6.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">xtd::native::named_event_wait_handle::wait</a></div><div class="ttdeci">static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout, bool manual_reset)</div><div class="ttdoc">Wait named event wait handle with specified event wait handle handle, timeout and manual reset.</div></div>
 <div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html">xtd::native::named_event_wait_handle</a></div><div class="ttdoc">Contains named_event_wait_handle native API.</div><div class="ttdef"><b>Definition</b> named_event_wait_handle.h:34</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_a2259b672212ec873b7449d62bb809946"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#a2259b672212ec873b7449d62bb809946">xtd::native::named_event_wait_handle::set</a></div><div class="ttdeci">static bool set(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_a3d6b6de46903efc2a55b8997fcec915e"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#a3d6b6de46903efc2a55b8997fcec915e">xtd::native::named_event_wait_handle::max_name_size</a></div><div class="ttdeci">static size_t max_name_size()</div><div class="ttdoc">Gets the maximum name size supported.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_a8ec4c90487b6b032fc33bfd0d73e48f6"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#a8ec4c90487b6b032fc33bfd0d73e48f6">xtd::native::named_event_wait_handle::open</a></div><div class="ttdeci">static intmax_t open(const std::string &amp;name)</div><div class="ttdoc">Open named event wait handle with specified name.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_aa55171f842c6d8bcce50a5a7f95fb4ae"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#aa55171f842c6d8bcce50a5a7f95fb4ae">xtd::native::named_event_wait_handle::create</a></div><div class="ttdeci">static intmax_t create(bool initial_state, bool manual_reset, const std::string &amp;name)</div><div class="ttdoc">Create named event wait handle with specified name, initial count and maxixum count.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_ab236d1b6f6a9ae0ca8f7fc1f88d1ea86"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#ab236d1b6f6a9ae0ca8f7fc1f88d1ea86">xtd::native::named_event_wait_handle::reset</a></div><div class="ttdeci">static bool reset(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Sets the state of the event to nonsignaled, causing threads to block.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_adbb5f58df427cfe2e48d15b84be7eeff"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#adbb5f58df427cfe2e48d15b84be7eeff">xtd::native::named_event_wait_handle::destroy</a></div><div class="ttdeci">static void destroy(intmax_t handle, const std::string &amp;name)</div><div class="ttdoc">Destroy named event wait handle with specified event wait handle handle.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1named__event__wait__handle_html_ae9059bf0b1dcbac7d31ebc3c68d6f1f6"><div class="ttname"><a href="classxtd_1_1native_1_1named__event__wait__handle.html#ae9059bf0b1dcbac7d31ebc3c68d6f1f6">xtd::native::named_event_wait_handle::wait</a></div><div class="ttdeci">static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout, bool manual_reset)</div><div class="ttdoc">Wait named event wait handle with specified event wait handle handle, timeout and manual reset.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a></div><div class="ttdoc">Represents a thread synchronization event.</div><div class="ttdef"><b>Definition</b> event_wait_handle.h:37</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li><li class="navelem"><a class="el" href="named__event__wait__handle_8h.html">named_event_wait_handle.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:02:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

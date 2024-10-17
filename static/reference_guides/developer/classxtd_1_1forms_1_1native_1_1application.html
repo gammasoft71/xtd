@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1application.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1applica
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html">application</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1application-members.html">List of all members</a>  </div>
@@ -120,79 +104,683 @@ Inheritance diagram for xtd::forms::native::application:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a556bba5b9baab002f894b49529dfce88"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a556bba5b9baab002f894b49529dfce88.html#a556bba5b9baab002f894b49529dfce88">allow_quit</a> ()</td></tr>
+<tr class="memitem:a556bba5b9baab002f894b49529dfce88"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a556bba5b9baab002f894b49529dfce88">allow_quit</a> ()</td></tr>
 <tr class="memdesc:a556bba5b9baab002f894b49529dfce88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the caller can quit this application.  <br /></td></tr>
 <tr class="separator:a556bba5b9baab002f894b49529dfce88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040d3ef34dfba0dfa4271dc82b77c319"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a040d3ef34dfba0dfa4271dc82b77c319.html#a040d3ef34dfba0dfa4271dc82b77c319">cleanup</a> ()</td></tr>
-<tr class="memdesc:a040d3ef34dfba0dfa4271dc82b77c319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup all data, handles, references, ... initialized by <a class="el" href="classxtd_1_1forms_1_1native_1_1application_af258073bfb1dcd6adf8e0dc05e14b253.html#af258073bfb1dcd6adf8e0dc05e14b253" title="Initialize all data, handles, references, ... needed by toolkits.">initialize()</a> before quit.  <br /></td></tr>
+<tr class="memitem:a040d3ef34dfba0dfa4271dc82b77c319"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a040d3ef34dfba0dfa4271dc82b77c319">cleanup</a> ()</td></tr>
+<tr class="memdesc:a040d3ef34dfba0dfa4271dc82b77c319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup all data, handles, references, ... initialized by <a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#af258073bfb1dcd6adf8e0dc05e14b253" title="Initialize all data, handles, references, ... needed by toolkits.">initialize()</a> before quit.  <br /></td></tr>
 <tr class="separator:a040d3ef34dfba0dfa4271dc82b77c319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae709061d59ff2be96d541451bb82b55f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_ae709061d59ff2be96d541451bb82b55f.html#ae709061d59ff2be96d541451bb82b55f">do_events</a> ()</td></tr>
+<tr class="memitem:ae709061d59ff2be96d541451bb82b55f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#ae709061d59ff2be96d541451bb82b55f">do_events</a> ()</td></tr>
 <tr class="memdesc:ae709061d59ff2be96d541451bb82b55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all Windows messages currently in the message queue.  <br /></td></tr>
 <tr class="separator:ae709061d59ff2be96d541451bb82b55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad2766dcfb940f5f054194759b758fad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_aad2766dcfb940f5f054194759b758fad.html#aad2766dcfb940f5f054194759b758fad">do_idle</a> ()</td></tr>
+<tr class="memitem:aad2766dcfb940f5f054194759b758fad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#aad2766dcfb940f5f054194759b758fad">do_idle</a> ()</td></tr>
 <tr class="memdesc:aad2766dcfb940f5f054194759b758fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes do idle event.  <br /></td></tr>
 <tr class="separator:aad2766dcfb940f5f054194759b758fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd8914cb86bac3a92e95d45c63b02fb3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_afd8914cb86bac3a92e95d45c63b02fb3.html#afd8914cb86bac3a92e95d45c63b02fb3">dark_mode_enabled</a> ()</td></tr>
+<tr class="memitem:afd8914cb86bac3a92e95d45c63b02fb3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#afd8914cb86bac3a92e95d45c63b02fb3">dark_mode_enabled</a> ()</td></tr>
 <tr class="memdesc:afd8914cb86bac3a92e95d45c63b02fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if dark mode is enabled for the application; otherwise return false.  <br /></td></tr>
 <tr class="separator:afd8914cb86bac3a92e95d45c63b02fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80f9d6ee0b15ae6de3a35d60d2de3dff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a80f9d6ee0b15ae6de3a35d60d2de3dff.html#a80f9d6ee0b15ae6de3a35d60d2de3dff">enable_button_images</a> (bool value)</td></tr>
+<tr class="memitem:a80f9d6ee0b15ae6de3a35d60d2de3dff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a80f9d6ee0b15ae6de3a35d60d2de3dff">enable_button_images</a> (bool value)</td></tr>
 <tr class="memdesc:a80f9d6ee0b15ae6de3a35d60d2de3dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables button images for the application.  <br /></td></tr>
 <tr class="separator:a80f9d6ee0b15ae6de3a35d60d2de3dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3487a78fc43c7842db6c3b192c60a89"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_ac3487a78fc43c7842db6c3b192c60a89.html#ac3487a78fc43c7842db6c3b192c60a89">enable_dark_mode</a> (bool value)</td></tr>
+<tr class="memitem:ac3487a78fc43c7842db6c3b192c60a89"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#ac3487a78fc43c7842db6c3b192c60a89">enable_dark_mode</a> (bool value)</td></tr>
 <tr class="memdesc:ac3487a78fc43c7842db6c3b192c60a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables dark mode for the application.  <br /></td></tr>
 <tr class="separator:ac3487a78fc43c7842db6c3b192c60a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b5e70a190438366b7b6a2206a99689a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a9b5e70a190438366b7b6a2206a99689a.html#a9b5e70a190438366b7b6a2206a99689a">enable_font_size_correction</a> (bool value)</td></tr>
+<tr class="memitem:a9b5e70a190438366b7b6a2206a99689a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a9b5e70a190438366b7b6a2206a99689a">enable_font_size_correction</a> (bool value)</td></tr>
 <tr class="memdesc:a9b5e70a190438366b7b6a2206a99689a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable font size correction for the application.  <br /></td></tr>
 <tr class="separator:a9b5e70a190438366b7b6a2206a99689a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2bbde844d30f89cf99e8726dfa438cd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_ac2bbde844d30f89cf99e8726dfa438cd.html#ac2bbde844d30f89cf99e8726dfa438cd">enable_light_mode</a> (bool value)</td></tr>
+<tr class="memitem:ac2bbde844d30f89cf99e8726dfa438cd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#ac2bbde844d30f89cf99e8726dfa438cd">enable_light_mode</a> (bool value)</td></tr>
 <tr class="memdesc:ac2bbde844d30f89cf99e8726dfa438cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables light mode for the application.  <br /></td></tr>
 <tr class="separator:ac2bbde844d30f89cf99e8726dfa438cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44932db5d00bf87fd8f2696032c553cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a44932db5d00bf87fd8f2696032c553cf.html#a44932db5d00bf87fd8f2696032c553cf">enable_menu_images</a> (bool value)</td></tr>
+<tr class="memitem:a44932db5d00bf87fd8f2696032c553cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a44932db5d00bf87fd8f2696032c553cf">enable_menu_images</a> (bool value)</td></tr>
 <tr class="memdesc:a44932db5d00bf87fd8f2696032c553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables menu images for the application.  <br /></td></tr>
 <tr class="separator:a44932db5d00bf87fd8f2696032c553cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b897fd0a51bf4fc64bb9d80aa79a39"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_ae6b897fd0a51bf4fc64bb9d80aa79a39.html#ae6b897fd0a51bf4fc64bb9d80aa79a39">enable_system_font_size</a> (bool value)</td></tr>
+<tr class="memitem:ae6b897fd0a51bf4fc64bb9d80aa79a39"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#ae6b897fd0a51bf4fc64bb9d80aa79a39">enable_system_font_size</a> (bool value)</td></tr>
 <tr class="memdesc:ae6b897fd0a51bf4fc64bb9d80aa79a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables system font size for the application.  <br /></td></tr>
 <tr class="separator:ae6b897fd0a51bf4fc64bb9d80aa79a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa2519a36f47c6f94a7fff6becdcec32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_afa2519a36f47c6f94a7fff6becdcec32.html#afa2519a36f47c6f94a7fff6becdcec32">enable_visual_style</a> (bool value)</td></tr>
+<tr class="memitem:afa2519a36f47c6f94a7fff6becdcec32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#afa2519a36f47c6f94a7fff6becdcec32">enable_visual_style</a> (bool value)</td></tr>
 <tr class="memdesc:afa2519a36f47c6f94a7fff6becdcec32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables visual styles for the application.  <br /></td></tr>
 <tr class="separator:afa2519a36f47c6f94a7fff6becdcec32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7196c8e77dc6d90965c2aea16ad2ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a6f7196c8e77dc6d90965c2aea16ad2ac.html#a6f7196c8e77dc6d90965c2aea16ad2ac">exit</a> ()</td></tr>
+<tr class="memitem:a6f7196c8e77dc6d90965c2aea16ad2ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a6f7196c8e77dc6d90965c2aea16ad2ac">exit</a> ()</td></tr>
 <tr class="memdesc:a6f7196c8e77dc6d90965c2aea16ad2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits application.  <br /></td></tr>
 <tr class="separator:a6f7196c8e77dc6d90965c2aea16ad2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af258073bfb1dcd6adf8e0dc05e14b253"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_af258073bfb1dcd6adf8e0dc05e14b253.html#af258073bfb1dcd6adf8e0dc05e14b253">initialize</a> ()</td></tr>
+<tr class="memitem:af258073bfb1dcd6adf8e0dc05e14b253"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#af258073bfb1dcd6adf8e0dc05e14b253">initialize</a> ()</td></tr>
 <tr class="memdesc:af258073bfb1dcd6adf8e0dc05e14b253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all data, handles, references, ... needed by toolkits.  <br /></td></tr>
 <tr class="separator:af258073bfb1dcd6adf8e0dc05e14b253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39742a839dda22894184f8edea0f532b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a39742a839dda22894184f8edea0f532b.html#a39742a839dda22894184f8edea0f532b">register_message_filter</a> (const delegate&lt; bool(<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;message_filter)</td></tr>
+<tr class="memitem:a39742a839dda22894184f8edea0f532b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a39742a839dda22894184f8edea0f532b">register_message_filter</a> (const delegate&lt; bool(<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;message_filter)</td></tr>
 <tr class="memdesc:a39742a839dda22894184f8edea0f532b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a specified message filter from the message pump of the application.  <br /></td></tr>
 <tr class="separator:a39742a839dda22894184f8edea0f532b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a818c2cc46cb5425d3b51862426be9ab6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a818c2cc46cb5425d3b51862426be9ab6.html#a818c2cc46cb5425d3b51862426be9ab6">register_thread_exception</a> (const delegate&lt; bool()&gt; &amp;thread_exception)</td></tr>
+<tr class="memitem:a818c2cc46cb5425d3b51862426be9ab6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a818c2cc46cb5425d3b51862426be9ab6">register_thread_exception</a> (const delegate&lt; bool()&gt; &amp;thread_exception)</td></tr>
 <tr class="memdesc:a818c2cc46cb5425d3b51862426be9ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a specified thread_exception from the message pump of the application.  <br /></td></tr>
 <tr class="separator:a818c2cc46cb5425d3b51862426be9ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af88396bd5e6f25df98b249540fa077d7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_af88396bd5e6f25df98b249540fa077d7.html#af88396bd5e6f25df98b249540fa077d7">register_wnd_proc</a> (const delegate&lt; <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>(<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;wnd_proc)</td></tr>
+<tr class="memitem:af88396bd5e6f25df98b249540fa077d7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#af88396bd5e6f25df98b249540fa077d7">register_wnd_proc</a> (const delegate&lt; <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>(<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;wnd_proc)</td></tr>
 <tr class="memdesc:af88396bd5e6f25df98b249540fa077d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a specified wnd proc from the message pump of the application.  <br /></td></tr>
 <tr class="separator:af88396bd5e6f25df98b249540fa077d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae400a00ac243a53282c92ce810ab61cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_ae400a00ac243a53282c92ce810ab61cf.html#ae400a00ac243a53282c92ce810ab61cf">restart</a> (bool exit_after_restart)</td></tr>
+<tr class="memitem:ae400a00ac243a53282c92ce810ab61cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#ae400a00ac243a53282c92ce810ab61cf">restart</a> (bool exit_after_restart)</td></tr>
 <tr class="memdesc:ae400a00ac243a53282c92ce810ab61cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down the application and starts a new instance immediately.  <br /></td></tr>
 <tr class="separator:ae400a00ac243a53282c92ce810ab61cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3fc90e8539f2e788d72ca50a13b60fa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_aa3fc90e8539f2e788d72ca50a13b60fa.html#aa3fc90e8539f2e788d72ca50a13b60fa">run</a> ()</td></tr>
+<tr class="memitem:aa3fc90e8539f2e788d72ca50a13b60fa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#aa3fc90e8539f2e788d72ca50a13b60fa">run</a> ()</td></tr>
 <tr class="memdesc:aa3fc90e8539f2e788d72ca50a13b60fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread.  <br /></td></tr>
 <tr class="separator:aa3fc90e8539f2e788d72ca50a13b60fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a43bed6d2c74f01ef2a798f4f03e59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application_a94a43bed6d2c74f01ef2a798f4f03e59.html#a94a43bed6d2c74f01ef2a798f4f03e59">use_wait_cursor</a> (bool <a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html">use_wait_cursor</a>)</td></tr>
+<tr class="memitem:a94a43bed6d2c74f01ef2a798f4f03e59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#a94a43bed6d2c74f01ef2a798f4f03e59">use_wait_cursor</a> (bool <a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html">use_wait_cursor</a>)</td></tr>
 <tr class="memdesc:a94a43bed6d2c74f01ef2a798f4f03e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the wait cursor is used for all open forms of the application.  <br /></td></tr>
 <tr class="separator:a94a43bed6d2c74f01ef2a798f4f03e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a556bba5b9baab002f894b49529dfce88" name="a556bba5b9baab002f894b49529dfce88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556bba5b9baab002f894b49529dfce88">&#9670;&#160;</a></span>allow_quit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::application::allow_quit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the caller can quit this application. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the caller can quit this application; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a040d3ef34dfba0dfa4271dc82b77c319" name="a040d3ef34dfba0dfa4271dc82b77c319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040d3ef34dfba0dfa4271dc82b77c319">&#9670;&#160;</a></span>cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::cleanup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cleanup all data, handles, references, ... initialized by <a class="el" href="classxtd_1_1forms_1_1native_1_1application.html#af258073bfb1dcd6adf8e0dc05e14b253" title="Initialize all data, handles, references, ... needed by toolkits.">initialize()</a> before quit. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Some toolkits are nothing to clean. Leave this method empty. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae709061d59ff2be96d541451bb82b55f" name="ae709061d59ff2be96d541451bb82b55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae709061d59ff2be96d541451bb82b55f">&#9670;&#160;</a></span>do_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::do_events </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes all Windows messages currently in the message queue. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aad2766dcfb940f5f054194759b758fad" name="aad2766dcfb940f5f054194759b758fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2766dcfb940f5f054194759b758fad">&#9670;&#160;</a></span>do_idle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::do_idle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes do idle event. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afd8914cb86bac3a92e95d45c63b02fb3" name="afd8914cb86bac3a92e95d45c63b02fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8914cb86bac3a92e95d45c63b02fb3">&#9670;&#160;</a></span>dark_mode_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::application::dark_mode_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return true if dark mode is enabled for the application; otherwise return false. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if dark mode is enabled; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a80f9d6ee0b15ae6de3a35d60d2de3dff" name="a80f9d6ee0b15ae6de3a35d60d2de3dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f9d6ee0b15ae6de3a35d60d2de3dff">&#9670;&#160;</a></span>enable_button_images()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_button_images </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables button images for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac3487a78fc43c7842db6c3b192c60a89" name="ac3487a78fc43c7842db6c3b192c60a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3487a78fc43c7842db6c3b192c60a89">&#9670;&#160;</a></span>enable_dark_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_dark_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables dark mode for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9b5e70a190438366b7b6a2206a99689a" name="a9b5e70a190438366b7b6a2206a99689a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5e70a190438366b7b6a2206a99689a">&#9670;&#160;</a></span>enable_font_size_correction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_font_size_correction </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable font size correction for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac2bbde844d30f89cf99e8726dfa438cd" name="ac2bbde844d30f89cf99e8726dfa438cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2bbde844d30f89cf99e8726dfa438cd">&#9670;&#160;</a></span>enable_light_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_light_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables light mode for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a44932db5d00bf87fd8f2696032c553cf" name="a44932db5d00bf87fd8f2696032c553cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44932db5d00bf87fd8f2696032c553cf">&#9670;&#160;</a></span>enable_menu_images()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_menu_images </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables menu images for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae6b897fd0a51bf4fc64bb9d80aa79a39" name="ae6b897fd0a51bf4fc64bb9d80aa79a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b897fd0a51bf4fc64bb9d80aa79a39">&#9670;&#160;</a></span>enable_system_font_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_system_font_size </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables system font size for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afa2519a36f47c6f94a7fff6becdcec32" name="afa2519a36f47c6f94a7fff6becdcec32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2519a36f47c6f94a7fff6becdcec32">&#9670;&#160;</a></span>enable_visual_style()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::enable_visual_style </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables visual styles for the application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6f7196c8e77dc6d90965c2aea16ad2ac" name="a6f7196c8e77dc6d90965c2aea16ad2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f7196c8e77dc6d90965c2aea16ad2ac">&#9670;&#160;</a></span>exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exits application. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af258073bfb1dcd6adf8e0dc05e14b253" name="af258073bfb1dcd6adf8e0dc05e14b253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af258073bfb1dcd6adf8e0dc05e14b253">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize all data, handles, references, ... needed by toolkits. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Some toolkits are nothing to init. Leave this method empty. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a39742a839dda22894184f8edea0f532b" name="a39742a839dda22894184f8edea0f532b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39742a839dda22894184f8edea0f532b">&#9670;&#160;</a></span>register_message_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::register_message_filter </td>
+          <td>(</td>
+          <td class="paramtype">const delegate&lt; bool(<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>message_filter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register a specified message filter from the message pump of the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message_filter</td><td>A message filter delegate to register. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a818c2cc46cb5425d3b51862426be9ab6" name="a818c2cc46cb5425d3b51862426be9ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818c2cc46cb5425d3b51862426be9ab6">&#9670;&#160;</a></span>register_thread_exception()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::register_thread_exception </td>
+          <td>(</td>
+          <td class="paramtype">const delegate&lt; bool()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>thread_exception</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register a specified thread_exception from the message pump of the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thread_exception</td><td>A thread exception delegate to register. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The thread exception delegate return true if the user want quit application after exception. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af88396bd5e6f25df98b249540fa077d7" name="af88396bd5e6f25df98b249540fa077d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88396bd5e6f25df98b249540fa077d7">&#9670;&#160;</a></span>register_wnd_proc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::register_wnd_proc </td>
+          <td>(</td>
+          <td class="paramtype">const delegate&lt; <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>(<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>wnd_proc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register a specified wnd proc from the message pump of the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wnd_proc</td><td>A wnd proc delegate to register. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae400a00ac243a53282c92ce810ab61cf" name="ae400a00ac243a53282c92ce810ab61cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae400a00ac243a53282c92ce810ab61cf">&#9670;&#160;</a></span>restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::restart </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exit_after_restart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shuts down the application and starts a new instance immediately. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exit_after_restart</td><td>If this option is enabled, the current application will be closed after the new application is created. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa3fc90e8539f2e788d72ca50a13b60fa" name="aa3fc90e8539f2e788d72ca50a13b60fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fc90e8539f2e788d72ca50a13b60fa">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Begins running a standard application message loop on the current thread. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a94a43bed6d2c74f01ef2a798f4f03e59" name="a94a43bed6d2c74f01ef2a798f4f03e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a43bed6d2c74f01ef2a798f4f03e59">&#9670;&#160;</a></span>use_wait_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::application::use_wait_cursor </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_wait_cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets whether the wait cursor is used for all open forms of the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html" title="Creates a use wait cursor class.">use_wait_cursor</a></td><td>true is the wait cursor is used for all open forms; otherwise, false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2application_8h_source.html">application.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1application.html">application</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

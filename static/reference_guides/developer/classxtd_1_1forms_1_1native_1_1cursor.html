@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1cursor.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1cursor.
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1cursor-members.html">List of all members</a>  </div>
@@ -120,52 +104,442 @@ Inheritance diagram for xtd::forms::native::cursor:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:ab8e635cdf6a7b0bc7beecabe79ff6e22"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_ab8e635cdf6a7b0bc7beecabe79ff6e22.html#ab8e635cdf6a7b0bc7beecabe79ff6e22">create</a> ()</td></tr>
+<tr class="memitem:ab8e635cdf6a7b0bc7beecabe79ff6e22"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#ab8e635cdf6a7b0bc7beecabe79ff6e22">create</a> ()</td></tr>
 <tr class="memdesc:ab8e635cdf6a7b0bc7beecabe79ff6e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates cursor.  <br /></td></tr>
 <tr class="separator:ab8e635cdf6a7b0bc7beecabe79ff6e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf621f071d799123b1248bf0d36dd9f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_abf621f071d799123b1248bf0d36dd9f8.html#abf621f071d799123b1248bf0d36dd9f8">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;image, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_afc34c4a5a2102707f4831a0d678b5f5c.html#afc34c4a5a2102707f4831a0d678b5f5c">hot_spot</a>)</td></tr>
+<tr class="memitem:abf621f071d799123b1248bf0d36dd9f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#abf621f071d799123b1248bf0d36dd9f8">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;image, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#afc34c4a5a2102707f4831a0d678b5f5c">hot_spot</a>)</td></tr>
 <tr class="memdesc:abf621f071d799123b1248bf0d36dd9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates cursor with specified image and hot spot.  <br /></td></tr>
 <tr class="separator:abf621f071d799123b1248bf0d36dd9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b82dc9ab76dd362c24888b65543575"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_ad6b82dc9ab76dd362c24888b65543575.html#ad6b82dc9ab76dd362c24888b65543575">copy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
+<tr class="memitem:ad6b82dc9ab76dd362c24888b65543575"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#ad6b82dc9ab76dd362c24888b65543575">copy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:ad6b82dc9ab76dd362c24888b65543575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the cursor handle.  <br /></td></tr>
 <tr class="separator:ad6b82dc9ab76dd362c24888b65543575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedd1a1461f484e3c3cb4f55520da06e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_aedd1a1461f484e3c3cb4f55520da06e1.html#aedd1a1461f484e3c3cb4f55520da06e1">current</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
+<tr class="memitem:aedd1a1461f484e3c3cb4f55520da06e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#aedd1a1461f484e3c3cb4f55520da06e1">current</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:aedd1a1461f484e3c3cb4f55520da06e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a cursor object that represents the mouse cursor.  <br /></td></tr>
 <tr class="separator:aedd1a1461f484e3c3cb4f55520da06e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae74bb71fcb901e62bb0fd595ba7ca19"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_aae74bb71fcb901e62bb0fd595ba7ca19.html#aae74bb71fcb901e62bb0fd595ba7ca19">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
+<tr class="memitem:aae74bb71fcb901e62bb0fd595ba7ca19"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#aae74bb71fcb901e62bb0fd595ba7ca19">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:aae74bb71fcb901e62bb0fd595ba7ca19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys cursor.  <br /></td></tr>
 <tr class="separator:aae74bb71fcb901e62bb0fd595ba7ca19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b7a7dae65c9ca12c0875eaf67d34099"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_a4b7a7dae65c9ca12c0875eaf67d34099.html#a4b7a7dae65c9ca12c0875eaf67d34099">hide</a> ()</td></tr>
+<tr class="memitem:a4b7a7dae65c9ca12c0875eaf67d34099"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#a4b7a7dae65c9ca12c0875eaf67d34099">hide</a> ()</td></tr>
 <tr class="memdesc:a4b7a7dae65c9ca12c0875eaf67d34099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides cursor.  <br /></td></tr>
 <tr class="separator:a4b7a7dae65c9ca12c0875eaf67d34099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc34c4a5a2102707f4831a0d678b5f5c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_afc34c4a5a2102707f4831a0d678b5f5c.html#afc34c4a5a2102707f4831a0d678b5f5c">hot_spot</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
+<tr class="memitem:afc34c4a5a2102707f4831a0d678b5f5c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#afc34c4a5a2102707f4831a0d678b5f5c">hot_spot</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:afc34c4a5a2102707f4831a0d678b5f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cursor hot spot.  <br /></td></tr>
 <tr class="separator:afc34c4a5a2102707f4831a0d678b5f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addbc99a0c430070156f74c6510ff332c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_addbc99a0c430070156f74c6510ff332c.html#addbc99a0c430070156f74c6510ff332c">position</a> ()</td></tr>
+<tr class="memitem:addbc99a0c430070156f74c6510ff332c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#addbc99a0c430070156f74c6510ff332c">position</a> ()</td></tr>
 <tr class="memdesc:addbc99a0c430070156f74c6510ff332c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cursor's position.  <br /></td></tr>
 <tr class="separator:addbc99a0c430070156f74c6510ff332c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a0eadac776d39315c07d3a05e9e8bbc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_a1a0eadac776d39315c07d3a05e9e8bbc.html#a1a0eadac776d39315c07d3a05e9e8bbc">position</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;position)</td></tr>
+<tr class="memitem:a1a0eadac776d39315c07d3a05e9e8bbc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#a1a0eadac776d39315c07d3a05e9e8bbc">position</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;position)</td></tr>
 <tr class="memdesc:a1a0eadac776d39315c07d3a05e9e8bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor's position.  <br /></td></tr>
 <tr class="separator:a1a0eadac776d39315c07d3a05e9e8bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a34c9ab1971c752c4dd11dc2840f63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_ad3a34c9ab1971c752c4dd11dc2840f63.html#ad3a34c9ab1971c752c4dd11dc2840f63">size</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
+<tr class="memitem:ad3a34c9ab1971c752c4dd11dc2840f63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#ad3a34c9ab1971c752c4dd11dc2840f63">size</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:ad3a34c9ab1971c752c4dd11dc2840f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the cursor object.  <br /></td></tr>
 <tr class="separator:ad3a34c9ab1971c752c4dd11dc2840f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af719287e365fa6df5cf68c44076b7b66"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor_af719287e365fa6df5cf68c44076b7b66.html#af719287e365fa6df5cf68c44076b7b66">show</a> ()</td></tr>
+<tr class="memitem:af719287e365fa6df5cf68c44076b7b66"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html#af719287e365fa6df5cf68c44076b7b66">show</a> ()</td></tr>
 <tr class="memdesc:af719287e365fa6df5cf68c44076b7b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows cursor.  <br /></td></tr>
 <tr class="separator:af719287e365fa6df5cf68c44076b7b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab8e635cdf6a7b0bc7beecabe79ff6e22" name="ab8e635cdf6a7b0bc7beecabe79ff6e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e635cdf6a7b0bc7beecabe79ff6e22">&#9670;&#160;</a></span>create() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::cursor::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates cursor. </p>
+<dl class="section return"><dt>Returns</dt><dd>The created cursor handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="abf621f071d799123b1248bf0d36dd9f8" name="abf621f071d799123b1248bf0d36dd9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf621f071d799123b1248bf0d36dd9f8">&#9670;&#160;</a></span>create() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::cursor::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>hot_spot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates cursor with specified image and hot spot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>A <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> image will be use by cursor. </td></tr>
+    <tr><td class="paramname">hot_spot</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> hot spot location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created cursor handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad6b82dc9ab76dd362c24888b65543575" name="ad6b82dc9ab76dd362c24888b65543575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b82dc9ab76dd362c24888b65543575">&#9670;&#160;</a></span>copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::cursor::copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the cursor handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intptr that represents the cursor's handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aedd1a1461f484e3c3cb4f55520da06e1" name="aedd1a1461f484e3c3cb4f55520da06e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd1a1461f484e3c3cb4f55520da06e1">&#9670;&#160;</a></span>current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::cursor::current </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a cursor object that represents the mouse cursor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aae74bb71fcb901e62bb0fd595ba7ca19" name="aae74bb71fcb901e62bb0fd595ba7ca19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae74bb71fcb901e62bb0fd595ba7ca19">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::cursor::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys cursor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4b7a7dae65c9ca12c0875eaf67d34099" name="a4b7a7dae65c9ca12c0875eaf67d34099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7a7dae65c9ca12c0875eaf67d34099">&#9670;&#160;</a></span>hide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::cursor::hide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hides cursor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afc34c4a5a2102707f4831a0d678b5f5c" name="afc34c4a5a2102707f4831a0d678b5f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc34c4a5a2102707f4831a0d678b5f5c">&#9670;&#160;</a></span>hot_spot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::native::cursor::hot_spot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the cursor hot spot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A point representing the cursor hot spot. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="addbc99a0c430070156f74c6510ff332c" name="addbc99a0c430070156f74c6510ff332c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addbc99a0c430070156f74c6510ff332c">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::native::cursor::position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the cursor's position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A point that represents the cursor's position in screen coordinates. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a1a0eadac776d39315c07d3a05e9e8bbc" name="a1a0eadac776d39315c07d3a05e9e8bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a0eadac776d39315c07d3a05e9e8bbc">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::cursor::position </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the cursor's position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+    <tr><td class="paramname">position</td><td>A point that represents the cursor's position in screen coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad3a34c9ab1971c752c4dd11dc2840f63" name="ad3a34c9ab1971c752c4dd11dc2840f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a34c9ab1971c752c4dd11dc2840f63">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> xtd::forms::native::cursor::size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>cursor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the size of the cursor object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A size that represents the width and height of the cursor. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af719287e365fa6df5cf68c44076b7b66" name="af719287e365fa6df5cf68c44076b7b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af719287e365fa6df5cf68c44076b7b66">&#9670;&#160;</a></span>show()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::cursor::show </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows cursor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cursor</td><td>Cursor handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2cursor_8h_source.html">cursor.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1cursor.html">cursor</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

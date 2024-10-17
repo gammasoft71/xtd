@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__drawing.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -107,9 +87,9 @@ $(document).ready(function(){initNavTree('group__drawing.html',''); initResizabl
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <p>All needed for drawing something. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> class is create from <a class="el" href="classxtd_1_1forms_1_1control_add513f7ccbc19b4842ab59e9978392a7.html#add513f7ccbc19b4842ab59e9978392a7" title="Creates the xtd::drawing::graphics for the control.">xtd::forms::control::create_graphics</a> or <a class="el" href="classxtd_1_1forms_1_1screen_a6699dd3e468cae054a9e497f6ccf9a6b.html#a6699dd3e468cae054a9e497f6ccf9a6b" title="Creates the xtd::drawing::graphics for the screen.">xtd::forms::screen::create_graphics</a> or <a class="el" href="classxtd_1_1drawing_1_1image_a35c36c9ac58d5a2a834f36e17e986f7c.html#a35c36c9ac58d5a2a834f36e17e986f7c" title="Creates the xtd::drawing::graphics for the image.">xtd::drawing::image::create_graphics</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> class is create from <a class="el" href="classxtd_1_1forms_1_1control.html#add513f7ccbc19b4842ab59e9978392a7" title="Creates the xtd::drawing::graphics for the control.">xtd::forms::control::create_graphics</a> or <a class="el" href="classxtd_1_1forms_1_1screen.html#a6699dd3e468cae054a9e497f6ccf9a6b" title="Creates the xtd::drawing::graphics for the screen.">xtd::forms::screen::create_graphics</a> or <a class="el" href="classxtd_1_1drawing_1_1image.html#a35c36c9ac58d5a2a834f36e17e986f7c" title="Creates the xtd::drawing::graphics for the image.">xtd::drawing::image::create_graphics</a>. </dd>
 <dd>
-And also when <a class="el" href="classxtd_1_1forms_1_1control_a9807bd96bb4688bf38e796a165c734c1.html#a9807bd96bb4688bf38e796a165c734c1" title="Occurs when the xtd::forms::control is redrawn.">xtd::forms::control::paint</a> event is sent, the <a class="el" href="classxtd_1_1forms_1_1paint__event__args.html" title="Provides data for the xtd::forms::control::paint event.">xtd::forms::paint_event_args</a> contains a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> associate to the control event paint. </dd></dl>
+And also when <a class="el" href="classxtd_1_1forms_1_1control.html#a9807bd96bb4688bf38e796a165c734c1" title="Occurs when the xtd::forms::control is redrawn.">xtd::forms::control::paint</a> event is sent, the <a class="el" href="classxtd_1_1forms_1_1paint__event__args.html" title="Provides data for the xtd::forms::control::paint event.">xtd::forms::paint_event_args</a> contains a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> associate to the control event paint. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Modules</h2></td></tr>
@@ -147,7 +127,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines an object used to draw lines and curves. This class cannot be inherited.  <a href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">xtd::drawing::drawing_2d::graphics_state</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the state of a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object. This object is returned by a call to the <a class="el" href="classxtd_1_1drawing_1_1graphics_aef15cffcc8c524c5d92b7f7999fdff28.html#aef15cffcc8c524c5d92b7f7999fdff28" title="Saves the current state of this xtd::drawing::graphics and identifies the saved state with a xtd::dra...">xtd::drawing::graphics::save()</a> methods. This class cannot be inherited.  <a href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the state of a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object. This object is returned by a call to the <a class="el" href="classxtd_1_1drawing_1_1graphics.html#aef15cffcc8c524c5d92b7f7999fdff28" title="Saves the current state of this xtd::drawing::graphics and identifies the saved state with a xtd::dra...">xtd::drawing::graphics::save()</a> methods. This class cannot be inherited.  <a href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.  <a href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html#details">More...</a><br /></td></tr>
@@ -160,13 +140,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

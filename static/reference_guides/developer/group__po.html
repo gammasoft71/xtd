@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__po.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,33 +90,205 @@ $(document).ready(function(){initNavTree('group__po.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga72c4c137ecc3dd0332afa3feb07f501f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_ga72c4c137ecc3dd0332afa3feb07f501f.html#ga72c4c137ecc3dd0332afa3feb07f501f">PO_INVALID</a></td></tr>
+<tr class="memitem:ga72c4c137ecc3dd0332afa3feb07f501f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#ga72c4c137ecc3dd0332afa3feb07f501f">PO_INVALID</a></td></tr>
 <tr class="memdesc:ga72c4c137ecc3dd0332afa3feb07f501f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies an invalid mode.  <br /></td></tr>
 <tr class="separator:ga72c4c137ecc3dd0332afa3feb07f501f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga996172916dacabe098e9bd89eaf7ecb5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_ga996172916dacabe098e9bd89eaf7ecb5.html#ga996172916dacabe098e9bd89eaf7ecb5">PO_DEFAULT</a></td></tr>
+<tr class="memitem:ga996172916dacabe098e9bd89eaf7ecb5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#ga996172916dacabe098e9bd89eaf7ecb5">PO_DEFAULT</a></td></tr>
 <tr class="memdesc:ga996172916dacabe098e9bd89eaf7ecb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies default mode.  <br /></td></tr>
 <tr class="separator:ga996172916dacabe098e9bd89eaf7ecb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2179ba112d60c3e22d11529501aadfc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_gaf2179ba112d60c3e22d11529501aadfc.html#gaf2179ba112d60c3e22d11529501aadfc">PO_HIGH_SPEED</a></td></tr>
+<tr class="memitem:gaf2179ba112d60c3e22d11529501aadfc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#gaf2179ba112d60c3e22d11529501aadfc">PO_HIGH_SPEED</a></td></tr>
 <tr class="memdesc:gaf2179ba112d60c3e22d11529501aadfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies high speed, low quality rendering.  <br /></td></tr>
 <tr class="separator:gaf2179ba112d60c3e22d11529501aadfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafee8397e36c1b4712b31772651c1f7f9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_gafee8397e36c1b4712b31772651c1f7f9.html#gafee8397e36c1b4712b31772651c1f7f9">PO_HIGHT_QUALITY</a></td></tr>
+<tr class="memitem:gafee8397e36c1b4712b31772651c1f7f9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#gafee8397e36c1b4712b31772651c1f7f9">PO_HIGHT_QUALITY</a></td></tr>
 <tr class="memdesc:gafee8397e36c1b4712b31772651c1f7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies high quality, low speed rendering.  <br /></td></tr>
 <tr class="separator:gafee8397e36c1b4712b31772651c1f7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0731d5c58642dc366dd734c92b593563"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_ga0731d5c58642dc366dd734c92b593563.html#ga0731d5c58642dc366dd734c92b593563">PO_NONE</a></td></tr>
+<tr class="memitem:ga0731d5c58642dc366dd734c92b593563"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#ga0731d5c58642dc366dd734c92b593563">PO_NONE</a></td></tr>
 <tr class="memdesc:ga0731d5c58642dc366dd734c92b593563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies no pixel offset.  <br /></td></tr>
 <tr class="separator:ga0731d5c58642dc366dd734c92b593563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac0f7518ef73ac6bf15dbccc5fa74e25a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po_gac0f7518ef73ac6bf15dbccc5fa74e25a.html#gac0f7518ef73ac6bf15dbccc5fa74e25a">PO_HALF</a></td></tr>
+<tr class="memitem:gac0f7518ef73ac6bf15dbccc5fa74e25a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__po.html#gac0f7518ef73ac6bf15dbccc5fa74e25a">PO_HALF</a></td></tr>
 <tr class="memdesc:gac0f7518ef73ac6bf15dbccc5fa74e25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antialiasing.  <br /></td></tr>
 <tr class="separator:gac0f7518ef73ac6bf15dbccc5fa74e25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga72c4c137ecc3dd0332afa3feb07f501f" name="ga72c4c137ecc3dd0332afa3feb07f501f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72c4c137ecc3dd0332afa3feb07f501f">&#9670;&#160;</a></span>PO_INVALID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_INVALID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies an invalid mode. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga996172916dacabe098e9bd89eaf7ecb5" name="ga996172916dacabe098e9bd89eaf7ecb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga996172916dacabe098e9bd89eaf7ecb5">&#9670;&#160;</a></span>PO_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_DEFAULT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies default mode. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf2179ba112d60c3e22d11529501aadfc" name="gaf2179ba112d60c3e22d11529501aadfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2179ba112d60c3e22d11529501aadfc">&#9670;&#160;</a></span>PO_HIGH_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_HIGH_SPEED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies high speed, low quality rendering. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gafee8397e36c1b4712b31772651c1f7f9" name="gafee8397e36c1b4712b31772651c1f7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafee8397e36c1b4712b31772651c1f7f9">&#9670;&#160;</a></span>PO_HIGHT_QUALITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_HIGHT_QUALITY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies high quality, low speed rendering. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0731d5c58642dc366dd734c92b593563" name="ga0731d5c58642dc366dd734c92b593563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0731d5c58642dc366dd734c92b593563">&#9670;&#160;</a></span>PO_NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_NONE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies no pixel offset. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac0f7518ef73ac6bf15dbccc5fa74e25a" name="gac0f7518ef73ac6bf15dbccc5fa74e25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0f7518ef73ac6bf15dbccc5fa74e25a">&#9670;&#160;</a></span>PO_HALF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> PO_HALF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/pixel_offset_modes.h&gt;</code></p>
+
+<p>Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antialiasing. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

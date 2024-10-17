@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1progress__dialog.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1progres
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">progress_dialog</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1progress__dialog-members.html">List of all members</a>  </div>
@@ -120,58 +104,645 @@ Inheritance diagram for xtd::forms::native::progress_dialog:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:aaf6666af1f01eed022c2a85cc731f563"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_aaf6666af1f01eed022c2a85cc731f563.html#aaf6666af1f01eed022c2a85cc731f563">cancelled</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:aaf6666af1f01eed022c2a85cc731f563"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#aaf6666af1f01eed022c2a85cc731f563">cancelled</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:aaf6666af1f01eed022c2a85cc731f563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on cancel button.  <br /></td></tr>
 <tr class="separator:aaf6666af1f01eed022c2a85cc731f563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d267325ae351f5438c548846c9055b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a7d267325ae351f5438c548846c9055b2.html#a7d267325ae351f5438c548846c9055b2">create</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hwnd, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="group__xtd__forms_ga57070ef804d401fead746fcd411d02cc.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1message.html">message</a>, const std::vector&lt; <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a8511bb501fe892e3ade48a1b4087c9ce.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a>, size_t marquee_animation_speed, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_aea607b44a258eb47b6cc8448e25b513b.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a3b1d461e97467b01e7480e411381a966.html#a3b1d461e97467b01e7480e411381a966">maximum</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_afaf260fd20f5c2648366c480a8bcccea.html#afaf260fd20f5c2648366c480a8bcccea">value</a>, size_t options)</td></tr>
+<tr class="memitem:a7d267325ae351f5438c548846c9055b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a7d267325ae351f5438c548846c9055b2">create</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hwnd, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1message.html">message</a>, const std::vector&lt; <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a>, size_t marquee_animation_speed, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a3b1d461e97467b01e7480e411381a966">maximum</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#afaf260fd20f5c2648366c480a8bcccea">value</a>, size_t options)</td></tr>
 <tr class="memdesc:a7d267325ae351f5438c548846c9055b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates progress dialog.  <br /></td></tr>
 <tr class="separator:a7d267325ae351f5438c548846c9055b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c03356d3d54a7cf13c1fbd3ee296e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a49c03356d3d54a7cf13c1fbd3ee296e6.html#a49c03356d3d54a7cf13c1fbd3ee296e6">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:a49c03356d3d54a7cf13c1fbd3ee296e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a49c03356d3d54a7cf13c1fbd3ee296e6">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:a49c03356d3d54a7cf13c1fbd3ee296e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys progress dialog.  <br /></td></tr>
 <tr class="separator:a49c03356d3d54a7cf13c1fbd3ee296e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8511bb501fe892e3ade48a1b4087c9ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a8511bb501fe892e3ade48a1b4087c9ce.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, const std::vector&lt; <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;informations)</td></tr>
+<tr class="memitem:a8511bb501fe892e3ade48a1b4087c9ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, const std::vector&lt; <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;informations)</td></tr>
 <tr class="memdesc:a8511bb501fe892e3ade48a1b4087c9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the information texts.  <br /></td></tr>
 <tr class="separator:a8511bb501fe892e3ade48a1b4087c9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0d2323e690dba7bef427f2e637e3403"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_ab0d2323e690dba7bef427f2e637e3403.html#ab0d2323e690dba7bef427f2e637e3403">marquee</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, bool marquee, size_t animation_speed)</td></tr>
+<tr class="memitem:ab0d2323e690dba7bef427f2e637e3403"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#ab0d2323e690dba7bef427f2e637e3403">marquee</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, bool marquee, size_t animation_speed)</td></tr>
 <tr class="memdesc:ab0d2323e690dba7bef427f2e637e3403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__bar.html" title="Contains progress bar native API.">progress_bar</a> in a marquee fashion.  <br /></td></tr>
 <tr class="separator:ab0d2323e690dba7bef427f2e637e3403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1d461e97467b01e7480e411381a966"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a3b1d461e97467b01e7480e411381a966.html#a3b1d461e97467b01e7480e411381a966">maximum</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> maximum)</td></tr>
+<tr class="memitem:a3b1d461e97467b01e7480e411381a966"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a3b1d461e97467b01e7480e411381a966">maximum</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> maximum)</td></tr>
 <tr class="memdesc:a3b1d461e97467b01e7480e411381a966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum value of the range of the control.  <br /></td></tr>
 <tr class="separator:a3b1d461e97467b01e7480e411381a966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a6b2aaa47d4a2fe66c91e835a20190b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a4a6b2aaa47d4a2fe66c91e835a20190b.html#a4a6b2aaa47d4a2fe66c91e835a20190b">message</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1message.html">message</a>)</td></tr>
+<tr class="memitem:a4a6b2aaa47d4a2fe66c91e835a20190b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a4a6b2aaa47d4a2fe66c91e835a20190b">message</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1message.html">message</a>)</td></tr>
 <tr class="memdesc:a4a6b2aaa47d4a2fe66c91e835a20190b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message text.  <br /></td></tr>
 <tr class="separator:a4a6b2aaa47d4a2fe66c91e835a20190b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea607b44a258eb47b6cc8448e25b513b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_aea607b44a258eb47b6cc8448e25b513b.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> minimum)</td></tr>
+<tr class="memitem:aea607b44a258eb47b6cc8448e25b513b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> minimum)</td></tr>
 <tr class="memdesc:aea607b44a258eb47b6cc8448e25b513b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum value of the range of the control.  <br /></td></tr>
 <tr class="separator:aea607b44a258eb47b6cc8448e25b513b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b43094c35cfc309f26a7ee11f5a543a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a1b43094c35cfc309f26a7ee11f5a543a.html#a1b43094c35cfc309f26a7ee11f5a543a">resume</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:a1b43094c35cfc309f26a7ee11f5a543a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a1b43094c35cfc309f26a7ee11f5a543a">resume</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:a1b43094c35cfc309f26a7ee11f5a543a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume progress dialog box after Abort button clicked.  <br /></td></tr>
 <tr class="separator:a1b43094c35cfc309f26a7ee11f5a543a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a50205b892dca9765e3df4ccd5f074e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a0a50205b892dca9765e3df4ccd5f074e.html#a0a50205b892dca9765e3df4ccd5f074e">show</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:a0a50205b892dca9765e3df4ccd5f074e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a0a50205b892dca9765e3df4ccd5f074e">show</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:a0a50205b892dca9765e3df4ccd5f074e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
 <tr class="separator:a0a50205b892dca9765e3df4ccd5f074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5008d696645eddcc55ec4cc9707b9bae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a5008d696645eddcc55ec4cc9707b9bae.html#a5008d696645eddcc55ec4cc9707b9bae">show_sheet</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:a5008d696645eddcc55ec4cc9707b9bae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a5008d696645eddcc55ec4cc9707b9bae">show_sheet</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:a5008d696645eddcc55ec4cc9707b9bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box as sheet.  <br /></td></tr>
 <tr class="separator:a5008d696645eddcc55ec4cc9707b9bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abacb077ca9b9ff8161420ee65d7a03a5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_abacb077ca9b9ff8161420ee65d7a03a5.html#abacb077ca9b9ff8161420ee65d7a03a5">skipped</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
+<tr class="memitem:abacb077ca9b9ff8161420ee65d7a03a5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#abacb077ca9b9ff8161420ee65d7a03a5">skipped</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog)</td></tr>
 <tr class="memdesc:abacb077ca9b9ff8161420ee65d7a03a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on skip button.  <br /></td></tr>
 <tr class="separator:abacb077ca9b9ff8161420ee65d7a03a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf260fd20f5c2648366c480a8bcccea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_afaf260fd20f5c2648366c480a8bcccea.html#afaf260fd20f5c2648366c480a8bcccea">value</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> value)</td></tr>
+<tr class="memitem:afaf260fd20f5c2648366c480a8bcccea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#afaf260fd20f5c2648366c480a8bcccea">value</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> dialog, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> value)</td></tr>
 <tr class="memdesc:afaf260fd20f5c2648366c480a8bcccea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current position of the progress bar.  <br /></td></tr>
 <tr class="separator:afaf260fd20f5c2648366c480a8bcccea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaf6666af1f01eed022c2a85cc731f563" name="aaf6666af1f01eed022c2a85cc731f563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6666af1f01eed022c2a85cc731f563">&#9670;&#160;</a></span>cancelled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::progress_dialog::cancelled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets whether user has clicked on cancel button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if user has clicked on cancel button; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7d267325ae351f5438c548846c9055b2" name="a7d267325ae351f5438c548846c9055b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d267325ae351f5438c548846c9055b2">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::progress_dialog::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>hwnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>informations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>marquee_animation_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>minimum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>maximum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>options</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates progress dialog. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hwnd</td><td>Parent window handle. </td></tr>
+    <tr><td class="paramname">text</td><td>A string that specifies the title bar caption to display. </td></tr>
+    <tr><td class="paramname">message</td><td>A string that specifies the text to display. </td></tr>
+    <tr><td class="paramname">informations</td><td>The information texts. </td></tr>
+    <tr><td class="paramname">marquee_animation_speed</td><td>The time period, in milliseconds, that it takes the progress block to scroll across the progress bar. </td></tr>
+    <tr><td class="paramname">minimum</td><td>The minimum value of the range. </td></tr>
+    <tr><td class="paramname">maximum</td><td>The maximum value of the range. </td></tr>
+    <tr><td class="paramname">value</td><td>The position within the range of the progress bar. The default is 0. </td></tr>
+    <tr><td class="paramname">options</td><td>A bitwise progress dialog flags value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created progress dialog window handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a49c03356d3d54a7cf13c1fbd3ee296e6" name="a49c03356d3d54a7cf13c1fbd3ee296e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c03356d3d54a7cf13c1fbd3ee296e6">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys progress dialog. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle to destroy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8511bb501fe892e3ade48a1b4087c9ce" name="a8511bb501fe892e3ade48a1b4087c9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8511bb501fe892e3ade48a1b4087c9ce">&#9670;&#160;</a></span>informations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::informations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>informations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the information texts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">informations</td><td>The information texts. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ab0d2323e690dba7bef427f2e637e3403" name="ab0d2323e690dba7bef427f2e637e3403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d2323e690dba7bef427f2e637e3403">&#9670;&#160;</a></span>marquee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::marquee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>marquee</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>animation_speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__bar.html" title="Contains progress bar native API.">progress_bar</a> in a marquee fashion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">marquee</td><td>tree is marquee; otherwise false. The default is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3b1d461e97467b01e7480e411381a966" name="a3b1d461e97467b01e7480e411381a966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1d461e97467b01e7480e411381a966">&#9670;&#160;</a></span>maximum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::maximum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>maximum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the maximum value of the range of the control. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">maximum</td><td>The maximum value of the range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4a6b2aaa47d4a2fe66c91e835a20190b" name="a4a6b2aaa47d4a2fe66c91e835a20190b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a6b2aaa47d4a2fe66c91e835a20190b">&#9670;&#160;</a></span>message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the message text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">description</td><td>The message text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aea607b44a258eb47b6cc8448e25b513b" name="aea607b44a258eb47b6cc8448e25b513b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea607b44a258eb47b6cc8448e25b513b">&#9670;&#160;</a></span>minimum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::minimum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>minimum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the minimum value of the range of the control. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">minimum</td><td>The minimum value of the range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a1b43094c35cfc309f26a7ee11f5a543a" name="a1b43094c35cfc309f26a7ee11f5a543a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b43094c35cfc309f26a7ee11f5a543a">&#9670;&#160;</a></span>resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::resume </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resume progress dialog box after Abort button clicked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a0a50205b892dca9765e3df4ccd5f074e" name="a0a50205b892dca9765e3df4ccd5f074e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a50205b892dca9765e3df4ccd5f074e">&#9670;&#160;</a></span>show()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::show </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs progress dialog box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5008d696645eddcc55ec4cc9707b9bae" name="a5008d696645eddcc55ec4cc9707b9bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5008d696645eddcc55ec4cc9707b9bae">&#9670;&#160;</a></span>show_sheet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::show_sheet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs progress dialog box as sheet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="abacb077ca9b9ff8161420ee65d7a03a5" name="abacb077ca9b9ff8161420ee65d7a03a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abacb077ca9b9ff8161420ee65d7a03a5">&#9670;&#160;</a></span>skipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::progress_dialog::skipped </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets whether user has clicked on skip button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if user has clicked on skip button; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afaf260fd20f5c2648366c480a8bcccea" name="afaf260fd20f5c2648366c480a8bcccea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf260fd20f5c2648366c480a8bcccea">&#9670;&#160;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::progress_dialog::value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>dialog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the current position of the progress bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dialog</td><td>Progress dialog window handle. </td></tr>
+    <tr><td class="paramname">value</td><td>The position within the range of the progress bar. The default is 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2progress__dialog_8h_source.html">progress_dialog.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">progress_dialog</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1progress__dialog.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1progres
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">progress_dialog</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">xtd::forms::native::progress_dialog Member List</div></div>
 </div><!--header-->
@@ -105,27 +89,24 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1progres
 
 <p>This is the complete list of members for <a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_aaf6666af1f01eed022c2a85cc731f563.html#aaf6666af1f01eed022c2a85cc731f563">cancelled</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a7d267325ae351f5438c548846c9055b2.html#a7d267325ae351f5438c548846c9055b2">create</a>(intptr hwnd, const xtd::string &amp;text, const xtd::string &amp;message, const std::vector&lt; xtd::string &gt; &amp;informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a49c03356d3d54a7cf13c1fbd3ee296e6.html#a49c03356d3d54a7cf13c1fbd3ee296e6">destroy</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a8511bb501fe892e3ade48a1b4087c9ce.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a>(intptr dialog, const std::vector&lt; xtd::string &gt; &amp;informations)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_ab0d2323e690dba7bef427f2e637e3403.html#ab0d2323e690dba7bef427f2e637e3403">marquee</a>(intptr dialog, bool marquee, size_t animation_speed)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a3b1d461e97467b01e7480e411381a966.html#a3b1d461e97467b01e7480e411381a966">maximum</a>(intptr dialog, int32 maximum)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a4a6b2aaa47d4a2fe66c91e835a20190b.html#a4a6b2aaa47d4a2fe66c91e835a20190b">message</a>(intptr dialog, const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_aea607b44a258eb47b6cc8448e25b513b.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a>(intptr dialog, int32 minimum)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a1b43094c35cfc309f26a7ee11f5a543a.html#a1b43094c35cfc309f26a7ee11f5a543a">resume</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a0a50205b892dca9765e3df4ccd5f074e.html#a0a50205b892dca9765e3df4ccd5f074e">show</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_a5008d696645eddcc55ec4cc9707b9bae.html#a5008d696645eddcc55ec4cc9707b9bae">show_sheet</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_abacb077ca9b9ff8161420ee65d7a03a5.html#abacb077ca9b9ff8161420ee65d7a03a5">skipped</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog_afaf260fd20f5c2648366c480a8bcccea.html#afaf260fd20f5c2648366c480a8bcccea">value</a>(intptr dialog, int32 value)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#aaf6666af1f01eed022c2a85cc731f563">cancelled</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a7d267325ae351f5438c548846c9055b2">create</a>(intptr hwnd, const xtd::string &amp;text, const xtd::string &amp;message, const std::vector&lt; xtd::string &gt; &amp;informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a49c03356d3d54a7cf13c1fbd3ee296e6">destroy</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a8511bb501fe892e3ade48a1b4087c9ce">informations</a>(intptr dialog, const std::vector&lt; xtd::string &gt; &amp;informations)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#ab0d2323e690dba7bef427f2e637e3403">marquee</a>(intptr dialog, bool marquee, size_t animation_speed)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a3b1d461e97467b01e7480e411381a966">maximum</a>(intptr dialog, int32 maximum)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a4a6b2aaa47d4a2fe66c91e835a20190b">message</a>(intptr dialog, const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#aea607b44a258eb47b6cc8448e25b513b">minimum</a>(intptr dialog, int32 minimum)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a1b43094c35cfc309f26a7ee11f5a543a">resume</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a0a50205b892dca9765e3df4ccd5f074e">show</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#a5008d696645eddcc55ec4cc9707b9bae">show_sheet</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#abacb077ca9b9ff8161420ee65d7a03a5">skipped</a>(intptr dialog)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html#afaf260fd20f5c2648366c480a8bcccea">value</a>(intptr dialog, int32 value)</td><td class="entry"><a class="el" href="classxtd_1_1forms_1_1native_1_1progress__dialog.html">xtd::forms::native::progress_dialog</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

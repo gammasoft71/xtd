@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1tunit_1_1base__assert.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1tunit_1_1base__assert.html
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1tunit.html">tunit</a></li><li class="navelem"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">base_assert</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">xtd::tunit::base_assert Member List</div></div>
 </div><!--header-->
@@ -105,38 +89,27 @@ $(document).ready(function(){initNavTree('classxtd_1_1tunit_1_1base__assert.html
 
 <p>This is the complete list of members for <a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a12d0a475e319dc4ad8a7f7823eab9cd4.html#a12d0a475e319dc4ad8a7f7823eab9cd4">abort</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a758c9e61178d413c7959cb1b066e37c0.html#a758c9e61178d413c7959cb1b066e37c0">abort</a>(const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_aad30fa3b585859098064cbad8911687a.html#aad30fa3b585859098064cbad8911687a">abort</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a0d0c74b963d7ee53de6eca3bcec19096.html#a0d0c74b963d7ee53de6eca3bcec19096">abort</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a520ed0852b2d62598bfaaf7525989689.html#a520ed0852b2d62598bfaaf7525989689">error</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a5e483d8178182d974438eca5714cdc5b.html#a5e483d8178182d974438eca5714cdc5b">error</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_aecaf5eb4ca14266449beb58af70b7d2b.html#aecaf5eb4ca14266449beb58af70b7d2b">error</a>(const xtd::string &amp;actual, const xtd::string &amp;expected, const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_ae46df4f9f34fc04ba8aa1447dd023dd1.html#ae46df4f9f34fc04ba8aa1447dd023dd1">fail</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_af78e9ef98bb78154dfe0cd49d97115e7.html#af78e9ef98bb78154dfe0cd49d97115e7">fail</a>(const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_aa871ce69f5959a559f1985debae31315.html#aa871ce69f5959a559f1985debae31315">fail</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_aee813a247430f9f63a5ee468a9c11270.html#aee813a247430f9f63a5ee468a9c11270">fail</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_adc072d9b4182746a05fc7c3260d72c51.html#adc072d9b4182746a05fc7c3260d72c51">fail</a>(const xtd::string &amp;actual, const xtd::string &amp;expected, const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a43955cabe9ead93bb75087f7057b7b47.html#a43955cabe9ead93bb75087f7057b7b47">ignore</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a7ba94691baa872fcf2d034f72f20f9b1.html#a7ba94691baa872fcf2d034f72f20f9b1">ignore</a>(const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a07bc30e6c522371fc99a50a46118b298.html#a07bc30e6c522371fc99a50a46118b298">ignore</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a14a8ec95a11314d3286d210da7897b5a.html#a14a8ec95a11314d3286d210da7897b5a">ignore</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a02c116d7a2d2e5669bbb2e1d5886ba85.html#a02c116d7a2d2e5669bbb2e1d5886ba85">join_items</a>(const collection_t &amp;collection)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a0c50d204d6760b6b933f9643b96ffc31.html#a0c50d204d6760b6b933f9643b96ffc31">join_items</a>(const xtd::string &amp;str)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_afb1ba9d11011565681ff2b7ff593272a.html#afb1ba9d11011565681ff2b7ff593272a">succeed</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a65875e5b89612451b6a9821c2807470b.html#a65875e5b89612451b6a9821c2807470b">succeed</a>(const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_ad27f8309eec6673753ef2360bfae13d6.html#ad27f8309eec6673753ef2360bfae13d6">succeed</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_aec274631bdbd5b222049c49cf0e77787.html#aec274631bdbd5b222049c49cf0e77787">succeed</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_abd335542bada064ae9a6d0e5f265d636.html#abd335542bada064ae9a6d0e5f265d636">to_string</a>(const value_t &amp;value)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert_a4f570c3b5751c0345e0b1485ac813385.html#a4f570c3b5751c0345e0b1485ac813385">to_string</a>(const value_t *value)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a8c5cc625c55bce60feff21759fd1ed5c">abort</a>(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#aca60e71125df06a3fcdbc1052ad41110">abort</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a520ed0852b2d62598bfaaf7525989689">error</a>()</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a5e483d8178182d974438eca5714cdc5b">error</a>(const xtd::string &amp;message)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a6d5e2249126b2563090c34e378b7df3f">error</a>(const xtd::string &amp;actual, const xtd::string &amp;expected, const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a90ce043aa8fea58e47b2badcfb87641b">fail</a>(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a88ffde19524317999d7ba232ef574de8">fail</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a358d0b321b2a7c93c06de13f0148bb23">fail</a>(const xtd::string &amp;actual, const xtd::string &amp;expected, const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a1b1baf0849258365dc553abb5caf8747">ignore</a>(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a4d155e34554ecd5fc68783de251769c6">ignore</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a02c116d7a2d2e5669bbb2e1d5886ba85">join_items</a>(const collection_t &amp;collection)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a0c50d204d6760b6b933f9643b96ffc31">join_items</a>(const xtd::string &amp;str)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a96f26f24063db18a4962539eea561bd3">succeed</a>(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a26bd79ce9bfc4f828285fd0d9f64e917">succeed</a>(const xtd::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#abd335542bada064ae9a6d0e5f265d636">to_string</a>(const value_t &amp;value)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html#a4f570c3b5751c0345e0b1485ac813385">to_string</a>(const value_t *value)</td><td class="entry"><a class="el" href="classxtd_1_1tunit_1_1base__assert.html">xtd::tunit::base_assert</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

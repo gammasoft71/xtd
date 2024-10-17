@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1matrix.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1matri
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html">matrix</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1drawing_1_1native_1_1matrix-members.html">List of all members</a>  </div>
@@ -120,79 +104,1033 @@ Inheritance diagram for xtd::drawing::native::matrix:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a2892c60d5ba1145e92c3d96406c1cabb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a2892c60d5ba1145e92c3d96406c1cabb.html#a2892c60d5ba1145e92c3d96406c1cabb">create</a> (float m11, float m12, float m21, float m22, float dx, float dy)</td></tr>
+<tr class="memitem:a2892c60d5ba1145e92c3d96406c1cabb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a2892c60d5ba1145e92c3d96406c1cabb">create</a> (float m11, float m12, float m21, float m22, float dx, float dy)</td></tr>
 <tr class="memdesc:a2892c60d5ba1145e92c3d96406c1cabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a matrix with the specified elements.  <br /></td></tr>
 <tr class="separator:a2892c60d5ba1145e92c3d96406c1cabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18a033f02f650a239efb897c1059ff10"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a18a033f02f650a239efb897c1059ff10.html#a18a033f02f650a239efb897c1059ff10">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a18a033f02f650a239efb897c1059ff10"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a18a033f02f650a239efb897c1059ff10">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a18a033f02f650a239efb897c1059ff10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the matrix.  <br /></td></tr>
 <tr class="separator:a18a033f02f650a239efb897c1059ff10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fe174ba3fe21df98c11bdf1c20fe9b"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a11fe174ba3fe21df98c11bdf1c20fe9b.html#a11fe174ba3fe21df98c11bdf1c20fe9b">elenents</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a11fe174ba3fe21df98c11bdf1c20fe9b"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a11fe174ba3fe21df98c11bdf1c20fe9b">elenents</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a11fe174ba3fe21df98c11bdf1c20fe9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of floating-point values that represents the elements of the matrix.  <br /></td></tr>
 <tr class="separator:a11fe174ba3fe21df98c11bdf1c20fe9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab258dd3df68ac1afe834f7bfa9815b8c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_ab258dd3df68ac1afe834f7bfa9815b8c.html#ab258dd3df68ac1afe834f7bfa9815b8c">is_identity</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:ab258dd3df68ac1afe834f7bfa9815b8c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#ab258dd3df68ac1afe834f7bfa9815b8c">is_identity</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:ab258dd3df68ac1afe834f7bfa9815b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the matrix is the identity matrix.  <br /></td></tr>
 <tr class="separator:ab258dd3df68ac1afe834f7bfa9815b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2ede31708eec4220e0f9961b8496a70"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_ae2ede31708eec4220e0f9961b8496a70.html#ae2ede31708eec4220e0f9961b8496a70">is_invertible</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:ae2ede31708eec4220e0f9961b8496a70"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#ae2ede31708eec4220e0f9961b8496a70">is_invertible</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:ae2ede31708eec4220e0f9961b8496a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the matrix is invertible.  <br /></td></tr>
 <tr class="separator:ae2ede31708eec4220e0f9961b8496a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa592ccdc4178d9070b7ac7920cce88"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a5aa592ccdc4178d9070b7ac7920cce88.html#a5aa592ccdc4178d9070b7ac7920cce88">invert</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a5aa592ccdc4178d9070b7ac7920cce88"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a5aa592ccdc4178d9070b7ac7920cce88">invert</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a5aa592ccdc4178d9070b7ac7920cce88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts the matrix, if it is invertible.  <br /></td></tr>
 <tr class="separator:a5aa592ccdc4178d9070b7ac7920cce88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bbe63108b8ed4d57a0b38d5015892f1"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a4bbe63108b8ed4d57a0b38d5015892f1.html#a4bbe63108b8ed4d57a0b38d5015892f1">offset_x</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a4bbe63108b8ed4d57a0b38d5015892f1"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a4bbe63108b8ed4d57a0b38d5015892f1">offset_x</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a4bbe63108b8ed4d57a0b38d5015892f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x translation value (the dx value, or the element in the third row and first column) of the matrix.  <br /></td></tr>
 <tr class="separator:a4bbe63108b8ed4d57a0b38d5015892f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a1b6b9b2c82f5af5902751900d25d0"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_ad3a1b6b9b2c82f5af5902751900d25d0.html#ad3a1b6b9b2c82f5af5902751900d25d0">offset_y</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:ad3a1b6b9b2c82f5af5902751900d25d0"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#ad3a1b6b9b2c82f5af5902751900d25d0">offset_y</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:ad3a1b6b9b2c82f5af5902751900d25d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y translation value (the dx value, or the element in the third row and first column) of the matrix.  <br /></td></tr>
 <tr class="separator:ad3a1b6b9b2c82f5af5902751900d25d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a1a0bc0b98622e3f02bf7509a9d763"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a53a1a0bc0b98622e3f02bf7509a9d763.html#a53a1a0bc0b98622e3f02bf7509a9d763">multiply</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html">matrix</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:a53a1a0bc0b98622e3f02bf7509a9d763"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a53a1a0bc0b98622e3f02bf7509a9d763">multiply</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html">matrix</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:a53a1a0bc0b98622e3f02bf7509a9d763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, and in the order specified in the order parameter.  <br /></td></tr>
 <tr class="separator:a53a1a0bc0b98622e3f02bf7509a9d763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d79729848a350a61e22a6d796354962"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a7d79729848a350a61e22a6d796354962.html#a7d79729848a350a61e22a6d796354962">reset</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a7d79729848a350a61e22a6d796354962"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a7d79729848a350a61e22a6d796354962">reset</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a7d79729848a350a61e22a6d796354962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the matrix to have the elements of the identity matrix.  <br /></td></tr>
 <tr class="separator:a7d79729848a350a61e22a6d796354962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77c0e38dd999ed9bf22c029be1ece78"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_ad77c0e38dd999ed9bf22c029be1ece78.html#ad77c0e38dd999ed9bf22c029be1ece78">rotate</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float angle, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:ad77c0e38dd999ed9bf22c029be1ece78"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#ad77c0e38dd999ed9bf22c029be1ece78">rotate</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float angle, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:ad77c0e38dd999ed9bf22c029be1ece78"><td class="mdescLeft">&#160;</td><td class="mdescRight">repend to the matrix a clockwise rotation, around the origin and by the specified angle.  <br /></td></tr>
 <tr class="separator:ad77c0e38dd999ed9bf22c029be1ece78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21651afae53322419292a9bf75cf822f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a21651afae53322419292a9bf75cf822f.html#a21651afae53322419292a9bf75cf822f">rotate_at</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float angle, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:a21651afae53322419292a9bf75cf822f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a21651afae53322419292a9bf75cf822f">rotate_at</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float angle, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:a21651afae53322419292a9bf75cf822f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation to the matrix around the point specified in the point parameter, and by prepending the rotation.  <br /></td></tr>
 <tr class="separator:a21651afae53322419292a9bf75cf822f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a049b5d74ef51b0c41cbd28269942d8cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a049b5d74ef51b0c41cbd28269942d8cf.html#a049b5d74ef51b0c41cbd28269942d8cf">scale</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float scale_x, float scale_y, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:a049b5d74ef51b0c41cbd28269942d8cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a049b5d74ef51b0c41cbd28269942d8cf">scale</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float scale_x, float scale_y, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:a049b5d74ef51b0c41cbd28269942d8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified scale vector (scale_x and scale_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> using the specified order.  <br /></td></tr>
 <tr class="separator:a049b5d74ef51b0c41cbd28269942d8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963c2876fdf82e7e2e23723b502f7aea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a963c2876fdf82e7e2e23723b502f7aea.html#a963c2876fdf82e7e2e23723b502f7aea">shear</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float scale_x, float scale_y, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:a963c2876fdf82e7e2e23723b502f7aea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a963c2876fdf82e7e2e23723b502f7aea">shear</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float scale_x, float scale_y, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:a963c2876fdf82e7e2e23723b502f7aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified shear vector to the matrix in the specified order.  <br /></td></tr>
 <tr class="separator:a963c2876fdf82e7e2e23723b502f7aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f14ae13fb12b41b894d6ba56dfdb49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a76f14ae13fb12b41b894d6ba56dfdb49.html#a76f14ae13fb12b41b894d6ba56dfdb49">transform_point</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
+<tr class="memitem:a76f14ae13fb12b41b894d6ba56dfdb49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a76f14ae13fb12b41b894d6ba56dfdb49">transform_point</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
 <tr class="memdesc:a76f14ae13fb12b41b894d6ba56dfdb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by the matrix to a specified array of points.  <br /></td></tr>
 <tr class="separator:a76f14ae13fb12b41b894d6ba56dfdb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96dc66e6fef6381e2f54381f3ffb3b82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a96dc66e6fef6381e2f54381f3ffb3b82.html#a96dc66e6fef6381e2f54381f3ffb3b82">transform_point</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
+<tr class="memitem:a96dc66e6fef6381e2f54381f3ffb3b82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a96dc66e6fef6381e2f54381f3ffb3b82">transform_point</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
 <tr class="memdesc:a96dc66e6fef6381e2f54381f3ffb3b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by the matrix to a specified array of points.  <br /></td></tr>
 <tr class="separator:a96dc66e6fef6381e2f54381f3ffb3b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557ae2fe4b7c03c5e1dac91c051e3819"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a557ae2fe4b7c03c5e1dac91c051e3819.html#a557ae2fe4b7c03c5e1dac91c051e3819">transform_vectors</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;points)</td></tr>
+<tr class="memitem:a557ae2fe4b7c03c5e1dac91c051e3819"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a557ae2fe4b7c03c5e1dac91c051e3819">transform_vectors</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;points)</td></tr>
 <tr class="memdesc:a557ae2fe4b7c03c5e1dac91c051e3819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of the matrix to the specified array of points.  <br /></td></tr>
 <tr class="separator:a557ae2fe4b7c03c5e1dac91c051e3819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6aebb6f9ea00638f5400af9d9ef00c8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_af6aebb6f9ea00638f5400af9d9ef00c8.html#af6aebb6f9ea00638f5400af9d9ef00c8">transform_vectors</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; float, float &gt; &gt; &amp;points)</td></tr>
+<tr class="memitem:af6aebb6f9ea00638f5400af9d9ef00c8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#af6aebb6f9ea00638f5400af9d9ef00c8">transform_vectors</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; float, float &gt; &gt; &amp;points)</td></tr>
 <tr class="memdesc:af6aebb6f9ea00638f5400af9d9ef00c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of the matrix to the specified array of points.  <br /></td></tr>
 <tr class="separator:af6aebb6f9ea00638f5400af9d9ef00c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4418ed9437c361f76f8fb9dfae4fc82e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a4418ed9437c361f76f8fb9dfae4fc82e.html#a4418ed9437c361f76f8fb9dfae4fc82e">translate</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_a4bbe63108b8ed4d57a0b38d5015892f1.html#a4bbe63108b8ed4d57a0b38d5015892f1">offset_x</a>, float <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_ad3a1b6b9b2c82f5af5902751900d25d0.html#ad3a1b6b9b2c82f5af5902751900d25d0">offset_y</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
+<tr class="memitem:a4418ed9437c361f76f8fb9dfae4fc82e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a4418ed9437c361f76f8fb9dfae4fc82e">translate</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#a4bbe63108b8ed4d57a0b38d5015892f1">offset_x</a>, float <a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#ad3a1b6b9b2c82f5af5902751900d25d0">offset_y</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> order)</td></tr>
 <tr class="memdesc:a4418ed9437c361f76f8fb9dfae4fc82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified translation vector (offset_x and offset_y) to the matrix in the specified order.  <br /></td></tr>
 <tr class="separator:a4418ed9437c361f76f8fb9dfae4fc82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaf695af44f756ce0da7be691f068ee3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix_abaf695af44f756ce0da7be691f068ee3.html#abaf695af44f756ce0da7be691f068ee3">vector_transform_points</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;points)</td></tr>
+<tr class="memitem:abaf695af44f756ce0da7be691f068ee3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html#abaf695af44f756ce0da7be691f068ee3">vector_transform_points</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;points)</td></tr>
 <tr class="memdesc:abaf695af44f756ce0da7be691f068ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.  <br /></td></tr>
 <tr class="separator:abaf695af44f756ce0da7be691f068ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2892c60d5ba1145e92c3d96406c1cabb" name="a2892c60d5ba1145e92c3d96406c1cabb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2892c60d5ba1145e92c3d96406c1cabb">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::matrix::create </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>m11</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>m21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>m22</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a matrix with the specified elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m11</td><td>The value in the first row and first column of the matrix. </td></tr>
+    <tr><td class="paramname">m12</td><td>The value in the first row and second column of the matrix. </td></tr>
+    <tr><td class="paramname">m21</td><td>The value in the second row and first column of the matrix. </td></tr>
+    <tr><td class="paramname">m22</td><td>The value in the second row and second column of the matrix. </td></tr>
+    <tr><td class="paramname">dx</td><td>The value in the third row and first column of the matrix. </td></tr>
+    <tr><td class="paramname">dy</td><td>The value in the third row and second column of the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created matrix handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a18a033f02f650a239efb897c1059ff10" name="a18a033f02f650a239efb897c1059ff10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a033f02f650a239efb897c1059ff10">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle to destroy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a11fe174ba3fe21df98c11bdf1c20fe9b" name="a11fe174ba3fe21df98c11bdf1c20fe9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11fe174ba3fe21df98c11bdf1c20fe9b">&#9670;&#160;</a></span>elenents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; float &gt; xtd::drawing::native::matrix::elenents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an array of floating-point values that represents the elements of the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of floating-point values that represents the elements of the matrix. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ab258dd3df68ac1afe834f7bfa9815b8c" name="ab258dd3df68ac1afe834f7bfa9815b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab258dd3df68ac1afe834f7bfa9815b8c">&#9670;&#160;</a></span>is_identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::matrix::is_identity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the matrix is the identity matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This property is true if the matrix is identity; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae2ede31708eec4220e0f9961b8496a70" name="ae2ede31708eec4220e0f9961b8496a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ede31708eec4220e0f9961b8496a70">&#9670;&#160;</a></span>is_invertible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::matrix::is_invertible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the matrix is invertible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This property is true if the matrix is invertible; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5aa592ccdc4178d9070b7ac7920cce88" name="a5aa592ccdc4178d9070b7ac7920cce88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa592ccdc4178d9070b7ac7920cce88">&#9670;&#160;</a></span>invert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::invert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inverts the matrix, if it is invertible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4bbe63108b8ed4d57a0b38d5015892f1" name="a4bbe63108b8ed4d57a0b38d5015892f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bbe63108b8ed4d57a0b38d5015892f1">&#9670;&#160;</a></span>offset_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float xtd::drawing::native::matrix::offset_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x translation value (the dx value, or the element in the third row and first column) of the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The x translation value of the matrix. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad3a1b6b9b2c82f5af5902751900d25d0" name="ad3a1b6b9b2c82f5af5902751900d25d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a1b6b9b2c82f5af5902751900d25d0">&#9670;&#160;</a></span>offset_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float xtd::drawing::native::matrix::offset_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y translation value (the dx value, or the element in the third row and first column) of the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The y translation value of the matrix. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a53a1a0bc0b98622e3f02bf7509a9d763" name="a53a1a0bc0b98622e3f02bf7509a9d763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a1a0bc0b98622e3f02bf7509a9d763">&#9670;&#160;</a></span>multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::multiply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>matrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, and in the order specified in the order parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">matrix</td><td>The matrix handle by which the matrix is to be multiplied. </td></tr>
+    <tr><td class="paramname">order</td><td>The value that represents the order (see <a class="el" href="matrix__orders_8h_source.html">matrix_orders.h</a> for more information). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7d79729848a350a61e22a6d796354962" name="a7d79729848a350a61e22a6d796354962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d79729848a350a61e22a6d796354962">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the matrix to have the elements of the identity matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad77c0e38dd999ed9bf22c029be1ece78" name="ad77c0e38dd999ed9bf22c029be1ece78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77c0e38dd999ed9bf22c029be1ece78">&#9670;&#160;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::rotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>repend to the matrix a clockwise rotation, around the origin and by the specified angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle of the rotation, in degrees. </td></tr>
+    <tr><td class="paramname">order</td><td>The value that represents the order (see <a class="el" href="matrix__orders_8h_source.html">matrix_orders.h</a> for more information). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a21651afae53322419292a9bf75cf822f" name="a21651afae53322419292a9bf75cf822f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21651afae53322419292a9bf75cf822f">&#9670;&#160;</a></span>rotate_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::rotate_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies a clockwise rotation to the matrix around the point specified in the point parameter, and by prepending the rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle (extent) of the rotation, in degrees. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the point that represents the center of the rotation. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the point that represents the center of the rotation. </td></tr>
+    <tr><td class="paramname">order</td><td>The value that represents the order (see <a class="el" href="matrix__orders_8h_source.html">matrix_orders.h</a> for more information). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a049b5d74ef51b0c41cbd28269942d8cf" name="a049b5d74ef51b0c41cbd28269942d8cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049b5d74ef51b0c41cbd28269942d8cf">&#9670;&#160;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::scale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the specified scale vector (scale_x and scale_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> using the specified order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">scale_x</td><td>The value by which to scale this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the x-axis direction. </td></tr>
+    <tr><td class="paramname">scale_y</td><td>The value by which to scale this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the y-axis direction. </td></tr>
+    <tr><td class="paramname">order</td><td>A value that specifies the order (append or prepend) in which the scale vector is applied to the matrix (see <a class="el" href="matrix__orders_8h_source.html">matrix_orders.h</a> for more information). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a963c2876fdf82e7e2e23723b502f7aea" name="a963c2876fdf82e7e2e23723b502f7aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963c2876fdf82e7e2e23723b502f7aea">&#9670;&#160;</a></span>shear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::shear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the specified shear vector to the matrix in the specified order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">scale_x</td><td>The horizontal shear factor. </td></tr>
+    <tr><td class="paramname">scale_y</td><td>The vertical shear factor. </td></tr>
+    <tr><td class="paramname">order</td><td>A xvalue that specifies the order (append or prepend) in which the shear is applied (see <a class="el" href="matrix__orders_8h_source.html">matrix_orders.h</a> for more information). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a76f14ae13fb12b41b894d6ba56dfdb49" name="a76f14ae13fb12b41b894d6ba56dfdb49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f14ae13fb12b41b894d6ba56dfdb49">&#9670;&#160;</a></span>transform_point() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::transform_point </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the geometric transform represented by the matrix to a specified array of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the point that represents the point to transform. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the point that represents the point to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a96dc66e6fef6381e2f54381f3ffb3b82" name="a96dc66e6fef6381e2f54381f3ffb3b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96dc66e6fef6381e2f54381f3ffb3b82">&#9670;&#160;</a></span>transform_point() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::transform_point </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the geometric transform represented by the matrix to a specified array of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the point that represents the point to transform. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the point that represents the point to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a557ae2fe4b7c03c5e1dac91c051e3819" name="a557ae2fe4b7c03c5e1dac91c051e3819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557ae2fe4b7c03c5e1dac91c051e3819">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::transform_vectors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies only the scale and rotate components of the matrix to the specified array of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">x</td><td>An array of <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair&lt;int32, int32&gt;</a>t structures that represents the points to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af6aebb6f9ea00638f5400af9d9ef00c8" name="af6aebb6f9ea00638f5400af9d9ef00c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6aebb6f9ea00638f5400af9d9ef00c8">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::transform_vectors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; float, float &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies only the scale and rotate components of the matrix to the specified array of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">x</td><td>An array of <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair&lt;int32, int32&gt;</a>t structures that represents the points to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4418ed9437c361f76f8fb9dfae4fc82e" name="a4418ed9437c361f76f8fb9dfae4fc82e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4418ed9437c361f76f8fb9dfae4fc82e">&#9670;&#160;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::translate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>offset_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>offset_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>order</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies the specified translation vector (offset_x and offset_y) to the matrix in the specified order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">offset_x</td><td>The x value by which to translate the matrix. </td></tr>
+    <tr><td class="paramname">offset_y</td><td>The y value by which to translate the matrix. </td></tr>
+    <tr><td class="paramname">order</td><td>A value that specifies the order (append or prepend) in which the translation is applied to the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="abaf695af44f756ce0da7be691f068ee3" name="abaf695af44f756ce0da7be691f068ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf695af44f756ce0da7be691f068ee3">&#9670;&#160;</a></span>vector_transform_points()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::matrix::vector_transform_points </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The matrix handle. </td></tr>
+    <tr><td class="paramname">points</td><td>An array of <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair&lt;int32, int32&gt;</a> structures that represents the points to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.drawing.native/include/xtd/drawing/native/<a class="el" href="xtd_8drawing_8native_2include_2xtd_2drawing_2native_2matrix_8h_source.html">matrix.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1matrix.html">matrix</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

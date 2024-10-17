@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1menu.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1menu.ht
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1menu-members.html">List of all members</a>  </div>
@@ -120,40 +104,342 @@ Inheritance diagram for xtd::forms::native::menu:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a37af9dedf830d3136159ecc0467ea489"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_a37af9dedf830d3136159ecc0467ea489.html#a37af9dedf830d3136159ecc0467ea489">create</a> ()</td></tr>
+<tr class="memitem:a37af9dedf830d3136159ecc0467ea489"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#a37af9dedf830d3136159ecc0467ea489">create</a> ()</td></tr>
 <tr class="memdesc:a37af9dedf830d3136159ecc0467ea489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates menu.  <br /></td></tr>
 <tr class="separator:a37af9dedf830d3136159ecc0467ea489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f937d83b1072c038c28d8c90b420e82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_a9f937d83b1072c038c28d8c90b420e82.html#a9f937d83b1072c038c28d8c90b420e82">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
+<tr class="memitem:a9f937d83b1072c038c28d8c90b420e82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#a9f937d83b1072c038c28d8c90b420e82">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
 <tr class="memdesc:a9f937d83b1072c038c28d8c90b420e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys menu.  <br /></td></tr>
 <tr class="separator:a9f937d83b1072c038c28d8c90b420e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0beb5c246d39ef2b060f26cebeb4c74"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_af0beb5c246d39ef2b060f26cebeb4c74.html#af0beb5c246d39ef2b060f26cebeb4c74">insert_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html">menu_item</a>)</td></tr>
+<tr class="memitem:af0beb5c246d39ef2b060f26cebeb4c74"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#af0beb5c246d39ef2b060f26cebeb4c74">insert_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html">menu_item</a>)</td></tr>
 <tr class="memdesc:af0beb5c246d39ef2b060f26cebeb4c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert specified item to specisified position.  <br /></td></tr>
 <tr class="separator:af0beb5c246d39ef2b060f26cebeb4c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8765e03edf6533d3e60c597feb423ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_ae8765e03edf6533d3e60c597feb423ae.html#ae8765e03edf6533d3e60c597feb423ae">insert_menu</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html">menu_item</a>, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1menu_a0df61ef153222c34585eb431c7a3b6db.html#a0df61ef153222c34585eb431c7a3b6db">text</a>)</td></tr>
+<tr class="memitem:ae8765e03edf6533d3e60c597feb423ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#ae8765e03edf6533d3e60c597feb423ae">insert_menu</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html">menu_item</a>, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#a0df61ef153222c34585eb431c7a3b6db">text</a>)</td></tr>
 <tr class="memdesc:ae8765e03edf6533d3e60c597feb423ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert specified menu item to specisified position.  <br /></td></tr>
 <tr class="separator:ae8765e03edf6533d3e60c597feb423ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad48e6719dd40d19510e8ff30e7f38381"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_ad48e6719dd40d19510e8ff30e7f38381.html#ad48e6719dd40d19510e8ff30e7f38381">native_handle</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
+<tr class="memitem:ad48e6719dd40d19510e8ff30e7f38381"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#ad48e6719dd40d19510e8ff30e7f38381">native_handle</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
 <tr class="memdesc:ad48e6719dd40d19510e8ff30e7f38381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets native menu handle.  <br /></td></tr>
 <tr class="separator:ad48e6719dd40d19510e8ff30e7f38381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635be67fd061839335b0974792c7ab11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_a635be67fd061839335b0974792c7ab11.html#a635be67fd061839335b0974792c7ab11">remove_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos)</td></tr>
+<tr class="memitem:a635be67fd061839335b0974792c7ab11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#a635be67fd061839335b0974792c7ab11">remove_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, size_t pos)</td></tr>
 <tr class="memdesc:a635be67fd061839335b0974792c7ab11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove menu item from specisified position.  <br /></td></tr>
 <tr class="separator:a635be67fd061839335b0974792c7ab11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df61ef153222c34585eb431c7a3b6db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu_a0df61ef153222c34585eb431c7a3b6db.html#a0df61ef153222c34585eb431c7a3b6db">text</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;text)</td></tr>
+<tr class="memitem:a0df61ef153222c34585eb431c7a3b6db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html#a0df61ef153222c34585eb431c7a3b6db">text</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;text)</td></tr>
 <tr class="memdesc:a0df61ef153222c34585eb431c7a3b6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets text menu.  <br /></td></tr>
 <tr class="separator:a0df61ef153222c34585eb431c7a3b6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a37af9dedf830d3136159ecc0467ea489" name="a37af9dedf830d3136159ecc0467ea489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37af9dedf830d3136159ecc0467ea489">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::menu::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates menu. </p>
+<dl class="section return"><dt>Returns</dt><dd>The created menu handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9f937d83b1072c038c28d8c90b420e82" name="a9f937d83b1072c038c28d8c90b420e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f937d83b1072c038c28d8c90b420e82">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::menu::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af0beb5c246d39ef2b060f26cebeb4c74" name="af0beb5c246d39ef2b060f26cebeb4c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0beb5c246d39ef2b060f26cebeb4c74">&#9670;&#160;</a></span>insert_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::menu::insert_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu_item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Insert specified item to specisified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+    <tr><td class="paramname">pos</td><td>Position to insert menu item. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html" title="Menu item native API.">menu_item</a></td><td>Menu item to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae8765e03edf6533d3e60c597feb423ae" name="ae8765e03edf6533d3e60c597feb423ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8765e03edf6533d3e60c597feb423ae">&#9670;&#160;</a></span>insert_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::menu::insert_menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu_item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Insert specified menu item to specisified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+    <tr><td class="paramname">pos</td><td>Position to insert menu item. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu__item.html" title="Menu item native API.">menu_item</a></td><td>Menu item to insert. </td></tr>
+    <tr><td class="paramname">text</td><td>The text associated with this menu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad48e6719dd40d19510e8ff30e7f38381" name="ad48e6719dd40d19510e8ff30e7f38381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48e6719dd40d19510e8ff30e7f38381">&#9670;&#160;</a></span>native_handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::menu::native_handle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets native menu handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The native menu handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a635be67fd061839335b0974792c7ab11" name="a635be67fd061839335b0974792c7ab11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635be67fd061839335b0974792c7ab11">&#9670;&#160;</a></span>remove_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::menu::remove_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove menu item from specisified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+    <tr><td class="paramname">pos</td><td>Position to insert menu item. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a0df61ef153222c34585eb431c7a3b6db" name="a0df61ef153222c34585eb431c7a3b6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df61ef153222c34585eb431c7a3b6db">&#9670;&#160;</a></span>text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::menu::text </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets text menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Menu handle. </td></tr>
+    <tr><td class="paramname">text</td><td>The text associated with this menu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2menu_8h_source.html">menu.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

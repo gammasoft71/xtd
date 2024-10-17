@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__ifm.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,120 +90,1133 @@ $(document).ready(function(){initNavTree('group__ifm.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gacbbdfc75661c1017532b320e8dc6263e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gacbbdfc75661c1017532b320e8dc6263e.html#gacbbdfc75661c1017532b320e8dc6263e">IFM_UNKNOWN</a></td></tr>
+<tr class="memitem:gacbbdfc75661c1017532b320e8dc6263e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gacbbdfc75661c1017532b320e8dc6263e">IFM_UNKNOWN</a></td></tr>
 <tr class="memdesc:gacbbdfc75661c1017532b320e8dc6263e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the unknoxn image format.  <br /></td></tr>
 <tr class="separator:gacbbdfc75661c1017532b320e8dc6263e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga34a052a36e7dd7d87db59a22158f9230"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga34a052a36e7dd7d87db59a22158f9230.html#ga34a052a36e7dd7d87db59a22158f9230">IFM_BMP</a></td></tr>
+<tr class="memitem:ga34a052a36e7dd7d87db59a22158f9230"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga34a052a36e7dd7d87db59a22158f9230">IFM_BMP</a></td></tr>
 <tr class="memdesc:ga34a052a36e7dd7d87db59a22158f9230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the bitmap image format.  <br /></td></tr>
 <tr class="separator:ga34a052a36e7dd7d87db59a22158f9230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b8aa69187f1430fd4eaf67a885316ae"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga0b8aa69187f1430fd4eaf67a885316ae.html#ga0b8aa69187f1430fd4eaf67a885316ae">IFM_EMF</a></td></tr>
+<tr class="memitem:ga0b8aa69187f1430fd4eaf67a885316ae"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga0b8aa69187f1430fd4eaf67a885316ae">IFM_EMF</a></td></tr>
 <tr class="memdesc:ga0b8aa69187f1430fd4eaf67a885316ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the enhanced metafile image format.  <br /></td></tr>
 <tr class="separator:ga0b8aa69187f1430fd4eaf67a885316ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae13614ae7acc1aefc9ba85b0ce6bc831"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gae13614ae7acc1aefc9ba85b0ce6bc831.html#gae13614ae7acc1aefc9ba85b0ce6bc831">IFM_EXIF</a></td></tr>
+<tr class="memitem:gae13614ae7acc1aefc9ba85b0ce6bc831"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gae13614ae7acc1aefc9ba85b0ce6bc831">IFM_EXIF</a></td></tr>
 <tr class="memdesc:gae13614ae7acc1aefc9ba85b0ce6bc831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the Exif format.  <br /></td></tr>
 <tr class="separator:gae13614ae7acc1aefc9ba85b0ce6bc831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6de8feeed1d666bcaf25e60b2b97313e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga6de8feeed1d666bcaf25e60b2b97313e.html#ga6de8feeed1d666bcaf25e60b2b97313e">IFM_GIF</a></td></tr>
+<tr class="memitem:ga6de8feeed1d666bcaf25e60b2b97313e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga6de8feeed1d666bcaf25e60b2b97313e">IFM_GIF</a></td></tr>
 <tr class="memdesc:ga6de8feeed1d666bcaf25e60b2b97313e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the GIF image format.  <br /></td></tr>
 <tr class="separator:ga6de8feeed1d666bcaf25e60b2b97313e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f11931818e8ff8fb9368b4613c00f7d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga9f11931818e8ff8fb9368b4613c00f7d.html#ga9f11931818e8ff8fb9368b4613c00f7d">IFM_ICO</a></td></tr>
+<tr class="memitem:ga9f11931818e8ff8fb9368b4613c00f7d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga9f11931818e8ff8fb9368b4613c00f7d">IFM_ICO</a></td></tr>
 <tr class="memdesc:ga9f11931818e8ff8fb9368b4613c00f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the icon image format.  <br /></td></tr>
 <tr class="separator:ga9f11931818e8ff8fb9368b4613c00f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5cc1b64980f70b579d536cd18e628e3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gab5cc1b64980f70b579d536cd18e628e3.html#gab5cc1b64980f70b579d536cd18e628e3">IFM_JPEG</a></td></tr>
+<tr class="memitem:gab5cc1b64980f70b579d536cd18e628e3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gab5cc1b64980f70b579d536cd18e628e3">IFM_JPEG</a></td></tr>
 <tr class="memdesc:gab5cc1b64980f70b579d536cd18e628e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the JOEG image format.  <br /></td></tr>
 <tr class="separator:gab5cc1b64980f70b579d536cd18e628e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab793654e52f29478461b6fc703252073"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gab793654e52f29478461b6fc703252073.html#gab793654e52f29478461b6fc703252073">IFM_MEMORY_BMP</a></td></tr>
+<tr class="memitem:gab793654e52f29478461b6fc703252073"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gab793654e52f29478461b6fc703252073">IFM_MEMORY_BMP</a></td></tr>
 <tr class="memdesc:gab793654e52f29478461b6fc703252073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the bitmap memory image format.  <br /></td></tr>
 <tr class="separator:gab793654e52f29478461b6fc703252073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a0a5ca3f4b3124b3bbaf83205007a8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga5a0a5ca3f4b3124b3bbaf83205007a8b.html#ga5a0a5ca3f4b3124b3bbaf83205007a8b">IFM_PNG</a></td></tr>
+<tr class="memitem:ga5a0a5ca3f4b3124b3bbaf83205007a8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga5a0a5ca3f4b3124b3bbaf83205007a8b">IFM_PNG</a></td></tr>
 <tr class="memdesc:ga5a0a5ca3f4b3124b3bbaf83205007a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PNG image format.  <br /></td></tr>
 <tr class="separator:ga5a0a5ca3f4b3124b3bbaf83205007a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga67031880a6ec6aa2bb73d86f53786c86"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga67031880a6ec6aa2bb73d86f53786c86.html#ga67031880a6ec6aa2bb73d86f53786c86">IFM_TIFF</a></td></tr>
+<tr class="memitem:ga67031880a6ec6aa2bb73d86f53786c86"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga67031880a6ec6aa2bb73d86f53786c86">IFM_TIFF</a></td></tr>
 <tr class="memdesc:ga67031880a6ec6aa2bb73d86f53786c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the TIFF image format.  <br /></td></tr>
 <tr class="separator:ga67031880a6ec6aa2bb73d86f53786c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7381c5dfabf833d7d4ab495cf3cbe2a3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga7381c5dfabf833d7d4ab495cf3cbe2a3.html#ga7381c5dfabf833d7d4ab495cf3cbe2a3">IFM_WMF</a></td></tr>
+<tr class="memitem:ga7381c5dfabf833d7d4ab495cf3cbe2a3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga7381c5dfabf833d7d4ab495cf3cbe2a3">IFM_WMF</a></td></tr>
 <tr class="memdesc:ga7381c5dfabf833d7d4ab495cf3cbe2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the WMF image format.  <br /></td></tr>
 <tr class="separator:ga7381c5dfabf833d7d4ab495cf3cbe2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab0c61f8756be2c0ab40f97f2d0350b1f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gab0c61f8756be2c0ab40f97f2d0350b1f.html#gab0c61f8756be2c0ab40f97f2d0350b1f">IFM_MEMORY_GIF</a></td></tr>
+<tr class="memitem:gab0c61f8756be2c0ab40f97f2d0350b1f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gab0c61f8756be2c0ab40f97f2d0350b1f">IFM_MEMORY_GIF</a></td></tr>
 <tr class="memdesc:gab0c61f8756be2c0ab40f97f2d0350b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the GIF mempry image format.  <br /></td></tr>
 <tr class="separator:gab0c61f8756be2c0ab40f97f2d0350b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga326d7cefa1fc5e1c1e25c8598dd75100"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga326d7cefa1fc5e1c1e25c8598dd75100.html#ga326d7cefa1fc5e1c1e25c8598dd75100">IFM_MEMORY_ICO</a></td></tr>
+<tr class="memitem:ga326d7cefa1fc5e1c1e25c8598dd75100"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga326d7cefa1fc5e1c1e25c8598dd75100">IFM_MEMORY_ICO</a></td></tr>
 <tr class="memdesc:ga326d7cefa1fc5e1c1e25c8598dd75100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the icon memory image format.  <br /></td></tr>
 <tr class="separator:ga326d7cefa1fc5e1c1e25c8598dd75100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae7f1d9ec1a685fed4e7e25f6d891be37"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gae7f1d9ec1a685fed4e7e25f6d891be37.html#gae7f1d9ec1a685fed4e7e25f6d891be37">IFM_MEMORY_JPEG</a></td></tr>
+<tr class="memitem:gae7f1d9ec1a685fed4e7e25f6d891be37"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gae7f1d9ec1a685fed4e7e25f6d891be37">IFM_MEMORY_JPEG</a></td></tr>
 <tr class="memdesc:gae7f1d9ec1a685fed4e7e25f6d891be37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the JPEG memory image format.  <br /></td></tr>
 <tr class="separator:gae7f1d9ec1a685fed4e7e25f6d891be37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30b1b935a0015ecad1a0ecf3f796e00b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga30b1b935a0015ecad1a0ecf3f796e00b.html#ga30b1b935a0015ecad1a0ecf3f796e00b">IFM_MEMORY_PNG</a></td></tr>
+<tr class="memitem:ga30b1b935a0015ecad1a0ecf3f796e00b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga30b1b935a0015ecad1a0ecf3f796e00b">IFM_MEMORY_PNG</a></td></tr>
 <tr class="memdesc:ga30b1b935a0015ecad1a0ecf3f796e00b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PNG memory image format.  <br /></td></tr>
 <tr class="separator:ga30b1b935a0015ecad1a0ecf3f796e00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga71de38ffc3ad578c824efc6b4dbbf326"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga71de38ffc3ad578c824efc6b4dbbf326.html#ga71de38ffc3ad578c824efc6b4dbbf326">IFM_MEMORY_TIFF</a></td></tr>
+<tr class="memitem:ga71de38ffc3ad578c824efc6b4dbbf326"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga71de38ffc3ad578c824efc6b4dbbf326">IFM_MEMORY_TIFF</a></td></tr>
 <tr class="memdesc:ga71de38ffc3ad578c824efc6b4dbbf326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the TIFF memory image format.  <br /></td></tr>
 <tr class="separator:ga71de38ffc3ad578c824efc6b4dbbf326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaca96ad1f2bf1f01b4f8d75af517f3020"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gaca96ad1f2bf1f01b4f8d75af517f3020.html#gaca96ad1f2bf1f01b4f8d75af517f3020">IFM_CUR</a></td></tr>
+<tr class="memitem:gaca96ad1f2bf1f01b4f8d75af517f3020"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gaca96ad1f2bf1f01b4f8d75af517f3020">IFM_CUR</a></td></tr>
 <tr class="memdesc:gaca96ad1f2bf1f01b4f8d75af517f3020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the cursor image format.  <br /></td></tr>
 <tr class="separator:gaca96ad1f2bf1f01b4f8d75af517f3020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c16a420d0d82738952deeb053787f7d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga6c16a420d0d82738952deeb053787f7d.html#ga6c16a420d0d82738952deeb053787f7d">IFM_MEMORY_CUR</a></td></tr>
+<tr class="memitem:ga6c16a420d0d82738952deeb053787f7d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga6c16a420d0d82738952deeb053787f7d">IFM_MEMORY_CUR</a></td></tr>
 <tr class="memdesc:ga6c16a420d0d82738952deeb053787f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the CUR memory image format.  <br /></td></tr>
 <tr class="separator:ga6c16a420d0d82738952deeb053787f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad4f726bbbd98b4569c696087dcf2c8b2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gad4f726bbbd98b4569c696087dcf2c8b2.html#gad4f726bbbd98b4569c696087dcf2c8b2">IFM_XBM</a></td></tr>
+<tr class="memitem:gad4f726bbbd98b4569c696087dcf2c8b2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gad4f726bbbd98b4569c696087dcf2c8b2">IFM_XBM</a></td></tr>
 <tr class="memdesc:gad4f726bbbd98b4569c696087dcf2c8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the XBM image format.  <br /></td></tr>
 <tr class="separator:gad4f726bbbd98b4569c696087dcf2c8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa08f16e7f87cacf72ac57a0af8c93099"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gaa08f16e7f87cacf72ac57a0af8c93099.html#gaa08f16e7f87cacf72ac57a0af8c93099">IFM_MEMORY_XBM</a></td></tr>
+<tr class="memitem:gaa08f16e7f87cacf72ac57a0af8c93099"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gaa08f16e7f87cacf72ac57a0af8c93099">IFM_MEMORY_XBM</a></td></tr>
 <tr class="memdesc:gaa08f16e7f87cacf72ac57a0af8c93099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the XBM memory image format.  <br /></td></tr>
 <tr class="separator:gaa08f16e7f87cacf72ac57a0af8c93099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5f4501408d5f72f7989d5429dbeab6e1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga5f4501408d5f72f7989d5429dbeab6e1.html#ga5f4501408d5f72f7989d5429dbeab6e1">IFM_XPM</a></td></tr>
+<tr class="memitem:ga5f4501408d5f72f7989d5429dbeab6e1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga5f4501408d5f72f7989d5429dbeab6e1">IFM_XPM</a></td></tr>
 <tr class="memdesc:ga5f4501408d5f72f7989d5429dbeab6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the XPM image format.  <br /></td></tr>
 <tr class="separator:ga5f4501408d5f72f7989d5429dbeab6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac282d7a5e497c4d3b4e7520fc48365b6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gac282d7a5e497c4d3b4e7520fc48365b6.html#gac282d7a5e497c4d3b4e7520fc48365b6">IFM_MEMORY_XPM</a></td></tr>
+<tr class="memitem:gac282d7a5e497c4d3b4e7520fc48365b6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gac282d7a5e497c4d3b4e7520fc48365b6">IFM_MEMORY_XPM</a></td></tr>
 <tr class="memdesc:gac282d7a5e497c4d3b4e7520fc48365b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the XPM memory image format.  <br /></td></tr>
 <tr class="separator:gac282d7a5e497c4d3b4e7520fc48365b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab0fd3402642354a880f7a36b2660617e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gab0fd3402642354a880f7a36b2660617e.html#gab0fd3402642354a880f7a36b2660617e">IFM_PNM</a></td></tr>
+<tr class="memitem:gab0fd3402642354a880f7a36b2660617e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gab0fd3402642354a880f7a36b2660617e">IFM_PNM</a></td></tr>
 <tr class="memdesc:gab0fd3402642354a880f7a36b2660617e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PNM image format.  <br /></td></tr>
 <tr class="separator:gab0fd3402642354a880f7a36b2660617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabbae83abf18063ef280e4c3e588a2442"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gabbae83abf18063ef280e4c3e588a2442.html#gabbae83abf18063ef280e4c3e588a2442">IFM_MEMORY_PNM</a></td></tr>
+<tr class="memitem:gabbae83abf18063ef280e4c3e588a2442"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gabbae83abf18063ef280e4c3e588a2442">IFM_MEMORY_PNM</a></td></tr>
 <tr class="memdesc:gabbae83abf18063ef280e4c3e588a2442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PNM memory image format.  <br /></td></tr>
 <tr class="separator:gabbae83abf18063ef280e4c3e588a2442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8c2123a504df5c0b2430e9cb01ee05a4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga8c2123a504df5c0b2430e9cb01ee05a4.html#ga8c2123a504df5c0b2430e9cb01ee05a4">IFM_PCX</a></td></tr>
+<tr class="memitem:ga8c2123a504df5c0b2430e9cb01ee05a4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga8c2123a504df5c0b2430e9cb01ee05a4">IFM_PCX</a></td></tr>
 <tr class="memdesc:ga8c2123a504df5c0b2430e9cb01ee05a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PCX image format.  <br /></td></tr>
 <tr class="separator:ga8c2123a504df5c0b2430e9cb01ee05a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4e99a93c99f227ca8a7b76cede64218"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gae4e99a93c99f227ca8a7b76cede64218.html#gae4e99a93c99f227ca8a7b76cede64218">IFM_MEMORY_PCX</a></td></tr>
+<tr class="memitem:gae4e99a93c99f227ca8a7b76cede64218"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gae4e99a93c99f227ca8a7b76cede64218">IFM_MEMORY_PCX</a></td></tr>
 <tr class="memdesc:gae4e99a93c99f227ca8a7b76cede64218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PCX memory image format.  <br /></td></tr>
 <tr class="separator:gae4e99a93c99f227ca8a7b76cede64218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4d90ac1d675c9d0c93913e42fee56a2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gab4d90ac1d675c9d0c93913e42fee56a2.html#gab4d90ac1d675c9d0c93913e42fee56a2">IFM_PICT</a></td></tr>
+<tr class="memitem:gab4d90ac1d675c9d0c93913e42fee56a2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gab4d90ac1d675c9d0c93913e42fee56a2">IFM_PICT</a></td></tr>
 <tr class="memdesc:gab4d90ac1d675c9d0c93913e42fee56a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PICT image format.  <br /></td></tr>
 <tr class="separator:gab4d90ac1d675c9d0c93913e42fee56a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafb78dc20e49ae26457daf1610286c9bc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gafb78dc20e49ae26457daf1610286c9bc.html#gafb78dc20e49ae26457daf1610286c9bc">IFM_MEMORY_PICT</a></td></tr>
+<tr class="memitem:gafb78dc20e49ae26457daf1610286c9bc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gafb78dc20e49ae26457daf1610286c9bc">IFM_MEMORY_PICT</a></td></tr>
 <tr class="memdesc:gafb78dc20e49ae26457daf1610286c9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the PICT memory image format.  <br /></td></tr>
 <tr class="separator:gafb78dc20e49ae26457daf1610286c9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacad191137c60bbaabef6201e86b85b35"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_gacad191137c60bbaabef6201e86b85b35.html#gacad191137c60bbaabef6201e86b85b35">IFM_ICON</a></td></tr>
+<tr class="memitem:gacad191137c60bbaabef6201e86b85b35"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#gacad191137c60bbaabef6201e86b85b35">IFM_ICON</a></td></tr>
 <tr class="memdesc:gacad191137c60bbaabef6201e86b85b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the ICON image format.  <br /></td></tr>
 <tr class="separator:gacad191137c60bbaabef6201e86b85b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga44d8b4c86fd03c63239a5e9bb1072d88"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga44d8b4c86fd03c63239a5e9bb1072d88.html#ga44d8b4c86fd03c63239a5e9bb1072d88">IFM_MEMORY_ICON</a></td></tr>
+<tr class="memitem:ga44d8b4c86fd03c63239a5e9bb1072d88"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga44d8b4c86fd03c63239a5e9bb1072d88">IFM_MEMORY_ICON</a></td></tr>
 <tr class="memdesc:ga44d8b4c86fd03c63239a5e9bb1072d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the ICOM memory image format.  <br /></td></tr>
 <tr class="separator:ga44d8b4c86fd03c63239a5e9bb1072d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga597471ea2bdf76c0ae8a76ad34b0aaaa"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga597471ea2bdf76c0ae8a76ad34b0aaaa.html#ga597471ea2bdf76c0ae8a76ad34b0aaaa">IFM_MACCUR</a></td></tr>
+<tr class="memitem:ga597471ea2bdf76c0ae8a76ad34b0aaaa"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga597471ea2bdf76c0ae8a76ad34b0aaaa">IFM_MACCUR</a></td></tr>
 <tr class="memdesc:ga597471ea2bdf76c0ae8a76ad34b0aaaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the Apple CURSOR format.  <br /></td></tr>
 <tr class="separator:ga597471ea2bdf76c0ae8a76ad34b0aaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e920f7f2f8d996a2ae95975dd412d37"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga3e920f7f2f8d996a2ae95975dd412d37.html#ga3e920f7f2f8d996a2ae95975dd412d37">IFM_MEMORY_MACCUR</a></td></tr>
+<tr class="memitem:ga3e920f7f2f8d996a2ae95975dd412d37"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga3e920f7f2f8d996a2ae95975dd412d37">IFM_MEMORY_MACCUR</a></td></tr>
 <tr class="memdesc:ga3e920f7f2f8d996a2ae95975dd412d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the CURSOR memory image format.  <br /></td></tr>
 <tr class="separator:ga3e920f7f2f8d996a2ae95975dd412d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c407a99964db64ca633f30f4426b0b7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga6c407a99964db64ca633f30f4426b0b7.html#ga6c407a99964db64ca633f30f4426b0b7">IFM_ANI</a></td></tr>
+<tr class="memitem:ga6c407a99964db64ca633f30f4426b0b7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga6c407a99964db64ca633f30f4426b0b7">IFM_ANI</a></td></tr>
 <tr class="memdesc:ga6c407a99964db64ca633f30f4426b0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the ANI image format.  <br /></td></tr>
 <tr class="separator:ga6c407a99964db64ca633f30f4426b0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f5d2cea5d9e2ed0d4764d791f02fa29"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga2f5d2cea5d9e2ed0d4764d791f02fa29.html#ga2f5d2cea5d9e2ed0d4764d791f02fa29">IFM_IIF</a></td></tr>
+<tr class="memitem:ga2f5d2cea5d9e2ed0d4764d791f02fa29"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga2f5d2cea5d9e2ed0d4764d791f02fa29">IFM_IIF</a></td></tr>
 <tr class="memdesc:ga2f5d2cea5d9e2ed0d4764d791f02fa29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the IIF image format.  <br /></td></tr>
 <tr class="separator:ga2f5d2cea5d9e2ed0d4764d791f02fa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b8c62b5843d12b936fae73f2fe9a87f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm_ga4b8c62b5843d12b936fae73f2fe9a87f.html#ga4b8c62b5843d12b936fae73f2fe9a87f">IFM_TGA</a></td></tr>
+<tr class="memitem:ga4b8c62b5843d12b936fae73f2fe9a87f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ifm.html#ga4b8c62b5843d12b936fae73f2fe9a87f">IFM_TGA</a></td></tr>
 <tr class="memdesc:ga4b8c62b5843d12b936fae73f2fe9a87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the TGA image format.  <br /></td></tr>
 <tr class="separator:ga4b8c62b5843d12b936fae73f2fe9a87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gacbbdfc75661c1017532b320e8dc6263e" name="gacbbdfc75661c1017532b320e8dc6263e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbbdfc75661c1017532b320e8dc6263e">&#9670;&#160;</a></span>IFM_UNKNOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_UNKNOWN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the unknoxn image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga34a052a36e7dd7d87db59a22158f9230" name="ga34a052a36e7dd7d87db59a22158f9230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34a052a36e7dd7d87db59a22158f9230">&#9670;&#160;</a></span>IFM_BMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_BMP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the bitmap image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0b8aa69187f1430fd4eaf67a885316ae" name="ga0b8aa69187f1430fd4eaf67a885316ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b8aa69187f1430fd4eaf67a885316ae">&#9670;&#160;</a></span>IFM_EMF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_EMF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the enhanced metafile image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae13614ae7acc1aefc9ba85b0ce6bc831" name="gae13614ae7acc1aefc9ba85b0ce6bc831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae13614ae7acc1aefc9ba85b0ce6bc831">&#9670;&#160;</a></span>IFM_EXIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_EXIF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the Exif format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6de8feeed1d666bcaf25e60b2b97313e" name="ga6de8feeed1d666bcaf25e60b2b97313e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6de8feeed1d666bcaf25e60b2b97313e">&#9670;&#160;</a></span>IFM_GIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_GIF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the GIF image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9f11931818e8ff8fb9368b4613c00f7d" name="ga9f11931818e8ff8fb9368b4613c00f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f11931818e8ff8fb9368b4613c00f7d">&#9670;&#160;</a></span>IFM_ICO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_ICO</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the icon image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab5cc1b64980f70b579d536cd18e628e3" name="gab5cc1b64980f70b579d536cd18e628e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5cc1b64980f70b579d536cd18e628e3">&#9670;&#160;</a></span>IFM_JPEG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_JPEG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the JOEG image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab793654e52f29478461b6fc703252073" name="gab793654e52f29478461b6fc703252073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab793654e52f29478461b6fc703252073">&#9670;&#160;</a></span>IFM_MEMORY_BMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_BMP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the bitmap memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga5a0a5ca3f4b3124b3bbaf83205007a8b" name="ga5a0a5ca3f4b3124b3bbaf83205007a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a0a5ca3f4b3124b3bbaf83205007a8b">&#9670;&#160;</a></span>IFM_PNG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_PNG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PNG image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga67031880a6ec6aa2bb73d86f53786c86" name="ga67031880a6ec6aa2bb73d86f53786c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67031880a6ec6aa2bb73d86f53786c86">&#9670;&#160;</a></span>IFM_TIFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_TIFF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the TIFF image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga7381c5dfabf833d7d4ab495cf3cbe2a3" name="ga7381c5dfabf833d7d4ab495cf3cbe2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7381c5dfabf833d7d4ab495cf3cbe2a3">&#9670;&#160;</a></span>IFM_WMF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_WMF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the WMF image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab0c61f8756be2c0ab40f97f2d0350b1f" name="gab0c61f8756be2c0ab40f97f2d0350b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0c61f8756be2c0ab40f97f2d0350b1f">&#9670;&#160;</a></span>IFM_MEMORY_GIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_GIF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the GIF mempry image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga326d7cefa1fc5e1c1e25c8598dd75100" name="ga326d7cefa1fc5e1c1e25c8598dd75100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga326d7cefa1fc5e1c1e25c8598dd75100">&#9670;&#160;</a></span>IFM_MEMORY_ICO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_ICO</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the icon memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae7f1d9ec1a685fed4e7e25f6d891be37" name="gae7f1d9ec1a685fed4e7e25f6d891be37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7f1d9ec1a685fed4e7e25f6d891be37">&#9670;&#160;</a></span>IFM_MEMORY_JPEG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_JPEG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the JPEG memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga30b1b935a0015ecad1a0ecf3f796e00b" name="ga30b1b935a0015ecad1a0ecf3f796e00b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30b1b935a0015ecad1a0ecf3f796e00b">&#9670;&#160;</a></span>IFM_MEMORY_PNG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_PNG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PNG memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga71de38ffc3ad578c824efc6b4dbbf326" name="ga71de38ffc3ad578c824efc6b4dbbf326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71de38ffc3ad578c824efc6b4dbbf326">&#9670;&#160;</a></span>IFM_MEMORY_TIFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_TIFF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the TIFF memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaca96ad1f2bf1f01b4f8d75af517f3020" name="gaca96ad1f2bf1f01b4f8d75af517f3020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca96ad1f2bf1f01b4f8d75af517f3020">&#9670;&#160;</a></span>IFM_CUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_CUR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the cursor image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6c16a420d0d82738952deeb053787f7d" name="ga6c16a420d0d82738952deeb053787f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c16a420d0d82738952deeb053787f7d">&#9670;&#160;</a></span>IFM_MEMORY_CUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_CUR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the CUR memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad4f726bbbd98b4569c696087dcf2c8b2" name="gad4f726bbbd98b4569c696087dcf2c8b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4f726bbbd98b4569c696087dcf2c8b2">&#9670;&#160;</a></span>IFM_XBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_XBM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the XBM image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaa08f16e7f87cacf72ac57a0af8c93099" name="gaa08f16e7f87cacf72ac57a0af8c93099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa08f16e7f87cacf72ac57a0af8c93099">&#9670;&#160;</a></span>IFM_MEMORY_XBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_XBM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the XBM memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga5f4501408d5f72f7989d5429dbeab6e1" name="ga5f4501408d5f72f7989d5429dbeab6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f4501408d5f72f7989d5429dbeab6e1">&#9670;&#160;</a></span>IFM_XPM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_XPM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the XPM image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac282d7a5e497c4d3b4e7520fc48365b6" name="gac282d7a5e497c4d3b4e7520fc48365b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac282d7a5e497c4d3b4e7520fc48365b6">&#9670;&#160;</a></span>IFM_MEMORY_XPM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_XPM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the XPM memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab0fd3402642354a880f7a36b2660617e" name="gab0fd3402642354a880f7a36b2660617e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0fd3402642354a880f7a36b2660617e">&#9670;&#160;</a></span>IFM_PNM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_PNM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PNM image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gabbae83abf18063ef280e4c3e588a2442" name="gabbae83abf18063ef280e4c3e588a2442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbae83abf18063ef280e4c3e588a2442">&#9670;&#160;</a></span>IFM_MEMORY_PNM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_PNM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PNM memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8c2123a504df5c0b2430e9cb01ee05a4" name="ga8c2123a504df5c0b2430e9cb01ee05a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c2123a504df5c0b2430e9cb01ee05a4">&#9670;&#160;</a></span>IFM_PCX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_PCX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PCX image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae4e99a93c99f227ca8a7b76cede64218" name="gae4e99a93c99f227ca8a7b76cede64218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4e99a93c99f227ca8a7b76cede64218">&#9670;&#160;</a></span>IFM_MEMORY_PCX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_PCX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PCX memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab4d90ac1d675c9d0c93913e42fee56a2" name="gab4d90ac1d675c9d0c93913e42fee56a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4d90ac1d675c9d0c93913e42fee56a2">&#9670;&#160;</a></span>IFM_PICT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_PICT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PICT image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gafb78dc20e49ae26457daf1610286c9bc" name="gafb78dc20e49ae26457daf1610286c9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb78dc20e49ae26457daf1610286c9bc">&#9670;&#160;</a></span>IFM_MEMORY_PICT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_PICT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the PICT memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gacad191137c60bbaabef6201e86b85b35" name="gacad191137c60bbaabef6201e86b85b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacad191137c60bbaabef6201e86b85b35">&#9670;&#160;</a></span>IFM_ICON</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_ICON</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the ICON image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga44d8b4c86fd03c63239a5e9bb1072d88" name="ga44d8b4c86fd03c63239a5e9bb1072d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44d8b4c86fd03c63239a5e9bb1072d88">&#9670;&#160;</a></span>IFM_MEMORY_ICON</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_ICON</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the ICOM memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga597471ea2bdf76c0ae8a76ad34b0aaaa" name="ga597471ea2bdf76c0ae8a76ad34b0aaaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga597471ea2bdf76c0ae8a76ad34b0aaaa">&#9670;&#160;</a></span>IFM_MACCUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MACCUR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the Apple CURSOR format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga3e920f7f2f8d996a2ae95975dd412d37" name="ga3e920f7f2f8d996a2ae95975dd412d37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e920f7f2f8d996a2ae95975dd412d37">&#9670;&#160;</a></span>IFM_MEMORY_MACCUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_MEMORY_MACCUR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the CURSOR memory image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6c407a99964db64ca633f30f4426b0b7" name="ga6c407a99964db64ca633f30f4426b0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c407a99964db64ca633f30f4426b0b7">&#9670;&#160;</a></span>IFM_ANI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_ANI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the ANI image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga2f5d2cea5d9e2ed0d4764d791f02fa29" name="ga2f5d2cea5d9e2ed0d4764d791f02fa29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f5d2cea5d9e2ed0d4764d791f02fa29">&#9670;&#160;</a></span>IFM_IIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_IIF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the IIF image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4b8c62b5843d12b936fae73f2fe9a87f" name="ga4b8c62b5843d12b936fae73f2fe9a87f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b8c62b5843d12b936fae73f2fe9a87f">&#9670;&#160;</a></span>IFM_TGA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t IFM_TGA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/image_formats.h&gt;</code></p>
+
+<p>Indicates the TGA image format. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

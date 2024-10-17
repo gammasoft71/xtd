@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__pws.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,27 +90,141 @@ $(document).ready(function(){initNavTree('group__pws.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga62202a82751e51c953c7243b18f5cd4a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws_ga62202a82751e51c953c7243b18f5cd4a.html#ga62202a82751e51c953c7243b18f5cd4a">PROCESS_WINDOW_STYLE_NORMAL</a></td></tr>
+<tr class="memitem:ga62202a82751e51c953c7243b18f5cd4a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws.html#ga62202a82751e51c953c7243b18f5cd4a">PROCESS_WINDOW_STYLE_NORMAL</a></td></tr>
 <tr class="memdesc:ga62202a82751e51c953c7243b18f5cd4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The normal, visible window style. The system displays a window with Normal style on the screen, in a default location. If a window is visible, the user can supply input to the window and view the window's output. Frequently, an application may initialize a new window to the Hidden style while it customizes the window's appearance, and then make the window style Normal.  <br /></td></tr>
 <tr class="separator:ga62202a82751e51c953c7243b18f5cd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7ccd929998c55cbbc83a967c0e6995b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws_gac7ccd929998c55cbbc83a967c0e6995b.html#gac7ccd929998c55cbbc83a967c0e6995b">PROCESS_WINDOW_STYLE_HIDDEN</a></td></tr>
+<tr class="memitem:gac7ccd929998c55cbbc83a967c0e6995b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws.html#gac7ccd929998c55cbbc83a967c0e6995b">PROCESS_WINDOW_STYLE_HIDDEN</a></td></tr>
 <tr class="memdesc:gac7ccd929998c55cbbc83a967c0e6995b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hidden window style. A window can be either visible or hidden. The system displays a hidden window by not drawing it. If a window is hidden, it is effectively disabled. A hidden window can process messages from the system or from other windows, but it cannot process input from the user or display output. Frequently, an application may keep a new window hidden while it customizes the window's appearance, and then make the window style Normal. To use process_window_style.Hidden, the ProcessStartInfo.UseShellExecute property must be false.  <br /></td></tr>
 <tr class="separator:gac7ccd929998c55cbbc83a967c0e6995b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a5bdafe34e701ee7f9603507ae4bfc0"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws_ga8a5bdafe34e701ee7f9603507ae4bfc0.html#ga8a5bdafe34e701ee7f9603507ae4bfc0">PROCESS_WINDOW_STYLE_MINIMIZED</a></td></tr>
+<tr class="memitem:ga8a5bdafe34e701ee7f9603507ae4bfc0"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws.html#ga8a5bdafe34e701ee7f9603507ae4bfc0">PROCESS_WINDOW_STYLE_MINIMIZED</a></td></tr>
 <tr class="memdesc:ga8a5bdafe34e701ee7f9603507ae4bfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimized window style. By default, the system reduces a minimized window to the size of its taskbar button and moves the minimized window to the taskbar.  <br /></td></tr>
 <tr class="separator:ga8a5bdafe34e701ee7f9603507ae4bfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc25f7df737219053f5969a8692ad131"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws_gadc25f7df737219053f5969a8692ad131.html#gadc25f7df737219053f5969a8692ad131">PROCESS_WINDOW_STYLE_MAXIMIZED</a></td></tr>
+<tr class="memitem:gadc25f7df737219053f5969a8692ad131"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pws.html#gadc25f7df737219053f5969a8692ad131">PROCESS_WINDOW_STYLE_MAXIMIZED</a></td></tr>
 <tr class="memdesc:gadc25f7df737219053f5969a8692ad131"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximized window style. By default, the system enlarges a maximized window so that it fills the screen or, in the case of a child window, the parent window's client area. If the window has a title bar, the system automatically moves it to the top of the screen or to the top of the parent window's client area. Also, the system disables the window's sizing border and the window-positioning capability of the title bar so that the user cannot move the window by dragging the title bar.  <br /></td></tr>
 <tr class="separator:gadc25f7df737219053f5969a8692ad131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga62202a82751e51c953c7243b18f5cd4a" name="ga62202a82751e51c953c7243b18f5cd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62202a82751e51c953c7243b18f5cd4a">&#9670;&#160;</a></span>PROCESS_WINDOW_STYLE_NORMAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t PROCESS_WINDOW_STYLE_NORMAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2process__window__style_8h.html">xtd.core.native/include/xtd/native/process_window_style.h</a>&gt;</code></p>
+
+<p>The normal, visible window style. The system displays a window with Normal style on the screen, in a default location. If a window is visible, the user can supply input to the window and view the window's output. Frequently, an application may initialize a new window to the Hidden style while it customizes the window's appearance, and then make the window style Normal. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac7ccd929998c55cbbc83a967c0e6995b" name="gac7ccd929998c55cbbc83a967c0e6995b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7ccd929998c55cbbc83a967c0e6995b">&#9670;&#160;</a></span>PROCESS_WINDOW_STYLE_HIDDEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t PROCESS_WINDOW_STYLE_HIDDEN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2process__window__style_8h.html">xtd.core.native/include/xtd/native/process_window_style.h</a>&gt;</code></p>
+
+<p>The hidden window style. A window can be either visible or hidden. The system displays a hidden window by not drawing it. If a window is hidden, it is effectively disabled. A hidden window can process messages from the system or from other windows, but it cannot process input from the user or display output. Frequently, an application may keep a new window hidden while it customizes the window's appearance, and then make the window style Normal. To use process_window_style.Hidden, the ProcessStartInfo.UseShellExecute property must be false. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8a5bdafe34e701ee7f9603507ae4bfc0" name="ga8a5bdafe34e701ee7f9603507ae4bfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a5bdafe34e701ee7f9603507ae4bfc0">&#9670;&#160;</a></span>PROCESS_WINDOW_STYLE_MINIMIZED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t PROCESS_WINDOW_STYLE_MINIMIZED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2process__window__style_8h.html">xtd.core.native/include/xtd/native/process_window_style.h</a>&gt;</code></p>
+
+<p>The minimized window style. By default, the system reduces a minimized window to the size of its taskbar button and moves the minimized window to the taskbar. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadc25f7df737219053f5969a8692ad131" name="gadc25f7df737219053f5969a8692ad131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc25f7df737219053f5969a8692ad131">&#9670;&#160;</a></span>PROCESS_WINDOW_STYLE_MAXIMIZED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t PROCESS_WINDOW_STYLE_MAXIMIZED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2process__window__style_8h.html">xtd.core.native/include/xtd/native/process_window_style.h</a>&gt;</code></p>
+
+<p>The maximized window style. By default, the system enlarges a maximized window so that it fills the screen or, in the case of a child window, the parent window's client area. If the window has a title bar, the system automatically moves it to the top of the screen or to the top of the parent window's client area. Also, the system disables the window's sizing border and the window-positioning capability of the title bar so that the user cannot move the window by dragging the title bar. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('month__calendar__styles_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('month__calendar__styles_8h.html',''); 
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
@@ -113,40 +97,36 @@ $(document).ready(function(){initNavTree('month__calendar__styles_8h.html',''); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga2ccb40071336f2175b477d41a7733b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga2ccb40071336f2175b477d41a7733b9a.html#ga2ccb40071336f2175b477d41a7733b9a">MCS_DAYSTATE</a></td></tr>
+<tr class="memitem:ga2ccb40071336f2175b477d41a7733b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga2ccb40071336f2175b477d41a7733b9a">MCS_DAYSTATE</a></td></tr>
 <tr class="memdesc:ga2ccb40071336f2175b477d41a7733b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar sends MCN_GETDAYSTATE notifications to request information about which days should be displayed in bold.  <br /></td></tr>
 <tr class="separator:ga2ccb40071336f2175b477d41a7733b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab10627e68846782255019e3e89309720"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gab10627e68846782255019e3e89309720.html#gab10627e68846782255019e3e89309720">MCS_MULTISELECT</a></td></tr>
+<tr class="memitem:gab10627e68846782255019e3e89309720"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gab10627e68846782255019e3e89309720">MCS_MULTISELECT</a></td></tr>
 <tr class="memdesc:gab10627e68846782255019e3e89309720"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar enables the user to select a range of dates within the control. By default, the maximum range is one week. You can change the maximum range that can be selected by using the MCM_SETMAXSELCOUNT message.  <br /></td></tr>
 <tr class="separator:gab10627e68846782255019e3e89309720"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga724e69014c4ac81d884cd690cba41146"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga724e69014c4ac81d884cd690cba41146.html#ga724e69014c4ac81d884cd690cba41146">MCS_WEEKNUMBERS</a></td></tr>
+<tr class="memitem:ga724e69014c4ac81d884cd690cba41146"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga724e69014c4ac81d884cd690cba41146">MCS_WEEKNUMBERS</a></td></tr>
 <tr class="memdesc:ga724e69014c4ac81d884cd690cba41146"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control displays week numbers (1-52) to the left of each row of days. Week 1 is defined as the first week that contains at least four days.  <br /></td></tr>
 <tr class="separator:ga724e69014c4ac81d884cd690cba41146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gaaea5bbea849e81091ab1d15c5a78db0d.html#gaaea5bbea849e81091ab1d15c5a78db0d">MCS_NOTODAYCIRCLE</a></td></tr>
+<tr class="memitem:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gaaea5bbea849e81091ab1d15c5a78db0d">MCS_NOTODAYCIRCLE</a></td></tr>
 <tr class="memdesc:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control does not circle the "today" date.  <br /></td></tr>
 <tr class="separator:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83567010e0cfecc2d5019d0f453464dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga83567010e0cfecc2d5019d0f453464dc.html#ga83567010e0cfecc2d5019d0f453464dc">MCS_NOTODAY</a></td></tr>
+<tr class="memitem:ga83567010e0cfecc2d5019d0f453464dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga83567010e0cfecc2d5019d0f453464dc">MCS_NOTODAY</a></td></tr>
 <tr class="memdesc:ga83567010e0cfecc2d5019d0f453464dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control does not display the "today" date at the bottom of the control.  <br /></td></tr>
 <tr class="separator:ga83567010e0cfecc2d5019d0f453464dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga410f3715907380bf0e30009ff580199a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga410f3715907380bf0e30009ff580199a.html#ga410f3715907380bf0e30009ff580199a">MCS_NOTRAILINGDATES</a></td></tr>
+<tr class="memitem:ga410f3715907380bf0e30009ff580199a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga410f3715907380bf0e30009ff580199a">MCS_NOTRAILINGDATES</a></td></tr>
 <tr class="memdesc:ga410f3715907380bf0e30009ff580199a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dates from the previous and next months are not displayed in the current month's calendar.  <br /></td></tr>
 <tr class="separator:ga410f3715907380bf0e30009ff580199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga8f6c083aae7a972d77b67e2ff5f09542.html#ga8f6c083aae7a972d77b67e2ff5f09542">MCS_SHORTDAYSOFWEEK</a></td></tr>
+<tr class="memitem:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga8f6c083aae7a972d77b67e2ff5f09542">MCS_SHORTDAYSOFWEEK</a></td></tr>
 <tr class="memdesc:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short day names are displayed in the header.  <br /></td></tr>
 <tr class="separator:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd45ec8a321af46a76395473a17e43e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gabd45ec8a321af46a76395473a17e43e8.html#gabd45ec8a321af46a76395473a17e43e8">MCS_NOSELCHANGEONNAV</a></td></tr>
+<tr class="memitem:gabd45ec8a321af46a76395473a17e43e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gabd45ec8a321af46a76395473a17e43e8">MCS_NOSELCHANGEONNAV</a></td></tr>
 <tr class="memdesc:gabd45ec8a321af46a76395473a17e43e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The selection is not changed when the user navigates next or previous in the calendar. This allows the user to select a range larger than is visible.  <br /></td></tr>
 <tr class="separator:gabd45ec8a321af46a76395473a17e43e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li><li class="navelem"><a class="el" href="month__calendar__styles_8h.html">month_calendar_styles.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

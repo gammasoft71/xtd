@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1debugger.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1debugger.html','
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1debugger.html">debugger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1debugger-members.html">List of all members</a>  </div>
@@ -111,37 +95,254 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1debugger.html','
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a7e9f0c1ae0b186bd72e5965bd28d0fd4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_a7e9f0c1ae0b186bd72e5965bd28d0fd4.html#a7e9f0c1ae0b186bd72e5965bd28d0fd4">debug_break</a> ()</td></tr>
+<tr class="memitem:a7e9f0c1ae0b186bd72e5965bd28d0fd4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#a7e9f0c1ae0b186bd72e5965bd28d0fd4">debug_break</a> ()</td></tr>
 <tr class="memdesc:a7e9f0c1ae0b186bd72e5965bd28d0fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a breakpoint to an attached debugger.  <br /></td></tr>
 <tr class="separator:a7e9f0c1ae0b186bd72e5965bd28d0fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfad70624e8d3e832dfd37df672259b5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_adfad70624e8d3e832dfd37df672259b5.html#adfad70624e8d3e832dfd37df672259b5">is_attached</a> ()</td></tr>
+<tr class="memitem:adfad70624e8d3e832dfd37df672259b5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#adfad70624e8d3e832dfd37df672259b5">is_attached</a> ()</td></tr>
 <tr class="memdesc:adfad70624e8d3e832dfd37df672259b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether a debugger is attached to the process.  <br /></td></tr>
 <tr class="separator:adfad70624e8d3e832dfd37df672259b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa820693a2bf3566a5594b08b185893be"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_aa820693a2bf3566a5594b08b185893be.html#aa820693a2bf3566a5594b08b185893be">is_logging</a> ()</td></tr>
+<tr class="memitem:aa820693a2bf3566a5594b08b185893be"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#aa820693a2bf3566a5594b08b185893be">is_logging</a> ()</td></tr>
 <tr class="memdesc:aa820693a2bf3566a5594b08b185893be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if logging is enabled by an attached debugger.  <br /></td></tr>
 <tr class="separator:aa820693a2bf3566a5594b08b185893be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27961be4bb7ad55c4b3f49648bce39e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_a27961be4bb7ad55c4b3f49648bce39e4.html#a27961be4bb7ad55c4b3f49648bce39e4">launch</a> ()</td></tr>
+<tr class="memitem:a27961be4bb7ad55c4b3f49648bce39e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#a27961be4bb7ad55c4b3f49648bce39e4">launch</a> ()</td></tr>
 <tr class="memdesc:a27961be4bb7ad55c4b3f49648bce39e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launches and attaches a debugger to the process.  <br /></td></tr>
 <tr class="separator:a27961be4bb7ad55c4b3f49648bce39e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9942aa41efdcc725d856de91a91573"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_a8b9942aa41efdcc725d856de91a91573.html#a8b9942aa41efdcc725d856de91a91573">show_assert_dialog</a> (const std::string &amp;text, const std::string &amp;caption)</td></tr>
+<tr class="memitem:a8b9942aa41efdcc725d856de91a91573"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#a8b9942aa41efdcc725d856de91a91573">show_assert_dialog</a> (const std::string &amp;text, const std::string &amp;caption)</td></tr>
 <tr class="memdesc:a8b9942aa41efdcc725d856de91a91573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an assert dialog that shows the text.  <br /></td></tr>
 <tr class="separator:a8b9942aa41efdcc725d856de91a91573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a46fe0e45ca1d61101f4e790c2981e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger_ad7a46fe0e45ca1d61101f4e790c2981e.html#ad7a46fe0e45ca1d61101f4e790c2981e">log</a> (int32_t level, const std::string &amp;category, const std::string &amp;message)</td></tr>
+<tr class="memitem:ad7a46fe0e45ca1d61101f4e790c2981e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1debugger.html#ad7a46fe0e45ca1d61101f4e790c2981e">log</a> (int32_t level, const std::string &amp;category, const std::string &amp;message)</td></tr>
 <tr class="memdesc:ad7a46fe0e45ca1d61101f4e790c2981e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posts a message for the attached debugger.  <br /></td></tr>
 <tr class="separator:ad7a46fe0e45ca1d61101f4e790c2981e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7e9f0c1ae0b186bd72e5965bd28d0fd4" name="a7e9f0c1ae0b186bd72e5965bd28d0fd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9f0c1ae0b186bd72e5965bd28d0fd4">&#9670;&#160;</a></span>debug_break()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::debugger::debug_break </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signals a breakpoint to an attached debugger. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="adfad70624e8d3e832dfd37df672259b5" name="adfad70624e8d3e832dfd37df672259b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfad70624e8d3e832dfd37df672259b5">&#9670;&#160;</a></span>is_attached()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::debugger::is_attached </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that indicates whether a debugger is attached to the process. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if a debugger is attached; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa820693a2bf3566a5594b08b185893be" name="aa820693a2bf3566a5594b08b185893be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa820693a2bf3566a5594b08b185893be">&#9670;&#160;</a></span>is_logging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::debugger::is_logging </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks to see if logging is enabled by an attached debugger. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if a debugger is attached and logging is enabled; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a27961be4bb7ad55c4b3f49648bce39e4" name="a27961be4bb7ad55c4b3f49648bce39e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27961be4bb7ad55c4b3f49648bce39e4">&#9670;&#160;</a></span>launch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::debugger::launch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Launches and attaches a debugger to the process. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the startup is successful or if the debugger is already attached; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If a debugger is already attached, nothing happens. </dd>
+<dd>
+Debugger launch is only supported on Windows operating system. On Unix and macOS operating systems, the method returns true without launching a debugger. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8b9942aa41efdcc725d856de91a91573" name="a8b9942aa41efdcc725d856de91a91573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9942aa41efdcc725d856de91a91573">&#9670;&#160;</a></span>show_assert_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::debugger::show_assert_dialog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>caption</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays an assert dialog that shows the text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The assert dialog text. </td></tr>
+    <tr><td class="paramname">caption</td><td>The assert dialog caption. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The assert dialog result. (see <a class="el" href="assert__dialog__results_8h.html" title="Contains assert idalog result constants.">assert_dialog_results.h</a> file). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>In general the assert dialog is a system message box. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad7a46fe0e45ca1d61101f4e790c2981e" name="ad7a46fe0e45ca1d61101f4e790c2981e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a46fe0e45ca1d61101f4e790c2981e">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::debugger::log </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>category</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Posts a message for the attached debugger. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>A description of the importance of the message. </td></tr>
+    <tr><td class="paramname">category</td><td>The category of the message. </td></tr>
+    <tr><td class="paramname">message</td><td>The message to show. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2debugger_8h_source.html">debugger.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1debugger.html">debugger</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

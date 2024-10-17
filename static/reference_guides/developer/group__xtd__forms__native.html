@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__xtd__forms__native.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -297,102 +277,941 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga2ccb40071336f2175b477d41a7733b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga2ccb40071336f2175b477d41a7733b9a.html#ga2ccb40071336f2175b477d41a7733b9a">MCS_DAYSTATE</a></td></tr>
+<tr class="memitem:ga2ccb40071336f2175b477d41a7733b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga2ccb40071336f2175b477d41a7733b9a">MCS_DAYSTATE</a></td></tr>
 <tr class="memdesc:ga2ccb40071336f2175b477d41a7733b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar sends MCN_GETDAYSTATE notifications to request information about which days should be displayed in bold.  <br /></td></tr>
 <tr class="separator:ga2ccb40071336f2175b477d41a7733b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab10627e68846782255019e3e89309720"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gab10627e68846782255019e3e89309720.html#gab10627e68846782255019e3e89309720">MCS_MULTISELECT</a></td></tr>
+<tr class="memitem:gab10627e68846782255019e3e89309720"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gab10627e68846782255019e3e89309720">MCS_MULTISELECT</a></td></tr>
 <tr class="memdesc:gab10627e68846782255019e3e89309720"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar enables the user to select a range of dates within the control. By default, the maximum range is one week. You can change the maximum range that can be selected by using the MCM_SETMAXSELCOUNT message.  <br /></td></tr>
 <tr class="separator:gab10627e68846782255019e3e89309720"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga724e69014c4ac81d884cd690cba41146"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga724e69014c4ac81d884cd690cba41146.html#ga724e69014c4ac81d884cd690cba41146">MCS_WEEKNUMBERS</a></td></tr>
+<tr class="memitem:ga724e69014c4ac81d884cd690cba41146"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga724e69014c4ac81d884cd690cba41146">MCS_WEEKNUMBERS</a></td></tr>
 <tr class="memdesc:ga724e69014c4ac81d884cd690cba41146"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control displays week numbers (1-52) to the left of each row of days. Week 1 is defined as the first week that contains at least four days.  <br /></td></tr>
 <tr class="separator:ga724e69014c4ac81d884cd690cba41146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gaaea5bbea849e81091ab1d15c5a78db0d.html#gaaea5bbea849e81091ab1d15c5a78db0d">MCS_NOTODAYCIRCLE</a></td></tr>
+<tr class="memitem:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gaaea5bbea849e81091ab1d15c5a78db0d">MCS_NOTODAYCIRCLE</a></td></tr>
 <tr class="memdesc:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control does not circle the "today" date.  <br /></td></tr>
 <tr class="separator:gaaea5bbea849e81091ab1d15c5a78db0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83567010e0cfecc2d5019d0f453464dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga83567010e0cfecc2d5019d0f453464dc.html#ga83567010e0cfecc2d5019d0f453464dc">MCS_NOTODAY</a></td></tr>
+<tr class="memitem:ga83567010e0cfecc2d5019d0f453464dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga83567010e0cfecc2d5019d0f453464dc">MCS_NOTODAY</a></td></tr>
 <tr class="memdesc:ga83567010e0cfecc2d5019d0f453464dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The month calendar control does not display the "today" date at the bottom of the control.  <br /></td></tr>
 <tr class="separator:ga83567010e0cfecc2d5019d0f453464dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga410f3715907380bf0e30009ff580199a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga410f3715907380bf0e30009ff580199a.html#ga410f3715907380bf0e30009ff580199a">MCS_NOTRAILINGDATES</a></td></tr>
+<tr class="memitem:ga410f3715907380bf0e30009ff580199a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga410f3715907380bf0e30009ff580199a">MCS_NOTRAILINGDATES</a></td></tr>
 <tr class="memdesc:ga410f3715907380bf0e30009ff580199a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dates from the previous and next months are not displayed in the current month's calendar.  <br /></td></tr>
 <tr class="separator:ga410f3715907380bf0e30009ff580199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga8f6c083aae7a972d77b67e2ff5f09542.html#ga8f6c083aae7a972d77b67e2ff5f09542">MCS_SHORTDAYSOFWEEK</a></td></tr>
+<tr class="memitem:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga8f6c083aae7a972d77b67e2ff5f09542">MCS_SHORTDAYSOFWEEK</a></td></tr>
 <tr class="memdesc:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short day names are displayed in the header.  <br /></td></tr>
 <tr class="separator:ga8f6c083aae7a972d77b67e2ff5f09542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd45ec8a321af46a76395473a17e43e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gabd45ec8a321af46a76395473a17e43e8.html#gabd45ec8a321af46a76395473a17e43e8">MCS_NOSELCHANGEONNAV</a></td></tr>
+<tr class="memitem:gabd45ec8a321af46a76395473a17e43e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gabd45ec8a321af46a76395473a17e43e8">MCS_NOSELCHANGEONNAV</a></td></tr>
 <tr class="memdesc:gabd45ec8a321af46a76395473a17e43e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The selection is not changed when the user navigates next or previous in the calendar. This allows the user to select a range larger than is visible.  <br /></td></tr>
 <tr class="separator:gabd45ec8a321af46a76395473a17e43e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2eb7408a15732f5102dc7a308af42dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gac2eb7408a15732f5102dc7a308af42dc.html#gac2eb7408a15732f5102dc7a308af42dc">SBARS_SIZEGRIP</a></td></tr>
+<tr class="memitem:gac2eb7408a15732f5102dc7a308af42dc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gac2eb7408a15732f5102dc7a308af42dc">SBARS_SIZEGRIP</a></td></tr>
 <tr class="memdesc:gac2eb7408a15732f5102dc7a308af42dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status bar control will include a sizing grip at the right end of the status bar. A sizing grip is similar to a sizing border; it is a rectangular area that the user can click and drag to resize the parent window.  <br /></td></tr>
 <tr class="separator:gac2eb7408a15732f5102dc7a308af42dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7c4dd4876a5b9db12cb77924352f59b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gaf7c4dd4876a5b9db12cb77924352f59b.html#gaf7c4dd4876a5b9db12cb77924352f59b">SBARS_TOOLTIPS</a></td></tr>
+<tr class="memitem:gaf7c4dd4876a5b9db12cb77924352f59b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gaf7c4dd4876a5b9db12cb77924352f59b">SBARS_TOOLTIPS</a></td></tr>
 <tr class="memdesc:gaf7c4dd4876a5b9db12cb77924352f59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this style to enable tooltips.  <br /></td></tr>
 <tr class="separator:gaf7c4dd4876a5b9db12cb77924352f59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe96db02dc58da78d18bafda27fc37be"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gabe96db02dc58da78d18bafda27fc37be.html#gabe96db02dc58da78d18bafda27fc37be">SBARS_ELLIPSIZE</a></td></tr>
+<tr class="memitem:gabe96db02dc58da78d18bafda27fc37be"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gabe96db02dc58da78d18bafda27fc37be">SBARS_ELLIPSIZE</a></td></tr>
 <tr class="memdesc:gabe96db02dc58da78d18bafda27fc37be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the end of the status texts with an ellipsis when the status text widths exceed status bar or status panel width.  <br /></td></tr>
 <tr class="separator:gabe96db02dc58da78d18bafda27fc37be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga320cdcfcfdb90f3beebb8ac4bb5ad298"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga320cdcfcfdb90f3beebb8ac4bb5ad298.html#ga320cdcfcfdb90f3beebb8ac4bb5ad298">SBARS_LEFT</a></td></tr>
+<tr class="memitem:ga320cdcfcfdb90f3beebb8ac4bb5ad298"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga320cdcfcfdb90f3beebb8ac4bb5ad298">SBARS_LEFT</a></td></tr>
 <tr class="memdesc:ga320cdcfcfdb90f3beebb8ac4bb5ad298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the status bar is left position. The default value is top.  <br /></td></tr>
 <tr class="separator:ga320cdcfcfdb90f3beebb8ac4bb5ad298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39bb7299044b6146c8850d3b9d44bf02"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga39bb7299044b6146c8850d3b9d44bf02.html#ga39bb7299044b6146c8850d3b9d44bf02">SBARS_BOTTOM</a></td></tr>
+<tr class="memitem:ga39bb7299044b6146c8850d3b9d44bf02"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga39bb7299044b6146c8850d3b9d44bf02">SBARS_BOTTOM</a></td></tr>
 <tr class="memdesc:ga39bb7299044b6146c8850d3b9d44bf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the status bar is bottom position. The default value is top.  <br /></td></tr>
 <tr class="separator:ga39bb7299044b6146c8850d3b9d44bf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04eae33677f3ee50d50e8f1f40bfb718"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga04eae33677f3ee50d50e8f1f40bfb718.html#ga04eae33677f3ee50d50e8f1f40bfb718">SBARS_RIGHT</a></td></tr>
+<tr class="memitem:ga04eae33677f3ee50d50e8f1f40bfb718"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga04eae33677f3ee50d50e8f1f40bfb718">SBARS_RIGHT</a></td></tr>
 <tr class="memdesc:ga04eae33677f3ee50d50e8f1f40bfb718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the status bar is right position. The default value is top.  <br /></td></tr>
 <tr class="separator:ga04eae33677f3ee50d50e8f1f40bfb718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5524689264ebff3a9c1ba78619600c60"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga5524689264ebff3a9c1ba78619600c60.html#ga5524689264ebff3a9c1ba78619600c60">TBSTYLE_TOOLTIPS</a></td></tr>
+<tr class="memitem:ga5524689264ebff3a9c1ba78619600c60"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga5524689264ebff3a9c1ba78619600c60">TBSTYLE_TOOLTIPS</a></td></tr>
 <tr class="memdesc:ga5524689264ebff3a9c1ba78619600c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tooltip control that an application can use to display descriptive text for the buttons in the toolbar.  <br /></td></tr>
 <tr class="separator:ga5524689264ebff3a9c1ba78619600c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8998cbeaa03ce3e03ada010d38fbb147"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga8998cbeaa03ce3e03ada010d38fbb147.html#ga8998cbeaa03ce3e03ada010d38fbb147">TBSTYLE_WRAPABLE</a></td></tr>
+<tr class="memitem:ga8998cbeaa03ce3e03ada010d38fbb147"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga8998cbeaa03ce3e03ada010d38fbb147">TBSTYLE_WRAPABLE</a></td></tr>
 <tr class="memdesc:ga8998cbeaa03ce3e03ada010d38fbb147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a toolbar that can have multiple lines of buttons. Toolbar buttons can "wrap" to the next line when the toolbar becomes too narrow to include all buttons on the same line. When the toolbar is wrapped, the break will occur on either the rightmost separator or the rightmost button if there are no separators on the bar. This style must be set to display a vertical toolbar control when the toolbar is part of a vertical rebar control. This style cannot be combined with CCS_VERT.  <br /></td></tr>
 <tr class="separator:ga8998cbeaa03ce3e03ada010d38fbb147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadaf91a533205493cb505da42a297b895"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gadaf91a533205493cb505da42a297b895.html#gadaf91a533205493cb505da42a297b895">TBSTYLE_ALTDRAG</a></td></tr>
+<tr class="memitem:gadaf91a533205493cb505da42a297b895"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gadaf91a533205493cb505da42a297b895">TBSTYLE_ALTDRAG</a></td></tr>
 <tr class="memdesc:gadaf91a533205493cb505da42a297b895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows users to change a toolbar button's position by dragging it while holding down the ALT key. If this style is not specified, the user must hold down the SHIFT key while dragging a button. Note that the CCS_ADJUSTABLE style must be specified to enable toolbar buttons to be dragged.  <br /></td></tr>
 <tr class="separator:gadaf91a533205493cb505da42a297b895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad1850cea8246d2b102fc0ad98a6370da"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gad1850cea8246d2b102fc0ad98a6370da.html#gad1850cea8246d2b102fc0ad98a6370da">TBSTYLE_FLAT</a></td></tr>
+<tr class="memitem:gad1850cea8246d2b102fc0ad98a6370da"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gad1850cea8246d2b102fc0ad98a6370da">TBSTYLE_FLAT</a></td></tr>
 <tr class="memdesc:gad1850cea8246d2b102fc0ad98a6370da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a flat toolbar. In a flat toolbar, both the toolbar and the buttons are transparent and hot-tracking is enabled. Button text appears under button bitmaps. To prevent repainting problems, this style should be set before the toolbar control becomes visible.  <br /></td></tr>
 <tr class="separator:gad1850cea8246d2b102fc0ad98a6370da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga29723a37675e745bd6f12b8463c4dee7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga29723a37675e745bd6f12b8463c4dee7.html#ga29723a37675e745bd6f12b8463c4dee7">TBSTYLE_LIST</a></td></tr>
+<tr class="memitem:ga29723a37675e745bd6f12b8463c4dee7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga29723a37675e745bd6f12b8463c4dee7">TBSTYLE_LIST</a></td></tr>
 <tr class="memdesc:ga29723a37675e745bd6f12b8463c4dee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a flat toolbar with button text to the right of the bitmap. Otherwise, this style is identical to TBSTYLE_FLAT. To prevent repainting problems, this style should be set before the toolbar control becomes visible.  <br /></td></tr>
 <tr class="separator:ga29723a37675e745bd6f12b8463c4dee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadff9cf05fb3dfeea0b61e66c8c79ed27"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gadff9cf05fb3dfeea0b61e66c8c79ed27.html#gadff9cf05fb3dfeea0b61e66c8c79ed27">TBSTYLE_CUSTOMERASE</a></td></tr>
+<tr class="memitem:gadff9cf05fb3dfeea0b61e66c8c79ed27"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gadff9cf05fb3dfeea0b61e66c8c79ed27">TBSTYLE_CUSTOMERASE</a></td></tr>
 <tr class="memdesc:gadff9cf05fb3dfeea0b61e66c8c79ed27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates NM_CUSTOMDRAW notification codes when the toolbar processes WM_ERASEBKGND messages.  <br /></td></tr>
 <tr class="separator:gadff9cf05fb3dfeea0b61e66c8c79ed27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac695a244b9c2c9164f326adcc7ae59dd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gac695a244b9c2c9164f326adcc7ae59dd.html#gac695a244b9c2c9164f326adcc7ae59dd">TBSTYLE_REGISTERDROP</a></td></tr>
+<tr class="memitem:gac695a244b9c2c9164f326adcc7ae59dd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gac695a244b9c2c9164f326adcc7ae59dd">TBSTYLE_REGISTERDROP</a></td></tr>
 <tr class="memdesc:gac695a244b9c2c9164f326adcc7ae59dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates TBN_GETOBJECT notification codes to request drop target objects when the cursor passes over toolbar buttons.  <br /></td></tr>
 <tr class="separator:gac695a244b9c2c9164f326adcc7ae59dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga710e4a3edcbc9559d52c105fa67fe9fe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga710e4a3edcbc9559d52c105fa67fe9fe.html#ga710e4a3edcbc9559d52c105fa67fe9fe">TBSTYLE_TRANSPARENT</a></td></tr>
+<tr class="memitem:ga710e4a3edcbc9559d52c105fa67fe9fe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga710e4a3edcbc9559d52c105fa67fe9fe">TBSTYLE_TRANSPARENT</a></td></tr>
 <tr class="memdesc:ga710e4a3edcbc9559d52c105fa67fe9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transparent toolbar. In a transparent toolbar, the toolbar is transparent but the buttons are not. Button text appears under button bitmaps. To prevent repainting problems, this style should be set before the toolbar control becomes visible.  <br /></td></tr>
 <tr class="separator:ga710e4a3edcbc9559d52c105fa67fe9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga18a80555e765ced55324c049067950f3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga18a80555e765ced55324c049067950f3.html#ga18a80555e765ced55324c049067950f3">TBSTYLE_SHOWTEXT</a></td></tr>
+<tr class="memitem:ga18a80555e765ced55324c049067950f3"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga18a80555e765ced55324c049067950f3">TBSTYLE_SHOWTEXT</a></td></tr>
 <tr class="memdesc:ga18a80555e765ced55324c049067950f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar button texts are visible.  <br /></td></tr>
 <tr class="separator:ga18a80555e765ced55324c049067950f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8caadeacea10adba0bcf3ca0feb66339"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga8caadeacea10adba0bcf3ca0feb66339.html#ga8caadeacea10adba0bcf3ca0feb66339">TBSTYLE_TEXTRIGHTALIGN</a></td></tr>
+<tr class="memitem:ga8caadeacea10adba0bcf3ca0feb66339"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga8caadeacea10adba0bcf3ca0feb66339">TBSTYLE_TEXTRIGHTALIGN</a></td></tr>
 <tr class="memdesc:ga8caadeacea10adba0bcf3ca0feb66339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar button texts are right-aligned. The default value is bottom aligned.  <br /></td></tr>
 <tr class="separator:ga8caadeacea10adba0bcf3ca0feb66339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e9da834f6623d2f9b24e16d09d0cbe1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga4e9da834f6623d2f9b24e16d09d0cbe1.html#ga4e9da834f6623d2f9b24e16d09d0cbe1">TBSTYLE_LEFT</a></td></tr>
+<tr class="memitem:ga4e9da834f6623d2f9b24e16d09d0cbe1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga4e9da834f6623d2f9b24e16d09d0cbe1">TBSTYLE_LEFT</a></td></tr>
 <tr class="memdesc:ga4e9da834f6623d2f9b24e16d09d0cbe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar is left position. The default value is top.  <br /></td></tr>
 <tr class="separator:ga4e9da834f6623d2f9b24e16d09d0cbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2bbefc3d2e205b67c41736207176b77"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_gad2bbefc3d2e205b67c41736207176b77.html#gad2bbefc3d2e205b67c41736207176b77">TBSTYLE_BOTTOM</a></td></tr>
+<tr class="memitem:gad2bbefc3d2e205b67c41736207176b77"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#gad2bbefc3d2e205b67c41736207176b77">TBSTYLE_BOTTOM</a></td></tr>
 <tr class="memdesc:gad2bbefc3d2e205b67c41736207176b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar is bottom position. The default value is top.  <br /></td></tr>
 <tr class="separator:gad2bbefc3d2e205b67c41736207176b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0837a7460d20fd8a92624c2acd35613f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga0837a7460d20fd8a92624c2acd35613f.html#ga0837a7460d20fd8a92624c2acd35613f">TBSTYLE_RIGHT</a></td></tr>
+<tr class="memitem:ga0837a7460d20fd8a92624c2acd35613f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga0837a7460d20fd8a92624c2acd35613f">TBSTYLE_RIGHT</a></td></tr>
 <tr class="memdesc:ga0837a7460d20fd8a92624c2acd35613f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar is right position. The default value is top.  <br /></td></tr>
 <tr class="separator:ga0837a7460d20fd8a92624c2acd35613f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga512ce01fcae49b0abde2efdb4a60c710"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga512ce01fcae49b0abde2efdb4a60c710.html#ga512ce01fcae49b0abde2efdb4a60c710">TBSTYLE_NOSHOWICON</a></td></tr>
+<tr class="memitem:ga512ce01fcae49b0abde2efdb4a60c710"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga512ce01fcae49b0abde2efdb4a60c710">TBSTYLE_NOSHOWICON</a></td></tr>
 <tr class="memdesc:ga512ce01fcae49b0abde2efdb4a60c710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar icon is no visible.  <br /></td></tr>
 <tr class="separator:ga512ce01fcae49b0abde2efdb4a60c710"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0861f451c73a4ef7c16b9dd08bb0d279"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native_ga0861f451c73a4ef7c16b9dd08bb0d279.html#ga0861f451c73a4ef7c16b9dd08bb0d279">TBSTYLE_NODIVIDER</a></td></tr>
+<tr class="memitem:ga0861f451c73a4ef7c16b9dd08bb0d279"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms__native.html#ga0861f451c73a4ef7c16b9dd08bb0d279">TBSTYLE_NODIVIDER</a></td></tr>
 <tr class="memdesc:ga0861f451c73a4ef7c16b9dd08bb0d279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that the tool bar divider is no visible.  <br /></td></tr>
 <tr class="separator:ga0861f451c73a4ef7c16b9dd08bb0d279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga2ccb40071336f2175b477d41a7733b9a" name="ga2ccb40071336f2175b477d41a7733b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ccb40071336f2175b477d41a7733b9a">&#9670;&#160;</a></span>MCS_DAYSTATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_DAYSTATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The month calendar sends MCN_GETDAYSTATE notifications to request information about which days should be displayed in bold. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab10627e68846782255019e3e89309720" name="gab10627e68846782255019e3e89309720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab10627e68846782255019e3e89309720">&#9670;&#160;</a></span>MCS_MULTISELECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_MULTISELECT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The month calendar enables the user to select a range of dates within the control. By default, the maximum range is one week. You can change the maximum range that can be selected by using the MCM_SETMAXSELCOUNT message. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga724e69014c4ac81d884cd690cba41146" name="ga724e69014c4ac81d884cd690cba41146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga724e69014c4ac81d884cd690cba41146">&#9670;&#160;</a></span>MCS_WEEKNUMBERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_WEEKNUMBERS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The month calendar control displays week numbers (1-52) to the left of each row of days. Week 1 is defined as the first week that contains at least four days. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaaea5bbea849e81091ab1d15c5a78db0d" name="gaaea5bbea849e81091ab1d15c5a78db0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaea5bbea849e81091ab1d15c5a78db0d">&#9670;&#160;</a></span>MCS_NOTODAYCIRCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_NOTODAYCIRCLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The month calendar control does not circle the "today" date. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga83567010e0cfecc2d5019d0f453464dc" name="ga83567010e0cfecc2d5019d0f453464dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83567010e0cfecc2d5019d0f453464dc">&#9670;&#160;</a></span>MCS_NOTODAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_NOTODAY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The month calendar control does not display the "today" date at the bottom of the control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga410f3715907380bf0e30009ff580199a" name="ga410f3715907380bf0e30009ff580199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga410f3715907380bf0e30009ff580199a">&#9670;&#160;</a></span>MCS_NOTRAILINGDATES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_NOTRAILINGDATES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>Dates from the previous and next months are not displayed in the current month's calendar. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8f6c083aae7a972d77b67e2ff5f09542" name="ga8f6c083aae7a972d77b67e2ff5f09542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f6c083aae7a972d77b67e2ff5f09542">&#9670;&#160;</a></span>MCS_SHORTDAYSOFWEEK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_SHORTDAYSOFWEEK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>Short day names are displayed in the header. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gabd45ec8a321af46a76395473a17e43e8" name="gabd45ec8a321af46a76395473a17e43e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd45ec8a321af46a76395473a17e43e8">&#9670;&#160;</a></span>MCS_NOSELCHANGEONNAV</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t MCS_NOSELCHANGEONNAV</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="month__calendar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/month_calendar_styles.h</a>&gt;</code></p>
+
+<p>The selection is not changed when the user navigates next or previous in the calendar. This allows the user to select a range larger than is visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac2eb7408a15732f5102dc7a308af42dc" name="gac2eb7408a15732f5102dc7a308af42dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2eb7408a15732f5102dc7a308af42dc">&#9670;&#160;</a></span>SBARS_SIZEGRIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_SIZEGRIP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>The status bar control will include a sizing grip at the right end of the status bar. A sizing grip is similar to a sizing border; it is a rectangular area that the user can click and drag to resize the parent window. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf7c4dd4876a5b9db12cb77924352f59b" name="gaf7c4dd4876a5b9db12cb77924352f59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7c4dd4876a5b9db12cb77924352f59b">&#9670;&#160;</a></span>SBARS_TOOLTIPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_TOOLTIPS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>Use this style to enable tooltips. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gabe96db02dc58da78d18bafda27fc37be" name="gabe96db02dc58da78d18bafda27fc37be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe96db02dc58da78d18bafda27fc37be">&#9670;&#160;</a></span>SBARS_ELLIPSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_ELLIPSIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>Replace the end of the status texts with an ellipsis when the status text widths exceed status bar or status panel width. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga320cdcfcfdb90f3beebb8ac4bb5ad298" name="ga320cdcfcfdb90f3beebb8ac4bb5ad298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga320cdcfcfdb90f3beebb8ac4bb5ad298">&#9670;&#160;</a></span>SBARS_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_LEFT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the status bar is left position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga39bb7299044b6146c8850d3b9d44bf02" name="ga39bb7299044b6146c8850d3b9d44bf02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39bb7299044b6146c8850d3b9d44bf02">&#9670;&#160;</a></span>SBARS_BOTTOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_BOTTOM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the status bar is bottom position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga04eae33677f3ee50d50e8f1f40bfb718" name="ga04eae33677f3ee50d50e8f1f40bfb718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04eae33677f3ee50d50e8f1f40bfb718">&#9670;&#160;</a></span>SBARS_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t SBARS_RIGHT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="status__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/status_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the status bar is right position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga5524689264ebff3a9c1ba78619600c60" name="ga5524689264ebff3a9c1ba78619600c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5524689264ebff3a9c1ba78619600c60">&#9670;&#160;</a></span>TBSTYLE_TOOLTIPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_TOOLTIPS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Creates a tooltip control that an application can use to display descriptive text for the buttons in the toolbar. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8998cbeaa03ce3e03ada010d38fbb147" name="ga8998cbeaa03ce3e03ada010d38fbb147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8998cbeaa03ce3e03ada010d38fbb147">&#9670;&#160;</a></span>TBSTYLE_WRAPABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_WRAPABLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Creates a toolbar that can have multiple lines of buttons. Toolbar buttons can "wrap" to the next line when the toolbar becomes too narrow to include all buttons on the same line. When the toolbar is wrapped, the break will occur on either the rightmost separator or the rightmost button if there are no separators on the bar. This style must be set to display a vertical toolbar control when the toolbar is part of a vertical rebar control. This style cannot be combined with CCS_VERT. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadaf91a533205493cb505da42a297b895" name="gadaf91a533205493cb505da42a297b895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadaf91a533205493cb505da42a297b895">&#9670;&#160;</a></span>TBSTYLE_ALTDRAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_ALTDRAG</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Allows users to change a toolbar button's position by dragging it while holding down the ALT key. If this style is not specified, the user must hold down the SHIFT key while dragging a button. Note that the CCS_ADJUSTABLE style must be specified to enable toolbar buttons to be dragged. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad1850cea8246d2b102fc0ad98a6370da" name="gad1850cea8246d2b102fc0ad98a6370da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1850cea8246d2b102fc0ad98a6370da">&#9670;&#160;</a></span>TBSTYLE_FLAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_FLAT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Creates a flat toolbar. In a flat toolbar, both the toolbar and the buttons are transparent and hot-tracking is enabled. Button text appears under button bitmaps. To prevent repainting problems, this style should be set before the toolbar control becomes visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga29723a37675e745bd6f12b8463c4dee7" name="ga29723a37675e745bd6f12b8463c4dee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29723a37675e745bd6f12b8463c4dee7">&#9670;&#160;</a></span>TBSTYLE_LIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_LIST</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Creates a flat toolbar with button text to the right of the bitmap. Otherwise, this style is identical to TBSTYLE_FLAT. To prevent repainting problems, this style should be set before the toolbar control becomes visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadff9cf05fb3dfeea0b61e66c8c79ed27" name="gadff9cf05fb3dfeea0b61e66c8c79ed27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadff9cf05fb3dfeea0b61e66c8c79ed27">&#9670;&#160;</a></span>TBSTYLE_CUSTOMERASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_CUSTOMERASE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Generates NM_CUSTOMDRAW notification codes when the toolbar processes WM_ERASEBKGND messages. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac695a244b9c2c9164f326adcc7ae59dd" name="gac695a244b9c2c9164f326adcc7ae59dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac695a244b9c2c9164f326adcc7ae59dd">&#9670;&#160;</a></span>TBSTYLE_REGISTERDROP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_REGISTERDROP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Generates TBN_GETOBJECT notification codes to request drop target objects when the cursor passes over toolbar buttons. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga710e4a3edcbc9559d52c105fa67fe9fe" name="ga710e4a3edcbc9559d52c105fa67fe9fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga710e4a3edcbc9559d52c105fa67fe9fe">&#9670;&#160;</a></span>TBSTYLE_TRANSPARENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_TRANSPARENT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Creates a transparent toolbar. In a transparent toolbar, the toolbar is transparent but the buttons are not. Button text appears under button bitmaps. To prevent repainting problems, this style should be set before the toolbar control becomes visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga18a80555e765ced55324c049067950f3" name="ga18a80555e765ced55324c049067950f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18a80555e765ced55324c049067950f3">&#9670;&#160;</a></span>TBSTYLE_SHOWTEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_SHOWTEXT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar button texts are visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8caadeacea10adba0bcf3ca0feb66339" name="ga8caadeacea10adba0bcf3ca0feb66339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8caadeacea10adba0bcf3ca0feb66339">&#9670;&#160;</a></span>TBSTYLE_TEXTRIGHTALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_TEXTRIGHTALIGN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar button texts are right-aligned. The default value is bottom aligned. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4e9da834f6623d2f9b24e16d09d0cbe1" name="ga4e9da834f6623d2f9b24e16d09d0cbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e9da834f6623d2f9b24e16d09d0cbe1">&#9670;&#160;</a></span>TBSTYLE_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_LEFT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar is left position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad2bbefc3d2e205b67c41736207176b77" name="gad2bbefc3d2e205b67c41736207176b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2bbefc3d2e205b67c41736207176b77">&#9670;&#160;</a></span>TBSTYLE_BOTTOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_BOTTOM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar is bottom position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0837a7460d20fd8a92624c2acd35613f" name="ga0837a7460d20fd8a92624c2acd35613f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0837a7460d20fd8a92624c2acd35613f">&#9670;&#160;</a></span>TBSTYLE_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_RIGHT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar is right position. The default value is top. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga512ce01fcae49b0abde2efdb4a60c710" name="ga512ce01fcae49b0abde2efdb4a60c710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga512ce01fcae49b0abde2efdb4a60c710">&#9670;&#160;</a></span>TBSTYLE_NOSHOWICON</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_NOSHOWICON</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar icon is no visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0861f451c73a4ef7c16b9dd08bb0d279" name="ga0861f451c73a4ef7c16b9dd08bb0d279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0861f451c73a4ef7c16b9dd08bb0d279">&#9670;&#160;</a></span>TBSTYLE_NODIVIDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TBSTYLE_NODIVIDER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tool__bar__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tool_bar_styles.h</a>&gt;</code></p>
+
+<p>Specifies that the tool bar divider is no visible. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

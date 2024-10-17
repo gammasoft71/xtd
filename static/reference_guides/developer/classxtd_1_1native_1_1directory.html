@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1directory.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1directory.html',
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1directory.html">directory</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -114,53 +98,365 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1directory.html',
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_1_1directory__iterator.html">directory_iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent directory iterator used by <a class="el" href="classxtd_1_1native_1_1directory_a4a96abc182d9421c4127357dd8991d1e.html#a4a96abc182d9421c4127357dd8991d1e" title="Returns an enumerable collection of directory full names that match a search pattern in a specified p...">xtd::native::directory::enumerate_directories</a>.  <a href="classxtd_1_1native_1_1directory_1_1directory__iterator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent directory iterator used by <a class="el" href="classxtd_1_1native_1_1directory.html#a4a96abc182d9421c4127357dd8991d1e" title="Returns an enumerable collection of directory full names that match a search pattern in a specified p...">xtd::native::directory::enumerate_directories</a>.  <a href="classxtd_1_1native_1_1directory_1_1directory__iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html">file_and_directory_iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent file iterator used by <a class="el" href="classxtd_1_1native_1_1directory_af2880054f978c7e6fb1445ccc02a9f86.html#af2880054f978c7e6fb1445ccc02a9f86" title="Returns an iterator of full file names that match a search pattern in a specified path.">xtd::native::directory::enumerate_files</a>.  <a href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent file iterator used by <a class="el" href="classxtd_1_1native_1_1directory.html#af2880054f978c7e6fb1445ccc02a9f86" title="Returns an iterator of full file names that match a search pattern in a specified path.">xtd::native::directory::enumerate_files</a>.  <a href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_1_1file__iterator.html">file_iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent file iterator used by <a class="el" href="classxtd_1_1native_1_1directory_af2880054f978c7e6fb1445ccc02a9f86.html#af2880054f978c7e6fb1445ccc02a9f86" title="Returns an iterator of full file names that match a search pattern in a specified path.">xtd::native::directory::enumerate_files</a>.  <a href="classxtd_1_1native_1_1directory_1_1file__iterator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent file iterator used by <a class="el" href="classxtd_1_1native_1_1directory.html#af2880054f978c7e6fb1445ccc02a9f86" title="Returns an iterator of full file names that match a search pattern in a specified path.">xtd::native::directory::enumerate_files</a>.  <a href="classxtd_1_1native_1_1directory_1_1file__iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a94b3b5f01591c393463659348fceeca9"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_a94b3b5f01591c393463659348fceeca9.html#a94b3b5f01591c393463659348fceeca9">create</a> (const std::string &amp;directory_name)</td></tr>
+<tr class="memitem:a94b3b5f01591c393463659348fceeca9"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#a94b3b5f01591c393463659348fceeca9">create</a> (const std::string &amp;directory_name)</td></tr>
 <tr class="memdesc:a94b3b5f01591c393463659348fceeca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates all directories and subdirectories in the specified path unless they already exist.  <br /></td></tr>
 <tr class="separator:a94b3b5f01591c393463659348fceeca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a96abc182d9421c4127357dd8991d1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1directory__iterator.html">directory_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_a4a96abc182d9421c4127357dd8991d1e.html#a4a96abc182d9421c4127357dd8991d1e">enumerate_directories</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
+<tr class="memitem:a4a96abc182d9421c4127357dd8991d1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1directory__iterator.html">directory_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#a4a96abc182d9421c4127357dd8991d1e">enumerate_directories</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
 <tr class="memdesc:a4a96abc182d9421c4127357dd8991d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerable collection of directory full names that match a search pattern in a specified path.  <br /></td></tr>
 <tr class="separator:a4a96abc182d9421c4127357dd8991d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2880054f978c7e6fb1445ccc02a9f86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__iterator.html">file_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_af2880054f978c7e6fb1445ccc02a9f86.html#af2880054f978c7e6fb1445ccc02a9f86">enumerate_files</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
+<tr class="memitem:af2880054f978c7e6fb1445ccc02a9f86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__iterator.html">file_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#af2880054f978c7e6fb1445ccc02a9f86">enumerate_files</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
 <tr class="memdesc:af2880054f978c7e6fb1445ccc02a9f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator of full file names that match a search pattern in a specified path.  <br /></td></tr>
 <tr class="separator:af2880054f978c7e6fb1445ccc02a9f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9330e59ea7e9c3ec395a2981a88a82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html">file_and_directory_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_afa9330e59ea7e9c3ec395a2981a88a82.html#afa9330e59ea7e9c3ec395a2981a88a82">enumerate_files_and_directories</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
+<tr class="memitem:afa9330e59ea7e9c3ec395a2981a88a82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html">file_and_directory_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#afa9330e59ea7e9c3ec395a2981a88a82">enumerate_files_and_directories</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>, const std::string &amp;pattern)</td></tr>
 <tr class="memdesc:afa9330e59ea7e9c3ec395a2981a88a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator of full file names and full direcctory names that match a search pattern in a specified path.  <br /></td></tr>
 <tr class="separator:afa9330e59ea7e9c3ec395a2981a88a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dfb6b7ade1bb90d653f765a6a54dcfb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_a2dfb6b7ade1bb90d653f765a6a54dcfb.html#a2dfb6b7ade1bb90d653f765a6a54dcfb">exists</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
+<tr class="memitem:a2dfb6b7ade1bb90d653f765a6a54dcfb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#a2dfb6b7ade1bb90d653f765a6a54dcfb">exists</a> (const std::string &amp;<a class="el" href="classxtd_1_1native_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:a2dfb6b7ade1bb90d653f765a6a54dcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if specified directory exist.  <br /></td></tr>
 <tr class="separator:a2dfb6b7ade1bb90d653f765a6a54dcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03292bb04b0918b6cea076e35d2dd926"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_a03292bb04b0918b6cea076e35d2dd926.html#a03292bb04b0918b6cea076e35d2dd926">get_current_directory</a> ()</td></tr>
+<tr class="memitem:a03292bb04b0918b6cea076e35d2dd926"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#a03292bb04b0918b6cea076e35d2dd926">get_current_directory</a> ()</td></tr>
 <tr class="memdesc:a03292bb04b0918b6cea076e35d2dd926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current directory.  <br /></td></tr>
 <tr class="separator:a03292bb04b0918b6cea076e35d2dd926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d1c9cc50a9091b084aca39a7044379f"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_a8d1c9cc50a9091b084aca39a7044379f.html#a8d1c9cc50a9091b084aca39a7044379f">remove</a> (const std::string &amp;directory_name)</td></tr>
+<tr class="memitem:a8d1c9cc50a9091b084aca39a7044379f"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#a8d1c9cc50a9091b084aca39a7044379f">remove</a> (const std::string &amp;directory_name)</td></tr>
 <tr class="memdesc:a8d1c9cc50a9091b084aca39a7044379f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes an empty directory from a specified path.  <br /></td></tr>
 <tr class="separator:a8d1c9cc50a9091b084aca39a7044379f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea54b14acab654190aba145a4b485f5"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory_aeea54b14acab654190aba145a4b485f5.html#aeea54b14acab654190aba145a4b485f5">set_current_directory</a> (const std::string &amp;directory_name)</td></tr>
+<tr class="memitem:aeea54b14acab654190aba145a4b485f5"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1directory.html#aeea54b14acab654190aba145a4b485f5">set_current_directory</a> (const std::string &amp;directory_name)</td></tr>
 <tr class="memdesc:aeea54b14acab654190aba145a4b485f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current directory.  <br /></td></tr>
 <tr class="separator:aeea54b14acab654190aba145a4b485f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a94b3b5f01591c393463659348fceeca9" name="a94b3b5f01591c393463659348fceeca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b3b5f01591c393463659348fceeca9">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::directory::create </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates all directories and subdirectories in the specified path unless they already exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory_name</td><td>The directory to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4a96abc182d9421c4127357dd8991d1e" name="a4a96abc182d9421c4127357dd8991d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a96abc182d9421c4127357dd8991d1e">&#9670;&#160;</a></span>enumerate_directories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1native_1_1directory_1_1directory__iterator.html">directory_iterator</a> xtd::native::directory::enumerate_directories </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an enumerable collection of directory full names that match a search pattern in a specified path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The relative or absolute path to the directory to search. </td></tr>
+    <tr><td class="paramname">pattern</td><td>The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af2880054f978c7e6fb1445ccc02a9f86" name="af2880054f978c7e6fb1445ccc02a9f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2880054f978c7e6fb1445ccc02a9f86">&#9670;&#160;</a></span>enumerate_files()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__iterator.html">file_iterator</a> xtd::native::directory::enumerate_files </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator of full file names that match a search pattern in a specified path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The relative or absolute path to the directory to search. </td></tr>
+    <tr><td class="paramname">pattern</td><td>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afa9330e59ea7e9c3ec395a2981a88a82" name="afa9330e59ea7e9c3ec395a2981a88a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9330e59ea7e9c3ec395a2981a88a82">&#9670;&#160;</a></span>enumerate_files_and_directories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html">file_and_directory_iterator</a> xtd::native::directory::enumerate_files_and_directories </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator of full file names and full direcctory names that match a search pattern in a specified path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The relative or absolute path to the directory to search. </td></tr>
+    <tr><td class="paramname">pattern</td><td>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a2dfb6b7ade1bb90d653f765a6a54dcfb" name="a2dfb6b7ade1bb90d653f765a6a54dcfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dfb6b7ade1bb90d653f765a6a54dcfb">&#9670;&#160;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::directory::exists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if specified directory exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The diretory path to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true is file exist; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a03292bb04b0918b6cea076e35d2dd926" name="a03292bb04b0918b6cea076e35d2dd926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03292bb04b0918b6cea076e35d2dd926">&#9670;&#160;</a></span>get_current_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::directory::get_current_directory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current directory. </p>
+<dl class="section return"><dt>Returns</dt><dd>The currrent directory. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>On error the return value is an empty string (""). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8d1c9cc50a9091b084aca39a7044379f" name="a8d1c9cc50a9091b084aca39a7044379f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1c9cc50a9091b084aca39a7044379f">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::directory::remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes an empty directory from a specified path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory_name</td><td>The name of the empty directory to remove. This directory must be writable and empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aeea54b14acab654190aba145a4b485f5" name="aeea54b14acab654190aba145a4b485f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea54b14acab654190aba145a4b485f5">&#9670;&#160;</a></span>set_current_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::directory::set_current_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the current directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirrectory_name</td><td>The currrent directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success; -1 operation is not supported; otherwise failed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2directory_8h_source.html">directory.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1directory.html">directory</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

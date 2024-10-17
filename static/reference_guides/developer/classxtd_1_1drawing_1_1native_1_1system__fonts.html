@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1system__fonts.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1syste
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html">system_fonts</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1drawing_1_1native_1_1system__fonts-members.html">List of all members</a>  </div>
@@ -120,46 +104,304 @@ Inheritance diagram for xtd::drawing::native::system_fonts:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a58fbd8e6f741c1f65a00281938c1a065"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a58fbd8e6f741c1f65a00281938c1a065.html#a58fbd8e6f741c1f65a00281938c1a065">caption_font</a> ()</td></tr>
+<tr class="memitem:a58fbd8e6f741c1f65a00281938c1a065"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a58fbd8e6f741c1f65a00281938c1a065">caption_font</a> ()</td></tr>
 <tr class="memdesc:a58fbd8e6f741c1f65a00281938c1a065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used to display text in the title bars of windows.  <br /></td></tr>
 <tr class="separator:a58fbd8e6f741c1f65a00281938c1a065"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff91598d3804cd5c28e006f7f77505c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_aeff91598d3804cd5c28e006f7f77505c.html#aeff91598d3804cd5c28e006f7f77505c">default_font</a> ()</td></tr>
+<tr class="memitem:aeff91598d3804cd5c28e006f7f77505c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#aeff91598d3804cd5c28e006f7f77505c">default_font</a> ()</td></tr>
 <tr class="memdesc:aeff91598d3804cd5c28e006f7f77505c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default font that applications can use for dialog boxes and forms.  <br /></td></tr>
 <tr class="separator:aeff91598d3804cd5c28e006f7f77505c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a151403cf2c27b8952826b36f34ee3824"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a151403cf2c27b8952826b36f34ee3824.html#a151403cf2c27b8952826b36f34ee3824">dialog_font</a> ()</td></tr>
+<tr class="memitem:a151403cf2c27b8952826b36f34ee3824"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a151403cf2c27b8952826b36f34ee3824">dialog_font</a> ()</td></tr>
 <tr class="memdesc:a151403cf2c27b8952826b36f34ee3824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that applications can use for dialog boxes and forms.  <br /></td></tr>
 <tr class="separator:a151403cf2c27b8952826b36f34ee3824"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a982b48044099be1771f33a9b81c5b2f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a982b48044099be1771f33a9b81c5b2f8.html#a982b48044099be1771f33a9b81c5b2f8">icon_title_font</a> ()</td></tr>
+<tr class="memitem:a982b48044099be1771f33a9b81c5b2f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a982b48044099be1771f33a9b81c5b2f8">icon_title_font</a> ()</td></tr>
 <tr class="memdesc:a982b48044099be1771f33a9b81c5b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used for icon titles.  <br /></td></tr>
 <tr class="separator:a982b48044099be1771f33a9b81c5b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96125215991e0d2580415f24e1bfe9e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a96125215991e0d2580415f24e1bfe9e3.html#a96125215991e0d2580415f24e1bfe9e3">menu_font</a> ()</td></tr>
+<tr class="memitem:a96125215991e0d2580415f24e1bfe9e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a96125215991e0d2580415f24e1bfe9e3">menu_font</a> ()</td></tr>
 <tr class="memdesc:a96125215991e0d2580415f24e1bfe9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used for menus.  <br /></td></tr>
 <tr class="separator:a96125215991e0d2580415f24e1bfe9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87897d3efd123b6b80767df077d47ec0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a87897d3efd123b6b80767df077d47ec0.html#a87897d3efd123b6b80767df077d47ec0">message_box_font</a> ()</td></tr>
+<tr class="memitem:a87897d3efd123b6b80767df077d47ec0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a87897d3efd123b6b80767df077d47ec0">message_box_font</a> ()</td></tr>
 <tr class="memdesc:a87897d3efd123b6b80767df077d47ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used for message boxes.  <br /></td></tr>
 <tr class="separator:a87897d3efd123b6b80767df077d47ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ebfc78f488450f3a60f164f4c00126f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_a0ebfc78f488450f3a60f164f4c00126f.html#a0ebfc78f488450f3a60f164f4c00126f">small_caption_font</a> ()</td></tr>
+<tr class="memitem:a0ebfc78f488450f3a60f164f4c00126f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#a0ebfc78f488450f3a60f164f4c00126f">small_caption_font</a> ()</td></tr>
 <tr class="memdesc:a0ebfc78f488450f3a60f164f4c00126f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used to display text in the title bars of small windows, such as tool windows.  <br /></td></tr>
 <tr class="separator:a0ebfc78f488450f3a60f164f4c00126f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb9c28a608092675afe1cc2a478a62fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_aeb9c28a608092675afe1cc2a478a62fd.html#aeb9c28a608092675afe1cc2a478a62fd">status_font</a> ()</td></tr>
+<tr class="memitem:aeb9c28a608092675afe1cc2a478a62fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#aeb9c28a608092675afe1cc2a478a62fd">status_font</a> ()</td></tr>
 <tr class="memdesc:aeb9c28a608092675afe1cc2a478a62fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used to display text in the status bar.  <br /></td></tr>
 <tr class="separator:aeb9c28a608092675afe1cc2a478a62fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5ec236a7cce1e18276aff25f32ba508"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts_ac5ec236a7cce1e18276aff25f32ba508.html#ac5ec236a7cce1e18276aff25f32ba508">tool_font</a> ()</td></tr>
+<tr class="memitem:ac5ec236a7cce1e18276aff25f32ba508"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html#ac5ec236a7cce1e18276aff25f32ba508">tool_font</a> ()</td></tr>
 <tr class="memdesc:ac5ec236a7cce1e18276aff25f32ba508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font that is used to display text in the tool bar.  <br /></td></tr>
 <tr class="separator:ac5ec236a7cce1e18276aff25f32ba508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a58fbd8e6f741c1f65a00281938c1a065" name="a58fbd8e6f741c1f65a00281938c1a065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58fbd8e6f741c1f65a00281938c1a065">&#9670;&#160;</a></span>caption_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::caption_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used to display text in the title bars of windows. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used to display text in the title bars of windows. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aeff91598d3804cd5c28e006f7f77505c" name="aeff91598d3804cd5c28e006f7f77505c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff91598d3804cd5c28e006f7f77505c">&#9670;&#160;</a></span>default_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::default_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the default font that applications can use for dialog boxes and forms. </p>
+<dl class="section return"><dt>Returns</dt><dd>The default font handle of the system. The value returned will vary depending on the user's operating system and the local culture setting of their system. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a151403cf2c27b8952826b36f34ee3824" name="a151403cf2c27b8952826b36f34ee3824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151403cf2c27b8952826b36f34ee3824">&#9670;&#160;</a></span>dialog_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::dialog_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that applications can use for dialog boxes and forms. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that can be used for dialog boxes and forms, depending on the operating system and local culture setting of the system. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a982b48044099be1771f33a9b81c5b2f8" name="a982b48044099be1771f33a9b81c5b2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982b48044099be1771f33a9b81c5b2f8">&#9670;&#160;</a></span>icon_title_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::icon_title_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used for icon titles. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used for icon titles. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a96125215991e0d2580415f24e1bfe9e3" name="a96125215991e0d2580415f24e1bfe9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96125215991e0d2580415f24e1bfe9e3">&#9670;&#160;</a></span>menu_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::menu_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used for menus. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used for menus. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a87897d3efd123b6b80767df077d47ec0" name="a87897d3efd123b6b80767df077d47ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87897d3efd123b6b80767df077d47ec0">&#9670;&#160;</a></span>message_box_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::message_box_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used for message boxes. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used for message boxes. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a0ebfc78f488450f3a60f164f4c00126f" name="a0ebfc78f488450f3a60f164f4c00126f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebfc78f488450f3a60f164f4c00126f">&#9670;&#160;</a></span>small_caption_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::small_caption_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used to display text in the title bars of small windows, such as tool windows. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used to display text in the title bars of small windows, such as tool windows. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aeb9c28a608092675afe1cc2a478a62fd" name="aeb9c28a608092675afe1cc2a478a62fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9c28a608092675afe1cc2a478a62fd">&#9670;&#160;</a></span>status_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::status_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used to display text in the status bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used to display text in the status bar. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac5ec236a7cce1e18276aff25f32ba508" name="ac5ec236a7cce1e18276aff25f32ba508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ec236a7cce1e18276aff25f32ba508">&#9670;&#160;</a></span>tool_font()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::system_fonts::tool_font </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a font that is used to display text in the tool bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>A font handle that is used to display text in the tool bar. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.drawing.native/include/xtd/drawing/native/<a class="el" href="xtd_8drawing_8native_2include_2xtd_2drawing_2native_2system__fonts_8h_source.html">system_fonts.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1system__fonts.html">system_fonts</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

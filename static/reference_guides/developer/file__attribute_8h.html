@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('file__attribute_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('file__attribute_8h.html',''); initResi
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
@@ -113,82 +97,78 @@ $(document).ready(function(){initNavTree('file__attribute_8h.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gaf26760f319d337142f2875d7ea1fa195"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gaf26760f319d337142f2875d7ea1fa195.html#gaf26760f319d337142f2875d7ea1fa195">FILE_ATTRIBUTE_READONLY</a></td></tr>
+<tr class="memitem:gaf26760f319d337142f2875d7ea1fa195"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gaf26760f319d337142f2875d7ea1fa195">FILE_ATTRIBUTE_READONLY</a></td></tr>
 <tr class="memdesc:gaf26760f319d337142f2875d7ea1fa195"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is read-only.  <br /></td></tr>
 <tr class="separator:gaf26760f319d337142f2875d7ea1fa195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0d74faf3a8d27d0019fc57bcdb868537"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga0d74faf3a8d27d0019fc57bcdb868537.html#ga0d74faf3a8d27d0019fc57bcdb868537">FILE_ATTRIBUTE_HIDDEN</a></td></tr>
+<tr class="memitem:ga0d74faf3a8d27d0019fc57bcdb868537"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga0d74faf3a8d27d0019fc57bcdb868537">FILE_ATTRIBUTE_HIDDEN</a></td></tr>
 <tr class="memdesc:ga0d74faf3a8d27d0019fc57bcdb868537"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is hidden, and thus is not included in an ordinary directory listing.  <br /></td></tr>
 <tr class="separator:ga0d74faf3a8d27d0019fc57bcdb868537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae090309de172929518f44cd14ab0f252"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gae090309de172929518f44cd14ab0f252.html#gae090309de172929518f44cd14ab0f252">FILE_ATTRIBUTE_SYSTEM</a></td></tr>
+<tr class="memitem:gae090309de172929518f44cd14ab0f252"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gae090309de172929518f44cd14ab0f252">FILE_ATTRIBUTE_SYSTEM</a></td></tr>
 <tr class="memdesc:gae090309de172929518f44cd14ab0f252"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is a system file. The file is part of the operating system or is used exclusively by the operating system.  <br /></td></tr>
 <tr class="separator:gae090309de172929518f44cd14ab0f252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66bd75e857c2581ad438f0d27ac07340"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga66bd75e857c2581ad438f0d27ac07340.html#ga66bd75e857c2581ad438f0d27ac07340">FILE_ATTRIBUTE_DIRECTORY</a></td></tr>
+<tr class="memitem:ga66bd75e857c2581ad438f0d27ac07340"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga66bd75e857c2581ad438f0d27ac07340">FILE_ATTRIBUTE_DIRECTORY</a></td></tr>
 <tr class="memdesc:ga66bd75e857c2581ad438f0d27ac07340"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is a directory.  <br /></td></tr>
 <tr class="separator:ga66bd75e857c2581ad438f0d27ac07340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga295110680ae991eb2f5fd0822ac734f3"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga295110680ae991eb2f5fd0822ac734f3.html#ga295110680ae991eb2f5fd0822ac734f3">FILE_ATTRIBUTE_ARCHIVE</a></td></tr>
+<tr class="memitem:ga295110680ae991eb2f5fd0822ac734f3"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga295110680ae991eb2f5fd0822ac734f3">FILE_ATTRIBUTE_ARCHIVE</a></td></tr>
 <tr class="memdesc:ga295110680ae991eb2f5fd0822ac734f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file's archive status. Applications use this attribute to mark files for backup or removal.  <br /></td></tr>
 <tr class="separator:ga295110680ae991eb2f5fd0822ac734f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ac900cc29ff190d883b0080e068feda"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga1ac900cc29ff190d883b0080e068feda.html#ga1ac900cc29ff190d883b0080e068feda">FILE_ATTRIBUTE_DEVICE</a></td></tr>
+<tr class="memitem:ga1ac900cc29ff190d883b0080e068feda"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga1ac900cc29ff190d883b0080e068feda">FILE_ATTRIBUTE_DEVICE</a></td></tr>
 <tr class="memdesc:ga1ac900cc29ff190d883b0080e068feda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved for future use.  <br /></td></tr>
 <tr class="separator:ga1ac900cc29ff190d883b0080e068feda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacbdaf151a6a2a43521f48ed7a76269dd"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gacbdaf151a6a2a43521f48ed7a76269dd.html#gacbdaf151a6a2a43521f48ed7a76269dd">FILE_ATTRIBUTE_NORMAL</a></td></tr>
+<tr class="memitem:gacbdaf151a6a2a43521f48ed7a76269dd"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gacbdaf151a6a2a43521f48ed7a76269dd">FILE_ATTRIBUTE_NORMAL</a></td></tr>
 <tr class="memdesc:gacbdaf151a6a2a43521f48ed7a76269dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is normal and has no other attributes set. This attribute is valid only if used alone.  <br /></td></tr>
 <tr class="separator:gacbdaf151a6a2a43521f48ed7a76269dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf3e639eb7357860e6fb0702e365c7090"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gaf3e639eb7357860e6fb0702e365c7090.html#gaf3e639eb7357860e6fb0702e365c7090">FILE_ATTRIBUTE_TEMPORARY</a></td></tr>
+<tr class="memitem:gaf3e639eb7357860e6fb0702e365c7090"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gaf3e639eb7357860e6fb0702e365c7090">FILE_ATTRIBUTE_TEMPORARY</a></td></tr>
 <tr class="memdesc:gaf3e639eb7357860e6fb0702e365c7090"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed.  <br /></td></tr>
 <tr class="separator:gaf3e639eb7357860e6fb0702e365c7090"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gade6baba9d8e6049c2fff0b8aab052f7f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gade6baba9d8e6049c2fff0b8aab052f7f.html#gade6baba9d8e6049c2fff0b8aab052f7f">FILE_ATTRIBUTE_SPARSE_FILE</a></td></tr>
+<tr class="memitem:gade6baba9d8e6049c2fff0b8aab052f7f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gade6baba9d8e6049c2fff0b8aab052f7f">FILE_ATTRIBUTE_SPARSE_FILE</a></td></tr>
 <tr class="memdesc:gade6baba9d8e6049c2fff0b8aab052f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is a sparse file. Sparse files are typically large files whose data are mostly zeros.  <br /></td></tr>
 <tr class="separator:gade6baba9d8e6049c2fff0b8aab052f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7d1f4960ab90cc9f65157e7878b672a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gac7d1f4960ab90cc9f65157e7878b672a.html#gac7d1f4960ab90cc9f65157e7878b672a">FILE_ATTRIBUTE_REPARSE_POINT</a></td></tr>
+<tr class="memitem:gac7d1f4960ab90cc9f65157e7878b672a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gac7d1f4960ab90cc9f65157e7878b672a">FILE_ATTRIBUTE_REPARSE_POINT</a></td></tr>
 <tr class="memdesc:gac7d1f4960ab90cc9f65157e7878b672a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file contains a reparse point, which is a block of user-defined data associated with a file or a directory.  <br /></td></tr>
 <tr class="separator:gac7d1f4960ab90cc9f65157e7878b672a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaebe0dd44f5b377f2b92c07a356a67403"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gaebe0dd44f5b377f2b92c07a356a67403.html#gaebe0dd44f5b377f2b92c07a356a67403">FILE_ATTRIBUTE_COMPRESSED</a></td></tr>
+<tr class="memitem:gaebe0dd44f5b377f2b92c07a356a67403"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gaebe0dd44f5b377f2b92c07a356a67403">FILE_ATTRIBUTE_COMPRESSED</a></td></tr>
 <tr class="memdesc:gaebe0dd44f5b377f2b92c07a356a67403"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is compressed.  <br /></td></tr>
 <tr class="separator:gaebe0dd44f5b377f2b92c07a356a67403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c6aac3c59b5ea41b10e8514ca0a46f2"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga4c6aac3c59b5ea41b10e8514ca0a46f2.html#ga4c6aac3c59b5ea41b10e8514ca0a46f2">FILE_ATTRIBUTE_OFFLINE</a></td></tr>
+<tr class="memitem:ga4c6aac3c59b5ea41b10e8514ca0a46f2"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga4c6aac3c59b5ea41b10e8514ca0a46f2">FILE_ATTRIBUTE_OFFLINE</a></td></tr>
 <tr class="memdesc:ga4c6aac3c59b5ea41b10e8514ca0a46f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is offline. The data of the file is not immediately available.  <br /></td></tr>
 <tr class="separator:ga4c6aac3c59b5ea41b10e8514ca0a46f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6aad80532b1617494efc0e6e0900d112"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga6aad80532b1617494efc0e6e0900d112.html#ga6aad80532b1617494efc0e6e0900d112">FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</a></td></tr>
+<tr class="memitem:ga6aad80532b1617494efc0e6e0900d112"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga6aad80532b1617494efc0e6e0900d112">FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</a></td></tr>
 <tr class="memdesc:ga6aad80532b1617494efc0e6e0900d112"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file will not be indexed by the operating system's content indexing service.  <br /></td></tr>
 <tr class="separator:ga6aad80532b1617494efc0e6e0900d112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04c612458d37e938844252175eb9908e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga04c612458d37e938844252175eb9908e.html#ga04c612458d37e938844252175eb9908e">FILE_ATTRIBUTE_ENCRYPTED</a></td></tr>
+<tr class="memitem:ga04c612458d37e938844252175eb9908e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga04c612458d37e938844252175eb9908e">FILE_ATTRIBUTE_ENCRYPTED</a></td></tr>
 <tr class="memdesc:ga04c612458d37e938844252175eb9908e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories.  <br /></td></tr>
 <tr class="separator:ga04c612458d37e938844252175eb9908e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa0195ce276ff4a3d17f2b342773661ad"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gaa0195ce276ff4a3d17f2b342773661ad.html#gaa0195ce276ff4a3d17f2b342773661ad">FILE_ATTRIBUTE_INTEGRITY_STREAM</a></td></tr>
+<tr class="memitem:gaa0195ce276ff4a3d17f2b342773661ad"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gaa0195ce276ff4a3d17f2b342773661ad">FILE_ATTRIBUTE_INTEGRITY_STREAM</a></td></tr>
 <tr class="memdesc:gaa0195ce276ff4a3d17f2b342773661ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The directory or user data stream is configured with integrity (only supported on ReFS volumes). It is not included in an ordinary directory listing. The integrity setting persists with the file if it's renamed. If a file is copied the destination file will have integrity set if either the source file or destination directory have integrity set.  <br /></td></tr>
 <tr class="separator:gaa0195ce276ff4a3d17f2b342773661ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac388b22e51fd7874aaaa052b86873b9b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gac388b22e51fd7874aaaa052b86873b9b.html#gac388b22e51fd7874aaaa052b86873b9b">FILE_ATTRIBUTE_VIRTUAL</a></td></tr>
+<tr class="memitem:gac388b22e51fd7874aaaa052b86873b9b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gac388b22e51fd7874aaaa052b86873b9b">FILE_ATTRIBUTE_VIRTUAL</a></td></tr>
 <tr class="memdesc:gac388b22e51fd7874aaaa052b86873b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This value is reserved for system use.  <br /></td></tr>
 <tr class="separator:gac388b22e51fd7874aaaa052b86873b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4503ba52a02c7936e33136fae7399b17"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga4503ba52a02c7936e33136fae7399b17.html#ga4503ba52a02c7936e33136fae7399b17">FILE_ATTRIBUTE_NO_SCRUB_DATA</a></td></tr>
+<tr class="memitem:ga4503ba52a02c7936e33136fae7399b17"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga4503ba52a02c7936e33136fae7399b17">FILE_ATTRIBUTE_NO_SCRUB_DATA</a></td></tr>
 <tr class="memdesc:ga4503ba52a02c7936e33136fae7399b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user data stream not to be read by the background data integrity scanner (AKA scrubber). When set on a directory it only provides inheritance. This flag is only supported on Storage Spaces and ReFS volumes. It is not included in an ordinary directory listing.  <br /></td></tr>
 <tr class="separator:ga4503ba52a02c7936e33136fae7399b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f4ba68b2d5f10b5978316d6551e4a7a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga8f4ba68b2d5f10b5978316d6551e4a7a.html#ga8f4ba68b2d5f10b5978316d6551e4a7a">FILE_ATTRIBUTE_EA</a></td></tr>
+<tr class="memitem:ga8f4ba68b2d5f10b5978316d6551e4a7a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga8f4ba68b2d5f10b5978316d6551e4a7a">FILE_ATTRIBUTE_EA</a></td></tr>
 <tr class="memdesc:ga8f4ba68b2d5f10b5978316d6551e4a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Not documented).  <br /></td></tr>
 <tr class="separator:ga8f4ba68b2d5f10b5978316d6551e4a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14e8545becf2a65c14640a38cf309b74"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga14e8545becf2a65c14640a38cf309b74.html#ga14e8545becf2a65c14640a38cf309b74">FILE_ATTRIBUTE_PINNED</a></td></tr>
+<tr class="memitem:ga14e8545becf2a65c14640a38cf309b74"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga14e8545becf2a65c14640a38cf309b74">FILE_ATTRIBUTE_PINNED</a></td></tr>
 <tr class="memdesc:ga14e8545becf2a65c14640a38cf309b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Not documented).  <br /></td></tr>
 <tr class="separator:ga14e8545becf2a65c14640a38cf309b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa3171a0f25926d415c4caa73783f782"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_gafa3171a0f25926d415c4caa73783f782.html#gafa3171a0f25926d415c4caa73783f782">FILE_ATTRIBUTE_UNPINNED</a></td></tr>
+<tr class="memitem:gafa3171a0f25926d415c4caa73783f782"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#gafa3171a0f25926d415c4caa73783f782">FILE_ATTRIBUTE_UNPINNED</a></td></tr>
 <tr class="memdesc:gafa3171a0f25926d415c4caa73783f782"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Not documented).  <br /></td></tr>
 <tr class="separator:gafa3171a0f25926d415c4caa73783f782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9eed64703ef445f943da5ed61b4c7c4d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga9eed64703ef445f943da5ed61b4c7c4d.html#ga9eed64703ef445f943da5ed61b4c7c4d">FILE_ATTRIBUTE_RECALL_ON_OPEN</a></td></tr>
+<tr class="memitem:ga9eed64703ef445f943da5ed61b4c7c4d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga9eed64703ef445f943da5ed61b4c7c4d">FILE_ATTRIBUTE_RECALL_ON_OPEN</a></td></tr>
 <tr class="memdesc:ga9eed64703ef445f943da5ed61b4c7c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This attribute only appears in directory enumeration classes (FILE_DIRECTORY_INFORMATION, FILE_BOTH_DIR_INFORMATION, etc.). When this attribute is set, it means that the file or directory has no physical representation on the local system; the item is virtual. Opening the item will be more expensive than normal, e.g. it will cause at least some of it to be fetched from a remote store.  <br /></td></tr>
 <tr class="separator:ga9eed64703ef445f943da5ed61b4c7c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22f8e688d81c2b8f5e370c2a3550d771"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes_ga22f8e688d81c2b8f5e370c2a3550d771.html#ga22f8e688d81c2b8f5e370c2a3550d771">FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS</a></td></tr>
+<tr class="memitem:ga22f8e688d81c2b8f5e370c2a3550d771"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__attributes.html#ga22f8e688d81c2b8f5e370c2a3550d771">FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS</a></td></tr>
 <tr class="memdesc:ga22f8e688d81c2b8f5e370c2a3550d771"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this attribute is set, it means that the file or directory is not fully present locally. For a file that means that not all of its data is on local storage (e.g. it may be sparse with some data still in remote storage). For a directory it means that some of the directory contents are being virtualized from another location. Reading the file / enumerating the directory will be more expensive than normal, e.g. it will cause at least some of the file/directory content to be fetched from a remote store. Only kernel-mode callers can set this bit.  <br /></td></tr>
 <tr class="separator:ga22f8e688d81c2b8f5e370c2a3550d771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li><li class="navelem"><a class="el" href="file__attribute_8h.html">file_attribute.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

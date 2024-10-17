@@ -60,5 +60,6 @@ var searchData=
   ['_5f_5fstring_5fdefinitions_2eh_57',['__string_definitions.h',['../____string__definitions_8h.html',1,'']]],
   ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_58',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
   ['_5f_5fxtd_5fdebugbreak_2eh_59',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
-  ['_5f_5fxtd_5fstd_5fversion_2eh_60',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]]
+  ['_5f_5fxtd_5fsource_5flocation_2eh_60',['__xtd_source_location.h',['../____xtd__source__location_8h.html',1,'']]],
+  ['_5f_5fxtd_5fstd_5fversion_2eh_61',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]]
 ];

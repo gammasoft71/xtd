@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('interpolation__modes_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('interpolation__modes_8h_source.html','
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b7aa4832653e799b7ffe86189cb8a6f7.html">xtd.drawing.native</a></li><li class="navelem"><a class="el" href="dir_fcb1f1e80d49018510b7453bb1ae094e.html">include</a></li><li class="navelem"><a class="el" href="dir_036315e33034268bbbd08b1a61ac0ee6.html">xtd</a></li><li class="navelem"><a class="el" href="dir_77b9c98fc32e37a3bab081e3bee076c8.html">drawing</a></li><li class="navelem"><a class="el" href="dir_69678a3f376eb6756df299b551c324b5.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">interpolation_modes.h</div></div>
 </div><!--header-->
@@ -109,43 +93,39 @@ $(document).ready(function(){initNavTree('interpolation__modes_8h_source.html','
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="xtd_8core_2include_2xtd_2types_8h.html">xtd/types.h</a>&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="group__im_ga36518298d21a0e964d1695892163ad94.html#ga36518298d21a0e964d1695892163ad94">   16</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga36518298d21a0e964d1695892163ad94.html#ga36518298d21a0e964d1695892163ad94">IM_INVALID</a> = -1;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="group__im.html#ga36518298d21a0e964d1695892163ad94">   16</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga36518298d21a0e964d1695892163ad94">IM_INVALID</a> = -1;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="group__im_ga78f2f55c12490d9b134242651f64c73c.html#ga78f2f55c12490d9b134242651f64c73c">   24</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga78f2f55c12490d9b134242651f64c73c.html#ga78f2f55c12490d9b134242651f64c73c">IM_DEFAULT</a> = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="group__im.html#ga78f2f55c12490d9b134242651f64c73c">   24</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga78f2f55c12490d9b134242651f64c73c">IM_DEFAULT</a> = 0;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="group__im_ga7a965858bb183e408b310acb85be6f27.html#ga7a965858bb183e408b310acb85be6f27">   32</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga7a965858bb183e408b310acb85be6f27.html#ga7a965858bb183e408b310acb85be6f27">IM_LOW</a> = 1;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="group__im.html#ga7a965858bb183e408b310acb85be6f27">   32</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga7a965858bb183e408b310acb85be6f27">IM_LOW</a> = 1;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="group__im_gae1f81589100b954a186d80fb880b3d97.html#gae1f81589100b954a186d80fb880b3d97">   40</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_gae1f81589100b954a186d80fb880b3d97.html#gae1f81589100b954a186d80fb880b3d97">IM_HIGHT</a> = 2;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="group__im.html#gae1f81589100b954a186d80fb880b3d97">   40</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#gae1f81589100b954a186d80fb880b3d97">IM_HIGHT</a> = 2;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__im_ga739776b61d03d24ce7eb798e78bca97f.html#ga739776b61d03d24ce7eb798e78bca97f">   48</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga739776b61d03d24ce7eb798e78bca97f.html#ga739776b61d03d24ce7eb798e78bca97f">IM_BILINEAR</a> = 3;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__im.html#ga739776b61d03d24ce7eb798e78bca97f">   48</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga739776b61d03d24ce7eb798e78bca97f">IM_BILINEAR</a> = 3;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__im_gad668a9007c33c620f82573b2588eb248.html#gad668a9007c33c620f82573b2588eb248">   56</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_gad668a9007c33c620f82573b2588eb248.html#gad668a9007c33c620f82573b2588eb248">IM_BICUBIC</a> = 4;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__im.html#gad668a9007c33c620f82573b2588eb248">   56</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#gad668a9007c33c620f82573b2588eb248">IM_BICUBIC</a> = 4;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__im_ga9360d2f00e4e2b9c2bb22097c6f36327.html#ga9360d2f00e4e2b9c2bb22097c6f36327">   64</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga9360d2f00e4e2b9c2bb22097c6f36327.html#ga9360d2f00e4e2b9c2bb22097c6f36327">IM_NEAREST_NEIGHBOOR</a> = 5;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__im.html#ga9360d2f00e4e2b9c2bb22097c6f36327">   64</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga9360d2f00e4e2b9c2bb22097c6f36327">IM_NEAREST_NEIGHBOOR</a> = 5;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__im_ga7fe19033be782b33caefa6d75c9d934b.html#ga7fe19033be782b33caefa6d75c9d934b">   72</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga7fe19033be782b33caefa6d75c9d934b.html#ga7fe19033be782b33caefa6d75c9d934b">IM_HIGH_QUALITY_BILINEAR</a> = 6;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__im.html#ga7fe19033be782b33caefa6d75c9d934b">   72</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga7fe19033be782b33caefa6d75c9d934b">IM_HIGH_QUALITY_BILINEAR</a> = 6;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__im_ga5d673d9fb220bf15380dbb9c226ae0d2.html#ga5d673d9fb220bf15380dbb9c226ae0d2">   80</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im_ga5d673d9fb220bf15380dbb9c226ae0d2.html#ga5d673d9fb220bf15380dbb9c226ae0d2">IM_HIGH_QUALITY_BICUBIC</a> = 7;</div>
-<div class="ttc" id="agroup__im_ga36518298d21a0e964d1695892163ad94_html_ga36518298d21a0e964d1695892163ad94"><div class="ttname"><a href="group__im_ga36518298d21a0e964d1695892163ad94.html#ga36518298d21a0e964d1695892163ad94">IM_INVALID</a></div><div class="ttdeci">constexpr xtd::int32 IM_INVALID</div><div class="ttdoc">Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawin...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:16</div></div>
-<div class="ttc" id="agroup__im_ga5d673d9fb220bf15380dbb9c226ae0d2_html_ga5d673d9fb220bf15380dbb9c226ae0d2"><div class="ttname"><a href="group__im_ga5d673d9fb220bf15380dbb9c226ae0d2.html#ga5d673d9fb220bf15380dbb9c226ae0d2">IM_HIGH_QUALITY_BICUBIC</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGH_QUALITY_BICUBIC</div><div class="ttdoc">Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrin...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:80</div></div>
-<div class="ttc" id="agroup__im_ga739776b61d03d24ce7eb798e78bca97f_html_ga739776b61d03d24ce7eb798e78bca97f"><div class="ttname"><a href="group__im_ga739776b61d03d24ce7eb798e78bca97f.html#ga739776b61d03d24ce7eb798e78bca97f">IM_BILINEAR</a></div><div class="ttdeci">constexpr xtd::int32 IM_BILINEAR</div><div class="ttdoc">Specifies bilinear interpolation. No prefiltering is done. This mode is not suitable for shrinking an...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:48</div></div>
-<div class="ttc" id="agroup__im_ga78f2f55c12490d9b134242651f64c73c_html_ga78f2f55c12490d9b134242651f64c73c"><div class="ttname"><a href="group__im_ga78f2f55c12490d9b134242651f64c73c.html#ga78f2f55c12490d9b134242651f64c73c">IM_DEFAULT</a></div><div class="ttdeci">constexpr xtd::int32 IM_DEFAULT</div><div class="ttdoc">Specifies default mode.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:24</div></div>
-<div class="ttc" id="agroup__im_ga7a965858bb183e408b310acb85be6f27_html_ga7a965858bb183e408b310acb85be6f27"><div class="ttname"><a href="group__im_ga7a965858bb183e408b310acb85be6f27.html#ga7a965858bb183e408b310acb85be6f27">IM_LOW</a></div><div class="ttdeci">constexpr xtd::int32 IM_LOW</div><div class="ttdoc">Specifies low quality interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:32</div></div>
-<div class="ttc" id="agroup__im_ga7fe19033be782b33caefa6d75c9d934b_html_ga7fe19033be782b33caefa6d75c9d934b"><div class="ttname"><a href="group__im_ga7fe19033be782b33caefa6d75c9d934b.html#ga7fe19033be782b33caefa6d75c9d934b">IM_HIGH_QUALITY_BILINEAR</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGH_QUALITY_BILINEAR</div><div class="ttdoc">Specifies high-quality, bilinear interpolation. Prefiltering is performed to ensure high-quality shri...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:72</div></div>
-<div class="ttc" id="agroup__im_ga9360d2f00e4e2b9c2bb22097c6f36327_html_ga9360d2f00e4e2b9c2bb22097c6f36327"><div class="ttname"><a href="group__im_ga9360d2f00e4e2b9c2bb22097c6f36327.html#ga9360d2f00e4e2b9c2bb22097c6f36327">IM_NEAREST_NEIGHBOOR</a></div><div class="ttdeci">constexpr xtd::int32 IM_NEAREST_NEIGHBOOR</div><div class="ttdoc">Specifies nearest-neighbor interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:64</div></div>
-<div class="ttc" id="agroup__im_gad668a9007c33c620f82573b2588eb248_html_gad668a9007c33c620f82573b2588eb248"><div class="ttname"><a href="group__im_gad668a9007c33c620f82573b2588eb248.html#gad668a9007c33c620f82573b2588eb248">IM_BICUBIC</a></div><div class="ttdeci">constexpr xtd::int32 IM_BICUBIC</div><div class="ttdoc">Specifies bicubic interpolation. No prefiltering is done. This mode is not suitable for shrinking an ...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:56</div></div>
-<div class="ttc" id="agroup__im_gae1f81589100b954a186d80fb880b3d97_html_gae1f81589100b954a186d80fb880b3d97"><div class="ttname"><a href="group__im_gae1f81589100b954a186d80fb880b3d97.html#gae1f81589100b954a186d80fb880b3d97">IM_HIGHT</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGHT</div><div class="ttdoc">Specifies high quality interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:40</div></div>
-<div class="ttc" id="agroup__types_ga205462e259a4eca1545511085c2c350e_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__im.html#ga5d673d9fb220bf15380dbb9c226ae0d2">   80</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> <a class="code hl_variable" href="group__im.html#ga5d673d9fb220bf15380dbb9c226ae0d2">IM_HIGH_QUALITY_BICUBIC</a> = 7;</div>
+<div class="ttc" id="agroup__im_html_ga36518298d21a0e964d1695892163ad94"><div class="ttname"><a href="group__im.html#ga36518298d21a0e964d1695892163ad94">IM_INVALID</a></div><div class="ttdeci">constexpr xtd::int32 IM_INVALID</div><div class="ttdoc">Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawin...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:16</div></div>
+<div class="ttc" id="agroup__im_html_ga5d673d9fb220bf15380dbb9c226ae0d2"><div class="ttname"><a href="group__im.html#ga5d673d9fb220bf15380dbb9c226ae0d2">IM_HIGH_QUALITY_BICUBIC</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGH_QUALITY_BICUBIC</div><div class="ttdoc">Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrin...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:80</div></div>
+<div class="ttc" id="agroup__im_html_ga739776b61d03d24ce7eb798e78bca97f"><div class="ttname"><a href="group__im.html#ga739776b61d03d24ce7eb798e78bca97f">IM_BILINEAR</a></div><div class="ttdeci">constexpr xtd::int32 IM_BILINEAR</div><div class="ttdoc">Specifies bilinear interpolation. No prefiltering is done. This mode is not suitable for shrinking an...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:48</div></div>
+<div class="ttc" id="agroup__im_html_ga78f2f55c12490d9b134242651f64c73c"><div class="ttname"><a href="group__im.html#ga78f2f55c12490d9b134242651f64c73c">IM_DEFAULT</a></div><div class="ttdeci">constexpr xtd::int32 IM_DEFAULT</div><div class="ttdoc">Specifies default mode.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:24</div></div>
+<div class="ttc" id="agroup__im_html_ga7a965858bb183e408b310acb85be6f27"><div class="ttname"><a href="group__im.html#ga7a965858bb183e408b310acb85be6f27">IM_LOW</a></div><div class="ttdeci">constexpr xtd::int32 IM_LOW</div><div class="ttdoc">Specifies low quality interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:32</div></div>
+<div class="ttc" id="agroup__im_html_ga7fe19033be782b33caefa6d75c9d934b"><div class="ttname"><a href="group__im.html#ga7fe19033be782b33caefa6d75c9d934b">IM_HIGH_QUALITY_BILINEAR</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGH_QUALITY_BILINEAR</div><div class="ttdoc">Specifies high-quality, bilinear interpolation. Prefiltering is performed to ensure high-quality shri...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:72</div></div>
+<div class="ttc" id="agroup__im_html_ga9360d2f00e4e2b9c2bb22097c6f36327"><div class="ttname"><a href="group__im.html#ga9360d2f00e4e2b9c2bb22097c6f36327">IM_NEAREST_NEIGHBOOR</a></div><div class="ttdeci">constexpr xtd::int32 IM_NEAREST_NEIGHBOOR</div><div class="ttdoc">Specifies nearest-neighbor interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:64</div></div>
+<div class="ttc" id="agroup__im_html_gad668a9007c33c620f82573b2588eb248"><div class="ttname"><a href="group__im.html#gad668a9007c33c620f82573b2588eb248">IM_BICUBIC</a></div><div class="ttdeci">constexpr xtd::int32 IM_BICUBIC</div><div class="ttdoc">Specifies bicubic interpolation. No prefiltering is done. This mode is not suitable for shrinking an ...</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:56</div></div>
+<div class="ttc" id="agroup__im_html_gae1f81589100b954a186d80fb880b3d97"><div class="ttname"><a href="group__im.html#gae1f81589100b954a186d80fb880b3d97">IM_HIGHT</a></div><div class="ttdeci">constexpr xtd::int32 IM_HIGHT</div><div class="ttdoc">Specifies high quality interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_modes.h:40</div></div>
+<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
 <div class="ttc" id="axtd_8core_2include_2xtd_2types_8h_html"><div class="ttname"><a href="xtd_8core_2include_2xtd_2types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_b7aa4832653e799b7ffe86189cb8a6f7.html">xtd.drawing.native</a></li><li class="navelem"><a class="el" href="dir_fcb1f1e80d49018510b7453bb1ae094e.html">include</a></li><li class="navelem"><a class="el" href="dir_036315e33034268bbbd08b1a61ac0ee6.html">xtd</a></li><li class="navelem"><a class="el" href="dir_77b9c98fc32e37a3bab081e3bee076c8.html">drawing</a></li><li class="navelem"><a class="el" href="dir_69678a3f376eb6756df299b551c324b5.html">native</a></li><li class="navelem"><b>interpolation_modes.h</b></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:02:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

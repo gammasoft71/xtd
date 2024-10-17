@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('extended__window__styles_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('extended__window__styles_8h.html','');
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
@@ -114,103 +98,99 @@ $(document).ready(function(){initNavTree('extended__window__styles_8h.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga1e95aa9d0f1ceb29a867594bf5fa2de4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga1e95aa9d0f1ceb29a867594bf5fa2de4.html#ga1e95aa9d0f1ceb29a867594bf5fa2de4">WS_EX_DLGMODALFRAME</a></td></tr>
+<tr class="memitem:ga1e95aa9d0f1ceb29a867594bf5fa2de4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga1e95aa9d0f1ceb29a867594bf5fa2de4">WS_EX_DLGMODALFRAME</a></td></tr>
 <tr class="memdesc:ga1e95aa9d0f1ceb29a867594bf5fa2de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designates a window with a double border that may (optionally) be created with a title bar when you specify the WS_CAPTION style flag in the dwStyle parameter.  <br /></td></tr>
 <tr class="separator:ga1e95aa9d0f1ceb29a867594bf5fa2de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb78f3d53c034be0d5a00b5b6b9f3978"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gabb78f3d53c034be0d5a00b5b6b9f3978.html#gabb78f3d53c034be0d5a00b5b6b9f3978">WS_EX_NOPARENTNOTIFY</a></td></tr>
+<tr class="memitem:gabb78f3d53c034be0d5a00b5b6b9f3978"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gabb78f3d53c034be0d5a00b5b6b9f3978">WS_EX_NOPARENTNOTIFY</a></td></tr>
 <tr class="memdesc:gabb78f3d53c034be0d5a00b5b6b9f3978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a child window created with this style will not send the WM_PARENTNOTIFY message to its parent window when the child window is created or destroyed.  <br /></td></tr>
 <tr class="separator:gabb78f3d53c034be0d5a00b5b6b9f3978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5093cecb9b5c786e49d39b082ab003e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gab5093cecb9b5c786e49d39b082ab003e.html#gab5093cecb9b5c786e49d39b082ab003e">WS_EX_TOPMOST</a></td></tr>
+<tr class="memitem:gab5093cecb9b5c786e49d39b082ab003e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gab5093cecb9b5c786e49d39b082ab003e">WS_EX_TOPMOST</a></td></tr>
 <tr class="memdesc:gab5093cecb9b5c786e49d39b082ab003e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a window created with this style should be placed above all non topmost windows and stay above them even when the window is deactivated. An application can use the SetWindowPos member function to add or remove this attribute.  <br /></td></tr>
 <tr class="separator:gab5093cecb9b5c786e49d39b082ab003e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ad94b4f0be3ff22c56c960228709310"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga6ad94b4f0be3ff22c56c960228709310.html#ga6ad94b4f0be3ff22c56c960228709310">WS_EX_ACCEPTFILES</a></td></tr>
+<tr class="memitem:ga6ad94b4f0be3ff22c56c960228709310"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga6ad94b4f0be3ff22c56c960228709310">WS_EX_ACCEPTFILES</a></td></tr>
 <tr class="memdesc:ga6ad94b4f0be3ff22c56c960228709310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a window created with this style accepts drag-and-drop files.  <br /></td></tr>
 <tr class="separator:ga6ad94b4f0be3ff22c56c960228709310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa206e6f03688356532f80014c802ba04"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaa206e6f03688356532f80014c802ba04.html#gaa206e6f03688356532f80014c802ba04">WS_EX_TRANSPARENT</a></td></tr>
+<tr class="memitem:gaa206e6f03688356532f80014c802ba04"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaa206e6f03688356532f80014c802ba04">WS_EX_TRANSPARENT</a></td></tr>
 <tr class="memdesc:gaa206e6f03688356532f80014c802ba04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a window created with this style is to be transparent. That is, any windows that are beneath the window are not obscured by the window. A window created with this style receives WM_PAINT messages only after all sibling windows beneath it have been updated.  <br /></td></tr>
 <tr class="separator:gaa206e6f03688356532f80014c802ba04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac6fc6376657330c4884dd9f401546cc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaac6fc6376657330c4884dd9f401546cc.html#gaac6fc6376657330c4884dd9f401546cc">WS_EX_MDICHILD</a></td></tr>
+<tr class="memitem:gaac6fc6376657330c4884dd9f401546cc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaac6fc6376657330c4884dd9f401546cc">WS_EX_MDICHILD</a></td></tr>
 <tr class="memdesc:gaac6fc6376657330c4884dd9f401546cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an MDI child window.  <br /></td></tr>
 <tr class="separator:gaac6fc6376657330c4884dd9f401546cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1846d7bb709cc613264e2ac29d738d7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaf1846d7bb709cc613264e2ac29d738d7.html#gaf1846d7bb709cc613264e2ac29d738d7">WS_EX_TOOLWINDOW</a></td></tr>
+<tr class="memitem:gaf1846d7bb709cc613264e2ac29d738d7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaf1846d7bb709cc613264e2ac29d738d7">WS_EX_TOOLWINDOW</a></td></tr>
 <tr class="memdesc:gaf1846d7bb709cc613264e2ac29d738d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tool window, which is a window intended to be used as a floating toolbar. A tool window has a title bar that is shorter than a normal title bar, and the window title is drawn using a smaller font. A tool window does not appear in the task bar or in the window that appears when the user presses ALT+TAB.  <br /></td></tr>
 <tr class="separator:gaf1846d7bb709cc613264e2ac29d738d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea999d9b2e815ad51b6e5bbbed5902d6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaea999d9b2e815ad51b6e5bbbed5902d6.html#gaea999d9b2e815ad51b6e5bbbed5902d6">WS_EX_WINDOWEDGE</a></td></tr>
+<tr class="memitem:gaea999d9b2e815ad51b6e5bbbed5902d6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaea999d9b2e815ad51b6e5bbbed5902d6">WS_EX_WINDOWEDGE</a></td></tr>
 <tr class="memdesc:gaea999d9b2e815ad51b6e5bbbed5902d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a window has a border with a raised edge.  <br /></td></tr>
 <tr class="separator:gaea999d9b2e815ad51b6e5bbbed5902d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad29653016c3221131b49533808fd0532"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gad29653016c3221131b49533808fd0532.html#gad29653016c3221131b49533808fd0532">WS_EX_CLIENTEDGE</a></td></tr>
+<tr class="memitem:gad29653016c3221131b49533808fd0532"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gad29653016c3221131b49533808fd0532">WS_EX_CLIENTEDGE</a></td></tr>
 <tr class="memdesc:gad29653016c3221131b49533808fd0532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a window has a 3D look — that is, a border with a sunken edge.  <br /></td></tr>
 <tr class="separator:gad29653016c3221131b49533808fd0532"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab7065f7dddfe48b486b1941b2e41e8a7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gab7065f7dddfe48b486b1941b2e41e8a7.html#gab7065f7dddfe48b486b1941b2e41e8a7">WS_EX_CONTEXTHELP</a></td></tr>
+<tr class="memitem:gab7065f7dddfe48b486b1941b2e41e8a7"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gab7065f7dddfe48b486b1941b2e41e8a7">WS_EX_CONTEXTHELP</a></td></tr>
 <tr class="memdesc:gab7065f7dddfe48b486b1941b2e41e8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes a question mark in the title bar of the window. When the user clicks the question mark, the cursor changes to a question mark with a pointer. If the user then clicks a child window, the child receives a WM_HELP message.  <br /></td></tr>
 <tr class="separator:gab7065f7dddfe48b486b1941b2e41e8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga026c51cbcb7578c85be6b2604073e309"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga026c51cbcb7578c85be6b2604073e309.html#ga026c51cbcb7578c85be6b2604073e309">WS_EX_RIGHT</a></td></tr>
+<tr class="memitem:ga026c51cbcb7578c85be6b2604073e309"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga026c51cbcb7578c85be6b2604073e309">WS_EX_RIGHT</a></td></tr>
 <tr class="memdesc:ga026c51cbcb7578c85be6b2604073e309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a window generic right-aligned properties. This depends on the window class.  <br /></td></tr>
 <tr class="separator:ga026c51cbcb7578c85be6b2604073e309"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b0da5587e59134697974988d9825f8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga2b0da5587e59134697974988d9825f8b.html#ga2b0da5587e59134697974988d9825f8b">WS_EX_LEFT</a></td></tr>
+<tr class="memitem:ga2b0da5587e59134697974988d9825f8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga2b0da5587e59134697974988d9825f8b">WS_EX_LEFT</a></td></tr>
 <tr class="memdesc:ga2b0da5587e59134697974988d9825f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives window generic left-aligned properties. This is the default.  <br /></td></tr>
 <tr class="separator:ga2b0da5587e59134697974988d9825f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c69679c8b6b02826096d8880711ecae"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga0c69679c8b6b02826096d8880711ecae.html#ga0c69679c8b6b02826096d8880711ecae">WS_EX_RTLREADING</a></td></tr>
+<tr class="memitem:ga0c69679c8b6b02826096d8880711ecae"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga0c69679c8b6b02826096d8880711ecae">WS_EX_RTLREADING</a></td></tr>
 <tr class="memdesc:ga0c69679c8b6b02826096d8880711ecae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the window text using right-to-left reading order properties.  <br /></td></tr>
 <tr class="separator:ga0c69679c8b6b02826096d8880711ecae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf870fefc023144303663f8f50a62ba17"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaf870fefc023144303663f8f50a62ba17.html#gaf870fefc023144303663f8f50a62ba17">WS_EX_LTRREADING</a></td></tr>
+<tr class="memitem:gaf870fefc023144303663f8f50a62ba17"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaf870fefc023144303663f8f50a62ba17">WS_EX_LTRREADING</a></td></tr>
 <tr class="memdesc:gaf870fefc023144303663f8f50a62ba17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the window text using left-to-right reading order properties. This is the default.  <br /></td></tr>
 <tr class="separator:gaf870fefc023144303663f8f50a62ba17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf0d8be0253996f00c27ab78d8d9664da"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gaf0d8be0253996f00c27ab78d8d9664da.html#gaf0d8be0253996f00c27ab78d8d9664da">WS_EX_LEFTSCROLLBAR</a></td></tr>
+<tr class="memitem:gaf0d8be0253996f00c27ab78d8d9664da"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gaf0d8be0253996f00c27ab78d8d9664da">WS_EX_LEFTSCROLLBAR</a></td></tr>
 <tr class="memdesc:gaf0d8be0253996f00c27ab78d8d9664da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places a vertical scroll bar to the left of the client area.  <br /></td></tr>
 <tr class="separator:gaf0d8be0253996f00c27ab78d8d9664da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0dd03138b618d39b4e9fbd1c17b06567"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga0dd03138b618d39b4e9fbd1c17b06567.html#ga0dd03138b618d39b4e9fbd1c17b06567">WS_EX_RIGHTSCROLLBAR</a></td></tr>
+<tr class="memitem:ga0dd03138b618d39b4e9fbd1c17b06567"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga0dd03138b618d39b4e9fbd1c17b06567">WS_EX_RIGHTSCROLLBAR</a></td></tr>
 <tr class="memdesc:ga0dd03138b618d39b4e9fbd1c17b06567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places a vertical scroll bar (if present) to the right of the client area. This is the default.  <br /></td></tr>
 <tr class="separator:ga0dd03138b618d39b4e9fbd1c17b06567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac0b571fdb5411e71c70b8fb90a2b6661"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gac0b571fdb5411e71c70b8fb90a2b6661.html#gac0b571fdb5411e71c70b8fb90a2b6661">WS_EX_CONTROLPARENT</a></td></tr>
+<tr class="memitem:gac0b571fdb5411e71c70b8fb90a2b6661"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gac0b571fdb5411e71c70b8fb90a2b6661">WS_EX_CONTROLPARENT</a></td></tr>
 <tr class="memdesc:gac0b571fdb5411e71c70b8fb90a2b6661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the user to navigate among the child windows of the window by using the TAB key.  <br /></td></tr>
 <tr class="separator:gac0b571fdb5411e71c70b8fb90a2b6661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d603772444e803a0dbfcc8ce08ec51a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga9d603772444e803a0dbfcc8ce08ec51a.html#ga9d603772444e803a0dbfcc8ce08ec51a">WS_EX_STATICEDGE</a></td></tr>
+<tr class="memitem:ga9d603772444e803a0dbfcc8ce08ec51a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga9d603772444e803a0dbfcc8ce08ec51a">WS_EX_STATICEDGE</a></td></tr>
 <tr class="memdesc:ga9d603772444e803a0dbfcc8ce08ec51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a window with a three-dimensional border style intended to be used for items that do not accept user input.  <br /></td></tr>
 <tr class="separator:ga9d603772444e803a0dbfcc8ce08ec51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6079c2f04d367a795a943eb4f024510a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga6079c2f04d367a795a943eb4f024510a.html#ga6079c2f04d367a795a943eb4f024510a">WS_EX_APPWINDOW</a></td></tr>
+<tr class="memitem:ga6079c2f04d367a795a943eb4f024510a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga6079c2f04d367a795a943eb4f024510a">WS_EX_APPWINDOW</a></td></tr>
 <tr class="memdesc:ga6079c2f04d367a795a943eb4f024510a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces a top-level window onto the taskbar when the window is visible.  <br /></td></tr>
 <tr class="separator:ga6079c2f04d367a795a943eb4f024510a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga70f596b19977ec25176c493f817bf124"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga70f596b19977ec25176c493f817bf124.html#ga70f596b19977ec25176c493f817bf124">WS_EX_OVERLAPPEDWINDOW</a></td></tr>
+<tr class="memitem:ga70f596b19977ec25176c493f817bf124"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga70f596b19977ec25176c493f817bf124">WS_EX_OVERLAPPEDWINDOW</a></td></tr>
 <tr class="memdesc:ga70f596b19977ec25176c493f817bf124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the WS_EX_CLIENTEDGE and WS_EX_WINDOWEDGE styles.  <br /></td></tr>
 <tr class="separator:ga70f596b19977ec25176c493f817bf124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ff64fb8a97ff48f58c529f25a7605ff"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga4ff64fb8a97ff48f58c529f25a7605ff.html#ga4ff64fb8a97ff48f58c529f25a7605ff">WS_EX_PALETTEWINDOW</a></td></tr>
+<tr class="memitem:ga4ff64fb8a97ff48f58c529f25a7605ff"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga4ff64fb8a97ff48f58c529f25a7605ff">WS_EX_PALETTEWINDOW</a></td></tr>
 <tr class="memdesc:ga4ff64fb8a97ff48f58c529f25a7605ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the WS_EX_WINDOWEDGE and WS_EX_TOPMOST styles.  <br /></td></tr>
 <tr class="separator:ga4ff64fb8a97ff48f58c529f25a7605ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7b6f0ee680fce2632ca6503040bcdbac"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga7b6f0ee680fce2632ca6503040bcdbac.html#ga7b6f0ee680fce2632ca6503040bcdbac">WS_EX_LAYERED</a></td></tr>
+<tr class="memitem:ga7b6f0ee680fce2632ca6503040bcdbac"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga7b6f0ee680fce2632ca6503040bcdbac">WS_EX_LAYERED</a></td></tr>
 <tr class="memdesc:ga7b6f0ee680fce2632ca6503040bcdbac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The window is a layered window. This style cannot be used if the window has a class style of either CS_OWNDC or CS_CLASSDC. However, Microsoft Windows 8 does support the WS_EX_LAYERED style for child windows, where previous Windows versions support it only for top-level windows.  <br /></td></tr>
 <tr class="separator:ga7b6f0ee680fce2632ca6503040bcdbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga883d6ba6994d79aec5b7a4c3f34a47cf"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga883d6ba6994d79aec5b7a4c3f34a47cf.html#ga883d6ba6994d79aec5b7a4c3f34a47cf">WS_EX_NOINHERITLAYOUT</a></td></tr>
+<tr class="memitem:ga883d6ba6994d79aec5b7a4c3f34a47cf"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga883d6ba6994d79aec5b7a4c3f34a47cf">WS_EX_NOINHERITLAYOUT</a></td></tr>
 <tr class="memdesc:ga883d6ba6994d79aec5b7a4c3f34a47cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a child window created with this style will not send the WM_PARENTNOTIFY message to its parent window when the child window is created or destroyed.  <br /></td></tr>
 <tr class="separator:ga883d6ba6994d79aec5b7a4c3f34a47cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3db7c8111cbe1e4dd49df5b29eba10f0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga3db7c8111cbe1e4dd49df5b29eba10f0.html#ga3db7c8111cbe1e4dd49df5b29eba10f0">WS_EX_NOREDIRECTIONBITMAP</a></td></tr>
+<tr class="memitem:ga3db7c8111cbe1e4dd49df5b29eba10f0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga3db7c8111cbe1e4dd49df5b29eba10f0">WS_EX_NOREDIRECTIONBITMAP</a></td></tr>
 <tr class="memdesc:ga3db7c8111cbe1e4dd49df5b29eba10f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The window does not render to a redirection surface. This is for windows that do not have visible content or that use mechanisms other than surfaces to provide their visual.  <br /></td></tr>
 <tr class="separator:ga3db7c8111cbe1e4dd49df5b29eba10f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8007d94d583376afbfc3af06eed99e9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gac8007d94d583376afbfc3af06eed99e9.html#gac8007d94d583376afbfc3af06eed99e9">WS_EX_LAYOUTRTL</a></td></tr>
+<tr class="memitem:gac8007d94d583376afbfc3af06eed99e9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gac8007d94d583376afbfc3af06eed99e9">WS_EX_LAYOUTRTL</a></td></tr>
 <tr class="memdesc:gac8007d94d583376afbfc3af06eed99e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the shell language is Hebrew, Arabic, or another language that supports reading order alignment, the horizontal origin of the window is on the right edge. Increasing horizontal values advance to the left.  <br /></td></tr>
 <tr class="separator:gac8007d94d583376afbfc3af06eed99e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabced0d7cd9b7fff06c8c8368424ee577"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gabced0d7cd9b7fff06c8c8368424ee577.html#gabced0d7cd9b7fff06c8c8368424ee577">WS_EX_COMPOSITED</a></td></tr>
+<tr class="memitem:gabced0d7cd9b7fff06c8c8368424ee577"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gabced0d7cd9b7fff06c8c8368424ee577">WS_EX_COMPOSITED</a></td></tr>
 <tr class="memdesc:gabced0d7cd9b7fff06c8c8368424ee577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paints all descendants of a window in bottom-to-top painting order using double-buffering. Bottom-to-top painting order allows a descendent window to have translucency (alpha) and transparency (color-key) effects, but only if the descendent window also has the WS_EX_TRANSPARENT bit set. Double-buffering allows the window and its descendents to be painted without flicker. This cannot be used if the window has a class style of either CS_OWNDC or CS_CLASSDC.  <br /></td></tr>
 <tr class="separator:gabced0d7cd9b7fff06c8c8368424ee577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4ae672c628510e057ecf40904558ae6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gae4ae672c628510e057ecf40904558ae6.html#gae4ae672c628510e057ecf40904558ae6">WS_EX_NOACTIVATE</a></td></tr>
+<tr class="memitem:gae4ae672c628510e057ecf40904558ae6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gae4ae672c628510e057ecf40904558ae6">WS_EX_NOACTIVATE</a></td></tr>
 <tr class="memdesc:gae4ae672c628510e057ecf40904558ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A top-level window created with this style does not become the foreground window when the user clicks it. The system does not bring this window to the foreground when the user minimizes or closes the foreground window.  <br /></td></tr>
 <tr class="separator:gae4ae672c628510e057ecf40904558ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae08a321feb76a5a7b89148dd125b6626"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_gae08a321feb76a5a7b89148dd125b6626.html#gae08a321feb76a5a7b89148dd125b6626">WS_EX_AUTOSCROLL</a></td></tr>
+<tr class="memitem:gae08a321feb76a5a7b89148dd125b6626"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#gae08a321feb76a5a7b89148dd125b6626">WS_EX_AUTOSCROLL</a></td></tr>
 <tr class="memdesc:gae08a321feb76a5a7b89148dd125b6626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate automatic scroll based on virtual size.  <br /></td></tr>
 <tr class="separator:gae08a321feb76a5a7b89148dd125b6626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2832124e8ec0971b2ac4f1fdf5b9e9cf"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws_ga2832124e8ec0971b2ac4f1fdf5b9e9cf.html#ga2832124e8ec0971b2ac4f1fdf5b9e9cf">WS_EX_MODALWINDOW</a></td></tr>
+<tr class="memitem:ga2832124e8ec0971b2ac4f1fdf5b9e9cf"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ex__ws.html#ga2832124e8ec0971b2ac4f1fdf5b9e9cf">WS_EX_MODALWINDOW</a></td></tr>
 <tr class="memdesc:ga2832124e8ec0971b2ac4f1fdf5b9e9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a modal window.  <br /></td></tr>
 <tr class="separator:ga2832124e8ec0971b2ac4f1fdf5b9e9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li><li class="navelem"><a class="el" href="extended__window__styles_8h.html">extended_window_styles.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

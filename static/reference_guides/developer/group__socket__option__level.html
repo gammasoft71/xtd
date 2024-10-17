@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__socket__option__level.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,30 +90,173 @@ $(document).ready(function(){initNavTree('group__socket__option__level.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga0e0dc6c367693a3ea8c90a4ece919eb6"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level_ga0e0dc6c367693a3ea8c90a4ece919eb6.html#ga0e0dc6c367693a3ea8c90a4ece919eb6">SOCKET_OPTION_LEVEL_SOCKET</a></td></tr>
+<tr class="memitem:ga0e0dc6c367693a3ea8c90a4ece919eb6"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level.html#ga0e0dc6c367693a3ea8c90a4ece919eb6">SOCKET_OPTION_LEVEL_SOCKET</a></td></tr>
 <tr class="memdesc:ga0e0dc6c367693a3ea8c90a4ece919eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket options apply to all sockets.  <br /></td></tr>
 <tr class="separator:ga0e0dc6c367693a3ea8c90a4ece919eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8c28b95d0af6177c7f50557fdfa8008"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level_gab8c28b95d0af6177c7f50557fdfa8008.html#gab8c28b95d0af6177c7f50557fdfa8008">SOCKET_OPTION_LEVEL_IP</a></td></tr>
+<tr class="memitem:gab8c28b95d0af6177c7f50557fdfa8008"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level.html#gab8c28b95d0af6177c7f50557fdfa8008">SOCKET_OPTION_LEVEL_IP</a></td></tr>
 <tr class="memdesc:gab8c28b95d0af6177c7f50557fdfa8008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket options apply only to IP sockets.  <br /></td></tr>
 <tr class="separator:gab8c28b95d0af6177c7f50557fdfa8008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c780d1ad41845a87449b1effe417a6d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level_ga6c780d1ad41845a87449b1effe417a6d.html#ga6c780d1ad41845a87449b1effe417a6d">SOCKET_OPTION_LEVEL_IP_V6</a></td></tr>
+<tr class="memitem:ga6c780d1ad41845a87449b1effe417a6d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level.html#ga6c780d1ad41845a87449b1effe417a6d">SOCKET_OPTION_LEVEL_IP_V6</a></td></tr>
 <tr class="memdesc:ga6c780d1ad41845a87449b1effe417a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket options apply only to IPv6 sockets.  <br /></td></tr>
 <tr class="separator:ga6c780d1ad41845a87449b1effe417a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga312a103e385056108e165a7818d93771"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level_ga312a103e385056108e165a7818d93771.html#ga312a103e385056108e165a7818d93771">SOCKET_OPTION_LEVEL_TCP</a></td></tr>
+<tr class="memitem:ga312a103e385056108e165a7818d93771"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level.html#ga312a103e385056108e165a7818d93771">SOCKET_OPTION_LEVEL_TCP</a></td></tr>
 <tr class="memdesc:ga312a103e385056108e165a7818d93771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket options apply only to TCP sockets.  <br /></td></tr>
 <tr class="separator:ga312a103e385056108e165a7818d93771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga656f30eb99022b72ba0a2186c376faa1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level_ga656f30eb99022b72ba0a2186c376faa1.html#ga656f30eb99022b72ba0a2186c376faa1">SOCKET_OPTION_LEVEL_UDP</a></td></tr>
+<tr class="memitem:ga656f30eb99022b72ba0a2186c376faa1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__option__level.html#ga656f30eb99022b72ba0a2186c376faa1">SOCKET_OPTION_LEVEL_UDP</a></td></tr>
 <tr class="memdesc:ga656f30eb99022b72ba0a2186c376faa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket options apply only to UDP sockets.  <br /></td></tr>
 <tr class="separator:ga656f30eb99022b72ba0a2186c376faa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga0e0dc6c367693a3ea8c90a4ece919eb6" name="ga0e0dc6c367693a3ea8c90a4ece919eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e0dc6c367693a3ea8c90a4ece919eb6">&#9670;&#160;</a></span>SOCKET_OPTION_LEVEL_SOCKET</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SOCKET_OPTION_LEVEL_SOCKET</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="socket__option__level__constants_8h.html">xtd.core.native/include/xtd/native/socket_option_level_constants.h</a>&gt;</code></p>
+
+<p>Socket options apply to all sockets. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab8c28b95d0af6177c7f50557fdfa8008" name="gab8c28b95d0af6177c7f50557fdfa8008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8c28b95d0af6177c7f50557fdfa8008">&#9670;&#160;</a></span>SOCKET_OPTION_LEVEL_IP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SOCKET_OPTION_LEVEL_IP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="socket__option__level__constants_8h.html">xtd.core.native/include/xtd/native/socket_option_level_constants.h</a>&gt;</code></p>
+
+<p>Socket options apply only to IP sockets. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6c780d1ad41845a87449b1effe417a6d" name="ga6c780d1ad41845a87449b1effe417a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c780d1ad41845a87449b1effe417a6d">&#9670;&#160;</a></span>SOCKET_OPTION_LEVEL_IP_V6</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SOCKET_OPTION_LEVEL_IP_V6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="socket__option__level__constants_8h.html">xtd.core.native/include/xtd/native/socket_option_level_constants.h</a>&gt;</code></p>
+
+<p>Socket options apply only to IPv6 sockets. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga312a103e385056108e165a7818d93771" name="ga312a103e385056108e165a7818d93771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga312a103e385056108e165a7818d93771">&#9670;&#160;</a></span>SOCKET_OPTION_LEVEL_TCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SOCKET_OPTION_LEVEL_TCP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="socket__option__level__constants_8h.html">xtd.core.native/include/xtd/native/socket_option_level_constants.h</a>&gt;</code></p>
+
+<p>Socket options apply only to TCP sockets. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga656f30eb99022b72ba0a2186c376faa1" name="ga656f30eb99022b72ba0a2186c376faa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga656f30eb99022b72ba0a2186c376faa1">&#9670;&#160;</a></span>SOCKET_OPTION_LEVEL_UDP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SOCKET_OPTION_LEVEL_UDP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="socket__option__level__constants_8h.html">xtd.core.native/include/xtd/native/socket_option_level_constants.h</a>&gt;</code></p>
+
+<p>Socket options apply only to UDP sockets. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

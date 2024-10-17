@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2forms_2native_2font__picker_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">font_picker.h</div></div>
 </div><!--header-->
@@ -119,14 +103,14 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">class </span>font_picker;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">namespace </span>native {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html">   35</a></span>      <span class="keyword">class </span>forms_native_export_ <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1font__picker.html">font_picker</a> final <a class="code hl_define" href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html">   35</a></span>      <span class="keyword">class </span>forms_native_export_ <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1font__picker.html">font_picker</a> final <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1forms_1_1font__picker.html">xtd::forms::font_picker</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker_a7ba0ea50c5c23169ae49e8f11a3c1a44.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">   45</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker_a7ba0ea50c5c23169ae49e8f11a3c1a44.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">color</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker_ac920b164e707f7d45dbb6c53fddc2cb3.html#ac920b164e707f7d45dbb6c53fddc2cb3">   50</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker_ac920b164e707f7d45dbb6c53fddc2cb3.html#ac920b164e707f7d45dbb6c53fddc2cb3">color</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">drawing::color</a>&amp; color);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker_a4ed04a32c276141a704dae0cb1d4ab85.html#a4ed04a32c276141a704dae0cb1d4ab85">   55</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">drawing::font</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker_a4ed04a32c276141a704dae0cb1d4ab85.html#a4ed04a32c276141a704dae0cb1d4ab85">font</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker_af5a4ded02588c396451bd1def3ed6ca8.html#af5a4ded02588c396451bd1def3ed6ca8">   60</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker_af5a4ded02588c396451bd1def3ed6ca8.html#af5a4ded02588c396451bd1def3ed6ca8">font</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">drawing::font</a>&amp; font);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">   45</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">color</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html#ac920b164e707f7d45dbb6c53fddc2cb3">   50</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker.html#ac920b164e707f7d45dbb6c53fddc2cb3">color</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">drawing::color</a>&amp; color);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html#a4ed04a32c276141a704dae0cb1d4ab85">   55</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">drawing::font</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker.html#a4ed04a32c276141a704dae0cb1d4ab85">font</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1font__picker.html#af5a4ded02588c396451bd1def3ed6ca8">   60</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1font__picker.html#af5a4ded02588c396451bd1def3ed6ca8">font</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">drawing::font</a>&amp; font);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      };</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
@@ -135,28 +119,24 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1font__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1font__picker.html">xtd::forms::font_picker</a></div><div class="ttdoc">Represents a picker control that displays available fonts along with controls.</div><div class="ttdef"><b>Definition</b> font_picker.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1control.html">xtd::forms::native::control</a></div><div class="ttdoc">Contains control native API.</div><div class="ttdef"><b>Definition</b> control.h:65</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_a4ed04a32c276141a704dae0cb1d4ab85_html_a4ed04a32c276141a704dae0cb1d4ab85"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker_a4ed04a32c276141a704dae0cb1d4ab85.html#a4ed04a32c276141a704dae0cb1d4ab85">xtd::forms::native::font_picker::font</a></div><div class="ttdeci">static drawing::font font(intptr control)</div><div class="ttdoc">Gets the selected font.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_a7ba0ea50c5c23169ae49e8f11a3c1a44_html_a7ba0ea50c5c23169ae49e8f11a3c1a44"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker_a7ba0ea50c5c23169ae49e8f11a3c1a44.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">xtd::forms::native::font_picker::color</a></div><div class="ttdeci">static drawing::color color(intptr control)</div><div class="ttdoc">Gets the color selected by the user.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_ac920b164e707f7d45dbb6c53fddc2cb3_html_ac920b164e707f7d45dbb6c53fddc2cb3"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker_ac920b164e707f7d45dbb6c53fddc2cb3.html#ac920b164e707f7d45dbb6c53fddc2cb3">xtd::forms::native::font_picker::color</a></div><div class="ttdeci">static void color(intptr control, const drawing::color &amp;color)</div><div class="ttdoc">Sets the color selected by the user.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_af5a4ded02588c396451bd1def3ed6ca8_html_af5a4ded02588c396451bd1def3ed6ca8"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker_af5a4ded02588c396451bd1def3ed6ca8.html#af5a4ded02588c396451bd1def3ed6ca8">xtd::forms::native::font_picker::font</a></div><div class="ttdeci">static void font(intptr control, const drawing::font &amp;font)</div><div class="ttdoc">Sets the selected font.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker.html">xtd::forms::native::font_picker</a></div><div class="ttdoc">Contains font picker native API.</div><div class="ttdef"><b>Definition</b> font_picker.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_html_a4ed04a32c276141a704dae0cb1d4ab85"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker.html#a4ed04a32c276141a704dae0cb1d4ab85">xtd::forms::native::font_picker::font</a></div><div class="ttdeci">static drawing::font font(intptr control)</div><div class="ttdoc">Gets the selected font.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_html_a7ba0ea50c5c23169ae49e8f11a3c1a44"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker.html#a7ba0ea50c5c23169ae49e8f11a3c1a44">xtd::forms::native::font_picker::color</a></div><div class="ttdeci">static drawing::color color(intptr control)</div><div class="ttdoc">Gets the color selected by the user.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_html_ac920b164e707f7d45dbb6c53fddc2cb3"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker.html#ac920b164e707f7d45dbb6c53fddc2cb3">xtd::forms::native::font_picker::color</a></div><div class="ttdeci">static void color(intptr control, const drawing::color &amp;color)</div><div class="ttdoc">Sets the color selected by the user.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1font__picker_html_af5a4ded02588c396451bd1def3ed6ca8"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1font__picker.html#af5a4ded02588c396451bd1def3ed6ca8">xtd::forms::native::font_picker::font</a></div><div class="ttdeci">static void font(intptr control, const drawing::font &amp;font)</div><div class="ttdoc">Sets the selected font.</div></div>
 <div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
-<div class="ttc" id="agroup__keywords_ga28796443ec37b938df7072c79595e3f6_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
-<div class="ttc" id="agroup__types_gaa7283e1dd31c385d954467f7ea324451_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
+<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
 <div class="ttc" id="axtd_8drawing_2include_2xtd_2drawing_2font_8h_html"><div class="ttname"><a href="xtd_8drawing_2include_2xtd_2drawing_2font_8h.html">font.h</a></div><div class="ttdoc">Contains xtd::drawing::font class.</div></div>
 <div class="ttc" id="axtd_8forms_2include_2xtd_2forms_2create__params_8h_html"><div class="ttname"><a href="xtd_8forms_2include_2xtd_2forms_2create__params_8h.html">create_params.h</a></div><div class="ttdoc">Contains xtd::forms::create_params class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li><li class="navelem"><a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2font__picker_8h.html">font_picker.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

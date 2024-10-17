@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1choice.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1choice.
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html">choice</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1choice-members.html">List of all members</a>  </div>
@@ -120,40 +104,341 @@ Inheritance diagram for xtd::forms::native::choice:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:ad4f18b535f6054a5a93482dc0bbb46bc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_ad4f18b535f6054a5a93482dc0bbb46bc.html#ad4f18b535f6054a5a93482dc0bbb46bc">begin_update</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
-<tr class="memdesc:ad4f18b535f6054a5a93482dc0bbb46bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the <a class="el" href="classxtd_1_1forms_1_1native_1_1choice_a1fa62f78443fe679e0748f155ef3ef2c.html#a1fa62f78443fe679e0748f155ef3ef2c" title="Resumes painting the checked_list_box control after painting is suspended by the begin_update method.">end_update()</a> method is called.  <br /></td></tr>
+<tr class="memitem:ad4f18b535f6054a5a93482dc0bbb46bc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#ad4f18b535f6054a5a93482dc0bbb46bc">begin_update</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memdesc:ad4f18b535f6054a5a93482dc0bbb46bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the <a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a1fa62f78443fe679e0748f155ef3ef2c" title="Resumes painting the checked_list_box control after painting is suspended by the begin_update method.">end_update()</a> method is called.  <br /></td></tr>
 <tr class="separator:ad4f18b535f6054a5a93482dc0bbb46bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a446ecfb05c5e8df9bc328aafe12c68b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_a446ecfb05c5e8df9bc328aafe12c68b3.html#a446ecfb05c5e8df9bc328aafe12c68b3">delete_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index)</td></tr>
+<tr class="memitem:a446ecfb05c5e8df9bc328aafe12c68b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a446ecfb05c5e8df9bc328aafe12c68b3">delete_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index)</td></tr>
 <tr class="memdesc:a446ecfb05c5e8df9bc328aafe12c68b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes specified item index.  <br /></td></tr>
 <tr class="separator:a446ecfb05c5e8df9bc328aafe12c68b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fa62f78443fe679e0748f155ef3ef2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_a1fa62f78443fe679e0748f155ef3ef2c.html#a1fa62f78443fe679e0748f155ef3ef2c">end_update</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a1fa62f78443fe679e0748f155ef3ef2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a1fa62f78443fe679e0748f155ef3ef2c">end_update</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a1fa62f78443fe679e0748f155ef3ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the <a class="el" href="classxtd_1_1forms_1_1native_1_1checked__list__box.html" title="Contains checked list box native API.">checked_list_box</a> control after painting is suspended by the begin_update method.  <br /></td></tr>
 <tr class="separator:a1fa62f78443fe679e0748f155ef3ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f38e2d359827fe20183817205041e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_ae5f38e2d359827fe20183817205041e6.html#ae5f38e2d359827fe20183817205041e6">insert_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
+<tr class="memitem:ae5f38e2d359827fe20183817205041e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#ae5f38e2d359827fe20183817205041e6">insert_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:ae5f38e2d359827fe20183817205041e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts at specified item index a specified value.  <br /></td></tr>
 <tr class="separator:ae5f38e2d359827fe20183817205041e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b46337108d1bce26d25ef678006bd1b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_a7b46337108d1bce26d25ef678006bd1b.html#a7b46337108d1bce26d25ef678006bd1b">selected_index</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a7b46337108d1bce26d25ef678006bd1b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a7b46337108d1bce26d25ef678006bd1b">selected_index</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a7b46337108d1bce26d25ef678006bd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets selected item index.  <br /></td></tr>
 <tr class="separator:a7b46337108d1bce26d25ef678006bd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab295dfa50683bdef746d070e1b21dab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_aab295dfa50683bdef746d070e1b21dab.html#aab295dfa50683bdef746d070e1b21dab">selected_index</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index)</td></tr>
+<tr class="memitem:aab295dfa50683bdef746d070e1b21dab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#aab295dfa50683bdef746d070e1b21dab">selected_index</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t index)</td></tr>
 <tr class="memdesc:aab295dfa50683bdef746d070e1b21dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets selected item with specified index.  <br /></td></tr>
 <tr class="separator:aab295dfa50683bdef746d070e1b21dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95371cf0aba789ba780bd082621145c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice_a95371cf0aba789ba780bd082621145c5.html#a95371cf0aba789ba780bd082621145c5">update_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t pos, const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
+<tr class="memitem:a95371cf0aba789ba780bd082621145c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a95371cf0aba789ba780bd082621145c5">update_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, size_t pos, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:a95371cf0aba789ba780bd082621145c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a specified item index with specified value.  <br /></td></tr>
 <tr class="separator:a95371cf0aba789ba780bd082621145c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad4f18b535f6054a5a93482dc0bbb46bc" name="ad4f18b535f6054a5a93482dc0bbb46bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f18b535f6054a5a93482dc0bbb46bc">&#9670;&#160;</a></span>begin_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::begin_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the <a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html#a1fa62f78443fe679e0748f155ef3ef2c" title="Resumes painting the checked_list_box control after painting is suspended by the begin_update method.">end_update()</a> method is called. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a446ecfb05c5e8df9bc328aafe12c68b3" name="a446ecfb05c5e8df9bc328aafe12c68b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446ecfb05c5e8df9bc328aafe12c68b3">&#9670;&#160;</a></span>delete_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::delete_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes specified item index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The item index to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a1fa62f78443fe679e0748f155ef3ef2c" name="a1fa62f78443fe679e0748f155ef3ef2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa62f78443fe679e0748f155ef3ef2c">&#9670;&#160;</a></span>end_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::end_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resumes painting the <a class="el" href="classxtd_1_1forms_1_1native_1_1checked__list__box.html" title="Contains checked list box native API.">checked_list_box</a> control after painting is suspended by the begin_update method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae5f38e2d359827fe20183817205041e6" name="ae5f38e2d359827fe20183817205041e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f38e2d359827fe20183817205041e6">&#9670;&#160;</a></span>insert_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::insert_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts at specified item index a specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The item index to insert. </td></tr>
+    <tr><td class="paramname">value</td><td>The text value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7b46337108d1bce26d25ef678006bd1b" name="a7b46337108d1bce26d25ef678006bd1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b46337108d1bce26d25ef678006bd1b">&#9670;&#160;</a></span>selected_index() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t xtd::forms::native::choice::selected_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets selected item index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The selected item index. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aab295dfa50683bdef746d070e1b21dab" name="aab295dfa50683bdef746d070e1b21dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab295dfa50683bdef746d070e1b21dab">&#9670;&#160;</a></span>selected_index() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::selected_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets selected item with specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The selected item index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a95371cf0aba789ba780bd082621145c5" name="a95371cf0aba789ba780bd082621145c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95371cf0aba789ba780bd082621145c5">&#9670;&#160;</a></span>update_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::choice::update_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates a specified item index with specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Choice window handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The item index to update. </td></tr>
+    <tr><td class="paramname">value</td><td>The text value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2choice_8h_source.html">choice.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1choice.html">choice</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>
