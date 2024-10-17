@@ -28,9 +28,9 @@ const string& test::actual() const noexcept {
 }
 
 time_span test::elapsed_time() const noexcept {
-  if (start_time_.ticks() == 0 && end_time_point.ticks() == 0) return 0_ms;
-  if (end_time_point.ticks() == 0) return date_time::now() - start_time_;
-  return end_time_point - start_time_;
+  if (start_time_.ticks() == 0 && end_time_point_.ticks() == 0) return 0_ms;
+  if (end_time_point_.ticks() == 0) return date_time::now() - start_time_;
+  return end_time_point_ - start_time_;
 }
 
 const string& test::expect() const noexcept {
@@ -130,7 +130,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
       try {
         start_time_ = date_time::now();
         method()();
-        end_time_point = date_time::now();
+        end_time_point_ = date_time::now();
         if (not_started()) status_ = test_status::succeed;
         if (succeed())
           if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_succeed(test_event_args(*this, test_class, unit_test));
