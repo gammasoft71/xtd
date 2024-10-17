@@ -18,7 +18,7 @@ public:
     button1.text("Exception...");
     button1.click += [&] {
       try {
-        throw invalid_operation_exception("Throws an invalid operation exception to show an exception dialog.", current_stack_frame_);
+        throw invalid_operation_exception("Throws an invalid operation exception to show an exception dialog.");
       } catch (const xtd::system_exception& e) {
         auto dialog = exception_dialog {};
         dialog.exception(e);

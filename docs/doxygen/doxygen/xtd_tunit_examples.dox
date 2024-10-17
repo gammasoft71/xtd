@@ -398,7 +398,7 @@
 /// Shows how to create your own xtd::tunit::event_listener class.
 ///
 /// @example line_info.cpp
-/// Shows how to use xtd::diagnostics::stack_frame class and csf_ keyword.
+/// Shows how to use xtd::diagnostics::stack_frame class.
 ///
 /// @example many_asserts.cpp
 /// Shows how to use xtd::tunit::assert class with many asserts.

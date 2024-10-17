@@ -520,12 +520,6 @@
 /// @example call_once2.cpp
 /// Shows how to use call_once struct.
 ///
-/// @example csf.cpp
-/// Shows how to use xtd::diagnostics::stack_frame class.
-///
-/// @example current_stack_frame.cpp
-/// Shows how to use xtd::diagnostics::stack_frame class.
-///
 /// @example interface.cpp
 /// Shows how to use xtd::interface class.
 ///

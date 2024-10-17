@@ -100,7 +100,6 @@ add_sources(
   create_a_control_binding.md
   create_access_key_shortcuts.md
   create_user_dined_exceptions.md
-  csf.md
   custom_controls.md
   custom_painting_and_drawing.md
   data_binding_overview.md

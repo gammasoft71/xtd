@@ -19,7 +19,7 @@ public:
     text("application and exception example");
     
     // Uncomment the following line to raise the exception in main entry point :
-    //throw system_exception(current_stack_frame_);
+    //throw system_exception {};
     
     generate_handled_exception_button.auto_size(true);
     generate_handled_exception_button.location({10, 10});
@@ -49,13 +49,13 @@ public:
 private:
   void generate_handled_exception() {
     try {
-      throw operation_canceled_exception(current_stack_frame_);
+      throw operation_canceled_exception {};
     } catch (const system_exception& e) {
       message_box::show(*this, e.message(), string::format("Exception {} handled", e.name()));
     }
   }
   void generate_exception() {throw std::invalid_argument("Invalid argument");}
-  void generate_system_exception() {throw argument_out_of_range_exception(current_stack_frame_);}
+  void generate_system_exception() {throw argument_out_of_range_exception {};}
   void generate_unknown_exception() {throw "Unknown exception occured";}
 
   button generate_handled_exception_button;
