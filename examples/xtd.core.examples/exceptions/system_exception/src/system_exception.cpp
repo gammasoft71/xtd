@@ -8,7 +8,7 @@ long create_handle() {
 }
 
 void destroy_handle(long handle) {
-  if (handle == 0) throw system_exception("The handle is null",  csf_);
+  if (handle == 0) throw system_exception("The handle is null");
   delete reinterpret_cast<object*>(handle);
 }
 

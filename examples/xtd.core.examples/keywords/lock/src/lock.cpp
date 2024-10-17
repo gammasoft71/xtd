@@ -20,7 +20,7 @@ namespace examples {
   private:
     int withdraw(int amount) {
       // This condition never is true unless the lock statement is commented out.
-      if (balance < 0) throw system_exception {"Negative Balance", csf_};
+      if (balance < 0) throw system_exception {"Negative Balance"};
       
       // Comment out the next line to see the effect of leaving out the lock keyword.
       lock_(balance) {

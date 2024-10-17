@@ -19,7 +19,6 @@ public:
     button1.click += [&] {
       auto dialog = assert_dialog {};
       dialog.message("Index must be > 0");
-      dialog.stack_frame(csf_);
       switch(dialog.show_sheet_dialog(*this)) {
         case forms::dialog_result::abort: application::exit(); break;
         case forms::dialog_result::retry: debug_break_(); break;

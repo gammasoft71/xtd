@@ -10,7 +10,7 @@ auto main() -> int {
   
   auto thread1 = thread {[&] {
     try {
-      throw invalid_operation_exception("Ouch there are an exception !", csf_);
+      throw invalid_operation_exception("Ouch there are an exception !");
     } catch (...) {
       exception_pointer = std::current_exception();
     }

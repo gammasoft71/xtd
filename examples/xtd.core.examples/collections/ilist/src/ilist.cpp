@@ -149,7 +149,7 @@ public:
     enumerator get_enumerator() const override {
       // Refer to the xtd::collection::ienumerator documentation for an example of
       // implementing an enumerator.
-      throw not_implemented_exception {"The method or operation is not implemented.", csf_};
+      throw not_implemented_exception {"The method or operation is not implemented."};
     }
   };
 };

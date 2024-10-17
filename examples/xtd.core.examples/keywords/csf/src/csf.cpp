@@ -15,6 +15,10 @@ auto main() -> int {
   trace_message("Something has happened.", csf_);
   // trace_message("Something has happened.", csf_); is same as :
   //
+  // trace_message("Something has happened.", {xtd::source_local::current()});
+  //
+  // or :
+  //
   // trace_message("Something has happened.", {__FILE__, __LINE__, __func__});
 }
 
