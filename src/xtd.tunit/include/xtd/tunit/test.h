@@ -139,7 +139,7 @@ namespace xtd {
       
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
-      xtd::date_time end_time_point;
+      xtd::date_time end_time_point_;
       static test* current_test_;
       static const test_class* current_test_class_;
       static const unit_test* current_unit_test_;
