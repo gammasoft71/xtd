@@ -232,8 +232,6 @@
 | [assert_dialog_result](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/assert_dialog_result.h)               | enumeration  | ![progress](/pictures/progress100.png) |
 | [boolean_switch](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/boolean_switch.h)                           | class        | ![progress](/pictures/progress100.png) |
 | [console_trace_listener](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/console_trace_listener.h)           | class        | ![progress](/pictures/progress100.png) |
-| [csf_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/current_stack_frame.h)                                | keyword      | ![progress](/pictures/progress100.png) |
-| [current_stack_frame_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/current_stack_frame.h)                | keyword      | ![progress](/pictures/progress100.png) |
 | [data_received_event_args](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/data_received_event_args.h)       | class        | ![progress](/pictures/progress100.png) |
 | [data_received_event_handler](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/data_received_event_handler.h) | delegate     | ![progress](/pictures/progress100.png) |
 | [debug](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/diagnostics/debug.h)                                             | static class | ![progress](/pictures/progress100.png) |

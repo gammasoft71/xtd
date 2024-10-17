@@ -78,7 +78,6 @@ xtd.tunit uses custom helpers to identify test fixtures and test methods. It's t
 | [test_cleanup_(cleanup_name)](/docs/documentation/Guides/Overview/Tutorials/test_cleanup)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
 | [test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/test_method)               | Is used to define test method (test case) with method_name name.                                                                         |
 | [ignore_test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/ingore_test_method) | Is used to define ignored test method (test case) with method_name name.                                                                 |
-| [csf_](/docs/documentation/Guides/Overview/Tutorials/csf)                                            | Is used to create a xtd::diagnostics::stack_frame class initialized with current method name, current file name and current line number. |
 
 ### Examples
 
@@ -198,127 +197,6 @@ auto main(int argc, char* argv[]) -> int {
 }
 ```
 
-The following example shows how to get current informations with helper :
-
-```cpp
-#include <xtd/tunit>
-#include <iostream>
-
-using namespace std;
-using namespace xtd::tunit;
-
-void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  cout << "message: " << message << endl;
-  cout << "member name: " << stack_frame.get_method() << endl;
-  cout << "source file path: " << stack_frame.get_file_name() << endl;
-  cout << "source line number: " << stack_frame.get_file_line_number() << endl;
-}
-
-auto main() -> int {
-  trace_message("Something happened.", csf_);
-}
-```
-
-The following example shows how to get same current informations without helper :
-
-```cpp
-#include <xtd/tunit>
-#include <iostream>
-
-using namespace std;
-using namespace xtd::tunit;
-
-void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  cout << "message: " << message << endl;
-  cout << "member name: " << stack_frame.get_method() << endl;
-  cout << "source file path: " << stack_frame.get_file_name() << endl;
-  cout << "source line number: " << stack_frame.get_file_line_number() << endl;
-}
-
-auto main() -> int {
-  trace_message("Something happened.", xtd::diagnostics::stack_frame(__FILE__, __LINE__, __func__));
-}
-```
-
-### More helpers
-
-For each assertion, validation or assumption test method, the last parameter is xtd::diagnostics::stack_frame class that contains current informations.
-To add automatically xtd::diagnostics::stack_frame, helpers are create. Add '_' at the end of test method member to used helper.
-
-example without helper :
-```cpp
-assert::contains('a', str, csf_);
-string_valid::are_equal_ignoring_case("value", str, csf_);
-```
-
-example with helper :
-```cpp
-assert::contains_('a', str);
-string_valid::are_equal_ignoring_case_("value", str);
-```
-
-The following example shows hot to call are_equal assertion tests with helper :
-
-```cpp
-#include <xtd/tunit>
-
-using namespace xtd::tunit;
-
-namespace unit_tests {
-  class test_class_(test) {
-  public:
-    void test_method_(test_case_1) {
-      int i = 24;
-      assert::are_equal_(24, i);
-      assert::are_equal_(24, i, "My message");
-    }
-  };
-}
-
-auto main(int argc, char* argv[]) -> int {
-  return console_unit_test(argv, argc).run();
-}
-```
-
-The following example shows hot to call the same are_equal assertion tests without helper :
-
-```cpp
-#include <xtd/tunit>
-
-using namespace xtd::tunit;
-
-namespace unit_tests {
-  class test_class_(test) {
-  public:
-    void test_method_(test_case_1) {
-      int i = 24;
-      assert::are_equal(24, i, xtd::diagnostics::stack_frame(__FILE__, __LINE__, __func__));
-      assert::are_equal(24, i, "My message", xtd::diagnostics::stack_frame(__FILE__, __LINE__, _-func__));
-    }
-  };
-}
-
-auto main(int argc, char* argv[]) -> int {
-  return console_unit_test(argv, argc).run();
-}
-```
-
-#### Remarks
-
-Some functions are template, in this case the template parameter becomes the first parameter of the helper.
-
-example without helper : 
-
-```cpp
-assert::is_instance_of<std::ios_base>(stream, csf_);
-```
-
-example with helper :
-
-```cpp
-assert::is_instance_of_(std::ios_base, stream);
-```
-
 ## Assertions
 
 Assertions are central to unit testing in any of the xUnit frameworks, and xtd.tunit is no exception. xtd.tunit provides a rich set of assertions as static methods of the Assert class.
@@ -339,8 +217,8 @@ Assertions make use with the following static classes :
 
 ```cpp
 void test_method_(test_case_1) {
-  assert::are_equal(4, 2 + 2, csf_);
-  string_Assert::start_width("Hello", "Hello, World!", csf_)
+  assert::are_equal(4, 2 + 2);
+  string_Assert::start_width("Hello", "Hello, World!")
 }
 ```
 
@@ -362,8 +240,8 @@ Validations make use with the following static classes :
 
 ```cpp
 void test_method_(test_case_1) {
-  valid::are_equal(4, 2 + 2, csf_);
-  string_valid::start_width("Hello", "Hello, World!", csf_)
+  valid::are_equal(4, 2 + 2, );
+  string_valid::start_width("Hello", "Hello, World!")
 }
 ```
 
@@ -383,8 +261,8 @@ Assumptions make use with the following static classes :
 
 ```cpp
 void test_method_(test_case_1) {
-  assume::are_equal(4, 2 + 2, csf_);
-  string_assume::start_width("Hello", "Hello, World!", csf_)
+  assume::are_equal(4, 2 + 2);
+  string_assume::start_width("Hello", "Hello, World!")
 }
 ```
 

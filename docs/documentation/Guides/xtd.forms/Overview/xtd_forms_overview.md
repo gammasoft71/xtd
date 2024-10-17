@@ -1333,7 +1333,7 @@ namespace resources_example::properties {
 
     /// @brief Looks up a localized resource of type xtd::forms::sound.
     static const xtd::object& sound() {
-      throw xtd::not_implemented_exception(current_stack_frame_);
+      throw xtd::not_implemented_exception {};
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
