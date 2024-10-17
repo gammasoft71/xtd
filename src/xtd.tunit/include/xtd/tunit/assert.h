@@ -47,7 +47,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = csf_) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
+      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -60,7 +60,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (actual == expected)
           succeed(message, stack_frame);
         else
@@ -68,16 +68,16 @@ namespace xtd {
       }
       
       /// @cond
-      static void are_equal(const char* expected, const char* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(const char* expected, const char* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void are_equal(const char8* expected, const char8* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(const char8* expected, const char8* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void are_equal(const char16* expected, const char16* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_equal(const char32* expected, const char32* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_equal(float expected, float actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_equal(double expected, double actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_equal(long double expected, long double actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(const char16* expected, const char16* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_equal(const char32* expected, const char32* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_equal(float expected, float actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_equal(double expected, double actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_equal(long double expected, long double actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -91,7 +91,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f,); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f); // test throws an assert_error exception.
       /// ```
-      static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -105,7 +105,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f, "User message..."); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_equal(float expected, float actual, float tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(float expected, float actual, float tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -118,7 +118,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001); // test throws an assert_error exception.
       /// ```
-      static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -132,7 +132,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_equal(double expected, double actual, double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(double expected, double actual, double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -145,7 +145,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.0000000000001l); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.00000000000001l); // test throws an assert_error exception.
       /// ```
-      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -159,7 +159,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.0000000000001l, "User message..."); // test ok.
       /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.00000000000001l, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that two type are not equal.
       /// @param expected the expected value.
@@ -172,7 +172,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_not_equal(24, int(24)); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = csf_) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -185,7 +185,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_not_equal(24, int(24), "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (actual != expected)
           succeed(message, stack_frame);
         else
@@ -193,13 +193,13 @@ namespace xtd {
       }
       
       /// @cond
-      static void are_not_equal(const char* expected, const char* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_not_equal(const char* expected, const char* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void are_not_equal(const char8* expected, const char8* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_not_equal(const char8* expected, const char8* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void are_not_equal(const char16* expected, const char16* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_not_equal(const char32* expected, const char32* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void are_not_equal(const char16* expected, const char16* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_not_equal(const char32* expected, const char32* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -216,7 +216,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_not_same(b, a, stack_frame); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = csf_) {are_not_same(expected, actual, xtd::string::empty_string, stack_frame);}
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_same(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -232,7 +232,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_not_same(b, a, "User message...", stack_frame); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (&actual != &expected)
           succeed(message, stack_frame);
         else
@@ -253,7 +253,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_same(c, a); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = csf_) {are_same(expected, actual, xtd::string::empty_string, stack_frame);}
+      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_same(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -269,7 +269,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_same(c, a, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename expected_t, typename actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (&actual == &expected)
           succeed(message, stack_frame);
         else
@@ -288,7 +288,7 @@ namespace xtd {
       /// xtd::tunit::assert::contains(4, v1); // test throws an assert_error exception.
       /// ```
       template<typename item_t, typename collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = csf_) {contains(item, collection, xtd::string::empty_string, stack_frame);}
+      static void contains(const item_t& item, const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, collection, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -302,7 +302,7 @@ namespace xtd {
       /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename item_t, typename collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void contains(const item_t& item, const collection_t& collection, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto result = std::find(collection.begin(), collection.end(), item);
         if (result != collection.end())
           succeed(message, stack_frame);
@@ -312,22 +312,22 @@ namespace xtd {
       
       /// @cond
       template<typename item_t, typename value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = csf_) {contains(item, values, xtd::string::empty_string, stack_frame);}
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, values, xtd::string::empty_string, stack_frame);}
       template<typename item_t, typename value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto result = std::find(values.begin(), values.end(), item);
         if (result != values.end())
           succeed(message, stack_frame);
         else
           fail("collection containing " + to_string(item), join_items(values), message, stack_frame);
       }
-      static void contains(char item, const char* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void contains(char item, const char* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void contains(char8 item, const char8* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void contains(char8 item, const char8* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void contains(char16 item, const char16* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void contains(char32 item, const char32* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void contains(wchar_t item, const wchar_t* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void contains(char16 item, const char16* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void contains(char32 item, const char32* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void contains(wchar_t item, const wchar_t* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that the staement does not throw an exception.
@@ -340,7 +340,7 @@ namespace xtd {
       /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}); // test ok.
       /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}); // test throws an assert_error exception.
       /// ```
-      static void does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -352,7 +352,7 @@ namespace xtd {
       /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void does_not_throw(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void does_not_throw(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that collection contains an item.
       /// @param value The value to check is empty.
@@ -366,7 +366,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_empty(value, xtd::string::empty_string, stack_frame);}
+      static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -380,7 +380,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::empty(value))
           succeed(message, stack_frame);
         else
@@ -389,21 +389,21 @@ namespace xtd {
       
       /// @cond
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_empty(values, xtd::string::empty_string, stack_frame);}
+      static void is_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(values, xtd::string::empty_string, stack_frame);}
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::empty(values))
           succeed(message, stack_frame);
         else
           fail("collection <empty>", join_items(values), message, stack_frame);
       }
-      static void is_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_empty(const char8* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_empty(const char8* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_empty(const char16* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_empty(const char32* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_empty(const char16* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_empty(const char32* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that a condition is false.
@@ -417,7 +417,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assert_error exception.
       /// ```
-      static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -430,7 +430,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_false(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_false(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -443,7 +443,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_greater(24, 48); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_greater(val1, val2, xtd::string::empty_string, stack_frame);}
+      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -456,7 +456,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_greater(24, 48, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (val1 > val2)
           succeed(message, stack_frame);
         else
@@ -464,13 +464,13 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_greater(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_greater(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_greater(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_greater(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that the first value is greater than or equal to the second value.
@@ -485,7 +485,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_greater_or_equal(24, 48); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_greater_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -499,7 +499,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_greater_or_equal(24, 48, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (val1 >= val2)
           succeed(message, stack_frame);
         else
@@ -507,13 +507,13 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater_or_equal(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater_or_equal(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_greater_or_equal(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater_or_equal(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_greater_or_equal(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_greater_or_equal(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that an object is of the type supplied or a derived type.
@@ -527,7 +527,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except); // test throws an assert_error exception.
       /// ```
       template<typename type_t, typename value_t>
-      static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
+      static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -540,7 +540,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename type_t, typename value_t>
-      static void is_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         const type_t* instance = dynamic_cast<const type_t*>(&value);
         if (instance != nullptr)
           succeed(message, stack_frame);
@@ -559,7 +559,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_less(24, 12); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_less(val1, val2, xtd::string::empty_string, stack_frame);}
+      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -572,7 +572,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_less(24, 12, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (val1 < val2)
           succeed(message, stack_frame);
         else
@@ -580,13 +580,13 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_less(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_less(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_less(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_less(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that the first value is is_less than or equal to the second value.
@@ -601,7 +601,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_less_or_equal(24, 12); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_less_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -615,7 +615,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_less_or_equal(24, 12, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value1_t, typename value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (val1 <= val2)
           succeed(message, stack_frame);
         else
@@ -623,13 +623,13 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less_or_equal(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less_or_equal(const char* val1, const char* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_less_or_equal(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less_or_equal(const char8* val1, const char8* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_less_or_equal(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_less_or_equal(const char32* val1, const char32* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief that a value is NaN.
@@ -643,7 +643,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1); // test ok.
       /// xtd::tunit::assert::is_NaN(v2); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -656,7 +656,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(double value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(double value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param stack_frame Contains information about current file and current line.
@@ -668,7 +668,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1); // test ok.
       /// xtd::tunit::assert::is_NaN(v2); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -681,7 +681,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(long double value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(long double value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param stack_frame Contains information about current file and current line.
@@ -693,7 +693,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1); // test ok.
       /// xtd::tunit::assert::is_NaN(v2); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -706,7 +706,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_NaN(float value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_NaN(float value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that ta condition is negative.
       /// @param value The value to check is negative.
@@ -720,7 +720,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_negative(i2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_negative(value, xtd::string::empty_string, stack_frame);}
+      static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_negative(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -734,7 +734,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_negative(i2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (value < 0)
           succeed(message, stack_frame);
         else
@@ -753,7 +753,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
+      static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -767,7 +767,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (!std::empty(value))
           succeed(message, stack_frame);
         else
@@ -776,21 +776,21 @@ namespace xtd {
       
       /// @cond
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_empty(values, xtd::string::empty_string, stack_frame);}
+      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(values, xtd::string::empty_string, stack_frame);}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (!std::empty(values))
           succeed(message, stack_frame);
         else
           fail("collection not <empty>", "<empty>", message, stack_frame);
       }
-      static void is_not_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_not_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
-      static void is_not_empty(const char8* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_not_empty(const char8* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #endif
-      static void is_not_empty(const char16* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_not_empty(const char32* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
-      static void is_not_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_not_empty(const char16* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_not_empty(const char32* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void is_not_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
       /// @brief Asserts that an object is not of the type supplied or a derived type.
@@ -804,7 +804,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except); // test throws an assert_error exception.
       /// ```
       template<typename type_t, typename value_t>
-      static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
+      static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -817,7 +817,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename type_t, typename value_t>
-      static void is_not_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         const type_t* instance = dynamic_cast<const type_t*>(&value);
         if (instance == nullptr)
           succeed(message, stack_frame);
@@ -838,7 +838,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_not_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -853,7 +853,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
@@ -871,7 +871,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename optional_t>
-      static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_null(opt, xtd::string::empty_string, stack_frame);}
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(opt, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the optional is not std::nullopt.
       /// @param opt The optional to check is std::nullopt.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -885,7 +885,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename optional_t>
-      static void is_not_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (opt != std::nullopt)
           succeed(message, stack_frame);
         else
@@ -903,7 +903,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -917,7 +917,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
@@ -935,7 +935,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -949,7 +949,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
@@ -967,7 +967,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -981,7 +981,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer.owner_before(xtd::wptr<pointer_t> {}) || xtd::wptr<pointer_t> {}.owner_before(pointer))
           succeed(message, stack_frame);
         else
@@ -996,7 +996,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::is_not_null(nullptr); // test throws an assert_error exception.
       /// ```
-      static void is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1007,7 +1007,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::is_not_null(nullptr, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_not_null(std::nullptr_t pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_not_null(std::nullptr_t pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -1021,7 +1021,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_zero(i2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_not_zero(value, xtd::string::empty_string, stack_frame);}
+      static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1035,7 +1035,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_zero(i2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (value != static_cast<value_t>(0))
           succeed(message, stack_frame);
         else
@@ -1055,7 +1055,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1070,7 +1070,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
@@ -1088,7 +1088,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename optional_t>
-      static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_null(opt, xtd::string::empty_string, stack_frame);}
+      static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(opt, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the optional is std::nullopt.
       /// @param opt The optional to check is std::nullopt.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1102,7 +1102,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename optional_t>
-      static void is_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (opt == std::nullopt)
           succeed(message, stack_frame);
         else
@@ -1120,7 +1120,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1134,7 +1134,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
@@ -1152,7 +1152,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1166,7 +1166,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
@@ -1185,7 +1185,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1200,7 +1200,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (!pointer.owner_before(xtd::wptr<pointer_t> {}) && !xtd::wptr<pointer_t> {}.owner_before(pointer))
           succeed(message, stack_frame);
         else
@@ -1215,7 +1215,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::is_null(nullptr); // test ok.
       /// ```
-      static void is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1226,7 +1226,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::is_null(nullptr, "User message..."); // test ok.
       /// ```
-      static void is_null(std::nullptr_t pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_null(std::nullptr_t pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that ta condition is positive.
       /// @param value The value to check is positive.
@@ -1240,7 +1240,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_positive(i2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_positive(value, xtd::string::empty_string, stack_frame);}
+      static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_positive(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1254,7 +1254,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_positive(i2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (value > 0)
           succeed(message, stack_frame);
         else
@@ -1272,7 +1272,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assert_error exception.
       /// ```
-      static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1285,7 +1285,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assert_error exception.
       /// ```
-      static void is_true(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void is_true(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
       /// @brief Asserts that ta condition is zero.
       /// @param value The value to check is zero.
@@ -1299,7 +1299,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_zero(i2); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = csf_) {is_zero(value, xtd::string::empty_string, stack_frame);}
+      static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1313,7 +1313,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_zero(i2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename value_t>
-      static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (value == static_cast<value_t>(0))
           succeed(message, stack_frame);
         else
@@ -1332,7 +1332,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an assert_error exception.
       /// ```
       template<typename exception_t>
-      static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = csf_) {throws<exception_t>(statement, xtd::string::empty_string, stack_frame);}
+      static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {throws<exception_t>(statement, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
@@ -1346,7 +1346,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename exception_t>
-      static void throws(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_) {
+      static void throws(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           statement();
           fail("<" + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
@@ -1371,7 +1371,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws_any([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}); // test throws an assert_error exception.
       /// ```
-      static void throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1383,7 +1383,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void throws_any(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = csf_);
+      static void throws_any(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
     private:

@@ -65,28 +65,16 @@ void trace::use_global_lock(bool use_global_lock) noexcept {
   use_global_lock_ = use_global_lock;
 }
 
-void trace::cassert(bool condition) {
-  if (__should_aborted__(condition, string::empty_string, csf_)) __xtd_debugbreak();
-}
-
-void trace::cassert(bool condition, const string& message) {
-  if (__should_aborted__(condition, message, csf_)) __xtd_debugbreak();
+void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, string::empty_string, stack_frame)) __xtd_debugbreak();
 }
 
 void trace::cassert(bool condition, const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) __xtd_debugbreak();
 }
 
-void trace::cassert(bool condition, const string& message, const string& detail_message) {
-  if (__should_aborted__(condition, message, detail_message, csf_)) __xtd_debugbreak();
-}
-
 void trace::cassert(bool condition, const string& message, const string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, detail_message, stack_frame)) __xtd_debugbreak();
-}
-
-void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, string::empty_string, stack_frame)) __xtd_debugbreak();
 }
 
 void trace::indent() noexcept {

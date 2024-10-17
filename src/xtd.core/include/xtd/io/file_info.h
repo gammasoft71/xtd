@@ -105,7 +105,7 @@ namespace xtd {
       /// std::vector<char> open_data_file(const string& file_name) {
       ///   // Check the FileName argument.
       ///   if (file_name.size() == 0)
-      ///     throw argument_exception("file_name", csf_);
+      ///     throw argument_exception("file_name");
       ///
       ///   // Check to see if the file exists.
       ///   file_info f_info(file_name);
@@ -113,7 +113,7 @@ namespace xtd {
       ///   // You can throw a personalized exception if
       ///   // the file does not exist.
       ///   if (!f_info.exists())
-      ///     throw file_not_found_exception("The file was not found.", csf_);
+      ///     throw file_not_found_exception("The file was not found.");
       ///
       ///   // Open the file.
       ///   std::ifstream f_stream(file_name, std::ios::binary);
