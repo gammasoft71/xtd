@@ -23,16 +23,9 @@ namespace xtd {
       /// @param name The name of the test initialize attribute.
       /// @param test_class The test_class that will contians the test initialize attribute.
       /// @param method The test initialize method.
-      template<typename test_class_t>
-      test_initialize_attribute(const xtd::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_initialize_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
-      
-      /// @brief Creates a new instance of test_initialize_attribute with specified name, test_class and method.
-      /// @param name The name of the test initialize attribute.
-      /// @param test_class The test_class that will contians the test initialize attribute.
-      /// @param method The test initialize method.
       /// @param stack_frame The stack frame of test initialize method.
       template<typename test_class_t>
-      test_initialize_attribute(const xtd::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
+      test_initialize_attribute(const xtd::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
       /// @}
     };
   }
@@ -48,7 +41,7 @@ namespace xtd {
   __##method_name##_unused() = delete; \
   class __test_initialize_attribute : public xtd::tunit::test_initialize_attribute { \
   public:\
-    template<typename test_class> __test_initialize_attribute(test_class& test) : test_initialize_attribute(#method_name, test, &test_class::method_name, {__FILE__, __LINE__, __func__}) {} \
+    template<typename test_class> __test_initialize_attribute(test_class& test) : test_initialize_attribute(#method_name, test, &test_class::method_name) {} \
   } __test_initialize_attribute {*this}; \
   static void method_name()
 
