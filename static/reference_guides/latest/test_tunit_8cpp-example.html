@@ -88,7 +88,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#define ASSERT_TRUE2(condition) \</span></div>
 <div class="line"><span class="preprocessor">struct __TESTER__##__LINE__ { \</span></div>
-<div class="line"><span class="preprocessor">  ~__TESTER__##__LINE__() {xtd::tunit::assume::is_true(condition, message_, csf_);} \</span></div>
+<div class="line"><span class="preprocessor">  ~__TESTER__##__LINE__() {xtd::tunit::assume::is_true(condition, message_);} \</span></div>
 <div class="line"><span class="preprocessor">  __TESTER__##__LINE__&amp; operator &lt;&lt;(const xtd::string&amp; message) {message_ = message; return *this;} \</span></div>
 <div class="line"><span class="preprocessor">  xtd::string message_; \</span></div>
 <div class="line"><span class="preprocessor">} __tester__##__LINE__; __tester__##__LINE__</span></div>
@@ -99,8 +99,8 @@ $(function() {
 <div class="line">  TEST(class1, DISABLED_method2) {ASSERT_TRUE2(<span class="keyword">true</span>);}</div>
 <div class="line">  TEST(class1, method3) {<span class="comment">//ASSERT_TRUE2(false) &lt;&lt; &quot;Invalid value&quot;;</span></div>
 <div class="line">    <span class="keyword">struct </span>__TESTER__ {</div>
-<div class="line">      ~__TESTER__() {<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a5c48682d12f9aa2e4d1a2f3a8f5d3f37">xtd::tunit::assume::is_true</a>(<span class="keyword">false</span>, message_, <a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);}</div>
-<div class="line">      __TESTER__&amp; operator &lt;&lt;(<span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message) {message_ = message; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line">      ~__TESTER__() {<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a4853b7a002d7f34a5a153bbe65c73bd1">xtd::tunit::assume::is_true</a>(<span class="keyword">false</span>, message_);}</div>
+<div class="line">      __TESTER__&amp; operator &lt;&lt;(<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message) {message_ = message; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a> message_;</div>
 <div class="line">    } __tester__;</div>
 <div class="line">    __tester__ &lt;&lt; <span class="stringliteral">&quot;Invalid value&quot;</span>;</div>
@@ -115,13 +115,12 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html"><div class="ttname"><a href="classxtd_1_1basic__string.html">xtd::basic_string</a></div><div class="ttdoc">Represents text as a sequence of character units.</div><div class="ttdef"><b>Definition</b> basic_string.h:79</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a5c48682d12f9aa2e4d1a2f3a8f5d3f37"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a5c48682d12f9aa2e4d1a2f3a8f5d3f37">xtd::tunit::assume::is_true</a></div><div class="ttdeci">static void is_true(bool condition)</div><div class="ttdoc">Assumes that ta condition is true.</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a4853b7a002d7f34a5a153bbe65c73bd1"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a4853b7a002d7f34a5a153bbe65c73bd1">xtd::tunit::assume::is_true</a></div><div class="ttdeci">static void is_true(bool condition, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that a condition is true.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 15 2024 21:31:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 14:13:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

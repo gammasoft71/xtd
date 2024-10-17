@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> (text[index] == <span class="charliteral">&#39;/&#39;</span> &amp;&amp; text[index + 1] == <span class="charliteral">&#39;*&#39;</span>) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>              <span class="comment">// Skip comments...</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>              index = text.index_of(<span class="stringliteral">&quot;*/&quot;</span>, index + 2);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>              <span class="keywordflow">if</span> (index == text.npos) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;expected end comment&quot;</span>_t, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>              <span class="keywordflow">if</span> (index == text.npos) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;expected end comment&quot;</span>_t);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>              index++;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>              start_index = index + 1;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>              <span class="keywordflow">continue</span>;</div>
@@ -139,12 +139,12 @@ $(function() {
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>              status = parse_status::selector;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status == parse_status::key &amp;&amp; text[index] == <span class="charliteral">&#39;:&#39;</span>) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>              current_key = text.substring(start_index, index - start_index).trim().to_lower();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>              <span class="keywordflow">if</span> (current_key.<a class="code hl_function" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e">empty</a>()) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;key cannot be empty&quot;</span>_t, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>              <span class="keywordflow">if</span> (current_key.<a class="code hl_function" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e">empty</a>()) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;key cannot be empty&quot;</span>_t);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>              start_index = index + 1;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>              status = parse_status::value;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status == parse_status::value &amp;&amp; text[index] == <span class="charliteral">&#39;;&#39;</span>) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>              <span class="keyword">auto</span> value = text.substring(start_index, index - start_index).trim();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>              <span class="keywordflow">if</span> (value.empty()) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;value cannot be empty&quot;</span>_t, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>              <span class="keywordflow">if</span> (value.empty()) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a>(<span class="stringliteral">&quot;value cannot be empty&quot;</span>_t);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>              start_index = index + 1;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>              current_selector.properties()[current_key] = <a class="code hl_class" href="classxtd_1_1web_1_1css_1_1property.html">property</a>(value);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>              status = parse_status::key;</div>
@@ -167,7 +167,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1web_1_1css_1_1css__reader_html"><div class="ttname"><a href="classxtd_1_1web_1_1css_1_1css__reader.html">xtd::web::css::css_reader</a></div><div class="ttdef"><b>Definition</b> css_reader.h:16</div></div>
 <div class="ttc" id="aclassxtd_1_1web_1_1css_1_1property_html"><div class="ttname"><a href="classxtd_1_1web_1_1css_1_1property.html">xtd::web::css::property</a></div><div class="ttdef"><b>Definition</b> property.h:13</div></div>
 <div class="ttc" id="aclassxtd_1_1web_1_1css_1_1selector_html"><div class="ttname"><a href="classxtd_1_1web_1_1css_1_1selector.html">xtd::web::css::selector</a></div><div class="ttdef"><b>Definition</b> selector.h:12</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="aselector__map_8h_html"><div class="ttname"><a href="selector__map_8h.html">selector_map.h</a></div><div class="ttdoc">Contains xtd::web::css::selector_map alias.</div></div>
 <div class="ttc" id="aselector__map_8h_html_a0c2b331b8b4c08aef1da20f10384fba2"><div class="ttname"><a href="selector__map_8h.html#a0c2b331b8b4c08aef1da20f10384fba2">xtd::web::css::selector_map</a></div><div class="ttdeci">std::map&lt; xtd::string, xtd::web::css::selector &gt; selector_map</div><div class="ttdoc">Represents the map of a selector name - selector pair.</div><div class="ttdef"><b>Definition</b> selector_map.h:13</div></div>
@@ -175,7 +174,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 15 2024 21:31:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 14:13:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
