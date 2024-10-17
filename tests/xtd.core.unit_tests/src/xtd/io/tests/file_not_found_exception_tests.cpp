@@ -49,7 +49,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(default_constructor_with_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -88,7 +88,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_nullopt_message_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -127,7 +127,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_message_empty_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"", stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -166,7 +166,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_message_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"Test excpetion message.", stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -205,7 +205,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_nullopt_message_nullopt_file_name_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, nullopt, stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -245,7 +245,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_nullopt_message_file_name_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, "my_file.txt", stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_not_null(e.file_name());
@@ -286,7 +286,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(constructor_with_message_file_name_and_stack_frame) {
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"Test excpetion message.", "my_file.txt", stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_not_null(e.file_name());
@@ -330,7 +330,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, inner_exception, stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -374,7 +374,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"Test excpetion message.", inner_exception, stack_frame};
       assert::is_null(e.file_name());
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
@@ -419,7 +419,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_nullopt_message_nullopt_file_name_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, nullopt, inner_exception, stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_null(e.file_name());
@@ -463,7 +463,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_message_nullopt_file_name_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"Test excpetion message.", nullopt, inner_exception, stack_frame};
       assert::is_null(e.file_name());
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
@@ -509,7 +509,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_nullopt_message_file_name_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {nullopt, "my_file.txt", inner_exception, stack_frame};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
       assert::is_not_null(e.file_name());
@@ -555,7 +555,7 @@ namespace xtd::io::tests {
     
     void test_method_(constructor_with_message_file_name_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
-      auto stack_frame = current_stack_frame_;
+      auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = file_not_found_exception {"Test excpetion message.", "my_file.txt", inner_exception, stack_frame};
       assert::is_not_null(e.file_name());
       assert::are_equal("my_file.txt", e.file_name().value());

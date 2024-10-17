@@ -5,6 +5,7 @@
 #include <xtd/diagnostics/debug_break>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -17,7 +18,7 @@ public:
     button1.auto_size(true);
     button1.text("assert...");
     button1.click += [&] {
-      switch(assert_box::show(*this, "Index must be > 0")) {
+      switch(assert_box::show(*this, "Index must be > 0", stack_frame::current())) {
         case forms::dialog_result::abort: application::exit(); break;
         case forms::dialog_result::retry: debug_break_(); break;
         default: break;

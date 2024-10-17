@@ -44,13 +44,10 @@ assert_dialog& assert_dialog::message(const string& message) {
 }
 
 diagnostics::stack_frame assert_dialog::stack_frame() const noexcept {
-  return data_->stack_frame;
+  return diagnostics::stack_frame {};
 }
 
 assert_dialog& assert_dialog::stack_frame(const diagnostics::stack_frame& stack_frame) {
-  if (data_->stack_frame == stack_frame) return *this;
-  data_->stack_frame = stack_frame;
-  set_message();
   return *this;
 }
 
@@ -65,19 +62,27 @@ void assert_dialog::reset() noexcept {
   set_message();
 }
 
-xtd::forms::dialog_result assert_dialog::show_dialog() {
+xtd::forms::dialog_result assert_dialog::show_dialog(const xtd::diagnostics::stack_frame& stack_frame) {
+  data_->stack_frame = stack_frame;
+  set_message();
   return data_->dialog.show_dialog();
 }
 
-xtd::forms::dialog_result assert_dialog::show_dialog(const iwin32_window& owner) {
+xtd::forms::dialog_result assert_dialog::show_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame) {
+  data_->stack_frame = stack_frame;
+  set_message();
   return data_->dialog.show_dialog(owner);
 }
 
-void assert_dialog::show_sheet(const iwin32_window& owner) {
+void assert_dialog::show_sheet(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame) {
+  data_->stack_frame = stack_frame;
+  set_message();
   data_->dialog.show_sheet(owner);
 }
 
-forms::dialog_result assert_dialog::show_sheet_dialog(const iwin32_window& owner) {
+forms::dialog_result assert_dialog::show_sheet_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame) {
+  data_->stack_frame = stack_frame;
+  set_message();
   return data_->dialog.show_sheet_dialog(owner);
 }
 

@@ -67,11 +67,15 @@ namespace xtd {
       assert_dialog& message(const xtd::string& value);
 
       /// @brief Gets stack frame.
-      /// @return The stzack frame.
+      /// @return The stack frame.
+      /// @deprecated Will be removed in version 0.4.0.
+      [[deprecated("Will be removed in version 0.4.0.")]]
       xtd::diagnostics::stack_frame stack_frame() const noexcept;
       /// @brief Sets stack frame.
       /// @param value The stack frame.
       /// @return Current assert_dialog instance.
+      /// @deprecated Use "Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.")]]
       assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
       /// @}
       
@@ -82,16 +86,16 @@ namespace xtd {
       void reset() noexcept;
       
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_dialog();
+      xtd::forms::dialog_result show_dialog(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_dialog(const iwin32_window& owner);
+      xtd::forms::dialog_result show_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 
       /// @brief Runs assert dialog box.
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
-      void show_sheet(const iwin32_window& owner);
+      void show_sheet(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
       /// @name Public Events

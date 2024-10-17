@@ -40,39 +40,27 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief Displays a assert box in front of the specified window. The assert box displays an unknown assert.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
-      static dialog_result show(const iwin32_window& owner);
-      /// @brief Displays a assert box in front of the specified window. The assert box displays a specified caption and unknown assert.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
-      /// @param message A string that specifies the message to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::string& message);
       /// @brief Displays a assert box in front of the specified window. The assert box displays a specified assert.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame);
+      static dialog_result show(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Displays a assert box in front of the specified window. The assert box displays a specified assert and caption.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param message A string that specifies the message to display.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static dialog_result show(const iwin32_window& owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
-      /// @brief Displays a assert box. The assert box displays an unknown assert.
-      static dialog_result show();
-      /// @brief Displays a assert box. The assert box displays a specified caption and unknown assert.
-      /// @param message A string that specifies the message to display.
-      static dialog_result show(const xtd::string& message);
       /// @brief Displays a assert box. The assert box displays a specified assert.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const xtd::diagnostics::stack_frame& stack_frame);
+      static dialog_result show(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Displays a assert box. The assert box displays a specified assert and caption.
       /// @param message A string that specifies the message to display.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static dialog_result show(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
     private:
-      static dialog_result show_assert_box(const iwin32_window* owner, const xtd::string& message = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static dialog_result show_assert_box(const iwin32_window* owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
     };
   }
 }
