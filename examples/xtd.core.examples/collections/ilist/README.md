@@ -1,6 +1,6 @@
 # ilist
 
-Shows how to use [xtd::collections:: ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4) interface.
+Shows how to use [xtd::collections::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4) interface.
 
 ## Sources
 
