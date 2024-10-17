@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__lj.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,27 +90,141 @@ $(document).ready(function(){initNavTree('group__lj.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga705df955740f805b7fb6ea8bcef6b5f3"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj_ga705df955740f805b7fb6ea8bcef6b5f3.html#ga705df955740f805b7fb6ea8bcef6b5f3">LJ_MITER</a></td></tr>
+<tr class="memitem:ga705df955740f805b7fb6ea8bcef6b5f3"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj.html#ga705df955740f805b7fb6ea8bcef6b5f3">LJ_MITER</a></td></tr>
 <tr class="memdesc:ga705df955740f805b7fb6ea8bcef6b5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a mitered join. This produces a sharp corner or a clipped corner, depending on whether the length of the miter exceeds the miter limit.  <br /></td></tr>
 <tr class="separator:ga705df955740f805b7fb6ea8bcef6b5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8953a74f1d3480dba066a30f33b579e4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj_ga8953a74f1d3480dba066a30f33b579e4.html#ga8953a74f1d3480dba066a30f33b579e4">LJ_BEVEL</a></td></tr>
+<tr class="memitem:ga8953a74f1d3480dba066a30f33b579e4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj.html#ga8953a74f1d3480dba066a30f33b579e4">LJ_BEVEL</a></td></tr>
 <tr class="memdesc:ga8953a74f1d3480dba066a30f33b579e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a beveled join. This produces a diagonal corner.  <br /></td></tr>
 <tr class="separator:ga8953a74f1d3480dba066a30f33b579e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4cac388687d77ba059c4219cc700329d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj_ga4cac388687d77ba059c4219cc700329d.html#ga4cac388687d77ba059c4219cc700329d">LJ_ROUND</a></td></tr>
+<tr class="memitem:ga4cac388687d77ba059c4219cc700329d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj.html#ga4cac388687d77ba059c4219cc700329d">LJ_ROUND</a></td></tr>
 <tr class="memdesc:ga4cac388687d77ba059c4219cc700329d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a circular join. This produces a smooth, circular arc between the lines.  <br /></td></tr>
 <tr class="separator:ga4cac388687d77ba059c4219cc700329d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabad00023a31131f50d14b4e8d1d52df1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj_gabad00023a31131f50d14b4e8d1d52df1.html#gabad00023a31131f50d14b4e8d1d52df1">LJ_MITER_CLIPPED</a></td></tr>
+<tr class="memitem:gabad00023a31131f50d14b4e8d1d52df1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lj.html#gabad00023a31131f50d14b4e8d1d52df1">LJ_MITER_CLIPPED</a></td></tr>
 <tr class="memdesc:gabad00023a31131f50d14b4e8d1d52df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a mitered join. This produces a sharp corner or a beveled corner, depending on whether the length of the miter exceeds the miter limit.  <br /></td></tr>
 <tr class="separator:gabad00023a31131f50d14b4e8d1d52df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga705df955740f805b7fb6ea8bcef6b5f3" name="ga705df955740f805b7fb6ea8bcef6b5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga705df955740f805b7fb6ea8bcef6b5f3">&#9670;&#160;</a></span>LJ_MITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> LJ_MITER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/line_joins.h&gt;</code></p>
+
+<p>Specifies a mitered join. This produces a sharp corner or a clipped corner, depending on whether the length of the miter exceeds the miter limit. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8953a74f1d3480dba066a30f33b579e4" name="ga8953a74f1d3480dba066a30f33b579e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8953a74f1d3480dba066a30f33b579e4">&#9670;&#160;</a></span>LJ_BEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> LJ_BEVEL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/line_joins.h&gt;</code></p>
+
+<p>Specifies a beveled join. This produces a diagonal corner. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4cac388687d77ba059c4219cc700329d" name="ga4cac388687d77ba059c4219cc700329d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4cac388687d77ba059c4219cc700329d">&#9670;&#160;</a></span>LJ_ROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> LJ_ROUND</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/line_joins.h&gt;</code></p>
+
+<p>Specifies a circular join. This produces a smooth, circular arc between the lines. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gabad00023a31131f50d14b4e8d1d52df1" name="gabad00023a31131f50d14b4e8d1d52df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabad00023a31131f50d14b4e8d1d52df1">&#9670;&#160;</a></span>LJ_MITER_CLIPPED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a> LJ_MITER_CLIPPED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;xtd.drawing.native/include/xtd/drawing/native/line_joins.h&gt;</code></p>
+
+<p>Specifies a mitered join. This produces a sharp corner or a beveled corner, depending on whether the length of the miter exceeds the miter limit. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1native.html" title="The xtd::drawing::native namespace contains internal native API definitions to access underlying tool...">xtd.drawing.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1environment.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1environment.html
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1environment.html">environment</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1environment-members.html">List of all members</a>  </div>
@@ -111,124 +95,1300 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1environment.html
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a01133663793148cf425e8ecea5e4fd6b"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a01133663793148cf425e8ecea5e4fd6b.html#a01133663793148cf425e8ecea5e4fd6b">at_quick_exit</a> (void(*on_quick_exit)(void))</td></tr>
-<tr class="memdesc:a01133663793148cf425e8ecea5e4fd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the function pointed to by func to be called on quick program termination (via <a class="el" href="classxtd_1_1native_1_1environment_ad9cb753538d258fa2003cc800371f3cb.html#ad9cb753538d258fa2003cc800371f3cb" title="Terminates this process and returns an exit code to the operating system without completely cleaning ...">xtd::native::environment::quick_exit</a>).  <br /></td></tr>
+<tr class="memitem:a01133663793148cf425e8ecea5e4fd6b"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a01133663793148cf425e8ecea5e4fd6b">at_quick_exit</a> (void(*on_quick_exit)(void))</td></tr>
+<tr class="memdesc:a01133663793148cf425e8ecea5e4fd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the function pointed to by func to be called on quick program termination (via <a class="el" href="classxtd_1_1native_1_1environment.html#ad9cb753538d258fa2003cc800371f3cb" title="Terminates this process and returns an exit code to the operating system without completely cleaning ...">xtd::native::environment::quick_exit</a>).  <br /></td></tr>
 <tr class="separator:a01133663793148cf425e8ecea5e4fd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac062f4243c6bc4bb4c37a0d5483f4e5d"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ac062f4243c6bc4bb4c37a0d5483f4e5d.html#ac062f4243c6bc4bb4c37a0d5483f4e5d">get_command_line_args</a> ()</td></tr>
+<tr class="memitem:ac062f4243c6bc4bb4c37a0d5483f4e5d"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ac062f4243c6bc4bb4c37a0d5483f4e5d">get_command_line_args</a> ()</td></tr>
 <tr class="memdesc:ac062f4243c6bc4bb4c37a0d5483f4e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
 <tr class="separator:ac062f4243c6bc4bb4c37a0d5483f4e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d4afcc53d1f05ba8c090d578d703579"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a5d4afcc53d1f05ba8c090d578d703579.html#a5d4afcc53d1f05ba8c090d578d703579">get_desktop_environment</a> ()</td></tr>
+<tr class="memitem:a5d4afcc53d1f05ba8c090d578d703579"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a5d4afcc53d1f05ba8c090d578d703579">get_desktop_environment</a> ()</td></tr>
 <tr class="memdesc:a5d4afcc53d1f05ba8c090d578d703579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the desktop environment name.  <br /></td></tr>
 <tr class="separator:a5d4afcc53d1f05ba8c090d578d703579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f644a18199c0cb68719b83bb09757a4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a6f644a18199c0cb68719b83bb09757a4.html#a6f644a18199c0cb68719b83bb09757a4">get_desktop_theme</a> ()</td></tr>
+<tr class="memitem:a6f644a18199c0cb68719b83bb09757a4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a6f644a18199c0cb68719b83bb09757a4">get_desktop_theme</a> ()</td></tr>
 <tr class="memdesc:a6f644a18199c0cb68719b83bb09757a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the desktop theme name.  <br /></td></tr>
 <tr class="separator:a6f644a18199c0cb68719b83bb09757a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7b46d149f9235a564a095a87cb90c4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a0e7b46d149f9235a564a095a87cb90c4.html#a0e7b46d149f9235a564a095a87cb90c4">get_distribution_bug_report</a> ()</td></tr>
+<tr class="memitem:a0e7b46d149f9235a564a095a87cb90c4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a0e7b46d149f9235a564a095a87cb90c4">get_distribution_bug_report</a> ()</td></tr>
 <tr class="memdesc:a0e7b46d149f9235a564a095a87cb90c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution bug report url.  <br /></td></tr>
 <tr class="separator:a0e7b46d149f9235a564a095a87cb90c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76003cd8a971e5698359298d4250db41"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a76003cd8a971e5698359298d4250db41.html#a76003cd8a971e5698359298d4250db41">get_distribution_code_name</a> ()</td></tr>
+<tr class="memitem:a76003cd8a971e5698359298d4250db41"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a76003cd8a971e5698359298d4250db41">get_distribution_code_name</a> ()</td></tr>
 <tr class="memdesc:a76003cd8a971e5698359298d4250db41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution code name.  <br /></td></tr>
 <tr class="separator:a76003cd8a971e5698359298d4250db41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeebc02e22ad1f9ea40e2b74c8f108c3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_aaeebc02e22ad1f9ea40e2b74c8f108c3.html#aaeebc02e22ad1f9ea40e2b74c8f108c3">get_distribution_description</a> ()</td></tr>
+<tr class="memitem:aaeebc02e22ad1f9ea40e2b74c8f108c3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#aaeebc02e22ad1f9ea40e2b74c8f108c3">get_distribution_description</a> ()</td></tr>
 <tr class="memdesc:aaeebc02e22ad1f9ea40e2b74c8f108c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution description.  <br /></td></tr>
 <tr class="separator:aaeebc02e22ad1f9ea40e2b74c8f108c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad43ccc32cbd7435c0b33704517222407"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ad43ccc32cbd7435c0b33704517222407.html#ad43ccc32cbd7435c0b33704517222407">get_distribution_home</a> ()</td></tr>
+<tr class="memitem:ad43ccc32cbd7435c0b33704517222407"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ad43ccc32cbd7435c0b33704517222407">get_distribution_home</a> ()</td></tr>
 <tr class="memdesc:ad43ccc32cbd7435c0b33704517222407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution home url.  <br /></td></tr>
 <tr class="separator:ad43ccc32cbd7435c0b33704517222407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b9174517b4d4bdfc81f446f9d80defa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a9b9174517b4d4bdfc81f446f9d80defa.html#a9b9174517b4d4bdfc81f446f9d80defa">get_distribution_id</a> ()</td></tr>
+<tr class="memitem:a9b9174517b4d4bdfc81f446f9d80defa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a9b9174517b4d4bdfc81f446f9d80defa">get_distribution_id</a> ()</td></tr>
 <tr class="memdesc:a9b9174517b4d4bdfc81f446f9d80defa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution identifier.  <br /></td></tr>
 <tr class="separator:a9b9174517b4d4bdfc81f446f9d80defa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a04ee30ceff179a8a4f0a50f80a5c4"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a84a04ee30ceff179a8a4f0a50f80a5c4.html#a84a04ee30ceff179a8a4f0a50f80a5c4">get_distribution_like_ids</a> ()</td></tr>
+<tr class="memitem:a84a04ee30ceff179a8a4f0a50f80a5c4"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a84a04ee30ceff179a8a4f0a50f80a5c4">get_distribution_like_ids</a> ()</td></tr>
 <tr class="memdesc:a84a04ee30ceff179a8a4f0a50f80a5c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution like identifiers array.  <br /></td></tr>
 <tr class="separator:a84a04ee30ceff179a8a4f0a50f80a5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a307e35b034d089d01a5aaca824d048d6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a307e35b034d089d01a5aaca824d048d6.html#a307e35b034d089d01a5aaca824d048d6">get_distribution_name</a> ()</td></tr>
+<tr class="memitem:a307e35b034d089d01a5aaca824d048d6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a307e35b034d089d01a5aaca824d048d6">get_distribution_name</a> ()</td></tr>
 <tr class="memdesc:a307e35b034d089d01a5aaca824d048d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution name.  <br /></td></tr>
 <tr class="separator:a307e35b034d089d01a5aaca824d048d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8634df732704fdfa7ac0f19024a910"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a8c8634df732704fdfa7ac0f19024a910.html#a8c8634df732704fdfa7ac0f19024a910">get_distribution_version</a> (int32_t &amp;major, int32_t &amp;minor, int32_t &amp;build, int32_t &amp;revision)</td></tr>
+<tr class="memitem:a8c8634df732704fdfa7ac0f19024a910"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a8c8634df732704fdfa7ac0f19024a910">get_distribution_version</a> (int32_t &amp;major, int32_t &amp;minor, int32_t &amp;build, int32_t &amp;revision)</td></tr>
 <tr class="memdesc:a8c8634df732704fdfa7ac0f19024a910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the distribution.  <br /></td></tr>
 <tr class="separator:a8c8634df732704fdfa7ac0f19024a910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f430af680fce89269b5332a7baa9bfa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a9f430af680fce89269b5332a7baa9bfa.html#a9f430af680fce89269b5332a7baa9bfa">get_distribution_version_string</a> ()</td></tr>
+<tr class="memitem:a9f430af680fce89269b5332a7baa9bfa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a9f430af680fce89269b5332a7baa9bfa">get_distribution_version_string</a> ()</td></tr>
 <tr class="memdesc:a9f430af680fce89269b5332a7baa9bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distribution version string.  <br /></td></tr>
 <tr class="separator:a9f430af680fce89269b5332a7baa9bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1aac4b3f1078ef6b579e673f1775881"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ae1aac4b3f1078ef6b579e673f1775881.html#ae1aac4b3f1078ef6b579e673f1775881">get_environment_variables</a> (int32_t target)</td></tr>
+<tr class="memitem:ae1aac4b3f1078ef6b579e673f1775881"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ae1aac4b3f1078ef6b579e673f1775881">get_environment_variables</a> (int32_t target)</td></tr>
 <tr class="memdesc:ae1aac4b3f1078ef6b579e673f1775881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
 <tr class="separator:ae1aac4b3f1078ef6b579e673f1775881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc0454e7127c769eda071d1c906c80f8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_abc0454e7127c769eda071d1c906c80f8.html#abc0454e7127c769eda071d1c906c80f8">get_environment_variable</a> (const std::string &amp;variable, int32_t target)</td></tr>
+<tr class="memitem:abc0454e7127c769eda071d1c906c80f8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#abc0454e7127c769eda071d1c906c80f8">get_environment_variable</a> (const std::string &amp;variable, int32_t target)</td></tr>
 <tr class="memdesc:abc0454e7127c769eda071d1c906c80f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process.  <br /></td></tr>
 <tr class="separator:abc0454e7127c769eda071d1c906c80f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079600a22434ce40425b6cd6b2965a56"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a079600a22434ce40425b6cd6b2965a56.html#a079600a22434ce40425b6cd6b2965a56">get_know_folder_path</a> (int32_t csidl)</td></tr>
+<tr class="memitem:a079600a22434ce40425b6cd6b2965a56"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a079600a22434ce40425b6cd6b2965a56">get_know_folder_path</a> (int32_t csidl)</td></tr>
 <tr class="memdesc:a079600a22434ce40425b6cd6b2965a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the system special folder that is identified by the specified enumeration.  <br /></td></tr>
 <tr class="separator:a079600a22434ce40425b6cd6b2965a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7d0436bd82150a87c957846a150917"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_add7d0436bd82150a87c957846a150917.html#add7d0436bd82150a87c957846a150917">get_machine_name</a> ()</td></tr>
+<tr class="memitem:add7d0436bd82150a87c957846a150917"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#add7d0436bd82150a87c957846a150917">get_machine_name</a> ()</td></tr>
 <tr class="memdesc:add7d0436bd82150a87c957846a150917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the NetBIOS name of this local computer.  <br /></td></tr>
 <tr class="separator:add7d0436bd82150a87c957846a150917"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f6381109d27c111d0ec6a60b16d29d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a89f6381109d27c111d0ec6a60b16d29d.html#a89f6381109d27c111d0ec6a60b16d29d">get_os_platform_id</a> ()</td></tr>
+<tr class="memitem:a89f6381109d27c111d0ec6a60b16d29d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a89f6381109d27c111d0ec6a60b16d29d">get_os_platform_id</a> ()</td></tr>
 <tr class="memdesc:a89f6381109d27c111d0ec6a60b16d29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a platform id that identifies the operating system platform.  <br /></td></tr>
 <tr class="separator:a89f6381109d27c111d0ec6a60b16d29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd666c5e32a10cd62176b79abdd2f1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a6dd666c5e32a10cd62176b79abdd2f1f.html#a6dd666c5e32a10cd62176b79abdd2f1f">get_os_version</a> (int32_t &amp;major, int32_t &amp;minor, int32_t &amp;build, int32_t &amp;revision)</td></tr>
+<tr class="memitem:a6dd666c5e32a10cd62176b79abdd2f1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a6dd666c5e32a10cd62176b79abdd2f1f">get_os_version</a> (int32_t &amp;major, int32_t &amp;minor, int32_t &amp;build, int32_t &amp;revision)</td></tr>
 <tr class="memdesc:a6dd666c5e32a10cd62176b79abdd2f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the operating system.  <br /></td></tr>
 <tr class="separator:a6dd666c5e32a10cd62176b79abdd2f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56e1a2a5fab5b850c879eab201bc2089"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a56e1a2a5fab5b850c879eab201bc2089.html#a56e1a2a5fab5b850c879eab201bc2089">get_processor_count</a> ()</td></tr>
+<tr class="memitem:a56e1a2a5fab5b850c879eab201bc2089"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a56e1a2a5fab5b850c879eab201bc2089">get_processor_count</a> ()</td></tr>
 <tr class="memdesc:a56e1a2a5fab5b850c879eab201bc2089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of processors on the current machine.  <br /></td></tr>
 <tr class="separator:a56e1a2a5fab5b850c879eab201bc2089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64949d8666fd02931593c26b043f5320"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a64949d8666fd02931593c26b043f5320.html#a64949d8666fd02931593c26b043f5320">get_resources_path</a> (bool gui_app)</td></tr>
+<tr class="memitem:a64949d8666fd02931593c26b043f5320"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a64949d8666fd02931593c26b043f5320">get_resources_path</a> (bool gui_app)</td></tr>
 <tr class="memdesc:a64949d8666fd02931593c26b043f5320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path of the resources folder.  <br /></td></tr>
 <tr class="separator:a64949d8666fd02931593c26b043f5320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ccd92fe29cae7f3aadecf5941f9f82"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ae0ccd92fe29cae7f3aadecf5941f9f82.html#ae0ccd92fe29cae7f3aadecf5941f9f82">get_service_pack</a> ()</td></tr>
+<tr class="memitem:ae0ccd92fe29cae7f3aadecf5941f9f82"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ae0ccd92fe29cae7f3aadecf5941f9f82">get_service_pack</a> ()</td></tr>
 <tr class="memdesc:ae0ccd92fe29cae7f3aadecf5941f9f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the service pack version represented by this <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">operating_system</a> object.  <br /></td></tr>
 <tr class="separator:ae0ccd92fe29cae7f3aadecf5941f9f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c0348db11b6f51d493d73c09a24dbd"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ad8c0348db11b6f51d493d73c09a24dbd.html#ad8c0348db11b6f51d493d73c09a24dbd">get_system_page_size</a> ()</td></tr>
+<tr class="memitem:ad8c0348db11b6f51d493d73c09a24dbd"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ad8c0348db11b6f51d493d73c09a24dbd">get_system_page_size</a> ()</td></tr>
 <tr class="memdesc:ad8c0348db11b6f51d493d73c09a24dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of bytes in the operating system's memory page.  <br /></td></tr>
 <tr class="separator:ad8c0348db11b6f51d493d73c09a24dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33613653127e80fedec30f32cdca5c4a"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a33613653127e80fedec30f32cdca5c4a.html#a33613653127e80fedec30f32cdca5c4a">get_tick_count</a> ()</td></tr>
+<tr class="memitem:a33613653127e80fedec30f32cdca5c4a"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a33613653127e80fedec30f32cdca5c4a">get_tick_count</a> ()</td></tr>
 <tr class="memdesc:a33613653127e80fedec30f32cdca5c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of milliseconds elapsed since the system started.  <br /></td></tr>
 <tr class="separator:a33613653127e80fedec30f32cdca5c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeac345a99a8afeaf7369591227dfe013"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_aeac345a99a8afeaf7369591227dfe013.html#aeac345a99a8afeaf7369591227dfe013">get_user_administrator</a> ()</td></tr>
+<tr class="memitem:aeac345a99a8afeaf7369591227dfe013"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#aeac345a99a8afeaf7369591227dfe013">get_user_administrator</a> ()</td></tr>
 <tr class="memdesc:aeac345a99a8afeaf7369591227dfe013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current user is an administrator.  <br /></td></tr>
 <tr class="separator:aeac345a99a8afeaf7369591227dfe013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a942b2b172954ddd5b2629576c63c28ad"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a942b2b172954ddd5b2629576c63c28ad.html#a942b2b172954ddd5b2629576c63c28ad">get_user_domain_name</a> ()</td></tr>
+<tr class="memitem:a942b2b172954ddd5b2629576c63c28ad"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a942b2b172954ddd5b2629576c63c28ad">get_user_domain_name</a> ()</td></tr>
 <tr class="memdesc:a942b2b172954ddd5b2629576c63c28ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the network domain name associated with the current user.  <br /></td></tr>
 <tr class="separator:a942b2b172954ddd5b2629576c63c28ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae570dc447b04bcbcdb5b93e563911c5c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ae570dc447b04bcbcdb5b93e563911c5c.html#ae570dc447b04bcbcdb5b93e563911c5c">get_user_name</a> ()</td></tr>
+<tr class="memitem:ae570dc447b04bcbcdb5b93e563911c5c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ae570dc447b04bcbcdb5b93e563911c5c">get_user_name</a> ()</td></tr>
 <tr class="memdesc:ae570dc447b04bcbcdb5b93e563911c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the user name of the person who is currently logged on to the operating system.  <br /></td></tr>
 <tr class="separator:ae570dc447b04bcbcdb5b93e563911c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403c12ffd46f716c386f61664ee60718"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a403c12ffd46f716c386f61664ee60718.html#a403c12ffd46f716c386f61664ee60718">has_shutdown_started</a> ()</td></tr>
+<tr class="memitem:a403c12ffd46f716c386f61664ee60718"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a403c12ffd46f716c386f61664ee60718">has_shutdown_started</a> ()</td></tr>
 <tr class="memdesc:a403c12ffd46f716c386f61664ee60718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the current application domain is shutting down.  <br /></td></tr>
 <tr class="separator:a403c12ffd46f716c386f61664ee60718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd9d65aca194b7ded95f69b7ad8d612"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a4cd9d65aca194b7ded95f69b7ad8d612.html#a4cd9d65aca194b7ded95f69b7ad8d612">is_processor_arm</a> ()</td></tr>
+<tr class="memitem:a4cd9d65aca194b7ded95f69b7ad8d612"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a4cd9d65aca194b7ded95f69b7ad8d612">is_processor_arm</a> ()</td></tr>
 <tr class="memdesc:a4cd9d65aca194b7ded95f69b7ad8d612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current processor is arm.  <br /></td></tr>
 <tr class="separator:a4cd9d65aca194b7ded95f69b7ad8d612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae8441a0131bf3ac7a1ada00f0ba54f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_aae8441a0131bf3ac7a1ada00f0ba54f4.html#aae8441a0131bf3ac7a1ada00f0ba54f4">is_os_64_bit</a> ()</td></tr>
+<tr class="memitem:aae8441a0131bf3ac7a1ada00f0ba54f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#aae8441a0131bf3ac7a1ada00f0ba54f4">is_os_64_bit</a> ()</td></tr>
 <tr class="memdesc:aae8441a0131bf3ac7a1ada00f0ba54f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current operating system is a 64-bit operating system.  <br /></td></tr>
 <tr class="separator:aae8441a0131bf3ac7a1ada00f0ba54f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e32c0984b7e2caa378b1e4b9e560a6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_a13e32c0984b7e2caa378b1e4b9e560a6.html#a13e32c0984b7e2caa378b1e4b9e560a6">new_line</a> ()</td></tr>
+<tr class="memitem:a13e32c0984b7e2caa378b1e4b9e560a6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#a13e32c0984b7e2caa378b1e4b9e560a6">new_line</a> ()</td></tr>
 <tr class="memdesc:a13e32c0984b7e2caa378b1e4b9e560a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the newline string defined for this environment.  <br /></td></tr>
 <tr class="separator:a13e32c0984b7e2caa378b1e4b9e560a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cb753538d258fa2003cc800371f3cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ad9cb753538d258fa2003cc800371f3cb.html#ad9cb753538d258fa2003cc800371f3cb">quick_exit</a> (int32_t exit_code) noexcept</td></tr>
+<tr class="memitem:ad9cb753538d258fa2003cc800371f3cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ad9cb753538d258fa2003cc800371f3cb">quick_exit</a> (int32_t exit_code) noexcept</td></tr>
 <tr class="memdesc:ad9cb753538d258fa2003cc800371f3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit code to the operating system without completely cleaning the resources..  <br /></td></tr>
 <tr class="separator:ad9cb753538d258fa2003cc800371f3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa45ef0a4e41420e7e7b3fb95f398b057"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_aa45ef0a4e41420e7e7b3fb95f398b057.html#aa45ef0a4e41420e7e7b3fb95f398b057">set_environment_variable</a> (const std::string &amp;name, const std::string &amp;value, int32_t target)</td></tr>
+<tr class="memitem:aa45ef0a4e41420e7e7b3fb95f398b057"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#aa45ef0a4e41420e7e7b3fb95f398b057">set_environment_variable</a> (const std::string &amp;name, const std::string &amp;value, int32_t target)</td></tr>
 <tr class="memdesc:aa45ef0a4e41420e7e7b3fb95f398b057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates or modifies an environment variable stored in the current process.  <br /></td></tr>
 <tr class="separator:aa45ef0a4e41420e7e7b3fb95f398b057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00740d3ddeb112610bb188d856844db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ae00740d3ddeb112610bb188d856844db.html#ae00740d3ddeb112610bb188d856844db">unset_environment_variable</a> (const std::string &amp;name, int32_t target)</td></tr>
+<tr class="memitem:ae00740d3ddeb112610bb188d856844db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ae00740d3ddeb112610bb188d856844db">unset_environment_variable</a> (const std::string &amp;name, int32_t target)</td></tr>
 <tr class="memdesc:ae00740d3ddeb112610bb188d856844db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes an environment variable stored in the current process.  <br /></td></tr>
 <tr class="separator:ae00740d3ddeb112610bb188d856844db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3372d43c135f25ca9a51752ad005ac3"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment_ac3372d43c135f25ca9a51752ad005ac3.html#ac3372d43c135f25ca9a51752ad005ac3">working_set</a> ()</td></tr>
+<tr class="memitem:ac3372d43c135f25ca9a51752ad005ac3"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1environment.html#ac3372d43c135f25ca9a51752ad005ac3">working_set</a> ()</td></tr>
 <tr class="memdesc:ac3372d43c135f25ca9a51752ad005ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of physical memory mapped to the process context.  <br /></td></tr>
 <tr class="separator:ac3372d43c135f25ca9a51752ad005ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a01133663793148cf425e8ecea5e4fd6b" name="a01133663793148cf425e8ecea5e4fd6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01133663793148cf425e8ecea5e4fd6b">&#9670;&#160;</a></span>at_quick_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::environment::at_quick_exit </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>on_quick_exit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers the function pointed to by func to be called on quick program termination (via <a class="el" href="classxtd_1_1native_1_1environment.html#ad9cb753538d258fa2003cc800371f3cb" title="Terminates this process and returns an exit code to the operating system without completely cleaning ...">xtd::native::environment::quick_exit</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">on_quick_exit</td><td>pointer to a function to be called on quick program termination. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0​ if the registration succeeds, nonzero value otherwise. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac062f4243c6bc4bb4c37a0d5483f4e5d" name="ac062f4243c6bc4bb4c37a0d5483f4e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac062f4243c6bc4bb4c37a0d5483f4e5d">&#9670;&#160;</a></span>get_command_line_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; std::string &gt; xtd::native::environment::get_command_line_args </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a string array containing the command-line arguments for the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5d4afcc53d1f05ba8c090d578d703579" name="a5d4afcc53d1f05ba8c090d578d703579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d4afcc53d1f05ba8c090d578d703579">&#9670;&#160;</a></span>get_desktop_environment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_desktop_environment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the desktop environment name. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing desktop environment name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinnamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux. </dd>
+<dd>
+Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6f644a18199c0cb68719b83bb09757a4" name="a6f644a18199c0cb68719b83bb09757a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f644a18199c0cb68719b83bb09757a4">&#9670;&#160;</a></span>get_desktop_theme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_desktop_theme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the desktop theme name. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing desktop theme name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns a string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ... </dd>
+<dd>
+Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a0e7b46d149f9235a564a095a87cb90c4" name="a0e7b46d149f9235a564a095a87cb90c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7b46d149f9235a564a095a87cb90c4">&#9670;&#160;</a></span>get_distribution_bug_report()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_bug_report </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution bug report url. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution bug report url. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a76003cd8a971e5698359298d4250db41" name="a76003cd8a971e5698359298d4250db41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76003cd8a971e5698359298d4250db41">&#9670;&#160;</a></span>get_distribution_code_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_code_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution code name. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution code name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aaeebc02e22ad1f9ea40e2b74c8f108c3" name="aaeebc02e22ad1f9ea40e2b74c8f108c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeebc02e22ad1f9ea40e2b74c8f108c3">&#9670;&#160;</a></span>get_distribution_description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_description </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution description. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution description. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad43ccc32cbd7435c0b33704517222407" name="ad43ccc32cbd7435c0b33704517222407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43ccc32cbd7435c0b33704517222407">&#9670;&#160;</a></span>get_distribution_home()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_home </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution home url. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution home url. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ... </dd>
+<dd>
+Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9b9174517b4d4bdfc81f446f9d80defa" name="a9b9174517b4d4bdfc81f446f9d80defa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9174517b4d4bdfc81f446f9d80defa">&#9670;&#160;</a></span>get_distribution_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution identifier. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a84a04ee30ceff179a8a4f0a50f80a5c4" name="a84a04ee30ceff179a8a4f0a50f80a5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a04ee30ceff179a8a4f0a50f80a5c4">&#9670;&#160;</a></span>get_distribution_like_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; std::string &gt; xtd::native::environment::get_distribution_like_ids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution like identifiers array. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution like identifiers array. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return {} if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a307e35b034d089d01a5aaca824d048d6" name="a307e35b034d089d01a5aaca824d048d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307e35b034d089d01a5aaca824d048d6">&#9670;&#160;</a></span>get_distribution_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution name. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ... </dd>
+<dd>
+Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8c8634df732704fdfa7ac0f19024a910" name="a8c8634df732704fdfa7ac0f19024a910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8634df732704fdfa7ac0f19024a910">&#9670;&#160;</a></span>get_distribution_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::environment::get_distribution_version </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>major</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>minor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>build</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>revision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the distribution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">major</td><td>return the major version. </td></tr>
+    <tr><td class="paramname">minor</td><td>return the minor version, build, and revision numbers for the distribution. </td></tr>
+    <tr><td class="paramname">build</td><td>return the build. </td></tr>
+    <tr><td class="paramname">revision</td><td>return the revision numbers for the distribution. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9f430af680fce89269b5332a7baa9bfa" name="a9f430af680fce89269b5332a7baa9bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f430af680fce89269b5332a7baa9bfa">&#9670;&#160;</a></span>get_distribution_version_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_distribution_version_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the distribution version string. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string A string containing distribution version string. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return "" if not found or defined. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae1aac4b3f1078ef6b579e673f1775881" name="ae1aac4b3f1078ef6b579e673f1775881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1aac4b3f1078ef6b579e673f1775881">&#9670;&#160;</a></span>get_environment_variables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::map&lt; std::string, std::string &gt; &amp; xtd::native::environment::get_environment_variables </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The environment variable target (see environment_variable_target.h file). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="abc0454e7127c769eda071d1c906c80f8" name="abc0454e7127c769eda071d1c906c80f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0454e7127c769eda071d1c906c80f8">&#9670;&#160;</a></span>get_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of an environment variable from the current process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of the environment variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a079600a22434ce40425b6cd6b2965a56" name="a079600a22434ce40425b6cd6b2965a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079600a22434ce40425b6cd6b2965a56">&#9670;&#160;</a></span>get_know_folder_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_know_folder_path </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>csidl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path to the system special folder that is identified by the specified enumeration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">csidl</td><td>System special folder identifier (see <a class="el" href="constant__special__item__id__list_8h.html" title="Contains constant special item ID list.">constant_special_item_id_list.h</a> file). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string (""). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="add7d0436bd82150a87c957846a150917" name="add7d0436bd82150a87c957846a150917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7d0436bd82150a87c957846a150917">&#9670;&#160;</a></span>get_machine_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_machine_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the NetBIOS name of this local computer. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the name of this computer. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a89f6381109d27c111d0ec6a60b16d29d" name="a89f6381109d27c111d0ec6a60b16d29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f6381109d27c111d0ec6a60b16d29d">&#9670;&#160;</a></span>get_os_platform_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::environment::get_os_platform_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a platform id that identifies the operating system platform. </p>
+<dl class="section return"><dt>Returns</dt><dd>Operating system platform identifier (see <a class="el" href="platform__ids_8h.html" title="Contains platform id constants.">platform_ids.h</a> file). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6dd666c5e32a10cd62176b79abdd2f1f" name="a6dd666c5e32a10cd62176b79abdd2f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd666c5e32a10cd62176b79abdd2f1f">&#9670;&#160;</a></span>get_os_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::environment::get_os_version </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>major</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>minor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>build</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>revision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the operating system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">major</td><td>return the major version. </td></tr>
+    <tr><td class="paramname">minor</td><td>return the minor version, build, and revision numbers for the operating system. </td></tr>
+    <tr><td class="paramname">build</td><td>return the build. </td></tr>
+    <tr><td class="paramname">revision</td><td>return the revision numbers for the operating system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a56e1a2a5fab5b850c879eab201bc2089" name="a56e1a2a5fab5b850c879eab201bc2089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e1a2a5fab5b850c879eab201bc2089">&#9670;&#160;</a></span>get_processor_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t xtd::native::environment::get_processor_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of processors on the current machine. </p>
+<dl class="section return"><dt>Returns</dt><dd>The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a64949d8666fd02931593c26b043f5320" name="a64949d8666fd02931593c26b043f5320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64949d8666fd02931593c26b043f5320">&#9670;&#160;</a></span>get_resources_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_resources_path </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>gui_app</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path of the resources folder. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string that represents the path of the resources folder. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae0ccd92fe29cae7f3aadecf5941f9f82" name="ae0ccd92fe29cae7f3aadecf5941f9f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ccd92fe29cae7f3aadecf5941f9f82">&#9670;&#160;</a></span>get_service_pack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_service_pack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the service pack version represented by this <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">operating_system</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>string The service pack version, if service packs are supported and at least one is installed; otherwise, an empty string (""). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad8c0348db11b6f51d493d73c09a24dbd" name="ad8c0348db11b6f51d493d73c09a24dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c0348db11b6f51d493d73c09a24dbd">&#9670;&#160;</a></span>get_system_page_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t xtd::native::environment::get_system_page_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of bytes in the operating system's memory page. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes in the system memory page. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a33613653127e80fedec30f32cdca5c4a" name="a33613653127e80fedec30f32cdca5c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33613653127e80fedec30f32cdca5c4a">&#9670;&#160;</a></span>get_tick_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t xtd::native::environment::get_tick_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of milliseconds elapsed since the system started. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aeac345a99a8afeaf7369591227dfe013" name="aeac345a99a8afeaf7369591227dfe013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac345a99a8afeaf7369591227dfe013">&#9670;&#160;</a></span>get_user_administrator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::environment::get_user_administrator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the current user is an administrator. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the current user is an administrator; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a942b2b172954ddd5b2629576c63c28ad" name="a942b2b172954ddd5b2629576c63c28ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942b2b172954ddd5b2629576c63c28ad">&#9670;&#160;</a></span>get_user_domain_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_user_domain_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the network domain name associated with the current user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The network domain name associated with the current user. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae570dc447b04bcbcdb5b93e563911c5c" name="ae570dc447b04bcbcdb5b93e563911c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae570dc447b04bcbcdb5b93e563911c5c">&#9670;&#160;</a></span>get_user_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::get_user_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the user name of the person who is currently logged on to the operating system. </p>
+<dl class="section return"><dt>Returns</dt><dd>The user name of the person who is logged on to the operating system. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a403c12ffd46f716c386f61664ee60718" name="a403c12ffd46f716c386f61664ee60718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403c12ffd46f716c386f61664ee60718">&#9670;&#160;</a></span>has_shutdown_started()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::environment::has_shutdown_started </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that indicates whether the current application domain is shutting down. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the current application domain is shutting down; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4cd9d65aca194b7ded95f69b7ad8d612" name="a4cd9d65aca194b7ded95f69b7ad8d612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd9d65aca194b7ded95f69b7ad8d612">&#9670;&#160;</a></span>is_processor_arm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::environment::is_processor_arm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the current processor is arm. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the processor is is arm; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aae8441a0131bf3ac7a1ada00f0ba54f4" name="aae8441a0131bf3ac7a1ada00f0ba54f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8441a0131bf3ac7a1ada00f0ba54f4">&#9670;&#160;</a></span>is_os_64_bit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::environment::is_os_64_bit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the current operating system is a 64-bit operating system. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the operating system is 64-bit; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a13e32c0984b7e2caa378b1e4b9e560a6" name="a13e32c0984b7e2caa378b1e4b9e560a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e32c0984b7e2caa378b1e4b9e560a6">&#9670;&#160;</a></span>new_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::environment::new_line </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the newline string defined for this environment. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad9cb753538d258fa2003cc800371f3cb" name="ad9cb753538d258fa2003cc800371f3cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9cb753538d258fa2003cc800371f3cb">&#9670;&#160;</a></span>quick_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::environment::quick_exit </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>exit_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminates this process and returns an exit code to the operating system without completely cleaning the resources.. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exit_code</td><td>The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa45ef0a4e41420e7e7b3fb95f398b057" name="aa45ef0a4e41420e7e7b3fb95f398b057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45ef0a4e41420e7e7b3fb95f398b057">&#9670;&#160;</a></span>set_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::environment::set_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates or modifies an environment variable stored in the current process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of an environment variable. </td></tr>
+    <tr><td class="paramname">value</td><td>A value to assign to variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae00740d3ddeb112610bb188d856844db" name="ae00740d3ddeb112610bb188d856844db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00740d3ddeb112610bb188d856844db">&#9670;&#160;</a></span>unset_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::environment::unset_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes an environment variable stored in the current process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of an environment variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac3372d43c135f25ca9a51752ad005ac3" name="ac3372d43c135f25ca9a51752ad005ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3372d43c135f25ca9a51752ad005ac3">&#9670;&#160;</a></span>working_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::environment::working_set </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the amount of physical memory mapped to the process context. </p>
+<dl class="section return"><dt>Returns</dt><dd>Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2environment_8h_source.html">environment.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1environment.html">environment</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

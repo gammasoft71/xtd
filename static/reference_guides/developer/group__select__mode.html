@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__select__mode.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,24 +90,109 @@ $(document).ready(function(){initNavTree('group__select__mode.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga2adc5cce28e20b9bcfb1c27e2aa66d0a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode_ga2adc5cce28e20b9bcfb1c27e2aa66d0a.html#ga2adc5cce28e20b9bcfb1c27e2aa66d0a">SELECT_MODE_READ</a></td></tr>
+<tr class="memitem:ga2adc5cce28e20b9bcfb1c27e2aa66d0a"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode.html#ga2adc5cce28e20b9bcfb1c27e2aa66d0a">SELECT_MODE_READ</a></td></tr>
 <tr class="memdesc:ga2adc5cce28e20b9bcfb1c27e2aa66d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read status mode.  <br /></td></tr>
 <tr class="separator:ga2adc5cce28e20b9bcfb1c27e2aa66d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88819f203c434ad6c0b945369a4646c6"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode_ga88819f203c434ad6c0b945369a4646c6.html#ga88819f203c434ad6c0b945369a4646c6">SELECT_MODE_WRITE</a></td></tr>
+<tr class="memitem:ga88819f203c434ad6c0b945369a4646c6"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode.html#ga88819f203c434ad6c0b945369a4646c6">SELECT_MODE_WRITE</a></td></tr>
 <tr class="memdesc:ga88819f203c434ad6c0b945369a4646c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write status mode.  <br /></td></tr>
 <tr class="separator:ga88819f203c434ad6c0b945369a4646c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8fb97dc9c1a871a87c02274617f0051"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode_gac8fb97dc9c1a871a87c02274617f0051.html#gac8fb97dc9c1a871a87c02274617f0051">SELECT_MODE_ERROR</a></td></tr>
+<tr class="memitem:gac8fb97dc9c1a871a87c02274617f0051"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__select__mode.html#gac8fb97dc9c1a871a87c02274617f0051">SELECT_MODE_ERROR</a></td></tr>
 <tr class="memdesc:gac8fb97dc9c1a871a87c02274617f0051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error status mode.  <br /></td></tr>
 <tr class="separator:gac8fb97dc9c1a871a87c02274617f0051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga2adc5cce28e20b9bcfb1c27e2aa66d0a" name="ga2adc5cce28e20b9bcfb1c27e2aa66d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2adc5cce28e20b9bcfb1c27e2aa66d0a">&#9670;&#160;</a></span>SELECT_MODE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SELECT_MODE_READ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="select__mode__constants_8h.html">xtd.core.native/include/xtd/native/select_mode_constants.h</a>&gt;</code></p>
+
+<p>Read status mode. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga88819f203c434ad6c0b945369a4646c6" name="ga88819f203c434ad6c0b945369a4646c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88819f203c434ad6c0b945369a4646c6">&#9670;&#160;</a></span>SELECT_MODE_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SELECT_MODE_WRITE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="select__mode__constants_8h.html">xtd.core.native/include/xtd/native/select_mode_constants.h</a>&gt;</code></p>
+
+<p>Write status mode. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac8fb97dc9c1a871a87c02274617f0051" name="gac8fb97dc9c1a871a87c02274617f0051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8fb97dc9c1a871a87c02274617f0051">&#9670;&#160;</a></span>SELECT_MODE_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int32_t SELECT_MODE_ERROR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="select__mode__constants_8h.html">xtd.core.native/include/xtd/native/select_mode_constants.h</a>&gt;</code></p>
+
+<p>Error status mode. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

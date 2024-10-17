@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__bif.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,66 +90,557 @@ $(document).ready(function(){initNavTree('group__bif.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga8ac5b9a1ea86f29e33352781b048c3a5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga8ac5b9a1ea86f29e33352781b048c3a5.html#ga8ac5b9a1ea86f29e33352781b048c3a5">BIF_RETURNONLYFSDIRS</a></td></tr>
+<tr class="memitem:ga8ac5b9a1ea86f29e33352781b048c3a5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga8ac5b9a1ea86f29e33352781b048c3a5">BIF_RETURNONLYFSDIRS</a></td></tr>
 <tr class="memdesc:ga8ac5b9a1ea86f29e33352781b048c3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only return file system directories. If the user selects folders that are not part of the file system, the OK button is grayed.  <br /></td></tr>
 <tr class="separator:ga8ac5b9a1ea86f29e33352781b048c3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53425fa8a3f9c44315d55a8bbd610e87"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga53425fa8a3f9c44315d55a8bbd610e87.html#ga53425fa8a3f9c44315d55a8bbd610e87">BIF_DONTGOBELOWDOMAIN</a></td></tr>
+<tr class="memitem:ga53425fa8a3f9c44315d55a8bbd610e87"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga53425fa8a3f9c44315d55a8bbd610e87">BIF_DONTGOBELOWDOMAIN</a></td></tr>
 <tr class="memdesc:ga53425fa8a3f9c44315d55a8bbd610e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not include network folders below the domain level in the dialog box's tree view control.  <br /></td></tr>
 <tr class="separator:ga53425fa8a3f9c44315d55a8bbd610e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga509e261edc20b55ed81db689c7669c0f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga509e261edc20b55ed81db689c7669c0f.html#ga509e261edc20b55ed81db689c7669c0f">BIF_STATUSTEXT</a></td></tr>
+<tr class="memitem:ga509e261edc20b55ed81db689c7669c0f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga509e261edc20b55ed81db689c7669c0f">BIF_STATUSTEXT</a></td></tr>
 <tr class="memdesc:ga509e261edc20b55ed81db689c7669c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include a status area in the dialog box. The callback function can set the status text by sending messages to the dialog box. This flag is not supported when BIF_NEWDIALOGSTYLE is specified.  <br /></td></tr>
 <tr class="separator:ga509e261edc20b55ed81db689c7669c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa62d6adbcd04bfed6f5b33675e999c2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gaaa62d6adbcd04bfed6f5b33675e999c2.html#gaaa62d6adbcd04bfed6f5b33675e999c2">BIF_RETURNFSANCESTORS</a></td></tr>
+<tr class="memitem:gaaa62d6adbcd04bfed6f5b33675e999c2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gaaa62d6adbcd04bfed6f5b33675e999c2">BIF_RETURNFSANCESTORS</a></td></tr>
 <tr class="memdesc:gaaa62d6adbcd04bfed6f5b33675e999c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include a status area in the dialog box. The callback function can set the status text by sending messages to the dialog box. This flag is not supported when BIF_NEWDIALOGSTYLE is specified.  <br /></td></tr>
 <tr class="separator:gaaa62d6adbcd04bfed6f5b33675e999c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga140923ff87ed594f9a30b8c8e9253bf9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga140923ff87ed594f9a30b8c8e9253bf9.html#ga140923ff87ed594f9a30b8c8e9253bf9">BIF_EDITBOX</a></td></tr>
+<tr class="memitem:ga140923ff87ed594f9a30b8c8e9253bf9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga140923ff87ed594f9a30b8c8e9253bf9">BIF_EDITBOX</a></td></tr>
 <tr class="memdesc:ga140923ff87ed594f9a30b8c8e9253bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include an edit control in the browse dialog box that allows the user to type the name of an item.  <br /></td></tr>
 <tr class="separator:ga140923ff87ed594f9a30b8c8e9253bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae63f6549c85449931a21173095c623ce"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gae63f6549c85449931a21173095c623ce.html#gae63f6549c85449931a21173095c623ce">BIF_VALIDATE</a></td></tr>
+<tr class="memitem:gae63f6549c85449931a21173095c623ce"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gae63f6549c85449931a21173095c623ce">BIF_VALIDATE</a></td></tr>
 <tr class="memdesc:gae63f6549c85449931a21173095c623ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the user types an invalid name into the edit box, the browse dialog box calls the application's BrowseCallbackProc with the BFFM_VALIDATEFAILED message. This flag is ignored if BIF_EDITBOX is not specified.  <br /></td></tr>
 <tr class="separator:gae63f6549c85449931a21173095c623ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc66b27571dc64a1e7ef0e352bcc5bde"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gafc66b27571dc64a1e7ef0e352bcc5bde.html#gafc66b27571dc64a1e7ef0e352bcc5bde">BIF_NEWDIALOGSTYLE</a></td></tr>
+<tr class="memitem:gafc66b27571dc64a1e7ef0e352bcc5bde"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gafc66b27571dc64a1e7ef0e352bcc5bde">BIF_NEWDIALOGSTYLE</a></td></tr>
 <tr class="memdesc:gafc66b27571dc64a1e7ef0e352bcc5bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the new user interface. Setting this flag provides the user with a larger dialog box that can be resized. The dialog box has several new capabilities, including: drag-and-drop capability within the dialog box, reordering, shortcut menus, new folders, delete, and other shortcut menu commands.  <br /></td></tr>
 <tr class="separator:gafc66b27571dc64a1e7ef0e352bcc5bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4d7682f6d1e5e1c5ce46cd5729f95ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gaf4d7682f6d1e5e1c5ce46cd5729f95ec.html#gaf4d7682f6d1e5e1c5ce46cd5729f95ec">BIF_USENEWUI</a></td></tr>
+<tr class="memitem:gaf4d7682f6d1e5e1c5ce46cd5729f95ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gaf4d7682f6d1e5e1c5ce46cd5729f95ec">BIF_USENEWUI</a></td></tr>
 <tr class="memdesc:gaf4d7682f6d1e5e1c5ce46cd5729f95ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the new user interface, including an edit box. This flag is equivalent to BIF_EDITBOX | BIF_NEWDIALOGSTYLE.  <br /></td></tr>
 <tr class="separator:gaf4d7682f6d1e5e1c5ce46cd5729f95ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9cbce6b5232b305f18c190cdd012aab9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga9cbce6b5232b305f18c190cdd012aab9.html#ga9cbce6b5232b305f18c190cdd012aab9">BIF_BROWSEINCLUDEURLS</a></td></tr>
+<tr class="memitem:ga9cbce6b5232b305f18c190cdd012aab9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga9cbce6b5232b305f18c190cdd012aab9">BIF_BROWSEINCLUDEURLS</a></td></tr>
 <tr class="memdesc:ga9cbce6b5232b305f18c190cdd012aab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The browse dialog box can display URLs. The BIF_USENEWUI and BIF_BROWSEINCLUDEFILES flags must also be set. If any of these three flags are not set, the browser dialog box rejects URLs. Even when these flags are set, the browse dialog box displays URLs only if the folder that contains the selected item supports URLs. When the folder's IShellFolder::GetAttributesOf method is called to request the selected item's attributes, the folder must set the SFGAO_FOLDER attribute flag. Otherwise, the browse dialog box will not display the URL.  <br /></td></tr>
 <tr class="separator:ga9cbce6b5232b305f18c190cdd012aab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54fef3483a2e43ef4aef4eb05ec53688"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga54fef3483a2e43ef4aef4eb05ec53688.html#ga54fef3483a2e43ef4aef4eb05ec53688">BIF_UAHINT</a></td></tr>
+<tr class="memitem:ga54fef3483a2e43ef4aef4eb05ec53688"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga54fef3483a2e43ef4aef4eb05ec53688">BIF_UAHINT</a></td></tr>
 <tr class="memdesc:ga54fef3483a2e43ef4aef4eb05ec53688"><td class="mdescLeft">&#160;</td><td class="mdescRight">When combined with BIF_NEWDIALOGSTYLE, adds a usage hint to the dialog box, in place of the edit box. BIF_EDITBOX overrides this flag.  <br /></td></tr>
 <tr class="separator:ga54fef3483a2e43ef4aef4eb05ec53688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9135cd377680a618afd0e369465c6087"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga9135cd377680a618afd0e369465c6087.html#ga9135cd377680a618afd0e369465c6087">BIF_NONEWFOLDERBUTTON</a></td></tr>
+<tr class="memitem:ga9135cd377680a618afd0e369465c6087"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga9135cd377680a618afd0e369465c6087">BIF_NONEWFOLDERBUTTON</a></td></tr>
 <tr class="memdesc:ga9135cd377680a618afd0e369465c6087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not include the New Folder button in the browse dialog box.  <br /></td></tr>
 <tr class="separator:ga9135cd377680a618afd0e369465c6087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga831e35611a5c8a4c458c5fa5b80743a6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga831e35611a5c8a4c458c5fa5b80743a6.html#ga831e35611a5c8a4c458c5fa5b80743a6">BIF_NOTRANSLATETARGETS</a></td></tr>
+<tr class="memitem:ga831e35611a5c8a4c458c5fa5b80743a6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga831e35611a5c8a4c458c5fa5b80743a6">BIF_NOTRANSLATETARGETS</a></td></tr>
 <tr class="memdesc:ga831e35611a5c8a4c458c5fa5b80743a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the selected item is a shortcut, return the PIDL of the shortcut itself rather than its target.  <br /></td></tr>
 <tr class="separator:ga831e35611a5c8a4c458c5fa5b80743a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf25895a2acb4c6d9c45b2c13808df9af"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gaf25895a2acb4c6d9c45b2c13808df9af.html#gaf25895a2acb4c6d9c45b2c13808df9af">BIF_BROWSEFORCOMPUTER</a></td></tr>
+<tr class="memitem:gaf25895a2acb4c6d9c45b2c13808df9af"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gaf25895a2acb4c6d9c45b2c13808df9af">BIF_BROWSEFORCOMPUTER</a></td></tr>
 <tr class="memdesc:gaf25895a2acb4c6d9c45b2c13808df9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only return computers. If the user selects anything other than a computer, the OK button is grayed.  <br /></td></tr>
 <tr class="separator:gaf25895a2acb4c6d9c45b2c13808df9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaebd6673f3746f1ef681e730877f8408"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gaaebd6673f3746f1ef681e730877f8408.html#gaaebd6673f3746f1ef681e730877f8408">BIF_BROWSEFORPRINTER</a></td></tr>
+<tr class="memitem:gaaebd6673f3746f1ef681e730877f8408"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gaaebd6673f3746f1ef681e730877f8408">BIF_BROWSEFORPRINTER</a></td></tr>
 <tr class="memdesc:gaaebd6673f3746f1ef681e730877f8408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only allow the selection of printers. If the user selects anything other than a printer, the OK button is grayed.  <br /></td></tr>
 <tr class="separator:gaaebd6673f3746f1ef681e730877f8408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa18b78abdf7057da17c8ebdc27187be8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gaa18b78abdf7057da17c8ebdc27187be8.html#gaa18b78abdf7057da17c8ebdc27187be8">BIF_BROWSEINCLUDEFILES</a></td></tr>
+<tr class="memitem:gaa18b78abdf7057da17c8ebdc27187be8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gaa18b78abdf7057da17c8ebdc27187be8">BIF_BROWSEINCLUDEFILES</a></td></tr>
 <tr class="memdesc:gaa18b78abdf7057da17c8ebdc27187be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The browse dialog box displays files as well as folders.  <br /></td></tr>
 <tr class="separator:gaa18b78abdf7057da17c8ebdc27187be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c7b2b3e48d6e5570dad30c8b29a7aad"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_ga2c7b2b3e48d6e5570dad30c8b29a7aad.html#ga2c7b2b3e48d6e5570dad30c8b29a7aad">BIF_SHAREABLE</a></td></tr>
+<tr class="memitem:ga2c7b2b3e48d6e5570dad30c8b29a7aad"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#ga2c7b2b3e48d6e5570dad30c8b29a7aad">BIF_SHAREABLE</a></td></tr>
 <tr class="memdesc:ga2c7b2b3e48d6e5570dad30c8b29a7aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The browse dialog box can display sharable resources on remote systems. This is intended for applications that want to expose remote shares on a local system. The BIF_NEWDIALOGSTYLE flag must also be set.  <br /></td></tr>
 <tr class="separator:ga2c7b2b3e48d6e5570dad30c8b29a7aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc5f1ef27e667882b44882ad25de02df"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif_gadc5f1ef27e667882b44882ad25de02df.html#gadc5f1ef27e667882b44882ad25de02df">BIF_BROWSEFILEJUNCTIONS</a></td></tr>
+<tr class="memitem:gadc5f1ef27e667882b44882ad25de02df"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__bif.html#gadc5f1ef27e667882b44882ad25de02df">BIF_BROWSEFILEJUNCTIONS</a></td></tr>
 <tr class="memdesc:gadc5f1ef27e667882b44882ad25de02df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow folder junctions such as a library or a compressed file with a .zip file name extension to be browsed.  <br /></td></tr>
 <tr class="separator:gadc5f1ef27e667882b44882ad25de02df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga8ac5b9a1ea86f29e33352781b048c3a5" name="ga8ac5b9a1ea86f29e33352781b048c3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ac5b9a1ea86f29e33352781b048c3a5">&#9670;&#160;</a></span>BIF_RETURNONLYFSDIRS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_RETURNONLYFSDIRS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Only return file system directories. If the user selects folders that are not part of the file system, the OK button is grayed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga53425fa8a3f9c44315d55a8bbd610e87" name="ga53425fa8a3f9c44315d55a8bbd610e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53425fa8a3f9c44315d55a8bbd610e87">&#9670;&#160;</a></span>BIF_DONTGOBELOWDOMAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_DONTGOBELOWDOMAIN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Do not include network folders below the domain level in the dialog box's tree view control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga509e261edc20b55ed81db689c7669c0f" name="ga509e261edc20b55ed81db689c7669c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga509e261edc20b55ed81db689c7669c0f">&#9670;&#160;</a></span>BIF_STATUSTEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_STATUSTEXT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Include a status area in the dialog box. The callback function can set the status text by sending messages to the dialog box. This flag is not supported when BIF_NEWDIALOGSTYLE is specified. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaaa62d6adbcd04bfed6f5b33675e999c2" name="gaaa62d6adbcd04bfed6f5b33675e999c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa62d6adbcd04bfed6f5b33675e999c2">&#9670;&#160;</a></span>BIF_RETURNFSANCESTORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_RETURNFSANCESTORS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Include a status area in the dialog box. The callback function can set the status text by sending messages to the dialog box. This flag is not supported when BIF_NEWDIALOGSTYLE is specified. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga140923ff87ed594f9a30b8c8e9253bf9" name="ga140923ff87ed594f9a30b8c8e9253bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga140923ff87ed594f9a30b8c8e9253bf9">&#9670;&#160;</a></span>BIF_EDITBOX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_EDITBOX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Include an edit control in the browse dialog box that allows the user to type the name of an item. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae63f6549c85449931a21173095c623ce" name="gae63f6549c85449931a21173095c623ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae63f6549c85449931a21173095c623ce">&#9670;&#160;</a></span>BIF_VALIDATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_VALIDATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>If the user types an invalid name into the edit box, the browse dialog box calls the application's BrowseCallbackProc with the BFFM_VALIDATEFAILED message. This flag is ignored if BIF_EDITBOX is not specified. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gafc66b27571dc64a1e7ef0e352bcc5bde" name="gafc66b27571dc64a1e7ef0e352bcc5bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc66b27571dc64a1e7ef0e352bcc5bde">&#9670;&#160;</a></span>BIF_NEWDIALOGSTYLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_NEWDIALOGSTYLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Use the new user interface. Setting this flag provides the user with a larger dialog box that can be resized. The dialog box has several new capabilities, including: drag-and-drop capability within the dialog box, reordering, shortcut menus, new folders, delete, and other shortcut menu commands. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf4d7682f6d1e5e1c5ce46cd5729f95ec" name="gaf4d7682f6d1e5e1c5ce46cd5729f95ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4d7682f6d1e5e1c5ce46cd5729f95ec">&#9670;&#160;</a></span>BIF_USENEWUI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_USENEWUI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Use the new user interface, including an edit box. This flag is equivalent to BIF_EDITBOX | BIF_NEWDIALOGSTYLE. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9cbce6b5232b305f18c190cdd012aab9" name="ga9cbce6b5232b305f18c190cdd012aab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9cbce6b5232b305f18c190cdd012aab9">&#9670;&#160;</a></span>BIF_BROWSEINCLUDEURLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_BROWSEINCLUDEURLS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>The browse dialog box can display URLs. The BIF_USENEWUI and BIF_BROWSEINCLUDEFILES flags must also be set. If any of these three flags are not set, the browser dialog box rejects URLs. Even when these flags are set, the browse dialog box displays URLs only if the folder that contains the selected item supports URLs. When the folder's IShellFolder::GetAttributesOf method is called to request the selected item's attributes, the folder must set the SFGAO_FOLDER attribute flag. Otherwise, the browse dialog box will not display the URL. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga54fef3483a2e43ef4aef4eb05ec53688" name="ga54fef3483a2e43ef4aef4eb05ec53688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54fef3483a2e43ef4aef4eb05ec53688">&#9670;&#160;</a></span>BIF_UAHINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_UAHINT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>When combined with BIF_NEWDIALOGSTYLE, adds a usage hint to the dialog box, in place of the edit box. BIF_EDITBOX overrides this flag. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9135cd377680a618afd0e369465c6087" name="ga9135cd377680a618afd0e369465c6087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9135cd377680a618afd0e369465c6087">&#9670;&#160;</a></span>BIF_NONEWFOLDERBUTTON</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_NONEWFOLDERBUTTON</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Do not include the New Folder button in the browse dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga831e35611a5c8a4c458c5fa5b80743a6" name="ga831e35611a5c8a4c458c5fa5b80743a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga831e35611a5c8a4c458c5fa5b80743a6">&#9670;&#160;</a></span>BIF_NOTRANSLATETARGETS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_NOTRANSLATETARGETS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>When the selected item is a shortcut, return the PIDL of the shortcut itself rather than its target. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf25895a2acb4c6d9c45b2c13808df9af" name="gaf25895a2acb4c6d9c45b2c13808df9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf25895a2acb4c6d9c45b2c13808df9af">&#9670;&#160;</a></span>BIF_BROWSEFORCOMPUTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_BROWSEFORCOMPUTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Only return computers. If the user selects anything other than a computer, the OK button is grayed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaaebd6673f3746f1ef681e730877f8408" name="gaaebd6673f3746f1ef681e730877f8408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaebd6673f3746f1ef681e730877f8408">&#9670;&#160;</a></span>BIF_BROWSEFORPRINTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_BROWSEFORPRINTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Only allow the selection of printers. If the user selects anything other than a printer, the OK button is grayed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaa18b78abdf7057da17c8ebdc27187be8" name="gaa18b78abdf7057da17c8ebdc27187be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa18b78abdf7057da17c8ebdc27187be8">&#9670;&#160;</a></span>BIF_BROWSEINCLUDEFILES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_BROWSEINCLUDEFILES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>The browse dialog box displays files as well as folders. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga2c7b2b3e48d6e5570dad30c8b29a7aad" name="ga2c7b2b3e48d6e5570dad30c8b29a7aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c7b2b3e48d6e5570dad30c8b29a7aad">&#9670;&#160;</a></span>BIF_SHAREABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_SHAREABLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>The browse dialog box can display sharable resources on remote systems. This is intended for applications that want to expose remote shares on a local system. The BIF_NEWDIALOGSTYLE flag must also be set. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadc5f1ef27e667882b44882ad25de02df" name="gadc5f1ef27e667882b44882ad25de02df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc5f1ef27e667882b44882ad25de02df">&#9670;&#160;</a></span>BIF_BROWSEFILEJUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t BIF_BROWSEFILEJUNCTIONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="browser__info__flags_8h.html">xtd.forms.native/include/xtd/forms/browser_info_flags.h</a>&gt;</code></p>
+
+<p>Allow folder junctions such as a library or a compressed file with a .zip file name extension to be browsed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

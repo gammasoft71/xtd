@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__ofn.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,99 +90,909 @@ $(document).ready(function(){initNavTree('group__ofn.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gac149774d5120af3791ccb854817f1012"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gac149774d5120af3791ccb854817f1012.html#gac149774d5120af3791ccb854817f1012">OFN_READONLY</a></td></tr>
+<tr class="memitem:gac149774d5120af3791ccb854817f1012"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gac149774d5120af3791ccb854817f1012">OFN_READONLY</a></td></tr>
 <tr class="memdesc:gac149774d5120af3791ccb854817f1012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the Read Only check box to be selected initially when the dialog box is created. This flag indicates the state of the Read Only check box when the dialog box is closed.  <br /></td></tr>
 <tr class="separator:gac149774d5120af3791ccb854817f1012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad05dbc2b511c1f96d5751a1937b0a489"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gad05dbc2b511c1f96d5751a1937b0a489.html#gad05dbc2b511c1f96d5751a1937b0a489">OFN_OVERWRITEPROMPT</a></td></tr>
+<tr class="memitem:gad05dbc2b511c1f96d5751a1937b0a489"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gad05dbc2b511c1f96d5751a1937b0a489">OFN_OVERWRITEPROMPT</a></td></tr>
 <tr class="memdesc:gad05dbc2b511c1f96d5751a1937b0a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the Save As dialog box to generate a message box if the selected file already exists. The user must confirm whether to overwrite the file.  <br /></td></tr>
 <tr class="separator:gad05dbc2b511c1f96d5751a1937b0a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63443b24493395fcaefbbaa0085a794b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga63443b24493395fcaefbbaa0085a794b.html#ga63443b24493395fcaefbbaa0085a794b">OFN_HIDEREADONLY</a></td></tr>
+<tr class="memitem:ga63443b24493395fcaefbbaa0085a794b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga63443b24493395fcaefbbaa0085a794b">OFN_HIDEREADONLY</a></td></tr>
 <tr class="memdesc:ga63443b24493395fcaefbbaa0085a794b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the Read Only check box.  <br /></td></tr>
 <tr class="separator:ga63443b24493395fcaefbbaa0085a794b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0de842f2d493b8b78c40826a567c3bfe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga0de842f2d493b8b78c40826a567c3bfe.html#ga0de842f2d493b8b78c40826a567c3bfe">OFN_NOCHANGEDIR</a></td></tr>
+<tr class="memitem:ga0de842f2d493b8b78c40826a567c3bfe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga0de842f2d493b8b78c40826a567c3bfe">OFN_NOCHANGEDIR</a></td></tr>
 <tr class="memdesc:ga0de842f2d493b8b78c40826a567c3bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the current directory to its original value if the user changed the directory while searching for files.  <br /></td></tr>
 <tr class="separator:ga0de842f2d493b8b78c40826a567c3bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga409f0ac3d7d2cba1f8db36bbb4fb44bd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga409f0ac3d7d2cba1f8db36bbb4fb44bd.html#ga409f0ac3d7d2cba1f8db36bbb4fb44bd">OFN_SHOWHELP</a></td></tr>
+<tr class="memitem:ga409f0ac3d7d2cba1f8db36bbb4fb44bd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga409f0ac3d7d2cba1f8db36bbb4fb44bd">OFN_SHOWHELP</a></td></tr>
 <tr class="memdesc:ga409f0ac3d7d2cba1f8db36bbb4fb44bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display the Help button. The hwndOwner member must specify the window to receive the HELPMSGSTRING registered messages that the dialog box sends when the user clicks the Help button. An Explorer-style dialog box sends a CDN_HELP notification message to your hook procedure when the user clicks the Help button.  <br /></td></tr>
 <tr class="separator:ga409f0ac3d7d2cba1f8db36bbb4fb44bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7a4348fcdbd163d7589427ca2aaed4f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gac7a4348fcdbd163d7589427ca2aaed4f.html#gac7a4348fcdbd163d7589427ca2aaed4f">OFN_ENABLEHOOK</a></td></tr>
+<tr class="memitem:gac7a4348fcdbd163d7589427ca2aaed4f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gac7a4348fcdbd163d7589427ca2aaed4f">OFN_ENABLEHOOK</a></td></tr>
 <tr class="memdesc:gac7a4348fcdbd163d7589427ca2aaed4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the hook function specified in the lpfnHook member.  <br /></td></tr>
 <tr class="separator:gac7a4348fcdbd163d7589427ca2aaed4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac431225b9f72862f8c7cc515ec0f9bf8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gac431225b9f72862f8c7cc515ec0f9bf8.html#gac431225b9f72862f8c7cc515ec0f9bf8">OFN_ENABLETEMPLATE</a></td></tr>
+<tr class="memitem:gac431225b9f72862f8c7cc515ec0f9bf8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gac431225b9f72862f8c7cc515ec0f9bf8">OFN_ENABLETEMPLATE</a></td></tr>
 <tr class="memdesc:gac431225b9f72862f8c7cc515ec0f9bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lpTemplateName member is a pointer to the name of a dialog template resource in the module identified by the hInstance member. If the OFN_EXPLORER flag is set, the system uses the specified template to create a dialog box that is a child of the default Explorer-style dialog box. If the OFN_EXPLORER flag is not set, the system uses the template to create an old-style dialog box that replaces the default dialog box.  <br /></td></tr>
 <tr class="separator:gac431225b9f72862f8c7cc515ec0f9bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea8f61747bafc2e5db77440f254cf033"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gaea8f61747bafc2e5db77440f254cf033.html#gaea8f61747bafc2e5db77440f254cf033">OFN_ENABLETEMPLATEHANDLE</a></td></tr>
+<tr class="memitem:gaea8f61747bafc2e5db77440f254cf033"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gaea8f61747bafc2e5db77440f254cf033">OFN_ENABLETEMPLATEHANDLE</a></td></tr>
 <tr class="memdesc:gaea8f61747bafc2e5db77440f254cf033"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hInstance member identifies a data block that contains a preloaded dialog box template. The system ignores lpTemplateName if this flag is specified. If the OFN_EXPLORER flag is set, the system uses the specified template to create a dialog box that is a child of the default Explorer-style dialog box. If the OFN_EXPLORER flag is not set, the system uses the template to create an old-style dialog box that replaces the default dialog box.  <br /></td></tr>
 <tr class="separator:gaea8f61747bafc2e5db77440f254cf033"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada7496858bb08f2afab289c8b5347422"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gada7496858bb08f2afab289c8b5347422.html#gada7496858bb08f2afab289c8b5347422">OFN_NOVALIDATE</a></td></tr>
+<tr class="memitem:gada7496858bb08f2afab289c8b5347422"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gada7496858bb08f2afab289c8b5347422">OFN_NOVALIDATE</a></td></tr>
 <tr class="memdesc:gada7496858bb08f2afab289c8b5347422"><td class="mdescLeft">&#160;</td><td class="mdescRight">The common dialog boxes allow invalid characters in the returned file name. Typically, the calling application uses a hook procedure that checks the file name by using the FILEOKSTRING message. If the text box in the edit control is empty or contains nothing but spaces, the lists of files and directories are updated. If the text box in the edit control contains anything else, nFileOffset and nFileExtension are set to values generated by parsing the text. No default extension is added to the text, nor is text copied to the buffer specified by lpstrFileTitle. If the value specified by nFileOffset is less than zero, the file name is invalid. Otherwise, the file name is valid, and nFileExtension and nFileOffset can be used as if the OFN_NOVALIDATE flag had not been specified.  <br /></td></tr>
 <tr class="separator:gada7496858bb08f2afab289c8b5347422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf9ff783f98cbb702a60f219a44733e1c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gaf9ff783f98cbb702a60f219a44733e1c.html#gaf9ff783f98cbb702a60f219a44733e1c">OFN_ALLOWMULTISELECT</a></td></tr>
+<tr class="memitem:gaf9ff783f98cbb702a60f219a44733e1c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gaf9ff783f98cbb702a60f219a44733e1c">OFN_ALLOWMULTISELECT</a></td></tr>
 <tr class="memdesc:gaf9ff783f98cbb702a60f219a44733e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The File Name list box allows multiple selections. If you also set the OFN_EXPLORER flag, the dialog box uses the Explorer-style user interface; otherwise, it uses the old-style user interface.  <br /></td></tr>
 <tr class="separator:gaf9ff783f98cbb702a60f219a44733e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4fe9ee305341c37525ec8a0ee25cd295"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga4fe9ee305341c37525ec8a0ee25cd295.html#ga4fe9ee305341c37525ec8a0ee25cd295">OFN_EXTENSIONDIFFERENT</a></td></tr>
+<tr class="memitem:ga4fe9ee305341c37525ec8a0ee25cd295"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga4fe9ee305341c37525ec8a0ee25cd295">OFN_EXTENSIONDIFFERENT</a></td></tr>
 <tr class="memdesc:ga4fe9ee305341c37525ec8a0ee25cd295"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user typed a file name extension that differs from the extension specified by lpstrDefExt. The function does not use this flag if lpstrDefExt is NULL.  <br /></td></tr>
 <tr class="separator:ga4fe9ee305341c37525ec8a0ee25cd295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0cb2830b5f2a13bbe616efc01028b7ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga0cb2830b5f2a13bbe616efc01028b7ec.html#ga0cb2830b5f2a13bbe616efc01028b7ec">OFN_PATHMUSTEXIST</a></td></tr>
+<tr class="memitem:ga0cb2830b5f2a13bbe616efc01028b7ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga0cb2830b5f2a13bbe616efc01028b7ec">OFN_PATHMUSTEXIST</a></td></tr>
 <tr class="memdesc:ga0cb2830b5f2a13bbe616efc01028b7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user can type only valid paths and file names. If this flag is used and the user types an invalid path and file name in the File Name entry field, the dialog box function displays a warning in a message box.  <br /></td></tr>
 <tr class="separator:ga0cb2830b5f2a13bbe616efc01028b7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga532446c263312085700e422acd844b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga532446c263312085700e422acd844b9a.html#ga532446c263312085700e422acd844b9a">OFN_FILEMUSTEXIST</a></td></tr>
+<tr class="memitem:ga532446c263312085700e422acd844b9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga532446c263312085700e422acd844b9a">OFN_FILEMUSTEXIST</a></td></tr>
 <tr class="memdesc:ga532446c263312085700e422acd844b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user can type only names of existing files in the File Name entry field. If this flag is specified and the user enters an invalid name, the dialog box procedure displays a warning in a message box. If this flag is specified, the OFN_PATHMUSTEXIST flag is also used. This flag can be used in an Open dialog box. It cannot be used with a Save As dialog box.  <br /></td></tr>
 <tr class="separator:ga532446c263312085700e422acd844b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f9a9a512779f5166fdcec6f4c5563b9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga4f9a9a512779f5166fdcec6f4c5563b9.html#ga4f9a9a512779f5166fdcec6f4c5563b9">OFN_CREATEPROMPT</a></td></tr>
+<tr class="memitem:ga4f9a9a512779f5166fdcec6f4c5563b9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga4f9a9a512779f5166fdcec6f4c5563b9">OFN_CREATEPROMPT</a></td></tr>
 <tr class="memdesc:ga4f9a9a512779f5166fdcec6f4c5563b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the user specifies a file that does not exist, this flag causes the dialog box to prompt the user for permission to create the file. If the user chooses to create the file, the dialog box closes and the function returns the specified name; otherwise, the dialog box remains open. If you use this flag with the OFN_ALLOWMULTISELECT flag, the dialog box allows the user to specify only one nonexistent file.  <br /></td></tr>
 <tr class="separator:ga4f9a9a512779f5166fdcec6f4c5563b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2914be7b98d55eabb5bca86c7d362b0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gad2914be7b98d55eabb5bca86c7d362b0.html#gad2914be7b98d55eabb5bca86c7d362b0">OFN_SHAREAWARE</a></td></tr>
+<tr class="memitem:gad2914be7b98d55eabb5bca86c7d362b0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gad2914be7b98d55eabb5bca86c7d362b0">OFN_SHAREAWARE</a></td></tr>
 <tr class="memdesc:gad2914be7b98d55eabb5bca86c7d362b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that if a call to the OpenFile function fails because of a network sharing violation, the error is ignored and the dialog box returns the selected file name. If this flag is not set, the dialog box notifies your hook procedure when a network sharing violation occurs for the file name specified by the user. If you set the OFN_EXPLORER flag, the dialog box sends the CDN_SHAREVIOLATION message to the hook procedure. If you do not set OFN_EXPLORER, the dialog box sends the SHAREVISTRING registered message to the hook procedure.  <br /></td></tr>
 <tr class="separator:gad2914be7b98d55eabb5bca86c7d362b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac5bc445e1627b5b33a83ec4e71491f9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gac5bc445e1627b5b33a83ec4e71491f9a.html#gac5bc445e1627b5b33a83ec4e71491f9a">OFN_NOREADONLYRETURN</a></td></tr>
+<tr class="memitem:gac5bc445e1627b5b33a83ec4e71491f9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gac5bc445e1627b5b33a83ec4e71491f9a">OFN_NOREADONLYRETURN</a></td></tr>
 <tr class="memdesc:gac5bc445e1627b5b33a83ec4e71491f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The returned file does not have the Read Only check box selected and is not in a write-protected directory.  <br /></td></tr>
 <tr class="separator:gac5bc445e1627b5b33a83ec4e71491f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga197a6034ad92a5df34b2c9f258b8f07c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga197a6034ad92a5df34b2c9f258b8f07c.html#ga197a6034ad92a5df34b2c9f258b8f07c">OFN_NOTESTFILECREATE</a></td></tr>
+<tr class="memitem:ga197a6034ad92a5df34b2c9f258b8f07c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga197a6034ad92a5df34b2c9f258b8f07c">OFN_NOTESTFILECREATE</a></td></tr>
 <tr class="memdesc:ga197a6034ad92a5df34b2c9f258b8f07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file is not created before the dialog box is closed. This flag should be specified if the application saves the file on a create-nonmodify network share. When an application specifies this flag, the library does not check for write protection, a full disk, an open drive door, or network protection. Applications using this flag must perform file operations carefully, because a file cannot be reopened once it is closed.  <br /></td></tr>
 <tr class="separator:ga197a6034ad92a5df34b2c9f258b8f07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7dfbe36dceae7c9ba57f885cbc3eef1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gaf7dfbe36dceae7c9ba57f885cbc3eef1.html#gaf7dfbe36dceae7c9ba57f885cbc3eef1">OFN_NONETWORKBUTTON</a></td></tr>
+<tr class="memitem:gaf7dfbe36dceae7c9ba57f885cbc3eef1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gaf7dfbe36dceae7c9ba57f885cbc3eef1">OFN_NONETWORKBUTTON</a></td></tr>
 <tr class="memdesc:gaf7dfbe36dceae7c9ba57f885cbc3eef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides and disables the Network button.  <br /></td></tr>
 <tr class="separator:gaf7dfbe36dceae7c9ba57f885cbc3eef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga74ba2739a7b2891ee2606de31f465ea0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga74ba2739a7b2891ee2606de31f465ea0.html#ga74ba2739a7b2891ee2606de31f465ea0">OFN_NOLONGNAMES</a></td></tr>
+<tr class="memitem:ga74ba2739a7b2891ee2606de31f465ea0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga74ba2739a7b2891ee2606de31f465ea0">OFN_NOLONGNAMES</a></td></tr>
 <tr class="memdesc:ga74ba2739a7b2891ee2606de31f465ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">For old-style dialog boxes, this flag causes the dialog box to use short file names (8.3 format). Explorer-style dialog boxes ignore this flag and always display long file names.  <br /></td></tr>
 <tr class="separator:ga74ba2739a7b2891ee2606de31f465ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9866ffc798b4060425853340ba32475e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga9866ffc798b4060425853340ba32475e.html#ga9866ffc798b4060425853340ba32475e">OFN_EXPLORER</a></td></tr>
+<tr class="memitem:ga9866ffc798b4060425853340ba32475e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga9866ffc798b4060425853340ba32475e">OFN_EXPLORER</a></td></tr>
 <tr class="memdesc:ga9866ffc798b4060425853340ba32475e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that any customizations made to the Open or Save As dialog box use the Explorer-style customization methods.  <br /></td></tr>
 <tr class="separator:ga9866ffc798b4060425853340ba32475e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad4b2f486d4245585f684fa5bb40106a9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gad4b2f486d4245585f684fa5bb40106a9.html#gad4b2f486d4245585f684fa5bb40106a9">OFN_NODEREFERENCELINKS</a></td></tr>
+<tr class="memitem:gad4b2f486d4245585f684fa5bb40106a9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gad4b2f486d4245585f684fa5bb40106a9">OFN_NODEREFERENCELINKS</a></td></tr>
 <tr class="memdesc:gad4b2f486d4245585f684fa5bb40106a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directs the dialog box to return the path and file name of the selected shortcut (.LNK) file. If this value is not specified, the dialog box returns the path and file name of the file referenced by the shortcut.  <br /></td></tr>
 <tr class="separator:gad4b2f486d4245585f684fa5bb40106a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga67c267310505559234ae35790b5b49bc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga67c267310505559234ae35790b5b49bc.html#ga67c267310505559234ae35790b5b49bc">OFN_LONGNAMES</a></td></tr>
+<tr class="memitem:ga67c267310505559234ae35790b5b49bc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga67c267310505559234ae35790b5b49bc">OFN_LONGNAMES</a></td></tr>
 <tr class="memdesc:ga67c267310505559234ae35790b5b49bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">For old-style dialog boxes, this flag causes the dialog box to use long file names. If this flag is not specified, or if the OFN_ALLOWMULTISELECT flag is also set, old-style dialog boxes use short file names (8.3 format) for file names with spaces. Explorer-style dialog boxes ignore this flag and always display long file names.  <br /></td></tr>
 <tr class="separator:ga67c267310505559234ae35790b5b49bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9a5f64e405544241820748a10a2f3f54"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga9a5f64e405544241820748a10a2f3f54.html#ga9a5f64e405544241820748a10a2f3f54">OFN_ENABLEINCLUDENOTIFY</a></td></tr>
+<tr class="memitem:ga9a5f64e405544241820748a10a2f3f54"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga9a5f64e405544241820748a10a2f3f54">OFN_ENABLEINCLUDENOTIFY</a></td></tr>
 <tr class="memdesc:ga9a5f64e405544241820748a10a2f3f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to send CDN_INCLUDEITEM notification messages to your OFNHookProc hook procedure when the user opens a folder. The dialog box sends a notification for each item in the newly opened folder. These messages enable you to control which items the dialog box displays in the folder's item list.  <br /></td></tr>
 <tr class="separator:ga9a5f64e405544241820748a10a2f3f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga74a97f8ab451edb654d57d8ec120fd70"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga74a97f8ab451edb654d57d8ec120fd70.html#ga74a97f8ab451edb654d57d8ec120fd70">OFN_ENABLESIZING</a></td></tr>
+<tr class="memitem:ga74a97f8ab451edb654d57d8ec120fd70"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga74a97f8ab451edb654d57d8ec120fd70">OFN_ENABLESIZING</a></td></tr>
 <tr class="memdesc:ga74a97f8ab451edb654d57d8ec120fd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the Explorer-style dialog box to be resized using either the mouse or the keyboard. By default, the Explorer-style Open and Save As dialog boxes allow the dialog box to be resized regardless of whether this flag is set. This flag is necessary only if you provide a hook procedure or custom template. The old-style dialog box does not permit resizing.  <br /></td></tr>
 <tr class="separator:ga74a97f8ab451edb654d57d8ec120fd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad95dda3c6ccf9b5792a1fccea10f6f95"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gad95dda3c6ccf9b5792a1fccea10f6f95.html#gad95dda3c6ccf9b5792a1fccea10f6f95">OFN_DONTADDTORECENT</a></td></tr>
+<tr class="memitem:gad95dda3c6ccf9b5792a1fccea10f6f95"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gad95dda3c6ccf9b5792a1fccea10f6f95">OFN_DONTADDTORECENT</a></td></tr>
 <tr class="memdesc:gad95dda3c6ccf9b5792a1fccea10f6f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prevents the system from adding a link to the selected file in the file system directory that contains the user's most recently used documents. To retrieve the location of this directory, call the SHGetSpecialFolderLocation function with the CSIDL_RECENT flag.  <br /></td></tr>
 <tr class="separator:gad95dda3c6ccf9b5792a1fccea10f6f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d6efc89cee1597b5d85c7b59313d821"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_ga8d6efc89cee1597b5d85c7b59313d821.html#ga8d6efc89cee1597b5d85c7b59313d821">OFN_FORCESHOWHIDDEN</a></td></tr>
+<tr class="memitem:ga8d6efc89cee1597b5d85c7b59313d821"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#ga8d6efc89cee1597b5d85c7b59313d821">OFN_FORCESHOWHIDDEN</a></td></tr>
 <tr class="memdesc:ga8d6efc89cee1597b5d85c7b59313d821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the showing of system and hidden files, thus overriding the user setting to show or not show hidden files. However, a file that is marked both system and hidden is not shown.  <br /></td></tr>
 <tr class="separator:ga8d6efc89cee1597b5d85c7b59313d821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc9e3f35f8d0afd1eef99842f22d6672"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gafc9e3f35f8d0afd1eef99842f22d6672.html#gafc9e3f35f8d0afd1eef99842f22d6672">OFN_SHOWPREVIEW</a></td></tr>
+<tr class="memitem:gafc9e3f35f8d0afd1eef99842f22d6672"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gafc9e3f35f8d0afd1eef99842f22d6672">OFN_SHOWPREVIEW</a></td></tr>
 <tr class="memdesc:gafc9e3f35f8d0afd1eef99842f22d6672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display the preview panel.  <br /></td></tr>
 <tr class="separator:gafc9e3f35f8d0afd1eef99842f22d6672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1943c22864e7f150b7e950efd1c0d01"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn_gab1943c22864e7f150b7e950efd1c0d01.html#gab1943c22864e7f150b7e950efd1c0d01">OFN_ADDEXTENSION</a></td></tr>
+<tr class="memitem:gab1943c22864e7f150b7e950efd1c0d01"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ofn.html#gab1943c22864e7f150b7e950efd1c0d01">OFN_ADDEXTENSION</a></td></tr>
 <tr class="memdesc:gab1943c22864e7f150b7e950efd1c0d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cause the dialog box automatically adds an extension to a file name if the user omits the extension.  <br /></td></tr>
 <tr class="separator:gab1943c22864e7f150b7e950efd1c0d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gac149774d5120af3791ccb854817f1012" name="gac149774d5120af3791ccb854817f1012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac149774d5120af3791ccb854817f1012">&#9670;&#160;</a></span>OFN_READONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_READONLY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Causes the Read Only check box to be selected initially when the dialog box is created. This flag indicates the state of the Read Only check box when the dialog box is closed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad05dbc2b511c1f96d5751a1937b0a489" name="gad05dbc2b511c1f96d5751a1937b0a489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad05dbc2b511c1f96d5751a1937b0a489">&#9670;&#160;</a></span>OFN_OVERWRITEPROMPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_OVERWRITEPROMPT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Causes the Save As dialog box to generate a message box if the selected file already exists. The user must confirm whether to overwrite the file. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga63443b24493395fcaefbbaa0085a794b" name="ga63443b24493395fcaefbbaa0085a794b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63443b24493395fcaefbbaa0085a794b">&#9670;&#160;</a></span>OFN_HIDEREADONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_HIDEREADONLY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Hides the Read Only check box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0de842f2d493b8b78c40826a567c3bfe" name="ga0de842f2d493b8b78c40826a567c3bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0de842f2d493b8b78c40826a567c3bfe">&#9670;&#160;</a></span>OFN_NOCHANGEDIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NOCHANGEDIR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Restores the current directory to its original value if the user changed the directory while searching for files. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga409f0ac3d7d2cba1f8db36bbb4fb44bd" name="ga409f0ac3d7d2cba1f8db36bbb4fb44bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga409f0ac3d7d2cba1f8db36bbb4fb44bd">&#9670;&#160;</a></span>OFN_SHOWHELP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_SHOWHELP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display the Help button. The hwndOwner member must specify the window to receive the HELPMSGSTRING registered messages that the dialog box sends when the user clicks the Help button. An Explorer-style dialog box sends a CDN_HELP notification message to your hook procedure when the user clicks the Help button. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac7a4348fcdbd163d7589427ca2aaed4f" name="gac7a4348fcdbd163d7589427ca2aaed4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7a4348fcdbd163d7589427ca2aaed4f">&#9670;&#160;</a></span>OFN_ENABLEHOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ENABLEHOOK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Enables the hook function specified in the lpfnHook member. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac431225b9f72862f8c7cc515ec0f9bf8" name="gac431225b9f72862f8c7cc515ec0f9bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac431225b9f72862f8c7cc515ec0f9bf8">&#9670;&#160;</a></span>OFN_ENABLETEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ENABLETEMPLATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The lpTemplateName member is a pointer to the name of a dialog template resource in the module identified by the hInstance member. If the OFN_EXPLORER flag is set, the system uses the specified template to create a dialog box that is a child of the default Explorer-style dialog box. If the OFN_EXPLORER flag is not set, the system uses the template to create an old-style dialog box that replaces the default dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaea8f61747bafc2e5db77440f254cf033" name="gaea8f61747bafc2e5db77440f254cf033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea8f61747bafc2e5db77440f254cf033">&#9670;&#160;</a></span>OFN_ENABLETEMPLATEHANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ENABLETEMPLATEHANDLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The hInstance member identifies a data block that contains a preloaded dialog box template. The system ignores lpTemplateName if this flag is specified. If the OFN_EXPLORER flag is set, the system uses the specified template to create a dialog box that is a child of the default Explorer-style dialog box. If the OFN_EXPLORER flag is not set, the system uses the template to create an old-style dialog box that replaces the default dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gada7496858bb08f2afab289c8b5347422" name="gada7496858bb08f2afab289c8b5347422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada7496858bb08f2afab289c8b5347422">&#9670;&#160;</a></span>OFN_NOVALIDATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NOVALIDATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The common dialog boxes allow invalid characters in the returned file name. Typically, the calling application uses a hook procedure that checks the file name by using the FILEOKSTRING message. If the text box in the edit control is empty or contains nothing but spaces, the lists of files and directories are updated. If the text box in the edit control contains anything else, nFileOffset and nFileExtension are set to values generated by parsing the text. No default extension is added to the text, nor is text copied to the buffer specified by lpstrFileTitle. If the value specified by nFileOffset is less than zero, the file name is invalid. Otherwise, the file name is valid, and nFileExtension and nFileOffset can be used as if the OFN_NOVALIDATE flag had not been specified. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf9ff783f98cbb702a60f219a44733e1c" name="gaf9ff783f98cbb702a60f219a44733e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9ff783f98cbb702a60f219a44733e1c">&#9670;&#160;</a></span>OFN_ALLOWMULTISELECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ALLOWMULTISELECT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The File Name list box allows multiple selections. If you also set the OFN_EXPLORER flag, the dialog box uses the Explorer-style user interface; otherwise, it uses the old-style user interface. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4fe9ee305341c37525ec8a0ee25cd295" name="ga4fe9ee305341c37525ec8a0ee25cd295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fe9ee305341c37525ec8a0ee25cd295">&#9670;&#160;</a></span>OFN_EXTENSIONDIFFERENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_EXTENSIONDIFFERENT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The user typed a file name extension that differs from the extension specified by lpstrDefExt. The function does not use this flag if lpstrDefExt is NULL. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0cb2830b5f2a13bbe616efc01028b7ec" name="ga0cb2830b5f2a13bbe616efc01028b7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cb2830b5f2a13bbe616efc01028b7ec">&#9670;&#160;</a></span>OFN_PATHMUSTEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_PATHMUSTEXIST</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The user can type only valid paths and file names. If this flag is used and the user types an invalid path and file name in the File Name entry field, the dialog box function displays a warning in a message box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga532446c263312085700e422acd844b9a" name="ga532446c263312085700e422acd844b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga532446c263312085700e422acd844b9a">&#9670;&#160;</a></span>OFN_FILEMUSTEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_FILEMUSTEXIST</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The user can type only names of existing files in the File Name entry field. If this flag is specified and the user enters an invalid name, the dialog box procedure displays a warning in a message box. If this flag is specified, the OFN_PATHMUSTEXIST flag is also used. This flag can be used in an Open dialog box. It cannot be used with a Save As dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4f9a9a512779f5166fdcec6f4c5563b9" name="ga4f9a9a512779f5166fdcec6f4c5563b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f9a9a512779f5166fdcec6f4c5563b9">&#9670;&#160;</a></span>OFN_CREATEPROMPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_CREATEPROMPT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>If the user specifies a file that does not exist, this flag causes the dialog box to prompt the user for permission to create the file. If the user chooses to create the file, the dialog box closes and the function returns the specified name; otherwise, the dialog box remains open. If you use this flag with the OFN_ALLOWMULTISELECT flag, the dialog box allows the user to specify only one nonexistent file. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad2914be7b98d55eabb5bca86c7d362b0" name="gad2914be7b98d55eabb5bca86c7d362b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2914be7b98d55eabb5bca86c7d362b0">&#9670;&#160;</a></span>OFN_SHAREAWARE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_SHAREAWARE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Specifies that if a call to the OpenFile function fails because of a network sharing violation, the error is ignored and the dialog box returns the selected file name. If this flag is not set, the dialog box notifies your hook procedure when a network sharing violation occurs for the file name specified by the user. If you set the OFN_EXPLORER flag, the dialog box sends the CDN_SHAREVIOLATION message to the hook procedure. If you do not set OFN_EXPLORER, the dialog box sends the SHAREVISTRING registered message to the hook procedure. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac5bc445e1627b5b33a83ec4e71491f9a" name="gac5bc445e1627b5b33a83ec4e71491f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5bc445e1627b5b33a83ec4e71491f9a">&#9670;&#160;</a></span>OFN_NOREADONLYRETURN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NOREADONLYRETURN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The returned file does not have the Read Only check box selected and is not in a write-protected directory. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga197a6034ad92a5df34b2c9f258b8f07c" name="ga197a6034ad92a5df34b2c9f258b8f07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga197a6034ad92a5df34b2c9f258b8f07c">&#9670;&#160;</a></span>OFN_NOTESTFILECREATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NOTESTFILECREATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>The file is not created before the dialog box is closed. This flag should be specified if the application saves the file on a create-nonmodify network share. When an application specifies this flag, the library does not check for write protection, a full disk, an open drive door, or network protection. Applications using this flag must perform file operations carefully, because a file cannot be reopened once it is closed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf7dfbe36dceae7c9ba57f885cbc3eef1" name="gaf7dfbe36dceae7c9ba57f885cbc3eef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7dfbe36dceae7c9ba57f885cbc3eef1">&#9670;&#160;</a></span>OFN_NONETWORKBUTTON</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NONETWORKBUTTON</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Hides and disables the Network button. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga74ba2739a7b2891ee2606de31f465ea0" name="ga74ba2739a7b2891ee2606de31f465ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74ba2739a7b2891ee2606de31f465ea0">&#9670;&#160;</a></span>OFN_NOLONGNAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NOLONGNAMES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>For old-style dialog boxes, this flag causes the dialog box to use short file names (8.3 format). Explorer-style dialog boxes ignore this flag and always display long file names. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9866ffc798b4060425853340ba32475e" name="ga9866ffc798b4060425853340ba32475e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9866ffc798b4060425853340ba32475e">&#9670;&#160;</a></span>OFN_EXPLORER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_EXPLORER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Indicates that any customizations made to the Open or Save As dialog box use the Explorer-style customization methods. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad4b2f486d4245585f684fa5bb40106a9" name="gad4b2f486d4245585f684fa5bb40106a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4b2f486d4245585f684fa5bb40106a9">&#9670;&#160;</a></span>OFN_NODEREFERENCELINKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_NODEREFERENCELINKS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Directs the dialog box to return the path and file name of the selected shortcut (.LNK) file. If this value is not specified, the dialog box returns the path and file name of the file referenced by the shortcut. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga67c267310505559234ae35790b5b49bc" name="ga67c267310505559234ae35790b5b49bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67c267310505559234ae35790b5b49bc">&#9670;&#160;</a></span>OFN_LONGNAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_LONGNAMES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>For old-style dialog boxes, this flag causes the dialog box to use long file names. If this flag is not specified, or if the OFN_ALLOWMULTISELECT flag is also set, old-style dialog boxes use short file names (8.3 format) for file names with spaces. Explorer-style dialog boxes ignore this flag and always display long file names. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga9a5f64e405544241820748a10a2f3f54" name="ga9a5f64e405544241820748a10a2f3f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a5f64e405544241820748a10a2f3f54">&#9670;&#160;</a></span>OFN_ENABLEINCLUDENOTIFY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ENABLEINCLUDENOTIFY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to send CDN_INCLUDEITEM notification messages to your OFNHookProc hook procedure when the user opens a folder. The dialog box sends a notification for each item in the newly opened folder. These messages enable you to control which items the dialog box displays in the folder's item list. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga74a97f8ab451edb654d57d8ec120fd70" name="ga74a97f8ab451edb654d57d8ec120fd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74a97f8ab451edb654d57d8ec120fd70">&#9670;&#160;</a></span>OFN_ENABLESIZING</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ENABLESIZING</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Enables the Explorer-style dialog box to be resized using either the mouse or the keyboard. By default, the Explorer-style Open and Save As dialog boxes allow the dialog box to be resized regardless of whether this flag is set. This flag is necessary only if you provide a hook procedure or custom template. The old-style dialog box does not permit resizing. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad95dda3c6ccf9b5792a1fccea10f6f95" name="gad95dda3c6ccf9b5792a1fccea10f6f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad95dda3c6ccf9b5792a1fccea10f6f95">&#9670;&#160;</a></span>OFN_DONTADDTORECENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_DONTADDTORECENT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Prevents the system from adding a link to the selected file in the file system directory that contains the user's most recently used documents. To retrieve the location of this directory, call the SHGetSpecialFolderLocation function with the CSIDL_RECENT flag. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga8d6efc89cee1597b5d85c7b59313d821" name="ga8d6efc89cee1597b5d85c7b59313d821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8d6efc89cee1597b5d85c7b59313d821">&#9670;&#160;</a></span>OFN_FORCESHOWHIDDEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_FORCESHOWHIDDEN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Forces the showing of system and hidden files, thus overriding the user setting to show or not show hidden files. However, a file that is marked both system and hidden is not shown. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gafc9e3f35f8d0afd1eef99842f22d6672" name="gafc9e3f35f8d0afd1eef99842f22d6672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc9e3f35f8d0afd1eef99842f22d6672">&#9670;&#160;</a></span>OFN_SHOWPREVIEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_SHOWPREVIEW</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display the preview panel. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab1943c22864e7f150b7e950efd1c0d01" name="gab1943c22864e7f150b7e950efd1c0d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1943c22864e7f150b7e950efd1c0d01">&#9670;&#160;</a></span>OFN_ADDEXTENSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t OFN_ADDEXTENSION</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="open__file__name__flags_8h.html">xtd.forms.native/include/xtd/forms/open_file_name_flags.h</a>&gt;</code></p>
+
+<p>Cause the dialog box automatically adds an extension to a file name if the user omits the extension. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

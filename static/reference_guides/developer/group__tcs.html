@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__tcs.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,75 +90,653 @@ $(document).ready(function(){initNavTree('group__tcs.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga27ed9d3205e3b97d4d8c7333156c948f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga27ed9d3205e3b97d4d8c7333156c948f.html#ga27ed9d3205e3b97d4d8c7333156c948f">TCS_SCROLLOPPOSITE</a></td></tr>
+<tr class="memitem:ga27ed9d3205e3b97d4d8c7333156c948f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga27ed9d3205e3b97d4d8c7333156c948f">TCS_SCROLLOPPOSITE</a></td></tr>
 <tr class="memdesc:ga27ed9d3205e3b97d4d8c7333156c948f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unneeded tabs scroll to the opposite side of the control when a tab is selected.  <br /></td></tr>
 <tr class="separator:ga27ed9d3205e3b97d4d8c7333156c948f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54a28e17a060c7e34317ca67f31d622d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga54a28e17a060c7e34317ca67f31d622d.html#ga54a28e17a060c7e34317ca67f31d622d">TCS_BOTTOM</a></td></tr>
+<tr class="memitem:ga54a28e17a060c7e34317ca67f31d622d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga54a28e17a060c7e34317ca67f31d622d">TCS_BOTTOM</a></td></tr>
 <tr class="memdesc:ga54a28e17a060c7e34317ca67f31d622d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabs appear at the bottom of the control. This value equals TCS_RIGHT.  <br /></td></tr>
 <tr class="separator:ga54a28e17a060c7e34317ca67f31d622d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b7fecaf51774696fe2b52eeab4a8f2c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga0b7fecaf51774696fe2b52eeab4a8f2c.html#ga0b7fecaf51774696fe2b52eeab4a8f2c">TCS_RIGHT</a></td></tr>
+<tr class="memitem:ga0b7fecaf51774696fe2b52eeab4a8f2c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga0b7fecaf51774696fe2b52eeab4a8f2c">TCS_RIGHT</a></td></tr>
 <tr class="memdesc:ga0b7fecaf51774696fe2b52eeab4a8f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabs appear vertically on the right side of controls that use the TCS_VERTICAL style. This value equals TCS_BOTTOM.  <br /></td></tr>
 <tr class="separator:ga0b7fecaf51774696fe2b52eeab4a8f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2971d26d1109284d486cd1e7a79316a1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga2971d26d1109284d486cd1e7a79316a1.html#ga2971d26d1109284d486cd1e7a79316a1">TCS_MULTISELECT</a></td></tr>
+<tr class="memitem:ga2971d26d1109284d486cd1e7a79316a1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga2971d26d1109284d486cd1e7a79316a1">TCS_MULTISELECT</a></td></tr>
 <tr class="memdesc:ga2971d26d1109284d486cd1e7a79316a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiple tabs can be selected by holding down the CTRL key when clicking. This style must be used with the TCS_BUTTONS style.  <br /></td></tr>
 <tr class="separator:ga2971d26d1109284d486cd1e7a79316a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8dd00e0310ae2da6965b446cd934420"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gac8dd00e0310ae2da6965b446cd934420.html#gac8dd00e0310ae2da6965b446cd934420">TCS_FLATBUTTONS</a></td></tr>
+<tr class="memitem:gac8dd00e0310ae2da6965b446cd934420"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gac8dd00e0310ae2da6965b446cd934420">TCS_FLATBUTTONS</a></td></tr>
 <tr class="memdesc:gac8dd00e0310ae2da6965b446cd934420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selected tabs appear as being indented into the background while other tabs appear as being on the same plane as the background. This style only affects tab controls with the TCS_BUTTONS style.  <br /></td></tr>
 <tr class="separator:gac8dd00e0310ae2da6965b446cd934420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae2faccd3c870f44322af0d6cfda447fe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gae2faccd3c870f44322af0d6cfda447fe.html#gae2faccd3c870f44322af0d6cfda447fe">TCS_FORCEICONLEFT</a></td></tr>
+<tr class="memitem:gae2faccd3c870f44322af0d6cfda447fe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gae2faccd3c870f44322af0d6cfda447fe">TCS_FORCEICONLEFT</a></td></tr>
 <tr class="memdesc:gae2faccd3c870f44322af0d6cfda447fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Icons are aligned with the left edge of each fixed-width tab. This style can only be used with the TCS_FIXEDWIDTH style.  <br /></td></tr>
 <tr class="separator:gae2faccd3c870f44322af0d6cfda447fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e4b0c2a600130ba64a1fbce911cd133"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga1e4b0c2a600130ba64a1fbce911cd133.html#ga1e4b0c2a600130ba64a1fbce911cd133">TCS_FORCELABELLEFT</a></td></tr>
+<tr class="memitem:ga1e4b0c2a600130ba64a1fbce911cd133"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga1e4b0c2a600130ba64a1fbce911cd133">TCS_FORCELABELLEFT</a></td></tr>
 <tr class="memdesc:ga1e4b0c2a600130ba64a1fbce911cd133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Labels are aligned with the left edge of each fixed-width tab; that is, the label is displayed immediately to the right of the icon instead of being centered. This style can only be used with the TCS_FIXEDWIDTH style, and it implies the TCS_FORCEICONLEFT style.  <br /></td></tr>
 <tr class="separator:ga1e4b0c2a600130ba64a1fbce911cd133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad0b665c7649dccfe0f15ebc9a87ff441"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gad0b665c7649dccfe0f15ebc9a87ff441.html#gad0b665c7649dccfe0f15ebc9a87ff441">TCS_HOTTRACK</a></td></tr>
+<tr class="memitem:gad0b665c7649dccfe0f15ebc9a87ff441"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gad0b665c7649dccfe0f15ebc9a87ff441">TCS_HOTTRACK</a></td></tr>
 <tr class="memdesc:gad0b665c7649dccfe0f15ebc9a87ff441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Items under the pointer are automatically highlighted. You can check whether hot tracking is enabled by calling SystemParametersInfo.  <br /></td></tr>
 <tr class="separator:gad0b665c7649dccfe0f15ebc9a87ff441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12eeffdbd3dfd0e5e313ed774a68123b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga12eeffdbd3dfd0e5e313ed774a68123b.html#ga12eeffdbd3dfd0e5e313ed774a68123b">TCS_VERTICAL</a></td></tr>
+<tr class="memitem:ga12eeffdbd3dfd0e5e313ed774a68123b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga12eeffdbd3dfd0e5e313ed774a68123b">TCS_VERTICAL</a></td></tr>
 <tr class="memdesc:ga12eeffdbd3dfd0e5e313ed774a68123b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabs appear at the left side of the control, with tab text displayed vertically. This style is valid only when used with the TCS_MULTILINE style. To make tabs appear on the right side of the control, also use the TCS_RIGHT style.  <br /></td></tr>
 <tr class="separator:ga12eeffdbd3dfd0e5e313ed774a68123b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fa1dd888781e43a017cace3710a9884"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga0fa1dd888781e43a017cace3710a9884.html#ga0fa1dd888781e43a017cace3710a9884">TCS_TABS</a></td></tr>
+<tr class="memitem:ga0fa1dd888781e43a017cace3710a9884"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga0fa1dd888781e43a017cace3710a9884">TCS_TABS</a></td></tr>
 <tr class="memdesc:ga0fa1dd888781e43a017cace3710a9884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabs appear as tabs, and a border is drawn around the display area. This style is the default.  <br /></td></tr>
 <tr class="separator:ga0fa1dd888781e43a017cace3710a9884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a9842aa4573ab4c8f5601e2ca4bc64f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga0a9842aa4573ab4c8f5601e2ca4bc64f.html#ga0a9842aa4573ab4c8f5601e2ca4bc64f">TCS_BUTTONS</a></td></tr>
+<tr class="memitem:ga0a9842aa4573ab4c8f5601e2ca4bc64f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga0a9842aa4573ab4c8f5601e2ca4bc64f">TCS_BUTTONS</a></td></tr>
 <tr class="memdesc:ga0a9842aa4573ab4c8f5601e2ca4bc64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabs appear as buttons, and no border is drawn around the display area.  <br /></td></tr>
 <tr class="separator:ga0a9842aa4573ab4c8f5601e2ca4bc64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf3b4d0c8209b4a4dd99fc1f8649f43af"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gaf3b4d0c8209b4a4dd99fc1f8649f43af.html#gaf3b4d0c8209b4a4dd99fc1f8649f43af">TCS_SINGLELINE</a></td></tr>
+<tr class="memitem:gaf3b4d0c8209b4a4dd99fc1f8649f43af"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gaf3b4d0c8209b4a4dd99fc1f8649f43af">TCS_SINGLELINE</a></td></tr>
 <tr class="memdesc:gaf3b4d0c8209b4a4dd99fc1f8649f43af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only one row of tabs is displayed. The user can scroll to see more tabs, if necessary. This style is the default.  <br /></td></tr>
 <tr class="separator:gaf3b4d0c8209b4a4dd99fc1f8649f43af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga46c898ae8de5002f8ea20049991f1d5e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga46c898ae8de5002f8ea20049991f1d5e.html#ga46c898ae8de5002f8ea20049991f1d5e">TCS_MULTILINE</a></td></tr>
+<tr class="memitem:ga46c898ae8de5002f8ea20049991f1d5e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga46c898ae8de5002f8ea20049991f1d5e">TCS_MULTILINE</a></td></tr>
 <tr class="memdesc:ga46c898ae8de5002f8ea20049991f1d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiple rows of tabs are displayed, if necessary, so all tabs are visible at once.  <br /></td></tr>
 <tr class="separator:ga46c898ae8de5002f8ea20049991f1d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5b64d4bc04fcbe18787807b0a4e59a4b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga5b64d4bc04fcbe18787807b0a4e59a4b.html#ga5b64d4bc04fcbe18787807b0a4e59a4b">TCS_RIGHTJUSTIFY</a></td></tr>
+<tr class="memitem:ga5b64d4bc04fcbe18787807b0a4e59a4b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga5b64d4bc04fcbe18787807b0a4e59a4b">TCS_RIGHTJUSTIFY</a></td></tr>
 <tr class="memdesc:ga5b64d4bc04fcbe18787807b0a4e59a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of each tab is increased, if necessary, so that each row of tabs fills the entire width of the tab control. This window style is ignored unless the TCS_MULTILINE style is also specified.  <br /></td></tr>
 <tr class="separator:ga5b64d4bc04fcbe18787807b0a4e59a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc44005f9baab2d55b947d16f1456094"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gadc44005f9baab2d55b947d16f1456094.html#gadc44005f9baab2d55b947d16f1456094">TCS_FIXEDWIDTH</a></td></tr>
+<tr class="memitem:gadc44005f9baab2d55b947d16f1456094"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gadc44005f9baab2d55b947d16f1456094">TCS_FIXEDWIDTH</a></td></tr>
 <tr class="memdesc:gadc44005f9baab2d55b947d16f1456094"><td class="mdescLeft">&#160;</td><td class="mdescRight">All tabs are the same width. This style cannot be combined with the TCS_RIGHTJUSTIFY style.  <br /></td></tr>
 <tr class="separator:gadc44005f9baab2d55b947d16f1456094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga465d6cab717485863299f8143409e13f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga465d6cab717485863299f8143409e13f.html#ga465d6cab717485863299f8143409e13f">TCS_RAGGEDRIGHT</a></td></tr>
+<tr class="memitem:ga465d6cab717485863299f8143409e13f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga465d6cab717485863299f8143409e13f">TCS_RAGGEDRIGHT</a></td></tr>
 <tr class="memdesc:ga465d6cab717485863299f8143409e13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rows of tabs will not be stretched to fill the entire width of the control. This style is the default.  <br /></td></tr>
 <tr class="separator:ga465d6cab717485863299f8143409e13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25ad4c010427d71b4e81aa669badc266"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga25ad4c010427d71b4e81aa669badc266.html#ga25ad4c010427d71b4e81aa669badc266">TCS_FOCUSONBUTTONDOWN</a></td></tr>
+<tr class="memitem:ga25ad4c010427d71b4e81aa669badc266"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga25ad4c010427d71b4e81aa669badc266">TCS_FOCUSONBUTTONDOWN</a></td></tr>
 <tr class="memdesc:ga25ad4c010427d71b4e81aa669badc266"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tab control receives the input focus when clicked.  <br /></td></tr>
 <tr class="separator:ga25ad4c010427d71b4e81aa669badc266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga476f7595b0eb94c8aff9c9c874fe6b4e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_ga476f7595b0eb94c8aff9c9c874fe6b4e.html#ga476f7595b0eb94c8aff9c9c874fe6b4e">TCS_OWNERDRAWFIXED</a></td></tr>
+<tr class="memitem:ga476f7595b0eb94c8aff9c9c874fe6b4e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#ga476f7595b0eb94c8aff9c9c874fe6b4e">TCS_OWNERDRAWFIXED</a></td></tr>
 <tr class="memdesc:ga476f7595b0eb94c8aff9c9c874fe6b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parent window is responsible for drawing tabs.  <br /></td></tr>
 <tr class="separator:ga476f7595b0eb94c8aff9c9c874fe6b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9015d885a34707771497f50d0639f77"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gae9015d885a34707771497f50d0639f77.html#gae9015d885a34707771497f50d0639f77">TCS_TOOLTIPS</a></td></tr>
+<tr class="memitem:gae9015d885a34707771497f50d0639f77"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gae9015d885a34707771497f50d0639f77">TCS_TOOLTIPS</a></td></tr>
 <tr class="memdesc:gae9015d885a34707771497f50d0639f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tab control has a tooltip control associated with it.  <br /></td></tr>
 <tr class="separator:gae9015d885a34707771497f50d0639f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1f92dc7e0df2924663df5afa878cd36"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs_gab1f92dc7e0df2924663df5afa878cd36.html#gab1f92dc7e0df2924663df5afa878cd36">TCS_FOCUSNEVER</a></td></tr>
+<tr class="memitem:gab1f92dc7e0df2924663df5afa878cd36"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcs.html#gab1f92dc7e0df2924663df5afa878cd36">TCS_FOCUSNEVER</a></td></tr>
 <tr class="memdesc:gab1f92dc7e0df2924663df5afa878cd36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tab control does not receive the input focus when clicked.  <br /></td></tr>
 <tr class="separator:gab1f92dc7e0df2924663df5afa878cd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga27ed9d3205e3b97d4d8c7333156c948f" name="ga27ed9d3205e3b97d4d8c7333156c948f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27ed9d3205e3b97d4d8c7333156c948f">&#9670;&#160;</a></span>TCS_SCROLLOPPOSITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_SCROLLOPPOSITE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Unneeded tabs scroll to the opposite side of the control when a tab is selected. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga54a28e17a060c7e34317ca67f31d622d" name="ga54a28e17a060c7e34317ca67f31d622d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54a28e17a060c7e34317ca67f31d622d">&#9670;&#160;</a></span>TCS_BOTTOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_BOTTOM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Tabs appear at the bottom of the control. This value equals TCS_RIGHT. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0b7fecaf51774696fe2b52eeab4a8f2c" name="ga0b7fecaf51774696fe2b52eeab4a8f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b7fecaf51774696fe2b52eeab4a8f2c">&#9670;&#160;</a></span>TCS_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_RIGHT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Tabs appear vertically on the right side of controls that use the TCS_VERTICAL style. This value equals TCS_BOTTOM. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga2971d26d1109284d486cd1e7a79316a1" name="ga2971d26d1109284d486cd1e7a79316a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2971d26d1109284d486cd1e7a79316a1">&#9670;&#160;</a></span>TCS_MULTISELECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_MULTISELECT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Multiple tabs can be selected by holding down the CTRL key when clicking. This style must be used with the TCS_BUTTONS style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac8dd00e0310ae2da6965b446cd934420" name="gac8dd00e0310ae2da6965b446cd934420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8dd00e0310ae2da6965b446cd934420">&#9670;&#160;</a></span>TCS_FLATBUTTONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FLATBUTTONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Selected tabs appear as being indented into the background while other tabs appear as being on the same plane as the background. This style only affects tab controls with the TCS_BUTTONS style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae2faccd3c870f44322af0d6cfda447fe" name="gae2faccd3c870f44322af0d6cfda447fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2faccd3c870f44322af0d6cfda447fe">&#9670;&#160;</a></span>TCS_FORCEICONLEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FORCEICONLEFT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Icons are aligned with the left edge of each fixed-width tab. This style can only be used with the TCS_FIXEDWIDTH style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga1e4b0c2a600130ba64a1fbce911cd133" name="ga1e4b0c2a600130ba64a1fbce911cd133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e4b0c2a600130ba64a1fbce911cd133">&#9670;&#160;</a></span>TCS_FORCELABELLEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FORCELABELLEFT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Labels are aligned with the left edge of each fixed-width tab; that is, the label is displayed immediately to the right of the icon instead of being centered. This style can only be used with the TCS_FIXEDWIDTH style, and it implies the TCS_FORCEICONLEFT style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad0b665c7649dccfe0f15ebc9a87ff441" name="gad0b665c7649dccfe0f15ebc9a87ff441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0b665c7649dccfe0f15ebc9a87ff441">&#9670;&#160;</a></span>TCS_HOTTRACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_HOTTRACK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Items under the pointer are automatically highlighted. You can check whether hot tracking is enabled by calling SystemParametersInfo. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga12eeffdbd3dfd0e5e313ed774a68123b" name="ga12eeffdbd3dfd0e5e313ed774a68123b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12eeffdbd3dfd0e5e313ed774a68123b">&#9670;&#160;</a></span>TCS_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_VERTICAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Tabs appear at the left side of the control, with tab text displayed vertically. This style is valid only when used with the TCS_MULTILINE style. To make tabs appear on the right side of the control, also use the TCS_RIGHT style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0fa1dd888781e43a017cace3710a9884" name="ga0fa1dd888781e43a017cace3710a9884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fa1dd888781e43a017cace3710a9884">&#9670;&#160;</a></span>TCS_TABS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_TABS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Tabs appear as tabs, and a border is drawn around the display area. This style is the default. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0a9842aa4573ab4c8f5601e2ca4bc64f" name="ga0a9842aa4573ab4c8f5601e2ca4bc64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a9842aa4573ab4c8f5601e2ca4bc64f">&#9670;&#160;</a></span>TCS_BUTTONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_BUTTONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Tabs appear as buttons, and no border is drawn around the display area. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaf3b4d0c8209b4a4dd99fc1f8649f43af" name="gaf3b4d0c8209b4a4dd99fc1f8649f43af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf3b4d0c8209b4a4dd99fc1f8649f43af">&#9670;&#160;</a></span>TCS_SINGLELINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_SINGLELINE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Only one row of tabs is displayed. The user can scroll to see more tabs, if necessary. This style is the default. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga46c898ae8de5002f8ea20049991f1d5e" name="ga46c898ae8de5002f8ea20049991f1d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46c898ae8de5002f8ea20049991f1d5e">&#9670;&#160;</a></span>TCS_MULTILINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_MULTILINE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Multiple rows of tabs are displayed, if necessary, so all tabs are visible at once. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga5b64d4bc04fcbe18787807b0a4e59a4b" name="ga5b64d4bc04fcbe18787807b0a4e59a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b64d4bc04fcbe18787807b0a4e59a4b">&#9670;&#160;</a></span>TCS_RIGHTJUSTIFY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_RIGHTJUSTIFY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>The width of each tab is increased, if necessary, so that each row of tabs fills the entire width of the tab control. This window style is ignored unless the TCS_MULTILINE style is also specified. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadc44005f9baab2d55b947d16f1456094" name="gadc44005f9baab2d55b947d16f1456094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc44005f9baab2d55b947d16f1456094">&#9670;&#160;</a></span>TCS_FIXEDWIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FIXEDWIDTH</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>All tabs are the same width. This style cannot be combined with the TCS_RIGHTJUSTIFY style. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga465d6cab717485863299f8143409e13f" name="ga465d6cab717485863299f8143409e13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga465d6cab717485863299f8143409e13f">&#9670;&#160;</a></span>TCS_RAGGEDRIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_RAGGEDRIGHT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>Rows of tabs will not be stretched to fill the entire width of the control. This style is the default. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga25ad4c010427d71b4e81aa669badc266" name="ga25ad4c010427d71b4e81aa669badc266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25ad4c010427d71b4e81aa669badc266">&#9670;&#160;</a></span>TCS_FOCUSONBUTTONDOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FOCUSONBUTTONDOWN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>The tab control receives the input focus when clicked. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga476f7595b0eb94c8aff9c9c874fe6b4e" name="ga476f7595b0eb94c8aff9c9c874fe6b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga476f7595b0eb94c8aff9c9c874fe6b4e">&#9670;&#160;</a></span>TCS_OWNERDRAWFIXED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_OWNERDRAWFIXED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>The parent window is responsible for drawing tabs. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae9015d885a34707771497f50d0639f77" name="gae9015d885a34707771497f50d0639f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9015d885a34707771497f50d0639f77">&#9670;&#160;</a></span>TCS_TOOLTIPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_TOOLTIPS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>The tab control has a tooltip control associated with it. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gab1f92dc7e0df2924663df5afa878cd36" name="gab1f92dc7e0df2924663df5afa878cd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1f92dc7e0df2924663df5afa878cd36">&#9670;&#160;</a></span>TCS_FOCUSNEVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t TCS_FOCUSNEVER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="tab__control__styles_8h.html">xtd.forms.native/include/xtd/forms/native/tab_control_styles.h</a>&gt;</code></p>
+
+<p>The tab control does not receive the input focus when clicked. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('examples.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -112,6 +92,8 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="target_registered_8cpp-example.html">target_registered.cpp</a></li>
 <li><a class="el" href="target_startup_8cpp-example.html">target_startup.cpp</a></li>
 <li><a class="el" href="target_type_8cpp-example.html">target_type.cpp</a></li>
+<li><a class="el" href="any_8cpp-example.html">any.cpp</a></li>
+<li><a class="el" href="any_info_8cpp-example.html">any_info.cpp</a></li>
 <li><a class="el" href="bit_converter_8cpp-example.html">bit_converter.cpp</a></li>
 <li><a class="el" href="bit_converter_endianness_8cpp-example.html">bit_converter_endianness.cpp</a></li>
 <li><a class="el" href="bit_converter_is_big_endian_8cpp-example.html">bit_converter_is_big_endian.cpp</a></li>
@@ -121,8 +103,10 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="boxing_8cpp-example.html">boxing.cpp</a></li>
 <li><a class="el" href="array_list_8cpp-example.html">array_list.cpp</a></li>
 <li><a class="el" href="array_list2_8cpp-example.html">array_list2.cpp</a></li>
-<li><a class="el" href="vector_list_8cpp-example.html">vector_list.cpp</a></li>
-<li><a class="el" href="vector_list2_8cpp-example.html">vector_list2.cpp</a></li>
+<li><a class="el" href="hashtable_8cpp-example.html">hashtable.cpp</a></li>
+<li><a class="el" href="ienumerable_8cpp-example.html">ienumerable.cpp</a></li>
+<li><a class="el" href="ienumerator_8cpp-example.html">ienumerator.cpp</a></li>
+<li><a class="el" href="ilist_8cpp-example.html">ilist.cpp</a></li>
 <li><a class="el" href="file_settings_8cpp-example.html">file_settings.cpp</a></li>
 <li><a class="el" href="console_background_color_8cpp-example.html">console_background_color.cpp</a></li>
 <li><a class="el" href="console_beep_8cpp-example.html">console_beep.cpp</a></li>
@@ -223,6 +207,7 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="argument_exception_8cpp-example.html">argument_exception.cpp</a></li>
 <li><a class="el" href="exception_ptr_8cpp-example.html">exception_ptr.cpp</a></li>
 <li><a class="el" href="system_exception_8cpp-example.html">system_exception.cpp</a></li>
+<li><a class="el" href="user_defined_exception_8cpp-example.html">user_defined_exception.cpp</a></li>
 <li><a class="el" href="format_8cpp-example.html">format.cpp</a></li>
 <li><a class="el" href="format_any_8cpp-example.html">format_any.cpp</a></li>
 <li><a class="el" href="format_associative_containers_8cpp-example.html">format_associative_containers.cpp</a></li>
@@ -251,6 +236,16 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="format_unordered_associative_containers_8cpp-example.html">format_unordered_associative_containers.cpp</a></li>
 <li><a class="el" href="format_with_alignment_8cpp-example.html">format_with_alignment.cpp</a></li>
 <li><a class="el" href="format_with_order_8cpp-example.html">format_with_order.cpp</a></li>
+<li><a class="el" href="generic_icollection_8cpp-example.html">generic_icollection.cpp</a></li>
+<li><a class="el" href="generic_ienumerable_8cpp-example.html">generic_ienumerable.cpp</a></li>
+<li><a class="el" href="generic_ienumerable2_8cpp-example.html">generic_ienumerable2.cpp</a></li>
+<li><a class="el" href="generic_ienumerator_8cpp-example.html">generic_ienumerator.cpp</a></li>
+<li><a class="el" href="generic_ilist_8cpp-example.html">generic_ilist.cpp</a></li>
+<li><a class="el" href="generic_list_8cpp-example.html">generic_list.cpp</a></li>
+<li><a class="el" href="generic_list2_8cpp-example.html">generic_list2.cpp</a></li>
+<li><a class="el" href="generic_list3_8cpp-example.html">generic_list3.cpp</a></li>
+<li><a class="el" href="generic_list4_8cpp-example.html">generic_list4.cpp</a></li>
+<li><a class="el" href="generic_list_as_read_only_8cpp-example.html">generic_list_as_read_only.cpp</a></li>
 <li><a class="el" href="guid_8cpp-example.html">guid.cpp</a></li>
 <li><a class="el" href="hash_code_8cpp-example.html">hash_code.cpp</a></li>
 <li><a class="el" href="hello_world_console_8cpp-example.html">hello_world_console.cpp</a></li>
@@ -266,6 +261,7 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="iformatable_vs_to_string_8cpp-example.html">iformatable_vs_to_string.cpp</a></li>
 <li><a class="el" href="iobservable_iobserver_8cpp-example.html">iobservable_iobserver.cpp</a></li>
 <li><a class="el" href="iprogress_8cpp-example.html">iprogress.cpp</a></li>
+<li><a class="el" href="istringable_8cpp-example.html">istringable.cpp</a></li>
 <li><a class="el" href="binary_reader_8cpp-example.html">binary_reader.cpp</a></li>
 <li><a class="el" href="binary_reader2_8cpp-example.html">binary_reader2.cpp</a></li>
 <li><a class="el" href="binary_reader3_8cpp-example.html">binary_reader3.cpp</a></li>
@@ -283,8 +279,6 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="block_scope_8cpp-example.html">block_scope.cpp</a></li>
 <li><a class="el" href="call_once_8cpp-example.html">call_once.cpp</a></li>
 <li><a class="el" href="call_once2_8cpp-example.html">call_once2.cpp</a></li>
-<li><a class="el" href="csf_8cpp-example.html">csf.cpp</a></li>
-<li><a class="el" href="current_stack_frame_8cpp-example.html">current_stack_frame.cpp</a></li>
 <li><a class="el" href="interface_8cpp-example.html">interface.cpp</a></li>
 <li><a class="el" href="interface2_8cpp-example.html">interface2.cpp</a></li>
 <li><a class="el" href="lock_8cpp-example.html">lock.cpp</a></li>
@@ -302,6 +296,7 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="main5_8cpp-example.html">main5.cpp</a></li>
 <li><a class="el" href="math_8cpp-example.html">math.cpp</a></li>
 <li><a class="el" href="system_sounds_8cpp-example.html">system_sounds.cpp</a></li>
+<li><a class="el" href="memory_information_8cpp-example.html">memory_information.cpp</a></li>
 <li><a class="el" href="dns_get_host_addresses_8cpp-example.html">dns_get_host_addresses.cpp</a></li>
 <li><a class="el" href="dns_get_host_entry_8cpp-example.html">dns_get_host_entry.cpp</a></li>
 <li><a class="el" href="ip_address_8cpp-example.html">ip_address.cpp</a></li>
@@ -323,6 +318,7 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="object_memberwise_clone_8cpp-example.html">object_memberwise_clone.cpp</a></li>
 <li><a class="el" href="object_reference_equals_8cpp-example.html">object_reference_equals.cpp</a></li>
 <li><a class="el" href="object_to_string_8cpp-example.html">object_to_string.cpp</a></li>
+<li><a class="el" href="read_only_collection_8cpp-example.html">read_only_collection.cpp</a></li>
 <li><a class="el" href="console_background_color2_8cpp-example.html">console_background_color2.cpp</a></li>
 <li><a class="el" href="console_background_color3_8cpp-example.html">console_background_color3.cpp</a></li>
 <li><a class="el" href="console_beep2_8cpp-example.html">console_beep2.cpp</a></li>
@@ -351,6 +347,7 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="random1_8cpp-example.html">random1.cpp</a></li>
 <li><a class="el" href="random2_8cpp-example.html">random2.cpp</a></li>
 <li><a class="el" href="random3_8cpp-example.html">random3.cpp</a></li>
+<li><a class="el" href="source_location_invoked_directly_8cpp-example.html">source_location_invoked_directly.cpp</a></li>
 <li><a class="el" href="sprintf_8cpp-example.html">sprintf.cpp</a></li>
 <li><a class="el" href="sprintf_boolean_8cpp-example.html">sprintf_boolean.cpp</a></li>
 <li><a class="el" href="sprintf_character_8cpp-example.html">sprintf_character.cpp</a></li>
@@ -380,7 +377,9 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="string_format_8cpp-example.html">string_format.cpp</a></li>
 <li><a class="el" href="string_format_with_order_8cpp-example.html">string_format_with_order.cpp</a></li>
 <li><a class="el" href="string_unicode_8cpp-example.html">string_unicode.cpp</a></li>
+<li><a class="el" href="strings_8cpp-example.html">strings.cpp</a></li>
 <li><a class="el" href="test_console_8cpp-example.html">test_console.cpp</a></li>
+<li><a class="el" href="string_builder_append_8cpp-example.html">string_builder_append.cpp</a></li>
 <li><a class="el" href="auto_reset_event_8cpp-example.html">auto_reset_event.cpp</a></li>
 <li><a class="el" href="barrier_8cpp-example.html">barrier.cpp</a></li>
 <li><a class="el" href="barrier_simple_8cpp-example.html">barrier_simple.cpp</a></li>
@@ -890,13 +889,10 @@ $(document).ready(function(){initNavTree('examples.html',''); initResizable(); }
 <li><a class="el" href="valid_throws_any_8cpp-example.html">valid_throws_any.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

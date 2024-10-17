@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1condition__variable.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1condition__varia
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1condition__variable.html">condition_variable</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1condition__variable-members.html">List of all members</a>  </div>
@@ -112,34 +96,219 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1condition__varia
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:aa284736b5af4e1e1027aa79368d4ed30"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable_aa284736b5af4e1e1027aa79368d4ed30.html#aa284736b5af4e1e1027aa79368d4ed30">create</a> ()</td></tr>
+<tr class="memitem:aa284736b5af4e1e1027aa79368d4ed30"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable.html#aa284736b5af4e1e1027aa79368d4ed30">create</a> ()</td></tr>
 <tr class="memdesc:aa284736b5af4e1e1027aa79368d4ed30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create condition variable.  <br /></td></tr>
 <tr class="separator:aa284736b5af4e1e1027aa79368d4ed30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaca9d0fbe07a5728c77bcb6b9b89306d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable_aaca9d0fbe07a5728c77bcb6b9b89306d.html#aaca9d0fbe07a5728c77bcb6b9b89306d">destroy</a> (intmax_t handle)</td></tr>
+<tr class="memitem:aaca9d0fbe07a5728c77bcb6b9b89306d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable.html#aaca9d0fbe07a5728c77bcb6b9b89306d">destroy</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:aaca9d0fbe07a5728c77bcb6b9b89306d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy condition variable with specified condition variable handle.  <br /></td></tr>
 <tr class="separator:aaca9d0fbe07a5728c77bcb6b9b89306d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4650f52c418fbce856822c5d8d552b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable_ae4650f52c418fbce856822c5d8d552b4.html#ae4650f52c418fbce856822c5d8d552b4">pulse</a> (intmax_t handle)</td></tr>
+<tr class="memitem:ae4650f52c418fbce856822c5d8d552b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable.html#ae4650f52c418fbce856822c5d8d552b4">pulse</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:ae4650f52c418fbce856822c5d8d552b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pulse wainting condition variable with specified condition variable handle.  <br /></td></tr>
 <tr class="separator:ae4650f52c418fbce856822c5d8d552b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c92a2d70faa0af7c94d4611cafe24bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable_a2c92a2d70faa0af7c94d4611cafe24bd.html#a2c92a2d70faa0af7c94d4611cafe24bd">pulse_all</a> (intmax_t handle)</td></tr>
+<tr class="memitem:a2c92a2d70faa0af7c94d4611cafe24bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable.html#a2c92a2d70faa0af7c94d4611cafe24bd">pulse_all</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:a2c92a2d70faa0af7c94d4611cafe24bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pulse all waiting condition variable with specified condition variable handle.  <br /></td></tr>
 <tr class="separator:a2c92a2d70faa0af7c94d4611cafe24bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0f772eef53b85a838eaebef688bc3b7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable_ac0f772eef53b85a838eaebef688bc3b7.html#ac0f772eef53b85a838eaebef688bc3b7">wait</a> (intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout)</td></tr>
+<tr class="memitem:ac0f772eef53b85a838eaebef688bc3b7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1condition__variable.html#ac0f772eef53b85a838eaebef688bc3b7">wait</a> (intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout)</td></tr>
 <tr class="memdesc:ac0f772eef53b85a838eaebef688bc3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait`condition variable with specified condition variable handle.  <br /></td></tr>
 <tr class="separator:ac0f772eef53b85a838eaebef688bc3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa284736b5af4e1e1027aa79368d4ed30" name="aa284736b5af4e1e1027aa79368d4ed30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa284736b5af4e1e1027aa79368d4ed30">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static intmax_t xtd::native::condition_variable::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create condition variable. </p>
+<dl class="section return"><dt>Returns</dt><dd>The handle of the created condition variable. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aaca9d0fbe07a5728c77bcb6b9b89306d" name="aaca9d0fbe07a5728c77bcb6b9b89306d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca9d0fbe07a5728c77bcb6b9b89306d">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::condition_variable::destroy </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy condition variable with specified condition variable handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The condition variable handle to destroy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae4650f52c418fbce856822c5d8d552b4" name="ae4650f52c418fbce856822c5d8d552b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4650f52c418fbce856822c5d8d552b4">&#9670;&#160;</a></span>pulse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::condition_variable::pulse </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pulse wainting condition variable with specified condition variable handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The condition variable handle to pulse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if succeed; otherwhise false. </dd></dl>
+
+</div>
+</div>
+<a id="a2c92a2d70faa0af7c94d4611cafe24bd" name="a2c92a2d70faa0af7c94d4611cafe24bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c92a2d70faa0af7c94d4611cafe24bd">&#9670;&#160;</a></span>pulse_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::condition_variable::pulse_all </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pulse all waiting condition variable with specified condition variable handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The condition variable handle to pulse all. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if succeed; otherwhise false. </dd></dl>
+
+</div>
+</div>
+<a id="ac0f772eef53b85a838eaebef688bc3b7" name="ac0f772eef53b85a838eaebef688bc3b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f772eef53b85a838eaebef688bc3b7">&#9670;&#160;</a></span>wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::condition_variable::wait </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>critical_section_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>milliseconds_timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait`condition variable with specified condition variable handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The condition variable handle to release. </td></tr>
+    <tr><td class="paramname">critical_section_handle</td><td>The critical section handle associate to the condition variable handle. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>The timeout in milliseconds (-1 is infinite timeout). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if succeed; otherwhise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="condition__variable_8h_source.html">condition_variable.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1condition__variable.html">condition_variable</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

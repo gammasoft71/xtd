@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1tunit_1_1file__assert.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1tunit_1_1file__assert.html
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1tunit.html">tunit</a></li><li class="navelem"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html">file_assert</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1tunit_1_1file__assert-members.html">List of all members</a>  </div>
@@ -131,27 +115,27 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
 <div class="line">      <span class="keyword">auto</span> fn = path::get_temp_file_name();</div>
 <div class="line">      file_assert::exists(fn);</div>
 <div class="line">      file::remove(fn);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
 <div class="line">      <span class="keyword">auto</span> fn = path::get_random_file_name();</div>
 <div class="line">      file_assert::exists(fn);</div>
 <div class="line">      <span class="comment">// No need to remove fn because the file does not exist.</span></div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assert::are_equal example.&quot;</span>};</div>
-<div class="line">      file_assert::are_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assert::are_equel example.&quot;</span>}, <a class="code hl_function" href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">is</a>);</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assert::are_equal example.&quot;</span>};</div>
+<div class="line">      file_assert::are_equal(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assert::are_equel example.&quot;</span>}, <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
@@ -173,123 +157,923 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.h:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
-<div class="ttc" id="agroup__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
-<div class="ttc" id="agroup__xtd__core_ga52ae9030016acf7d943cd428e943dc02_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:365</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
+<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:365</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a96fc1cd7bccd421b4506f2883ec8e63b"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a96fc1cd7bccd421b4506f2883ec8e63b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a96fc1cd7bccd421b4506f2883ec8e63b.html#a96fc1cd7bccd421b4506f2883ec8e63b">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual)</td></tr>
-<tr class="memdesc:a96fc1cd7bccd421b4506f2883ec8e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a96fc1cd7bccd421b4506f2883ec8e63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605c67149051d9f9ebe15ba102805b0c"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a605c67149051d9f9ebe15ba102805b0c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a605c67149051d9f9ebe15ba102805b0c.html#a605c67149051d9f9ebe15ba102805b0c">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a605c67149051d9f9ebe15ba102805b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a605c67149051d9f9ebe15ba102805b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ef838c12e82efef81d3fe3f4586c217"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a9ef838c12e82efef81d3fe3f4586c217"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a9ef838c12e82efef81d3fe3f4586c217.html#a9ef838c12e82efef81d3fe3f4586c217">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a9ef838c12e82efef81d3fe3f4586c217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a9ef838c12e82efef81d3fe3f4586c217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f723a213a04168c89a34f74ded6109a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a3f723a213a04168c89a34f74ded6109a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a3f723a213a04168c89a34f74ded6109a.html#a3f723a213a04168c89a34f74ded6109a">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a3f723a213a04168c89a34f74ded6109a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a3f723a213a04168c89a34f74ded6109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158e813c7a83768e0d7f004032ad1f6c"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a158e813c7a83768e0d7f004032ad1f6c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a158e813c7a83768e0d7f004032ad1f6c.html#a158e813c7a83768e0d7f004032ad1f6c">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual)</td></tr>
-<tr class="memdesc:a158e813c7a83768e0d7f004032ad1f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a158e813c7a83768e0d7f004032ad1f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a90139f17071175fbc7d7d8aa9272c"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a44a90139f17071175fbc7d7d8aa9272c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a44a90139f17071175fbc7d7d8aa9272c.html#a44a90139f17071175fbc7d7d8aa9272c">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a44a90139f17071175fbc7d7d8aa9272c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:a44a90139f17071175fbc7d7d8aa9272c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab08d9f3846eb5232dae8cae064df73de"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ab08d9f3846eb5232dae8cae064df73de"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_ab08d9f3846eb5232dae8cae064df73de.html#ab08d9f3846eb5232dae8cae064df73de">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message)</td></tr>
-<tr class="memdesc:ab08d9f3846eb5232dae8cae064df73de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:ab08d9f3846eb5232dae8cae064df73de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c049a60705de221636599e4bd41f60"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ac3c049a60705de221636599e4bd41f60"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_ac3c049a60705de221636599e4bd41f60.html#ac3c049a60705de221636599e4bd41f60">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:ac3c049a60705de221636599e4bd41f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
-<tr class="separator:ac3c049a60705de221636599e4bd41f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21c91ba00241ff7cfc030b445c1895a4"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a21c91ba00241ff7cfc030b445c1895a4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a21c91ba00241ff7cfc030b445c1895a4.html#a21c91ba00241ff7cfc030b445c1895a4">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual)</td></tr>
-<tr class="memdesc:a21c91ba00241ff7cfc030b445c1895a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:a21c91ba00241ff7cfc030b445c1895a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9ede8ff5b47c6e856d4010c0a92228"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:acd9ede8ff5b47c6e856d4010c0a92228"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_acd9ede8ff5b47c6e856d4010c0a92228.html#acd9ede8ff5b47c6e856d4010c0a92228">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:acd9ede8ff5b47c6e856d4010c0a92228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:acd9ede8ff5b47c6e856d4010c0a92228"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc684b301f0ac6d6fa649b932b13a55a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:acc684b301f0ac6d6fa649b932b13a55a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_acc684b301f0ac6d6fa649b932b13a55a.html#acc684b301f0ac6d6fa649b932b13a55a">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message)</td></tr>
-<tr class="memdesc:acc684b301f0ac6d6fa649b932b13a55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:acc684b301f0ac6d6fa649b932b13a55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbbe7cf4cd08b125ab58288201a12b68"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:adbbe7cf4cd08b125ab58288201a12b68"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_adbbe7cf4cd08b125ab58288201a12b68.html#adbbe7cf4cd08b125ab58288201a12b68">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:adbbe7cf4cd08b125ab58288201a12b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:adbbe7cf4cd08b125ab58288201a12b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a361bc9991f60a76c07c6e9246a37488c"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a361bc9991f60a76c07c6e9246a37488c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a361bc9991f60a76c07c6e9246a37488c.html#a361bc9991f60a76c07c6e9246a37488c">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual)</td></tr>
-<tr class="memdesc:a361bc9991f60a76c07c6e9246a37488c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:a361bc9991f60a76c07c6e9246a37488c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92429dc4ea3aad337559820914ce01e"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ae92429dc4ea3aad337559820914ce01e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_ae92429dc4ea3aad337559820914ce01e.html#ae92429dc4ea3aad337559820914ce01e">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:ae92429dc4ea3aad337559820914ce01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:ae92429dc4ea3aad337559820914ce01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17c3f8aa1f7a7afa236850e6d32f5c4d"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a17c3f8aa1f7a7afa236850e6d32f5c4d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a17c3f8aa1f7a7afa236850e6d32f5c4d.html#a17c3f8aa1f7a7afa236850e6d32f5c4d">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a17c3f8aa1f7a7afa236850e6d32f5c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:a17c3f8aa1f7a7afa236850e6d32f5c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fed5d73ff7aee4aed7b28c1fbf87057"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a6fed5d73ff7aee4aed7b28c1fbf87057"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a6fed5d73ff7aee4aed7b28c1fbf87057.html#a6fed5d73ff7aee4aed7b28c1fbf87057">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a6fed5d73ff7aee4aed7b28c1fbf87057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
-<tr class="separator:a6fed5d73ff7aee4aed7b28c1fbf87057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a822569787af34e316143a1cfe64e0c89"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a822569787af34e316143a1cfe64e0c89"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a822569787af34e316143a1cfe64e0c89.html#a822569787af34e316143a1cfe64e0c89">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file)</td></tr>
-<tr class="memdesc:a822569787af34e316143a1cfe64e0c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
-<tr class="separator:a822569787af34e316143a1cfe64e0c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57b8571f1e182ed918b6a63e0e7becfc"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a57b8571f1e182ed918b6a63e0e7becfc"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a57b8571f1e182ed918b6a63e0e7becfc.html#a57b8571f1e182ed918b6a63e0e7becfc">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a57b8571f1e182ed918b6a63e0e7becfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
-<tr class="separator:a57b8571f1e182ed918b6a63e0e7becfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a4e02aa35a5c8fb57e9e659db8a31a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a82a4e02aa35a5c8fb57e9e659db8a31a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a82a4e02aa35a5c8fb57e9e659db8a31a.html#a82a4e02aa35a5c8fb57e9e659db8a31a">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a82a4e02aa35a5c8fb57e9e659db8a31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
-<tr class="separator:a82a4e02aa35a5c8fb57e9e659db8a31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7707f97a07b877b3d7de97c029b79e95"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a7707f97a07b877b3d7de97c029b79e95"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a7707f97a07b877b3d7de97c029b79e95.html#a7707f97a07b877b3d7de97c029b79e95">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a7707f97a07b877b3d7de97c029b79e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
-<tr class="separator:a7707f97a07b877b3d7de97c029b79e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab51a5503cb10261d6c499f8fe3450503"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ab51a5503cb10261d6c499f8fe3450503"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_ab51a5503cb10261d6c499f8fe3450503.html#ab51a5503cb10261d6c499f8fe3450503">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file)</td></tr>
-<tr class="memdesc:ab51a5503cb10261d6c499f8fe3450503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
-<tr class="separator:ab51a5503cb10261d6c499f8fe3450503"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e2042ae2bddf834a61da2483efdc93"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ae8e2042ae2bddf834a61da2483efdc93"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_ae8e2042ae2bddf834a61da2483efdc93.html#ae8e2042ae2bddf834a61da2483efdc93">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:ae8e2042ae2bddf834a61da2483efdc93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
-<tr class="separator:ae8e2042ae2bddf834a61da2483efdc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a91b0b01e5f2993bf2c0b33152603b4"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a5a91b0b01e5f2993bf2c0b33152603b4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a5a91b0b01e5f2993bf2c0b33152603b4.html#a5a91b0b01e5f2993bf2c0b33152603b4">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a5a91b0b01e5f2993bf2c0b33152603b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
-<tr class="separator:a5a91b0b01e5f2993bf2c0b33152603b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75c943dbe90a42f1125abdf3381de3de"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a75c943dbe90a42f1125abdf3381de3de"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert_a75c943dbe90a42f1125abdf3381de3de.html#a75c943dbe90a42f1125abdf3381de3de">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a75c943dbe90a42f1125abdf3381de3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
-<tr class="separator:a75c943dbe90a42f1125abdf3381de3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcbaf9c1801f29acea0b404acd916f15"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:abcbaf9c1801f29acea0b404acd916f15"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:abcbaf9c1801f29acea0b404acd916f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
+<tr class="separator:abcbaf9c1801f29acea0b404acd916f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa702b1ea06c2fc8acb0658c09dcd77e6"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:aa702b1ea06c2fc8acb0658c09dcd77e6"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#aa702b1ea06c2fc8acb0658c09dcd77e6">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:aa702b1ea06c2fc8acb0658c09dcd77e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
+<tr class="separator:aa702b1ea06c2fc8acb0658c09dcd77e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5136344319651186d9f260b395eaa523"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a5136344319651186d9f260b395eaa523"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a5136344319651186d9f260b395eaa523">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a5136344319651186d9f260b395eaa523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
+<tr class="separator:a5136344319651186d9f260b395eaa523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cee7ddff39afd73104bb4bb1679cd1"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:ad1cee7ddff39afd73104bb4bb1679cd1"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#ad1cee7ddff39afd73104bb4bb1679cd1">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:ad1cee7ddff39afd73104bb4bb1679cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are equal.  <br /></td></tr>
+<tr class="separator:ad1cee7ddff39afd73104bb4bb1679cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757e437b09478eb1ce7356375d9d5221"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a757e437b09478eb1ce7356375d9d5221"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a757e437b09478eb1ce7356375d9d5221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
+<tr class="separator:a757e437b09478eb1ce7356375d9d5221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5020f3c3d154a1ac01eaf9bac6eb7af0"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a5020f3c3d154a1ac01eaf9bac6eb7af0"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a5020f3c3d154a1ac01eaf9bac6eb7af0">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a5020f3c3d154a1ac01eaf9bac6eb7af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
+<tr class="separator:a5020f3c3d154a1ac01eaf9bac6eb7af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db2ecb25ab2a18ecdf77caef984d7c2"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a9db2ecb25ab2a18ecdf77caef984d7c2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a9db2ecb25ab2a18ecdf77caef984d7c2">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a9db2ecb25ab2a18ecdf77caef984d7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
+<tr class="separator:a9db2ecb25ab2a18ecdf77caef984d7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc05c9c413e28b55e1332409f7a7b0a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:adfc05c9c413e28b55e1332409f7a7b0a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#adfc05c9c413e28b55e1332409f7a7b0a">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:adfc05c9c413e28b55e1332409f7a7b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two files are not equal.  <br /></td></tr>
+<tr class="separator:adfc05c9c413e28b55e1332409f7a7b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20752d12f964d7f31423317ebef1e137"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a20752d12f964d7f31423317ebef1e137"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a20752d12f964d7f31423317ebef1e137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
+<tr class="separator:a20752d12f964d7f31423317ebef1e137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f785c7a9841b7d243ae925a0783bfda"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a8f785c7a9841b7d243ae925a0783bfda"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#a8f785c7a9841b7d243ae925a0783bfda">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:a8f785c7a9841b7d243ae925a0783bfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file not exists.  <br /></td></tr>
+<tr class="separator:a8f785c7a9841b7d243ae925a0783bfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2fd9af33af64537de20b05c9fad68e"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:aca2fd9af33af64537de20b05c9fad68e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:aca2fd9af33af64537de20b05c9fad68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
+<tr class="separator:aca2fd9af33af64537de20b05c9fad68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc73dd5142648062a8afe431cc093c41"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:abc73dd5142648062a8afe431cc093c41"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html#abc73dd5142648062a8afe431cc093c41">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memdesc:abc73dd5142648062a8afe431cc093c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that file exists.  <br /></td></tr>
+<tr class="separator:abc73dd5142648062a8afe431cc093c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abcbaf9c1801f29acea0b404acd916f15" name="abcbaf9c1801f29acea0b404acd916f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcbaf9c1801f29acea0b404acd916f15">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_equal </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_abcbaf9c1801f29acea0b404acd916f15"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assert.h:51</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aa702b1ea06c2fc8acb0658c09dcd77e6" name="aa702b1ea06c2fc8acb0658c09dcd77e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa702b1ea06c2fc8acb0658c09dcd77e6">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_equal </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5136344319651186d9f260b395eaa523" name="a5136344319651186d9f260b395eaa523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5136344319651186d9f260b395eaa523">&#9670;&#160;</a></span>are_equal() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ad1cee7ddff39afd73104bb4bb1679cd1" name="ad1cee7ddff39afd73104bb4bb1679cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1cee7ddff39afd73104bb4bb1679cd1">&#9670;&#160;</a></span>are_equal() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a757e437b09478eb1ce7356375d9d5221" name="a757e437b09478eb1ce7356375d9d5221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757e437b09478eb1ce7356375d9d5221">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_not_equal </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a757e437b09478eb1ce7356375d9d5221"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_assert.h:173</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5020f3c3d154a1ac01eaf9bac6eb7af0" name="a5020f3c3d154a1ac01eaf9bac6eb7af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5020f3c3d154a1ac01eaf9bac6eb7af0">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_not_equal </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a9db2ecb25ab2a18ecdf77caef984d7c2" name="a9db2ecb25ab2a18ecdf77caef984d7c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db2ecb25ab2a18ecdf77caef984d7c2">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_not_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="adfc05c9c413e28b55e1332409f7a7b0a" name="adfc05c9c413e28b55e1332409f7a7b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc05c9c413e28b55e1332409f7a7b0a">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::are_not_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that two files are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::stringstream s1;</div>
+<div class="line">s1 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s1.seekg(0, std::ios::beg);</div>
+<div class="line">std::stringstream s2;</div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
+<div class="line">s2.seekg(0, std::ios::beg);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a20752d12f964d7f31423317ebef1e137" name="a20752d12f964d7f31423317ebef1e137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20752d12f964d7f31423317ebef1e137">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::does_not_exist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that file not exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
+<div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a20752d12f964d7f31423317ebef1e137"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file not exists.</div><div class="ttdef"><b>Definition</b> file_assert.h:289</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">xtd::console_key::f1</a></div><div class="ttdeci">@ f1</div><div class="ttdoc">The F1 key.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a8f785c7a9841b7d243ae925a0783bfda" name="a8f785c7a9841b7d243ae925a0783bfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f785c7a9841b7d243ae925a0783bfda">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::does_not_exist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that file not exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
+<div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aca2fd9af33af64537de20b05c9fad68e" name="aca2fd9af33af64537de20b05c9fad68e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca2fd9af33af64537de20b05c9fad68e">&#9670;&#160;</a></span>exists() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::exists </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that file exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
+<div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_aca2fd9af33af64537de20b05c9fad68e"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a></div><div class="ttdeci">static void exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file exists.</div><div class="ttdef"><b>Definition</b> file_assert.h:333</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="abc73dd5142648062a8afe431cc093c41" name="abc73dd5142648062a8afe431cc093c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc73dd5142648062a8afe431cc093c41">&#9670;&#160;</a></span>exists() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::file_assert::exists </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em> = <code><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9ed13e058cdb9c8013ccceb424491eb4">xtd::diagnostics::stack_frame::current</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asserts that file exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td>the expected value. </td></tr>
+    <tr><td class="paramname">actual</td><td>the actual value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1assert__error.html" title="Exception thow when an assertion failed.">xtd::tunit::assert_error</a></td><td>If bad assertion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
+<div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.tunit/include/xtd/tunit/<a class="el" href="file__assert_8h_source.html">file_assert.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1tunit.html">tunit</a></li><li class="navelem"><a class="el" href="classxtd_1_1tunit_1_1file__assert.html">file_assert</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

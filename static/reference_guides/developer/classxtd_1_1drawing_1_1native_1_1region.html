@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1region.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1regio
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1drawing_1_1native_1_1region-members.html">List of all members</a>  </div>
@@ -120,88 +104,1173 @@ Inheritance diagram for xtd::drawing::native::region:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:aa3bf1dc0ba58b7720695ecd3f8df86ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_aa3bf1dc0ba58b7720695ecd3f8df86ed.html#aa3bf1dc0ba58b7720695ecd3f8df86ed">create</a> ()</td></tr>
+<tr class="memitem:aa3bf1dc0ba58b7720695ecd3f8df86ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#aa3bf1dc0ba58b7720695ecd3f8df86ed">create</a> ()</td></tr>
 <tr class="memdesc:aa3bf1dc0ba58b7720695ecd3f8df86ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a region with an infinite interior.  <br /></td></tr>
 <tr class="separator:aa3bf1dc0ba58b7720695ecd3f8df86ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a683b158e93cf3c94436da0def0c0f9e8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a683b158e93cf3c94436da0def0c0f9e8.html#a683b158e93cf3c94436da0def0c0f9e8">create_from_rect</a> (float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height)</td></tr>
+<tr class="memitem:a683b158e93cf3c94436da0def0c0f9e8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a683b158e93cf3c94436da0def0c0f9e8">create_from_rect</a> (float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height)</td></tr>
 <tr class="memdesc:a683b158e93cf3c94436da0def0c0f9e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a region from the specified rectangle.  <br /></td></tr>
 <tr class="separator:a683b158e93cf3c94436da0def0c0f9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfb4c7e8598c1038efdfaad396782949"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_acfb4c7e8598c1038efdfaad396782949.html#acfb4c7e8598c1038efdfaad396782949">create_from_graphics_path</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="group__xtd__core_ga20b51d7977f3ffaaca44c6075ad021db.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>)</td></tr>
+<tr class="memitem:acfb4c7e8598c1038efdfaad396782949"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#acfb4c7e8598c1038efdfaad396782949">create_from_graphics_path</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>)</td></tr>
 <tr class="memdesc:acfb4c7e8598c1038efdfaad396782949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a region with the specified graphics path.  <br /></td></tr>
 <tr class="separator:acfb4c7e8598c1038efdfaad396782949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2b1b97275bdcc154cbef1446d43c6b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a3a2b1b97275bdcc154cbef1446d43c6b.html#a3a2b1b97275bdcc154cbef1446d43c6b">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a3a2b1b97275bdcc154cbef1446d43c6b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a3a2b1b97275bdcc154cbef1446d43c6b">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a3a2b1b97275bdcc154cbef1446d43c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the region.  <br /></td></tr>
 <tr class="separator:a3a2b1b97275bdcc154cbef1446d43c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8055ae649a16de7c73241299d85ca380"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a8055ae649a16de7c73241299d85ca380.html#a8055ae649a16de7c73241299d85ca380">complement</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
+<tr class="memitem:a8055ae649a16de7c73241299d85ca380"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a8055ae649a16de7c73241299d85ca380">complement</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
 <tr class="memdesc:a8055ae649a16de7c73241299d85ca380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates thie region to contain the portion of the specified region that does not intersect with the region.  <br /></td></tr>
 <tr class="separator:a8055ae649a16de7c73241299d85ca380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68234c9599ef50886ec2330464ace46d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a68234c9599ef50886ec2330464ace46d.html#a68234c9599ef50886ec2330464ace46d">exclude</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
+<tr class="memitem:a68234c9599ef50886ec2330464ace46d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a68234c9599ef50886ec2330464ace46d">exclude</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
 <tr class="memdesc:a68234c9599ef50886ec2330464ace46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the region to contain only the portion of its interior that does not intersect with the specified region.  <br /></td></tr>
 <tr class="separator:a68234c9599ef50886ec2330464ace46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada2cb36ff05dadfadbb0b2befe6a7fbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_ada2cb36ff05dadfadbb0b2befe6a7fbc.html#ada2cb36ff05dadfadbb0b2befe6a7fbc">from_hrgn</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hrgn)</td></tr>
+<tr class="memitem:ada2cb36ff05dadfadbb0b2befe6a7fbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#ada2cb36ff05dadfadbb0b2befe6a7fbc">from_hrgn</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hrgn)</td></tr>
 <tr class="memdesc:ada2cb36ff05dadfadbb0b2befe6a7fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a region from a handle to the specified existing GDI region.  <br /></td></tr>
 <tr class="separator:ada2cb36ff05dadfadbb0b2befe6a7fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a369c2e36455641ca3acb7af172e1acd5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a369c2e36455641ca3acb7af172e1acd5.html#a369c2e36455641ca3acb7af172e1acd5">get_bounds</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float &amp;<a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float &amp;width, float &amp;height)</td></tr>
+<tr class="memitem:a369c2e36455641ca3acb7af172e1acd5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a369c2e36455641ca3acb7af172e1acd5">get_bounds</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float &amp;width, float &amp;height)</td></tr>
 <tr class="memdesc:a369c2e36455641ca3acb7af172e1acd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a rectangle that represents a rectangle that bounds in pixels the region.  <br /></td></tr>
 <tr class="separator:a369c2e36455641ca3acb7af172e1acd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44e31b670d65bfa11c69af1aadc6237f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a44e31b670d65bfa11c69af1aadc6237f.html#a44e31b670d65bfa11c69af1aadc6237f">get_hrgn</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
+<tr class="memitem:a44e31b670d65bfa11c69af1aadc6237f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a44e31b670d65bfa11c69af1aadc6237f">get_hrgn</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
 <tr class="memdesc:a44e31b670d65bfa11c69af1aadc6237f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a Windows handle to the region in the specified graphics context.  <br /></td></tr>
 <tr class="separator:a44e31b670d65bfa11c69af1aadc6237f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9ce9f2c64c0b06516ea334623b5923"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a6c9ce9f2c64c0b06516ea334623b5923.html#a6c9ce9f2c64c0b06516ea334623b5923">intersect</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
+<tr class="memitem:a6c9ce9f2c64c0b06516ea334623b5923"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a6c9ce9f2c64c0b06516ea334623b5923">intersect</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
 <tr class="memdesc:a6c9ce9f2c64c0b06516ea334623b5923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the region to the intersection of itself with the specified region.  <br /></td></tr>
 <tr class="separator:a6c9ce9f2c64c0b06516ea334623b5923"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a830218306b20fabe1a798246050287eb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a830218306b20fabe1a798246050287eb.html#a830218306b20fabe1a798246050287eb">is_empty</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a830218306b20fabe1a798246050287eb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a830218306b20fabe1a798246050287eb">is_empty</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a830218306b20fabe1a798246050287eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the region has an empty interior.  <br /></td></tr>
 <tr class="separator:a830218306b20fabe1a798246050287eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d343091fb4bd234e5ee50b5430517b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a37d343091fb4bd234e5ee50b5430517b.html#a37d343091fb4bd234e5ee50b5430517b">is_empty</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
+<tr class="memitem:a37d343091fb4bd234e5ee50b5430517b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a37d343091fb4bd234e5ee50b5430517b">is_empty</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
 <tr class="memdesc:a37d343091fb4bd234e5ee50b5430517b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the region has an empty interior on the specified drawing surface.  <br /></td></tr>
 <tr class="separator:a37d343091fb4bd234e5ee50b5430517b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b90631fef92db32e8f5b194b9571ff5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a3b90631fef92db32e8f5b194b9571ff5.html#a3b90631fef92db32e8f5b194b9571ff5">is_infinite</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a3b90631fef92db32e8f5b194b9571ff5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a3b90631fef92db32e8f5b194b9571ff5">is_infinite</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a3b90631fef92db32e8f5b194b9571ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the region has an infinite interior.  <br /></td></tr>
 <tr class="separator:a3b90631fef92db32e8f5b194b9571ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1feaed21e0498e94330cb1ebd1f6fdf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_ab1feaed21e0498e94330cb1ebd1f6fdf.html#ab1feaed21e0498e94330cb1ebd1f6fdf">is_infinite</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
+<tr class="memitem:ab1feaed21e0498e94330cb1ebd1f6fdf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#ab1feaed21e0498e94330cb1ebd1f6fdf">is_infinite</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
 <tr class="memdesc:ab1feaed21e0498e94330cb1ebd1f6fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the region has an infinite interior on the specified drawing surface.  <br /></td></tr>
 <tr class="separator:ab1feaed21e0498e94330cb1ebd1f6fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a957ee4c9f205051c582f4b256150bb25"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a957ee4c9f205051c582f4b256150bb25.html#a957ee4c9f205051c582f4b256150bb25">is_visible</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
+<tr class="memitem:a957ee4c9f205051c582f4b256150bb25"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a957ee4c9f205051c582f4b256150bb25">is_visible</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</td></tr>
 <tr class="memdesc:a957ee4c9f205051c582f4b256150bb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the specified point is contained within the region when drawn using the specified graphics.  <br /></td></tr>
 <tr class="separator:a957ee4c9f205051c582f4b256150bb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079d83bfed1ba8516e1fba328d54a5f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a079d83bfed1ba8516e1fba328d54a5f9.html#a079d83bfed1ba8516e1fba328d54a5f9">is_visible</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
+<tr class="memitem:a079d83bfed1ba8516e1fba328d54a5f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a079d83bfed1ba8516e1fba328d54a5f9">is_visible</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
 <tr class="memdesc:a079d83bfed1ba8516e1fba328d54a5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the specified point is contained within the region when drawn using the specified graphics.  <br /></td></tr>
 <tr class="separator:a079d83bfed1ba8516e1fba328d54a5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac96afa3477bb35b27ca8b4b2ea81443c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_ac96afa3477bb35b27ca8b4b2ea81443c.html#ac96afa3477bb35b27ca8b4b2ea81443c">is_visible</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height)</td></tr>
+<tr class="memitem:ac96afa3477bb35b27ca8b4b2ea81443c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#ac96afa3477bb35b27ca8b4b2ea81443c">is_visible</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height)</td></tr>
 <tr class="memdesc:ac96afa3477bb35b27ca8b4b2ea81443c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether any portion of the specified rectangle is contained within the region.  <br /></td></tr>
 <tr class="separator:ac96afa3477bb35b27ca8b4b2ea81443c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbe8fac01849be39348b6ec3e4c89261"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_acbe8fac01849be39348b6ec3e4c89261.html#acbe8fac01849be39348b6ec3e4c89261">is_visible</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
+<tr class="memitem:acbe8fac01849be39348b6ec3e4c89261"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#acbe8fac01849be39348b6ec3e4c89261">is_visible</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float width, float height, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> grpahics)</td></tr>
 <tr class="memdesc:acbe8fac01849be39348b6ec3e4c89261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether any portion of the specified rectangle is contained within this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> when drawn using the specified <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a>.  <br /></td></tr>
 <tr class="separator:acbe8fac01849be39348b6ec3e4c89261"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aa2a517f05f844f8c7d9c83dd115461"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a9aa2a517f05f844f8c7d9c83dd115461.html#a9aa2a517f05f844f8c7d9c83dd115461">make_empty</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a9aa2a517f05f844f8c7d9c83dd115461"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a9aa2a517f05f844f8c7d9c83dd115461">make_empty</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a9aa2a517f05f844f8c7d9c83dd115461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the region to an empty interior.  <br /></td></tr>
 <tr class="separator:a9aa2a517f05f844f8c7d9c83dd115461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa58cccffbf67785c75e950a77493d7ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_aa58cccffbf67785c75e950a77493d7ac.html#aa58cccffbf67785c75e950a77493d7ac">make_union</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
+<tr class="memitem:aa58cccffbf67785c75e950a77493d7ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#aa58cccffbf67785c75e950a77493d7ac">make_union</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
 <tr class="memdesc:aa58cccffbf67785c75e950a77493d7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the region to the union of itself and the specified region.  <br /></td></tr>
 <tr class="separator:aa58cccffbf67785c75e950a77493d7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a9e14def098acf86897ade713d0fb9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a94a9e14def098acf86897ade713d0fb9.html#a94a9e14def098acf86897ade713d0fb9">make_xor</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
+<tr class="memitem:a94a9e14def098acf86897ade713d0fb9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a94a9e14def098acf86897ade713d0fb9">make_xor</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a>)</td></tr>
 <tr class="memdesc:a94a9e14def098acf86897ade713d0fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the region to the union minus the intersection of itself with the specified region.  <br /></td></tr>
 <tr class="separator:a94a9e14def098acf86897ade713d0fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc3f1bda165d423beec95cb0ac019b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_aecc3f1bda165d423beec95cb0ac019b5.html#aecc3f1bda165d423beec95cb0ac019b5">release_hrgn</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> region_handle)</td></tr>
+<tr class="memitem:aecc3f1bda165d423beec95cb0ac019b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#aecc3f1bda165d423beec95cb0ac019b5">release_hrgn</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> region_handle)</td></tr>
 <tr class="memdesc:aecc3f1bda165d423beec95cb0ac019b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the handle of the region.  <br /></td></tr>
 <tr class="separator:aecc3f1bda165d423beec95cb0ac019b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469804449264a3b6fe37bb0597c14e0d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region_a469804449264a3b6fe37bb0597c14e0d.html#a469804449264a3b6fe37bb0597c14e0d">translate</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float dx, float dy)</td></tr>
+<tr class="memitem:a469804449264a3b6fe37bb0597c14e0d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html#a469804449264a3b6fe37bb0597c14e0d">translate</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle, float dx, float dy)</td></tr>
 <tr class="memdesc:a469804449264a3b6fe37bb0597c14e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offsets the coordinates of the region by the specified amount.  <br /></td></tr>
 <tr class="separator:a469804449264a3b6fe37bb0597c14e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa3bf1dc0ba58b7720695ecd3f8df86ed" name="aa3bf1dc0ba58b7720695ecd3f8df86ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bf1dc0ba58b7720695ecd3f8df86ed">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::region::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a region with an infinite interior. </p>
+<dl class="section return"><dt>Returns</dt><dd>The created region handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a683b158e93cf3c94436da0def0c0f9e8" name="a683b158e93cf3c94436da0def0c0f9e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683b158e93cf3c94436da0def0c0f9e8">&#9670;&#160;</a></span>create_from_rect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::region::create_from_rect </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a region from the specified rectangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A x-coordinate of rectangle that defines the interior of the region. </td></tr>
+    <tr><td class="paramname">y</td><td>A y-coordinate of rectangle that defines the interior of the region. </td></tr>
+    <tr><td class="paramname">width</td><td>A width of rectangle that defines the interior of the region. </td></tr>
+    <tr><td class="paramname">height</td><td>A height of rectangle that defines the interior of the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created region handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="acfb4c7e8598c1038efdfaad396782949" name="acfb4c7e8598c1038efdfaad396782949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb4c7e8598c1038efdfaad396782949">&#9670;&#160;</a></span>create_from_graphics_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::region::create_from_graphics_path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a region with the specified graphics path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>A graphics path handle that defines the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created region handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3a2b1b97275bdcc154cbef1446d43c6b" name="a3a2b1b97275bdcc154cbef1446d43c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2b1b97275bdcc154cbef1446d43c6b">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle to destroy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8055ae649a16de7c73241299d85ca380" name="a8055ae649a16de7c73241299d85ca380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8055ae649a16de7c73241299d85ca380">&#9670;&#160;</a></span>complement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::complement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates thie region to contain the portion of the specified region that does not intersect with the region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">region</td><td>The region handle to complement the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a68234c9599ef50886ec2330464ace46d" name="a68234c9599ef50886ec2330464ace46d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68234c9599ef50886ec2330464ace46d">&#9670;&#160;</a></span>exclude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::exclude </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the region to contain only the portion of its interior that does not intersect with the specified region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">region</td><td>The region handle to exclude from the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ada2cb36ff05dadfadbb0b2befe6a7fbc" name="ada2cb36ff05dadfadbb0b2befe6a7fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2cb36ff05dadfadbb0b2befe6a7fbc">&#9670;&#160;</a></span>from_hrgn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::region::from_hrgn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>hrgn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a region from a handle to the specified existing GDI region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hrgn</td><td>A handle to an existing region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created region handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a369c2e36455641ca3acb7af172e1acd5" name="a369c2e36455641ca3acb7af172e1acd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369c2e36455641ca3acb7af172e1acd5">&#9670;&#160;</a></span>get_bounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::get_bounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a rectangle that represents a rectangle that bounds in pixels the region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of rectangle that represents the bounding rectangle in pixels for the region. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of rectangle that represents the bounding rectangle in pixels for the region. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of rectangle that represents the bounding rectangle in pixels for the region. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of rectangle that represents the bounding rectangle in pixels for the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a44e31b670d65bfa11c69af1aadc6237f" name="a44e31b670d65bfa11c69af1aadc6237f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e31b670d65bfa11c69af1aadc6237f">&#9670;&#160;</a></span>get_hrgn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::region::get_hrgn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>grpahics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a Windows handle to the region in the specified graphics context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">graphics</td><td>The graphics handle on which the region is drawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A Windows handle to the region. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6c9ce9f2c64c0b06516ea334623b5923" name="a6c9ce9f2c64c0b06516ea334623b5923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9ce9f2c64c0b06516ea334623b5923">&#9670;&#160;</a></span>intersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::intersect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the region to the intersection of itself with the specified region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">region</td><td>The region handle to intersect with the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a830218306b20fabe1a798246050287eb" name="a830218306b20fabe1a798246050287eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830218306b20fabe1a798246050287eb">&#9670;&#160;</a></span>is_empty() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the region has an empty interior. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the interior of the region is empty; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a37d343091fb4bd234e5ee50b5430517b" name="a37d343091fb4bd234e5ee50b5430517b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d343091fb4bd234e5ee50b5430517b">&#9670;&#160;</a></span>is_empty() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>grpahics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the region has an empty interior on the specified drawing surface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">graphics</td><td>A graphics handle that represents a drawing surface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3b90631fef92db32e8f5b194b9571ff5" name="a3b90631fef92db32e8f5b194b9571ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b90631fef92db32e8f5b194b9571ff5">&#9670;&#160;</a></span>is_infinite() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_infinite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the region has an infinite interior. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the interior of the region is infinite; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ab1feaed21e0498e94330cb1ebd1f6fdf" name="ab1feaed21e0498e94330cb1ebd1f6fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1feaed21e0498e94330cb1ebd1f6fdf">&#9670;&#160;</a></span>is_infinite() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_infinite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>grpahics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the region has an infinite interior on the specified drawing surface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">graphics</td><td>A graphics handle that represents a drawing surface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the interior of the region is infinite when the transformation associated with graphics is applied; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a957ee4c9f205051c582f4b256150bb25" name="a957ee4c9f205051c582f4b256150bb25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a957ee4c9f205051c582f4b256150bb25">&#9670;&#160;</a></span>is_visible() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_visible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the specified point is contained within the region when drawn using the specified graphics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the point to test. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the point to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the specified point is contained within the region; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a079d83bfed1ba8516e1fba328d54a5f9" name="a079d83bfed1ba8516e1fba328d54a5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079d83bfed1ba8516e1fba328d54a5f9">&#9670;&#160;</a></span>is_visible() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_visible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>grpahics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether the specified point is contained within the region when drawn using the specified graphics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the point to test. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the point to test. </td></tr>
+    <tr><td class="paramname">graphics</td><td>The graphics handle that represents a draing surface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the specified point is contained within the region; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac96afa3477bb35b27ca8b4b2ea81443c" name="ac96afa3477bb35b27ca8b4b2ea81443c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96afa3477bb35b27ca8b4b2ea81443c">&#9670;&#160;</a></span>is_visible() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_visible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether any portion of the specified rectangle is contained within the region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the upper-left corner of the rectangle to test. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the upper-left corner of the rectangle to test. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the rectangle to test. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the rectangle to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when any portion of the specified rectangle is contained within the region; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="acbe8fac01849be39348b6ec3e4c89261" name="acbe8fac01849be39348b6ec3e4c89261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe8fac01849be39348b6ec3e4c89261">&#9670;&#160;</a></span>is_visible() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::drawing::native::region::is_visible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>grpahics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests whether any portion of the specified rectangle is contained within this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> when drawn using the specified <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the upper-left corner of the rectangle to test. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the upper-left corner of the rectangle to test. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the rectangle to test. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the rectangle to test. </td></tr>
+    <tr><td class="paramname">graphics</td><td>A graphics handle that represents a graphics context. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when any portion of the specified rectangle is contained within the region; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9aa2a517f05f844f8c7d9c83dd115461" name="a9aa2a517f05f844f8c7d9c83dd115461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aa2a517f05f844f8c7d9c83dd115461">&#9670;&#160;</a></span>make_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::make_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the region to an empty interior. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa58cccffbf67785c75e950a77493d7ac" name="aa58cccffbf67785c75e950a77493d7ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58cccffbf67785c75e950a77493d7ac">&#9670;&#160;</a></span>make_union()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::make_union </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the region to the union of itself and the specified region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">region</td><td>The region handle to unite with the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a94a9e14def098acf86897ade713d0fb9" name="a94a9e14def098acf86897ade713d0fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a9e14def098acf86897ade713d0fb9">&#9670;&#160;</a></span>make_xor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::make_xor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the region to the union minus the intersection of itself with the specified region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">path</td><td>The region handle to Xor with this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aecc3f1bda165d423beec95cb0ac019b5" name="aecc3f1bda165d423beec95cb0ac019b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecc3f1bda165d423beec95cb0ac019b5">&#9670;&#160;</a></span>release_hrgn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::release_hrgn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region_handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Releases the handle of the region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">region_handle</td><td>The handle to the region. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a469804449264a3b6fe37bb0597c14e0d" name="a469804449264a3b6fe37bb0597c14e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469804449264a3b6fe37bb0597c14e0d">&#9670;&#160;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::region::translate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Offsets the coordinates of the region by the specified amount. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The region handle. </td></tr>
+    <tr><td class="paramname">dx</td><td>The amount to offset the region horizontally. </td></tr>
+    <tr><td class="paramname">dy</td><td>The amount to offset the region vertically. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.drawing.native/include/xtd/drawing/native/<a class="el" href="xtd_8drawing_8native_2include_2xtd_2drawing_2native_2region_8h_source.html">region.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1region.html">region</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

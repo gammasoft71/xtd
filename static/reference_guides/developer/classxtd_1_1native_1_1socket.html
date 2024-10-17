@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1socket.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1socket.html','')
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1socket.html">socket</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1socket-members.html">List of all members</a>  </div>
@@ -111,118 +95,1813 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1socket.html','')
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
-<tr class="memitem:a61a9669ecc719b08281c0c3efed6f435"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a61a9669ecc719b08281c0c3efed6f435.html#a61a9669ecc719b08281c0c3efed6f435">address_family_to_native</a> (int32_t address_family)</td></tr>
+<tr class="memitem:a61a9669ecc719b08281c0c3efed6f435"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a61a9669ecc719b08281c0c3efed6f435">address_family_to_native</a> (int32_t address_family)</td></tr>
 <tr class="memdesc:a61a9669ecc719b08281c0c3efed6f435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native address family value corresponding to xtd address family.  <br /></td></tr>
 <tr class="separator:a61a9669ecc719b08281c0c3efed6f435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03f7d25f605a8f91b6dc4259b6cf6c86"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a03f7d25f605a8f91b6dc4259b6cf6c86.html#a03f7d25f605a8f91b6dc4259b6cf6c86">native_to_address_family</a> (int32_t address_family)</td></tr>
+<tr class="memitem:a03f7d25f605a8f91b6dc4259b6cf6c86"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a03f7d25f605a8f91b6dc4259b6cf6c86">native_to_address_family</a> (int32_t address_family)</td></tr>
 <tr class="memdesc:a03f7d25f605a8f91b6dc4259b6cf6c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the xtd address family value corresponding to native address family.  <br /></td></tr>
 <tr class="separator:a03f7d25f605a8f91b6dc4259b6cf6c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a177d6f3a77087332f019a79a4236da57"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a177d6f3a77087332f019a79a4236da57.html#a177d6f3a77087332f019a79a4236da57">accept</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
+<tr class="memitem:a177d6f3a77087332f019a79a4236da57"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a177d6f3a77087332f019a79a4236da57">accept</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
 <tr class="memdesc:a177d6f3a77087332f019a79a4236da57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a connection on a socket.  <br /></td></tr>
 <tr class="separator:a177d6f3a77087332f019a79a4236da57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadd98548e30cb2749ffc5ffb0c62a864"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_aadd98548e30cb2749ffc5ffb0c62a864.html#aadd98548e30cb2749ffc5ffb0c62a864">bind</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
+<tr class="memitem:aadd98548e30cb2749ffc5ffb0c62a864"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#aadd98548e30cb2749ffc5ffb0c62a864">bind</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
 <tr class="memdesc:aadd98548e30cb2749ffc5ffb0c62a864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds a name to a socket.  <br /></td></tr>
 <tr class="separator:aadd98548e30cb2749ffc5ffb0c62a864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59b485f975c2afffbb88a843b4600b7f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a59b485f975c2afffbb88a843b4600b7f.html#a59b485f975c2afffbb88a843b4600b7f">cleanup</a> ()</td></tr>
+<tr class="memitem:a59b485f975c2afffbb88a843b4600b7f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a59b485f975c2afffbb88a843b4600b7f">cleanup</a> ()</td></tr>
 <tr class="memdesc:a59b485f975c2afffbb88a843b4600b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup the socket library.  <br /></td></tr>
 <tr class="separator:a59b485f975c2afffbb88a843b4600b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e70000898e8f40f726a2c1739b1e800"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a6e70000898e8f40f726a2c1739b1e800.html#a6e70000898e8f40f726a2c1739b1e800">connect</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
+<tr class="memitem:a6e70000898e8f40f726a2c1739b1e800"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a6e70000898e8f40f726a2c1739b1e800">connect</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
 <tr class="memdesc:a6e70000898e8f40f726a2c1739b1e800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates a connection on a socket.  <br /></td></tr>
 <tr class="separator:a6e70000898e8f40f726a2c1739b1e800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9e54bcf2f17f2abbdf358b81c8bfc4"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a8b9e54bcf2f17f2abbdf358b81c8bfc4.html#a8b9e54bcf2f17f2abbdf358b81c8bfc4">create</a> (int32_t address_family, int32_t socket_type, int32_t protocol_type)</td></tr>
+<tr class="memitem:a8b9e54bcf2f17f2abbdf358b81c8bfc4"><td class="memItemLeft" align="right" valign="top">static intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a8b9e54bcf2f17f2abbdf358b81c8bfc4">create</a> (int32_t address_family, int32_t socket_type, int32_t protocol_type)</td></tr>
 <tr class="memdesc:a8b9e54bcf2f17f2abbdf358b81c8bfc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an endpoint for communication.  <br /></td></tr>
 <tr class="separator:a8b9e54bcf2f17f2abbdf358b81c8bfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1805f37908505e71f882d34f000cdd3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_aa1805f37908505e71f882d34f000cdd3.html#aa1805f37908505e71f882d34f000cdd3">destroy</a> (intmax_t handle)</td></tr>
+<tr class="memitem:aa1805f37908505e71f882d34f000cdd3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#aa1805f37908505e71f882d34f000cdd3">destroy</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:aa1805f37908505e71f882d34f000cdd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the socket.  <br /></td></tr>
 <tr class="separator:aa1805f37908505e71f882d34f000cdd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a5ddee08c8e0f8b3fc5cc8b38df18da6c.html#a5ddee08c8e0f8b3fc5cc8b38df18da6c">get_available</a> (intmax_t handle)</td></tr>
+<tr class="memitem:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a5ddee08c8e0f8b3fc5cc8b38df18da6c">get_available</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of data that has been received from the network and is available to be read.  <br /></td></tr>
 <tr class="separator:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a459424595f61ee986274af6657f3720b"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a459424595f61ee986274af6657f3720b.html#a459424595f61ee986274af6657f3720b">get_last_error</a> ()</td></tr>
+<tr class="memitem:a459424595f61ee986274af6657f3720b"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a459424595f61ee986274af6657f3720b">get_last_error</a> ()</td></tr>
 <tr class="memdesc:a459424595f61ee986274af6657f3720b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets last error.  <br /></td></tr>
 <tr class="separator:a459424595f61ee986274af6657f3720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d2b9c9399a626d6b81c660de706eed"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ae1d2b9c9399a626d6b81c660de706eed.html#ae1d2b9c9399a626d6b81c660de706eed">get_os_supports_ip_v4</a> () noexcept</td></tr>
+<tr class="memitem:ae1d2b9c9399a626d6b81c660de706eed"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ae1d2b9c9399a626d6b81c660de706eed">get_os_supports_ip_v4</a> () noexcept</td></tr>
 <tr class="memdesc:ae1d2b9c9399a626d6b81c660de706eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).  <br /></td></tr>
 <tr class="separator:ae1d2b9c9399a626d6b81c660de706eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8c9dbd5fad36ba144b077c7b973b32c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_aa8c9dbd5fad36ba144b077c7b973b32c.html#aa8c9dbd5fad36ba144b077c7b973b32c">get_os_supports_ip_v6</a> () noexcept</td></tr>
+<tr class="memitem:aa8c9dbd5fad36ba144b077c7b973b32c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#aa8c9dbd5fad36ba144b077c7b973b32c">get_os_supports_ip_v6</a> () noexcept</td></tr>
 <tr class="memdesc:aa8c9dbd5fad36ba144b077c7b973b32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).  <br /></td></tr>
 <tr class="separator:aa8c9dbd5fad36ba144b077c7b973b32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae24f2dffe6f2b6a6439afb7323c5222d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ae24f2dffe6f2b6a6439afb7323c5222d.html#ae24f2dffe6f2b6a6439afb7323c5222d">get_raw_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t &amp;option_length)</td></tr>
+<tr class="memitem:ae24f2dffe6f2b6a6439afb7323c5222d"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ae24f2dffe6f2b6a6439afb7323c5222d">get_raw_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t &amp;option_length)</td></tr>
 <tr class="memdesc:ae24f2dffe6f2b6a6439afb7323c5222d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets options on socket.  <br /></td></tr>
 <tr class="separator:ae24f2dffe6f2b6a6439afb7323c5222d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b3502464631bb8e309c76c047a22521"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a6b3502464631bb8e309c76c047a22521.html#a6b3502464631bb8e309c76c047a22521">get_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t &amp;option_length)</td></tr>
+<tr class="memitem:a6b3502464631bb8e309c76c047a22521"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a6b3502464631bb8e309c76c047a22521">get_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t &amp;option_length)</td></tr>
 <tr class="memdesc:a6b3502464631bb8e309c76c047a22521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets options on socket.  <br /></td></tr>
 <tr class="separator:a6b3502464631bb8e309c76c047a22521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f9ef366f7f2091f926da238c6fc99ef"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a3f9ef366f7f2091f926da238c6fc99ef.html#a3f9ef366f7f2091f926da238c6fc99ef">get_socket_linger_option</a> (intmax_t handle, bool &amp;enabled, uint32_t &amp;linger_time)</td></tr>
+<tr class="memitem:a3f9ef366f7f2091f926da238c6fc99ef"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a3f9ef366f7f2091f926da238c6fc99ef">get_socket_linger_option</a> (intmax_t handle, bool &amp;enabled, uint32_t &amp;linger_time)</td></tr>
 <tr class="memdesc:a3f9ef366f7f2091f926da238c6fc99ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets linger option on socket.  <br /></td></tr>
 <tr class="separator:a3f9ef366f7f2091f926da238c6fc99ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a997d4236f0800a21992f0eade42dc3f6"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a997d4236f0800a21992f0eade42dc3f6.html#a997d4236f0800a21992f0eade42dc3f6">get_socket_multicast_option</a> (intmax_t handle, int32_t socket_option_name, uint32_t &amp;multicast_address, uint32_t &amp;interface_index)</td></tr>
+<tr class="memitem:a997d4236f0800a21992f0eade42dc3f6"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a997d4236f0800a21992f0eade42dc3f6">get_socket_multicast_option</a> (intmax_t handle, int32_t socket_option_name, uint32_t &amp;multicast_address, uint32_t &amp;interface_index)</td></tr>
 <tr class="memdesc:a997d4236f0800a21992f0eade42dc3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets multicast option on socket.  <br /></td></tr>
 <tr class="separator:a997d4236f0800a21992f0eade42dc3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaf6547e9c262d0f44f56ff40fb92582"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_adaf6547e9c262d0f44f56ff40fb92582.html#adaf6547e9c262d0f44f56ff40fb92582">get_socket_ip_v6_multicast_option</a> (intmax_t handle, int32_t socket_option_name, std::vector&lt; uint8_t &gt; &amp;multicast_address, uint32_t &amp;interface_index)</td></tr>
+<tr class="memitem:adaf6547e9c262d0f44f56ff40fb92582"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#adaf6547e9c262d0f44f56ff40fb92582">get_socket_ip_v6_multicast_option</a> (intmax_t handle, int32_t socket_option_name, std::vector&lt; uint8_t &gt; &amp;multicast_address, uint32_t &amp;interface_index)</td></tr>
 <tr class="memdesc:adaf6547e9c262d0f44f56ff40fb92582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets IP v6 multicast option on socket.  <br /></td></tr>
 <tr class="separator:adaf6547e9c262d0f44f56ff40fb92582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f9e23b669d86bf598aba56162ff2d84"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a9f9e23b669d86bf598aba56162ff2d84.html#a9f9e23b669d86bf598aba56162ff2d84">io_control</a> (intmax_t handle, int32_t io_control, std::vector&lt; uint8_t &gt; &amp;option_in_value, std::vector&lt; uint8_t &gt; &amp;option_out_value)</td></tr>
+<tr class="memitem:a9f9e23b669d86bf598aba56162ff2d84"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a9f9e23b669d86bf598aba56162ff2d84">io_control</a> (intmax_t handle, int32_t io_control, std::vector&lt; uint8_t &gt; &amp;option_in_value, std::vector&lt; uint8_t &gt; &amp;option_out_value)</td></tr>
 <tr class="memdesc:a9f9e23b669d86bf598aba56162ff2d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets low-level operating modes for the Socket using the IOControlCode enumeration to specify control codes.  <br /></td></tr>
 <tr class="separator:a9f9e23b669d86bf598aba56162ff2d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56b2675ebcaa853e7ca5be08233db966"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a56b2675ebcaa853e7ca5be08233db966.html#a56b2675ebcaa853e7ca5be08233db966">listen</a> (intmax_t handle, size_t backlog)</td></tr>
+<tr class="memitem:a56b2675ebcaa853e7ca5be08233db966"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a56b2675ebcaa853e7ca5be08233db966">listen</a> (intmax_t handle, size_t backlog)</td></tr>
 <tr class="memdesc:a56b2675ebcaa853e7ca5be08233db966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listens for connections on a socket.  <br /></td></tr>
 <tr class="separator:a56b2675ebcaa853e7ca5be08233db966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94c3a9efc5c29f33bbfa7eb01c28a4c"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ac94c3a9efc5c29f33bbfa7eb01c28a4c.html#ac94c3a9efc5c29f33bbfa7eb01c28a4c">poll</a> (intmax_t handle, int32_t microseconds, int32_t mode)</td></tr>
+<tr class="memitem:ac94c3a9efc5c29f33bbfa7eb01c28a4c"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ac94c3a9efc5c29f33bbfa7eb01c28a4c">poll</a> (intmax_t handle, int32_t microseconds, int32_t mode)</td></tr>
 <tr class="memdesc:ac94c3a9efc5c29f33bbfa7eb01c28a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronous I/O multiplexing.  <br /></td></tr>
 <tr class="separator:ac94c3a9efc5c29f33bbfa7eb01c28a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1535d0950cf5ff44b4c1db0074bd97f"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ad1535d0950cf5ff44b4c1db0074bd97f.html#ad1535d0950cf5ff44b4c1db0074bd97f">receive</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core_ga21077f4832fc4718f7095d1a560a89cd.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>)</td></tr>
+<tr class="memitem:ad1535d0950cf5ff44b4c1db0074bd97f"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ad1535d0950cf5ff44b4c1db0074bd97f">receive</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>)</td></tr>
 <tr class="memdesc:ad1535d0950cf5ff44b4c1db0074bd97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from a socket.  <br /></td></tr>
 <tr class="separator:ad1535d0950cf5ff44b4c1db0074bd97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76602d188d5e445778d4f3356a67124e"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a76602d188d5e445778d4f3356a67124e.html#a76602d188d5e445778d4f3356a67124e">receive_from</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core_ga21077f4832fc4718f7095d1a560a89cd.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>, std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
+<tr class="memitem:a76602d188d5e445778d4f3356a67124e"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a76602d188d5e445778d4f3356a67124e">receive_from</a> (intmax_t handle, std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>, std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
 <tr class="memdesc:a76602d188d5e445778d4f3356a67124e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from a socket.  <br /></td></tr>
 <tr class="separator:a76602d188d5e445778d4f3356a67124e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7746a9317538d54052f267cef8e29510"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a7746a9317538d54052f267cef8e29510.html#a7746a9317538d54052f267cef8e29510">select</a> (std::vector&lt; intmax_t &gt; &amp;check_read, std::vector&lt; intmax_t &gt; &amp;check_write, std::vector&lt; intmax_t &gt; &amp;check_error, int32_t microseconds)</td></tr>
+<tr class="memitem:a7746a9317538d54052f267cef8e29510"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a7746a9317538d54052f267cef8e29510">select</a> (std::vector&lt; intmax_t &gt; &amp;check_read, std::vector&lt; intmax_t &gt; &amp;check_write, std::vector&lt; intmax_t &gt; &amp;check_error, int32_t microseconds)</td></tr>
 <tr class="memdesc:a7746a9317538d54052f267cef8e29510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the status of one or more sockets.  <br /></td></tr>
 <tr class="separator:a7746a9317538d54052f267cef8e29510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6027b7b70d3f0151d9379a346f7fb61"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ad6027b7b70d3f0151d9379a346f7fb61.html#ad6027b7b70d3f0151d9379a346f7fb61">send</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core_ga21077f4832fc4718f7095d1a560a89cd.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>)</td></tr>
+<tr class="memitem:ad6027b7b70d3f0151d9379a346f7fb61"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ad6027b7b70d3f0151d9379a346f7fb61">send</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>)</td></tr>
 <tr class="memdesc:ad6027b7b70d3f0151d9379a346f7fb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">send a message from a socket.  <br /></td></tr>
 <tr class="separator:ad6027b7b70d3f0151d9379a346f7fb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac08ee7046aec31cbcdd99f47bb92a459"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ac08ee7046aec31cbcdd99f47bb92a459.html#ac08ee7046aec31cbcdd99f47bb92a459">send_to</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core_ga21077f4832fc4718f7095d1a560a89cd.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
+<tr class="memitem:ac08ee7046aec31cbcdd99f47bb92a459"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ac08ee7046aec31cbcdd99f47bb92a459">send_to</a> (intmax_t handle, const std::vector&lt; uint8_t &gt; &amp;buffer, size_t offset, size_t <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, int32_t <a class="el" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">flags</a>, const std::vector&lt; uint8_t &gt; &amp;socket_address)</td></tr>
 <tr class="memdesc:ac08ee7046aec31cbcdd99f47bb92a459"><td class="mdescLeft">&#160;</td><td class="mdescRight">send a message from a socket.  <br /></td></tr>
 <tr class="separator:ac08ee7046aec31cbcdd99f47bb92a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d4304b352f133fd0e25d913c5b2de76"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a6d4304b352f133fd0e25d913c5b2de76.html#a6d4304b352f133fd0e25d913c5b2de76">set_blocking</a> (intmax_t handle, bool blocking)</td></tr>
+<tr class="memitem:a6d4304b352f133fd0e25d913c5b2de76"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a6d4304b352f133fd0e25d913c5b2de76">set_blocking</a> (intmax_t handle, bool blocking)</td></tr>
 <tr class="memdesc:a6d4304b352f133fd0e25d913c5b2de76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether the socket is in blocking mode.  <br /></td></tr>
 <tr class="separator:a6d4304b352f133fd0e25d913c5b2de76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff45a3be7d903aac367ecd15c7fd39d3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_aff45a3be7d903aac367ecd15c7fd39d3.html#aff45a3be7d903aac367ecd15c7fd39d3">set_raw_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t option_length)</td></tr>
+<tr class="memitem:aff45a3be7d903aac367ecd15c7fd39d3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#aff45a3be7d903aac367ecd15c7fd39d3">set_raw_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t option_length)</td></tr>
 <tr class="memdesc:aff45a3be7d903aac367ecd15c7fd39d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets options on socket.  <br /></td></tr>
 <tr class="separator:aff45a3be7d903aac367ecd15c7fd39d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbaf3532a1e31378aa33377b23be0fe3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_acbaf3532a1e31378aa33377b23be0fe3.html#acbaf3532a1e31378aa33377b23be0fe3">set_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t option_length)</td></tr>
+<tr class="memitem:acbaf3532a1e31378aa33377b23be0fe3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#acbaf3532a1e31378aa33377b23be0fe3">set_socket_option</a> (intmax_t handle, int32_t socket_option_level, int32_t socket_option_name, intmax_t option, size_t option_length)</td></tr>
 <tr class="memdesc:acbaf3532a1e31378aa33377b23be0fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets options on socket.  <br /></td></tr>
 <tr class="separator:acbaf3532a1e31378aa33377b23be0fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3829fe367bee12921acef9fc4f77c695"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a3829fe367bee12921acef9fc4f77c695.html#a3829fe367bee12921acef9fc4f77c695">set_socket_linger_option</a> (intmax_t handle, bool enabled, uint32_t linger_time)</td></tr>
+<tr class="memitem:a3829fe367bee12921acef9fc4f77c695"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a3829fe367bee12921acef9fc4f77c695">set_socket_linger_option</a> (intmax_t handle, bool enabled, uint32_t linger_time)</td></tr>
 <tr class="memdesc:a3829fe367bee12921acef9fc4f77c695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets linger option on socket.  <br /></td></tr>
 <tr class="separator:a3829fe367bee12921acef9fc4f77c695"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3c139b778e6b501fa3508d2e04998aa"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ae3c139b778e6b501fa3508d2e04998aa.html#ae3c139b778e6b501fa3508d2e04998aa">set_socket_multicast_option</a> (intmax_t handle, int32_t socket_option_name, uint32_t multicast_address, uint32_t interface_index)</td></tr>
+<tr class="memitem:ae3c139b778e6b501fa3508d2e04998aa"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ae3c139b778e6b501fa3508d2e04998aa">set_socket_multicast_option</a> (intmax_t handle, int32_t socket_option_name, uint32_t multicast_address, uint32_t interface_index)</td></tr>
 <tr class="memdesc:ae3c139b778e6b501fa3508d2e04998aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets multicast option on socket.  <br /></td></tr>
 <tr class="separator:ae3c139b778e6b501fa3508d2e04998aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e07d4aa885a0642552d23630cd6342"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a23e07d4aa885a0642552d23630cd6342.html#a23e07d4aa885a0642552d23630cd6342">set_socket_ip_v6_multicast_option</a> (intmax_t handle, int32_t socket_option_name, const std::vector&lt; uint8_t &gt; &amp;multicast_address, uint32_t interface_index)</td></tr>
+<tr class="memitem:a23e07d4aa885a0642552d23630cd6342"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a23e07d4aa885a0642552d23630cd6342">set_socket_ip_v6_multicast_option</a> (intmax_t handle, int32_t socket_option_name, const std::vector&lt; uint8_t &gt; &amp;multicast_address, uint32_t interface_index)</td></tr>
 <tr class="memdesc:a23e07d4aa885a0642552d23630cd6342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets IP v6 multicast option on socket.  <br /></td></tr>
 <tr class="separator:a23e07d4aa885a0642552d23630cd6342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9df0bb6f057d4d4ad636a1152a69ea2"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_ad9df0bb6f057d4d4ad636a1152a69ea2.html#ad9df0bb6f057d4d4ad636a1152a69ea2">shutdown</a> (intmax_t handle, int32_t how)</td></tr>
+<tr class="memitem:ad9df0bb6f057d4d4ad636a1152a69ea2"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#ad9df0bb6f057d4d4ad636a1152a69ea2">shutdown</a> (intmax_t handle, int32_t how)</td></tr>
 <tr class="memdesc:ad9df0bb6f057d4d4ad636a1152a69ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down part of a full-duplex connection.  <br /></td></tr>
 <tr class="separator:ad9df0bb6f057d4d4ad636a1152a69ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d454b5dfebd410c519d759c2bf115a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket_a9d454b5dfebd410c519d759c2bf115a9.html#a9d454b5dfebd410c519d759c2bf115a9">startup</a> ()</td></tr>
+<tr class="memitem:a9d454b5dfebd410c519d759c2bf115a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a9d454b5dfebd410c519d759c2bf115a9">startup</a> ()</td></tr>
 <tr class="memdesc:a9d454b5dfebd410c519d759c2bf115a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Startup the socket library.  <br /></td></tr>
 <tr class="separator:a9d454b5dfebd410c519d759c2bf115a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61a9669ecc719b08281c0c3efed6f435" name="a61a9669ecc719b08281c0c3efed6f435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a9669ecc719b08281c0c3efed6f435">&#9670;&#160;</a></span>address_family_to_native()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::address_family_to_native </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>address_family</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the native address family value corresponding to xtd address family. </p>
+<dl class="section return"><dt>Returns</dt><dd>The native address family value corresponding to xtd address family (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a03f7d25f605a8f91b6dc4259b6cf6c86" name="a03f7d25f605a8f91b6dc4259b6cf6c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03f7d25f605a8f91b6dc4259b6cf6c86">&#9670;&#160;</a></span>native_to_address_family()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::native_to_address_family </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>address_family</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the xtd address family value corresponding to native address family. </p>
+<dl class="section return"><dt>Returns</dt><dd>The xtd address family value corresponding to native address family (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a177d6f3a77087332f019a79a4236da57" name="a177d6f3a77087332f019a79a4236da57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177d6f3a77087332f019a79a4236da57">&#9670;&#160;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static intmax_t xtd::native::socket::accept </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>socket_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accepts a connection on a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_address</td><td>A byte array socket address is a result parameter that is filled in with the address of the connecting entity, as known to the communications layer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new socket handle created. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aadd98548e30cb2749ffc5ffb0c62a864" name="aadd98548e30cb2749ffc5ffb0c62a864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd98548e30cb2749ffc5ffb0c62a864">&#9670;&#160;</a></span>bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::bind </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>socket_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Binds a name to a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_address</td><td>A byte array socket address to bind. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a59b485f975c2afffbb88a843b4600b7f" name="a59b485f975c2afffbb88a843b4600b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59b485f975c2afffbb88a843b4600b7f">&#9670;&#160;</a></span>cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::socket::cleanup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cleanup the socket library. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6e70000898e8f40f726a2c1739b1e800" name="a6e70000898e8f40f726a2c1739b1e800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e70000898e8f40f726a2c1739b1e800">&#9670;&#160;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::connect </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>socket_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initiates a connection on a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_address</td><td>A byte array socket address to connect. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a8b9e54bcf2f17f2abbdf358b81c8bfc4" name="a8b9e54bcf2f17f2abbdf358b81c8bfc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9e54bcf2f17f2abbdf358b81c8bfc4">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static intmax_t xtd::native::socket::create </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>address_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>protocol_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an endpoint for communication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address_family</td><td>One of address family values (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_type</td><td>One of socket type values (see <a class="el" href="socket__type__constants_8h.html" title="Contains socket type constants.">socket_type_constants.h</a>). </td></tr>
+    <tr><td class="paramname">protocol_type</td><td>One of protocol type values (see <a class="el" href="protocol__type__constants_8h.html" title="Contains protocol type constants.">protocol_type_constants.h</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new socket handle created. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa1805f37908505e71f882d34f000cdd3" name="aa1805f37908505e71f882d34f000cdd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1805f37908505e71f882d34f000cdd3">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::destroy </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5ddee08c8e0f8b3fc5cc8b38df18da6c" name="a5ddee08c8e0f8b3fc5cc8b38df18da6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ddee08c8e0f8b3fc5cc8b38df18da6c">&#9670;&#160;</a></span>get_available()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t xtd::native::socket::get_available </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the amount of data that has been received from the network and is available to be read. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes of data received from the network and available to be read. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Return -1 if error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a459424595f61ee986274af6657f3720b" name="a459424595f61ee986274af6657f3720b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459424595f61ee986274af6657f3720b">&#9670;&#160;</a></span>get_last_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_last_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets last error. </p>
+<dl class="section return"><dt>Returns</dt><dd>One of socket error value (see <a class="el" href="socket__error__constants_8h.html" title="Contains socket error constants.">socket_error_constants.h</a>). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae1d2b9c9399a626d6b81c660de706eed" name="ae1d2b9c9399a626d6b81c660de706eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d2b9c9399a626d6b81c660de706eed">&#9670;&#160;</a></span>get_os_supports_ip_v4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::socket::get_os_supports_ip_v4 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4). </p>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the operating system and network adaptors support the IPv4 protocol; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa8c9dbd5fad36ba144b077c7b973b32c" name="aa8c9dbd5fad36ba144b077c7b973b32c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c9dbd5fad36ba144b077c7b973b32c">&#9670;&#160;</a></span>get_os_supports_ip_v6()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::native::socket::get_os_supports_ip_v6 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6). </p>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the operating system and network adaptors support the IPv6 protocol; otherwise, false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae24f2dffe6f2b6a6439afb7323c5222d" name="ae24f2dffe6f2b6a6439afb7323c5222d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24f2dffe6f2b6a6439afb7323c5222d">&#9670;&#160;</a></span>get_raw_socket_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_raw_socket_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>option_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets options on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>The platform-defined option level. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>The platform-defined option name. </td></tr>
+    <tr><td class="paramname">option</td><td>The option is a result parameter of that is filled with the option value. </td></tr>
+    <tr><td class="paramname">option_length</td><td>The option size will contains the size of option value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6b3502464631bb8e309c76c047a22521" name="a6b3502464631bb8e309c76c047a22521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b3502464631bb8e309c76c047a22521">&#9670;&#160;</a></span>get_socket_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_socket_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>option_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets options on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see <a class="el" href="socket__option__level__constants_8h.html" title="Contains socket option level constants.">socket_option_level_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">option</td><td>The option is a result parameter of that is filled with the option value. </td></tr>
+    <tr><td class="paramname">option_length</td><td>The option size will contains the size of option value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3f9ef366f7f2091f926da238c6fc99ef" name="a3f9ef366f7f2091f926da238c6fc99ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9ef366f7f2091f926da238c6fc99ef">&#9670;&#160;</a></span>get_socket_linger_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_socket_linger_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>enabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>linger_time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets linger option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">enabled</td><td>Indicates whether to linger after the socket is closed.. </td></tr>
+    <tr><td class="paramname">linger_time</td><td>The amount of time to remain connected after calling the socket close method if data remains to be sent. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a997d4236f0800a21992f0eade42dc3f6" name="a997d4236f0800a21992f0eade42dc3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997d4236f0800a21992f0eade42dc3f6">&#9670;&#160;</a></span>get_socket_multicast_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_socket_multicast_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>multicast_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>interface_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets multicast option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
+    <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="adaf6547e9c262d0f44f56ff40fb92582" name="adaf6547e9c262d0f44f56ff40fb92582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf6547e9c262d0f44f56ff40fb92582">&#9670;&#160;</a></span>get_socket_ip_v6_multicast_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::get_socket_ip_v6_multicast_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>multicast_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>interface_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets IP v6 multicast option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
+    <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9f9e23b669d86bf598aba56162ff2d84" name="a9f9e23b669d86bf598aba56162ff2d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f9e23b669d86bf598aba56162ff2d84">&#9670;&#160;</a></span>io_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::io_control </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>io_control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>option_in_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>option_out_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets low-level operating modes for the Socket using the IOControlCode enumeration to specify control codes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">io_control</td><td>A io control code value that specifies the control code of the operation to perform (see io_control_code_constants.h). </td></tr>
+    <tr><td class="paramname">option_in_value</td><td>An array of type byte that contains the input data required by the operation. </td></tr>
+    <tr><td class="paramname">option_out_value</td><td>An array of type byte that contains the output data returned by the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a56b2675ebcaa853e7ca5be08233db966" name="a56b2675ebcaa853e7ca5be08233db966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b2675ebcaa853e7ca5be08233db966">&#9670;&#160;</a></span>listen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::listen </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>backlog</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Listens for connections on a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">backlog</td><td>The maximum length for the queue of pending connections. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac94c3a9efc5c29f33bbfa7eb01c28a4c" name="ac94c3a9efc5c29f33bbfa7eb01c28a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94c3a9efc5c29f33bbfa7eb01c28a4c">&#9670;&#160;</a></span>poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::poll </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>microseconds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Synchronous I/O multiplexing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">microseconds</td><td>Timeout in microseconds. </td></tr>
+    <tr><td class="paramname">mode</td><td>One of select mode value (see <a class="el" href="select__mode__constants_8h.html" title="Contains select mode constants.">select_mode_constants.h</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad1535d0950cf5ff44b4c1db0074bd97f" name="ad1535d0950cf5ff44b4c1db0074bd97f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1535d0950cf5ff44b4c1db0074bd97f">&#9670;&#160;</a></span>receive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::receive </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Receives a message from a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">buffer</td><td>An array of type byte that is the storage location for the received data. </td></tr>
+    <tr><td class="paramname">offset</td><td>The location in buffer to store the received data. </td></tr>
+    <tr><td class="paramname">size</td><td>The number of bytes to receive. </td></tr>
+    <tr><td class="paramname">flags</td><td>A bitwise combination of the socket flags values. (see socket_flags_constants.h) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a76602d188d5e445778d4f3356a67124e" name="a76602d188d5e445778d4f3356a67124e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76602d188d5e445778d4f3356a67124e">&#9670;&#160;</a></span>receive_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::receive_from </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>socket_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Receives a message from a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">buffer</td><td>An array of type byte that is the storage location for the received data. </td></tr>
+    <tr><td class="paramname">offset</td><td>The location in buffer to store the received data. </td></tr>
+    <tr><td class="paramname">size</td><td>The number of bytes to receive. </td></tr>
+    <tr><td class="paramname">flags</td><td>A bitwise combination of the socket flags values. (see socket_flags_constants.h) </td></tr>
+    <tr><td class="paramname">socket_address</td><td>A byte array socket address to receive from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7746a9317538d54052f267cef8e29510" name="a7746a9317538d54052f267cef8e29510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7746a9317538d54052f267cef8e29510">&#9670;&#160;</a></span>select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::select </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; intmax_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>check_read</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; intmax_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>check_write</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; intmax_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>check_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>microseconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines the status of one or more sockets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check_read</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> of Socket instances to check for readability. </td></tr>
+    <tr><td class="paramname">check_write</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> of Socket instances to check for writability. </td></tr>
+    <tr><td class="paramname">check_error</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> of Socket instances to check for errors. </td></tr>
+    <tr><td class="paramname">microseconds</td><td>The time-out value, in microseconds. A -1 value indicates an infinite time-out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad6027b7b70d3f0151d9379a346f7fb61" name="ad6027b7b70d3f0151d9379a346f7fb61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6027b7b70d3f0151d9379a346f7fb61">&#9670;&#160;</a></span>send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::send </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>send a message from a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>An array of type Byte that contains the data to be sent. </td></tr>
+    <tr><td class="paramname">offset</td><td>TThe position in the data buffer at which to begin sending data. </td></tr>
+    <tr><td class="paramname">size</td><td>The number of bytes to send. </td></tr>
+    <tr><td class="paramname">flags</td><td>A bitwise combination of the socket flags values. (see socket_flags_constants.h) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac08ee7046aec31cbcdd99f47bb92a459" name="ac08ee7046aec31cbcdd99f47bb92a459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08ee7046aec31cbcdd99f47bb92a459">&#9670;&#160;</a></span>send_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::send_to </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>socket_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>send a message from a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">buffer</td><td>An array of type Byte that contains the data to be sent. </td></tr>
+    <tr><td class="paramname">offset</td><td>TThe position in the data buffer at which to begin sending data. </td></tr>
+    <tr><td class="paramname">size</td><td>The number of bytes to send. </td></tr>
+    <tr><td class="paramname">flags</td><td>A bitwise combination of the socket flags values. (see socket_flags_constants.h) </td></tr>
+    <tr><td class="paramname">socket_address</td><td>A byte array socket address to send to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6d4304b352f133fd0e25d913c5b2de76" name="a6d4304b352f133fd0e25d913c5b2de76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4304b352f133fd0e25d913c5b2de76">&#9670;&#160;</a></span>set_blocking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_blocking </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>blocking</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value that indicates whether the socket is in blocking mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">blocking</td><td>bool true if the Socket will block; otherwise, false. The default is true </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aff45a3be7d903aac367ecd15c7fd39d3" name="aff45a3be7d903aac367ecd15c7fd39d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff45a3be7d903aac367ecd15c7fd39d3">&#9670;&#160;</a></span>set_raw_socket_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_raw_socket_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>option_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets options on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>The platform-defined option name. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>The value to which the option should be set. </td></tr>
+    <tr><td class="paramname">option</td><td>Contains the option value. </td></tr>
+    <tr><td class="paramname">option_length</td><td>Contains the option value size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="acbaf3532a1e31378aa33377b23be0fe3" name="acbaf3532a1e31378aa33377b23be0fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbaf3532a1e31378aa33377b23be0fe3">&#9670;&#160;</a></span>set_socket_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_socket_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>option_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets options on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see <a class="el" href="socket__option__level__constants_8h.html" title="Contains socket option level constants.">socket_option_level_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">option</td><td>Contains the option value. </td></tr>
+    <tr><td class="paramname">option_length</td><td>Contains the option value size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3829fe367bee12921acef9fc4f77c695" name="a3829fe367bee12921acef9fc4f77c695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3829fe367bee12921acef9fc4f77c695">&#9670;&#160;</a></span>set_socket_linger_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_socket_linger_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>linger_time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets linger option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">enabled</td><td>Indicates whether to linger after the socket is closed.. </td></tr>
+    <tr><td class="paramname">linger_time</td><td>The amount of time to remain connected after calling the socket close method if data remains to be sent. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae3c139b778e6b501fa3508d2e04998aa" name="ae3c139b778e6b501fa3508d2e04998aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c139b778e6b501fa3508d2e04998aa">&#9670;&#160;</a></span>set_socket_multicast_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_socket_multicast_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>multicast_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>interface_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets multicast option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
+    <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a23e07d4aa885a0642552d23630cd6342" name="a23e07d4aa885a0642552d23630cd6342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e07d4aa885a0642552d23630cd6342">&#9670;&#160;</a></span>set_socket_ip_v6_multicast_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::set_socket_ip_v6_multicast_option </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_option_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>multicast_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>interface_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets IP v6 multicast option on socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
+    <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
+    <tr><td class="paramname">linger_time</td><td>The amount of time to remain connected after calling the socket close method if data remains to be sent. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ad9df0bb6f057d4d4ad636a1152a69ea2" name="ad9df0bb6f057d4d4ad636a1152a69ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9df0bb6f057d4d4ad636a1152a69ea2">&#9670;&#160;</a></span>shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::socket::shutdown </td>
+          <td>(</td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>how</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shut down part of a full-duplex connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
+    <tr><td class="paramname">how</td><td>One of socket shutdown values (see <a class="el" href="socket__shutdown__constants_8h.html" title="Contains socket shutdown constants.">socket_shutdown_constants.h</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9d454b5dfebd410c519d759c2bf115a9" name="a9d454b5dfebd410c519d759c2bf115a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d454b5dfebd410c519d759c2bf115a9">&#9670;&#160;</a></span>startup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::native::socket::startup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Startup the socket library. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2socket_8h_source.html">socket.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1socket.html">socket</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__cs.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,51 +90,397 @@ $(document).ready(function(){initNavTree('group__cs.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga5d8ec82e724981ee7a34c78436a76850"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga5d8ec82e724981ee7a34c78436a76850.html#ga5d8ec82e724981ee7a34c78436a76850">CS_VREDRAW</a></td></tr>
+<tr class="memitem:ga5d8ec82e724981ee7a34c78436a76850"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga5d8ec82e724981ee7a34c78436a76850">CS_VREDRAW</a></td></tr>
 <tr class="memdesc:ga5d8ec82e724981ee7a34c78436a76850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redraws the entire window if a movement or size adjustment changes the height of the client area.  <br /></td></tr>
 <tr class="separator:ga5d8ec82e724981ee7a34c78436a76850"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc7d44a11ef861a6510147bbd3beb40e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_gacc7d44a11ef861a6510147bbd3beb40e.html#gacc7d44a11ef861a6510147bbd3beb40e">CS_HREDRAW</a></td></tr>
+<tr class="memitem:gacc7d44a11ef861a6510147bbd3beb40e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#gacc7d44a11ef861a6510147bbd3beb40e">CS_HREDRAW</a></td></tr>
 <tr class="memdesc:gacc7d44a11ef861a6510147bbd3beb40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redraws the entire window if a movement or size adjustment changes the width of the client area.  <br /></td></tr>
 <tr class="separator:gacc7d44a11ef861a6510147bbd3beb40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66352c4b71cecc381f4278c1370920df"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga66352c4b71cecc381f4278c1370920df.html#ga66352c4b71cecc381f4278c1370920df">CS_DBLCLKS</a></td></tr>
+<tr class="memitem:ga66352c4b71cecc381f4278c1370920df"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga66352c4b71cecc381f4278c1370920df">CS_DBLCLKS</a></td></tr>
 <tr class="memdesc:ga66352c4b71cecc381f4278c1370920df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a double-click message to the window procedure when the user double-clicks the mouse while the cursor is within a window belonging to the class.  <br /></td></tr>
 <tr class="separator:ga66352c4b71cecc381f4278c1370920df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga762918505bc4c75fec5e379153d39560"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga762918505bc4c75fec5e379153d39560.html#ga762918505bc4c75fec5e379153d39560">CS_OWNDC</a></td></tr>
+<tr class="memitem:ga762918505bc4c75fec5e379153d39560"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga762918505bc4c75fec5e379153d39560">CS_OWNDC</a></td></tr>
 <tr class="memdesc:ga762918505bc4c75fec5e379153d39560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a unique device context for each window in the class.  <br /></td></tr>
 <tr class="separator:ga762918505bc4c75fec5e379153d39560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga935b91071ac1bb98ccb7253306ad1622"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga935b91071ac1bb98ccb7253306ad1622.html#ga935b91071ac1bb98ccb7253306ad1622">CS_CLASSDC</a></td></tr>
+<tr class="memitem:ga935b91071ac1bb98ccb7253306ad1622"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga935b91071ac1bb98ccb7253306ad1622">CS_CLASSDC</a></td></tr>
 <tr class="memdesc:ga935b91071ac1bb98ccb7253306ad1622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates one device context to be shared by all windows in the class. Because window classes are process specific, it is possible for multiple threads of an application to create a window of the same class. It is also possible for the threads to attempt to use the device context simultaneously. When this happens, the system allows only one thread to successfully finish its drawing operation.  <br /></td></tr>
 <tr class="separator:ga935b91071ac1bb98ccb7253306ad1622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b94dee9c615d8405f79110e84dedde5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga6b94dee9c615d8405f79110e84dedde5.html#ga6b94dee9c615d8405f79110e84dedde5">CS_PARENTDC</a></td></tr>
+<tr class="memitem:ga6b94dee9c615d8405f79110e84dedde5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga6b94dee9c615d8405f79110e84dedde5">CS_PARENTDC</a></td></tr>
 <tr class="memdesc:ga6b94dee9c615d8405f79110e84dedde5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the clipping rectangle of the child window to that of the parent window so that the child can draw on the parent. A window with the CS_PARENTDC style bit receives a regular device context from the system's cache of device contexts. It does not give the child the parent's device context or device context settings. Specifying CS_PARENTDC enhances an application's performance.  <br /></td></tr>
 <tr class="separator:ga6b94dee9c615d8405f79110e84dedde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d7452bffc4005f066e5d4c5509f1351"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga4d7452bffc4005f066e5d4c5509f1351.html#ga4d7452bffc4005f066e5d4c5509f1351">CS_NOCLOSE</a></td></tr>
+<tr class="memitem:ga4d7452bffc4005f066e5d4c5509f1351"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga4d7452bffc4005f066e5d4c5509f1351">CS_NOCLOSE</a></td></tr>
 <tr class="memdesc:ga4d7452bffc4005f066e5d4c5509f1351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables Close on the window menu.  <br /></td></tr>
 <tr class="separator:ga4d7452bffc4005f066e5d4c5509f1351"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad597ee1531cd47dcd12aacfff0403a79"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_gad597ee1531cd47dcd12aacfff0403a79.html#gad597ee1531cd47dcd12aacfff0403a79">CS_SAVEBITS</a></td></tr>
+<tr class="memitem:gad597ee1531cd47dcd12aacfff0403a79"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#gad597ee1531cd47dcd12aacfff0403a79">CS_SAVEBITS</a></td></tr>
 <tr class="memdesc:gad597ee1531cd47dcd12aacfff0403a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves, as a bitmap, the portion of the screen image obscured by a window of this class. When the window is removed, the system uses the saved bitmap to restore the screen image, including other windows that were obscured. Therefore, the system does not send WM_PAINT messages to windows that were obscured if the memory used by the bitmap has not been discarded and if other screen actions have not invalidated the stored image. This style is useful for small windows (for example, menus or dialog boxes) that are displayed briefly and then removed before other screen activity takes place. This style increases the time required to display the window, because the system must first allocate memory to store the bitmap.  <br /></td></tr>
 <tr class="separator:gad597ee1531cd47dcd12aacfff0403a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3bef796b2048f395186989c251e714b4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga3bef796b2048f395186989c251e714b4.html#ga3bef796b2048f395186989c251e714b4">CS_BYTEALIGNCLIENT</a></td></tr>
+<tr class="memitem:ga3bef796b2048f395186989c251e714b4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga3bef796b2048f395186989c251e714b4">CS_BYTEALIGNCLIENT</a></td></tr>
 <tr class="memdesc:ga3bef796b2048f395186989c251e714b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aligns the window's client area on a byte boundary (in the x direction). This style affects the width of the window and its horizontal placement on the display.  <br /></td></tr>
 <tr class="separator:ga3bef796b2048f395186989c251e714b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2fe1d9ebb09a0a470d3024f3500090dd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga2fe1d9ebb09a0a470d3024f3500090dd.html#ga2fe1d9ebb09a0a470d3024f3500090dd">CS_BYTEALIGNWINDOW</a></td></tr>
+<tr class="memitem:ga2fe1d9ebb09a0a470d3024f3500090dd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga2fe1d9ebb09a0a470d3024f3500090dd">CS_BYTEALIGNWINDOW</a></td></tr>
 <tr class="memdesc:ga2fe1d9ebb09a0a470d3024f3500090dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aligns the window on a byte boundary (in the x direction). This style affects the width of the window and its horizontal placement on the display.  <br /></td></tr>
 <tr class="separator:ga2fe1d9ebb09a0a470d3024f3500090dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7db82554022181411839bcb68fc69a0a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_ga7db82554022181411839bcb68fc69a0a.html#ga7db82554022181411839bcb68fc69a0a">CS_GLOBALCLASS</a></td></tr>
+<tr class="memitem:ga7db82554022181411839bcb68fc69a0a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#ga7db82554022181411839bcb68fc69a0a">CS_GLOBALCLASS</a></td></tr>
 <tr class="memdesc:ga7db82554022181411839bcb68fc69a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the window class is an application global class.  <br /></td></tr>
 <tr class="separator:ga7db82554022181411839bcb68fc69a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcc9e9d7c2ed61dd567a316f515ec603"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs_gabcc9e9d7c2ed61dd567a316f515ec603.html#gabcc9e9d7c2ed61dd567a316f515ec603">CS_DROPSHADOW</a></td></tr>
+<tr class="memitem:gabcc9e9d7c2ed61dd567a316f515ec603"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cs.html#gabcc9e9d7c2ed61dd567a316f515ec603">CS_DROPSHADOW</a></td></tr>
 <tr class="memdesc:gabcc9e9d7c2ed61dd567a316f515ec603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the drop shadow effect on a window. The effect is turned on and off through SPI_SETDROPSHADOW. Typically, this is enabled for small, short-lived windows such as menus to emphasize their Z-order relationship to other windows. Windows created from a class with this style must be top-level windows; they may not be child windows.  <br /></td></tr>
 <tr class="separator:gabcc9e9d7c2ed61dd567a316f515ec603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga5d8ec82e724981ee7a34c78436a76850" name="ga5d8ec82e724981ee7a34c78436a76850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d8ec82e724981ee7a34c78436a76850">&#9670;&#160;</a></span>CS_VREDRAW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_VREDRAW</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Redraws the entire window if a movement or size adjustment changes the height of the client area. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gacc7d44a11ef861a6510147bbd3beb40e" name="gacc7d44a11ef861a6510147bbd3beb40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc7d44a11ef861a6510147bbd3beb40e">&#9670;&#160;</a></span>CS_HREDRAW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_HREDRAW</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Redraws the entire window if a movement or size adjustment changes the width of the client area. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga66352c4b71cecc381f4278c1370920df" name="ga66352c4b71cecc381f4278c1370920df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66352c4b71cecc381f4278c1370920df">&#9670;&#160;</a></span>CS_DBLCLKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_DBLCLKS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Sends a double-click message to the window procedure when the user double-clicks the mouse while the cursor is within a window belonging to the class. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga762918505bc4c75fec5e379153d39560" name="ga762918505bc4c75fec5e379153d39560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga762918505bc4c75fec5e379153d39560">&#9670;&#160;</a></span>CS_OWNDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_OWNDC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Allocates a unique device context for each window in the class. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga935b91071ac1bb98ccb7253306ad1622" name="ga935b91071ac1bb98ccb7253306ad1622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga935b91071ac1bb98ccb7253306ad1622">&#9670;&#160;</a></span>CS_CLASSDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_CLASSDC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Allocates one device context to be shared by all windows in the class. Because window classes are process specific, it is possible for multiple threads of an application to create a window of the same class. It is also possible for the threads to attempt to use the device context simultaneously. When this happens, the system allows only one thread to successfully finish its drawing operation. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga6b94dee9c615d8405f79110e84dedde5" name="ga6b94dee9c615d8405f79110e84dedde5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b94dee9c615d8405f79110e84dedde5">&#9670;&#160;</a></span>CS_PARENTDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_PARENTDC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Sets the clipping rectangle of the child window to that of the parent window so that the child can draw on the parent. A window with the CS_PARENTDC style bit receives a regular device context from the system's cache of device contexts. It does not give the child the parent's device context or device context settings. Specifying CS_PARENTDC enhances an application's performance. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4d7452bffc4005f066e5d4c5509f1351" name="ga4d7452bffc4005f066e5d4c5509f1351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d7452bffc4005f066e5d4c5509f1351">&#9670;&#160;</a></span>CS_NOCLOSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_NOCLOSE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Disables Close on the window menu. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad597ee1531cd47dcd12aacfff0403a79" name="gad597ee1531cd47dcd12aacfff0403a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad597ee1531cd47dcd12aacfff0403a79">&#9670;&#160;</a></span>CS_SAVEBITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_SAVEBITS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Saves, as a bitmap, the portion of the screen image obscured by a window of this class. When the window is removed, the system uses the saved bitmap to restore the screen image, including other windows that were obscured. Therefore, the system does not send WM_PAINT messages to windows that were obscured if the memory used by the bitmap has not been discarded and if other screen actions have not invalidated the stored image. This style is useful for small windows (for example, menus or dialog boxes) that are displayed briefly and then removed before other screen activity takes place. This style increases the time required to display the window, because the system must first allocate memory to store the bitmap. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga3bef796b2048f395186989c251e714b4" name="ga3bef796b2048f395186989c251e714b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bef796b2048f395186989c251e714b4">&#9670;&#160;</a></span>CS_BYTEALIGNCLIENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_BYTEALIGNCLIENT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Aligns the window's client area on a byte boundary (in the x direction). This style affects the width of the window and its horizontal placement on the display. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga2fe1d9ebb09a0a470d3024f3500090dd" name="ga2fe1d9ebb09a0a470d3024f3500090dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fe1d9ebb09a0a470d3024f3500090dd">&#9670;&#160;</a></span>CS_BYTEALIGNWINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_BYTEALIGNWINDOW</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Aligns the window on a byte boundary (in the x direction). This style affects the width of the window and its horizontal placement on the display. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga7db82554022181411839bcb68fc69a0a" name="ga7db82554022181411839bcb68fc69a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7db82554022181411839bcb68fc69a0a">&#9670;&#160;</a></span>CS_GLOBALCLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_GLOBALCLASS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Indicates that the window class is an application global class. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gabcc9e9d7c2ed61dd567a316f515ec603" name="gabcc9e9d7c2ed61dd567a316f515ec603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcc9e9d7c2ed61dd567a316f515ec603">&#9670;&#160;</a></span>CS_DROPSHADOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CS_DROPSHADOW</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="class__styles_8h.html">xtd.forms.native/include/xtd/forms/native/class_styles.h</a>&gt;</code></p>
+
+<p>Enables the drop shadow effect on a window. The effect is turned on and off through SPI_SETDROPSHADOW. Typically, this is enabled for small, short-lived windows such as menus to emphasize their Z-order relationship to other windows. Windows created from a class with this style must be top-level windows; they may not be child windows. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

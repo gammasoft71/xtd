@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__es.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,60 +90,494 @@ $(document).ready(function(){initNavTree('group__es.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga45e7b638a236be38dd553e0238b88e09"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga45e7b638a236be38dd553e0238b88e09.html#ga45e7b638a236be38dd553e0238b88e09">ES_LEFT</a></td></tr>
+<tr class="memitem:ga45e7b638a236be38dd553e0238b88e09"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga45e7b638a236be38dd553e0238b88e09">ES_LEFT</a></td></tr>
 <tr class="memdesc:ga45e7b638a236be38dd553e0238b88e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left-aligns text in a single-line or multiline edit control.  <br /></td></tr>
 <tr class="separator:ga45e7b638a236be38dd553e0238b88e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga480d459000062e2e320f6a19014f4726"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga480d459000062e2e320f6a19014f4726.html#ga480d459000062e2e320f6a19014f4726">ES_CENTER</a></td></tr>
+<tr class="memitem:ga480d459000062e2e320f6a19014f4726"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga480d459000062e2e320f6a19014f4726">ES_CENTER</a></td></tr>
 <tr class="memdesc:ga480d459000062e2e320f6a19014f4726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centers text in a single-line or multiline edit control.  <br /></td></tr>
 <tr class="separator:ga480d459000062e2e320f6a19014f4726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa612135bbda13b577fb3115601616825"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_gaa612135bbda13b577fb3115601616825.html#gaa612135bbda13b577fb3115601616825">ES_RIGHT</a></td></tr>
+<tr class="memitem:gaa612135bbda13b577fb3115601616825"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#gaa612135bbda13b577fb3115601616825">ES_RIGHT</a></td></tr>
 <tr class="memdesc:gaa612135bbda13b577fb3115601616825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right-aligns text in a single-line or multiline edit control.  <br /></td></tr>
 <tr class="separator:gaa612135bbda13b577fb3115601616825"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e6b092069a66d4887fe12a17da5cc33"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga4e6b092069a66d4887fe12a17da5cc33.html#ga4e6b092069a66d4887fe12a17da5cc33">ES_MULTILINE</a></td></tr>
+<tr class="memitem:ga4e6b092069a66d4887fe12a17da5cc33"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga4e6b092069a66d4887fe12a17da5cc33">ES_MULTILINE</a></td></tr>
 <tr class="memdesc:ga4e6b092069a66d4887fe12a17da5cc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designates a multiple-line edit control. (The default is single line.) If the ES_AUTOVSCROLL style is specified, the edit control shows as many lines as possible and scrolls vertically when the user presses the ENTER key. If ES_AUTOVSCROLL is not given, the edit control shows as many lines as possible and beeps if ENTER is pressed when no more lines can be displayed. If the ES_AUTOHSCROLL style is specified, the multiple-line edit control automatically scrolls horizontally when the caret goes past the right edge of the control. To start a new line, the user must press ENTER. If ES_AUTOHSCROLL is not given, the control automatically wraps words to the beginning of the next line when necessary; a new line is also started if ENTER is pressed. The position of the wordwrap is determined by the window size. If the window size changes, the wordwrap position changes and the text is redisplayed. Multiple-line edit controls can have scroll bars. An edit control with scroll bars processes its own scroll-bar messages. Edit controls without scroll bars scroll as described above and process any scroll messages sent by the parent window.  <br /></td></tr>
 <tr class="separator:ga4e6b092069a66d4887fe12a17da5cc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f958142fdec4db941ba41dc1676637d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga2f958142fdec4db941ba41dc1676637d.html#ga2f958142fdec4db941ba41dc1676637d">ES_UPPERCASE</a></td></tr>
+<tr class="memitem:ga2f958142fdec4db941ba41dc1676637d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga2f958142fdec4db941ba41dc1676637d">ES_UPPERCASE</a></td></tr>
 <tr class="memdesc:ga2f958142fdec4db941ba41dc1676637d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts all characters to uppercase as they are typed into the edit control.  <br /></td></tr>
 <tr class="separator:ga2f958142fdec4db941ba41dc1676637d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45fa7624f39afe878cb5c4b59fd60076"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga45fa7624f39afe878cb5c4b59fd60076.html#ga45fa7624f39afe878cb5c4b59fd60076">ES_LOWERCASE</a></td></tr>
+<tr class="memitem:ga45fa7624f39afe878cb5c4b59fd60076"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga45fa7624f39afe878cb5c4b59fd60076">ES_LOWERCASE</a></td></tr>
 <tr class="memdesc:ga45fa7624f39afe878cb5c4b59fd60076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts all characters to lowercase as they are typed into the edit control.  <br /></td></tr>
 <tr class="separator:ga45fa7624f39afe878cb5c4b59fd60076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7779aab808d9360e76cb158abef2aafe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga7779aab808d9360e76cb158abef2aafe.html#ga7779aab808d9360e76cb158abef2aafe">ES_PASSWORD</a></td></tr>
+<tr class="memitem:ga7779aab808d9360e76cb158abef2aafe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga7779aab808d9360e76cb158abef2aafe">ES_PASSWORD</a></td></tr>
 <tr class="memdesc:ga7779aab808d9360e76cb158abef2aafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays all characters as an asterisk (*) as they are typed into the edit control. An application can use the SetPasswordChar member function to change the character that is displayed.  <br /></td></tr>
 <tr class="separator:ga7779aab808d9360e76cb158abef2aafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4244163bc28cc373890db77caca60c26"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga4244163bc28cc373890db77caca60c26.html#ga4244163bc28cc373890db77caca60c26">ES_AUTOVSCROLL</a></td></tr>
+<tr class="memitem:ga4244163bc28cc373890db77caca60c26"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga4244163bc28cc373890db77caca60c26">ES_AUTOVSCROLL</a></td></tr>
 <tr class="memdesc:ga4244163bc28cc373890db77caca60c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically scrolls text up one page when the user presses ENTER on the last line.  <br /></td></tr>
 <tr class="separator:ga4244163bc28cc373890db77caca60c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga315897edf8741eb90f5e2efcc63d4c35"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga315897edf8741eb90f5e2efcc63d4c35.html#ga315897edf8741eb90f5e2efcc63d4c35">ES_AUTOHSCROLL</a></td></tr>
+<tr class="memitem:ga315897edf8741eb90f5e2efcc63d4c35"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga315897edf8741eb90f5e2efcc63d4c35">ES_AUTOHSCROLL</a></td></tr>
 <tr class="memdesc:ga315897edf8741eb90f5e2efcc63d4c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically scrolls text to the right by 10 characters when the user types a character at the end of the line. When the user presses the ENTER key, the control scrolls all text back to position 0.  <br /></td></tr>
 <tr class="separator:ga315897edf8741eb90f5e2efcc63d4c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga037fa0bf6450bb716dbab3398dd6fec1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga037fa0bf6450bb716dbab3398dd6fec1.html#ga037fa0bf6450bb716dbab3398dd6fec1">ES_NOHIDESEL</a></td></tr>
+<tr class="memitem:ga037fa0bf6450bb716dbab3398dd6fec1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga037fa0bf6450bb716dbab3398dd6fec1">ES_NOHIDESEL</a></td></tr>
 <tr class="memdesc:ga037fa0bf6450bb716dbab3398dd6fec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normally, an edit control hides the selection when the control loses the input focus and inverts the selection when the control receives the input focus. Specifying ES_NOHIDESEL deletes this default action.  <br /></td></tr>
 <tr class="separator:ga037fa0bf6450bb716dbab3398dd6fec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad1fadfe302b12040465c71d2305475fa"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_gad1fadfe302b12040465c71d2305475fa.html#gad1fadfe302b12040465c71d2305475fa">ES_OEMCONVERT</a></td></tr>
+<tr class="memitem:gad1fadfe302b12040465c71d2305475fa"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#gad1fadfe302b12040465c71d2305475fa">ES_OEMCONVERT</a></td></tr>
 <tr class="memdesc:gad1fadfe302b12040465c71d2305475fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text entered in the edit control is converted from the ANSI character set to the OEM character set and then back to ANSI. This ensures proper character conversion when the application calls the AnsiToOem Windows function to convert an ANSI string in the edit control to OEM characters. This style is most useful for edit controls that contain filenames.  <br /></td></tr>
 <tr class="separator:gad1fadfe302b12040465c71d2305475fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1c461983fd12471ac5907526df382fe9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga1c461983fd12471ac5907526df382fe9.html#ga1c461983fd12471ac5907526df382fe9">ES_READONLY</a></td></tr>
+<tr class="memitem:ga1c461983fd12471ac5907526df382fe9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga1c461983fd12471ac5907526df382fe9">ES_READONLY</a></td></tr>
 <tr class="memdesc:ga1c461983fd12471ac5907526df382fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prevents the user from entering or editing text in the edit control.  <br /></td></tr>
 <tr class="separator:ga1c461983fd12471ac5907526df382fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga991518449e1b098567c87705f7bca0e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga991518449e1b098567c87705f7bca0e8.html#ga991518449e1b098567c87705f7bca0e8">ES_WANTRETURN</a></td></tr>
+<tr class="memitem:ga991518449e1b098567c87705f7bca0e8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga991518449e1b098567c87705f7bca0e8">ES_WANTRETURN</a></td></tr>
 <tr class="memdesc:ga991518449e1b098567c87705f7bca0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a carriage return be inserted when the user presses the ENTER key while entering text into a multiple-line edit control in a dialog box. Without this style, pressing the ENTER key has the same effect as pressing the dialog boxes default pushbutton. This style has no effect on a single-line edit control.  <br /></td></tr>
 <tr class="separator:ga991518449e1b098567c87705f7bca0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41f611ccd8f3e038c8b37c39cd17b0a9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_ga41f611ccd8f3e038c8b37c39cd17b0a9.html#ga41f611ccd8f3e038c8b37c39cd17b0a9">ES_NUMBER</a></td></tr>
+<tr class="memitem:ga41f611ccd8f3e038c8b37c39cd17b0a9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#ga41f611ccd8f3e038c8b37c39cd17b0a9">ES_NUMBER</a></td></tr>
 <tr class="memdesc:ga41f611ccd8f3e038c8b37c39cd17b0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows only digits to be entered into the edit control.  <br /></td></tr>
 <tr class="separator:ga41f611ccd8f3e038c8b37c39cd17b0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacab63d15c01c403daef88dd8374aff33"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es_gacab63d15c01c403daef88dd8374aff33.html#gacab63d15c01c403daef88dd8374aff33">ES_WANTTAB</a></td></tr>
+<tr class="memitem:gacab63d15c01c403daef88dd8374aff33"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__es.html#gacab63d15c01c403daef88dd8374aff33">ES_WANTTAB</a></td></tr>
 <tr class="memdesc:gacab63d15c01c403daef88dd8374aff33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that a tabulation be inserted when the user presses the TAB key while entering text into a edit control.  <br /></td></tr>
 <tr class="separator:gacab63d15c01c403daef88dd8374aff33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga45e7b638a236be38dd553e0238b88e09" name="ga45e7b638a236be38dd553e0238b88e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45e7b638a236be38dd553e0238b88e09">&#9670;&#160;</a></span>ES_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_LEFT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Left-aligns text in a single-line or multiline edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga480d459000062e2e320f6a19014f4726" name="ga480d459000062e2e320f6a19014f4726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga480d459000062e2e320f6a19014f4726">&#9670;&#160;</a></span>ES_CENTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_CENTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Centers text in a single-line or multiline edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gaa612135bbda13b577fb3115601616825" name="gaa612135bbda13b577fb3115601616825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa612135bbda13b577fb3115601616825">&#9670;&#160;</a></span>ES_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_RIGHT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Right-aligns text in a single-line or multiline edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4e6b092069a66d4887fe12a17da5cc33" name="ga4e6b092069a66d4887fe12a17da5cc33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e6b092069a66d4887fe12a17da5cc33">&#9670;&#160;</a></span>ES_MULTILINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_MULTILINE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Designates a multiple-line edit control. (The default is single line.) If the ES_AUTOVSCROLL style is specified, the edit control shows as many lines as possible and scrolls vertically when the user presses the ENTER key. If ES_AUTOVSCROLL is not given, the edit control shows as many lines as possible and beeps if ENTER is pressed when no more lines can be displayed. If the ES_AUTOHSCROLL style is specified, the multiple-line edit control automatically scrolls horizontally when the caret goes past the right edge of the control. To start a new line, the user must press ENTER. If ES_AUTOHSCROLL is not given, the control automatically wraps words to the beginning of the next line when necessary; a new line is also started if ENTER is pressed. The position of the wordwrap is determined by the window size. If the window size changes, the wordwrap position changes and the text is redisplayed. Multiple-line edit controls can have scroll bars. An edit control with scroll bars processes its own scroll-bar messages. Edit controls without scroll bars scroll as described above and process any scroll messages sent by the parent window. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga2f958142fdec4db941ba41dc1676637d" name="ga2f958142fdec4db941ba41dc1676637d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f958142fdec4db941ba41dc1676637d">&#9670;&#160;</a></span>ES_UPPERCASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_UPPERCASE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Converts all characters to uppercase as they are typed into the edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga45fa7624f39afe878cb5c4b59fd60076" name="ga45fa7624f39afe878cb5c4b59fd60076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45fa7624f39afe878cb5c4b59fd60076">&#9670;&#160;</a></span>ES_LOWERCASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_LOWERCASE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Converts all characters to lowercase as they are typed into the edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga7779aab808d9360e76cb158abef2aafe" name="ga7779aab808d9360e76cb158abef2aafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7779aab808d9360e76cb158abef2aafe">&#9670;&#160;</a></span>ES_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_PASSWORD</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Displays all characters as an asterisk (*) as they are typed into the edit control. An application can use the SetPasswordChar member function to change the character that is displayed. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4244163bc28cc373890db77caca60c26" name="ga4244163bc28cc373890db77caca60c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4244163bc28cc373890db77caca60c26">&#9670;&#160;</a></span>ES_AUTOVSCROLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_AUTOVSCROLL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Automatically scrolls text up one page when the user presses ENTER on the last line. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga315897edf8741eb90f5e2efcc63d4c35" name="ga315897edf8741eb90f5e2efcc63d4c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga315897edf8741eb90f5e2efcc63d4c35">&#9670;&#160;</a></span>ES_AUTOHSCROLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_AUTOHSCROLL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Automatically scrolls text to the right by 10 characters when the user types a character at the end of the line. When the user presses the ENTER key, the control scrolls all text back to position 0. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga037fa0bf6450bb716dbab3398dd6fec1" name="ga037fa0bf6450bb716dbab3398dd6fec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga037fa0bf6450bb716dbab3398dd6fec1">&#9670;&#160;</a></span>ES_NOHIDESEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_NOHIDESEL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Normally, an edit control hides the selection when the control loses the input focus and inverts the selection when the control receives the input focus. Specifying ES_NOHIDESEL deletes this default action. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gad1fadfe302b12040465c71d2305475fa" name="gad1fadfe302b12040465c71d2305475fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1fadfe302b12040465c71d2305475fa">&#9670;&#160;</a></span>ES_OEMCONVERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_OEMCONVERT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Text entered in the edit control is converted from the ANSI character set to the OEM character set and then back to ANSI. This ensures proper character conversion when the application calls the AnsiToOem Windows function to convert an ANSI string in the edit control to OEM characters. This style is most useful for edit controls that contain filenames. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga1c461983fd12471ac5907526df382fe9" name="ga1c461983fd12471ac5907526df382fe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c461983fd12471ac5907526df382fe9">&#9670;&#160;</a></span>ES_READONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_READONLY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Prevents the user from entering or editing text in the edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga991518449e1b098567c87705f7bca0e8" name="ga991518449e1b098567c87705f7bca0e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga991518449e1b098567c87705f7bca0e8">&#9670;&#160;</a></span>ES_WANTRETURN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_WANTRETURN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Specifies that a carriage return be inserted when the user presses the ENTER key while entering text into a multiple-line edit control in a dialog box. Without this style, pressing the ENTER key has the same effect as pressing the dialog boxes default pushbutton. This style has no effect on a single-line edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga41f611ccd8f3e038c8b37c39cd17b0a9" name="ga41f611ccd8f3e038c8b37c39cd17b0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41f611ccd8f3e038c8b37c39cd17b0a9">&#9670;&#160;</a></span>ES_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_NUMBER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Allows only digits to be entered into the edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gacab63d15c01c403daef88dd8374aff33" name="gacab63d15c01c403daef88dd8374aff33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacab63d15c01c403daef88dd8374aff33">&#9670;&#160;</a></span>ES_WANTTAB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ES_WANTTAB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="edit__styles_8h.html">xtd.forms.native/include/xtd/forms/native/edit_styles.h</a>&gt;</code></p>
+
+<p>Specifies that a tabulation be inserted when the user presses the TAB key while entering text into a edit control. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

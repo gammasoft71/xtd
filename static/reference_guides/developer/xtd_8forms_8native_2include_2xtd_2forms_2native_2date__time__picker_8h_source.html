@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2forms_2native_2date__time__picker_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">date_time_picker.h</div></div>
 </div><!--header-->
@@ -118,12 +102,12 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">class </span>date_time_picker;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">namespace </span>native {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html">   34</a></span>      <span class="keyword">class </span>forms_native_export_ <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html">date_time_picker</a> final <a class="code hl_define" href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html">   34</a></span>      <span class="keyword">class </span>forms_native_export_ <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html">date_time_picker</a> final <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1forms_1_1date__time__picker.html">xtd::forms::date_time_picker</a>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> allowable_dates(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> min_date, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> max_date);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker_a375e3c7766c601b1fc83cc030299348e.html#a375e3c7766c601b1fc83cc030299348e">   49</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1date__time__picker_a375e3c7766c601b1fc83cc030299348e.html#a375e3c7766c601b1fc83cc030299348e">value</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker_a2e2df817417b16a6fa14fbc1c1d8437e.html#a2e2df817417b16a6fa14fbc1c1d8437e">   54</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1date__time__picker_a2e2df817417b16a6fa14fbc1c1d8437e.html#a2e2df817417b16a6fa14fbc1c1d8437e">value</a>(<a class="code hl_typedef" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> value);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> allowable_dates(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> min_date, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> max_date);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a375e3c7766c601b1fc83cc030299348e">   49</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a375e3c7766c601b1fc83cc030299348e">value</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a2e2df817417b16a6fa14fbc1c1d8437e">   54</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a2e2df817417b16a6fa14fbc1c1d8437e">value</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="code hl_class" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> value);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      };</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
@@ -131,25 +115,21 @@ $(document).ready(function(){initNavTree('xtd_8forms_8native_2include_2xtd_2form
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:85</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1date__time__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1date__time__picker.html">xtd::forms::date_time_picker</a></div><div class="ttdoc">Represents a picker control that displays available date time along with controls.</div><div class="ttdef"><b>Definition</b> date_time_picker.h:33</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1control.html">xtd::forms::native::control</a></div><div class="ttdoc">Contains control native API.</div><div class="ttdef"><b>Definition</b> control.h:65</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1date__time__picker_a2e2df817417b16a6fa14fbc1c1d8437e_html_a2e2df817417b16a6fa14fbc1c1d8437e"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1date__time__picker_a2e2df817417b16a6fa14fbc1c1d8437e.html#a2e2df817417b16a6fa14fbc1c1d8437e">xtd::forms::native::date_time_picker::value</a></div><div class="ttdeci">static void value(intptr control, date_time value)</div><div class="ttdoc">Sets the date/time value assigned to the control.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1date__time__picker_a375e3c7766c601b1fc83cc030299348e_html_a375e3c7766c601b1fc83cc030299348e"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1date__time__picker_a375e3c7766c601b1fc83cc030299348e.html#a375e3c7766c601b1fc83cc030299348e">xtd::forms::native::date_time_picker::value</a></div><div class="ttdeci">static date_time value(intptr control)</div><div class="ttdoc">Gets the date/time value assigned to the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1date__time__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1date__time__picker.html">xtd::forms::native::date_time_picker</a></div><div class="ttdoc">Contains date time picker native API.</div><div class="ttdef"><b>Definition</b> date_time_picker.h:34</div></div>
-<div class="ttc" id="agroup__keywords_ga28796443ec37b938df7072c79595e3f6_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
-<div class="ttc" id="agroup__types_gaa7283e1dd31c385d954467f7ea324451_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1date__time__picker_html_a2e2df817417b16a6fa14fbc1c1d8437e"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a2e2df817417b16a6fa14fbc1c1d8437e">xtd::forms::native::date_time_picker::value</a></div><div class="ttdeci">static void value(intptr control, date_time value)</div><div class="ttdoc">Sets the date/time value assigned to the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1native_1_1date__time__picker_html_a375e3c7766c601b1fc83cc030299348e"><div class="ttname"><a href="classxtd_1_1forms_1_1native_1_1date__time__picker.html#a375e3c7766c601b1fc83cc030299348e">xtd::forms::native::date_time_picker::value</a></div><div class="ttdeci">static date_time value(intptr control)</div><div class="ttdoc">Gets the date/time value assigned to the control.</div></div>
+<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
 <div class="ttc" id="axtd_8core_2include_2xtd_2date__time_8h_html"><div class="ttname"><a href="xtd_8core_2include_2xtd_2date__time_8h.html">date_time.h</a></div><div class="ttdoc">Contains xtd::date_time class.</div></div>
 <div class="ttc" id="axtd_8forms_2include_2xtd_2forms_2create__params_8h_html"><div class="ttname"><a href="xtd_8forms_2include_2xtd_2forms_2create__params_8h.html">create_params.h</a></div><div class="ttdoc">Contains xtd::forms::create_params class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_87816c776e7a9e0d99a41814da2dd506.html">xtd.forms.native</a></li><li class="navelem"><a class="el" href="dir_3788c21a6f619b348e94450346e31b27.html">include</a></li><li class="navelem"><a class="el" href="dir_564743700ad306012cd01893f0a1c044.html">xtd</a></li><li class="navelem"><a class="el" href="dir_1e85b4d00539d932584bfdb4e2aa874b.html">forms</a></li><li class="navelem"><a class="el" href="dir_06788c7aa2da08d7f05aaa2182322b54.html">native</a></li><li class="navelem"><a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2date__time__picker_8h.html">date_time_picker.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('unnamed__mutex_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('unnamed__mutex_8h_source.html',''); in
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">unnamed_mutex.h</div></div>
 </div><!--header-->
@@ -124,32 +108,28 @@ $(document).ready(function(){initNavTree('unnamed__mutex_8h_source.html',''); in
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1threading_1_1mutex.html">xtd::threading::mutex</a>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex_a97807c638cb02b6ea9f9187df44d9d35.html#a97807c638cb02b6ea9f9187df44d9d35">   47</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex_a97807c638cb02b6ea9f9187df44d9d35.html#a97807c638cb02b6ea9f9187df44d9d35">create</a>(<span class="keywordtype">bool</span> initially_owned);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex.html#a97807c638cb02b6ea9f9187df44d9d35">   47</a></span>      <span class="keyword">static</span> intmax_t <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex.html#a97807c638cb02b6ea9f9187df44d9d35">create</a>(<span class="keywordtype">bool</span> initially_owned);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex_abef8bf630a95f55281c6bc0ac93a3e4b.html#abef8bf630a95f55281c6bc0ac93a3e4b">   53</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex_abef8bf630a95f55281c6bc0ac93a3e4b.html#abef8bf630a95f55281c6bc0ac93a3e4b">destroy</a>(intmax_t handle);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex.html#abef8bf630a95f55281c6bc0ac93a3e4b">   53</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex.html#abef8bf630a95f55281c6bc0ac93a3e4b">destroy</a>(intmax_t handle);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex_ac5d186395d19f99e427b80630bc482d3.html#ac5d186395d19f99e427b80630bc482d3">   59</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex_ac5d186395d19f99e427b80630bc482d3.html#ac5d186395d19f99e427b80630bc482d3">signal</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex.html#ac5d186395d19f99e427b80630bc482d3">   59</a></span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex.html#ac5d186395d19f99e427b80630bc482d3">signal</a>(intmax_t handle, <span class="keywordtype">bool</span>&amp; io_error);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex_aabadd894abf8e8c0e0e6bf0e83102efa.html#aabadd894abf8e8c0e0e6bf0e83102efa">   70</a></span>      <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex_aabadd894abf8e8c0e0e6bf0e83102efa.html#aabadd894abf8e8c0e0e6bf0e83102efa">wait</a>(intmax_t handle, int32_t milliseconds_timeout);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classxtd_1_1native_1_1unnamed__mutex.html#aabadd894abf8e8c0e0e6bf0e83102efa">   70</a></span>      <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classxtd_1_1native_1_1unnamed__mutex.html#aabadd894abf8e8c0e0e6bf0e83102efa">wait</a>(intmax_t handle, int32_t milliseconds_timeout);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    };</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_a97807c638cb02b6ea9f9187df44d9d35_html_a97807c638cb02b6ea9f9187df44d9d35"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex_a97807c638cb02b6ea9f9187df44d9d35.html#a97807c638cb02b6ea9f9187df44d9d35">xtd::native::unnamed_mutex::create</a></div><div class="ttdeci">static intmax_t create(bool initially_owned)</div><div class="ttdoc">Create named mutex with specified name and a bool value that.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_aabadd894abf8e8c0e0e6bf0e83102efa_html_aabadd894abf8e8c0e0e6bf0e83102efa"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex_aabadd894abf8e8c0e0e6bf0e83102efa.html#aabadd894abf8e8c0e0e6bf0e83102efa">xtd::native::unnamed_mutex::wait</a></div><div class="ttdeci">static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout)</div><div class="ttdoc">Wait named mutex with specified mutex handle and timeout.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_abef8bf630a95f55281c6bc0ac93a3e4b_html_abef8bf630a95f55281c6bc0ac93a3e4b"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex_abef8bf630a95f55281c6bc0ac93a3e4b.html#abef8bf630a95f55281c6bc0ac93a3e4b">xtd::native::unnamed_mutex::destroy</a></div><div class="ttdeci">static void destroy(intmax_t handle)</div><div class="ttdoc">Destroy named mutex with specified mutex handle.</div></div>
-<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_ac5d186395d19f99e427b80630bc482d3_html_ac5d186395d19f99e427b80630bc482d3"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex_ac5d186395d19f99e427b80630bc482d3.html#ac5d186395d19f99e427b80630bc482d3">xtd::native::unnamed_mutex::signal</a></div><div class="ttdeci">static bool signal(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Signal named mutex with specified mutex handle.</div></div>
 <div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_html"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex.html">xtd::native::unnamed_mutex</a></div><div class="ttdoc">Contains unnamed_mutex native API.</div><div class="ttdef"><b>Definition</b> unnamed_mutex.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_html_a97807c638cb02b6ea9f9187df44d9d35"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex.html#a97807c638cb02b6ea9f9187df44d9d35">xtd::native::unnamed_mutex::create</a></div><div class="ttdeci">static intmax_t create(bool initially_owned)</div><div class="ttdoc">Create named mutex with specified name and a bool value that.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_html_aabadd894abf8e8c0e0e6bf0e83102efa"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex.html#aabadd894abf8e8c0e0e6bf0e83102efa">xtd::native::unnamed_mutex::wait</a></div><div class="ttdeci">static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout)</div><div class="ttdoc">Wait named mutex with specified mutex handle and timeout.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_html_abef8bf630a95f55281c6bc0ac93a3e4b"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex.html#abef8bf630a95f55281c6bc0ac93a3e4b">xtd::native::unnamed_mutex::destroy</a></div><div class="ttdeci">static void destroy(intmax_t handle)</div><div class="ttdoc">Destroy named mutex with specified mutex handle.</div></div>
+<div class="ttc" id="aclassxtd_1_1native_1_1unnamed__mutex_html_ac5d186395d19f99e427b80630bc482d3"><div class="ttname"><a href="classxtd_1_1native_1_1unnamed__mutex.html#ac5d186395d19f99e427b80630bc482d3">xtd::native::unnamed_mutex::signal</a></div><div class="ttdeci">static bool signal(intmax_t handle, bool &amp;io_error)</div><div class="ttdoc">Signal named mutex with specified mutex handle.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1mutex_html"><div class="ttname"><a href="classxtd_1_1threading_1_1mutex.html">xtd::threading::mutex</a></div><div class="ttdoc">A synchronization primitive that can also be used for interprocess synchronization.</div><div class="ttdef"><b>Definition</b> mutex.h:50</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li><li class="navelem"><a class="el" href="unnamed__mutex_8h.html">unnamed_mutex.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:02:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1native_1_1interlocked.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1interlocked.html
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1interlocked.html">interlocked</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1native_1_1interlocked-members.html">List of all members</a>  </div>
@@ -111,61 +95,700 @@ $(document).ready(function(){initNavTree('classxtd_1_1native_1_1interlocked.html
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a7eb86193d5f1fce28612906b9d24c12c"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a7eb86193d5f1fce28612906b9d24c12c.html#a7eb86193d5f1fce28612906b9d24c12c">add</a> (int32_t &amp;location, int32_t value)</td></tr>
+<tr class="memitem:a7eb86193d5f1fce28612906b9d24c12c"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a7eb86193d5f1fce28612906b9d24c12c">add</a> (int32_t &amp;location, int32_t value)</td></tr>
 <tr class="memdesc:a7eb86193d5f1fce28612906b9d24c12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a7eb86193d5f1fce28612906b9d24c12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25cad0453625e4fac457e6132caae67e"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a25cad0453625e4fac457e6132caae67e.html#a25cad0453625e4fac457e6132caae67e">add</a> (int64_t &amp;location, int64_t value)</td></tr>
+<tr class="memitem:a25cad0453625e4fac457e6132caae67e"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a25cad0453625e4fac457e6132caae67e">add</a> (int64_t &amp;location, int64_t value)</td></tr>
 <tr class="memdesc:a25cad0453625e4fac457e6132caae67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a25cad0453625e4fac457e6132caae67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b37821933ef5b369b7f5ad3a48893cb"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a9b37821933ef5b369b7f5ad3a48893cb.html#a9b37821933ef5b369b7f5ad3a48893cb">compare_exchange</a> (int32_t &amp;location, int32_t value, int32_t comparand)</td></tr>
+<tr class="memitem:a9b37821933ef5b369b7f5ad3a48893cb"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a9b37821933ef5b369b7f5ad3a48893cb">compare_exchange</a> (int32_t &amp;location, int32_t value, int32_t comparand)</td></tr>
 <tr class="memdesc:a9b37821933ef5b369b7f5ad3a48893cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
 <tr class="separator:a9b37821933ef5b369b7f5ad3a48893cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429e744bfe6e693ec7da33a7657fae8e"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a429e744bfe6e693ec7da33a7657fae8e.html#a429e744bfe6e693ec7da33a7657fae8e">compare_exchange</a> (int64_t &amp;location, int64_t value, int64_t comparand)</td></tr>
+<tr class="memitem:a429e744bfe6e693ec7da33a7657fae8e"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a429e744bfe6e693ec7da33a7657fae8e">compare_exchange</a> (int64_t &amp;location, int64_t value, int64_t comparand)</td></tr>
 <tr class="memdesc:a429e744bfe6e693ec7da33a7657fae8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
 <tr class="separator:a429e744bfe6e693ec7da33a7657fae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4f1071c75aca9355d554261b7a64c17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_af4f1071c75aca9355d554261b7a64c17.html#af4f1071c75aca9355d554261b7a64c17">compare_exchange</a> (<a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;location, <a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a> value, <a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a> comparand)</td></tr>
+<tr class="memitem:af4f1071c75aca9355d554261b7a64c17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#af4f1071c75aca9355d554261b7a64c17">compare_exchange</a> (<a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;location, <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> value, <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> comparand)</td></tr>
 <tr class="memdesc:af4f1071c75aca9355d554261b7a64c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <b>slong</b> signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
 <tr class="separator:af4f1071c75aca9355d554261b7a64c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f0493c86cb1ff1be25274ab4119d7a"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a94f0493c86cb1ff1be25274ab4119d7a.html#a94f0493c86cb1ff1be25274ab4119d7a">compare_exchange</a> (void *&amp;location, void *value, void *comparand)</td></tr>
+<tr class="memitem:a94f0493c86cb1ff1be25274ab4119d7a"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a94f0493c86cb1ff1be25274ab4119d7a">compare_exchange</a> (void *&amp;location, void *value, void *comparand)</td></tr>
 <tr class="memdesc:a94f0493c86cb1ff1be25274ab4119d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.  <br /></td></tr>
 <tr class="separator:a94f0493c86cb1ff1be25274ab4119d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38c7be8ce034ef591cbf45ce866ed633"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a38c7be8ce034ef591cbf45ce866ed633.html#a38c7be8ce034ef591cbf45ce866ed633">decrement</a> (int32_t &amp;location)</td></tr>
+<tr class="memitem:a38c7be8ce034ef591cbf45ce866ed633"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a38c7be8ce034ef591cbf45ce866ed633">decrement</a> (int32_t &amp;location)</td></tr>
 <tr class="memdesc:a38c7be8ce034ef591cbf45ce866ed633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a38c7be8ce034ef591cbf45ce866ed633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96fdc90ec3d556b38939a534f1d49d00"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a96fdc90ec3d556b38939a534f1d49d00.html#a96fdc90ec3d556b38939a534f1d49d00">decrement</a> (int64_t &amp;location)</td></tr>
+<tr class="memitem:a96fdc90ec3d556b38939a534f1d49d00"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a96fdc90ec3d556b38939a534f1d49d00">decrement</a> (int64_t &amp;location)</td></tr>
 <tr class="memdesc:a96fdc90ec3d556b38939a534f1d49d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a96fdc90ec3d556b38939a534f1d49d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a372b8440f62c3aa8c8ea860abd62f7b4"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a372b8440f62c3aa8c8ea860abd62f7b4.html#a372b8440f62c3aa8c8ea860abd62f7b4">exchange</a> (int32_t &amp;location, int32_t value)</td></tr>
+<tr class="memitem:a372b8440f62c3aa8c8ea860abd62f7b4"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a372b8440f62c3aa8c8ea860abd62f7b4">exchange</a> (int32_t &amp;location, int32_t value)</td></tr>
 <tr class="memdesc:a372b8440f62c3aa8c8ea860abd62f7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a372b8440f62c3aa8c8ea860abd62f7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace1ac81604d8044f422ac6cab11c0558"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_ace1ac81604d8044f422ac6cab11c0558.html#ace1ac81604d8044f422ac6cab11c0558">exchange</a> (int64_t &amp;location, int64_t value)</td></tr>
+<tr class="memitem:ace1ac81604d8044f422ac6cab11c0558"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#ace1ac81604d8044f422ac6cab11c0558">exchange</a> (int64_t &amp;location, int64_t value)</td></tr>
 <tr class="memdesc:ace1ac81604d8044f422ac6cab11c0558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
 <tr class="separator:ace1ac81604d8044f422ac6cab11c0558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f5d2b5fd4701c9e061d4ef593db3fbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a4f5d2b5fd4701c9e061d4ef593db3fbc.html#a4f5d2b5fd4701c9e061d4ef593db3fbc">exchange</a> (<a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;location, <a class="el" href="value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861">__slong__</a> value)</td></tr>
+<tr class="memitem:a4f5d2b5fd4701c9e061d4ef593db3fbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a4f5d2b5fd4701c9e061d4ef593db3fbc">exchange</a> (<a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;location, <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> value)</td></tr>
 <tr class="memdesc:a4f5d2b5fd4701c9e061d4ef593db3fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <b>slong</b> signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a4f5d2b5fd4701c9e061d4ef593db3fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcfc6eff78c5a8ebeaaac7d1031d0efd"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_afcfc6eff78c5a8ebeaaac7d1031d0efd.html#afcfc6eff78c5a8ebeaaac7d1031d0efd">exchange</a> (void *&amp;location, void *value)</td></tr>
+<tr class="memitem:afcfc6eff78c5a8ebeaaac7d1031d0efd"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#afcfc6eff78c5a8ebeaaac7d1031d0efd">exchange</a> (void *&amp;location, void *value)</td></tr>
 <tr class="memdesc:afcfc6eff78c5a8ebeaaac7d1031d0efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
 <tr class="separator:afcfc6eff78c5a8ebeaaac7d1031d0efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a250a5584f30e45d97be36ad5413352"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a5a250a5584f30e45d97be36ad5413352.html#a5a250a5584f30e45d97be36ad5413352">increment</a> (int32_t &amp;location)</td></tr>
+<tr class="memitem:a5a250a5584f30e45d97be36ad5413352"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a5a250a5584f30e45d97be36ad5413352">increment</a> (int32_t &amp;location)</td></tr>
 <tr class="memdesc:a5a250a5584f30e45d97be36ad5413352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a5a250a5584f30e45d97be36ad5413352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a324bdd28834ff2489a1e08ec28df3715"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked_a324bdd28834ff2489a1e08ec28df3715.html#a324bdd28834ff2489a1e08ec28df3715">increment</a> (int64_t &amp;location)</td></tr>
+<tr class="memitem:a324bdd28834ff2489a1e08ec28df3715"><td class="memItemLeft" align="right" valign="top">static int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1interlocked.html#a324bdd28834ff2489a1e08ec28df3715">increment</a> (int64_t &amp;location)</td></tr>
 <tr class="memdesc:a324bdd28834ff2489a1e08ec28df3715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
 <tr class="separator:a324bdd28834ff2489a1e08ec28df3715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7eb86193d5f1fce28612906b9d24c12c" name="a7eb86193d5f1fce28612906b9d24c12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb86193d5f1fce28612906b9d24c12c">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::interlocked::add </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A variable containing the first value to be added. The sum of the two values is stored in location. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to be added to the integer at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t The new value stored at location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a25cad0453625e4fac457e6132caae67e" name="a25cad0453625e4fac457e6132caae67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25cad0453625e4fac457e6132caae67e">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::interlocked::add </td>
+          <td>(</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A variable containing the first value to be added. The sum of the two values is stored in location. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to be added to the integer at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t The new value stored at location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9b37821933ef5b369b7f5ad3a48893cb" name="a9b37821933ef5b369b7f5ad3a48893cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b37821933ef5b369b7f5ad3a48893cb">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::interlocked::compare_exchange </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>comparand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The destination, whose value is compared with Comparand and possibly replaced. </td></tr>
+    <tr><td class="paramname">value</td><td>The value that replaces the destination value if the comparison results in equality. </td></tr>
+    <tr><td class="paramname">Comparand</td><td>The value that is compared to the value at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value in location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a429e744bfe6e693ec7da33a7657fae8e" name="a429e744bfe6e693ec7da33a7657fae8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429e744bfe6e693ec7da33a7657fae8e">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::interlocked::compare_exchange </td>
+          <td>(</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>comparand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The destination, whose value is compared with comparand and possibly replaced. </td></tr>
+    <tr><td class="paramname">value</td><td>The value that replaces the destination value if the comparison results in equality. </td></tr>
+    <tr><td class="paramname">comparand</td><td>The value that is compared to the value at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value in location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="af4f1071c75aca9355d554261b7a64c17" name="af4f1071c75aca9355d554261b7a64c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f1071c75aca9355d554261b7a64c17">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> xtd::native::interlocked::compare_exchange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td>
+          <td class="paramname"><em>comparand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares two <b>slong</b> signed integers for equality and, if they are equal, replaces one of the values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The destination, whose value is compared with comparand and possibly replaced. </td></tr>
+    <tr><td class="paramname">value</td><td>The value that replaces the destination value if the comparison results in equality. </td></tr>
+    <tr><td class="paramname">comparand</td><td>The value that is compared to the value at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value in location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a94f0493c86cb1ff1be25274ab4119d7a" name="a94f0493c86cb1ff1be25274ab4119d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f0493c86cb1ff1be25274ab4119d7a">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * xtd::native::interlocked::compare_exchange </td>
+          <td>(</td>
+          <td class="paramtype">void *&amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>comparand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The destination, whose value is compared with comparand and possibly replaced. </td></tr>
+    <tr><td class="paramname">value</td><td>The value that replaces the destination value if the comparison results in equality. </td></tr>
+    <tr><td class="paramname">comparand</td><td>The value that is compared to the value at location. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value in location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a38c7be8ce034ef591cbf45ce866ed633" name="a38c7be8ce034ef591cbf45ce866ed633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c7be8ce034ef591cbf45ce866ed633">&#9670;&#160;</a></span>decrement() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::interlocked::decrement </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrements a specified variable and stores the result, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable whose value is to be decremented. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The decremented value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a96fdc90ec3d556b38939a534f1d49d00" name="a96fdc90ec3d556b38939a534f1d49d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96fdc90ec3d556b38939a534f1d49d00">&#9670;&#160;</a></span>decrement() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::interlocked::decrement </td>
+          <td>(</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrements a specified variable and stores the result, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable whose value is to be decremented. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The decremented value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a372b8440f62c3aa8c8ea860abd62f7b4" name="a372b8440f62c3aa8c8ea860abd62f7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a372b8440f62c3aa8c8ea860abd62f7b4">&#9670;&#160;</a></span>exchange() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::interlocked::exchange </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable to set to the specified value. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to which the location parameter is set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ace1ac81604d8044f422ac6cab11c0558" name="ace1ac81604d8044f422ac6cab11c0558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace1ac81604d8044f422ac6cab11c0558">&#9670;&#160;</a></span>exchange() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::interlocked::exchange </td>
+          <td>(</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable to set to the specified value. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to which the location parameter is set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a4f5d2b5fd4701c9e061d4ef593db3fbc" name="a4f5d2b5fd4701c9e061d4ef593db3fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5d2b5fd4701c9e061d4ef593db3fbc">&#9670;&#160;</a></span>exchange() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> xtd::native::interlocked::exchange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="value__types_8h.html#addcf1862bf2a19913f00854d12503861">__slong__</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a <b>slong</b> signed integer to a specified value and returns the original value, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable to set to the specified value. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to which the location parameter is set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afcfc6eff78c5a8ebeaaac7d1031d0efd" name="afcfc6eff78c5a8ebeaaac7d1031d0efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcfc6eff78c5a8ebeaaac7d1031d0efd">&#9670;&#160;</a></span>exchange() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * xtd::native::interlocked::exchange </td>
+          <td>(</td>
+          <td class="paramtype">void *&amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable to set to the specified value. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to which the location parameter is set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original value of location. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5a250a5584f30e45d97be36ad5413352" name="a5a250a5584f30e45d97be36ad5413352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a250a5584f30e45d97be36ad5413352">&#9670;&#160;</a></span>increment() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t xtd::native::interlocked::increment </td>
+          <td>(</td>
+          <td class="paramtype">int32_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increments a specified variable and stores the result, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable whose value is to be incremented. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The incremented value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a324bdd28834ff2489a1e08ec28df3715" name="a324bdd28834ff2489a1e08ec28df3715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324bdd28834ff2489a1e08ec28df3715">&#9670;&#160;</a></span>increment() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int64_t xtd::native::interlocked::increment </td>
+          <td>(</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increments a specified variable and stores the result, as an atomic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The variable whose value is to be incremented. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The incremented value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2interlocked_8h_source.html">interlocked.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1native_1_1interlocked.html">interlocked</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

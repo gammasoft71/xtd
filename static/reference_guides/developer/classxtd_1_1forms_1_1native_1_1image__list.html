@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1image__list.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1image__
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1image__list-members.html">List of all members</a>  </div>
@@ -120,34 +104,254 @@ Inheritance diagram for xtd::forms::native::image_list:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a0bb89424b64bdd61dc09086d23a5838a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list_a0bb89424b64bdd61dc09086d23a5838a.html#a0bb89424b64bdd61dc09086d23a5838a">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;image_size)</td></tr>
+<tr class="memitem:a0bb89424b64bdd61dc09086d23a5838a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html#a0bb89424b64bdd61dc09086d23a5838a">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;image_size)</td></tr>
 <tr class="memdesc:a0bb89424b64bdd61dc09086d23a5838a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates image list.  <br /></td></tr>
 <tr class="separator:a0bb89424b64bdd61dc09086d23a5838a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ee8b031c42c4b45928a933ae2512d23"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list_a5ee8b031c42c4b45928a933ae2512d23.html#a5ee8b031c42c4b45928a933ae2512d23">delete_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index)</td></tr>
+<tr class="memitem:a5ee8b031c42c4b45928a933ae2512d23"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html#a5ee8b031c42c4b45928a933ae2512d23">delete_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index)</td></tr>
 <tr class="memdesc:a5ee8b031c42c4b45928a933ae2512d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes specified image index.  <br /></td></tr>
 <tr class="separator:a5ee8b031c42c4b45928a933ae2512d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a723ee509af089bd660b5ff5c075e9bee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list_a723ee509af089bd660b5ff5c075e9bee.html#a723ee509af089bd660b5ff5c075e9bee">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>)</td></tr>
+<tr class="memitem:a723ee509af089bd660b5ff5c075e9bee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html#a723ee509af089bd660b5ff5c075e9bee">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>)</td></tr>
 <tr class="memdesc:a723ee509af089bd660b5ff5c075e9bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys image list.  <br /></td></tr>
 <tr class="separator:a723ee509af089bd660b5ff5c075e9bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41fe545b57a1c7ee95df2c298efa6b4a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list_a41fe545b57a1c7ee95df2c298efa6b4a.html#a41fe545b57a1c7ee95df2c298efa6b4a">insert_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index, const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;image)</td></tr>
+<tr class="memitem:a41fe545b57a1c7ee95df2c298efa6b4a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html#a41fe545b57a1c7ee95df2c298efa6b4a">insert_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index, const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;image)</td></tr>
 <tr class="memdesc:a41fe545b57a1c7ee95df2c298efa6b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts at specified image index a specified image.  <br /></td></tr>
 <tr class="separator:a41fe545b57a1c7ee95df2c298efa6b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10987c50dfa5f6cbc94af344a05828b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list_ae10987c50dfa5f6cbc94af344a05828b.html#ae10987c50dfa5f6cbc94af344a05828b">update_item</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index, const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;image)</td></tr>
+<tr class="memitem:ae10987c50dfa5f6cbc94af344a05828b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html#ae10987c50dfa5f6cbc94af344a05828b">update_item</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a>, size_t index, const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;image)</td></tr>
 <tr class="memdesc:ae10987c50dfa5f6cbc94af344a05828b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a specified item index with specified value.  <br /></td></tr>
 <tr class="separator:ae10987c50dfa5f6cbc94af344a05828b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0bb89424b64bdd61dc09086d23a5838a" name="a0bb89424b64bdd61dc09086d23a5838a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb89424b64bdd61dc09086d23a5838a">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::forms::native::image_list::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>image_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates image list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image_size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> image size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created control window handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a5ee8b031c42c4b45928a933ae2512d23" name="a5ee8b031c42c4b45928a933ae2512d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee8b031c42c4b45928a933ae2512d23">&#9670;&#160;</a></span>delete_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::image_list::delete_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>image_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes specified image index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html" title="Contains image list native API.">image_list</a></td><td>image list handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The item index to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a723ee509af089bd660b5ff5c075e9bee" name="a723ee509af089bd660b5ff5c075e9bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723ee509af089bd660b5ff5c075e9bee">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::image_list::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>image_list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys image list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html" title="Contains image list native API.">image_list</a></td><td>image list handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a41fe545b57a1c7ee95df2c298efa6b4a" name="a41fe545b57a1c7ee95df2c298efa6b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41fe545b57a1c7ee95df2c298efa6b4a">&#9670;&#160;</a></span>insert_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::image_list::insert_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>image_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts at specified image index a specified image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html" title="Contains image list native API.">image_list</a></td><td>image list handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The image index to insert. </td></tr>
+    <tr><td class="paramname">image</td><td>The <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae10987c50dfa5f6cbc94af344a05828b" name="ae10987c50dfa5f6cbc94af344a05828b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10987c50dfa5f6cbc94af344a05828b">&#9670;&#160;</a></span>update_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::image_list::update_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>image_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1image.html">drawing::image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates a specified item index with specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html" title="Contains image list native API.">image_list</a></td><td>image list handle. </td></tr>
+    <tr><td class="paramname">index</td><td>The image index to update. </td></tr>
+    <tr><td class="paramname">image</td><td>The <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2image__list_8h_source.html">image_list.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1image__list.html">image_list</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

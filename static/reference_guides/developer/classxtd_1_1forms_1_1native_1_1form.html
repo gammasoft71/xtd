@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1form.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1forms_1_1native_1_1form.ht
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html">form</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1forms_1_1native_1_1form-members.html">List of all members</a>  </div>
@@ -120,73 +104,802 @@ Inheritance diagram for xtd::forms::native::form:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a91c9da316a46a86247d497d93a750385"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a91c9da316a46a86247d497d93a750385.html#a91c9da316a46a86247d497d93a750385">activate</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a91c9da316a46a86247d497d93a750385"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a91c9da316a46a86247d497d93a750385">activate</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a91c9da316a46a86247d497d93a750385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the form and gives it focus.  <br /></td></tr>
 <tr class="separator:a91c9da316a46a86247d497d93a750385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e71be092708db682d5c5a8b0f7e6310"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a2e71be092708db682d5c5a8b0f7e6310.html#a2e71be092708db682d5c5a8b0f7e6310">close</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a2e71be092708db682d5c5a8b0f7e6310"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a2e71be092708db682d5c5a8b0f7e6310">close</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a2e71be092708db682d5c5a8b0f7e6310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the form.  <br /></td></tr>
 <tr class="separator:a2e71be092708db682d5c5a8b0f7e6310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfb14ea1c18e628d182efbdaf8c12c2f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_abfb14ea1c18e628d182efbdaf8c12c2f.html#abfb14ea1c18e628d182efbdaf8c12c2f">end_dialog</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a> result)</td></tr>
+<tr class="memitem:abfb14ea1c18e628d182efbdaf8c12c2f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#abfb14ea1c18e628d182efbdaf8c12c2f">end_dialog</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> result)</td></tr>
 <tr class="memdesc:abfb14ea1c18e628d182efbdaf8c12c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force end dialog with specified result.  <br /></td></tr>
 <tr class="separator:abfb14ea1c18e628d182efbdaf8c12c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f45a305e5047df0acc7043191b3881a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a9f45a305e5047df0acc7043191b3881a.html#a9f45a305e5047df0acc7043191b3881a">full_screen</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a9f45a305e5047df0acc7043191b3881a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a9f45a305e5047df0acc7043191b3881a">full_screen</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a9f45a305e5047df0acc7043191b3881a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicates whether full screen window.  <br /></td></tr>
 <tr class="separator:a9f45a305e5047df0acc7043191b3881a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d40d937ad2ad87692924231a4bd023f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a0d40d937ad2ad87692924231a4bd023f.html#a0d40d937ad2ad87692924231a4bd023f">full_screen</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool full_screen)</td></tr>
+<tr class="memitem:a0d40d937ad2ad87692924231a4bd023f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a0d40d937ad2ad87692924231a4bd023f">full_screen</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool full_screen)</td></tr>
 <tr class="memdesc:a0d40d937ad2ad87692924231a4bd023f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicates whether full screen window.  <br /></td></tr>
 <tr class="separator:a0d40d937ad2ad87692924231a4bd023f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a412f822201dc88bc153dc5074365034c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a412f822201dc88bc153dc5074365034c.html#a412f822201dc88bc153dc5074365034c">icon</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon)</td></tr>
+<tr class="memitem:a412f822201dc88bc153dc5074365034c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a412f822201dc88bc153dc5074365034c">icon</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon)</td></tr>
 <tr class="memdesc:a412f822201dc88bc153dc5074365034c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the icon for the form.  <br /></td></tr>
 <tr class="separator:a412f822201dc88bc153dc5074365034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c01f2de2ad6b467dba00176fb060ae6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a9c01f2de2ad6b467dba00176fb060ae6.html#a9c01f2de2ad6b467dba00176fb060ae6">maximize</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a9c01f2de2ad6b467dba00176fb060ae6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a9c01f2de2ad6b467dba00176fb060ae6">maximize</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a9c01f2de2ad6b467dba00176fb060ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate whether maximized windows.  <br /></td></tr>
 <tr class="separator:a9c01f2de2ad6b467dba00176fb060ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa04bca2fd48499edfc1e45b4d6b7eb32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_aa04bca2fd48499edfc1e45b4d6b7eb32.html#aa04bca2fd48499edfc1e45b4d6b7eb32">maximize</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool maximize)</td></tr>
+<tr class="memitem:aa04bca2fd48499edfc1e45b4d6b7eb32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#aa04bca2fd48499edfc1e45b4d6b7eb32">maximize</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool maximize)</td></tr>
 <tr class="memdesc:aa04bca2fd48499edfc1e45b4d6b7eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicate whether maximized windows.  <br /></td></tr>
 <tr class="separator:aa04bca2fd48499edfc1e45b4d6b7eb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a68733dc78734e254a3f8c27346388"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a94a68733dc78734e254a3f8c27346388.html#a94a68733dc78734e254a3f8c27346388">minimize</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a94a68733dc78734e254a3f8c27346388"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a94a68733dc78734e254a3f8c27346388">minimize</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a94a68733dc78734e254a3f8c27346388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate whether minimized windows.  <br /></td></tr>
 <tr class="separator:a94a68733dc78734e254a3f8c27346388"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a7de277f44f4d804bc120cbf0216be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a74a7de277f44f4d804bc120cbf0216be.html#a74a7de277f44f4d804bc120cbf0216be">minimize</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool minimize)</td></tr>
+<tr class="memitem:a74a7de277f44f4d804bc120cbf0216be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a74a7de277f44f4d804bc120cbf0216be">minimize</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, bool minimize)</td></tr>
 <tr class="memdesc:a74a7de277f44f4d804bc120cbf0216be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicate whether minimized windows.  <br /></td></tr>
 <tr class="separator:a74a7de277f44f4d804bc120cbf0216be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1087e3ad9c995cc55fea0681c3a8b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_afe1087e3ad9c995cc55fea0681c3a8b3.html#afe1087e3ad9c995cc55fea0681c3a8b3">menu</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
+<tr class="memitem:afe1087e3ad9c995cc55fea0681c3a8b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#afe1087e3ad9c995cc55fea0681c3a8b3">menu</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1menu.html">menu</a>)</td></tr>
 <tr class="memdesc:afe1087e3ad9c995cc55fea0681c3a8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classxtd_1_1forms_1_1native_1_1main__menu.html" title="Main menu native API.">main_menu</a> that is displayed in the form.  <br /></td></tr>
 <tr class="separator:afe1087e3ad9c995cc55fea0681c3a8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6f7636c5ad3c92ad8b03683d1901d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a6c6f7636c5ad3c92ad8b03683d1901d0.html#a6c6f7636c5ad3c92ad8b03683d1901d0">opacity</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, double opacity)</td></tr>
+<tr class="memitem:a6c6f7636c5ad3c92ad8b03683d1901d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a6c6f7636c5ad3c92ad8b03683d1901d0">opacity</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, double opacity)</td></tr>
 <tr class="memdesc:a6c6f7636c5ad3c92ad8b03683d1901d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets form opacity.  <br /></td></tr>
 <tr class="separator:a6c6f7636c5ad3c92ad8b03683d1901d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8b71d4896391528bd8ee975fc740201"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_aa8b71d4896391528bd8ee975fc740201.html#aa8b71d4896391528bd8ee975fc740201">restore</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:aa8b71d4896391528bd8ee975fc740201"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#aa8b71d4896391528bd8ee975fc740201">restore</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:aa8b71d4896391528bd8ee975fc740201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore form in normal state (not minimized, not maximized and not full screen).  <br /></td></tr>
 <tr class="separator:aa8b71d4896391528bd8ee975fc740201"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f7825f3d6cf77f71c3e467f20bef26"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_ae8f7825f3d6cf77f71c3e467f20bef26.html#ae8f7825f3d6cf77f71c3e467f20bef26">set_region</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> region)</td></tr>
+<tr class="memitem:ae8f7825f3d6cf77f71c3e467f20bef26"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#ae8f7825f3d6cf77f71c3e467f20bef26">set_region</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> region)</td></tr>
 <tr class="memdesc:ae8f7825f3d6cf77f71c3e467f20bef26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the shape of the window to that depicted by region.  <br /></td></tr>
 <tr class="separator:ae8f7825f3d6cf77f71c3e467f20bef26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac67b5abd082d8ab55e93c01173acf191"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_ac67b5abd082d8ab55e93c01173acf191.html#ac67b5abd082d8ab55e93c01173acf191">show_dialog</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:ac67b5abd082d8ab55e93c01173acf191"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#ac67b5abd082d8ab55e93c01173acf191">show_dialog</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:ac67b5abd082d8ab55e93c01173acf191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show dialog.  <br /></td></tr>
 <tr class="separator:ac67b5abd082d8ab55e93c01173acf191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b58101ef3a15e38498364b4035ec2fe"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a9b58101ef3a15e38498364b4035ec2fe.html#a9b58101ef3a15e38498364b4035ec2fe">show_sheet</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a9b58101ef3a15e38498364b4035ec2fe"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a9b58101ef3a15e38498364b4035ec2fe">show_sheet</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a9b58101ef3a15e38498364b4035ec2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show async dialog as sheet.  <br /></td></tr>
 <tr class="separator:a9b58101ef3a15e38498364b4035ec2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a203cd2f94d38246d6e180fa6f9d3c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_a7a203cd2f94d38246d6e180fa6f9d3c2.html#a7a203cd2f94d38246d6e180fa6f9d3c2">show_sheet_dialog</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a7a203cd2f94d38246d6e180fa6f9d3c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#a7a203cd2f94d38246d6e180fa6f9d3c2">show_sheet_dialog</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a7a203cd2f94d38246d6e180fa6f9d3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show dialog as sheet.  <br /></td></tr>
 <tr class="separator:a7a203cd2f94d38246d6e180fa6f9d3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39fe18f0b20f07edbd478f890ba13ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form_aa39fe18f0b20f07edbd478f890ba13ec.html#aa39fe18f0b20f07edbd478f890ba13ec">virtual_size</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memitem:aa39fe18f0b20f07edbd478f890ba13ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html#aa39fe18f0b20f07edbd478f890ba13ec">virtual_size</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1native_1_1control.html">control</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
 <tr class="memdesc:aa39fe18f0b20f07edbd478f890ba13ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets virtual size.  <br /></td></tr>
 <tr class="separator:aa39fe18f0b20f07edbd478f890ba13ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a91c9da316a46a86247d497d93a750385" name="a91c9da316a46a86247d497d93a750385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c9da316a46a86247d497d93a750385">&#9670;&#160;</a></span>activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::activate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Activates the form and gives it focus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a2e71be092708db682d5c5a8b0f7e6310" name="a2e71be092708db682d5c5a8b0f7e6310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e71be092708db682d5c5a8b0f7e6310">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes the form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="abfb14ea1c18e628d182efbdaf8c12c2f" name="abfb14ea1c18e628d182efbdaf8c12c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb14ea1c18e628d182efbdaf8c12c2f">&#9670;&#160;</a></span>end_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::end_dialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Force end dialog with specified result. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">result</td><td>A dialog box id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9f45a305e5047df0acc7043191b3881a" name="a9f45a305e5047df0acc7043191b3881a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f45a305e5047df0acc7043191b3881a">&#9670;&#160;</a></span>full_screen() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::form::full_screen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicates whether full screen window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if form is full screen; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a0d40d937ad2ad87692924231a4bd023f" name="a0d40d937ad2ad87692924231a4bd023f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d40d937ad2ad87692924231a4bd023f">&#9670;&#160;</a></span>full_screen() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::full_screen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>full_screen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicates whether full screen window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">full_screen</td><td>true if form is full screen; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a412f822201dc88bc153dc5074365034c" name="a412f822201dc88bc153dc5074365034c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412f822201dc88bc153dc5074365034c">&#9670;&#160;</a></span>icon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::icon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;&#160;</td>
+          <td class="paramname"><em>icon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the icon for the form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">icon</td><td>An icon that represents the icon for the form. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9c01f2de2ad6b467dba00176fb060ae6" name="a9c01f2de2ad6b467dba00176fb060ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c01f2de2ad6b467dba00176fb060ae6">&#9670;&#160;</a></span>maximize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::form::maximize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicate whether maximized windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if form is full screen; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa04bca2fd48499edfc1e45b4d6b7eb32" name="aa04bca2fd48499edfc1e45b4d6b7eb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04bca2fd48499edfc1e45b4d6b7eb32">&#9670;&#160;</a></span>maximize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::maximize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>maximize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicate whether maximized windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">maximize</td><td>true if form is maximized; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a94a68733dc78734e254a3f8c27346388" name="a94a68733dc78734e254a3f8c27346388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a68733dc78734e254a3f8c27346388">&#9670;&#160;</a></span>minimize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::native::form::minimize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicate whether minimized windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if form is full screen; otherwise false. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a74a7de277f44f4d804bc120cbf0216be" name="a74a7de277f44f4d804bc120cbf0216be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a7de277f44f4d804bc120cbf0216be">&#9670;&#160;</a></span>minimize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::minimize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>minimize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicate whether minimized windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">minimize</td><td>true if form is full screen; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afe1087e3ad9c995cc55fea0681c3a8b3" name="afe1087e3ad9c995cc55fea0681c3a8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1087e3ad9c995cc55fea0681c3a8b3">&#9670;&#160;</a></span>menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the <a class="el" href="classxtd_1_1forms_1_1native_1_1main__menu.html" title="Main menu native API.">main_menu</a> that is displayed in the form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">menu</td><td>A menu handle that represents the menu to display in the form. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a6c6f7636c5ad3c92ad8b03683d1901d0" name="a6c6f7636c5ad3c92ad8b03683d1901d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6f7636c5ad3c92ad8b03683d1901d0">&#9670;&#160;</a></span>opacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::opacity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>opacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets form opacity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">opacity</td><td>A double-precision value between 0.0 and 1.0 that represent the form opacity. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa8b71d4896391528bd8ee975fc740201" name="aa8b71d4896391528bd8ee975fc740201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b71d4896391528bd8ee975fc740201">&#9670;&#160;</a></span>restore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::restore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restore form in normal state (not minimized, not maximized and not full screen). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ae8f7825f3d6cf77f71c3e467f20bef26" name="ae8f7825f3d6cf77f71c3e467f20bef26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f7825f3d6cf77f71c3e467f20bef26">&#9670;&#160;</a></span>set_region()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::set_region </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the shape of the window to that depicted by region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">region</td><td>The region to set shape; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ac67b5abd082d8ab55e93c01173acf191" name="ac67b5abd082d8ab55e93c01173acf191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac67b5abd082d8ab55e93c01173acf191">&#9670;&#160;</a></span>show_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::forms::native::form::show_dialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show dialog. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a9b58101ef3a15e38498364b4035ec2fe" name="a9b58101ef3a15e38498364b4035ec2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b58101ef3a15e38498364b4035ec2fe">&#9670;&#160;</a></span>show_sheet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::show_sheet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show async dialog as sheet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7a203cd2f94d38246d6e180fa6f9d3c2" name="a7a203cd2f94d38246d6e180fa6f9d3c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a203cd2f94d38246d6e180fa6f9d3c2">&#9670;&#160;</a></span>show_sheet_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::forms::native::form::show_sheet_dialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show dialog as sheet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa39fe18f0b20f07edbd478f890ba13ec" name="aa39fe18f0b20f07edbd478f890ba13ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39fe18f0b20f07edbd478f890ba13ec">&#9670;&#160;</a></span>virtual_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::native::form::virtual_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets virtual size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">control</td><td>Control window handle. </td></tr>
+    <tr><td class="paramname">size</td><td>A virtual <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.forms.native/include/xtd/forms/native/<a class="el" href="xtd_8forms_8native_2include_2xtd_2forms_2native_2form_8h_source.html">form.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms.html">forms</a></li><li class="navelem"><a class="el" href="namespacextd_1_1forms_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1forms_1_1native_1_1form.html">form</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

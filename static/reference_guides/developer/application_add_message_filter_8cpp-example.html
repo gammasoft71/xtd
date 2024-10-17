@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('application_add_message_filter_8cpp-example.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -102,7 +82,7 @@ $(document).ready(function(){initNavTree('application_add_message_filter_8cpp-ex
   <div class="headertitle"><div class="title">application_add_message_filter.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to create an application with <a class="el" href="classxtd_1_1forms_1_1application_a4f8eac12a2e3e29b5308846260788d14.html#a4f8eac12a2e3e29b5308846260788d14" title="Adds a message filter to monitor Windows messages as they are routed to their destinations.">xtd::forms::application::add_message_filter</a> method. </p><dl class="section user"><dt>Windows</dt><dd><div class="image">
+<p>Shows how to create an application with <a class="el" href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14" title="Adds a message filter to monitor Windows messages as they are routed to their destinations.">xtd::forms::application::add_message_filter</a> method. </p><dl class="section user"><dt>Windows</dt><dd><div class="image">
 <img src="application_add_message_filter_w.png" alt=""/>
 </div>
  <br  />
@@ -140,7 +120,7 @@ $(document).ready(function(){initNavTree('application_add_message_filter_8cpp-ex
 <div class="line">  <span class="keyword">class </span>main_form : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a>, <span class="keyword">public</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1imessage__filter.html">imessage_filter</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    main_form() {</div>
-<div class="line">      <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application_a4f8eac12a2e3e29b5308846260788d14.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a>(*<span class="keyword">this</span>);</div>
+<div class="line">      <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a>(*<span class="keyword">this</span>);</div>
 <div class="line">      text(<span class="stringliteral">&quot;Application add message filter example&quot;</span>);</div>
 <div class="line">      panel_.border_style(forms::border_style::groove);</div>
 <div class="line">      skip_button_click_check_box_.auto_size(<span class="keyword">true</span>);</div>
@@ -154,7 +134,7 @@ $(document).ready(function(){initNavTree('application_add_message_filter_8cpp-ex
 <div class="line">    <span class="keywordtype">bool</span> pre_filter_message(<span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>) {</div>
 <div class="line">      <span class="comment">// Uncomment following line to see all messages.</span></div>
 <div class="line">      <span class="comment">//debug::write_line(string::format(&quot;message=[{}], control=[{}]&quot;, message.to_string(), from_handle(message.hwnd()).has_value() ? from_handle(message.hwnd()).value().get().to_string() : &quot;(null)&quot;));</span></div>
-<div class="line">      <span class="keywordflow">return</span> skip_button_click_check_box_.checked() &amp;&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1forms_1_1message_aa03b92404d32b7b0ebe446408d1d2727.html#aa03b92404d32b7b0ebe446408d1d2727">msg</a>() == <a id="a5" name="a5"></a><a class="code hl_variable" href="group__wm_ga07660cb8669963e92d5af13f463f9069.html#ga07660cb8669963e92d5af13f463f9069">WM_LBUTTONDOWN</a> &amp;&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>.<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1forms_1_1message_aac71102ad63fba6372c4ba431b7b3ffb.html#aac71102ad63fba6372c4ba431b7b3ffb">hwnd</a>() == button_.handle();</div>
+<div class="line">      <span class="keywordflow">return</span> skip_button_click_check_box_.checked() &amp;&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1forms_1_1message.html#aa03b92404d32b7b0ebe446408d1d2727">msg</a>() == <a id="a5" name="a5"></a><a class="code hl_variable" href="group__wm.html#ga07660cb8669963e92d5af13f463f9069">WM_LBUTTONDOWN</a> &amp;&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>.<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1forms_1_1message.html#aac71102ad63fba6372c4ba431b7b3ffb">hwnd</a>() == button_.handle();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> debug_form_;</div>
@@ -165,31 +145,28 @@ $(document).ready(function(){initNavTree('application_add_message_filter_8cpp-ex
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">  <a id="a11" name="a11"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application_a4ee49410f3156fd66b61c2567a59388e.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(application_add_message_filter_example::main_form {});</div>
+<div class="line">  <a id="a11" name="a11"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(application_add_message_filter_example::main_form {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_a4ee49410f3156fd66b61c2567a59388e_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application_a4ee49410f3156fd66b61c2567a59388e.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_a4f8eac12a2e3e29b5308846260788d14_html_a4f8eac12a2e3e29b5308846260788d14"><div class="ttname"><a href="classxtd_1_1forms_1_1application_a4f8eac12a2e3e29b5308846260788d14.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a></div><div class="ttdeci">static void add_message_filter(const imessage_filter &amp;value)</div><div class="ttdoc">Adds a message filter to monitor Windows messages as they are routed to their destinations.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4f8eac12a2e3e29b5308846260788d14"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a></div><div class="ttdeci">static void add_message_filter(const imessage_filter &amp;value)</div><div class="ttdoc">Adds a message filter to monitor Windows messages as they are routed to their destinations.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1check__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1check__box.html">xtd::forms::check_box</a></div><div class="ttdoc">Represents a Windows check_box.</div><div class="ttdef"><b>Definition</b> check_box.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1imessage__filter_html"><div class="ttname"><a href="classxtd_1_1forms_1_1imessage__filter.html">xtd::forms::imessage_filter</a></div><div class="ttdoc">Defines a message filter interface.</div><div class="ttdef"><b>Definition</b> imessage_filter.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message_aa03b92404d32b7b0ebe446408d1d2727_html_aa03b92404d32b7b0ebe446408d1d2727"><div class="ttname"><a href="classxtd_1_1forms_1_1message_aa03b92404d32b7b0ebe446408d1d2727.html#aa03b92404d32b7b0ebe446408d1d2727">xtd::forms::message::msg</a></div><div class="ttdeci">uint32 msg() const noexcept</div><div class="ttdoc">Gets the ID number for the message.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message_aac71102ad63fba6372c4ba431b7b3ffb_html_aac71102ad63fba6372c4ba431b7b3ffb"><div class="ttname"><a href="classxtd_1_1forms_1_1message_aac71102ad63fba6372c4ba431b7b3ffb.html#aac71102ad63fba6372c4ba431b7b3ffb">xtd::forms::message::hwnd</a></div><div class="ttdeci">intptr hwnd() const noexcept</div><div class="ttdoc">Gets the window handle of the message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message_html"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html">xtd::forms::message</a></div><div class="ttdoc">Implements a Windows message.</div><div class="ttdef"><b>Definition</b> message.h:28</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1message_html_aa03b92404d32b7b0ebe446408d1d2727"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html#aa03b92404d32b7b0ebe446408d1d2727">xtd::forms::message::msg</a></div><div class="ttdeci">uint32 msg() const noexcept</div><div class="ttdoc">Gets the ID number for the message.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1message_html_aac71102ad63fba6372c4ba431b7b3ffb"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html#aac71102ad63fba6372c4ba431b7b3ffb">xtd::forms::message::hwnd</a></div><div class="ttdeci">intptr hwnd() const noexcept</div><div class="ttdoc">Gets the window handle of the message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.h:32</div></div>
-<div class="ttc" id="agroup__wm_ga07660cb8669963e92d5af13f463f9069_html_ga07660cb8669963e92d5af13f463f9069"><div class="ttname"><a href="group__wm_ga07660cb8669963e92d5af13f463f9069.html#ga07660cb8669963e92d5af13f463f9069">WM_LBUTTONDOWN</a></div><div class="ttdeci">constexpr xtd::uint32 WM_LBUTTONDOWN</div><div class="ttdoc">Posted when the user presses the left mouse button while the cursor is in the client area of a window...</div><div class="ttdef"><b>Definition</b> window_messages.h:967</div></div>
+<div class="ttc" id="agroup__wm_html_ga07660cb8669963e92d5af13f463f9069"><div class="ttname"><a href="group__wm.html#ga07660cb8669963e92d5af13f463f9069">WM_LBUTTONDOWN</a></div><div class="ttdeci">constexpr xtd::uint32 WM_LBUTTONDOWN</div><div class="ttdoc">Posted when the user presses the left mouse button while the cursor is in the client area of a window...</div><div class="ttdef"><b>Definition</b> window_messages.h:967</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:02:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

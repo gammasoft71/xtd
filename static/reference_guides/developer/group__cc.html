@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -61,22 +57,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__cc.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -110,45 +90,333 @@ $(document).ready(function(){initNavTree('group__cc.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gad6c3c0072dad9bca0cbb27ad9c41e1f4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_gad6c3c0072dad9bca0cbb27ad9c41e1f4.html#gad6c3c0072dad9bca0cbb27ad9c41e1f4">CC_RGBINIT</a></td></tr>
+<tr class="memitem:gad6c3c0072dad9bca0cbb27ad9c41e1f4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#gad6c3c0072dad9bca0cbb27ad9c41e1f4">CC_RGBINIT</a></td></tr>
 <tr class="memdesc:gad6c3c0072dad9bca0cbb27ad9c41e1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to use the color specified in the rgbResult member as the initial color selection.  <br /></td></tr>
 <tr class="separator:gad6c3c0072dad9bca0cbb27ad9c41e1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga343546e2f42ce7a43f7b3a4475c7c6f1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga343546e2f42ce7a43f7b3a4475c7c6f1.html#ga343546e2f42ce7a43f7b3a4475c7c6f1">CC_FULLOPEN</a></td></tr>
+<tr class="memitem:ga343546e2f42ce7a43f7b3a4475c7c6f1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga343546e2f42ce7a43f7b3a4475c7c6f1">CC_FULLOPEN</a></td></tr>
 <tr class="memdesc:ga343546e2f42ce7a43f7b3a4475c7c6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display the additional controls that allow the user to create custom colors. If this flag is not set, the user must click the Define Custom Color button to display the custom color controls.  <br /></td></tr>
 <tr class="separator:ga343546e2f42ce7a43f7b3a4475c7c6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0849e8a161f6ef70cbe646d6e2a7a081"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga0849e8a161f6ef70cbe646d6e2a7a081.html#ga0849e8a161f6ef70cbe646d6e2a7a081">CC_PREVENTFULLOPEN</a></td></tr>
+<tr class="memitem:ga0849e8a161f6ef70cbe646d6e2a7a081"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga0849e8a161f6ef70cbe646d6e2a7a081">CC_PREVENTFULLOPEN</a></td></tr>
 <tr class="memdesc:ga0849e8a161f6ef70cbe646d6e2a7a081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the Define Custom Color button.  <br /></td></tr>
 <tr class="separator:ga0849e8a161f6ef70cbe646d6e2a7a081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadaf582296f8322020181dd32f6ab8ed2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_gadaf582296f8322020181dd32f6ab8ed2.html#gadaf582296f8322020181dd32f6ab8ed2">CC_SHOWHELP</a></td></tr>
+<tr class="memitem:gadaf582296f8322020181dd32f6ab8ed2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#gadaf582296f8322020181dd32f6ab8ed2">CC_SHOWHELP</a></td></tr>
 <tr class="memdesc:gadaf582296f8322020181dd32f6ab8ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display the Help button. The hwndOwner member must specify the window to receive the HELPMSGSTRING registered messages that the dialog box sends when the user clicks the Help button.  <br /></td></tr>
 <tr class="separator:gadaf582296f8322020181dd32f6ab8ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac84512dcf46f4cbdca506216c0548345"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_gac84512dcf46f4cbdca506216c0548345.html#gac84512dcf46f4cbdca506216c0548345">CC_ENABLEHOOK</a></td></tr>
+<tr class="memitem:gac84512dcf46f4cbdca506216c0548345"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#gac84512dcf46f4cbdca506216c0548345">CC_ENABLEHOOK</a></td></tr>
 <tr class="memdesc:gac84512dcf46f4cbdca506216c0548345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the hook procedure specified in the lpfnHook member of this structure. This flag is used only to initialize the dialog box.  <br /></td></tr>
 <tr class="separator:gac84512dcf46f4cbdca506216c0548345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae086ec99e079b1d5182c1a30acfeb583"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_gae086ec99e079b1d5182c1a30acfeb583.html#gae086ec99e079b1d5182c1a30acfeb583">CC_ENABLETEMPLATE</a></td></tr>
+<tr class="memitem:gae086ec99e079b1d5182c1a30acfeb583"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#gae086ec99e079b1d5182c1a30acfeb583">CC_ENABLETEMPLATE</a></td></tr>
 <tr class="memdesc:gae086ec99e079b1d5182c1a30acfeb583"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hInstance and lpTemplateName members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box.  <br /></td></tr>
 <tr class="separator:gae086ec99e079b1d5182c1a30acfeb583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c0c9ce9a9ffe9785e849072072228d1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga4c0c9ce9a9ffe9785e849072072228d1.html#ga4c0c9ce9a9ffe9785e849072072228d1">CC_ENABLETEMPLATEHANDLE</a></td></tr>
+<tr class="memitem:ga4c0c9ce9a9ffe9785e849072072228d1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga4c0c9ce9a9ffe9785e849072072228d1">CC_ENABLETEMPLATEHANDLE</a></td></tr>
 <tr class="memdesc:ga4c0c9ce9a9ffe9785e849072072228d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hInstance member identifies a data block that contains a preloaded dialog box template. The system ignores the lpTemplateName member if this flag is specified. This flag is used only to initialize the dialog box.  <br /></td></tr>
 <tr class="separator:ga4c0c9ce9a9ffe9785e849072072228d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga84a03aa1389e0e8b8db4259f8adc4cbe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga84a03aa1389e0e8b8db4259f8adc4cbe.html#ga84a03aa1389e0e8b8db4259f8adc4cbe">CC_SOLIDCOLOR</a></td></tr>
+<tr class="memitem:ga84a03aa1389e0e8b8db4259f8adc4cbe"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga84a03aa1389e0e8b8db4259f8adc4cbe">CC_SOLIDCOLOR</a></td></tr>
 <tr class="memdesc:ga84a03aa1389e0e8b8db4259f8adc4cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display only solid colors in the set of basic colors.  <br /></td></tr>
 <tr class="separator:ga84a03aa1389e0e8b8db4259f8adc4cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga98476de878880bd4dd39e1f40875044f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga98476de878880bd4dd39e1f40875044f.html#ga98476de878880bd4dd39e1f40875044f">CC_ANYCOLOR</a></td></tr>
+<tr class="memitem:ga98476de878880bd4dd39e1f40875044f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga98476de878880bd4dd39e1f40875044f">CC_ANYCOLOR</a></td></tr>
 <tr class="memdesc:ga98476de878880bd4dd39e1f40875044f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display all available colors in the set of basic colors.  <br /></td></tr>
 <tr class="separator:ga98476de878880bd4dd39e1f40875044f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a77a3cfc4c345905b80ae1d4ae5d947"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc_ga0a77a3cfc4c345905b80ae1d4ae5d947.html#ga0a77a3cfc4c345905b80ae1d4ae5d947">CC_ALPHACOLOR</a></td></tr>
+<tr class="memitem:ga0a77a3cfc4c345905b80ae1d4ae5d947"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc.html#ga0a77a3cfc4c345905b80ae1d4ae5d947">CC_ALPHACOLOR</a></td></tr>
 <tr class="memdesc:ga0a77a3cfc4c345905b80ae1d4ae5d947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the dialog box to display alpha colors in the set of basic colors.  <br /></td></tr>
 <tr class="separator:ga0a77a3cfc4c345905b80ae1d4ae5d947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gad6c3c0072dad9bca0cbb27ad9c41e1f4" name="gad6c3c0072dad9bca0cbb27ad9c41e1f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6c3c0072dad9bca0cbb27ad9c41e1f4">&#9670;&#160;</a></span>CC_RGBINIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_RGBINIT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to use the color specified in the rgbResult member as the initial color selection. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga343546e2f42ce7a43f7b3a4475c7c6f1" name="ga343546e2f42ce7a43f7b3a4475c7c6f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga343546e2f42ce7a43f7b3a4475c7c6f1">&#9670;&#160;</a></span>CC_FULLOPEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_FULLOPEN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display the additional controls that allow the user to create custom colors. If this flag is not set, the user must click the Define Custom Color button to display the custom color controls. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0849e8a161f6ef70cbe646d6e2a7a081" name="ga0849e8a161f6ef70cbe646d6e2a7a081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0849e8a161f6ef70cbe646d6e2a7a081">&#9670;&#160;</a></span>CC_PREVENTFULLOPEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_PREVENTFULLOPEN</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Disables the Define Custom Color button. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gadaf582296f8322020181dd32f6ab8ed2" name="gadaf582296f8322020181dd32f6ab8ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadaf582296f8322020181dd32f6ab8ed2">&#9670;&#160;</a></span>CC_SHOWHELP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_SHOWHELP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display the Help button. The hwndOwner member must specify the window to receive the HELPMSGSTRING registered messages that the dialog box sends when the user clicks the Help button. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac84512dcf46f4cbdca506216c0548345" name="gac84512dcf46f4cbdca506216c0548345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac84512dcf46f4cbdca506216c0548345">&#9670;&#160;</a></span>CC_ENABLEHOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_ENABLEHOOK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Enables the hook procedure specified in the lpfnHook member of this structure. This flag is used only to initialize the dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae086ec99e079b1d5182c1a30acfeb583" name="gae086ec99e079b1d5182c1a30acfeb583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae086ec99e079b1d5182c1a30acfeb583">&#9670;&#160;</a></span>CC_ENABLETEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_ENABLETEMPLATE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>The hInstance and lpTemplateName members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga4c0c9ce9a9ffe9785e849072072228d1" name="ga4c0c9ce9a9ffe9785e849072072228d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c0c9ce9a9ffe9785e849072072228d1">&#9670;&#160;</a></span>CC_ENABLETEMPLATEHANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_ENABLETEMPLATEHANDLE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>The hInstance member identifies a data block that contains a preloaded dialog box template. The system ignores the lpTemplateName member if this flag is specified. This flag is used only to initialize the dialog box. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga84a03aa1389e0e8b8db4259f8adc4cbe" name="ga84a03aa1389e0e8b8db4259f8adc4cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84a03aa1389e0e8b8db4259f8adc4cbe">&#9670;&#160;</a></span>CC_SOLIDCOLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_SOLIDCOLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display only solid colors in the set of basic colors. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga98476de878880bd4dd39e1f40875044f" name="ga98476de878880bd4dd39e1f40875044f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98476de878880bd4dd39e1f40875044f">&#9670;&#160;</a></span>CC_ANYCOLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_ANYCOLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display all available colors in the set of basic colors. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more info see <a href="https://docs.microsoft.com">https://docs.microsoft.com</a> . </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="ga0a77a3cfc4c345905b80ae1d4ae5d947" name="ga0a77a3cfc4c345905b80ae1d4ae5d947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a77a3cfc4c345905b80ae1d4ae5d947">&#9670;&#160;</a></span>CC_ALPHACOLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t CC_ALPHACOLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="choose__color__flags_8h.html">xtd.forms.native/include/xtd/forms/choose_color_flags.h</a>&gt;</code></p>
+
+<p>Causes the dialog box to display alpha colors in the set of basic colors. </p>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms_1_1native.html" title="The xtd::forms::native namespace contains internal native API definitions to access underlying toolki...">xtd.forms.native</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Added specifically for xtd. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

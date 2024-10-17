@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('socket__error__constants_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('socket__error__constants_8h.html','');
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
@@ -113,157 +97,153 @@ $(document).ready(function(){initNavTree('socket__error__constants_8h.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gaca5667a13a69a607389de8a9ce292e38"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaca5667a13a69a607389de8a9ce292e38.html#gaca5667a13a69a607389de8a9ce292e38">SOCKET_ERROR_SOCKET_ERROR</a></td></tr>
+<tr class="memitem:gaca5667a13a69a607389de8a9ce292e38"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaca5667a13a69a607389de8a9ce292e38">SOCKET_ERROR_SOCKET_ERROR</a></td></tr>
 <tr class="memdesc:gaca5667a13a69a607389de8a9ce292e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unspecified error occurred.  <br /></td></tr>
 <tr class="separator:gaca5667a13a69a607389de8a9ce292e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06a79377b372a39a901463e5c3d443f5"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga06a79377b372a39a901463e5c3d443f5.html#ga06a79377b372a39a901463e5c3d443f5">SOCKET_ERROR_SUCCESS</a></td></tr>
+<tr class="memitem:ga06a79377b372a39a901463e5c3d443f5"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga06a79377b372a39a901463e5c3d443f5">SOCKET_ERROR_SUCCESS</a></td></tr>
 <tr class="memdesc:ga06a79377b372a39a901463e5c3d443f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation successful.  <br /></td></tr>
 <tr class="separator:ga06a79377b372a39a901463e5c3d443f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga85a8b13826b28554615e5b53ef2a4975"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga85a8b13826b28554615e5b53ef2a4975.html#ga85a8b13826b28554615e5b53ef2a4975">SOCKET_ERROR_OPERATION_ABORTED</a></td></tr>
+<tr class="memitem:ga85a8b13826b28554615e5b53ef2a4975"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga85a8b13826b28554615e5b53ef2a4975">SOCKET_ERROR_OPERATION_ABORTED</a></td></tr>
 <tr class="memdesc:ga85a8b13826b28554615e5b53ef2a4975"><td class="mdescLeft">&#160;</td><td class="mdescRight">The overlapped operation was aborted due to the closure of the socket.  <br /></td></tr>
 <tr class="separator:ga85a8b13826b28554615e5b53ef2a4975"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e97ecc46c76e3bca48e67548face8ce"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga2e97ecc46c76e3bca48e67548face8ce.html#ga2e97ecc46c76e3bca48e67548face8ce">SOCKET_ERROR_IO_PENDING</a></td></tr>
+<tr class="memitem:ga2e97ecc46c76e3bca48e67548face8ce"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga2e97ecc46c76e3bca48e67548face8ce">SOCKET_ERROR_IO_PENDING</a></td></tr>
 <tr class="memdesc:ga2e97ecc46c76e3bca48e67548face8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application has initiated an overlapped operation that cannot be completed immediately.  <br /></td></tr>
 <tr class="separator:ga2e97ecc46c76e3bca48e67548face8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga639397529ef66991bec9fafd1f2c35ef"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga639397529ef66991bec9fafd1f2c35ef.html#ga639397529ef66991bec9fafd1f2c35ef">SOCKET_ERROR_INTERRUPTED</a></td></tr>
+<tr class="memitem:ga639397529ef66991bec9fafd1f2c35ef"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga639397529ef66991bec9fafd1f2c35ef">SOCKET_ERROR_INTERRUPTED</a></td></tr>
 <tr class="memdesc:ga639397529ef66991bec9fafd1f2c35ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">A blocking call was canceled.  <br /></td></tr>
 <tr class="separator:ga639397529ef66991bec9fafd1f2c35ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadf872fb7e7190a758ad9b9f077e57866"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gadf872fb7e7190a758ad9b9f077e57866.html#gadf872fb7e7190a758ad9b9f077e57866">SOCKET_ERROR_ACCESS_DENIED</a></td></tr>
+<tr class="memitem:gadf872fb7e7190a758ad9b9f077e57866"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gadf872fb7e7190a758ad9b9f077e57866">SOCKET_ERROR_ACCESS_DENIED</a></td></tr>
 <tr class="memdesc:gadf872fb7e7190a758ad9b9f077e57866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access denied.  <br /></td></tr>
 <tr class="separator:gadf872fb7e7190a758ad9b9f077e57866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea918aa325f7503f625f8e3764ebae5e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaea918aa325f7503f625f8e3764ebae5e.html#gaea918aa325f7503f625f8e3764ebae5e">SOCKET_ERROR_FAULT</a></td></tr>
+<tr class="memitem:gaea918aa325f7503f625f8e3764ebae5e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaea918aa325f7503f625f8e3764ebae5e">SOCKET_ERROR_FAULT</a></td></tr>
 <tr class="memdesc:gaea918aa325f7503f625f8e3764ebae5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid pointer address.  <br /></td></tr>
 <tr class="separator:gaea918aa325f7503f625f8e3764ebae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaca3cd8ad3d88eb7f27d32b87bf2dacaf"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaca3cd8ad3d88eb7f27d32b87bf2dacaf.html#gaca3cd8ad3d88eb7f27d32b87bf2dacaf">SOCKET_ERROR_INVALID_ARGUMENT</a></td></tr>
+<tr class="memitem:gaca3cd8ad3d88eb7f27d32b87bf2dacaf"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaca3cd8ad3d88eb7f27d32b87bf2dacaf">SOCKET_ERROR_INVALID_ARGUMENT</a></td></tr>
 <tr class="memdesc:gaca3cd8ad3d88eb7f27d32b87bf2dacaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid argument.  <br /></td></tr>
 <tr class="separator:gaca3cd8ad3d88eb7f27d32b87bf2dacaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2df252a242c39dd963c9a56d20eb9aae"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga2df252a242c39dd963c9a56d20eb9aae.html#ga2df252a242c39dd963c9a56d20eb9aae">SOCKET_ERROR_TOO_MANY_OPEN_SOCKETS</a></td></tr>
+<tr class="memitem:ga2df252a242c39dd963c9a56d20eb9aae"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga2df252a242c39dd963c9a56d20eb9aae">SOCKET_ERROR_TOO_MANY_OPEN_SOCKETS</a></td></tr>
 <tr class="memdesc:ga2df252a242c39dd963c9a56d20eb9aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Too many sockets opened.  <br /></td></tr>
 <tr class="separator:ga2df252a242c39dd963c9a56d20eb9aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga182673cb76686357553dae8ae9897a9f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga182673cb76686357553dae8ae9897a9f.html#ga182673cb76686357553dae8ae9897a9f">SOCKET_ERROR_WOULD_BLOCK</a></td></tr>
+<tr class="memitem:ga182673cb76686357553dae8ae9897a9f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga182673cb76686357553dae8ae9897a9f">SOCKET_ERROR_WOULD_BLOCK</a></td></tr>
 <tr class="memdesc:ga182673cb76686357553dae8ae9897a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An operation on a nonblocking socket cannot be completed immediately.  <br /></td></tr>
 <tr class="separator:ga182673cb76686357553dae8ae9897a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6d09bbf5c0636650b653df1e9e583a1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaf6d09bbf5c0636650b653df1e9e583a1.html#gaf6d09bbf5c0636650b653df1e9e583a1">SOCKET_ERROR_IN_PROGRESS</a></td></tr>
+<tr class="memitem:gaf6d09bbf5c0636650b653df1e9e583a1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaf6d09bbf5c0636650b653df1e9e583a1">SOCKET_ERROR_IN_PROGRESS</a></td></tr>
 <tr class="memdesc:gaf6d09bbf5c0636650b653df1e9e583a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A blocking operation is in progress.  <br /></td></tr>
 <tr class="separator:gaf6d09bbf5c0636650b653df1e9e583a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3eb48d75ecad9ca09bfb1925201b91ae"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga3eb48d75ecad9ca09bfb1925201b91ae.html#ga3eb48d75ecad9ca09bfb1925201b91ae">SOCKET_ERROR_ALREADY_IN_PROGRESS</a></td></tr>
+<tr class="memitem:ga3eb48d75ecad9ca09bfb1925201b91ae"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga3eb48d75ecad9ca09bfb1925201b91ae">SOCKET_ERROR_ALREADY_IN_PROGRESS</a></td></tr>
 <tr class="memdesc:ga3eb48d75ecad9ca09bfb1925201b91ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The nonblocking socket has an operation in progress.  <br /></td></tr>
 <tr class="separator:ga3eb48d75ecad9ca09bfb1925201b91ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc6dfbcab7f00130c0ec483bd9f2b978"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gafc6dfbcab7f00130c0ec483bd9f2b978.html#gafc6dfbcab7f00130c0ec483bd9f2b978">SOCKET_ERROR_NOT_SOCKET</a></td></tr>
+<tr class="memitem:gafc6dfbcab7f00130c0ec483bd9f2b978"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gafc6dfbcab7f00130c0ec483bd9f2b978">SOCKET_ERROR_NOT_SOCKET</a></td></tr>
 <tr class="memdesc:gafc6dfbcab7f00130c0ec483bd9f2b978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation attempted on a non-socket object.  <br /></td></tr>
 <tr class="separator:gafc6dfbcab7f00130c0ec483bd9f2b978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3571f64930f4b50371123cdb49e0e792"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga3571f64930f4b50371123cdb49e0e792.html#ga3571f64930f4b50371123cdb49e0e792">SOCKET_ERROR_DESTINATION_ADDRESS_REQUIRED</a></td></tr>
+<tr class="memitem:ga3571f64930f4b50371123cdb49e0e792"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga3571f64930f4b50371123cdb49e0e792">SOCKET_ERROR_DESTINATION_ADDRESS_REQUIRED</a></td></tr>
 <tr class="memdesc:ga3571f64930f4b50371123cdb49e0e792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Required destination missing.  <br /></td></tr>
 <tr class="separator:ga3571f64930f4b50371123cdb49e0e792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa7abea3b1b2c6e02579c429d841c2aba"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaa7abea3b1b2c6e02579c429d841c2aba.html#gaa7abea3b1b2c6e02579c429d841c2aba">SOCKET_ERROR_MESSAGE_SIZE</a></td></tr>
+<tr class="memitem:gaa7abea3b1b2c6e02579c429d841c2aba"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaa7abea3b1b2c6e02579c429d841c2aba">SOCKET_ERROR_MESSAGE_SIZE</a></td></tr>
 <tr class="memdesc:gaa7abea3b1b2c6e02579c429d841c2aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Datagram message is too long.  <br /></td></tr>
 <tr class="separator:gaa7abea3b1b2c6e02579c429d841c2aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab997b89ac8f3717f33aec5033e732889"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gab997b89ac8f3717f33aec5033e732889.html#gab997b89ac8f3717f33aec5033e732889">SOCKET_ERROR_PROTOCOL_TYPE</a></td></tr>
+<tr class="memitem:gab997b89ac8f3717f33aec5033e732889"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gab997b89ac8f3717f33aec5033e732889">SOCKET_ERROR_PROTOCOL_TYPE</a></td></tr>
 <tr class="memdesc:gab997b89ac8f3717f33aec5033e732889"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protocol type is incorrect.  <br /></td></tr>
 <tr class="separator:gab997b89ac8f3717f33aec5033e732889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga98c93740cb033037db42614c85ba9947"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga98c93740cb033037db42614c85ba9947.html#ga98c93740cb033037db42614c85ba9947">SOCKET_ERROR_PROTOCOL_OPTION</a></td></tr>
+<tr class="memitem:ga98c93740cb033037db42614c85ba9947"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga98c93740cb033037db42614c85ba9947">SOCKET_ERROR_PROTOCOL_OPTION</a></td></tr>
 <tr class="memdesc:ga98c93740cb033037db42614c85ba9947"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unknown, invalid, or unsupported option or level was used.  <br /></td></tr>
 <tr class="separator:ga98c93740cb033037db42614c85ba9947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6875c05bf125d61226fbb64ed12be124"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga6875c05bf125d61226fbb64ed12be124.html#ga6875c05bf125d61226fbb64ed12be124">SOCKET_ERROR_PROTOCOL_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:ga6875c05bf125d61226fbb64ed12be124"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga6875c05bf125d61226fbb64ed12be124">SOCKET_ERROR_PROTOCOL_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:ga6875c05bf125d61226fbb64ed12be124"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protocol is not implemented or has not been configured.  <br /></td></tr>
 <tr class="separator:ga6875c05bf125d61226fbb64ed12be124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e8bc8347d445b81a414ddff21e203c2"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga1e8bc8347d445b81a414ddff21e203c2.html#ga1e8bc8347d445b81a414ddff21e203c2">SOCKET_ERROR_SOCKET_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:ga1e8bc8347d445b81a414ddff21e203c2"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga1e8bc8347d445b81a414ddff21e203c2">SOCKET_ERROR_SOCKET_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:ga1e8bc8347d445b81a414ddff21e203c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The support for the specified socket type does not exist in this address family.  <br /></td></tr>
 <tr class="separator:ga1e8bc8347d445b81a414ddff21e203c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafb3ae9953419f02b902ff00fae8bfada"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gafb3ae9953419f02b902ff00fae8bfada.html#gafb3ae9953419f02b902ff00fae8bfada">SOCKET_ERROR_OPERATION_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:gafb3ae9953419f02b902ff00fae8bfada"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gafb3ae9953419f02b902ff00fae8bfada">SOCKET_ERROR_OPERATION_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:gafb3ae9953419f02b902ff00fae8bfada"><td class="mdescLeft">&#160;</td><td class="mdescRight">The address family is not supported by the protocol family.  <br /></td></tr>
 <tr class="separator:gafb3ae9953419f02b902ff00fae8bfada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga20c053d780da48a112b768e68db488a9"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga20c053d780da48a112b768e68db488a9.html#ga20c053d780da48a112b768e68db488a9">SOCKET_ERROR_PROTOCOL_FAMILY_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:ga20c053d780da48a112b768e68db488a9"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga20c053d780da48a112b768e68db488a9">SOCKET_ERROR_PROTOCOL_FAMILY_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:ga20c053d780da48a112b768e68db488a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protocol family is not implemented or has not been configured.  <br /></td></tr>
 <tr class="separator:ga20c053d780da48a112b768e68db488a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2631edb677160c197567e8d9ca39149b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga2631edb677160c197567e8d9ca39149b.html#ga2631edb677160c197567e8d9ca39149b">SOCKET_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:ga2631edb677160c197567e8d9ca39149b"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga2631edb677160c197567e8d9ca39149b">SOCKET_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:ga2631edb677160c197567e8d9ca39149b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The address family specified is not supported. This error is returned if the IPv6 address family was specified and the IPv6 stack is not installed on the local machine. This error is returned if the IPv4 address family was specified and the IPv4 stack is not installed on the local machine.  <br /></td></tr>
 <tr class="separator:ga2631edb677160c197567e8d9ca39149b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66539c58df61de71f9e3b06df99a8db0"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga66539c58df61de71f9e3b06df99a8db0.html#ga66539c58df61de71f9e3b06df99a8db0">SOCKET_ERROR_ADDRESS_ALREADY_IN_USE</a></td></tr>
+<tr class="memitem:ga66539c58df61de71f9e3b06df99a8db0"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga66539c58df61de71f9e3b06df99a8db0">SOCKET_ERROR_ADDRESS_ALREADY_IN_USE</a></td></tr>
 <tr class="memdesc:ga66539c58df61de71f9e3b06df99a8db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only one use of an address is normally permitted.  <br /></td></tr>
 <tr class="separator:ga66539c58df61de71f9e3b06df99a8db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab329b16ac816a38c1a119de6fab42e2c"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gab329b16ac816a38c1a119de6fab42e2c.html#gab329b16ac816a38c1a119de6fab42e2c">SOCKET_ERROR_ADDRESS_NOT_AVAILABLE</a></td></tr>
+<tr class="memitem:gab329b16ac816a38c1a119de6fab42e2c"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gab329b16ac816a38c1a119de6fab42e2c">SOCKET_ERROR_ADDRESS_NOT_AVAILABLE</a></td></tr>
 <tr class="memdesc:gab329b16ac816a38c1a119de6fab42e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The selected IP address is not valid in this context.  <br /></td></tr>
 <tr class="separator:gab329b16ac816a38c1a119de6fab42e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc3e0ce875b564fbd4d39a64abc801d5"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gacc3e0ce875b564fbd4d39a64abc801d5.html#gacc3e0ce875b564fbd4d39a64abc801d5">SOCKET_ERROR_NETWORK_DOWN</a></td></tr>
+<tr class="memitem:gacc3e0ce875b564fbd4d39a64abc801d5"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gacc3e0ce875b564fbd4d39a64abc801d5">SOCKET_ERROR_NETWORK_DOWN</a></td></tr>
 <tr class="memdesc:gacc3e0ce875b564fbd4d39a64abc801d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The network is not available.  <br /></td></tr>
 <tr class="separator:gacc3e0ce875b564fbd4d39a64abc801d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41483c41a93b7d796f2d266477f0b9aa"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga41483c41a93b7d796f2d266477f0b9aa.html#ga41483c41a93b7d796f2d266477f0b9aa">SOCKET_ERROR_NETWORK_UNREACHABLE</a></td></tr>
+<tr class="memitem:ga41483c41a93b7d796f2d266477f0b9aa"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga41483c41a93b7d796f2d266477f0b9aa">SOCKET_ERROR_NETWORK_UNREACHABLE</a></td></tr>
 <tr class="memdesc:ga41483c41a93b7d796f2d266477f0b9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">No route to the remote host exists.  <br /></td></tr>
 <tr class="separator:ga41483c41a93b7d796f2d266477f0b9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa93e6373ef9e7ce8dc4ffc7a686fc90f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaa93e6373ef9e7ce8dc4ffc7a686fc90f.html#gaa93e6373ef9e7ce8dc4ffc7a686fc90f">SOCKET_ERROR_NETWORK_RESET</a></td></tr>
+<tr class="memitem:gaa93e6373ef9e7ce8dc4ffc7a686fc90f"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaa93e6373ef9e7ce8dc4ffc7a686fc90f">SOCKET_ERROR_NETWORK_RESET</a></td></tr>
 <tr class="memdesc:gaa93e6373ef9e7ce8dc4ffc7a686fc90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application tried to set "keep alive" on a connection that timed out.  <br /></td></tr>
 <tr class="separator:gaa93e6373ef9e7ce8dc4ffc7a686fc90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga839ab08be1a967d4a75cb03752fb0a6e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga839ab08be1a967d4a75cb03752fb0a6e.html#ga839ab08be1a967d4a75cb03752fb0a6e">SOCKET_ERROR_CONNECTION_ABORTED</a></td></tr>
+<tr class="memitem:ga839ab08be1a967d4a75cb03752fb0a6e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga839ab08be1a967d4a75cb03752fb0a6e">SOCKET_ERROR_CONNECTION_ABORTED</a></td></tr>
 <tr class="memdesc:ga839ab08be1a967d4a75cb03752fb0a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection aborted.  <br /></td></tr>
 <tr class="separator:ga839ab08be1a967d4a75cb03752fb0a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa424b536352f376f3b45debf54a17196"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaa424b536352f376f3b45debf54a17196.html#gaa424b536352f376f3b45debf54a17196">SOCKET_ERROR_CONNECTION_RESET</a></td></tr>
+<tr class="memitem:gaa424b536352f376f3b45debf54a17196"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaa424b536352f376f3b45debf54a17196">SOCKET_ERROR_CONNECTION_RESET</a></td></tr>
 <tr class="memdesc:gaa424b536352f376f3b45debf54a17196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection reset by the remote peer.  <br /></td></tr>
 <tr class="separator:gaa424b536352f376f3b45debf54a17196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf4aea6753570bcd06b31025eafe9127"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gacf4aea6753570bcd06b31025eafe9127.html#gacf4aea6753570bcd06b31025eafe9127">SOCKET_ERROR_NO_BUFFER_SPACE_AVAILABLE</a></td></tr>
+<tr class="memitem:gacf4aea6753570bcd06b31025eafe9127"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gacf4aea6753570bcd06b31025eafe9127">SOCKET_ERROR_NO_BUFFER_SPACE_AVAILABLE</a></td></tr>
 <tr class="memdesc:gacf4aea6753570bcd06b31025eafe9127"><td class="mdescLeft">&#160;</td><td class="mdescRight">No free buffer space available.  <br /></td></tr>
 <tr class="separator:gacf4aea6753570bcd06b31025eafe9127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga440b31e3b9df6b14f391d3cfdfdfbd0d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga440b31e3b9df6b14f391d3cfdfdfbd0d.html#ga440b31e3b9df6b14f391d3cfdfdfbd0d">SOCKET_ERROR_IS_CONNECTED</a></td></tr>
+<tr class="memitem:ga440b31e3b9df6b14f391d3cfdfdfbd0d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga440b31e3b9df6b14f391d3cfdfdfbd0d">SOCKET_ERROR_IS_CONNECTED</a></td></tr>
 <tr class="memdesc:ga440b31e3b9df6b14f391d3cfdfdfbd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Already connected.  <br /></td></tr>
 <tr class="separator:ga440b31e3b9df6b14f391d3cfdfdfbd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f0369a42764cfd202a987224e85ef3e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga9f0369a42764cfd202a987224e85ef3e.html#ga9f0369a42764cfd202a987224e85ef3e">SOCKET_ERROR_NOT_CONNECTED</a></td></tr>
+<tr class="memitem:ga9f0369a42764cfd202a987224e85ef3e"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga9f0369a42764cfd202a987224e85ef3e">SOCKET_ERROR_NOT_CONNECTED</a></td></tr>
 <tr class="memdesc:ga9f0369a42764cfd202a987224e85ef3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The socket is not connected.  <br /></td></tr>
 <tr class="separator:ga9f0369a42764cfd202a987224e85ef3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga810f0c9bdbfb4e115a7164f499b78680"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga810f0c9bdbfb4e115a7164f499b78680.html#ga810f0c9bdbfb4e115a7164f499b78680">SOCKET_ERROR_SHUTDOWN</a></td></tr>
+<tr class="memitem:ga810f0c9bdbfb4e115a7164f499b78680"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga810f0c9bdbfb4e115a7164f499b78680">SOCKET_ERROR_SHUTDOWN</a></td></tr>
 <tr class="memdesc:ga810f0c9bdbfb4e115a7164f499b78680"><td class="mdescLeft">&#160;</td><td class="mdescRight">A request to send or receive data was disallowed because the socket is closed.  <br /></td></tr>
 <tr class="separator:ga810f0c9bdbfb4e115a7164f499b78680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae8eeda8d8a80c122352a4991734821fd"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gae8eeda8d8a80c122352a4991734821fd.html#gae8eeda8d8a80c122352a4991734821fd">SOCKET_ERROR_TIMED_OUT</a></td></tr>
+<tr class="memitem:gae8eeda8d8a80c122352a4991734821fd"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gae8eeda8d8a80c122352a4991734821fd">SOCKET_ERROR_TIMED_OUT</a></td></tr>
 <tr class="memdesc:gae8eeda8d8a80c122352a4991734821fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The connection attempt timed out, or the connected host has failed to respond.  <br /></td></tr>
 <tr class="separator:gae8eeda8d8a80c122352a4991734821fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b8c5879534d0fec991460568d34ad3d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga6b8c5879534d0fec991460568d34ad3d.html#ga6b8c5879534d0fec991460568d34ad3d">SOCKET_ERROR_CONNECTION_REFUSED</a></td></tr>
+<tr class="memitem:ga6b8c5879534d0fec991460568d34ad3d"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga6b8c5879534d0fec991460568d34ad3d">SOCKET_ERROR_CONNECTION_REFUSED</a></td></tr>
 <tr class="memdesc:ga6b8c5879534d0fec991460568d34ad3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The remote host is actively refusing a connection.  <br /></td></tr>
 <tr class="separator:ga6b8c5879534d0fec991460568d34ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59ec4959b986710bf2bc253ffccbf7ad"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga59ec4959b986710bf2bc253ffccbf7ad.html#ga59ec4959b986710bf2bc253ffccbf7ad">SOCKET_ERROR_HOST_DOWN</a></td></tr>
+<tr class="memitem:ga59ec4959b986710bf2bc253ffccbf7ad"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga59ec4959b986710bf2bc253ffccbf7ad">SOCKET_ERROR_HOST_DOWN</a></td></tr>
 <tr class="memdesc:ga59ec4959b986710bf2bc253ffccbf7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operation failed because the remote host is down.  <br /></td></tr>
 <tr class="separator:ga59ec4959b986710bf2bc253ffccbf7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8887d8ed7b39b257e19463c5bbeaca31"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga8887d8ed7b39b257e19463c5bbeaca31.html#ga8887d8ed7b39b257e19463c5bbeaca31">SOCKET_ERROR_HOST_UNREACHABLE</a></td></tr>
+<tr class="memitem:ga8887d8ed7b39b257e19463c5bbeaca31"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga8887d8ed7b39b257e19463c5bbeaca31">SOCKET_ERROR_HOST_UNREACHABLE</a></td></tr>
 <tr class="memdesc:ga8887d8ed7b39b257e19463c5bbeaca31"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is no network route to the specified host.  <br /></td></tr>
 <tr class="separator:ga8887d8ed7b39b257e19463c5bbeaca31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6ebdab1f87f282a7066d5a59793e6aa"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gad6ebdab1f87f282a7066d5a59793e6aa.html#gad6ebdab1f87f282a7066d5a59793e6aa">SOCKET_ERROR_PROCESS_LIMIT</a></td></tr>
+<tr class="memitem:gad6ebdab1f87f282a7066d5a59793e6aa"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gad6ebdab1f87f282a7066d5a59793e6aa">SOCKET_ERROR_PROCESS_LIMIT</a></td></tr>
 <tr class="memdesc:gad6ebdab1f87f282a7066d5a59793e6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Too many processes are using the underlying socket provider.  <br /></td></tr>
 <tr class="separator:gad6ebdab1f87f282a7066d5a59793e6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa92276de642970ae671fcc4bf7e4f943"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaa92276de642970ae671fcc4bf7e4f943.html#gaa92276de642970ae671fcc4bf7e4f943">SOCKET_ERROR_SYSTEM_NOT_READY</a></td></tr>
+<tr class="memitem:gaa92276de642970ae671fcc4bf7e4f943"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaa92276de642970ae671fcc4bf7e4f943">SOCKET_ERROR_SYSTEM_NOT_READY</a></td></tr>
 <tr class="memdesc:gaa92276de642970ae671fcc4bf7e4f943"><td class="mdescLeft">&#160;</td><td class="mdescRight">The network subsystem is unavailable.  <br /></td></tr>
 <tr class="separator:gaa92276de642970ae671fcc4bf7e4f943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2ff759d04ee6f02202b4e54e35ec6ee1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga2ff759d04ee6f02202b4e54e35ec6ee1.html#ga2ff759d04ee6f02202b4e54e35ec6ee1">SOCKET_ERROR_VERSION_NOT_SUPPORTED</a></td></tr>
+<tr class="memitem:ga2ff759d04ee6f02202b4e54e35ec6ee1"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga2ff759d04ee6f02202b4e54e35ec6ee1">SOCKET_ERROR_VERSION_NOT_SUPPORTED</a></td></tr>
 <tr class="memdesc:ga2ff759d04ee6f02202b4e54e35ec6ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of the underlying socket provider is out of range.  <br /></td></tr>
 <tr class="separator:ga2ff759d04ee6f02202b4e54e35ec6ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac70e19914abd981ecc5dc92f689143de"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gac70e19914abd981ecc5dc92f689143de.html#gac70e19914abd981ecc5dc92f689143de">SOCKET_ERROR_NOT_INITIALIZED</a></td></tr>
+<tr class="memitem:gac70e19914abd981ecc5dc92f689143de"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gac70e19914abd981ecc5dc92f689143de">SOCKET_ERROR_NOT_INITIALIZED</a></td></tr>
 <tr class="memdesc:gac70e19914abd981ecc5dc92f689143de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying socket provider has not been initialized.  <br /></td></tr>
 <tr class="separator:gac70e19914abd981ecc5dc92f689143de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga606dc63a42f2da1a71b93c3e5e3f8fc4"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga606dc63a42f2da1a71b93c3e5e3f8fc4.html#ga606dc63a42f2da1a71b93c3e5e3f8fc4">SOCKET_ERROR_DISCONNECTING</a></td></tr>
+<tr class="memitem:ga606dc63a42f2da1a71b93c3e5e3f8fc4"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga606dc63a42f2da1a71b93c3e5e3f8fc4">SOCKET_ERROR_DISCONNECTING</a></td></tr>
 <tr class="memdesc:ga606dc63a42f2da1a71b93c3e5e3f8fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A graceful shutdown is in progress.  <br /></td></tr>
 <tr class="separator:ga606dc63a42f2da1a71b93c3e5e3f8fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8db2fc5e87288338074c2e0d84f608e9"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga8db2fc5e87288338074c2e0d84f608e9.html#ga8db2fc5e87288338074c2e0d84f608e9">SOCKET_ERROR_TYPE_NOT_FOUND</a></td></tr>
+<tr class="memitem:ga8db2fc5e87288338074c2e0d84f608e9"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga8db2fc5e87288338074c2e0d84f608e9">SOCKET_ERROR_TYPE_NOT_FOUND</a></td></tr>
 <tr class="memdesc:ga8db2fc5e87288338074c2e0d84f608e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specified class was not found.  <br /></td></tr>
 <tr class="separator:ga8db2fc5e87288338074c2e0d84f608e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d82af0f58c2e0aea90eb87ce864307c"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga8d82af0f58c2e0aea90eb87ce864307c.html#ga8d82af0f58c2e0aea90eb87ce864307c">SOCKET_ERROR_HOST_NOT_FOUND</a></td></tr>
+<tr class="memitem:ga8d82af0f58c2e0aea90eb87ce864307c"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga8d82af0f58c2e0aea90eb87ce864307c">SOCKET_ERROR_HOST_NOT_FOUND</a></td></tr>
 <tr class="memdesc:ga8d82af0f58c2e0aea90eb87ce864307c"><td class="mdescLeft">&#160;</td><td class="mdescRight">No such host is known. The name is not an official host name or alias.  <br /></td></tr>
 <tr class="separator:ga8d82af0f58c2e0aea90eb87ce864307c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c9683f34694ff0a2545879348cd36a7"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga0c9683f34694ff0a2545879348cd36a7.html#ga0c9683f34694ff0a2545879348cd36a7">SOCKET_ERROR_TRY_AGAIN</a></td></tr>
+<tr class="memitem:ga0c9683f34694ff0a2545879348cd36a7"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga0c9683f34694ff0a2545879348cd36a7">SOCKET_ERROR_TRY_AGAIN</a></td></tr>
 <tr class="memdesc:ga0c9683f34694ff0a2545879348cd36a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the host could not be resolved. Try again later.  <br /></td></tr>
 <tr class="separator:ga0c9683f34694ff0a2545879348cd36a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf311f1d93c7f8296140dd022ae551200"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_gaf311f1d93c7f8296140dd022ae551200.html#gaf311f1d93c7f8296140dd022ae551200">SOCKET_ERROR_NOT_RECOVERY</a></td></tr>
+<tr class="memitem:gaf311f1d93c7f8296140dd022ae551200"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#gaf311f1d93c7f8296140dd022ae551200">SOCKET_ERROR_NOT_RECOVERY</a></td></tr>
 <tr class="memdesc:gaf311f1d93c7f8296140dd022ae551200"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error is unrecoverable or the requested database cannot be located.  <br /></td></tr>
 <tr class="separator:gaf311f1d93c7f8296140dd022ae551200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga760584fe8529a59f2520ccc09fbffbc8"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error_ga760584fe8529a59f2520ccc09fbffbc8.html#ga760584fe8529a59f2520ccc09fbffbc8">SOCKET_ERROR_NO_DATA</a></td></tr>
+<tr class="memitem:ga760584fe8529a59f2520ccc09fbffbc8"><td class="memItemLeft" align="right" valign="top">constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__socket__error.html#ga760584fe8529a59f2520ccc09fbffbc8">SOCKET_ERROR_NO_DATA</a></td></tr>
 <tr class="memdesc:ga760584fe8529a59f2520ccc09fbffbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The requested name or IP address was not found on the name server.  <br /></td></tr>
 <tr class="separator:ga760584fe8529a59f2520ccc09fbffbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_476372782b485e7f8d54407cf99382ad.html">xtd.core.native</a></li><li class="navelem"><a class="el" href="dir_4518a894390302c84754eee9b7570b57.html">include</a></li><li class="navelem"><a class="el" href="dir_1dd5657fd1410df60655238fa598809f.html">xtd</a></li><li class="navelem"><a class="el" href="dir_c2e0eb911d20a3081884aa79218209e4.html">native</a></li><li class="navelem"><a class="el" href="socket__error__constants_8h.html">socket_error_constants.h</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>

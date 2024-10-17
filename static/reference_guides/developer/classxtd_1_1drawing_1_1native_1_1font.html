@@ -8,10 +8,6 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
-		<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,23 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1font.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,6 +77,11 @@ $(document).ready(function(){initNavTree('classxtd_1_1drawing_1_1native_1_1font.
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1drawing_1_1native_1_1font-members.html">List of all members</a>  </div>
@@ -120,43 +104,487 @@ Inheritance diagram for xtd::drawing::native::font:</div>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a12d5d62452c7602425773dfcc95ee282"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_a12d5d62452c7602425773dfcc95ee282.html#a12d5d62452c7602425773dfcc95ee282">create</a> (const <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;family_name, float em_size, bool <a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a69dcab4a73aeec2113f69b61e6263da8">bold</a>, bool <a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">italic</a>, bool <a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a6dc7b4483f8c2c701a48e42db552806d">underline</a>, bool <a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a9dc8c8aed9618f3315baeea0d7426b51">strikeout</a>, <a class="el" href="group__types_gabb9d3031d62e3725b4265c7e5d2a98e1.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> gdi_char_set, bool gdi_vertical_font)</td></tr>
+<tr class="memitem:a12d5d62452c7602425773dfcc95ee282"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#a12d5d62452c7602425773dfcc95ee282">create</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;family_name, float em_size, bool <a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a69dcab4a73aeec2113f69b61e6263da8">bold</a>, bool <a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">italic</a>, bool <a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a6dc7b4483f8c2c701a48e42db552806d">underline</a>, bool <a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a9dc8c8aed9618f3315baeea0d7426b51">strikeout</a>, <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> gdi_char_set, bool gdi_vertical_font)</td></tr>
 <tr class="memdesc:a12d5d62452c7602425773dfcc95ee282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates font.  <br /></td></tr>
 <tr class="separator:a12d5d62452c7602425773dfcc95ee282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7797ac2529ceae062cc8d92a07de4fc9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_a7797ac2529ceae062cc8d92a07de4fc9.html#a7797ac2529ceae062cc8d92a07de4fc9">create_from_hdc</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hdc)</td></tr>
+<tr class="memitem:a7797ac2529ceae062cc8d92a07de4fc9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#a7797ac2529ceae062cc8d92a07de4fc9">create_from_hdc</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hdc)</td></tr>
 <tr class="memdesc:a7797ac2529ceae062cc8d92a07de4fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates font from hdc.  <br /></td></tr>
 <tr class="separator:a7797ac2529ceae062cc8d92a07de4fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2cff459600142859cb16c1303bccd17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_aa2cff459600142859cb16c1303bccd17.html#aa2cff459600142859cb16c1303bccd17">create_from_hfont</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hfont)</td></tr>
+<tr class="memitem:aa2cff459600142859cb16c1303bccd17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#aa2cff459600142859cb16c1303bccd17">create_from_hfont</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hfont)</td></tr>
 <tr class="memdesc:aa2cff459600142859cb16c1303bccd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates font from hfont.  <br /></td></tr>
 <tr class="separator:aa2cff459600142859cb16c1303bccd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f2e0ab3a5e7dedab48477efb8203798"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_a3f2e0ab3a5e7dedab48477efb8203798.html#a3f2e0ab3a5e7dedab48477efb8203798">destroy</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>)</td></tr>
+<tr class="memitem:a3f2e0ab3a5e7dedab48477efb8203798"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#a3f2e0ab3a5e7dedab48477efb8203798">destroy</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>)</td></tr>
 <tr class="memdesc:a3f2e0ab3a5e7dedab48477efb8203798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the font.  <br /></td></tr>
 <tr class="separator:a3f2e0ab3a5e7dedab48477efb8203798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85b5756ebd9eaa3883d88917bd852c62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types_ga205462e259a4eca1545511085c2c350e.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_a85b5756ebd9eaa3883d88917bd852c62.html#a85b5756ebd9eaa3883d88917bd852c62">dpi</a> ()</td></tr>
+<tr class="memitem:a85b5756ebd9eaa3883d88917bd852c62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#a85b5756ebd9eaa3883d88917bd852c62">dpi</a> ()</td></tr>
 <tr class="memdesc:a85b5756ebd9eaa3883d88917bd852c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the screen dpi .  <br /></td></tr>
 <tr class="separator:a85b5756ebd9eaa3883d88917bd852c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa66624b89b30b8d2b203825bc15db7d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_aa66624b89b30b8d2b203825bc15db7d9.html#aa66624b89b30b8d2b203825bc15db7d9">get_information</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>, <a class="el" href="group__strings_ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;name, float &amp;em_size, bool &amp;<a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a69dcab4a73aeec2113f69b61e6263da8">bold</a>, bool &amp;<a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">italic</a>, bool &amp;<a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a6dc7b4483f8c2c701a48e42db552806d">underline</a>, bool &amp;<a class="el" href="group__fonts_ga5622feb39a9d16672cef53957d224571.html#gga5622feb39a9d16672cef53957d224571a9dc8c8aed9618f3315baeea0d7426b51">strikeout</a>, <a class="el" href="group__types_gabb9d3031d62e3725b4265c7e5d2a98e1.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &amp;gdi_char_set, bool &amp;gdi_vertical_font)</td></tr>
+<tr class="memitem:aa66624b89b30b8d2b203825bc15db7d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#aa66624b89b30b8d2b203825bc15db7d9">get_information</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;name, float &amp;em_size, bool &amp;<a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a69dcab4a73aeec2113f69b61e6263da8">bold</a>, bool &amp;<a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">italic</a>, bool &amp;<a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a6dc7b4483f8c2c701a48e42db552806d">underline</a>, bool &amp;<a class="el" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a9dc8c8aed9618f3315baeea0d7426b51">strikeout</a>, <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &amp;gdi_char_set, bool &amp;gdi_vertical_font)</td></tr>
 <tr class="memdesc:aa66624b89b30b8d2b203825bc15db7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the font information from font hanfle.  <br /></td></tr>
 <tr class="separator:aa66624b89b30b8d2b203825bc15db7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcece095a3503cb4060ffcaaafc74e9"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_afdcece095a3503cb4060ffcaaafc74e9.html#afdcece095a3503cb4060ffcaaafc74e9">height</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>)</td></tr>
+<tr class="memitem:afdcece095a3503cb4060ffcaaafc74e9"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#afdcece095a3503cb4060ffcaaafc74e9">height</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>)</td></tr>
 <tr class="memdesc:afdcece095a3503cb4060ffcaaafc74e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the font height.  <br /></td></tr>
 <tr class="separator:afdcece095a3503cb4060ffcaaafc74e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055352a83d72f4b5e419eb1ec19b0758"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font_a055352a83d72f4b5e419eb1ec19b0758.html#a055352a83d72f4b5e419eb1ec19b0758">height</a> (<a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>, <a class="el" href="group__types_gaa7283e1dd31c385d954467f7ea324451.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hdc)</td></tr>
+<tr class="memitem:a055352a83d72f4b5e419eb1ec19b0758"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html#a055352a83d72f4b5e419eb1ec19b0758">height</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hdc)</td></tr>
 <tr class="memdesc:a055352a83d72f4b5e419eb1ec19b0758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the font height for the specified hdc.  <br /></td></tr>
 <tr class="separator:a055352a83d72f4b5e419eb1ec19b0758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a12d5d62452c7602425773dfcc95ee282" name="a12d5d62452c7602425773dfcc95ee282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d5d62452c7602425773dfcc95ee282">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::font::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>family_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>em_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>underline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>strikeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a>&#160;</td>
+          <td class="paramname"><em>gdi_char_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>gdi_vertical_font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">family_name</td><td>A string representation of the font family for the new font. </td></tr>
+    <tr><td class="paramname">em_size</td><td>The em-size of the new font in pixels. </td></tr>
+    <tr><td class="paramname">bold</td><td>true if font is bold; otherwise false. </td></tr>
+    <tr><td class="paramname">italic</td><td>true if font is italic; otherwise false. </td></tr>
+    <tr><td class="paramname">underline</td><td>true if font is underline; otherwise false. </td></tr>
+    <tr><td class="paramname">strikeout</td><td>true if font is strikeout; otherwise false. </td></tr>
+    <tr><td class="paramname">gdi_char_set</td><td>A byte that specifies a GDI character set to use for this font. </td></tr>
+    <tr><td class="paramname">gdi_vertical_font</td><td>A boolean value indicating whether the new <a class="el" href="classxtd_1_1drawing_1_1font.html" title="Defines a particular format for text, including font face, size, and style attributes....">xtd::drawing::font</a> is derived from a GDI vertical font. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created font handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a7797ac2529ceae062cc8d92a07de4fc9" name="a7797ac2529ceae062cc8d92a07de4fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7797ac2529ceae062cc8d92a07de4fc9">&#9670;&#160;</a></span>create_from_hdc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::font::create_from_hdc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>hdc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates font from hdc. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hdc</td><td>The handle of the device context font. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created font handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa2cff459600142859cb16c1303bccd17" name="aa2cff459600142859cb16c1303bccd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cff459600142859cb16c1303bccd17">&#9670;&#160;</a></span>create_from_hfont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::drawing::native::font::create_from_hfont </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>hfont</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates font from hfont. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hfont</td><td>The handle of the font. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created font handle. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a3f2e0ab3a5e7dedab48477efb8203798" name="a3f2e0ab3a5e7dedab48477efb8203798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2e0ab3a5e7dedab48477efb8203798">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::font::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>font</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>The font handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a85b5756ebd9eaa3883d88917bd852c62" name="a85b5756ebd9eaa3883d88917bd852c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b5756ebd9eaa3883d88917bd852c62">&#9670;&#160;</a></span>dpi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::drawing::native::font::dpi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the screen dpi . </p>
+<dl class="section return"><dt>Returns</dt><dd>The screen dpi. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aa66624b89b30b8d2b203825bc15db7d9" name="aa66624b89b30b8d2b203825bc15db7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66624b89b30b8d2b203825bc15db7d9">&#9670;&#160;</a></span>get_information()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::drawing::native::font::get_information </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>em_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>bold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>italic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>underline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>strikeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &amp;&#160;</td>
+          <td class="paramname"><em>gdi_char_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>gdi_vertical_font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the font information from font hanfle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>The font handle to retrieve informations. </td></tr>
+    <tr><td class="paramname">name</td><td>The font name. </td></tr>
+    <tr><td class="paramname">em_size</td><td>The font em-size. </td></tr>
+    <tr><td class="paramname">bold</td><td>True is the font is bold; otherwise false. </td></tr>
+    <tr><td class="paramname">italic</td><td>True is the font is italic; otherwise false. </td></tr>
+    <tr><td class="paramname">underline</td><td>True is the font is underline; otherwise false. </td></tr>
+    <tr><td class="paramname">strikeout</td><td>True is the font is strikeout; otherwise false. </td></tr>
+    <tr><td class="paramname">gdi_char_set</td><td>The GDI character set. </td></tr>
+    <tr><td class="paramname">gdi_vertical_font</td><td>True is the font is GDI vertical font; otherwise false. <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"> Character set   </th><th class="markdownTableHeadNone"> Value    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ANSI   </td><td class="markdownTableBodyNone">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">DEFAULT   </td><td class="markdownTableBodyNone">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SYMBOL   </td><td class="markdownTableBodyNone"> 2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SHIFTJIS   </td><td class="markdownTableBodyNone">128    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">HANGEUL   </td><td class="markdownTableBodyNone">129    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">HANGUL   </td><td class="markdownTableBodyNone">129    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GB2312   </td><td class="markdownTableBodyNone">134    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CHINESEBIG5   </td><td class="markdownTableBodyNone">136    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">OEM   </td><td class="markdownTableBodyNone"> 255    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">JOHAB   </td><td class="markdownTableBodyNone"> 130    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">HEBREW   </td><td class="markdownTableBodyNone">177    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ARABIC   </td><td class="markdownTableBodyNone"> 178    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GREEK   </td><td class="markdownTableBodyNone"> 161    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">TURKISH   </td><td class="markdownTableBodyNone">162    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">VIETNAMESE   </td><td class="markdownTableBodyNone">163    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">THAI   </td><td class="markdownTableBodyNone"> 222    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">EASTEUROPE   </td><td class="markdownTableBodyNone"> 238    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">RUSSIAN   </td><td class="markdownTableBodyNone"> 204    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MAC   </td><td class="markdownTableBodyNone">77    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">BALTIC   </td><td class="markdownTableBodyNone"> 186   </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="afdcece095a3503cb4060ffcaaafc74e9" name="afdcece095a3503cb4060ffcaaafc74e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdcece095a3503cb4060ffcaaafc74e9">&#9670;&#160;</a></span>height() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float xtd::drawing::native::font::height </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>font</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the font height. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>The font handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The font height. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a055352a83d72f4b5e419eb1ec19b0758" name="a055352a83d72f4b5e419eb1ec19b0758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055352a83d72f4b5e419eb1ec19b0758">&#9670;&#160;</a></span>height() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float xtd::drawing::native::font::height </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
+          <td class="paramname"><em>hdc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the font height for the specified hdc. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>The font handle. </td></tr>
+    <tr><td class="paramname">hdc</td><td>The device context handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The font height. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.drawing.native/include/xtd/drawing/native/<a class="el" href="xtd_8drawing_8native_2include_2xtd_2drawing_2native_2font_8h_source.html">font.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing.html">drawing</a></li><li class="navelem"><a class="el" href="namespacextd_1_1drawing_1_1native.html">native</a></li><li class="navelem"><a class="el" href="classxtd_1_1drawing_1_1native_1_1font.html">font</a></li>
-		<li class="footer">Generated on Mon Sep 9 2024 23:28:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Oct 17 2024 16:03:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+</small></address>
 </body>
 </html>
