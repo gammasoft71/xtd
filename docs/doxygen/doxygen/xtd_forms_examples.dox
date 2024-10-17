@@ -2252,7 +2252,7 @@
 /// @image html minesweeper_gd.png
 ///
 /// @example tetris.cpp
-/// The Tetris game is one of the most popular computer games ever created.
+/// The Tetris game is one of the most popular computer games ever created. 
 /// @par Windows
 /// @image html tetris_w.png
 /// <br>

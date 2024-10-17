@@ -1,6 +1,12 @@
 /// @file
 /// @brief Contains xtd.core examples.
 ///
+/// @example any.cpp
+/// Shows how to use xtd::any_object class.
+///
+/// @example any_info.cpp
+/// Shows how to use xtd::any_object class.
+///
 /// @example bit_converter.cpp
 /// Shows how to use xtd::bit_converter class.
 ///
@@ -28,11 +34,17 @@
 /// @example array_list2.cpp
 /// Shows how to use xtd::collections::array_list alias.
 ///
-/// @example vector_list.cpp
-/// Shows how to use vector_list class.
+/// @example hashtable.cpp
+/// Shows how to use hashtable alias.
 ///
-/// @example vector_list2.cpp
-/// Shows how to use xtd::collections::vector_list class.
+/// @example ienumerable.cpp
+/// Shows how to use xtd::collections::ienumerable interface.
+///
+/// @example ienumerator.cpp
+/// Shows how to use xtd::collections::ienumerator interface.
+///
+/// @example ilist.cpp
+/// Shows how to use xtd::collections::ilist interface.
 ///
 /// @example file_settings.cpp
 /// Shows how to use xtd::consiguration::file_settings object.
@@ -334,6 +346,9 @@
 /// @example system_exception.cpp
 /// Shows how to use system_exception exception.
 ///
+/// @example user_defined_exception.cpp
+/// Shows how to use xtd::exception exception.
+///
 /// @example format.cpp
 /// Show how to use format xtd::format class.
 ///
@@ -418,6 +433,36 @@
 /// @example format_with_order.cpp
 /// Show how to use format xtd::format class with order.
 ///
+/// @example generic_icollection.cpp
+/// Shows how to use xtd::collections::generic::icollection interface.
+///
+/// @example generic_ienumerable.cpp
+/// Shows how to use xtd::collections::generic::ienumerable interface.
+///
+/// @example generic_ienumerable2.cpp
+/// Shows how to use xtd::collections::generic::ienumerable interface.
+///
+/// @example generic_ienumerator.cpp
+/// Shows how to use xtd::collections::generic::ienumerator interface.
+///
+/// @example generic_ilist.cpp
+/// Shows how to use xtd::collections::generic::ilist interface.
+///
+/// @example generic_list.cpp
+/// Shows how to use xtd::collections::generic::list class.
+///
+/// @example generic_list2.cpp
+/// Shows how to use xtd::collections::generic::list class.
+///
+/// @example generic_list3.cpp
+/// Shows how to use xtd::collections::generic::list class.
+///
+/// @example generic_list4.cpp
+/// Shows how to use xtd::collections::generic::list class.
+///
+/// @example generic_list_as_read_only.cpp
+/// Shows how to use xtd::collections::generic::list class.
+///
 /// @example guid.cpp
 /// Shows how to use xtd::guid class.
 ///
@@ -462,6 +507,9 @@
 ///
 /// @example iprogress.cpp
 /// Shows how to use xtd::iprogress interface.
+///
+/// @example istringable.cpp
+/// Shows how to use xtd::istringable interface.
 ///
 /// @example binary_reader.cpp
 /// Show how to use xtd::io::binary_reader class.
@@ -571,6 +619,9 @@
 /// @example system_sounds.cpp
 /// Shows how tto use xtd::media::system_sounds and xtd::media::system_sounds classes.
 ///
+/// @example memory_information.cpp
+/// Shows how to use xtd::memory_information class.
+///
 /// @example dns_get_host_addresses.cpp
 /// Shows how to use xtd::net::dns class.
 ///
@@ -633,6 +684,9 @@
 ///
 /// @example object_to_string.cpp
 /// Shows hows how to use xtd::object::to_string method.
+///
+/// @example read_only_collection.cpp
+/// Shows how to use xtd::collections::object_model::read_only_collection class.
 ///
 /// @example console_background_color2.cpp
 /// Shows how to use xtd::console::background_color method.
@@ -718,6 +772,9 @@
 /// @example random3.cpp
 /// Shows how to use xtd::random::next method.
 ///
+/// @example source_location_invoked_directly.cpp
+/// Shows how to use xtd::source_location class.
+///
 /// @example sprintf.cpp
 /// Shows how to use xtd::string::sprintf method.
 ///
@@ -740,13 +797,13 @@
 /// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_duration.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum_class.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_floating_point.cpp
 /// Shows how to use xtd::string::sprintf method.
@@ -755,10 +812,10 @@
 /// Shows how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_string.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_with_alignment.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example startup.cpp
 /// Shows how to use xtd::startup class.
@@ -805,8 +862,14 @@
 /// @example string_unicode.cpp
 /// Shows how to use xtd::string method.
 ///
+/// @example strings.cpp
+/// Shows how to use xtd::basic_string constructors.
+///
 /// @example test_console.cpp
 /// Shows how to set target startup with cmake xtd::console.
+///
+/// @example string_builder_append.cpp
+/// Shows how to use xtd::text::basic_string_builder::append method.
 ///
 /// @example auto_reset_event.cpp
 /// Shows how to use xtd::threading::auto_reset_event class.
