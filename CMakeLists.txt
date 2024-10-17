@@ -19,7 +19,7 @@ option(XTD_ENABLE_COVERAGE "Enable code coverage" OFF)
 option(XTD_ENABLE_EXTRA_PROJECTS "Enable exptra projects (docs, local and scripts" OFF)
 option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
 option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
-option(XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE "Add run Developper Reference Guide generator command" OFF)
+option(XTD_ENABLE_RUN_DEVELOPER_REFERENCE_GUIDE "Add run Developer Reference Guide generator command" OFF)
 option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
 option(XTD_INSTALL_EXAMPLES "Install examples" ON)
 option(XTD_INSTALL_RESOURCES "Install resources" ON)
@@ -199,9 +199,10 @@ endif ()
 ################################################################################
 # Run Developper Reference Guide generator command
 
-if (XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE)
-  add_custom_target(RUN_DEVELOPPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
-  set_target_properties(RUN_DEVELOPPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
+if (XTD_ENABLE_RUN_DEVELOPER_REFERENCE_GUIDE)
+  file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/developer_html)
+  add_custom_target(RUN_DEVELOPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
+  set_target_properties(RUN_DEVELOPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
 endif ()
 
 # Updates export file
