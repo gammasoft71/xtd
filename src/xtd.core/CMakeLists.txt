@@ -501,8 +501,6 @@ add_sources(
   include/xtd/uri_template_match_exception
   include/xtd/using.h
   include/xtd/using
-  include/xtd/va_args_comma.h
-  include/xtd/va_args_comma
   include/xtd/version.h
   include/xtd/version
   include/xtd/wchar.h
@@ -608,8 +606,6 @@ add_sources(
   include/xtd/diagnostics/boolean_switch
   include/xtd/diagnostics/console_trace_listener.h
   include/xtd/diagnostics/console_trace_listener
-  include/xtd/diagnostics/current_stack_frame.h
-  include/xtd/diagnostics/current_stack_frame
   include/xtd/diagnostics/data_received_event_args.h
   include/xtd/diagnostics/data_received_event_args
   include/xtd/diagnostics/data_received_event_handler.h

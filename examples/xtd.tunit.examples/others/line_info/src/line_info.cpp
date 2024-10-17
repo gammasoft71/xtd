@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-void trace_message(const string& message, const stack_frame& sf) {
+void trace_message(const string& message, const stack_frame& sf = stack_frame::current()) {
   console::out << "message: " << message << environment::new_line;
   console::out << "member name: " << sf.get_method() << environment::new_line;
   console::out << "source file path: " << sf.get_file_name() << environment::new_line;
@@ -12,7 +12,7 @@ void trace_message(const string& message, const stack_frame& sf) {
 }
 
 auto main() -> int {
-  trace_message("Something happened.", csf_);
+  trace_message("Something happened.");
 }
 
 // This code can produce the following output :

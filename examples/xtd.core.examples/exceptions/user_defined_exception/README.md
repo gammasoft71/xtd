@@ -25,5 +25,5 @@ h_result          = 0x80131500 (2148734208)
 inner_exception   = (null)
 message           = The employee list does not exist.
 source            = user_defined_exception
-stack_trace       =    at main [0x0000665C] in /Users/yves/Projects/xtd/examples/xtd.core.examples/exceptions/user_defined_exception/src/user_defined_exception.cpp:line 24
+stack_trace       =    at main [0x0000665C] in /!---OMITTED---!/user_defined_exception/src/user_defined_exception.cpp:line 24
 ```

@@ -18,7 +18,7 @@ public:
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
-    throw format_exception(current_stack_frame_);
+    throw format_exception {};
   }
   
 private:

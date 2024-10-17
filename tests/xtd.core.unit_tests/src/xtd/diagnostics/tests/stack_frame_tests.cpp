@@ -111,8 +111,8 @@ namespace xtd::tests {
     void test_method_(current) {
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
       assert::are_equal(113_z, stack_frame::current().get_file_line_number());
-      if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::csf()", stack_frame::current().get_method());
-      else assert::are_equal("csf", stack_frame::current().get_method());
+      if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::current()", stack_frame::current().get_method());
+      else assert::are_equal("current", stack_frame::current().get_method());
     }
   };
 }

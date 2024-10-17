@@ -5,8 +5,6 @@
 * [block_scope](block_scope/README.md) shows how to use [block_scope_](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) method.
 * [call_once](call_once/README.md) shows how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85) keyword.
 * [call_once2](call_once2/README.md) shows how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
-* [current_stack_frame](current_stack_frame/README.md) shows how to use [current_stack_frame_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__frame.html) method.
-* [csf](csf/README.md) shows how to use [csf_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__frame.html) method.
 * [interface](interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
 * [interface2](interface2/README.md) shows how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
 * [lock](lock/README.md) shows how to use [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.

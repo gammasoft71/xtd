@@ -7,8 +7,6 @@ add_projects(
   block_scope
   call_once
   call_once2
-  current_stack_frame
-  csf
   interface
   interface2
   lock
