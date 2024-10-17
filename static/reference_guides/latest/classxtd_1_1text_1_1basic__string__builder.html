@@ -126,7 +126,7 @@ Several aliases for common character types are provided: </dd>
 <td class="markdownTableBodyNone"><a class="el" href="group__strings.html#ga516498bf5a31bcaeee8b68db8b27166d" title="Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows syste...">xtd::text::wstring_builder</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> &lt;<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518" title="Represents a wide character.">xtd::wchar</a>&gt;   </td></tr>
 </table>
 </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ip_address_8cpp-example.html#_a1">ip_address.cpp</a>, and <a class="el" href="ostream_unit_test_8cpp-example.html#_a3">ostream_unit_test.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ip_address_8cpp-example.html#_a1">ip_address.cpp</a>, <a class="el" href="ostream_unit_test_8cpp-example.html#_a3">ostream_unit_test.cpp</a>, and <a class="el" href="string_builder_append_8cpp-example.html#_a1">string_builder_append.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -3384,6 +3384,8 @@ If <code>value</code> is <code>empty</code>, no changes are made. </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>When you instantiate the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object by calling the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a3c8c9b34721a5dce3830f0e76d94d517" title="Initializes a new instance of the xtd::text::basic_string_builder class that starts with a specified ...">xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size)</a> constructor, both the length and the capacity of the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> instance can grow beyond the value of its <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a82a9b0e909ef5975e6ac07821b8b100e" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::max_capacity</a> property. This can occur particularly when you call the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> and <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afdea991b3a89ae01e8c998481fa987d3" title="Appends the string returned by processing a composite format string, which contains zero or more form...">xtd::text::basic_string_builder::append_format</a> methods to append small strings. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="string_builder_append_8cpp-example.html#a2">string_builder_append.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -12032,7 +12034,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 15 2024 21:32:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 14:13:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

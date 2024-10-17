@@ -570,7 +570,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found. <div class="fragment"><div class="line">std::vector&lt;char&gt; open_data_file(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_name) {</div>
 <div class="line">  <span class="comment">// Check the FileName argument.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (file_name.<a class="code hl_function" href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853">size</a>() == 0)</div>
-<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;file_name&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;file_name&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Check to see if the file exists.</span></div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> f_info(file_name);</div>
@@ -578,7 +578,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <div class="line">  <span class="comment">// You can throw a personalized exception if</span></div>
 <div class="line">  <span class="comment">// the file does not exist.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (!f_info.exists())</div>
-<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1io_1_1file__not__found__exception.html">file_not_found_exception</a>(<span class="stringliteral">&quot;The file was not found.&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1io_1_1file__not__found__exception.html">file_not_found_exception</a>(<span class="stringliteral">&quot;The file was not found.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Open the file.</span></div>
 <div class="line">  std::ifstream f_stream(file_name, std::ios::binary);</div>
@@ -595,7 +595,6 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.h:24</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_aa6e7750375addd424e2684f5f7f88853"><div class="ttname"><a href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853">xtd::basic_string::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of char_t elements in the string, i.e. std::distance(begin(), end()).</div><div class="ttdef"><b>Definition</b> basic_string.h:934</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__not__found__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__not__found__exception.html">xtd::io::file_not_found_exception</a></div><div class="ttdoc">The exception that is thrown when an attempt to access a file that does not exist on disk fails.</div><div class="ttdef"><b>Definition</b> file_not_found_exception.h:30</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> and caches information about the file. On subsequent calls, you must call <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> to get the latest copy of the information. </dd>
 <dd>
@@ -2597,7 +2596,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 15 2024 21:32:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 14:13:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

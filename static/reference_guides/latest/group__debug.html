@@ -152,9 +152,6 @@ Macros</h2></td></tr>
 <tr class="memitem:gad1e9d87aeb065b1eec47e92a49fd01e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a>(...)</td></tr>
 <tr class="memdesc:gad1e9d87aeb065b1eec47e92a49fd01e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
 <tr class="separator:gad1e9d87aeb065b1eec47e92a49fd01e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8e6aea91a39c5e05d514044aa2b2ddf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf">cassert_</a>(...)</td></tr>
-<tr class="memdesc:gab8e6aea91a39c5e05d514044aa2b2ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
-<tr class="separator:gab8e6aea91a39c5e05d514044aa2b2ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7a5088b030211d28a0a24ecc924f57b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>()</td></tr>
 <tr class="memdesc:ga7a5088b030211d28a0a24ecc924f57b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a breakpoint to an attached debugger.  <br /></td></tr>
 <tr class="separator:ga7a5088b030211d28a0a24ecc924f57b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,113 +264,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gab8e6aea91a39c5e05d514044aa2b2ddf" name="gab8e6aea91a39c5e05d514044aa2b2ddf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab8e6aea91a39c5e05d514044aa2b2ddf">&#9670;&#160;</a></span>cassert_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define cassert_</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="debug_8h.html">xtd.core/include/xtd/diagnostics/debug.h</a>&gt;</code></p>
-
-<p>Checks for a condition; if the condition is false, displays a message box that shows the call stack. </p>
-<dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).">xtd::static_object</a> → <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">condition</td><td>The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed. </td></tr>
-    <tr><td class="paramname">message</td><td>(optional) The brief message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
-    <tr><td class="paramname">detail_message</td><td>(optional) The detail message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt>Usage</dt><dd>This assert can only call by <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a> and <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a> like this :<ul>
-<li>xtd::diagnostics::debug::cassert_();</li>
-<li>xtd::diagnostics:trace::<a class="el" href="group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf" title="Checks for a condition; if the condition is false, displays a message box that shows the call stack.">cassert_()</a>; </li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::diagnostics::debug::cassert_ method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
-<div class="line">  <span class="comment">//for (auto listener : debug::listeners())</span></div>
-<div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
-<div class="line">  <span class="comment">//    as&lt;default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> index = 0;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
-<div class="line">  debug::cassert_(index &gt; 0);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;End application&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Abort&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Retry&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">// &gt; Break the debugger on file debug_cassert.cpp line 12.</span></div>
-<div class="line"><span class="comment">// &gt; If user choose continue running after break.</span></div>
-<div class="line"><span class="comment">// End application</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Ignore&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">// End application</span></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::diagnostics::trace::cassert_ method. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/trace&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
-<div class="line">  <span class="comment">//for (auto listener : trace::listeners())</span></div>
-<div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
-<div class="line">  <span class="comment">//    as&lt;default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> index = 0;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
-<div class="line">  trace::cassert_(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;End application&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Abort&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Retry&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">// &gt; Break the debugger on file tace_cassert.cpp line 13.</span></div>
-<div class="line"><span class="comment">// &gt; If user choose continue running after break.</span></div>
-<div class="line"><span class="comment">// End application</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Ignore&#39; button:</span></div>
-<div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">// End application</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a id="ga7a5088b030211d28a0a24ecc924f57b6" name="ga7a5088b030211d28a0a24ecc924f57b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7a5088b030211d28a0a24ecc924f57b6">&#9670;&#160;</a></span>debug_break_</h2>
 
@@ -399,7 +289,7 @@ Variables</h2></td></tr>
 <div class="line">console::write_line(<span class="stringliteral">&quot;Hello, world.&quot;</span>);</div>
 <div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debug_break.h:21</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a2">assert_box.cpp</a>, and <a class="el" href="assert_dialog_8cpp-example.html#a4">assert_dialog.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a1">assert_box.cpp</a>, and <a class="el" href="assert_dialog_8cpp-example.html#a3">assert_dialog.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -475,7 +365,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 15 2024 21:31:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 17 2024 14:13:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

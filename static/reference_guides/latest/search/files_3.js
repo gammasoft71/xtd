@@ -53,7 +53,7 @@ var searchData=
   ['command_5flink_5fbutton_2eh_50',['command_link_button.h',['../command__link__button_8h.html',1,'']]],
   ['command_5flink_5fbuttons_2eh_51',['command_link_buttons.h',['../command__link__buttons_8h.html',1,'']]],
   ['common_5fdialog_2eh_52',['common_dialog.h',['../common__dialog_8h.html',1,'']]],
-  ['comparer_2eh_53',['comparer.h',['../helpers_2comparer_8h.html',1,'(Global Namespace)'],['../comparer_8h.html',1,'(Global Namespace)']]],
+  ['comparer_2eh_53',['comparer.h',['../comparer_8h.html',1,'(Global Namespace)'],['../helpers_2comparer_8h.html',1,'(Global Namespace)']]],
   ['comparison_2eh_54',['comparison.h',['../comparison_8h.html',1,'']]],
   ['comparison_5foperators_2eh_55',['comparison_operators.h',['../comparison__operators_8h.html',1,'']]],
   ['compiler_2eh_56',['compiler.h',['../compiler_8h.html',1,'']]],
@@ -113,9 +113,8 @@ var searchData=
   ['css_5freader_2eh_110',['css_reader.h',['../css__reader_8h.html',1,'']]],
   ['css_5fwriter_2eh_111',['css_writer.h',['../css__writer_8h.html',1,'']]],
   ['ctrace_2eh_112',['ctrace.h',['../ctrace_8h.html',1,'']]],
-  ['current_5fstack_5fframe_2eh_113',['current_stack_frame.h',['../current__stack__frame_8h.html',1,'']]],
-  ['cursor_2eh_114',['cursor.h',['../cursor_8h.html',1,'']]],
-  ['cursors_2eh_115',['cursors.h',['../cursors_8h.html',1,'']]],
-  ['cursors_5fappearances_5fpage_2edox_116',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
-  ['cyan_5fcolors_2eh_117',['cyan_colors.h',['../cyan__colors_8h.html',1,'']]]
+  ['cursor_2eh_113',['cursor.h',['../cursor_8h.html',1,'']]],
+  ['cursors_2eh_114',['cursors.h',['../cursors_8h.html',1,'']]],
+  ['cursors_5fappearances_5fpage_2edox_115',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
+  ['cyan_5fcolors_2eh_116',['cyan_colors.h',['../cyan__colors_8h.html',1,'']]]
 ];
