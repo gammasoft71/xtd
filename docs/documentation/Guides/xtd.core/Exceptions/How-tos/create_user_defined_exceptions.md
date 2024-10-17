@@ -14,14 +14,14 @@ using namespace xtd::diagnostics;
 
 class employee_list_not_found_exception : public exception {
 public:
-  employee_list_not_found_exception(const stack_frame& sf = stack_frame::current()) : exception {"The employee list does not exist."_t, sf} {
+  employee_list_not_found_exception(const stack_frame& frame = stack_frame::current()) : exception {"The employee list does not exist."_t, frame} {
   }
 
-  employee_list_not_found_exception(const string& message, const stack_frame& sf = stack_frame::current()) : exception {message, sf} {
+  employee_list_not_found_exception(const string& message, const stack_frame& frame = stack_frame::current()) : exception {message, frame} {
   }
 
   template<typename exception_t>
-  employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& sf = stack_frame::current()) : exception {message, inner, sf} {
+  employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& frame = stack_frame::current()) : exception {message, inner, frame} {
   }
 };
 ```
