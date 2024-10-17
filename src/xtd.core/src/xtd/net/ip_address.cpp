@@ -83,12 +83,12 @@ bool ip_address::is_ip_v6_teredo() const noexcept {
 }
 
 uint32 ip_address::scope_id() const {
-  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
+  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported);
   return scope_id_;
 }
 
 ip_address& ip_address::scope_id(uint32 value) {
-  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
+  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported);
   
   scope_id_ = static_cast<uint32>(value);
   return *this;

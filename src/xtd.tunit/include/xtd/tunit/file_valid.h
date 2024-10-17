@@ -41,10 +41,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, csf_); // test ok.
+      /// xtd::tunit::file_valid::are_equal(s2, s1); // test ok.
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, csf_); // test fails
+      /// xtd::tunit::file_valid::are_equal(s2, s1); // test fails
       /// ```
       template<typename char_t>
       static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
@@ -61,10 +61,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message..."); // test ok.
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
@@ -86,10 +86,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, csf_); // test ok.
+      /// xtd::tunit::file_valid::are_equal(s2, s1); // test ok.
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, csf_); // test fails
+      /// xtd::tunit::file_valid::are_equal(s2, s1); // test fails
       /// ```
       template<typename char_t>
       static void are_equal(const xtd::basic_string<char_t>& expected, const xtd::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
@@ -106,10 +106,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message..."); // test ok.
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::are_equal(s2, s1, "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void are_equal(const xtd::basic_string<char_t>& expected, const xtd::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
@@ -141,10 +141,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, csf_); // test ok.
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1); // test ok.
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, csf_); // test fails
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1); // test fails
       /// ```
       template<typename char_t>
       static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
@@ -161,10 +161,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message..."); // test ok.
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
@@ -186,10 +186,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, csf_); // test ok.
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1); // test ok.
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, csf_); // test fails
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1); // test fails
       /// ```
       template<typename char_t>
       static void are_not_equal(const xtd::basic_string<char_t>& expected, const xtd::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
@@ -206,10 +206,10 @@ namespace xtd {
       /// std::stringstream s2;
       /// s2 << "Test2";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message..."); // test ok.
       /// s2 << "Test";
       /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::are_not_equal(s2, s1, "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void are_not_equal(const xtd::basic_string<char_t>& expected, const xtd::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
@@ -237,8 +237,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_valid::does_not_exist("Test2.txt", csf_); // test ok.
-      /// xtd::tunit::file_valid::does_not_exist("Test1.txt", csf_); // test fails
+      /// xtd::tunit::file_valid::does_not_exist("Test2.txt"); // test ok.
+      /// xtd::tunit::file_valid::does_not_exist("Test1.txt"); // test fails
       /// ```
       template<typename char_t>
       static void does_not_exist(const xtd::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(file, xtd::string::empty_string, stack_frame);}
@@ -251,8 +251,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_valid::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::file_valid::does_not_exist("Test1.txt", "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::does_not_exist("Test2.txt" "User message..."); // test ok.
+      /// xtd::tunit::file_valid::does_not_exist("Test1.txt", "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void does_not_exist(const xtd::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
@@ -278,8 +278,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt", csf_); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt", csf_); // test fails
+      /// xtd::tunit::file_valid::exists("Test1.txt"); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt"); // test fails
       /// ```
       template<typename char_t>
       static void exists(const xtd::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(file, xtd::string::empty_string, stack_frame);}
@@ -292,8 +292,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt", "User message...", csf_); // test fails
+      /// xtd::tunit::file_valid::exists("Test1.txt" "User message..."); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt", "User message..."); // test fails
       /// ```
       template<typename char_t>
       static void exists(const xtd::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {

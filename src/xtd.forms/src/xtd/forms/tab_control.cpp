@@ -218,7 +218,7 @@ forms::create_params tab_control::create_params() const noexcept {
 
 xtd::uptr<xtd::object> tab_control::clone() const {
   auto result = xtd::new_uptr<tab_control>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

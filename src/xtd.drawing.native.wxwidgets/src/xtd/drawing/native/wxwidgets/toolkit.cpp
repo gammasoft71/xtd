@@ -50,9 +50,9 @@ namespace {
       
       if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", string::format("cond={}, msg={}", string {cond.c_str()}, string {msg.c_str()}), stack_frame {string {file.c_str()}, as<uint32>(line), string {func.c_str()}})) debug_break_();
     } catch(const xtd::exception& e) {
-      if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.to_string()), csf_)) debug_break_();
+      if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.to_string()))) debug_break_();
     } catch(const std::exception& e) {
-      if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.what()), csf_)) debug_break_();
+      if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.what()))) debug_break_();
     }
   }
 }

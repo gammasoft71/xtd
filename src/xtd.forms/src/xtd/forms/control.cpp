@@ -553,7 +553,7 @@ control& control::fore_color(std::nullptr_t) {
 
 intptr control::handle() const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()));
   return data_->handle;
 }
 
@@ -1562,7 +1562,7 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
 
 bool control::post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()));
   if (!is_handle_created()) return false;
   data_->post_messages.push(message::create(hwnd, msg, wparam, lparam));
   return true;
@@ -1594,7 +1594,7 @@ void control::refresh() const {
 
 intptr control::send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+    throw invalid_operation_exception(string::format("Cross-thread operation not valid: {}"_t, to_string()));
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr>(-1);
 }
 
@@ -1677,7 +1677,7 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
 
 xtd::uptr<xtd::object> control::clone() const {
   auto result = xtd::new_uptr<control>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

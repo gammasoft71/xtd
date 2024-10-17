@@ -349,7 +349,7 @@ link_label link_label::create(const control& parent, const xtd::string& text, co
 
 xtd::uptr<xtd::object> link_label::clone() const {
   auto result = xtd::new_uptr<link_label>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

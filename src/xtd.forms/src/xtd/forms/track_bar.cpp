@@ -422,7 +422,7 @@ drawing::size track_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> track_bar::clone() const {
   auto result = xtd::new_uptr<track_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

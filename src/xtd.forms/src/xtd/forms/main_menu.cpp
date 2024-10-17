@@ -31,7 +31,7 @@ main_menu::main_menu(const std::vector<menu_item_ref>& menu_items) {
 
 xtd::uptr<xtd::object> main_menu::clone() const {
   auto result = xtd::new_uptr<main_menu>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

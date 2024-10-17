@@ -44,7 +44,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
       //assert::are_equal(42, 0x2A);
-      assert::abort(csf_);
+      assert::abort();
     }
   };
 }

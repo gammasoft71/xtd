@@ -205,6 +205,6 @@ xtd::string status_bar_panel::to_string() const noexcept {
 
 xtd::uptr<xtd::object> status_bar_panel::clone() const {
   auto result = xtd::new_uptr<status_bar_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }

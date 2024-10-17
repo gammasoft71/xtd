@@ -109,7 +109,7 @@ namespace xtd {
         friend xtd::forms::native::domain_up_down;
       private:
         explicit wx_domain_up_down(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
           int32 height = create_params.size.height();
           #if defined(__WXGTK__)
           if (height < 32) height = 32;

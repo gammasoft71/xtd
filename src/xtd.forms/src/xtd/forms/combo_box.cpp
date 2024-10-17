@@ -68,7 +68,7 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index() == selected_index) return *this;
-  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t);
   set_selected_index(selected_index);
   if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
   
@@ -348,7 +348,7 @@ forms::create_params combo_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> combo_box::clone() const {
   auto result = xtd::new_uptr<combo_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

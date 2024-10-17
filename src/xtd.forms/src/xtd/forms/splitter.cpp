@@ -22,7 +22,7 @@ splitter::splitter() : data_(xtd::new_sptr<data>()) {
 }
 
 control& splitter::dock(dock_style dock) {
-  if (dock != dock_style::left && dock != dock_style::right && dock != dock_style::top && dock != dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t, csf_);
+  if (dock != dock_style::left && dock != dock_style::right && dock != dock_style::top && dock != dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t);
   control::dock(dock);
   cursor(default_cursor());
   if (data_->default_width && (dock == dock_style::left || dock == dock_style::right)) width(3);
@@ -113,7 +113,7 @@ drawing::size splitter::default_size() const noexcept {
 
 xtd::uptr<xtd::object> splitter::clone() const {
   auto result = xtd::new_uptr<splitter>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
   return result;
 }
 

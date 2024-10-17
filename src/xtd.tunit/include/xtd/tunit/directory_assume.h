@@ -37,8 +37,8 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// ...
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2); // test ok.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2); // test throws an abort_error exception.
       /// ```
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Assumes that two directories are equal.
@@ -50,8 +50,8 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// ...
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message..."); // test throws an abort_error exception.
       /// ```
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       #endif
@@ -65,8 +65,8 @@ namespace xtd {
       /// xtd::io::directory_info d1(".");
       /// xtd::io::directory_info d2(".")
       /// xtd::io::directory_info d3("..")
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_equal(d1, d3, csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2); // test ok.
+      /// xtd::tunit::directory_assume::are_equal(d1, d3); // test throws an assert_error exception.
       /// ```
       static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Assumes that two xtd::io::directory_info are equal.
@@ -80,8 +80,8 @@ namespace xtd {
       /// xtd::io::directory_info d1(".");
       /// xtd::io::directory_info d2(".")
       /// xtd::io::directory_info d3("..")
-      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_equal(d1, d3, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
@@ -94,8 +94,8 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// ...
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test throws an abort_error exception.
       /// ```
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Assumes that two std::filesystem::directory_entry are not equal.
@@ -107,8 +107,8 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// ...
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test throws an abort_error exception.
       /// ```
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       #endif
@@ -122,8 +122,8 @@ namespace xtd {
       /// xtd::io::directory_info d1(".");
       /// xtd::io::directory_info d2(".")
       /// xtd::io::directory_info d3("..")
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d3, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d3, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Assumes that two xtd::io::directory_info are not equal.
@@ -137,8 +137,8 @@ namespace xtd {
       /// xtd::io::directory_info d1(".");
       /// xtd::io::directory_info d2(".")
       /// xtd::io::directory_info d3("..")
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d3, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d3, "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
@@ -209,8 +209,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::directory_assume::does_not_exist("Test2.txt", csf_); // test ok.
-      /// xtd::tunit::directory_assume::does_not_exist("Test1.txt", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::does_not_exist("Test2.txt"); // test ok.
+      /// xtd::tunit::directory_assume::does_not_exist("Test1.txt"); // test throws an abort_error exception.
       /// ```
       template<typename char_t>
       static void does_not_exist(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
@@ -224,8 +224,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::directory_assume::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::does_not_exist("Test1.txt", "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::does_not_exist("Test2.txt" "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::does_not_exist("Test1.txt", "User message..."); // test throws an abort_error exception.
       /// ```
       template<typename char_t>
       static void does_not_exist(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
@@ -310,8 +310,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::directory_assume::exists("Test1.txt", csf_); // test ok.
-      /// xtd::tunit::directory_assume::exists("Test2.txt", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::exists("Test1.txt"); // test ok.
+      /// xtd::tunit::directory_assume::exists("Test2.txt"); // test throws an abort_error exception.
       /// ```
       template<typename char_t>
       static void exists(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
@@ -325,8 +325,8 @@ namespace xtd {
       /// ```cpp
       /// std::ifstream f1("Test1.txt");
       /// f1.close();
-      /// xtd::tunit::directory_assume::exists("Test1.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assume::exists("Test2.txt", "User message...", csf_); // test throws an abort_error exception.
+      /// xtd::tunit::directory_assume::exists("Test1.txt" "User message..."); // test ok.
+      /// xtd::tunit::directory_assume::exists("Test2.txt", "User message..."); // test throws an abort_error exception.
       /// ```
       template<typename char_t>
       static void exists(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {

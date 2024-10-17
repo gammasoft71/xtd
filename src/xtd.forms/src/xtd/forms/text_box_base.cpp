@@ -139,8 +139,8 @@ void text_box_base::clear() {
 
 void text_box_base::select(size_t start, size_t length) {
   if (data_->selection_start != start || length != data_->selection_length) {
-    if (start > text().size()) throw argument_out_of_range_exception("start greater than text size"_t, csf_);
-    if (start + length > text().size()) throw argument_out_of_range_exception("start + length greater than text size"_t, csf_);
+    if (start > text().size()) throw argument_out_of_range_exception("start greater than text size"_t);
+    if (start + length > text().size()) throw argument_out_of_range_exception("start + length greater than text size"_t);
     data_->selection_start = start;
     data_->selection_length = length;
   }
