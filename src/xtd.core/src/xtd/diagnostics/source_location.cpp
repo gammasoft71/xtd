@@ -1,5 +1,5 @@
-#include "../../include/xtd/source_location.h"
-#include "../../include/xtd/string.h"
+#include "../../../include/xtd/diagnostics/source_location.h"
+#include "../../../include/xtd/string.h"
 
 using namespace xtd;
 

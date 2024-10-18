@@ -123,6 +123,7 @@
 * [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics::console_trace_listener](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1console__trace__listener.html) class.
 * [debug](diagnostics/debug/README.md) shows how to use [xtd::diagnostics::debug](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html) class.
 * [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
+* [source_location_invoked_directly](diagnostics/source_location_invoked_directly/README.md) shows how to use [xtd::source_location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1source__location.html) class.
 * [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__frame.html) class.
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics::stack_trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__trace.html) class.
 * [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__trace.html) class and iterate through its frames to obtain debugging and diagnostic information.
@@ -327,10 +328,6 @@
 * [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
 * [random2](random/random2/README.md) shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
-
-## [source_location](source_location/README.md)
-
-* [source_location_invoked_directly](source_location/source_location_invoked_directly/README.md) shows how to use [xtd::source_location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1source__location.html) class.
 
 ## [sprintf](sprintf/README.md)
 
