@@ -116,6 +116,10 @@ const string& stack_frame::get_method() const noexcept {
   return data_->method_name;
 }
 
+xtd::size stack_frame::get_native_offset() const noexcept {
+  return native::stack_trace::get_native_offset();
+}
+
 xtd::size stack_frame::get_offset() const noexcept {
   return data_->offset;
 }

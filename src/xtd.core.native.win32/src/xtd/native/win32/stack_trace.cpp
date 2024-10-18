@@ -11,24 +11,32 @@
 using namespace std;
 using namespace xtd::native;
 
-class stack_walker final : public StackWalker {
-public:
-  using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
-  using frames = std::vector<frame>;
+namespace {
+  constexpr size_t native_offset = 1;
   
-  stack_walker() : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath) {}
-  
-  const frames& get_frames() const noexcept {return frames_;}
-  
-private:
-  void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
-    StackWalker::OnCallstackEntry(type, entry);
-    frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
-  }
-  
-private:
-  frames frames_;
-};
+  class stack_walker final : public StackWalker {
+  public:
+    using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
+    using frames = std::vector<frame>;
+    
+    stack_walker() : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath) {}
+    
+    const frames& get_frames() const noexcept {return frames_;}
+    
+  private:
+    void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
+      StackWalker::OnCallstackEntry(type, entry);
+      frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
+    }
+    
+  private:
+    frames frames_;
+  };
+}
+
+size_t stack_trace::get_native_offset() {
+  return native_offset;
+}
 
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   auto sw = stack_walker {};
@@ -36,7 +44,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   
   auto result = stack_trace::frames {};
   auto frames = sw.get_frames();
-  for (auto index = skip_frames + 1; index < frames.size(); ++index) {
+  for (auto index = skip_frames + native_offset; index < frames.size(); ++index) {
     result.push_back(frames[index]);
     if (get<3>(frames[index]) == "main") break;
   }
