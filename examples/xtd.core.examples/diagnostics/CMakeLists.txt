@@ -10,6 +10,7 @@ add_projects(
   debug
   debug_cassert
   default_trace_listener
+  source_location_invoked_directly
   stack_frame
   stack_trace
   stack_trace_simple

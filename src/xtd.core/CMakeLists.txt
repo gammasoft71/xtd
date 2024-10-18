@@ -395,8 +395,6 @@ add_sources(
   include/xtd/slong_object
   include/xtd/software_termination_exception.h
   include/xtd/software_termination_exception
-  include/xtd/source_location
-  include/xtd/source_location.h
   include/xtd/sptr.h
   include/xtd/sptr
   include/xtd/startup.h
@@ -634,6 +632,8 @@ add_sources(
   include/xtd/diagnostics/source_filter
   include/xtd/diagnostics/source_levels.h
   include/xtd/diagnostics/source_levels
+  include/xtd/diagnostics/source_location.h
+  include/xtd/diagnostics/source_location
   include/xtd/diagnostics/source_switch.h
   include/xtd/diagnostics/source_switch
   include/xtd/diagnostics/stack_frame.h
@@ -1063,7 +1063,6 @@ add_sources(
   src/xtd/processor.cpp
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
-  src/xtd/source_location.cpp
   src/xtd/startup.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
@@ -1090,6 +1089,7 @@ add_sources(
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
   src/xtd/diagnostics/source_filter.cpp
+  src/xtd/diagnostics/source_location.cpp
   src/xtd/diagnostics/source_switch.cpp
   src/xtd/diagnostics/stack_frame.cpp
   src/xtd/diagnostics/stack_trace.cpp

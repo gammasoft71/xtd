@@ -5,11 +5,11 @@
 
 #include <cstdint>
 #include <vector>
+#include "source_location.h"
 #include "../core_export.h"
 #include "../iequatable.h"
 #include "../object.h"
 #include "../ptr.h"
-#include "../source_location.h"
 #include "../size.h"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__string_definitions.h"

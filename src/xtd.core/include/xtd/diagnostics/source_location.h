@@ -3,11 +3,11 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
-#include "internal/__xtd_source_location.h"
+#include "../internal/__xtd_source_location.h"
 #undef __XTD_CORE_INTERNAL__
-#include "object.h"
-#include "ptr.h"
-#include "size.h"
+#include "../object.h"
+#include "../ptr.h"
+#include "../size.h"
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::source_location class represents certain information about the source code, such as file names, line numbers, and function names. Previously, functions that desire to obtain this information about the call site (for logging, testing, or debugging purposes) must use macros so that [predefined macros](https://en.cppreference.com/w/cpp/preprocessor/replace#Predefined_macros) like `__LINE__` and `__FILE__` are expanded in the context of the caller. The xtd::source_location class provides a better alternative.

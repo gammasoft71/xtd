@@ -1,8 +1,8 @@
 #pragma once
 #include "unit_test_error.h"
+#include <xtd/diagnostics/source_location>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
-#include <xtd/source_location>
 #include <iostream>
 #include <sstream>
 #include <string>
