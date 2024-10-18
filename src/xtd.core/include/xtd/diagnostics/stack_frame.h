@@ -197,6 +197,23 @@ namespace xtd {
       /// ```
       virtual const xtd::string& get_method() const noexcept;
       
+      /// @brief Gets the offset from the start of the native code for the method that is being executed.
+      /// @return The offset from the start of the native code for the method that is being executed.
+      /// @par Examples
+      /// The following example demonstrates the use of the get_offset() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
+      /// ```cpp
+      /// // Display the stack frame properties.
+      /// stack_frame sf = st.get_frame(i);
+      /// console::write_line(" File: {}", sf.get_file_name());
+      /// console::write_line(" Line Number: {}", sf.get_file_line_number());
+      /// // Note that the column number defaults to zero when not initialized.
+      /// console::write_line(" Column Number: {}", sf.get_file_column_number());
+      /// console::write_line(" Method: {}", sf.get_method());
+      /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
+      ///   console::write_line(" Native Offset: {}", sf.get_native_offset());
+      /// ```
+      virtual xtd::size get_native_offset() const noexcept;
+      
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
       /// @par Examples

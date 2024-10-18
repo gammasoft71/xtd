@@ -49,6 +49,11 @@ namespace xtd {
       /// @name Protected Static Methods
       
       /// @{
+      /// @brief Gets the offset from the start of the native code for the method that is being executed.
+      /// @return The offset from the start of the native code for the method that is being executed.
+      /// @warning Internal use only
+      static size_t get_native_offset();
+      
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only

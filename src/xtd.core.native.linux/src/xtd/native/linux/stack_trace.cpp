@@ -9,6 +9,8 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
+  constexpr size_t native_offset = 1;
+  
   string demangle_string(const string& method) {
     auto result = method;
     auto status = 0;
@@ -17,6 +19,11 @@ namespace {
     free(demangled);
     return result;
   }
+}
+
+
+size_t stack_trace::get_native_offset() {
+  return native_offset;
 }
 
 #if __ANDROID__ | __CYGWIN__ | __MINGW32__
@@ -31,7 +38,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   traces.resize(max_frames);
   auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
 
-  for (auto index = skip_frames + 1; index < nb_frames; ++index) {
+  for (auto index = skip_frames + native_offset; index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
     frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));

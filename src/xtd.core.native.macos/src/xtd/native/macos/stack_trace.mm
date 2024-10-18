@@ -9,6 +9,8 @@
 using namespace xtd::native;
 
 namespace {
+  constexpr size_t native_offset = 1;
+  
   std::string demangle_string(const std::string& method) {
     auto result = method;
     auto status = 0;
@@ -19,6 +21,10 @@ namespace {
   }
 }
 
+size_t stack_trace::get_native_offset() {
+  return native_offset;
+}
+
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   //NSLog(@"%@", NSThread.callStackSymbols);
   static constexpr auto max_frames = size_t {1024};
@@ -27,7 +33,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   traces.resize(max_frames);
   auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
   
-  for (auto index = skip_frames + 1; index < nb_frames; ++index) {
+  for (auto index = skip_frames + native_offset; index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
     frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
