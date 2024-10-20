@@ -9,7 +9,7 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
-  constexpr size_t native_offset = 1;
+  constexpr size_t native_offset = 3;
   
   string demangle_string(const string& method) {
     auto result = method;
@@ -25,17 +25,18 @@ size_t stack_trace::get_native_offset() {
   return native_offset;
 }
 
-stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
+stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   static constexpr size_t max_frames = 1024;
-  stack_trace::frames frames;
-  std::vector<void*> traces;
+  auto frames = stack_trace::frames {};
+  auto traces = std::vector<void*> {};
   traces.resize(max_frames);
-  size_t nb_frames = backtrace(traces.data(), static_cast<int>(max_frames));
+  auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
   
-  for (size_t index = skip_frames + native_offset; index < nb_frames; ++index) {
-    Dl_info dl_info;
+  for (auto index = skip_frames + native_offset; index < nb_frames; ++index) {
+    auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
-    frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
+    if (!need_file_info) frames.push_back(std::make_tuple("", 0, 0, demangle_string(dl_info.dli_sname), 0));
+    else frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
     if (demangle_string(dl_info.dli_sname) == std::string("main")) break;
   }
   return frames;

@@ -134,13 +134,13 @@ stack_frame stack_frame::current(const xtd::source_location& value) noexcept {
 }
 
 std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::size skip_frames, bool need_file_info) noexcept {
-  auto call_stack = native::stack_trace::get_frames(2);
+  auto call_stack = native::stack_trace::get_frames(skip_frames, need_file_info);
   auto skip_frames_before_str = 0_z;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.size();
     for (auto index = 0_z; index < call_stack.size(); ++index) {
-      auto [file, line, column, function, offset] = call_stack[index];
-      if (string {function}.starts_with(str)) {
+      auto [file, line, column, method, offset] = call_stack[index];
+      if (string {method}.starts_with(str)) {
         skip_frames_before_str = index;
         break;
       }
@@ -149,13 +149,13 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::s
   
   auto stack_frames = std::vector<stack_frame> {};
   if (call_stack.size() == 0) return stack_frames;
-  for (auto index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
-    auto [file, line, column, function, offset] = call_stack[index];
+  for (auto index = skip_frames_before_str; index < call_stack.size(); ++index) {
+    auto [file, line, column, method, offset] = call_stack[index];
     auto skip = false;
-    for (auto starting_str : {"__startup__::run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
-      if (string(function).starts_with(starting_str)) skip = true;
+    for (auto starting_str : {"xtd::startup::run", "int xtd::startup::internal_safe_run", "int xtd::startup::safe_run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
+      if (string {method}.starts_with(starting_str)) skip = true;
     if (skip) continue;
-    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, function, need_file_info ? column : 0, offset));
+    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, method, need_file_info ? column : 0, offset));
   }
   return stack_frames;
 }

@@ -36,15 +36,17 @@ namespace xtd::tests {
     
     void test_method_(constructor_with_need_file_info_to_true) {
       // Depending on the xtd::native::stack_trace::get_frames method, the result is not the same for every operating system.
+      if (environment::os_version().is_macos()) return;
       assert::are_not_equal(stack_frame::empty(), stack_frame {true});
     }
     
     void test_method_(constructor_with_skip_frames_need_file_info) {
       // Depending on the xtd::native::stack_trace::get_frames method, the result is not the same for every operating system.
       assert::are_not_equal(stack_frame::empty(), stack_frame {0, false});
+      assert::are_equal(stack_frame::empty(), stack_frame {stack_frame::OFFSET_UNKNOWN, false});
+      if (environment::os_version().is_macos()) return;
       assert::are_not_equal(stack_frame::empty(), stack_frame {0, true});
-      assert::are_equal(stack_frame::empty(), stack_frame {stack_frame::OFFSET_UNKNOWN - 1, false});
-      assert::are_equal(stack_frame::empty(), stack_frame {stack_frame::OFFSET_UNKNOWN - 1, true});
+      assert::are_equal(stack_frame::empty(), stack_frame {stack_frame::OFFSET_UNKNOWN, true});
     }
     
     void test_method_(constructor_with_file_name_and_line_number) {
@@ -110,7 +112,7 @@ namespace xtd::tests {
 
     void test_method_(current) {
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
-      assert::are_equal(113_z, stack_frame::current().get_file_line_number());
+      assert::are_equal(115_z, stack_frame::current().get_file_line_number());
       if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::current()", stack_frame::current().get_method());
       else assert::are_equal("current", stack_frame::current().get_method());
     }

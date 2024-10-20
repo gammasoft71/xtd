@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
-      static frames get_frames(size_t skip_frames);
+      static frames get_frames(size_t skip_frames, bool need_file_info);
       /// @}
     };
   }
