@@ -12,25 +12,27 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
-  constexpr size_t native_offset = 1;
+  constexpr size_t native_offset = 3;
   
   class stack_walker final : public StackWalker {
   public:
     using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
     using frames = std::vector<frame>;
     
-    stack_walker() : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath) {}
+    explicit stack_walker(bool need_file_info) : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath), need_file_info_ {need_file_info} {}
     
     const frames& get_frames() const noexcept {return frames_;}
     
   private:
     void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
       StackWalker::OnCallstackEntry(type, entry);
-      frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
+      if (need_file_info_) frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
+      else frames_.push_back(make_tuple("", 0, 0, entry.name, 0));
     }
     
   private:
     frames frames_;
+    bool need_file_info_ = false;
   };
 }
 
@@ -38,7 +40,7 @@ size_t stack_trace::get_native_offset() {
   return native_offset;
 }
 
-stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
+stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   auto sw = stack_walker {};
   if (!sw.ShowCallstack()) return {};
   
