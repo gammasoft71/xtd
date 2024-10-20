@@ -19,9 +19,10 @@ xtdc run
 ## Output
 
 ```
-stack_trace:
-   at method3()
-   at method2()
-   at method1()
+stack_trace :
+   at stack_trace_example::main_class::method3()
+   at stack_trace_example::main_class::method2()
+   at stack_trace_example::main_class::method1()
+   at stack_trace_example::main_class::main()
    at main
 ```
