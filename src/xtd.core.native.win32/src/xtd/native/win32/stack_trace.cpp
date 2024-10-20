@@ -41,7 +41,7 @@ size_t stack_trace::get_native_offset() {
 }
 
 stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
-  auto sw = stack_walker {};
+  auto sw = stack_walker {need_file_info};
   if (!sw.ShowCallstack()) return {};
   
   auto result = stack_trace::frames {};
