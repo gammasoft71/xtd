@@ -74,8 +74,8 @@ string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame
   for (auto index = skip_frames; index < data_->frames.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + data_->frames[index].get_method();
-    if (index == skip_frames && stack_frame != stack_frame::empty()) str += string::format(" {}in {}:line {}", data_->frames[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? string::format("[0x{:X8}] ", data_->frames[index].get_offset()) : string::empty_string, stack_frame.get_file_name(), stack_frame.get_file_line_number());
-    else if (!data_->frames[index].get_file_name().empty()) str += string::format(" {}in {}:line {}", data_->frames[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? string::format("[0x{:X8}] ", data_->frames[index].get_offset()) : string::empty_string, data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
+    if (index == skip_frames && stack_frame != stack_frame::empty()) str += string::format(" in {}:line {}", stack_frame.get_file_name(), stack_frame.get_file_line_number());
+    else if (!data_->frames[index].get_file_name().empty()) str += string::format(" in {}:line {}", data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
   }
   return str;
 }
