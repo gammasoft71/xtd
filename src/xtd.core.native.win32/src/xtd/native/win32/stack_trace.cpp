@@ -26,8 +26,8 @@ namespace {
   private:
     void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
       StackWalker::OnCallstackEntry(type, entry);
-      if (need_file_info_) frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
-      else frames_.push_back(make_tuple("", 0, 0, entry.name, 0));
+      if (!need_file_info_) frames_.push_back(make_tuple("", 0, 0, entry.name, 0));
+      else frames_.push_back(make_tuple(entry.lineFileName, entry.lineNumber, entry.offsetFromLine, entry.name, static_cast<size_t>(entry.offsetFromSmybol)));
     }
     
   private:
@@ -47,8 +47,9 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_i
   auto result = stack_trace::frames {};
   auto frames = sw.get_frames();
   for (auto index = skip_frames + native_offset; index < frames.size(); ++index) {
+    if (get<3>(frames[index]) == "invoke_main") break;
+    if (get<3>(frames[index]) == "start") break;
     result.push_back(frames[index]);
-    if (get<3>(frames[index]) == "main") break;
   }
   return result;
 }
