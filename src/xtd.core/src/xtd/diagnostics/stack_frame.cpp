@@ -147,12 +147,26 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::s
     }
   }
   
+  auto frames_to_skip = {
+    "decltype",
+    "int xtd::startup::internal_safe_run",
+    "int xtd::startup::safe_run",
+    "long std::_",
+    "std::_",
+    "std::invoke",
+    "void std::_",
+    "xtd::delegate<",
+    "xtd::startup::internal_safe_run",
+    "xtd::startup::run",
+    "xtd::startup::safe_run",
+  };
+
   auto stack_frames = std::vector<stack_frame> {};
   if (call_stack.size() == 0) return stack_frames;
   for (auto index = skip_frames_before_str; index < call_stack.size(); ++index) {
     auto [file, line, column, method, offset] = call_stack[index];
     auto skip = false;
-    for (auto starting_str : {"xtd::startup::run", "int xtd::startup::internal_safe_run", "int xtd::startup::safe_run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
+    for (auto starting_str : frames_to_skip)
       if (string {method}.starts_with(starting_str)) skip = true;
     if (skip) continue;
     stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, method, need_file_info ? column : 0, offset));
