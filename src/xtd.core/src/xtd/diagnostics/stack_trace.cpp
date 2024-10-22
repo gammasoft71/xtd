@@ -77,5 +77,6 @@ string stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame
     if (index == skip_frames && stack_frame != stack_frame::empty()) str += string::format(" in {}:line {}", stack_frame.get_file_name(), stack_frame.get_file_line_number());
     else if (!data_->frames[index].get_file_name().empty()) str += string::format(" in {}:line {}", data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
   }
+  str += environment::new_line();
   return str;
 }
