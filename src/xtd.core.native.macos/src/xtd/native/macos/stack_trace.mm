@@ -60,7 +60,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_i
   
   for (auto index = skip_frames + native_offset; index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
-    if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
+    if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) continue;
     if (demangle_string(dl_info.dli_sname) == std::string("start")) break;
     if (!need_file_info) frames.push_back(std::make_tuple("", 0, 0, demangle_string(dl_info.dli_sname), 0));
     else {
