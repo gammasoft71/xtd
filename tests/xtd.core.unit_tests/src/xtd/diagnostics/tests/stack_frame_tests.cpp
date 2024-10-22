@@ -103,11 +103,11 @@ namespace xtd::tests {
     
     void test_method_(to_string) {
       assert::are_equal("", stack_frame::empty().to_string());
-      assert::are_equal("<unknown method> at offset <unknown offset> in file:line:column file_name.cpp:42:0", stack_frame {"file_name.cpp", 42}.to_string());
-      assert::are_equal("method_name at offset <unknown offset> in file:line:column file_name.cpp:42:0", stack_frame {"file_name.cpp", 42, "method_name"}.to_string());
-      assert::are_equal("method_name at offset <unknown offset> in file:line:column file_name.cpp:42:21", stack_frame {"file_name.cpp", 42, "method_name", 21}.to_string());
-      assert::are_equal("<unknown method> at offset <unknown offset> in file:line:column file_name.cpp:42:21", stack_frame {"file_name.cpp", 42, 21}.to_string());
-      assert::are_equal("method_name at offset 84 in file:line:column file_name.cpp:42:21", stack_frame {"file_name.cpp", 42, "method_name", 21, 84}.to_string());
+      assert::are_equal("<unknown method> at offset <unknown offset> in file:line:column file_name.cpp:42:0\n", stack_frame {"file_name.cpp", 42}.to_string());
+      assert::are_equal("method_name at offset <unknown offset> in file:line:column file_name.cpp:42:0\n", stack_frame {"file_name.cpp", 42, "method_name"}.to_string());
+      assert::are_equal("method_name at offset <unknown offset> in file:line:column file_name.cpp:42:21\n", stack_frame {"file_name.cpp", 42, "method_name", 21}.to_string());
+      assert::are_equal("<unknown method> at offset <unknown offset> in file:line:column file_name.cpp:42:21\n", stack_frame {"file_name.cpp", 42, 21}.to_string());
+      assert::are_equal("method_name at offset 84 in file:line:column file_name.cpp:42:21\n", stack_frame {"file_name.cpp", 42, "method_name", 21, 84}.to_string());
     }
 
     void test_method_(current) {
