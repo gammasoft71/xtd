@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Represents a frame object that contains file name,line, column, method name and offset.
       using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
       /// @brief Represents a frame collection.
-      using frames = std::vector<frame>;
+      using frame_collection = std::vector<frame>;
       /// @}
 
       /// @name Protected Static Methods
@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
-      static frames get_frames(size_t skip_frames, bool need_file_info);
+      static frame_collection get_frames(size_t skip_frames, bool need_file_info);
       /// @}
     };
   }
