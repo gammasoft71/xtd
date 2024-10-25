@@ -7,29 +7,33 @@
 #import <unistd.h>
 #include <dlfcn.h>
 #include <cxxabi.h>
+#include <limits>
 #include <sstream>
 
+using namespace abi;
+using namespace std;
 using namespace xtd::native;
 
 namespace {
   using address = void*;
-  using address_collection = std::vector<address>;
-  using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
-  using frame_collection = std::vector<frame>;
+  using address_collection = vector<address>;
+  using frame = tuple<string, size_t, size_t, string, size_t>;
+  using frame_collection = vector<frame>;
 
-  std::string demangle_string(const std::string& method) {
-    auto result = method;
+  string demangle(const string& name) {
+    auto result = name;
     auto status = 0;
-    auto demangled = abi::__cxa_demangle(method.c_str(), nullptr, 0, &status);
-    if (status == 0 && demangled) result = demangled;
-    free(demangled);
+    auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
+    if (status == 0 && demangled_name) result = demangled_name;
+    result = xtd::native::macos::strings::replace(result, "std::__1::", "std::");
+    free(demangled_name);
     return result;
   }
   
-  std::tuple<std::string, size_t> get_method_and_offset_from_address(address address) {
+  tuple<string, size_t> get_method_and_offset_from_address(address address) {
     auto dl_info = Dl_info {};
-    if (!dladdr(address, &dl_info)) return std::make_tuple("", std::numeric_limits<size_t>::max());
-    return std::make_tuple(demangle_string(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
+    if (!dladdr(address, &dl_info)) return make_tuple("", numeric_limits<size_t>::max());
+    return make_tuple(demangle(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
   }
 
   frame_collection get_frames_without_file_info_from_addresses(const address_collection& addresses) {
@@ -42,7 +46,7 @@ namespace {
   }
 
   frame_collection get_frames_from_addresses(const address_collection& addresses) {
-    auto ss = std::stringstream {};
+    auto ss = stringstream {};
     ss << "atos -p " << getpid() << " ";
     for (const auto& address : addresses)
       ss << address << " ";
@@ -51,19 +55,19 @@ namespace {
     for (auto index = size_t {}; index < frame_strings.size(); ++index) {
       if (frame_strings[index].size() < 2) continue;;
       frame_strings[index].erase(frame_strings[index].begin() + frame_strings[index].size() - 1, frame_strings[index].end());
-      auto method = std::string {};
+      auto method = string {};
       if (frame_strings[index].find(" (in") != frame_strings[index].npos) {
         method = frame_strings[index].substr(0, frame_strings[index].find(" (in"));
         frame_strings[index].erase(frame_strings[index].begin(), frame_strings[index].begin() + frame_strings[index].find(" (in") + 4);
         frame_strings[index].erase(frame_strings[index].begin(), frame_strings[index].begin() + frame_strings[index].find(") (") + 3);
       }
-      auto file_name = std::string {};
+      auto file_name = string {};
       auto line = size_t {};
       if (frame_strings[index].find(":") != frame_strings[index].npos) {
         file_name = frame_strings[index].substr(0, frame_strings[index].find(":"));
         frame_strings[index].erase(frame_strings[index].begin(), frame_strings[index].begin() + frame_strings[index].find(":") + 1);
         try {
-          line = std::stoi(frame_strings[index]);
+          line = stoi(frame_strings[index]);
         } catch (...) {
         }
       }
@@ -81,12 +85,12 @@ size_t stack_trace::get_native_offset() {
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   auto addresses = address_collection {size_t {1024}};
   addresses.resize(static_cast<size_t>(backtrace(addresses.data(), static_cast<int>(addresses.size()))));
-  if (skip_frames + get_native_offset() > addresses.size() || skip_frames > std::numeric_limits<size_t>::max() - get_native_offset()) return {};
+  if (skip_frames + get_native_offset() > addresses.size() || skip_frames > numeric_limits<size_t>::max() - get_native_offset()) return {};
   addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset());
 
   auto frames = frame_collection {};
   for (const auto& frame : need_file_info ? get_frames_from_addresses(addresses) : get_frames_without_file_info_from_addresses(addresses)) {
-    if (std::get<3>(frame) == "start") break;
+    if (get<3>(frame) == "start") break;
     frames.push_back(frame);
   }
   return frames;
