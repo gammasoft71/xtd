@@ -27,13 +27,13 @@ size_t stack_trace::get_native_offset() {
 }
 
 #if __ANDROID__ | __CYGWIN__ | __MINGW32__
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
+stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   return {};
 }
 #else
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
+stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   static constexpr size_t max_frames = 1024;
-  auto frames = stack_trace::frames {};
+  auto frames = stack_trace::frame_collection {};
   auto traces = std::vector<void*> {};
   traces.resize(max_frames);
   auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));

@@ -17,11 +17,11 @@ namespace {
   class stack_walker final : public StackWalker {
   public:
     using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
-    using frames = std::vector<frame>;
+    using frame_collection = std::vector<frame>;
     
     explicit stack_walker(bool need_file_info) : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath), need_file_info_ {need_file_info} {}
     
-    const frames& get_frames() const noexcept {return frames_;}
+    const frame_collection& get_frames() const noexcept {return frames_;}
     
   private:
     void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
@@ -31,7 +31,7 @@ namespace {
     }
     
   private:
-    frames frames_;
+    frame_collection frames_;
     bool need_file_info_ = false;
   };
 }
@@ -40,11 +40,11 @@ size_t stack_trace::get_native_offset() {
   return native_offset;
 }
 
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
+stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   auto sw = stack_walker {need_file_info};
   if (!sw.ShowCallstack()) return {};
   
-  auto result = stack_trace::frames {};
+  auto result = stack_trace::frame_collection {};
   auto frames = sw.get_frames();
   for (auto index = skip_frames + native_offset; index < frames.size(); ++index) {
     if (get<3>(frames[index]) == "invoke_main") break;
