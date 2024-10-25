@@ -8,15 +8,7 @@
 using namespace std;
 using namespace xtd::native;
 
-namespace {
-  string demangle(const string& name) {
-    auto status = 0;
-    auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
-    auto result = status == 0 && demangled_name ? demangled_name : name;
-    free(demangled_name);
-    return result;
-  }
-}
+string __xtd_abi_demangle(const string& name);
 
 size_t stack_trace::get_native_offset() {
   return 3;
@@ -32,9 +24,9 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   for (auto index = skip_frames + get_native_offset(); index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
-    if (!need_file_info) frames.push_back(make_tuple("", 0, 0, demangle(dl_info.dli_sname), 0));
-    else frames.push_back(make_tuple(dl_info.dli_fname, 0, 0, demangle(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
-    if (demangle(dl_info.dli_sname) == string("main")) break;
+    if (!need_file_info) frames.push_back(make_tuple("", 0, 0, __xtd_abi_demangle(dl_info.dli_sname), 0));
+    else frames.push_back(make_tuple(dl_info.dli_fname, 0, 0, __xtd_abi_demangle(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
+    if (__xtd_abi_demangle(dl_info.dli_sname) == string("main")) break;
   }
   return frames;
 }

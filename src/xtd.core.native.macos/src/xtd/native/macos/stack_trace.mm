@@ -14,24 +14,18 @@ using namespace abi;
 using namespace std;
 using namespace xtd::native;
 
+string __xtd_abi_demangle(const string& name);
+
 namespace {
   using address = void*;
   using address_collection = vector<address>;
   using frame = tuple<string, size_t, size_t, string, size_t>;
   using frame_collection = vector<frame>;
 
-  string demangle(const string& name) {
-    auto status = 0;
-    auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
-    auto result = xtd::native::macos::strings::replace(status == 0 && demangled_name ? demangled_name : name, "std::__1::", "std::");
-    free(demangled_name);
-    return result;
-  }
-  
   tuple<string, size_t> get_method_and_offset_from_address(address address) {
     auto dl_info = Dl_info {};
     if (!dladdr(address, &dl_info)) return make_tuple("", numeric_limits<size_t>::max());
-    return make_tuple(demangle(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
+    return make_tuple(__xtd_abi_demangle(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
   }
 
   frame_collection get_frames_without_file_info_from_addresses(const address_collection& addresses) {
