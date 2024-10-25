@@ -2,24 +2,21 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #include "../../../../include/xtd/native/macos/semaphore.h"
+#include "../../../../include/xtd/native/macos/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace abi;
+using namespace std;
 using namespace xtd::native;
 
-std::string types::demangle(const std::string& name) {
-  class auto_delete_char_pointer {
-  public:
-    explicit auto_delete_char_pointer(char* value) : value_(value) {}
-    ~auto_delete_char_pointer() {free(value_);}
-    char* operator()() const {return value_;}
-  private:
-    char* value_;
-  };
+string types::demangle(const string& name) {
+  auto result = name;
   auto status = 0;
-  auto result = __cxa_demangle(name.c_str(), 0, 0, &status);
-  if (result == nullptr) return name;
-  return auto_delete_char_pointer(result)();
+  auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
+  if (status == 0 && demangled_name) result = demangled_name;
+  result = xtd::native::macos::strings::replace(result, "std::__1::", "std::");
+  free(demangled_name);
+  return result;
 }
 
 intmax_t types::invalid_handle() noexcept {
