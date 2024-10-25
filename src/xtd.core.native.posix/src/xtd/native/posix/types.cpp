@@ -8,10 +8,9 @@ using namespace std;
 using namespace xtd::native;
 
 string types::demangle(const string& name) {
-  auto result = name;
   auto status = 0;
   auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
-  if (status == 0 && demangled_name) result = demangled_name;
+  auto result = status == 0 && demangled_name ? demangled_name : name;
   free(demangled_name);
   return result;
 }

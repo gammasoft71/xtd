@@ -10,11 +10,9 @@ using namespace std;
 using namespace xtd::native;
 
 string types::demangle(const string& name) {
-  auto result = name;
   auto status = 0;
   auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
-  if (status == 0 && demangled_name) result = demangled_name;
-  result = xtd::native::macos::strings::replace(result, "std::__1::", "std::");
+  auto result = xtd::native::macos::strings::replace(status == 0 && demangled_name ? demangled_name : name, "std::__1::", "std::");
   free(demangled_name);
   return result;
 }
