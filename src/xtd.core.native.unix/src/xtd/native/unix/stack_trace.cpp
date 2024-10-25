@@ -26,16 +26,16 @@ size_t stack_trace::get_native_offset() {
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   static constexpr size_t max_frames = 1024;
   auto frames = stack_trace::frame_collection {};
-  auto traces = std::vector<void*> {};
+  auto traces = vector<void*> {};
   traces.resize(max_frames);
   auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
   
   for (auto index = skip_frames + get_native_offset(); index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
-    if (!need_file_info) frames.push_back(std::make_tuple("", 0, 0, demangle(dl_info.dli_sname), 0));
-    else frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
-    if (demangle(dl_info.dli_sname) == std::string("main")) break;
+    if (!need_file_info) frames.push_back(make_tuple("", 0, 0, demangle(dl_info.dli_sname), 0));
+    else frames.push_back(make_tuple(dl_info.dli_fname, 0, 0, demangle(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
+    if (demangle(dl_info.dli_sname) == string("main")) break;
   }
   return frames;
 }
