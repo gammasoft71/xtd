@@ -1,38 +1,113 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
+#include "../../../../include/xtd/native/linux/shell_execute.h"
+#include "../../../../include/xtd/native/linux/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <execinfo.h>
 #include <dlfcn.h>
+#include <link.h>
 #include <cxxabi.h>
+#include <iomanip>
+#include <limits>
+#include <sstream>
+#include <unordered_map>
 
-using namespace abi;
+#include <iostream>
+
 using namespace std;
 using namespace xtd::native;
 
 string __xtd_abi_demangle(const string& name);
+
+namespace {
+  using address = void*;
+  using address_collection = vector<address>;
+  using frame = tuple<string, size_t, size_t, string, size_t>;
+  using frame_collection = vector<frame>;
+  using module_info = tuple<string, size_t>;
+  using command = tuple<string, vector<size_t>>;
+  using command_collection = unordered_map<string, command>;
+
+  module_info get_module_info(void* trace) {
+    using link_map_ptr = link_map*;
+    auto info = Dl_info {};
+    auto link_map = link_map_ptr {};
+    if (!dladdr1(trace, &info, reinterpret_cast<void**>(&link_map), RTLD_DL_LINKMAP)) return {"", numeric_limits<size_t>::max()};
+    return {info.dli_fname, link_map->l_addr};
+  }
+
+  command_collection get_commands(const address_collection& addresses) {
+    auto commands = command_collection {};
+    for (auto index =  size_t {0}; index < addresses.size(); ++index) {
+      auto [name, offset] = get_module_info(addresses[index]);
+      if (name.empty()) continue;
+
+      auto& [command, indices] = commands[name];
+      if (command.empty()) {
+        auto ss = stringstream {};
+        ss << "addr2line -C -f -e \"" << name <<"\"";
+        command = ss.str();
+      }
+      auto ss = stringstream {};
+      ss << " " << hex << (reinterpret_cast<size_t>(addresses[index]) - offset);
+      command += ss.str();
+      indices.push_back(index);
+    }
+    return commands;
+  };
+  
+  frame_collection get_frames(const command_collection& commands, size_t count, bool need_file_info) {
+    auto frames = frame_collection {count};
+
+    for (const auto& [name, command] : commands) {
+      auto& [command_to_run, indices] = command;
+      //cout << "[command] = " << command_to_run << endl;
+      //auto result = xtd::native::linux::shell_execute::run(command_to_run);
+      //cout << result << endl;
+      auto frame_strings = xtd::native::linux::strings::split(xtd::native::linux::shell_execute::run(command_to_run), {'\n'});
+      for (auto index = size_t {}; index + 1 < frame_strings.size(); index += 2) {
+        //cout << "   [" << indices[index / 2] << "] " << frame_strings[index];
+        //if (index + 1 < frame_strings.size()) cout << " " <<  frame_strings[index + 1];
+        //cout << endl;
+        auto method = frame_strings[index] == "??" ? "" : frame_strings[index];
+        auto file_name = string {};
+        auto line = size_t {};
+        if (index + 1 < frame_strings.size()) {
+          file_name = frame_strings[index + 1].substr(0, frame_strings[index + 1].find(":"));
+          if (file_name == "??") file_name = "";
+          frame_strings[index + 1].erase(frame_strings[index + 1].begin(), frame_strings[index + 1].begin() + frame_strings[index + 1].find(":") + 1);
+          try {
+            line = stoi(frame_strings[index + 1].substr(0, frame_strings[index + 1].find(" ")));
+          } catch(...) {
+          }
+        }
+        frames[indices[index / 2]] = {file_name, line, size_t {}, method, size_t {}};
+      }
+    }
+
+    return frames;
+  }
+}
 
 size_t stack_trace::get_native_offset() {
   return 3;
 }
 
 #if __ANDROID__ | __CYGWIN__ | __MINGW32__
-stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
+stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   return {};
 }
 #else
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
-  static constexpr size_t max_frames = 1024;
-  auto frames = stack_trace::frame_collection {};
-  auto traces = vector<void*> {};
-  traces.resize(max_frames);
-  auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
+  auto addresses = address_collection {size_t {1024}};
+  addresses.resize(static_cast<size_t>(backtrace(addresses.data(), static_cast<int>(addresses.size()))));
+  if (skip_frames + get_native_offset() > addresses.size() || skip_frames > numeric_limits<size_t>::max() - get_native_offset()) return {};
+  addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset() - 1);
 
-  for (auto index = skip_frames + get_native_offset(); index < nb_frames; ++index) {
-    auto dl_info = Dl_info {};
-    if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
-    if (!need_file_info) frames.push_back(make_tuple("", 0, 0, __xtd_abi_demangle(dl_info.dli_sname), 0));
-    else frames.push_back(make_tuple(dl_info.dli_fname, 0, 0, __xtd_abi_demangle(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
-    if (__xtd_abi_demangle(dl_info.dli_sname) == string("main")) break;
+  auto frames = frame_collection {};
+  for (const auto& frame : ::get_frames(get_commands(addresses), addresses.size(), need_file_info)) {
+    if (get<3>(frame) == "__libc_start_call_main") break;
+    frames.push_back(frame);
   }
   return frames;
 }
