@@ -22,22 +22,22 @@ namespace {
   using frame = tuple<string, size_t, size_t, string, size_t>;
   using frame_collection = vector<frame>;
 
-  tuple<string, size_t> get_method_and_offset_from_address(address address) {
+  tuple<string, size_t> get_method_and_offset(address address) {
     auto dl_info = Dl_info {};
     if (!dladdr(address, &dl_info)) return make_tuple("", numeric_limits<size_t>::max());
     return make_tuple(__xtd_abi_demangle(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
   }
 
-  frame_collection get_frames_without_file_info_from_addresses(const address_collection& addresses) {
+  frame_collection get_frames_without_file_info(const address_collection& addresses) {
     auto frames = ::frame_collection {};
     for (const auto& address : addresses) {
-      auto [method, offset] = get_method_and_offset_from_address(address);
+      auto [method, offset] = get_method_and_offset(address);
       frames.emplace_back("", size_t {}, size_t {}, method, offset);
     }
     return frames;
   }
 
-  frame_collection get_frames_from_addresses(const address_collection& addresses) {
+  frame_collection get_frames(const address_collection& addresses) {
     auto ss = stringstream {};
     ss << "atos -p " << getpid() << " ";
     for (const auto& address : addresses)
@@ -63,7 +63,7 @@ namespace {
         } catch (...) {
         }
       }
-      auto [dummy, offset] = get_method_and_offset_from_address(addresses[index]);
+      auto [dummy, offset] = get_method_and_offset(addresses[index]);
       frames.emplace_back(file_name, line, size_t {}, method, offset);
     }
     return frames;
@@ -81,7 +81,7 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset());
 
   auto frames = frame_collection {};
-  for (const auto& frame : need_file_info ? get_frames_from_addresses(addresses) : get_frames_without_file_info_from_addresses(addresses)) {
+  for (const auto& frame : need_file_info ? ::get_frames(addresses) : get_frames_without_file_info(addresses)) {
     if (get<3>(frame) == "start") break;
     frames.push_back(frame);
   }
