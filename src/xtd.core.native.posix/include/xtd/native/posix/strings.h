@@ -99,25 +99,25 @@ namespace xtd::native::posix {
       if (count == 1) return {str};
       
       auto list = std::vector<std::string> {};
-      auto sub_string = std::string {};
+      auto substring = std::string {};
       auto split_char_separators = separators.size() == 0 ? std::vector<char> {9, 10, 11, 12, 13, 32} : separators;
       for (auto it = str.begin(); it != str.end(); ++it) {
         auto is_separator = std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
-        if (!is_separator) sub_string.append(std::string(1, *it));
-        if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0  && !remove_empty_entries))) {
+        if (!is_separator) substring.append(std::string(1, *it));
+        if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (substring.length() > 0 || (substring.length() == 0  && !remove_empty_entries))) {
           if (list.size() == count - 1) {
-            list.push_back(sub_string + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
+            list.push_back(substring + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
             return list;
           }
-          list.push_back(sub_string);
-          sub_string.clear();
+          list.push_back(substring);
+          substring.clear();
         }
       }
       
       return list;
     }
     
-    static std::string sub_string(const std::string& str, size_t start_index, size_t length) noexcept {
+    static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
       if (start_index >= str.size()) return "";
       return str.substr(start_index, length);
     }
