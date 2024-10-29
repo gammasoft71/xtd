@@ -25,7 +25,7 @@ var searchData=
   ['semaphore_2eh_22',['semaphore.h',['../threading_2semaphore_8h.html',1,'(Global Namespace)'],['../semaphore_8h.html',1,'(Global Namespace)']]],
   ['semaphore_5ffull_5fexception_2eh_23',['semaphore_full_exception.h',['../semaphore__full__exception_8h.html',1,'']]],
   ['send_5fpackets_5felement_2eh_24',['send_packets_element.h',['../send__packets__element_8h.html',1,'']]],
-  ['settings_2eh_25',['settings.h',['../xtd_8tunit_2include_2xtd_2tunit_2settings_8h.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2settings_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2configuration_2settings_8h.html',1,'(Global Namespace)']]],
+  ['settings_2eh_25',['settings.h',['../xtd_8tunit_2include_2xtd_2tunit_2settings_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2configuration_2settings_8h.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2settings_8h.html',1,'(Global Namespace)']]],
   ['seven_5fsegment_5fdisplay_2eh_26',['seven_segment_display.h',['../seven__segment__display_8h.html',1,'']]],
   ['shadow_2eh_27',['shadow.h',['../style__sheets_2shadow_8h.html',1,'(Global Namespace)'],['../shadow_8h.html',1,'(Global Namespace)']]],
   ['shadows_2eh_28',['shadows.h',['../style__sheets_2shadows_8h.html',1,'(Global Namespace)'],['../shadows_8h.html',1,'(Global Namespace)']]],
