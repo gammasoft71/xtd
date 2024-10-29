@@ -33,7 +33,7 @@ void application_context::main_form(const form& main_form) {
   data_->main_form->form_closed += {*this, &application_context::on_main_form_closed};
 }
 
-void application_context::main_form(nullptr_t) {
+void application_context::main_form(std::nullptr_t) {
   if (data_->main_form != nullptr) data_->main_form->handle_destroyed -= {*this, &application_context::on_main_form_closed};
   data_->main_form = nullptr;
 }

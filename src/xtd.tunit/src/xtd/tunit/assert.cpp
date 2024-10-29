@@ -472,19 +472,19 @@ void assert::is_not_empty(const wchar_t* value, const string& message, const sta
     fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
-void assert::is_not_null(nullptr_t pointer, const stack_frame& stack_frame) {
+void assert::is_not_null(std::nullptr_t pointer, const stack_frame& stack_frame) {
   is_not_null(pointer, string::empty_string, stack_frame);
 }
 
-void assert::is_not_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
+void assert::is_not_null(std::nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   fail("not null", "null", message, stack_frame);
 }
 
-void assert::is_null(nullptr_t pointer, const stack_frame& stack_frame) {
+void assert::is_null(std::nullptr_t pointer, const stack_frame& stack_frame) {
   is_null(pointer, string::empty_string, stack_frame);
 }
 
-void assert::is_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
+void assert::is_null(std::nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   succeed(message, stack_frame);
 }
 
