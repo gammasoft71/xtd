@@ -139,7 +139,7 @@ control& control::back_color(const color& color) {
   return *this;
 }
 
-control& control::back_color(nullptr_t) {
+control& control::back_color(std::nullptr_t) {
   if (back_color_.has_value()) {
     back_color_.reset();
     recreate_handle();
@@ -196,7 +196,7 @@ control& control::cursor(const forms::cursor &cursor) {
   return *this;
 }
 
-control& control::cursor(nullptr_t) {
+control& control::cursor(std::nullptr_t) {
   if (cursor_.has_value()) {
     cursor_.reset();
     recreate_handle();
@@ -248,7 +248,7 @@ control& control::font(const drawing::font& font) {
   return *this;
 }
 
-control& control::font(nullptr_t) {
+control& control::font(std::nullptr_t) {
   if (font_.has_value()) {
     font_.reset();
     recreate_handle();
@@ -276,7 +276,7 @@ control& control::fore_color(const color& color) {
   return *this;
 }
 
-control& control::fore_color(nullptr_t) {
+control& control::fore_color(std::nullptr_t) {
   if (fore_color_.has_value()) {
     fore_color_.reset();
     recreate_handle();
@@ -327,7 +327,7 @@ control& control::parent(const control& parent) {
   return *this;
 }
 
-control& control::parent(nullptr_t) {
+control& control::parent(std::nullptr_t) {
   if (parent_ != 0) {
     for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {

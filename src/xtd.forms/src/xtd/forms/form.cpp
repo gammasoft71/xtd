@@ -45,7 +45,7 @@ form& form::accept_button(const ibutton_control& accept_button) {
   return *this;
 }
 
-form& form::accept_button(nullptr_t) {
+form& form::accept_button(std::nullptr_t) {
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(false);
   accept_button_.reset();
   return *this;
@@ -58,7 +58,7 @@ form& form::cancel_button(const ibutton_control& cancel_button) {
   return *this;
 }
 
-form& form::cancel_button(nullptr_t) {
+form& form::cancel_button(std::nullptr_t) {
   cancel_button_.reset();
   return *this;
 }
@@ -130,7 +130,7 @@ form& form::menu(const forms::main_menu& value) {
   return *this;
 }
 
-form& form::menu(nullptr_t) {
+form& form::menu(std::nullptr_t) {
   if (menu_.has_value()) {
     menu_.reset();
     native::form::menu(handle(), 0);

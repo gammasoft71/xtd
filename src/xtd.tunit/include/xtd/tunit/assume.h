@@ -2058,7 +2058,7 @@ namespace xtd {
       
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2069,7 +2069,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2080,7 +2080,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2092,7 +2092,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2430,7 +2430,7 @@ namespace xtd {
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2441,7 +2441,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2452,7 +2452,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -2464,7 +2464,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
