@@ -37,8 +37,39 @@ namespace xtd {
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
   template<typename type_t, typename allocator_t>
-  class array_<type_t, 2, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
+  class array<type_t, 2, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
   public:
+    /// @name Public Aliases
+    
+    /// @{
+    /// @brief Represents the array value type.
+    using value_type = type_t;
+    /// @brief Represents the array allocator type.
+    using allocator_type = typename xtd::basic_array<type_t, allocator_t>::allocator_type;
+    /// @brief Represents the array base type.
+    using base_type = typename xtd::basic_array<type_t, allocator_t>::base_type;
+    /// @brief Represents the array size type (usually xtd::size).
+    using size_type = typename xtd::basic_array<type_t, allocator_t>::size_type;
+    /// @brief Represents the array difference type (usually xtd::ptrdiff).
+    using difference_type = typename xtd::basic_array<type_t, allocator_t>::difference_type;
+    /// @brief Represents the reference of array value type.
+    using reference = typename xtd::basic_array<type_t, allocator_t>::reference;
+    /// @brief Represents the const reference of array value type.
+    using const_reference = typename xtd::basic_array<type_t, allocator_t>::const_reference;
+    /// @brief Represents the pointer of array value type.
+    using pointer = typename xtd::basic_array<type_t, allocator_t>::pointer;
+    /// @brief Represents the const pointer of array value type.
+    using const_pointer = typename xtd::basic_array<type_t, allocator_t>::const_pointer;
+    /// @brief Represents the iterator of array value type.
+    using iterator = typename xtd::basic_array<type_t, allocator_t>::iterator;
+    /// @brief Represents the const iterator of array value type.
+    using const_iterator = typename xtd::basic_array<type_t, allocator_t>::const_iterator;
+    /// @brief Represents the reverse iterator of array value type.
+    using reverse_iterator = typename xtd::basic_array<type_t, allocator_t>::reverse_iterator;
+    /// @brief Represents the const reverse iterator of array value type.
+    using const_reverse_iterator = typename xtd::basic_array<type_t, allocator_t>::const_reverse_iterator;
+    /// @}
+    
     /// @name Public Constructors
     
     /// @{
@@ -47,7 +78,40 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_()= default;
+    array()= default;
+    /// @brief Copy constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array(const array& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Move constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array(const array&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
+    /// @brief Copy constructor with specified base type array.
+    /// @param array The xtd::array::base_type which elements will be inserted from.
+    array(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Move constructor with specified base type array.
+    /// @param array The xtd::array::base_type which elements will be moved from.
+    array(base_type&& array) : basic_array<type_t, allocator_t>(array) {}
+    /// @brief Initializes a new instance of the array class with lengths for each rank specified.
+    /// @param length1 the length for the first rank.
+    /// @param length2 the length for the second rank.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array(size_type length1, size_type length2) : basic_array<type_t, allocator_t>(array<xtd::size> {length1, length2}) {}
+    /// @brief Constructs the container with the contents of the specified initializer list.
+    /// @param items The initializer list to initialize the elements of the container with.
+    array(std::initializer_list<std::initializer_list<type_t>> items) : basic_array<type_t, allocator_t>(items) {}
+    /// @}
+
+    /// @cond
+    ~array() {}
+    /// @endcond
+
+    /// @name Public Properties
+    
+    /// @{
+    xtd::size rank() const noexcept override {return 2;}
     /// @}
   };
 }

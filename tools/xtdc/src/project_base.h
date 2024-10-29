@@ -11,7 +11,7 @@ namespace xtdc_command {
     static xtd::string get_project_full_path_from_path(const xtd::string& path) noexcept {
       if (path.empty() || path == ".") return xtd::environment::current_directory();
       else if (path == "..") {
-        auto directories = xtd::environment::current_directory().split(xtd::io::path::directory_separator_char());
+        auto directories = std::vector<xtd::string> {xtd::environment::current_directory().split(xtd::io::path::directory_separator_char())};
         if (directories.size() < 2) return "";
         directories.erase(directories.begin() + directories.size() - 2);
         return xtd::io::path::combine(directories);

@@ -266,7 +266,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(items) {
       auto items = list {84, 42, 21};
-      assert::are_equal(typeof_<array_<int>::base_type>(), typeof_(items.items()));
+      assert::are_equal(typeof_<array<int>::base_type>(), typeof_(items.items()));
       
       auto& inners = items.items();
       assert::are_equal(84, inners[0]);
@@ -417,7 +417,7 @@ namespace xtd::collections::generic::tests {
       assert::is_true(items1.equals(as<object>(items2)));
       auto items3 = list {84, 42, 33};
       assert::is_false(items1.equals(as<object>(items3)));
-      auto items4 = array_ {84, 42, 21};
+      auto items4 = array {84, 42, 21};
       assert::is_false(items1.equals(items4));
     }
     

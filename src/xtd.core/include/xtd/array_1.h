@@ -37,7 +37,7 @@ namespace xtd {
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
   template<typename type_t, typename allocator_t>
-  class array_<type_t, 1, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
+  class array<type_t, 1, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
   public:
     /// @name Public Aliases
     
@@ -78,29 +78,29 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_() = default;
+    array() = default;
     /// @brief Copy constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array_(const array_& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const array& array) : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array_(const array_&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
+    array(const array&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
     /// @brief Copy constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be inserted from.
-    array_(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be moved from.
-    array_(base_type&& array) : basic_array<type_t, allocator_t>(array) {}
+    array(base_type&& array) : basic_array<type_t, allocator_t>(array) {}
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param length the length for the first rank.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_(size_type length) : basic_array<type_t, allocator_t>(array_<xtd::size> {length}) {}
+    array(size_type length) : basic_array<type_t, allocator_t>(array<xtd::size> {length}) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.
-    array_(std::initializer_list<type_t> items) : basic_array<type_t, allocator_t>(items) {}
+    array(std::initializer_list<type_t> items) : basic_array<type_t, allocator_t>(items) {}
     /// @brief Initializes a new instance of the array and copy array[] type_t.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
@@ -108,7 +108,7 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     template<xtd::size length>
-    array_(const type_t(&array)[length]) : basic_array<type_t, allocator_t>(array, length) {}
+    array(const type_t(&array)[length]) : basic_array<type_t, allocator_t>(array, length) {}
     /// @brief Initializes a new instance of the array and copy array[] type_t with length specified.
     /// @param array the array to copy.
     /// @param length length of the array.
@@ -116,27 +116,31 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_(const type_t* array, size_type length) : basic_array<type_t, allocator_t>(array, length) {}
+    array(const type_t* array, size_type length) : basic_array<type_t, allocator_t>(array, length) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
+    array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
     /// @brief Constructs the container with the contents of the range [first, last).
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
     template<typename iterator_t>
-    array_(iterator_t first, iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    array(iterator_t first, iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
     /// @}
+
+    /// @cond
+    ~array() {}
+    /// @endcond
 
     /// @name Public Properties
     
@@ -186,8 +190,8 @@ namespace xtd {
     /// @name Public Operators
     
     /// @{
-    array_& operator=(const array_&) = default;
-    array_& operator=(array_&&) = default;
+    array& operator=(const array&) = default;
+    array& operator=(array&&) = default;
     
     using xtd::basic_array<type_t, allocator_t>::operator();
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.

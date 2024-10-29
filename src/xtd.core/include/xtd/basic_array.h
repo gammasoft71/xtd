@@ -242,7 +242,7 @@ namespace xtd {
     }
     
     void copy_to(xtd::array<type_t>& array, size_type index) const override {
-      /// @todo uncomment want array_ remamed into array.
+      /// @todo uncomment want array remamed into array.
       //if (array.rank() != 1) __throw_argument_exception(__FILE__, __LINE__, __func__);
       if (rank() != 1) __throw_rank_exception(__FILE__, __LINE__, __func__);
       if (index + length() > array.size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
@@ -338,7 +338,7 @@ namespace xtd {
     /// @param indexes An array that represents the position of the element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception If `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
-    const value_type& get_value(const xtd::array_<size_type>& indexes) const;
+    const value_type& get_value(const xtd::array<size_type>& indexes) const;
     
     /// @brief Determines the index of a specific item in the xtd::array <type_t>.
     /// @param value The object to locate in the xtd::array.
@@ -370,7 +370,7 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param indexes An array that represents the position of the element to set.
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
-    void set_value(const type_t& value, const xtd::array_<size_type>& indexes) {operator()(indexes) = value;}
+    void set_value(const type_t& value, const xtd::array<size_type>& indexes) {operator()(indexes) = value;}
     
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
@@ -493,7 +493,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    type_t& operator()(const xtd::array_<size_type>& indexes);
+    type_t& operator()(const xtd::array<size_type>& indexes);
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -502,15 +502,15 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    const type_t& operator()(const xtd::array_<size_type>& indexes) const;
+    const type_t& operator()(const xtd::array<size_type>& indexes) const;
     /// @}
     
   private:
     template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
-    friend class array_;
+    friend class array;
     
     basic_array() = default;
-    basic_array(const array_<size_type, 1>& lengths);
+    basic_array(const array<size_type, 1>& lengths);
     
     basic_array(const_pointer array, size_type length) {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
