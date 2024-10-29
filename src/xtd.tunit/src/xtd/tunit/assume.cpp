@@ -502,11 +502,11 @@ void assume::is_not_empty(const wchar_t* value, const string& message, const sta
   }
 }
 
-void assume::is_not_null(nullptr_t pointer, const stack_frame& stack_frame) {
+void assume::is_not_null(std::nullptr_t pointer, const stack_frame& stack_frame) {
   is_not_null(pointer, string::empty_string, stack_frame);
 }
 
-void assume::is_not_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
+void assume::is_not_null(std::nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_not_null(pointer, message, stack_frame);
   } catch (...) {
@@ -514,11 +514,11 @@ void assume::is_not_null(nullptr_t pointer, const string& message, const stack_f
   }
 }
 
-void assume::is_null(nullptr_t pointer, const stack_frame& stack_frame) {
+void assume::is_null(std::nullptr_t pointer, const stack_frame& stack_frame) {
   is_null(pointer, string::empty_string, stack_frame);
 }
 
-void assume::is_null(nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
+void assume::is_null(std::nullptr_t pointer, const string& message, const stack_frame& stack_frame) {
   assert::succeed(message, stack_frame);
 }
 

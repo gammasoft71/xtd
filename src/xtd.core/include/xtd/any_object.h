@@ -158,7 +158,7 @@ namespace xtd {
     inline ptr<object> boxing_ptr(float& value) noexcept {return new_ptr<single_object>(value);}
     inline ptr<object> boxing_ptr(double& value) noexcept {return new_ptr<double_object>(value);}
     inline ptr<object> boxing_ptr(decimal& value) noexcept {return new_ptr<decimal_object>(value);}
-    inline ptr<object> boxing_ptr(nullptr_t value) noexcept {return ptr<object> {};}
+    inline ptr<object> boxing_ptr(std::nullptr_t value) noexcept {return ptr<object> {};}
     
     ptr<object> value_;
   };

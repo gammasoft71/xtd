@@ -991,7 +991,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::is_not_null(nullptr); // test throws an assert_error exception.
@@ -1002,7 +1002,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::is_not_null(nullptr, "User message..."); // test throws an assert_error exception.
@@ -1210,7 +1210,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::is_null(nullptr); // test ok.
@@ -1221,7 +1221,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::is_null(nullptr, "User message..."); // test ok.
