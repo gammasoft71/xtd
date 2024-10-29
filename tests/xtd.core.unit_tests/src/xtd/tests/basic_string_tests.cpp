@@ -947,29 +947,29 @@ namespace xtd::tests {
     }
 
     void test_method_(split) {
-      assert::are_equal(std::vector<basic_string<char_t>> {}, basic_string<char_t> {""}.split({'+', '-', '='}));
-      assert::are_equal(std::vector<basic_string<char_t>> {"a"}, basic_string<char_t> {"a"}.split({'+', '-', '='}));
-      assert::are_equal((std::vector<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100 42\t142"}.split());
-      assert::are_equal((std::vector<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100+42=142"}.split({'+', '-', '='}));
-      assert::are_equal(std::vector<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({'%', '*'}));
-      assert::are_equal(std::vector<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({}));
-      assert::are_equal((std::vector<basic_string<char_t>> {"a", "b", "c"}), basic_string<char_t> {"a,b,c"}.split(','));
-      assert::are_equal((std::vector<basic_string<char_t>> {"a", "", "", "b", "", "c"}), basic_string<char_t> {"a,,,b,,c"}.split(','));
+      assert::are_equal(array<basic_string<char_t>> {}, basic_string<char_t> {""}.split({'+', '-', '='}));
+      assert::are_equal(array<basic_string<char_t>> {"a"}, basic_string<char_t> {"a"}.split({'+', '-', '='}));
+      assert::are_equal((array<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100 42\t142"}.split());
+      assert::are_equal((array<basic_string<char_t>> {"100", "42", "142"}), basic_string<char_t> {"100+42=142"}.split({'+', '-', '='}));
+      assert::are_equal(array<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({'%', '*'}));
+      assert::are_equal(array<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({}));
+      assert::are_equal((array<basic_string<char_t>> {"a", "b", "c"}), basic_string<char_t> {"a,b,c"}.split(','));
+      assert::are_equal((array<basic_string<char_t>> {"a", "", "", "b", "", "c"}), basic_string<char_t> {"a,,,b,,c"}.split(','));
     }
     
     void test_method_(split_count) {
-      assert::are_equal((std::vector<basic_string<char_t>> {"42", " 12, 19"}), basic_string<char_t> {"42, 12, 19"}.split({',', ' '}, 2));
-      assert::are_equal((std::vector<basic_string<char_t>> {"42", "", "12", ".19"}), basic_string<char_t> {"42..12..19"}.split({'.'}, 4));
-      assert::are_equal(std::vector<basic_string<char_t>> {"Banana"}, basic_string<char_t> {"Banana"}.split({','}, 2));
-      assert::are_equal(std::vector<basic_string<char_t>> {"Darb\nSmarba "}, basic_string<char_t> {"Darb\nSmarba "}.split({}, 1));
+      assert::are_equal((array<basic_string<char_t>> {"42", " 12, 19"}), basic_string<char_t> {"42, 12, 19"}.split({',', ' '}, 2));
+      assert::are_equal((array<basic_string<char_t>> {"42", "", "12", ".19"}), basic_string<char_t> {"42..12..19"}.split({'.'}, 4));
+      assert::are_equal(array<basic_string<char_t>> {"Banana"}, basic_string<char_t> {"Banana"}.split({','}, 2));
+      assert::are_equal(array<basic_string<char_t>> {"Darb\nSmarba "}, basic_string<char_t> {"Darb\nSmarba "}.split({}, 1));
     }
     
     void test_method_(split_with_string_split_option_remove_empty_entries) {
-      assert::are_equal(std::vector<basic_string<char_t>> {"a", "b", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::remove_empty_entries));
+      assert::are_equal(array<basic_string<char_t>> {"a", "b", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::remove_empty_entries));
     }
     
     void test_method_(split_with_string_split_optio_none) {
-      assert::are_equal(std::vector<basic_string<char_t>> {"a", "", "", "b", "", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::none));
+      assert::are_equal(array<basic_string<char_t>> {"a", "", "", "b", "", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::none));
     }
 
     void test_method_(starts_with_value_type) {

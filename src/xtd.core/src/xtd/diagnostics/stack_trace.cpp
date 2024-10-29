@@ -19,7 +19,7 @@ stack_trace::stack_trace(bool need_file_info) : data_{new_ptr<data>()} {
 }
 
 stack_trace::stack_trace(const stack_frame& frame) : data_{new_ptr<data>()} {
-  data_->frames.push_back(frame);
+  data_->frames = stack_frame_collection {frame};
 }
 
 stack_trace::stack_trace(const string& str, size_t skip_frames, bool need_file_info) : data_{new_ptr<data>()} {

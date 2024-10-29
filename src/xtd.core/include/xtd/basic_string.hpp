@@ -132,7 +132,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   if (count == 0) return {};
   if (count == 1) return {*this};
   
-  auto list = xtd::array<basic_string> {};
+  auto list = std::vector<basic_string> {};
   auto sub_string = basic_string::empty_string;
   auto split_char_separators = separators.size() == 0 ? default_split_separators : separators;
   for (auto it = begin(); it != end(); ++it) {
@@ -257,7 +257,7 @@ template<typename ...args_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::format(const basic_string<char>& fmt, args_t&& ... args) {
   auto result = basic_string<char> {};
   auto index = xtd::size {0};
-  auto formats = xtd::array<__format_information<char>> {};
+  auto formats = std::vector<__format_information<char>> {};
   auto begin_format_iterator = fmt.end();
   auto end_format_iterator = fmt.end();
   for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
@@ -358,7 +358,7 @@ inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t
 
 
 template<typename arg_t>
-void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, xtd::array<__format_information<char>>& formats, arg_t&& arg) {
+void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
   for (auto& format : formats) {
     format.location += offset;
@@ -383,7 +383,7 @@ void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& 
 }
 
 template<typename ...args_t>
-void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::array<__format_information<char>>& formats, args_t&&... args) {
+void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
   auto index = xtd::size {0};
   (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable

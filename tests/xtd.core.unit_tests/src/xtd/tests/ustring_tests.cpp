@@ -776,7 +776,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_vector) {
-      assert::are_equal(L"1234", string::concat(std::vector {L"1", L"2", L"3", L"4"}));
+      assert::are_equal(L"1234", string::concat(array {L"1", L"2", L"3", L"4"}));
     }
     
     void test_method_(contains) {

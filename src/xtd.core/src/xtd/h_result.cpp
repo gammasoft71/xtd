@@ -20,10 +20,12 @@ int32 h_result::get_facility(int32 h_result) noexcept {
 }
 
 const xtd::array<int32>& h_result::get_h_results() noexcept {
-  static auto h_results = xtd::array<int32> {};
+  static auto h_results = array<int32> {};
   call_once_ {
+    static auto tmp_h_results = std::vector<int32> {};
     for (auto item : get_names())
-      h_results.push_back(item.first);
+      tmp_h_results.push_back(item.first);
+    h_results = tmp_h_results;
   };
   return h_results;
 }

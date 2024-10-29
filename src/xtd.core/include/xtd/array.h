@@ -55,7 +55,7 @@ namespace xtd {
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
   template<typename type_t, xtd::size rank_, typename allocator_t>
-  class array_ : public basic_array<type_t, allocator_t> {
+  class array : public basic_array<type_t, allocator_t> {
   public:
     /// @name Public Constructors
     
@@ -65,7 +65,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include ArrayConstructor.cpp
-    array_() = default;
+    array() = default;
     
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param lengths the lengths for each rank.
@@ -73,12 +73,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array_(const array_<xtd::size, 1>& lengths) : xtd::basic_array<type_t, allocator_t>(lengths) {}
+    array(const array<xtd::size, 1>& lengths) : xtd::basic_array<type_t, allocator_t>(lengths) {}
+    /// @}
     
     /// @cond
-    array_(const array_& array) : xtd::basic_array<type_t, allocator_t>(array) {}
-    array_(array_&& array) = default;
-    /// @}
+    array(const array& array) : xtd::basic_array<type_t, allocator_t>(array) {}
+    array(array&& array) = default;
+    /// @endcond
 
     /// @name Public Properties
     
@@ -89,13 +90,13 @@ namespace xtd {
     /// @name Public Operators
     
     /// @{
-    array_& operator=(const array_&) = default;
-    array_& operator=(array_&&) = default;
+    array& operator=(const array&) = default;
+    array& operator=(array&&) = default;
     /// @}
 
   private:
-    friend class array_<>;
-    array_(const array_<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
+    friend class array<>;
+    array(const array<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
    };
 }
 

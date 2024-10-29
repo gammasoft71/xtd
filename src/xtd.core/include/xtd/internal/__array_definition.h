@@ -13,10 +13,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @todo remove and rename array_ to array
-  template<typename type_t>
-  using array = std::vector<type_t>;
-  
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
@@ -46,7 +42,7 @@ namespace xtd {
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
   template<typename type_t = nullptr_t, xtd::size rank_size = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  class array_;
+  class array;
   
   /// @brief Base object that represent array.
   /// @par Definition
