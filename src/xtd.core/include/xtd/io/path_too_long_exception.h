@@ -32,66 +32,87 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
       /// @remarks Message is set with the default message associate to the exception.
-      explicit path_too_long_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(default_message(), stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      explicit path_too_long_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      explicit path_too_long_exception(const xtd::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+      template<typename exception_t>
+      path_too_long_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_PATHTOOLONG));}
+      
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, error, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, help_link, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
-      explicit path_too_long_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, error, help_link, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
       /// @remarks Message is set with the default message associate to the exception.
-      explicit path_too_long_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(default_message(), inner_exception, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, error, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, help_link, stack_frame) {}
-      /// @brief Create a new instance of class path_too_long_exception
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      /// @brief Create a new instance of class xtd::io::path_too_long_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, error, help_link, stack_frame) {}
+      /// @deprecated Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::io::path_too_long_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      explicit path_too_long_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame&stack_frame = null);
       /// @}
       /// @cond
       path_too_long_exception(const path_too_long_exception&) = default;
       path_too_long_exception& operator =(const path_too_long_exception&) = default;
       /// @endcond
-      
-    private:
-      const char* default_message() const noexcept {return "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."_t;}
     };
   }
 }
