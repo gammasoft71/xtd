@@ -1114,6 +1114,7 @@ add_sources(
   src/xtd/io/directory_not_found_exception.cpp
   src/xtd/io/file.cpp
   src/xtd/io/file_info.cpp
+  src/xtd/io/file_load_exception.cpp
   src/xtd/io/file_not_found_exception.cpp
   src/xtd/io/file_system_info.cpp
   src/xtd/io/drive_info.cpp
