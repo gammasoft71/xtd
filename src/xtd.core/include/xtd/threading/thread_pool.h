@@ -8,6 +8,7 @@
 #include "wait_callback.h"
 #include "wait_or_timer_callback.h"
 #include "../core_export.h"
+#include "../new_ptr.h"
 #include "../static.h"
 #include "../time_span.h"
 #include "../types.h"
@@ -59,21 +60,38 @@ namespace xtd {
       template<typename callback_t>
       struct thread_item : public object {
         thread_item() = default;
-        thread_item(const callback_t& callback) : callback(callback) {}
-        thread_item(const callback_t& callback, std::any state) : callback(callback), state(state) {}
-        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback(callback), state(state), wait_object(&wait_object), milliseconds_timeout_interval(milliseconds_timeout_interval), execute_only_once(execute_only_once) {}
+        thread_item(thread_item&&) = default;
+        thread_item(const thread_item&) = default;
+        thread_item& operator =(thread_item&&) = default;
+        thread_item& operator =(const thread_item&) = default;
+        thread_item(const callback_t& callback) : data {xtd::new_ptr<sdata>(callback)} {}
+        thread_item(const callback_t& callback, std::any state) : data {xtd::new_ptr<sdata>(callback, state)} {}
+        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
         
-        callback_t callback;
-        std::any state;
-        wait_handle* wait_object = null;
-        int32 milliseconds_timeout_interval;
-        bool execute_only_once = true;
-        bool unregistered = false;
+        struct sdata {
+          sdata() = default;
+          sdata(sdata&&) = default;
+          sdata(const sdata&) = default;
+          sdata& operator =(sdata&&) = default;
+          sdata& operator =(const sdata&) = default;
+          sdata(const callback_t& callback) : callback {callback} {}
+          sdata(const callback_t& callback, std::any state) : callback {callback}, state {state} {}
+          sdata(const callback_t& callback, std::any state, wait_handle* wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback {callback}, state {state}, wait_object {wait_object}, milliseconds_timeout_interval {milliseconds_timeout_interval}, execute_only_once {execute_only_once} {}
+          
+          callback_t callback;
+          std::any state;
+          wait_handle* wait_object = null;
+          int32 milliseconds_timeout_interval;
+          bool execute_only_once = true;
+          bool unregistered = false;
+        };
+        
+        ptr<sdata> data = xtd::new_ptr<sdata>();
         
         void run() {
           do {
-            this->callback(state);
-          } while (!execute_only_once);
+            this->callback(data->state);
+          } while (!data->execute_only_once);
         }
       };
       

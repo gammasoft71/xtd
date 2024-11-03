@@ -8,14 +8,14 @@ bool registered_wait_handle::unregister() {
   if (item_ == 0) return false;
   
   auto item = reinterpret_cast<thread_pool::thread_pool_asynchronous_io_item*>(item_);
-  item->unregistered = true;
-  return item->wait_object->signal();
+  item->data->unregistered = true;
+  return item->data->wait_object->signal();
 }
 
 bool registered_wait_handle::unregister(wait_handle& wait_object) {
   if (item_ == 0) return false;
   
   auto item = reinterpret_cast<thread_pool::thread_pool_asynchronous_io_item*>(item_);
-  item->unregistered = true;
+  item->data->unregistered = true;
   return wait_object.signal();
 }

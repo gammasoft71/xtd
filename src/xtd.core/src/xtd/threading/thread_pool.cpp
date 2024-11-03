@@ -146,11 +146,11 @@ void thread_pool::asynchronous_io_run() {
     }
     
     do {
-      auto wait_result = wait_handle::wait_any({&static_data_.close_asynchronous_io_threads_manual_reset_event, item.wait_object}, item.milliseconds_timeout_interval);
+      auto wait_result = wait_handle::wait_any({&static_data_.close_asynchronous_io_threads_manual_reset_event, item.data->wait_object}, item.data->milliseconds_timeout_interval);
       if (wait_result == 0) break;
       auto timeout = wait_result == wait_handle::wait_timeout;
-      if (!item.unregistered) item.callback(item.state, timeout);
-    } while (!item.execute_only_once && !item.unregistered);
+      if (!item.data->unregistered) item.data->callback(item.data->state, timeout);
+    } while (!item.data->execute_only_once && !item.data->unregistered);
   }
 }
 
@@ -222,6 +222,6 @@ void thread_pool::run() {
       item = static_data_.thread_pool_items.back();
       static_data_.thread_pool_items.pop_back();
     }
-    item.callback(item.state);
+    item.data->callback(item.data->state);
   }
 }
