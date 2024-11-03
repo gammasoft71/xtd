@@ -1074,6 +1074,7 @@ add_sources(
   src/xtd/translator.cpp
   src/xtd/type_object.cpp
   src/xtd/uri.cpp
+  src/xtd/uri_format_exception.cpp
   src/xtd/string.cpp
   src/xtd/version.cpp
   src/xtd/collections/key_not_found_exception.cpp
