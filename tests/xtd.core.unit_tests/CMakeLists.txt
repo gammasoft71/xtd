@@ -215,6 +215,7 @@ add_sources(
   src/xtd/tests/unregistered_enum_struct_tests.cpp
   src/xtd/tests/unregistered_enum_tests.cpp
   src/xtd/tests/uri_components_tests.cpp
+  src/xtd/tests/uri_format_exception_tests.cpp
   src/xtd/tests/uri_host_name_type_tests.cpp
   src/xtd/tests/uri_kind_tests.cpp
   src/xtd/tests/uri_partial_tests.cpp
