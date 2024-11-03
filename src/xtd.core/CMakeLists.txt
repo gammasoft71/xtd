@@ -1047,6 +1047,7 @@ add_sources(
   src/xtd/distribution.cpp
   src/xtd/event_args.cpp
   src/xtd/exception.cpp
+  src/xtd/format_exception.cpp
   src/xtd/guid.cpp
   src/xtd/hash_code.cpp
   src/xtd/h_result.cpp
