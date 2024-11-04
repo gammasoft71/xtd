@@ -1154,6 +1154,7 @@ add_sources(
   src/xtd/net/sockets/send_packets_element.cpp
   src/xtd/net/sockets/socket.cpp
   src/xtd/net/sockets/socket_async_event_args.cpp
+  src/xtd/net/sockets/socket_exception.cpp
   src/xtd/net/sockets/socket_information.cpp
   src/xtd/net/sockets/tcp_client.cpp
   src/xtd/net/sockets/tcp_listener.cpp

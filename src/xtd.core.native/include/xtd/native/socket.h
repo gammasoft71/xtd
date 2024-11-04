@@ -24,6 +24,7 @@ namespace xtd {
     class socket_address;
     namespace sockets {
       class socket;
+      class socket_exception;
     }
   }
   /// @endcond
@@ -43,6 +44,7 @@ namespace xtd {
       friend __using_socket__;
       friend xtd::net::socket_address;
       friend xtd::net::sockets::socket;
+      friend xtd::net::sockets::socket_exception;
     protected:
       /// @name Protected Methods
       
