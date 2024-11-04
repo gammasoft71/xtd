@@ -56,13 +56,13 @@ sidebar_position: 2
       * [xtd::format_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1format__exception.html)
         * [xtd::io::file_format_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__format__exception.html)
         * [xtd::net::cookie_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1cookie__exception.html)
-        * [xtd::net::protocol_violation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1protocol__violation__exception.html)
-        * [xtd::net::web_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1protocol__violation__exception.html)
         * [xtd::uri_format_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1uri__format__exception.html)
       * [xtd::index_out_of_range_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1index__out__of__range__exception.html)
       * [xtd::interrupt_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interrupt__exception.html)
       * [xtd::invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html)
       * [xtd::invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html)
+        * [xtd::net::protocol_violation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1protocol__violation__exception.html)
+        * [xtd::net::web_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1web__exception.html)
       * [xtd::invalid_program_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__program__exception.html)
       * [xtd::io::io_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1io__exception.html)
         * [xtd::io::directory_not_found_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1directory__not__found__exception.html)
@@ -105,7 +105,6 @@ sidebar_position: 2
     * [xtd::tunit::abort_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1abort__error.html)
     * [xtd::tunit::assert_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__error.html)
     * [xtd::tunit::ignore_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1ignore__error.html)
-
 
 ## mscorelib (.Net Framework)
 
