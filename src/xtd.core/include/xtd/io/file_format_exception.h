@@ -115,7 +115,7 @@ namespace xtd {
       file_format_exception& operator =(const file_format_exception&) = default;
       /// @endcond
     private:
-      static xtd::string default_message();
+      static xtd::string default_message() noexcept;
     };
   }
 }

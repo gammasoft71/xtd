@@ -49,6 +49,6 @@ file_format_exception::file_format_exception(const xtd::string& message, const s
   this->help_link(help_link);
 }
 
-xtd::string file_format_exception::default_message() {
+xtd::string file_format_exception::default_message() noexcept {
   return "Input file or data stream does not conform to the expected file format specification."_t;
 }
