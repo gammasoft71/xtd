@@ -38,59 +38,87 @@ namespace xtd {
         /// @brief Create a new instance of class socket_exception
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
         /// @remarks Message is set with the default message associate to the exception.
-        explicit socket_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(default_message(), stack_frame) {}
-        /// @brief Create a new instance of class socket_exception
-        /// @param message Message string associate to the exception.
+        explicit socket_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+        /// @brief Create a new instance of class socket_exception with the specified error code.
+        /// @param error_code The error code that indicates the error that occurred.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, stack_frame) {}
+        explicit socket_exception(int32 error_code, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+        /// @brief Create a new instance of class socket_exception with the specified error code and message.
+        /// @param error_code The error code that indicates the error that occurred.
+        /// @param message The error code that indicates the error that occurred.
+        /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+        explicit socket_exception(int32 error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+        /// @brief Create a new instance of class socket_exception with the specified error code.
+        /// @param error_code The error code that indicates the error that occurred.
+        /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+        explicit socket_exception(xtd::net::sockets::socket_error error_code, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+        /// @brief Create a new instance of class socket_exception with the specified error code and message.
+        /// @param error_code The error code that indicates the error that occurred.
+        /// @param message The error code that indicates the error that occurred.
+        /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+        explicit socket_exception(xtd::net::sockets::socket_error error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param error Error code associate to the exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, error, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param help_link Help link string associate to the exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, help_link, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param error Error code associate to the exception.
         /// @param help_link Help link string associate to the exception.
-        explicit socket_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, error, help_link, stack_frame) {}
+        /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param inner_exception The exception that is the cause of the current exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
         /// @remarks Message is set with the default message associate to the exception.
-        explicit socket_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(default_message(), inner_exception, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+        socket_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param inner_exception The exception that is the cause of the current exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param inner_exception The exception that is the cause of the current exception.
         /// @param error Error code associate to the exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, error, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param inner_exception The exception that is the cause of the current exception.
         /// @param help_link Help link string associate to the exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, help_link, stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param inner_exception The exception that is the cause of the current exception.
         /// @param error Error code associate to the exception.
         /// @param help_link Help link string associate to the exception.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, error, help_link, stack_frame) {}
-        /// @brief Create a new instance of class socket_exception
-        /// @param error One of xtd::net::sockets::socket_error values .
-        /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-        explicit socket_exception(const xtd::net::sockets::socket_error& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(default_message(), std::error_code(static_cast<int32>(error), std::system_category()), stack_frame) {}
+        /// @deprecated Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
+        [[deprecated("Use xtd::socket_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+        socket_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
         /// @}
         
         /// @cond
@@ -98,8 +126,15 @@ namespace xtd {
         socket_exception& operator =(const socket_exception&) = default;
         /// @endcond
         
+        /// @name Public Properties
+        
+        /// @{
+        //const xtd::string& message() const noexcept override;
+        virtual xtd::net::sockets::socket_error socket_error_code() const noexcept;
+        /// @}
+        
       private:
-        const char* default_message() const noexcept {return "The Socket operation failed."_t;}
+        xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
       };
     }
   }
