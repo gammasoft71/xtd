@@ -116,12 +116,9 @@ int32_t socket::destroy(intmax_t handle) {
 }
 
 std::string socket::socket_error_to_string(int32_t socket_error) {
+  if (socket_error == 0) return "The operation completed successfully";
   auto error = socket_error_to_native(socket_error);
-  if (error == 0) return "The operation completed successfully";
-  auto previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
-  auto result = std::string {std::strerror(error != -1 ? error : socket_error)};
-  std::locale::global(previous_locale);
-  return result;
+  return std::string {std::strerror(error != -1 ? error : socket_error)};
 }
 
 size_t socket::get_available(intmax_t handle) {
