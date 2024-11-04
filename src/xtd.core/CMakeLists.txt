@@ -1144,6 +1144,7 @@ add_sources(
   src/xtd/net/ip_host_entry.cpp
   src/xtd/net/network_credential.cpp
   src/xtd/net/protocol_violation_exception.cpp
+  src/xtd/net/web_exception.cpp
   src/xtd/net/socket_address.cpp
   src/xtd/net/sockets/ip_packet_information.cpp
   src/xtd/net/sockets/ip_v6_multicast_option.cpp
