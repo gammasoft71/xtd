@@ -9,6 +9,8 @@
 #include <xtd/native/socket_shutdown_constants>
 #include <xtd/native/socket_type_constants>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <cstring>
+#include <locale>
 #include <map>
 #include <string>
 #include <errno.h>
