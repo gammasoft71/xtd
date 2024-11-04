@@ -120,8 +120,8 @@ namespace xtd::native {
       }
       
       static const std::string to_lower(const std::string& str) noexcept {
-        auto result = str;
-        std::transform(result.begin(), result.end(), result.begin(), ::tolower);
+        std::string result;
+        std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::tolower(c)); });
         return result;
       }
   
@@ -162,8 +162,8 @@ namespace xtd::native {
       }
 
       static const std::string to_upper(const std::string& str) noexcept {
-        auto result = str;
-        std::transform(result.begin(), result.end(), result.begin(), ::toupper);
+        std::string result;
+        std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::toupper(c)); });
         return result;
       }
 
