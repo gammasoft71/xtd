@@ -87,6 +87,19 @@ int32_t socket::destroy(intmax_t handle) {
   return ::closesocket(static_cast<SOCKET>(handle));
 }
 
+std::string socket::socket_error_to_string(int32_t socket_error) {
+  auto message_buffer = LPSTR {nullptr};
+  auto size = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, socket_error, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), reinterpret_cast<LPSTR>(&message_buffer), 0, nullptr);
+  if (message_buffer == nullptr) {
+    auto ss = std::stringstream {};
+    ss << "Unknown error (0x" << std::hex << socket_error << ")";
+    return ss.str();
+  }
+  auto result = std::string {message_buffer, size - 1};
+  LocalFree(message_buffer);
+  return result;
+}
+
 size_t socket::get_available(intmax_t handle) {
   auto nbr_bytes_available = u_long {};
   if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return static_cast<size_t>(-1);
