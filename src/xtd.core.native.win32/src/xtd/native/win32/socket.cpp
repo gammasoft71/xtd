@@ -10,6 +10,8 @@
 #include <xtd/native/socket_type_constants>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
+#include <sstream>
+#include <string>
 #include <Winsock2.h>
 #include <Windows.h>
 
@@ -89,7 +91,7 @@ int32_t socket::destroy(intmax_t handle) {
 
 std::string socket::socket_error_to_string(int32_t socket_error) {
   auto message_buffer = LPSTR {nullptr};
-  auto size = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, socket_error, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), reinterpret_cast<LPSTR>(&message_buffer), 0, nullptr);
+  auto size = FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, socket_error, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), reinterpret_cast<LPSTR>(&message_buffer), 0, nullptr);
   if (message_buffer == nullptr) {
     auto ss = std::stringstream {};
     ss << "Unknown error (0x" << std::hex << socket_error << ")";
