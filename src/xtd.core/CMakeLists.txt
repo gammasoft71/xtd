@@ -1134,6 +1134,7 @@ add_sources(
   src/xtd/io/text_writer.cpp
   src/xtd/media/system_sound.cpp
   src/xtd/media/system_sounds.cpp
+  src/xtd/net/cookie_exception.cpp
   src/xtd/net/dns.cpp
   src/xtd/net/dns_end_point.cpp
   src/xtd/net/end_point.cpp
