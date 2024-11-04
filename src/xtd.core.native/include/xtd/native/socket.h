@@ -88,6 +88,11 @@ namespace xtd {
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t destroy(intmax_t handle);
+      /// @brief Gets the string corresponding to the specified socket error.
+      /// @param int32 The socket error.
+      /// @return The string corresponding to the specified socket error.
+      /// @warning Internal use only
+      static std::string socket_error_to_string(int32_t socket_error);
       /// @brief Gets the amount of data that has been received from the network and is available to be read.
       /// @param handle The socket handle.
       /// @return The number of bytes of data received from the network and available to be read.
