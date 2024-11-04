@@ -1053,6 +1053,7 @@ add_sources(
   src/xtd/h_result.cpp
   src/xtd/h_result_category.cpp
   src/xtd/iformatable.cpp
+  src/xtd/invalid_operation_exception.cpp
   src/xtd/istringable.cpp
   src/xtd/literals.cpp
   src/xtd/make_error_code.cpp
@@ -1142,6 +1143,7 @@ add_sources(
   src/xtd/net/ip_end_point.cpp
   src/xtd/net/ip_host_entry.cpp
   src/xtd/net/network_credential.cpp
+  src/xtd/net/protocol_violation_exception.cpp
   src/xtd/net/socket_address.cpp
   src/xtd/net/sockets/ip_packet_information.cpp
   src/xtd/net/sockets/ip_v6_multicast_option.cpp
