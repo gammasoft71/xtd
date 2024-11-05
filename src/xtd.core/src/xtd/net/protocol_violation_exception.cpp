@@ -11,6 +11,8 @@ protocol_violation_exception::protocol_violation_exception(const stack_frame& st
 protocol_violation_exception::protocol_violation_exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 protocol_violation_exception::protocol_violation_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
   error_code(error);
 }
@@ -42,3 +44,4 @@ protocol_violation_exception::protocol_violation_exception(const xtd::string& me
   error_code(error);
   this->help_link(help_link);
 }
+/// @}

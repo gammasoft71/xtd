@@ -11,6 +11,8 @@ web_exception::web_exception(const stack_frame& stack_frame) : invalid_operation
 web_exception::web_exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 web_exception::web_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
   error_code(error);
 }
@@ -42,3 +44,4 @@ web_exception::web_exception(const xtd::string& message, const std::exception& i
   error_code(error);
   this->help_link(help_link);
 }
+/// @}

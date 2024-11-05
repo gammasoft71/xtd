@@ -12,6 +12,8 @@ end_of_stream_exception::end_of_stream_exception(const optional<string>& message
   error_code(h_result::make_error_code(h_result::COR_E_ENDOFSTREAM));
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 end_of_stream_exception::end_of_stream_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : io_exception(message, stack_frame) {
   error_code(error);
 }
@@ -47,3 +49,4 @@ end_of_stream_exception::end_of_stream_exception(const string& message, const st
   error_code(error);
   this->help_link(help_link);
 }
+/// @}

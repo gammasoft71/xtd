@@ -11,6 +11,8 @@ cookie_exception::cookie_exception(const stack_frame& stack_frame) : format_exce
 cookie_exception::cookie_exception(const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : format_exception(message, stack_frame) {
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 cookie_exception::cookie_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : format_exception(message, stack_frame) {
   error_code(error);
 }
@@ -42,3 +44,4 @@ cookie_exception::cookie_exception(const xtd::string& message, const std::except
   error_code(error);
   this->help_link(help_link);
 }
+/// @}
