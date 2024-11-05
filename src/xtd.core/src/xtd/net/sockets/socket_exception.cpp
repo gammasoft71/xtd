@@ -12,22 +12,26 @@ socket_exception::socket_exception(const stack_frame& stack_frame) : system_exce
   error_code(h_result::make_error_code(h_result::E_FAIL));
 }
 
-socket_exception::socket_exception(int32 error_code, const xtd::diagnostics::stack_frame& stack_frame) : socket_exception(static_cast<socket_error>(error_code), stack_frame) {
+socket_exception::socket_exception(int32 error_code, const xtd::diagnostics::stack_frame& stack_frame) : socket_exception(static_cast<xtd::net::sockets::socket_error>(error_code), stack_frame) {
 }
 
-socket_exception::socket_exception(int32 error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : socket_exception(static_cast<socket_error>(error_code), message, stack_frame) {
+socket_exception::socket_exception(int32 error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : socket_exception(static_cast<xtd::net::sockets::socket_error>(error_code), message, stack_frame) {
 }
 
-socket_exception::socket_exception(socket_error error_code, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(native::socket::socket_error_to_string(static_cast<int32>(error_code)), stack_frame), error_code_ {error_code} {
+socket_exception::socket_exception(xtd::net::sockets::socket_error socket_error, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(native::socket::socket_error_to_string(static_cast<int32>(socket_error)), stack_frame), socket_error_ {socket_error} {
   this->error_code(h_result::make_error_code(h_result::E_FAIL));
 }
 
-socket_exception::socket_exception(xtd::net::sockets::socket_error error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message.value_or(native::socket::socket_error_to_string(static_cast<int32>(error_code))), stack_frame), error_code_ {error_code} {
+socket_exception::socket_exception(xtd::net::sockets::socket_error socket_error, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message.value_or(native::socket::socket_error_to_string(static_cast<int32>(socket_error))), stack_frame), socket_error_ {socket_error} {
   this->error_code(h_result::make_error_code(h_result::E_FAIL));
 }
 
-xtd::net::sockets::socket_error socket_exception::socket_error_code() const noexcept {
-  return error_code_;
+int32 socket_exception::socket_error_code() const noexcept {
+  return enum_object {socket_error_}.to_int32();
+}
+
+xtd::net::sockets::socket_error socket_exception::socket_error() const noexcept {
+  return socket_error_;
 }
 
 /// @todo to remove deprecated in version 0.4.0
