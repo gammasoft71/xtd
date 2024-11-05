@@ -22,10 +22,16 @@ socket_exception::socket_exception(socket_error error_code, const xtd::diagnosti
   this->error_code(h_result::make_error_code(h_result::E_FAIL));
 }
 
-socket_exception::socket_exception(xtd::net::sockets::socket_error error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message, stack_frame), error_code_ {error_code} {
+socket_exception::socket_exception(xtd::net::sockets::socket_error error_code, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message.value_or(native::socket::socket_error_to_string(static_cast<int32>(error_code))), stack_frame), error_code_ {error_code} {
   this->error_code(h_result::make_error_code(h_result::E_FAIL));
 }
 
+xtd::net::sockets::socket_error socket_exception::socket_error_code() const noexcept {
+  return error_code_;
+}
+
+/// @todo to remove deprecated in version 0.4.0
+/// @{
 socket_exception::socket_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message, stack_frame) {
   error_code(error);
 }
@@ -61,7 +67,4 @@ socket_exception::socket_exception(const xtd::string& message, const std::except
   error_code(error);
   this->help_link(help_link);
 }
-
-xtd::net::sockets::socket_error socket_exception::socket_error_code() const noexcept {
-  return error_code_;
-}
+/// @}
