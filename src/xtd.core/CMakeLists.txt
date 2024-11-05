@@ -1175,6 +1175,7 @@ add_sources(
   src/xtd/reflection/assembly_trademark_attribute.cpp
   src/xtd/reflection/assembly_version_attribute.cpp
   src/xtd/security/secure_string.cpp
+  src/xtd/security/security_exception.cpp
   src/xtd/speech/synthesis/prompt.cpp
   src/xtd/speech/synthesis/speech_synthesizer.cpp
   src/xtd/threading/barrier.cpp
