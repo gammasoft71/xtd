@@ -12,6 +12,8 @@ drive_not_found_exception::drive_not_found_exception(const optional<string>& mes
   error_code(h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND));
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 drive_not_found_exception::drive_not_found_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : io_exception(message, stack_frame) {
   error_code(error);
 }
@@ -47,3 +49,4 @@ drive_not_found_exception::drive_not_found_exception(const string& message, cons
   error_code(error);
   this->help_link(help_link);
 }
+/// @}

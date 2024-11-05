@@ -16,6 +16,19 @@ file_not_found_exception::file_not_found_exception(const optional<string>& messa
   error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));
 }
 
+const optional<string>& file_not_found_exception::file_name() const noexcept {
+  return file_name_;
+}
+
+const xtd::string& file_not_found_exception::message() const noexcept {
+  if (defined_message_ || !file_name_.has_value()) return exception::message();
+  thread_local static string message;
+  message = string::format("Could not load file '{}'. The system cannot find the file specified.", file_name_.value());
+  return message;
+}
+
+/// @todo remove deprecated in version 0.4.0
+/// @{
 file_not_found_exception::file_not_found_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : io_exception(message, stack_frame), defined_message_ {true} {
   error_code(error);
 }
@@ -46,14 +59,4 @@ file_not_found_exception::file_not_found_exception(const string& message, const 
   error_code(error);
   this->help_link(help_link);
 }
-
-const optional<string>& file_not_found_exception::file_name() const noexcept {
-  return file_name_;
-}
-
-const xtd::string& file_not_found_exception::message() const noexcept {
-  if (defined_message_ || !file_name_.has_value()) return exception::message();
-  thread_local static string message;
-  message = string::format("Could not load file '{}'. The system cannot find the file specified.", file_name_.value());
-  return message;
-}
+/// @}

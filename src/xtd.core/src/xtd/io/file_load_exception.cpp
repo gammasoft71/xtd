@@ -12,6 +12,8 @@ file_load_exception::file_load_exception(const optional<string>& message, const 
   error_code(h_result::make_error_code(h_result::COR_E_FILELOAD));
 }
 
+/// @todo remove deprecated in version 0.4.0
+/// @{
 file_load_exception::file_load_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : io_exception(message, stack_frame) {
   error_code(error);
 }
@@ -47,3 +49,4 @@ file_load_exception::file_load_exception(const string& message, const std::excep
   error_code(error);
   this->help_link(help_link);
 }
+/// @}
