@@ -4318,6 +4318,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::address_not_available, e.socket_error());
+      assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4336,6 +4338,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::network_down, e.socket_error());
+      assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4354,6 +4358,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::network_unreachable, e.socket_error());
+      assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4372,6 +4378,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::network_reset, e.socket_error());
+      assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4390,6 +4398,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::connection_aborted, e.socket_error());
+      assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4408,6 +4418,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::connection_reset, e.socket_error());
+      assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4426,6 +4438,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
+      assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4444,6 +4458,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::is_connected, e.socket_error());
+      assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4462,6 +4478,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::not_connected, e.socket_error());
+      assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4480,6 +4498,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::shutdown, e.socket_error());
+      assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4498,6 +4518,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::timed_out, e.socket_error());
+      assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4516,6 +4538,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::connection_refused, e.socket_error());
+      assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4534,6 +4558,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::host_down, e.socket_error());
+      assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4552,6 +4578,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::host_unreachable, e.socket_error());
+      assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4570,6 +4598,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::process_limit, e.socket_error());
+      assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4588,6 +4618,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::system_not_ready, e.socket_error());
+      assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4606,6 +4638,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::version_not_supported, e.socket_error());
+      assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4624,6 +4658,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::not_initialized, e.socket_error());
+      assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4642,6 +4678,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::disconnecting, e.socket_error());
+      assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4660,6 +4698,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::type_not_found, e.socket_error());
+      assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4678,6 +4718,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::host_not_found, e.socket_error());
+      assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4696,6 +4738,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::try_again, e.socket_error());
+      assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4714,6 +4758,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::no_recovery, e.socket_error());
+      assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
@@ -4732,6 +4778,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
       assert::are_equal("", e.message());
+      assert::are_equal(socket_error::no_data, e.socket_error());
+      assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
