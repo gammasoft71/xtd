@@ -347,40 +347,6 @@ std::map<std::string, std::string>& environment::get_environment_variables(envir
   return native::environment::get_environment_variables(as<int32>(target));
 }
 
-xtd::string environment::get_folder_path(environment::special_folder folder) {
-  return get_folder_path(folder, environment::special_folder_option::none);
-}
-
-string environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
-  switch (folder) {
-    case environment::special_folder::application_resources: return path::get_full_path(native::environment::get_resources_path(is_gui_application()));
-    case environment::special_folder::xtd_install: return xtd_root_path();
-    case environment::special_folder::xtd_locale: return path::combine(xtd_root_path(), "share", "xtd", "locale");
-    case environment::special_folder::xtd_reference_guide: return path::combine(xtd_root_path(), "share", "xtd", "reference_guide");
-    case environment::special_folder::xtd_themes: return path::combine(xtd_root_path(), "share", "xtd", "themes");
-    case environment::special_folder::xtd_include: return path::combine(xtd_root_path(), "include");
-    case environment::special_folder::xtd_libraries: return path::combine(xtd_root_path(), "lib");
-    case environment::special_folder::xtd_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
-    case environment::special_folder::xtd_console_include: return path::combine(xtd_root_path(), "include");
-    case environment::special_folder::xtd_console_libraries: return path::combine(xtd_root_path(), "lib");
-    case environment::special_folder::xtd_drawing_include: return path::combine(xtd_root_path(), "include");
-    case environment::special_folder::xtd_drawing_libraries: return path::combine(xtd_root_path(), "lib");
-    case environment::special_folder::xtd_drawing_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
-    case environment::special_folder::xtd_forms_include: return path::combine(xtd_root_path(), "include");
-    case environment::special_folder::xtd_forms_libraries: return path::combine(xtd_root_path(), "lib");
-    case environment::special_folder::xtd_forms_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
-    case environment::special_folder::xtd_tunit_include: return path::combine(xtd_root_path(), "include");
-    case environment::special_folder::xtd_tunit_libraries: return path::combine(xtd_root_path(), "lib");
-    default: break;
-  }
-  
-  auto path = native::environment::get_know_folder_path(static_cast<int32>(folder));
-  if (path.empty()) return path;
-  if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
-  if (option == environment::special_folder_option::create && !xtd::io::directory::exists(path)) xtd::io::directory::create_directory(path);
-  return path;
-}
-
 xtd::collections::specialized::string_collection environment::get_logical_drives() {
   return io::directory::get_logical_drives();
 }
@@ -421,6 +387,10 @@ void environment::set_environment_variable(const string& variable, const string&
   }
 }
 
+void environment::__signal_catcher_check__() {
+  unused_(signal_catcher_);
+}
+
 void environment::on_cancel_signal(signal_cancel_event_args& e) {
   auto signal = cancel_signal;
   if (!signal.is_empty()) signal(e);
@@ -431,6 +401,32 @@ void environment::on_program_exit(const program_exit_event_args& e) {
   if (!event.is_empty()) event(e);
 }
 
-void environment::__signal_catcher_check__() {
-  unused_(signal_catcher_);
+string environment::get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application) {
+  switch (folder) {
+    case environment::special_folder::application_resources: return path::get_full_path(native::environment::get_resources_path(is_gui_application));
+    case environment::special_folder::xtd_install: return xtd_root_path();
+    case environment::special_folder::xtd_locale: return path::combine(xtd_root_path(), "share", "xtd", "locale");
+    case environment::special_folder::xtd_reference_guide: return path::combine(xtd_root_path(), "share", "xtd", "reference_guide");
+    case environment::special_folder::xtd_themes: return path::combine(xtd_root_path(), "share", "xtd", "themes");
+    case environment::special_folder::xtd_include: return path::combine(xtd_root_path(), "include");
+    case environment::special_folder::xtd_libraries: return path::combine(xtd_root_path(), "lib");
+    case environment::special_folder::xtd_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
+    case environment::special_folder::xtd_console_include: return path::combine(xtd_root_path(), "include");
+    case environment::special_folder::xtd_console_libraries: return path::combine(xtd_root_path(), "lib");
+    case environment::special_folder::xtd_drawing_include: return path::combine(xtd_root_path(), "include");
+    case environment::special_folder::xtd_drawing_libraries: return path::combine(xtd_root_path(), "lib");
+    case environment::special_folder::xtd_drawing_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
+    case environment::special_folder::xtd_forms_include: return path::combine(xtd_root_path(), "include");
+    case environment::special_folder::xtd_forms_libraries: return path::combine(xtd_root_path(), "lib");
+    case environment::special_folder::xtd_forms_resources: return path::combine(xtd_root_path(), "share", "xtd", "resources");
+    case environment::special_folder::xtd_tunit_include: return path::combine(xtd_root_path(), "include");
+    case environment::special_folder::xtd_tunit_libraries: return path::combine(xtd_root_path(), "lib");
+    default: break;
+  }
+  
+  auto path = native::environment::get_know_folder_path(static_cast<int32>(folder));
+  if (path.empty()) return path;
+  if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
+  if (option == environment::special_folder_option::create && !xtd::io::directory::exists(path)) xtd::io::directory::create_directory(path);
+  return path;
 }

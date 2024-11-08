@@ -604,14 +604,14 @@ namespace xtd {
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static xtd::string get_folder_path(environment::special_folder folder);
+    static xtd::string get_folder_path(environment::special_folder folder) {return get_folder_path_(folder, environment::special_folder_option::none);}
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
     /// @param folder One of the enumeration values that identifies a system special folder.
     /// @param option One of the enumeration values that specifies options to use for accessing a special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static xtd::string get_folder_path(environment::special_folder folder, environment::special_folder_option option);
+    static xtd::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {return get_folder_path_(folder, option);}
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
@@ -659,7 +659,7 @@ namespace xtd {
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);
 
-    inline static bool is_gui_application() noexcept {return target_type().is_guid_application();}
+    static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_guid_application());
     inline static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
   };
