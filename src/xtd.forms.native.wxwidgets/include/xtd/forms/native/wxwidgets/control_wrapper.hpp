@@ -348,7 +348,7 @@ namespace xtd::forms::native {
     int32 virtual_keys = get_virtual_keys(mouse_state);
     auto x = mouse_state.GetX();
     auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
+    if (event.GetEventObject()) reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), msg, virtual_key | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr>(&event));
   }
   
@@ -671,7 +671,7 @@ namespace xtd::forms::native {
     int32 virtual_keys = get_virtual_keys(mouse_state);
     auto x = mouse_state.GetX();
     auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
+    if (event.GetEventObject()) reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), mouse_event.GetWheelAxis() == wxMouseWheelAxis::wxMOUSE_WHEEL_VERTICAL ? WM_MOUSEWHEEL : WM_MOUSEHWHEEL, virtual_keys + ((mouse_event.GetWheelRotation() < 0 ? -mouse_event.GetWheelDelta() : mouse_event.GetWheelDelta()) << 16), mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr>(&event));
   }
   
