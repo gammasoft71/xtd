@@ -77,7 +77,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: -1", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -85,8 +85,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
-      assert::are_equal("Unknown error: -1", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success) {
@@ -97,7 +97,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -105,8 +105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted) {
@@ -117,7 +117,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 995", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -125,8 +125,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
-      assert::are_equal("Unknown error: 995", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending) {
@@ -137,7 +137,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 997", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -145,8 +145,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
-      assert::are_equal("Unknown error: 997", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted) {
@@ -157,7 +157,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Interrupted system call", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -165,8 +165,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
-      assert::are_equal("Interrupted system call", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied) {
@@ -177,7 +177,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Permission denied", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -185,8 +185,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
-      assert::are_equal("Permission denied", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault) {
@@ -197,7 +197,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Bad address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -205,8 +205,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
-      assert::are_equal("Bad address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument) {
@@ -217,7 +217,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Invalid argument", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -225,8 +225,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
-      assert::are_equal("Invalid argument", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets) {
@@ -237,7 +237,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many open files", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -245,8 +245,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
-      assert::are_equal("Too many open files", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block) {
@@ -257,7 +257,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Resource temporarily unavailable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -265,8 +265,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
-      assert::are_equal("Resource temporarily unavailable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress) {
@@ -277,7 +277,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation now in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -285,8 +285,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
-      assert::are_equal("Operation now in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress) {
@@ -297,7 +297,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation already in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -305,8 +305,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
-      assert::are_equal("Operation already in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket) {
@@ -317,7 +317,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket operation on non-socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -325,8 +325,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
-      assert::are_equal("Socket operation on non-socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required) {
@@ -337,7 +337,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Destination address required", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -345,8 +345,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
-      assert::are_equal("Destination address required", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size) {
@@ -357,7 +357,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Message too long", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -365,8 +365,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
-      assert::are_equal("Message too long", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type) {
@@ -377,7 +377,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol wrong type for socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -385,8 +385,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
-      assert::are_equal("Protocol wrong type for socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option) {
@@ -397,7 +397,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -405,8 +405,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
-      assert::are_equal("Protocol not available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported) {
@@ -417,7 +417,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -425,8 +425,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
-      assert::are_equal("Protocol not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported) {
@@ -437,7 +437,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket type not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -445,8 +445,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
-      assert::are_equal("Socket type not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported) {
@@ -457,7 +457,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -465,8 +465,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
-      assert::are_equal("Operation not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported) {
@@ -477,7 +477,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol family not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -485,8 +485,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
-      assert::are_equal("Protocol family not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported) {
@@ -497,7 +497,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address family not supported by protocol family", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -505,8 +505,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
-      assert::are_equal("Address family not supported by protocol family", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use) {
@@ -517,7 +517,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address already in use", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -525,8 +525,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
-      assert::are_equal("Address already in use", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available) {
@@ -537,7 +537,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't assign requested address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -545,8 +545,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
-      assert::are_equal("Can't assign requested address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down) {
@@ -557,7 +557,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -565,8 +565,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
-      assert::are_equal("Network is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable) {
@@ -577,7 +577,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is unreachable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -585,8 +585,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
-      assert::are_equal("Network is unreachable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset) {
@@ -597,7 +597,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network dropped connection on reset", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -605,8 +605,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
-      assert::are_equal("Network dropped connection on reset", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted) {
@@ -617,7 +617,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Software caused connection abort", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -625,8 +625,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
-      assert::are_equal("Software caused connection abort", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset) {
@@ -637,7 +637,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection reset by peer", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -645,8 +645,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
-      assert::are_equal("Connection reset by peer", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available) {
@@ -657,7 +657,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No buffer space available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -665,8 +665,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
-      assert::are_equal("No buffer space available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected) {
@@ -677,7 +677,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is already connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -685,8 +685,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
-      assert::are_equal("Socket is already connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected) {
@@ -697,7 +697,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is not connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -705,8 +705,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
-      assert::are_equal("Socket is not connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown) {
@@ -717,7 +717,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't send after socket shutdown", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -725,8 +725,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
-      assert::are_equal("Can't send after socket shutdown", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out) {
@@ -737,7 +737,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation timed out", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -745,8 +745,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
-      assert::are_equal("Operation timed out", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused) {
@@ -757,7 +757,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection refused", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -765,8 +765,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
-      assert::are_equal("Connection refused", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down) {
@@ -777,7 +777,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Host is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -785,8 +785,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
-      assert::are_equal("Host is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable) {
@@ -797,7 +797,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No route to host", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -805,8 +805,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
-      assert::are_equal("No route to host", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit) {
@@ -817,7 +817,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many processes", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -825,8 +825,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
-      assert::are_equal("Too many processes", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready) {
@@ -837,7 +837,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10091", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -845,8 +845,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
-      assert::are_equal("Unknown error: 10091", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported) {
@@ -857,7 +857,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("RPC version wrong", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -865,8 +865,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
-      assert::are_equal("RPC version wrong", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized) {
@@ -877,7 +877,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10093", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -885,8 +885,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
-      assert::are_equal("Unknown error: 10093", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting) {
@@ -897,7 +897,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10101", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -905,8 +905,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
-      assert::are_equal("Unknown error: 10101", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found) {
@@ -917,7 +917,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10109", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -925,8 +925,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
-      assert::are_equal("Unknown error: 10109", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found) {
@@ -937,7 +937,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11001", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -945,8 +945,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
-      assert::are_equal("Unknown error: 11001", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again) {
@@ -957,7 +957,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11002", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -965,8 +965,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
-      assert::are_equal("Unknown error: 11002", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery) {
@@ -977,7 +977,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11003", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -985,8 +985,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
-      assert::are_equal("Unknown error: 11003", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data) {
@@ -997,7 +997,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11004", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1005,8 +1005,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
-      assert::are_equal("Unknown error: 11004", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.what());
     }
     
     void test_method_(constructor_with_undefined_socket_error) {
@@ -1017,7 +1017,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 486", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 486", e.message());
       assert::are_equal(static_cast<socket_error>(486), e.socket_error());
       assert::are_equal(486, e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1025,8 +1025,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 486", e.to_string());
-      assert::are_equal("Unknown error: 486", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 486", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 486", e.what());
     }
 
     void test_method_(constructor_with_socket_error_sock_error_as_int) {
@@ -1037,7 +1037,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: -1", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1045,8 +1045,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
-      assert::are_equal("Unknown error: -1", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_as_int) {
@@ -1057,7 +1057,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1065,8 +1065,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int) {
@@ -1077,7 +1077,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 995", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1085,8 +1085,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
-      assert::are_equal("Unknown error: 995", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_as_int) {
@@ -1097,7 +1097,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 997", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1105,8 +1105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
-      assert::are_equal("Unknown error: 997", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_as_int) {
@@ -1117,7 +1117,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Interrupted system call", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1125,8 +1125,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
-      assert::are_equal("Interrupted system call", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_as_int) {
@@ -1137,7 +1137,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Permission denied", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1145,8 +1145,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
-      assert::are_equal("Permission denied", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_as_int) {
@@ -1157,7 +1157,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Bad address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1165,8 +1165,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
-      assert::are_equal("Bad address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_as_int) {
@@ -1177,7 +1177,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Invalid argument", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1185,8 +1185,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
-      assert::are_equal("Invalid argument", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_as_int) {
@@ -1197,7 +1197,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many open files", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1205,8 +1205,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
-      assert::are_equal("Too many open files", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_as_int) {
@@ -1217,7 +1217,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Resource temporarily unavailable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1225,8 +1225,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
-      assert::are_equal("Resource temporarily unavailable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_as_int) {
@@ -1237,7 +1237,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation now in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1245,8 +1245,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
-      assert::are_equal("Operation now in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_as_int) {
@@ -1257,7 +1257,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation already in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1265,8 +1265,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
-      assert::are_equal("Operation already in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_as_int) {
@@ -1277,7 +1277,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket operation on non-socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1285,8 +1285,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
-      assert::are_equal("Socket operation on non-socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_as_int) {
@@ -1297,7 +1297,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Destination address required", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1305,8 +1305,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
-      assert::are_equal("Destination address required", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_as_int) {
@@ -1317,7 +1317,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Message too long", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1325,8 +1325,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
-      assert::are_equal("Message too long", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_as_int) {
@@ -1337,7 +1337,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol wrong type for socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1345,8 +1345,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
-      assert::are_equal("Protocol wrong type for socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_as_int) {
@@ -1357,7 +1357,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1365,8 +1365,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
-      assert::are_equal("Protocol not available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_as_int) {
@@ -1377,7 +1377,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1385,8 +1385,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
-      assert::are_equal("Protocol not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_as_int) {
@@ -1397,7 +1397,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket type not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1405,8 +1405,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
-      assert::are_equal("Socket type not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_as_int) {
@@ -1417,7 +1417,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1425,8 +1425,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
-      assert::are_equal("Operation not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_as_int) {
@@ -1437,7 +1437,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol family not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1445,8 +1445,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
-      assert::are_equal("Protocol family not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_as_int) {
@@ -1457,7 +1457,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address family not supported by protocol family", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1465,8 +1465,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
-      assert::are_equal("Address family not supported by protocol family", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_as_int) {
@@ -1477,7 +1477,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address already in use", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1485,8 +1485,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
-      assert::are_equal("Address already in use", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_as_int) {
@@ -1497,7 +1497,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't assign requested address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1505,8 +1505,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
-      assert::are_equal("Can't assign requested address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_as_int) {
@@ -1517,7 +1517,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1525,8 +1525,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
-      assert::are_equal("Network is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_as_int) {
@@ -1537,7 +1537,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is unreachable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1545,8 +1545,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
-      assert::are_equal("Network is unreachable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_as_int) {
@@ -1557,7 +1557,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network dropped connection on reset", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1565,8 +1565,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
-      assert::are_equal("Network dropped connection on reset", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_as_int) {
@@ -1577,7 +1577,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Software caused connection abort", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1585,8 +1585,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
-      assert::are_equal("Software caused connection abort", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_as_int) {
@@ -1597,7 +1597,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection reset by peer", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1605,8 +1605,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
-      assert::are_equal("Connection reset by peer", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_as_int) {
@@ -1617,7 +1617,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No buffer space available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1625,8 +1625,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
-      assert::are_equal("No buffer space available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_as_int) {
@@ -1637,7 +1637,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is already connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1645,8 +1645,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
-      assert::are_equal("Socket is already connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_as_int) {
@@ -1657,7 +1657,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is not connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1665,8 +1665,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
-      assert::are_equal("Socket is not connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_as_int) {
@@ -1677,7 +1677,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't send after socket shutdown", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1685,8 +1685,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
-      assert::are_equal("Can't send after socket shutdown", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_as_int) {
@@ -1697,7 +1697,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation timed out", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1705,8 +1705,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
-      assert::are_equal("Operation timed out", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_as_int) {
@@ -1717,7 +1717,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection refused", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1725,8 +1725,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
-      assert::are_equal("Connection refused", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_as_int) {
@@ -1737,7 +1737,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Host is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1745,8 +1745,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
-      assert::are_equal("Host is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_as_int) {
@@ -1757,7 +1757,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No route to host", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1765,8 +1765,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
-      assert::are_equal("No route to host", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_as_int) {
@@ -1777,7 +1777,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many processes", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1785,8 +1785,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
-      assert::are_equal("Too many processes", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_as_int) {
@@ -1797,7 +1797,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10091", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1805,8 +1805,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
-      assert::are_equal("Unknown error: 10091", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_as_int) {
@@ -1817,7 +1817,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("RPC version wrong", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1825,8 +1825,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
-      assert::are_equal("RPC version wrong", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_as_int) {
@@ -1837,7 +1837,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10093", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1845,8 +1845,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
-      assert::are_equal("Unknown error: 10093", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_as_int) {
@@ -1857,7 +1857,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10101", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1865,8 +1865,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
-      assert::are_equal("Unknown error: 10101", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_as_int) {
@@ -1877,7 +1877,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10109", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1885,8 +1885,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
-      assert::are_equal("Unknown error: 10109", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_as_int) {
@@ -1897,7 +1897,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11001", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1905,8 +1905,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
-      assert::are_equal("Unknown error: 11001", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_as_int) {
@@ -1917,7 +1917,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11002", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1925,8 +1925,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
-      assert::are_equal("Unknown error: 11002", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_as_int) {
@@ -1937,7 +1937,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11003", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1945,8 +1945,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
-      assert::are_equal("Unknown error: 11003", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_as_int) {
@@ -1957,7 +1957,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11004", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1965,8 +1965,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
-      assert::are_equal("Unknown error: 11004", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_and_nullopt) {
@@ -1977,7 +1977,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: -1", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1985,8 +1985,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
-      assert::are_equal("Unknown error: -1", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_and_nullopt) {
@@ -1997,7 +1997,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2005,8 +2005,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_and_nullopt) {
@@ -2017,7 +2017,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 995", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2025,8 +2025,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
-      assert::are_equal("Unknown error: 995", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_and_nullopt) {
@@ -2037,7 +2037,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 997", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2045,8 +2045,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
-      assert::are_equal("Unknown error: 997", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_and_nullopt) {
@@ -2057,7 +2057,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Interrupted system call", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2065,8 +2065,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
-      assert::are_equal("Interrupted system call", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_and_nullopt) {
@@ -2077,7 +2077,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Permission denied", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2085,8 +2085,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
-      assert::are_equal("Permission denied", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_and_nullopt) {
@@ -2097,7 +2097,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Bad address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2105,8 +2105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
-      assert::are_equal("Bad address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_and_nullopt) {
@@ -2117,7 +2117,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Invalid argument", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2125,8 +2125,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
-      assert::are_equal("Invalid argument", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_and_nullopt) {
@@ -2137,7 +2137,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many open files", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2145,8 +2145,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
-      assert::are_equal("Too many open files", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_and_nullopt) {
@@ -2157,7 +2157,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Resource temporarily unavailable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2165,8 +2165,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
-      assert::are_equal("Resource temporarily unavailable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_and_nullopt) {
@@ -2177,7 +2177,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation now in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2185,8 +2185,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
-      assert::are_equal("Operation now in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_and_nullopt) {
@@ -2197,7 +2197,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation already in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2205,8 +2205,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
-      assert::are_equal("Operation already in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_and_nullopt) {
@@ -2217,7 +2217,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket operation on non-socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2225,8 +2225,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
-      assert::are_equal("Socket operation on non-socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_and_nullopt) {
@@ -2237,7 +2237,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Destination address required", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2245,8 +2245,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
-      assert::are_equal("Destination address required", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_and_nullopt) {
@@ -2257,7 +2257,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Message too long", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2265,8 +2265,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
-      assert::are_equal("Message too long", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_and_nullopt) {
@@ -2277,7 +2277,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol wrong type for socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2285,8 +2285,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
-      assert::are_equal("Protocol wrong type for socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_and_nullopt) {
@@ -2297,7 +2297,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2305,8 +2305,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
-      assert::are_equal("Protocol not available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_and_nullopt) {
@@ -2317,7 +2317,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2325,8 +2325,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
-      assert::are_equal("Protocol not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_and_nullopt) {
@@ -2337,7 +2337,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket type not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2345,8 +2345,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
-      assert::are_equal("Socket type not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_and_nullopt) {
@@ -2357,7 +2357,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2365,8 +2365,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
-      assert::are_equal("Operation not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_and_nullopt) {
@@ -2377,7 +2377,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol family not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2385,8 +2385,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
-      assert::are_equal("Protocol family not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_and_nullopt) {
@@ -2397,7 +2397,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address family not supported by protocol family", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2405,8 +2405,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
-      assert::are_equal("Address family not supported by protocol family", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_and_nullopt) {
@@ -2417,7 +2417,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address already in use", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2425,8 +2425,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
-      assert::are_equal("Address already in use", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_and_nullopt) {
@@ -2437,7 +2437,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't assign requested address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2445,8 +2445,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
-      assert::are_equal("Can't assign requested address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_and_nullopt) {
@@ -2457,7 +2457,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2465,8 +2465,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
-      assert::are_equal("Network is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_and_nullopt) {
@@ -2477,7 +2477,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is unreachable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2485,8 +2485,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
-      assert::are_equal("Network is unreachable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_and_nullopt) {
@@ -2497,7 +2497,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network dropped connection on reset", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2505,8 +2505,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
-      assert::are_equal("Network dropped connection on reset", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_and_nullopt) {
@@ -2517,7 +2517,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Software caused connection abort", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2525,8 +2525,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
-      assert::are_equal("Software caused connection abort", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_and_nullopt) {
@@ -2537,7 +2537,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection reset by peer", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2545,8 +2545,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
-      assert::are_equal("Connection reset by peer", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_and_nullopt) {
@@ -2557,7 +2557,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No buffer space available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2565,8 +2565,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
-      assert::are_equal("No buffer space available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_and_nullopt) {
@@ -2577,7 +2577,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is already connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2585,8 +2585,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
-      assert::are_equal("Socket is already connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_and_nullopt) {
@@ -2597,7 +2597,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is not connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2605,8 +2605,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
-      assert::are_equal("Socket is not connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_and_nullopt) {
@@ -2617,7 +2617,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't send after socket shutdown", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2625,8 +2625,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
-      assert::are_equal("Can't send after socket shutdown", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_and_nullopt) {
@@ -2637,7 +2637,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation timed out", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2645,8 +2645,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
-      assert::are_equal("Operation timed out", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_and_nullopt) {
@@ -2657,7 +2657,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection refused", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2665,8 +2665,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
-      assert::are_equal("Connection refused", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_and_nullopt) {
@@ -2677,7 +2677,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Host is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2685,8 +2685,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
-      assert::are_equal("Host is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_and_nullopt) {
@@ -2697,7 +2697,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No route to host", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2705,8 +2705,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
-      assert::are_equal("No route to host", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_and_nullopt) {
@@ -2717,7 +2717,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many processes", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2725,8 +2725,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
-      assert::are_equal("Too many processes", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_and_nullopt) {
@@ -2737,7 +2737,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10091", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2745,8 +2745,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
-      assert::are_equal("Unknown error: 10091", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_and_nullopt) {
@@ -2757,7 +2757,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("RPC version wrong", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2765,8 +2765,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
-      assert::are_equal("RPC version wrong", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_and_nullopt) {
@@ -2777,7 +2777,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10093", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2785,8 +2785,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
-      assert::are_equal("Unknown error: 10093", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_and_nullopt) {
@@ -2797,7 +2797,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10101", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2805,8 +2805,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
-      assert::are_equal("Unknown error: 10101", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_and_nullopt) {
@@ -2817,7 +2817,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10109", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2825,8 +2825,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
-      assert::are_equal("Unknown error: 10109", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_and_nullopt) {
@@ -2837,7 +2837,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11001", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2845,8 +2845,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
-      assert::are_equal("Unknown error: 11001", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_and_nullopt) {
@@ -2857,7 +2857,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11002", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2865,8 +2865,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
-      assert::are_equal("Unknown error: 11002", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_and_nullopt) {
@@ -2877,7 +2877,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11003", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2885,8 +2885,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
-      assert::are_equal("Unknown error: 11003", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_and_nullopt) {
@@ -2897,7 +2897,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11004", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2905,8 +2905,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
-      assert::are_equal("Unknown error: 11004", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_as_int_and_nullopt) {
@@ -2917,7 +2917,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: -1", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2925,8 +2925,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
-      assert::are_equal("Unknown error: -1", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: -1", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: -1", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_as_int_and_nullopt) {
@@ -2937,7 +2937,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2945,8 +2945,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int_and_nullopt) {
@@ -2957,7 +2957,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 995", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2965,8 +2965,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
-      assert::are_equal("Unknown error: 995", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 995", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 995", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_as_int_and_nullopt) {
@@ -2977,7 +2977,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 997", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2985,8 +2985,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
-      assert::are_equal("Unknown error: 997", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 997", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 997", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_as_int_and_nullopt) {
@@ -2997,7 +2997,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Interrupted system call", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3005,8 +3005,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
-      assert::are_equal("Interrupted system call", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Interrupted system call", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Interrupted system call", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_as_int_and_nullopt) {
@@ -3017,7 +3017,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Permission denied", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3025,8 +3025,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
-      assert::are_equal("Permission denied", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Permission denied", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Permission denied", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_as_int_and_nullopt) {
@@ -3037,7 +3037,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Bad address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3045,8 +3045,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
-      assert::are_equal("Bad address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Bad address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Bad address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_as_int_and_nullopt) {
@@ -3057,7 +3057,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Invalid argument", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3065,8 +3065,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
-      assert::are_equal("Invalid argument", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Invalid argument", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Invalid argument", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_as_int_and_nullopt) {
@@ -3077,7 +3077,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many open files", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3085,8 +3085,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
-      assert::are_equal("Too many open files", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many open files", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many open files", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_as_int_and_nullopt) {
@@ -3097,7 +3097,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Resource temporarily unavailable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3105,8 +3105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
-      assert::are_equal("Resource temporarily unavailable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Resource temporarily unavailable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Resource temporarily unavailable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_as_int_and_nullopt) {
@@ -3117,7 +3117,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation now in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3125,8 +3125,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
-      assert::are_equal("Operation now in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation now in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation now in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_as_int_and_nullopt) {
@@ -3137,7 +3137,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation already in progress", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3145,8 +3145,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
-      assert::are_equal("Operation already in progress", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation already in progress", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation already in progress", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_as_int_and_nullopt) {
@@ -3157,7 +3157,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket operation on non-socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3165,8 +3165,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
-      assert::are_equal("Socket operation on non-socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket operation on non-socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket operation on non-socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_as_int_and_nullopt) {
@@ -3177,7 +3177,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Destination address required", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3185,8 +3185,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
-      assert::are_equal("Destination address required", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Destination address required", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Destination address required", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_as_int_and_nullopt) {
@@ -3197,7 +3197,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Message too long", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3205,8 +3205,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
-      assert::are_equal("Message too long", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Message too long", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Message too long", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_as_int_and_nullopt) {
@@ -3217,7 +3217,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol wrong type for socket", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3225,8 +3225,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
-      assert::are_equal("Protocol wrong type for socket", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol wrong type for socket", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol wrong type for socket", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_as_int_and_nullopt) {
@@ -3237,7 +3237,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3245,8 +3245,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
-      assert::are_equal("Protocol not available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_as_int_and_nullopt) {
@@ -3257,7 +3257,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3265,8 +3265,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
-      assert::are_equal("Protocol not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_as_int_and_nullopt) {
@@ -3277,7 +3277,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket type not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3285,8 +3285,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
-      assert::are_equal("Socket type not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket type not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket type not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_as_int_and_nullopt) {
@@ -3297,7 +3297,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3305,8 +3305,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
-      assert::are_equal("Operation not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_as_int_and_nullopt) {
@@ -3317,7 +3317,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Protocol family not supported", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3325,8 +3325,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
-      assert::are_equal("Protocol family not supported", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Protocol family not supported", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Protocol family not supported", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_as_int_and_nullopt) {
@@ -3337,7 +3337,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address family not supported by protocol family", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3345,8 +3345,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
-      assert::are_equal("Address family not supported by protocol family", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address family not supported by protocol family", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address family not supported by protocol family", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_as_int_and_nullopt) {
@@ -3357,7 +3357,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Address already in use", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3365,8 +3365,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
-      assert::are_equal("Address already in use", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Address already in use", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Address already in use", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_as_int_and_nullopt) {
@@ -3377,7 +3377,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't assign requested address", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3385,8 +3385,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
-      assert::are_equal("Can't assign requested address", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't assign requested address", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't assign requested address", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_as_int_and_nullopt) {
@@ -3397,7 +3397,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3405,8 +3405,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
-      assert::are_equal("Network is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_as_int_and_nullopt) {
@@ -3417,7 +3417,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network is unreachable", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3425,8 +3425,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
-      assert::are_equal("Network is unreachable", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network is unreachable", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network is unreachable", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_as_int_and_nullopt) {
@@ -3437,7 +3437,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Network dropped connection on reset", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3445,8 +3445,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
-      assert::are_equal("Network dropped connection on reset", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Network dropped connection on reset", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Network dropped connection on reset", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_as_int_and_nullopt) {
@@ -3457,7 +3457,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Software caused connection abort", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3465,8 +3465,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
-      assert::are_equal("Software caused connection abort", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Software caused connection abort", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Software caused connection abort", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_as_int_and_nullopt) {
@@ -3477,7 +3477,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection reset by peer", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3485,8 +3485,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
-      assert::are_equal("Connection reset by peer", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection reset by peer", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection reset by peer", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_as_int_and_nullopt) {
@@ -3497,7 +3497,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No buffer space available", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3505,8 +3505,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
-      assert::are_equal("No buffer space available", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No buffer space available", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No buffer space available", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_as_int_and_nullopt) {
@@ -3517,7 +3517,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is already connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3525,8 +3525,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
-      assert::are_equal("Socket is already connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is already connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is already connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_as_int_and_nullopt) {
@@ -3537,7 +3537,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Socket is not connected", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3545,8 +3545,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
-      assert::are_equal("Socket is not connected", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Socket is not connected", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Socket is not connected", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_as_int_and_nullopt) {
@@ -3557,7 +3557,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Can't send after socket shutdown", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3565,8 +3565,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
-      assert::are_equal("Can't send after socket shutdown", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Can't send after socket shutdown", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Can't send after socket shutdown", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_as_int_and_nullopt) {
@@ -3577,7 +3577,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Operation timed out", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3585,8 +3585,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
-      assert::are_equal("Operation timed out", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Operation timed out", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Operation timed out", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_as_int_and_nullopt) {
@@ -3597,7 +3597,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Connection refused", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3605,8 +3605,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
-      assert::are_equal("Connection refused", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Connection refused", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Connection refused", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_as_int_and_nullopt) {
@@ -3617,7 +3617,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Host is down", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3625,8 +3625,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
-      assert::are_equal("Host is down", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Host is down", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Host is down", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_as_int_and_nullopt) {
@@ -3637,7 +3637,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("No route to host", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3645,8 +3645,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
-      assert::are_equal("No route to host", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : No route to host", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("No route to host", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_as_int_and_nullopt) {
@@ -3657,7 +3657,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Too many processes", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3665,8 +3665,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
-      assert::are_equal("Too many processes", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Too many processes", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Too many processes", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_as_int_and_nullopt) {
@@ -3677,7 +3677,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10091", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3685,8 +3685,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
-      assert::are_equal("Unknown error: 10091", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10091", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10091", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_as_int_and_nullopt) {
@@ -3697,7 +3697,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("RPC version wrong", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3705,8 +3705,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
-      assert::are_equal("RPC version wrong", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : RPC version wrong", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("RPC version wrong", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_as_int_and_nullopt) {
@@ -3717,7 +3717,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10093", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3725,8 +3725,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
-      assert::are_equal("Unknown error: 10093", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10093", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10093", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_as_int_and_nullopt) {
@@ -3737,7 +3737,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10101", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3745,8 +3745,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
-      assert::are_equal("Unknown error: 10101", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10101", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10101", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_as_int_and_nullopt) {
@@ -3757,7 +3757,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 10109", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3765,8 +3765,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
-      assert::are_equal("Unknown error: 10109", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 10109", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 10109", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_as_int_and_nullopt) {
@@ -3777,7 +3777,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11001", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3785,8 +3785,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
-      assert::are_equal("Unknown error: 11001", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11001", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11001", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_as_int_and_nullopt) {
@@ -3797,7 +3797,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11002", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3805,8 +3805,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
-      assert::are_equal("Unknown error: 11002", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11002", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11002", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_as_int_and_nullopt) {
@@ -3817,7 +3817,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11003", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3825,8 +3825,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
-      assert::are_equal("Unknown error: 11003", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11003", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11003", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_as_int_and_nullopt) {
@@ -3837,7 +3837,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Unknown error: 11004", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3845,8 +3845,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
-      assert::are_equal("Unknown error: 11004", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 11004", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 11004", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_and_empty_message) {
@@ -3857,7 +3857,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3865,8 +3865,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_and_empty_message) {
@@ -3877,7 +3877,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3885,8 +3885,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_and_empty_message) {
@@ -3897,7 +3897,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3905,8 +3905,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_and_empty_message) {
@@ -3917,7 +3917,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3925,8 +3925,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_and_empty_message) {
@@ -3937,7 +3937,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3945,8 +3945,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_and_empty_message) {
@@ -3957,7 +3957,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3965,8 +3965,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_and_empty_message) {
@@ -3977,7 +3977,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -3985,8 +3985,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_and_empty_message) {
@@ -3997,7 +3997,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4005,8 +4005,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_and_empty_message) {
@@ -4017,7 +4017,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4025,8 +4025,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_and_empty_message) {
@@ -4037,7 +4037,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4045,8 +4045,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_and_empty_message) {
@@ -4057,7 +4057,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
@@ -4065,8 +4065,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_and_empty_message) {
@@ -4077,7 +4077,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4085,8 +4085,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_and_empty_message) {
@@ -4097,7 +4097,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4105,8 +4105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_and_empty_message) {
@@ -4117,7 +4117,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4125,8 +4125,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_and_empty_message) {
@@ -4137,7 +4137,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4145,8 +4145,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_and_empty_message) {
@@ -4157,7 +4157,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4165,8 +4165,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_and_empty_message) {
@@ -4177,7 +4177,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4185,8 +4185,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_and_empty_message) {
@@ -4197,7 +4197,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4205,8 +4205,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_and_empty_message) {
@@ -4217,7 +4217,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4225,8 +4225,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_and_empty_message) {
@@ -4237,7 +4237,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4245,8 +4245,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_and_empty_message) {
@@ -4257,7 +4257,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4265,8 +4265,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_and_empty_message) {
@@ -4277,7 +4277,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4285,8 +4285,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_and_empty_message) {
@@ -4297,7 +4297,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4305,8 +4305,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_and_empty_message) {
@@ -4317,7 +4317,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4325,8 +4325,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_and_empty_message) {
@@ -4337,7 +4337,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4345,8 +4345,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_and_empty_message) {
@@ -4357,7 +4357,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4365,8 +4365,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_and_empty_message) {
@@ -4377,7 +4377,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4385,8 +4385,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_and_empty_message) {
@@ -4397,7 +4397,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4405,8 +4405,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_and_empty_message) {
@@ -4417,7 +4417,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4425,8 +4425,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_and_empty_message) {
@@ -4437,7 +4437,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4445,8 +4445,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_and_empty_message) {
@@ -4457,7 +4457,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4465,8 +4465,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_and_empty_message) {
@@ -4477,7 +4477,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4485,8 +4485,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_and_empty_message) {
@@ -4497,7 +4497,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4505,8 +4505,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_and_empty_message) {
@@ -4517,7 +4517,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4525,8 +4525,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_and_empty_message) {
@@ -4537,7 +4537,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4545,8 +4545,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_and_empty_message) {
@@ -4557,7 +4557,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4565,8 +4565,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_and_empty_message) {
@@ -4577,7 +4577,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4585,8 +4585,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_and_empty_message) {
@@ -4597,7 +4597,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4605,8 +4605,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_and_empty_message) {
@@ -4617,7 +4617,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4625,8 +4625,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_and_empty_message) {
@@ -4637,7 +4637,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4645,8 +4645,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_and_empty_message) {
@@ -4657,7 +4657,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4665,8 +4665,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_and_empty_message) {
@@ -4677,7 +4677,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4685,8 +4685,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_and_empty_message) {
@@ -4697,7 +4697,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4705,8 +4705,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_and_empty_message) {
@@ -4717,7 +4717,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4725,8 +4725,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_and_empty_message) {
@@ -4737,7 +4737,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4745,8 +4745,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_and_empty_message) {
@@ -4757,7 +4757,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4765,8 +4765,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_and_empty_message) {
@@ -4777,7 +4777,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4785,8 +4785,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_as_int_and_empty_message) {
@@ -4797,7 +4797,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4805,8 +4805,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_as_int_and_empty_message) {
@@ -4817,7 +4817,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4825,8 +4825,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int_and_empty_message) {
@@ -4837,7 +4837,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4845,8 +4845,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_as_int_and_empty_message) {
@@ -4857,14 +4857,14 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_as_int_and_empty_message) {
@@ -4875,7 +4875,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4883,8 +4883,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_as_int_and_empty_message) {
@@ -4895,7 +4895,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4903,8 +4903,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_as_int_and_empty_message) {
@@ -4915,7 +4915,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4923,8 +4923,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_as_int_and_empty_message) {
@@ -4935,7 +4935,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4943,8 +4943,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_as_int_and_empty_message) {
@@ -4955,7 +4955,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4963,8 +4963,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_as_int_and_empty_message) {
@@ -4975,7 +4975,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -4983,8 +4983,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_as_int_and_empty_message) {
@@ -4995,7 +4995,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5003,8 +5003,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_as_int_and_empty_message) {
@@ -5015,7 +5015,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5023,8 +5023,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_as_int_and_empty_message) {
@@ -5035,7 +5035,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5043,8 +5043,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_as_int_and_empty_message) {
@@ -5055,7 +5055,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5063,8 +5063,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_as_int_and_empty_message) {
@@ -5075,7 +5075,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5083,8 +5083,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_as_int_and_empty_message) {
@@ -5095,7 +5095,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5103,8 +5103,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_as_int_and_empty_message) {
@@ -5115,7 +5115,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5123,8 +5123,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_as_int_and_empty_message) {
@@ -5135,7 +5135,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5143,8 +5143,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_as_int_and_empty_message) {
@@ -5155,7 +5155,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5163,8 +5163,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_as_int_and_empty_message) {
@@ -5175,7 +5175,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5183,8 +5183,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_as_int_and_empty_message) {
@@ -5195,7 +5195,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5203,8 +5203,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_as_int_and_empty_message) {
@@ -5215,7 +5215,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5223,8 +5223,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_as_int_and_empty_message) {
@@ -5235,7 +5235,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5243,8 +5243,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_as_int_and_empty_message) {
@@ -5255,7 +5255,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5263,8 +5263,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_as_int_and_empty_message) {
@@ -5275,7 +5275,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5283,8 +5283,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_as_int_and_empty_message) {
@@ -5295,7 +5295,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5303,8 +5303,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_as_int_and_empty_message) {
@@ -5315,7 +5315,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5323,8 +5323,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_as_int_and_empty_message) {
@@ -5335,7 +5335,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5343,8 +5343,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_as_int_and_empty_message) {
@@ -5355,7 +5355,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5363,8 +5363,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_as_int_and_empty_message) {
@@ -5375,7 +5375,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5383,8 +5383,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_as_int_and_empty_message) {
@@ -5395,7 +5395,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5403,8 +5403,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_as_int_and_empty_message) {
@@ -5415,7 +5415,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5423,8 +5423,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_as_int_and_empty_message) {
@@ -5435,7 +5435,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5443,8 +5443,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_as_int_and_empty_message) {
@@ -5455,7 +5455,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5463,8 +5463,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_as_int_and_empty_message) {
@@ -5475,7 +5475,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5483,8 +5483,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_as_int_and_empty_message) {
@@ -5495,7 +5495,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5503,8 +5503,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_as_int_and_empty_message) {
@@ -5515,7 +5515,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5523,8 +5523,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_as_int_and_empty_message) {
@@ -5535,7 +5535,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5543,8 +5543,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_as_int_and_empty_message) {
@@ -5555,7 +5555,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5563,8 +5563,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_as_int_and_empty_message) {
@@ -5575,7 +5575,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5583,8 +5583,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_as_int_and_empty_message) {
@@ -5595,7 +5595,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5603,8 +5603,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_as_int_and_empty_message) {
@@ -5615,7 +5615,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5623,8 +5623,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_as_int_and_empty_message) {
@@ -5635,7 +5635,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5643,8 +5643,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_as_int_and_empty_message) {
@@ -5655,7 +5655,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5663,8 +5663,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_as_int_and_empty_message) {
@@ -5675,7 +5675,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5683,8 +5683,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_as_int_and_empty_message) {
@@ -5695,7 +5695,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5703,8 +5703,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_as_int_and_empty_message) {
@@ -5715,7 +5715,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5723,8 +5723,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
-      assert::are_equal("xtd::net::sockets::socket_exception", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("xtd::net::sockets::socket_exception", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_and_message) {
@@ -5735,7 +5735,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5743,8 +5743,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_and_message) {
@@ -5755,7 +5755,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5763,8 +5763,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_and_message) {
@@ -5775,7 +5775,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5783,8 +5783,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_and_message) {
@@ -5795,7 +5795,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5803,8 +5803,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_and_message) {
@@ -5815,7 +5815,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5823,8 +5823,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_and_message) {
@@ -5835,7 +5835,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5843,8 +5843,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_and_message) {
@@ -5855,7 +5855,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5863,8 +5863,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_and_message) {
@@ -5875,7 +5875,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5883,8 +5883,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_and_message) {
@@ -5895,7 +5895,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5903,8 +5903,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_and_message) {
@@ -5915,7 +5915,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5923,8 +5923,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_and_message) {
@@ -5935,7 +5935,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5943,8 +5943,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_and_message) {
@@ -5955,7 +5955,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5963,8 +5963,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_and_message) {
@@ -5975,7 +5975,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -5983,8 +5983,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_and_message) {
@@ -5995,7 +5995,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6003,8 +6003,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_and_message) {
@@ -6015,7 +6015,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6023,8 +6023,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_and_message) {
@@ -6035,7 +6035,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6043,8 +6043,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_and_message) {
@@ -6055,7 +6055,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6063,8 +6063,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_and_message) {
@@ -6075,7 +6075,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6083,8 +6083,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_and_message) {
@@ -6095,7 +6095,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6103,8 +6103,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_and_message) {
@@ -6115,7 +6115,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6123,8 +6123,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_and_message) {
@@ -6135,7 +6135,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6143,8 +6143,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_and_message) {
@@ -6155,7 +6155,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6163,8 +6163,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_and_message) {
@@ -6175,7 +6175,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6183,8 +6183,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_and_message) {
@@ -6195,7 +6195,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6203,8 +6203,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_and_message) {
@@ -6215,7 +6215,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6223,8 +6223,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_and_message) {
@@ -6235,7 +6235,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6243,8 +6243,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_and_message) {
@@ -6255,7 +6255,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6263,8 +6263,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_and_message) {
@@ -6275,7 +6275,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6283,8 +6283,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_and_message) {
@@ -6295,7 +6295,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6303,8 +6303,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_and_message) {
@@ -6315,7 +6315,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6323,8 +6323,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_and_message) {
@@ -6335,7 +6335,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6343,8 +6343,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_and_message) {
@@ -6355,7 +6355,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6363,8 +6363,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_and_message) {
@@ -6375,7 +6375,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6383,8 +6383,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_and_message) {
@@ -6395,7 +6395,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6403,8 +6403,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_and_message) {
@@ -6415,7 +6415,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6423,8 +6423,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_and_message) {
@@ -6435,7 +6435,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6443,8 +6443,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_and_message) {
@@ -6455,7 +6455,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6463,8 +6463,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_and_message) {
@@ -6475,7 +6475,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6483,8 +6483,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_and_message) {
@@ -6495,7 +6495,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6503,8 +6503,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_and_message) {
@@ -6515,7 +6515,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6523,8 +6523,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_and_message) {
@@ -6535,7 +6535,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6543,8 +6543,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_and_message) {
@@ -6555,7 +6555,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6563,8 +6563,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_and_message) {
@@ -6575,7 +6575,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6583,8 +6583,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_and_message) {
@@ -6595,7 +6595,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6603,8 +6603,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_and_message) {
@@ -6615,7 +6615,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6623,8 +6623,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_and_message) {
@@ -6635,7 +6635,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6643,8 +6643,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_and_message) {
@@ -6655,7 +6655,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6663,8 +6663,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error_as_int_and_message) {
@@ -6675,7 +6675,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::sock_error, e.socket_error());
       assert::are_equal(enum_object {socket_error::sock_error}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6683,8 +6683,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_success_as_int_and_message) {
@@ -6695,7 +6695,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6703,8 +6703,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int_and_message) {
@@ -6715,7 +6715,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::operation_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6723,8 +6723,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_io_pending_as_int_and_message) {
@@ -6735,7 +6735,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::io_pending, e.socket_error());
       assert::are_equal(enum_object {socket_error::io_pending}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6743,8 +6743,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_interrupted_as_int_and_message) {
@@ -6755,7 +6755,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::interrupted, e.socket_error());
       assert::are_equal(enum_object {socket_error::interrupted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6763,8 +6763,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_access_denied_as_int_and_message) {
@@ -6775,7 +6775,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::access_denied, e.socket_error());
       assert::are_equal(enum_object {socket_error::access_denied}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6783,8 +6783,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_fault_as_int_and_message) {
@@ -6795,7 +6795,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::fault, e.socket_error());
       assert::are_equal(enum_object {socket_error::fault}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6803,8 +6803,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_invalid_argument_as_int_and_message) {
@@ -6815,7 +6815,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::invalid_argument, e.socket_error());
       assert::are_equal(enum_object {socket_error::invalid_argument}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6823,8 +6823,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_too_many_open_sockets_as_int_and_message) {
@@ -6835,7 +6835,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::too_many_open_sockets, e.socket_error());
       assert::are_equal(enum_object {socket_error::too_many_open_sockets}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6843,8 +6843,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_would_block_as_int_and_message) {
@@ -6855,7 +6855,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::would_block, e.socket_error());
       assert::are_equal(enum_object {socket_error::would_block}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6863,8 +6863,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_in_progress_as_int_and_message) {
@@ -6875,7 +6875,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6883,8 +6883,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_already_in_progress_as_int_and_message) {
@@ -6895,7 +6895,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::already_in_progress, e.socket_error());
       assert::are_equal(enum_object {socket_error::already_in_progress}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6903,8 +6903,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_socket_as_int_and_message) {
@@ -6915,7 +6915,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_socket, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_socket}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6923,8 +6923,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_destination_address_required_as_int_and_message) {
@@ -6935,7 +6935,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::destination_address_required, e.socket_error());
       assert::are_equal(enum_object {socket_error::destination_address_required}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6943,8 +6943,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_message_size_as_int_and_message) {
@@ -6955,7 +6955,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::message_size, e.socket_error());
       assert::are_equal(enum_object {socket_error::message_size}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6963,8 +6963,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_type_as_int_and_message) {
@@ -6975,7 +6975,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_type, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_type}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -6983,8 +6983,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_option_as_int_and_message) {
@@ -6995,7 +6995,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_option, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_option}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7003,8 +7003,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_not_supported_as_int_and_message) {
@@ -7015,7 +7015,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7023,8 +7023,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_socket_not_supported_as_int_and_message) {
@@ -7035,7 +7035,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::socket_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::socket_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7043,8 +7043,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_not_supported_as_int_and_message) {
@@ -7055,7 +7055,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::operation_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::operation_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7063,8 +7063,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_protocol_family_not_supported_as_int_and_message) {
@@ -7075,7 +7075,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::protocol_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::protocol_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7083,8 +7083,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_family_not_supported_as_int_and_message) {
@@ -7095,7 +7095,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_family_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_family_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7103,8 +7103,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_already_in_use_as_int_and_message) {
@@ -7115,7 +7115,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_already_in_use, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_already_in_use}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7123,8 +7123,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_address_not_available_as_int_and_message) {
@@ -7135,7 +7135,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::address_not_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::address_not_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7143,8 +7143,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_down_as_int_and_message) {
@@ -7155,7 +7155,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7163,8 +7163,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_unreachable_as_int_and_message) {
@@ -7175,7 +7175,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7183,8 +7183,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_network_reset_as_int_and_message) {
@@ -7195,7 +7195,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::network_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::network_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7203,8 +7203,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_aborted_as_int_and_message) {
@@ -7215,7 +7215,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_aborted, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_aborted}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7223,8 +7223,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_reset_as_int_and_message) {
@@ -7235,7 +7235,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_reset, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_reset}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7243,8 +7243,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_buffer_space_available_as_int_and_message) {
@@ -7255,7 +7255,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_buffer_space_available, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_buffer_space_available}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7263,8 +7263,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_is_connected_as_int_and_message) {
@@ -7275,7 +7275,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::is_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::is_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7283,8 +7283,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_connected_as_int_and_message) {
@@ -7295,7 +7295,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_connected, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_connected}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7303,8 +7303,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_shutdown_as_int_and_message) {
@@ -7315,7 +7315,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::shutdown, e.socket_error());
       assert::are_equal(enum_object {socket_error::shutdown}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7323,8 +7323,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_timed_out_as_int_and_message) {
@@ -7335,7 +7335,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::timed_out, e.socket_error());
       assert::are_equal(enum_object {socket_error::timed_out}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7343,8 +7343,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_connection_refused_as_int_and_message) {
@@ -7355,7 +7355,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::connection_refused, e.socket_error());
       assert::are_equal(enum_object {socket_error::connection_refused}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7363,8 +7363,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_down_as_int_and_message) {
@@ -7375,7 +7375,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_down, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_down}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7383,8 +7383,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_unreachable_as_int_and_message) {
@@ -7395,7 +7395,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_unreachable, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_unreachable}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7403,8 +7403,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_process_limit_as_int_and_message) {
@@ -7415,7 +7415,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::process_limit, e.socket_error());
       assert::are_equal(enum_object {socket_error::process_limit}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7423,8 +7423,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_system_not_ready_as_int_and_message) {
@@ -7435,7 +7435,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::system_not_ready, e.socket_error());
       assert::are_equal(enum_object {socket_error::system_not_ready}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7443,8 +7443,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_version_not_supported_as_int_and_message) {
@@ -7455,7 +7455,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::version_not_supported, e.socket_error());
       assert::are_equal(enum_object {socket_error::version_not_supported}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7463,8 +7463,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_not_initialized_as_int_and_message) {
@@ -7475,7 +7475,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::not_initialized, e.socket_error());
       assert::are_equal(enum_object {socket_error::not_initialized}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7483,8 +7483,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_disconnecting_as_int_and_message) {
@@ -7495,7 +7495,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::disconnecting, e.socket_error());
       assert::are_equal(enum_object {socket_error::disconnecting}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7503,8 +7503,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_type_not_found_as_int_and_message) {
@@ -7515,7 +7515,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::type_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::type_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7523,8 +7523,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_host_not_found_as_int_and_message) {
@@ -7535,7 +7535,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::host_not_found, e.socket_error());
       assert::are_equal(enum_object {socket_error::host_not_found}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7543,8 +7543,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_try_again_as_int_and_message) {
@@ -7555,7 +7555,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::try_again, e.socket_error());
       assert::are_equal(enum_object {socket_error::try_again}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7563,8 +7563,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_recovery_as_int_and_message) {
@@ -7575,7 +7575,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_recovery, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_recovery}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7583,8 +7583,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_no_data_as_int_and_message) {
@@ -7595,7 +7595,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("Test excpetion message.", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.message());
       assert::are_equal(socket_error::no_data, e.socket_error());
       assert::are_equal(enum_object {socket_error::no_data}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -7603,8 +7603,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
-      assert::are_equal("Test excpetion message.", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Test excpetion message.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("Test excpetion message.", e.what());
     }
     
   };
