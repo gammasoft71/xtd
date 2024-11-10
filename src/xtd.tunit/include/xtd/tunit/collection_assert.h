@@ -456,8 +456,8 @@ namespace xtd {
       /// ```
       template<typename expected_t, typename actual_t>
       static void contains(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto& value) {return value == item;}) == std::end(actual)) {
             fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
@@ -470,8 +470,8 @@ namespace xtd {
       static void contains(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename item_t>
       static void contains(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
@@ -482,8 +482,8 @@ namespace xtd {
       static void contains(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename collection_t, typename item_t>
       static void contains(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
@@ -494,8 +494,8 @@ namespace xtd {
       static void contains(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename item_t, typename collection_t>
       static void contains(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
@@ -530,8 +530,8 @@ namespace xtd {
       /// ```
       template<typename expected_t, typename actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto& value) {return value == item;}) == std::end(actual)) {
             assert::succeed(message, stack_frame);
             return;
           }
@@ -544,8 +544,8 @@ namespace xtd {
       static void does_not_contain(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename item_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             assert::succeed(message, stack_frame);
             return;
           }
@@ -556,8 +556,8 @@ namespace xtd {
       static void does_not_contain(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename collection_t, typename item_t>
       static void does_not_contain(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             assert::succeed(message, stack_frame);
             return;
           }
@@ -568,8 +568,8 @@ namespace xtd {
       static void does_not_contain(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
       template<typename item_t, typename collection_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : expected) {
-          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+        for (const auto& item : expected) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
             assert::succeed(message, stack_frame);
             return;
           }
@@ -719,10 +719,10 @@ namespace xtd {
       static bool __are_equivalent(const expected_t expected, const actual_t& actual) {
         if (std::distance(expected.begin(), expected.end()) != std::distance(actual.begin(), actual.end())) return false;
         for (auto iterator = expected.begin(); iterator != expected.end(); ++iterator)
-          if (std::find(actual.begin(), actual.end(), *iterator) == actual.end()) return false;
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto& value) {return value == *iterator;}) == std::end(actual)) return false;
         return true;
       }
-
+      
     };
   }
 }
