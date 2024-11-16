@@ -16,5 +16,6 @@ add_projects(
   static
   static_object
   static_object2
+  typeof
   using
 )
