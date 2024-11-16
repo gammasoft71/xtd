@@ -1,6 +1,6 @@
 # nameof
 
-Shows how to use [xtd::nameof](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe3976c5f529fab9b255e38ced18b281) keyword.
+Shows how to use [nameof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe3976c5f529fab9b255e38ced18b281) keyword.
 
 ## Sources
 
