@@ -389,6 +389,8 @@ add_sources(
   include/xtd/size
   include/xtd/size_object.h
   include/xtd/size_object
+  include/xtd/sizeof.h
+  include/xtd/sizeof  
   include/xtd/slong.h
   include/xtd/slong
   include/xtd/slong_object.h
