@@ -11,6 +11,7 @@ add_projects(
   interface2
   lock
   lock_guard_keyword
+  nameof
   startup_keyword
   static
   static_object
