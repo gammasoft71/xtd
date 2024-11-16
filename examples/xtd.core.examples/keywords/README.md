@@ -8,7 +8,7 @@
 * [interface](interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
 * [interface2](interface2/README.md) shows how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
 * [lock](lock/README.md) shows how to use [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
-* [lock_guard_keyword](lock/README.md) shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
+* [lock_guard_keyword](lock_guard_keyword/README.md) shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
 * [startup_keyword](startup_keyword/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
 * [static](static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
