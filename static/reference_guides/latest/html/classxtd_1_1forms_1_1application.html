@@ -150,17 +150,17 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">    generate_handled_exception_button.text(<span class="stringliteral">&quot;Generate handled exception&quot;</span>);</div>
 <div class="line">    generate_handled_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_handled_exception);</div>
 <div class="line">    </div>
-<div class="line">    generate_exception_button.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    generate_exception_button.location({10, 50});</div>
-<div class="line">    generate_exception_button.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    generate_exception_button.text(<span class="stringliteral">&quot;Generate exception&quot;</span>);</div>
-<div class="line">    generate_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_exception);</div>
+<div class="line">    generate_std_exception_button.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    generate_std_exception_button.location({10, 50});</div>
+<div class="line">    generate_std_exception_button.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    generate_std_exception_button.text(<span class="stringliteral">&quot;Generate std exception&quot;</span>);</div>
+<div class="line">    generate_std_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_std_exception);</div>
 <div class="line">    </div>
-<div class="line">    generate_system_exception_button.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    generate_system_exception_button.location({10, 90});</div>
-<div class="line">    generate_system_exception_button.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    generate_system_exception_button.text(<span class="stringliteral">&quot;Generate system exception&quot;</span>);</div>
-<div class="line">    generate_system_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_system_exception);</div>
+<div class="line">    generate_xtd_exception_button.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    generate_xtd_exception_button.location({10, 90});</div>
+<div class="line">    generate_xtd_exception_button.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    generate_xtd_exception_button.text(<span class="stringliteral">&quot;Generate xtd exception&quot;</span>);</div>
+<div class="line">    generate_xtd_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_xtd_exception);</div>
 <div class="line">    </div>
 <div class="line">    generate_unknown_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_unknown_exception_button.location({10, 130});</div>
@@ -174,16 +174,16 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1operation__canceled__exception.html">operation_canceled_exception</a> {};</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(*<span class="keyword">this</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.message(), <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.name()));</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(*<span class="keyword">this</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.message(), <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.get_type().full_name()));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
-<div class="line">  <span class="keywordtype">void</span> generate_exception() {<span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
-<div class="line">  <span class="keywordtype">void</span> generate_system_exception() {<span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {};}</div>
+<div class="line">  <span class="keywordtype">void</span> generate_std_exception() {<span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
+<div class="line">  <span class="keywordtype">void</span> generate_xtd_exception() {<span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {};}</div>
 <div class="line">  <span class="keywordtype">void</span> generate_unknown_exception() {<span class="keywordflow">throw</span> <span class="stringliteral">&quot;Unknown exception occured&quot;</span>;}</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_handled_exception_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_exception_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_system_exception_button;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_std_exception_button;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_xtd_exception_button;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_unknown_exception_button;</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -524,7 +524,7 @@ This method has an effect only on linux. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -661,7 +661,7 @@ The path will be different depending on whether the Windows Forms application is
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -693,7 +693,7 @@ The path will be different depending on whether the Windows Forms application is
 
 <p>Return true if dark mode is enabled for the application; otherwise return false. </p>
 <dl class="section return"><dt>Returns</dt><dd>True is dark mode enabled; otherwise false. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000114">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000186">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -784,7 +784,7 @@ The path will be different depending on whether the Windows Forms application is
 <dl class="section return"><dt>Returns</dt><dd>true if font size correction is enabled; otherwise false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -829,7 +829,7 @@ This method has an effect only on non Windows operating system. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -903,7 +903,7 @@ This method has an effect only on non Windows operating system. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -972,7 +972,7 @@ This method has an effect only on non Windows operating system. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1004,7 +1004,7 @@ This method has an effect only on non Windows operating system. </dd></dl>
 
 <p>Return true if dark mode is enabled for the application; otherwise return false. </p>
 <dl class="section return"><dt>Returns</dt><dd>True is light mode enabled; otherwise false. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000115">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000187">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1101,7 +1101,7 @@ This method has an effect only on linux. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1438,7 +1438,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f3
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1475,7 +1475,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f3
 <dl class="section return"><dt>Returns</dt><dd>true if the system font size is enabled; otherwise false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1520,7 +1520,7 @@ This method has an effect only on Gtk. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1622,7 +1622,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 <p>Gets a value that indicates whether visual styles are enabled for the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if visual styles are enabled; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000116">Deprecated:</a></b></dt><dd>Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000188">Deprecated:</a></b></dt><dd>Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1825,7 +1825,7 @@ This method has an effect only on Windows. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1931,12 +1931,12 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 <p>Enables button images for the application. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000117">Deprecated:</a></b></dt><dd>Replaced by xtd::application::button_images - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000189">Deprecated:</a></b></dt><dd>Replaced by xtd::application::button_images - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1966,14 +1966,14 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 <p>Enables dark mode for the application. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the dark mode is enabled automatically if the system is in dark mode. </dd>
 <dd>
 <a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8" title="Enables dark mode for the application.">xtd::forms::application::enable_dark_mode</a> sets the application in dark mode even if your system is in light mode. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000118">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000190">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2003,14 +2003,14 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 <p>Enables light mode for the application. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the light mode is enabled automatically if the system is in light mode. </dd>
 <dd>
 <a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d" title="Enables light mode for the application.">xtd::forms::application::enable_light_mode</a> sets the application in light mode even if your system is in dark mode. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000119">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000191">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2040,12 +2040,12 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 <p>Enables menu images for the application. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000120">Deprecated:</a></b></dt><dd>Replaced by xtd::application::menu_images - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000192">Deprecated:</a></b></dt><dd>Replaced by xtd::application::menu_images - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2075,7 +2075,7 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 <p>Enables visual styles for the application. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2700,7 +2700,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 28 2024 21:23:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:44:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

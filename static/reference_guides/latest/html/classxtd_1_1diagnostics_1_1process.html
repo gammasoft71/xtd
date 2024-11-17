@@ -357,7 +357,7 @@ You can create a xtd::diagnostics::processes component by using the constructor,
 <dl class="section return"><dt>Returns</dt><dd>The base priority, which is computed from the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a208dcfd152f0ffc41cc7ffcd3d768f39" title="Gets the overall priority category for the associated process.">xtd::diagnostics::process::priority_class</a> of the associated process. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -470,7 +470,7 @@ Sometimes, your application starts a process but doesn't require notification of
 <dl class="section return"><dt>Returns</dt><dd>The code that the associated process specified when it terminated. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The process has not exited.<br  />
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The process has not exited.<br  />
 -or-<br  />
 The process <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a95f547249f59864f171fd07a0ad6f5de" title="Gets the native handle of the associated process.">xtd::diagnostics::process::handle</a> is not valid. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>You are trying to access the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a724005eb604d992d3002818e3b028603" title="Gets the value that the associated process specified when it terminated.">xtd::diagnostics::process::exit_code</a> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer. </td></tr>
@@ -537,7 +537,7 @@ There are two ways of being notified when the associated process exits: synchron
 <dl class="section return"><dt>Returns</dt><dd>The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The process has not been started or has exited. The <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a95f547249f59864f171fd07a0ad6f5de" title="Gets the native handle of the associated process.">xtd::diagnostics::process::handle</a> property cannot be read because there is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> instance.<br  />
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The process has not been started or has exited. The <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a95f547249f59864f171fd07a0ad6f5de" title="Gets the native handle of the associated process.">xtd::diagnostics::process::handle</a> property cannot be read because there is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> instance.<br  />
 -or-<br  />
 The <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>You are trying to access the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a95f547249f59864f171fd07a0ad6f5de" title="Gets the native handle of the associated process.">xtd::diagnostics::process::handle</a> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer. </td></tr>
@@ -571,7 +571,7 @@ Only processes started through a call to <a class="el" href="classxtd_1_1diagnos
 <dl class="section return"><dt>Returns</dt><dd>true if the operating system process referenced by the process component has terminated; otherwise, false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with the object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with the object. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>You are trying to access the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aa387a8e10f9caad84c0c870d3116ae74" title="Gets a value indicating whether the associated process has been terminated.">xtd::diagnostics::process::has_exited</a> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer. </td></tr>
   </table>
   </dd>
@@ -602,7 +602,7 @@ A process can terminate independently of your code. If you started the process u
 <dl class="section return"><dt>Returns</dt><dd>The system-generated unique identifier of the process that is referenced by this process instance. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The process's Id property has not been set. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The process's Id property has not been set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -635,7 +635,7 @@ Because the identifier is unique on the system, you can pass it to other threads
 <dl class="section return"><dt>Returns</dt><dd>The name of the computer that the associated process is running on. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -663,7 +663,7 @@ Because the identifier is unique on the system, you can pass it to other threads
 <dl class="section return"><dt>Returns</dt><dd>The priority category for the associated process, from which the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a1733087c82f98ff44e2b3925d8d6e45d" title="Gets the base priority xof the associated process.">xtd::diagnostics::process::base_priority</a> of the process is calculated. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -718,7 +718,7 @@ The priority class cannot be viewed using System Monitor. The following table sh
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -767,7 +767,7 @@ The priority class cannot be viewed using System Monitor. The following table sh
 <dl class="section return"><dt>Returns</dt><dd>The name that the system uses to identify the process to the user. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -796,7 +796,7 @@ You can call xtd::diagnostics::process::get_processes_by_name, passing it an exe
 <dl class="section return"><dt>Returns</dt><dd>A std::istream that can be used to read the standard error stream of the application. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -933,7 +933,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <dl class="section return"><dt>Returns</dt><dd>A std::ostream that can be used to write the standard input stream of the application. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this xtd::diagnostics::processes object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this xtd::diagnostics::processes object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1023,7 +1023,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <dl class="section return"><dt>Returns</dt><dd>A std::istream that can be used to read the standard output stream of the application. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1339,7 +1339,7 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 <dl class="section return"><dt>Returns</dt><dd>An object that indicates when the process started. An exception is thrown if the process is not running. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1364,7 +1364,7 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 <p>Frees all the resources that are associated with this component. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1390,7 +1390,7 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 <p>Immediately stops the associated process. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1425,7 +1425,7 @@ You can call <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a4f018b
 <dl class="section return"><dt>Returns</dt><dd>true if a process resource is started; false if no new process resource is started (for example, if an existing process is reused). </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>No file name was specified in the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> component's <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>No file name was specified in the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> component's <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1479,7 +1479,7 @@ You can call <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a4f018b
 <p>Instructs the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> component to wait indefinitely for the associated process to exit. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1520,7 +1520,7 @@ Because the associated process has exited, the Handle property of the component 
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>There is no process associated with this <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1570,7 +1570,7 @@ Because the associated process has exited, the Handle property of the component 
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> that is associated with the process resource. Note that a new process that's started alongside already running instances of the same process will be independent from the others. In addition, Start may return a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> with its <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aa387a8e10f9caad84c0c870d3116ae74" title="Gets a value indicating whether the associated process has been terminated.">xtd::diagnostics::process::has_exited</a> property already set to true. In this case, the started process may have activated an existing instance of itself and then exited. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>No file name was specified in the startInfo parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>No file name was specified in the startInfo parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1670,7 +1670,7 @@ Because the associated process has exited, the Handle property of the component 
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1vertical__layout__panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1vertical__layout__panel.html">xtd::forms::vertical_layout_panel</a></div><div class="ttdoc">Used to group collections of vertically aligned controls.</div><div class="ttdef"><b>Definition</b> vertical_layout_panel.h:31</div></div>
-<div class="ttc" id="aclassxtd_1_1invalid__operation__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__operation__exception.html">xtd::invalid_operation_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> invalid_operation_exception.h:19</div></div>
+<div class="ttc" id="aclassxtd_1_1invalid__operation__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__operation__exception.html">xtd::invalid_operation_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> invalid_operation_exception.h:19</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use this overload to start a process resource by specifying a <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html" title="Specifies a set of values that are used when you start a process.">xtd::diagnostics::process_start_info</a> instance. The overload associates the resource with a new <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </dd>
@@ -1721,7 +1721,7 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> that is associated with the process resource. Note that a new process that's started alongside already running instances of the same process will be independent from the others. In addition, Start may return a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> with its <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aa387a8e10f9caad84c0c870d3116ae74" title="Gets a value indicating whether the associated process has been terminated.">xtd::diagnostics::process::has_exited</a> property already set to true. In this case, the started process may have activated an existing instance of itself and then exited. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>No file name was specified in the file_name parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>No file name was specified in the file_name parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1786,7 +1786,7 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> that is associated with the process resource. Note that a new process that's started alongside already running instances of the same process will be independent from the others. In addition, Start may return a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> with its <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aa387a8e10f9caad84c0c870d3116ae74" title="Gets a value indicating whether the associated process has been terminated.">xtd::diagnostics::process::has_exited</a> property already set to true. In this case, the started process may have activated an existing instance of itself and then exited. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>No file name was specified in the file_name parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>No file name was specified in the file_name parameter's <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9" title="Gets the application or document to start.">xtd::diagnostics::process_start_info::file_name</a> property. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1904,7 +1904,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 28 2024 21:23:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:44:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
