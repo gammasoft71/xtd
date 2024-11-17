@@ -79,7 +79,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    basic_array(const basic_array& array) {*data_ = *array.data_;}
+    basic_array(const basic_array& array) { if (array.data_) *data_ = *array.data_;}
     basic_array(basic_array&& array) = default;
     /// @endcond
     
