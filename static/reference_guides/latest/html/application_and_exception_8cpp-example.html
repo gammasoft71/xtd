@@ -135,17 +135,17 @@ $(function() {
 <div class="line">    generate_handled_exception_button.text(<span class="stringliteral">&quot;Generate handled exception&quot;</span>);</div>
 <div class="line">    generate_handled_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_handled_exception);</div>
 <div class="line">    </div>
-<div class="line">    generate_exception_button.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    generate_exception_button.location({10, 50});</div>
-<div class="line">    generate_exception_button.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    generate_exception_button.text(<span class="stringliteral">&quot;Generate exception&quot;</span>);</div>
-<div class="line">    generate_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_exception);</div>
+<div class="line">    generate_std_exception_button.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    generate_std_exception_button.location({10, 50});</div>
+<div class="line">    generate_std_exception_button.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    generate_std_exception_button.text(<span class="stringliteral">&quot;Generate std exception&quot;</span>);</div>
+<div class="line">    generate_std_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_std_exception);</div>
 <div class="line">    </div>
-<div class="line">    generate_system_exception_button.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    generate_system_exception_button.location({10, 90});</div>
-<div class="line">    generate_system_exception_button.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    generate_system_exception_button.text(<span class="stringliteral">&quot;Generate system exception&quot;</span>);</div>
-<div class="line">    generate_system_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_system_exception);</div>
+<div class="line">    generate_xtd_exception_button.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    generate_xtd_exception_button.location({10, 90});</div>
+<div class="line">    generate_xtd_exception_button.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    generate_xtd_exception_button.text(<span class="stringliteral">&quot;Generate xtd exception&quot;</span>);</div>
+<div class="line">    generate_xtd_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_xtd_exception);</div>
 <div class="line">    </div>
 <div class="line">    generate_unknown_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_unknown_exception_button.location({10, 130});</div>
@@ -159,16 +159,16 @@ $(function() {
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">throw</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1operation__canceled__exception.html">operation_canceled_exception</a> {};</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
-<div class="line">      message_box::show(*<span class="keyword">this</span>, e.message(), string::format(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, e.name()));</div>
+<div class="line">      message_box::show(*<span class="keyword">this</span>, e.message(), string::format(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, e.get_type().full_name()));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
-<div class="line">  <span class="keywordtype">void</span> generate_exception() {<span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
-<div class="line">  <span class="keywordtype">void</span> generate_system_exception() {<span class="keywordflow">throw</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {};}</div>
+<div class="line">  <span class="keywordtype">void</span> generate_std_exception() {<span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
+<div class="line">  <span class="keywordtype">void</span> generate_xtd_exception() {<span class="keywordflow">throw</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {};}</div>
 <div class="line">  <span class="keywordtype">void</span> generate_unknown_exception() {<span class="keywordflow">throw</span> <span class="stringliteral">&quot;Unknown exception occured&quot;</span>;}</div>
 <div class="line"> </div>
 <div class="line">  <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_handled_exception_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_exception_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_system_exception_button;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_std_exception_button;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_xtd_exception_button;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> generate_unknown_exception_button;</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -186,7 +186,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 28 2024 21:23:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:43:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -182,6 +182,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga05d1212dca8562cec36b4ebb03dd897f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></td></tr>
 <tr class="memdesc:ga05d1212dca8562cec36b4ebb03dd897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> expression is a reference value expression whose value is the reference of the implicit object parameter (the object on which the non-static member function (up to C++23) implicit object member function (since C++23) is called).  <br /></td></tr>
 <tr class="separator:ga05d1212dca8562cec36b4ebb03dd897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacff264255bb80f00c1447fda6524b0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(...)</td></tr>
+<tr class="memdesc:gacff264255bb80f00c1447fda6524b0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
+<tr class="separator:gacff264255bb80f00c1447fda6524b0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44bd440a34d147923e428eacd1c8eedd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_method)</td></tr>
 <tr class="memdesc:ga44bd440a34d147923e428eacd1c8eedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.  <br /></td></tr>
 <tr class="separator:ga44bd440a34d147923e428eacd1c8eedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1360,7 +1363,32 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <p>A nameof expression has this form: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (x == null) <span class="keywordflow">throw</span>  std::argument_error(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(x));</div>
 <div class="line">write_line(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(person.address().zip_code())); <span class="comment">// prints &quot;person.address().zip_code()&quot;</span></div>
 <div class="ttc" id="agroup__keywords_html_gabe3976c5f529fab9b255e38ced18b281"><div class="ttname"><a href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a></div><div class="ttdeci">#define nameof_(...)</div><div class="ttdoc">Used to obtain the simple (unqualified) string name of a variable, type, or member.</div><div class="ttdef"><b>Definition</b> nameof.h:34</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"></div><!-- fragment --> </dd></dl>
+</div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/nameof&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><span class="keywordtype">void</span> print_names(value_t value) {</div>
+<div class="line">  <span class="keyword">auto</span> the_answer_to_life_the_universe_and_everything = value;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(print_names));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(value_t));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{} is {}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(the_answer_to_life_the_universe_and_everything), the_answer_to_life_the_universe_and_everything);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{} = {}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>((124 + 26) / 2), (124 + 26) / 2);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  print_names(42);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// print_names</span></div>
+<div class="line"><span class="comment">// value_t</span></div>
+<div class="line"><span class="comment">// the_answer_to_life_the_universe_and_everything is 42</span></div>
+<div class="line"><span class="comment">// (124 + 26) / 2 = 75</span></div>
+<div class="line"> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The argument to nameof must be a simple name, qualified name, member access, base access with a specified member, or this access with a specified member. The argument expression identifies a code definition, but it is never evaluated. </dd>
 <dd>
 Because the argument needs to be an expression syntactically, there are many things disallowed that are not useful to list. The following are worth mentioning that produce errors: predefined types (for example, int or void), nullable types (Point?), array types (Customer[,]), pointer types (Buffer*), qualified alias (A::B), and unbound generic types (Dictionary&lt;,&gt;), preprocessing symbols (DEBUG), and labels (loop:). </dd>
@@ -1368,11 +1396,10 @@ Because the argument needs to be an expression syntactically, there are many thi
 If you need to get the fully-qualified name, you can use the typeof_ expression along with nameof. For example: <div class="fragment"><div class="line"><span class="keyword">class </span>c {</div>
 <div class="line"><span class="keyword">public</span>: </div>
 <div class="line">  <span class="keywordtype">void</span> f(<span class="keywordtype">int</span> i) {</div>
-<div class="line">    log(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{0}.{1}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(C), <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(f)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
+<div class="line">    log(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{0}::{1}&quot;</span>, typeof_&lt;c&gt;(), <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(f)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div></div>
-<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.h:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3100,6 +3127,115 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 
 </div>
 </div>
+<a id="gacff264255bb80f00c1447fda6524b0ec" name="gacff264255bb80f00c1447fda6524b0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacff264255bb80f00c1447fda6524b0ec">&#9670;&#160;</a></span>sizeof_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sizeof_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sizeof_8h.html">xtd.core/include/xtd/sizeof.h</a>&gt;</code></p>
+
+<p>Used to obtain the size in bytes of the object representation of type or expression. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/sizeof&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;sizeof :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;┌───────────────────┬─────────────────────┬─────────────────────────┐&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│  xtd              │  std                │ native                  │&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;├───────────────────┼─────────────────────┼─────────────────────────┤&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::boolean = {,2} │ ------------------- │ bool               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gab7230dbe491f8bcef5e5f8bdaba5e27f">xtd::boolean</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">bool</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char_   = {,2} │ ------------------- │ char               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga025f760e2ae1e3355f64174f10671484">xtd::char_</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char8   = {,2} │ ------------------- │ char8_t            = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char8_t</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char16  = {,2} │ ------------------- │ char16_t           = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char16_t</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char32  = {,2} │ ------------------- │ char32_t           = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char32_t</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::wchar   = {,2} │ ------------------- │ wchar_t            = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">wchar_t</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::single  = {,2} │ std::float_t   = {,2} │ float              = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga4c9f72f7ab9ea9919c93a1a2b245ab71">xtd::single</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::float_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">float</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::double_ = {,2} │ std::double_t  = {,2} │ double             = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gac9b7afa2262ed23eae6787dea92d733e">xtd::double_</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::double_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">double</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::decimal = {,2} │ ------------------- │ long double        = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::sbyte   = {,2} │ std::int8_t    = {,2} │ char               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">xtd::sbyte</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int8_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int16   = {,2} │ std::int16_t   = {,2} │ short              = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1">xtd::int16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int16_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">short</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int32   = {,2} │ std::int32_t   = {,2} │ int                = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int32_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">int</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int64   = {,2} │ std::int64_t   = {,2} │ long               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">xtd::int64</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int64_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::intptr  = {,2} │ std::intptr_t  = {,2} │ long long          = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::intptr_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::byte    = {,2} │ std::int8_t    = {,2} │ unsigned char      = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint8_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint16  = {,2} │ std::uint16_t  = {,2} │ unsigned short     = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gad8523b51611f0fac793f78f16b155b21">xtd::uint16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint16_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint32  = {,2} │ std::uint32_t  = {,2} │ unsigned int       = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">xtd::uint32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint32_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint64  = {,2} │ std::uint64_t  = {,2} │ unsigned long      = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gab5833228ed21371660af349c9b1fe797">xtd::uint64</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint64_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uintptr = {,2} │ std::uintptr_t = {,2} │ unsigned long long = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga611186545311a64ce96c09d1e7be8d8c">xtd::uintptr</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uintptr_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::size    = {,2} │ ------------------- │ size_t             = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">size_t</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::ptrdiff = {,2} │ ------------------- │ ptrdiff_t          = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(ptrdiff_t));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;└───────────────────┴─────────────────────┴─────────────────────────┘&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// sizeof :</span></div>
+<div class="line"><span class="comment">// ┌───────────────────┬─────────────────────┬─────────────────────────┐</span></div>
+<div class="line"><span class="comment">// │  xtd              │  std                │ native                  │</span></div>
+<div class="line"><span class="comment">// ├───────────────────┼─────────────────────┼─────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ xtd::boolean =  1 │ ------------------- │ bool               =  1 │</span></div>
+<div class="line"><span class="comment">// │ xtd::char_   =  1 │ ------------------- │ char               =  1 │</span></div>
+<div class="line"><span class="comment">// │ xtd::char8   =  1 │ ------------------- │ char8_t            =  1 │</span></div>
+<div class="line"><span class="comment">// │ xtd::char16  =  2 │ ------------------- │ char16_t           =  2 │</span></div>
+<div class="line"><span class="comment">// │ xtd::char32  =  4 │ ------------------- │ char32_t           =  4 │</span></div>
+<div class="line"><span class="comment">// │ xtd::wchar   =  4 │ ------------------- │ wchar_t            =  4 │</span></div>
+<div class="line"><span class="comment">// │ xtd::single  =  4 │ std::float_t   =  4 │ float              =  4 │</span></div>
+<div class="line"><span class="comment">// │ xtd::double_ =  8 │ std::double_t  =  8 │ double             =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::decimal =  8 │ ------------------- │ long double        =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::sbyte   =  1 │ std::int8_t    =  1 │ char               =  1 │</span></div>
+<div class="line"><span class="comment">// │ xtd::int16   =  2 │ std::int16_t   =  2 │ short              =  2 │</span></div>
+<div class="line"><span class="comment">// │ xtd::int32   =  4 │ std::int32_t   =  4 │ int                =  4 │</span></div>
+<div class="line"><span class="comment">// │ xtd::int64   =  8 │ std::int64_t   =  8 │ long               =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::intptr  =  8 │ std::intptr_t  =  8 │ long long          =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::byte    =  1 │ std::int8_t    =  1 │ unsigned char      =  1 │</span></div>
+<div class="line"><span class="comment">// │ xtd::uint16  =  2 │ std::uint16_t  =  2 │ unsigned short     =  2 │</span></div>
+<div class="line"><span class="comment">// │ xtd::uint32  =  4 │ std::uint32_t  =  4 │ unsigned int       =  4 │</span></div>
+<div class="line"><span class="comment">// │ xtd::uint64  =  8 │ std::uint64_t  =  8 │ unsigned long      =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::uintptr =  8 │ std::uintptr_t =  8 │ unsigned long long =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::size    =  8 │ ------------------- │ size_t             =  8 │</span></div>
+<div class="line"><span class="comment">// │ xtd::ptrdiff =  8 │ ------------------- │ ptrdiff_t          =  8 │</span></div>
+<div class="line"><span class="comment">// └───────────────────┴─────────────────────┴─────────────────────────┘</span></div>
+<div class="ttc" id="agroup__keywords_html_gacff264255bb80f00c1447fda6524b0ec"><div class="ttname"><a href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a></div><div class="ttdeci">#define sizeof_(...)</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.h:16</div></div>
+<div class="ttc" id="agroup__types_html_ga025f760e2ae1e3355f64174f10671484"><div class="ttname"><a href="group__types.html#ga025f760e2ae1e3355f64174f10671484">xtd::char_</a></div><div class="ttdeci">char char_</div><div class="ttdoc">Represents a character.</div><div class="ttdef"><b>Definition</b> char.h:24</div></div>
+<div class="ttc" id="agroup__types_html_ga09d26135a9af4f7a5f4cae382627d6d1"><div class="ttname"><a href="group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1">xtd::int16</a></div><div class="ttdeci">int16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> int16.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> char8.h:27</div></div>
+<div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> wchar.h:24</div></div>
+<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga2f2888f55e58cac4c07eb490db7868c4"><div class="ttname"><a href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">xtd::int64</a></div><div class="ttdeci">int64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> int64.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga37e983ceedf5a7f73bc4568eaeae0aa2"><div class="ttname"><a href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">xtd::sbyte</a></div><div class="ttdeci">int8_t sbyte</div><div class="ttdoc">Represents a 8-bit signed integer.</div><div class="ttdef"><b>Definition</b> sbyte.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> char16.h:26</div></div>
+<div class="ttc" id="agroup__types_html_ga41c5d8b5d999ac5a2ff06fe57f38d5f5"><div class="ttname"><a href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">xtd::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga4c9f72f7ab9ea9919c93a1a2b245ab71"><div class="ttname"><a href="group__types.html#ga4c9f72f7ab9ea9919c93a1a2b245ab71">xtd::single</a></div><div class="ttdeci">float single</div><div class="ttdoc">Represents a single-precision floating-point number.</div><div class="ttdef"><b>Definition</b> single.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga611186545311a64ce96c09d1e7be8d8c"><div class="ttname"><a href="group__types.html#ga611186545311a64ce96c09d1e7be8d8c">xtd::uintptr</a></div><div class="ttdeci">uintmax_t uintptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> uintptr.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.h:26</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gab5833228ed21371660af349c9b1fe797"><div class="ttname"><a href="group__types.html#gab5833228ed21371660af349c9b1fe797">xtd::uint64</a></div><div class="ttdeci">uint64_t uint64</div><div class="ttdoc">Represents a 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint64.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gab7230dbe491f8bcef5e5f8bdaba5e27f"><div class="ttname"><a href="group__types.html#gab7230dbe491f8bcef5e5f8bdaba5e27f">xtd::boolean</a></div><div class="ttdeci">bool boolean</div><div class="ttdoc">Represents a boolean.</div><div class="ttdef"><b>Definition</b> boolean.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gabb9d3031d62e3725b4265c7e5d2a98e1"><div class="ttname"><a href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gac047942a62f03ba75e1b4f0bde7401ca"><div class="ttname"><a href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a></div><div class="ttdeci">std::ptrdiff_t ptrdiff</div><div class="ttdoc">Represent the signed integer type of the result of subtracting two pointers.</div><div class="ttdef"><b>Definition</b> ptrdiff.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gac9b7afa2262ed23eae6787dea92d733e"><div class="ttname"><a href="group__types.html#gac9b7afa2262ed23eae6787dea92d733e">xtd::double_</a></div><div class="ttdeci">double double_</div><div class="ttdoc">Represents a double-precision floating-point number.</div><div class="ttdef"><b>Definition</b> double.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gad8523b51611f0fac793f78f16b155b21"><div class="ttname"><a href="group__types.html#gad8523b51611f0fac793f78f16b155b21">xtd::uint16</a></div><div class="ttdeci">uint16_t uint16</div><div class="ttdoc">Represents a 16-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint16.h:23</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga44bd440a34d147923e428eacd1c8eedd" name="ga44bd440a34d147923e428eacd1c8eedd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga44bd440a34d147923e428eacd1c8eedd">&#9670;&#160;</a></span>startup_</h2>
 
@@ -3586,6 +3722,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="line"><span class="comment">// Get the type object of an object :</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> type2 = <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(i);</div>
 <div class="ttc" id="aclassxtd_1_1type__object_html"><div class="ttname"><a href="classxtd_1_1type__object.html">xtd::type_object</a></div><div class="ttdoc">Represents type declarations: class types, interface types, array types, value types,...</div><div class="ttdef"><b>Definition</b> type_object.h:39</div></div>
+<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.h:45</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a2">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a4">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a0">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
@@ -3720,7 +3857,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 28 2024 21:23:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:43:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
