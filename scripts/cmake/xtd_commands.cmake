@@ -337,7 +337,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project.ch)
+##  add_sources(my_project.h)
 ##
 ##  target_top_level_statement(my_project.h)
 ##  target_type(GUI_APPLICATION)
