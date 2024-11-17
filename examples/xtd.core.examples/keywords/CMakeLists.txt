@@ -12,6 +12,7 @@ add_projects(
   lock
   lock_guard_keyword
   nameof
+  sizeof
   startup_keyword
   static
   static_object
