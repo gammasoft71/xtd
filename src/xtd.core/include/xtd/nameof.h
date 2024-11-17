@@ -27,7 +27,7 @@ namespace xtd {
   /// class c {
   /// public: 
   ///   void f(int i) {
-  ///     log(xtd::string::format("{0}.{1}", typeof_(C), nameof_(f)), "method entry");
+  ///     log(xtd::string::format("{0}::{1}", typeof_<c>(), nameof_(f)), "method entry");
   ///   }
   /// }
   /// ```
