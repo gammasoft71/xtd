@@ -406,6 +406,7 @@
 #include "single_object.h"
 #include "size.h"
 #include "size_object.h"
+#include "sizeof.h"
 #include "slong.h"
 #include "slong_object.h"
 #include "sptr.h"
