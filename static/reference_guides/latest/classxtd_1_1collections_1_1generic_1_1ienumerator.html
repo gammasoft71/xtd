@@ -146,7 +146,7 @@ If changes are made to the collection, such as adding, modifying, or deleting el
 The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization. </dd>
 <dd>
 Default implementations of collections in the <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace are not synchronized. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_icollection_8cpp-example.html#_a9">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a7">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#_a8">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a4">generic_ienumerator.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#_a10">generic_ilist.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a6">ienumerable.cpp</a>, and <a class="el" href="ienumerator_8cpp-example.html#_a3">ienumerator.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_icollection_8cpp-example.html#_a10">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a8">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#_a8">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a4">generic_ienumerator.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#_a11">generic_ilist.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a8">ienumerable.cpp</a>, and <a class="el" href="ienumerator_8cpp-example.html#_a3">ienumerator.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
@@ -264,7 +264,7 @@ template&lt;typename type_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
   </table>
   </dd>
 </dl>
@@ -334,7 +334,7 @@ template&lt;typename type_t &gt; </div>
 <p>Sets the enumerator to its initial position, which is before the first element in the collection. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The enumerator does not support being reset. </td></tr>
   </table>
   </dd>
@@ -383,7 +383,7 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 19:46:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:44:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

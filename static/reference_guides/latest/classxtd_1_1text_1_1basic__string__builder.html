@@ -471,7 +471,7 @@ Several aliases for common character types are provided: </dd>
 <tr class="memitem:a68eec80ec1a4223dc129301eb889e6a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a00d3525c87b582cd9dbf27852cf1199f">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a68eec80ec1a4223dc129301eb889e6a4">copy</a> (<a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#aa62aee9e769ee262f5deae94ff8ea03d">pointer</a> dest, <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> count, <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> pos) const</td></tr>
 <tr class="memdesc:a68eec80ec1a4223dc129301eb889e6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a substring [<code>pos</code>, <code>pos + count</code>) to character string pointed to by <code>dest</code>. If the requested substring lasts past the end of the string, or if <code>count == npos</code>, the copied substring is [<code>pos</code>, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">size()</a>).  <br /></td></tr>
 <tr class="separator:a68eec80ec1a4223dc129301eb889e6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab371da2a717b123bae6b1d802ef8493c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ab371da2a717b123bae6b1d802ef8493c">copy_to</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> source_index, <a class="el" href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a>&lt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; &amp;destination, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> destination_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> destination_count) const</td></tr>
+<tr class="memitem:ab371da2a717b123bae6b1d802ef8493c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ab371da2a717b123bae6b1d802ef8493c">copy_to</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> source_index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; &amp;destination, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> destination_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> destination_count) const</td></tr>
 <tr class="memdesc:ab371da2a717b123bae6b1d802ef8493c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the characters from a specified segment of this instance to a specified segment of a destination <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc" title="Represents the basic string value type.">xtd::text::basic_string_builder::value_type</a> array.  <br /></td></tr>
 <tr class="separator:ab371da2a717b123bae6b1d802ef8493c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af96c2ac833670b1180ac068212ad9f4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#af96c2ac833670b1180ac068212ad9f4f">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
@@ -1079,7 +1079,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 </div><div class="memdoc">
 
 <p>Represents the basic string iterator type. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>replace xtd::ienumerable::iterator </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>replace xtd::ienumerable::iterator </dd></dl>
 
 </div>
 </div>
@@ -1098,7 +1098,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 </div><div class="memdoc">
 
 <p>Represents the basic string const iterator type. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>replace xtd::ienumerable::const_iterator </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>replace xtd::ienumerable::const_iterator </dd></dl>
 
 </div>
 </div>
@@ -3571,7 +3571,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> bytes = <a class="code hl_typedef" href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">array&lt;byte&gt;</a> {16, 132, 27, 253};</div>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> bytes = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a> {16, 132, 27, 253};</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_class" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::string_builder</a> {};</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> value : bytes)</div>
 <div class="line">  sb.<a class="code hl_function" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d">append</a>(value).<a class="code hl_function" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d">append</a>(<span class="stringliteral">&quot; &quot;</span>);</div>
@@ -3580,7 +3580,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The byte array: 16 132 27 253</span></div>
-<div class="ttc" id="anamespacextd_html_a23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdef"><b>Definition</b> __array_definition.h:18</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.h:58</div></div>
 </div><!-- fragment --> </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
@@ -3958,7 +3958,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2" title="Represents a 8-bit signed integer.">xtd::sbyte</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> bytes = <a class="code hl_typedef" href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">array&lt;sbyte&gt;</a> {16, 132, 27, 253};</div>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2" title="Represents a 8-bit signed integer.">xtd::sbyte</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> bytes = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;sbyte&gt;</a> {16, 132, 27, 253};</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_class" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::string_builder</a> {};</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> value : bytes)</div>
 <div class="line">  sb.<a class="code hl_function" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d">append</a>(value).<a class="code hl_function" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d">append</a>(<span class="stringliteral">&quot; &quot;</span>);</div>
@@ -5901,7 +5901,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacextd.html#a23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a>&lt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>destination</em>, </td>
         </tr>
         <tr>
@@ -11361,7 +11361,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 
 <p>Converts the value of this instance to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> &lt;char&gt;. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current string. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo:</a></b></dt><dd>Uncomment the folllowing line and remove the next.. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>Uncomment the folllowing line and remove the next.. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
 
@@ -12034,7 +12034,7 @@ template&lt;typename char_t , typename traits_t  = std::char_traits&lt;char_t&gt
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 19:47:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:44:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
