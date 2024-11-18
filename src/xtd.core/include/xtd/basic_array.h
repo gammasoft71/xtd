@@ -79,7 +79,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    basic_array(const basic_array& array) { if (array.data_) *data_ = *array.data_;}
+    basic_array(const basic_array& array) : data_ {xtd::new_ptr<struct data>()} { if (array.data_) *data_ = *array.data_;}
     basic_array(basic_array&& array) = default;
     /// @endcond
     
@@ -509,38 +509,38 @@ namespace xtd {
     template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
     friend class array;
     
-    basic_array() = default;
+    basic_array() : data_ {xtd::new_ptr<struct data>()} {}
     basic_array(const array<size_type, 1>& lengths);
     
-    basic_array(const_pointer array, size_type length) {
+    basic_array(const_pointer array, size_type length) : data_ {xtd::new_ptr<struct data>()} {
       if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
       data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const xtd::collections::generic::ienumerable<type_t>& enumerable) {
+    basic_array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : data_ {xtd::new_ptr<struct data>()} {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
       data_->lower_bound.push_back(0);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector<type_t>& array) {
+    basic_array(const std::vector<type_t>& array) : data_ {xtd::new_ptr<struct data>()} {
       data_->items = array;
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::vector<type_t>&& array) {
+    basic_array(std::vector<type_t>&& array) : data_ {xtd::new_ptr<struct data>()} {
       data_->items = std::move(array);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::initializer_list<type_t> il) {
+    basic_array(std::initializer_list<type_t> il) : data_ {xtd::new_ptr<struct data>()} {
       data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::initializer_list<std::initializer_list<type_t>> il)  {
+    basic_array(std::initializer_list<std::initializer_list<type_t>> il) : data_ {xtd::new_ptr<struct data>()}  {
       for (const std::initializer_list<type_t>& il1 : il)
         data_->items.insert(data_->items.end(), il1.begin(), il1.end());
       data_->upper_bound[0] = il.size() - 1;
@@ -548,7 +548,7 @@ namespace xtd {
       data_->upper_bound.push_back((*il.begin()).size() - 1);
     }
     
-    basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il)  {
+    basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il) : data_ {xtd::new_ptr<struct data>()}  {
       for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
         for (const std::initializer_list<type_t>& il2 : il1)
           data_->items.insert(data_->items.end(), il2.begin(), il2.end());
@@ -560,7 +560,7 @@ namespace xtd {
     }
     
     template<typename iterator_t>
-    basic_array(iterator_t first, iterator_t last) {
+    basic_array(iterator_t first, iterator_t last) : data_ {xtd::new_ptr<struct data>()} {
       data_->items.assign(first, last);
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back(data_->items.size() - 1);
@@ -592,6 +592,6 @@ namespace xtd {
       object sync_root;
     };
     
-    std::shared_ptr<struct data> data_ = std::make_shared<struct data>();
+    xtd::ptr<struct data> data_;
   };
 }
