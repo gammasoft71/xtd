@@ -592,6 +592,6 @@ namespace xtd {
       object sync_root;
     };
     
-    xtd::ptr<struct data> data_ = xtd::new_ptr<struct data>();
+    std::shared_ptr<struct data> data_ = std::make_shared<struct data>();
   };
 }
