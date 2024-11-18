@@ -252,7 +252,7 @@
 * [lock](keywords/lock/README.md) shows how to use [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
 * [lock_guard_keyword](keywords/lock_guard_keyword/README.md) shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
 * [nameof](keywords/nameof/README.md) shows how to use [nameof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe3976c5f529fab9b255e38ced18b281) keyword.
-* [sizeof](keywords/sizeof/README.md) shows how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
+* [sizeof](keywords/sizeof/README.md) shows how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacff264255bb80f00c1447fda6524b0ec) keyword.
 * [startup_keyword](keywords/startup_keyword/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
 * [static](keywords/static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](keywords/static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
