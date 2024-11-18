@@ -248,6 +248,9 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <tr class="memitem:ab249fbb59dc173c7fa651f7a9c895224"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab249fbb59dc173c7fa651f7a9c895224">get_method</a> () const noexcept</td></tr>
 <tr class="memdesc:ab249fbb59dc173c7fa651f7a9c895224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the method in which the frame is executing.  <br /></td></tr>
 <tr class="separator:ab249fbb59dc173c7fa651f7a9c895224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9feef69a15feb1497fe085fc725490ac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9feef69a15feb1497fe085fc725490ac">get_native_offset</a> () const noexcept</td></tr>
+<tr class="memdesc:a9feef69a15feb1497fe085fc725490ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the native code for the method that is being executed.  <br /></td></tr>
+<tr class="separator:a9feef69a15feb1497fe085fc725490ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abddee510369e3620ff9e124090e722d4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#abddee510369e3620ff9e124090e722d4">get_offset</a> () const noexcept</td></tr>
 <tr class="memdesc:abddee510369e3620ff9e124090e722d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the code for the method that is being executed.  <br /></td></tr>
 <tr class="separator:abddee510369e3620ff9e124090e722d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -969,6 +972,45 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a9feef69a15feb1497fe085fc725490ac" name="a9feef69a15feb1497fe085fc725490ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9feef69a15feb1497fe085fc725490ac">&#9670;&#160;</a></span>get_native_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::diagnostics::stack_frame::get_native_offset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the offset from the start of the native code for the method that is being executed. </p>
+<dl class="section return"><dt>Returns</dt><dd>The offset from the start of the native code for the method that is being executed. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#abddee510369e3620ff9e124090e722d4" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1ff0d465067415c180c80027ab1a8551">get_file_name</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a8d0401a41ea6404856950f09e62c5034">get_file_line_number</a>());</div>
+<div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9443663b890466a57f93ff9b7268ef80">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab249fbb59dc173c7fa651f7a9c895224">get_method</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#abddee510369e3620ff9e124090e722d4">get_offset</a>() != <a class="code hl_variable" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Native Offset: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a9feef69a15feb1497fe085fc725490ac">get_native_offset</a>());</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a9feef69a15feb1497fe085fc725490ac"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a9feef69a15feb1497fe085fc725490ac">xtd::diagnostics::stack_frame::get_native_offset</a></div><div class="ttdeci">virtual xtd::size get_native_offset() const noexcept</div><div class="ttdoc">Gets the offset from the start of the native code for the method that is being executed.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="abddee510369e3620ff9e124090e722d4" name="abddee510369e3620ff9e124090e722d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abddee510369e3620ff9e124090e722d4">&#9670;&#160;</a></span>get_offset()</h2>
 
@@ -1250,7 +1292,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 19:46:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 17 2024 19:44:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
