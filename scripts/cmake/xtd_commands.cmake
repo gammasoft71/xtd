@@ -339,10 +339,10 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.h)
 ##
-##  target_top_level_statement(my_project.h)
+##  target_top_level(my_project.h)
 ##  target_type(GUI_APPLICATION)
 ## ```
-macro(target_top_level_statement TOP_LEVEL_FILE)
+macro(target_top_level TOP_LEVEL_FILE)
   message(VERBOSE "Add top level statement [\"${TOP_LEVEL_FILE}\"]...")
   set(STARTUP_FILE properties/startup.cpp)
   string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" TOP_LEVEL_FILE ${TOP_LEVEL_FILE})
