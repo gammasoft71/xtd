@@ -237,6 +237,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"));
       collection_assert::are_equivalent({"section1"}, fs.sections());
       assert::is_true(fs.stream().has_value());
+      stream.close();
       file::remove(file_name);
     }
     
@@ -312,6 +313,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"));
       collection_assert::are_equivalent({"section1"}, fs.sections());
       assert::is_true(fs.stream().has_value());
+      stream.close();
       file::remove(file_name);
     }
 
