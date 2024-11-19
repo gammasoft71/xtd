@@ -4,6 +4,7 @@
 #include <xtd/char16>
 #include <xtd/char32>
 #include <xtd/char8>
+#include <xtd/environment>
 #include <xtd/index_out_of_range_exception.h>
 #include <xtd/size_object>
 #include <xtd/wchar>
@@ -292,7 +293,8 @@ namespace xtd::tests {
     void test_method_(cend) {
       auto s = basic_string_builder<char_t> {"A test string"};
       auto iterator = s.cend();
-      assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
+      // Attempting to access cend results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(data_const) {
@@ -328,7 +330,8 @@ namespace xtd::tests {
     void test_method_(end) {
       auto s = basic_string_builder<char_t> {"A test string"};
       auto iterator = s.end();
-      assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
+      // Attempting to access end results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(front_const) {
@@ -902,7 +905,8 @@ namespace xtd::tests {
       assert::are_equal("A test $ string", s.to_string());
       assert::are_equal(char_t {'$'}, *i);
       s = basic_string_builder<char_t> {"A test string"};
-      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, char_t {'$'});});
+      // Attempting to access cbegin + an out of range index results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, char_t {'$'});});
     }
     
     void test_method_(insert_with_pos_count_and_ch) {
@@ -911,7 +915,8 @@ namespace xtd::tests {
       assert::are_equal("A test $$$$$ string", s.to_string());
       assert::are_equal(char_t {'$'}, *i);
       s = basic_string_builder<char_t> {"A test string"};
-      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, 5, char_t {'$'});});
+      // Attempting to access cbegin + an out of range index results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, 5, char_t {'$'});});
     }
     
     void test_method_(insert_with_pos_first_and_last_iterators) {
@@ -921,7 +926,8 @@ namespace xtd::tests {
       assert::are_equal("A test to test string", s.to_string());
       assert::are_equal(char_t {' '}, *i);
       s = basic_string_builder<char_t> {"A test string"};
-      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, si.begin(), si.end());});
+      // Attempting to access cbegin + an out of range index results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, si.begin(), si.end());});
     }
     
     void test_method_(insert_with_pos_and_ilist) {
@@ -930,7 +936,8 @@ namespace xtd::tests {
       assert::are_equal("A test to test string", s.to_string());
       assert::are_equal(char_t {' '}, *i);
       s = basic_string_builder<char_t> {"A test string"};
-      assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, {' ', 't', 'o', ' ', 't', 'e', 's', 't'});});
+      // Attempting to access cbegin + an out of range index results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, {' ', 't', 'o', ' ', 't', 'e', 's', 't'});});
     }
 
     void test_method_(pop_back) {
