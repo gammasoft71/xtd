@@ -213,7 +213,8 @@ namespace xtd::tests {
     
     void test_method_(crend) {
       auto items = array {84, 42, 21};
-      assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.crend();});
+      // Attempting to access crend results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.crend();});
     }
     
     void test_method_(data) {
@@ -347,7 +348,8 @@ namespace xtd::tests {
     
     void test_method_(rend) {
       auto items = array {84, 42, 21};
-      assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.rend();});
+      // Attempting to access rend results in undefined behaviour in Windows.
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *items.rend(); });
     }
 
     void test_method_(size) {
