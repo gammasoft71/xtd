@@ -33,7 +33,7 @@ auto main() -> int {
   console::write_line("└───────────────────┴─────────────────────┴─────────────────────────┘");
 }
 
-// This code produces the following output :
+// This code can produce the following output :
 //
 // sizeof :
 // ┌───────────────────┬─────────────────────┬─────────────────────────┐
@@ -47,7 +47,7 @@ auto main() -> int {
 // │ xtd::wchar   =  4 │ ------------------- │ wchar_t            =  4 │
 // │ xtd::single  =  4 │ std::float_t   =  4 │ float              =  4 │
 // │ xtd::double_ =  8 │ std::double_t  =  8 │ double             =  8 │
-// │ xtd::decimal =  8 │ ------------------- │ long double        =  8 │
+// │ xtd::decimal = 16 │ ------------------- │ long double        = 16 │
 // │ xtd::sbyte   =  1 │ std::int8_t    =  1 │ char               =  1 │
 // │ xtd::int16   =  2 │ std::int16_t   =  2 │ short              =  2 │
 // │ xtd::int32   =  4 │ std::int32_t   =  4 │ int                =  4 │
