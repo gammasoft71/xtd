@@ -126,22 +126,22 @@ namespace xtd {
         
         /// @brief Constructs an empty container with the given allocator.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(const allocator_type& alloc) noexcept : data_(xtd::new_ptr<struct data>(alloc)) {}
+        explicit list(const allocator_type& alloc) noexcept : data_(xtd::new_ptr<list_data>(alloc)) {}
         /// @brief Constructs the container with specified count copies of elements with specified value.
         /// @param count The size of the container.
         /// @param value The value to initialize elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(count, value, alloc)) {}
+        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(count, value, alloc)) {}
         /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
         /// @param count The size of the container.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(count, alloc)) {}
+        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(count, alloc)) {}
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         /// @param alloc The allocator to use for all memory allocations of this container.
         template<typename input_iterator_t>
-        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(first, last, alloc)) {}
+        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(first, last, alloc)) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
         /// @param alloc The allocator to use for all memory allocations of this container.
@@ -150,41 +150,41 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(collection, alloc)) {}
+        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(collection, alloc)) {}
         
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
-        list(const list& list) : data_(xtd::new_ptr<struct data>(list)) {}
+        list(const list& list) : data_(xtd::new_ptr<list_data>(list)) {}
         /// @brief Copy constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be inserted from.
-        list(const base_type& list) : data_(xtd::new_ptr<struct data>(list)) {}
+        list(const base_type& list) : data_(xtd::new_ptr<list_data>(list)) {}
         /// @brief Default copy constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const list& list, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(list, alloc)) {}
+        list(const list& list, const allocator_type& alloc) : data_(xtd::new_ptr<list_data>(list, alloc)) {}
         /// @brief Default copy constructor with specified base type list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const base_type& list, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(list, alloc)) {}
+        list(const base_type& list, const allocator_type& alloc) : data_(xtd::new_ptr<list_data>(list, alloc)) {}
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(items, alloc)) {}
+        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(items, alloc)) {}
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(list&& other) : data_(xtd::new_ptr<struct data>(std::move(other))) {other.data_ = xtd::new_ptr<struct data>();}
+        list(list&& other) : data_(xtd::new_ptr<list_data>(std::move(other))) {other.data_ = xtd::new_ptr<list_data>();}
         /// @brief Move constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(base_type&& other) : data_(xtd::new_ptr<struct data>(std::move(other))) {other.clear();}
+        list(base_type&& other) : data_(xtd::new_ptr<list_data>(std::move(other))) {other.clear();}
         /// @brief Move constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(list&& other, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(std::move(other)), alloc) {other.data_ = xtd::new_ptr<struct data>();}
+        list(list&& other, const allocator_type& alloc) : data_(xtd::new_ptr<list_data>(std::move(other)), alloc) {other.data_ = xtd::new_ptr<list_data>();}
         /// @brief Move constructor with specified base tyoe list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(base_type&& other, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(std::move(other), alloc)) {other.items.clear();}
+        list(base_type&& other, const allocator_type& alloc) : data_(xtd::new_ptr<list_data>(std::move(other), alloc)) {other.items.clear();}
         /// @}
         
         /// @name Public Properties
@@ -948,33 +948,33 @@ namespace xtd {
           return begin() + (value - data_->items.begin());
         }
 
-        struct data {
-          data() = default;
-          explicit data(const allocator_type& alloc) noexcept : items(alloc) {}
-          data(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items(count, value, alloc) {}
-          explicit data(size_type count, const allocator_type& alloc = allocator_type()) : items(count, alloc) {}
+        struct list_data {
+          list_data() = default;
+          explicit list_data(const allocator_type& alloc) noexcept : items(alloc) {}
+          list_data(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items(count, value, alloc) {}
+          explicit list_data(size_type count, const allocator_type& alloc = allocator_type()) : items(count, alloc) {}
           template<typename input_iterator_t>
-          data(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items(first, last, alloc) {}
-          data(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items(collection.begin(), collection.end(), alloc) {}
-          data(const list& list) : items(list.data_->items), version(list.data_->version) {}
-          data(const base_type& list) : items(list) {}
-          data(const list& list, const allocator_type& alloc) : items(list.data_->items, alloc), version(list.data_->version) {}
-          data(const base_type& list, const allocator_type& alloc) : items(list, alloc) {}
-          data(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items(items.begin(), items.end(), alloc) {}
-          data(list&& other) : items(std::move(other.data_->items)), version(std::move(other.data_->version)) {other.data_->items.clear(); other.data_->version = 0;}
-          data(base_type&& other) : items(std::move(other)) {other.clear();}
-          data(list&& other, const allocator_type& alloc) : items(other.data_->items, alloc), version{std::move(other.data_->version)} {other.data_->items.clear(); other.data_->version = 0;}
-          data(base_type&& other, const allocator_type& alloc) : items(std::move(other), alloc) {}
+          list_data(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items(first, last, alloc) {}
+          list_data(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items(collection.begin(), collection.end(), alloc) {}
+          list_data(const list& list) : items(list.data_->items), version(list.data_->version) {}
+          list_data(const base_type& list) : items(list) {}
+          list_data(const list& list, const allocator_type& alloc) : items(list.data_->items, alloc), version(list.data_->version) {}
+          list_data(const base_type& list, const allocator_type& alloc) : items(list, alloc) {}
+          list_data(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items(items.begin(), items.end(), alloc) {}
+          list_data(list&& other) : items(std::move(other.data_->items)), version(std::move(other.data_->version)) {other.data_->items.clear(); other.data_->version = 0;}
+          list_data(base_type&& other) : items(std::move(other)) {other.clear();}
+          list_data(list&& other, const allocator_type& alloc) : items(other.data_->items, alloc), version{std::move(other.data_->version)} {other.data_->items.clear(); other.data_->version = 0;}
+          list_data(base_type&& other, const allocator_type& alloc) : items(std::move(other), alloc) {}
 
-          data(const data&) = default;
-          data& operator =(const data&) = default;
+          list_data(const list_data&) = default;
+          list_data& operator =(const list_data&) = default;
 
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
         };
         
-        xtd::ptr<struct data> data_ = xtd::new_ptr<struct data>();
+        xtd::ptr<list_data> data_ = xtd::new_ptr<list_data>();
       };
       
       /// @cond
