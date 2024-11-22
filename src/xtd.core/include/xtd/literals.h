@@ -344,6 +344,350 @@ namespace xtd {
     /// ```
     xtd::time_span operator""_h(unsigned long long s);
     
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 1.6_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(long double n);
+    
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 54_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(unsigned long long n);
+    
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << "125"_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(const char* s, size_t n);
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u8"125"_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(const char8* s, size_t n);
+#endif
+    
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u"125"_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(const char16* s, size_t n);
+    
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << U"125"_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(const char32* s, size_t n);
+    
+    /// @brief Used to convert specified value into sbyte.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << L"125"_i8 << std::endl;
+    /// ```
+    sbyte operator""_i8(const wchar* s, size_t n);
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 1.6_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(long double n);
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 54_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(unsigned long long n);
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << "125"_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(const char* s, size_t n);
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u8"125"_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(const char8* s, size_t n);
+#endif
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u"125"_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(const char16* s, size_t n);
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << U"125"_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(const char32* s, size_t n);
+    
+    /// @brief Used to convert specified value into int16.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << L"125"_i16 << std::endl;
+    /// ```
+    int16 operator""_i16(const wchar* s, size_t n);
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 1.6_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(long double n);
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 54_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(unsigned long long n);
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << "125"_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(const char* s, size_t n);
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u8"125"_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(const char8* s, size_t n);
+#endif
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u"125"_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(const char16* s, size_t n);
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << U"125"_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(const char32* s, size_t n);
+    
+    /// @brief Used to convert specified value into int32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << L"125"_i32 << std::endl;
+    /// ```
+    int32 operator""_i32(const wchar* s, size_t n);
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 1.6_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(long double n);
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << 54_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(unsigned long long n);
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << "125"_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(const char* s, size_t n);
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u8"125"_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(const char8* s, size_t n);
+#endif
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << u"125"_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(const char16* s, size_t n);
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << U"125"_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(const char32* s, size_t n);
+    
+    /// @brief Used to convert specified value into int64.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// std::cout << L"125"_i64 << std::endl;
+    /// ```
+    int64 operator""_i64(const wchar* s, size_t n);
+
     /// @brief Used to convert the specified value as minutes to xtd::time_span.
     /// @par Namespace
     /// xtd
@@ -697,7 +1041,7 @@ namespace xtd {
     /// ```
     xtd::string operator""_sX8(unsigned long long s);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -709,7 +1053,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -721,7 +1065,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -734,7 +1078,7 @@ namespace xtd {
     sbyte operator""_s8(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -747,7 +1091,7 @@ namespace xtd {
     sbyte operator""_s8(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -759,7 +1103,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -771,7 +1115,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -783,7 +1127,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -795,7 +1139,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -807,7 +1151,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -820,7 +1164,7 @@ namespace xtd {
     int16 operator""_s16(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -833,7 +1177,7 @@ namespace xtd {
     int16 operator""_s16(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -845,7 +1189,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -857,7 +1201,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -869,7 +1213,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -881,7 +1225,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -893,7 +1237,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -906,7 +1250,7 @@ namespace xtd {
     int32 operator""_s32(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -919,7 +1263,7 @@ namespace xtd {
     int32 operator""_s32(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -931,7 +1275,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -943,7 +1287,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -955,7 +1299,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -967,7 +1311,7 @@ namespace xtd {
     /// ```
     int64 operator""_s64(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -979,7 +1323,7 @@ namespace xtd {
     /// ```
     int64 operator""_s64(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -992,7 +1336,7 @@ namespace xtd {
     int64 operator""_s64(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1005,7 +1349,7 @@ namespace xtd {
     int64 operator""_s64(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1017,7 +1361,7 @@ namespace xtd {
     /// ```
     int64 operator""_s64(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1029,7 +1373,7 @@ namespace xtd {
     /// ```
     int64 operator""_s64(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1170,7 +1514,7 @@ namespace xtd {
     /// ```
     xtd::byte operator""_u8(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1182,7 +1526,7 @@ namespace xtd {
     /// ```
     xtd::byte operator""_u8(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1194,7 +1538,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1206,7 +1550,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1219,7 +1563,7 @@ namespace xtd {
     uint16 operator""_u16(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1232,7 +1576,7 @@ namespace xtd {
     uint16 operator""_u16(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1244,7 +1588,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1256,7 +1600,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint16.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1268,7 +1612,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1280,7 +1624,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1292,7 +1636,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1305,7 +1649,7 @@ namespace xtd {
     uint32 operator""_u32(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1318,7 +1662,7 @@ namespace xtd {
     uint32 operator""_u32(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1330,7 +1674,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1342,7 +1686,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint32.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1354,7 +1698,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(const wchar* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1366,7 +1710,7 @@ namespace xtd {
     /// ```
     uint64 operator""_u64(long double n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1378,7 +1722,7 @@ namespace xtd {
     /// ```
     uint64 operator""_u64(unsigned long long n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1391,7 +1735,7 @@ namespace xtd {
     uint64 operator""_u64(const char* s, size_t n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1404,7 +1748,7 @@ namespace xtd {
     uint64 operator""_u64(const char8* s, size_t n);
 #endif
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1416,7 +1760,7 @@ namespace xtd {
     /// ```
     uint64 operator""_u64(const char16* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1428,7 +1772,7 @@ namespace xtd {
     /// ```
     uint64 operator""_u64(const char32* s, size_t n);
     
-    /// @brief Used to convert specified value into byte.
+    /// @brief Used to convert specified value into uint64.
     /// @par Namespace
     /// xtd
     /// @par Library

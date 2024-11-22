@@ -117,6 +117,126 @@ xtd::time_span xtd::operator""_h(unsigned long long s) {
   return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::hours(s))};
 }
 
+sbyte xtd::operator""_i8(long double n) {
+  return as<sbyte>(n);
+}
+
+sbyte xtd::operator""_i8(unsigned long long n) {
+  return as<sbyte>(n);
+}
+
+sbyte xtd::operator""_i8(const char* s, size_t n) {
+  return as<sbyte>(string(s, s + n));
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+sbyte xtd::operator""_i8(const char8* s, size_t n) {
+  return as<sbyte>(string(s, s + n));
+}
+#endif
+
+sbyte xtd::operator""_i8(const char16* s, size_t n) {
+  return as<sbyte>(std::u16string(s, s + n));
+}
+
+sbyte xtd::operator""_i8(const char32* s, size_t n) {
+  return as<sbyte>(std::u32string(s, s + n));
+}
+
+sbyte xtd::operator""_i8(const wchar* s, size_t n) {
+  return as<sbyte>(std::wstring(s, s + n));
+}
+
+int16 xtd::operator""_i16(long double n) {
+  return as<int16>(n);
+}
+
+int16 xtd::operator""_i16(unsigned long long n) {
+  return as<int16>(n);
+}
+
+int16 xtd::operator""_i16(const char* s, size_t n) {
+  return as<int16>(string(s, s + n));
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+int16 xtd::operator""_i16(const char8* s, size_t n) {
+  return as<int16>(string(s, s + n));
+}
+#endif
+
+int16 xtd::operator""_i16(const char16* s, size_t n) {
+  return as<int16>(std::u16string(s, s + n));
+}
+
+int16 xtd::operator""_i16(const char32* s, size_t n) {
+  return as<int16>(std::u32string(s, s + n));
+}
+
+int16 xtd::operator""_i16(const wchar* s, size_t n) {
+  return as<int16>(std::wstring(s, s + n));
+}
+
+int32 xtd::operator""_i32(long double n) {
+  return as<int32>(n);
+}
+
+int32 xtd::operator""_i32(unsigned long long n) {
+  return as<int32>(n);
+}
+
+int32 xtd::operator""_i32(const char* s, size_t n) {
+  return as<int32>(string(s, s + n));
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+int32 xtd::operator""_i32(const char8* s, size_t n) {
+  return as<int32>(string(s, s + n));
+}
+#endif
+
+int32 xtd::operator""_i32(const char16* s, size_t n) {
+  return as<int32>(std::u16string(s, s + n));
+}
+
+int32 xtd::operator""_i32(const char32* s, size_t n) {
+  return as<int32>(std::u32string(s, s + n));
+}
+
+int32 xtd::operator""_i32(const wchar* s, size_t n) {
+  return as<int32>(std::wstring(s, s + n));
+}
+
+int64 xtd::operator""_i64(long double n) {
+  return as<int64>(n);
+}
+
+int64 xtd::operator""_i64(unsigned long long n) {
+  return as<int64>(n);
+}
+
+int64 xtd::operator""_i64(const char* s, size_t n) {
+  return as<int64>(string(s, s + n));
+}
+
+#if defined(__xtd__cpp_lib_char8_t)
+int64 xtd::operator""_i64(const char8* s, size_t n) {
+  return as<int64>(string(s, s + n));
+}
+#endif
+
+int64 xtd::operator""_i64(const char16* s, size_t n) {
+  return as<int64>(std::u16string(s, s + n));
+}
+
+int64 xtd::operator""_i64(const char32* s, size_t n) {
+  return as<int64>(std::u32string(s, s + n));
+}
+
+int64 xtd::operator""_i64(const wchar* s, size_t n) {
+  return as<int64>(std::wstring(s, s + n));
+}
+
 xtd::time_span xtd::operator""_m(unsigned long long s) {
   return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
 }
