@@ -386,6 +386,8 @@
 #include "platform_id.h"
 #include "platform_not_supported_exception.h"
 #include "predicate.h"
+#include "print.h"
+#include "println.h"
 #include "processor.h"
 #include "program_exit_event_args.h"
 #include "program_exit_event_handler.h"
