@@ -319,6 +319,7 @@
 #include "exit_status.h"
 #include "flags_attribute.h"
 #include "foreground_color.h"
+#include "format.h"
 #include "format_exception.h"
 #include "func.h"
 #include "generic_stream_output.h"
