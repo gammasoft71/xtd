@@ -345,6 +345,10 @@ add_sources(
   include/xtd/platform_not_supported_exception
   include/xtd/predicate.h
   include/xtd/predicate
+  include/xtd/print.h
+  include/xtd/print
+  include/xtd/println.h
+  include/xtd/println
   include/xtd/processor.h
   include/xtd/processor
   include/xtd/program_exit_event_args.h
