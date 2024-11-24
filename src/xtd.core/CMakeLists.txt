@@ -209,6 +209,8 @@ add_sources(
   include/xtd/flags_attribute
   include/xtd/foreground_color.h
   include/xtd/foreground_color
+  include/xtd/format.h
+  include/xtd/format
   include/xtd/format_exception.h
   include/xtd/format_exception
   include/xtd/func.h
