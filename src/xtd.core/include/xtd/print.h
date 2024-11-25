@@ -22,4 +22,19 @@ namespace xtd {
   /// @param values Values to write,
   template<typename ... args_t>
   void print(const xtd::string& fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(fmt, std::forward<args_t>(values)...));}
+  
+  /// @cond
+  template<typename ... args_t>
+  void print(const char* fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
+#if defined(__xtd__cpp_lib_char8_t)
+  template<typename ... args_t>
+  void print(const char8_t* fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
+#endif
+  template<typename ... args_t>
+  void print(const char16_t* fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
+  template<typename ... args_t>
+  void print(const char32_t* fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
+  template<typename ... args_t>
+  void print(const wchar_t* fmt, args_t&& ... values) {xtd::console::write(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
+  /// @endcond
 }
