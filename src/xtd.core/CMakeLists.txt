@@ -34,7 +34,7 @@ add_sources(
   include/xtd/arithmetic_exception
   include/xtd/array.h
   include/xtd/array
-  include/xtd/array.hpp
+  include/xtd/array_.h
   include/xtd/array_1.h
   include/xtd/array_2.h
   include/xtd/array_3.h
@@ -55,7 +55,7 @@ add_sources(
   include/xtd/basic_array.h
   include/xtd/basic_string.h
   include/xtd/basic_string
-  include/xtd/basic_string.hpp
+  include/xtd/basic_string_.h
   include/xtd/beep.h
   include/xtd/beep
   include/xtd/bit_converter.h
