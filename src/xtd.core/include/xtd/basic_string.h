@@ -3718,5 +3718,5 @@ namespace xtd {
 }
 
 #define __XTD_BASIC_STRING_INTERNAL__
-#include "basic_string.hpp"
+#include "basic_string_.h"
 #undef __XTD_BASIC_STRING_INTERNAL__

@@ -105,5 +105,5 @@ namespace xtd {
 #include "array_2.h"
 #include "array_3.h"
 #include "array_static.h"
-#include "array.hpp"
+#include "array_.h"
 #undef __XTD_ARRAY_INTERNAL__

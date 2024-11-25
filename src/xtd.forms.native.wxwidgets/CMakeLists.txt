@@ -26,7 +26,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/control_handler
   include/xtd/forms/native/wxwidgets/control_wrapper.h
   include/xtd/forms/native/wxwidgets/control_wrapper
-  include/xtd/forms/native/wxwidgets/control_wrapper.hpp
+  include/xtd/forms/native/wxwidgets/control_wrapper_.h
   include/xtd/forms/native/wxwidgets/dark_mode.h
   include/xtd/forms/native/wxwidgets/dark_mode
   include/xtd/forms/native/wxwidgets/iwx_evt.h
