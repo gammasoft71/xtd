@@ -8,8 +8,8 @@
 #endif
 /// @endcond
 
-#include "console_color.h"
-#include "console_special_key.h"
+#include "console_color.hpp"
+#include "console_special_key.hpp"
 #include <xtd/core_native_export>
 #include <functional>
 #include <string>

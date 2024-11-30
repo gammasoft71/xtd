@@ -6,112 +6,112 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
-  include/xtd/xtd.core.native.h
+  include/xtd/xtd.core.native.hpp
   include/xtd/xtd.core.native
-  include/xtd/native/address_family_constants.h
+  include/xtd/native/address_family_constants.hpp
   include/xtd/native/address_family_constants
-  include/xtd/native/assert_dialog_results.h
+  include/xtd/native/assert_dialog_results.hpp
   include/xtd/native/assert_dialog_results
-  include/xtd/native/console_color.h
+  include/xtd/native/console_color.hpp
   include/xtd/native/console_color
-  include/xtd/native/console_special_key.h
+  include/xtd/native/console_special_key.hpp
   include/xtd/native/console_special_key
-  include/xtd/native/console.h
+  include/xtd/native/console.hpp
   include/xtd/native/console
-  include/xtd/native/constant_special_item_id_list.h
+  include/xtd/native/constant_special_item_id_list.hpp
   include/xtd/native/constant_special_item_id_list
-  include/xtd/native/condition_variable.h
+  include/xtd/native/condition_variable.hpp
   include/xtd/native/condition_variable
-  include/xtd/native/critical_section.h
+  include/xtd/native/critical_section.hpp
   include/xtd/native/critical_section
-  include/xtd/native/cryptography.h
+  include/xtd/native/cryptography.hpp
   include/xtd/native/cryptography
-  include/xtd/native/date_time.h
+  include/xtd/native/date_time.hpp
   include/xtd/native/date_time
-  include/xtd/native/debugger.h
+  include/xtd/native/debugger.hpp
   include/xtd/native/debugger
-  include/xtd/native/directory.h
+  include/xtd/native/directory.hpp
   include/xtd/native/directory
-  include/xtd/native/dns.h
+  include/xtd/native/dns.hpp
   include/xtd/native/dns
-  include/xtd/native/drive_type.h
+  include/xtd/native/drive_type.hpp
   include/xtd/native/drive_type
-  include/xtd/native/drive.h
+  include/xtd/native/drive.hpp
   include/xtd/native/drive
-  include/xtd/native/environment.h
+  include/xtd/native/environment.hpp
   include/xtd/native/environment
-  include/xtd/native/environment_variable_target.h
+  include/xtd/native/environment_variable_target.hpp
   include/xtd/native/environment_variable_target
-  include/xtd/native/file.h
+  include/xtd/native/file.hpp
   include/xtd/native/file
-  include/xtd/native/file_attribute.h
+  include/xtd/native/file_attribute.hpp
   include/xtd/native/file_attribute
-  include/xtd/native/file_permission.h
+  include/xtd/native/file_permission.hpp
   include/xtd/native/file_permission
-  include/xtd/native/file_system.h
+  include/xtd/native/file_system.hpp
   include/xtd/native/file_system
-  include/xtd/native/guid.h
+  include/xtd/native/guid.hpp
   include/xtd/native/guid
-  include/xtd/native/interlocked.h
+  include/xtd/native/interlocked.hpp
   include/xtd/native/interlocked
-  include/xtd/native/memory.h
-  include/xtd/native/named_event_wait_handle.h
+  include/xtd/native/memory.hpp
+  include/xtd/native/named_event_wait_handle.hpp
   include/xtd/native/named_event_wait_handle
-  include/xtd/native/named_mutex.h
+  include/xtd/native/named_mutex.hpp
   include/xtd/native/named_mutex
-  include/xtd/native/named_semaphore.h
+  include/xtd/native/named_semaphore.hpp
   include/xtd/native/named_semaphore
-  include/xtd/native/path.h
+  include/xtd/native/path.hpp
   include/xtd/native/path
-  include/xtd/native/platform_ids.h
+  include/xtd/native/platform_ids.hpp
   include/xtd/native/platform_ids
-  include/xtd/native/priority_class.h
+  include/xtd/native/priority_class.hpp
   include/xtd/native/priority_class
-  include/xtd/native/process.h
+  include/xtd/native/process.hpp
   include/xtd/native/process
-  include/xtd/native/process_creation_flags.h
+  include/xtd/native/process_creation_flags.hpp
   include/xtd/native/process_creation_flags
-  include/xtd/native/process_window_style.h
+  include/xtd/native/process_window_style.hpp
   include/xtd/native/process_window_style
-  include/xtd/native/protocol_type_constants.h
+  include/xtd/native/protocol_type_constants.hpp
   include/xtd/native/protocol_type_constants
-  include/xtd/native/select_mode_constants.h
+  include/xtd/native/select_mode_constants.hpp
   include/xtd/native/select_mode_constants
-  include/xtd/native/settings.h
+  include/xtd/native/settings.hpp
   include/xtd/native/settings
-  include/xtd/native/socket.h
+  include/xtd/native/socket.hpp
   include/xtd/native/socket
-  include/xtd/native/socket_option_level_constants.h
+  include/xtd/native/socket_option_level_constants.hpp
   include/xtd/native/socket_option_level_constants
-  include/xtd/native/socket_option_name_constants.h
+  include/xtd/native/socket_option_name_constants.hpp
   include/xtd/native/socket_option_name_constants
-  include/xtd/native/socket_error_constants.h
+  include/xtd/native/socket_error_constants.hpp
   include/xtd/native/socket_error_constants
-  include/xtd/native/socket_shutdown_constants.h
+  include/xtd/native/socket_shutdown_constants.hpp
   include/xtd/native/socket_shutdown_constants
-  include/xtd/native/socket_type_constants.h
+  include/xtd/native/socket_type_constants.hpp
   include/xtd/native/socket_type_constants
-  include/xtd/native/sounds.h
+  include/xtd/native/sounds.hpp
   include/xtd/native/sounds
-  include/xtd/native/speech_synthesizer.h
+  include/xtd/native/speech_synthesizer.hpp
   include/xtd/native/speech_synthesizer
-  include/xtd/native/stack_trace.h
+  include/xtd/native/stack_trace.hpp
   include/xtd/native/stack_trace
-  include/xtd/native/system_sound.h
+  include/xtd/native/system_sound.hpp
   include/xtd/native/system_sound
-  include/xtd/native/thread.h
+  include/xtd/native/thread.hpp
   include/xtd/native/thread
-  include/xtd/native/translator.h
+  include/xtd/native/translator.hpp
   include/xtd/native/translator
-  include/xtd/native/types.h
+  include/xtd/native/types.hpp
   include/xtd/native/types
-  include/xtd/native/unnamed_event_wait_handle.h
+  include/xtd/native/unnamed_event_wait_handle.hpp
   include/xtd/native/unnamed_event_wait_handle
-  include/xtd/native/unnamed_mutex.h
+  include/xtd/native/unnamed_mutex.hpp
   include/xtd/native/unnamed_mutex
-  include/xtd/native/unnamed_semaphore.h
+  include/xtd/native/unnamed_semaphore.hpp
   include/xtd/native/unnamed_semaphore
-  include/xtd/native/value_types.h
+  include/xtd/native/value_types.hpp
   include/xtd/native/value_types
 )
 target_type(INTERFACE_LIBRARY)

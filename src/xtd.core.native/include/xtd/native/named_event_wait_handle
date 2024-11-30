@@ -1,2 +1,2 @@
 #pragma once
-#include "named_event_wait_handle.h"
+#include "named_event_wait_handle.hpp"

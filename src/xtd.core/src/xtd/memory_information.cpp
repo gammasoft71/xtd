@@ -1,6 +1,6 @@
 #include "../../include/xtd/memory_information.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/memory.h>
+#include <xtd/native/memory>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;

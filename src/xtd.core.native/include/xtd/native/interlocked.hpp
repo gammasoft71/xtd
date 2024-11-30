@@ -9,9 +9,9 @@
 /// @endcond
 
 #define __XTD_VALUE_TYPE_NATIVE__
-#include "value_types.h"
+#include "value_types.hpp"
 #undef __XTD_VALUE_TYPE_NATIVE__
-#include "types.h"
+#include "types.hpp"
 #include <xtd/core_native_export>
 #include <cstddef>
 #include <ctime>
