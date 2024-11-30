@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_brush.h"
+#include "wx_brush.hpp"

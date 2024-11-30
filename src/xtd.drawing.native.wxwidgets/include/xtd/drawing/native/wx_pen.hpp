@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include "wx_brush.h"
+#include "wx_brush.hpp"
 #include <xtd/argument_exception>
 #include <xtd/as>
 #include <wx/pen.h>

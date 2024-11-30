@@ -9,9 +9,9 @@
 /// @endcond
 
 #include <xtd/xtd.drawing.native>
-#include "drawing/native/hdc_wrapper.h"
-#include "drawing/native/wxConicalGradient.h"
-#include "drawing/native/wxDrawString.h"
-#include "drawing/native/wx_application.h"
-#include "drawing/native/wx_brush.h"
-#include "drawing/native/wx_pen.h"
+#include "drawing/native/hdc_wrapper.hpp"
+#include "drawing/native/wxConicalGradient.hpp"
+#include "drawing/native/wxDrawString.hpp"
+#include "drawing/native/wx_application.hpp"
+#include "drawing/native/wx_brush.hpp"
+#include "drawing/native/wx_pen.hpp"

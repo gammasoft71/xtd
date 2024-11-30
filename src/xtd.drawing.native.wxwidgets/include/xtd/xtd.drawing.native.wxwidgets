@@ -8,4 +8,4 @@
 #endif
 /// @endcond
 
-#include "xtd.drawing.native.wxwidgets.h"
+#include "xtd.drawing.native.wxwidgets.hpp"
