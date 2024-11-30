@@ -1,2 +1,2 @@
 #pragma once
-#include "hatch_brush.h"
+#include "hatch_brush.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "dash_style.h"
+#include "dash_style.hpp"

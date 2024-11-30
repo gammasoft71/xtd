@@ -1,2 +1,2 @@
 #pragma once
-#include "gradient_stop.h"
+#include "gradient_stop.hpp"

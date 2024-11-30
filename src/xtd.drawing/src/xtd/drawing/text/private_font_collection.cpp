@@ -1,5 +1,5 @@
 #include <exception>
-#include "../../../../include/xtd/drawing/text/private_font_collection.h"
+#include "../../../../include/xtd/drawing/text/private_font_collection.hpp"
 #include <xtd/not_implemented_exception>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font_family>

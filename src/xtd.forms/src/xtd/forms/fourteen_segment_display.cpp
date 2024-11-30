@@ -1,5 +1,5 @@
 #include "../../../include/xtd/forms/fourteen_segment_display.h"
-#include <xtd/drawing/color_converter.h>
+#include <xtd/drawing/color_converter>
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -2,18 +2,9 @@
 /// @brief Contains xtd::drawing::magenta_colors alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "purple_colors.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
-  namespace drawing {
-    /// @brief Purple, violet and magenta colors for all the hmtl purple, violet and magenta colors.
-    /// @par Namespace
-    /// xtd::drawing
-    /// @par Library
-    /// xtd.drawing
-    /// @ingroup xtd_drawing colors
-    using magenta_colors = xtd::drawing::purple_colors;
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.drawing/include/xtd/drawing/magenta_colors.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.drawing/include/xtd/drawing/magenta_colors.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "magenta_colors.hpp"

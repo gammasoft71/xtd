@@ -1,2 +1,2 @@
 #pragma once
-#include "rotate_flip_type.h"
+#include "rotate_flip_type.hpp"

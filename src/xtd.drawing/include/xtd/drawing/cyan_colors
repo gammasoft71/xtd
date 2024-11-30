@@ -1,2 +1,2 @@
 #pragma once
-#include "cyan_colors.h"
+#include "cyan_colors.hpp"

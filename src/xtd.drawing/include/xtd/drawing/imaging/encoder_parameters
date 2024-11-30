@@ -1,2 +1,2 @@
 #pragma once
-#include "encoder_parameters.h"
+#include "encoder_parameters.hpp"

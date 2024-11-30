@@ -1,2 +1,2 @@
 #pragma once
-#include "image_format.h"
+#include "image_format.hpp"

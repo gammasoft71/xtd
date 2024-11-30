@@ -1,2 +1,2 @@
 #pragma once
-#include "hatch_style.h"
+#include "hatch_style.hpp"

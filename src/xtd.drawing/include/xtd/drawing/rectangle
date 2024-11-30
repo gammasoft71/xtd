@@ -1,2 +1,2 @@
 #pragma once
-#include "rectangle.h"
+#include "rectangle.hpp"
