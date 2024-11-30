@@ -2,15 +2,9 @@
 /// @brief Contains xtd::web::css::selector_map alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "selector.h"
-#include <map>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  namespace web {
-    namespace css {
-      /// @brief Represents the map of a selector name - selector pair.
-      using selector_map = std::map<xtd::string, xtd::web::css::selector>;
-    }
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/web/css/selector_map.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/web/css/selector_map.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "selector_map.hpp"

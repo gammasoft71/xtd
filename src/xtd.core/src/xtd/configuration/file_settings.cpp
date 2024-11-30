@@ -1,6 +1,6 @@
-#include "../../../include/xtd/configuration/file_settings.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/configuration/file_settings.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/environment.hpp"
 
 using namespace xtd;
 using namespace xtd::configuration;

@@ -1,12 +1,12 @@
-#include "../../include/xtd/call_once.h"
-#include "../../include/xtd/console.h"
-#include "../../include/xtd/environment.h"
-#include "../../include/xtd/exception.h"
-#include "../../include/xtd/h_result.h"
-#include "../../include/xtd/nullopt.h"
-#include "../../include/xtd/diagnostics/stack_trace.h"
-#include "../../include/xtd/io/path.h"
-#include "../../include/xtd/reflection/assembly.h"
+#include "../../include/xtd/call_once.hpp"
+#include "../../include/xtd/console.hpp"
+#include "../../include/xtd/environment.hpp"
+#include "../../include/xtd/exception.hpp"
+#include "../../include/xtd/h_result.hpp"
+#include "../../include/xtd/nullopt.hpp"
+#include "../../include/xtd/diagnostics/stack_trace.hpp"
+#include "../../include/xtd/io/path.hpp"
+#include "../../include/xtd/reflection/assembly.hpp"
 
 using namespace xtd;
 

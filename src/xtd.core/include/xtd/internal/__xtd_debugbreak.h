@@ -1,19 +1,10 @@
 /// @file
 /// @brief Contains __xtd_debugbreak definition.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-
-/// @cond
-#if defined(_MSC_VER)
-#define __xtd_debugbreak __debugbreak
-#elif defined(__clang__) || defined(__GNUC__)
-#define __xtd_debugbreak __builtin_trap
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__xtd_debugbreak.hpp> - Will be removed in version 0.4.0.")
 #else
-#include <cstdlib>
-#define __xtd_debugbreak std::abort
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__xtd_debugbreak.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
+#include "__xtd_debugbreak.hpp"

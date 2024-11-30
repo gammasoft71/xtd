@@ -1,2 +1,2 @@
 #pragma once
-#include "slong.h"
+#include "slong.hpp"

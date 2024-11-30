@@ -1,2 +1,2 @@
 #pragma once
-#include "network_stream.h"
+#include "network_stream.hpp"

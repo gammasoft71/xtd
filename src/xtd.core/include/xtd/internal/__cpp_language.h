@@ -1,12 +1,10 @@
 /// @file
 /// @brief Contains __cpp_language definition.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__cpp_language.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__cpp_language.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-/// @cond
-#  define __cpp_language xtd::cpp_language {__cplusplus}
-/// @endcond
+#include "__cpp_language.hpp"

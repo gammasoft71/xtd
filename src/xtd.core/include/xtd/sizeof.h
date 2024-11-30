@@ -2,17 +2,9 @@
 /// @brief Contains #sizeof_ keyword.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Used to obtain the size in bytes of the object representation of type or expression.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core keywords
-  /// @par Examples
-  /// Some C++ examples:
-  /// @include sizeof.cpp
-#define sizeof_(...) \
-  sizeof(__VA_ARGS__)
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/sizeof.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/sizeof.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "sizeof.hpp"

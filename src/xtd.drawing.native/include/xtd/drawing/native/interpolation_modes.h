@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 /// @brief Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawing_2d::quality_mode enumeration.
 /// @par Library

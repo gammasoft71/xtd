@@ -1,2 +1,2 @@
 #pragma once
-#include "build_type.h"
+#include "build_type.hpp"

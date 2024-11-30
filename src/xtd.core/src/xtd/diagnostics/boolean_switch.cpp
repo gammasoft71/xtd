@@ -1,6 +1,6 @@
-#include "../../../include/xtd/diagnostics/boolean_switch.h"
-#include "../../../include/xtd/format_exception.h"
-#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/diagnostics/boolean_switch.hpp"
+#include "../../../include/xtd/format_exception.hpp"
+#include "../../../include/xtd/as.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

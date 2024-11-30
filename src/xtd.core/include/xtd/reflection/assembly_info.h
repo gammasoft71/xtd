@@ -1,16 +1,10 @@
 /// @file
 /// @brief Contains the assembly information contained in xtd::reflection.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "assembly_company_attribute.h"
-#include "assembly_configuration_attribute.h"
-#include "assembly_copyright_attribute.h"
-#include "assembly_culture_attribute.h"
-#include "assembly_description_attribute.h"
-#include "assembly_file_version_attribute.h"
-#include "assembly_guid_attribute.h"
-#include "assembly_identifier_attribute.h"
-#include "assembly_name_attribute.h"
-#include "assembly_product_attribute.h"
-#include "assembly_title_attribute.h"
-#include "assembly_trademark_attribute.h"
-#include "assembly_version_attribute.h"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/reflection/assembly_info.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/reflection/assembly_info.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "assembly_info.hpp"

@@ -2,44 +2,9 @@
 /// @brief Contains xtd::program_exit_event_args event args.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "event_args.h"
-#include "exit_mode.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Provides data for the environment program exit event. This class cannot be inherited.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core events
-  class program_exit_event_args final : public xtd::event_args {
-  public:
-    /// @name Public Constructors
-    
-    /// @{
-    /// @brief Initializes a new instance of the program_exit_event_args class.
-    program_exit_event_args() = default;
-    
-    /// @brief Initializes a new instance of the program_exit_event_args class.
-    /// @param signal One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value..
-    explicit program_exit_event_args(xtd::exit_mode exit_mode) : exit_mode_(exit_mode) {}
-    /// @}
-    
-    /// @cond
-    program_exit_event_args(const program_exit_event_args&) = default;
-    program_exit_event_args& operator =(const program_exit_event_args&) = default;
-    /// @endcond
-    
-    /// @name Public Properties
-    
-    /// @{
-    /// @brief Gets the exit mode.
-    /// @return One of the xtd::exit_mode enumeration values.
-    xtd::exit_mode exit_mode() const noexcept {return exit_mode_;}
-    /// @}
-    
-  private:
-    xtd::exit_mode exit_mode_ = xtd::exit_mode::normal;
-  };
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/program_exit_event_args.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/program_exit_event_args.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "program_exit_event_args.hpp"

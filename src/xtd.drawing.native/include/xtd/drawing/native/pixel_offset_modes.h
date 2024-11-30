@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 /// @brief Specifies an invalid mode.
 /// @par Library

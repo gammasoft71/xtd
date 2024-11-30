@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_name_attribute.h"
+#include "assembly_name_attribute.hpp"

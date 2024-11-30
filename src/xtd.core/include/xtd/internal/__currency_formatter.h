@@ -1,25 +1,10 @@
 /// @file
 /// @brief Contains __currency_formatter method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__currency_formatter.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__currency_formatter.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include "__binary_formatter.h"
-
-#include <cmath>
-#include <iomanip>
-#include <locale>
-#include <sstream>
-
-/// @cond
-template<typename char_t>
-inline std::basic_string<char_t> __currency_formatter(long double value, const std::locale& loc) {
-  std::basic_stringstream<char_t> ss;
-  ss.imbue(loc);
-  ss << std::showbase << std::fixed << std::put_money(value * std::pow(10, std::use_facet<std::moneypunct<char_t>>(loc).frac_digits()));
-  return ss.str();
-}
-/// @endcond
+#include "__currency_formatter.hpp"

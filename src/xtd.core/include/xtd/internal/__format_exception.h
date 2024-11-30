@@ -1,16 +1,10 @@
 /// @file
 /// @brief Contains throw format exception method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_exception.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_exception.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include <string>
-#include "../types.h"
-
-/// @cond
-void __format_exception(const xtd::type& type);
-void __format_exception(const std::string& message);
-/// @endcond
+#include "__format_exception.hpp"

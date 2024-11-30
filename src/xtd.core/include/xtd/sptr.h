@@ -2,26 +2,9 @@
 /// @brief Contains xtd::sptr type.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <memory>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @name Native types
-  
-  /// @{
-  /// @brief The xtd::sptr object is a shared pointer.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  /// @par Examples
-  /// This example shows to use xtd::sptr with xtd::version class
-  /// @code
-  /// sptr<xtd::version> version = new_sptr<xtd::version>(1, 2, 3);
-  ///
-  /// console::write_line("version = {}", version->to_string());
-  /// delete_ptr(version); // Not mandatory.
-  /// @endcode
-  template<typename type_t>
-  using sptr = std::shared_ptr<type_t>;
-  /// @}
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/sptr.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/sptr.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "sptr.hpp"

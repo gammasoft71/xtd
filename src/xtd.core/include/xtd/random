@@ -1,2 +1,2 @@
 #pragma once
-#include "random.h"
+#include "random.hpp"

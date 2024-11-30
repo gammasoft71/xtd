@@ -1,2 +1,2 @@
 #pragma once
-#include "not_finite_number_exception.h"
+#include "not_finite_number_exception.hpp"

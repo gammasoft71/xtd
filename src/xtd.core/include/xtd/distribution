@@ -1,2 +1,2 @@
 #pragma once
-#include "distribution.h"
+#include "distribution.hpp"

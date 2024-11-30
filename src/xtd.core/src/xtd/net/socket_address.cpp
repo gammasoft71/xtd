@@ -1,9 +1,9 @@
-#include "../../../include/xtd/net/ip_address.h"
-#include "../../../include/xtd/net/socket_address.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/as.h"
-#include "../../../include/xtd/index_out_of_range_exception.h"
-#include "../../../include/xtd/bit_converter.h"
+#include "../../../include/xtd/net/ip_address.hpp"
+#include "../../../include/xtd/net/socket_address.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/as.hpp"
+#include "../../../include/xtd/index_out_of_range_exception.hpp"
+#include "../../../include/xtd/bit_converter.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/socket>
 #undef __XTD_CORE_NATIVE_LIBRARY__

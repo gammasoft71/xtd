@@ -1,8 +1,8 @@
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/configuration/file_settings.h"
-#include "../../../include/xtd/configuration/settings.h"
-#include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/reflection/assembly.h"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/configuration/file_settings.hpp"
+#include "../../../include/xtd/configuration/settings.hpp"
+#include "../../../include/xtd/io/path.hpp"
+#include "../../../include/xtd/reflection/assembly.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/settings>
 #undef __XTD_CORE_NATIVE_LIBRARY__

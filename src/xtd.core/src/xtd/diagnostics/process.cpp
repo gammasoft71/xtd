@@ -1,9 +1,9 @@
-#include "../../../include/xtd/diagnostics/process.h"
-#include "../../../include/xtd/diagnostics/debug.h"
-#include "../../../include/xtd/diagnostics/boolean_switch.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/diagnostics/process.hpp"
+#include "../../../include/xtd/diagnostics/debug.hpp"
+#include "../../../include/xtd/diagnostics/boolean_switch.hpp"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
+#include "../../../include/xtd/io/path.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process>
 #include <xtd/native/process_creation_flags>

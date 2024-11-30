@@ -2,21 +2,9 @@
 /// @brief Contains xtd::string_split_options enum class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Specifies whether applicable xtd::string::split method overloads include or omit empty substrings from the return value.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @see xtd::string
-  enum class string_split_options {
-    /// @brief The return value includes array elements that contain an empty string.
-    none,
-    /// @brief The return value does not include array elements that contain an empty string.
-    remove_empty_entries
-  };
-}
-
-// This file is included before enum definition so the enum_register is in the enum.h file.
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/string_split_options.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/string_split_options.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "string_split_options.hpp"

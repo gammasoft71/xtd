@@ -1,2 +1,2 @@
 #pragma once
-#include "null_ptr.h"
+#include "null_ptr.hpp"

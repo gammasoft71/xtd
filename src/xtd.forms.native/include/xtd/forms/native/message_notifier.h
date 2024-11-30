@@ -5,12 +5,12 @@
 
 #include <cstdint>
 #include <string>
-#include <xtd/delegate.h>
-#include <xtd/static.h>
-#include <xtd/string.h>
+#include <xtd/delegate>
+#include <xtd/static>
+#include <xtd/string>
 #include <xtd/forms_native_export.h>
-#include <xtd/drawing/icon.h>
-#include <xtd/guid.h>
+#include <xtd/drawing/icon>
+#include <xtd/guid>
 #include <xtd/chrono>
 // TODO: Documentation
 

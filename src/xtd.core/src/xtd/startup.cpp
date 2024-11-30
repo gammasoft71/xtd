@@ -1,6 +1,6 @@
-#include "../../include/xtd/environment.h"
-#include "../../include/xtd/startup.h"
-#include "../../include/xtd/threading/thread.h"
+#include "../../include/xtd/environment.hpp"
+#include "../../include/xtd/startup.hpp"
+#include "../../include/xtd/threading/thread.hpp"
 #include <vector>
 
 using namespace xtd;

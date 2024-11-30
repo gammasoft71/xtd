@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 /// @brief The destination area is filled by using the color associated with index 0 in the physical palette. (This color is black for the default physical palette.)
 /// @par Library

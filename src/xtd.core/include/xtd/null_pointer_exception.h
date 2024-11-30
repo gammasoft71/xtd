@@ -2,85 +2,9 @@
 /// @brief Contains xtd::null_pointer_exception exception.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "literals.h"
-#include "system_exception.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The exception that is thrown when there is an attempt to dereference a null object pointer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core exceptions
-  /// @par Examples
-  /// The following example demonstrates how to throw and catch an null_pointer_exception.
-  /// @include null_pointer_exception.cpp
-  class null_pointer_exception : public system_exception {
-  public:
-    /// @name Public Constructors
-    
-    /// @{
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    /// @remarks Message is set with the default message associate to the exception.
-    explicit null_pointer_exception(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(default_message(), stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param error Error code associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, error, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param help_link Help link string associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, help_link, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param error Error code associate to the exception.
-    /// @param help_link Help link string associate to the exception.
-    explicit null_pointer_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, error, help_link, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    /// @remarks Message is set with the default message associate to the exception.
-    explicit null_pointer_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(default_message(), inner_exception, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param error Error code associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, error, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param help_link Help link string associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, help_link, stack_frame) {}
-    /// @brief Create a new instance of class null_pointer_exception
-    /// @param message Message string associate to the exception.
-    /// @param inner_exception The exception that is the cause of the current exception.
-    /// @param error Error code associate to the exception.
-    /// @param help_link Help link string associate to the exception.
-    /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    explicit null_pointer_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, error, help_link, stack_frame) {}
-    /// @}
-    
-    /// @cond
-    null_pointer_exception(const null_pointer_exception&) = default;
-    null_pointer_exception& operator =(const null_pointer_exception&) = default;
-    /// @endcond
-    
-  private:
-    const char* default_message() const noexcept {return "Object pointer not set to an instance of an object."_t;}
-  };
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/null_pointer_exception.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/null_pointer_exception.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "null_pointer_exception.hpp"

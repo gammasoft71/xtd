@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 /// @brief Specifies a mitered join. This produces a sharp corner or a clipped corner, depending on whether the length of the miter exceeds the miter limit.
 /// @par Library

@@ -1,2 +1,2 @@
 #pragma once
-#include "wstring.h"
+#include "wstring.hpp"

@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 /// @brief Specifies the text be aligned near the layout. In a left-to-right layout, the near position is left. In a right-to-left layout, the near position is right.
 /// @par Library

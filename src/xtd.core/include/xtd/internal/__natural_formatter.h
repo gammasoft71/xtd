@@ -1,23 +1,10 @@
 /// @file
 /// @brief Contains __natural_formatter method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__natural_formatter.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__natural_formatter.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include <iomanip>
-#include <locale>
-#include <string>
-#include <sstream>
-
-/// @cond
-template<typename char_t>
-inline std::basic_string<char_t> __natural_formatter(long double value, int precision, const std::locale& loc) {
-  std::basic_stringstream<char_t> ss;
-  ss.imbue(loc);
-  ss << std::fixed << std::setprecision(precision) << value;
-  return ss.str();
-}
-/// @endcond
+#include "__natural_formatter.hpp"

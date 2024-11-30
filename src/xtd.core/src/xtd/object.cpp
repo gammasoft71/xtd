@@ -1,10 +1,10 @@
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/hash_code.h"
-#include "../../include/xtd/iformatable.h"
-#include "../../include/xtd/invalid_cast_exception.h"
-#include "../../include/xtd/object.h"
-#include "../../include/xtd/type_object.h"
-#include "../../include/xtd/string.h"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/hash_code.hpp"
+#include "../../include/xtd/iformatable.hpp"
+#include "../../include/xtd/invalid_cast_exception.hpp"
+#include "../../include/xtd/object.hpp"
+#include "../../include/xtd/type_object.hpp"
+#include "../../include/xtd/string.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic;

@@ -9,7 +9,7 @@
 /// @endcond
 
 #include "create_params.h"
-#include <xtd/static.h>
+#include <xtd/static>
 #include <xtd/drawing/color.h>
 #include <xtd/forms_native_export.h>
 

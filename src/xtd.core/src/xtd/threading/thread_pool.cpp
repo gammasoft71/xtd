@@ -1,8 +1,8 @@
-#include "../../../include/xtd/threading/manual_reset_event.h"
-#include "../../../include/xtd/threading/thread_pool.h"
-#include "../../../include/xtd/as.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/lock.h"
+#include "../../../include/xtd/threading/manual_reset_event.hpp"
+#include "../../../include/xtd/threading/thread_pool.hpp"
+#include "../../../include/xtd/as.hpp"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/lock.hpp"
 #include <mutex>
 
 using namespace xtd;

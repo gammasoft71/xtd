@@ -1,2 +1,2 @@
 #pragma once
-#include "not_implemented_exception.h"
+#include "not_implemented_exception.hpp"

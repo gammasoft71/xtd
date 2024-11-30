@@ -2,18 +2,9 @@
 /// @brief Contains xtd::wptr type.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <memory>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @name Native types
-  
-  /// @{
-  /// @brief The xtd::uptr object is a weak pointer.
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  template<typename type_t>
-  using wptr = std::weak_ptr<type_t>;
-  /// @}
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/wptr.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/wptr.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "wptr.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "string_comparison.h"
+#include "string_comparison.hpp"

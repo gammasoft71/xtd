@@ -1,7 +1,7 @@
-#include "../../include/xtd/diagnostics/process.h"
-#include "../../include/xtd/io/stream_reader.h"
-#include "../../include/xtd/compiler.h"
-#include "../../include/xtd/argument_exception.h"
+#include "../../include/xtd/diagnostics/process.hpp"
+#include "../../include/xtd/io/stream_reader.hpp"
+#include "../../include/xtd/compiler.hpp"
+#include "../../include/xtd/argument_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

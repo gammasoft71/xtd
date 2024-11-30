@@ -1,7 +1,7 @@
-#include "../../../include/xtd/array.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/typeof.h"
-#include "../../../include/xtd/diagnostics/stack_trace.h"
+#include "../../../include/xtd/array.hpp"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/typeof.hpp"
+#include "../../../include/xtd/diagnostics/stack_trace.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

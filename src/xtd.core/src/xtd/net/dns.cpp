@@ -1,5 +1,5 @@
-#include "../../../include/xtd/net/dns.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/net/dns.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/dns>
 #undef __XTD_CORE_NATIVE_LIBRARY__

@@ -2,34 +2,9 @@
 /// @brief Contains xtd::date_time_kind enum class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "enum.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
-  /// @par Namespace
-  /// xtd
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/date_time_kind>
-  /// ```
-    /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @remarks A member of the xtd::date_time_kind enumeration is returned by the xtd::date_time::kind property.
-  /// @remarks The members of the xtd::date_time_kind enumeration are used in conversion operations between local time and Coordinated Universal Time (UTC), but not in comparison or arithmetic operations.
-  enum class date_time_kind {
-    /// @brief The time represented is not specified as either local time or Coordinated Universal Time (UTC).
-    unspecified,
-    /// @brief The time represented is UTC.
-    utc,
-    /// @brief The time represented is local time.
-    local,
-  };
-}
-
-/// @cond
-template<> struct xtd::enum_register<xtd::date_time_kind> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::date_time_kind> {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
-};
-/// @endcond
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/date_time_kind.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/date_time_kind.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "date_time_kind.hpp"

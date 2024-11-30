@@ -1,2 +1,2 @@
 #pragma once
-#include "uri_partial.h"
+#include "uri_partial.hpp"

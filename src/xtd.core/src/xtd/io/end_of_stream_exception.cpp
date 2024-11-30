@@ -1,4 +1,4 @@
-#include "../../../include/xtd/io/end_of_stream_exception.h"
+#include "../../../include/xtd/io/end_of_stream_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

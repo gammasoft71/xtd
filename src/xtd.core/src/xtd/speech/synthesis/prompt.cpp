@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/speech/synthesis/prompt.h"
-#include "../../../../include/xtd/speech/synthesis/speech_synthesizer.h"
+#include "../../../../include/xtd/speech/synthesis/prompt.hpp"
+#include "../../../../include/xtd/speech/synthesis/speech_synthesizer.hpp"
 
 using namespace xtd;
 using namespace xtd::speech::synthesis;

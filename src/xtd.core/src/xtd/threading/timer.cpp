@@ -1,8 +1,8 @@
-#include "../../../include/xtd/threading/timer.h"
-#include "../../../include/xtd/threading/auto_reset_event.h"
-#include "../../../include/xtd/threading/thread_pool.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/threading/timer.hpp"
+#include "../../../include/xtd/threading/auto_reset_event.hpp"
+#include "../../../include/xtd/threading/thread_pool.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::threading;

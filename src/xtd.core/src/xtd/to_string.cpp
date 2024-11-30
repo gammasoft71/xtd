@@ -1,5 +1,5 @@
-#include "../../include/xtd/to_string.h"
-#include "../../include/xtd/string.h"
+#include "../../include/xtd/to_string.hpp"
+#include "../../include/xtd/string.hpp"
 
 namespace xtd {
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc) {

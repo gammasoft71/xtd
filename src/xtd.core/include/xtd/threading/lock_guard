@@ -1,2 +1,2 @@
 #pragma once
-#include "lock_guard.h"
+#include "lock_guard.hpp"

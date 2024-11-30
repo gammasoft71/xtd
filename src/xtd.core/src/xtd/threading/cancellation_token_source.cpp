@@ -1,6 +1,6 @@
-#include "../../../include/xtd/threading/cancellation_token_source.h"
-#include "../../../include/xtd/threading/manual_reset_event.h"
-#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/threading/cancellation_token_source.hpp"
+#include "../../../include/xtd/threading/manual_reset_event.hpp"
+#include "../../../include/xtd/as.hpp"
 
 using namespace xtd;
 using namespace xtd::threading;

@@ -4,7 +4,7 @@
 #include <xtd/drawing/native/font>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
-#include <xtd/single_object.h>
+#include <xtd/single_object>
 #include <xtd/math>
 #include <memory>
 

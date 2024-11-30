@@ -1,14 +1,14 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../include/xtd/basic_string.h"
-#include "../../include/xtd/typeof.h"
-#include "../../include/xtd/argument_exception.h"
-#include "../../include/xtd/argument_out_of_range_exception.h"
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/index_out_of_range_exception.h"
-#include "../../include/xtd/null_pointer_exception.h"
-#include "../../include/xtd/diagnostics/stack_frame.h"
+#include "../../include/xtd/basic_string.hpp"
+#include "../../include/xtd/typeof.hpp"
+#include "../../include/xtd/argument_exception.hpp"
+#include "../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../include/xtd/format_exception.hpp"
+#include "../../include/xtd/index_out_of_range_exception.hpp"
+#include "../../include/xtd/null_pointer_exception.hpp"
+#include "../../include/xtd/diagnostics/stack_frame.hpp"
 
 using namespace xtd;
 

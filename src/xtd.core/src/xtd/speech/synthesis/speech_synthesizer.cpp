@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/speech/synthesis/speech_synthesizer.h"
+#include "../../../../include/xtd/speech/synthesis/speech_synthesizer.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/speech_synthesizer>
 #undef __XTD_CORE_NATIVE_LIBRARY__

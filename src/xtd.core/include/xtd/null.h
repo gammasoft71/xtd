@@ -2,26 +2,9 @@
 /// @brief Contains xtd::null pointer valiue.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "null_ptr.h"
-#include "core_export.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents a null pointer value.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/null>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @par Examples
-  /// ```cpp
-  /// xtd::uptr<foo_class> foo = xtd::new_uptr<foo_class>();
-  /// ...
-  /// foo = null; // release the unique pointer.
-  /// ```
-  /// @ingroup xtd_core types
-  extern core_export_ null_ptr null;
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/null.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/null.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "null.hpp"

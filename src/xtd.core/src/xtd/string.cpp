@@ -1,16 +1,16 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../include/xtd/string.h"
-#include "../../include/xtd/typeof.h"
-#include "../../include/xtd/argument_exception.h"
-#include "../../include/xtd/convert_string.h"
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/hash_code.h"
-#include "../../include/xtd/is.h"
-#include "../../include/xtd/null_pointer_exception.h"
-//#include "../../include/xtd/collections/generic/hasher.h"
-#include "../../include/xtd/diagnostics/stack_frame.h"
+#include "../../include/xtd/string.hpp"
+#include "../../include/xtd/typeof.hpp"
+#include "../../include/xtd/argument_exception.hpp"
+#include "../../include/xtd/convert_string.hpp"
+#include "../../include/xtd/format_exception.hpp"
+#include "../../include/xtd/hash_code.hpp"
+#include "../../include/xtd/is.hpp"
+#include "../../include/xtd/null_pointer_exception.hpp"
+//#include "../../include/xtd/collections/generic/hasher.hpp"
+#include "../../include/xtd/diagnostics/stack_frame.hpp"
 #include <iomanip>
 
 using namespace xtd;

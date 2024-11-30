@@ -1,11 +1,11 @@
-#include "named_event_wait_handle.h"
-#include "unnamed_event_wait_handle.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/io/path_too_long_exception.h"
-#include "../../../include/xtd/threading/abandoned_mutex_exception.h"
-#include "../../../include/xtd/threading/event_wait_handle.h"
+#include "named_event_wait_handle.hpp"
+#include "unnamed_event_wait_handle.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/object_closed_exception.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/io/path_too_long_exception.hpp"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
+#include "../../../include/xtd/threading/event_wait_handle.hpp"
 #include <atomic>
 
 using namespace xtd;

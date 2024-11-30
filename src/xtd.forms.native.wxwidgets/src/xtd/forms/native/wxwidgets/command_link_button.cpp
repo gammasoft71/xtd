@@ -4,7 +4,7 @@
 #include <xtd/forms/native/content_alignment>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
-#include <xtd/convert_string.h>
+#include <xtd/convert_string>
 
 using namespace xtd;
 using namespace xtd::forms::native;

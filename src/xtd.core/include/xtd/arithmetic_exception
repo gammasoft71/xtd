@@ -1,2 +1,2 @@
 #pragma once
-#include "arithmetic_exception.h"
+#include "arithmetic_exception.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "interlocked.h"
+#include "interlocked.hpp"

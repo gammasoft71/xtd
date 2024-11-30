@@ -2,20 +2,9 @@
 /// @brief Contains xtd::object_ref alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "object.h"
-#include <functional>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents an object reference.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/forms/object_ref>
-  /// ```
-    /// @par Namespace
-  /// xtd::forms
-  /// @par Library
-  /// xtd.forms
-  /// @ingroup xtd_core
-  using object_ref = std::reference_wrapper<object>;
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/object_ref.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/object_ref.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "object_ref.hpp"

@@ -1,9 +1,9 @@
-#include "../../../include/xtd/threading/spin_lock.h"
-#include "../../../include/xtd/threading/lock_recursion_exception.h"
-#include "../../../include/xtd/threading/synchronization_lock_exception.h"
-#include "../../../include/xtd/threading/thread.h"
-#include "../../../include/xtd/diagnostics/stopwatch.h"
-#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/threading/spin_lock.hpp"
+#include "../../../include/xtd/threading/lock_recursion_exception.hpp"
+#include "../../../include/xtd/threading/synchronization_lock_exception.hpp"
+#include "../../../include/xtd/threading/thread.hpp"
+#include "../../../include/xtd/diagnostics/stopwatch.hpp"
+#include "../../../include/xtd/as.hpp"
 #include <atomic>
 
 using namespace xtd;

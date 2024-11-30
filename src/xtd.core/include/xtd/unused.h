@@ -2,31 +2,9 @@
 /// @brief Contains #unused_ keyword.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @param args variables to suppress the unused warning
-  /// @par Examples
-  /// This example sho how to use Unused():
-  /// @include unused.cpp
-  template <typename ...args_t>
-  void unused(args_t&& ... args) {}
-  
-  /// @brief It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd_core
-  /// @ingroup xtd_core keywords
-  /// @param args variables to suppress the unused warning
-  /// @par Examples
-  /// This example sho how to use Unused():
-  /// @include unused.cpp
-#define unused_ \
-  xtd::unused
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/unused.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/unused.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "unused.hpp"

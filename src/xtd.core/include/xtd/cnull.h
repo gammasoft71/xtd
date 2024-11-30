@@ -2,27 +2,9 @@
 /// @brief Contains xtd::cnull ostream.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "types.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-
-/// @cond
-xtd::int32 __get_file_attributes(const char* path);
-/// @endcond
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Provides a null std::ostream.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/cnull>
-  /// ```
-    /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  inline std::ostream cnull(nullptr);
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/cnull.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/cnull.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "cnull.hpp"

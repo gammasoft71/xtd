@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/net/sockets/socket_async_event_args.h"
-#include "../../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../../include/xtd/net/sockets/socket_async_event_args.hpp"
+#include "../../../../include/xtd/argument_out_of_range_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::net;

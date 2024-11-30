@@ -1,2 +1,2 @@
 #pragma once
-#include "day_of_week.h"
+#include "day_of_week.hpp"

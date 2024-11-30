@@ -1,7 +1,7 @@
-#include "../../../include/xtd/threading/cancellation_token.h"
-#include "../../../include/xtd/threading/cancellation_token_source.h"
-#include "../../../include/xtd/operation_canceled_exception.h"
-#include "../../../include/xtd/threading/manual_reset_event.h"
+#include "../../../include/xtd/threading/cancellation_token.hpp"
+#include "../../../include/xtd/threading/cancellation_token_source.hpp"
+#include "../../../include/xtd/operation_canceled_exception.hpp"
+#include "../../../include/xtd/threading/manual_reset_event.hpp"
 
 using namespace xtd;
 using namespace xtd::threading;

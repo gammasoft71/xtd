@@ -1,8 +1,8 @@
 #define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/internal/__format_stringer.h"
+#include "../../../include/xtd/internal/__format_stringer.hpp"
 #undef __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/iformatable.h"
-#include "../../../include/xtd/string.h"
+#include "../../../include/xtd/iformatable.hpp"
+#include "../../../include/xtd/string.hpp"
 
 using namespace xtd;
 

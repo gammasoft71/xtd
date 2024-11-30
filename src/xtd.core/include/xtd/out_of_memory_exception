@@ -1,2 +1,2 @@
 #pragma once
-#include "out_of_memory_exception.h"
+#include "out_of_memory_exception.hpp"

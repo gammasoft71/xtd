@@ -2,14 +2,9 @@
 /// @brief Contains xtd keywords.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "abstract.h"
-#include "block_scope.h"
-#include "call_once.h"
-#include "interface.h"
-#include "nameof.h"
-#include "scope_exit.h"
-#include "self.h"
-#include "startup.h"
-#include "typeof.h"
-#include "unused.h"
-#include "using.h"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/keywords.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/keywords.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "keywords.hpp"

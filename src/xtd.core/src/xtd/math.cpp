@@ -1,7 +1,7 @@
-#include "../../include/xtd/math.h"
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/double_object.h"
-#include "../../include/xtd/overflow_exception.h"
+#include "../../include/xtd/math.hpp"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/double_object.hpp"
+#include "../../include/xtd/overflow_exception.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>

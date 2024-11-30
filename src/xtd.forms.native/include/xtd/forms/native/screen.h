@@ -10,9 +10,9 @@
 
 #include <cstdio>
 #include <string>
-#include <xtd/static.h>
-#include <xtd/drawing/point.h>
-#include <xtd/drawing/rectangle.h>
+#include <xtd/static>
+#include <xtd/drawing/point>
+#include <xtd/drawing/rectangle>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

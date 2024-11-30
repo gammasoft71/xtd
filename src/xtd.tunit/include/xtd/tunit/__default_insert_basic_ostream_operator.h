@@ -28,7 +28,7 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
-#include <xtd/optional.h>
+#include <xtd/optional>
 #include <xtd/target_id>
 #include <xtd/string>
 
