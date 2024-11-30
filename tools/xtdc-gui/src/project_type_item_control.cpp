@@ -1,5 +1,5 @@
-#include "project_type_item_control.h"
-#include "project_type_items_control.h"
+#include "project_type_item_control.hpp"
+#include "project_type_items_control.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;
