@@ -31,15 +31,15 @@ endif ()
 add_references(xtd.core.native)
 
 add_sources(
-  include/xtd/xtd.core.native.unix.h
+  include/xtd/xtd.core.native.unix.hpp
   include/xtd/xtd.core.native.unix
-  include/xtd/native/unix/mutex.h
+  include/xtd/native/unix/mutex.hpp
   include/xtd/native/unix/mutex
-  include/xtd/native/unix/semaphore.h
+  include/xtd/native/unix/semaphore.hpp
   include/xtd/native/unix/semaphore
-  include/xtd/native/unix/shell_execute.h
+  include/xtd/native/unix/shell_execute.hpp
   include/xtd/native/unix/shell_execute
-  include/xtd/native/unix/strings.h
+  include/xtd/native/unix/strings.hpp
   include/xtd/native/unix/strings
   src/xtd/native/unix/condition_variable.cpp
   src/xtd/native/unix/console.cpp
