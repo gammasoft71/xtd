@@ -1,10 +1,10 @@
-#include "architecture_name.h"
-#include "build_type.h"
-#include "compiler_name.h"
-#include "compiler_version.h"
-#include "get_know_folder_path.h"
-#include "platform_name.h"
-#include "standard_name.h"
+#include "architecture_name.hpp"
+#include "build_type.hpp"
+#include "compiler_name.hpp"
+#include "compiler_version.hpp"
+#include "get_know_folder_path.hpp"
+#include "platform_name.hpp"
+#include "standard_name.hpp"
 #include <xtd/environment>
 #include <xtd/io/path>
 #include <xtd/threading/thread>
