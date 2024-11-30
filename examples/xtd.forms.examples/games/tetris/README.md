@@ -17,12 +17,12 @@ We play the Tetris game until we top out.
 ## Sources
 
 * [src/board_control.cpp](src/board_control.cpp)
-* [src/board_control.h](src/board_control.h)
+* [src/board_control.hpp](src/board_control.hpp)
 * [src/shape.cpp](src/shape.cpp)
-* [src/shape.h](src/shape.h)
+* [src/shape.hpp](src/shape.hpp)
 * [src/tetris_form.cpp](src/tetris_form.cpp)
-* [src/tetris_form.h](src/tetris_form.h)
-* [src/tetrominoes.h](src/tetrominoes.h)
+* [src/tetris_form.hpp](src/tetris_form.hpp)
+* [src/tetrominoes.hpp](src/tetrominoes.hpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run

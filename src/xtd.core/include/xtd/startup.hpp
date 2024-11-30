@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_collection.hpp"
-#include "core_export.h"
+#include "core_export.hpp"
 #include "delegate.hpp"
 #include "optional.hpp"
 #include "static.hpp"

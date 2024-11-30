@@ -19,17 +19,17 @@ Minesweeper features:
  
 ## Sources
 
-* [src/cell.h](src/cell.h)
+* [src/cell.hpp](src/cell.hpp)
 * [src/cell.cpp](src/cell.cpp)
-* [src/cell_state.h](src/cell_state.h)
-* [src/custom_field_dialog.h](src/custom_field_dialog.h)
+* [src/cell_state.hpp](src/cell_state.hpp)
+* [src/custom_field_dialog.hpp](src/custom_field_dialog.hpp)
 * [src/custom_field_dialog.cpp](src/custom_field_dialog.cpp)
-* [src/high_scores_dialog.h](src/high_scores_dialog.h)
+* [src/high_scores_dialog.hpp](src/high_scores_dialog.hpp)
 * [src/high_scores_dialog.cpp](src/high_scores_dialog.cpp)
-* [src/input_name_dialog.h](src/input_name_dialog.h)
+* [src/input_name_dialog.hpp](src/input_name_dialog.hpp)
 * [src/input_name_dialog.cpp](src/input_name_dialog.cpp)
-* [src/level.h](src/level.h)
-* [src/minesweeper.h](src/minesweeper.h)
+* [src/level.hpp](src/level.hpp)
+* [src/minesweeper.hpp](src/minesweeper.hpp)
 * [src/minesweeper.cpp](src/minesweeper.cpp)
 
 # Properties

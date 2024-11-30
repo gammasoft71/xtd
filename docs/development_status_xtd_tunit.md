@@ -46,7 +46,7 @@
 | [ostream_event_listener](../src/xtd.forms/include/xtd/tunit/ostream_event_listener.h)         | class        | ![progress](pictures/progress100.png) |
 | [ostream_unit_test](../src/xtd.forms/include/xtd/tunit/ostream_unit_test.h)                   | class        | ![progress](pictures/progress100.png) |
 | [registered_test_class](../src/xtd.forms/include/xtd/tunit/registered_test_class.h)           | class        | ![progress](pictures/progress100.png) |
-| [settings](../src/xtd.forms/include/xtd/tunit/settings.h)                                     | class        | ![progress](pictures/progress100.png) |
+| [settings](../src/xtd.forms/include/xtd/tunit/settings.hpp)                                   | class        | ![progress](pictures/progress100.png) |
 | [string_assert](../src/xtd.forms/include/xtd/tunit/string_assert.h)                           | class        | ![progress](pictures/progress100.png) |
 | [string_assum](../src/xtd.forms/include/xtd/tunit/string_assum.h)                             | class        | ![progress](pictures/progress100.png) |
 | [string_valid](../src/xtd.forms/include/xtd/tunit/string_valid.h)                             | class        | ![progress](pictures/progress100.png) |

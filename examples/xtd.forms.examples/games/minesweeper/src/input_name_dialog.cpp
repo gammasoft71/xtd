@@ -1,5 +1,5 @@
-#include "input_name_dialog.h"
-#include "../properties/settings.h"
+#include "input_name_dialog.hpp"
+#include "../properties/settings.hpp"
 #include <xtd/drawing/texts>
 
 using namespace minesweeper;

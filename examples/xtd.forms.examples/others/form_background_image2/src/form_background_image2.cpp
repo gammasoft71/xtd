@@ -3,7 +3,7 @@
 #include <xtd/forms/choice>
 #include <xtd/forms/form>
 #include <xtd/forms/link_label>
-#include "../properties/resources.h"
+#include "../properties/resources.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

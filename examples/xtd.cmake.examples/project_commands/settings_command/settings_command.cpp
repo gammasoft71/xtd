@@ -3,7 +3,7 @@
 #include <xtd/forms/color_picker>
 #include <xtd/forms/form>
 #include <xtd/forms/panel>
-#include "properties/settings.h"
+#include "properties/settings.hpp"
 
 using namespace xtd::forms;
 

@@ -21,7 +21,7 @@
 #include "../end_point.hpp"
 #include "../ip_address.hpp"
 #include "../../threading/manual_reset_event.hpp"
-#include "../../core_export.h"
+#include "../../core_export.hpp"
 #include "../../argument_exception.hpp"
 #include "../../async_callback.hpp"
 #include "../../iasync_result.hpp"

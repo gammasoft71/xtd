@@ -4,12 +4,12 @@ project(tetris)
 find_package(xtd REQUIRED)
 add_sources(
   README.md 
-  src/board_control.h
+  src/board_control.hpp
   src/board_control.cpp
-  src/shape.h
+  src/shape.hpp
   src/shape.cpp
-  src/tetrominoes.h
-  src/tetris_form.h
+  src/tetrominoes.hpp
+  src/tetris_form.hpp
   src/tetris_form.cpp
 )
 target_type(GUI_APPLICATION)

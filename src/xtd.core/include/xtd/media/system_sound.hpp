@@ -2,7 +2,7 @@
 /// @brief Contains xtd::media::system_sound class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
 

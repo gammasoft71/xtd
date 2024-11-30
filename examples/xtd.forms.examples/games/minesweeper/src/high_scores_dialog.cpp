@@ -1,8 +1,8 @@
 #include <xtd/drawing/texts>
 #include <xtd/translator>
-#include "level.h"
-#include "high_scores_dialog.h"
-#include "../properties/settings.h"
+#include "level.hpp"
+#include "high_scores_dialog.hpp"
+#include "../properties/settings.hpp"
 
 using namespace minesweeper;
 using namespace xtd;

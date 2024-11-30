@@ -31,12 +31,12 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/c
 
 set(ASTYLE_SOURCE_FILES 
   ${CMAKE_SOURCE_DIR}/src/*.cpp
-  ${CMAKE_SOURCE_DIR}/src/*.h
+  ${CMAKE_SOURCE_DIR}/src/*.hpp
   ${CMAKE_SOURCE_DIR}/src/*.mm
   ${CMAKE_SOURCE_DIR}/tests/*.cpp
-  ${CMAKE_SOURCE_DIR}/tests/*.h
+  ${CMAKE_SOURCE_DIR}/tests/*.hpp
   ${CMAKE_SOURCE_DIR}/tools/*.cpp
-  ${CMAKE_SOURCE_DIR}/tools/*.h
+  ${CMAKE_SOURCE_DIR}/tools/*.hpp
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
@@ -208,19 +208,19 @@ endif ()
 # Updates export file
 string(REPLACE "." "_" XTD_CORE_NATIVE_LIBRARY_UPPER ${XTD_CORE_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_CORE_NATIVE_LIBRARY_UPPER} XTD_CORE_NATIVE_LIBRARY_UPPER)
-xtd_update_export_file(src/${XTD_CORE_NATIVE_LIBRARY}/include/xtd/core_native_export.h ${XTD_CORE_NATIVE_LIBRARY_UPPER}_EXPORT core_native_export_)
-xtd_update_export_file(src/xtd.core/include/xtd/core_export.h XTD_CORE_EXPORT core_export_)
+xtd_update_export_file(src/${XTD_CORE_NATIVE_LIBRARY}/include/xtd/core_native_export.hpp ${XTD_CORE_NATIVE_LIBRARY_UPPER}_EXPORT core_native_export_)
+xtd_update_export_file(src/xtd.core/include/xtd/core_export.hpp XTD_CORE_EXPORT core_export_)
 string(REPLACE "." "_" XTD_DRAWING_NATIVE_LIBRARY_UPPER ${XTD_DRAWING_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_DRAWING_NATIVE_LIBRARY_UPPER} XTD_DRAWING_NATIVE_LIBRARY_UPPER)
-xtd_update_export_file(src/${XTD_DRAWING_NATIVE_LIBRARY}/include/xtd/drawing_native_export.h ${XTD_DRAWING_NATIVE_LIBRARY_UPPER}_EXPORT drawing_native_export_)
-xtd_update_export_file(src/xtd.drawing/include/xtd/drawing_export.h XTD_DRAWING_EXPORT drawing_export_)
+xtd_update_export_file(src/${XTD_DRAWING_NATIVE_LIBRARY}/include/xtd/drawing_native_export.hpp ${XTD_DRAWING_NATIVE_LIBRARY_UPPER}_EXPORT drawing_native_export_)
+xtd_update_export_file(src/xtd.drawing/include/xtd/drawing_export.hpp XTD_DRAWING_EXPORT drawing_export_)
 string(REPLACE "." "_" XTD_FORMS_NATIVE_LIBRARY_UPPER ${XTD_FORMS_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_FORMS_NATIVE_LIBRARY_UPPER} XTD_FORMS_NATIVE_LIBRARY_UPPER)
-xtd_update_export_file(src/${XTD_FORMS_NATIVE_LIBRARY}/include/xtd/forms_native_export.h ${XTD_FORMS_NATIVE_LIBRARY_UPPER}_EXPORT forms_native_export_)
+xtd_update_export_file(src/${XTD_FORMS_NATIVE_LIBRARY}/include/xtd/forms_native_export.hpp ${XTD_FORMS_NATIVE_LIBRARY_UPPER}_EXPORT forms_native_export_)
 
-xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.h XTD_FORMS_EXPORT forms_export_)
-xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.h XTD_TUNIT_EXPORT tunit_export_)
-xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
+xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.hpp XTD_FORMS_EXPORT forms_export_)
+xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.hpp XTD_TUNIT_EXPORT tunit_export_)
+xtd_update_export_file(src/xtd/include/xtd/export.hpp XTD_EXPORT export_)
 
 ################################################################################
 # Run tests

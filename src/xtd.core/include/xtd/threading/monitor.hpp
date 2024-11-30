@@ -5,7 +5,7 @@
 #include "timeout.hpp"
 #include "../collections/generic/key_value_pair.hpp"
 #include "../diagnostics/stack_frame.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../invalid_operation_exception.hpp"
 #include "../static.hpp"
 #include "../time_span.hpp"

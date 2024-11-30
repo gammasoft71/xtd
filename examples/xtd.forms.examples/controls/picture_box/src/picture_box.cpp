@@ -2,7 +2,7 @@
 #include <xtd/forms/choice>
 #include <xtd/forms/form>
 #include <xtd/forms/picture_box>
-#include "../properties/resources.h"
+#include "../properties/resources.hpp"
 
 using namespace xtd::drawing;
 using namespace xtd::forms;

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::interlocked class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../lock.hpp"
 #include "../object.hpp"
 #include "../static.hpp"

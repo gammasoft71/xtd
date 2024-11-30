@@ -7,7 +7,7 @@
 #include "thread.hpp"
 #include "wait_callback.hpp"
 #include "wait_or_timer_callback.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../new_ptr.hpp"
 #include "../static.hpp"
 #include "../time_span.hpp"

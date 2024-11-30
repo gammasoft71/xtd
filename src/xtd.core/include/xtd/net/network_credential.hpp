@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../security/secure_string.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
 #include "../string.hpp"

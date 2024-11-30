@@ -1,4 +1,4 @@
-#include "board_control.h"
+#include "board_control.hpp"
 
 namespace tetris {
   class tetris_form final : public xtd::forms::form {

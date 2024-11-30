@@ -10,7 +10,7 @@
 #include <xtd/collections/generic/key_value_pair>
 #include <xtd/static>
 #include <xtd/string>
-#include <xtd/drawing_native_export.h>
+#include <xtd/drawing_native_export.hpp>
 #include "hot_key_prefixes.hpp"
 #include "path_fill_modes.hpp"
 

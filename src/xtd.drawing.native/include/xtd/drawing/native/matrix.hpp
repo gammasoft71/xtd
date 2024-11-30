@@ -11,7 +11,7 @@
 #include <xtd/collections/generic/key_value_pair>
 #include <xtd/static>
 #include <xtd/string>
-#include <xtd/drawing_native_export.h>
+#include <xtd/drawing_native_export.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

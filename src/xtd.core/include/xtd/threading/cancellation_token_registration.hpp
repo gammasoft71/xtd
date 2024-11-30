@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::cancellation_token_registration class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
 

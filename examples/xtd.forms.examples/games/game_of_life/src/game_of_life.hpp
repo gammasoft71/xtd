@@ -9,7 +9,7 @@
 #include <xtd/forms/track_bar>
 #include <xtd/threading/thread>
 #include <xtd/random>
-#include "grid.h"
+#include "grid.hpp"
 
 namespace game_of_life {
   class form_game_of_life : public xtd::forms::form {

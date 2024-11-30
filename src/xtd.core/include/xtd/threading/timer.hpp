@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "timer_callback.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
 #include "../types.hpp"

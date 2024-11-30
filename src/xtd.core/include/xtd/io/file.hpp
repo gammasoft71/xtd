@@ -7,7 +7,7 @@
 #include "stream_reader.hpp"
 #include "stream_writer.hpp"
 #include "../chrono.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../date_time.hpp"
 #include "../static.hpp"
 #include "../string.hpp"

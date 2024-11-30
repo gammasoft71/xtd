@@ -12,7 +12,7 @@
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/drawing/image>
-#include <xtd/forms_native_export.h>
+#include <xtd/forms_native_export.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

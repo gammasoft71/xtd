@@ -261,7 +261,7 @@
 | [segment_style](../src/xtd.forms/include/xtd/forms/segment_style.h)                                                           | enumeration  | ![progress](pictures/progress100.png) |
 | [segments](../src/xtd.forms/include/xtd/forms/segments.h)                                                                     | enumeration  | ![progress](pictures/progress100.png) |
 | [selection_mode](../src/xtd.forms/include/xtd/forms/selection_mode.h)                                                         | enumeration  | ![progress](pictures/progress100.png) |
-| [settings](../src/xtd.forms/include/xtd/forms/settings.h)                                                                     | class        | ![progress](pictures/progress100.png) |
+| [settings](../src/xtd.forms/include/xtd/forms/settings.hpp)                                                                   | class        | ![progress](pictures/progress100.png) |
 | [seven_segment_display](../src/xtd.forms/include/xtd/forms/seven_segment_display.h)                                           | class        | ![progress](pictures/progress100.png) |
 | [seven_segment_display_renderer](../src/xtd.forms/include/xtd/forms/seven_segment_display_renderer.h)                         | static class | ![progress](pictures/progress0.png)   |
 | [shortcut](../src/xtd.forms/include/xtd/forms/shortcut.h)                                                                     | enumeration  | ![progress](pictures/progress100.png) |
@@ -333,9 +333,9 @@
 
 ## xtd::forms::properties
 
-| Name                                                                   | Type         | Status                                |
-| ---------------------------------------------------------------------- | ------------ | ------------------------------------- |
-| [resources](../src/xtd.forms/include/xtd/forms/properties/resources.h) | static class | ![progress](pictures/progress100.png) |
+| Name                                                                     | Type         | Status                                |
+| ------------------------------------------------------------------------ | ------------ | ------------------------------------- |
+| [resources](../src/xtd.forms/include/xtd/forms/properties/resources.hpp) | static class | ![progress](pictures/progress100.png) |
 
 ## xtd::forms::style_sheets
 

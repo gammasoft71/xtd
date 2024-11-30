@@ -4,9 +4,9 @@
 #include <xtd/diagnostics/process>
 #include <xtd/drawing/brushes>
 #include <xtd/random>
-#include "minesweeper.h"
-#include "custom_field_dialog.h"
-#include "input_name_dialog.h"
+#include "minesweeper.hpp"
+#include "custom_field_dialog.hpp"
+#include "input_name_dialog.hpp"
 
 using namespace minesweeper;
 using namespace xtd;

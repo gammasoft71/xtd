@@ -6,7 +6,7 @@
 #include <memory>
 #include <string>
 #include "../collections/generic/list.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../security/secure_string.hpp"
 #include "process_window_style.hpp"

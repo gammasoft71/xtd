@@ -1,4 +1,4 @@
-#include "shape.h"
+#include "shape.hpp"
 
 namespace tetris {
   class board_control final : public xtd::forms::control {

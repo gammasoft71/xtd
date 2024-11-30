@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include "../add_last_arg_to_command.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../environment.hpp"
 #include "../static.hpp"
 #include "../string.hpp"

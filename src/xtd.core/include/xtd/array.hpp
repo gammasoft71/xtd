@@ -10,7 +10,7 @@
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/ilist.hpp"
 #include "abstract.hpp"
-#include "core_export.h"
+#include "core_export.hpp"
 #include "int64.hpp"
 #include "iequatable.hpp"
 #include "new_ptr.hpp"

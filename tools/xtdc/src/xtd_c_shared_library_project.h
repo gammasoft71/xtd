@@ -58,7 +58,7 @@ namespace xtdc_command {
         "add_include_directories(include)",
         "add_sources(",
         "  include/file1.h",
-        "  include/export.h",
+        "  include/export.hpp",
         "  src/file1.c",
         ")",
         "target_type(C_SHARED_LIBRARY)",
@@ -114,7 +114,7 @@ namespace xtdc_command {
         "/** @endcond */",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "export.h"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "export.hpp"), lines);
     }
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
