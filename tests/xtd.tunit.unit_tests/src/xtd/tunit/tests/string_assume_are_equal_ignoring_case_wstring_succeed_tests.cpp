@@ -1,7 +1,7 @@
 #include <xtd/tunit/string_assume>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-#include "../../../assert_unit_tests/assert_unit_tests.h"
+#include "../../../assert_unit_tests/assert_unit_tests.hpp"
 
 namespace xtd::tunit::tests {
   class test_class_(string_assume_are_equal_ignoring_case_wstring_succeed_tests) {

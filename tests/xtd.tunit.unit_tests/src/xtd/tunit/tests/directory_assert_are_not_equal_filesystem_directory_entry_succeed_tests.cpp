@@ -1,7 +1,7 @@
 #include <xtd/tunit/directory_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-#include "../../../assert_unit_tests/assert_unit_tests.h"
+#include "../../../assert_unit_tests/assert_unit_tests.hpp"
 
 #if defined(__xtd__cpp_lib_filesystem)
 namespace xtd::tunit::tests {
