@@ -59,7 +59,7 @@ private:
         auto args = command_line.split(' ');
         start_info.file_name(args[0]);
         if (args.size() > 1)
-          start_info.arguments(xtd::string::join(" ", xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));
+          start_info.arguments(xtd::string::join(" ", xtd::argument_collection(args.begin() + 1, args.end())));
           
         append_text(xtd::environment::new_line());
         start_info.use_shell_execute(false);
@@ -103,7 +103,7 @@ private:
     e.handled(true);
   }
   xtd::string prompt = xtd::string::format("[{}] $ ",  xtd::environment::current_directory());
-  xtd::collections::specialized::string_collection commands;
+  xtd::collargument_collection commands;
 };
 
 using namespace xtd;

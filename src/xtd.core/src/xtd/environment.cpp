@@ -324,7 +324,7 @@ xtd::string environment::expand_environment_variables(const xtd::string& name) {
   return result;
 }
 
-xtd::collections::specialized::string_collection environment::get_command_line_args() {
+xtd::argument_collection environment::get_command_line_args() {
   auto args = native::environment::get_command_line_args();
   return {args.begin(), args.end()};
 }

@@ -6,6 +6,7 @@
 #include "diagnostics/stack_trace.hpp"
 #include "io/directory.hpp"
 #include "io/path.hpp"
+#include "argument_collection.hpp"
 #include "argument_exception.hpp"
 #include "as.hpp"
 #include "availability_versions.hpp"
@@ -567,7 +568,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-    static xtd::collections::specialized::string_collection get_command_line_args();
+    static xtd::argument_collection get_command_line_args();
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.

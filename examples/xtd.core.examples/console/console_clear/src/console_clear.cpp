@@ -3,14 +3,12 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::collections::specialized;
 
 namespace console_clear_example {
   class program {
   public:
     // The main entry point for the application.
-    static auto main(const string_collection& args) {
+    static auto main(const argument_collection& args) {
       // Save colors so they can be restored when use finishes input.
       auto dft_fore_color = console::foreground_color();
       auto dft_back_color = console::background_color();

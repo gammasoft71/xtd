@@ -3,12 +3,11 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections::specialized;
 
 namespace main4_example {
   class program {
   public:
-    static int main(const string_collection& args) {
+    static int main(const argument_collection& args) {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);

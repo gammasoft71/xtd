@@ -2,12 +2,11 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections::specialized;
 
 namespace main_example {
   class program {
   public:
-    static auto main(const string_collection& args) {
+    static auto main(const argument_collection& args) {
       auto number = 0;
       if (args.size() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
         console::write_line("Please enter an integer argument betwween 0 and 20.");
