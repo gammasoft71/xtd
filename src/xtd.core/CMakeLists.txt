@@ -24,6 +24,8 @@ add_sources(
   include/xtd/any
   include/xtd/architecture_id.hpp
   include/xtd/architecture_id
+  include/xtd/argument_collection.hpp
+  include/xtd/argument_collection
   include/xtd/argument_exception.hpp
   include/xtd/argument_exception
   include/xtd/argument_null_exception.hpp

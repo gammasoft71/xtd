@@ -89,20 +89,17 @@ namespace xtdc_command {
         xtd::string::format("/// @brief Contains {}::program class.", name),
         xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
         "#pragma once",
-        "#include <xtd/collections/specialized/string_collection>",
+        "#include <xtd/argument_collection>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         xtd::string::format("  /// @remarks Contains the {}::program::main entry point method;", name),
         "  class program {",
-        "    /// @brief Represents the collection of arguments passed to the main entry point method.",
-        "    using argument_collection = xtd::collections::specialized::string_collection;",
-        "",
         "  public:",
         "    /// @brief The main entry point for the application.",
         "    /// @param args The collection of arguments for the main entry point.",
-        "    static auto main(const argument_collection& args) -> void;",
+        "    static auto main(const xtd::argument_collection& args) -> void;",
         "  };",
         "}",
       };
@@ -113,12 +110,12 @@ namespace xtdc_command {
     void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
       std::vector<xtd::string> lines {
         "#include \"program.hpp\"",
-        "#include <xtd/console>",
+        "#include <xtd/println>",
         "",
         xtd::string::format("using namespace {};", name),
         "",
-        "auto program::main(const argument_collection& args) -> void {",
-        "  xtd::console::write_line(\"Hello, World!\");",
+        "auto program::main(const xtd::argument_collection& args) -> void {",
+        "  xtd::println(\"Hello, World!\");",
         "}",
       };
       
