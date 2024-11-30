@@ -13,7 +13,7 @@ auto main() -> int {
 
   auto index = 0;
   console::write_line("Start application");
-  trace::cassert_(index > 0, "index must be greater than 0");
+  trace::cassert(index > 0, "index must be greater than 0");
   console::write_line("End application");
 }
 
