@@ -103,7 +103,7 @@ private:
     e.handled(true);
   }
   xtd::string prompt = xtd::string::format("[{}] $ ",  xtd::environment::current_directory());
-  xtd::collargument_collection commands;
+  xtd::argument_collection commands;
 };
 
 using namespace xtd;
