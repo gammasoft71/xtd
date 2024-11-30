@@ -1,5 +1,5 @@
 #pragma once
-#include "unit_test_error.h"
+#include "unit_test_error.hpp"
 #include <xtd/diagnostics/source_location>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
