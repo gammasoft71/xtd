@@ -15,7 +15,7 @@ public:
   static void test_stream_reader_enumerable() {
     // Check the memory before the iterator is used.
     auto memory_before = memory_information::get_used_process_memory();
-    auto strings_found = array<string> {};
+    auto strings_found = list<string> {};
     // Open a file with the stream_reader_enumerable and check for a string.
     try {
       for (auto line : stream_reader_enumerable {path::combine(path::get_temp_path(), "temp_file.txt")})
@@ -47,7 +47,7 @@ public:
     }
     
     // Check for the string.
-    auto strings_found = array<string> {};
+    auto strings_found = list<string> {};
     for (auto line : file_contents)
       if (line.contains("string to search for")) strings_found.push_back(line);
     console::write_line("Found: {}", strings_found.size());

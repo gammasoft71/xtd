@@ -12,7 +12,7 @@ auto main() -> int {
 
   auto index = 0;
   console::write_line("Start application");
-  debug::cassert_(index > 0);
+  debug::cassert(index > 0);
   console::write_line("End application");
 }
 
