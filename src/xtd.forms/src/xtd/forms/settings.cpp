@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/settings.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/settings.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/settings>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

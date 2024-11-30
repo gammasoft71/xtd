@@ -1,5 +1,5 @@
 /// @file
-#include "component.h"
+#include "component.hpp"
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #if defined(_MSC_VER) && __cplusplus < 202302L
