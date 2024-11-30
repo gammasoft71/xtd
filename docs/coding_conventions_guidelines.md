@@ -110,7 +110,7 @@ For example, if a xtd.forms library header file contains :
 #pragma once
 
 #include <xtd/event_args.h>
-#include "close_reason.h"
+#include "close_reason.hpp"
 
 namespace xtd {
   namespace forms {
@@ -145,7 +145,7 @@ For example, if file contains :
 #pragma once
 
 #include <xtd/event_handler.h>
-#include "form_closed_event_args.h"
+#include "form_closed_event_args.hpp"
 
 namespace xtd {
   namespace forms {
@@ -320,7 +320,7 @@ This example of doxygen documented class (application_context.h) shows some doxy
 
 ```cpp
 #pragma once
-#include "form.h"
+#include "form.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
