@@ -7,7 +7,7 @@
 #else
 #  warning "Deprecated : Replaced by #include <xtd/string.h> - Will be removed in version 0.4.0"
 #endif
-#include "string.h"
+#include "string.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

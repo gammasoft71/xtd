@@ -1,5 +1,5 @@
-#include <xtd/drawing/native/brush.h>
-#include "../../../../../include/xtd/drawing/native/fl_brush.h"
+#include <xtd/drawing/native/brush>
+#include "../../../../../include/xtd/drawing/native/fl_brush.hpp"
 
 using namespace xtd::drawing::native;
 

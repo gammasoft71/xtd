@@ -9,7 +9,7 @@ include_directories(${FLTK_INCLUDE_DIR})
 add_include_directories(include)
 add_references(xtd.drawing xtd.forms.native ${FLTK_LIBRARIES})
 add_sources(
-  include/xtd/xtd.forms.native.fltk.h
+  include/xtd/xtd.forms.native.fltk.hpp
   include/xtd/xtd.forms.native.fltk
   src/xtd/forms/native/fltk/application.cpp
   src/xtd/forms/native/fltk/button.cpp
@@ -18,28 +18,28 @@ add_sources(
   src/xtd/forms/native/fltk/control.cpp
   src/xtd/forms/native/fltk/color_dialog.cpp
   src/xtd/forms/native/fltk/combo_box.cpp
-  src/xtd/forms/native/fltk/control_handler.h
+  src/xtd/forms/native/fltk/control_handler.hpp
   src/xtd/forms/native/fltk/cursor.cpp
   src/xtd/forms/native/fltk/cursors.cpp
-  src/xtd/forms/native/fltk/fl_button.h
-  src/xtd/forms/native/fltk/fl_check_box.h
-  src/xtd/forms/native/fltk/fl_checked_list_box.h
-  src/xtd/forms/native/fltk/fl_combo_box.h
-  src/xtd/forms/native/fltk/fl_control.h
-  src/xtd/forms/native/fltk/fl_font_chooser.h
-  src/xtd/forms/native/fltk/fl_form.h
-  src/xtd/forms/native/fltk/fl_group_box.h
-  src/xtd/forms/native/fltk/fl_label.h
-  src/xtd/forms/native/fltk/fl_list_box.h
-  src/xtd/forms/native/fltk/fl_panel.h
-  src/xtd/forms/native/fltk/fl_progress_bar.h
-  src/xtd/forms/native/fltk/fl_radio_button.h
-  src/xtd/forms/native/fltk/fl_tab_control.h
-  src/xtd/forms/native/fltk/fl_tab_page.h
-  src/xtd/forms/native/fltk/fl_text_box.h
-  src/xtd/forms/native/fltk/fl_timer.h
-  src/xtd/forms/native/fltk/fl_track_bar.h
-  src/xtd/forms/native/fltk/fl_user_control.h
+  src/xtd/forms/native/fltk/fl_button.hpp
+  src/xtd/forms/native/fltk/fl_check_box.hpp
+  src/xtd/forms/native/fltk/fl_checked_list_box.hpp
+  src/xtd/forms/native/fltk/fl_combo_box.hpp
+  src/xtd/forms/native/fltk/fl_control.hpp
+  src/xtd/forms/native/fltk/fl_font_chooser.hpp
+  src/xtd/forms/native/fltk/fl_form.hpp
+  src/xtd/forms/native/fltk/fl_group_box.hpp
+  src/xtd/forms/native/fltk/fl_label.hpp
+  src/xtd/forms/native/fltk/fl_list_box.hpp
+  src/xtd/forms/native/fltk/fl_panel.hpp
+  src/xtd/forms/native/fltk/fl_progress_bar.hpp
+  src/xtd/forms/native/fltk/fl_radio_button.hpp
+  src/xtd/forms/native/fltk/fl_tab_control.hpp
+  src/xtd/forms/native/fltk/fl_tab_page.hpp
+  src/xtd/forms/native/fltk/fl_text_box.hpp
+  src/xtd/forms/native/fltk/fl_timer.hpp
+  src/xtd/forms/native/fltk/fl_track_bar.hpp
+  src/xtd/forms/native/fltk/fl_user_control.hpp
   src/xtd/forms/native/fltk/font_dialog.cpp
   src/xtd/forms/native/fltk/form.cpp
   src/xtd/forms/native/fltk/group_box.cpp
