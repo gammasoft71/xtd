@@ -1,2 +1,2 @@
 #pragma once
-#include "copy_pixel_operations.h"
+#include "copy_pixel_operations.hpp"

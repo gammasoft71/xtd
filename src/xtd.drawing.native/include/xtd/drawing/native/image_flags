@@ -1,2 +1,2 @@
 #pragma once
-#include "image_flags.h"
+#include "image_flags.hpp"
