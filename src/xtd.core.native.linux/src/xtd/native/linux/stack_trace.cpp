@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
-#include "../../../../include/xtd/native/linux/shell_execute.h"
-#include "../../../../include/xtd/native/linux/strings.h"
+#include "../../../../include/xtd/native/linux/shell_execute.hpp"
+#include "../../../../include/xtd/native/linux/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <execinfo.h>
 #include <dlfcn.h>
