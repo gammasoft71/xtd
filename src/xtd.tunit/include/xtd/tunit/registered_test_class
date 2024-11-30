@@ -1,2 +1,2 @@
 #pragma once
-#include "registered_test_class.h"
+#include "registered_test_class.hpp"

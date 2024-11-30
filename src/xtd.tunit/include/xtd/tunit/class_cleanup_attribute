@@ -1,2 +1,2 @@
 #pragma once
-#include "class_cleanup_attribute.h"
+#include "class_cleanup_attribute.hpp"
