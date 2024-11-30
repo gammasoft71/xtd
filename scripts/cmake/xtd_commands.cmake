@@ -337,9 +337,9 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project.h)
+##  add_sources(my_project.hpp)
 ##
-##  target_top_level(my_project.h)
+##  target_top_level(my_project.hpp)
 ##  target_type(GUI_APPLICATION)
 ## ```
 macro(target_top_level TOP_LEVEL_FILE)
@@ -908,7 +908,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(src/my_project1.cpp src/my_project2.cpp include/my_project/my_project.h include/my_project/my_project2.h)
+##  add_sources(src/my_project1.cpp src/my_project2.cpp include/my_project/my_project.hpp include/my_project/my_project2.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ##
@@ -933,11 +933,11 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project1.cpp my_project2.cpp my_project.h MyProjec2.h)
+##  add_sources(my_project1.cpp my_project2.cpp my_project.hpp MyProjec2.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ##
-##  add_install_include_files(my_project1.h my_project2.h)
+##  add_install_include_files(my_project1.hpp my_project2.hpp)
 ##  install_component()
 ##  install_application()
 ## ```
@@ -958,11 +958,11 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project.cpp my_project.h)
+##  add_sources(my_project.cpp my_project.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ##
-##  add_install_include_files(my_project.h)
+##  add_install_include_files(my_project.hpp)
 ##  install_component()
 ##  install_package()
 ## ```
@@ -1012,12 +1012,12 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project.cpp my_project.h)
+##  add_sources(my_project.cpp my_project.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ##
 ##  install_name("specific_project")
-##  add_install_include_files(my_project.h)
+##  add_install_include_files(my_project.hpp)
 ##  install_component()
 ##  install_application()
 ## ```
@@ -1037,11 +1037,11 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(my_project.cpp my_project.h)
+##  add_sources(my_project.cpp my_project.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ##
-##  add_install_include_files(my_project.h)
+##  add_install_include_files(my_project.hpp)
 ##  install_component()
 ##  install_package()
 ## ```
@@ -1073,7 +1073,7 @@ endmacro()
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
 ##  add_include_directory(include)
-##  add_sources(my_project.cpp include/my_project/my_project.h)
+##  add_sources(my_project.cpp include/my_project/my_project.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
 ## ```
@@ -1175,7 +1175,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.h file.cpp)
+##  add_sources(file.hpp file.cpp)
 ##  resource(image1 resources/image1.png)
 ##  resource(image2 resources/image2.bmp)
 ##  resource(animation1 animations/ani1.gif)
@@ -1213,7 +1213,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.h file.cpp)
+##  add_sources(file.hpp file.cpp)
 ##  resource_string(caption "\"Form examples\"" "Caption of main Form.")
 ##  resource_string(button_close_text "\"Close\"" "Text of close button.")
 ##
@@ -1247,7 +1247,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.h file.cpp)
+##  add_sources(file.hpp file.cpp)
 ##  setting(name xtd::string APPLICATION "\"Settings example\"")
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
@@ -1283,7 +1283,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.h file.cpp)
+##  add_sources(file.hpp file.cpp)
 ##
 ##  setting_include("xtd/drawing/color") 
 ##  setting_include("xtd/string") 
@@ -1314,7 +1314,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file1.h file2.h options/file3.h)
+##  add_sources(file1.hpp file2.hpp options/file3.hpp)
 ##  add_sources(file1.cpp file2.cpp options/file3.cpp)
 ##  
 ##  target_type(CONSOLE_APPLICATION)
@@ -1428,7 +1428,7 @@ macro(write_assembly_informations)
   endif ()
 endmacro()
 
-## @brief Write resources files. Typically  properties/resources.h and properties/resources.cpp
+## @brief Write resources files. Typically  properties/resources.hpp and properties/resources.cpp
 ## @remarks Internal use only.
 macro(write_resources_files)
   if (PROJECT_RESOURCES OR PROJECT_RESOURCE_STRINGS)
@@ -1436,7 +1436,7 @@ macro(write_resources_files)
   endif ()
 endmacro()
 
-## @brief Write resources files. Typically  properties/resources.h and properties/resources.cpp
+## @brief Write resources files. Typically  properties/resources.hpp and properties/resources.cpp
 ## @remarks Internal use only.
 macro(write_settings_files)
   if (PROJECT_TARGET_SETTINGS OR PROJECT_USER_SETTINGS)
@@ -1852,10 +1852,10 @@ macro(write_project_config_cmake)
   )
 endmacro()
 
-## @brief Write resources file header. Typically properties/resources.h
+## @brief Write resources file header. Typically properties/resources.hpp
 ## @remarks Internal use only.
 macro(write_resources_file_header)
-  set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.h)
+  set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.hpp)
 
   file(WRITE ${RESOURCES_FILE_HEADER}
     "#pragma region xtd generated code\n"
@@ -1962,10 +1962,10 @@ macro(write_resources_file_header)
   set(PROJECT_SOURCES "${PROJECT_SOURCES};${RESOURCES_FILE_HEADER}")
 endmacro()
 
-## @brief Write resources file header. Typically properties/settings.h
+## @brief Write resources file header. Typically properties/settings.hpp
 ## @remarks Internal use only.
 macro(write_settings_file_header)
-  set(SETTINGS_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/settings.h)
+  set(SETTINGS_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/settings.hpp)
 
   file(WRITE ${SETTINGS_FILE_HEADER}
     "#pragma region xtd generated code\n"
@@ -2326,7 +2326,7 @@ add_definitions(-D__XTD_ROOT_PATH__="${XTD_ROOT_PATH}")
 if (NOT ASTYLE_SOURCE_FILES)
   set(ASTYLE_SOURCE_FILES
    ${CMAKE_SOURCE_DIR}/*.cpp 
-   ${CMAKE_SOURCE_DIR}/*.h
+   ${CMAKE_SOURCE_DIR}/*.hpp
   )
 endif ()
 

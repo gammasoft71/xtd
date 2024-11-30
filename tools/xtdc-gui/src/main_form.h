@@ -2,7 +2,7 @@
 /// @brief Contains main_form class.
 #pragma once
 #include "settings_form.h"
-#include "../properties/settings.h"
+#include "../properties/settings.hpp"
 #include "../resources/xtd_open_examples.xpm"
 #include "../resources/xtd_open.xpm"
 #include "../resources/xtd_new.xpm"
