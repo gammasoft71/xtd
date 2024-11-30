@@ -1,7 +1,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/region>
 #include <xtd/drawing/native/toolkit>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/as>
 #include <xtd/int32_object>

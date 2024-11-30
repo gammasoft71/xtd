@@ -5,9 +5,9 @@
 #endif
 /// @endcond
 
-#include "hdc_wrapper.h"
-#include "wx_brush.h"
-#include "wxConicalGradient.h"
+#include "hdc_wrapper.hpp"
+#include "wx_brush.hpp"
+#include "wxConicalGradient.hpp"
 #include <xtd/drawing/native/hot_key_prefixes>
 #include <xtd/drawing/native/string_formats>
 #include <xtd/drawing/native/string_trimmings>

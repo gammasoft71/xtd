@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_application.h"
+#include "wx_application.hpp"
