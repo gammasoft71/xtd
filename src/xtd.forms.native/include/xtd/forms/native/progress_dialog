@@ -1,2 +1,2 @@
 #pragma once
-#include "progress_dialog.h"
+#include "progress_dialog.hpp"

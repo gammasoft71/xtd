@@ -1,2 +1,2 @@
 #pragma once
-#include "browser_info_flags.h"
+#include "browser_info_flags.hpp"

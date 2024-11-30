@@ -1,2 +1,2 @@
 #pragma once
-#include "extended_window_styles.h"
+#include "extended_window_styles.hpp"

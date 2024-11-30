@@ -1,2 +1,2 @@
 #pragma once
-#include "window_definitions.h"
+#include "window_definitions.hpp"

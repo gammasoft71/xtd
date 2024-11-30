@@ -1,2 +1,2 @@
 #pragma once
-#include "group_box.h"
+#include "group_box.hpp"

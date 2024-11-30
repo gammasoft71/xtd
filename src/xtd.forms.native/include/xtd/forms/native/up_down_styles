@@ -1,2 +1,2 @@
 #pragma once
-#include "up_down_styles.h"
+#include "up_down_styles.hpp"

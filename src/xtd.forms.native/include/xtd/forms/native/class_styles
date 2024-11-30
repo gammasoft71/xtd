@@ -1,2 +1,2 @@
 #pragma once
-#include "class_styles.h"
+#include "class_styles.hpp"
