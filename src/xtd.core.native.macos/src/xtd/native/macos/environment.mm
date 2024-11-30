@@ -1,14 +1,14 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
-#include "../../../../include/xtd/native/macos/strings.h"
-#include "../../../../include/xtd/native/macos/shell_execute.h"
+#include "../../../../include/xtd/native/macos/strings.hpp"
+#include "../../../../include/xtd/native/macos/shell_execute.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
 #include <map>
 #include <numeric>
 #include <thread>
-#include "TargetConditionals.h"
+#include <TargetConditionals.h>
 #include <time.h>
 #include <sys/sysctl.h>
 #include <sys/param.h>
