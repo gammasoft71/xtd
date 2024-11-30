@@ -1,5 +1,5 @@
-#include "../../../include/xtd/system_report.h"
-#include "../../../include/xtd/forms/xtd_about_dialog.h"
+#include "../../../include/xtd/system_report.hpp"
+#include "../../../include/xtd/forms/xtd_about_dialog.hpp"
 #include <xtd/forms/properties/resources>
 #include <xtd/forms/about_dialog>
 #include <xtd/forms/tab_page>
