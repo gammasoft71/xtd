@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_loading_indicator.h"
+#include "wx_loading_indicator.hpp"

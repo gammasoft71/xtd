@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_label.h"
+#include "wx_label.hpp"

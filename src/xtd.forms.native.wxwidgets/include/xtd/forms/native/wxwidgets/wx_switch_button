@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_switch_button.h"
+#include "wx_switch_button.hpp"

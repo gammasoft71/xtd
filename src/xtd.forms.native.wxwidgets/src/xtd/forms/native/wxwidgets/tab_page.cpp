@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.hpp"
 #include <xtd/forms/native/tab_page>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

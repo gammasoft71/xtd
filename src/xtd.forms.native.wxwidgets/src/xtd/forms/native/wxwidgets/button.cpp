@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.hpp"
 #include <xtd/forms/native/button>
 #include <xtd/forms/native/content_alignment>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

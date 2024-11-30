@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_radio_button.h"
+#include "wx_radio_button.hpp"

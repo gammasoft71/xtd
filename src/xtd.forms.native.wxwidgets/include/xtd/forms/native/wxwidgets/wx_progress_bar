@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_progress_bar.h"
+#include "wx_progress_bar.hpp"

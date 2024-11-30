@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.hpp"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/combo_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

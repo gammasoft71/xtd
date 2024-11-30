@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_font_picker.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_font_picker.hpp"
 #include <xtd/forms/native/content_alignment>
 #include <xtd/forms/native/font_picker>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

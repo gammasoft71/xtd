@@ -9,7 +9,7 @@
 
 #define TRACE
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/types>
 #include <xtd/diagnostics/trace>

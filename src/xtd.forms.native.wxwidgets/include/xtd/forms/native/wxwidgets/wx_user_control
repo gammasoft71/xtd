@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_user_control.h"
+#include "wx_user_control.hpp"

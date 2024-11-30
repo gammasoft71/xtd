@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_color_picker.h"
+#include "wx_color_picker.hpp"
