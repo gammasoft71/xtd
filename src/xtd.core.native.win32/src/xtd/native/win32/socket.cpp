@@ -8,7 +8,7 @@
 #include <xtd/native/socket_option_level_constants>
 #include <xtd/native/socket_shutdown_constants>
 #include <xtd/native/socket_type_constants>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include "../../../../include/xtd/native/win32/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
 #include <sstream>
