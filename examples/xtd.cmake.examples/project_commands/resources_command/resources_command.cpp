@@ -1,4 +1,4 @@
-#include "properties/resources.h"
+#include "properties/resources.hpp"
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/label>

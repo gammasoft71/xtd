@@ -1,4 +1,4 @@
-#include "cell.h"
+#include "cell.hpp"
 
 using namespace minesweeper;
 

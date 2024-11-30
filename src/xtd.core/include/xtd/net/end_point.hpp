@@ -4,7 +4,7 @@
 #pragma once
 #include "socket_address.hpp"
 #include "sockets/address_family.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
 #include "../string.hpp"

@@ -8,7 +8,7 @@
 #include <xtd/delegate>
 #include <xtd/static>
 #include <xtd/string>
-#include <xtd/forms_native_export.h>
+#include <xtd/forms_native_export.hpp>
 #include <xtd/drawing/icon>
 #include <xtd/guid>
 #include <xtd/chrono>

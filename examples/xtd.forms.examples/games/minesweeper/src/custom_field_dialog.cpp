@@ -1,7 +1,7 @@
 #include <xtd/drawing/texts>
 #include <xtd/translator>
-#include "custom_field_dialog.h"
-#include "../properties/settings.h"
+#include "custom_field_dialog.hpp"
+#include "../properties/settings.hpp"
 
 using namespace minesweeper;
 using namespace xtd;

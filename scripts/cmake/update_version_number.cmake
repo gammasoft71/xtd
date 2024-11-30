@@ -23,7 +23,7 @@ if (${STRING_FOUND} EQUAL -1)
     "\n"
     "#include \"../include/xtd/environment\"\n"
     "\n"
-    "// This check verifies that the current version is defined in the availability_versions.h include file.\n"
+    "// This check verifies that the current version is defined in the availability_versions.hpp include file.\n"
     "#if !defined(__XTD_${XTD_VERSION_WITH_UNDERSCORE}__)\n"
     "#  error \"__XTD_${XTD_VERSION_WITH_UNDERSCORE}__ not defined\"\n"
     "#endif\n"

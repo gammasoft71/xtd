@@ -1,4 +1,4 @@
-#include "../properties/settings.h"
+#include "../properties/settings.hpp"
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/color_picker>

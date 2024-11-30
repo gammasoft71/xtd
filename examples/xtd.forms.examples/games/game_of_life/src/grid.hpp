@@ -1,6 +1,6 @@
 #pragma once
 #include <xtd/event>
-#include "cell.h"
+#include "cell.hpp"
 
 namespace game_of_life {
   using cell_row_collection = xtd::collections::generic::list<cell>;

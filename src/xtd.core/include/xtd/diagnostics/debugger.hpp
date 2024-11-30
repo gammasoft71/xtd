@@ -4,7 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <cstdlib>
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../static.hpp"
 #include "../string.hpp"
 

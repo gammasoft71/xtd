@@ -1,4 +1,4 @@
-#include "tetris_form.h"
+#include "tetris_form.hpp"
 
 using namespace tetris;
 using namespace xtd;

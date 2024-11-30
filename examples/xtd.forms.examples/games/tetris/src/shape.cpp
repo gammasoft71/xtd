@@ -1,4 +1,4 @@
-#include "shape.h"
+#include "shape.hpp"
 #include <algorithm>
 
 using namespace tetris;

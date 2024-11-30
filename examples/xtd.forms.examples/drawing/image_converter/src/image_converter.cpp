@@ -1,4 +1,4 @@
-#include "../properties/resources.h"
+#include "../properties/resources.hpp"
 #include <xtd/drawing/drawing_2d/hatch_brush>
 #include <xtd/drawing/brushes>
 #include <xtd/drawing/system_brushes>

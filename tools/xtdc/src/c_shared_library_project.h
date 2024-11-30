@@ -39,7 +39,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
-        "  include/export.h",
+        "  include/export.hpp",
         "  include/file1.h",
         ")",
         "set(SOURCES",
@@ -123,7 +123,7 @@ namespace xtdc_command {
         "/** @endcond */",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "export.h"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "export.hpp"), lines);
     }
     
     void create_source(const xtd::string& name, const xtd::string& path) const {

@@ -12,7 +12,7 @@
 ## @par Example
 ## This example shows how to invoke xtd_update_export_file for a project maned graphics :
 ## ```
-## xtd_update_export_file(src/graphics/include/graphics/graphics_export.h GRAPHICS_EXPORT graphics_export_)
+## xtd_update_export_file(src/graphics/include/graphics/graphics_export.hpp GRAPHICS_EXPORT graphics_export_)
 ## ```
 ## @remarks The GRAPHICS_EXPORT keyword will be generated automatically by xtd_commands.cmake.
 ## @remarks If you use more than one library per solution, you have to define GRAPHICS_EXPORT yourself.

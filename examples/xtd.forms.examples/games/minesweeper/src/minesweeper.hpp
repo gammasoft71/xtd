@@ -9,11 +9,11 @@
 #include <xtd/forms/timer>
 #include <xtd/overload>
 #include <xtd/translator>
-#include "cell.h"
-#include "high_scores_dialog.h"
-#include "level.h"
-#include "../properties/resources.h"
-#include "../properties/settings.h"
+#include "cell.hpp"
+#include "high_scores_dialog.hpp"
+#include "level.hpp"
+#include "../properties/resources.hpp"
+#include "../properties/settings.hpp"
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {

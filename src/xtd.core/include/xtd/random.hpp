@@ -6,7 +6,7 @@
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
 #include "box_integer.hpp"
-#include "core_export.h"
+#include "core_export.hpp"
 #include "environment.hpp"
 #include "math.hpp"
 #include "object.hpp"

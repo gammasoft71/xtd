@@ -1,4 +1,4 @@
-#include "board_control.h"
+#include "board_control.hpp"
 
 using namespace tetris;
 using namespace xtd;

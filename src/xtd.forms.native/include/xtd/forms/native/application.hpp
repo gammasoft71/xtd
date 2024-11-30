@@ -12,7 +12,7 @@
 #include <vector>
 #include <xtd/static>
 #include <xtd/delegate>
-#include <xtd/forms_native_export.h>
+#include <xtd/forms_native_export.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

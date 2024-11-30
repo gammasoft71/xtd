@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "elapsed_event_handler.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../event.hpp"
 #include "../isynchronize_invoke.hpp"
 #include "../object.hpp"

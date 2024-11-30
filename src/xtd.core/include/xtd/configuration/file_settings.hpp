@@ -2,7 +2,7 @@
 /// @brief Contains xtd::configuration::file_settings class
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../collections/generic/sorted_dictionary.hpp"
 #include "../collections/specialized/string_collection.hpp"
 #include "../io/directory.hpp"

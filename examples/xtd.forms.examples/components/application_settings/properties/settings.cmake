@@ -2,7 +2,7 @@
 # =============
 
 # Remarks
-# This file generates the "properties/settings.h" file, which is used to access the settings.
+# This file generates the "properties/settings.hpp" file, which is used to access the settings.
 
 # Includes
 setting_include("xtd/drawing/point")

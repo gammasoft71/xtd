@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "diagnostics/stack_frame.hpp"
-#include "core_export.h"
+#include "core_export.hpp"
 #include "h_result.hpp"
 #include "object.hpp"
 #include "nullopt.hpp"

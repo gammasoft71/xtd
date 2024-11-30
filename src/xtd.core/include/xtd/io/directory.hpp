@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "directory_info.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../date_time.hpp"
 #include "../iequatable.hpp"
 #include "../static.hpp"

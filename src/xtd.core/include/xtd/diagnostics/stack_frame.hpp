@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <vector>
 #include "source_location.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../ptr.hpp"

@@ -1,7 +1,7 @@
 #include <xtd/diagnostics/process>
 #include <xtd/drawing/bitmap>
 #include <xtd/io/path>
-#include "../properties/resources.h"
+#include "../properties/resources.hpp"
 
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;

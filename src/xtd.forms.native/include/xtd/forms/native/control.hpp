@@ -21,7 +21,7 @@
 #include <xtd/drawing/rectangle>
 #include <xtd/drawing/region>
 #include <xtd/string>
-#include <xtd/forms_native_export.h>
+#include <xtd/forms_native_export.hpp>
 #include "window_definitions.hpp"
 #include "create_params.hpp"
 

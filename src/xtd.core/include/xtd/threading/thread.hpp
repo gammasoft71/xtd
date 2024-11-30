@@ -8,7 +8,7 @@
 #include "thread_start.hpp"
 #include "thread_state.hpp"
 #include "../as.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
 #include "../types.hpp"

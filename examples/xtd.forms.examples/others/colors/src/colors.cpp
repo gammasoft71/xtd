@@ -1,7 +1,7 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
-#include "color_chooser.h"
-#include "color_editor.h"
+#include "color_chooser.hpp"
+#include "color_editor.hpp"
 
 using namespace xtd::forms;
 

@@ -5,7 +5,7 @@
 #include "file_attributes.hpp"
 #include "file_permissions.hpp"
 #include "../abstract.hpp"
-#include "../core_export.h"
+#include "../core_export.hpp"
 #include "../date_time.hpp"
 #include "../string.hpp"
 #include <memory>

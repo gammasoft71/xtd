@@ -11,7 +11,7 @@
 #include <xtd/string>
 #include <xtd/static>
 #include <xtd/version>
-#include <xtd/forms_native_export.h>
+#include <xtd/forms_native_export.hpp>
 
 /// @cond
 struct __init_toolkit__;

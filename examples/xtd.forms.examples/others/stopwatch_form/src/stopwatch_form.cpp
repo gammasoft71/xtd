@@ -5,7 +5,7 @@
 #include <xtd/forms/form>
 #include <xtd/forms/lcd_label>
 #include <xtd/forms/panel>
-#include "../properties/resources.h"
+#include "../properties/resources.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

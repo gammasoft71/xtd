@@ -10,7 +10,7 @@
 #include "as.hpp"
 #include "availability_versions.hpp"
 #include "compiler.hpp"
-#include "core_export.h"
+#include "core_export.hpp"
 #include "cpp_language.hpp"
 #include "enum.hpp"
 #include "environment_variable_target.hpp"
