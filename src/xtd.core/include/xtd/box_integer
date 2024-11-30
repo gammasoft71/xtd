@@ -1,2 +1,2 @@
 #pragma once
-#include "box_integer.h"
+#include "box_integer.hpp"

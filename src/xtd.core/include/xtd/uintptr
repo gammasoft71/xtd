@@ -1,2 +1,2 @@
 #pragma once
-#include "uintptr.h"
+#include "uintptr.hpp"

@@ -1,7 +1,7 @@
-#include "../../../include/xtd/diagnostics/stack_frame.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/literals.h"
-#include "../../../include/xtd/string.h"
+#include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/literals.hpp"
+#include "../../../include/xtd/string.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
 #undef __XTD_CORE_NATIVE_LIBRARY__

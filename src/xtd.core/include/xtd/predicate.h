@@ -2,16 +2,9 @@
 /// @brief Contains xtd::predicate delegate.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents a delegate that defines a set of criteria and determines whether the specified object meets those criteria.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  template<typename type_t>
-  using predicate = delegate<bool(type_t)>;
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/predicate.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/predicate.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "predicate.hpp"

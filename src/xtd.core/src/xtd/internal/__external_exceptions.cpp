@@ -1,15 +1,15 @@
 #define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/internal/__external_exceptions.h"
+#include "../../../include/xtd/internal/__external_exceptions.hpp"
 #undef __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/argument_null_exception.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/format_exception.h"
-#include "../../../include/xtd/index_out_of_range_exception.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/null_pointer_exception.h"
-#include "../../../include/xtd/rank_exception.h"
-#include "../../../include/xtd/diagnostics/stack_frame.h"
+#include "../../../include/xtd/argument_exception.hpp"
+#include "../../../include/xtd/argument_null_exception.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/format_exception.hpp"
+#include "../../../include/xtd/index_out_of_range_exception.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
+#include "../../../include/xtd/null_pointer_exception.hpp"
+#include "../../../include/xtd/rank_exception.hpp"
+#include "../../../include/xtd/diagnostics/stack_frame.hpp"
 
 using namespace xtd;
 

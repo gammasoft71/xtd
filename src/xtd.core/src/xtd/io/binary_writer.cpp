@@ -1,11 +1,11 @@
-#include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/bit_converter.h"
-#include "../../../include/xtd/unauthorized_access_exception.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/io/file_not_found_exception.h"
-#include "../../../include/xtd/io/file.h"
-#include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/io/binary_writer.h"
+#include "../../../include/xtd/argument_exception.hpp"
+#include "../../../include/xtd/bit_converter.hpp"
+#include "../../../include/xtd/unauthorized_access_exception.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/io/file_not_found_exception.hpp"
+#include "../../../include/xtd/io/file.hpp"
+#include "../../../include/xtd/io/path.hpp"
+#include "../../../include/xtd/io/binary_writer.hpp"
 
 using namespace xtd;
 using namespace xtd::io;

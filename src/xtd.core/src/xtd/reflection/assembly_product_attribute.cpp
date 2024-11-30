@@ -1,4 +1,4 @@
-#include "../../../include/xtd/reflection/assembly_product_attribute.h"
+#include "../../../include/xtd/reflection/assembly_product_attribute.hpp"
 
 using namespace xtd;
 using namespace xtd::reflection;

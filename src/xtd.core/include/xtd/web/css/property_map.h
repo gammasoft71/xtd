@@ -2,15 +2,9 @@
 /// @brief Contains xtd::web::css::property_map typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "property.h"
-#include <map>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  namespace web {
-    namespace css {
-      /// @brief Represents the map of a property name - property pair.
-      using property_map = std::map<xtd::string, xtd::web::css::property>;
-    }
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/web/css/property_map.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/web/css/property_map.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "property_map.hpp"

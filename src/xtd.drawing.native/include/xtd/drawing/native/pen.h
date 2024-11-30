@@ -6,8 +6,8 @@
 /// @endcond
 
 #include <cstdint>
-#include <xtd/static.h>
-#include <xtd/types.h>
+#include <xtd/static>
+#include <xtd/types>
 #include <xtd/drawing_native_export.h>
 #include <vector>
 

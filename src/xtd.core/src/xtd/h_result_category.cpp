@@ -1,5 +1,5 @@
-#include "../../include/xtd/h_result_category.h"
-#include "../../include/xtd/h_result.h"
+#include "../../include/xtd/h_result_category.hpp"
+#include "../../include/xtd/h_result.hpp"
 
 using namespace xtd;
 

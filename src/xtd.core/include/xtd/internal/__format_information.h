@@ -1,21 +1,10 @@
 /// @file
 /// @brief Contains __format_information struct.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_information.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_information.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include <string>
-#include <limits>
-
-/// @cond
-template<typename char_t>
-struct __format_information {
-  size_t index = std::numeric_limits<size_t>::max();
-  size_t location = 0;
-  std::basic_string<char_t> alignment;
-  std::basic_string<char_t> format;
-};
-/// @endcond
+#include "__format_information.hpp"

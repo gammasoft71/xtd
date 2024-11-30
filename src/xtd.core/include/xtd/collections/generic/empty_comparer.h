@@ -2,50 +2,9 @@
 /// @brief Contains xtd::collections::generic::empty_comparer <type_t> interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "icomparer.h"
-#include "../../object.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
-  namespace collections {
-    /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
-    namespace generic {
-      /// @brief Provides an empty comparer class.
-      /// @par Definition
-      /// ```cpp
-      /// template<typename type_t>
-      /// class empty_comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t>;
-      /// ```
-      /// @par Header
-      /// ```cpp
-      /// #include <xtd/collections/generic/empty_comparer
-      /// ```
-      /// @par Namespace
-      /// xtd::collections::generic
-      /// @par Library
-      /// xtd.core
-      /// @ingroup xtd_core generic_collections
-      template<typename type_t>
-      class empty_comparer : public object, public icomparer<type_t> {
-      public:
-        /// @name Public Constructors
-        
-        /// @{
-        /// @brief Initializes a new instance of the xtd::collections::generic::comparer <type_t> class.
-        empty_comparer() = default;
-        /// @}
-        
-        /// @name Public Methods
-        
-        /// @{
-        /// @brief Compares two entities and returns a value indicating whether one is less than, equal to, or greater than the other.
-        /// @param x The first entity to compare.
-        /// @param y The second entity to compare.
-        /// @return Always 0.
-        int32 compare(const type_t& x, const type_t& y) const override {return 0;}
-        /// @}
-      };
-    }
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/generic/empty_comparer.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/generic/empty_comparer.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "empty_comparer.hpp"

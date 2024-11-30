@@ -1,39 +1,10 @@
 /// @file
 /// @brief Contains xtd::register_any_stringer and xtd::unregister_any_stringer method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/generic/key_value_pair.h"
-#include "unregister_any_stringer.h"
-
-/// @cond
-extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
-
-template<class type_t, class function_t>
-inline xtd::collections::generic::key_value_pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
-  return {
-    std::type_index(typeid(type_t)),
-    [f = func](std::any const & value)->std::string {
-      if constexpr(std::is_void_v<type_t>) return f();
-      else return f(std::any_cast<const type_t&>(value));
-    }
-  };
-}
-/// @endcond
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Register an any stringer method for a specified type.
-  /// @param func Function to register any stringer for specified type.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @par Examples
-  /// Show how to register your own class.
-  /// @include format_any.cpp
-  template<class type_t, class function_t>
-  inline void register_any_stringer(const function_t& func) {
-    unregister_any_stringer<type_t>();
-    __any_stringer__.insert(__to_any_stringer__<type_t>(func));
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/register_any_stringer.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/register_any_stringer.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "register_any_stringer.hpp"

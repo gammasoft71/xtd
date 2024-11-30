@@ -8,8 +8,8 @@
 #include <cstdint>
 #include <istream>
 #include <vector>
-#include <xtd/static.h>
-#include <xtd/string.h>
+#include <xtd/static>
+#include <xtd/string>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

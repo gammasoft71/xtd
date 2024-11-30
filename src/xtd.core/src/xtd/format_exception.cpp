@@ -1,5 +1,5 @@
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/literals.h"
+#include "../../include/xtd/format_exception.hpp"
+#include "../../include/xtd/literals.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

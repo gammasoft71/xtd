@@ -1,7 +1,7 @@
-#include "../../../../include/xtd/net/sockets/tcp_client.h"
-#include "../../../../include/xtd/net/sockets/socket.h"
-#include "../../../../include/xtd/net/sockets/socket_exception.h"
-#include "../../../../include/xtd/net/dns.h"
+#include "../../../../include/xtd/net/sockets/tcp_client.hpp"
+#include "../../../../include/xtd/net/sockets/socket.hpp"
+#include "../../../../include/xtd/net/sockets/socket_exception.hpp"
+#include "../../../../include/xtd/net/dns.hpp"
 #include <mutex>
 
 using namespace xtd;

@@ -1,5 +1,5 @@
-#include "../../../include/xtd/net/end_point.h"
-#include "../../../include/xtd/not_implemented_exception.h"
+#include "../../../include/xtd/net/end_point.hpp"
+#include "../../../include/xtd/not_implemented_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::net;

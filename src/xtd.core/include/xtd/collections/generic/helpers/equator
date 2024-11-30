@@ -1,2 +1,2 @@
 #pragma once
-#include "equator.h"
+#include "equator.hpp"

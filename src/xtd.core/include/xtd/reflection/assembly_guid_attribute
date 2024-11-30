@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_guid_attribute.h"
+#include "assembly_guid_attribute.hpp"

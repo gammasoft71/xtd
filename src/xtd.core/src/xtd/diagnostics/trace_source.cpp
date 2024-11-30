@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/trace_source.h"
+#include "../../../include/xtd/diagnostics/trace_source.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

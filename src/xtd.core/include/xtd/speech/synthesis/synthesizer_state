@@ -1,2 +1,2 @@
 #pragma once
-#include "synthesizer_state.h"
+#include "synthesizer_state.hpp"

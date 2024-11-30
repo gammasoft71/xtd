@@ -9,11 +9,11 @@
 /// @endcond
 
 #include <cstdint>
-#include <xtd/optional.h>
-#include <xtd/static.h>
-#include <xtd/delegate.h>
-#include <xtd/string.h>
-#include <xtd/drawing/point.h>
+#include <xtd/optional>
+#include <xtd/static>
+#include <xtd/delegate>
+#include <xtd/string>
+#include <xtd/drawing/point>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -1,8 +1,8 @@
 #include <exception>
 #include "../../../../include/xtd/drawing/text/private_font_collection.h"
-#include <xtd/not_implemented_exception.h>
+#include <xtd/not_implemented_exception>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/font_family.h>
+#include <xtd/drawing/native/font_family>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;

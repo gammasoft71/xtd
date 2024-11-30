@@ -1,10 +1,10 @@
-#include "../../include/xtd/time_span.h"
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/divided_by_zero_exception.h"
-#include "../../include/xtd/double_object.h"
-#include "../../include/xtd/int32_object.h"
-#include "../../include/xtd/int64_object.h"
-#include "../../include/xtd/math.h"
+#include "../../include/xtd/time_span.hpp"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/divided_by_zero_exception.hpp"
+#include "../../include/xtd/double_object.hpp"
+#include "../../include/xtd/int32_object.hpp"
+#include "../../include/xtd/int64_object.hpp"
+#include "../../include/xtd/math.hpp"
 
 using namespace xtd;
 

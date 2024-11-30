@@ -8,10 +8,10 @@
 #endif
 /// @endcond
 
-#include <xtd/drawing/color.h>
-#include "create_params.h"
-#include <xtd/static.h>
-#include <xtd/string.h>
+#include <xtd/drawing/color>
+#include "create_params"
+#include <xtd/static>
+#include <xtd/string>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

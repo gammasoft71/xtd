@@ -1,23 +1,10 @@
 /// @file
 /// @brief Contains __compiler_id definition.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-#include "../compiler_id.h"
-
-/// @cond
-#if defined(_MSC_VER)
-#  define __compiler_id xtd::compiler_id::msvc
-#elif defined(__APPLE__) && defined(__clang__)
-#  define __compiler_id xtd::compiler_id::apple_clang;
-#elif defined(__clang__)
-#  define __compiler_id xtd::compiler_id::clang;
-#elif defined(__GNUC__)
-#  define __compiler_id xtd::compiler_id::gcc;
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__compiler_id.hpp> - Will be removed in version 0.4.0.")
 #else
-#  define __compiler_id xtd::compiler_id::unknown;
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__compiler_id.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
+#include "__compiler_id.hpp"

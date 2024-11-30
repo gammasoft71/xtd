@@ -8,9 +8,9 @@
 #endif
 /// @endcond
 
-#include <xtd/static.h>
-#include <xtd/drawing/image.h>
-#include <xtd/drawing/size.h>
+#include <xtd/static>
+#include <xtd/drawing/image>
+#include <xtd/drawing/size>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,20 +2,9 @@
 /// @brief Contains xtd::action delegate.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents a xtd::delegate that has variable parameters and does not return a value.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/action>
-  /// ```
-    /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  template<typename... arguments_t>
-  using action = delegate <void(arguments_t...)>;
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/action.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/action.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "action.hpp"

@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <xtd/unused.h>
+#include <xtd/unused>
 
 /// @cond
 // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...

@@ -1,7 +1,7 @@
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/is.h"
-#include "../../include/xtd/hash_code.h"
-#include "../../include/xtd/random.h"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/is.hpp"
+#include "../../include/xtd/hash_code.hpp"
+#include "../../include/xtd/random.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic::helpers;

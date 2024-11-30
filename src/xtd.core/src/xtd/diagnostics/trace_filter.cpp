@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/trace_filter.h"
+#include "../../../include/xtd/diagnostics/trace_filter.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

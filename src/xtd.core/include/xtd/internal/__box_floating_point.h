@@ -1,16 +1,10 @@
 /// @file
 /// @brief Contains internal math methods.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__box_floating_point.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__box_floating_point.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include "../types.h"
-
-/// @cond
-static constexpr xtd::decimal __get_epsilon(xtd::decimal) noexcept {return 0;}
-static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
-static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
-/// @endcond
+#include "__box_floating_point.hpp"

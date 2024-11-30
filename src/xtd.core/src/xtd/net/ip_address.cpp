@@ -1,10 +1,10 @@
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/bit_converter.h"
-#include "../../../include/xtd/format_exception.h"
-#include "../../../include/xtd/block_scope.h"
-#include "../../../include/xtd/net/ip_address.h"
-#include "../../../include/xtd/net/sockets/socket_error.h"
-#include "../../../include/xtd/net/sockets/socket_exception.h"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/bit_converter.hpp"
+#include "../../../include/xtd/format_exception.hpp"
+#include "../../../include/xtd/block_scope.hpp"
+#include "../../../include/xtd/net/ip_address.hpp"
+#include "../../../include/xtd/net/sockets/socket_error.hpp"
+#include "../../../include/xtd/net/sockets/socket_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::net;

@@ -1,5 +1,5 @@
-#include "../../../include/xtd/threading/interlocked.h"
-#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/threading/interlocked.hpp"
+#include "../../../include/xtd/as.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/interlocked>
 #undef __XTD_CORE_NATIVE_LIBRARY__

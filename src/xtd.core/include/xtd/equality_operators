@@ -1,2 +1,2 @@
 #pragma once
-#include "equality_operators.h"
+#include "equality_operators.hpp"

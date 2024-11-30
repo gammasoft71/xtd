@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_copyright_attribute.h"
+#include "assembly_copyright_attribute.hpp"

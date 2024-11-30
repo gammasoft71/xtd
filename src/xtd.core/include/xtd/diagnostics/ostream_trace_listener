@@ -1,2 +1,2 @@
 #pragma once
-#include "ostream_trace_listener.h"
+#include "ostream_trace_listener.hpp"

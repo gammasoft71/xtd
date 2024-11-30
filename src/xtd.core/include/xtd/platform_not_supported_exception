@@ -1,2 +1,2 @@
 #pragma once
-#include "platform_not_supported_exception.h"
+#include "platform_not_supported_exception.hpp"

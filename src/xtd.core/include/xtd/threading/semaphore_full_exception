@@ -1,2 +1,2 @@
 #pragma once
-#include "semaphore_full_exception.h"
+#include "semaphore_full_exception.hpp"

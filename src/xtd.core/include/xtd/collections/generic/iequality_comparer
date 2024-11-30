@@ -1,2 +1,2 @@
 #pragma once
-#include "iequality_comparer.h"
+#include "iequality_comparer.hpp"

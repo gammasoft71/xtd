@@ -1,2 +1,2 @@
 #pragma once
-#include "dns_end_point.h"
+#include "dns_end_point.hpp"

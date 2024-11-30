@@ -1,10 +1,10 @@
-#include "named_semaphore.h"
-#include "unnamed_semaphore.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/io/path_too_long_exception.h"
-#include "../../../include/xtd/threading/abandoned_mutex_exception.h"
+#include "named_semaphore.hpp"
+#include "unnamed_semaphore.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/object_closed_exception.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/io/path_too_long_exception.hpp"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 #include <atomic>
 
 using namespace xtd;

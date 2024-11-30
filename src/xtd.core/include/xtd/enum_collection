@@ -1,2 +1,2 @@
 #pragma once
-#include "enum_collection.h"
+#include "enum_collection.hpp"

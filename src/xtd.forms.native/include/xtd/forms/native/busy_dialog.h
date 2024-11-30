@@ -11,8 +11,8 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-#include <xtd/static.h>
-#include <xtd/string.h>
+#include <xtd/static>
+#include <xtd/string>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/forms_native_export.h>

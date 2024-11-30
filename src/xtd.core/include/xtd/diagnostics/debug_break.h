@@ -2,21 +2,9 @@
 /// @brief Contains xtd::diagnostics::debug_break keyword.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "debugger.h"
-
-/// @brief Signals a breakpoint to an attached debugger.
-/// @par Header
-/// ```cpp
-/// #include <xtd/diagnostics/debug_break>
-/// ```
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core debug
-/// @par Examples
-/// The following code example demonstrates how to stop the debugger at the call to write_line.
-/// ```cpp
-/// debug_break_();
-/// console::write_line("Hello, world.");
-/// ```
-#define debug_break_() \
-  if (xtd::diagnostics::debugger::launch()) __xtd_debugbreak()
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/diagnostics/debug_break.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/diagnostics/debug_break.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "debug_break.hpp"

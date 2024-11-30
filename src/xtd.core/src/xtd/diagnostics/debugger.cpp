@@ -1,5 +1,5 @@
-#include "../../../include/xtd/diagnostics/debugger.h"
-#include "../../../include/xtd/diagnostics/debug_break.h"
+#include "../../../include/xtd/diagnostics/debugger.hpp"
+#include "../../../include/xtd/diagnostics/debug_break.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__

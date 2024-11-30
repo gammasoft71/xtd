@@ -1,17 +1,10 @@
 /// @file
 /// @brief Contains __build_type definition.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-#include "../build_type.h"
-
-/// @cond
-#if !defined(NDEBUG) || defined(DEBUG)
-#  define __build_type xtd::build_type::debug;
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__build_type.hpp> - Will be removed in version 0.4.0.")
 #else
-#  define __build_type xtd::build_type::release;
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__build_type.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
+#include "__build_type.hpp"

@@ -1,6 +1,6 @@
-#include "../../include/xtd/system_exception.h"
-#include "../../include/xtd/diagnostics/stack_trace.h"
-#include "../../include/xtd/type_object.h"
+#include "../../include/xtd/system_exception.hpp"
+#include "../../include/xtd/diagnostics/stack_trace.hpp"
+#include "../../include/xtd/type_object.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

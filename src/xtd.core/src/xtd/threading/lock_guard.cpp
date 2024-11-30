@@ -1,4 +1,4 @@
-#include "../../../include/xtd/threading/lock_guard.h"
+#include "../../../include/xtd/threading/lock_guard.hpp"
 
 using namespace xtd;
 using namespace xtd::threading;

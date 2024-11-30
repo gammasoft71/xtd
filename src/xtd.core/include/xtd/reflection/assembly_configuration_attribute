@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_configuration_attribute.h"
+#include "assembly_configuration_attribute.hpp"

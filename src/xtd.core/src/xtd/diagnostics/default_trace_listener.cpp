@@ -1,5 +1,5 @@
-#include "../../../include/xtd/diagnostics/default_trace_listener.h"
-#include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/diagnostics/default_trace_listener.hpp"
+#include "../../../include/xtd/io/file.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__

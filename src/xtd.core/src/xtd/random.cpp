@@ -1,7 +1,7 @@
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/byte_object.h"
-#include "../../include/xtd/int32_object.h"
-#include "../../include/xtd/random.h"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/byte_object.hpp"
+#include "../../include/xtd/int32_object.hpp"
+#include "../../include/xtd/random.hpp"
 
 using namespace xtd;
 

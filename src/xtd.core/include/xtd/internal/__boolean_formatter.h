@@ -1,33 +1,10 @@
 /// @file
 /// @brief Contains __boolean_formatter method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__boolean_formatter.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__boolean_formatter.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include "__numeric_formatter.h"
-#include "__format_exception.h"
-
-
-/// @cond
-template<typename char_t>
-inline std::basic_string<char_t> __boolean_formatter(const std::basic_string<char_t>& fmt, bool value, const std::locale& loc) {
-  if (fmt.empty()) return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
-  
-  switch (fmt[0]) {
-    case 'b':
-    case 'B':
-    case 'd':
-    case 'D':
-    case 'o':
-    case 'O':
-    case 'x':
-    case 'X': return __numeric_formatter(fmt, value ? 1 : 0, loc);
-    case 'g':
-    case 'G': return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
-    default: __format_exception("Invalid format expression"); return {};
-  }
-}
-/// @endcond
+#include "__boolean_formatter.hpp"

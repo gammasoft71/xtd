@@ -2,10 +2,9 @@
 /// @brief Contains namespace aliases.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#undef linux
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The system namespace contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
-  namespace system = xtd;
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/xtd_namespace_aliases.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/xtd_namespace_aliases.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "xtd_namespace_aliases.hpp"

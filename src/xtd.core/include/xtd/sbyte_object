@@ -1,2 +1,2 @@
 #pragma once
-#include "sbyte_object.h"
+#include "sbyte_object.hpp"

@@ -1,6 +1,6 @@
-#include "../../../include/xtd/io/drive_info.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/io/drive_info.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/argument_exception.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/drive>
 #undef __XTD_CORE_NATIVE_LIBRARY__

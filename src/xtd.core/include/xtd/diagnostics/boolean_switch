@@ -1,2 +1,2 @@
 #pragma once
-#include "boolean_switch.h"
+#include "boolean_switch.hpp"

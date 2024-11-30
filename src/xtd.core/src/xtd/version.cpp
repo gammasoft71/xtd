@@ -1,9 +1,9 @@
-#include "../../include/xtd/version.h"
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/is.h"
-#include "../../include/xtd/collections/specialized/string_collection.h"
-#include "../../include/xtd/argument_out_of_range_exception.h"
-#include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/version.hpp"
+#include "../../include/xtd/as.hpp"
+#include "../../include/xtd/is.hpp"
+#include "../../include/xtd/collections/specialized/string_collection.hpp"
+#include "../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../include/xtd/format_exception.hpp"
 #include <regex>
 
 using namespace xtd;

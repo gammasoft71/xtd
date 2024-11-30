@@ -8,9 +8,9 @@
 #endif
 /// @endcond
 
-#include <xtd/string.h>
-#include <xtd/static.h>
-#include <xtd/version.h>
+#include <xtd/string>
+#include <xtd/static>
+#include <xtd/version>
 #include <xtd/forms_native_export.h>
 
 /// @cond

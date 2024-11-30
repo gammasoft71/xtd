@@ -2,7 +2,7 @@
 /// @brief Contains windows messages constants.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/types.h>
+#include <xtd/types>
 
 #if !defined(WM_NULL)
 /// @brief Performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.

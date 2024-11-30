@@ -1,2 +1,2 @@
 #pragma once
-#include "software_termination_exception.h"
+#include "software_termination_exception.hpp"

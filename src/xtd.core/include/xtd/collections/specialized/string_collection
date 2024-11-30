@@ -1,2 +1,2 @@
 #pragma once
-#include "string_collection.h"
+#include "string_collection.hpp"

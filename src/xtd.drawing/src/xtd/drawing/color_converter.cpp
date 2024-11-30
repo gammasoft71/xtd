@@ -1,5 +1,5 @@
 #include "../../../include/xtd/drawing/color_converter.h"
-#include <xtd/byte_object.h>
+#include <xtd/byte_object>
 #include <xtd/math>
 
 // Most of the algorithms come from https://www.programmingalgorithms.com/category/image-processing/

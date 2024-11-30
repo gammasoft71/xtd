@@ -1,2 +1,2 @@
 #pragma once
-#include "event_reset_mode.h"
+#include "event_reset_mode.hpp"

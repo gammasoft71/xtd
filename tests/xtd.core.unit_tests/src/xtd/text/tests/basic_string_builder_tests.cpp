@@ -5,7 +5,7 @@
 #include <xtd/char32>
 #include <xtd/char8>
 #include <xtd/environment>
-#include <xtd/index_out_of_range_exception.h>
+#include <xtd/index_out_of_range_exception>
 #include <xtd/size_object>
 #include <xtd/wchar>
 #include <xtd/tunit/assert>

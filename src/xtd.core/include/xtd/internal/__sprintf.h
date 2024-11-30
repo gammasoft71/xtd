@@ -1,54 +1,10 @@
 /// @file
 /// @brief Contains __format method.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__sprintf.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__sprintf.hpp> - Will be removed in version 0.4.0."
 #endif
-/// @endcond
-
-#include "../types.h"
-#include <cstdarg>
-#include <string>
-
-/// @cond
-template <typename char_t>
-inline std::basic_string<char_t> __sprintf(const char_t* fmt, ...) {return std::basic_string<char_t>();}
-
-template <>
-inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
-  va_list args;
-  va_start(args, fmt);
-  std::basic_string<char> formatted_string(vsnprintf(nullptr, 0, fmt, args), 0);
-  va_end(args);
-  va_start(args, fmt);
-  vsnprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
-  va_end(args);
-  if (formatted_string == "INF") formatted_string = {'i', 'n', 'f'};
-  if (formatted_string == "-INF") formatted_string = {'-', 'i', 'n', 'f'};
-  if (formatted_string == "NAN") formatted_string = {'n', 'a', 'n'};
-  return formatted_string;
-}
-
-template <>
-inline std::basic_string<xtd::wchar> __sprintf<xtd::wchar>(const xtd::wchar* fmt, ...) {
-  va_list args;
-  size_t size = 1024;
-  int length = 0;
-  std::basic_string<xtd::wchar> formatted_string;
-  bool error = false;
-  do {
-    formatted_string = std::basic_string<xtd::wchar>(size, 0);
-    va_start(args, fmt);
-    length = vswprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
-    error = length < 0;
-    va_end(args);
-    size *= 2;
-  } while (error);
-  formatted_string.resize(length);
-  if (formatted_string == L"INF") formatted_string = {'i', 'n', 'f'};
-  if (formatted_string == L"-INF") formatted_string = {'-', 'i', 'n', 'f'};
-  if (formatted_string == L"NAN") formatted_string = {'n', 'a', 'n'};
-  return formatted_string;
-}
-/// @endcond
+#include "__sprintf.hpp"

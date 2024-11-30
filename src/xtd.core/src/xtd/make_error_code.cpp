@@ -1,5 +1,5 @@
-#include "../../include/xtd/make_error_code.h"
-#include "../../include/xtd/h_result.h"
+#include "../../include/xtd/make_error_code.hpp"
+#include "../../include/xtd/h_result.hpp"
 
 using namespace xtd;
 

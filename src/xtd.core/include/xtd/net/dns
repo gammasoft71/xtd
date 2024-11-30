@@ -1,2 +1,2 @@
 #pragma once
-#include "dns.h"
+#include "dns.hpp"

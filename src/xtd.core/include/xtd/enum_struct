@@ -1,2 +1,2 @@
 #pragma once
-#include "enum_struct.h"
+#include "enum_struct.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "hash_code.h"
+#include "hash_code.hpp"

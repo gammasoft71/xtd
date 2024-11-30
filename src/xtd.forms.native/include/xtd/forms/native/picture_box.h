@@ -10,7 +10,7 @@
 
 #include <xtd/drawing/image.h>
 #include "create_params.h"
-#include <xtd/static.h>
+#include <xtd/static>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

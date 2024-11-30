@@ -1,5 +1,5 @@
-#include "../../../include/xtd/media/system_sound.h"
-#include "../../../include/xtd/is.h"
+#include "../../../include/xtd/media/system_sound.hpp"
+#include "../../../include/xtd/is.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/system_sound>
 #undef __XTD_CORE_NATIVE_LIBRARY__

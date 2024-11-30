@@ -1,5 +1,5 @@
-#include "../../include/xtd/iformatable.h"
-#include "../../include/xtd/string.h"
+#include "../../include/xtd/iformatable.hpp"
+#include "../../include/xtd/string.hpp"
 
 using namespace xtd;
 

@@ -1,2 +1,2 @@
 #pragma once
-#include "domain_exception.h"
+#include "domain_exception.hpp"

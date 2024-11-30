@@ -1,2 +1,2 @@
 #pragma once
-#include "trace_options.h"
+#include "trace_options.hpp"

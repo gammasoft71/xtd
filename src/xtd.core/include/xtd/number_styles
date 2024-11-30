@@ -1,2 +1,2 @@
 #pragma once
-#include "number_styles.h"
+#include "number_styles.hpp"

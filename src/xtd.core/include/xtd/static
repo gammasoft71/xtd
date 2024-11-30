@@ -1,2 +1,2 @@
 #pragma once
-#include "static.h"
+#include "static.hpp"

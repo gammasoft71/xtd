@@ -4,7 +4,7 @@
 #pragma once
 #include "assert.h"
 #define __XTD_STD_INTERNAL__
-#include <xtd/internal/__xtd_std_version.h>
+#include <xtd/internal/__xtd_std_version.hpp>
 #undef __XTD_STD_INTERNAL__
 #if defined(__xtd__cpp_lib_filesystem)
 #include <filesystem>

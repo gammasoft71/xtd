@@ -1,2 +1,2 @@
 #pragma once
-#include "box_floating_point.h"
+#include "box_floating_point.hpp"

@@ -10,7 +10,7 @@
 #include <xtd/forms/native/toolkit>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/char32_object.h>
+#include <xtd/char32_object>
 #include <xtd/convert_string>
 
 using namespace xtd;

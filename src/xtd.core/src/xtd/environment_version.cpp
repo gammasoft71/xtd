@@ -2,7 +2,7 @@
 //
 // Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
-#include "../include/xtd/environment.h"
+#include "../include/xtd/environment.hpp"
 
 // This check verifies that the current version is defined in the availability_versions.h include file.
 #if !defined(__XTD_0_2_0__)

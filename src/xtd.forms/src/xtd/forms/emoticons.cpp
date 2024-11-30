@@ -1,5 +1,5 @@
 #include "../../../include/xtd/forms/emoticons.h"
-#include <xtd/call_once.h>
+#include <xtd/call_once>
 
 using namespace xtd::forms;
 

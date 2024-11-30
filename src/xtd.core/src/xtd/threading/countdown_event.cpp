@@ -1,11 +1,11 @@
-#include "../../../include/xtd/threading/countdown_event.h"
-#include "../../../include/xtd/threading/manual_reset_event.h"
-#include "../../../include/xtd/diagnostics/stopwatch.h"
-#include "../../../include/xtd/operation_canceled_exception.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/lock.h"
+#include "../../../include/xtd/threading/countdown_event.hpp"
+#include "../../../include/xtd/threading/manual_reset_event.hpp"
+#include "../../../include/xtd/diagnostics/stopwatch.hpp"
+#include "../../../include/xtd/operation_canceled_exception.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
+#include "../../../include/xtd/object_closed_exception.hpp"
+#include "../../../include/xtd/lock.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

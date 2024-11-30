@@ -1,2 +1,2 @@
 #pragma once
-#include "registered_wait_handle.h"
+#include "registered_wait_handle.hpp"

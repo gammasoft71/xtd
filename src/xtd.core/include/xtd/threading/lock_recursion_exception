@@ -1,2 +1,2 @@
 #pragma once
-#include "lock_recursion_exception.h"
+#include "lock_recursion_exception.hpp"

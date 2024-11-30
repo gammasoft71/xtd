@@ -1,7 +1,7 @@
-#include "../../../include/xtd/reflection/assembly.h"
-#include "../../../include/xtd/reflection/assembly_info.h"
-#include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/reflection/assembly.hpp"
+#include "../../../include/xtd/reflection/assembly_info.hpp"
+#include "../../../include/xtd/io/path.hpp"
+#include "../../../include/xtd/environment.hpp"
 
 using namespace xtd;
 using namespace xtd::io;

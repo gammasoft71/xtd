@@ -1,7 +1,7 @@
-#include "../../../include/xtd/threading/thread.h"
-#include "../../../include/xtd/threading/wait_handle.h"
-#include "../../../include/xtd/diagnostics/stopwatch.h"
-#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/threading/thread.hpp"
+#include "../../../include/xtd/threading/wait_handle.hpp"
+#include "../../../include/xtd/diagnostics/stopwatch.hpp"
+#include "../../../include/xtd/argument_exception.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__

@@ -1,2 +1,2 @@
 #pragma once
-#include "object_closed_exception.h"
+#include "object_closed_exception.hpp"

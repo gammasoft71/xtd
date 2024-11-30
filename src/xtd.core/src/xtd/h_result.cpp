@@ -1,9 +1,9 @@
-#include "../../include/xtd/array.h"
-#include "../../include/xtd/call_once.h"
-#include "../../include/xtd/h_result.h"
-#include "../../include/xtd/literals.h"
-#include "../../include/xtd/string.h"
-#include "../../include/xtd/uint32.h"
+#include "../../include/xtd/array.hpp"
+#include "../../include/xtd/call_once.hpp"
+#include "../../include/xtd/h_result.hpp"
+#include "../../include/xtd/literals.hpp"
+#include "../../include/xtd/string.hpp"
+#include "../../include/xtd/uint32.hpp"
 
 using namespace xtd;
 
