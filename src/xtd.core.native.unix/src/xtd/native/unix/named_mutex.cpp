@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_mutex>
-#include "../../../../include/xtd/native/unix/semaphore.h"
+#include "../../../../include/xtd/native/unix/semaphore.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <fcntl.h>
 #include <sys/stat.h>
