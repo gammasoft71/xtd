@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
-#include "../../../../include/xtd/native/unix/strings.h"
-#include "../../../../include/xtd/native/unix/shell_execute.h"
+#include "../../../../include/xtd/native/unix/strings.hpp"
+#include "../../../../include/xtd/native/unix/shell_execute.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>

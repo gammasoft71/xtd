@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/unnamed_mutex>
-#include "../../../../include/xtd/native/unix/mutex.h"
+#include "../../../../include/xtd/native/unix/mutex.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <fcntl.h>
 #include <sys/stat.h>
