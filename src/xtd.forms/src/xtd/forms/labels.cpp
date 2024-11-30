@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/labels.h"
+#include "../../../include/xtd/forms/labels.hpp"
 #include <xtd/drawing/texts>
 
 using namespace xtd;

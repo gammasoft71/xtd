@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/seven_segment_display.h"
+#include "../../../include/xtd/forms/seven_segment_display.hpp"
 #include <xtd/drawing/color_converter>
 
 using namespace xtd;

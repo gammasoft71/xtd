@@ -1,2 +1,2 @@
 #pragma once
-#include "segment_style.h"
+#include "segment_style.hpp"

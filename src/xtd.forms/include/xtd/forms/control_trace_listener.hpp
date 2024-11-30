@@ -1,0 +1,95 @@
+/// @file
+/// @brief Contains xtd::forms::control_trace_listener listener.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+#pragma once
+#include "icontrol_trace.hpp"
+#include <xtd/diagnostics/trace_listener>
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+  namespace forms {
+    /// @brief Directs tracing or debugging output to a icontrol_trace object.
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/forms/control_trace_listener>
+    /// ```
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms debug
+    /// @par Examples
+    class control_trace_listener : public xtd::diagnostics::trace_listener {
+    public:
+      /// @name Public Constructors
+      
+      /// @{
+      /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.
+      /// @param control_trace A control that inherits to the icontrol_trace interface.
+      /// @see see xtd::forms::icontrol_trace interface.
+      control_trace_listener(xtd::forms::icontrol_trace& control_trace) : control_trace_(&control_trace) {}
+      /// @}
+      
+      /// @cond
+      ~control_trace_listener() {flush();}
+      /// @endcond
+      
+      /// @name Public Properties
+      
+      /// @{
+      /// @brief Gets icontroll_trace object.
+      /// @return The icontrol_trace object used.
+      virtual xtd::forms::icontrol_trace& control_trace() noexcept {return *control_trace_;}
+      /// @brief Sets icontroll_trace object.
+      /// @param control_trace The icontrol_trace object to use.
+      virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
+      /// @}
+      
+      /// @name Public Methods
+      
+      /// @{
+      void close() override { }
+      
+      void flush() override {
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (control_trace_) control_trace_->flush();
+        #endif
+      }
+      
+      using trace_listener::write;
+      /// @brief Writes the message to the listener you create when you implement the trace_listener class.
+      /// @param message A string you want to write.
+      void write(const xtd::string& message) override {
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (need_indent()) write_indent();
+        if (control_trace_) control_trace_->write(message);
+        #endif
+      }
+      
+      using trace_listener::write_line;
+      /// @brief Writes the message to the listener you create when you implement the trace_listener class.
+      /// @param message A string you want to write.
+      void write_line(const xtd::string& message) override {
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        //write(message + "\n");
+        if (need_indent()) write_indent();
+        if (control_trace_) control_trace_->write_line(message);
+        need_indent(true);
+        #endif
+      }
+      /// @}
+      
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Create new control_trace_listener.
+      /// @return New created trace listener.
+      static xtd::sptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return xtd::new_sptr<control_trace_listener>(control_trace);}
+      /// @}
+      
+    private:
+      xtd::forms::icontrol_trace* control_trace_ = nullptr;
+    };
+  }
+}

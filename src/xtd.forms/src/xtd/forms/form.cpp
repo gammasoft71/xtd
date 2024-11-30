@@ -1,8 +1,8 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/form_renderer.h"
-#include "../../../include/xtd/forms/screen.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/form.hpp"
+#include "../../../include/xtd/forms/form_renderer.hpp"
+#include "../../../include/xtd/forms/screen.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
 #include <xtd/diagnostics/debug>
 #include <xtd/drawing/system_colors>
 #include <xtd/drawing/system_icons>

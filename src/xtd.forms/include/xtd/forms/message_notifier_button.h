@@ -1,36 +1,10 @@
-#pragma once
+/// @file
 #include "component.h"
-#include <xtd/iequatable>
-#include <xtd/string>
-
-// TODO: documentation
-namespace xtd {
-  namespace forms {
-    class message_notifier_button : public xtd::forms::component, public xtd::iequatable<message_notifier_button> {
-    public:
-      message_notifier_button() = default;
-      explicit message_notifier_button(const xtd::string& text) : text_(text) {}
-      
-      const xtd::string& text() const noexcept {
-        return text_;
-      }
-      
-      message_notifier_button& text(const xtd::string& value) {
-        text_ = value;
-        return *this;
-      }
-      
-      //TODO:
-      using object::equals;
-      bool equals(const message_notifier_button& other) const noexcept override {
-        return text_ == other.text_;
-      }
-      
-    private:
-      xtd::string text_;
-    };
-    
-    using message_notifier_button_ref = std::reference_wrapper<message_notifier_button>;
-  }
-}
-
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+#pragma once
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/message_notifier_button.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/message_notifier_button.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "message_notifier_button.hpp"

@@ -1,10 +1,10 @@
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/status_bar.h"
-#include "../../../include/xtd/forms/status_bar_renderer.h"
-#include "../../../include/xtd/forms/status_bar_panel_renderer.h"
-#include "sizing_grip_control.h"
-#include "status_bar_panel_control.h"
-#include "status_bar_panel_data.h"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/status_bar.hpp"
+#include "../../../include/xtd/forms/status_bar_renderer.hpp"
+#include "../../../include/xtd/forms/status_bar_panel_renderer.hpp"
+#include "sizing_grip_control.hpp"
+#include "status_bar_panel_control.hpp"
+#include "status_bar_panel_data.hpp"
 #include <xtd/drawing/system_pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

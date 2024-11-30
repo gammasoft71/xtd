@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/v_scroll_bar.h"
+#include "../../../include/xtd/forms/v_scroll_bar.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/scroll_bar>
 #include <xtd/forms/native/scroll_bar_styles>

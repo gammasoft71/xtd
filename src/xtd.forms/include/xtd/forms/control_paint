@@ -1,2 +1,2 @@
 #pragma once
-#include "control_paint.h"
+#include "control_paint.hpp"

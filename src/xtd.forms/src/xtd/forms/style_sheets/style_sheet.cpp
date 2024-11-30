@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../../include/xtd/forms/application.h"
+#include "../../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../../include/xtd/forms/application.hpp"
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
 #include <xtd/drawing/system_colors>
 #define __XTD_FORMS_NATIVE_LIBRARY__

@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/style_sheets/status_bar_panel.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../include/xtd/forms/image_renderer.h"
-#include "../../../include/xtd/forms/status_bar_panel_renderer.h"
-#include "../../../include/xtd/forms/text_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/status_bar_panel.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../include/xtd/forms/image_renderer.hpp"
+#include "../../../include/xtd/forms/status_bar_panel_renderer.hpp"
+#include "../../../include/xtd/forms/text_renderer.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

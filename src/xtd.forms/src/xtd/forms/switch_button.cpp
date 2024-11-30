@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/switch_button.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/switch_button.hpp"
 #include <xtd/drawing/color_converter>
 
 using namespace xtd;

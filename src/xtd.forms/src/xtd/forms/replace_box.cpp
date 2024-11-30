@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/replace_box.h"
+#include "../../../include/xtd/forms/replace_box.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

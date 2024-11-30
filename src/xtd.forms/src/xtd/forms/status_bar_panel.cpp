@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/status_bar_panel.h"
-#include "../../../include/xtd/forms/status_bar.h"
-#include "status_bar_panel_data.h"
+#include "../../../include/xtd/forms/status_bar_panel.hpp"
+#include "../../../include/xtd/forms/status_bar.hpp"
+#include "status_bar_panel_data.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

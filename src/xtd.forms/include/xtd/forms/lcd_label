@@ -1,2 +1,2 @@
 #pragma once
-#include "lcd_label.h"
+#include "lcd_label.hpp"

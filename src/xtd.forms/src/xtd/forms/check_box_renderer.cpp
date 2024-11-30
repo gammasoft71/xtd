@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/check_box_renderer.h"
-#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/check_box_renderer.hpp"
+#include "../../../include/xtd/forms/control_paint.hpp"
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/system_colors>

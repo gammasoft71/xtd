@@ -1,2 +1,2 @@
 #pragma once
-#include "background_image.h"
+#include "background_image.hpp"

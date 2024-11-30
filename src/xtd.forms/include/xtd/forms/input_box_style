@@ -1,2 +1,2 @@
 #pragma once
-#include "input_box_style.h"
+#include "input_box_style.hpp"

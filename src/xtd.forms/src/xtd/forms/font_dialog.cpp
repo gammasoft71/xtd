@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/font_dialog.h"
-#include "xtd_forms_common_dialog_closed_caller.h"
+#include "../../../include/xtd/forms/font_dialog.hpp"
+#include "xtd_forms_common_dialog_closed_caller.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/font_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

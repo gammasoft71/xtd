@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/dot_matrix_display.h"
+#include "../../../include/xtd/forms/dot_matrix_display.hpp"
 #include <xtd/drawing/color_converter>
 
 using namespace xtd;

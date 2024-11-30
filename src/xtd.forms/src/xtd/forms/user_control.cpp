@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/user_control.h"
-#include "../../../include/xtd/forms/user_control_renderer.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/user_control.hpp"
+#include "../../../include/xtd/forms/user_control_renderer.hpp"
 #include <xtd/drawing/pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

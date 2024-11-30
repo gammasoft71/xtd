@@ -1,2 +1,2 @@
 #pragma once
-#include "message_dialog_icon.h"
+#include "message_dialog_icon.hpp"

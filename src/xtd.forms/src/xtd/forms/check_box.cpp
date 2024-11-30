@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/check_box.h"
-#include "../../../include/xtd/forms/toggle_button_renderer.h"
-#include "../../../include/xtd/forms/check_box_renderer.h"
-#include "../../../include/xtd/forms/visual_styles/toggle_button_state.h"
+#include "../../../include/xtd/forms/check_box.hpp"
+#include "../../../include/xtd/forms/toggle_button_renderer.hpp"
+#include "../../../include/xtd/forms/check_box_renderer.hpp"
+#include "../../../include/xtd/forms/visual_styles/toggle_button_state.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_styles>
 #include <xtd/forms/native/check_box>

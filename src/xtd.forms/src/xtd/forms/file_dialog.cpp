@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/file_dialog.h"
-#include "file_dialog_data.h"
+#include "../../../include/xtd/forms/file_dialog.hpp"
+#include "file_dialog_data.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

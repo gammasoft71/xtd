@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/progress_bar.h"
+#include "../../../include/xtd/forms/progress_bar.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_bar>
 #include <xtd/forms/native/progress_bar_styles>

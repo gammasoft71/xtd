@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/save_file_dialog.h"
-#include "file_dialog_data.h"
-#include "xtd_forms_common_dialog_closed_caller.h"
+#include "../../../include/xtd/forms/save_file_dialog.hpp"
+#include "file_dialog_data.hpp"
+#include "xtd_forms_common_dialog_closed_caller.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/file_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

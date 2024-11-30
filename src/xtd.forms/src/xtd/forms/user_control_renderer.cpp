@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/style_sheets/button.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../include/xtd/forms/user_control_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/button.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../include/xtd/forms/user_control_renderer.hpp"
 #include <xtd/drawing/color_converter>
 
 using namespace xtd;

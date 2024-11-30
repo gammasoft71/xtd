@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/lcd_label.h"
+#include "../../../include/xtd/forms/lcd_label.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

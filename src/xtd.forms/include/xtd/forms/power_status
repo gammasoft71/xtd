@@ -1,2 +1,2 @@
 #pragma once
-#include "power_status.h"
+#include "power_status.hpp"

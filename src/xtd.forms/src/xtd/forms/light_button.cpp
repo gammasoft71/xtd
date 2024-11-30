@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/light_button.h"
-#include "../../../include/xtd/forms/button_renderer.h"
-#include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/light_button.hpp"
+#include "../../../include/xtd/forms/button_renderer.hpp"
+#include "../../../include/xtd/forms/form.hpp"
 #include <xtd/drawing/color_converter>
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>

@@ -1,10 +1,10 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/button.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/panel.h"
-#include "../../../include/xtd/forms/input_dialog.h"
-#include "../../../include/xtd/forms/text_box.h"
-#include "xtd_forms_common_dialog_closed_caller.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/button.hpp"
+#include "../../../include/xtd/forms/label.hpp"
+#include "../../../include/xtd/forms/panel.hpp"
+#include "../../../include/xtd/forms/input_dialog.hpp"
+#include "../../../include/xtd/forms/text_box.hpp"
+#include "xtd_forms_common_dialog_closed_caller.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/input_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

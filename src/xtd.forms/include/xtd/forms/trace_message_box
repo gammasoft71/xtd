@@ -1,2 +1,2 @@
 #pragma once
-#include "trace_message_box.h"
+#include "trace_message_box.hpp"

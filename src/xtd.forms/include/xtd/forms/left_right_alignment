@@ -1,2 +1,2 @@
 #pragma once
-#include "left_right_alignment.h"
+#include "left_right_alignment.hpp"

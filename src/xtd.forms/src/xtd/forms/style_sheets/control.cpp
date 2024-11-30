@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/forms/style_sheets/control.h"
-#include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include "../../../../include/xtd/forms/style_sheets/control.hpp"
+#include "../../../../include/xtd/forms/style_sheets/style_sheet.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

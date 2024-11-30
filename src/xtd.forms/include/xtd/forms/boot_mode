@@ -1,2 +1,2 @@
 #pragma once
-#include "boot_mode.h"
+#include "boot_mode.hpp"

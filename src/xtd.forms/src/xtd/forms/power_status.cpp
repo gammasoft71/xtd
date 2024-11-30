@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/power_status.h"
+#include "../../../include/xtd/forms/power_status.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

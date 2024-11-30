@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/timer.h"
+#include "../../../include/xtd/forms/timer.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/timer>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

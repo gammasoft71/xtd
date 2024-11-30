@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/style_sheets/form.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../include/xtd/forms/form_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/form.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../include/xtd/forms/form_renderer.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

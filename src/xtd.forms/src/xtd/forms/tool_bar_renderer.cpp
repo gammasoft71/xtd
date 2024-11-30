@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/style_sheets/tool_bar.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../include/xtd/forms/tool_bar_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/tool_bar.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../include/xtd/forms/tool_bar_renderer.hpp"
 #include <xtd/drawing/color_converter>
 #include <tuple>
 

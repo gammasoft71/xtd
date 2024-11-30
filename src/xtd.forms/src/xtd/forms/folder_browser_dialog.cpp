@@ -1,8 +1,8 @@
-#include "../../../include/xtd/forms/folder_browser_dialog.h"
+#include "../../../include/xtd/forms/folder_browser_dialog.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/folder_browser_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "xtd_forms_common_dialog_closed_caller.h"
+#include "xtd_forms_common_dialog_closed_caller.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

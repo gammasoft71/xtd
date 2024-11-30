@@ -1,10 +1,10 @@
-#include "../../../include/xtd/forms/button_renderer.h"
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/image_renderer.h"
-#include "../../../include/xtd/forms/text_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/button.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include "../../../include/xtd/forms/button_renderer.hpp"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/image_renderer.hpp"
+#include "../../../include/xtd/forms/text_renderer.hpp"
+#include "../../../include/xtd/forms/style_sheets/button.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/system_colors>

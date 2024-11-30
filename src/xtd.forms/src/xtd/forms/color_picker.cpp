@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/color_picker.h"
+#include "../../../include/xtd/forms/color_picker.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/color_picker>

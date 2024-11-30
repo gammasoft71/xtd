@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/progress_dialog.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/progress_dialog.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

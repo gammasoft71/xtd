@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/track_bar.h"
+#include "../../../include/xtd/forms/track_bar.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/track_bar>
 #include <xtd/forms/native/track_bar_styles>
