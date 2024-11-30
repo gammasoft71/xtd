@@ -5,7 +5,7 @@ project(guidgen-gui)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_sources(
-  src/main_form.h
+  src/main_form.hpp
 )
 target_type(GUI_APPLICATION)
 

@@ -5,19 +5,19 @@ project(xtdc-gui)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_sources(
-  src/main_form.h
+  src/main_form.hpp
   src/main_form.cpp
-  src/project_language.h
-  src/project_platform.h
-  src/project_sdk.h
-  src/project_type.h
-  src/project_type_item.h
-  src/project_type_item_control.h
+  src/project_language.hpp
+  src/project_platform.hpp
+  src/project_sdk.hpp
+  src/project_type.hpp
+  src/project_type_item.hpp
+  src/project_type_item_control.hpp
   src/project_type_item_control.cpp
-  src/project_type_items_control.h
-  src/settings_form.h
+  src/project_type_items_control.hpp
+  src/settings_form.hpp
   src/settings_form.cpp
-  src/xtd_example_item.h
+  src/xtd_example_item.hpp
 )
 target_type(GUI_APPLICATION)
 

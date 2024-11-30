@@ -1,8 +1,8 @@
 #include "../properties/resources.hpp"
 #include "../properties/settings.hpp"
-#include "main_form.h"
-#include "key_control.h"
-#include "key_press_control.h"
+#include "main_form.hpp"
+#include "key_control.hpp"
+#include "key_press_control.hpp"
 #include <xtd/forms/about_dialog>
 #include <xtd/forms/button_images>
 #include <xtd/forms/window_messages>
