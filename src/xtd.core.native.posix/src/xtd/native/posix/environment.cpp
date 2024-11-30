@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
-#include "../../../../include/xtd/native/posix/strings.h"
+#include "../../../../include/xtd/native/posix/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
