@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/unnamed_event_wait_handle>
-#include "../../../../include/xtd/native/linux/semaphore.h"
+#include "../../../../include/xtd/native/linux/semaphore.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
