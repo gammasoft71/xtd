@@ -8,14 +8,14 @@ add_include_directories(include)
 include(references.cmake)
 
 add_sources(
-  include/xtd/system_report.h
+  include/xtd/system_report.hpp
   include/xtd/system_report
   include/xtd/xtd
   include/xtd/xtd
-  include/xtd/xtd.h
-  include/xtd/forms/xtd_about_box.h
+  include/xtd/xtd.hpp
+  include/xtd/forms/xtd_about_box.hpp
   include/xtd/forms/xtd_about_box
-  include/xtd/forms/xtd_about_dialog.h
+  include/xtd/forms/xtd_about_dialog.hpp
   include/xtd/forms/xtd_about_dialog
   src/xtd/system_report.cpp
   src/xtd/forms/xtd_about_box.cpp

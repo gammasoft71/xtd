@@ -1,4 +1,4 @@
-#include "../../include/xtd/system_report.h"
+#include "../../include/xtd/system_report.hpp"
 #include <xtd/box_char>
 #include <xtd/environment>
 #include <xtd/drawing/system_colors>
