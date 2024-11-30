@@ -66,7 +66,7 @@ private:
   
   void generate_debug_cassert() {
     auto index = 0;
-    debug::cassert_(index > 0, "Out of range", "Index must be greater than 0");
+    debug::cassert(index > 0, "Out of range", "Index must be greater than 0");
   }
   
   void generate_debug_break() {
