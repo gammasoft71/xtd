@@ -1,2 +1,2 @@
 #pragma once
-#include "critical_section.h"
+#include "critical_section.hpp"

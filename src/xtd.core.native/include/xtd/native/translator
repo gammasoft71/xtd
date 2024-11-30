@@ -1,2 +1,2 @@
 #pragma once
-#include "translator.h"
+#include "translator.hpp"

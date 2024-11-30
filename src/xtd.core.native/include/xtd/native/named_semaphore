@@ -1,2 +1,2 @@
 #pragma once
-#include "named_semaphore.h"
+#include "named_semaphore.hpp"

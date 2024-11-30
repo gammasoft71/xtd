@@ -8,9 +8,9 @@
 #endif
 /// @endcond
 
-#include "constant_special_item_id_list.h"
-#include "environment_variable_target.h"
-#include "platform_ids.h"
+#include "constant_special_item_id_list.hpp"
+#include "environment_variable_target.hpp"
+#include "platform_ids.hpp"
 #include <xtd/core_native_export>
 #include <cstdint>
 #include <map>

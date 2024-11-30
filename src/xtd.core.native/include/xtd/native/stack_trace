@@ -1,2 +1,2 @@
 #pragma once
-#include "stack_trace.h"
+#include "stack_trace.hpp"
