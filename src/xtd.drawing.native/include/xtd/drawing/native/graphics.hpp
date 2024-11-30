@@ -11,8 +11,8 @@
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/drawing_native_export.h>
-#include "hot_key_prefixes.h"
-#include "path_fill_modes.h"
+#include "hot_key_prefixes.hpp"
+#include "path_fill_modes.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
