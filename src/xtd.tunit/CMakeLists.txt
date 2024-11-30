@@ -7,94 +7,94 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_references(xtd.core)
 add_sources(
-  include/xtd/tunit/__default_insert_basic_ostream_operator.h
-  include/xtd/tunit/__google_test_markers.h
-  include/xtd/tunit/__tunit_join__items.h
-  include/xtd/tunit/abort_error.h
+  include/xtd/tunit/__default_insert_basic_ostream_operator.hpp
+  include/xtd/tunit/__google_test_markers.hpp
+  include/xtd/tunit/__tunit_join__items.hpp
+  include/xtd/tunit/abort_error.hpp
   include/xtd/tunit/abort_error
-  include/xtd/tunit/assert.h
+  include/xtd/tunit/assert.hpp
   include/xtd/tunit/assert
-  include/xtd/tunit/assert_error.h
+  include/xtd/tunit/assert_error.hpp
   include/xtd/tunit/assert_error
-  include/xtd/tunit/assume.h
+  include/xtd/tunit/assume.hpp
   include/xtd/tunit/assume
-  include/xtd/tunit/base_assert.h
+  include/xtd/tunit/base_assert.hpp
   include/xtd/tunit/base_assert
-  include/xtd/tunit/class_cleanup_attribute.h
+  include/xtd/tunit/class_cleanup_attribute.hpp
   include/xtd/tunit/class_cleanup_attribute
-  include/xtd/tunit/class_event_args.h
+  include/xtd/tunit/class_event_args.hpp
   include/xtd/tunit/class_event_args
-  include/xtd/tunit/class_initialize_attribute.h
+  include/xtd/tunit/class_initialize_attribute.hpp
   include/xtd/tunit/class_initialize_attribute
-  include/xtd/tunit/collection_assert.h
+  include/xtd/tunit/collection_assert.hpp
   include/xtd/tunit/collection_assert
-  include/xtd/tunit/collection_assume.h
+  include/xtd/tunit/collection_assume.hpp
   include/xtd/tunit/collection_assume
-  include/xtd/tunit/collection_valid.h
+  include/xtd/tunit/collection_valid.hpp
   include/xtd/tunit/collection_valid
-  include/xtd/tunit/console_unit_test.h
+  include/xtd/tunit/console_unit_test.hpp
   include/xtd/tunit/console_unit_test
-  include/xtd/tunit/default_main.h
+  include/xtd/tunit/default_main.hpp
   include/xtd/tunit/default_main
-  include/xtd/tunit/directory_assert.h
+  include/xtd/tunit/directory_assert.hpp
   include/xtd/tunit/directory_assert
-  include/xtd/tunit/directory_assume.h
+  include/xtd/tunit/directory_assume.hpp
   include/xtd/tunit/directory_assume
-  include/xtd/tunit/directory_valid.h
+  include/xtd/tunit/directory_valid.hpp
   include/xtd/tunit/directory_valid
-  include/xtd/tunit/event_listener.h
+  include/xtd/tunit/event_listener.hpp
   include/xtd/tunit/event_listener
-  include/xtd/tunit/file_assert.h
+  include/xtd/tunit/file_assert.hpp
   include/xtd/tunit/file_assert
-  include/xtd/tunit/file_assume.h
+  include/xtd/tunit/file_assume.hpp
   include/xtd/tunit/file_assume
-  include/xtd/tunit/file_valid.h
+  include/xtd/tunit/file_valid.hpp
   include/xtd/tunit/file_valid
-  include/xtd/tunit/ignore_error.h
+  include/xtd/tunit/ignore_error.hpp
   include/xtd/tunit/ignore_error
-  include/xtd/tunit/ostream_event_listener.h
+  include/xtd/tunit/ostream_event_listener.hpp
   include/xtd/tunit/ostream_event_listener
-  include/xtd/tunit/ostream_unit_test.h
+  include/xtd/tunit/ostream_unit_test.hpp
   include/xtd/tunit/ostream_unit_test
-  include/xtd/tunit/settings.h
+  include/xtd/tunit/settings.hpp
   include/xtd/tunit/settings
-  include/xtd/tunit/string_assert.h
+  include/xtd/tunit/string_assert.hpp
   include/xtd/tunit/string_assert
-  include/xtd/tunit/string_assume.h
+  include/xtd/tunit/string_assume.hpp
   include/xtd/tunit/string_assume
-  include/xtd/tunit/string_valid.h
+  include/xtd/tunit/string_valid.hpp
   include/xtd/tunit/string_valid
-  include/xtd/tunit/test.h
+  include/xtd/tunit/test.hpp
   include/xtd/tunit/test
-  include/xtd/tunit/registered_test_class.h
+  include/xtd/tunit/registered_test_class.hpp
   include/xtd/tunit/registered_test_class
-  include/xtd/tunit/test_cleanup_attribute.h
+  include/xtd/tunit/test_cleanup_attribute.hpp
   include/xtd/tunit/test_cleanup_attribute
-  include/xtd/tunit/test_event_args.h
+  include/xtd/tunit/test_event_args.hpp
   include/xtd/tunit/test_event_args
-  include/xtd/tunit/test_initialize_attribute.h
+  include/xtd/tunit/test_initialize_attribute.hpp
   include/xtd/tunit/test_initialize_attribute
-  include/xtd/tunit/test_method_attribute.h
+  include/xtd/tunit/test_method_attribute.hpp
   include/xtd/tunit/test_method_attribute
-  include/xtd/tunit/test_class.h
+  include/xtd/tunit/test_class.hpp
   include/xtd/tunit/test_class
-  include/xtd/tunit/test_class_attribute.h
+  include/xtd/tunit/test_class_attribute.hpp
   include/xtd/tunit/test_class_attribute
-  include/xtd/tunit/test_state.h
+  include/xtd/tunit/test_state.hpp
   include/xtd/tunit/test_state
-  include/xtd/tunit/tunit_event_args.h
+  include/xtd/tunit/tunit_event_args.hpp
   include/xtd/tunit/tunit_event_args
-  include/xtd/tunit/tunit_main.h
+  include/xtd/tunit/tunit_main.hpp
   include/xtd/tunit/tunit_main
-  include/xtd/tunit/unit_test.h
+  include/xtd/tunit/unit_test.hpp
   include/xtd/tunit/unit_test
-  include/xtd/tunit/valid.h
+  include/xtd/tunit/valid.hpp
   include/xtd/tunit/valid
-  include/xtd/gtest.h
+  include/xtd/gtest.hpp
   include/xtd/gtest
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit
-  include/xtd/xtd.tunit.h
+  include/xtd/xtd.tunit.hpp
   include/xtd/xtd.tunit
   src/xtd/tunit/assert.cpp
   src/xtd/tunit/assume.cpp

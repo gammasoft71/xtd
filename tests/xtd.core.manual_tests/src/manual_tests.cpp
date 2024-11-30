@@ -2,8 +2,8 @@
 
 using namespace xtd;
 
-auto main(int argc, char* argv[]) -> int {
-  console::write_line("Hello, World!");
+auto main() -> int {
+  println("Hello, World!");
   
   /*
   try {

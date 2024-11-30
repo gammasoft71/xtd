@@ -1,5 +1,5 @@
-#include "../../../include/xtd/tunit/test_class.h"
-#include "../../../include/xtd/tunit/unit_test.h"
+#include "../../../include/xtd/tunit/test_class.hpp"
+#include "../../../include/xtd/tunit/unit_test.hpp"
 #include <xtd/random>
 
 using namespace xtd;
