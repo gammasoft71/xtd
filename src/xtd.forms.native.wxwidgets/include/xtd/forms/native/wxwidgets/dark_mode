@@ -1,2 +1,2 @@
 #pragma once
-#include "dark_mode.h"
+#include "dark_mode.hpp"

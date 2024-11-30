@@ -3,8 +3,8 @@
 #include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

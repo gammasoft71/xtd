@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_collapsible_panel.h"
+#include "wx_collapsible_panel.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_text_box.h"
+#include "wx_text_box.hpp"

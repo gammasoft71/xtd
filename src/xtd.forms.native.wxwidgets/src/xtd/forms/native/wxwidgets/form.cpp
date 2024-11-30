@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.hpp"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/form>

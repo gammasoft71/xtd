@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.hpp"
 #include <xtd/forms/native/label>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 

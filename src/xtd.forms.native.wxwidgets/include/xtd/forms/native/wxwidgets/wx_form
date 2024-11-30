@@ -1,2 +1,2 @@
 #pragma once
-#include "wx_form.h"
+#include "wx_form.hpp"
