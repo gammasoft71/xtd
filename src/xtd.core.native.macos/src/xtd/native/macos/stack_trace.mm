@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
-#include "../../../../include/xtd/native/macos/shell_execute.h"
-#include "../../../../include/xtd/native/macos/strings.h"
+#include "../../../../include/xtd/native/macos/shell_execute.hpp"
+#include "../../../../include/xtd/native/macos/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <execinfo.h>
 #import <unistd.h>

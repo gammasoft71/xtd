@@ -1,2 +1,2 @@
 #pragma once
-#include "strings.h"
+#include "strings.hpp"

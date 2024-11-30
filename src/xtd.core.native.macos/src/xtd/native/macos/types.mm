@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
-#include "../../../../include/xtd/native/macos/semaphore.h"
-#include "../../../../include/xtd/native/macos/strings.h"
+#include "../../../../include/xtd/native/macos/semaphore.hpp"
+#include "../../../../include/xtd/native/macos/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cxxabi.h>
 
