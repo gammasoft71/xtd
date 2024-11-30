@@ -77,7 +77,7 @@ add_sources(
   src/xtd/tests/access_violation_exception_tests.cpp
   src/xtd/tests/any_tests.cpp
   src/xtd/tests/architecture_id_tests.cpp
-  src/xtd/tests/architecture_name.h
+  src/xtd/tests/architecture_name.hpp
   src/xtd/tests/argument_exception_tests.cpp
   src/xtd/tests/argument_null_exception_tests.cpp
   src/xtd/tests/argument_out_of_range_exception_tests.cpp
@@ -87,13 +87,13 @@ add_sources(
   src/xtd/tests/basic_string_tests.cpp
   src/xtd/tests/bit_converter_tests.cpp
   src/xtd/tests/box_tests.cpp
-  src/xtd/tests/build_type.h
+  src/xtd/tests/build_type.hpp
   src/xtd/tests/build_type_tests.cpp
-  src/xtd/tests/bytes_assert.h
-  src/xtd/tests/compiler_name.h
+  src/xtd/tests/bytes_assert.hpp
+  src/xtd/tests/compiler_name.hpp
   src/xtd/tests/compiler_tests.cpp
   src/xtd/tests/compiler_id_tests.cpp
-  src/xtd/tests/compiler_version.h
+  src/xtd/tests/compiler_version.hpp
   src/xtd/tests/console_cancel_event_args_tests.cpp
   src/xtd/tests/console_color_tests.cpp
   src/xtd/tests/console_key_info_tests.cpp
@@ -139,7 +139,7 @@ add_sources(
   src/xtd/tests/exit_status_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
-  src/xtd/tests/get_know_folder_path.h
+  src/xtd/tests/get_know_folder_path.hpp
   src/xtd/tests/guid_tests.cpp
   src/xtd/tests/h_result_tests.cpp
   src/xtd/tests/iasync_result_tests.cpp
@@ -175,7 +175,7 @@ add_sources(
   src/xtd/tests/overflow_exception_tests.cpp
   src/xtd/tests/parse_tests.cpp
   src/xtd/tests/platform_id_tests.cpp
-  src/xtd/tests/platform_name.h
+  src/xtd/tests/platform_name.hpp
   src/xtd/tests/platform_not_supported_exception_tests.cpp
   src/xtd/tests/rank_exception_tests.cpp
   src/xtd/tests/registered_enum_class_flags_tests.cpp
@@ -187,7 +187,7 @@ add_sources(
   src/xtd/tests/single_object_tests.cpp
   src/xtd/tests/signal_tests.cpp
   src/xtd/tests/software_termination_exception_tests.cpp
-  src/xtd/tests/standard_name.h
+  src/xtd/tests/standard_name.hpp
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_comparison_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp

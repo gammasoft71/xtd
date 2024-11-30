@@ -2,7 +2,7 @@
 #define NOMINMAX
 #include <Windows.h>
 #elif defined(__APPLE__)
-#include "get_double_click_time.h"
+#include "get_double_click_time.hpp"
 #endif
 #include <xtd/forms/system_information>
 #include <xtd/forms/form>

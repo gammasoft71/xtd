@@ -125,7 +125,7 @@ add_sources(
 )
 if (APPLE)
 add_sources(
-  src/xtd/forms/tests/get_double_click_time.h 
+  src/xtd/forms/tests/get_double_click_time.hpp 
   src/xtd/forms/tests/get_double_click_time.mm 
 )
 endif()

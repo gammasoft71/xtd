@@ -1,5 +1,5 @@
 #if defined(__APPLE__)
-#include "get_double_click_time.h"
+#include "get_double_click_time.hpp"
 #include <AppKit/NSEvent.h>
 #include <xtd/types>
 
