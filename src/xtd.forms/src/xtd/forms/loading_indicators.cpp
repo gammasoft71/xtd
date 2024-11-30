@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/loading_indicators.h"
+#include "../../../include/xtd/forms/loading_indicators.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

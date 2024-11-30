@@ -1,2 +1,2 @@
 #pragma once
-#include "find_dialog.h"
+#include "find_dialog.hpp"

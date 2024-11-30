@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/cursors.h"
+#include "../../../include/xtd/forms/cursors.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursors>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

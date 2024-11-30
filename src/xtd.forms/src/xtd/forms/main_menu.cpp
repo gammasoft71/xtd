@@ -1,14 +1,14 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/menu_item.h"
-#include "../../../include/xtd/forms/main_menu.h"
-#include "../../../include/xtd/forms/menu_images.h"
-#include "../../../include/xtd/forms/shortcut.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/menu_item.hpp"
+#include "../../../include/xtd/forms/main_menu.hpp"
+#include "../../../include/xtd/forms/menu_images.hpp"
+#include "../../../include/xtd/forms/shortcut.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/main_menu>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/texts>
 #include <xtd/environment>
-#include "menu_data.h"
+#include "menu_data.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

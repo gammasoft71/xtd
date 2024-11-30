@@ -1,2 +1,2 @@
 #pragma once
-#include "image_type.h"
+#include "image_type.hpp"

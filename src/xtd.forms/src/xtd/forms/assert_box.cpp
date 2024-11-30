@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/assert_box.h"
-#include "../../../include/xtd/forms/assert_dialog.h"
+#include "../../../include/xtd/forms/assert_box.hpp"
+#include "../../../include/xtd/forms/assert_dialog.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/tool_bar.h"
-#include "../../../include/xtd/forms/tool_bar_renderer.h"
-#include "../../../include/xtd/forms/tool_bar_button_renderer.h"
-#include "tool_bar_button_control.h"
-#include "tool_bar_button_data.h"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/tool_bar.hpp"
+#include "../../../include/xtd/forms/tool_bar_renderer.hpp"
+#include "../../../include/xtd/forms/tool_bar_button_renderer.hpp"
+#include "tool_bar_button_control.hpp"
+#include "tool_bar_button_data.hpp"
 #include <xtd/drawing/system_pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

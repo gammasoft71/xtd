@@ -1,2 +1,2 @@
 #pragma once
-#include "progress_box.h"
+#include "progress_box.hpp"

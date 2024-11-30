@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/control.h"
-#include "../../../include/xtd/forms/paint_event_args.h"
-#include "../../../include/xtd/forms/system_information.h"
+#include "../../../include/xtd/forms/control.hpp"
+#include "../../../include/xtd/forms/paint_event_args.hpp"
+#include "../../../include/xtd/forms/system_information.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

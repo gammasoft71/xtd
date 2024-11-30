@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/common_dialog.h"
+#include "../../../include/xtd/forms/common_dialog.hpp"
 #include <xtd/threading/thread>
 
 using namespace xtd;

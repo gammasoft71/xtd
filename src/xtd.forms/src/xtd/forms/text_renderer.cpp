@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/text_renderer.h"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/text_renderer.hpp"
 #include <xtd/drawing/string_format>
 #include <xtd/drawing/system_colors>
 

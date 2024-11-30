@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/screen.h"
+#include "../../../include/xtd/forms/screen.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/screen>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

@@ -1,2 +1,2 @@
 #pragma once
-#include "replace_dialog.h"
+#include "replace_dialog.hpp"

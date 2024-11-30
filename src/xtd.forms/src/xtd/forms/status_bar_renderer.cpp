@@ -1,8 +1,8 @@
-#include "../../../include/xtd/forms/style_sheets/status_bar.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../include/xtd/forms/status_bar_renderer.h"
-#include "../../../include/xtd/forms/text_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/status_bar.hpp"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
+#include "../../../include/xtd/forms/status_bar_renderer.hpp"
+#include "../../../include/xtd/forms/text_renderer.hpp"
 #include <xtd/drawing/color_converter>
 #include <tuple>
 

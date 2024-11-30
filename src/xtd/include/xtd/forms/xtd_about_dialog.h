@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/forms/layout/arranged_element_collection>
-#include <xtd/forms/component.h>
+#include <xtd/forms/component>
 #include <xtd/forms/dialog_appearance>
 #include <xtd/forms/iwin32_window>
 #include <xtd/drawing/icon>

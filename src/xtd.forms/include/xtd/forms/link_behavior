@@ -1,2 +1,2 @@
 #pragma once
-#include "link_behavior.h"
+#include "link_behavior.hpp"

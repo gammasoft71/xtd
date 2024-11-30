@@ -1,2 +1,2 @@
 #pragma once
-#include "loading_indicator_style.h"
+#include "loading_indicator_style.hpp"

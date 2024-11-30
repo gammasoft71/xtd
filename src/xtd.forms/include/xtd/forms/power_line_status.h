@@ -2,35 +2,9 @@
 /// @brief Contains xtd::forms::power_line_status enum class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/enum>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-  namespace forms {
-    /// @brief Specifies the system power status.
-    /// @par Header
-    /// ```cpp
-    /// #include <xtd/forms/power_line_status>
-    /// ```
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    enum class power_line_status {
-      /// @brief The system is offline.
-      offline = 0,
-      /// @brief The system is online.
-      online = 1,
-      /// @brief The power status of the system is unknown.
-      unknown = 0b11111111,
-    };
-  }
-}
-
-/// @cond
-template<> struct xtd::enum_register<xtd::forms::power_line_status> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::power_line_status> {{xtd::forms::power_line_status::offline, "offline"}, {xtd::forms::power_line_status::online, "online"}, {xtd::forms::power_line_status::unknown, "unknown"}};}
-};
-/// @endcond
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/power_line_status.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/power_line_status.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "power_line_status.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "vertical_control_layout_style.h"
+#include "vertical_control_layout_style.hpp"

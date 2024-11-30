@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/horizontal_control_layout_style.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/horizontal_control_layout_style.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

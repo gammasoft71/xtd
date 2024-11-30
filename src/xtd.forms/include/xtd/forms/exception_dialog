@@ -1,2 +1,2 @@
 #pragma once
-#include "exception_dialog.h"
+#include "exception_dialog.hpp"

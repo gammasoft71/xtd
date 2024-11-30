@@ -1,2 +1,2 @@
 #pragma once
-#include "trace_message_dialog.h"
+#include "trace_message_dialog.hpp"

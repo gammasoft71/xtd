@@ -1,2 +1,2 @@
 #pragma once
-#include "tick_style.h"
+#include "tick_style.hpp"

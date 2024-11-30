@@ -2,37 +2,9 @@
 /// @brief Contains namespace aliases.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#undef linux
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-  namespace forms {}
-  /// @brief The xtd::windows namespaces including animation clients, user interface controls, data binding, and type conversion. xtd::windows::forms and its child namespaces are used for developing Windows Forms (WinForms) applications.
-  namespace windows {
-    /// @brief The xtd::windows::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-    namespace forms = xtd::forms;
-  }
-}
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-  namespace forms {}
-  /// @brief The xtd::macos namespaces including animation clients, user interface controls, data binding, and type conversion. xtd::macos::forms and its child namespaces are used for developing macOS Forms (MacForms) applications.
-  namespace macos {
-    /// @brief The xtd::macos::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-    namespace forms = xtd::forms;
-  }
-}
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-  namespace forms {}
-  /// @brief The xtd::linux namespaces including animation clients, user interface controls, data binding, and type conversion. xtd::linux::forms and its child namespaces are used for developing Linux Forms (LinForms) applications.
-  namespace linux {
-    /// @brief The xtd::linux::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-    namespace forms = xtd::forms;
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms_namespace_aliases.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms_namespace_aliases.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "forms_namespace_aliases.hpp"

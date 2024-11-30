@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/input_box.h"
-#include "../../../include/xtd/forms/input_dialog.h"
+#include "../../../include/xtd/forms/input_box.hpp"
+#include "../../../include/xtd/forms/input_dialog.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;

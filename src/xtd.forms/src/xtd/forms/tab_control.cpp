@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/tab_control.h"
-#include "../../../include/xtd/forms/tab_page.h"
-#include "tab_control_data.h"
+#include "../../../include/xtd/forms/tab_control.hpp"
+#include "../../../include/xtd/forms/tab_page.hpp"
+#include "tab_control_data.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/extended_window_styles>

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/up_down_button.h"
+#include "../../../include/xtd/forms/up_down_button.hpp"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/extended_window_styles>

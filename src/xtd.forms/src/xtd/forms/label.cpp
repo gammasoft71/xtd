@@ -1,8 +1,8 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/label_renderer.h"
-#include "../../../include/xtd/forms/screen.h"
+#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/control_paint.hpp"
+#include "../../../include/xtd/forms/label.hpp"
+#include "../../../include/xtd/forms/label_renderer.hpp"
+#include "../../../include/xtd/forms/screen.hpp"
 #include <xtd/drawing/pens>
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/system_colors>

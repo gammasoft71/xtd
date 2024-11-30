@@ -2,45 +2,9 @@
 /// @brief Contains xtd::forms::form_renderer static class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/form_state.h"
-#include "flat_style.h"
-#include "box_renderer.h"
-#include <xtd/drawing/graphics>
-#include <xtd/static>
-#include <xtd/string>
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-  namespace forms {
-    /// @brief Provides form control renderer methods.
-    /// ```cpp
-    /// class forms_export_ form_renderer static_
-    /// ```
-    /// @par Inheritance
-    /// xtd::static → xtd::forms::form_renderer
-    /// @par Header
-    /// ```cpp
-    /// #include <xtd/forms/form_renderer>
-    /// ```
-    /// @par Namespace
-    /// xtd::forms::style_sheets
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms renderers
-    class form_renderer static_ {
-    public:
-      /// @name Public Static Methods
-      
-      /// @{
-      /// @brief Draws a box in the specified bounds, form state and background color.
-      /// @param graphics The xtd::drawing::graphics used to draw a form control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
-      /// @param form_state The visual state of a form that is drawn with visual styles.
-      /// @param back_color The background color for the form control.
-      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
-      static void draw_form(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color);
-      /// @}
-    };
-  }
-}
+#if defined(_MSC_VER) && __cplusplus < 202302L
+#  pragma message("Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/form_renderer.hpp> - Will be removed in version 0.4.0.")
+#else
+#  warning "Deprecated : Replaced by #include </Users/yves/Projects/xtd/src/xtd.forms/include/xtd/forms/form_renderer.hpp> - Will be removed in version 0.4.0."
+#endif
+#include "form_renderer.hpp"

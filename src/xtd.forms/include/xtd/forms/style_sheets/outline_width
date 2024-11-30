@@ -1,2 +1,2 @@
 #pragma once
-#include "outline_width.h"
+#include "outline_width.hpp"

@@ -1,2 +1,2 @@
 #pragma once
-#include "splitter_panel.h"
+#include "splitter_panel.hpp"
