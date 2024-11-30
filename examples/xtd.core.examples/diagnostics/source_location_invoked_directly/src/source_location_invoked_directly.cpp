@@ -1,8 +1,9 @@
 #include <xtd/io/path>
 #include <xtd/console>
-#include <xtd/source_location>
+#include <xtd/diagnostics/source_location>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::io;
 
 void print_this_file_name() {
