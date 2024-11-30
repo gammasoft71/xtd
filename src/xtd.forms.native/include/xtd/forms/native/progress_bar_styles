@@ -1,2 +1,2 @@
 #pragma once
-#include "progress_bar_styles.h"
+#include "progress_bar_styles.hpp"

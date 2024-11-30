@@ -1,7 +1,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_date_time_picker.h"
-#include <xtd/forms/native/date_time_picker.h>
-#include <xtd/forms/native/content_alignment.h>
+#include <xtd/forms/native/date_time_picker>
+#include <xtd/forms/native/content_alignment>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <tuple>

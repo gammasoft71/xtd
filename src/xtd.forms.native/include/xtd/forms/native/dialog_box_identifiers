@@ -1,2 +1,2 @@
 #pragma once
-#include "dialog_box_identifiers.h"
+#include "dialog_box_identifiers.hpp"
