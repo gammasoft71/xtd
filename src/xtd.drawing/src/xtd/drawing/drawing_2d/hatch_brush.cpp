@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/drawing/drawing_2d/hatch_brush.h"
-#include "../../../../include/xtd/drawing/bitmap.h"
+#include "../../../../include/xtd/drawing/drawing_2d/hatch_brush.hpp"
+#include "../../../../include/xtd/drawing/bitmap.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

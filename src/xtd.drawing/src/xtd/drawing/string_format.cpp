@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/string_format.h"
+#include "../../../include/xtd/drawing/string_format.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

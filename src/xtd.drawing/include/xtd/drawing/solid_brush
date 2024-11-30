@@ -1,2 +1,2 @@
 #pragma once
-#include "solid_brush.h"
+#include "solid_brush.hpp"

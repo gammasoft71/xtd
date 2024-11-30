@@ -1,2 +1,2 @@
 #pragma once
-#include "interpolation_mode.h"
+#include "interpolation_mode.hpp"

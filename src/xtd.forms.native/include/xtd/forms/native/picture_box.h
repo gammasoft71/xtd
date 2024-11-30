@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <xtd/drawing/image.h>
+#include <xtd/drawing/image>
 #include "create_params.h"
 #include <xtd/static>
 #include <xtd/forms_native_export.h>

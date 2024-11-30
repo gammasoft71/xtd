@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/buffered_graphics_context.h"
+#include "../../../include/xtd/drawing/buffered_graphics_context.hpp"
 #include <xtd/threading/interlocked>
 #include <xtd/argument_exception>
 #include <xtd/optional>

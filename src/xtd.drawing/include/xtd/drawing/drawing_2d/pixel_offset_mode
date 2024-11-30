@@ -1,2 +1,2 @@
 #pragma once
-#include "pixel_offset_mode.h"
+#include "pixel_offset_mode.hpp"

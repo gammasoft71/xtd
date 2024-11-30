@@ -1,2 +1,2 @@
 #pragma once
-#include "blue_colors.h"
+#include "blue_colors.hpp"

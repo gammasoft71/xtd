@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/buffered_graphics.h"
+#include "../../../include/xtd/drawing/buffered_graphics.hpp"
 #include <xtd/argument_exception>
 
 using namespace xtd;

@@ -1,7 +1,7 @@
-#include "../../../include/xtd/drawing/icon.h"
+#include "../../../include/xtd/drawing/icon.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/icon.h>
-#include <xtd/drawing/native/image_formats.h>
+#include <xtd/drawing/native/icon>
+#include <xtd/drawing/native/image_formats>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <iostream>
 

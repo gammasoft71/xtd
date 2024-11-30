@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/drawing/imaging/encoder_parameter.h"
+#include "../../../../include/xtd/drawing/imaging/encoder_parameter.hpp"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/bit_converter>

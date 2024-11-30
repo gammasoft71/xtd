@@ -1,2 +1,2 @@
 #pragma once
-#include "buffered_graphics.h"
+#include "buffered_graphics.hpp"

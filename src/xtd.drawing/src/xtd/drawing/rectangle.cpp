@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/rectangle.h"
+#include "../../../include/xtd/drawing/rectangle.hpp"
 #include <xtd/as>
 #include <xtd/math>
 

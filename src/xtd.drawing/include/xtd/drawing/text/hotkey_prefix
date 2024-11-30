@@ -1,2 +1,2 @@
 #pragma once
-#include "hotkey_prefix.h"
+#include "hotkey_prefix.hpp"

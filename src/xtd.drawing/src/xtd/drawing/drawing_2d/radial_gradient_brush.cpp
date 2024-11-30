@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/drawing/drawing_2d/radial_gradient_brush.h"
+#include "../../../../include/xtd/drawing/drawing_2d/radial_gradient_brush.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

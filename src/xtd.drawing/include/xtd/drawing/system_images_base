@@ -1,2 +1,2 @@
 #pragma once
-#include "system_images_base.h"
+#include "system_images_base.hpp"

@@ -1,5 +1,5 @@
-#include "../../../include/xtd/drawing/color_converter.h"
-#include "../../../include/xtd/drawing/image_converter.h"
+#include "../../../include/xtd/drawing/color_converter.hpp"
+#include "../../../include/xtd/drawing/image_converter.hpp"
 #include <xtd/byte_object>
 #include <xtd/math>
 #include <algorithm>

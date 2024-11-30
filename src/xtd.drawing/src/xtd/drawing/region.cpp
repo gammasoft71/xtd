@@ -1,5 +1,5 @@
-#include "../../../include/xtd/drawing/region.h"
-#include "../../../include/xtd/drawing/graphics.h"
+#include "../../../include/xtd/drawing/region.hpp"
+#include "../../../include/xtd/drawing/graphics.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/region>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
