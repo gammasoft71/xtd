@@ -11,9 +11,9 @@ endif ()
  
 add_references(xtd.core.native rpcrt4 ws2_32 ${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES})
 add_sources(
-  include/xtd/xtd.core.native.win32.h
+  include/xtd/xtd.core.native.win32.hpp
   include/xtd/xtd.core.native.win32
-  include/xtd/native/win32/strings.h
+  include/xtd/native/win32/strings.hpp
   include/xtd/native/win32/strings
   src/xtd/native/win32/console.cpp
   src/xtd/native/win32/condition_variable.cpp

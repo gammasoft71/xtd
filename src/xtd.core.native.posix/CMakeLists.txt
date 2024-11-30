@@ -31,13 +31,13 @@ endif ()
 add_references(xtd.core.native)
 
 add_sources(
-  include/xtd/xtd.core.native.posix.h
+  include/xtd/xtd.core.native.posix.hpp
   include/xtd/xtd.core.native.posix
-  include/xtd/native/posix/mutex.h
+  include/xtd/native/posix/mutex.hpp
   include/xtd/native/posix/mutex
-  include/xtd/native/posix/semaphore.h
+  include/xtd/native/posix/semaphore.hpp
   include/xtd/native/posix/semaphore
-  include/xtd/native/posix/strings.h
+  include/xtd/native/posix/strings.hpp
   include/xtd/native/posix/strings
   src/xtd/native/posix/condition_variable.cpp
   src/xtd/native/posix/console.cpp

@@ -12,15 +12,15 @@ add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
 add_references(xtd.core.native)
 
 add_sources(
-  include/xtd/xtd.core.native.macos.h
+  include/xtd/xtd.core.native.macos.hpp
   include/xtd/xtd.core.native.macos
-  include/xtd/native/macos/mutex.h
+  include/xtd/native/macos/mutex.hpp
   include/xtd/native/macos/mutex
-  include/xtd/native/macos/semaphore.h
+  include/xtd/native/macos/semaphore.hpp
   include/xtd/native/macos/semaphore
-  include/xtd/native/macos/shell_execute.h
+  include/xtd/native/macos/shell_execute.hpp
   include/xtd/native/macos/shell_execute
-  include/xtd/native/macos/strings.h
+  include/xtd/native/macos/strings.hpp
   include/xtd/native/macos/strings
   src/xtd/native/macos/console.mm
   src/xtd/native/macos/condition_variable.mm
