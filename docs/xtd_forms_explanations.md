@@ -1255,7 +1255,7 @@ target_type(GUI_APPLICATION)
 
 ```cpp
 #include <xtd/xtd>
-#include "properties/resources.h"
+#include "properties/resources.hpp"
 
 using namespace xtd::forms;
 

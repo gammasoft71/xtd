@@ -1,5 +1,5 @@
 #include "settings_form.h"
-#include "../properties/settings.h"
+#include "../properties/settings.hpp"
 #include <xtd/forms/open_file_dialog>
 
 using namespace xtd;

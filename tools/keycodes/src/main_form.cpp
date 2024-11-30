@@ -1,5 +1,5 @@
-#include "../properties/resources.h"
-#include "../properties/settings.h"
+#include "../properties/resources.hpp"
+#include "../properties/settings.hpp"
 #include "main_form.h"
 #include "key_control.h"
 #include "key_press_control.h"
