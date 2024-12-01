@@ -112,7 +112,7 @@ INPUT                  = ../../docs/doxygen/doxygen \
                          ../../src/xtd.forms/include \
                          ../../src/xtd.tunit/include
 INPUT_ENCODING         = UTF-8
-FILE_PATTERNS          = *.dox *.h *.md
+FILE_PATTERNS          = *.dox *.hpp *.md
 RECURSIVE              = YES # Default: NO
 EXCLUDE                = 
 EXCLUDE_SYMLINKS       = NO
