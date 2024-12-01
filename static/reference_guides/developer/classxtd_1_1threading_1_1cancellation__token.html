@@ -103,9 +103,9 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Propagates notification that operations should be canceled. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:42</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1cancellation__token_html"><div class="ttname"><a href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a></div><div class="ttdoc">Propagates notification that operations should be canceled.</div><div class="ttdef"><b>Definition</b> cancellation_token.h:39</div></div>
-<div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1cancellation__token_html"><div class="ttname"><a href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a></div><div class="ttdoc">Propagates notification that operations should be canceled.</div><div class="ttdef"><b>Definition</b> cancellation_token.hpp:39</div></div>
+<div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/cancellation_token&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -325,7 +325,7 @@ If this property is true, it only guarantees that cancellation has been requeste
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method provides functionality equivalent to: <div class="fragment"><div class="line"><span class="keywordflow">if</span> (tpken.is_cancellation_requested())</div>
 <div class="line">  <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.h:19</div></div>
+<div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.hpp:19</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -385,7 +385,7 @@ If this property is true, it only guarantees that cancellation has been requeste
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
@@ -504,13 +504,13 @@ Two empty cancellation tokens are always equal. </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/threading/<a class="el" href="cancellation__token_8h_source.html">cancellation_token.h</a></li>
+<li>xtd.core/include/xtd/threading/<a class="el" href="cancellation__token_8hpp_source.html">cancellation_token.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:56:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

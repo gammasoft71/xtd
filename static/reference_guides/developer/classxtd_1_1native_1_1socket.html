@@ -119,6 +119,9 @@ $(function() {
 <tr class="memitem:aa1805f37908505e71f882d34f000cdd3"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#aa1805f37908505e71f882d34f000cdd3">destroy</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:aa1805f37908505e71f882d34f000cdd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the socket.  <br /></td></tr>
 <tr class="separator:aa1805f37908505e71f882d34f000cdd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31237433252a1f07fa2d70c71306befe"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a31237433252a1f07fa2d70c71306befe">socket_error_to_string</a> (int32_t socket_error)</td></tr>
+<tr class="memdesc:a31237433252a1f07fa2d70c71306befe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string corresponding to the specified socket error.  <br /></td></tr>
+<tr class="separator:a31237433252a1f07fa2d70c71306befe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1socket.html#a5ddee08c8e0f8b3fc5cc8b38df18da6c">get_available</a> (intmax_t handle)</td></tr>
 <tr class="memdesc:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of data that has been received from the network and is available to be read.  <br /></td></tr>
 <tr class="separator:a5ddee08c8e0f8b3fc5cc8b38df18da6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,7 +224,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Gets the native address family value corresponding to xtd address family. </p>
-<dl class="section return"><dt>Returns</dt><dd>The native address family value corresponding to xtd address family (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The native address family value corresponding to xtd address family (see address_family_constants.h). </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
@@ -251,7 +254,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Gets the xtd address family value corresponding to native address family. </p>
-<dl class="section return"><dt>Returns</dt><dd>The xtd address family value corresponding to native address family (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The xtd address family value corresponding to native address family (see address_family_constants.h). </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
@@ -468,9 +471,9 @@ $(function() {
 <p>Creates an endpoint for communication. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address_family</td><td>One of address family values (see <a class="el" href="address__family__constants_8h.html" title="Contains address family constants.">address_family_constants.h</a>). </td></tr>
-    <tr><td class="paramname">socket_type</td><td>One of socket type values (see <a class="el" href="socket__type__constants_8h.html" title="Contains socket type constants.">socket_type_constants.h</a>). </td></tr>
-    <tr><td class="paramname">protocol_type</td><td>One of protocol type values (see <a class="el" href="protocol__type__constants_8h.html" title="Contains protocol type constants.">protocol_type_constants.h</a>). </td></tr>
+    <tr><td class="paramname">address_family</td><td>One of address family values (see address_family_constants.h). </td></tr>
+    <tr><td class="paramname">socket_type</td><td>One of socket type values (see socket_type_constants.h). </td></tr>
+    <tr><td class="paramname">protocol_type</td><td>One of protocol type values (see protocol_type_constants.h). </td></tr>
   </table>
   </dd>
 </dl>
@@ -511,6 +514,42 @@ $(function() {
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Zero (0) if succeed; otherwise on error. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="a31237433252a1f07fa2d70c71306befe" name="a31237433252a1f07fa2d70c71306befe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31237433252a1f07fa2d70c71306befe">&#9670;&#160;</a></span>socket_error_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string xtd::native::socket::socket_error_to_string </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>socket_error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the string corresponding to the specified socket error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int32</td><td>The socket error. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The string corresponding to the specified socket error. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
@@ -576,7 +615,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Gets last error. </p>
-<dl class="section return"><dt>Returns</dt><dd>One of socket error value (see <a class="el" href="socket__error__constants_8h.html" title="Contains socket error constants.">socket_error_constants.h</a>). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>One of socket error value (see socket_error_constants.h). </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
@@ -763,8 +802,8 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see <a class="el" href="socket__option__level__constants_8h.html" title="Contains socket option level constants.">socket_option_level_constants.h</a>). </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see socket_option_level_constants.h). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">option</td><td>The option is a result parameter of that is filled with the option value. </td></tr>
     <tr><td class="paramname">option_length</td><td>The option size will contains the size of option value. </td></tr>
   </table>
@@ -879,7 +918,7 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
     <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
   </table>
@@ -940,7 +979,7 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
     <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
   </table>
@@ -1104,7 +1143,7 @@ $(function() {
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
     <tr><td class="paramname">microseconds</td><td>Timeout in microseconds. </td></tr>
-    <tr><td class="paramname">mode</td><td>One of select mode value (see <a class="el" href="select__mode__constants_8h.html" title="Contains select mode constants.">select_mode_constants.h</a>). </td></tr>
+    <tr><td class="paramname">mode</td><td>One of select mode value (see select_mode_constants.h). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1630,8 +1669,8 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see <a class="el" href="socket__option__level__constants_8h.html" title="Contains socket option level constants.">socket_option_level_constants.h</a>). </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_level</td><td>One of socket option level values (see socket_option_level_constants.h). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">option</td><td>Contains the option value. </td></tr>
     <tr><td class="paramname">option_length</td><td>Contains the option value size. </td></tr>
   </table>
@@ -1746,7 +1785,7 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
     <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
   </table>
@@ -1807,7 +1846,7 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see <a class="el" href="socket__option__name__constants_8h.html" title="Contains socket option name constants.">socket_option_name_constants.h</a>). </td></tr>
+    <tr><td class="paramname">socket_option_name</td><td>One of socket option name values (see socket_option_name_constants.h). </td></tr>
     <tr><td class="paramname">multicast_address</td><td>The local IP address associated with a multicast group. </td></tr>
     <tr><td class="paramname">interface_index</td><td>The interface index that is associated with a multicast group. </td></tr>
     <tr><td class="paramname">linger_time</td><td>The amount of time to remain connected after calling the socket close method if data remains to be sent. </td></tr>
@@ -1857,7 +1896,7 @@ $(function() {
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>The socket handle. </td></tr>
-    <tr><td class="paramname">how</td><td>One of socket shutdown values (see <a class="el" href="socket__shutdown__constants_8h.html" title="Contains socket shutdown constants.">socket_shutdown_constants.h</a>). </td></tr>
+    <tr><td class="paramname">how</td><td>One of socket shutdown values (see socket_shutdown_constants.h). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1895,13 +1934,13 @@ $(function() {
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2socket_8h_source.html">socket.h</a></li>
+<li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2socket_8hpp_source.html">socket.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:56:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -156,12 +156,12 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
-<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:365</div></div>
-<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
-<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:73</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:365</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:16</div></div>
+<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
@@ -282,7 +282,7 @@ template&lt;typename char_t &gt; </div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_abcbaf9c1801f29acea0b404acd916f15"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assert.h:51</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_abcbaf9c1801f29acea0b404acd916f15"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:51</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -581,7 +581,7 @@ template&lt;typename char_t &gt; </div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a>(s2, s1); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a757e437b09478eb1ce7356375d9d5221"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_assert.h:173</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a757e437b09478eb1ce7356375d9d5221"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a757e437b09478eb1ce7356375d9d5221">xtd::tunit::file_assert::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:173</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -868,7 +868,7 @@ template&lt;typename char_t &gt; </div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a20752d12f964d7f31423317ebef1e137"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file not exists.</div><div class="ttdef"><b>Definition</b> file_assert.h:289</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_a20752d12f964d7f31423317ebef1e137"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#a20752d12f964d7f31423317ebef1e137">xtd::tunit::file_assert::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file not exists.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:289</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">xtd::console_key::f1</a></div><div class="ttdeci">@ f1</div><div class="ttdoc">The F1 key.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -995,7 +995,7 @@ template&lt;typename char_t &gt; </div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_aca2fd9af33af64537de20b05c9fad68e"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a></div><div class="ttdeci">static void exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file exists.</div><div class="ttdef"><b>Definition</b> file_assert.h:333</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_aca2fd9af33af64537de20b05c9fad68e"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assert.html#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a></div><div class="ttdeci">static void exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file exists.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:333</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1067,13 +1067,13 @@ template&lt;typename char_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.tunit/include/xtd/tunit/<a class="el" href="file__assert_8h_source.html">file_assert.h</a></li>
+<li>xtd.tunit/include/xtd/tunit/<a class="el" href="file__assert_8hpp_source.html">file_assert.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:56:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
