@@ -88,24 +88,17 @@ $(function() {
 <div class="contents">
 <a href="hashtable_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="dictionary_8h.html">generic/dictionary.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../as.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../any_object.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span>collections {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="group__collections.html#gaf94efa3cbd1251ed0a6bf8db67406922">   47</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="group__collections.html#gaf94efa3cbd1251ed0a6bf8db67406922">hashtable</a> = <a class="code hl_typedef" href="group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960">generic::dictionary&lt;xtd::any_object, xtd::any_object&gt;</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
-<div class="ttc" id="adictionary_8h_html"><div class="ttname"><a href="dictionary_8h.html">dictionary.h</a></div><div class="ttdoc">Contains xtd::collections::generic::dictionary struct.</div></div>
-<div class="ttc" id="agroup__collections_html_gaf94efa3cbd1251ed0a6bf8db67406922"><div class="ttname"><a href="group__collections.html#gaf94efa3cbd1251ed0a6bf8db67406922">xtd::collections::hashtable</a></div><div class="ttdeci">generic::dictionary&lt; xtd::any_object, xtd::any_object &gt; hashtable</div><div class="ttdoc">Represents a collection of key/value pairs that are organized based on the hash code of the key.</div><div class="ttdef"><b>Definition</b> hashtable.h:47</div></div>
-<div class="ttc" id="agroup__generic__collections_html_gabc6e9eab3efe7d40c7dd9c3287b36960"><div class="ttname"><a href="group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960">xtd::collections::generic::dictionary</a></div><div class="ttdeci">std::unordered_map&lt; key_t, value_t, helpers::hasher&lt; key_t &gt;, helpers::equator&lt; key_t &gt;, helpers::allocator&lt; std::pair&lt; const key_t, value_t &gt; &gt; &gt; dictionary</div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.h:36</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/hashtable.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/hashtable.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;hashtable.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

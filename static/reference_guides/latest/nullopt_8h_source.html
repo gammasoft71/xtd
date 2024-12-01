@@ -88,22 +88,17 @@ $(function() {
 <div class="contents">
 <a href="nullopt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="null__opt_8h.html">null_opt.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="core__export_8h.html">core_export.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">   26</a></span>  <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga7c21e81155886d77db3bcf8d0785afe8">null_opt</a> <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a> = std::nullopt;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="ttc" id="acore__export_8h_html"><div class="ttname"><a href="core__export_8h.html">core_export.h</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
-<div class="ttc" id="agroup__types_html_ga7c21e81155886d77db3bcf8d0785afe8"><div class="ttname"><a href="group__types.html#ga7c21e81155886d77db3bcf8d0785afe8">xtd::null_opt</a></div><div class="ttdeci">std::nullopt_t null_opt</div><div class="ttdoc">Represents the null_opt alias on std::nullopt_t.</div><div class="ttdef"><b>Definition</b> null_opt.h:19</div></div>
-<div class="ttc" id="agroup__types_html_gaf0620df1fd6c165eaad955c07e15097d"><div class="ttname"><a href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">xtd::nullopt</a></div><div class="ttdeci">constexpr null_opt nullopt</div><div class="ttdoc">Represents a nullopt value. Used to indicate that an std::optional does not contain a value.</div><div class="ttdef"><b>Definition</b> nullopt.h:26</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
-<div class="ttc" id="anull__opt_8h_html"><div class="ttname"><a href="null__opt_8h.html">null_opt.h</a></div><div class="ttdoc">Contains xtd::null_opt alias.</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/nullopt.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/nullopt.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;nullopt.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
