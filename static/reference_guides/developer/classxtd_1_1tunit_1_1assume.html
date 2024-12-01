@@ -148,10 +148,10 @@ Inheritance diagram for xtd::tunit::assume:</div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   ABORTED 2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
-<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
-<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:73</div></div>
+<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
@@ -512,7 +512,7 @@ template&lt;typename expected_t , typename actual_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a980c01f6c225e42361ed41d6a27a0702">xtd::tunit::assume::are_equal</a>(24, <span class="keywordtype">int</span>(24)); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a980c01f6c225e42361ed41d6a27a0702">xtd::tunit::assume::are_equal</a>(23, <span class="keywordtype">int</span>(24)); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a980c01f6c225e42361ed41d6a27a0702"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a980c01f6c225e42361ed41d6a27a0702">xtd::tunit::assume::are_equal</a></div><div class="ttdeci">static void are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two type are equal.</div><div class="ttdef"><b>Definition</b> assume.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a980c01f6c225e42361ed41d6a27a0702"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a980c01f6c225e42361ed41d6a27a0702">xtd::tunit::assume::are_equal</a></div><div class="ttdeci">static void are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two type are equal.</div><div class="ttdef"><b>Definition</b> assume.hpp:41</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1083,7 +1083,7 @@ template&lt;typename expected_t , typename actual_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a4de432e4ffa9f9ec9f083c316b443967">xtd::tunit::assume::are_not_equal</a>(23, <span class="keywordtype">int</span>(24)); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a4de432e4ffa9f9ec9f083c316b443967">xtd::tunit::assume::are_not_equal</a>(24, <span class="keywordtype">int</span>(24)); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a4de432e4ffa9f9ec9f083c316b443967"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a4de432e4ffa9f9ec9f083c316b443967">xtd::tunit::assume::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two type are not equal.</div><div class="ttdef"><b>Definition</b> assume.h:168</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a4de432e4ffa9f9ec9f083c316b443967"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a4de432e4ffa9f9ec9f083c316b443967">xtd::tunit::assume::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two type are not equal.</div><div class="ttdef"><b>Definition</b> assume.hpp:168</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1220,7 +1220,7 @@ template&lt;typename expected_t , typename actual_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> = 24;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a5485904f4c9c2dc004a6c0cc6d1daca5">xtd::tunit::assume::are_not_same</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a5485904f4c9c2dc004a6c0cc6d1daca5">xtd::tunit::assume::are_not_same</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, stack_frame); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a5485904f4c9c2dc004a6c0cc6d1daca5"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a5485904f4c9c2dc004a6c0cc6d1daca5">xtd::tunit::assume::are_not_same</a></div><div class="ttdeci">static void are_not_same(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two objects do refer to differents objects.</div><div class="ttdef"><b>Definition</b> assume.h:214</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a5485904f4c9c2dc004a6c0cc6d1daca5"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a5485904f4c9c2dc004a6c0cc6d1daca5">xtd::tunit::assume::are_not_same</a></div><div class="ttdeci">static void are_not_same(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two objects do refer to differents objects.</div><div class="ttdef"><b>Definition</b> assume.hpp:214</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div></div>
@@ -1363,7 +1363,7 @@ template&lt;typename expected_t , typename actual_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> = 24;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a04defa2abd0abff1354306e4cc30089d">xtd::tunit::assume::are_same</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a04defa2abd0abff1354306e4cc30089d">xtd::tunit::assume::are_same</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a04defa2abd0abff1354306e4cc30089d"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a04defa2abd0abff1354306e4cc30089d">xtd::tunit::assume::are_same</a></div><div class="ttdeci">static void are_same(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two objects do refer to differents objects.</div><div class="ttdef"><b>Definition</b> assume.h:252</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a04defa2abd0abff1354306e4cc30089d"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a04defa2abd0abff1354306e4cc30089d">xtd::tunit::assume::are_same</a></div><div class="ttdeci">static void are_same(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two objects do refer to differents objects.</div><div class="ttdef"><b>Definition</b> assume.hpp:252</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1501,7 +1501,7 @@ template&lt;typename item_t , typename collection_t &gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(2, v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(4, v1); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a293bba797d421e541dba84a948229856"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a></div><div class="ttdeci">static void contains(const item_t &amp;item, const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.h:288</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a293bba797d421e541dba84a948229856"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a></div><div class="ttdeci">static void contains(const item_t &amp;item, const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.hpp:288</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1749,7 +1749,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line">std::vector&lt;int&gt; v2 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_aa0ca29b871a810f95cc1752b6ceac040"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a></div><div class="ttdeci">static void is_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.h:366</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_aa0ca29b871a810f95cc1752b6ceac040"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a></div><div class="ttdeci">static void is_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.hpp:366</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1998,7 +1998,7 @@ template&lt;typename value1_t , typename value2_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ab1e4a903f22da16a056b1adffdbc9d68">xtd::tunit::assume::is_greater</a>(24, 12); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ab1e4a903f22da16a056b1adffdbc9d68">xtd::tunit::assume::is_greater</a>(24, 48); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ab1e4a903f22da16a056b1adffdbc9d68"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ab1e4a903f22da16a056b1adffdbc9d68">xtd::tunit::assume::is_greater</a></div><div class="ttdeci">static void is_greater(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is greater than the second value.</div><div class="ttdef"><b>Definition</b> assume.h:445</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ab1e4a903f22da16a056b1adffdbc9d68"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ab1e4a903f22da16a056b1adffdbc9d68">xtd::tunit::assume::is_greater</a></div><div class="ttdeci">static void is_greater(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is greater than the second value.</div><div class="ttdef"><b>Definition</b> assume.hpp:445</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2133,7 +2133,7 @@ template&lt;typename value1_t , typename value2_t &gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ae31396d9e254c6914b7dcea25155c40f">xtd::tunit::assume::is_greater_or_equal</a>(24, 12); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ae31396d9e254c6914b7dcea25155c40f">xtd::tunit::assume::is_greater_or_equal</a>(24, 24); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ae31396d9e254c6914b7dcea25155c40f">xtd::tunit::assume::is_greater_or_equal</a>(24, 48); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ae31396d9e254c6914b7dcea25155c40f"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ae31396d9e254c6914b7dcea25155c40f">xtd::tunit::assume::is_greater_or_equal</a></div><div class="ttdeci">static void is_greater_or_equal(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is greater than or equal to the second value.</div><div class="ttdef"><b>Definition</b> assume.h:488</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ae31396d9e254c6914b7dcea25155c40f"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ae31396d9e254c6914b7dcea25155c40f">xtd::tunit::assume::is_greater_or_equal</a></div><div class="ttdeci">static void is_greater_or_equal(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is greater than or equal to the second value.</div><div class="ttdef"><b>Definition</b> assume.hpp:488</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2389,7 +2389,7 @@ template&lt;typename value1_t , typename value2_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a124af1e1d356e9979967604811f75123">xtd::tunit::assume::is_less</a>(24, 48); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a124af1e1d356e9979967604811f75123">xtd::tunit::assume::is_less</a>(24, 12); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a124af1e1d356e9979967604811f75123"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a124af1e1d356e9979967604811f75123">xtd::tunit::assume::is_less</a></div><div class="ttdeci">static void is_less(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is is_less than the second value.</div><div class="ttdef"><b>Definition</b> assume.h:563</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a124af1e1d356e9979967604811f75123"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a124af1e1d356e9979967604811f75123">xtd::tunit::assume::is_less</a></div><div class="ttdeci">static void is_less(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is is_less than the second value.</div><div class="ttdef"><b>Definition</b> assume.hpp:563</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2524,7 +2524,7 @@ template&lt;typename value1_t , typename value2_t &gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a9cc4e11b7841bfa29e3ea735eb6fd787">xtd::tunit::assume::is_less_or_equal</a>(24, 48); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a9cc4e11b7841bfa29e3ea735eb6fd787">xtd::tunit::assume::is_less_or_equal</a>(24, 24); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a9cc4e11b7841bfa29e3ea735eb6fd787">xtd::tunit::assume::is_less_or_equal</a>(24, 12); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a9cc4e11b7841bfa29e3ea735eb6fd787"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a9cc4e11b7841bfa29e3ea735eb6fd787">xtd::tunit::assume::is_less_or_equal</a></div><div class="ttdeci">static void is_less_or_equal(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is is_less than or equal to the second value.</div><div class="ttdef"><b>Definition</b> assume.h:606</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a9cc4e11b7841bfa29e3ea735eb6fd787"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a9cc4e11b7841bfa29e3ea735eb6fd787">xtd::tunit::assume::is_less_or_equal</a></div><div class="ttdeci">static void is_less_or_equal(const value1_t &amp;val1, const value2_t &amp;val2, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the first value is is_less than or equal to the second value.</div><div class="ttdef"><b>Definition</b> assume.hpp:606</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3012,7 +3012,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> i2 = 1;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#acd03ae38a7087644080524107cdc1a76">xtd::tunit::assume::is_negative</a>(i1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#acd03ae38a7087644080524107cdc1a76">xtd::tunit::assume::is_negative</a>(i2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_acd03ae38a7087644080524107cdc1a76"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#acd03ae38a7087644080524107cdc1a76">xtd::tunit::assume::is_negative</a></div><div class="ttdeci">static void is_negative(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is negative.</div><div class="ttdef"><b>Definition</b> assume.h:726</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_acd03ae38a7087644080524107cdc1a76"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#acd03ae38a7087644080524107cdc1a76">xtd::tunit::assume::is_negative</a></div><div class="ttdeci">static void is_negative(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is negative.</div><div class="ttdef"><b>Definition</b> assume.hpp:726</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3136,7 +3136,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line">std::vector&lt;int&gt; v2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a1fb6df3bf91ca15ee23839b95d97547a"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a></div><div class="ttdeci">static void is_not_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection does not contain any item.</div><div class="ttdef"><b>Definition</b> assume.h:760</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a1fb6df3bf91ca15ee23839b95d97547a"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a></div><div class="ttdeci">static void is_not_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection does not contain any item.</div><div class="ttdef"><b>Definition</b> assume.hpp:760</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3382,7 +3382,7 @@ template&lt;typename pointer_t &gt; </div>
 <div class="line">std::string* s2 = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ac960ecb194130adc6c729e42181b7db0"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a></div><div class="ttdeci">static void is_not_null(const pointer_t *pointer, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the pointer is not null.</div><div class="ttdef"><b>Definition</b> assume.h:847</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ac960ecb194130adc6c729e42181b7db0"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a></div><div class="ttdeci">static void is_not_null(const pointer_t *pointer, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the pointer is not null.</div><div class="ttdef"><b>Definition</b> assume.hpp:847</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3630,7 +3630,7 @@ template&lt;typename pointer_t &gt; </div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.h:25</div></div>
+<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3754,7 +3754,7 @@ template&lt;typename pointer_t &gt; </div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.h:25</div></div>
+<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3879,7 +3879,7 @@ template&lt;typename pointer_t &gt; </div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c">xtd::wptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac960ecb194130adc6c729e42181b7db0">xtd::tunit::assume::is_not_null</a>(s2); <span class="comment">// test ok.</span></div>
-<div class="ttc" id="agroup__types_html_ga541ef37a59d2e67f6fd2ad9832ab220c"><div class="ttname"><a href="group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c">xtd::wptr</a></div><div class="ttdeci">std::weak_ptr&lt; type_t &gt; wptr</div><div class="ttdoc">The xtd::uptr object is a weak pointer.</div><div class="ttdef"><b>Definition</b> wptr.h:17</div></div>
+<div class="ttc" id="agroup__types_html_ga541ef37a59d2e67f6fd2ad9832ab220c"><div class="ttname"><a href="group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c">xtd::wptr</a></div><div class="ttdeci">std::weak_ptr&lt; type_t &gt; wptr</div><div class="ttdoc">The xtd::uptr object is a weak pointer.</div><div class="ttdef"><b>Definition</b> wptr.hpp:17</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3993,7 +3993,7 @@ template&lt;typename pointer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Always false, a nullptr_t is always equal to nullptr. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Always false, a std::nullptr_t is always equal to nullptr. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1abort__error.html" title="Exception thow when abort.">xtd::tunit::abort_error</a></td><td>If bad assertion. </td></tr>
@@ -4054,7 +4054,7 @@ template&lt;typename pointer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Always false, a nullptr_t is always equal to nullptr. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Always false, a std::nullptr_t is always equal to nullptr. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1abort__error.html" title="Exception thow when abort.">xtd::tunit::abort_error</a></td><td>If bad assertion. </td></tr>
@@ -4120,7 +4120,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> i2 = 0;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#afd601db987e44a06386e64ffb72d5cdc">xtd::tunit::assume::is_not_zero</a>(i1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#afd601db987e44a06386e64ffb72d5cdc">xtd::tunit::assume::is_not_zero</a>(i2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_afd601db987e44a06386e64ffb72d5cdc"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#afd601db987e44a06386e64ffb72d5cdc">xtd::tunit::assume::is_not_zero</a></div><div class="ttdeci">static void is_not_zero(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is not zero.</div><div class="ttdef"><b>Definition</b> assume.h:1037</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_afd601db987e44a06386e64ffb72d5cdc"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#afd601db987e44a06386e64ffb72d5cdc">xtd::tunit::assume::is_not_zero</a></div><div class="ttdeci">static void is_not_zero(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is not zero.</div><div class="ttdef"><b>Definition</b> assume.hpp:1037</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4245,7 +4245,7 @@ template&lt;typename pointer_t &gt; </div>
 <div class="line">std::string* s2 = &amp;str;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a7432c260817fd20e81ae0464c8e4a197">xtd::tunit::assume::is_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a7432c260817fd20e81ae0464c8e4a197">xtd::tunit::assume::is_null</a>(s2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a7432c260817fd20e81ae0464c8e4a197"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a7432c260817fd20e81ae0464c8e4a197">xtd::tunit::assume::is_null</a></div><div class="ttdeci">static void is_null(const pointer_t *pointer, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the pointer is null.</div><div class="ttdef"><b>Definition</b> assume.h:1072</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a7432c260817fd20e81ae0464c8e4a197"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a7432c260817fd20e81ae0464c8e4a197">xtd::tunit::assume::is_null</a></div><div class="ttdeci">static void is_null(const pointer_t *pointer, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the pointer is null.</div><div class="ttdef"><b>Definition</b> assume.hpp:1072</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4854,7 +4854,7 @@ template&lt;typename pointer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Always false, a nullptr_t is always equal to nullptr. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Always false, a std::nullptr_t is always equal to nullptr. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1abort__error.html" title="Exception thow when abort.">xtd::tunit::abort_error</a></td><td>If bad assertion. </td></tr>
@@ -4915,7 +4915,7 @@ template&lt;typename pointer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Always false, a nullptr_t is always equal to nullptr. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Always false, a std::nullptr_t is always equal to nullptr. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1tunit_1_1abort__error.html" title="Exception thow when abort.">xtd::tunit::abort_error</a></td><td>If bad assertion. </td></tr>
@@ -4981,7 +4981,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> i2 = -1;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aea8b3b5e3c3b0cd355c3032b008439d0">xtd::tunit::assume::is_positive</a>(i1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aea8b3b5e3c3b0cd355c3032b008439d0">xtd::tunit::assume::is_positive</a>(i2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_aea8b3b5e3c3b0cd355c3032b008439d0"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#aea8b3b5e3c3b0cd355c3032b008439d0">xtd::tunit::assume::is_positive</a></div><div class="ttdeci">static void is_positive(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is positive.</div><div class="ttdef"><b>Definition</b> assume.h:1264</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_aea8b3b5e3c3b0cd355c3032b008439d0"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#aea8b3b5e3c3b0cd355c3032b008439d0">xtd::tunit::assume::is_positive</a></div><div class="ttdeci">static void is_positive(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is positive.</div><div class="ttdef"><b>Definition</b> assume.hpp:1264</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5226,7 +5226,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line"><span class="keywordtype">int</span> i2 = 42;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a960acbfd224a9797a42d740e44a4e227">xtd::tunit::assume::is_zero</a>(i1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a960acbfd224a9797a42d740e44a4e227">xtd::tunit::assume::is_zero</a>(i2); <span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a960acbfd224a9797a42d740e44a4e227"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a960acbfd224a9797a42d740e44a4e227">xtd::tunit::assume::is_zero</a></div><div class="ttdeci">static void is_zero(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is zero.</div><div class="ttdef"><b>Definition</b> assume.h:1324</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a960acbfd224a9797a42d740e44a4e227"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a960acbfd224a9797a42d740e44a4e227">xtd::tunit::assume::is_zero</a></div><div class="ttdeci">static void is_zero(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that ta condition is zero.</div><div class="ttdef"><b>Definition</b> assume.hpp:1324</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5548,13 +5548,13 @@ template&lt;typename exception_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.tunit/include/xtd/tunit/<a class="el" href="assume_8h_source.html">assume.h</a></li>
+<li>xtd.tunit/include/xtd/tunit/<a class="el" href="assume_8hpp_source.html">assume.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:56:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

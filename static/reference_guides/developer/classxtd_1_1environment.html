@@ -217,11 +217,11 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line"><span class="comment">// !---OMITTED---!</span></div>
 <div class="line"><span class="comment">// get_folder_path: /System</span></div>
 <div class="line"><span class="comment">// GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:36</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:66</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.hpp:67</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a> class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the xtd framework. </dd></dl>
 </div><table class="memberdecls">
@@ -506,9 +506,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a2c205815fdf41c2df70f767b024e29b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a2c205815fdf41c2df70f767b024e29b2">expand_environment_variables</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;name)</td></tr>
 <tr class="memdesc:a2c205815fdf41c2df70f767b024e29b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.  <br /></td></tr>
 <tr class="separator:a2c205815fdf41c2df70f767b024e29b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737501f41a5613f54553f4431f76ebcd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__specialized__collections.html#ga2ef4a53fb8b9fd6c223dd185bff30b5f">xtd::collections::specialized::string_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a737501f41a5613f54553f4431f76ebcd">get_command_line_args</a> ()</td></tr>
-<tr class="memdesc:a737501f41a5613f54553f4431f76ebcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
-<tr class="separator:a737501f41a5613f54553f4431f76ebcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f1d16b679af00c6022ab3240abf0d9f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__xtd__core.html#ga7c787cab5157aefef9c2d7466471cad2">xtd::argument_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a2f1d16b679af00c6022ab3240abf0d9f">get_command_line_args</a> ()</td></tr>
+<tr class="memdesc:a2f1d16b679af00c6022ab3240abf0d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
+<tr class="separator:a2f1d16b679af00c6022ab3240abf0d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad648ff7c477babf9f30a3058048c8e7d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">get_environment_variable</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;variable)</td></tr>
 <tr class="memdesc:ad648ff7c477babf9f30a3058048c8e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process.  <br /></td></tr>
 <tr class="separator:ad648ff7c477babf9f30a3058048c8e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -929,7 +929,7 @@ The list below typically represents special folders by OS : <table class="markdo
 <dl class="section return"><dt>Returns</dt><dd>A string containing command-line arguments. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method provides access to the program name and any arguments specified on the command line when the current process was started. </dd>
 <dd>
-The program name can include path information, but is not required to do so. Use the <a class="el" href="classxtd_1_1environment.html#a737501f41a5613f54553f4431f76ebcd" title="Returns a string array containing the command-line arguments for the current process.">xtd::environment::get_command_line_args</a> method to retrieve the command-line information parsed and stored in an array of strings. </dd>
+The program name can include path information, but is not required to do so. Use the <a class="el" href="classxtd_1_1environment.html#a2f1d16b679af00c6022ab3240abf0d9f" title="Returns a string array containing the command-line arguments for the current process.">xtd::environment::get_command_line_args</a> method to retrieve the command-line information parsed and stored in an array of strings. </dd>
 <dd>
 The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer. </dd></dl>
 
@@ -2026,8 +2026,8 @@ Return always true for now. </dd></dl>
 
 </div>
 </div>
-<a id="a737501f41a5613f54553f4431f76ebcd" name="a737501f41a5613f54553f4431f76ebcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a737501f41a5613f54553f4431f76ebcd">&#9670;&#160;</a></span>get_command_line_args()</h2>
+<a id="a2f1d16b679af00c6022ab3240abf0d9f" name="a2f1d16b679af00c6022ab3240abf0d9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f1d16b679af00c6022ab3240abf0d9f">&#9670;&#160;</a></span>get_command_line_args()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2036,7 +2036,7 @@ Return always true for now. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__specialized__collections.html#ga2ef4a53fb8b9fd6c223dd185bff30b5f">xtd::collections::specialized::string_collection</a> xtd::environment::get_command_line_args </td>
+          <td class="memname">static <a class="el" href="group__xtd__core.html#ga7c787cab5157aefef9c2d7466471cad2">xtd::argument_collection</a> xtd::environment::get_command_line_args </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2262,7 +2262,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2310,7 +2310,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2653,13 +2653,13 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/<a class="el" href="xtd_8core_2include_2xtd_2environment_8h_source.html">environment.h</a></li>
+<li>xtd.core/include/xtd/<a class="el" href="xtd_8core_2include_2xtd_2environment_8hpp_source.html">environment.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

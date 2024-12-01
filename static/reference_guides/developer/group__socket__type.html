@@ -130,7 +130,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Specifies an unknown <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> type. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -159,7 +159,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Supports reliable, two-way, connection-based byte streams without the duplication of data and without preservation of boundaries. A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> of this type communicates with a single peer and requires a remote host connection before communication can begin. xtd::net::sockets::socket_types::stream uses the Transmission Control Protocol (<a class="el" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3ae20bb202b1d5537b1415e3263a37ed78" title="Transmission Control Protocol.">xtd::net::sockets::protocol_type::tcp</a>) and the <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">xtd::net::sockets::address_family::inter_network</a> address family. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -188,7 +188,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Supports datagrams, which are connectionless, unreliable messages of a fixed (typically small) maximum length. Messages might be lost or duplicated and might arrive out of order. A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> of type <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786" title="Supports datagrams, which are connectionless, unreliable messages of a fixed (typically small) maximu...">xtd::net::sockets::socket_type::dgram</a> requires no connection prior to sending and receiving data, and can communicate with multiple peers. <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786" title="Supports datagrams, which are connectionless, unreliable messages of a fixed (typically small) maximu...">xtd::net::sockets::socket_type::dgram</a> uses the Datagram Protocol (<a class="el" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781" title="User Datagram Protocol.">xtd::net::sockets::protocol_type::udp</a>) and the <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">xtd::net::sockets::address_family::inter_network</a> address family. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -217,7 +217,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Supports access to the underlying transport protocol. Using the <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598abdd166af3a63f7be696dd17a218a6ffb" title="Supports access to the underlying transport protocol. Using the xtd::net::sockets::socket_type::raw,...">xtd::net::sockets::socket_type::raw</a>, you can communicate using protocols like Internet Control Message Protocol (<a class="el" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a1249ce19ef6180e143506b5287be8a7a" title="Internet Control Message Protocol.">xtd::net::sockets::protocol_type::icmp</a>) and Internet Group Management Protocol (xtd::net::sockets::protocol_type::Igmp). Your application must provide a complete IP header when sending. Received datagrams return with the IP header and options intact. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -246,7 +246,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Supports connectionless, message-oriented, reliably delivered messages, and preserves message boundaries in data. <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598a4625809eb2690f70abd21c4a9aa6b2c7" title="Supports connectionless, message-oriented, reliably delivered messages, and preserves message boundar...">xtd::net::sockets::socket_type::rdm</a> (Reliably Delivered Messages) messages arrive unique and in order. Furthermore, the sender is notified if messages are lost. If you initialize a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> using <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598a4625809eb2690f70abd21c4a9aa6b2c7" title="Supports connectionless, message-oriented, reliably delivered messages, and preserves message boundar...">xtd::net::sockets::socket_type::rdm</a>, you do not require a remote host connection before sending and receiving data. With xtd::net::sockets::socket_typerdm, you can communicate with multiple peers. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -275,7 +275,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="socket__type__constants_8h.html">xtd.core.native/include/xtd/native/socket_type_constants.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socket__type__constants_8hpp.html">xtd.core.native/include/xtd/native/socket_type_constants.hpp</a>&gt;</code></p>
 
 <p>Provides connection-oriented and reliable two-way transfer of ordered byte streams across a network. <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598abce1aac2877561e29912f89b78354ae3" title="Provides connection-oriented and reliable two-way transfer of ordered byte streams across a network....">xtd::net::sockets::socket_type::seqpacket</a> does not duplicate data, and it preserves boundaries within the data stream. A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> of type <a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598abce1aac2877561e29912f89b78354ae3" title="Provides connection-oriented and reliable two-way transfer of ordered byte streams across a network....">xtd::net::sockets::socket_type::seqpacket</a> communicates with a single peer and requires a remote host connection before communication can begin. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -288,7 +288,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

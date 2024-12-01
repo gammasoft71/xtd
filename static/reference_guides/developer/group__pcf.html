@@ -163,7 +163,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The calling thread starts and debugs the new process and all child processes created by the new process. It can receive all related debug events using the WaitForDebugEvent function. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -192,7 +192,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The calling thread starts and debugs the new process. It can receive all related debug events using the WaitForDebugEvent function. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -221,7 +221,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The primary thread of the new process is created in a suspended state, and does not run until the ResumeThread function is called. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -250,7 +250,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>For console processes, the new process does not inherit its parent's console (the default). The new process can call the AllocConsole function at a later time to create a console. For more information, see Creation of a Console. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -279,7 +279,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The new process has a new console, instead of inheriting its parent's console (the default). For more information, see Creation of a Console. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -308,7 +308,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The new process is the root process of a new process group. The process group includes all processes that are descendants of this root process. The process identifier of the new process group is the same as the process identifier, which is returned in the lpProcessInformation parameter. Process groups are used by the GenerateConsoleCtrlEvent function to enable sending a CTRL+BREAK signal to a group of console processes. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -337,7 +337,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>If this flag is set, the environment block pointed to by lpEnvironment uses Unicode characters. Otherwise, the environment block uses ANSI characters. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -366,7 +366,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>This flag is valid only when starting a 16-bit Windows-based application. If set, the new process runs in a private Virtual DOS Machine (VDM). By default, all 16-bit Windows-based applications run as threads in a single, shared VDM. The advantage of running separately is that a crash only terminates the single VDM; any other programs running in distinct VDMs continue to function normally. Also, 16-bit Windows-based applications that are run in separate VDMs have separate input queues. That means that if one application stops responding momentarily, applications in separate VDMs continue to receive input. The disadvantage of running separately is that it takes significantly more memory to do so. You should use this flag only if the user requests that 16-bit applications should run in their own VDM. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -395,7 +395,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The flag is valid only when starting a 16-bit Windows-based application. If the. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -424,7 +424,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The process inherits its parent's affinity. If the parent process has threads in more than one processor group, the new process inherits the group-relative affinity of an arbitrary group in use by the parent. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -453,7 +453,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The process is to be run as a protected process. The system restricts access to protected processes and the threads of protected processes. For more information on how processes can interact with protect. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -482,7 +482,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The process is created with extended startup information; the lpStartupInfo parameter specifies a STARTUPINFOEX structure. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -511,7 +511,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>This flag allows secure processes, that run in the Virtualization-Based Security environment, to launch. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -540,7 +540,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The child processes of a process associated with a job are not associated with the job. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -569,7 +569,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>Allows the caller to execute a child process that bypasses the process restrictions that would normally be applied automatically to the process. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -598,7 +598,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The new process does not inherit the error mode of the calling process. Instead, the new process gets the default error mode. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -627,7 +627,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="process__creation__flags_8h.html">xtd.core.native/include/xtd/native/process_creation_flags.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="process__creation__flags_8hpp.html">xtd.core.native/include/xtd/native/process_creation_flags.hpp</a>&gt;</code></p>
 
 <p>The process is a console application that is being run without a console window. Therefore, the console handle for the application is not set. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core.native</dd></dl>
@@ -640,7 +640,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

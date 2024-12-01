@@ -115,7 +115,7 @@ The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1re
 <dd>
 The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a8f01c13a829529cbe2487da5f89479d9" title="Gets company name information.">xtd::reflection::assembly::company()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to <code>product_name</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1configuration_1_1settings.html" title="Represent settings associate to the application.">xtd::configuration::settings</a> class with <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection">CMake setting commands</a>.</dd></dl>
-<p>• application_Settings.cpp : </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../properties/settings.h&quot;</span></div>
+<p>• application_Settings.cpp : </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../properties/settings.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/color_picker&gt;</span></div>
@@ -158,9 +158,9 @@ The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1re
 <div class="line">  </div>
 <div class="line">  application::run(main_form);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.h:23</div></div>
+<div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:12</div></div>
 </div><!-- fragment --><p> • properties/settings.cmake : </p><div class="fragment"><div class="line">setting_include(xtd/drawing/point)</div>
 <div class="line">setting_include(xtd/drawing/size)</div>
 <div class="line">setting_include(xtd/drawing/system_colors)</div>
@@ -292,16 +292,16 @@ The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1re
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html"><div class="ttname"><a href="classxtd_1_1basic__string.html">xtd::basic_string</a></div><div class="ttdoc">Represents text as a sequence of character units.</div><div class="ttdef"><b>Definition</b> basic_string.h:79</div></div>
-<div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html">xtd::configuration::settings</a></div><div class="ttdoc">Represent settings associate to the application.</div><div class="ttdef"><b>Definition</b> settings.h:174</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html"><div class="ttname"><a href="classxtd_1_1basic__string.html">xtd::basic_string</a></div><div class="ttdoc">Represents text as a sequence of character units.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html">xtd::configuration::settings</a></div><div class="ttdoc">Represent settings associate to the application.</div><div class="ttdef"><b>Definition</b> settings.hpp:174</div></div>
 <div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html_a3f0f88d393e6e4d035a816f2ef3cbcad"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html#a3f0f88d393e6e4d035a816f2ef3cbcad">xtd::configuration::settings::write</a></div><div class="ttdeci">void write(const xtd::string &amp;key, const xtd::string &amp;value)</div><div class="ttdoc">Writes a specified value for specified key.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.h:49</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.h:54</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.h:31</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.hpp:49</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.hpp:54</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:31</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__colors_html_aaee26ec4d36ad4a99550bec18c258d84"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__colors.html#aaee26ec4d36ad4a99550bec18c258d84">xtd::drawing::system_colors::control</a></div><div class="ttdeci">static xtd::drawing::color control()</div><div class="ttdoc">Gets a xtd::drawing::color structure that is the face color of a 3-D element.</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:42</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --><p> The following code example demonstrates the use of <a class="el" href="classxtd_1_1configuration_1_1settings.html" title="Represent settings associate to the application.">xtd::configuration::settings</a> class without <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection">CMake setting commands</a>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/configuration/settings&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
@@ -349,7 +349,7 @@ The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1re
 <div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html_a089a23666c57a7b26c6641f195bb69f9"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9">xtd::configuration::settings::save</a></div><div class="ttdeci">void save()</div><div class="ttdoc">Save application settings.</div></div>
 <div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html_a68beee56bdd9b761deb7c600acc373f6"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html#a68beee56bdd9b761deb7c600acc373f6">xtd::configuration::settings::read</a></div><div class="ttdeci">xtd::string read(const xtd::string &amp;key, const xtd::string &amp;default_value)</div><div class="ttdoc">Reads a value for specified key. If not found default value is used.</div></div>
 <div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html_ae70597323a20259508bcfce797ed4997"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html#ae70597323a20259508bcfce797ed4997">xtd::configuration::settings::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset application settings.</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> brush.h:18</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> brush.hpp:18</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_settings_without_cmake_setting_commands_8cpp-example.html#_a0">application_settings_without_cmake_setting_commands.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
@@ -713,13 +713,13 @@ template&lt;typename type_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/configuration/<a class="el" href="xtd_8core_2include_2xtd_2configuration_2settings_8h_source.html">settings.h</a></li>
+<li>xtd.core/include/xtd/configuration/<a class="el" href="xtd_8core_2include_2xtd_2configuration_2settings_8hpp_source.html">settings.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

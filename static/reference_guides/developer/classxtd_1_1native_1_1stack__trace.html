@@ -98,14 +98,17 @@ $(function() {
 <tr class="memitem:a5be51d1842ab84e34a043b889202eb6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#a5be51d1842ab84e34a043b889202eb6b">frame</a> = std::tuple&lt; std::string, size_t, size_t, std::string, size_t &gt;</td></tr>
 <tr class="memdesc:a5be51d1842ab84e34a043b889202eb6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a frame object that contains file name,line, column, method name and offset.  <br /></td></tr>
 <tr class="separator:a5be51d1842ab84e34a043b889202eb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1af9e568bb6d5fc82f74366347cf0f52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#a1af9e568bb6d5fc82f74366347cf0f52">frames</a> = std::vector&lt; <a class="el" href="classxtd_1_1native_1_1stack__trace.html#a5be51d1842ab84e34a043b889202eb6b">frame</a> &gt;</td></tr>
-<tr class="memdesc:a1af9e568bb6d5fc82f74366347cf0f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a frame collection.  <br /></td></tr>
-<tr class="separator:a1af9e568bb6d5fc82f74366347cf0f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf1a089030de95396eb3196f5f4ed809"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#adf1a089030de95396eb3196f5f4ed809">frame_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1native_1_1stack__trace.html#a5be51d1842ab84e34a043b889202eb6b">frame</a> &gt;</td></tr>
+<tr class="memdesc:adf1a089030de95396eb3196f5f4ed809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a frame collection.  <br /></td></tr>
+<tr class="separator:adf1a089030de95396eb3196f5f4ed809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Static Methods</h2></td></tr>
-<tr class="memitem:a450ba6d2bb4cffc768c01d7f3bc1a82b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1stack__trace.html#a1af9e568bb6d5fc82f74366347cf0f52">frames</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#a450ba6d2bb4cffc768c01d7f3bc1a82b">get_frames</a> (size_t skip_frames)</td></tr>
-<tr class="memdesc:a450ba6d2bb4cffc768c01d7f3bc1a82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play system sound.  <br /></td></tr>
-<tr class="separator:a450ba6d2bb4cffc768c01d7f3bc1a82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78701a166857f258eeb74414de86e146"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#a78701a166857f258eeb74414de86e146">get_native_offset</a> ()</td></tr>
+<tr class="memdesc:a78701a166857f258eeb74414de86e146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the native code for the method that is being executed.  <br /></td></tr>
+<tr class="separator:a78701a166857f258eeb74414de86e146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceac80715664bd0e7eac8b1c7ff4e2f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1native_1_1stack__trace.html#adf1a089030de95396eb3196f5f4ed809">frame_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1native_1_1stack__trace.html#aceac80715664bd0e7eac8b1c7ff4e2f0">get_frames</a> (size_t skip_frames, bool need_file_info)</td></tr>
+<tr class="memdesc:aceac80715664bd0e7eac8b1c7ff4e2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play system sound.  <br /></td></tr>
+<tr class="separator:aceac80715664bd0e7eac8b1c7ff4e2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5be51d1842ab84e34a043b889202eb6b" name="a5be51d1842ab84e34a043b889202eb6b"></a>
@@ -132,8 +135,8 @@ $(function() {
 
 </div>
 </div>
-<a id="a1af9e568bb6d5fc82f74366347cf0f52" name="a1af9e568bb6d5fc82f74366347cf0f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1af9e568bb6d5fc82f74366347cf0f52">&#9670;&#160;</a></span>frames</h2>
+<a id="adf1a089030de95396eb3196f5f4ed809" name="adf1a089030de95396eb3196f5f4ed809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf1a089030de95396eb3196f5f4ed809">&#9670;&#160;</a></span>frame_collection</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +145,7 @@ $(function() {
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1native_1_1stack__trace.html#a1af9e568bb6d5fc82f74366347cf0f52">xtd::native::stack_trace::frames</a> =  std::vector&lt;<a class="el" href="classxtd_1_1native_1_1stack__trace.html#a5be51d1842ab84e34a043b889202eb6b">frame</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1native_1_1stack__trace.html#adf1a089030de95396eb3196f5f4ed809">xtd::native::stack_trace::frame_collection</a> =  std::vector&lt;<a class="el" href="classxtd_1_1native_1_1stack__trace.html#a5be51d1842ab84e34a043b889202eb6b">frame</a>&gt;</td>
         </tr>
       </table>
   </td>
@@ -157,8 +160,8 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a450ba6d2bb4cffc768c01d7f3bc1a82b" name="a450ba6d2bb4cffc768c01d7f3bc1a82b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a450ba6d2bb4cffc768c01d7f3bc1a82b">&#9670;&#160;</a></span>get_frames()</h2>
+<a id="a78701a166857f258eeb74414de86e146" name="a78701a166857f258eeb74414de86e146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78701a166857f258eeb74414de86e146">&#9670;&#160;</a></span>get_native_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,11 +170,50 @@ $(function() {
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1native_1_1stack__trace.html#a1af9e568bb6d5fc82f74366347cf0f52">frames</a> xtd::native::stack_trace::get_frames </td>
+          <td class="memname">static size_t xtd::native::stack_trace::get_native_offset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the offset from the start of the native code for the method that is being executed. </p>
+<dl class="section return"><dt>Returns</dt><dd>The offset from the start of the native code for the method that is being executed. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="aceac80715664bd0e7eac8b1c7ff4e2f0" name="aceac80715664bd0e7eac8b1c7ff4e2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceac80715664bd0e7eac8b1c7ff4e2f0">&#9670;&#160;</a></span>get_frames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1native_1_1stack__trace.html#adf1a089030de95396eb3196f5f4ed809">frame_collection</a> xtd::native::stack_trace::get_frames </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>skip_frames</em></td><td>)</td>
+          <td class="paramname"><em>skip_frames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>need_file_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -193,13 +235,13 @@ $(function() {
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2stack__trace_8h_source.html">stack_trace.h</a></li>
+<li>xtd.core.native/include/xtd/native/<a class="el" href="xtd_8core_8native_2include_2xtd_2native_2stack__trace_8hpp_source.html">stack_trace.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:56:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

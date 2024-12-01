@@ -107,6 +107,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1ostream__trace__listener.html">xtd::diagnostics::ostream_trace_listener</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directs tracing or debugging output to a std::ostream, such as std::fstream, std::stream...  <a href="classxtd_1_1diagnostics_1_1ostream__trace__listener.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1source__location.html">xtd::source_location</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class represents certain information about the source code, such as file names, line numbers, and function names. Previously, functions that desire to obtain this information about the call site (for logging, testing, or debugging purposes) must use macros so that <a href="https://en.cppreference.com/w/cpp/preprocessor/replace#Predefined_macros">predefined macros</a> like <code>__LINE__</code> and <code>__FILE__</code> are expanded in the context of the caller. The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class provides a better alternative.  <a href="classxtd_1_1source__location.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides information about a <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a>, which represents a function call on the call stack for the current thread.  <a href="classxtd_1_1diagnostics_1_1stack__frame.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,9 +118,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace.html">xtd::diagnostics::trace</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.  <a href="classxtd_1_1diagnostics_1_1trace.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1source__location.html">xtd::source_location</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class represents certain information about the source code, such as file names, line numbers, and function names. Previously, functions that desire to obtain this information about the call site (for logging, testing, or debugging purposes) must use macros so that <a href="https://en.cppreference.com/w/cpp/preprocessor/replace#Predefined_macros">predefined macros</a> like <code>__LINE__</code> and <code>__FILE__</code> are expanded in the context of the caller. The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class provides a better alternative.  <a href="classxtd_1_1source__location.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control__trace__listener.html">xtd::forms::control_trace_listener</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directs tracing or debugging output to a <a class="el" href="classxtd_1_1forms_1_1icontrol__trace.html" title="Allow a control to be called by control_trace_listener for writing debug or trace message.">icontrol_trace</a> object.  <a href="classxtd_1_1forms_1_1control__trace__listener.html#details">More...</a><br /></td></tr>
@@ -185,7 +185,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="xtd_8core_2include_2xtd_2diagnostics_2assert_8h.html">xtd.core/include/xtd/diagnostics/assert.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="xtd_8core_2include_2xtd_2diagnostics_2assert_8hpp.html">xtd.core/include/xtd/diagnostics/assert.hpp</a>&gt;</code></p>
 
 <p>Checks for a condition; if the condition is false, displays a message box that shows the call stack. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/assert&gt;</span></div>
@@ -227,8 +227,8 @@ Variables</h2></td></tr>
 <div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Ignore&#39; button:</span></div>
 <div class="line"><span class="comment">// Start application</span></div>
 <div class="line"><span class="comment">// End application</span></div>
-<div class="ttc" id="agroup__debug_html_gad1e9d87aeb065b1eec47e92a49fd01e9"><div class="ttname"><a href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a></div><div class="ttdeci">#define assert_(...)</div><div class="ttdoc">Checks for a condition; if the condition is false, displays a message box that shows the call stack.</div><div class="ttdef"><b>Definition</b> assert.h:25</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="agroup__debug_html_gad1e9d87aeb065b1eec47e92a49fd01e9"><div class="ttname"><a href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a></div><div class="ttdeci">#define assert_(...)</div><div class="ttdoc">Checks for a condition; if the condition is false, displays a message box that shows the call stack.</div><div class="ttdef"><b>Definition</b> assert.hpp:25</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9" title="Checks for a condition; if the condition is false, displays a message box that shows the call stack.">assert_</a> macro with message. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -279,7 +279,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="debug__break_8h.html">xtd.core/include/xtd/diagnostics/debug_break.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="debug__break_8hpp.html">xtd.core/include/xtd/diagnostics/debug_break.hpp</a>&gt;</code></p>
 
 <p>Signals a breakpoint to an attached debugger. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug_break&gt;</span></div>
@@ -287,7 +287,7 @@ Variables</h2></td></tr>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to stop the debugger at the call to write_line. <div class="fragment"><div class="line"><a class="code hl_define" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>();</div>
 <div class="line">console::write_line(<span class="stringliteral">&quot;Hello, world.&quot;</span>);</div>
-<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debug_break.h:21</div></div>
+<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debug_break.hpp:21</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a1">assert_box.cpp</a>, and <a class="el" href="assert_dialog_8cpp-example.html#a3">assert_dialog.cpp</a>.</dd>
 </dl>
@@ -319,7 +319,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="ctrace_8h.html">xtd.core/include/xtd/ctrace.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ctrace_8hpp.html">xtd.core/include/xtd/ctrace.hpp</a>&gt;</code></p>
 
 <p>Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a>. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ctrace&gt;</span></div>
@@ -350,7 +350,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="cdebug_8h.html">xtd.core/include/xtd/cdebug.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="cdebug_8hpp.html">xtd.core/include/xtd/cdebug.hpp</a>&gt;</code></p>
 
 <p>A <a class="el" href="classxtd_1_1debugstreambuf.html" title="Provides an std::stringbuf for xtd::diagnostics::debug.">xtd::debugstreambuf</a> variable used by xtd::cdebug ostream. </p>
 <p>Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a>.</p>
@@ -365,7 +365,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

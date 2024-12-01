@@ -103,15 +103,15 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt; type_t &gt;:</
 class xtd::collections::generic::enumerator&lt; type_t &gt;</div><p>Supports a simple iteration over a generic collection. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a> <a class="code hl_define" href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerator_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.h:31</div></div>
-<div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.h:58</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerator_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:31</div></div>
+<div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.hpp:58</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/enumerator</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> &lt;type_t&gt; class is used to encapsulate an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::ienumerator</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_icollection_8cpp-example.html#_a7">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a5">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#_a0">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a6">generic_ienumerator.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#_a7">generic_ilist.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a5">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a9">ienumerator.cpp</a>, and <a class="el" href="ilist_8cpp-example.html#_a3">ilist.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_icollection_8cpp-example.html#_a8">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a6">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#_a0">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a6">generic_ienumerator.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#_a8">generic_ilist.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a7">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a9">ienumerator.cpp</a>, and <a class="el" href="ilist_8cpp-example.html#_a5">ilist.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -269,7 +269,7 @@ template&lt;typename type_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,7 +308,7 @@ template&lt;typename type_t &gt; </div>
 <p>Sets the enumerator to its initial position, which is before the first element in the collection. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The collection was modified after the enumerator was created. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The enumerator does not support being reset. </td></tr>
   </table>
   </dd>
@@ -319,13 +319,13 @@ template&lt;typename type_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/collections/generic/<a class="el" href="generic_2enumerator_8h_source.html">enumerator.h</a></li>
+<li>xtd.core/include/xtd/collections/generic/<a class="el" href="generic_2enumerator_8hpp_source.html">enumerator.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2024 16:03:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:55:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
