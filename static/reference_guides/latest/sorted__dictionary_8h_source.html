@@ -88,28 +88,17 @@ $(function() {
 <div class="contents">
 <a href="sorted__dictionary_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="allocator_8h.html">helpers/allocator.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="helpers_2comparer_8h.html">helpers/comparer.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span>collections {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">namespace </span>generic {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">   36</a></span>      <span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">sorted_dictionary</a> = std::map&lt;key_t, value_t, helpers::comparer&lt;key_t&gt;, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;</a>&gt;&gt;;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aallocator_8h_html"><div class="ttname"><a href="allocator_8h.html">allocator.h</a></div><div class="ttdoc">Contains xtd::collections::generic::helpers::allocator alias.</div></div>
-<div class="ttc" id="agroup__generic__collections_html_ga00feb24bdefb37f4fdf3a1fda87520ad"><div class="ttname"><a href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">xtd::collections::generic::sorted_dictionary</a></div><div class="ttdeci">std::map&lt; key_t, value_t, helpers::comparer&lt; key_t &gt;, helpers::allocator&lt; std::pair&lt; const key_t, value_t &gt; &gt; &gt; sorted_dictionary</div><div class="ttdoc">Represents a collection of key/value pairs that are sorted on the key.</div><div class="ttdef"><b>Definition</b> sorted_dictionary.h:36</div></div>
-<div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.h:35</div></div>
-<div class="ttc" id="ahelpers_2comparer_8h_html"><div class="ttname"><a href="helpers_2comparer_8h.html">comparer.h</a></div><div class="ttdoc">Contains xtd::collections::generic::helpers::comparer struct.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/generic/sorted_dictionary.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/collections/generic/sorted_dictionary.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;sorted_dictionary.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

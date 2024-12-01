@@ -87,27 +87,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="____format__information_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if !defined(__XTD_CORE_INTERNAL__)</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#error &quot;Do not include this file: Internal use only&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">struct </span>__format_information {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">size_t</span> index = std::numeric_limits&lt;size_t&gt;::max();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a> = 0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  std::basic_string&lt;char_t&gt; alignment;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  std::basic_string&lt;char_t&gt; format;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
-<div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_information.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.core/include/xtd/internal/__format_information.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;__format_information.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

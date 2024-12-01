@@ -88,21 +88,17 @@ $(function() {
 <div class="contents">
 <a href="black__colors_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="gray__colors_8h.html">gray_colors.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span>drawing {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="group__colors.html#gab80da8035442ffdeab6f6ebe0a2b3a59">   17</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1drawing_1_1gray__colors.html">black_colors</a> = <a class="code hl_class" href="classxtd_1_1drawing_1_1gray__colors.html">xtd::drawing::gray_colors</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1gray__colors_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1gray__colors.html">xtd::drawing::gray_colors</a></div><div class="ttdoc">Gray and black colors for all the hmtl gray and black colors. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> gray_colors.h:25</div></div>
-<div class="ttc" id="agray__colors_8h_html"><div class="ttname"><a href="gray__colors_8h.html">gray_colors.h</a></div><div class="ttdoc">Contains xtd::drawing::gray_colors factory.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.drawing/include/xtd/drawing/black_colors.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.drawing/include/xtd/drawing/black_colors.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;black_colors.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

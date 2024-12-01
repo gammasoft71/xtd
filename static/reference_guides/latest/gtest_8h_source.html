@@ -86,51 +86,20 @@ $(function() {
   <div class="headertitle"><div class="title">gtest.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="gtest_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="xtd_8tunit_8h.html">xtd.tunit.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#if !defined(__XTD_EXPERIMENTAL_GTEST_HELPERS__)</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#error &quot;Do not use this file: it is for experimental purposes only&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>testing {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">void</span> InitGoogleTest() {<a class="code hl_function" href="classxtd_1_1tunit_1_1settings.html#a86e820878670883f9fa02fe1c0a80075">xtd::tunit::settings::default_settings</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa">gtest_compatibility</a>(<span class="keyword">true</span>);}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">void</span> InitGoogleTest(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {InitGoogleTest();}</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ASSERT_NE(val1, val2) xtd::tunit::assert::are_not_equal(val1, val2)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ASSERT_FALSE(condition) xtd::tunit::assert::is_false(condition)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ASSERT_TRUE(condition) xtd::tunit::assert::is_true(condition)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define EXPECT_FALSE(condition) xtd::tunit::assume::is_false(condition)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define EXPECT_TRUE(condition) xtd::tunit::assume::is_true(condition)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define RUN_ALL_TESTS xtd::tunit::console_unit_test().run</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define TEST(class_name, method_name) \</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">  void __##class_name##method_name(); \</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  class __class_##class_name##_##method_name; \</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;__class_##class_name##_##method_name&gt; __class_##class_name##_##method_name##_attr {typeof_&lt;__class_##class_name##_##method_name&gt;().full_name().replace(typeof_&lt;__class_##class_name##_##method_name&gt;().name(), xtd::string::empty_string) + #class_name}; \</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">  class __class_##class_name##_##method_name : public xtd::tunit::test_class { \</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    xtd::tunit::test_method_attribute __class_##class_name##_##method_name##_method {#method_name, *this, &amp;__class_##class_name##_##method_name::__method}; \</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    void __method() { \</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">      if (xtd::string {#method_name}.starts_with(&quot;DISABLED_&quot;</span>)) xtd::tunit::assert::ignore();\</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      __##class_name##method_name(); \</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    } \</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }; \</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  void __##class_name##method_name()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1settings_html_a86e820878670883f9fa02fe1c0a80075"><div class="ttname"><a href="classxtd_1_1tunit_1_1settings.html#a86e820878670883f9fa02fe1c0a80075">xtd::tunit::settings::default_settings</a></div><div class="ttdeci">static xtd::tunit::settings &amp; default_settings() noexcept</div><div class="ttdoc">Gets default settings instance.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1settings_html_af17a5673cab59ee9434d7c1cfb7987aa"><div class="ttname"><a href="classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa">xtd::tunit::settings::gtest_compatibility</a></div><div class="ttdeci">bool gtest_compatibility() const noexcept</div><div class="ttdoc">Gets google test comaptibility.</div></div>
-<div class="ttc" id="axtd_8tunit_8h_html"><div class="ttname"><a href="xtd_8tunit_8h.html">xtd.tunit.h</a></div><div class="ttdoc">Contains xtd.tunit library headers.</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; __cplusplus &lt; 202302L</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#  pragma message(&quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.tunit/include/xtd/gtest.hpp&gt; - Will be removed in version 0.4.0.&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#  warning &quot;Deprecated : Replaced by #include &lt;/Users/yves/Projects/xtd/src/xtd.tunit/include/xtd/gtest.hpp&gt; - Will be removed in version 0.4.0.&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;gtest.hpp&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 17 2024 19:43:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 1 2024 09:48:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
