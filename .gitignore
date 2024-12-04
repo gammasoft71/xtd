@@ -107,3 +107,4 @@ tools/xtdc/properties/resources.h
 tools/xtdc-gui/properties/assembly_info.cpp
 tools/xtdc-gui/properties/startup.cpp
 tools/xtdc-gui/properties/settings.h
+src/xtd.core.native.win32/include/xtd/core_native_export.hpp
