@@ -4,7 +4,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#  include "intrin.hpp"
+#  include "intrin.h"
 #endif
 #include <algorithm>
 #include <any>
