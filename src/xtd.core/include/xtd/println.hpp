@@ -15,12 +15,11 @@ namespace xtd {
   template<typename arg_t>
   void println(arg_t&& value) {xtd::console::write_line(xtd::string::format("{}", value));}
   
-  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
-  /// @tparam ...args_t Types of the values to write.
-  /// @param values Values to write,
+  /// @cond
   template<typename type_t>
   void println(const std::initializer_list<type_t>& il) {xtd::console::write_line(xtd::string::format("{}", il));}
-  
+  /// @endcond
+
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
