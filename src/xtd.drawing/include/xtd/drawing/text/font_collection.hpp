@@ -31,7 +31,7 @@ namespace xtd {
         
       protected:
         /// @brief Initialise new instance of font_collection class.
-        font_collection() {}
+        font_collection() = default;
         
         /// @cond
         std::vector<font_family> families_;
