@@ -509,7 +509,7 @@ namespace xtd {
     template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
     friend class array;
     
-    basic_array() {}
+    basic_array() = default;
     basic_array(const array<size_type, 1>& lengths);
     
     basic_array(const_pointer array, size_type length) {
