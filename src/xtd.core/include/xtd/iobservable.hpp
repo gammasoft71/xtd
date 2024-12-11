@@ -71,7 +71,7 @@ namespace xtd {
   /// ```cpp
   /// class location_unknown_exception : public exception {
   /// public:
-  ///   location_unknown_exception() {}
+  ///   location_unknown_exception() = default;
   /// };
   /// ```
   /// Observers subscribe to receive notifications from an @p location_tracker object by calling its xtd::iobservable::subscribe method. And unsubscribe by calling its xtd::unobservable <type_t>::unsubscribe method. The @p location_tracker class also includes an @ end_transmission method. When no further location data is available, this method calls each observer's xtd::iobserver::on_completed method, and then clears the internal list of observers.
