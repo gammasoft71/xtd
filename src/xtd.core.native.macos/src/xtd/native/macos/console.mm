@@ -154,7 +154,7 @@ namespace {
   public:
     class input_list {
     public:
-      input_list() {}
+      input_list() = default;
       explicit input_list(const std::list<int32_t>& chars) : chars(chars) {}
       explicit input_list(std::initializer_list<int32_t> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
