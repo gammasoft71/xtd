@@ -3,9 +3,10 @@
 #include <xtd/string>
 
 using namespace xtd;
+using namespace std::literals;
 
 auto main() -> int {
-  auto duration = 26_h + 3_min + 32_s + 24_ms + 500_ns;
+  auto duration = 26h + 3min + 32s + 24ms + 500ns;
   console::out << string::format("{}", duration) << environment::new_line;
   console::out << string::format("{:c}", duration) << environment::new_line;
   console::out << string::format("{:d}", duration) << environment::new_line;
