@@ -7,8 +7,8 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-std::time_t make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second) {
-  std::tm date = {};
+auto make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second) {
+  auto date = std::tm {};
   date.tm_year = year - 1900;
   date.tm_mon = month - 1;
   date.tm_mday = day;
@@ -18,16 +18,16 @@ std::time_t make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32
   return std::mktime(&date);
 }
 
-std::time_t make_time(uint32 year, uint32 month, uint32 day) {
+auto make_time(uint32 year, uint32 month, uint32 day) {
   return make_time(year, month, day, 0, 0, 0);
 }
 
-std::time_t make_time() {
-  return {};
+auto make_time() {
+  return std::tm {};
 }
 
 template<typename clock_t>
-void print_system_clock(const string& text, const std::chrono::time_point<clock_t>& value, cap c) {
+auto print_system_clock(const string& text, const std::chrono::time_point<clock_t>& value, cap c) {
   if (c == cap::title)
     console::out << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                       │   format   │      representation                      │" << environment::new_line
