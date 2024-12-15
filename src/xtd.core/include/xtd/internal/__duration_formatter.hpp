@@ -10,6 +10,7 @@
 #include "__format_exception.hpp"
 #include "__sprintf.hpp"
 #include "../chrono.hpp"
+#include "../ticks.hpp"
 
 /// @cond
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
@@ -53,6 +54,8 @@ inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> 
     case 'p': return value.count() < 0 ? "-" : "+";
     case 's': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::abs(std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60));
     case 'S': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::abs(std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60));
+    case 't': return __sprintf(std::basic_string<char_t> {'%', 'l', 'u'}.c_str(), std::abs(std::chrono::duration_cast<xtd::ticks>(value).count() % 10000000));
+    case 'T': return __sprintf(std::basic_string<char_t> {'%', '0', '7', 'l', 'u'}.c_str(), std::abs(std::chrono::duration_cast<xtd::ticks>(value).count() % 10000000));
     default: __format_exception("Invalid format"); return {};
   }
 }
