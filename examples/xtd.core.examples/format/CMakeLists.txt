@@ -29,6 +29,7 @@ add_projects(
   format_sequence_containers
   format_string
   format_system_clock
+  format_time_span
   format_tm
   format_tuple
   format_unordered_associative_containers
