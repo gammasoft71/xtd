@@ -515,8 +515,8 @@ std::tm date_time::to_tm() const {
   result.tm_min = as<int32>(minute);
   result.tm_hour = as<int32>(hour);
   result.tm_mday = as<int32>(day);
-  result.tm_mon = as<int32>(month - 1);
-  result.tm_year = as<int32>(year - 1900);
+  result.tm_mon = as<int32>(month) - 1;
+  result.tm_year = as<int32>(year) - 1900;
   result.tm_wday = day_of_week;
   result.tm_yday = as<int32>(day_of_year);
   result.tm_isdst = is_daylight_saving_time();
