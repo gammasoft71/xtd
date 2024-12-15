@@ -8,9 +8,10 @@ enum class cap {title, middle, end};
 
 auto print_boolean(const string& text, bool value, cap c) {
   if (c == cap::title)
-    console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
-                 << "│  boolean  │   format   │      representation              │" << environment::new_line
-                 << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
+    console::out
+    << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
+    << "│  boolean  │   format   │      representation              │" << environment::new_line
+    << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
 
   console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << string::format("{}", value).pad_right(32) << " |" << environment::new_line;
   console::out <<  "│ " << text.pad_right(9) << " │ {:b}       │ " << string::format("{:b}", value).pad_right(32) << " |" << environment::new_line;

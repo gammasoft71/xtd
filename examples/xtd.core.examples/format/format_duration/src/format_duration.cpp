@@ -10,7 +10,8 @@ enum class cap {title, middle, end};
 template <typename type_t, typename period_t = std::ratio<1>>
 auto print_duration(const string& text, const std::chrono::duration<type_t, period_t>& value, cap c) {
   if (c == cap::title)
-    console::out << "┌────────────────────────────────────────────────────┬────────────┬────────────────────────────┐" << environment::new_line
+    console::out
+    << "┌────────────────────────────────────────────────────┬────────────┬────────────────────────────┐" << environment::new_line
     << "│  time_span                                         │   format   │      representation        │" << environment::new_line
     << "├────────────────────────────────────────────────────┼────────────┼────────────────────────────┤" << environment::new_line;
   

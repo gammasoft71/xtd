@@ -29,7 +29,8 @@ auto make_time() {
 template<typename clock_t>
 auto print_system_clock(const string& text, const std::chrono::time_point<clock_t>& value, cap c) {
   if (c == cap::title)
-    console::out << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
+    console::out
+    << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                       │   format   │      representation                      │" << environment::new_line
     << "├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
