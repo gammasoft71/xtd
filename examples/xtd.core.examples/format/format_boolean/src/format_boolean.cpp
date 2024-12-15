@@ -6,7 +6,7 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-void print_boolean(string text, bool value, cap c) {
+void print_boolean(const string& text, bool value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  boolean  │   format   │      representation              │" << environment::new_line
