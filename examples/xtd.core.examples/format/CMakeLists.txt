@@ -28,6 +28,8 @@ add_projects(
   format_pointer
   format_sequence_containers
   format_string
+  format_system_clock
+  format_tm
   format_tuple
   format_unordered_associative_containers
   format_with_alignment
