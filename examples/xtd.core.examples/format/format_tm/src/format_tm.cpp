@@ -28,7 +28,8 @@ auto make_time() {
 
 auto print_tm(const string& text, const std::tm& value, cap c) {
   if (c == cap::title)
-    console::out << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
+    console::out
+    << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                       │   format   │      representation                      │" << environment::new_line
     << "├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   

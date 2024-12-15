@@ -9,9 +9,10 @@ enum class cap {title, middle, end};
 
 auto print_character(const u32string& text, char32 value, cap c) {
   if (c == cap::title)
-    console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
-                 << "│  char     │   format   │      representation              │" << environment::new_line
-                 << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
+    console::out
+    << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
+    << "│  char     │   format   │      representation              │" << environment::new_line
+    << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
   console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << u32string::format("{}", value).pad_right(32) << " |" << environment::new_line;
   console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << u32string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;

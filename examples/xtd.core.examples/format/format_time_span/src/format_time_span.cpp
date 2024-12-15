@@ -8,7 +8,8 @@ enum class cap {title, middle, end};
 
 auto print_time_span(const string& text, const time_span& value, cap c) {
   if (c == cap::title)
-    console::out << "┌──────────────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
+    console::out
+    << "┌──────────────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  time_span                               │   format   │      representation                      │" << environment::new_line
     << "├──────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
