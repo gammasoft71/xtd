@@ -4,9 +4,9 @@
 
 using namespace xtd;
 
-enum class cap { title, middle, end };
+enum class cap {title, middle, end};
 
-void print_number(string text, int value, cap c) {
+void print_number(const string& text, int value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  number   │   format   │      representation              │" << environment::new_line
