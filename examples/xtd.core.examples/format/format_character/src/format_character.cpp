@@ -7,7 +7,7 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-void print_character(u32string text, char32 value, cap c) {
+auto print_character(const u32string& text, char32 value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  char     │   format   │      representation              │" << environment::new_line
