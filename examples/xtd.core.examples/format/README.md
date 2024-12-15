@@ -9,7 +9,7 @@
 * [format_class](format_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class.
 * [format_class_with_specified_formatting](format_class_with_specified_formating/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class and with specified formatting args.
 * [format_class_with_specified_formating_with_to_string](format_class_with_specified_formating_with_to_string/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class and with specified formatting args.
-* [format_date_time](format_date_time/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
+* [format_date_time](format_date_time/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) class.
 * [format_duration](format_duration/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with duration (std::chrono::duration).
 * [format_enum](format_enum/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum.
 * [format_enum_class](format_enum_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum class.
@@ -22,6 +22,8 @@
 * [format_pointer](format_pointer/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::shared_ptr, std::unique_ptr and classic pointer.
 * [format_sequence_containers](format_sequence_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with sequence containers (std::initializer_list, std::array, std::forward_list, std::list, std::deque and std::vector).
 * [format_string](format_string/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with strings (std::string, std::wstring, std::u8string, std::u16string and std::u32string).
+* [format_system_clock](format_system_clock/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with [std::chrono::system_clock](https://en.cppreference.com/w/cpp/chrono/system_clock) class.
+* [format_tm](format_tm/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with [std::tm](https://en.cppreference.com/w/cpp/chrono/c/tm) struct.
 * [format_tuple](format_tuple/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::tuple.
 * [format_unordered_associative_containers](format_unordered_associative_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with associative containers (std::unordered_set, std::unordered_multiset, std::unordered_map and std::unordered_multimap).
 * [format_with_alignment](format_with_alignment/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with specified alignment args.
