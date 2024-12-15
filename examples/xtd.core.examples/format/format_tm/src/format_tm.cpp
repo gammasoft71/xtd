@@ -7,8 +7,8 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-std::tm make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second) {
-  std::tm date = {};
+auto make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second) {
+  auto date = std::tm {};
   date.tm_year = year - 1900;
   date.tm_mon = month - 1;
   date.tm_mday = day;
@@ -18,15 +18,15 @@ std::tm make_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 min
   return date;
 }
 
-std::tm make_time(uint32 year, uint32 month, uint32 day) {
+auto make_time(uint32 year, uint32 month, uint32 day) {
   return make_time(year, month, day, 0, 0, 0);
 }
 
-std::tm make_time() {
-  return {};
+auto make_time() {
+  return std::tm {};
 }
 
-void print_system_clock(const string& text, const std::tm& value, cap c) {
+auto print_system_clock(const string& text, const std::tm& value, cap c) {
   if (c == cap::title)
     console::out << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                       │   format   │      representation                      │" << environment::new_line
@@ -94,45 +94,45 @@ auto main() -> int {
 // ┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐
 // │  date_time                       │   format   │      representation                      │
 // ├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ 0                                │ {}         │ Thu Jan  1 01:00:00 1970                 |
+// │ 0                                │ {}         │ Sun Jan  0 00:00:00 1900                 |
 // │ 0                                │ {:a}       │ AM                                       |
 // │ 0                                │ {:b}       │ 000                                      |
 // │ 0                                │ {:B}       │ 0                                        |
-// │ 0                                │ {:d}       │ 01/01/1970                               |
-// │ 0                                │ {:D}       │ 1/01/1970                                |
-// │ 0                                │ {:f}       │ Thu Jan  1 01:00:00 1970                 |
-// │ 0                                │ {:F}       │ Thu Jan  1 01:00:00 1970                 |
-// │ 0                                │ {:g}       │ Thu Jan  1 01:00:00 1970                 |
-// │ 0                                │ {:G}       │ Thu Jan  1 01:00:00 1970                 |
-// │ 0                                │ {:h}       │ Thu                                      |
-// │ 0                                │ {:H}       │ Thursday                                 |
-// │ 0                                │ {:i}       │ 01                                       |
-// │ 0                                │ {:I}       │ 1                                        |
+// │ 0                                │ {:d}       │ 01/00/1900                               |
+// │ 0                                │ {:D}       │ 1/00/1900                                |
+// │ 0                                │ {:f}       │ Sun Jan  0 00:00:00 1900                 |
+// │ 0                                │ {:F}       │ Sun Jan  0 00:00:00 1900                 |
+// │ 0                                │ {:g}       │ Sun Jan  0 00:00:00 1900                 |
+// │ 0                                │ {:G}       │ Sun Jan  0 00:00:00 1900                 |
+// │ 0                                │ {:h}       │ Sun                                      |
+// │ 0                                │ {:H}       │ Sunday                                   |
+// │ 0                                │ {:i}       │ 00                                       |
+// │ 0                                │ {:I}       │ 0                                        |
 // │ 0                                │ {:j}       │ Jan                                      |
 // │ 0                                │ {:J}       │ January                                  |
 // │ 0                                │ {:k}       │ 01                                       |
 // │ 0                                │ {:K}       │ 1                                        |
-// │ 0                                │ {:l}       │ 70                                       |
-// │ 0                                │ {:L}       │ 1970                                     |
-// │ 0                                │ {:m}       │ January 1                                |
-// │ 0                                │ {:M}       │ January 1                                |
-// │ 0                                │ {:n}       │ Thursday, 1 January 1970                 |
-// │ 0                                │ {:n}       │ Thursday, 1 January 1970 1:00:00         |
-// │ 0                                │ {:o}       │ 1 January 1970                           |
-// │ 0                                │ {:O}       │ 1 January 1970                           |
-// │ 0                                │ {:s}       │ 1970-01-01T01:00:00.0000000              |
-// │ 0                                │ {:t}       │ 01:00:00                                 |
-// │ 0                                │ {:T}       │ 1:00:00                                  |
-// │ 0                                │ {:u}       │ 1970-01-01 01:00:00                      |
-// │ 0                                │ {:U}       │ Thursday, 1 January 1970 1:00:00         |
-// │ 0                                │ {:v}       │ 01:00                                    |
-// │ 0                                │ {:V}       │ 1:00                                     |
-// │ 0                                │ {:w}       │ 01}                                      |
-// │ 0                                │ {:W}       │ 1                                        |
-// │ 0                                │ {:x}       │ 01                                       |
-// │ 0                                │ {:X}       │ 1                                        |
-// │ 0                                │ {:y}       │ January 70                               |
-// │ 0                                │ {:Y}       │ January 1970                             |
+// │ 0                                │ {:l}       │ 00                                       |
+// │ 0                                │ {:L}       │ 1900                                     |
+// │ 0                                │ {:m}       │ January 0                                |
+// │ 0                                │ {:M}       │ January 0                                |
+// │ 0                                │ {:n}       │ Sunday, 0 January 1900                   |
+// │ 0                                │ {:n}       │ Sunday, 0 January 1900 0:00:00           |
+// │ 0                                │ {:o}       │ 0 January 1900                           |
+// │ 0                                │ {:O}       │ 0 January 1900                           |
+// │ 0                                │ {:s}       │ 1900-01-00T00:00:00.0000000              |
+// │ 0                                │ {:t}       │ 00:00:00                                 |
+// │ 0                                │ {:T}       │ 0:00:00                                  |
+// │ 0                                │ {:u}       │ 1900-01-00 00:00:00                      |
+// │ 0                                │ {:U}       │ Sunday, 0 January 1900 0:00:00           |
+// │ 0                                │ {:v}       │ 00:00                                    |
+// │ 0                                │ {:V}       │ 0:00                                     |
+// │ 0                                │ {:w}       │ 00}                                      |
+// │ 0                                │ {:W}       │ 0                                        |
+// │ 0                                │ {:x}       │ 00                                       |
+// │ 0                                │ {:X}       │ 0                                        |
+// │ 0                                │ {:y}       │ January 0                                |
+// │ 0                                │ {:Y}       │ January 1900                             |
 // │ 0                                │ {:z}       │ CET                                      |
 // │ 0                                │ {:Z}       │ CET                                      |
 // ├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤
