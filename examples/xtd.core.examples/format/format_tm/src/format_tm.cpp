@@ -26,7 +26,7 @@ auto make_time() {
   return std::tm {};
 }
 
-auto print_system_clock(const string& text, const std::tm& value, cap c) {
+auto print_tm(const string& text, const std::tm& value, cap c) {
   if (c == cap::title)
     console::out << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                       │   format   │      representation                      │" << environment::new_line
@@ -81,11 +81,11 @@ auto print_system_clock(const string& text, const std::tm& value, cap c) {
 }
 
 auto main() -> int {
-  print_system_clock("0", make_time(), cap::title);
-  print_system_clock("make_time(1971, 1, 5)", make_time(1971, 1, 5), cap::middle);
-  print_system_clock("make_time(1971, 1, 5, 21, 30, 3)", make_time(1971, 1, 5, 21, 30, 3), cap::middle);
+  print_tm("0", make_time(), cap::title);
+  print_tm("make_time(1971, 1, 5)", make_time(1971, 1, 5), cap::middle);
+  print_tm("make_time(1971, 1, 5, 21, 30, 3)", make_time(1971, 1, 5, 21, 30, 3), cap::middle);
   auto now = std::time(nullptr);
-  print_system_clock("now", *std::localtime(&now), cap::end);
+  print_tm("now", *std::localtime(&now), cap::end);
 }
 
 // This code can be produce the following output :
