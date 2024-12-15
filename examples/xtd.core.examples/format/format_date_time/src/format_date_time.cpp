@@ -7,7 +7,7 @@ using namespace xtd;
 
 enum class cap {title, middle, end};
 
-void print_date_time(const string& text, const date_time& value, cap c) {
+auto print_date_time(const string& text, const date_time& value, cap c) {
   if (c == cap::title)
     console::out << "┌─────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                  │   format   │      representation                      │" << environment::new_line
