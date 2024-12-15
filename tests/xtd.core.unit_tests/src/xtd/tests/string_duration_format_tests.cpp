@@ -172,5 +172,21 @@ namespace xtd::tests {
     void test_method_(format_with_seconds_argument_without_days_milliseconds_and_nanoseconds) {
       assert::are_equal("02", xtd::string::format("{0:S}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {2}));
     }
+
+    void test_method_(format_with_alternative_ticks_argument) {
+      assert::are_equal("240005", xtd::string::format("{0:t}", std::chrono::hours {26} + std::chrono::minutes {3} + std::chrono::seconds {32} + std::chrono::milliseconds {24} + std::chrono::nanoseconds {500}));
+    }
+    
+    void test_method_(format_with_alternative_ticks_argument_without_days_milliseconds_and_nanoseconds) {
+      assert::are_equal("0", xtd::string::format("{0:t}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32}));
+    }
+    
+    void test_method_(format_with_ticks_argument) {
+      assert::are_equal("0240005", xtd::string::format("{0:T}", std::chrono::hours {26} + std::chrono::minutes {3} + std::chrono::seconds {32} + std::chrono::milliseconds {24} + std::chrono::nanoseconds {500}));
+    }
+    
+    void test_method_(format_with_ticks_argument_without_days_milliseconds_and_nanoseconds) {
+      assert::are_equal("0000000", xtd::string::format("{0:T}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32}));
+    }
   };
 }
