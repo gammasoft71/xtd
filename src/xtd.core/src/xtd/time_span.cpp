@@ -353,6 +353,8 @@ string time_span::to_string(const string& format, const std::locale& loc) const 
     case 'L': return string::format("{:d3}", math::abs(milliseconds()));
     case 'm': return string::format("{}", math::abs(minutes()));
     case 'M': return string::format("{:d2}", math::abs(minutes()));
+    case 'n': return string::format("{}", math::abs(ticks() % ticks_per_second * nanoseconds_per_tick));
+    case 'N': return string::format("{:d9}", math::abs(ticks() % ticks_per_second * nanoseconds_per_tick));
     case 'o': return string::format("{}", ticks() < 0 ? "-" : "");
     case 'O': return string::format("{}", ticks() < 0 ? "-" : "+");
     case 's': return string::format("{}", math::abs(seconds()));
