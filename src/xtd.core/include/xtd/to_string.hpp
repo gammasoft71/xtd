@@ -360,7 +360,6 @@ namespace xtd {
   
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
-  /// @endcond
 
 #if defined(__xtd__cpp_lib_three_way_comparison)
   template<>
@@ -420,6 +419,9 @@ namespace xtd {
 
   template<>
   inline std::string to_string(const std::nullopt_t& value, const std::string& fmt, const std::locale& loc) {return "(null)";}
+  
+  template<>
+  inline std::string to_string(const std::nullptr_t&, const std::string& fmt, const std::locale& loc) {return "null";}
 
   template<typename type1_t, typename type2_t>
   inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc) {
@@ -496,6 +498,7 @@ namespace xtd {
   
   template<typename key_t, typename compare_t, typename allocator_t>
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  /// @endcond
 
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
