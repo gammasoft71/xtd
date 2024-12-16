@@ -138,6 +138,17 @@ add_sources(
   src/xtd/tests/exit_mode_tests.cpp
   src/xtd/tests/exit_status_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
+  src/xtd/tests/format_string_boolean_tests.cpp
+  src/xtd/tests/format_string_date_time_tests.cpp
+  src/xtd/tests/format_string_duration_tests.cpp
+  src/xtd/tests/format_string_enum_tests.cpp
+  src/xtd/tests/format_string_enum_class_tests.cpp
+  src/xtd/tests/format_string_fixed_point_tests.cpp
+  src/xtd/tests/format_string_numeric_tests.cpp
+  src/xtd/tests/format_string_object_tests.cpp
+  src/xtd/tests/format_string_object_without_xtd_to_string_tests.cpp
+  src/xtd/tests/format_string_string_tests.cpp
+  src/xtd/tests/format_string_tm_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/get_know_folder_path.hpp
   src/xtd/tests/guid_tests.cpp
@@ -188,19 +199,8 @@ add_sources(
   src/xtd/tests/signal_tests.cpp
   src/xtd/tests/software_termination_exception_tests.cpp
   src/xtd/tests/standard_name.hpp
-  src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_comparison_tests.cpp
-  src/xtd/tests/string_date_time_format_tests.cpp
-  src/xtd/tests/string_duration_format_tests.cpp
-  src/xtd/tests/string_enum_format_tests.cpp
-  src/xtd/tests/string_enum_class_format_tests.cpp
-  src/xtd/tests/string_fixed_point_format_tests.cpp
-  src/xtd/tests/string_numeric_format_tests.cpp
-  src/xtd/tests/string_object_format_tests.cpp
-  src/xtd/tests/string_object_format_without_xtd_to_string_tests.cpp
   src/xtd/tests/string_split_options_tests.cpp
-  src/xtd/tests/string_string_format_tests.cpp
-  src/xtd/tests/string_tm_format_tests.cpp
   src/xtd/tests/system_exception_tests.cpp
   src/xtd/tests/target_id_tests.cpp
   src/xtd/tests/tick_tests.cpp

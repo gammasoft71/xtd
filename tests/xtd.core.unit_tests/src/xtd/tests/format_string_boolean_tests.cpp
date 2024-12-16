@@ -1,4 +1,4 @@
-#include <xtd/string>
+#include <xtd/format>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -8,13 +8,13 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  class test_class_(string_boolean_format_tests) {
+  class test_class_(format_string_boolean_tests) {
     void test_method_(format_false_with_default_argument) {
-      assert::are_equal("false", xtd::string::format("{0}", false));
+      assert::are_equal("false", format("{0}", false));
     }
     
     void test_method_(format_true_with_default_argument) {
-      assert::are_equal("true", xtd::string::format("{0}", true));
+      assert::are_equal("true", format("{0}", true));
     }
     
     void test_method_(format_false_with_left_alignment) {
@@ -42,51 +42,51 @@ namespace xtd::tests {
     }
     
     void test_method_(format_false_with_binary_argument) {
-      assert::are_equal("0", xtd::string::format("{0:b}", false));
+      assert::are_equal("0", format("{0:b}", false));
     }
     
     void test_method_(format_true_with_binaryl_argument) {
-      assert::are_equal("1", xtd::string::format("{0:B}", true));
+      assert::are_equal("1", format("{0:B}", true));
     }
     
     void test_method_(format_false_with_decimal_argument) {
-      assert::are_equal("0", xtd::string::format("{0:d}", false));
+      assert::are_equal("0", format("{0:d}", false));
     }
     
     void test_method_(format_true_with_decimal_argument) {
-      assert::are_equal("1", xtd::string::format("{0:D}", true));
+      assert::are_equal("1", format("{0:D}", true));
     }
     
     void test_method_(format_false_with_general_argument) {
-      assert::are_equal("false", xtd::string::format("{0:g}", false));
+      assert::are_equal("false", format("{0:g}", false));
     }
     
     void test_method_(format_true_with_general_argument) {
-      assert::are_equal("true", xtd::string::format("{0:G}", true));
+      assert::are_equal("true", format("{0:G}", true));
     }
     
     void test_method_(format_false_with_octal_argument) {
-      assert::are_equal("0", xtd::string::format("{0:o}", false));
+      assert::are_equal("0", format("{0:o}", false));
     }
     
     void test_method_(format_true_with_octal_argument) {
-      assert::are_equal("1", xtd::string::format("{0:O}", true));
+      assert::are_equal("1", format("{0:O}", true));
     }
     
     void test_method_(format_false_with_hexadecimal_argument) {
-      assert::are_equal("0", xtd::string::format("{0:x}", false));
+      assert::are_equal("0", format("{0:x}", false));
     }
     
     void test_method_(format_true_with_hexadecimal_argument) {
-      assert::are_equal("1", xtd::string::format("{0:X}", true));
+      assert::are_equal("1", format("{0:X}", true));
     }
     
     void test_method_(format_false_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0:e}", true);});
+      assert::throws<xtd::format_exception>([] {format("{0:e}", true);});
     }
     
     void test_method_(format_true_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0:z1}", true);});
+      assert::throws<xtd::format_exception>([] {format("{0:z1}", true);});
     }
   };
 }

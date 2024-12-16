@@ -1,4 +1,4 @@
-#include <xtd/string>
+#include <xtd/format>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -22,9 +22,9 @@ template<> struct xtd::enum_register<day> {
 };
 
 namespace xtd::tests {
-  class test_class_(string_enum_format_tests) {
+  class test_class_(format_string_enum_tests) {
     void test_method_(format_sunday_with_default_argument) {
-      assert::are_equal("sunday", xtd::string::format("{0}", sunday));
+      assert::are_equal("sunday", format("{0}", sunday));
     }
     
     void test_method_(format_monday_with_left_alignment) {
@@ -36,27 +36,27 @@ namespace xtd::tests {
     }
     
     void test_method_(format_wednesday_with_binary_argument) {
-      assert::are_equal("11", xtd::string::format("{0:b}", wednesday));
+      assert::are_equal("11", format("{0:b}", wednesday));
     }
     
     void test_method_(format_thursday_with_decimal_argument) {
-      assert::are_equal("4", xtd::string::format("{0:d}", thursday));
+      assert::are_equal("4", format("{0:d}", thursday));
     }
     
     void test_method_(format_friday_with_general_argument) {
-      assert::are_equal("friday", xtd::string::format("{0:g}", friday));
+      assert::are_equal("friday", format("{0:g}", friday));
     }
     
     void test_method_(format_saturday_with_octal_argument) {
-      assert::are_equal("6", xtd::string::format("{0:o}", saturday));
+      assert::are_equal("6", format("{0:o}", saturday));
     }
     
     void test_method_(format_sunday_with_hexadecimal_argument) {
-      assert::are_equal("0", xtd::string::format("{0:x}", sunday));
+      assert::are_equal("0", format("{0:x}", sunday));
     }
     
     void test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0:e}", tuesday);});
+      assert::throws<xtd::format_exception>([] {format("{0:e}", tuesday);});
     }
   };
 }
