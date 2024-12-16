@@ -19,7 +19,77 @@
 #include <vector>
 
 /// @cond
-template<typename char_t, typename value_t>
+template <typename char_t, typename floating_point_t>
+inline std::basic_string<char_t> __floating_point_to_binary(floating_point_t value, int precision) {
+  union {
+    double input;
+    int64_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<char_t>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<char> __floating_point_to_binary<char, long double>(long double value, int precision) {
+  union {
+    long double input;
+    int64_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<char>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, long double>(long double value, int precision) {
+  union {
+    long double input;
+    int64_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<wchar_t>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<char> __floating_point_to_binary<char, double>(double value, int precision) {
+  union {
+    double input;
+    int64_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<char>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, double>(double value, int precision) {
+  union {
+    double input;
+    int64_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<wchar_t>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<char> __floating_point_to_binary<char, float>(float value, int precision) {
+  union {
+    float input;
+    int32_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<char>(data.output, precision);
+}
+
+template <>
+inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, float>(float value, int precision) {
+  union {
+    float input;
+    int32_t output;
+  } data;
+  data.input = value;
+  return __binary_formatter<wchar_t>(data.output, precision);
+}
+
+template <typename char_t, typename value_t>
 inline std::basic_string<char_t> __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
@@ -41,7 +111,7 @@ inline std::basic_string<char_t> __floating_point_formatter(const std::basic_str
   std::basic_string<char_t> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'b':
-    case 'B': {double value_double = static_cast<double>(value); int64_t value_int64 = 0; memcpy(&value_int64, &value_double, sizeof(value_double)); return __binary_formatter<char_t>(value_int64, precision);}
+    case 'B': return __floating_point_to_binary<char_t>(value, precision);
     case 'c':
     case 'C': return __currency_formatter<char_t>(static_cast<long double>(value), loc);
     case 'e':
