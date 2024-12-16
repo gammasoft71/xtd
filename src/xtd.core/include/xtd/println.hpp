@@ -26,7 +26,6 @@ namespace xtd {
   /// @param values Values to write,
   template<typename ... args_t>
   void println(const xtd::string& fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(fmt, std::forward<args_t>(values)...));}
-  
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
