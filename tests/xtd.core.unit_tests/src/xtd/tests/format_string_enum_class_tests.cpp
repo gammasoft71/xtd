@@ -1,4 +1,5 @@
 #include <xtd/enum_class>
+#include <xtd/format>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -24,9 +25,9 @@ template<> struct xtd::enum_register<xtd::tests::day> {
 };
 
 namespace xtd::tests {
-  class test_class_(string_enum_class_format_tests) {
+  class test_class_(format_string_enum_class_tests) {
     void test_method_(format_sunday_with_default_argument) {
-      assert::are_equal("sunday", xtd::string::format("{0}", day::sunday));
+      assert::are_equal("sunday", format("{0}", day::sunday));
     }
     
     void test_method_(format_monday_with_left_alignment) {
@@ -38,27 +39,27 @@ namespace xtd::tests {
     }
     
     void test_method_(format_wednesday_with_binary_argument) {
-      assert::are_equal("11", xtd::string::format("{0:b}", day::wednesday));
+      assert::are_equal("11", format("{0:b}", day::wednesday));
     }
     
     void test_method_(format_thursday_with_decimal_argument) {
-      assert::are_equal("4", xtd::string::format("{0:d}", day::thursday));
+      assert::are_equal("4", format("{0:d}", day::thursday));
     }
     
     void test_method_(format_friday_with_general_argument) {
-      assert::are_equal("friday", xtd::string::format("{0:g}", day::friday));
+      assert::are_equal("friday", format("{0:g}", day::friday));
     }
     
     void test_method_(format_saturday_with_octal_argument) {
-      assert::are_equal("6", xtd::string::format("{0:o}", day::saturday));
+      assert::are_equal("6", format("{0:o}", day::saturday));
     }
     
     void test_method_(format_sunday_with_hexadecimal_argument) {
-      assert::are_equal("0", xtd::string::format("{0:x}", day::sunday));
+      assert::are_equal("0", format("{0:x}", day::sunday));
     }
     
     void test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0:e}", day::tuesday);});
+      assert::throws<xtd::format_exception>([] {format("{0:e}", day::tuesday);});
     }
   };
 }

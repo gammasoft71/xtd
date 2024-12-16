@@ -1,4 +1,4 @@
-#include <xtd/string>
+#include <xtd/format>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -19,9 +19,9 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::
 }
 
 namespace xtd::tests {
-  class test_class_(string_object_format_without_xtd_to_string_tests) {
+  class test_class_(format_string_object_without_xtd_to_string_tests) {
     void test_method_(format_location_with_default_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {format("{0}", ::size_sof {42, 24});});
     }
     
     void test_method_(format_location_with_left_alignment) {
@@ -37,7 +37,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {xtd::string::format("{0:G}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {format("{0:G}", ::size_sof {42, 24});});
     }
   };
 }
