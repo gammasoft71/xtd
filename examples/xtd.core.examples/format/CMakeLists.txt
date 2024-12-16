@@ -21,7 +21,7 @@ add_projects(
   format_enum_class_flags_without_helper
   format_exception
   format_floating_point
-  format_numeric
+  format_number
   format_nullptr
   format_optional
   format_pair
