@@ -19,8 +19,10 @@ xtdc run
 # Output (with colors)
 
 ```
-nullptr
-nullptr
+null
+null
+null
+null
 0
 0
 ```
