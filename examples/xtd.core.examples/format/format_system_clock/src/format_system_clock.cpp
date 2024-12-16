@@ -31,7 +31,7 @@ auto print_system_clock(const string& text, const std::chrono::time_point<clock_
   if (c == cap::title)
     console::out
     << "┌──────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
-    << "│  date_time                       │   format   │      representation                      │" << environment::new_line
+    << "│  system_clock                    │   format   │      representation                      │" << environment::new_line
     << "├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
   console::out <<  "│ " << text.pad_right(32) << " │ {}         │ " << string::format("{}", value).pad_right(40) << " |" << environment::new_line;

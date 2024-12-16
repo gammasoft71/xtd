@@ -12,7 +12,7 @@ auto print_duration(const string& text, const std::chrono::duration<type_t, peri
   if (c == cap::title)
     console::out
     << "┌────────────────────────────────────────────────────┬────────────┬────────────────────────────┐" << environment::new_line
-    << "│  time_span                                         │   format   │      representation        │" << environment::new_line
+    << "│  duration                                          │   format   │      representation        │" << environment::new_line
     << "├────────────────────────────────────────────────────┼────────────┼────────────────────────────┤" << environment::new_line;
   
   console::out <<  "│ " << text.pad_right(50) << " │ {}         │ " << string::format("{}", value).pad_right(26) << " |" << environment::new_line;
