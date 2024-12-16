@@ -1,7 +1,7 @@
 #include <xtd/collections/generic/list>
 #include <xtd/console>
 #include <xtd/environment>
-#include <xtd/string>
+#include <xtd/format>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
@@ -25,7 +25,7 @@ using characters = list<character>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    console::out << string::format("{}", c) << environment::new_line;
+    console::out << format("{}", c) << environment::new_line;
 }
 
 // This code produces the following output :

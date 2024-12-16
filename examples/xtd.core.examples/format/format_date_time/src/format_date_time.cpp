@@ -1,7 +1,7 @@
 #include <xtd/console>
 #include <xtd/date_time>
 #include <xtd/environment>
-#include <xtd/string>
+#include <xtd/format>
 
 using namespace xtd;
 
@@ -14,54 +14,54 @@ auto print_date_time(const string& text, const date_time& value, cap c) {
     << "│  date_time                  │   format   │      representation                      │" << environment::new_line
     << "├─────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
-  console::out <<  "│ " << text.pad_right(27) << " │ {}         │ " << string::format("{}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:a}       │ " << string::format("{:a}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:b}       │ " << string::format("{:b}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:B}       │ " << string::format("{:B}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:c}       │ " << string::format("{:c}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:C}       │ " << string::format("{:C}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:d}       │ " << string::format("{:d}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:D}       │ " << string::format("{:D}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:e}       │ " << string::format("{:e}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:E}       │ " << string::format("{:E}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:f}       │ " << string::format("{:f}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:F}       │ " << string::format("{:F}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:g}       │ " << string::format("{:g}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:G}       │ " << string::format("{:G}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:h}       │ " << string::format("{:h}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:H}       │ " << string::format("{:H}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:i}       │ " << string::format("{:i}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:I}       │ " << string::format("{:I}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:j}       │ " << string::format("{:j}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:J}       │ " << string::format("{:J}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:k}       │ " << string::format("{:k}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:K}       │ " << string::format("{:K}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:l}       │ " << string::format("{:l}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:L}       │ " << string::format("{:L}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:m}       │ " << string::format("{:m}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:M}       │ " << string::format("{:M}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:n}       │ " << string::format("{:n}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:n}       │ " << string::format("{:N}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:o}       │ " << string::format("{:o}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:O}       │ " << string::format("{:O}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:p}       │ " << string::format("{:p}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:P}       │ " << string::format("{:P}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:s}       │ " << string::format("{:s}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:S}       │ " << string::format("{:S}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:t}       │ " << string::format("{:t}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:T}       │ " << string::format("{:T}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:u}       │ " << string::format("{:u}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:U}       │ " << string::format("{:U}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:v}       │ " << string::format("{:v}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:V}       │ " << string::format("{:V}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:w}       │ " << string::format("{:w}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:W}       │ " << string::format("{:W}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:x}       │ " << string::format("{:x}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:X}       │ " << string::format("{:X}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:y}       │ " << string::format("{:y}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:Y}       │ " << string::format("{:Y}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:z}       │ " << string::format("{:z}", value).pad_right(40) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(27) << " │ {:Z}       │ " << string::format("{:Z}", value).pad_right(40) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {}         │ " << format("{}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:a}       │ " << format("{:a}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:b}       │ " << format("{:b}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:B}       │ " << format("{:B}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:c}       │ " << format("{:c}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:C}       │ " << format("{:C}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:d}       │ " << format("{:d}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:D}       │ " << format("{:D}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:e}       │ " << format("{:e}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:E}       │ " << format("{:E}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:f}       │ " << format("{:f}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:F}       │ " << format("{:F}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:g}       │ " << format("{:g}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:G}       │ " << format("{:G}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:h}       │ " << format("{:h}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:H}       │ " << format("{:H}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:i}       │ " << format("{:i}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:I}       │ " << format("{:I}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:j}       │ " << format("{:j}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:J}       │ " << format("{:J}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:k}       │ " << format("{:k}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:K}       │ " << format("{:K}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:l}       │ " << format("{:l}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:L}       │ " << format("{:L}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:m}       │ " << format("{:m}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:M}       │ " << format("{:M}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:n}       │ " << format("{:n}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:n}       │ " << format("{:N}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:o}       │ " << format("{:o}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:O}       │ " << format("{:O}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:p}       │ " << format("{:p}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:P}       │ " << format("{:P}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:s}       │ " << format("{:s}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:S}       │ " << format("{:S}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:t}       │ " << format("{:t}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:T}       │ " << format("{:T}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:u}       │ " << format("{:u}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:U}       │ " << format("{:U}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:v}       │ " << format("{:v}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:V}       │ " << format("{:V}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:w}       │ " << format("{:w}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:W}       │ " << format("{:W}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:x}       │ " << format("{:x}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:X}       │ " << format("{:X}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:y}       │ " << format("{:y}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:Y}       │ " << format("{:Y}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:z}       │ " << format("{:z}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(27) << " │ {:Z}       │ " << format("{:Z}", value).pad_right(40) << " │" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├─────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
@@ -84,346 +84,346 @@ auto main() -> int {
 // ┌─────────────────────────────┬────────────┬──────────────────────────────────────────┐
 // │  date_time                  │   format   │      representation                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ {}                          │ {}         │ Mon Jan  1 00:00:00 0001                 |
-// │ {}                          │ {:a}       │ AM                                       |
-// │ {}                          │ {:b}       │ 000                                      |
-// │ {}                          │ {:B}       │ 0                                        |
-// │ {}                          │ {:c}       │ 0000000                                  |
-// │ {}                          │ {:C}       │ 0                                        |
-// │ {}                          │ {:d}       │ 01/01/1                                  |
-// │ {}                          │ {:D}       │ 1/01/1                                   |
-// │ {}                          │ {:e}       │ 00                                       |
-// │ {}                          │ {:E}       │ 0                                        |
-// │ {}                          │ {:f}       │ Mon Jan  1 00:00:00 0001                 |
-// │ {}                          │ {:F}       │ Mon Jan  1 00:00:00 0001                 |
-// │ {}                          │ {:g}       │ Mon Jan  1 00:00:00 0001                 |
-// │ {}                          │ {:G}       │ Mon Jan  1 00:00:00 0001                 |
-// │ {}                          │ {:h}       │ Mon                                      |
-// │ {}                          │ {:H}       │ Monday                                   |
-// │ {}                          │ {:i}       │ 01                                       |
-// │ {}                          │ {:I}       │ 1                                        |
-// │ {}                          │ {:j}       │ Jan                                      |
-// │ {}                          │ {:J}       │ January                                  |
-// │ {}                          │ {:k}       │ 01                                       |
-// │ {}                          │ {:K}       │ 1                                        |
-// │ {}                          │ {:l}       │ 01                                       |
-// │ {}                          │ {:L}       │ 0001                                     |
-// │ {}                          │ {:m}       │ 1                                        |
-// │ {}                          │ {:M}       │ January 1                                |
-// │ {}                          │ {:n}       │ Monday, 1 January 1                      |
-// │ {}                          │ {:n}       │ Monday, 1 January 1 0:00:00              |
-// │ {}                          │ {:o}       │ 1 January 1                              |
-// │ {}                          │ {:O}       │ 1 January 1                              |
-// │ {}                          │ {:p}       │ 00                                       |
-// │ {}                          │ {:P}       │ 0                                        |
-// │ {}                          │ {:s}       │ 0001-01-01T00:00:00.0000000              |
-// │ {}                          │ {:S}       │ 0001-01-01T00:00:00.000                  |
-// │ {}                          │ {:t}       │ 00:00:00                                 |
-// │ {}                          │ {:T}       │ 0:00:00                                  |
-// │ {}                          │ {:u}       │ 1-01-01 00:00:00                         |
-// │ {}                          │ {:U}       │ Monday, 1 January 1 0:00:00              |
-// │ {}                          │ {:v}       │ 00:00                                    |
-// │ {}                          │ {:V}       │ 0:00                                     |
-// │ {}                          │ {:w}       │ 00                                       |
-// │ {}                          │ {:W}       │ 0                                        |
-// │ {}                          │ {:x}       │ 00                                       |
-// │ {}                          │ {:X}       │ 0                                        |
-// │ {}                          │ {:y}       │ January 1                                |
-// │ {}                          │ {:Y}       │ January 1                                |
-// │ {}                          │ {:z}       │ UTC                                      |
-// │ {}                          │ {:Z}       │ UTC                                      |
+// │ {}                          │ {}         │ Mon Jan  1 00:00:00 0001                 │
+// │ {}                          │ {:a}       │ AM                                       │
+// │ {}                          │ {:b}       │ 000                                      │
+// │ {}                          │ {:B}       │ 0                                        │
+// │ {}                          │ {:c}       │ 0000000                                  │
+// │ {}                          │ {:C}       │ 0                                        │
+// │ {}                          │ {:d}       │ 01/01/1                                  │
+// │ {}                          │ {:D}       │ 1/01/1                                   │
+// │ {}                          │ {:e}       │ 00                                       │
+// │ {}                          │ {:E}       │ 0                                        │
+// │ {}                          │ {:f}       │ Mon Jan  1 00:00:00 0001                 │
+// │ {}                          │ {:F}       │ Mon Jan  1 00:00:00 0001                 │
+// │ {}                          │ {:g}       │ Mon Jan  1 00:00:00 0001                 │
+// │ {}                          │ {:G}       │ Mon Jan  1 00:00:00 0001                 │
+// │ {}                          │ {:h}       │ Mon                                      │
+// │ {}                          │ {:H}       │ Monday                                   │
+// │ {}                          │ {:i}       │ 01                                       │
+// │ {}                          │ {:I}       │ 1                                        │
+// │ {}                          │ {:j}       │ Jan                                      │
+// │ {}                          │ {:J}       │ January                                  │
+// │ {}                          │ {:k}       │ 01                                       │
+// │ {}                          │ {:K}       │ 1                                        │
+// │ {}                          │ {:l}       │ 01                                       │
+// │ {}                          │ {:L}       │ 0001                                     │
+// │ {}                          │ {:m}       │ 1                                        │
+// │ {}                          │ {:M}       │ January 1                                │
+// │ {}                          │ {:n}       │ Monday, 1 January 1                      │
+// │ {}                          │ {:n}       │ Monday, 1 January 1 0:00:00              │
+// │ {}                          │ {:o}       │ 1 January 1                              │
+// │ {}                          │ {:O}       │ 1 January 1                              │
+// │ {}                          │ {:p}       │ 00                                       │
+// │ {}                          │ {:P}       │ 0                                        │
+// │ {}                          │ {:s}       │ 0001-01-01T00:00:00.0000000              │
+// │ {}                          │ {:S}       │ 0001-01-01T00:00:00.000                  │
+// │ {}                          │ {:t}       │ 00:00:00                                 │
+// │ {}                          │ {:T}       │ 0:00:00                                  │
+// │ {}                          │ {:u}       │ 1-01-01 00:00:00                         │
+// │ {}                          │ {:U}       │ Monday, 1 January 1 0:00:00              │
+// │ {}                          │ {:v}       │ 00:00                                    │
+// │ {}                          │ {:V}       │ 0:00                                     │
+// │ {}                          │ {:w}       │ 00                                       │
+// │ {}                          │ {:W}       │ 0                                        │
+// │ {}                          │ {:x}       │ 00                                       │
+// │ {}                          │ {:X}       │ 0                                        │
+// │ {}                          │ {:y}       │ January 1                                │
+// │ {}                          │ {:Y}       │ January 1                                │
+// │ {}                          │ {:z}       │ UTC                                      │
+// │ {}                          │ {:Z}       │ UTC                                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ {123456789123456789}        │ {}         │ Sat Mar 21 19:15:12 0392                 |
-// │ {123456789123456789}        │ {:a}       │ PM                                       |
-// │ {123456789123456789}        │ {:b}       │ 345                                      |
-// │ {123456789123456789}        │ {:B}       │ 345                                      |
-// │ {123456789123456789}        │ {:c}       │ 0006789                                  |
-// │ {123456789123456789}        │ {:C}       │ 6789                                     |
-// │ {123456789123456789}        │ {:d}       │ 03/21/392                                |
-// │ {123456789123456789}        │ {:D}       │ 3/21/392                                 |
-// │ {123456789123456789}        │ {:e}       │ 12                                       |
-// │ {123456789123456789}        │ {:E}       │ 12                                       |
-// │ {123456789123456789}        │ {:f}       │ Sat Mar 21 19:15:12 0392                 |
-// │ {123456789123456789}        │ {:F}       │ Sat Mar 21 19:15:12 0392                 |
-// │ {123456789123456789}        │ {:g}       │ Sat Mar 21 19:15:12 0392                 |
-// │ {123456789123456789}        │ {:G}       │ Sat Mar 21 19:15:12 0392                 |
-// │ {123456789123456789}        │ {:h}       │ Sat                                      |
-// │ {123456789123456789}        │ {:H}       │ Saturday                                 |
-// │ {123456789123456789}        │ {:i}       │ 21                                       |
-// │ {123456789123456789}        │ {:I}       │ 21                                       |
-// │ {123456789123456789}        │ {:j}       │ Mar                                      |
-// │ {123456789123456789}        │ {:J}       │ March                                    |
-// │ {123456789123456789}        │ {:k}       │ 03                                       |
-// │ {123456789123456789}        │ {:K}       │ 3                                        |
-// │ {123456789123456789}        │ {:l}       │ 92                                       |
-// │ {123456789123456789}        │ {:L}       │ 0392                                     |
-// │ {123456789123456789}        │ {:m}       │ 392                                      |
-// │ {123456789123456789}        │ {:M}       │ March 21                                 |
-// │ {123456789123456789}        │ {:n}       │ Saturday, 21 March 392                   |
-// │ {123456789123456789}        │ {:n}       │ Saturday, 21 March 392 19:15:12          |
-// │ {123456789123456789}        │ {:o}       │ 21 March 392                             |
-// │ {123456789123456789}        │ {:O}       │ 21 March 392                             |
-// │ {123456789123456789}        │ {:p}       │ 15                                       |
-// │ {123456789123456789}        │ {:P}       │ 15                                       |
-// │ {123456789123456789}        │ {:s}       │ 0392-03-21T19:15:12.3456789              |
-// │ {123456789123456789}        │ {:S}       │ 0392-03-21T19:15:12.345                  |
-// │ {123456789123456789}        │ {:t}       │ 19:15:12                                 |
-// │ {123456789123456789}        │ {:T}       │ 19:15:12                                 |
-// │ {123456789123456789}        │ {:u}       │ 392-03-21 19:15:12                       |
-// │ {123456789123456789}        │ {:U}       │ Saturday, 21 March 392 19:15:12          |
-// │ {123456789123456789}        │ {:v}       │ 19:15                                    |
-// │ {123456789123456789}        │ {:V}       │ 19:15                                    |
-// │ {123456789123456789}        │ {:w}       │ 19                                       |
-// │ {123456789123456789}        │ {:W}       │ 19                                       |
-// │ {123456789123456789}        │ {:x}       │ 07                                       |
-// │ {123456789123456789}        │ {:X}       │ 7                                        |
-// │ {123456789123456789}        │ {:y}       │ March 92                                 |
-// │ {123456789123456789}        │ {:Y}       │ March 392                                |
-// │ {123456789123456789}        │ {:z}       │ UTC                                      |
-// │ {123456789123456789}        │ {:Z}       │ UTC                                      |
+// │ {123456789123456789}        │ {}         │ Sat Mar 21 19:15:12 0392                 │
+// │ {123456789123456789}        │ {:a}       │ PM                                       │
+// │ {123456789123456789}        │ {:b}       │ 345                                      │
+// │ {123456789123456789}        │ {:B}       │ 345                                      │
+// │ {123456789123456789}        │ {:c}       │ 0006789                                  │
+// │ {123456789123456789}        │ {:C}       │ 6789                                     │
+// │ {123456789123456789}        │ {:d}       │ 03/21/392                                │
+// │ {123456789123456789}        │ {:D}       │ 3/21/392                                 │
+// │ {123456789123456789}        │ {:e}       │ 12                                       │
+// │ {123456789123456789}        │ {:E}       │ 12                                       │
+// │ {123456789123456789}        │ {:f}       │ Sat Mar 21 19:15:12 0392                 │
+// │ {123456789123456789}        │ {:F}       │ Sat Mar 21 19:15:12 0392                 │
+// │ {123456789123456789}        │ {:g}       │ Sat Mar 21 19:15:12 0392                 │
+// │ {123456789123456789}        │ {:G}       │ Sat Mar 21 19:15:12 0392                 │
+// │ {123456789123456789}        │ {:h}       │ Sat                                      │
+// │ {123456789123456789}        │ {:H}       │ Saturday                                 │
+// │ {123456789123456789}        │ {:i}       │ 21                                       │
+// │ {123456789123456789}        │ {:I}       │ 21                                       │
+// │ {123456789123456789}        │ {:j}       │ Mar                                      │
+// │ {123456789123456789}        │ {:J}       │ March                                    │
+// │ {123456789123456789}        │ {:k}       │ 03                                       │
+// │ {123456789123456789}        │ {:K}       │ 3                                        │
+// │ {123456789123456789}        │ {:l}       │ 92                                       │
+// │ {123456789123456789}        │ {:L}       │ 0392                                     │
+// │ {123456789123456789}        │ {:m}       │ 392                                      │
+// │ {123456789123456789}        │ {:M}       │ March 21                                 │
+// │ {123456789123456789}        │ {:n}       │ Saturday, 21 March 392                   │
+// │ {123456789123456789}        │ {:n}       │ Saturday, 21 March 392 19:15:12          │
+// │ {123456789123456789}        │ {:o}       │ 21 March 392                             │
+// │ {123456789123456789}        │ {:O}       │ 21 March 392                             │
+// │ {123456789123456789}        │ {:p}       │ 15                                       │
+// │ {123456789123456789}        │ {:P}       │ 15                                       │
+// │ {123456789123456789}        │ {:s}       │ 0392-03-21T19:15:12.3456789              │
+// │ {123456789123456789}        │ {:S}       │ 0392-03-21T19:15:12.345                  │
+// │ {123456789123456789}        │ {:t}       │ 19:15:12                                 │
+// │ {123456789123456789}        │ {:T}       │ 19:15:12                                 │
+// │ {123456789123456789}        │ {:u}       │ 392-03-21 19:15:12                       │
+// │ {123456789123456789}        │ {:U}       │ Saturday, 21 March 392 19:15:12          │
+// │ {123456789123456789}        │ {:v}       │ 19:15                                    │
+// │ {123456789123456789}        │ {:V}       │ 19:15                                    │
+// │ {123456789123456789}        │ {:w}       │ 19                                       │
+// │ {123456789123456789}        │ {:W}       │ 19                                       │
+// │ {123456789123456789}        │ {:x}       │ 07                                       │
+// │ {123456789123456789}        │ {:X}       │ 7                                        │
+// │ {123456789123456789}        │ {:y}       │ March 92                                 │
+// │ {123456789123456789}        │ {:Y}       │ March 392                                │
+// │ {123456789123456789}        │ {:z}       │ UTC                                      │
+// │ {123456789123456789}        │ {:Z}       │ UTC                                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ {1971, 1, 5}                │ {}         │ Tue Jan  5 00:00:00 1971                 |
-// │ {1971, 1, 5}                │ {:a}       │ AM                                       |
-// │ {1971, 1, 5}                │ {:b}       │ 000                                      |
-// │ {1971, 1, 5}                │ {:B}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:c}       │ 0000000                                  |
-// │ {1971, 1, 5}                │ {:C}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:d}       │ 01/05/1971                               |
-// │ {1971, 1, 5}                │ {:D}       │ 1/05/1971                                |
-// │ {1971, 1, 5}                │ {:e}       │ 00                                       |
-// │ {1971, 1, 5}                │ {:E}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:f}       │ Tue Jan  5 00:00:00 1971                 |
-// │ {1971, 1, 5}                │ {:F}       │ Tue Jan  5 00:00:00 1971                 |
-// │ {1971, 1, 5}                │ {:g}       │ Tue Jan  5 00:00:00 1971                 |
-// │ {1971, 1, 5}                │ {:G}       │ Tue Jan  5 00:00:00 1971                 |
-// │ {1971, 1, 5}                │ {:h}       │ Tue                                      |
-// │ {1971, 1, 5}                │ {:H}       │ Tuesday                                  |
-// │ {1971, 1, 5}                │ {:i}       │ 05                                       |
-// │ {1971, 1, 5}                │ {:I}       │ 5                                        |
-// │ {1971, 1, 5}                │ {:j}       │ Jan                                      |
-// │ {1971, 1, 5}                │ {:J}       │ January                                  |
-// │ {1971, 1, 5}                │ {:k}       │ 01                                       |
-// │ {1971, 1, 5}                │ {:K}       │ 1                                        |
-// │ {1971, 1, 5}                │ {:l}       │ 71                                       |
-// │ {1971, 1, 5}                │ {:L}       │ 1971                                     |
-// │ {1971, 1, 5}                │ {:m}       │ 1971                                     |
-// │ {1971, 1, 5}                │ {:M}       │ January 5                                |
-// │ {1971, 1, 5}                │ {:n}       │ Tuesday, 5 January 1971                  |
-// │ {1971, 1, 5}                │ {:n}       │ Tuesday, 5 January 1971 0:00:00          |
-// │ {1971, 1, 5}                │ {:o}       │ 5 January 1971                           |
-// │ {1971, 1, 5}                │ {:O}       │ 5 January 1971                           |
-// │ {1971, 1, 5}                │ {:p}       │ 00                                       |
-// │ {1971, 1, 5}                │ {:P}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:s}       │ 1971-01-05T00:00:00.0000000              |
-// │ {1971, 1, 5}                │ {:S}       │ 1971-01-05T00:00:00.000                  |
-// │ {1971, 1, 5}                │ {:t}       │ 00:00:00                                 |
-// │ {1971, 1, 5}                │ {:T}       │ 0:00:00                                  |
-// │ {1971, 1, 5}                │ {:u}       │ 1971-01-05 00:00:00                      |
-// │ {1971, 1, 5}                │ {:U}       │ Tuesday, 5 January 1971 0:00:00          |
-// │ {1971, 1, 5}                │ {:v}       │ 00:00                                    |
-// │ {1971, 1, 5}                │ {:V}       │ 0:00                                     |
-// │ {1971, 1, 5}                │ {:w}       │ 00                                       |
-// │ {1971, 1, 5}                │ {:W}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:x}       │ 00                                       |
-// │ {1971, 1, 5}                │ {:X}       │ 0                                        |
-// │ {1971, 1, 5}                │ {:y}       │ January 71                               |
-// │ {1971, 1, 5}                │ {:Y}       │ January 1971                             |
-// │ {1971, 1, 5}                │ {:z}       │ UTC                                      |
-// │ {1971, 1, 5}                │ {:Z}       │ UTC                                      |
+// │ {1971, 1, 5}                │ {}         │ Tue Jan  5 00:00:00 1971                 │
+// │ {1971, 1, 5}                │ {:a}       │ AM                                       │
+// │ {1971, 1, 5}                │ {:b}       │ 000                                      │
+// │ {1971, 1, 5}                │ {:B}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:c}       │ 0000000                                  │
+// │ {1971, 1, 5}                │ {:C}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:d}       │ 01/05/1971                               │
+// │ {1971, 1, 5}                │ {:D}       │ 1/05/1971                                │
+// │ {1971, 1, 5}                │ {:e}       │ 00                                       │
+// │ {1971, 1, 5}                │ {:E}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:f}       │ Tue Jan  5 00:00:00 1971                 │
+// │ {1971, 1, 5}                │ {:F}       │ Tue Jan  5 00:00:00 1971                 │
+// │ {1971, 1, 5}                │ {:g}       │ Tue Jan  5 00:00:00 1971                 │
+// │ {1971, 1, 5}                │ {:G}       │ Tue Jan  5 00:00:00 1971                 │
+// │ {1971, 1, 5}                │ {:h}       │ Tue                                      │
+// │ {1971, 1, 5}                │ {:H}       │ Tuesday                                  │
+// │ {1971, 1, 5}                │ {:i}       │ 05                                       │
+// │ {1971, 1, 5}                │ {:I}       │ 5                                        │
+// │ {1971, 1, 5}                │ {:j}       │ Jan                                      │
+// │ {1971, 1, 5}                │ {:J}       │ January                                  │
+// │ {1971, 1, 5}                │ {:k}       │ 01                                       │
+// │ {1971, 1, 5}                │ {:K}       │ 1                                        │
+// │ {1971, 1, 5}                │ {:l}       │ 71                                       │
+// │ {1971, 1, 5}                │ {:L}       │ 1971                                     │
+// │ {1971, 1, 5}                │ {:m}       │ 1971                                     │
+// │ {1971, 1, 5}                │ {:M}       │ January 5                                │
+// │ {1971, 1, 5}                │ {:n}       │ Tuesday, 5 January 1971                  │
+// │ {1971, 1, 5}                │ {:n}       │ Tuesday, 5 January 1971 0:00:00          │
+// │ {1971, 1, 5}                │ {:o}       │ 5 January 1971                           │
+// │ {1971, 1, 5}                │ {:O}       │ 5 January 1971                           │
+// │ {1971, 1, 5}                │ {:p}       │ 00                                       │
+// │ {1971, 1, 5}                │ {:P}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:s}       │ 1971-01-05T00:00:00.0000000              │
+// │ {1971, 1, 5}                │ {:S}       │ 1971-01-05T00:00:00.000                  │
+// │ {1971, 1, 5}                │ {:t}       │ 00:00:00                                 │
+// │ {1971, 1, 5}                │ {:T}       │ 0:00:00                                  │
+// │ {1971, 1, 5}                │ {:u}       │ 1971-01-05 00:00:00                      │
+// │ {1971, 1, 5}                │ {:U}       │ Tuesday, 5 January 1971 0:00:00          │
+// │ {1971, 1, 5}                │ {:v}       │ 00:00                                    │
+// │ {1971, 1, 5}                │ {:V}       │ 0:00                                     │
+// │ {1971, 1, 5}                │ {:w}       │ 00                                       │
+// │ {1971, 1, 5}                │ {:W}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:x}       │ 00                                       │
+// │ {1971, 1, 5}                │ {:X}       │ 0                                        │
+// │ {1971, 1, 5}                │ {:y}       │ January 71                               │
+// │ {1971, 1, 5}                │ {:Y}       │ January 1971                             │
+// │ {1971, 1, 5}                │ {:z}       │ UTC                                      │
+// │ {1971, 1, 5}                │ {:Z}       │ UTC                                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ {1971, 1, 5, 21, 30, 3}     │ {}         │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:a}       │ PM                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:b}       │ 000                                      |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:B}       │ 0                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:c}       │ 0000000                                  |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:C}       │ 0                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:d}       │ 01/05/1971                               |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:D}       │ 1/05/1971                                |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:e}       │ 03                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:E}       │ 3                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:f}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:F}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:g}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:G}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:h}       │ Tue                                      |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:H}       │ Tuesday                                  |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:i}       │ 05                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:I}       │ 5                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:j}       │ Jan                                      |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:J}       │ January                                  |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:k}       │ 01                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:K}       │ 1                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:l}       │ 71                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:L}       │ 1971                                     |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:m}       │ 1971                                     |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:M}       │ January 5                                |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:n}       │ Tuesday, 5 January 1971                  |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:n}       │ Tuesday, 5 January 1971 21:30:03         |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:o}       │ 5 January 1971                           |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:O}       │ 5 January 1971                           |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:p}       │ 30                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:P}       │ 30                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:s}       │ 1971-01-05T21:30:03.0000000              |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:S}       │ 1971-01-05T21:30:03.000                  |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:t}       │ 21:30:03                                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:T}       │ 21:30:03                                 |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:u}       │ 1971-01-05 21:30:03                      |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:U}       │ Tuesday, 5 January 1971 21:30:03         |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:v}       │ 21:30                                    |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:V}       │ 21:30                                    |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:w}       │ 21                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:W}       │ 21                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:x}       │ 09                                       |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:X}       │ 9                                        |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:y}       │ January 71                               |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:Y}       │ January 1971                             |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:z}       │ UTC                                      |
-// │ {1971, 1, 5, 21, 30, 3}     │ {:Z}       │ UTC                                      |
+// │ {1971, 1, 5, 21, 30, 3}     │ {}         │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:a}       │ PM                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:b}       │ 000                                      │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:B}       │ 0                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:c}       │ 0000000                                  │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:C}       │ 0                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:d}       │ 01/05/1971                               │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:D}       │ 1/05/1971                                │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:e}       │ 03                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:E}       │ 3                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:h}       │ Tue                                      │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:H}       │ Tuesday                                  │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:i}       │ 05                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:I}       │ 5                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:j}       │ Jan                                      │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:J}       │ January                                  │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:k}       │ 01                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:K}       │ 1                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:l}       │ 71                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:L}       │ 1971                                     │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:m}       │ 1971                                     │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:M}       │ January 5                                │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:n}       │ Tuesday, 5 January 1971                  │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:n}       │ Tuesday, 5 January 1971 21:30:03         │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:o}       │ 5 January 1971                           │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:O}       │ 5 January 1971                           │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:p}       │ 30                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:P}       │ 30                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:s}       │ 1971-01-05T21:30:03.0000000              │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:S}       │ 1971-01-05T21:30:03.000                  │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:t}       │ 21:30:03                                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:T}       │ 21:30:03                                 │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:u}       │ 1971-01-05 21:30:03                      │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:U}       │ Tuesday, 5 January 1971 21:30:03         │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:v}       │ 21:30                                    │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:V}       │ 21:30                                    │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:w}       │ 21                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:W}       │ 21                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:x}       │ 09                                       │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:X}       │ 9                                        │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:y}       │ January 71                               │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:Y}       │ January 1971                             │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:z}       │ UTC                                      │
+// │ {1971, 1, 5, 21, 30, 3}     │ {:Z}       │ UTC                                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {}         │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:a}       │ PM                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:b}       │ 042                                      |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:B}       │ 42                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:c}       │ 0000000                                  |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:C}       │ 0                                        |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:d}       │ 01/05/1971                               |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:D}       │ 1/05/1971                                |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:e}       │ 03                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:E}       │ 3                                        |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:f}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:F}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:g}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ Tue Jan  5 21:30:03 1971                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:h}       │ Tue                                      |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:H}       │ Tuesday                                  |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:i}       │ 05                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:I}       │ 5                                        |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:j}       │ Jan                                      |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:J}       │ January                                  |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:k}       │ 01                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:K}       │ 1                                        |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:l}       │ 71                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:L}       │ 1971                                     |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:m}       │ 1971                                     |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:M}       │ January 5                                |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:n}       │ Tuesday, 5 January 1971                  |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:n}       │ Tuesday, 5 January 1971 21:30:03         |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:o}       │ 5 January 1971                           |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:O}       │ 5 January 1971                           |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:p}       │ 30                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:P}       │ 30                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:s}       │ 1971-01-05T21:30:03.0420000              |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:S}       │ 1971-01-05T21:30:03.042                  |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:t}       │ 21:30:03                                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:T}       │ 21:30:03                                 |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:u}       │ 1971-01-05 21:30:03                      |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:U}       │ Tuesday, 5 January 1971 21:30:03         |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:v}       │ 21:30                                    |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:V}       │ 21:30                                    |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:w}       │ 21                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:W}       │ 21                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:x}       │ 09                                       |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:X}       │ 9                                        |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:y}       │ January 71                               |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:Y}       │ January 1971                             |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:z}       │ UTC                                      |
-// │ {1971, 1, 5, 21, 30, 3, 42} │ {:Z}       │ UTC                                      |
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {}         │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:a}       │ PM                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:b}       │ 042                                      │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:B}       │ 42                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:c}       │ 0000000                                  │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:C}       │ 0                                        │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:d}       │ 01/05/1971                               │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:D}       │ 1/05/1971                                │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:e}       │ 03                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:E}       │ 3                                        │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:h}       │ Tue                                      │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:H}       │ Tuesday                                  │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:i}       │ 05                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:I}       │ 5                                        │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:j}       │ Jan                                      │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:J}       │ January                                  │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:k}       │ 01                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:K}       │ 1                                        │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:l}       │ 71                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:L}       │ 1971                                     │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:m}       │ 1971                                     │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:M}       │ January 5                                │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:n}       │ Tuesday, 5 January 1971                  │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:n}       │ Tuesday, 5 January 1971 21:30:03         │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:o}       │ 5 January 1971                           │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:O}       │ 5 January 1971                           │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:p}       │ 30                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:P}       │ 30                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:s}       │ 1971-01-05T21:30:03.0420000              │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:S}       │ 1971-01-05T21:30:03.042                  │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:t}       │ 21:30:03                                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:T}       │ 21:30:03                                 │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:u}       │ 1971-01-05 21:30:03                      │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:U}       │ Tuesday, 5 January 1971 21:30:03         │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:v}       │ 21:30                                    │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:V}       │ 21:30                                    │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:w}       │ 21                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:W}       │ 21                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:x}       │ 09                                       │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:X}       │ 9                                        │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:y}       │ January 71                               │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:Y}       │ January 1971                             │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:z}       │ UTC                                      │
+// │ {1971, 1, 5, 21, 30, 3, 42} │ {:Z}       │ UTC                                      │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ now                         │ {}         │ Sun Dec 15 12:39:49 2024                 |
-// │ now                         │ {:a}       │ PM                                       |
-// │ now                         │ {:b}       │ 769                                      |
-// │ now                         │ {:B}       │ 769                                      |
-// │ now                         │ {:c}       │ 0009240                                  |
-// │ now                         │ {:C}       │ 9240                                     |
-// │ now                         │ {:d}       │ 12/15/2024                               |
-// │ now                         │ {:D}       │ 12/15/2024                               |
-// │ now                         │ {:e}       │ 49                                       |
-// │ now                         │ {:E}       │ 49                                       |
-// │ now                         │ {:f}       │ Sun Dec 15 12:39:49 2024                 |
-// │ now                         │ {:F}       │ Sun Dec 15 12:39:49 2024                 |
-// │ now                         │ {:g}       │ Sun Dec 15 12:39:49 2024                 |
-// │ now                         │ {:G}       │ Sun Dec 15 12:39:49 2024                 |
-// │ now                         │ {:h}       │ Sun                                      |
-// │ now                         │ {:H}       │ Sunday                                   |
-// │ now                         │ {:i}       │ 15                                       |
-// │ now                         │ {:I}       │ 15                                       |
-// │ now                         │ {:j}       │ Dec                                      |
-// │ now                         │ {:J}       │ December                                 |
-// │ now                         │ {:k}       │ 12                                       |
-// │ now                         │ {:K}       │ 12                                       |
-// │ now                         │ {:l}       │ 24                                       |
-// │ now                         │ {:L}       │ 2024                                     |
-// │ now                         │ {:m}       │ 2024                                     |
-// │ now                         │ {:M}       │ December 15                              |
-// │ now                         │ {:n}       │ Sunday, 15 December 2024                 |
-// │ now                         │ {:n}       │ Sunday, 15 December 2024 12:39:49        |
-// │ now                         │ {:o}       │ 15 December 2024                         |
-// │ now                         │ {:O}       │ 15 December 2024                         |
-// │ now                         │ {:p}       │ 39                                       |
-// │ now                         │ {:P}       │ 39                                       |
-// │ now                         │ {:s}       │ 2024-12-15T12:39:49.7699240              |
-// │ now                         │ {:S}       │ 2024-12-15T12:39:49.769                  |
-// │ now                         │ {:t}       │ 12:39:49                                 |
-// │ now                         │ {:T}       │ 12:39:49                                 |
-// │ now                         │ {:u}       │ 2024-12-15 12:39:49                      |
-// │ now                         │ {:U}       │ Sunday, 15 December 2024 12:39:49        |
-// │ now                         │ {:v}       │ 12:39                                    |
-// │ now                         │ {:V}       │ 12:39                                    |
-// │ now                         │ {:w}       │ 12                                       |
-// │ now                         │ {:W}       │ 12                                       |
-// │ now                         │ {:x}       │ 00                                       |
-// │ now                         │ {:X}       │ 0                                        |
-// │ now                         │ {:y}       │ December 24                              |
-// │ now                         │ {:Y}       │ December 2024                            |
-// │ now                         │ {:z}       │                                          |
-// │ now                         │ {:Z}       │                                          |
+// │ now                         │ {}         │ Sun Dec 15 12:39:49 2024                 │
+// │ now                         │ {:a}       │ PM                                       │
+// │ now                         │ {:b}       │ 769                                      │
+// │ now                         │ {:B}       │ 769                                      │
+// │ now                         │ {:c}       │ 0009240                                  │
+// │ now                         │ {:C}       │ 9240                                     │
+// │ now                         │ {:d}       │ 12/15/2024                               │
+// │ now                         │ {:D}       │ 12/15/2024                               │
+// │ now                         │ {:e}       │ 49                                       │
+// │ now                         │ {:E}       │ 49                                       │
+// │ now                         │ {:f}       │ Sun Dec 15 12:39:49 2024                 │
+// │ now                         │ {:F}       │ Sun Dec 15 12:39:49 2024                 │
+// │ now                         │ {:g}       │ Sun Dec 15 12:39:49 2024                 │
+// │ now                         │ {:G}       │ Sun Dec 15 12:39:49 2024                 │
+// │ now                         │ {:h}       │ Sun                                      │
+// │ now                         │ {:H}       │ Sunday                                   │
+// │ now                         │ {:i}       │ 15                                       │
+// │ now                         │ {:I}       │ 15                                       │
+// │ now                         │ {:j}       │ Dec                                      │
+// │ now                         │ {:J}       │ December                                 │
+// │ now                         │ {:k}       │ 12                                       │
+// │ now                         │ {:K}       │ 12                                       │
+// │ now                         │ {:l}       │ 24                                       │
+// │ now                         │ {:L}       │ 2024                                     │
+// │ now                         │ {:m}       │ 2024                                     │
+// │ now                         │ {:M}       │ December 15                              │
+// │ now                         │ {:n}       │ Sunday, 15 December 2024                 │
+// │ now                         │ {:n}       │ Sunday, 15 December 2024 12:39:49        │
+// │ now                         │ {:o}       │ 15 December 2024                         │
+// │ now                         │ {:O}       │ 15 December 2024                         │
+// │ now                         │ {:p}       │ 39                                       │
+// │ now                         │ {:P}       │ 39                                       │
+// │ now                         │ {:s}       │ 2024-12-15T12:39:49.7699240              │
+// │ now                         │ {:S}       │ 2024-12-15T12:39:49.769                  │
+// │ now                         │ {:t}       │ 12:39:49                                 │
+// │ now                         │ {:T}       │ 12:39:49                                 │
+// │ now                         │ {:u}       │ 2024-12-15 12:39:49                      │
+// │ now                         │ {:U}       │ Sunday, 15 December 2024 12:39:49        │
+// │ now                         │ {:v}       │ 12:39                                    │
+// │ now                         │ {:V}       │ 12:39                                    │
+// │ now                         │ {:w}       │ 12                                       │
+// │ now                         │ {:W}       │ 12                                       │
+// │ now                         │ {:x}       │ 00                                       │
+// │ now                         │ {:X}       │ 0                                        │
+// │ now                         │ {:y}       │ December 24                              │
+// │ now                         │ {:Y}       │ December 2024                            │
+// │ now                         │ {:z}       │                                          │
+// │ now                         │ {:Z}       │                                          │
 // ├─────────────────────────────┼────────────┼──────────────────────────────────────────┤
-// │ utc_now                     │ {}         │ Sun Dec 15 11:39:49 2024                 |
-// │ utc_now                     │ {:a}       │ AM                                       |
-// │ utc_now                     │ {:b}       │ 772                                      |
-// │ utc_now                     │ {:B}       │ 772                                      |
-// │ utc_now                     │ {:c}       │ 0003870                                  |
-// │ utc_now                     │ {:C}       │ 3870                                     |
-// │ utc_now                     │ {:d}       │ 12/15/2024                               |
-// │ utc_now                     │ {:D}       │ 12/15/2024                               |
-// │ utc_now                     │ {:e}       │ 49                                       |
-// │ utc_now                     │ {:E}       │ 49                                       |
-// │ utc_now                     │ {:f}       │ Sun Dec 15 11:39:49 2024                 |
-// │ utc_now                     │ {:F}       │ Sun Dec 15 11:39:49 2024                 |
-// │ utc_now                     │ {:g}       │ Sun Dec 15 11:39:49 2024                 |
-// │ utc_now                     │ {:G}       │ Sun Dec 15 11:39:49 2024                 |
-// │ utc_now                     │ {:h}       │ Sun                                      |
-// │ utc_now                     │ {:H}       │ Sunday                                   |
-// │ utc_now                     │ {:i}       │ 15                                       |
-// │ utc_now                     │ {:I}       │ 15                                       |
-// │ utc_now                     │ {:j}       │ Dec                                      |
-// │ utc_now                     │ {:J}       │ December                                 |
-// │ utc_now                     │ {:k}       │ 12                                       |
-// │ utc_now                     │ {:K}       │ 12                                       |
-// │ utc_now                     │ {:l}       │ 24                                       |
-// │ utc_now                     │ {:L}       │ 2024                                     |
-// │ utc_now                     │ {:m}       │ 2024                                     |
-// │ utc_now                     │ {:M}       │ December 15                              |
-// │ utc_now                     │ {:n}       │ Sunday, 15 December 2024                 |
-// │ utc_now                     │ {:n}       │ Sunday, 15 December 2024 11:39:49        |
-// │ utc_now                     │ {:o}       │ 15 December 2024                         |
-// │ utc_now                     │ {:O}       │ 15 December 2024                         |
-// │ utc_now                     │ {:p}       │ 39                                       |
-// │ utc_now                     │ {:P}       │ 39                                       |
-// │ utc_now                     │ {:s}       │ 2024-12-15T11:39:49.7723870              |
-// │ utc_now                     │ {:S}       │ 2024-12-15T11:39:49.772                  |
-// │ utc_now                     │ {:t}       │ 11:39:49                                 |
-// │ utc_now                     │ {:T}       │ 11:39:49                                 |
-// │ utc_now                     │ {:u}       │ 2024-12-15 11:39:49                      |
-// │ utc_now                     │ {:U}       │ Sunday, 15 December 2024 11:39:49        |
-// │ utc_now                     │ {:v}       │ 11:39                                    |
-// │ utc_now                     │ {:V}       │ 11:39                                    |
-// │ utc_now                     │ {:w}       │ 11                                       |
-// │ utc_now                     │ {:W}       │ 11                                       |
-// │ utc_now                     │ {:x}       │ 11                                       |
-// │ utc_now                     │ {:X}       │ 11                                       |
-// │ utc_now                     │ {:y}       │ December 24                              |
-// │ utc_now                     │ {:Y}       │ December 2024                            |
-// │ utc_now                     │ {:z}       │ UTC                                      |
-// │ utc_now                     │ {:Z}       │ UTC                                      |
+// │ utc_now                     │ {}         │ Sun Dec 15 11:39:49 2024                 │
+// │ utc_now                     │ {:a}       │ AM                                       │
+// │ utc_now                     │ {:b}       │ 772                                      │
+// │ utc_now                     │ {:B}       │ 772                                      │
+// │ utc_now                     │ {:c}       │ 0003870                                  │
+// │ utc_now                     │ {:C}       │ 3870                                     │
+// │ utc_now                     │ {:d}       │ 12/15/2024                               │
+// │ utc_now                     │ {:D}       │ 12/15/2024                               │
+// │ utc_now                     │ {:e}       │ 49                                       │
+// │ utc_now                     │ {:E}       │ 49                                       │
+// │ utc_now                     │ {:f}       │ Sun Dec 15 11:39:49 2024                 │
+// │ utc_now                     │ {:F}       │ Sun Dec 15 11:39:49 2024                 │
+// │ utc_now                     │ {:g}       │ Sun Dec 15 11:39:49 2024                 │
+// │ utc_now                     │ {:G}       │ Sun Dec 15 11:39:49 2024                 │
+// │ utc_now                     │ {:h}       │ Sun                                      │
+// │ utc_now                     │ {:H}       │ Sunday                                   │
+// │ utc_now                     │ {:i}       │ 15                                       │
+// │ utc_now                     │ {:I}       │ 15                                       │
+// │ utc_now                     │ {:j}       │ Dec                                      │
+// │ utc_now                     │ {:J}       │ December                                 │
+// │ utc_now                     │ {:k}       │ 12                                       │
+// │ utc_now                     │ {:K}       │ 12                                       │
+// │ utc_now                     │ {:l}       │ 24                                       │
+// │ utc_now                     │ {:L}       │ 2024                                     │
+// │ utc_now                     │ {:m}       │ 2024                                     │
+// │ utc_now                     │ {:M}       │ December 15                              │
+// │ utc_now                     │ {:n}       │ Sunday, 15 December 2024                 │
+// │ utc_now                     │ {:n}       │ Sunday, 15 December 2024 11:39:49        │
+// │ utc_now                     │ {:o}       │ 15 December 2024                         │
+// │ utc_now                     │ {:O}       │ 15 December 2024                         │
+// │ utc_now                     │ {:p}       │ 39                                       │
+// │ utc_now                     │ {:P}       │ 39                                       │
+// │ utc_now                     │ {:s}       │ 2024-12-15T11:39:49.7723870              │
+// │ utc_now                     │ {:S}       │ 2024-12-15T11:39:49.772                  │
+// │ utc_now                     │ {:t}       │ 11:39:49                                 │
+// │ utc_now                     │ {:T}       │ 11:39:49                                 │
+// │ utc_now                     │ {:u}       │ 2024-12-15 11:39:49                      │
+// │ utc_now                     │ {:U}       │ Sunday, 15 December 2024 11:39:49        │
+// │ utc_now                     │ {:v}       │ 11:39                                    │
+// │ utc_now                     │ {:V}       │ 11:39                                    │
+// │ utc_now                     │ {:w}       │ 11                                       │
+// │ utc_now                     │ {:W}       │ 11                                       │
+// │ utc_now                     │ {:x}       │ 11                                       │
+// │ utc_now                     │ {:X}       │ 11                                       │
+// │ utc_now                     │ {:y}       │ December 24                              │
+// │ utc_now                     │ {:Y}       │ December 2024                            │
+// │ utc_now                     │ {:z}       │ UTC                                      │
+// │ utc_now                     │ {:Z}       │ UTC                                      │
 // └─────────────────────────────┴────────────┴──────────────────────────────────────────┘
