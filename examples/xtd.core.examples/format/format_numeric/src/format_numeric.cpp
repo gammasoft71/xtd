@@ -51,7 +51,6 @@ auto print_number(const string& text, int value, cap c) {
     console::out << "└───────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
 }
 
-
 auto main() -> int {
   std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
   print_number("0", 0, cap::title);

@@ -1,7 +1,6 @@
 #include <xtd/console>
 #include <xtd/environment>
-#include <xtd/string>
-#include <xtd/u32string>
+#include <xtd/format>
 
 using namespace xtd;
 
@@ -14,14 +13,14 @@ auto print_character(const u32string& text, char32 value, cap c) {
     << "│  char     │   format   │      representation              │" << environment::new_line
     << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
-  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << u32string::format("{}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << u32string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << u32string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << u32string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << u32string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << u32string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << u32string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
-  console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << u32string::format("{:ANY_FMT}", value).pad_right(32) << " |" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {}         │ " << format(U"{}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:g}       │ " << format(U"{:g}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:G}       │ " << format(U"{:G}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:d}       │ " << format(U"{:d}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:D}       │ " << format(U"{:D}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:x}       │ " << format(U"{:x}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << format(U"{:X}", value).pad_right(32) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << format(U"{:ANY_FMT}", value).pad_right(32) << " │" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
@@ -44,48 +43,48 @@ auto main() -> int {
 // ┌───────────┬────────────┬──────────────────────────────────┐
 // │  char     │   format   │      representation              │
 // ├───────────┼────────────┼──────────────────────────────────┤
-// │ a         │ {}         │ a                                |
-// │ a         │ {:g}       │ a                                |
-// │ a         │ {:G}       │ a                                |
-// │ a         │ {:d}       │ a                                |
-// │ a         │ {:D}       │ a                                |
-// │ a         │ {:x}       │ a                                |
-// │ a         │ {:X}       │ a                                |
-// │ a         │ {:ANY_FMT} │ a                                |
+// │ a         │ {}         │ a                                │
+// │ a         │ {:g}       │ a                                │
+// │ a         │ {:G}       │ a                                │
+// │ a         │ {:d}       │ a                                │
+// │ a         │ {:D}       │ a                                │
+// │ a         │ {:x}       │ a                                │
+// │ a         │ {:X}       │ a                                │
+// │ a         │ {:ANY_FMT} │ a                                │
 // ├───────────┼────────────┼──────────────────────────────────┤
-// │ 1         │ {}         │ 1                                |
-// │ 1         │ {:g}       │ 1                                |
-// │ 1         │ {:G}       │ 1                                |
-// │ 1         │ {:d}       │ 1                                |
-// │ 1         │ {:D}       │ 1                                |
-// │ 1         │ {:x}       │ 1                                |
-// │ 1         │ {:X}       │ 1                                |
-// │ 1         │ {:ANY_FMT} │ 1                                |
+// │ 1         │ {}         │ 1                                │
+// │ 1         │ {:g}       │ 1                                │
+// │ 1         │ {:G}       │ 1                                │
+// │ 1         │ {:d}       │ 1                                │
+// │ 1         │ {:D}       │ 1                                │
+// │ 1         │ {:x}       │ 1                                │
+// │ 1         │ {:X}       │ 1                                │
+// │ 1         │ {:ANY_FMT} │ 1                                │
 // ├───────────┼────────────┼──────────────────────────────────┤
-// │ 😃         │ {}         │ 😃                                |
-// │ 😃         │ {:g}       │ 😃                                |
-// │ 😃         │ {:G}       │ 😃                                |
-// │ 😃         │ {:d}       │ 😃                                |
-// │ 😃         │ {:D}       │ 😃                                |
-// │ 😃         │ {:x}       │ 😃                                |
-// │ 😃         │ {:X}       │ 😃                                |
-// │ 😃         │ {:ANY_FMT} │ 😃                                |
+// │ 😃         │ {}         │ 😃                                │
+// │ 😃         │ {:g}       │ 😃                                │
+// │ 😃         │ {:G}       │ 😃                                │
+// │ 😃         │ {:d}       │ 😃                                │
+// │ 😃         │ {:D}       │ 😃                                │
+// │ 😃         │ {:x}       │ 😃                                │
+// │ 😃         │ {:X}       │ 😃                                │
+// │ 😃         │ {:ANY_FMT} │ 😃                                │
 // ├───────────┼────────────┼──────────────────────────────────┤
-// │ 亰         │ {}         │ 亰                                |
-// │ 亰         │ {:g}       │ 亰                                |
-// │ 亰         │ {:G}       │ 亰                                |
-// │ 亰         │ {:d}       │ 亰                                |
-// │ 亰         │ {:D}       │ 亰                                |
-// │ 亰         │ {:x}       │ 亰                                |
-// │ 亰         │ {:X}       │ 亰                                |
-// │ 亰         │ {:ANY_FMT} │ 亰                                |
+// │ 亰         │ {}         │ 亰                                │
+// │ 亰         │ {:g}       │ 亰                                │
+// │ 亰         │ {:G}       │ 亰                                │
+// │ 亰         │ {:d}       │ 亰                                │
+// │ 亰         │ {:D}       │ 亰                                │
+// │ 亰         │ {:x}       │ 亰                                │
+// │ 亰         │ {:X}       │ 亰                                │
+// │ 亰         │ {:ANY_FMT} │ 亰                                │
 // ├───────────┼────────────┼──────────────────────────────────┤
-// │ 🐨         │ {}         │ 🐨                                |
-// │ 🐨         │ {:g}       │ 🐨                                |
-// │ 🐨         │ {:G}       │ 🐨                                |
-// │ 🐨         │ {:d}       │ 🐨                                |
-// │ 🐨         │ {:D}       │ 🐨                                |
-// │ 🐨         │ {:x}       │ 🐨                                |
-// │ 🐨         │ {:X}       │ 🐨                                |
-// │ 🐨         │ {:ANY_FMT} │ 🐨                                |
+// │ 🐨         │ {}         │ 🐨                                │
+// │ 🐨         │ {:g}       │ 🐨                                │
+// │ 🐨         │ {:G}       │ 🐨                                │
+// │ 🐨         │ {:d}       │ 🐨                                │
+// │ 🐨         │ {:D}       │ 🐨                                │
+// │ 🐨         │ {:x}       │ 🐨                                │
+// │ 🐨         │ {:X}       │ 🐨                                │
+// │ 🐨         │ {:ANY_FMT} │ 🐨                                │
 // └───────────┴────────────┴──────────────────────────────────┘

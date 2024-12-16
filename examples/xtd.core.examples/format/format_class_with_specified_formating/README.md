@@ -19,9 +19,48 @@ xtdc run
 # Output (with colors)
 
 ```
-Jean-Luc Picard (Captain)
-Jean-Luc Picard (Captain)
-Jean-Luc Picard
-Captain
+┌───────────────────────────────────────────────┬────────────┬──────────────────────────────────────────┐
+│  character                                    │   format   │      representation                      │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {}                                            │ {}         │  ()                                      │
+│ {}                                            │ {:F}       │  ()                                      │
+│ {}                                            │ {:N}       │                                          │
+│ {}                                            │ {:R}       │                                          │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Jean-Luc Picard", "Captain"}                │ {}         │ Jean-Luc Picard (Captain)                │
+│ {"Jean-Luc Picard", "Captain"}                │ {:F}       │ Jean-Luc Picard (Captain)                │
+│ {"Jean-Luc Picard", "Captain"}                │ {:N}       │ Jean-Luc Picard                          │
+│ {"Jean-Luc Picard", "Captain"}                │ {:R}       │ Captain                                  │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"William Riker", "Commander"}                │ {}         │ William Riker (Commander)                │
+│ {"William Riker", "Commander"}                │ {:F}       │ William Riker (Commander)                │
+│ {"William Riker", "Commander"}                │ {:N}       │ William Riker                            │
+│ {"William Riker", "Commander"}                │ {:R}       │ Commander                                │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Data", "Commander"}                         │ {}         │ Data (Commander)                         │
+│ {"Data", "Commander"}                         │ {:F}       │ Data (Commander)                         │
+│ {"Data", "Commander"}                         │ {:N}       │ Data                                     │
+│ {"Data", "Commander"}                         │ {:R}       │ Commander                                │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Beverly Crusher", "Commander"}              │ {}         │ Beverly Crusher (Commander)              │
+│ {"Beverly Crusher", "Commander"}              │ {:F}       │ Beverly Crusher (Commander)              │
+│ {"Beverly Crusher", "Commander"}              │ {:N}       │ Beverly Crusher                          │
+│ {"Beverly Crusher", "Commander"}              │ {:R}       │ Commander                                │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Geordi La Forge", "Lieutenant Commander"}   │ {}         │ Geordi La Forge (Lieutenant Commander)   │
+│ {"Geordi La Forge", "Lieutenant Commander"}   │ {:F}       │ Geordi La Forge (Lieutenant Commander)   │
+│ {"Geordi La Forge", "Lieutenant Commander"}   │ {:N}       │ Geordi La Forge                          │
+│ {"Geordi La Forge", "Lieutenant Commander"}   │ {:R}       │ Lieutenant Commander                     │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Worf", "Lieutenant Commander"}              │ {}         │ Worf (Lieutenant Commander)              │
+│ {"Worf", "Lieutenant Commander"}              │ {:F}       │ Worf (Lieutenant Commander)              │
+│ {"Worf", "Lieutenant Commander"}              │ {:N}       │ Worf                                     │
+│ {"Worf", "Lieutenant Commander"}              │ {:R}       │ Lieutenant Commander                     │
+├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
+│ {"Tasha Yar", "Lieutenant"}                   │ {}         │ Tasha Yar (Lieutenant)                   │
+│ {"Tasha Yar", "Lieutenant"}                   │ {:F}       │ Tasha Yar (Lieutenant)                   │
+│ {"Tasha Yar", "Lieutenant"}                   │ {:N}       │ Tasha Yar                                │
+│ {"Tasha Yar", "Lieutenant"}                   │ {:R}       │ Lieutenant                               │
+└───────────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘
 ```
 
