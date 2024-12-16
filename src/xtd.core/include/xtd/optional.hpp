@@ -159,12 +159,6 @@ namespace std {
 #endif
 /// @endcond
 
-/// @file
-/// @brief Contains xtd::null_opt alias.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
-#pragma once
-#include "optional.hpp"
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the null_opt alias on [std::nullopt_t](https://en.cppreference.com/w/cpp/utility/optional/nullopt_t).
