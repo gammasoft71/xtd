@@ -22,10 +22,10 @@ std::string __to_string_istringable_to_string(const xtd::istringable* obj);
 template<typename value_t>
 static std::string __to_string_polymorphic(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {
   auto value_ptr = &value;
-  if (dynamic_cast<const std::exception*>(value_ptr)) return std::string {"exception: "} + dynamic_cast<const std::exception&>(value).what();
   if (dynamic_cast<const xtd::iformatable*>(value_ptr)) return dynamic_cast<const xtd::iformatable&>(value).__opague_internal_formatable__(reinterpret_cast<intptr_t>(&fmt), reinterpret_cast<intptr_t>(&loc), 0, INTPTR_MAX);
   if (dynamic_cast<const xtd::istringable*>(value_ptr)) return __to_string_istringable_to_string(dynamic_cast<const xtd::istringable*>(&value));
   if (dynamic_cast<const xtd::object*>(value_ptr)) return __to_string_object_to_string(dynamic_cast<const xtd::object*>(value_ptr));
+  if (dynamic_cast<const std::exception*>(value_ptr)) return std::string {"exception: "} + dynamic_cast<const std::exception&>(value).what();
   __format_exception(typeid(value)); return {};
 }
 
