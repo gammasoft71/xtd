@@ -11,9 +11,9 @@ namespace xtd::tests {
   template <typename value_t>
   class format_string_fixed_point_tests;
   
-  test_class_attribute<format_string_fixed_point_tests<float>> string_fixed_point_format_tests_class_float_attr {"format_string_fixed_point_tests<float>"};
-  test_class_attribute<format_string_fixed_point_tests<double>> string_fixed_point_format_tests_class_double_attr {"format_string_fixed_point_tests<double>"};
-  test_class_attribute<format_string_fixed_point_tests<long double>> string_fixed_point_format_tests_class_long_double_attr {"format_string_fixed_point_tests<long_double>"};
+  test_class_attribute<format_string_fixed_point_tests<float>> format_string_fixed_point_tests_class_float_attr {"format_string_fixed_point_tests<float>"};
+  test_class_attribute<format_string_fixed_point_tests<double>> format_string_fixed_point_tests_class_double_attr {"format_string_fixed_point_tests<double>"};
+  test_class_attribute<format_string_fixed_point_tests<long double>> format_string_fixed_point_tests_class_long_double_attr {"format_string_fixed_point_tests<long_double>"};
   
   template<typename value_t>
   class format_string_fixed_point_tests : public test_class {
