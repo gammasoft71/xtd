@@ -33,7 +33,7 @@ auto main() -> int {
     println("2 : {:N}", char1);
     println("2 : {:B}", char1);
   } catch (const exception& e) {
-    println(e.to_string());
+    println(e);
   }
 }
 
