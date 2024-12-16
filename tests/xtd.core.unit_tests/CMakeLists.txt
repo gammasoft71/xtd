@@ -160,7 +160,7 @@ add_sources(
   src/xtd/tests/format_u16string_object_without_xtd_to_string_tests.cpp
   src/xtd/tests/format_u16string_string_tests.cpp
   src/xtd/tests/format_u16string_tm_tests.cpp
-  src/xtd/tests/format_u16string_boolean_tests.cpp
+  src/xtd/tests/format_u32string_boolean_tests.cpp
   src/xtd/tests/format_u32string_date_time_tests.cpp
   src/xtd/tests/format_u32string_duration_tests.cpp
   src/xtd/tests/format_u32string_enum_tests.cpp
@@ -182,6 +182,17 @@ add_sources(
   src/xtd/tests/format_u8string_object_without_xtd_to_string_tests.cpp
   src/xtd/tests/format_u8string_string_tests.cpp
   src/xtd/tests/format_u8string_tm_tests.cpp
+  src/xtd/tests/format_wstring_boolean_tests.cpp
+  src/xtd/tests/format_wstring_date_time_tests.cpp
+  src/xtd/tests/format_wstring_duration_tests.cpp
+  src/xtd/tests/format_wstring_enum_tests.cpp
+  src/xtd/tests/format_wstring_enum_class_tests.cpp
+  src/xtd/tests/format_wstring_fixed_point_tests.cpp
+  src/xtd/tests/format_wstring_numeric_tests.cpp
+  src/xtd/tests/format_wstring_object_tests.cpp
+  src/xtd/tests/format_wstring_object_without_xtd_to_string_tests.cpp
+  src/xtd/tests/format_wstring_string_tests.cpp
+  src/xtd/tests/format_wstring_tm_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/get_know_folder_path.hpp
   src/xtd/tests/guid_tests.cpp
@@ -257,16 +268,6 @@ add_sources(
   src/xtd/tests/uri_tests.cpp
   src/xtd/tests/ustring_tests.cpp
   src/xtd/tests/version_tests.cpp
-  src/xtd/tests/wstring_boolean_format_tests.cpp
-  src/xtd/tests/wstring_date_time_format_tests.cpp
-  src/xtd/tests/wstring_duration_format_tests.cpp
-  src/xtd/tests/wstring_enum_format_tests.cpp
-  src/xtd/tests/wstring_enum_class_format_tests.cpp
-  src/xtd/tests/wstring_fixed_point_format_tests.cpp
-  src/xtd/tests/wstring_numeric_format_tests.cpp
-  src/xtd/tests/wstring_object_format_tests.cpp
-  src/xtd/tests/wstring_object_format_without_xtd_to_string_tests.cpp
-  src/xtd/tests/wstring_string_format_tests.cpp
   src/xtd/tests/xml_syntax_exception_tests.cpp
   src/xtd/text/tests/basic_string_builder_tests.cpp
   src/xtd/threading/tasks/tests/task_canceled_exception_tests.cpp
