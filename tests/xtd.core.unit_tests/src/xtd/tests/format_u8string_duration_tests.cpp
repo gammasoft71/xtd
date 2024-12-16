@@ -8,6 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
+#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_duration_tests) {
     void test_method_(format_with_default_argument) {
       assert::are_equal(u8"1.02:03:32:024000500", format(u8"{0}", std::chrono::hours {26} + std::chrono::minutes {3} + std::chrono::seconds {32} + std::chrono::milliseconds {24} + std::chrono::nanoseconds {500}));
@@ -189,4 +190,5 @@ namespace xtd::tests {
       assert::are_equal(u8"0000000", format(u8"{0:T}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32}));
     }
   };
+#endif
 }
