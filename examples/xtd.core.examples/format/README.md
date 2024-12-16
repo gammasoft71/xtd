@@ -15,7 +15,7 @@
 * [format_enum_class](format_enum_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum class.
 * [format_exception](format_exception/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with exceptions (std::exception and inherited classes, xtd::system_exception and inherited classes).
 * [format_floating_point](format_floating_point/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with floating point (float, double and long double).
-* [format_numeric](format_numeric/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
+* [format_number](format_number/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
 * [format_nullptr](format_nullptr/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with nullptr and null.
 * [format_optional](format_optional/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::format_optional.
 * [format_pair](format_pair/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::pair.
