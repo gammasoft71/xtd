@@ -149,6 +149,17 @@ add_sources(
   src/xtd/tests/format_string_object_without_xtd_to_string_tests.cpp
   src/xtd/tests/format_string_string_tests.cpp
   src/xtd/tests/format_string_tm_tests.cpp
+  src/xtd/tests/format_u8string_boolean_tests.cpp
+  src/xtd/tests/format_u8string_date_time_tests.cpp
+  src/xtd/tests/format_u8string_duration_tests.cpp
+  src/xtd/tests/format_u8string_enum_tests.cpp
+  src/xtd/tests/format_u8string_enum_class_tests.cpp
+  src/xtd/tests/format_u8string_fixed_point_tests.cpp
+  src/xtd/tests/format_u8string_numeric_tests.cpp
+  src/xtd/tests/format_u8string_object_tests.cpp
+  src/xtd/tests/format_u8string_object_without_xtd_to_string_tests.cpp
+  src/xtd/tests/format_u8string_string_tests.cpp
+  src/xtd/tests/format_u8string_tm_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/get_know_folder_path.hpp
   src/xtd/tests/guid_tests.cpp
