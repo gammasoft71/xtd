@@ -1,6 +1,6 @@
 # format_optional
 
-Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with [std::optional](https://en.cppreference.com/w/cpp/utility/optional).
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with [xtd::optional](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga17559da5e7e089b9cfa775bf7bb40263).
 
 ## Sources
 
@@ -20,6 +20,7 @@ xtdc run
 
 ```
 (null)
-(Optional string)
+(null)
+(string value)
 ```
 

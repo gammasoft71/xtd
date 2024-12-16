@@ -25,7 +25,7 @@ auto main() -> int {
   console::out << string::format("{}", *uptr) << environment::new_line;
 }
 
-// This code produces the following output :
+// This code can produce the following output :
 //
 // (null)
 // 0x1007380f0
