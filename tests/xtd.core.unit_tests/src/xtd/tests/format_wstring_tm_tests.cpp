@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <xtd/string>
+#include <xtd/format>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
@@ -8,9 +8,9 @@
 
 #include <time.h>
 #if defined(_WIN32)
-static time_t __make_utc_date_time(struct tm* tm) noexcept { return _mkgmtime(tm); }
+static time_t __make_utc_date_time(struct tm* tm) noexcept {return _mkgmtime(tm);}
 #else
-static time_t __make_utc_date_time(struct tm* tm) noexcept { return timegm(tm); }
+static time_t __make_utc_date_time(struct tm* tm) noexcept {return timegm(tm);}
 #endif
 
 using namespace xtd;
@@ -81,15 +81,13 @@ namespace {
 
 namespace xtd::tests {
   template <typename value_t>
-  class wstring_date_time_format_tests;
+  class format_wstring_tm_tests;
   
-  #if !defined(_WIN32)
-  test_class_attribute<wstring_date_time_format_tests<std::tm>> wstring_date_time_format_tests_class_std_tm_attr {"wstring_date_time_format_tests<std::tm>"};
-  test_class_attribute<wstring_date_time_format_tests<std::chrono::system_clock::time_point>> wstring_date_time_format_tests_class_std_chrono_system_clock_time_point_attr {"wstring_date_time_format_tests<std::chrono::system_clock::time_point>"};
-  #endif
+  test_class_attribute<format_wstring_tm_tests<std::tm>> format_wstring_tm_tests_class_std_tm_attr {"format_wstring_tm_tests<std::tm>"};
+  test_class_attribute<format_wstring_tm_tests<std::chrono::system_clock::time_point>> format_wstring_tm_tests_class_std_chrono_system_clock_time_point_attr {"format_wstring_tm_tests<std::chrono::system_clock::time_point>"};
   
   template<typename value_t>
-  class wstring_date_time_format_tests : public test_class {
+  class format_wstring_tm_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
@@ -101,227 +99,226 @@ namespace xtd::tests {
     
     void test_method_(format_date_time_local_with_std_tm_with_default_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_left_alignment) {
       #if defined(__APPLE__)
-      assert::are_equal(L"           Wed Jan  2 03:04:05 2019", string::format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"           Wed Jan  2 03:04:05 2019", format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"                1/2/2019 3:04:05 AM", string::format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"                1/2/2019 3:04:05 AM", format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"    Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", format(L"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_left_alignment_wth_plus) {
       #if defined(__APPLE__)
-      assert::are_equal(L"           Wed Jan  2 03:04:05 2019", string::format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"           Wed Jan  2 03:04:05 2019", format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"                1/2/2019 3:04:05 AM", string::format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"                1/2/2019 3:04:05 AM", format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"    Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", format(L"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_left_to_zero) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_right_alignment) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019           ", string::format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019           ", format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM                ", string::format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM                ", format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_right_alignment_to_zero) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_alignment_empty) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_alignment_invalid) {
-      assert::throws<format_exception>([] {string::format(L"{0,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {format(L"{0,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_date_argument_and_zero_fill) {
-      assert::are_equal(L"01/02/2019", string::format(L"{0:d}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"01/02/2019", format(L"{0:d}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_date_argument) {
-      assert::are_equal(L"1/02/2019", string::format(L"{0:D}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"1/02/2019", format(L"{0:D}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_utc_with_std_tm_with_alternative_full_date_time_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_utc_with_std_tm_with_full_date_time_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_alternative_general_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_general_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"Wed Jan  2 03:04:05 2019", string::format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wed Jan  2 03:04:05 2019", format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #elif defined(_WIN32)
-      assert::are_equal(L"1/2/2019 3:04:05 AM", string::format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #else
-      string_assert::starts_with(L"Wed 02 Jan 2019 03:04:05 AM", string::format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
       #endif
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_brief_weekday_name_argument) {
-      assert::are_equal(L"Wed", string::format(L"{0:h}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"Wed", format(L"{0:h}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_weekday_name_argument) {
-      assert::are_equal(L"Wednesday", string::format(L"{0:H}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"Wednesday", format(L"{0:H}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_day_argument_and_zero_fill) {
-      assert::are_equal(L"02", string::format(L"{0:i}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"02", format(L"{0:i}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_day_argument) {
-      assert::are_equal(L"2", string::format(L"{0:I}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"2", format(L"{0:I}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_brief_month_name_argument) {
-      assert::are_equal(L"Jan", string::format(L"{0:j}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"Jan", format(L"{0:j}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_name_argument) {
-      assert::are_equal(L"January", string::format(L"{0:J}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"January", format(L"{0:J}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_argument_and_zero_fill) {
-      assert::are_equal(L"01", string::format(L"{0:k}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"01", format(L"{0:k}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_argument) {
-      assert::are_equal(L"1", string::format(L"{0:K}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"1", format(L"{0:K}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_year_on_two_digits_argument) {
-      assert::are_equal(L"19", string::format(L"{0:l}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"19", format(L"{0:l}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_year_argument) {
-      assert::are_equal(L"2019", string::format(L"{0:L}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"2019", format(L"{0:L}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_and_day_argument) {
-      assert::are_equal(L"January 2", string::format(L"{0:M}", make_time<value_t>(2019, 1, 2)));
+      assert::are_equal(L"January 2", format(L"{0:M}", make_time<value_t>(2019, 1, 2)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_natural_date_argument) {
-      assert::are_equal(L"Wednesday, 2 January 2019", string::format(L"{0:n}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wednesday, 2 January 2019", format(L"{0:n}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_natural_date_time_argument) {
-      assert::are_equal(L"Wednesday, 2 January 2019 3:04:05", string::format(L"{0:N}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wednesday, 2 January 2019 3:04:05", format(L"{0:N}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_ordinary_date_argument) {
-      assert::are_equal(L"2 January 2019", string::format(L"{0:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"2 January 2019", format(L"{0:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_sortable_argument) {
-      assert::are_equal(L"2019-01-02T03:04:05.0000000", string::format(L"{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"2019-01-02T03:04:05.0000000", format(L"{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_argument_and_zero_fill) {
-      assert::are_equal(L"03:04:05", string::format(L"{0:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"03:04:05", format(L"{0:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_argument) {
-      assert::are_equal(L"3:04:05", string::format(L"{0:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"3:04:05", format(L"{0:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_alternative_universale_argument_and_zero_fill) {
-      assert::are_equal(L"2019-01-02 03:04:05", string::format(L"{0:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"2019-01-02 03:04:05", format(L"{0:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_universale_argument_and_zero_fill) {
-      assert::are_equal(L"Wednesday, 2 January 2019 3:04:05", string::format(L"{0:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"Wednesday, 2 January 2019 3:04:05", format(L"{0:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument_and_zero_fill) {
-      assert::are_equal(L"03:04", string::format(L"{0:v}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"03:04", format(L"{0:v}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument) {
-      assert::are_equal(L"3:04", string::format(L"{0:V}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"3:04", format(L"{0:V}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_and_year_on_two_digits_argument) {
-      assert::are_equal(L"January 19", string::format(L"{0:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"January 19", format(L"{0:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_month_and_year_argument) {
-      assert::are_equal(L"January 2019", string::format(L"{0:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal(L"January 2019", format(L"{0:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_zone_argument) {
       #if defined(__APPLE__)
-      assert::are_equal(L"UTC", string::format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
-      #elif defined(_WIN32) && defined(_WIN64)
-      assert::are_equal(L"", string::format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
+      assert::are_equal(L"UTC", format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
       #elif defined(_WIN32)
-      assert::are_equal(L"Coordinated Universal time_t", string::format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
+      // This test is commented, because the result is time zone dependent.
+      // assert::are_equal(L"Coordinated Universal time_t", format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
       #else
-      assert::are_equal(L"GMT", string::format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
+      assert::are_equal(L"GMT", format(L"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
       #endif
     }
   };
