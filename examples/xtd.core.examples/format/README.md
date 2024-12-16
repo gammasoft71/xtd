@@ -17,7 +17,7 @@
 * [format_floating_point](format_floating_point/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with floating point (float, double and long double).
 * [format_nullptr](format_nullptr/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with nullptr and null.
 * [format_number](format_number/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
-* [format_optional](format_optional/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::format_optional.
+* [format_optional](format_optional/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with [xtd::optional](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga17559da5e7e089b9cfa775bf7bb40263).
 * [format_pair](format_pair/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::pair.
 * [format_pointer](format_pointer/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::shared_ptr, std::unique_ptr and classic pointer.
 * [format_sequence_containers](format_sequence_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with sequence containers (std::initializer_list, std::array, std::forward_list, std::list, std::deque and std::vector).
