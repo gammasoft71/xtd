@@ -19,27 +19,25 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::
 }
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
-  class test_class_(format_u8string_object_without_xtd_to_string_tests) {
+  class test_class_(format_u32string_object_without_xtd_to_string_tests) {
     void test_method_(format_location_with_default_argument) {
-      assert::throws<xtd::format_exception>([] {format(u8"{0}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {format(U"{0}", ::size_sof {42, 24});});
     }
     
     void test_method_(format_location_with_left_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(u8"{0,10}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {string::format(U"{0,10}", ::size_sof {42, 24});});
     }
     
     void test_method_(format_location_with_right_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(u8"{0, -10}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {string::format(U"{0, -10}", ::size_sof {42, 24});});
     }
     
     void test_method_(format_location_with_zero_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(u8"{0,0}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {string::format(U"{0,0}", ::size_sof {42, 24});});
     }
     
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(u8"{0:G}", ::size_sof {42, 24});});
+      assert::throws<xtd::format_exception>([] {format(U"{0:G}", ::size_sof {42, 24});});
     }
   };
-#endif
 }

@@ -8,6 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
+#if defined(__xtd__cpp_lib_char8_t)
   template <typename value_t>
   class format_u8string_fixed_point_tests;
   
@@ -269,4 +270,5 @@ namespace xtd::tests {
       assert::throws<xtd::format_exception>([] {format(u8"{0:V}", static_cast<value_t>(42.0));});
     }
   };
+#endif
 }

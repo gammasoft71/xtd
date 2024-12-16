@@ -160,6 +160,17 @@ add_sources(
   src/xtd/tests/format_u16string_object_without_xtd_to_string_tests.cpp
   src/xtd/tests/format_u16string_string_tests.cpp
   src/xtd/tests/format_u16string_tm_tests.cpp
+  src/xtd/tests/format_u16string_boolean_tests.cpp
+  src/xtd/tests/format_u32string_date_time_tests.cpp
+  src/xtd/tests/format_u32string_duration_tests.cpp
+  src/xtd/tests/format_u32string_enum_tests.cpp
+  src/xtd/tests/format_u32string_enum_class_tests.cpp
+  src/xtd/tests/format_u32string_fixed_point_tests.cpp
+  src/xtd/tests/format_u32string_numeric_tests.cpp
+  src/xtd/tests/format_u32string_object_tests.cpp
+  src/xtd/tests/format_u32string_object_without_xtd_to_string_tests.cpp
+  src/xtd/tests/format_u32string_string_tests.cpp
+  src/xtd/tests/format_u32string_tm_tests.cpp
   src/xtd/tests/format_u8string_boolean_tests.cpp
   src/xtd/tests/format_u8string_date_time_tests.cpp
   src/xtd/tests/format_u8string_duration_tests.cpp
