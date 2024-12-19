@@ -19,8 +19,10 @@ xtdc run
 # Output (with colors)
 
 ```
-(null)
-(null)
 (string value)
+string value
+fallback string
+(null)
+(null)
 ```
 
