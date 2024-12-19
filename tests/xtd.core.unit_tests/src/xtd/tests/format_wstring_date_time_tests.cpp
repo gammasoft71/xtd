@@ -26,7 +26,7 @@ namespace xtd::tests {
       #elif defined(_WIN32)
       assert::are_equal(L"1/2/2019 3:04:05 AM", format(L"{0}", date_time {2019, 1, 2, 3, 4, 5}));
       #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", date_time {2019, 1, 2, 3, 4, 5}));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(L"{0}", date_time {2019, 1, 2, 3, 4, 5}));
       #endif
     }
     
