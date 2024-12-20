@@ -28,6 +28,7 @@
 * [Interfaces](xtd.core.examples/interfaces/README.md) contains interfaces examples.
 * [IO](xtd.core.examples/io/README.md) contains io examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
+* [Linq](xtd.core.examples/linq/README.md) contains linq examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
 * [Math](xtd.core.examples/math/README.md) contains math examples.
 * [Media](xtd.core.examples/media/README.md) contains media examples.
