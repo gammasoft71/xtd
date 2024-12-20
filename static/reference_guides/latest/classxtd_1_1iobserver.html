@@ -156,7 +156,7 @@ class xtd::iobserver&lt; type_t &gt;</div><p>Provides a mechanism for receiving 
 <div class="ttc" id="aclassxtd_1_1iobserver_html"><div class="ttname"><a href="classxtd_1_1iobserver.html">xtd::iobserver</a></div><div class="ttdoc">Provides a mechanism for receiving push-based notifications.</div><div class="ttdef"><b>Definition</b> iobserver.hpp:154</div></div>
 </div><!-- fragment --> If the <code>location</code> value is <code>nullopt</code>, the <code>tack_location</code> method instantiates a <code>location_unknown_exception</code> object, which is shown in the following example. It then calls each observer's <code>on_error</code> method and passes it the <code>location_unknown_exception</code> object. Note that <code>location_unknown_exception</code> derives from <a class="el" href="classxtd_1_1exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">xtd::exception</a>, but does not add any new members. <div class="fragment"><div class="line"><span class="keyword">class </span>location_unknown_exception : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1exception.html">exception</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  location_unknown_exception() {}</div>
+<div class="line">  location_unknown_exception() = <span class="keywordflow">default</span>;</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:28</div></div>
 </div><!-- fragment --> Observers subscribe to receive notifications from an <code>location_tracker</code> object by calling its <a class="el" href="classxtd_1_1iobservable.html#a6f2db48cba351e9b26dcd633ff78294f" title="Notifies the provider that an observer is to receive notifications.">xtd::iobservable::subscribe</a> method. And unsubscribe by calling its xtd::unobservable &lt;type_t&gt;::unsubscribe method. The <code>location_tracker</code> class also includes an @ end_transmission method. When no further location data is available, this method calls each observer's <a class="el" href="classxtd_1_1iobserver.html#a466d725a38941d2d70f44348aa611c17" title="Notifies the observer that the provider has finished sending push-based notifications.">xtd::iobserver::on_completed</a> method, and then clears the internal list of observers.</dd></dl>
@@ -375,7 +375,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 1 2024 09:51:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 20 2024 21:47:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

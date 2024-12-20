@@ -552,7 +552,7 @@ var searchData=
   ['font_5fbox_5foptions_549',['font_box_options',['../group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd',1,'xtd::forms']]],
   ['font_5fbox_5foptions_2ehpp_550',['font_box_options.hpp',['../font__box__options_8hpp.html',1,'']]],
   ['font_5fchanged_551',['font_changed',['../classxtd_1_1forms_1_1control.html#a52494f7214b65db98e3a942acab5d506',1,'xtd::forms::control']]],
-  ['font_5fcollection_552',['font_collection',['../classxtd_1_1drawing_1_1text_1_1font__collection.html#a7750189634b5abe6265047db3757b9d2',1,'xtd::drawing::text::font_collection::font_collection()'],['../classxtd_1_1drawing_1_1text_1_1font__collection.html',1,'xtd::drawing::text::font_collection']]],
+  ['font_5fcollection_552',['font_collection',['../classxtd_1_1drawing_1_1text_1_1font__collection.html#acf5b5bed4ebb326b2b39c79294e66dac',1,'xtd::drawing::text::font_collection::font_collection()'],['../classxtd_1_1drawing_1_1text_1_1font__collection.html',1,'xtd::drawing::text::font_collection']]],
   ['font_5fcollection_2ehpp_553',['font_collection.hpp',['../font__collection_8hpp.html',1,'']]],
   ['font_5fdialog_554',['font_dialog',['../classxtd_1_1forms_1_1font__dialog.html#ac58c9e4d1568dd7e4eba42a5ea33542d',1,'xtd::forms::font_dialog::font_dialog()'],['../classxtd_1_1forms_1_1font__dialog.html',1,'xtd::forms::font_dialog']]],
   ['font_5fdialog_2ehpp_555',['font_dialog.hpp',['../font__dialog_8hpp.html',1,'']]],
