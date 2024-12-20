@@ -19,10 +19,10 @@ namespace xtd {
     /// #include <xtd/linq/enumerable_collection
     /// ```
     /// @par Namespace
-    /// xtd::collections::generic
+    /// xtd::linq
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core generic_collections
+    /// @ingroup xtd_core linq
     template<typename type_t>
     using enumerable_collection = xtd::collections::generic::list<type_t>;
   }

@@ -22,10 +22,10 @@ namespace xtd {
     /// #include <xtd/linq/enumerable
     /// ```
     /// @par Namespace
-    /// xtd::collections::generic
+    /// xtd::linq
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core generic_collections
+    /// @ingroup xtd_core linq
     class enumerable static_ {
     public:
       /// @name Public Static Methods

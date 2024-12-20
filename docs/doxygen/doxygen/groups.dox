@@ -150,6 +150,10 @@
     |   |     /// @brief Contains io definitions.
     |   |     /// @ingroup system
     |   |     /// @defgroup io io
+    |   |- linq
+    |   |     /// @brief Contains linq definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup linq linq
     |   |- media
     |   |     /// @brief Contains media definitions.
     |   |     /// @ingroup system
