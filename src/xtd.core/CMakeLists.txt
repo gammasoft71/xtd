@@ -788,6 +788,10 @@ add_sources(
   include/xtd/io/text_reader
   include/xtd/io/text_writer.hpp
   include/xtd/io/text_writer
+  include/xtd/linq/enumerable.hpp
+  include/xtd/linq/enumerable
+  include/xtd/linq/enumerable_collection.hpp
+  include/xtd/linq/enumerable_collection
   include/xtd/media/system_sound.hpp
   include/xtd/media/system_sound
   include/xtd/media/system_sounds.hpp
