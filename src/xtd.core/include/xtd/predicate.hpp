@@ -2,7 +2,7 @@
 /// @brief Contains xtd::predicate delegate.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate.hpp"
+#include "func.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,5 +13,5 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename type_t>
-  using predicate = delegate<bool(type_t)>;
+  using predicate = xtd::func<bool, type_t>;
 }
