@@ -85,29 +85,34 @@ $(function() {
 <p>Show how to use format <a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class with null pointers.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/format&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="keyword">nullptr</span>) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, null) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, NULL) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, 0) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, null) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types.html#gaa9a3f4dafd186fefa851536b1fad44b4">null_ptr</a> {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="keyword">nullptr</span>) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, std::nullptr_t {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, NULL) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, 0) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// nullptr</span></div>
-<div class="line"><span class="comment">// nullptr</span></div>
+<div class="line"><span class="comment">// null</span></div>
+<div class="line"><span class="comment">// null</span></div>
+<div class="line"><span class="comment">// null</span></div>
+<div class="line"><span class="comment">// null</span></div>
 <div class="line"><span class="comment">// 0</span></div>
 <div class="line"><span class="comment">// 0</span></div>
+<div class="ttc" id="agroup__types_html_gaa9a3f4dafd186fefa851536b1fad44b4"><div class="ttname"><a href="group__types.html#gaa9a3f4dafd186fefa851536b1fad44b4">xtd::null_ptr</a></div><div class="ttdeci">std::nullptr_t null_ptr</div><div class="ttdoc">Represents the null_opt alias on std::nullptr_t.</div><div class="ttdef"><b>Definition</b> null_ptr.hpp:19</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 1 2024 09:51:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 20 2024 21:47:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
