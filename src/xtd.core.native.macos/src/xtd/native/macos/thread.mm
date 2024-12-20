@@ -21,9 +21,10 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32
     start_obj->first(start_obj->second);
     delete start_obj;
     return nullptr;
-  }, reinterpret_cast<void*>( new std::pair<std::function<void(intmax_t)>, intmax_t> {start, obj}));
+  }, reinterpret_cast<void*>(new auto(std::make_pair(start, obj))));
   if (error != 0) return reinterpret_cast<intmax_t>(PTHREAD_FAILED);
-  // The POSIX standard provides no mechanism by which a thread A can suspend the execution of another thread B, without cooperation from B. The only way to implement a suspend/resume mechanism is to have B check periodically some global variable for a suspend request and then suspend itself on a condition variable, which another thread can signal later to restart B.
+  // POSIX does not support suspending a thread without its cooperation.
+  // A thread must periodically check a global variable and suspend itself on a condition variable.
   id = reinterpret_cast<intmax_t>(thread);
   return reinterpret_cast<intmax_t>(thread);
 }
