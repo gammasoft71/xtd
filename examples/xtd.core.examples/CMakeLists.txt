@@ -25,6 +25,7 @@ add_projects(
   interfaces
   io
   keywords
+  linq
   mains
   math
   media
