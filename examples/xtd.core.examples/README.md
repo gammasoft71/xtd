@@ -263,6 +263,13 @@
 * [typeof](keywords/typeof/README.md) shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
 * [using](keywords/using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f) keyword.
 
+## [Linq](linq/README.md)
+
+* [enumerable_aggregate](linq/enumerable_aggregate/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a80ec308a9a8c3b94822405b811270630) method.
+* [enumerable_aggregate2](linq/enumerable_aggregate2/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65cb8dbb360aba65ed73cc16bb8bbe9a) method.
+* [enumerable_aggregate3](linq/enumerable_aggregate3/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65e1b63547102643e7ad9acf9cb56174) method.
+* [enumerable_all](linq/enumerable_all/README.md) shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
+
 ## [Mains](mains/README.md)
 
 * [main](mains/main/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
