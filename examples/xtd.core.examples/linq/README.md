@@ -5,7 +5,11 @@
 * [enumerable_aggregate](enumerable_aggregate/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a80ec308a9a8c3b94822405b811270630) method.
 * [enumerable_aggregate2](enumerable_aggregate2/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65cb8dbb360aba65ed73cc16bb8bbe9a) method.
 * [enumerable_aggregate3](enumerable_aggregate3/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65e1b63547102643e7ad9acf9cb56174) method.
+* [enumerable_aggregate4](enumerable_aggregate4/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a80ec308a9a8c3b94822405b811270630) method.
+* [enumerable_aggregate5](enumerable_aggregate5/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65cb8dbb360aba65ed73cc16bb8bbe9a) method.
+* [enumerable_aggregate6](enumerable_aggregate6/README.md) shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65e1b63547102643e7ad9acf9cb56174) method.
 * [enumerable_all](enumerable_all/README.md) shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
+* [enumerable_all2](enumerable_all2/README.md) shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
 * [enumerable_any](enumerable_any/README.md) shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a9fcb75c4192ead30fe619401d8455c80) method.
 
 ## Build and run any project
