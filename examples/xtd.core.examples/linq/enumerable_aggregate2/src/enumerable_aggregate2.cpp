@@ -16,6 +16,6 @@ auto main() -> int {
   println("The number of even integers is: {}", num_even);
 }
 
-// This code can produce the following output :
+// This code produces the following output :
 //
 // The number of even integers is: 6
