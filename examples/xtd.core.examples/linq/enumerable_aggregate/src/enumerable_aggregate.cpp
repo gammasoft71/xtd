@@ -18,6 +18,6 @@ auto main() -> int {
   println(reversed.quoted());
 }
 
-// This code can produce the following output :
+// This code produces the following output :
 //
 // "dog lazy the over jumps fox brown quick the"
