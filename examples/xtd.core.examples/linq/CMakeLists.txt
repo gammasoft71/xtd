@@ -8,4 +8,5 @@ add_projects(
   enumerable_aggregate2
   enumerable_aggregate3
   enumerable_all
+  enumerable_any
 )
