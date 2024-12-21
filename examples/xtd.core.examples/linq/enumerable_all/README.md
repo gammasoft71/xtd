@@ -19,5 +19,5 @@ xtdc run
 ## Output
 
 ```
-"dog lazy the over jumps fox brown quick the"
+Not all pet names start with 'B'.
 ```
