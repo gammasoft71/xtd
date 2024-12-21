@@ -28,6 +28,6 @@ auto main() -> int {
   println("{} pet names start with 'B'.", all_start_with_b ? "All" : "Not all");
 }
 
-// This code can produce the following output :
+// This code produces the following output :
 //
 // Not all pet names start with 'B'.
