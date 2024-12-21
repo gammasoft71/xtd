@@ -255,7 +255,8 @@ namespace xtd {
         return all(source, xtd::predicate<const source_t&> {predicate});
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
-      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
       /// @par Examples
@@ -268,7 +269,8 @@ namespace xtd {
         return true;
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
-      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
       /// @par Examples
@@ -280,7 +282,8 @@ namespace xtd {
       }
       
       /// @brief Determines whether a sequence contains any elements.
-      /// @param source The IEnumerable<T> to check for emptiness.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
       /// @return true if the source sequence contains any elements; otherwise, false.
       /// @par Examples
       /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
@@ -288,6 +291,66 @@ namespace xtd {
       template<typename source_t>
       static bool any(const xtd::collections::generic::ienumerable<source_t>& source) {
         return source.get_enumerator().move_next();
+      }
+      /// @brief Determines whether any element of a sequence satisfies a condition.
+      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param predicate A function to test each element for a condition.
+      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// @include enumerable_all.cpp
+      template<typename source_t>
+      static bool any(const xtd::collections::generic::ienumerable<source_t>& source, const xtd::predicate<const source_t&>& predicate) {
+        for (const auto& item : source)
+          if (predicate(item)) return true;
+        return false;
+      }
+      /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param predicate A function to test each element for a condition.
+      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// @include enumerable_all.cpp
+      template<typename source_t, typename predicate_t>
+      static bool any(const xtd::collections::generic::ienumerable<source_t>& source, const predicate_t& predicate) {
+        return any(source, xtd::predicate<const source_t&> {predicate});
+      }
+      /// @brief Determines whether a sequence contains any elements.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @return true if the source sequence contains any elements; otherwise, false.
+      /// @par Examples
+      /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
+      /// @include EnumerableAny.cpp
+      template<typename source_t, typename input_iterator_t>
+      static bool any(input_iterator_t first, input_iterator_t last) {
+        return first != last;
+      }
+      /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @param predicate A function to test each element for a condition.
+      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// @include enumerable_all.cpp
+      template<typename source_t, typename input_iterator_t>
+      static bool any(input_iterator_t first, input_iterator_t last, const xtd::predicate<const source_t&>& predicate) {
+        for (auto iterator = first; iterator != last; ++iterator)
+          if (predicate(*iterator)) return true;
+        return false;
+      }
+      /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param predicate A function to test each element for a condition.
+      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// @include enumerable_all2.cpp
+      template<typename source_t, typename input_iterator_t, typename predicate_t>
+      static bool any(input_iterator_t first, input_iterator_t last, const predicate_t& predicate) {
+        return any(first, last, xtd::predicate<const source_t&> {predicate});
       }
       /// @}
     };

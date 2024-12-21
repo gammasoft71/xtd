@@ -38,12 +38,12 @@ namespace xtd::linq::tests {
       assert::are_equal(-25, enumerable::aggregate(s.begin(), s.end(), 10, [](int total, int next) {return total + next;}, [](int aggregated) {return -aggregated;}));
     }
 
-    void test_method_(all_with_source_and_func) {
+    void test_method_(all_with_source_and_predicate) {
       assert::is_true(enumerable::all(array {2, 4, 6, 8, 10, 12}, [](int next) {return next % 2 == 0;}));
       assert::is_false(enumerable::all(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
     }
 
-    void test_method_(all_with_iterators_and_func) {
+    void test_method_(all_with_iterators_and_prediacte) {
       auto s1 = array {2, 4, 6, 8, 10, 12};
       assert::is_true(enumerable::all<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
       auto s2 = array {1, 2, 3, 4, 5};
@@ -53,6 +53,18 @@ namespace xtd::linq::tests {
     void test_method_(any_with_source) {
       assert::is_true(enumerable::any(array {1}));
       assert::is_false(enumerable::any(array<int> {}));
+    }
+
+    void test_method_(any_with_source_and_predicate) {
+      assert::is_true(enumerable::any(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
+      assert::is_false(enumerable::any(array {1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
+    }
+    
+    void test_method_(any_with_iterators_and_prediacte) {
+      auto s1 = array {1, 2, 3, 4, 5};
+      assert::is_true(enumerable::any<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
+      auto s2 = array {1, 3, 5, 7, 9, 11};
+      assert::is_false(enumerable::any<int>(s2.begin(), s2.end(), [](int next) {return next % 2 == 0;}));
     }
   };
 }
