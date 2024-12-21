@@ -4,7 +4,7 @@ Shows how to use [xtd::threading::barrier](https:gammasoft71.github.io/xtd/refer
 
 ## Sources
 
-[src/barrier_simple.cpp](src/thread_pool.cpp)
+[src/barrier_simple.cpp](src/barrier_simple.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
