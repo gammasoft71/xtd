@@ -1,6 +1,6 @@
 #include <xtd/linq/enumerable>
 #include <xtd/array>
-#include <xtd/println>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::linq;
@@ -13,7 +13,7 @@ auto main() -> int {
     return next % 2 == 0 ? total + 1 : total;
   });
   
-  println("The number of even integers is: {}", num_even);
+  console::write_line("The number of even integers is: {}", num_even);
 }
 
 // This code produces the following output :

@@ -1,6 +1,6 @@
 #include <xtd/linq/enumerable>
 #include <xtd/array>
-#include <xtd/println>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::linq;
@@ -15,7 +15,7 @@ auto main() -> int {
                         // Return the final result as an upper case string.
                         [](const string& fruit) {return fruit.to_upper();});
   
-  println("The fruit with the longest name is {}", longest_name);
+  console::write_line("The fruit with the longest name is {}", longest_name);
 }
 
 // This code produces the following output :

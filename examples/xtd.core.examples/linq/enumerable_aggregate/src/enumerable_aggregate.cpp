@@ -1,5 +1,5 @@
 #include <xtd/linq/enumerable>
-#include <xtd/println>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::linq;
@@ -15,7 +15,7 @@ auto main() -> int {
     return next + " " + working_sentence;
   });
   
-  println(reversed.quoted());
+  console::write_line(reversed.quoted());
 }
 
 // This code produces the following output :
