@@ -18,6 +18,6 @@ auto main() -> int {
   println("The fruit with the longest name is {}", longest_name);
 }
 
-// This code can produce the following output :
+// This code produces the following output :
 //
 // The fruit with the longest name is PASSIONFRUIT
