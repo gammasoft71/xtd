@@ -1,5 +1,5 @@
 #include <xtd/linq/enumerable>
-#include <xtd/println>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::linq;
@@ -25,7 +25,7 @@ auto main() -> int {
     return pet.name.starts_with("B");
   });
   
-  println("{} pet names start with 'B'.", all_start_with_b ? "All" : "Not all");
+  console::write_line("{} pet names start with 'B'.", all_start_with_b ? "All" : "Not all");
 }
 
 // This code produces the following output :

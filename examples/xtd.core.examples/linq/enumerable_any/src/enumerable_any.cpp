@@ -1,6 +1,6 @@
 #include <xtd/collections/generic/list>
 #include <xtd/linq/enumerable>
-#include <xtd/println>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
@@ -10,7 +10,7 @@ auto main() -> int {
   auto numbers = list {1, 2};
   auto has_elements = enumerable::any(numbers);
   
-  println("The list {0} empty.", has_elements ? "is not" : "is");
+  console::write_line("The list {0} empty.", has_elements ? "is not" : "is");
 }
 
 // This code produces the following output :
