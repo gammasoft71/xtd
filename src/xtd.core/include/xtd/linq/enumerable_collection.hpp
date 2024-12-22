@@ -2,7 +2,9 @@
 /// @brief Contains xtd::linq::enumerable_collection <type_t> alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../collections/generic/list.hpp"
+#include "../collections/generic/ienumerable.hpp"
+#include <limits>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,6 +26,25 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core linq
     template<typename type_t>
-    using enumerable_collection = xtd::collections::generic::list<type_t>;
+    class enumerable_collection : public xtd::collections::generic::ienumerable<type_t> {
+    public:
+      xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
+        class box_enumerator : public xtd::collections::generic::ienumerator<type_t> {
+        public:
+          explicit box_enumerator(const std::vector<type_t>& items) : items_(items) {}
+          const type_t& current() const override {return items_[index_];}
+          bool move_next() override {return ++index_ < items_.size();}
+          void reset() override {index_ = std::numeric_limits<size>::max();}
+          
+        protected:
+          const std::vector<type_t>& items_;
+          size index_ = std::numeric_limits<size>::max();
+        };
+        return {new_ptr<box_enumerator>(enumerable_collection_)};
+      }
+
+    private:
+      std::vector<type_t> enumerable_collection_;
+    };
   }
 }
