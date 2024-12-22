@@ -10,6 +10,7 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
+      /// @brief The xtd::collections::generic::extensions namespace contains collection and interface extensions.
       namespace extensions {
         /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
         /// @par Definition

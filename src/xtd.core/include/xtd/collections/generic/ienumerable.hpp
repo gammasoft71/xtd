@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::generic::ienumarable <type_t> interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "enumerable_iterators.hpp"
+#include "extensions/enumerable_iterators.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,15 +32,15 @@ namespace xtd {
       /// @remarks For the non-generic version of this interface, see xtd::collections::ienumerable.
       /// @remarks xtd::collections::generic::ienumerable <type_t> contains a single method that you must implement when implementing this interface; xtd::collections::generic::ienumerable::get_enumerator, which returns an xtd::collections::generic::enumerator <type_t> object. The returned xtd::collections::generic::enumerator <type_t> provides the ability to iterate through the collection by exposing a xtd::collections::generic::enumerator::current property.
       template <typename type_t>
-      class ienumerable : public interface, public enumerable_iterators<type_t, ienumerable<type_t>> {
+      class ienumerable : public interface, public xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>> {
       public:
         /// @name Public Aliases
         
         /// @{
         /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
-        using iterator = typename enumerable_iterators<type_t, ienumerable<type_t>>::iterator;
+        using iterator = typename xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>::iterator;
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
-        using const_iterator = typename enumerable_iterators<type_t, ienumerable<type_t>>::const_iterator;
+        using const_iterator = typename xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>::const_iterator;
         /// @}
 
         /// @name Public Methods
@@ -48,7 +48,7 @@ namespace xtd {
         /// @{
         /// @brief Returns an enumerator that iterates through a collection.
         /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
-        virtual enumerator<type_t> get_enumerator() const = 0;
+        virtual xtd::collections::generic::enumerator<type_t> get_enumerator() const = 0;
         /// @}
       };
     }
