@@ -549,14 +549,14 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/extensions/enumerable.hpp
   include/xtd/collections/generic/extensions/enumerable
+  include/xtd/collections/generic/extensions/enumerable_iterators.hpp
+  include/xtd/collections/generic/extensions/enumerable_iterators
   include/xtd/collections/generic/comparer.hpp
   include/xtd/collections/generic/comparer
   include/xtd/collections/generic/dictionary.hpp
   include/xtd/collections/generic/dictionary
   include/xtd/collections/generic/empty_comparer.hpp
   include/xtd/collections/generic/empty_comparer
-  include/xtd/collections/generic/enumerable_iterators.hpp
-  include/xtd/collections/generic/enumerable_iterators
   include/xtd/collections/generic/enumerator.hpp
   include/xtd/collections/generic/enumerator
   include/xtd/collections/generic/hash_set.hpp
