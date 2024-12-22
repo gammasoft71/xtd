@@ -64,6 +64,7 @@ namespace {
     // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
     auto major = -1, minor = -1, build = -1, revision = -1;
     get_windows_version(major, minor, build, revision);
+    if (build >= 26100) return make_tuple("Windows 11", "", "24H2");
     if (build >= 22631) return make_tuple("Windows 11", "", "23H2");
     if (build >= 22621) return make_tuple("Windows 11", "Sun Valley 2", "22H2");
     if (build >= 22000) return make_tuple("Windows 11", "Sun Valley", "21H2");
