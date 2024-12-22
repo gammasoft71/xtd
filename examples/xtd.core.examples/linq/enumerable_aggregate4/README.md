@@ -1,6 +1,6 @@
 # enumerable_aggregate4
 
-Shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a80ec308a9a8c3b94822405b811270630) method.
+Shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a33e0dc791067d2d9f472dd067ead27e9) method.
 
 ## Sources
 

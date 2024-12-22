@@ -43,7 +43,7 @@ namespace xtd::linq::tests {
       assert::is_false(enumerable::all(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
     }
 
-    void test_method_(all_with_iterators_and_prediacte) {
+    void test_method_(all_with_iterators_and_predicate) {
       auto s1 = array {2, 4, 6, 8, 10, 12};
       assert::is_true(enumerable::all<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
       auto s2 = array {1, 2, 3, 4, 5};
@@ -60,7 +60,7 @@ namespace xtd::linq::tests {
       assert::is_false(enumerable::any(array {1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
     }
     
-    void test_method_(any_with_iterators_and_prediacte) {
+    void test_method_(any_with_iterators_and_predicate) {
       auto s1 = array {1, 2, 3, 4, 5};
       assert::is_true(enumerable::any<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
       auto s2 = array {1, 3, 5, 7, 9, 11};

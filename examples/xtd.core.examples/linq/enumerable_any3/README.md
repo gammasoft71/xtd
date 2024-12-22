@@ -1,6 +1,6 @@
 # enumerable_any3
 
-Shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
+Shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#afc08a959b1eac4f4812fb640ddcb1385) method.
 
 ## Sources
 
@@ -19,5 +19,5 @@ xtdc run
 ## Output
 
 ```
-There are unvaccinated animals over age one.
+The list is not empty.
 ```
