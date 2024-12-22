@@ -1,8 +1,7 @@
-#include <xtd/linq/enumerable>
+#include <xtd/array>
 #include <xtd/console>
 
 using namespace xtd;
-using namespace xtd::linq;
 
 auto main() -> int {
   struct pet : public object {
@@ -22,7 +21,7 @@ auto main() -> int {
   };
   
   // Determine whether all pet names in the array start with 'B'.
-  bool unvaccinated = enumerable::any(pets, [](const pet& pet) {
+  bool unvaccinated = pets.any([](const pet& pet) {
     return pet.age > 1 && !pet.vaccinated;
   });
   

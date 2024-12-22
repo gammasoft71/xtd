@@ -1,8 +1,7 @@
-#include <xtd/linq/enumerable>
+#include <xtd/array>
 #include <xtd/console>
 
 using namespace xtd;
-using namespace xtd::linq;
 
 auto main() -> int {
   struct pet : public object {
@@ -21,7 +20,7 @@ auto main() -> int {
   };
   
   // Determine whether all pet names in the array start with 'B'.
-  bool all_start_with_b = enumerable::all(pets, [](const pet& pet) {
+  bool all_start_with_b = pets.all([](const pet& pet) {
     return pet.name.starts_with("B");
   });
   
