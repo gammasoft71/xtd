@@ -1,10 +1,10 @@
-# enumerable_any2
+# enumerable_any4
 
-Shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#af6685459cb72973136764e127613a3bb) method.
+Shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a36cca9c23f887a13fcbaae69a231fbbf) method.
 
 ## Sources
 
-[src/enumerable_any2.cpp](src/enumerable_any2.cpp)
+[src/enumerable_any4.cpp](src/enumerable_any4.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
