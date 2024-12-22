@@ -1,8 +1,7 @@
-#include <xtd/linq/enumerable>
 #include <xtd/console>
+#include <xtd/string>
 
 using namespace xtd;
-using namespace xtd::linq;
 
 auto main() -> int {
   auto sentence = "the quick brown fox jumps over the lazy dog"_s;
@@ -11,7 +10,7 @@ auto main() -> int {
   auto words = sentence.split(' ');
   
   // Prepend each word to the beginning of the new sentence to reverse the word order.
-  auto reversed = enumerable::aggregate(words, [](const string& working_sentence, const string& next) {
+  auto reversed = words.aggregate([](const string& working_sentence, const string& next) {
     return next + " " + working_sentence;
   });
   
