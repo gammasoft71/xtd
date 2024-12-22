@@ -9,6 +9,7 @@
 #include "collections/generic/enumerator.hpp"
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/ilist.hpp"
+#include "collections/generic/extensions/enumerable.hpp"
 #include "abstract.hpp"
 #include "core_export.hpp"
 #include "int64.hpp"
