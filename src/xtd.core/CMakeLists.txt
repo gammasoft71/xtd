@@ -547,6 +547,8 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.hpp
   include/xtd/collections/vector_list
+  include/xtd/collections/generic/extensions/enumerable.hpp
+  include/xtd/collections/generic/extensions/enumerable
   include/xtd/collections/generic/comparer.hpp
   include/xtd/collections/generic/comparer
   include/xtd/collections/generic/dictionary.hpp
