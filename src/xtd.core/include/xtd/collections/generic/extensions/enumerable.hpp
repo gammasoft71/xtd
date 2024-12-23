@@ -34,7 +34,6 @@ namespace xtd {
           
           /// @{
           /// @brief Applies an accumulator function over a sequence.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
           /// @par Examples
@@ -44,7 +43,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), func);
           }
           /// @brief Applies an accumulator function over a sequence.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
           /// @par Examples
@@ -55,7 +53,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
@@ -67,7 +64,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
@@ -79,7 +75,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_Selector A function to transform the final accumulator value into the result value.
@@ -92,7 +87,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_selector A function to transform the final accumulator value into the result value.
@@ -105,7 +99,6 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_Selector A function to transform the final accumulator value into the result value.
@@ -119,7 +112,6 @@ namespace xtd {
           }
           
           /// @brief Determines whether all elements of a sequence satisfy a condition.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
           /// @param predicate A function to test each element for a condition.
           /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
           /// @par Examples
@@ -129,7 +121,6 @@ namespace xtd {
             return xtd::linq::enumerable::all(base(), predicate);
           }
           /// @brief Determines whether all elements of a sequence satisfy a condition.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
           /// @param predicate A function to test each element for a condition.
           /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
           /// @par Examples
@@ -141,17 +132,14 @@ namespace xtd {
           }
           
           /// @brief Determines whether a sequence contains any elements.
-          /// @param first The first iterator.
-          /// @param last The last iterator.
           /// @return true if the source sequence contains any elements; otherwise, false.
           /// @par Examples
           /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
           /// @include EnumerableAny.cpp
-          bool any() const {
+          bool any() const noexcept {
             return xtd::linq::enumerable::any(base());
           }
           /// @brief Determines whether any element of a sequence satisfies a condition.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
           /// @param predicate A function to test each element for a condition.
           /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
           /// @par Examples
@@ -161,7 +149,6 @@ namespace xtd {
             return xtd::linq::enumerable::any(base(), predicate);
           }
           /// @brief Determines whether any elements of a sequence satisfy a condition.
-          /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
           /// @param predicate A function to test each element for a condition.
           /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
           /// @par Examples
@@ -170,6 +157,16 @@ namespace xtd {
           template<typename predicate_t>
           bool any(const predicate_t& predicate) const {
             return xtd::linq::enumerable::any(base(), predicate);
+          }
+          
+          /// @brief Appends a value to the end of the sequence.
+          /// @param element The value to append to source.
+          /// @return A new sequence that ends with element.
+          /// @par Examples
+          /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
+          /// @include enumerable_append.cpp
+          xtd::linq::enumerable_collection<source_t> append(const source_t& element) const noexcept {
+            return xtd::linq::enumerable::append(base(), element);
           }
           /// @}
           
