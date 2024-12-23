@@ -14,8 +14,8 @@
 * [enumerable_any2](enumerable_any2/README.md) shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#af6685459cb72973136764e127613a3bb) method.
 * [enumerable_any3](enumerable_any3/README.md) shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#afc08a959b1eac4f4812fb640ddcb1385) method.
 * [enumerable_any4](enumerable_any4/README.md) shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a36cca9c23f887a13fcbaae69a231fbbf) method.
-* [enumerable_append](enumerable_append/README.md) shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a36cca9c23f887a13fcbaae69a231fbbf) method.
-* [enumerable_append2](enumerable_append2/README.md) shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a36cca9c23f887a13fcbaae69a231fbbf) method.
+* [enumerable_append](enumerable_append/README.md) shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a850d17deb2ca4039f3ad05dc4dd6caa4) method.
+* [enumerable_append2](enumerable_append2/README.md) shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a33b3a348f1b0aba3f3aec5afdca7ea46) method.
 
 ## Build and run any project
 
