@@ -132,7 +132,7 @@ var searchData=
   ['iequatable_3c_20uri_20_3e_129',['iequatable&lt; uri &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20version_20_3e_130',['iequatable&lt; version &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20vertical_5fcontrol_5flayout_5fstyle_20_3e_131',['iequatable&lt; vertical_control_layout_style &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
-  ['iequatable_3c_20xtd_3a_3acollections_3a_3ageneric_3a_3alist_3c_20type_5ft_2c_20xtd_3a_3acollections_3a_3ageneric_3a_3ahelpers_3a_3aallocator_3c_20typename_20std_3a_3aconditional_3c_20std_3a_3ais_5fsame_3c_20bool_2c_20type_5ft_20_3e_3a_3avalue_2c_20char_2c_20type_5ft_20_3e_3a_3atype_20_3e_20_3e_20_3e_132',['iequatable&lt; xtd::collections::generic::list&lt; type_t, xtd::collections::generic::helpers::allocator&lt; typename std::conditional&lt; std::is_same&lt; bool, type_t &gt;::value, char, type_t &gt;::type &gt; &gt; &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
+  ['iequatable_3c_20xtd_3a_3acollections_3a_3ageneric_3a_3alist_3c_20type_5ft_2c_20allocator_5ft_20_3e_20_3e_132',['iequatable&lt; xtd::collections::generic::list&lt; type_t, allocator_t &gt; &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iformatable_133',['iformatable',['../classxtd_1_1iformatable.html',1,'xtd']]],
   ['ignore_5ferror_134',['ignore_error',['../classxtd_1_1tunit_1_1ignore__error.html',1,'xtd::tunit']]],
   ['iimage_5fmodel_135',['iimage_model',['../classxtd_1_1forms_1_1style__sheets_1_1iimage__model.html',1,'xtd::forms::style_sheets']]],
@@ -170,7 +170,7 @@ var searchData=
   ['isynchronize_5finvoke_167',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
   ['item_168',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
   ['item_5fcheck_5fevent_5fargs_169',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
-  ['iterator_170',['iterator',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html',1,'xtd::collections::generic::enumerable_iterators']]],
+  ['iterator_170',['iterator',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html',1,'xtd::collections::generic::extensions::enumerable_iterators']]],
   ['itext_5fmodel_171',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
   ['iwin32_5fwindow_172',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
 ];
