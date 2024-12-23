@@ -1,8 +1,9 @@
 /// @file
-/// @brief Contains xtd::linq::enumerable_collection <type_t> alias.
+/// @brief Contains xtd::linq::enumerable_collection <type_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/ienumerable.hpp"
+#include "../new_ptr.hpp"
 #include <limits>
 #include <vector>
 
@@ -10,11 +11,15 @@
 namespace xtd {
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
+    /// @cond
+    class enumerable;
+    /// @endcond
+    
     /// @brief Represent an enumerable collection.
     /// @par Definition
     /// ```cpp
     /// template<typename type_t>
-    /// using enumerable_collection = xtd::collections::generic::list<type_t>;
+    /// class enumerable_collection : public xtd::collections::generic::ienumerable<type_t>
     /// ```
     /// @par Header
     /// ```cpp
@@ -44,6 +49,12 @@ namespace xtd {
       }
 
     private:
+      friend class xtd::linq::enumerable;
+      
+      void append(const type_t& item) noexcept {
+        enumerable_collection_.push_back(item);
+      }
+      
       std::vector<type_t> enumerable_collection_;
     };
   }

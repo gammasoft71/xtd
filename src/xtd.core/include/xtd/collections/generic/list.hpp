@@ -68,7 +68,7 @@ namespace xtd {
       ///
       /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
       /// @include generic_list2.cpp
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<typename type_t, typename allocator_t>
       class list : public xtd::object, public xtd::collections::generic::extensions::enumerable<list<type_t, allocator_t>, type_t>, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t>> {
       public:
         /// @name Public Aliases
