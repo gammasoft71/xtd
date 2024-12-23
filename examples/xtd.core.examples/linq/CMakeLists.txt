@@ -16,4 +16,6 @@ add_projects(
   enumerable_any2
   enumerable_any3
   enumerable_any4
+  enumerable_append
+  enumerable_append2
 )
