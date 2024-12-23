@@ -26,7 +26,7 @@ namespace xtd {
         /// xtd::linq
         /// @par Library
         /// xtd.core
-        /// @ingroup xtd_core linq
+        /// @ingroup xtd_core extensions_generic_collections
         template <typename enumerable_t, typename source_t>
         class enumerable {
         public:

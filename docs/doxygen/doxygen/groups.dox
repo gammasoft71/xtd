@@ -126,8 +126,12 @@
     |   |   |   | /// @brief Contains generic collections definitions.
     |   |   |   | /// @ingroup collections
     |   |   |   | /// @defgroup generic_collections generic
+    |   |   |   |- extensions_generic_collections
+    |   |   |         /// @brief Contain generic collections extensions definitions.
+    |   |   |         /// @ingroup generic_collections
+    |   |   |         /// @defgroup extensions_generic_collections extensions
     |   |   |   |- helpers_generic_collections
-    |   |   |         /// @brief Contains helpers generic collections definitions.
+    |   |   |         /// @brief Contains generic collections elpers definitions.
     |   |   |         /// @ingroup generic_collections
     |   |   |         /// @defgroup helpers_generic_collections helpers
     |   |   |- object_model_collections
