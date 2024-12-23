@@ -18,7 +18,7 @@ auto main() -> int {
   console::write_line(string::join(", ", numbers.append(5)));
   
   // If you prefer, you can create a new list explicitly
-  auto new_numbers = numbers.append(5); //.to_list();
+  auto new_numbers = numbers.append(5).to_list();
   
   // And then write to the console output
   console::write_line(string::join(", ", new_numbers));
