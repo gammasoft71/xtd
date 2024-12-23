@@ -2293,7 +2293,15 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
-    static basic_string join(const basic_string separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
+    static basic_string join(const basic_string separator, const collection_t& values) noexcept {
+      xtd::size i = 0;
+      basic_string result;
+      for (const auto& item : values) {
+        if (i++ != 0) result += separator;
+        result += format("{}", item);
+      }
+      return result;
+    }
     /// @brief Concatenates a specified separator basic_string between each element of a specified object array, yielding a single concatenated basic_string.
     /// @param separator A basic_string separator.
     /// @param values An array of Object.
