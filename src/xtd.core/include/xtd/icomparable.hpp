@@ -4,7 +4,7 @@
 #pragma once
 #include "interface.hpp"
 #include "types.hpp"
-#include "comparison_operators.hpp"
+#include "extensions/comparison_operators.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +18,7 @@ namespace xtd {
   /// The following example shows how to use xtd::icomparable interface.
   /// @include icomparable.cpp
   template <typename type_t>
-  class icomparable : public interface, public comparison_operators<type_t, icomparable<type_t>> {
+  class icomparable : public interface, public extensions::comparison_operators<type_t, icomparable<type_t>> {
   public:
     /// @name Public Methods
     

@@ -127,11 +127,11 @@
     |   |   |   | /// @ingroup collections
     |   |   |   | /// @defgroup generic_collections generic
     |   |   |   |- extensions_generic_collections
-    |   |   |         /// @brief Contain generic collections extensions definitions.
+    |   |   |         /// @brief Contain generic collections and interfaces extensions.
     |   |   |         /// @ingroup generic_collections
     |   |   |         /// @defgroup extensions_generic_collections extensions
     |   |   |   |- helpers_generic_collections
-    |   |   |         /// @brief Contains generic collections elpers definitions.
+    |   |   |         /// @brief Contains generic collections helpers definitions.
     |   |   |         /// @ingroup generic_collections
     |   |   |         /// @defgroup helpers_generic_collections helpers
     |   |   |- object_model_collections
@@ -150,6 +150,10 @@
     |   |     /// @brief Contains diagnostics definitions.
     |   |     /// @ingroup system
     |   |     /// @defgroup diagnostics diagnostics
+    |   |- extensions
+    |   |     /// @brief Contains interfaces extensions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup extensions extensions
     |   |- io
     |   |     /// @brief Contains io definitions.
     |   |     /// @ingroup system
