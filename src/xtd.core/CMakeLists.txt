@@ -110,8 +110,6 @@ add_sources(
   include/xtd/cnull
   include/xtd/comparison.hpp
   include/xtd/comparison
-  include/xtd/comparison_operators.hpp
-  include/xtd/comparison_operators
   include/xtd/compiler.hpp
   include/xtd/compiler
   include/xtd/compiler_id.hpp
@@ -174,8 +172,6 @@ add_sources(
   include/xtd/double
   include/xtd/double_object.hpp
   include/xtd/double_object
-  include/xtd/equality_operators.hpp
-  include/xtd/equality_operators
   include/xtd/enum.hpp
   include/xtd/enum
   include/xtd/enum_attribute.hpp
@@ -676,6 +672,10 @@ add_sources(
   include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.hpp
   include/xtd/diagnostics/trace_switch
+  include/xtd/extensions/comparison_operators.hpp
+  include/xtd/extensions/comparison_operators
+  include/xtd/extensions/equality_operators.hpp
+  include/xtd/extensions/equality_operators
   include/xtd/internal/__array_definition.hpp
   include/xtd/internal/__as_any_object.hpp
   include/xtd/internal/__as_bool.hpp

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::iequatable interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "equality_operators.hpp"
+#include "extensions/equality_operators.hpp"
 #include "interface.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -19,7 +19,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::iequatable interface.
   /// @include iequatable.cpp
-  class iequatable : public interface, public equality_operators<type_t, iequatable<type_t>> {
+  class iequatable : public interface, public extensions::equality_operators<type_t, iequatable<type_t>> {
   public:
     /// @name Public Methods
     
