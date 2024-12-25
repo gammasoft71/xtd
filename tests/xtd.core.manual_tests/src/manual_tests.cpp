@@ -3,7 +3,7 @@
 using namespace xtd;
 
 auto main() -> int {
-  println("Hello, World!");
+  println("average = {}", array<int> {1, 2, 3, 4, 5}.average());
   
   /*
   try {

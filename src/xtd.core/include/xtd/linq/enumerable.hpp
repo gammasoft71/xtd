@@ -4,7 +4,11 @@
 #pragma once
 #include "enumerable_collection.hpp"
 #include "../collections/generic/helpers/allocator.hpp"
+#include "../decimal.hpp"
 #include "../iequatable.hpp"
+#include "../int32.hpp"
+#include "../int64.hpp"
+#include "../optional.hpp"
 #include "../static.hpp"
 #include <algorithm>
 #include <functional>
@@ -728,7 +732,57 @@ namespace xtd {
           result.items.push_back(*iterator);
         return result;
       }
+
+      /// @brief Computes the average of a sequence of xtd::decimal values.
+      /// @param source A sequence of xtd::decimal values to calculate the average of.
+      /// @return The average of the sequence of values.
+      /// @exception xtd::invalid_operation_exception `source` contains no elements.
+      static xtd::decimal average(const xtd::collections::generic::ienumerable<xtd::decimal>& source);
+      /// @brief Computes the average of a sequence of double values.
+      /// @param source A sequence of double values to calculate the average of.
+      /// @return The average of the sequence of values.
+      /// @exception xtd::invalid_operation_exception `source` contains no elements.
+      static double average(const xtd::collections::generic::ienumerable<double>& source);
+      /// @brief Computes the average of a sequence of float values.
+      /// @param source A sequence of float values to calculate the average of.
+      /// @return The average of the sequence of values.
+      /// @exception xtd::invalid_operation_exception `source` contains no elements.
+      static float average(const xtd::collections::generic::ienumerable<float>& source);
+      /// @brief Computes the average of a sequence of xtd::int32 values.
+      /// @param source A sequence of xtd::int32 values to calculate the average of.
+      /// @return The average of the sequence of values.
+      /// @exception xtd::invalid_operation_exception `source` contains no elements.
+      static double average(const xtd::collections::generic::ienumerable<xtd::int32>& source);
+      /// @brief Computes the average of a sequence of xtd::int64 values.
+      /// @param source A sequence of xtd::int64 values to calculate the average of.
+      /// @return The average of the sequence of values.
+      /// @exception xtd::invalid_operation_exception `source` contains no elements.
+      static double average(const xtd::collections::generic::ienumerable<xtd::int64>& source);
+
+      /// @brief Computes the average of a sequence of optional xtd::decimal values.
+      /// @param source A sequence of optional xtd::decimal values to calculate the average of.
+      /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
+      static xtd::optional<xtd::decimal> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::decimal>>& source) noexcept;
+      /// @brief Computes the average of a sequence of optional double values.
+      /// @param source A sequence of optional double values to calculate the average of.
+      /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
+      static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<double>>& source) noexcept;
+      /// @brief Computes the average of a sequence of optional float values.
+      /// @param source A sequence of optional float values to calculate the average of.
+      /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
+      static xtd::optional<float> average(const xtd::collections::generic::ienumerable<xtd::optional<float>>& source) noexcept;
+      /// @brief Computes the average of a sequence of optional xtd::int32 values.
+      /// @param source A sequence of optional xtd::int32 values to calculate the average of.
+      /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
+      static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::int32>>& source) noexcept;
+      /// @brief Computes the average of a sequence of optional xtd::int64 values.
+      /// @param source A sequence of optional xtd::int64 values to calculate the average of.
+      /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
+      static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::int64>>& source) noexcept;
       /// @}
+      
+    private:
+      void throw_invalid_operation_exception();
     };
   }
 }

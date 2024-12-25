@@ -178,6 +178,13 @@ namespace xtd {
           xtd::linq::enumerable_collection<source_t> as_enumerable() const noexcept {
             return xtd::linq::enumerable::as_enumerable(base());
           }
+
+          /// @brief Computes the average of a sequence of source_t values.
+          /// @return The average of this sequence of values.
+          /// @exception xtd::invalid_operation_exception this sequence contains no elements.
+          auto average() const noexcept {
+            return xtd::linq::enumerable::average(base());
+          }
           /// @}
           
         private:

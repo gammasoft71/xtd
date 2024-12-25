@@ -1150,6 +1150,7 @@ add_sources(
   src/xtd/io/string_writer.cpp
   src/xtd/io/text_reader.cpp
   src/xtd/io/text_writer.cpp
+  src/xtd/linq/enumerable.cpp
   src/xtd/media/system_sound.cpp
   src/xtd/media/system_sounds.cpp
   src/xtd/net/cookie_exception.cpp
