@@ -1,5 +1,6 @@
 #include <xtd/linq/enumerable>
 #include <xtd/icomparable>
+#include <xtd/invalid_operation_exception>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -128,6 +129,56 @@ namespace xtd::linq::tests {
       auto s = array {1, 2, 3};
       assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable<int>(s.begin(), s.end()));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable<int>(s.begin(), s.end()));
+    }
+    
+    void test_method_(average_with_enumerable_decimal) {
+      assert::are_equal(.3l, enumerable::average(array {.1l, .2l, .3l, .4l, .5l}));
+      assert::throws<invalid_operation_exception>([]{enumerable::average(array<decimal> {});});
+    }
+    
+    void test_method_(average_with_enumerable_double) {
+      assert::are_equal(.3, enumerable::average(array {.1, .2, .3, .4, .5}));
+      assert::throws<invalid_operation_exception>([]{enumerable::average(array<double> {});});
+    }
+
+    void test_method_(average_with_enumerable_float) {
+      assert::are_equal(.3f, enumerable::average(array {.1f, .2f, .3f, .4f, .5f}));
+      assert::throws<invalid_operation_exception>([]{enumerable::average(array<float> {});});
+    }
+    
+    void test_method_(average_with_enumerable_int32) {
+      assert::are_equal(3.0, enumerable::average(array {1, 2, 3, 4, 5}));
+      assert::throws<invalid_operation_exception>([]{enumerable::average(array<int32> {});});
+    }
+
+    void test_method_(average_with_enumerable_int64) {
+      assert::are_equal(3.0, enumerable::average(array {1_s64, 2_s64, 3_s64, 4_s64, 5_s64}));
+      assert::throws<invalid_operation_exception>([]{enumerable::average(array<int64> {});});
+    }
+    
+    void test_method_(average_with_enumerable_optional_decimal) {
+      assert::are_equal(.3l, enumerable::average(array<optional<decimal>> {.1l, .2l, nullopt, .3l, .4l, .5l}));
+      assert::are_equal(nullopt, enumerable::average(array<optional<decimal>> {}));
+    }
+    
+    void test_method_(average_with_enumerable_optional_double) {
+      assert::are_equal(.3, enumerable::average(array<optional<double>> {.1, .2, nullopt, .3, .4, .5}));
+      assert::are_equal(nullopt, enumerable::average(array<optional<double>> {}));
+    }
+    
+    void test_method_(average_with_enumerable_optional_float) {
+      assert::are_equal(.3f, enumerable::average(array<optional<float>> {.1f, .2f, nullopt, .3f, .4f, .5f}));
+      assert::are_equal(nullopt, enumerable::average(array<optional<float>> {}));
+    }
+    
+    void test_method_(average_with_enumerable_optional_int32) {
+      assert::are_equal(3.0, enumerable::average(array<optional<int32>> {1, 2, nullopt, 3, 4, 5}));
+      assert::are_equal(nullopt, enumerable::average(array<optional<int32>> {}));
+    }
+    
+    void test_method_(average_with_enumerable_optional_int64) {
+      assert::are_equal(3.0, enumerable::average(array<optional<int64>> {1_s64, 2_s64, nullopt, 3_s64, 4_s64, 5_s64}));
+      assert::are_equal(nullopt, enumerable::average(array<optional<int64>> {}));
     }
   };
 }
