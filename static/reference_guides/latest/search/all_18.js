@@ -7,7 +7,7 @@ var searchData=
   ['drawing2d_4',['drawing2d',['../namespacextd_1_1drawing_1_1drawing2d.html',1,'xtd::drawing']]],
   ['drawing_5f2d_5',['drawing_2d',['../namespacextd_1_1drawing_1_1drawing__2d.html',1,'xtd::drawing']]],
   ['exception_5fservices_6',['exception_services',['../namespacextd_1_1runtime_1_1exception__services.html',1,'xtd::runtime']]],
-  ['extensions_7',['extensions',['../namespacextd_1_1collections_1_1generic_1_1extensions.html',1,'xtd::collections::generic']]],
+  ['extensions_7',['extensions',['../namespacextd_1_1collections_1_1generic_1_1extensions.html',1,'xtd::collections::generic::extensions'],['../namespacextd_1_1extensions.html',1,'xtd::extensions']]],
   ['forms_8',['forms',['../namespacextd_1_1forms.html',1,'xtd']]],
   ['generic_9',['generic',['../namespacextd_1_1collections_1_1generic.html',1,'xtd::collections']]],
   ['helpers_10',['helpers',['../namespacextd_1_1collections_1_1generic_1_1helpers.html',1,'xtd::collections::generic']]],

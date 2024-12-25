@@ -160,6 +160,9 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a710bddf2e51d3f6ed70f1b7905c8fcfe">append</a> (const source_t &amp;element) const noexcept</td></tr>
 <tr class="memdesc:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
 <tr class="separator:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5bab0aafd6e4b9c8d55e39bc67a9ce1e">as_enumerable</a> () const noexcept</td></tr>
+<tr class="memdesc:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as xtd::collection::generic::ienumerable &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a22f3540f62b3b6140ecf188faf509842" name="a22f3540f62b3b6140ecf188faf509842"></a>
@@ -1038,7 +1041,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a8a7a51d0792107dd537730634b8fff12">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers.append(5)));</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// If you prefer, you can create a new list explicitly</span></div>
-<div class="line">  <span class="keyword">auto</span> new_numbers = numbers.append(5); <span class="comment">//.to_list();</span></div>
+<div class="line">  <span class="keyword">auto</span> new_numbers = numbers.append(5).to_list();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// And then write to the console output</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a8a7a51d0792107dd537730634b8fff12">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, new_numbers));</div>
@@ -1057,6 +1060,43 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 
 </div>
 </div>
+<a id="a5bab0aafd6e4b9c8d55e39bc67a9ce1e" name="a5bab0aafd6e4b9c8d55e39bc67a9ce1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bab0aafd6e4b9c8d55e39bc67a9ce1e">&#9670;&#160;</a></span>as_enumerable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::as_enumerable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the input typed as xtd::collection::generic::ienumerable &lt;type_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as xtd::collection::generic::ienumerable &lt;type_t&gt;. </dd></dl>
+<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/collections/generic/extensions/<a class="el" href="collections_2generic_2extensions_2enumerable_8hpp_source.html">enumerable.hpp</a></li>
 </ul>
@@ -1064,7 +1104,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 23 2024 21:17:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 25 2024 15:34:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
