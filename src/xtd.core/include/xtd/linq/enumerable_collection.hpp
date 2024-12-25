@@ -34,28 +34,24 @@ namespace xtd {
     class enumerable_collection : public xtd::collections::generic::ienumerable<type_t> {
     public:
       xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
-        class box_enumerator : public xtd::collections::generic::ienumerator<type_t> {
-        public:
-          explicit box_enumerator(const std::vector<type_t>& items) : items_(items) {}
-          const type_t& current() const override {return items_[index_];}
-          bool move_next() override {return ++index_ < items_.size();}
-          void reset() override {index_ = std::numeric_limits<size>::max();}
+        struct box_enumerator : xtd::collections::generic::ienumerator<type_t> {
+          explicit box_enumerator(const collection_type& items) : items {items} {}
+          const type_t& current() const override {return items[index];}
+          bool move_next() override {return ++index < items.size();}
+          void reset() override {index = npos;}
           
-        protected:
-          const std::vector<type_t>& items_;
-          size index_ = std::numeric_limits<size>::max();
+        private:
+          const collection_type& items;
+          xtd::size index = npos;
         };
-        return {new_ptr<box_enumerator>(enumerable_collection_)};
+        return {new_ptr<box_enumerator>(items)};
       }
 
     private:
       friend class xtd::linq::enumerable;
-      
-      void append(const type_t& item) noexcept {
-        enumerable_collection_.push_back(item);
-      }
-      
-      std::vector<type_t> enumerable_collection_;
+      using collection_type = std::vector<type_t>;
+      static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
+      collection_type items;
     };
   }
 }

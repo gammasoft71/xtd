@@ -168,6 +168,16 @@ namespace xtd {
           xtd::linq::enumerable_collection<source_t> append(const source_t& element) const noexcept {
             return xtd::linq::enumerable::append(base(), element);
           }
+
+          /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+          /// @param source A sequence of values.
+          /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+          /// @par Example
+          /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+          /// @include enumerable_as_enumerable.cpp
+          xtd::linq::enumerable_collection<source_t> as_enumerable() const noexcept {
+            return xtd::linq::enumerable::as_enumerable(base());
+          }
           /// @}
           
         private:
