@@ -2,8 +2,9 @@
 /// @brief Contains xtd::collections::generic::enumerable <type_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "enumerable_collection.hpp"
+//#include "enumerable_collection.hpp"
 #include "../collections/generic/helpers/allocator.hpp"
+#include "../collections/generic/ienumerable.hpp"
 #include "../decimal.hpp"
 #include "../iequatable.hpp"
 #include "../int32.hpp"
@@ -24,6 +25,11 @@ namespace xtd {
   
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
+    /// @cond
+    template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    class enumerable_collection;
+    /// @endcond
+
     /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
     /// @par Definition
     /// ```cpp
@@ -779,6 +785,13 @@ namespace xtd {
       /// @param source A sequence of optional xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::int64>>& source) noexcept;
+      
+      /// @brief Generates a sequence of integral numbers within a specified range.
+      /// @param start The value of the first integer in the sequence.
+      /// @param count The number of sequential integers to generate.
+      /// @return An xtd::collection::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      static enumerable_collection<xtd::int32> range(xtd::int32 start, xtd::int32 count);
       /// @}
       
     private:
@@ -786,3 +799,5 @@ namespace xtd {
     };
   }
 }
+
+#include "../collections/generic/extensions/enumerable.hpp"

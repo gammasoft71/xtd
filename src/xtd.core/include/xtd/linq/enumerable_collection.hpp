@@ -2,7 +2,9 @@
 /// @brief Contains xtd::linq::enumerable_collection <type_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "../collections/generic/helpers/allocator.hpp"
 #include "../collections/generic/ienumerable.hpp"
+#include "../collections/generic/extensions/enumerable.hpp"
 #include "../new_ptr.hpp"
 #include <limits>
 #include <vector>
@@ -30,8 +32,8 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core linq
-    template<typename type_t>
-    class enumerable_collection : public xtd::collections::generic::ienumerable<type_t> {
+    template<typename type_t, typename allocator_t>
+    class enumerable_collection : public xtd::collections::generic::extensions::enumerable<enumerable_collection<type_t, allocator_t>, type_t>, public xtd::collections::generic::ienumerable<type_t> {
     public:
       xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
         struct box_enumerator : xtd::collections::generic::ienumerator<type_t> {
@@ -49,7 +51,7 @@ namespace xtd {
 
     private:
       friend class xtd::linq::enumerable;
-      using collection_type = std::vector<type_t>;
+      using collection_type = std::vector<type_t, allocator_t>;
       static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
       collection_type items;
     };

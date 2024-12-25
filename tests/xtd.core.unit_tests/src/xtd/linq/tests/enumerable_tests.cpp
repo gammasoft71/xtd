@@ -180,5 +180,9 @@ namespace xtd::linq::tests {
       assert::are_equal(3.0, enumerable::average(array<optional<int64>> {1_s64, 2_s64, nullopt, 3_s64, 4_s64, 5_s64}));
       assert::are_equal(nullopt, enumerable::average(array<optional<int64>> {}));
     }
+    
+    void test_method_(range_with_start_and_count) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::range(1, 5));
+    }
   };
 }

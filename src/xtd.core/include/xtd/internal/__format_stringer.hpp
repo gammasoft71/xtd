@@ -6,6 +6,7 @@
 #include "__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #include "__string_definitions.hpp"
+#include "../linq/enumerable_collection.hpp"
 #include "../any.hpp"
 #include "../chrono.hpp"
 #include "../optional.hpp"
@@ -147,6 +148,8 @@ namespace xtd {
   inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
   template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  inline std::string to_string(const xtd::linq::enumerable_collection<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
 
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);

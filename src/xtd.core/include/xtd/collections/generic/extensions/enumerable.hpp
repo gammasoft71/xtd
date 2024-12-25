@@ -194,3 +194,5 @@ namespace xtd {
     }
   }
 }
+
+#include "../../../linq/enumerable_collection.hpp"

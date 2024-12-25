@@ -1,4 +1,5 @@
 #include "../../../include/xtd/linq/enumerable.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/literals.hpp"
@@ -120,6 +121,14 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
   }
   if (count == 0) return nullopt;
   return average / count;
+}
+
+enumerable_collection<int32> enumerable::range(int32 start, int32 count) {
+  if (count < 0) throw argument_out_of_range_exception {};
+  auto result = enumerable_collection<int32> {};
+  for (auto index = start; index < start + count; ++index)
+    result.items.push_back(index);
+  return result;
 }
 
 void enumerable::throw_invalid_operation_exception() {
