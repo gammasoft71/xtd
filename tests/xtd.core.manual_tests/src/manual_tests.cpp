@@ -1,10 +1,13 @@
 #include <xtd/xtd>
 
 using namespace xtd;
+using namespace xtd::linq;
 
 auto main() -> int {
-  println("average = {}", array<int> {1, 2, 3, 4, 5}.average());
-  
+  println("values = {}", enumerable::as_enumerable(std::vector {1, 3, 3, 4, 5, 6, 7, 8, 9, 10}).append(11));
+  println("values = {}", enumerable::range(1, 10).append(11));
+  println("values = [{}]", string::join(", ", enumerable::range(1, 10).append(11)));
+
   /*
   try {
     throw exception {};
