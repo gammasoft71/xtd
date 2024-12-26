@@ -165,7 +165,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
-          xtd::linq::enumerable_collection<source_t> append(const source_t& element) const noexcept {
+          const xtd::collections::generic::ienumerable<source_t>& append(const source_t& element) const noexcept {
             return xtd::linq::enumerable::append(base(), element);
           }
 

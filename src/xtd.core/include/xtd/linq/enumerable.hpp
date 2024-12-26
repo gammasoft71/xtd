@@ -710,8 +710,8 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t>
-      static auto append(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& element) noexcept {
-        auto result = enumerable_collection<source_t> {};
+      static const xtd::collections::generic::ienumerable<source_t>& append(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& element) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -725,8 +725,8 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t>
-      static auto append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
-        auto result = enumerable_collection<source_t> {};
+      static const xtd::collections::generic::ienumerable<source_t>& append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -740,8 +740,8 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t, typename collection_t>
-      static auto append(const collection_t& source, const source_t& element) noexcept {
-        auto result = enumerable_collection<source_t> {};
+      static const xtd::collections::generic::ienumerable<source_t>& append(const collection_t& source, const source_t& element) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -756,8 +756,8 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append2.cpp
       template<typename source_t, typename input_iterator_t>
-      static auto append(input_iterator_t first, input_iterator_t last, const source_t& element) noexcept {
-        auto result = enumerable_collection<source_t> {};
+      static const xtd::collections::generic::ienumerable<source_t>& append(input_iterator_t first, input_iterator_t last, const source_t& element) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
         result.items.push_back(element);
@@ -781,8 +781,8 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename source_t>
-      static auto as_enumerable(const std::initializer_list<source_t>& source) noexcept {
-        auto result = enumerable_collection<source_t> {};
+      static const xtd::collections::generic::ienumerable<source_t>& as_enumerable(const std::initializer_list<source_t>& source) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return result;
@@ -794,12 +794,12 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template <typename collection_t>
-      static auto as_enumerable(const collection_t& source) noexcept {
+      static const auto& as_enumerable(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
-        auto result = enumerable_collection<source_t> {};
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
-        return result;
+        return static_cast<const xtd::collections::generic::ienumerable<source_t>&>(result);
       }
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
       /// @param first The first iterator.
@@ -809,12 +809,12 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
       template<typename input_iterator_t>
-      static auto as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
+      static const auto& as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
-        auto result = enumerable_collection<source_t> {};
+        static thread_local auto result = enumerable_collection<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
-        return result;
+        return static_cast<const xtd::collections::generic::ienumerable<source_t>&>(result);
       }
 
       /// @brief Computes the average of a sequence of xtd::decimal values.
