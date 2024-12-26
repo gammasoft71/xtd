@@ -16,17 +16,25 @@ namespace xtd::linq::tests {
       assert::are_equal(15, enumerable::aggregate(array {1, 2, 3, 4, 5}, [](int total, int next)->int {return total + next;}));
     }
     
+    void test_method_(aggregate_with_intializer_list_and_func) {
+      assert::are_equal(15, enumerable::aggregate({1, 2, 3, 4, 5}, [](int total, int next)->int {return total + next;}));
+    }
+    
     void test_method_(aggregate_with_collection_and_func) {
       assert::are_equal(15, enumerable::aggregate(std::vector {1, 2, 3, 4, 5}, [](int total, int next)->int {return total + next;}));
     }
     
     void test_method_(aggregate_with_iterators_and_func) {
       auto s = array {1, 2, 3, 4, 5};
-      assert::are_equal(15, enumerable::aggregate<int>(s.begin(), s.end(), [](int total, int next) {return total + next;}));
+      assert::are_equal(15, enumerable::aggregate(s.begin(), s.end(), [](int total, int next) {return total + next;}));
     }
     
     void test_method_(aggregate_with_enumerable_seed_and_func) {
       assert::are_equal(25, enumerable::aggregate(array {1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}));
+    }
+    
+    void test_method_(aggregate_with_initializer_list_seed_and_func) {
+      assert::are_equal(25, enumerable::aggregate({1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}));
     }
     
     void test_method_(aggregate_with_collection_seed_and_func) {
@@ -40,6 +48,10 @@ namespace xtd::linq::tests {
     
     void test_method_(aggregate_with_enumerable_seed_func_and_result_selector) {
       assert::are_equal(-25, enumerable::aggregate(array {1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}, [](int aggregated) {return -aggregated;}));
+    }
+    
+    void test_method_(aggregate_with_initializer_list_seed_func_and_result_selector) {
+      assert::are_equal(-25, enumerable::aggregate({1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}, [](int aggregated) {return -aggregated;}));
     }
     
     void test_method_(aggregate_with_collection_seed_func_and_result_selector) {
@@ -56,6 +68,11 @@ namespace xtd::linq::tests {
       assert::is_false(enumerable::all(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
     }
     
+    void test_method_(all_with_initializer_list_and_predicate) {
+      assert::is_true(enumerable::all({2, 4, 6, 8, 10, 12}, [](int next) {return next % 2 == 0;}));
+      assert::is_false(enumerable::all({1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
+    }
+    
     void test_method_(all_with_collection_and_predicate) {
       assert::is_true(enumerable::all(std::vector {2, 4, 6, 8, 10, 12}, [](int next) {return next % 2 == 0;}));
       assert::is_false(enumerable::all(std::vector {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
@@ -63,14 +80,19 @@ namespace xtd::linq::tests {
     
     void test_method_(all_with_iterators_and_predicate) {
       auto s1 = array {2, 4, 6, 8, 10, 12};
-      assert::is_true(enumerable::all<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
+      assert::is_true(enumerable::all(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
       auto s2 = array {1, 2, 3, 4, 5};
-      assert::is_false(enumerable::all<int>(s2.begin(), s2.end(), [](int next) {return next % 2 == 0;}));
+      assert::is_false(enumerable::all(s2.begin(), s2.end(), [](int next) {return next % 2 == 0;}));
     }
 
     void test_method_(any_with_enumerable) {
       assert::is_true(enumerable::any(array {1}));
       assert::is_false(enumerable::any(array<int> {}));
+    }
+    
+    void test_method_(any_with_initializer_list) {
+      assert::is_true(enumerable::any({1}));
+      assert::is_false(enumerable::any(std::initializer_list<int> {}));
     }
     
     void test_method_(any_with_collection) {
@@ -90,6 +112,11 @@ namespace xtd::linq::tests {
       assert::is_false(enumerable::any(array {1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
     }
     
+    void test_method_(any_with_initializer_list_and_predicate) {
+      assert::is_true(enumerable::any({1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
+      assert::is_false(enumerable::any({1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
+    }
+    
     void test_method_(any_with_collection_and_predicate) {
       assert::is_true(enumerable::any(std::vector {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
       assert::is_false(enumerable::any(std::vector {1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
@@ -97,13 +124,17 @@ namespace xtd::linq::tests {
     
     void test_method_(any_with_iterators_and_predicate) {
       auto s1 = array {1, 2, 3, 4, 5};
-      assert::is_true(enumerable::any<int>(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
+      assert::is_true(enumerable::any(s1.begin(), s1.end(), [](int next) {return next % 2 == 0;}));
       auto s2 = array {1, 3, 5, 7, 9, 11};
-      assert::is_false(enumerable::any<int>(s2.begin(), s2.end(), [](int next) {return next % 2 == 0;}));
+      assert::is_false(enumerable::any(s2.begin(), s2.end(), [](int next) {return next % 2 == 0;}));
     }
     
     void test_method_(append_with_enumerable_and_element) {
       collection_assert::are_equal({1, 2, 3}, enumerable::append(array {1, 2}, 3));
+    }
+    
+    void test_method_(append_with_initializer_list_and_element) {
+      collection_assert::are_equal({1, 2, 3}, enumerable::append({1, 2}, 3));
     }
     
     void test_method_(append_with_collection_and_element) {
@@ -120,6 +151,11 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(array {1, 2, 3}));
     }
     
+    void test_method_(as_enumerable_with_initializer_list) {
+      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable({1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable({1, 2, 3}));
+    }
+    
     void test_method_(as_enumerable_with_collection) {
       assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable(std::vector {1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(std::vector {1, 2, 3}));
@@ -127,8 +163,8 @@ namespace xtd::linq::tests {
     
     void test_method_(as_enumerable_with_iterators) {
       auto s = array {1, 2, 3};
-      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable<int>(s.begin(), s.end()));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable<int>(s.begin(), s.end()));
+      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable(s.begin(), s.end()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.begin(), s.end()));
     }
     
     void test_method_(average_with_enumerable_decimal) {

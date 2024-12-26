@@ -2,11 +2,11 @@
 
 using namespace xtd;
 using namespace xtd::linq;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
-  println("values = {}", enumerable::as_enumerable(std::vector {1, 3, 3, 4, 5, 6, 7, 8, 9, 10}).append(11));
-  println("values = {}", enumerable::range(1, 10).append(11));
-  println("values = [{}]", string::join(", ", enumerable::range(1, 10).append(11)));
+  const ienumerable<int>& v1 = enumerable::as_enumerable({1, 3, 3, 4});
+  println("v1 = {}", v1);
 
   /*
   try {
