@@ -1073,6 +1073,90 @@ namespace xtd {
         using source_t = typename std::decay<decltype(*first)>::type;
         return input_iterator_to_list<source_t, input_iterator_t>(first, last);
       }
+      
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        for (const auto& item : source)
+          if (predicate(item)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        for (const auto& item : source)
+          if (predicate(item)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename collection_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        for (const auto& item : source)
+          if (predicate(item)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename input_iterator_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        for (auto iterator = first; iterator != last; ++iterator)
+          if (predicate(*iterator)) result.items.push_back(*iterator);
+        return result;
+      }
+      
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename predicate_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const predicate_t& predicate) {
+        return where(source, std::function<bool(const source_t&)> {predicate});
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename predicate_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const predicate_t& predicate) {
+        return where(source, std::function<bool(const source_t&)> {predicate});
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename collection_t, typename predicate_t>
+      static const auto& where(const collection_t& source, const predicate_t& predicate) {
+        using source_t = typename collection_t::value_type;
+        return where(source, std::function<bool(const source_t&)> {predicate});
+      }
+      /// @brief Filters a sequence of values based on a predicate.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each element for a condition.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename input_iterator_t, typename predicate_t>
+      static const auto& where(input_iterator_t first, input_iterator_t last, const predicate_t& predicate) {
+        using source_t = typename std::decay<decltype(*first)>::type;
+        return where(first, last, std::function<bool(const source_t&)> {predicate});
+      }
       /// @}
       
     private:

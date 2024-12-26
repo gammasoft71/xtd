@@ -193,7 +193,6 @@ namespace xtd {
           const xtd::collections::generic::ienumerable<result_t>& select(const std::function<result_t(const source_t&)>& selector) const {
             return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
           }
-          
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
@@ -202,7 +201,6 @@ namespace xtd {
           const xtd::collections::generic::ienumerable<result_t>& select(const selector_t& selector) const {
             return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
           }
-          
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
@@ -210,7 +208,6 @@ namespace xtd {
           const xtd::collections::generic::ienumerable<source_t>& select(const std::function<source_t(const source_t&)>& selector) const {
             return xtd::linq::enumerable::select(base(), selector);
           }
-          
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
@@ -223,6 +220,22 @@ namespace xtd {
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           const xtd::collections::generic::list<source_t>& to_list() const noexcept;
+          
+          /// @brief Filters a sequence of values based on a predicate.
+          /// @param source A sequence of values to filter.
+          /// @param predicate A function to test each element for a condition.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+          const xtd::collections::generic::ienumerable<source_t>& where(const std::function<bool(const source_t&)>& predicate) const {
+            return xtd::linq::enumerable::where(base(), predicate);
+          }
+          /// @brief Filters a sequence of values based on a predicate.
+          /// @param source A sequence of values to filter.
+          /// @param predicate A function to test each element for a condition.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+          template<typename predicate_t>
+          const xtd::collections::generic::ienumerable<source_t>& where(const predicate_t& predicate) const {
+            return xtd::linq::enumerable::where(base(), predicate);
+          }
           /// @}
           
         private:
