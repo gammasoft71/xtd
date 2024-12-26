@@ -24,7 +24,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
-  class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::extensions::enumerable<basic_array<type_t, allocator_t>, type_t>, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>> {
+  class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>> {
     class comparer {
     public:
       comparer(const xtd::collections::generic::icomparer<type_t>* comparer) : comparer_(comparer) { }
