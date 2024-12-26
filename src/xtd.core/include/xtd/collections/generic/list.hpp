@@ -1005,3 +1005,43 @@ namespace xtd {
     }
   }
 }
+
+/// @cond
+namespace xtd::collections::generic::extensions {
+  template <typename enumerable_t, typename source_t>
+  inline const xtd::collections::generic::list<source_t>& enumerable<enumerable_t, source_t>::to_list() const noexcept {
+    return xtd::linq::enumerable::to_list(base());
+  }
+}
+
+namespace xtd::linq {
+  template<typename source_t>
+  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+    static thread_local auto result = xtd::collections::generic::list<source_t> {};
+    result = xtd::collections::generic::list<source_t> {source};
+    return result;
+  }
+
+  template<typename source_t>
+  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(const std::initializer_list<source_t>& source) noexcept {
+    static thread_local auto result = xtd::collections::generic::list<source_t> {};
+    result = xtd::collections::generic::list<source_t> {source};
+    return result;
+  }
+  
+  template<typename source_t, typename collection_t>
+  inline const xtd::collections::generic::list<source_t>& enumerable::collection_to_list(const collection_t& source) noexcept {
+    static thread_local auto result = xtd::collections::generic::list<source_t> {};
+    result = xtd::collections::generic::list<source_t> {source.begin(), source.end()};
+    return result;
+  }
+  
+  template<typename source_t, typename input_iterator_t>
+  inline const xtd::collections::generic::list<source_t>& enumerable::input_iterator_to_list(input_iterator_t first, input_iterator_t last) noexcept {
+    static thread_local auto result = xtd::collections::generic::list<source_t> {};
+    result = xtd::collections::generic::list<source_t> {first, last};
+    return result;
+  }
+}
+/// @endcond
+
