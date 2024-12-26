@@ -185,6 +185,24 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
+          /// @brief Projects each element of a sequence into a new form.
+          /// @param source A sequence of values to invoke a transform function on.
+          /// @param selector A transform function to apply to each element.
+          /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+          template<typename result_t>
+          const xtd::collections::generic::ienumerable<result_t>& select(const std::function<result_t(const source_t&)>& selector) const {
+            return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
+          }
+          
+          /// @brief Projects each element of a sequence into a new form.
+          /// @param source A sequence of values to invoke a transform function on.
+          /// @param selector A transform function to apply to each element.
+          /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+          template<typename result_t, typename selector_t>
+          const xtd::collections::generic::ienumerable<result_t>& select(const selector_t& selector) const {
+            return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
+          }
+          
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           const xtd::collections::generic::list<source_t>& to_list() const noexcept;
