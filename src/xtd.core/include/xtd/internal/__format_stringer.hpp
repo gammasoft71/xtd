@@ -148,6 +148,8 @@ namespace xtd {
   inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
   template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t>
+  inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
   template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   inline std::string to_string(const xtd::linq::enumerable_collection<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
 
