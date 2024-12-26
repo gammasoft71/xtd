@@ -170,7 +170,6 @@ namespace xtd {
           }
 
           /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
-          /// @param source A sequence of values.
           /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
           /// @par Example
           /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
@@ -186,6 +185,8 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
+          /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
+          /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           const xtd::collections::generic::list<source_t>& to_list() const noexcept;
           /// @}
           
