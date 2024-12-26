@@ -43,6 +43,7 @@ namespace xtd {
         /// @cond
         enumerator(enumerator&& enumerator) = default;
         enumerator(const enumerator& enumerator) = default;
+        enumerator& operator =(enumerator&& enumerator) = default;
         enumerator& operator =(const enumerator& enumerator) = default;
         /// @endcond
         
