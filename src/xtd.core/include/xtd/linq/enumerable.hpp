@@ -2,9 +2,7 @@
 /// @brief Contains xtd::collections::generic::enumerable <type_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-//#include "enumerable_collection.hpp"
 #include "../collections/generic/helpers/allocator.hpp"
-#include "../collections/generic/ienumerable.hpp"
 #include "../decimal.hpp"
 #include "../iequatable.hpp"
 #include "../int32.hpp"
@@ -20,6 +18,8 @@ namespace xtd {
   namespace collections::generic {
     template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
     class list;
+    template<typename type_t>
+    class ienumerable;
   }
   /// @endcond
   
@@ -710,7 +710,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t>
-      static enumerable_collection<source_t> append(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& element) noexcept {
+      static auto append(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& element) noexcept {
         auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
@@ -725,7 +725,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t>
-      static enumerable_collection<source_t> append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
+      static auto append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
         auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
@@ -740,7 +740,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t, typename collection_t>
-      static enumerable_collection<source_t> append(const collection_t& source, const source_t& element) noexcept {
+      static auto append(const collection_t& source, const source_t& element) noexcept {
         auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
@@ -756,7 +756,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append2.cpp
       template<typename source_t, typename input_iterator_t>
-      static enumerable_collection<source_t> append(input_iterator_t first, input_iterator_t last, const source_t& element) noexcept {
+      static auto append(input_iterator_t first, input_iterator_t last, const source_t& element) noexcept {
         auto result = enumerable_collection<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
@@ -771,11 +771,8 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename source_t>
-      static enumerable_collection<source_t> as_enumerable(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
-        auto result = enumerable_collection<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        return result;
+      static const xtd::collections::generic::ienumerable<source_t>& as_enumerable(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+        return source;
       }
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
       /// @param source A sequence of values.
@@ -784,7 +781,7 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename source_t>
-      static enumerable_collection<source_t> as_enumerable(const std::initializer_list<source_t>& source) noexcept {
+      static auto as_enumerable(const std::initializer_list<source_t>& source) noexcept {
         auto result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
@@ -872,11 +869,12 @@ namespace xtd {
       /// @param count The number of sequential integers to generate.
       /// @return An xtd::collection::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      static enumerable_collection<xtd::int32> range(xtd::int32 start, xtd::int32 count);
+      static auto range(xtd::int32 start, xtd::int32 count);
       /// @}
       
     private:
-      void throw_invalid_operation_exception();
+      static void throw_argument_out_of_range_exception();
+      static void throw_invalid_operation_exception();
     };
   }
 }

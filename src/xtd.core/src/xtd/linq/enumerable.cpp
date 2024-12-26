@@ -123,7 +123,7 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
   return average / count;
 }
 
-enumerable_collection<int32> enumerable::range(int32 start, int32 count) {
+auto enumerable::range(int32 start, int32 count) {
   if (count < 0) throw argument_out_of_range_exception {};
   auto result = enumerable_collection<int32> {};
   for (auto index = start; index < start + count; ++index)
