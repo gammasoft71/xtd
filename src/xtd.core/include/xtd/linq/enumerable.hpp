@@ -712,6 +712,7 @@ namespace xtd {
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& append(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& element) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -727,6 +728,7 @@ namespace xtd {
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -742,6 +744,7 @@ namespace xtd {
       template<typename source_t, typename collection_t>
       static const xtd::collections::generic::ienumerable<source_t>& append(const collection_t& source, const source_t& element) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -758,6 +761,7 @@ namespace xtd {
       template<typename source_t, typename input_iterator_t>
       static const xtd::collections::generic::ienumerable<source_t>& append(input_iterator_t first, input_iterator_t last, const source_t& element) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
         result.items.push_back(element);
@@ -783,6 +787,7 @@ namespace xtd {
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& as_enumerable(const std::initializer_list<source_t>& source) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return result;
@@ -797,6 +802,7 @@ namespace xtd {
       static const auto& as_enumerable(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return static_cast<const xtd::collections::generic::ienumerable<source_t>&>(result);
@@ -812,6 +818,7 @@ namespace xtd {
       static const auto& as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
         static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
         return static_cast<const xtd::collections::generic::ienumerable<source_t>&>(result);
