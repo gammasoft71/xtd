@@ -185,6 +185,8 @@ namespace xtd {
           auto average() const noexcept {
             return xtd::linq::enumerable::average(base());
           }
+          
+          const xtd::collections::generic::list<source_t>& to_list() const noexcept;
           /// @}
           
         private:

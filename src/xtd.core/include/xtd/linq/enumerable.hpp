@@ -877,9 +877,41 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       static const xtd::collections::generic::ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 count);
+      
+      /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
+      /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
+      /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      template<typename source_t>
+      static const xtd::collections::generic::list<source_t>& to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept;
+      /// @brief Creates a xtd::collections::generic::list <type_t> from an std::initializer_list <type_t>.
+      /// @param source The std::initializer_list <type_t> to create a xtd::collections::generic::list <type_t> from.
+      /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      template<typename source_t>
+      static const xtd::collections::generic::list<source_t>& to_list(const std::initializer_list<source_t>& source) noexcept;
+      /// @brief Creates a xtd::collections::generic::list <type_t> from an collection_t.
+      /// @param source The collection_t to create a xtd::collections::generic::list <type_t> from.
+      /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      template<typename collection_t>
+      static const auto& to_list(const collection_t& source) noexcept {
+        using source_t = typename collection_t::value_type;
+        return collection_to_list<source_t, collection_t>(source);
+      }
+      /// @brief Creates a xtd::collections::generic::list <type_t> from iterators.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      template<typename input_iterator_t>
+      static const auto& to_list(input_iterator_t first, input_iterator_t last) noexcept {
+        using source_t = typename std::decay<decltype(*first)>::type;
+        return input_iterator_to_list<source_t, input_iterator_t>(first, last);
+      }
       /// @}
       
     private:
+      template<typename source_t, typename collection_t>
+      static const xtd::collections::generic::list<source_t>& collection_to_list(const collection_t& source) noexcept;
+      template<typename source_t, typename input_iterator_t>
+      static const xtd::collections::generic::list<source_t>& input_iterator_to_list(input_iterator_t first, input_iterator_t last) noexcept;
       static void throw_argument_out_of_range_exception();
       static void throw_invalid_operation_exception();
     };

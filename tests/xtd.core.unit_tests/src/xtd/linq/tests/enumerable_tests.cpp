@@ -1,4 +1,6 @@
 #include <xtd/linq/enumerable>
+#include <xtd/collections/generic/list>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/icomparable>
 #include <xtd/invalid_operation_exception>
 #include <xtd/tunit/collection_assert>
@@ -147,23 +149,23 @@ namespace xtd::linq::tests {
     }
     
     void test_method_(as_enumerable_with_enumerable) {
-      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable(array {1, 2, 3}));
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(array {1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(array {1, 2, 3}));
     }
     
     void test_method_(as_enumerable_with_initializer_list) {
-      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable({1, 2, 3}));
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable({1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable({1, 2, 3}));
     }
     
     void test_method_(as_enumerable_with_collection) {
-      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable(std::vector {1, 2, 3}));
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(std::vector {1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(std::vector {1, 2, 3}));
     }
     
     void test_method_(as_enumerable_with_iterators) {
       auto s = array {1, 2, 3};
-      assert::is_instance_of<xtd::linq::enumerable_collection<int>>(enumerable::as_enumerable(s.begin(), s.end()));
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.begin(), s.end()));
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.begin(), s.end()));
     }
     
@@ -219,6 +221,31 @@ namespace xtd::linq::tests {
     
     void test_method_(range_with_start_and_count) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::range(1, 5));
+      collection_assert::are_equal({11, 12, 13, 14, 15}, enumerable::range(11, 5));
+      collection_assert::are_equal({-5, -4, -3, -2, -1}, enumerable::range(-5, 5));
+      collection_assert::are_equal({-1, 0, 1, 2, 3}, enumerable::range(-1, 5));
+      assert::throws<argument_out_of_range_exception>([]{enumerable::range(1, -1);});
+    }
+    
+    void test_method_(to_list_with_enumerable) {
+      assert::is_instance_of<xtd::collections::generic::list<int>>(enumerable::to_list(array {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::to_list(array {1, 2, 3}));
+    }
+    
+    void test_method_(to_list_with_initializer_list) {
+      assert::is_instance_of<xtd::collections::generic::list<int>>(enumerable::to_list({1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::to_list({1, 2, 3}));
+    }
+    
+    void test_method_(to_list_with_collection) {
+      assert::is_instance_of<xtd::collections::generic::list<int>>(enumerable::to_list(std::vector {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::to_list(std::vector {1, 2, 3}));
+    }
+    
+    void test_method_(to_list_with_iterators) {
+      auto s = array {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::list<int>>(enumerable::to_list(s.begin(), s.end()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::to_list(s.begin(), s.end()));
     }
   };
 }
