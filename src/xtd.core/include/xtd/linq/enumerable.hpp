@@ -869,7 +869,7 @@ namespace xtd {
       /// @param count The number of sequential integers to generate.
       /// @return An xtd::collection::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      static auto range(xtd::int32 start, xtd::int32 count);
+      static const xtd::collections::generic::ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 count);
       /// @}
       
     private:
