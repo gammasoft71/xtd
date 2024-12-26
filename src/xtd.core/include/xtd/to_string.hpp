@@ -501,9 +501,6 @@ namespace xtd {
 
   template<typename type_t>
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
-
-  template<typename type_t, typename allocator_t>
-  inline std::string to_string(const xtd::linq::enumerable_collection<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
   /// @endcond
 
   /// @brief Convert a specified value into a string with specified format and locale.
