@@ -22,4 +22,6 @@ add_projects(
   enumerable_select
   enumerable_select2
   enumerable_to_list
+  enumerable_where
+  enumerable_where2
 )
