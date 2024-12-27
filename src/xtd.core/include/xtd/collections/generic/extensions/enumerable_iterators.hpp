@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::enumerable_iterators <type_t, enumerable_t> class.
+/// @brief Contains xtd::collections::generic::extensions::enumerable_iterators <type_t, enumerable_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../enumerator.hpp"
@@ -30,13 +30,13 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core extensions_generic_collections
-        /// @remarks The xtd::collections::generic::enumerable_iterators <type_t> class is use to hide the complexity of c++ [std::iterator](https://en.cppreference.com/w/cpp/iterator/iterator).
+        /// @remarks The xtd::collections::generic::extensions::enumerable_iterators <type_t> class is use to hide the complexity of c++ [std::iterator](https://en.cppreference.com/w/cpp/iterator/iterator).
         /// @remarks The objective is for any collection inheriting from the xtd::collections::generic::ienumerable <type_t> interface to provide the iterator and const_iterator types and `begin` and `end` methods needed to be able to iterate the collection as for example :
         /// ```cpp
         /// auto parts = part_collection {};
-        /// Items.add(part {"item one", guid::new_guid()});
-        /// /*...*/
-        /// Items.add(part {"item n", guid::new_guid()}});
+        /// parts.add(part {"item one", guid::new_guid()});
+        /// // ...
+        /// parts.add(part {"item n", guid::new_guid()}});
         ///
         /// for (auto part : parts)
         ///   console::write_line(part);
