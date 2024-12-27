@@ -262,6 +262,12 @@ namespace xtd {
           const xtd::collections::generic::ienumerable<source_t>& where(const predicate_t& predicate) const {
             return xtd::linq::enumerable::where(base(), predicate);
           }
+          /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+          /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+          const xtd::collections::generic::ienumerable<source_t>& where(const std::function<bool(const source_t&)>& predicate, size_t) const {
+            return xtd::linq::enumerable::where(base(), predicate);
+          }
           /// @}
           
         private:

@@ -1331,6 +1331,60 @@ namespace xtd {
         using source_t = typename std::decay<decltype(*first)>::type;
         return where(first, last, std::function<bool(const source_t&)> {predicate});
       }
+
+      /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&, size_t)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          if (predicate(item, index++)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&, size_t)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          if (predicate(item, index++)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @param source A sequence of values to filter.
+      /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename collection_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          if (predicate(item, index++)) result.items.push_back(item);
+        return result;
+      }
+      /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      template<typename source_t, typename input_iterator_t>
+      static const xtd::collections::generic::ienumerable<source_t>& where(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&, size_t)>& predicate) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (auto iterator = first; iterator != last; ++iterator)
+          if (predicate(*iterator, index++)) result.items.push_back(*iterator);
+        return result;
+      }
       /// @}
       
     private:
