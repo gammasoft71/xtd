@@ -2,11 +2,12 @@
 
 using namespace xtd;
 using namespace xtd::linq;
-using namespace xtd::collections::generic;
 
 auto main() -> int {
-  const ienumerable<int>& v1 = enumerable::as_enumerable({1, 3, 3, 4});
-  println("v1 = {}", v1);
+  const auto& squares = enumerable::range(1, 10).select([](auto x) {return x * x;});
+  
+  for (auto num : squares)
+    console::write_line(num);
 
   /*
   try {
