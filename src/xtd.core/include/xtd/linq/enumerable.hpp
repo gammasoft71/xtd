@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::enumerable <type_t> class.
+/// @brief Contains xtd::linq::enumerable <type_t> class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
@@ -38,7 +38,7 @@ namespace xtd {
     /// ```
     /// @par Header
     /// ```cpp
-    /// #include <xtd/linq/enumerable
+    /// #include <xtd/linq/enumerable>
     /// ```
     /// @par Namespace
     /// xtd::linq
@@ -1239,3 +1239,4 @@ namespace xtd {
 }
 
 #include "../collections/generic/extensions/enumerable.hpp"
+#include "from.hpp"

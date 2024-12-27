@@ -794,6 +794,8 @@ add_sources(
   include/xtd/linq/enumerable
   include/xtd/linq/enumerable_collection.hpp
   include/xtd/linq/enumerable_collection
+  include/xtd/linq/from.hpp
+  include/xtd/linq/from
   include/xtd/media/system_sound.hpp
   include/xtd/media/system_sound
   include/xtd/media/system_sounds.hpp
