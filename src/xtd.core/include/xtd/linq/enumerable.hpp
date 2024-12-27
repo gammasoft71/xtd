@@ -74,7 +74,7 @@ namespace xtd {
       /// The following code example demonstrates how to reverse the order of words in a string by using enumerable::aggregate.
       /// @include enumerable_aggregate.cpp
       template<typename source_t>
-      static source_t aggregate(const std::initializer_list<source_t>& source, const std::function<source_t(const source_t&, const source_t&)>& func) {
+      static source_t aggregate(std::initializer_list<source_t> source, const std::function<source_t(const source_t&, const source_t&)>& func) {
         auto nb = 0;
         auto aggregated = source_t {};
         for (const auto& item : source)
@@ -135,7 +135,7 @@ namespace xtd {
       /// The following code example demonstrates how to reverse the order of words in a string by using xtd::linq::enumerable::aggregate.
       /// @include enumerable_aggregate.cpp
       template<typename source_t, typename func_t>
-      static source_t aggregate(const std::initializer_list<source_t>& source, const func_t& func) {
+      static source_t aggregate(std::initializer_list<source_t> source, const func_t& func) {
         return aggregate(source, std::function<source_t(const source_t&, const source_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence.
@@ -188,7 +188,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
       template<typename source_t, typename accumulate_t>
-      static accumulate_t aggregate(const std::initializer_list<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
+      static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
         auto aggregated = seed;
         for (const auto& item : source)
           aggregated = func(aggregated, item);
@@ -246,7 +246,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
       template<typename source_t, typename accumulate_t, typename func_t>
-      static accumulate_t aggregate(const std::initializer_list<source_t>& source, const accumulate_t& seed, const func_t& func) {
+      static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
@@ -303,7 +303,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
       template<typename source_t, typename accumulate_t, typename result_t>
-      static result_t aggregate(const std::initializer_list<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
+      static result_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (const auto& item : source)
           aggregated = func(aggregated, item);
@@ -366,7 +366,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
       template<typename source_t, typename accumulate_t, typename result_t, typename func_t, typename result_selector_t>
-      static result_t aggregate(const std::initializer_list<source_t>& source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
+      static result_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<result_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
@@ -422,7 +422,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
       template<typename source_t, typename accumulate_t, typename func_t, typename result_selector_t>
-      static accumulate_t aggregate(const std::initializer_list<source_t>& source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
+      static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<accumulate_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
@@ -476,7 +476,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<typename source_t>
-      static bool all(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
+      static bool all(std::initializer_list<source_t> source, const std::function<bool(const source_t&)>& predicate) {
         for (const auto& item : source)
           if (!predicate(item)) return false;
         return true;
@@ -517,18 +517,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<typename source_t, typename predicate_t>
-      static bool all(const xtd::collections::generic::ienumerable<source_t>& source, const predicate_t& predicate) {
-        return all(source, std::function<bool(const source_t&)> {predicate});
-      }
-      /// @brief Determines whether all elements of a sequence satisfy a condition.
-      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
-      /// @param predicate A function to test each element for a condition.
-      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
-      /// @include enumerable_all.cpp
-      template<typename source_t, typename predicate_t>
-      static bool all(const std::initializer_list<source_t>& source, const predicate_t& predicate) {
+      static bool all(std::initializer_list<source_t> source, const predicate_t& predicate) {
         return all(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
@@ -576,7 +565,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
       /// @include enumerable_any.cpp
       template<typename source_t>
-      static bool any(const std::initializer_list<source_t>& source) noexcept {
+      static bool any(std::initializer_list<source_t> source) noexcept {
         return source.begin() != source.end();
       }
       /// @brief Determines whether a sequence contains any elements.
@@ -622,7 +611,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<typename source_t>
-      static bool any(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
+      static bool any(std::initializer_list<source_t> source, const std::function<bool(const source_t&)>& predicate) {
         for (const auto& item : source)
           if (predicate(item)) return true;
         return false;
@@ -656,25 +645,14 @@ namespace xtd {
       }
 
       /// @brief Determines whether any elements of a sequence satisfy a condition.
-      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
+      /// @param source A collection_t that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<typename source_t, typename predicate_t>
-      static bool any(const xtd::collections::generic::ienumerable<source_t>& source, const predicate_t& predicate) {
-        return any(source, std::function<bool(const source_t&)> {predicate});
-      }
-      /// @brief Determines whether any elements of a sequence satisfy a condition.
-      /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
-      /// @param predicate A function to test each element for a condition.
-      /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
-      /// @include enumerable_all.cpp
-      template<typename source_t, typename predicate_t>
-      static bool any(const std::initializer_list<source_t>& source, const predicate_t& predicate) {
+      static bool any(std::initializer_list<source_t> source, const predicate_t& predicate) {
         return any(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether any elements of a sequence satisfy a condition.
@@ -726,7 +704,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& append(const std::initializer_list<source_t>& source, const source_t& element) noexcept {
+      static const xtd::collections::generic::ienumerable<source_t>& append(std::initializer_list<source_t> source, const source_t& element) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         for (const auto& item : source)
@@ -785,7 +763,7 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& as_enumerable(const std::initializer_list<source_t>& source) noexcept {
+      static const xtd::collections::generic::ienumerable<source_t>& as_enumerable(std::initializer_list<source_t> source) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         for (const auto& item : source)
@@ -884,7 +862,7 @@ namespace xtd {
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
-      static source_t first_or_default(const std::initializer_list<source_t>& source, const source_t& default_value) noexcept {
+      static source_t first_or_default(std::initializer_list<source_t> source, const source_t& default_value) noexcept {
         return any(source) ? *source.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
@@ -916,7 +894,7 @@ namespace xtd {
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
-      static source_t first_or_default(const std::initializer_list<source_t>& source) noexcept {
+      static source_t first_or_default(std::initializer_list<source_t> source) noexcept {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
@@ -970,7 +948,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
       template<typename source_t, typename result_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(const std::initializer_list<source_t>& source, const std::function<result_t(const source_t&)>& selector) {
+      static const xtd::collections::generic::ienumerable<result_t>& select(std::initializer_list<source_t> source, const std::function<result_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
         for (const auto& item : source)
@@ -1015,53 +993,6 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const selector_t& selector) {
-        return select(source, std::function<result_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(const std::initializer_list<source_t>& source, const selector_t& selector) {
-        return select(source, std::function<result_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename result_t, typename collection_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(const collection_t& source, const selector_t& selector) {
-        using source_t = typename collection_t::value_type;
-        return select(source, std::function<result_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename result_t, typename input_iterator_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(input_iterator_t first, input_iterator_t last, const selector_t& selector) {
-        using source_t = typename std::decay<decltype(*first)>::type;
-        return select(first, last, std::function<result_t(const source_t&)> {selector});
-      }
-      
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1078,7 +1009,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& select(const std::initializer_list<source_t>& source, const std::function<source_t(const source_t&)>& selector) {
+      static const xtd::collections::generic::ienumerable<source_t>& select(std::initializer_list<source_t> source, const std::function<source_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         for (const auto& item : source)
@@ -1116,53 +1047,6 @@ namespace xtd {
         return result;
       }
       
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<source_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const selector_t& selector) {
-        return select(source, std::function<source_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename selector_t>
-      static const xtd::collections::generic::ienumerable<source_t>& select(const std::initializer_list<source_t>& source, const selector_t& selector) {
-        return select(source, std::function<source_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename collection_t, typename selector_t>
-      static const auto& select(const collection_t& source, const selector_t& selector) {
-        using source_t = typename collection_t::value_type;
-        return select(source, std::function<source_t(const source_t&)> {selector});
-      }
-      /// @brief Projects each element of a sequence into a new form.
-      /// @param source A sequence of values to invoke a transform function on.
-      /// @param selector A transform function to apply to each element.
-      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp.cpp
-      template<typename input_iterator_t, typename selector_t>
-      static const auto& select(input_iterator_t first, input_iterator_t last, const selector_t& selector) {
-        using source_t = typename std::decay<decltype(*first)>::type;
-        return select(first, last, std::function<source_t(const source_t&)> {selector});
-      }
-      
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
@@ -1187,7 +1071,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<typename source_t, typename result_t>
-      static const xtd::collections::generic::ienumerable<result_t>& select(const std::initializer_list<source_t>& source, const std::function<result_t(const source_t&, size_t)>& selector) {
+      static const xtd::collections::generic::ienumerable<result_t>& select(std::initializer_list<source_t> source, const std::function<result_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
         auto index = size_t {0};
@@ -1252,7 +1136,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& select(const std::initializer_list<source_t>& source, const std::function<source_t(const source_t&, size_t)>& selector) {
+      static const xtd::collections::generic::ienumerable<source_t>& select(std::initializer_list<source_t> source, const std::function<source_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         auto index = size_t {0};
@@ -1308,7 +1192,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
       template<typename source_t>
-      static const xtd::collections::generic::list<source_t>& to_list(const std::initializer_list<source_t>& source) noexcept;
+      static const xtd::collections::generic::list<source_t>& to_list(std::initializer_list<source_t> source) noexcept;
       /// @brief Creates a xtd::collections::generic::list <type_t> from an collection_t.
       /// @param source The collection_t to create a xtd::collections::generic::list <type_t> from.
       /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
@@ -1337,6 +1221,9 @@ namespace xtd {
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
+      /// @include enumerable_where.cpp
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1349,8 +1236,11 @@ namespace xtd {
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
+      /// @include enumerable_where.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
+      static const xtd::collections::generic::ienumerable<source_t>& where(std::initializer_list<source_t> source, const std::function<bool(const source_t&)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         for (const auto& item : source)
@@ -1361,6 +1251,9 @@ namespace xtd {
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
+      /// @include enumerable_where.cpp
       template<typename source_t, typename collection_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1374,6 +1267,9 @@ namespace xtd {
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
+      /// @include enumerable_where.cpp
       template<typename source_t, typename input_iterator_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1382,47 +1278,14 @@ namespace xtd {
           if (predicate(*iterator)) result.items.push_back(*iterator);
         return result;
       }
-      
-      /// @brief Filters a sequence of values based on a predicate.
-      /// @param source A sequence of values to filter.
-      /// @param predicate A function to test each element for a condition.
-      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
-      template<typename source_t, typename predicate_t>
-      static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const predicate_t& predicate) {
-        return where(source, std::function<bool(const source_t&)> {predicate});
-      }
-      /// @brief Filters a sequence of values based on a predicate.
-      /// @param source A sequence of values to filter.
-      /// @param predicate A function to test each element for a condition.
-      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
-      template<typename source_t, typename predicate_t>
-      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const predicate_t& predicate) {
-        return where(source, std::function<bool(const source_t&)> {predicate});
-      }
-      /// @brief Filters a sequence of values based on a predicate.
-      /// @param source A sequence of values to filter.
-      /// @param predicate A function to test each element for a condition.
-      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
-      template<typename collection_t, typename predicate_t>
-      static const auto& where(const collection_t& source, const predicate_t& predicate) {
-        using source_t = typename collection_t::value_type;
-        return where(source, std::function<bool(const source_t&)> {predicate});
-      }
-      /// @brief Filters a sequence of values based on a predicate.
-      /// @param first The first iterator.
-      /// @param last The last iterator.
-      /// @param predicate A function to test each element for a condition.
-      /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
-      template<typename input_iterator_t, typename predicate_t>
-      static const auto& where(input_iterator_t first, input_iterator_t last, const predicate_t& predicate) {
-        using source_t = typename std::decay<decltype(*first)>::type;
-        return where(first, last, std::function<bool(const source_t&)> {predicate});
-      }
 
       /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+      /// @include enumerable_where2.cpp
       template<typename source_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&, size_t)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1436,8 +1299,11 @@ namespace xtd {
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+      /// @include enumerable_where2.cpp
       template<typename source_t>
-      static const xtd::collections::generic::ienumerable<source_t>& where(const std::initializer_list<source_t>& source, const std::function<bool(const source_t&, size_t)>& predicate) {
+      static const xtd::collections::generic::ienumerable<source_t>& where(std::initializer_list<source_t> source, const std::function<bool(const source_t&, size_t)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         auto index = size_t {0};
@@ -1449,6 +1315,9 @@ namespace xtd {
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+      /// @include enumerable_where2.cpp
       template<typename source_t, typename collection_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
@@ -1463,6 +1332,9 @@ namespace xtd {
       /// @param last The last iterator.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+      /// @include enumerable_where2.cpp
       template<typename source_t, typename input_iterator_t>
       static const xtd::collections::generic::ienumerable<source_t>& where(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&, size_t)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
