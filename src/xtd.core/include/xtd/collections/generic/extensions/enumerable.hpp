@@ -185,6 +185,19 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
+          /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+          /// @param default_value The default value to return if the sequence is empty.
+          /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+          source_t first_or_default(const source_t default_value) const noexcept {
+            return xtd::linq::enumerable::first_or_default(base(), default_value);
+          }
+          
+          /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+          /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+          source_t first_or_default() const noexcept {
+            return xtd::linq::enumerable::first_or_default(base());
+          }
+
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
@@ -222,14 +235,12 @@ namespace xtd {
           const xtd::collections::generic::list<source_t>& to_list() const noexcept;
           
           /// @brief Filters a sequence of values based on a predicate.
-          /// @param source A sequence of values to filter.
           /// @param predicate A function to test each element for a condition.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
           const xtd::collections::generic::ienumerable<source_t>& where(const std::function<bool(const source_t&)>& predicate) const {
             return xtd::linq::enumerable::where(base(), predicate);
           }
           /// @brief Filters a sequence of values based on a predicate.
-          /// @param source A sequence of values to filter.
           /// @param predicate A function to test each element for a condition.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
           template<typename predicate_t>
