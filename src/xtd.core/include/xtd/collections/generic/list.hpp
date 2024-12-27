@@ -1023,7 +1023,7 @@ namespace xtd::linq {
   }
 
   template<typename source_t>
-  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(const std::initializer_list<source_t>& source) noexcept {
+  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(std::initializer_list<source_t> source) noexcept {
     static thread_local auto result = xtd::collections::generic::list<source_t> {};
     result = xtd::collections::generic::list<source_t> {source};
     return result;
