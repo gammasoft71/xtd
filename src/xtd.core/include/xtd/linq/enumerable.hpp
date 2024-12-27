@@ -852,7 +852,7 @@ namespace xtd {
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
-      /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
       static source_t first_or_default(const xtd::collections::generic::ienumerable<source_t>& source, const source_t& default_value) noexcept {
         return any(source) ? *source.begin() : default_value;
@@ -860,7 +860,7 @@ namespace xtd {
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
-      /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
       static source_t first_or_default(std::initializer_list<source_t> source, const source_t& default_value) noexcept {
         return any(source) ? *source.begin() : default_value;
@@ -868,7 +868,7 @@ namespace xtd {
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
-      /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t, typename collection_t>
       static auto first_or_default(const collection_t& source, const source_t& default_value) noexcept {
         return any(source) ? *source.begin() : default_value;
@@ -877,7 +877,7 @@ namespace xtd {
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param default_value The default value to return if the sequence is empty.
-      /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t, typename input_iterator_t>
       static auto first_or_default(input_iterator_t first, input_iterator_t last, const source_t& default_value) noexcept {
         return any(first, last) ? *first : default_value;
@@ -885,21 +885,21 @@ namespace xtd {
 
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
-      /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
       static source_t first_or_default(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
-      /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
       static source_t first_or_default(std::initializer_list<source_t> source) noexcept {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
-      /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename collection_t>
       static auto first_or_default(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
@@ -908,7 +908,7 @@ namespace xtd {
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param first The first iterator.
       /// @param last The last iterator.
-      /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename input_iterator_t>
       static auto first_or_default(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
