@@ -21,10 +21,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core linq
     template <typename source_t>
-    const auto& from(const xtd::collections::generic::ienumerable<source_t>& source) {
+    const xtd::collections::generic::ienumerable<source_t>& from(const xtd::collections::generic::ienumerable<source_t>& source) {
       return enumerable::as_enumerable(source);
     }
-    
     /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
     /// @param source A sequence of values.
     /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
@@ -38,10 +37,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core linq
     template <typename source_t>
-    const auto& from(const std::initializer_list<source_t>& source) {
+    const xtd::collections::generic::ienumerable<source_t>& from(const std::initializer_list<source_t>& source) {
       return enumerable::as_enumerable(source);
     }
-    
     /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
     /// @param source A sequence of values.
     /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
@@ -58,7 +56,6 @@ namespace xtd {
     const auto& from(const collection_t& source) {
       return enumerable::as_enumerable(source);
     }
-    
     /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
     /// @param first The first iterator.
     /// @param last The last iterator.

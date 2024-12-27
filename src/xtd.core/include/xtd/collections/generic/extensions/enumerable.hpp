@@ -229,6 +229,21 @@ namespace xtd {
           const xtd::collections::generic::ienumerable<source_t>& select(const selector_t& selector) const {
             return xtd::linq::enumerable::select(base(), selector);
           }
+          /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+          /// @param source A sequence of values to invoke a transform function on.
+          /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+          /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+          template<typename result_t>
+          const xtd::collections::generic::ienumerable<result_t>& select(const std::function<result_t(const source_t&, size_t index)>& selector) const {
+            return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
+          }
+          /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+          /// @param source A sequence of values to invoke a transform function on.
+          /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+          /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+          const xtd::collections::generic::ienumerable<source_t>& select(const std::function<source_t(const source_t&, size_t index)>& selector) const {
+            return xtd::linq::enumerable::select(base(), selector);
+          }
 
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.

@@ -1111,6 +1111,112 @@ namespace xtd {
         using source_t = typename std::decay<decltype(*first)>::type;
         return select(first, last, std::function<source_t(const source_t&)> {selector});
       }
+      
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename result_t>
+      static const xtd::collections::generic::ienumerable<result_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<result_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<result_t> {};
+        result = enumerable_collection<result_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename result_t>
+      static const xtd::collections::generic::ienumerable<result_t>& select(const std::initializer_list<source_t>& source, const std::function<result_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<result_t> {};
+        result = enumerable_collection<result_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename result_t, typename collection_t>
+      static const xtd::collections::generic::ienumerable<result_t>& select(const collection_t& source, const std::function<result_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<result_t> {};
+        result = enumerable_collection<result_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename result_t, typename input_iterator_t>
+      static const xtd::collections::generic::ienumerable<result_t>& select(input_iterator_t first, input_iterator_t last, const std::function<result_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<result_t> {};
+        result = enumerable_collection<result_t> {};
+        auto index = size_t {0};
+        for (auto iterator = first; iterator != last; ++iterator)
+          result.items.push_back(selector(*iterator, index++));
+        return result;
+      }
+      
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<source_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t>
+      static const xtd::collections::generic::ienumerable<source_t>& select(const std::initializer_list<source_t>& source, const std::function<source_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename collection_t>
+      static const xtd::collections::generic::ienumerable<source_t>& select(const collection_t& source, const std::function<source_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (const auto& item : source)
+          result.items.push_back(selector(item, index++));
+        return result;
+      }
+      /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @param source A sequence of values to invoke a transform function on.
+      /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
+      /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
+      template<typename source_t, typename input_iterator_t>
+      static const xtd::collections::generic::ienumerable<source_t>& select(input_iterator_t first, input_iterator_t last, const std::function<source_t(const source_t&, size_t)>& selector) {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        auto index = size_t {0};
+        for (auto iterator = first; iterator != last; ++iterator)
+          result.items.push_back(selector(*iterator, index++));
+        return result;
+      }
 
       /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
