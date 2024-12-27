@@ -94,9 +94,10 @@ Inheritance diagram for xtd::collections::generic::extensions::enumerable&lt; en
  <div class="center">
   <img src="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.png" usemap="#xtd::collections::generic::extensions::enumerable_3C_20enumerable_5Ft_2C_20source_5Ft_20_3E_map" alt=""/>
   <map id="xtd::collections::generic::extensions::enumerable_3C_20enumerable_5Ft_2C_20source_5Ft_20_3E_map" name="xtd::collections::generic::extensions::enumerable_3C_20enumerable_5Ft_2C_20source_5Ft_20_3E_map">
-<area href="classxtd_1_1basic__array.html" alt="xtd::basic_array&lt; value_type, allocator_t &gt;" shape="rect" coords="0,56,438,80"/>
-<area href="classxtd_1_1basic__array.html" title="Base object that represent array." alt="xtd::basic_array&lt; type_t, allocator_t &gt;" shape="rect" coords="448,56,886,80"/>
-<area href="classxtd_1_1array.html" alt="xtd::array&lt; value_type &gt;" shape="rect" coords="448,112,886,136"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; char_t &gt;" shape="rect" coords="0,56,438,80"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; list_type_t &gt;" shape="rect" coords="448,56,886,80"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; value_type &gt;" shape="rect" coords="896,56,1334,80"/>
+<area href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units." alt="xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;" shape="rect" coords="0,112,438,136"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -157,12 +158,46 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a805f57ed82fadcdd3fa73f36005c2f9c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a805f57ed82fadcdd3fa73f36005c2f9c">any</a> (const predicate_t &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const</td></tr>
 <tr class="memdesc:a805f57ed82fadcdd3fa73f36005c2f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any elements of a sequence satisfy a condition.  <br /></td></tr>
 <tr class="separator:a805f57ed82fadcdd3fa73f36005c2f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a710bddf2e51d3f6ed70f1b7905c8fcfe">append</a> (const source_t &amp;element) const noexcept</td></tr>
-<tr class="memdesc:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
-<tr class="separator:a710bddf2e51d3f6ed70f1b7905c8fcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5bab0aafd6e4b9c8d55e39bc67a9ce1e">as_enumerable</a> () const noexcept</td></tr>
-<tr class="memdesc:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as xtd::collection::generic::ienumerable &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a5bab0aafd6e4b9c8d55e39bc67a9ce1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d2f992c66d3c0760bb1b299ceae73d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae5d2f992c66d3c0760bb1b299ceae73d">append</a> (const source_t &amp;element) const noexcept</td></tr>
+<tr class="memdesc:ae5d2f992c66d3c0760bb1b299ceae73d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
+<tr class="separator:ae5d2f992c66d3c0760bb1b299ceae73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f6f7576a1ae835f2ea5eb56cfa6cf4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a49f6f7576a1ae835f2ea5eb56cfa6cf4">as_enumerable</a> () const noexcept</td></tr>
+<tr class="memdesc:a49f6f7576a1ae835f2ea5eb56cfa6cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as xtd::collection::generic::ienumerable &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a49f6f7576a1ae835f2ea5eb56cfa6cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5669f1a9bf9da6303aa9ff29197b4799"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5669f1a9bf9da6303aa9ff29197b4799">average</a> () const noexcept</td></tr>
+<tr class="memdesc:a5669f1a9bf9da6303aa9ff29197b4799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of source_t values.  <br /></td></tr>
+<tr class="separator:a5669f1a9bf9da6303aa9ff29197b4799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba0a757b76c036ef644cec12662f887"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2ba0a757b76c036ef644cec12662f887">first_or_default</a> (const source_t default_value) const noexcept</td></tr>
+<tr class="memdesc:a2ba0a757b76c036ef644cec12662f887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="separator:a2ba0a757b76c036ef644cec12662f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964948d137047014d18a7cc5db15f46f"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
+<tr class="memdesc:a964948d137047014d18a7cc5db15f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="separator:a964948d137047014d18a7cc5db15f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a71193005cec47956095089fd24dca9"><td class="memTemplParams" colspan="2">template&lt;typename result_t &gt; </td></tr>
+<tr class="memitem:a2a71193005cec47956095089fd24dca9"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; result_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2a71193005cec47956095089fd24dca9">select</a> (const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector) const</td></tr>
+<tr class="memdesc:a2a71193005cec47956095089fd24dca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="separator:a2a71193005cec47956095089fd24dca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa225555534e214fe597e3fac14c459ca"><td class="memTemplParams" colspan="2">template&lt;typename result_t , typename selector_t &gt; </td></tr>
+<tr class="memitem:aa225555534e214fe597e3fac14c459ca"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; result_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aa225555534e214fe597e3fac14c459ca">select</a> (const selector_t &amp;selector) const</td></tr>
+<tr class="memdesc:aa225555534e214fe597e3fac14c459ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="separator:aa225555534e214fe597e3fac14c459ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e27c243ea31ea97a872ab01df810444"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0e27c243ea31ea97a872ab01df810444">select</a> (const std::function&lt; source_t(const source_t &amp;)&gt; &amp;selector) const</td></tr>
+<tr class="memdesc:a0e27c243ea31ea97a872ab01df810444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="separator:a0e27c243ea31ea97a872ab01df810444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c895c64295f0e3ce95ea092498fe597"><td class="memTemplParams" colspan="2">template&lt;typename selector_t &gt; </td></tr>
+<tr class="memitem:a8c895c64295f0e3ce95ea092498fe597"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8c895c64295f0e3ce95ea092498fe597">select</a> (const selector_t &amp;selector) const</td></tr>
+<tr class="memdesc:a8c895c64295f0e3ce95ea092498fe597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="separator:a8c895c64295f0e3ce95ea092498fe597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e09b306a5c1df3ddda02fe4ca3085a1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7e09b306a5c1df3ddda02fe4ca3085a1">to_list</a> () const noexcept</td></tr>
+<tr class="memdesc:a7e09b306a5c1df3ddda02fe4ca3085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a7e09b306a5c1df3ddda02fe4ca3085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db80522d1924c428b39bde2917b805e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a4db80522d1924c428b39bde2917b805e">where</a> (const std::function&lt; bool(const source_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const</td></tr>
+<tr class="memdesc:a4db80522d1924c428b39bde2917b805e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate.  <br /></td></tr>
+<tr class="separator:a4db80522d1924c428b39bde2917b805e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739e350169ba87f0f76b9f63a26e24e2"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t &gt; </td></tr>
+<tr class="memitem:a739e350169ba87f0f76b9f63a26e24e2"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a739e350169ba87f0f76b9f63a26e24e2">where</a> (const predicate_t &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const</td></tr>
+<tr class="memdesc:a739e350169ba87f0f76b9f63a26e24e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate.  <br /></td></tr>
+<tr class="separator:a739e350169ba87f0f76b9f63a26e24e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a22f3540f62b3b6140ecf188faf509842" name="a22f3540f62b3b6140ecf188faf509842"></a>
@@ -355,7 +390,7 @@ template&lt;typename accumulate_t &gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The number of even integers is: 6</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:58</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a22f3540f62b3b6140ecf188faf509842"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a22f3540f62b3b6140ecf188faf509842">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">source_t aggregate(const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func) const</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:42</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -987,8 +1022,8 @@ template&lt;typename predicate_t &gt; </div>
 
 </div>
 </div>
-<a id="a710bddf2e51d3f6ed70f1b7905c8fcfe" name="a710bddf2e51d3f6ed70f1b7905c8fcfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a710bddf2e51d3f6ed70f1b7905c8fcfe">&#9670;&#160;</a></span>append()</h2>
+<a id="ae5d2f992c66d3c0760bb1b299ceae73d" name="ae5d2f992c66d3c0760bb1b299ceae73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d2f992c66d3c0760bb1b299ceae73d">&#9670;&#160;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -999,7 +1034,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::append </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::append </td>
           <td>(</td>
           <td class="paramtype">const source_t &amp;&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
@@ -1032,7 +1067,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {1, 2, 3, 4};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  numbers.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a710bddf2e51d3f6ed70f1b7905c8fcfe">append</a>(5);</div>
+<div class="line">  numbers.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae5d2f992c66d3c0760bb1b299ceae73d">append</a>(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a8a7a51d0792107dd537730634b8fff12">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
@@ -1053,15 +1088,15 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
 <div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a8a7a51d0792107dd537730634b8fff12"><div class="ttname"><a href="classxtd_1_1basic__string.html#a8a7a51d0792107dd537730634b8fff12">xtd::basic_string::join</a></div><div class="ttdeci">static basic_string join(const basic_string separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator basic_string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:2296</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a710bddf2e51d3f6ed70f1b7905c8fcfe"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a710bddf2e51d3f6ed70f1b7905c8fcfe">xtd::collections::generic::extensions::enumerable::append</a></div><div class="ttdeci">xtd::linq::enumerable_collection&lt; source_t &gt; append(const source_t &amp;element) const noexcept</div><div class="ttdoc">Appends a value to the end of the sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:168</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:72</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ae5d2f992c66d3c0760bb1b299ceae73d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae5d2f992c66d3c0760bb1b299ceae73d">xtd::collections::generic::extensions::enumerable::append</a></div><div class="ttdeci">const xtd::collections::generic::ienumerable&lt; source_t &gt; &amp; append(const source_t &amp;element) const noexcept</div><div class="ttdoc">Appends a value to the end of the sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:168</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:71</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a5bab0aafd6e4b9c8d55e39bc67a9ce1e" name="a5bab0aafd6e4b9c8d55e39bc67a9ce1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bab0aafd6e4b9c8d55e39bc67a9ce1e">&#9670;&#160;</a></span>as_enumerable()</h2>
+<a id="a49f6f7576a1ae835f2ea5eb56cfa6cf4" name="a49f6f7576a1ae835f2ea5eb56cfa6cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f6f7576a1ae835f2ea5eb56cfa6cf4">&#9670;&#160;</a></span>as_enumerable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1072,7 +1107,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1linq_1_1enumerable__collection.html">xtd::linq::enumerable_collection</a>&lt; source_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::as_enumerable </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::as_enumerable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1086,14 +1121,375 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the input typed as xtd::collection::generic::ienumerable &lt;type_t&gt;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values. </td></tr>
+<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as xtd::collection::generic::ienumerable &lt;type_t&gt;. </dd></dl>
+<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5669f1a9bf9da6303aa9ff29197b4799" name="a5669f1a9bf9da6303aa9ff29197b4799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5669f1a9bf9da6303aa9ff29197b4799">&#9670;&#160;</a></span>average()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::average </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the average of a sequence of source_t values. </p>
+<dl class="section return"><dt>Returns</dt><dd>The average of this sequence of values. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>this sequence contains no elements. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as xtd::collection::generic::ienumerable &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a2ba0a757b76c036ef644cec12662f887" name="a2ba0a757b76c036ef644cec12662f887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba0a757b76c036ef644cec12662f887">&#9670;&#160;</a></span>first_or_default() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">source_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::first_or_default </td>
+          <td>(</td>
+          <td class="paramtype">const source_t&#160;</td>
+          <td class="paramname"><em>default_value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the first element of the sequence that satisfies a condition or a default value if no such element is found. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">default_value</td><td>The default value to return if the sequence is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>default_value</code> if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate. </dd></dl>
+
+</div>
+</div>
+<a id="a964948d137047014d18a7cc5db15f46f" name="a964948d137047014d18a7cc5db15f46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964948d137047014d18a7cc5db15f46f">&#9670;&#160;</a></span>first_or_default() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">source_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::first_or_default </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the first element of the sequence that satisfies a condition or a default value if no such element is found. </p>
+<dl class="section return"><dt>Returns</dt><dd>default <code>source_t {}</code> if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate. </dd></dl>
+
+</div>
+</div>
+<a id="a2a71193005cec47956095089fd24dca9" name="a2a71193005cec47956095089fd24dca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a71193005cec47956095089fd24dca9">&#9670;&#160;</a></span>select() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename result_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; result_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::select </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; result_t(const source_t &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Projects each element of a sequence into a new form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
+    <tr><td class="paramname">selector</td><td>A transform function to apply to each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
+
+</div>
+</div>
+<a id="aa225555534e214fe597e3fac14c459ca" name="aa225555534e214fe597e3fac14c459ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa225555534e214fe597e3fac14c459ca">&#9670;&#160;</a></span>select() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename result_t , typename selector_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; result_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::select </td>
+          <td>(</td>
+          <td class="paramtype">const selector_t &amp;&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Projects each element of a sequence into a new form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
+    <tr><td class="paramname">selector</td><td>A transform function to apply to each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
+
+</div>
+</div>
+<a id="a0e27c243ea31ea97a872ab01df810444" name="a0e27c243ea31ea97a872ab01df810444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e27c243ea31ea97a872ab01df810444">&#9670;&#160;</a></span>select() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::select </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Projects each element of a sequence into a new form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
+    <tr><td class="paramname">selector</td><td>A transform function to apply to each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
+
+</div>
+</div>
+<a id="a8c895c64295f0e3ce95ea092498fe597" name="a8c895c64295f0e3ce95ea092498fe597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c895c64295f0e3ce95ea092498fe597">&#9670;&#160;</a></span>select() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename selector_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::select </td>
+          <td>(</td>
+          <td class="paramtype">const selector_t &amp;&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Projects each element of a sequence into a new form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
+    <tr><td class="paramname">selector</td><td>A transform function to apply to each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
+
+</div>
+</div>
+<a id="a7e09b306a5c1df3ddda02fe4ca3085a1" name="a7e09b306a5c1df3ddda02fe4ca3085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e09b306a5c1df3ddda02fe4ca3085a1">&#9670;&#160;</a></span>to_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::to_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains elements from the input sequence. </dd></dl>
+
+</div>
+</div>
+<a id="a4db80522d1924c428b39bde2917b805e" name="a4db80522d1924c428b39bde2917b805e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db80522d1924c428b39bde2917b805e">&#9670;&#160;</a></span>where() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::where </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filters a sequence of values based on a predicate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; that contains elements from the input sequence that satisfy the condition. </dd></dl>
+
+</div>
+</div>
+<a id="a739e350169ba87f0f76b9f63a26e24e2" name="a739e350169ba87f0f76b9f63a26e24e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739e350169ba87f0f76b9f63a26e24e2">&#9670;&#160;</a></span>where() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t , typename source_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename predicate_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; source_t &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::where </td>
+          <td>(</td>
+          <td class="paramtype">const predicate_t &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filters a sequence of values based on a predicate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; that contains elements from the input sequence that satisfy the condition. </dd></dl>
 
 </div>
 </div>
@@ -1104,7 +1500,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 25 2024 15:34:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 27 2024 09:43:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
